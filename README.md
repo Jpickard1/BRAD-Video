@@ -8,6 +8,16 @@ Follow the below instructions to install the necessary dependencies and build th
 
 ### Install Dependencies
 
+**Install BRAD**
+This code must be run from the `video-rag` branch from the `BRAD` repository, and the roots of both repository must be located within the same directory. Run the below commands to install both repositories:
+```
+git clone https://github.com/Jpickard1/BRAD.git
+cd BRAD
+git checkout video-rag
+cd ..
+git clone https://github.com/Jpickard1/BRAD-Video.git
+```
+
 **Backend (python)**
 1. Activate `BRAD-DEV` or `BRAD-1` conda environment used for developing the main `BRAD` repository
 2. `pip install scrapetube`
@@ -22,6 +32,7 @@ nvm install 20.18.0
 nvm use 20.18.0
 npm install --prefix ./brad-chat
 ```
+
 ### Build the RAG Database
 
 To build the RAG database:
@@ -37,3 +48,14 @@ python youtube_database_construction.py
 2. specify the videos (we should add a new argument for this)
 
 ## Cite As
+```
+@article{pickard2024language,
+  title={Language Model Powered Digital Biology with BRAD},
+  author={Pickard, Joshua and Prakash, Ram and Choi, Marc Andrew and Oliven, Natalie and
+          Stansbury, Cooper and Cwycyshyn, Jillian
+          and Gorodetsky, Alex and Velasquez, Alvaro and Rajapakse, Indika},
+  journal={arXiv preprint arXiv:2409.02864},
+  url={https://arxiv.org/abs/2409.02864},
+  year={2024}
+}
+```
