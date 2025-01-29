@@ -87,13 +87,6 @@ function App() {
                 ))}
               </select>
             </div>
-            <label className="playback-speed">
-              Video Database:  
-              <select>
-                <option>DCMB Seminar Series</option>
-                <option>Three Blue One Brown</option>
-              </select>
-            </label>
           </div>
         </div>
         {/* Chat Container on the left */}
