@@ -1,0 +1,222 @@
+[
+    {
+        "start": 0.08,
+        "text": "a pretty good crowd so i'm going to go ahead and get started welcome everybody to the dcmv seminar series today we've got uh dr magnus rattray speaking with us from the university of manchester it's uh one uh one good thing about covet is um since we're having these virtual seminars we can uh we can bring people in from europe very easily so we're excited to have dr ratri here he uh graduated with his bachelor's in math and physics and and then ultimately his phd in computer science from the university of manchester and then he did postdoctoral work on the statistical mechanics of neural networks at the neural computing research group at aston university and he was professor of machine learning and statistical bioinformatics at sheffield university before returning to manchester in 2012 where he currently is the director of the university of manchester data science institute and dr rattray uses probabilistic "
+    },
+    {
+        "start": 62.079,
+        "text": "modeling and bayesian inference techniques to study biological systems across a range of temporal and spatial scales from gene expression in single cells to longitudinal population health data and what's particularly impressive to me about his work is his deep knowledge of both statistical machine learning and biological applications he's a world-class expert in gaussian processes and he's been working on genomic applications since the days of microarrays and more recently he's he's developing gaussian process methods um to uncover oscillations in single cell imaging time course data and in first pseudo time from single cell rna seq data which i believe he's going to talk about today so magnus thanks very much for speaking with us and we're excited for your talk ms joshua thanks for the nice [Music] bio and uh you made me feel old now talking about microarrays uh so um okay let me share my screen and i hope that works "
+    },
+    {
+        "start": 123.36,
+        "text": "uh is that okay yep looks good brilliant okay so thanks so much for inviting me uh it's sad that i can't actually visit uh ann arbor um but i did have a look at it on wikipedia so that i felt like i was actually in the place you know um and uh it's also unusual for me to give a talk just after putting the kids to bed so uh that's also but luckily they've gone okay so so hopefully they won't interrupt us um okay so um i am gonna talk about um guys and processes as joshua says i've been working on that for quite a long time um so just see if i can just move forward so i'm going to give a quick tutorial about gaussian processes um so i think they're a useful statistical model um that you know it's useful to know "
+    },
+    {
+        "start": 186.64,
+        "text": "about in general so hopefully that intro will give people a bit of a flavor about what they're about um and then i'm gonna talk about three different ways that we've applied them recently i'll start off talking about pseudotemporal inference in the specific case where we have some um capture time information from a single cell time series data and the bayesian nature of the gaussian process method is useful to encode that prior information about capture times of the cells and that's really building on other people's works but our extension was to introduce some extra latent dimensions into that model to capture other variation such as differentiation and branching so then uh after talking about branching in high dimensional data i'll go down to the gene level and talk about modeling branching "
+    },
+    {
+        "start": 248.879,
+        "text": "individual genes from single cell pseudotemporal or pseudotime course data and finally i'll just talk about a new extension where we've introduced a negative binomial likelihood into gaussian process framework which allows us to model count data a little bit better and i'll talk about spatial inference with that type of model so first guessing processes 101 and uh you know if people want to ask a question you can just unmute and uh go ahead or put things in the chat whatever i don't mind um if there's something in the chat that i miss maybe josh can alert me um so um what's gaussian process so it's it's a probability distribution but it's a probability distribution over "
+    },
+    {
+        "start": 309.52,
+        "text": "functions rather than numbers so a gaussian distribution is a distribution over numbers a gaussian process is a distribution over functions and the functions in code are sort of prior beliefs or or they model structure and data so for instance they might model the fact that time series is very dynamic um or they could model the fact that your time series could be stochastic like from uh single cell life cell imaging traces for instance or it could be smooth because you're averaging over millions of cells it could be stationary so it looks the same at different places or it could be non-stationary and the covariance function encodes the type of functions that we can draw from this probability distribution so the covariance function really "
+    },
+    {
+        "start": 371.12,
+        "text": "contains the the sort of modeling strength of gaussian processes so um what why the gaussian processors what's the link to gaussian distributions well i'm going to try and explain that here so the dots here are um numbers from a 25-dimensional vector which has been drawn from a multivariate normal so you take your you know multivariate normal random number generator from r or python or whatever and you draw a 25-dimensional vector and then you plot the data and the indices in the vector are along the x-axis and the values in the vector are on the y-axis here and um i've i've chosen the covariance matrix "
+    },
+    {
+        "start": 431.44,
+        "text": "this normal distribution to have a specific um structure where so white is top here and it means that indices that are close together are highly correlated so this covariance matrix or the variance is one so you can think of it as a correlation matrix so things where the indices are close together so if we take the 10th element and the 11th element in this vector then if we go along and look at that box it's high and that means those two things are highly correlated so if we draw that vector it looks a little bit during those dots it's a smooth curve okay um but it's not a function it's it's a vector but we because we've chosen the covariance matrix in a particular way it looks good so gaussian process is just where you take instead of having n equals 25 "
+    },
+    {
+        "start": 492.0,
+        "text": "you have n equals infinity so if i and actually these curves here aren't really drawn with infinite number of points i think i chose 400 you know so actually this is now a 400 dimensional vector but it just looks like a function because everything is so smooth and close together and now the covariance matrix or the correlation matrix is no longer a matrix it's actually a function so it's this thing here and it's got the same form as this guy it's high in the middle along this diagonal and falls off on the off diagonal so that means this function here takes its maximum value when two points are right on top of each other t equals t prime and then it falls off otherwise and if you um draw functions from this particular covariance function then they're going to look smooth "
+    },
+    {
+        "start": 553.68,
+        "text": "and there's a parameter of this which is a length scale here so it's t minus t prime over this length scale squared if i make that large then the functions cross the zero line less often and they have a longer length scale if i make that small then they're going to be more wiggly and things are going to cross the zero line a lot so that parameter we call it hyperparameter it tunes how wiggly these curves are so gaussian process is a probability distribution over wiggly curves and the parameters of the covariance function they tune how wiggly they are and uh here at the beginning there's an amplitude outside this exponent which says how much amplitude there is in these functions so they're wiggly and they go up and down alpha tunes how high they go up and down and l tunes their length scale so that squared exponential covariance "
+    },
+    {
+        "start": 616.72,
+        "text": "that's one choice this is what one sample from that looks like sometimes you call it an rbf which is historically because it's related to radio basis functions so that's one choice if we change the function instead of having an l2 norm here an exponent but we have a um l1 then we get stochastic sats and that's actually like a brown in a potential so that's called an einstein um back process also sort of make more complex variance functions so here i've one of these einstein illinois processes i've multiplied by a cosine and that's induced these kind of stochastic pseudo periodic kind of "
+    },
+    {
+        "start": 677.04,
+        "text": "shapes here so it's um what you could call kind of it's not completely uh periodic but it's kind of stochastically periodic and actually in the past we've used that to model oscillations in a single cell data time course data so longitudinal microscopy type data i'm not going to talk about that today but if you're interested that's the paper okay so gaussian processes are distributions over functions and the reason people in machine learning are interested in them is because they're very preference over data so uh on the left here i'm showing samples from uh our squared exponential distributions so that means that these are smooth samples and if we're doing bayesian inference we can think of these "
+    },
+    {
+        "start": 738.24,
+        "text": "as our prior belief for what some time series is going to look like before we see data so i haven't seen any data but i know that you know it's a bulk rna sequence a so i'm expecting things to be smooth because it's averaged over tissue and um i don't really know what's going to happen but i've seen lots of time of course in the past and they always look like wiggly kind of curves like this so that's my prior belief and then i do four experiments and those have to be passed closer data in this case i've done a super clean experiment so these are really low noise uh but in between the data i don't really know what's happened so the guys in process allows me to say you know the prior tells me what the functions look like they're smooth the data tells me constrains me to have functions that pass closer data and in between the functions are allowed to "
+    },
+    {
+        "start": 799.12,
+        "text": "vary and that gives me my uncertainty in what the inferred functions should look like so the kind of posterior distribution after seeing data is this kind of uh sample of functions that all pass close to the data and that's uh that allows and you can do all this analytically it's fully tractable and that's the nice thing about gaussian processors so you can do bayesian inference for nonlinear regression exactly and josh was asking about neil lawrence actually so this is uh example of the simplest thing you can do with gaussian processors you have some time series gene expression data and you just want to ask is it changing in time or later on i'm going to talk about space is it changing in some spatial dimensions and the simplest thing you "
+    },
+    {
+        "start": 860.959,
+        "text": "can do is just work out the probability under a dynamic model so under gaussian process take away the probability under a constant model and that gives you a log likelihood ratio score for whether the gene is dynamic and you can just use data find the dynamic genes and then push them into the next sort of stage of phase analysis now um gaussian processes if you just apply naively are slow because they involve a big fixing verb and that's cubicking complexity with the number of time points or the number of space you'll look at so that's completely impractical but there's lots of ways of getting around that so we use something called sparse inference with inducing points and um that scales linearly in the dimension of "
+    },
+    {
+        "start": 924.839,
+        "text": "data quadratically in the number of inducing points but the inducing points only need to really be um sort of logarithmic in the dimensions so k there can scale logarithmically usually i think and the whole thing is just a little bit slower than uh linear so that's not bad times we have a model that has some time to talk about models with i must talk about gaussian data uh you can no longer do everything atlas and you have to use something uh like mcmc or variational inference and we use variational inference and finally you can also benefit from all the advances in software engineering from the deep learning community so they've got these really nice methods like tensorflow and pi torch these methods allow you to "
+    },
+    {
+        "start": 986.88,
+        "text": "make really good use of processors so you can use all your cpus and gpus to full effect um and really these things have matured tremendously in the last five to ten years so i think that getting process inference is a lot more practical for big data than it was in the past so i think it's it's really become a very practical tool okay so that was kind of uh you know in processes 101 world wind uh tour uh so now talk about a few applications uh bioinformatics app okay so first i'm going to talk a bit about dimensionality reduction and super time inference um so people are probably very familiar with pseudotime is well established now "
+    },
+    {
+        "start": 1048.079,
+        "text": "and there's there's tens of packages uh doing this um so the idea is if we're doing single cell genomics we typically destroy the cell and enrichment we can't follow in time and if we're interested in something that's going on in this song we might want to infer where the cells are in that dynamic process so it's a bit like rediscovering time from high dimensional time series data and having a sort of pseudo-temporal ordering of cells and here's a picture from the nice slingshot method where first you reduce the dimensionality of the data into some low dimensional space not really three i think a bit higher than three but just this is just a picture uh they do some clustering and then they join the clusters together with a minimum spanning tree and then do some smoothing doing some sort of principle curves "
+    },
+    {
+        "start": 1108.08,
+        "text": "modeling through that space and to work out pseudotime profiles so there was a nice paper from john reed and lawrence varnish a few years ago introducing something called the delorean package which did sue the time using a bayesian gprvm which is a type of geysing process um but it's a gaussian process where you infer the um time variable as well as the um data y so you're inferring one e um the nice thing about this is that if you have some private about where the cells are and dynamic process you're interested in so maybe you've captured them at some particular point "
+    },
+    {
+        "start": 1168.24,
+        "text": "in the process then you can introduce that model as a prior and that information about and helps you infer pseudo time so you can't apply this to every data set but if you have a data set where you have some capture time information um then this is a useful approach but this was a nice paper but it didn't really scale very well and in 2016 the data sets weren't so huge um and um they used i think stan to implement this and every um cell was a variable that you had to do mcmc over and stan so it stands really nice but it doesn't really it's not going to scale you up to millions of cells so we re-implemented this using a more scalable architecture using gp flow and we introduced a new or a modified variational inference algorithm and "
+    },
+    {
+        "start": 1229.36,
+        "text": "another thing we did was as well as inferring pseudotime we also introduced other dimensions into the laying space and we found that be quite useful so as well as having time we also had some additional lane variable color x and x could model other types of variation that might reflect for instance branching that's going on as you go through time and we publish this as the grand prix package so just to explain the branching i'm going to show results from uh it's it's it's not a very big data set but it's a very nice data set for sort of explaining the idea so it's an old data set or using qpcr on early very early embryonic development in mouse and the idea is that you go from really the earliest stage where you have a single cell and then it goes into doubles into two cells and four cells "
+    },
+    {
+        "start": 1291.039,
+        "text": "eight cells and so on into the inner cell mass and then the trifecta derm epiblast and primitive endotherm and so by the time you're at the 64 cell stage you've got three different cell types um and um so if if if you can capture the cells at all these different stages then you've got a lot of information about time but then you can use pseudotime to kind of model the fact that the cells are differentiating into different cell types over time now if you just do pca um it doesn't really work it's clearly a non-linear data set um and so um pca is not not going to do it everything's going to be kind of mixed up the standard gpr vm is a typical kind of non-linear um dimensionality reduction algorithm and so you can think of that as just doing t-sne or umap "
+    },
+    {
+        "start": 1351.84,
+        "text": "or one of these kind of methods and it's non-linear so it's much better separating out the different stages so here i've used colors for each different stage and then those also for different cell types um but what you can see is that the time order of the process so so these differentiation times uh they aren't really reflected in the latent space so this low dimensional space here doesn't really capture the fact that you go from 8 16 to 32 to 64. the 32 inner cell mass is um away from the trifecta dome of 32 and it's separated by these other cells at 64 stage so the latent space doesn't really reflect reflect the temporal um nature of the data so on the left showing the same standard gprvm picture on the right i've "
+    },
+    {
+        "start": 1414.08,
+        "text": "shown the result of using grand prix so we're growing we put some prior knowledge that we know which cells around so we know uh the one two four eight sixteen a two sixty four and then we just use gpm to add in the additional variation in the um hearer's y-axis and really captures the differentiation into cell types at time to time 64. so it gives us a much kind of clearer representation of this uh developmental process over time than the standard representation another advantage of adding in that extra dimension so you can you can go back and look at how good your latent "
+    },
+    {
+        "start": 1474.64,
+        "text": "representation of data really corresponds to the known times for the cells so the capture stages and if you use the original approach of just inferring time only having time as your latent dimension and no other variation you actually get a much poorer solution you find you find you get stuck in local optima basically which don't really reflect the temporal progression through those stages but if you do the 2d optimization where you also allow for the branching then the times are much better reflected in the latent space so it seems like having this 2d approach rather than just learning a 1d space also improves the 1d inference improve improves the time inference and then once you've inferred sudo time you can go back to individual genes and see how they behave so you know in this case we can see that id2 here is already looking like it's differentiating at the "
+    },
+    {
+        "start": 1535.44,
+        "text": "16 cell stage even though that wasn't apparent in the kind of global reduced dimension picture um but it's probably not involved here in the epiblast differentiation later whereas sox2 is involved in the epiblast later so now that kind of links me to the next part because if we look at individual genes as we are here in the bottom then we might ask the question which genes are associated with branching events and so we can see here that sox2 is clearly involved in that transition from the inner cell mass to the epiblast um and so in order to do that we have to go down and kind of model things at individual genes and that's what i'm going to talk about next um just before i finish "
+    },
+    {
+        "start": 1597.6,
+        "text": "scalability so that was a very small example as i said introducing this implementation in gp flow right allows us to really scale this up to big data sets this is not a pseudo time one this is just a dimensionality reduction problem so this is a standard gpu vm which shows it's very kind of scalable um and this data i think we initialized using t-sne and what we found that was that the gprvm latent space actually ended up more consistent with the clusters in this data than the uh this one where the clusters were found not not in low dimensional space but in the higher dimensional space um one nice thing we found was the uh so so uber developed this package called pyro for um probabilistic programming uh it's a bit "
+    },
+    {
+        "start": 1659.679,
+        "text": "like stan but it uses different inference techniques so you can just write model and the ornates all the different spots really nice and um we just used our paper to make the sample for the gprvm so those can be independent we just noticed they've done this and they've implemented it in both from scratch and they get exactly the same results so it's quite nice because it you know we're very much into repo research and reproducing results um but reproducing something including implementing in a different framework and getting the same results very nice so so that gave us so it shows actually the model isn't quite simple and can be implemented in many different ways and you know there's lots of practical tools out there for doing this type of modeling and pyro looks actually really nice "
+    },
+    {
+        "start": 1721.36,
+        "text": "um recently uh verma and barbara engelhardt um have a really nice version of the gprvm which is a bit more robust um than the standard gaussian that we use so they're using a student t likelihood so it's a bit more robust to heavy tailed kind of noise they use a slightly more general set of covariance functions and it looks really nice and if you look at this paper it actually shows that this scale is better than things like umap and t-sne actually so i think people are probably thinking gaussian processes are slow thing and maybe avoid them for that reason but if you look at this paper you can see actually that when you implement them in a modern framework they're pretty scalable so i like this paper i thought it was really nice okay so um that was "
+    },
+    {
+        "start": 1784.72,
+        "text": "that was kind of looking at gps for modeling high dimensional data and inferring a low dimensional lane space um i'm gonna go back to dimensional data modeling actual individual genes and looking a bit more of that branching question you know uh seeing if there's evidence for genes branching and whether they branch early or not so originally we had a model for branching gain processes which we used for time series data and it's for what's called a two-sample inference problem where you have two different time series data and you want to understand the differences between those two time series so for example you might have a time series for a wild type and a time series for a mutant uh organism and you follow the genes over time and you ask "
+    },
+    {
+        "start": 1845.2,
+        "text": "you know which genes are changing in the mutant and when are the changes happening um and and that's the question we addressed originally with this work from a few years ago but um we can also apply this to single cell pseudotemporal data so a gaussian process as i said is a distribution over functions um but now i'm going to talk about branching functions so here the red function is a standard sample from a smooth gaussian process and the blue one is a gaussian process that touches the red one at a particular time point and then goes off and does its own thing so here's one sample from that distribution here's another here's another these are just all samples from the same coherence uh function and you know so that's that's the the "
+    },
+    {
+        "start": 1905.679,
+        "text": "samples from that distribution and then you want to do some inference over that so you plug that covariance function into your gaussian process inference tool and you can make inferences about where uh when you have real data where does the branching happen so two things you can do you can say um what's the probability of branching at each time in that time course and the second thing you get is what's the probability of branching at all you know what's probability of branching versus non-branching and we can work out that using a bayes factor so if i look at time series so um this is some time series data uh then at the top i'm showing the probability of where the branching is so the posterior probability of where those two things are beginning to diverge um "
+    },
+    {
+        "start": 1969.12,
+        "text": "there's an evidence so and the there's there's there's very low evidence for those two things not branching here's an example where there's strong evidence for these things not branching so they look identical over time statistically at the top is a posterior probability of where the branching is but the highest value is at the end and the the base factor for whether it's branching or not branching is basically it's worked out as the height of the last bar divided by the average height of all the bars so if the last bar is higher than all the other ones it means that the most likely thing is that there's no branching so that was for time series that's kind of old work um then when we have uh pseudo-temporal data we have some additional so we have to work as time to talk about "
+    },
+    {
+        "start": 2031.039,
+        "text": "then we have to work out you know which branch does the cell actually belong to um we have to work out which genes are involved in the branching and when they change so the last two are the same as for time series but the question of where the cell lies on the branch is actually a new problem and we address that in this bp package so um method that did something like this was called beam which is based on splines and beam was uh it was implemented in earlier versions of monocle but i don't think it's in the current version um so if the data is low noise and um and you can see that the so beam here is on the left and we have uh we've done pseudotime inference there's some global branching which is the dashed the black line here "
+    },
+    {
+        "start": 2094.079,
+        "text": "and then the actual branching for this gene is a bit later than the global branching and we want to infer where that is beam fits these splines it looks where they cross and it finds that they branch late this is synthetic data so we know that this is is close to the truth um bgp does something similar works out that the branching is here um has some uncertainty but generally the two methods agree however if there's a lot of noise which is more typical with single cell data then the gaussian process says well you know the most likely branching is still late um but i'm super unconfident about it so i'm going to put big error bars or credible regions whereas the spline doesn't have any uh concept of uncertainty and it tends to be highly biased towards this global branching this black line so it becomes very conservative and says ah i think "
+    },
+    {
+        "start": 2155.68,
+        "text": "this gene just branches where the global branching of all the other genes is the other thing that the gaussian process allows us to do is it allows us to deal with the situation where branching is actually earlier than the global branching in the single in the um in the data so if we use some um sort of method like uh slingshot on monaco and we work out where the global branching of the cells is if we have a gene that branches very early then uh often it will branch before that global branching in pseudotime and we can see here that the purple dots aren't labeled to which branch they belong to and the gp allows us to make inferences about which of these branches the purple dots belong to whereas the kind of beam approach doesn't allow us to do that it it "
+    },
+    {
+        "start": 2216.64,
+        "text": "actually just randomly assigns the purple ones to either branch and fits the spine um so in that case so the red pluses tri beam they're kind of biased towards this global branching in this example um whereas the blue and black ones are the black is the grand truth and the blue is the btp result and the the blue and black don't match here because um sudo time can be a kind of non-linear function of actual time and and there's always a risk that you can be a bit biased so so i think what's happened here is pseudo time is a bit warped relative to um actual time but the kind of rank order of the cells in pseudotime is probably okay so looking at some real data um sort of um from bone marrow myeloid progenitor populations we kind of so the way you do this you apply some general approach for pseudotime and "
+    },
+    {
+        "start": 2278.64,
+        "text": "branching inference for the cells and then you can look at individual cells and you can score them in terms of their evidence of branching a particular branching in the sort of global tree um and then you can look at the locations so here's some examples in real data these are kind of genes with strong evidence of branching in that data and bgp the posterior for where the branching is is at the bottom here so most of these are early branches but we can see that car 2 and car 1 are kind of branching a bit later here and then we can get a confident gene ordering um so where things here are connected by line that means that they're confidently branching later or earlier than the gene they're connected to so it allows you to kind of rank order the genes okay so um finally "
+    },
+    {
+        "start": 2341.52,
+        "text": "i'm just going to talk a bit a little bit about some recent work where we've extended these types of gaussian process models to modeling cans data so here's an example where gaussian processors have gone wrong a little bit using a standard gaussian likelihood so in the bottom here i've done this thing of transforming log counts plus a constant and modeling that using uh gp um and then i'm trying to do a two sample test to work out whether these two time series are different um and they are different i mean or there's strong evidence in the top here when we use a negative binomial likelihood a proper kind of cancer likelihood but in the bottom here we find that the gaussian is not fitting one of the time series very well and it's probably confused by the fact that we don't have a lot of replicates here and the replicates just happen to be very close together in "
+    },
+    {
+        "start": 2402.8,
+        "text": "this example and so the gp is somewhat confused and it's kind of wiggling through this data and just not fitting well so if we're doing a two sample test this is actually this model because the fit the green fit for the bottom right there is not good it means the model is going to prefer to say that there's no difference between green blue green and blue in that case so the the inference is kind of failed i think whereas in the top the nega binomial fit to these time series really captures the fact that these are two different functions they're both smooth they both look like they've got reasonable credible regions and it's more plausible to say that those two time series are different so sometimes the gaussian likely goes wrong because it doesn't correctly model the noise distribution in the data now there's been quite a few papers suggesting that negative binomial is quite a good choice for um "
+    },
+    {
+        "start": 2466.24,
+        "text": "single cell rna seq data um and i'm not going to kind of go into the the the details of those discussions um we've actually implemented negative binomial and xero inflated but in practice we find the zero inflated doesn't add much in most applications so the idea of a negative binomial is that it models um counts data which has excessive variance or dispersion relative to a poisson distribution so the variance in the data is equal to the mean plus an extra term which captures the dispersion and in the gaussian process what we do is we model the log of the mean of the data as a function from a gaussian process so the dispersion models the accounts data and the the mean of that is modeled using the gaussian process "
+    },
+    {
+        "start": 2526.88,
+        "text": "and if we use synthetic data we can look at you know is that is that useful well um if you have low dispersion then the gaussian is pretty good you know so the gaussian and the negative binomial are quite comparable for low dispersion data um the poisson works reasonably well but for high cancer can still break down a bit even with quite low dispersion but when you have high dispersion especially if you have high cancer and high dispersion you can see quite a big difference between the nega binomial and the slime and here what we're doing is one of those one sample tests where we're just testing to see if there's dynamics in the data and that's that's kind of the um type of statistical test that we're doing in this comparison so it seems like negative binomial um is useful in the case where we have high "
+    },
+    {
+        "start": 2587.68,
+        "text": "dispersion data and if we have this type of single cell pseudo time series for instance we have high dispersion but also if we have spatial transcripts to makes data we also see a high dispersion often supply is to um spatial data just to a very simple problem of identifying differentially expressed genes basically and um spatial spatial leakage does that with the standard gaussian process for the gaussian likelihood function and we've just plugged in a negative binomial likelihood into the same pipeline so everything else is very similar so the idea here is that um if you have spatial variation then those should have a characteristic length scale so you should be able to model them with a covariance function that has a kind of length scale parameter if you have non-spatial variation it "
+    },
+    {
+        "start": 2649.52,
+        "text": "should be better modeled just as a noise and it won't be captured by a kind of spatial covariance function so you do we're doing a likelihood ratio test between a model which is flat and only has um non-spatial variation versus a model it has a variation to see um which is best and what we find is that um having this negative binomial likelihood function really gives us much better sensitivity and uh also avoids some rather implausible positives so spatialde in this venn diagram here is identifying a smaller number of genes as differentially expressed in this data set and then the ones which spatial dc he says are positive um when we look at them "
+    },
+    {
+        "start": 2712.48,
+        "text": "often they're extremely they have extremely small numbers of counts um so it looks like the fact that if you have very small numbers accounts and you use a lot and use a um gaussian noise model then you don't have a lot of information to estimate things like variance when you have that little data so it's rather implausible to use a gaussian noise model in that case the the counts likely it's quite nice because in the case where you have very little data you're just going to basically infer something like a poison or slightly over dispersed poisson and then you get a lot of information about variation in the data that you wouldn't get from a gaussian model um and if you look at some of the ones which are positive you can see that they kind of are reflected in images which are independent from the spatial transcriptomics data um we've also scaled this up um using the sparse inference techniques i was talking about and "
+    },
+    {
+        "start": 2773.28,
+        "text": "i was hoping to present some results on slide seek we we've we've run it on that data um but we haven't uh got results ready to present but with the sparse methods it scales up to large scale things like um slide seek and 10x spatial data so um i'm done so so just to summarize gps are they're very natural for modeling branching in time series uncertainty allows you to kind of get a confidence in ordering your um events so if you want to know which genes are branching early or late you can order those with with a level of uncertainty to be practical for single cell you really have to use speed up so we use these kind of variational inference techniques in the gp flow package which is very good for that and and recently we've introduced a negative binomial likelihood into these "
+    },
+    {
+        "start": 2834.48,
+        "text": "gaussian process methods which i think gives us a much more realistic model for counts data and we've been applying that specifically in this spatial inference um challenges well um i separated out suitable time and branching it would be nicer to model them together and have a kind of joint model which also has which has pseudotime and branching at the same time um and we'd like to look at more complex spatial models so we're interested in point processes um and also when you're fitting these models to you know and sometimes we're fitting them to all the genes so so we're fitting ten thousand models it's really important that the inference is robust and that hyperprinter estimation is robust so you have to catch numerical issues you have to restart if you converge at a bad local optima so those type of things we're working on but i think we can "
+    },
+    {
+        "start": 2895.04,
+        "text": "always improve so that you don't get kind of um bad inference in in some bad cases and finally i'd like to thank uh people who did a lot of the work so um suman ahmed and alexis buccavales did a lot of work on grand prix in the bgp method um jing yang also on the branching estee john and sokratia worked on the spatial and the nega binomial and new heart as well who's put the gp cans package together and then james hensman is a long time collaborator and you have worked with on this work thank you great beautiful work uh magnus thank you um all right so now we have time for for questions so um if you have a question feel free to type it in the chat um or just unmute yourself and ask and uh maybe i'll ask a question while "
+    },
+    {
+        "start": 2955.839,
+        "text": "people are are thinking um so these um these gaussian process models are beautiful and elegant um i wonder so the other sort of technique that people are using now for a lot of single cell problems is deep learning in various forms like um so i i wonder what do you think are the pros and cons of gp regression versus ml you know multi-layer perceptron or gplvm versus variational autoencoder for some of these applications it's a really good question we i my group also uses deep learning and variation shorts encoders and they're they're very nice um i think the the um let me take the variational autoencoder versus gprvms1 um so um one advantage i think of the gplvm is that "
+    },
+    {
+        "start": 3016.72,
+        "text": "it has a very explicit um model um which allows you to introduce prior information if you have it about the lane space so so i gave a simple example of that but i think you can probably think of more complex models where you have some prior information that you want to build into the lane space and i think the gplvm provides a really nice way of doing that um i think in terms of deep learning deep learning is um extremely powerful in terms of uh you know non-linear function estimation basically and um has has great power but i think that um it's quite hard to build the uncertainty into deep learning well and calibrating the uncertainties "
+    },
+    {
+        "start": 3078.079,
+        "text": "in in deep learning models is quite tricky i mean people will work on it so i'm not saying it's not something that you can do it's an interesting area um but i think so i think the benefits of using gps is a very explicit treatment of uncertainty and a very explicit treatment of priors and prior knowledge but you know you've got to use the right approach for the right problem and we use deep learning all the time so it's also a great set of tools looks like we've got a question in the chat chen lee asks um is gp flow easily transformed and applied to "
+    },
+    {
+        "start": 3138.72,
+        "text": "other single cell modalities to find branching and pseudo time ordering so you uh like an example single scale attack seek or something like that perhaps or other is that the other type ceromics and so on i think that's how i would interpret that question that's a good question we we we actually work a lot in single cell attack see data often without taxi data um [Music] so one of the challenges there is um because the data is it's not quite binary but it's almost binary you know it's it's it's got a little bit less dynamic range than single cell rna-seq data so um it's a little bit more challenging to normalize out library size effects in single-cell "
+    },
+    {
+        "start": 3199.119,
+        "text": "a-taxi data we find and having a probabilistic model for modeling the library depth is is really nice so you can model the kind of observation process like how many reeds you get from the experiment on top of the uh kind of um well you might model the data's binary or you might model it with some other model that's not binary we often just use something binary and you can put that type of likelihood model into a gp so um i think this that that's one of the nice things about gps because they have a very explicit probabilistic model if you want to plug in some other probabilistic model that models something like the library depth um you can you can do that actually and and i bet the pyro package would be quite good for that because you could just write things down like you do in stan "
+    },
+    {
+        "start": 3261.52,
+        "text": "and the inference would just the machine just turns the handle um you know so yeah i think i think definitely any other questions one other thing i was thinking about as sort of a tool in your set of gaussian process tools is multi-output gps have you guys investigated using those for anything maybe like covariance relationships among genes yeah that's a really interesting question so um exactly um we're very interested in that in the spatial case because um i think discovering latent lower dimensional gps and relating them yeah that's a very good question i didn't talk about that type of thing but that's exactly one of the extensions "
+    },
+    {
+        "start": 3322.24,
+        "text": "i mentioned point processes but also multi-output actually in the past um in older work and times periods we use um different layers of transcription uh so you know modeling um primase a's and proteins and degradation and and production models and you can also do that with multi-output gps so yeah i think multiple gps have great potential great well um it doesn't look like there are any other questions so i'll let everybody go thanks again "
+    }
+]

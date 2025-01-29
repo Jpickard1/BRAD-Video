@@ -1,0 +1,1432 @@
+[
+    {
+        "text": "This is a 3.",
+        "start": 4.22,
+        "duration": 1.18
+    },
+    {
+        "text": "It's sloppily written and rendered at an extremely low resolution of 28x28 pixels,",
+        "start": 6.06,
+        "duration": 4.653
+    },
+    {
+        "text": "but your brain has no trouble recognizing it as a 3.",
+        "start": 10.713,
+        "duration": 3.007
+    },
+    {
+        "text": "And I want you to take a moment to appreciate how",
+        "start": 14.34,
+        "duration": 2.219
+    },
+    {
+        "text": "crazy it is that brains can do this so effortlessly.",
+        "start": 16.559,
+        "duration": 2.401
+    },
+    {
+        "text": "I mean, this, this and this are also recognizable as 3s,",
+        "start": 19.7,
+        "duration": 3.262
+    },
+    {
+        "text": "even though the specific values of each pixel is very different from one",
+        "start": 22.962,
+        "duration": 4.251
+    },
+    {
+        "text": "image to the next.",
+        "start": 27.213,
+        "duration": 1.107
+    },
+    {
+        "text": "The particular light-sensitive cells in your eye that are firing when you",
+        "start": 28.9,
+        "duration": 4.048
+    },
+    {
+        "text": "see this 3 are very different from the ones firing when you see this 3.",
+        "start": 32.948,
+        "duration": 3.992
+    },
+    {
+        "text": "But something in that crazy-smart visual cortex of yours resolves these as representing",
+        "start": 37.52,
+        "duration": 5.22
+    },
+    {
+        "text": "the same idea, while at the same time recognizing other images as their own distinct",
+        "start": 42.74,
+        "duration": 5.1
+    },
+    {
+        "text": "ideas.",
+        "start": 47.84,
+        "duration": 0.5
+    },
+    {
+        "text": "But if I told you, hey, sit down and write for me a program that takes in a grid of",
+        "start": 49.22,
+        "duration": 5.414
+    },
+    {
+        "text": "28x28 pixels like this and outputs a single number between 0 and 10,",
+        "start": 54.634,
+        "duration": 4.501
+    },
+    {
+        "text": "telling you what it thinks the digit is, well the task goes from comically trivial to",
+        "start": 59.135,
+        "duration": 5.61
+    },
+    {
+        "text": "dauntingly difficult.",
+        "start": 64.745,
+        "duration": 1.435
+    },
+    {
+        "text": "Unless you've been living under a rock, I think I hardly need to motivate the relevance",
+        "start": 67.16,
+        "duration": 3.697
+    },
+    {
+        "text": "and importance of machine learning and neural networks to the present and to the future.",
+        "start": 70.857,
+        "duration": 3.783
+    },
+    {
+        "text": "But what I want to do here is show you what a neural network actually is,",
+        "start": 75.12,
+        "duration": 3.83
+    },
+    {
+        "text": "assuming no background, and to help visualize what it's doing,",
+        "start": 78.95,
+        "duration": 3.306
+    },
+    {
+        "text": "not as a buzzword but as a piece of math.",
+        "start": 82.256,
+        "duration": 2.204
+    },
+    {
+        "text": "My hope is that you come away feeling like the structure itself is motivated,",
+        "start": 85.02,
+        "duration": 3.757
+    },
+    {
+        "text": "and to feel like you know what it means when you read,",
+        "start": 88.777,
+        "duration": 2.684
+    },
+    {
+        "text": "or you hear about a neural network quote-unquote learning.",
+        "start": 91.461,
+        "duration": 2.879
+    },
+    {
+        "text": "This video is just going to be devoted to the structure component of that,",
+        "start": 95.36,
+        "duration": 2.901
+    },
+    {
+        "text": "and the following one is going to tackle learning.",
+        "start": 98.261,
+        "duration": 1.999
+    },
+    {
+        "text": "What we're going to do is put together a neural",
+        "start": 100.96,
+        "duration": 2.318
+    },
+    {
+        "text": "network that can learn to recognize handwritten digits.",
+        "start": 103.278,
+        "duration": 2.762
+    },
+    {
+        "text": "This is a somewhat classic example for introducing the topic,",
+        "start": 109.36,
+        "duration": 2.7
+    },
+    {
+        "text": "and I'm happy to stick with the status quo here,",
+        "start": 112.06,
+        "duration": 2.168
+    },
+    {
+        "text": "because at the end of the two videos I want to point you to a couple good",
+        "start": 114.228,
+        "duration": 3.275
+    },
+    {
+        "text": "resources where you can learn more, and where you can download the code that",
+        "start": 117.503,
+        "duration": 3.408
+    },
+    {
+        "text": "does this and play with it on your own computer.",
+        "start": 120.911,
+        "duration": 2.169
+    },
+    {
+        "text": "There are many many variants of neural networks,",
+        "start": 125.04,
+        "duration": 2.621
+    },
+    {
+        "text": "and in recent years there's been sort of a boom in research towards these variants,",
+        "start": 127.661,
+        "duration": 4.585
+    },
+    {
+        "text": "but in these two introductory videos you and I are just going to look at the simplest",
+        "start": 132.246,
+        "duration": 4.696
+    },
+    {
+        "text": "plain vanilla form with no added frills.",
+        "start": 136.942,
+        "duration": 2.238
+    },
+    {
+        "text": "This is kind of a necessary prerequisite for understanding any of the more powerful",
+        "start": 139.86,
+        "duration": 4.03
+    },
+    {
+        "text": "modern variants, and trust me it still has plenty of complexity for us to wrap our minds",
+        "start": 143.89,
+        "duration": 4.322
+    },
+    {
+        "text": "around.",
+        "start": 148.212,
+        "duration": 0.5
+    },
+    {
+        "text": "But even in this simplest form it can learn to recognize handwritten digits,",
+        "start": 149.12,
+        "duration": 4.075
+    },
+    {
+        "text": "which is a pretty cool thing for a computer to be able to do.",
+        "start": 153.195,
+        "duration": 3.325
+    },
+    {
+        "text": "And at the same time you'll see how it does fall",
+        "start": 157.48,
+        "duration": 2.327
+    },
+    {
+        "text": "short of a couple hopes that we might have for it.",
+        "start": 159.807,
+        "duration": 2.473
+    },
+    {
+        "text": "As the name suggests neural networks are inspired by the brain, but let's break that down.",
+        "start": 163.38,
+        "duration": 5.12
+    },
+    {
+        "text": "What are the neurons, and in what sense are they linked together?",
+        "start": 168.52,
+        "duration": 3.14
+    },
+    {
+        "text": "Right now when I say neuron all I want you to think about is a thing that holds a number,",
+        "start": 172.5,
+        "duration": 5.521
+    },
+    {
+        "text": "specifically a number between 0 and 1.",
+        "start": 178.021,
+        "duration": 2.419
+    },
+    {
+        "text": "It's really not more than that.",
+        "start": 180.68,
+        "duration": 1.88
+    },
+    {
+        "text": "For example the network starts with a bunch of neurons corresponding to",
+        "start": 183.78,
+        "duration": 5.042
+    },
+    {
+        "text": "each of the 28x28 pixels of the input image, which is 784 neurons in total.",
+        "start": 188.822,
+        "duration": 5.398
+    },
+    {
+        "text": "Each one of these holds a number that represents the grayscale value of the",
+        "start": 194.7,
+        "duration": 4.714
+    },
+    {
+        "text": "corresponding pixel, ranging from 0 for black pixels up to 1 for white pixels.",
+        "start": 199.414,
+        "duration": 4.966
+    },
+    {
+        "text": "This number inside the neuron is called its activation,",
+        "start": 205.3,
+        "duration": 2.953
+    },
+    {
+        "text": "and the image you might have in mind here is that each neuron is lit up when its",
+        "start": 208.253,
+        "duration": 4.35
+    },
+    {
+        "text": "activation is a high number.",
+        "start": 212.603,
+        "duration": 1.557
+    },
+    {
+        "text": "So all of these 784 neurons make up the first layer of our network.",
+        "start": 216.72,
+        "duration": 5.14
+    },
+    {
+        "text": "Now jumping over to the last layer, this has 10 neurons,",
+        "start": 226.5,
+        "duration": 2.926
+    },
+    {
+        "text": "each representing one of the digits.",
+        "start": 229.426,
+        "duration": 1.934
+    },
+    {
+        "text": "The activation in these neurons, again some number that's between 0 and 1,",
+        "start": 232.04,
+        "duration": 4.576
+    },
+    {
+        "text": "represents how much the system thinks that a given image corresponds with a given digit.",
+        "start": 236.616,
+        "duration": 5.504
+    },
+    {
+        "text": "There's also a couple layers in between called the hidden layers,",
+        "start": 243.04,
+        "duration": 3.381
+    },
+    {
+        "text": "which for the time being should just be a giant question mark for",
+        "start": 246.421,
+        "duration": 3.434
+    },
+    {
+        "text": "how on earth this process of recognizing digits is going to be handled.",
+        "start": 249.855,
+        "duration": 3.745
+    },
+    {
+        "text": "In this network I chose two hidden layers, each one with 16 neurons,",
+        "start": 254.26,
+        "duration": 3.6
+    },
+    {
+        "text": "and admittedly that's kind of an arbitrary choice.",
+        "start": 257.86,
+        "duration": 2.7
+    },
+    {
+        "text": "To be honest I chose two layers based on how I want to motivate the structure in",
+        "start": 261.02,
+        "duration": 3.635
+    },
+    {
+        "text": "just a moment, and 16, well that was just a nice number to fit on the screen.",
+        "start": 264.655,
+        "duration": 3.545
+    },
+    {
+        "text": "In practice there is a lot of room for experiment with a specific structure here.",
+        "start": 268.78,
+        "duration": 3.56
+    },
+    {
+        "text": "The way the network operates, activations in one",
+        "start": 273.02,
+        "duration": 2.647
+    },
+    {
+        "text": "layer determine the activations of the next layer.",
+        "start": 275.667,
+        "duration": 2.813
+    },
+    {
+        "text": "And of course the heart of the network as an information processing mechanism comes down",
+        "start": 279.2,
+        "duration": 4.611
+    },
+    {
+        "text": "to exactly how those activations from one layer bring about activations in the next",
+        "start": 283.811,
+        "duration": 4.402
+    },
+    {
+        "text": "layer.",
+        "start": 288.213,
+        "duration": 0.5
+    },
+    {
+        "text": "It's meant to be loosely analogous to how in biological networks of neurons,",
+        "start": 289.14,
+        "duration": 4.493
+    },
+    {
+        "text": "some groups of neurons firing cause certain others to fire.",
+        "start": 293.633,
+        "duration": 3.547
+    },
+    {
+        "text": "Now the network I'm showing here has already been trained to recognize digits,",
+        "start": 298.12,
+        "duration": 3.461
+    },
+    {
+        "text": "and let me show you what I mean by that.",
+        "start": 301.581,
+        "duration": 1.819
+    },
+    {
+        "text": "It means if you feed in an image, lighting up all 784 neurons of the input layer",
+        "start": 303.64,
+        "duration": 4.654
+    },
+    {
+        "text": "according to the brightness of each pixel in the image,",
+        "start": 308.294,
+        "duration": 3.257
+    },
+    {
+        "text": "that pattern of activations causes some very specific pattern in the next layer",
+        "start": 311.551,
+        "duration": 4.654
+    },
+    {
+        "text": "which causes some pattern in the one after it,",
+        "start": 316.205,
+        "duration": 2.734
+    },
+    {
+        "text": "which finally gives some pattern in the output layer.",
+        "start": 318.939,
+        "duration": 3.141
+    },
+    {
+        "text": "And the brightest neuron of that output layer is the network's choice,",
+        "start": 322.56,
+        "duration": 3.957
+    },
+    {
+        "text": "so to speak, for what digit this image represents.",
+        "start": 326.517,
+        "duration": 2.883
+    },
+    {
+        "text": "And before jumping into the math for how one layer influences the next,",
+        "start": 332.56,
+        "duration": 3.777
+    },
+    {
+        "text": "or how training works, let's just talk about why it's even reasonable",
+        "start": 336.337,
+        "duration": 3.725
+    },
+    {
+        "text": "to expect a layered structure like this to behave intelligently.",
+        "start": 340.062,
+        "duration": 3.458
+    },
+    {
+        "text": "What are we expecting here?",
+        "start": 344.06,
+        "duration": 1.16
+    },
+    {
+        "text": "What is the best hope for what those middle layers might be doing?",
+        "start": 345.4,
+        "duration": 2.2
+    },
+    {
+        "text": "Well, when you or I recognize digits, we piece together various components.",
+        "start": 348.92,
+        "duration": 4.6
+    },
+    {
+        "text": "A 9 has a loop up top and a line on the right.",
+        "start": 354.2,
+        "duration": 2.62
+    },
+    {
+        "text": "An 8 also has a loop up top, but it's paired with another loop down low.",
+        "start": 357.38,
+        "duration": 3.8
+    },
+    {
+        "text": "A 4 basically breaks down into three specific lines, and things like that.",
+        "start": 361.98,
+        "duration": 4.84
+    },
+    {
+        "text": "Now in a perfect world, we might hope that each neuron in the second",
+        "start": 367.6,
+        "duration": 3.958
+    },
+    {
+        "text": "to last layer corresponds with one of these subcomponents,",
+        "start": 371.558,
+        "duration": 3.434
+    },
+    {
+        "text": "that anytime you feed in an image with, say, a loop up top,",
+        "start": 374.992,
+        "duration": 3.492
+    },
+    {
+        "text": "like a 9 or an 8, there's some specific neuron whose activation is",
+        "start": 378.484,
+        "duration": 3.899
+    },
+    {
+        "text": "going to be close to 1.",
+        "start": 382.383,
+        "duration": 1.397
+    },
+    {
+        "text": "And I don't mean this specific loop of pixels,",
+        "start": 384.5,
+        "duration": 2.406
+    },
+    {
+        "text": "the hope would be that any generally loopy pattern towards the top sets off this neuron.",
+        "start": 386.906,
+        "duration": 4.654
+    },
+    {
+        "text": "That way, going from the third layer to the last one just requires",
+        "start": 392.44,
+        "duration": 3.609
+    },
+    {
+        "text": "learning which combination of subcomponents corresponds to which digits.",
+        "start": 396.049,
+        "duration": 3.991
+    },
+    {
+        "text": "Of course, that just kicks the problem down the road,",
+        "start": 401.0,
+        "duration": 2.199
+    },
+    {
+        "text": "because how would you recognize these subcomponents,",
+        "start": 403.199,
+        "duration": 2.2
+    },
+    {
+        "text": "or even learn what the right subcomponents should be?",
+        "start": 405.399,
+        "duration": 2.241
+    },
+    {
+        "text": "And I still haven't even talked about how one layer influences the next,",
+        "start": 408.06,
+        "duration": 3.158
+    },
+    {
+        "text": "but run with me on this one for a moment.",
+        "start": 411.218,
+        "duration": 1.842
+    },
+    {
+        "text": "Recognizing a loop can also break down into subproblems.",
+        "start": 413.68,
+        "duration": 3.0
+    },
+    {
+        "text": "One reasonable way to do this would be to first",
+        "start": 417.28,
+        "duration": 2.611
+    },
+    {
+        "text": "recognize the various little edges that make it up.",
+        "start": 419.891,
+        "duration": 2.889
+    },
+    {
+        "text": "Similarly, a long line, like the kind you might see in the digits 1 or 4 or 7,",
+        "start": 423.78,
+        "duration": 4.619
+    },
+    {
+        "text": "is really just a long edge, or maybe you think of it as a certain pattern of several",
+        "start": 428.399,
+        "duration": 5.033
+    },
+    {
+        "text": "smaller edges.",
+        "start": 433.432,
+        "duration": 0.888
+    },
+    {
+        "text": "So maybe our hope is that each neuron in the second layer of",
+        "start": 435.14,
+        "duration": 3.668
+    },
+    {
+        "text": "the network corresponds with the various relevant little edges.",
+        "start": 438.808,
+        "duration": 3.912
+    },
+    {
+        "text": "Maybe when an image like this one comes in, it lights up all of the",
+        "start": 443.54,
+        "duration": 3.971
+    },
+    {
+        "text": "neurons associated with around 8 to 10 specific little edges,",
+        "start": 447.511,
+        "duration": 3.674
+    },
+    {
+        "text": "which in turn lights up the neurons associated with the upper loop",
+        "start": 451.185,
+        "duration": 3.971
+    },
+    {
+        "text": "and a long vertical line, and those light up the neuron associated with a 9.",
+        "start": 455.156,
+        "duration": 4.564
+    },
+    {
+        "text": "Whether or not this is what our final network actually does is another question,",
+        "start": 460.68,
+        "duration": 4.003
+    },
+    {
+        "text": "one that I'll come back to once we see how to train the network,",
+        "start": 464.683,
+        "duration": 3.253
+    },
+    {
+        "text": "but this is a hope that we might have, a sort of goal with the layered structure",
+        "start": 467.936,
+        "duration": 4.054
+    },
+    {
+        "text": "like this.",
+        "start": 471.99,
+        "duration": 0.55
+    },
+    {
+        "text": "Moreover, you can imagine how being able to detect edges and patterns",
+        "start": 473.16,
+        "duration": 3.596
+    },
+    {
+        "text": "like this would be really useful for other image recognition tasks.",
+        "start": 476.756,
+        "duration": 3.544
+    },
+    {
+        "text": "And even beyond image recognition, there are all sorts of intelligent",
+        "start": 480.88,
+        "duration": 3.132
+    },
+    {
+        "text": "things you might want to do that break down into layers of abstraction.",
+        "start": 484.012,
+        "duration": 3.268
+    },
+    {
+        "text": "Parsing speech, for example, involves taking raw audio and picking out distinct sounds,",
+        "start": 488.04,
+        "duration": 4.689
+    },
+    {
+        "text": "which combine to make certain syllables, which combine to form words,",
+        "start": 492.729,
+        "duration": 3.774
+    },
+    {
+        "text": "which combine to make up phrases and more abstract thoughts, etc.",
+        "start": 496.503,
+        "duration": 3.557
+    },
+    {
+        "text": "But getting back to how any of this actually works,",
+        "start": 501.1,
+        "duration": 2.585
+    },
+    {
+        "text": "picture yourself right now designing how exactly the activations in one layer might",
+        "start": 503.685,
+        "duration": 4.258
+    },
+    {
+        "text": "determine the activations in the next.",
+        "start": 507.943,
+        "duration": 1.977
+    },
+    {
+        "text": "The goal is to have some mechanism that could conceivably combine pixels into edges,",
+        "start": 510.86,
+        "duration": 5.128
+    },
+    {
+        "text": "or edges into patterns, or patterns into digits.",
+        "start": 515.988,
+        "duration": 2.992
+    },
+    {
+        "text": "And to zoom in on one very specific example, let's say the hope",
+        "start": 519.44,
+        "duration": 3.828
+    },
+    {
+        "text": "is for one particular neuron in the second layer to pick up",
+        "start": 523.268,
+        "duration": 3.646
+    },
+    {
+        "text": "on whether or not the image has an edge in this region here.",
+        "start": 526.914,
+        "duration": 3.706
+    },
+    {
+        "text": "The question at hand is what parameters should the network have?",
+        "start": 531.44,
+        "duration": 3.66
+    },
+    {
+        "text": "What dials and knobs should you be able to tweak so that it's expressive",
+        "start": 535.64,
+        "duration": 4.01
+    },
+    {
+        "text": "enough to potentially capture this pattern, or any other pixel pattern,",
+        "start": 539.65,
+        "duration": 4.009
+    },
+    {
+        "text": "or the pattern that several edges can make a loop, and other such things?",
+        "start": 543.659,
+        "duration": 4.121
+    },
+    {
+        "text": "Well, what we'll do is assign a weight to each one of the",
+        "start": 548.72,
+        "duration": 3.094
+    },
+    {
+        "text": "connections between our neuron and the neurons from the first layer.",
+        "start": 551.814,
+        "duration": 3.746
+    },
+    {
+        "text": "These weights are just numbers.",
+        "start": 556.32,
+        "duration": 1.38
+    },
+    {
+        "text": "Then take all of those activations from the first layer",
+        "start": 558.54,
+        "duration": 3.358
+    },
+    {
+        "text": "and compute their weighted sum according to these weights.",
+        "start": 561.898,
+        "duration": 3.602
+    },
+    {
+        "text": "I find it helpful to think of these weights as being organized into a",
+        "start": 567.7,
+        "duration": 3.397
+    },
+    {
+        "text": "little grid of their own, and I'm going to use green pixels to indicate",
+        "start": 571.097,
+        "duration": 3.545
+    },
+    {
+        "text": "positive weights, and red pixels to indicate negative weights,",
+        "start": 574.642,
+        "duration": 3.101
+    },
+    {
+        "text": "where the brightness of that pixel is some loose depiction of the weight's value.",
+        "start": 577.743,
+        "duration": 4.037
+    },
+    {
+        "text": "Now if we made the weights associated with almost all of the pixels zero",
+        "start": 582.78,
+        "duration": 3.747
+    },
+    {
+        "text": "except for some positive weights in this region that we care about,",
+        "start": 586.527,
+        "duration": 3.539
+    },
+    {
+        "text": "then taking the weighted sum of all the pixel values really just amounts",
+        "start": 590.066,
+        "duration": 3.799
+    },
+    {
+        "text": "to adding up the values of the pixel just in the region that we care about.",
+        "start": 593.865,
+        "duration": 3.955
+    },
+    {
+        "text": "And if you really wanted to pick up on whether there's an edge here,",
+        "start": 599.14,
+        "duration": 3.252
+    },
+    {
+        "text": "what you might do is have some negative weights associated with the surrounding pixels.",
+        "start": 602.392,
+        "duration": 4.208
+    },
+    {
+        "text": "Then the sum is largest when those middle pixels",
+        "start": 607.48,
+        "duration": 2.557
+    },
+    {
+        "text": "are bright but the surrounding pixels are darker.",
+        "start": 610.037,
+        "duration": 2.663
+    },
+    {
+        "text": "When you compute a weighted sum like this, you might come out with any number,",
+        "start": 614.26,
+        "duration": 4.387
+    },
+    {
+        "text": "but for this network what we want is for activations to be some value between 0 and 1.",
+        "start": 618.647,
+        "duration": 4.893
+    },
+    {
+        "text": "So a common thing to do is to pump this weighted sum into some function",
+        "start": 624.12,
+        "duration": 4.126
+    },
+    {
+        "text": "that squishes the real number line into the range between 0 and 1.",
+        "start": 628.246,
+        "duration": 3.894
+    },
+    {
+        "text": "And a common function that does this is called the sigmoid function,",
+        "start": 632.46,
+        "duration": 3.373
+    },
+    {
+        "text": "also known as a logistic curve.",
+        "start": 635.833,
+        "duration": 1.587
+    },
+    {
+        "text": "Basically very negative inputs end up close to 0, positive inputs end up close to 1,",
+        "start": 638.0,
+        "duration": 5.351
+    },
+    {
+        "text": "and it just steadily increases around the input 0.",
+        "start": 643.351,
+        "duration": 3.249
+    },
+    {
+        "text": "So the activation of the neuron here is basically a",
+        "start": 649.12,
+        "duration": 3.517
+    },
+    {
+        "text": "measure of how positive the relevant weighted sum is.",
+        "start": 652.637,
+        "duration": 3.723
+    },
+    {
+        "text": "But maybe it's not that you want the neuron to",
+        "start": 657.54,
+        "duration": 2.101
+    },
+    {
+        "text": "light up when the weighted sum is bigger than 0.",
+        "start": 659.641,
+        "duration": 2.239
+    },
+    {
+        "text": "Maybe you only want it to be active when the sum is bigger than say 10.",
+        "start": 662.28,
+        "duration": 4.08
+    },
+    {
+        "text": "That is, you want some bias for it to be inactive.",
+        "start": 666.84,
+        "duration": 3.42
+    },
+    {
+        "text": "What we'll do then is just add in some other number like negative 10 to this",
+        "start": 671.38,
+        "duration": 4.086
+    },
+    {
+        "text": "weighted sum before plugging it through the sigmoid squishification function.",
+        "start": 675.466,
+        "duration": 4.194
+    },
+    {
+        "text": "That additional number is called the bias.",
+        "start": 680.58,
+        "duration": 1.86
+    },
+    {
+        "text": "So the weights tell you what pixel pattern this neuron in the second",
+        "start": 683.46,
+        "duration": 3.85
+    },
+    {
+        "text": "layer is picking up on, and the bias tells you how high the weighted",
+        "start": 687.31,
+        "duration": 3.907
+    },
+    {
+        "text": "sum needs to be before the neuron starts getting meaningfully active.",
+        "start": 691.217,
+        "duration": 3.963
+    },
+    {
+        "text": "And that is just one neuron.",
+        "start": 696.12,
+        "duration": 1.56
+    },
+    {
+        "text": "Every other neuron in this layer is going to be connected to",
+        "start": 698.28,
+        "duration": 4.197
+    },
+    {
+        "text": "all 784 pixel neurons from the first layer, and each one of",
+        "start": 702.477,
+        "duration": 4.196
+    },
+    {
+        "text": "those 784 connections has its own weight associated with it.",
+        "start": 706.673,
+        "duration": 4.267
+    },
+    {
+        "text": "Also, each one has some bias, some other number that you add",
+        "start": 711.6,
+        "duration": 2.975
+    },
+    {
+        "text": "on to the weighted sum before squishing it with the sigmoid.",
+        "start": 714.575,
+        "duration": 3.025
+    },
+    {
+        "text": "And that's a lot to think about!",
+        "start": 718.11,
+        "duration": 1.43
+    },
+    {
+        "text": "With this hidden layer of 16 neurons, that's a total of 784 times 16 weights,",
+        "start": 719.96,
+        "duration": 6.238
+    },
+    {
+        "text": "along with 16 biases.",
+        "start": 726.198,
+        "duration": 1.782
+    },
+    {
+        "text": "And all of that is just the connections from the first layer to the second.",
+        "start": 728.84,
+        "duration": 3.1
+    },
+    {
+        "text": "The connections between the other layers also have",
+        "start": 732.52,
+        "duration": 2.363
+    },
+    {
+        "text": "a bunch of weights and biases associated with them.",
+        "start": 734.883,
+        "duration": 2.457
+    },
+    {
+        "text": "All said and done, this network has almost exactly 13,000 total weights and biases.",
+        "start": 738.34,
+        "duration": 5.46
+    },
+    {
+        "text": "13,000 knobs and dials that can be tweaked and turned",
+        "start": 743.8,
+        "duration": 3.265
+    },
+    {
+        "text": "to make this network behave in different ways.",
+        "start": 747.065,
+        "duration": 2.895
+    },
+    {
+        "text": "So when we talk about learning, what that's referring to is",
+        "start": 751.04,
+        "duration": 3.222
+    },
+    {
+        "text": "getting the computer to find a valid setting for all of these",
+        "start": 754.262,
+        "duration": 3.385
+    },
+    {
+        "text": "many many numbers so that it'll actually solve the problem at hand.",
+        "start": 757.647,
+        "duration": 3.713
+    },
+    {
+        "text": "One thought experiment that is at once fun and kind of horrifying is to imagine sitting",
+        "start": 762.62,
+        "duration": 4.566
+    },
+    {
+        "text": "down and setting all of these weights and biases by hand,",
+        "start": 767.186,
+        "duration": 3.044
+    },
+    {
+        "text": "purposefully tweaking the numbers so that the second layer picks up on edges,",
+        "start": 770.23,
+        "duration": 4.093
+    },
+    {
+        "text": "the third layer picks up on patterns, etc.",
+        "start": 774.323,
+        "duration": 2.257
+    },
+    {
+        "text": "I personally find this satisfying rather than just treating the network as a total black",
+        "start": 776.98,
+        "duration": 4.362
+    },
+    {
+        "text": "box, because when the network doesn't perform the way you anticipate,",
+        "start": 781.342,
+        "duration": 3.47
+    },
+    {
+        "text": "if you've built up a little bit of a relationship with what those weights and biases",
+        "start": 784.812,
+        "duration": 4.213
+    },
+    {
+        "text": "actually mean, you have a starting place for experimenting with how to change the",
+        "start": 789.025,
+        "duration": 4.065
+    },
+    {
+        "text": "structure to improve.",
+        "start": 793.09,
+        "duration": 1.09
+    },
+    {
+        "text": "Or when the network does work but not for the reasons you might expect,",
+        "start": 794.96,
+        "duration": 3.473
+    },
+    {
+        "text": "digging into what the weights and biases are doing is a good way to challenge",
+        "start": 798.433,
+        "duration": 3.816
+    },
+    {
+        "text": "your assumptions and really expose the full space of possible solutions.",
+        "start": 802.249,
+        "duration": 3.571
+    },
+    {
+        "text": "By the way, the actual function here is a little cumbersome to write down,",
+        "start": 806.84,
+        "duration": 3.123
+    },
+    {
+        "text": "don't you think?",
+        "start": 809.963,
+        "duration": 0.717
+    },
+    {
+        "text": "So let me show you a more notationally compact way that these connections are represented.",
+        "start": 812.5,
+        "duration": 4.64
+    },
+    {
+        "text": "This is how you'd see it if you choose to read up more about neural networks.",
+        "start": 817.66,
+        "duration": 2.86
+    },
+    {
+        "text": "Organize all of the activations from one layer into a column as a vector.",
+        "start": 820.52,
+        "duration": 7.503
+    },
+    {
+        "text": "Then organize all of the weights as a matrix, where each row of that matrix corresponds",
+        "start": 828.357,
+        "duration": 1.681
+    },
+    {
+        "text": "to the connections between one layer and a particular neuron in the next layer.",
+        "start": 830.038,
+        "duration": 7.962
+    },
+    {
+        "text": "What that means is that taking the weighted sum of the activations in",
+        "start": 838.54,
+        "duration": 3.674
+    },
+    {
+        "text": "the first layer according to these weights corresponds to one of the",
+        "start": 842.214,
+        "duration": 3.673
+    },
+    {
+        "text": "terms in the matrix vector product of everything we have on the left here.",
+        "start": 845.887,
+        "duration": 3.993
+    },
+    {
+        "text": "By the way, so much of machine learning just comes down to having a good",
+        "start": 854.0,
+        "duration": 3.714
+    },
+    {
+        "text": "grasp of linear algebra, so for any of you who want a nice visual",
+        "start": 857.714,
+        "duration": 3.405
+    },
+    {
+        "text": "understanding for matrices and what matrix vector multiplication means,",
+        "start": 861.119,
+        "duration": 3.715
+    },
+    {
+        "text": "take a look at the series I did on linear algebra, especially chapter 3.",
+        "start": 864.834,
+        "duration": 3.766
+    },
+    {
+        "text": "Back to our expression, instead of talking about adding the bias to each one of",
+        "start": 869.24,
+        "duration": 4.353
+    },
+    {
+        "text": "these values independently, we represent it by organizing all those biases into",
+        "start": 873.593,
+        "duration": 4.409
+    },
+    {
+        "text": "a vector, and adding the entire vector to the previous matrix vector product.",
+        "start": 878.002,
+        "duration": 4.298
+    },
+    {
+        "text": "Then as a final step, I'll wrap a sigmoid around the outside here,",
+        "start": 883.28,
+        "duration": 3.534
+    },
+    {
+        "text": "and what that's supposed to represent is that you're going to apply the",
+        "start": 886.814,
+        "duration": 3.856
+    },
+    {
+        "text": "sigmoid function to each specific component of the resulting vector inside.",
+        "start": 890.67,
+        "duration": 4.07
+    },
+    {
+        "text": "So once you write down this weight matrix and these vectors as their own symbols,",
+        "start": 895.94,
+        "duration": 4.538
+    },
+    {
+        "text": "you can communicate the full transition of activations from one layer to the next in an",
+        "start": 900.478,
+        "duration": 4.93
+    },
+    {
+        "text": "extremely tight and neat little expression, and this makes the relevant code both a lot",
+        "start": 905.408,
+        "duration": 4.93
+    },
+    {
+        "text": "simpler and a lot faster, since many libraries optimize the heck out of matrix",
+        "start": 910.338,
+        "duration": 4.426
+    },
+    {
+        "text": "multiplication.",
+        "start": 914.764,
+        "duration": 0.896
+    },
+    {
+        "text": "Remember how earlier I said these neurons are simply things that hold numbers?",
+        "start": 917.82,
+        "duration": 3.64
+    },
+    {
+        "text": "Well of course the specific numbers that they hold depends on the image you feed in,",
+        "start": 922.22,
+        "duration": 5.11
+    },
+    {
+        "text": "so it's actually more accurate to think of each neuron as a function,",
+        "start": 927.33,
+        "duration": 4.258
+    },
+    {
+        "text": "one that takes in the outputs of all the neurons in the previous layer and spits out a",
+        "start": 931.588,
+        "duration": 5.292
+    },
+    {
+        "text": "number between 0 and 1.",
+        "start": 936.88,
+        "duration": 1.46
+    },
+    {
+        "text": "Really the entire network is just a function, one that takes in",
+        "start": 939.2,
+        "duration": 3.93
+    },
+    {
+        "text": "784 numbers as an input and spits out 10 numbers as an output.",
+        "start": 943.13,
+        "duration": 3.93
+    },
+    {
+        "text": "It's an absurdly complicated function, one that involves 13,000 parameters",
+        "start": 947.56,
+        "duration": 3.902
+    },
+    {
+        "text": "in the forms of these weights and biases that pick up on certain patterns,",
+        "start": 951.462,
+        "duration": 3.954
+    },
+    {
+        "text": "and which involves iterating many matrix vector products and the sigmoid",
+        "start": 955.416,
+        "duration": 3.849
+    },
+    {
+        "text": "squishification function, but it's just a function nonetheless.",
+        "start": 959.265,
+        "duration": 3.375
+    },
+    {
+        "text": "And in a way it's kind of reassuring that it looks complicated.",
+        "start": 963.4,
+        "duration": 3.26
+    },
+    {
+        "text": "I mean if it were any simpler, what hope would we have",
+        "start": 967.34,
+        "duration": 2.361
+    },
+    {
+        "text": "that it could take on the challenge of recognizing digits?",
+        "start": 969.701,
+        "duration": 2.579
+    },
+    {
+        "text": "And how does it take on that challenge?",
+        "start": 973.34,
+        "duration": 1.36
+    },
+    {
+        "text": "How does this network learn the appropriate weights and biases just by looking at data?",
+        "start": 975.08,
+        "duration": 4.28
+    },
+    {
+        "text": "Well that's what I'll show in the next video, and I'll also dig a little",
+        "start": 980.14,
+        "duration": 3.054
+    },
+    {
+        "text": "more into what this particular network we're seeing is really doing.",
+        "start": 983.194,
+        "duration": 2.926
+    },
+    {
+        "text": "Now is the point I suppose I should say subscribe to stay notified",
+        "start": 987.58,
+        "duration": 3.168
+    },
+    {
+        "text": "about when that video or any new videos come out,",
+        "start": 990.748,
+        "duration": 2.4
+    },
+    {
+        "text": "but realistically most of you don't actually receive notifications from YouTube, do you?",
+        "start": 993.148,
+        "duration": 4.272
+    },
+    {
+        "text": "Maybe more honestly I should say subscribe so that the neural networks",
+        "start": 998.02,
+        "duration": 3.256
+    },
+    {
+        "text": "that underlie YouTube's recommendation algorithm are primed to believe",
+        "start": 1001.276,
+        "duration": 3.302
+    },
+    {
+        "text": "that you want to see content from this channel get recommended to you.",
+        "start": 1004.578,
+        "duration": 3.302
+    },
+    {
+        "text": "Anyway, stay posted for more.",
+        "start": 1008.56,
+        "duration": 1.38
+    },
+    {
+        "text": "Thank you very much to everyone supporting these videos on Patreon.",
+        "start": 1010.76,
+        "duration": 2.74
+    },
+    {
+        "text": "I've been a little slow to progress in the probability series this summer,",
+        "start": 1014.0,
+        "duration": 3.439
+    },
+    {
+        "text": "but I'm jumping back into it after this project,",
+        "start": 1017.439,
+        "duration": 2.277
+    },
+    {
+        "text": "so patrons you can look out for updates there.",
+        "start": 1019.716,
+        "duration": 2.184
+    },
+    {
+        "text": "To close things off here I have with me Lisha Li who did her PhD work on the",
+        "start": 1023.6,
+        "duration": 3.49
+    },
+    {
+        "text": "theoretical side of deep learning and who currently works at a venture capital",
+        "start": 1027.09,
+        "duration": 3.627
+    },
+    {
+        "text": "firm called Amplify Partners who kindly provided some of the funding for this video.",
+        "start": 1030.717,
+        "duration": 3.903
+    },
+    {
+        "text": "So Lisha one thing I think we should quickly bring up is this sigmoid function.",
+        "start": 1035.46,
+        "duration": 3.66
+    },
+    {
+        "text": "As I understand it early networks use this to squish the relevant weighted",
+        "start": 1039.7,
+        "duration": 3.458
+    },
+    {
+        "text": "sum into that interval between zero and one, you know kind of motivated",
+        "start": 1043.158,
+        "duration": 3.364
+    },
+    {
+        "text": "by this biological analogy of neurons either being inactive or active.",
+        "start": 1046.522,
+        "duration": 3.318
+    },
+    {
+        "text": "Exactly.\nBut relatively few modern networks actually use sigmoid anymore.",
+        "start": 1050.28,
+        "duration": 3.76
+    },
+    {
+        "text": "Yeah.\nIt's kind of old school right?",
+        "start": 1054.32,
+        "duration": 1.44
+    },
+    {
+        "text": "Yeah or rather ReLU seems to be much easier to train.",
+        "start": 1055.76,
+        "duration": 3.22
+    },
+    {
+        "text": "And ReLU, ReLU stands for rectified linear unit?",
+        "start": 1059.4,
+        "duration": 2.94
+    },
+    {
+        "text": "Yes it's this kind of function where you're just taking a max of zero",
+        "start": 1062.68,
+        "duration": 4.721
+    },
+    {
+        "text": "and a where a is given by what you were explaining in the video and",
+        "start": 1067.401,
+        "duration": 4.653
+    },
+    {
+        "text": "what this was sort of motivated from I think was a partially by a",
+        "start": 1072.054,
+        "duration": 4.516
+    },
+    {
+        "text": "biological analogy with how neurons would either be activated or not.",
+        "start": 1076.57,
+        "duration": 4.79
+    },
+    {
+        "text": "And so if it passes a certain threshold it would be the identity function but if it did",
+        "start": 1081.36,
+        "duration": 4.66
+    },
+    {
+        "text": "not then it would just not be activated so it'd be zero so it's kind of a simplification.",
+        "start": 1086.02,
+        "duration": 4.82
+    },
+    {
+        "text": "Using sigmoids didn't help training or it was very difficult to",
+        "start": 1091.16,
+        "duration": 4.535
+    },
+    {
+        "text": "train at some point and people just tried ReLU and it happened",
+        "start": 1095.695,
+        "duration": 4.534
+    },
+    {
+        "text": "to work very well for these incredibly deep neural networks.",
+        "start": 1100.229,
+        "duration": 4.391
+    },
+    {
+        "text": "All right thank you Lisha.",
+        "start": 1105.1,
+        "duration": 0.54
+    }
+]

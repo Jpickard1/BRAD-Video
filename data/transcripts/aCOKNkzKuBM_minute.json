@@ -1,0 +1,110 @@
+[
+    {
+        "start": 1.12,
+        "text": "uh hello uh my name is xiao chung we i'm so happy to present my work about uh detecting gene uh autology or miss annotations using text specific read ratio analysis uh okay sorry well firstly i want to introduce uh myself i graduated from central university uh from 2015 to 2016. i was a victim pg student in yandere lab before joining uh youngjun lab i never know how to write a script it is changing or who helped me much more on script writing so that is why he became become my husband here i want to give my suggestion to those single boys so if you want to have a wife please learn to program well this picture is taken in my wedding uh my phd mentor uh "
+    },
+    {
+        "start": 61.12,
+        "text": "mentors dr joni and dr uh yangjung uh they uh they signed on my marriage license uh it means that they are both responsible for my marriage anyway the knowledge i learned in yandere lab helped me get a postdoc position in linch lab so this is uh my current postdoc postdoc lab uh dr linchi uh who sits uh in the center of in the center of this uh insight so um i joined this lab in march 2020 so it is the beginning time of pandemic so we have to wear masks even even now um pandemic changed my life i lost my dear grandma at the same time i get a baby so he gave him he gave me a lot of joy and work in this match i came back to work as a "
+    },
+    {
+        "start": 123.36,
+        "text": "nursing mom so now i am learning how to balance my family and work okay it's a long self introduction thank you for your time let's talk about science uh in this project uh we developed a texan based ratio method to delete to detect uh geo miss annotations here we also point out where the misannotations come from um where what is a gogo is a gene ontology which includes the molecular function biological process and the cellular component we use protein function in public database such as uniprot uh especially when we get next generation sequencing data uh we will use uh geo annotations to do function uh enrichment and analysis so here is a example in this "
+    },
+    {
+        "start": 184.72,
+        "text": "paper they performed a single cell iron sequencing from two kind of two cans of parasites after get differential genes they they did go enrichment to analyze the different gene function between these two parasites so protein functional annotation is very important but not all of them are validated by experiments so um it means that some of them are not are not right uh for uh here we can see that uh most proteins like manual function annotation the upper line is the unit product the upper line shows the number of protein sequences in a uniprot database in 2020 uh there are more than uh 180 million protein sequences uh however "
+    },
+    {
+        "start": 245.28,
+        "text": "in uh the swiss product database the or the lower line the sweet data series of product database is a database uh or with the proteins uh is annotated by the experiments uh those proteins have the manual function annotation um we can see that there are there is only uh 560 million proteins uh were annotated by experiments it means that um there are more than 99 percent of proteins are not experiment are not experimentally characterized here we can uh here this is a statistics uh image way uh wave image from the uniprot database we can see that uh in all organisms uh the iea evidence code has the 99 "
+    },
+    {
+        "start": 306.479,
+        "text": "percent so iea is a short name of user short name of import from electronic annotations it means that the 99 percent geo terms are computationally predicted without a menu review so even though in 20 model organisms which are well studied the ieee percent percentage is 54 percent uh so uh uh these two these 20 modal organisms i include the bacteria include the human mouse in coli so we can see that uh even though in this uh well-studied models there are still um 54 percent uh proteins without experiment validation um uh here is um an example "
+    },
+    {
+        "start": 369.759,
+        "text": "uh this is a human uh protein the junction uh placa globin this protein uh is annotated in the uniprot it as the structural constant of the cell wall similarly in a nester prod database which is a subset of the uniprot database we can see that they also annotated this protein as the structural uh constant our cell wall we know that no cell wall in human cells so it is a obvious error we check we check this experiment paper and found that this paper uh only show that this protein is on the outer surface of the cell so somehow the curator incorrectly incorrectly assumed that this complex is the cell wall resulting in resulting in this "
+    },
+    {
+        "start": 430.319,
+        "text": "misannotation so this protein is well calculated but also counting the errors so we decide to develop our own method to find out its errors so here is the principle of our method firstly we classify proteins based on their texture in this example we classify the proteins into four texts takes them in uh four columns uh animal bacteria fungi and plants so the column shows the g o terms for each protein function we count the portion uh the kind of the portion of the proteins in each texture annotated to this function uh which is showing uh which is showing here as the area of reactor angles "
+    },
+    {
+        "start": 490.879,
+        "text": "when ignore is uh we ignore these functions if they are annotated to uh about the same amount of the proteins in all texas so uh for the upper two rows we ignore this kind of protein so the next to call next two rows we can see that uh the this protein uh this uh geotherm is only present in a one in one um texas so we also ignore this kind of our proteins uh for the last two rows uh we can see that uh the the area the part the number of proteins in the bacteria uh is unless is much more is much less than other texans similarly in uh similarly for this term the number of the number of proteins assigned "
+    },
+    {
+        "start": 551.2,
+        "text": "to this dual term is less than uh the fungi so it means that these two geoterms are likely to be misannotated uh here this is the equation of our method so for our function q uh it's a annotation rate in taxon t we we called the ptq equals to the number of the proteins annotated with the q in this taxon divided by divided by all the proteins uh in this texan then we calculate the ratio uh vocabulary ratio equals to the minimum of ptq divided by the maximum of the ptq and then we oh what's happening "
+    },
+    {
+        "start": 613.6,
+        "text": "oh now is director 20 um we the 20 uh model organisms uh including the uh five animals uh seven bacteria uh three ikea uh three fungi and the two plants to apply our uh ratio analysis to flag potential missed annotations after manually checked the flag annotations we found that about 20 about 200 miss annotations for each unique product annotation release so 200 uh misannotations that are not sound a lot but remember that this is only for well-studied modal such as human mouse and e coli so actual the amount of misallocations for other less studied organisms is much larger "
+    },
+    {
+        "start": 674.88,
+        "text": "we uh we will check uh we also check uh which year the miss annotations uh was made in uniprot uh as shown in the x x axis here the black and green colors are the ir analysis using the different texture we can see that more than half of the miss annotations are made in uniprot um 20 or 2017 or earlier and was not corrected for more than three years by the time we published our study we next analyze the what kind of evidence codes in these mis-annotations uh for the 20 model organisms we picked we found that most of misannotations have iba evidence code iba is a short name of the effort from "
+    },
+    {
+        "start": 735.44,
+        "text": "biological ancestor it is a same manual computational function prediction based on the phylogenetic tree to understand why iba geotomes are so easily misannotated we check we checked some examples here udg is uh is a well-studied enzyme for uh repairing dna bacillius is a kind of bacteria so in basilius this protein has served a structure which i showed on the right uh despite this that being so well uh characterized protein it's uniprot uh annotation a science of function um outside this protein as the mitochondria and the nucleus both both of which are not uh are not "
+    },
+    {
+        "start": 798.32,
+        "text": "in the bacilla bacteria we can see that uh in the uh you know in this database which is uh uh which is a bachelor's special specific database we can see that they also assign this protein as the nucleus and the mitochondria so we know that bacteria there in the bacteria there is no mitochondria and the nucleus so this is also error so next we want to um know the principle of the iba method and also we want to know why the iba shows ibm annotated these proteins so here is the principle of the iba method uh we can see that uh for this four five six seven uh other proteins other proteins one two three with a "
+    },
+    {
+        "start": 859.519,
+        "text": "circle other ancestor so the four and six with the green uh green green square other proteins with other proteins with known function 5 and 7 proteins we want to know the function for now we don't know so we can see that for the 4 and the 6 the most most the most recent common ancestor is two is two uh so for the iba method they uh will assign the uh they will assign the five the pros the protein five at the same uh g0 term with the four and six uh here is uh here is uh the uh the reason why the udg is assigned to the mitochondria so we can see that this is a phylogenetic tree of the udt family "
+    },
+    {
+        "start": 920.16,
+        "text": "the first branch the first branch includes the animal fungi and lower plants the lower branch includes the bacteria also we can see that uh for this a lower branch there is a small branch which include in the included in the upper branch so uh for all these four branches the proteins are the udg proteins are assigned to the mitochondria and the nucleus so so we can see that the most com the most recent uh common ancestor for these uh for these four branches is the is is here so uh this is the best idea we want to study but because they have the mo they have the most common recent most recent common ancestor so uh the uniprot assign the mitochondria and nucleus to the uh "
+    },
+    {
+        "start": 981.519,
+        "text": "udg protein in the basilar so this this is the rhythm this is the reason why the ibm uh make this a mistake so uh actually the uh uniprot and the g uh energy oh cassidium constantly are correct miss annotations uh for the uh 20 species um we collect in this study uh there is uh four point five percent of our geotherms annotations uh originally presented in uniprot doa uh release uh 2018 uh which were removed uh in the 2019. so aman is corrected geoterm annotations uh 81 percent uh has the i has the ia evidence code third thirteen percent um thirteen "
+    },
+    {
+        "start": 1041.6,
+        "text": "percent of proteins have the iba evidence code now using our ir method we found the we found 250 annotations among these 250 missed annotations uh there are 63 uh miss annotations were corrected in the 2019 version among these 63 uh potential missed annotations 7 4 47 i have the iba 47 have the iba evidence code um so this data suggests that our our ir method indeed detect potential misannotations especially those have the ibm iba evidence code as ad additional sensors of the quality of iba versus other types of "
+    },
+    {
+        "start": 1101.76,
+        "text": "geo terms we collect 10 500 uh geo annotations from 2018 uh that are either rejected or confirmed experimentally uh in 2019 uh version among these annotations there are 50 there are a 1 500 um iba terms so uh it's uh the percentage is a 31 percent uh we uh doesn't mean that there are 31 percent of which are rejected in 2019 this is an estimated error error rate uh six times greater than fully automatically annotated iea terms of ia terms only showed up five percent uh and we we have report our fundings to uniport uh the geo custom and the next approach "
+    },
+    {
+        "start": 1163.919,
+        "text": "so most of the for now most of the miscellaneous were corrected so uh here i want to show the key findings so firstly we developed a semi semi-annotated approach to detect mis-annotated functions and also there are 30 53 percent of these misadvantages in the uniprot for larger than uh for larger than one year um and also we uh we reported that uh 66 percent or miss annotations are from the iba evidence and also a way uh we also we also clarified that the reason why the iba uh uh should have a and misannotated these proteins because they use a phenogenetic tree um i want to uh mention that "
+    },
+    {
+        "start": 1226.159,
+        "text": "we we use the italic vector to predict a protein function for uncharacteristic proteins so this method includes include the three parts protein sequence alignment protein protein interaction prediction and the protein structure prediction for example for this protein uh upe1 protein sequence after we get this protein sequence we will do the cyblust to get the sequence called homologs and the second part is that we will use the spring database to uh to analyze protein protein interactions the third part is that we use itself to predict the structure to predict the this protein structure and then we will do structural alignment um then we will do structural alignment to get the structure and like analogs so finally we will "
+    },
+    {
+        "start": 1287.44,
+        "text": "uh we will giving we will give uh different weights of for these three parts and then run the co factor to uh to finally get the protein function and by the way i want to mention that using itsa we predict the structure of the nephron which is which is an important protein for the kidney function so this work uh this work uh is published and will be present in the april issue our gci as our cover story uh thank you dr young after the young john this um i learned the structural analysis in that lab thank you that's all my presentations will come questions "
+    },
+    {
+        "start": 1353.44,
+        "text": "if anyone has any questions you can either unmute yourself and ask or put them in the chat box and i can read them to sha'shan yeah we will come questions so xiao chong is very nice presentation and it's gil omen it's nice to see develop this whole area of research and to see the application with the uh pretzeler lab on kidney can you explain to us a little more um what your interactions were with uniprot and nexpro and what it takes to get the international databases like those to hear your criticisms and findings and actually take action rather expeditiously promptly tell us how that worked "
+    },
+    {
+        "start": 1415.12,
+        "text": "do you understand what i'm asking what was the process of informing unipro a next pro of your findings of these misannotations oh yeah for the uh you mean that um you mean that uh for the miss annotations so what do we do uh in the uniprot right yes do they have a uh an office for uh complaints or adverse findings or did you have to find someone to take responsibility there how did it work yeah yeah yeah we emailed uh we emailed a uniprot uh doctor here dr lady lane oh no this is the next product both we emailed uh we emailed uh we we sent our miss annotations proteins to the uniprot next part uh and the go custom they said that they will check them and correct them uh especially for the next support "
+    },
+    {
+        "start": 1476.08,
+        "text": "doctor lydia and the doctor lady ling she is opposed of the next part she has checked all of the misannotations and correct them also see also see downgraded downgraded iba evidence from the gold to sierra we also checked the proteins i show here which misannotated uh for now they all for now in uniprot next product they both correct currently these miso annotations great i would suggest that you send a copy maybe a uh compressed copy of your slide set to dr lane and to others and let them see how much you've accomplished in this area it's really terrific oh yeah yeah it's good to know that those big organizations respond to such analysis yeah thank you yeah yes "
+    },
+    {
+        "start": 1542.799,
+        "text": "any other questions so far nobody's entering anything in the chat box but again if anyone has questions you can enter them in the chat box or unmute yourself this isn't a question but uh someone uh dana just wrote in there no question but great talk and just thank you for your great talks i just want to pass that along to you oh thank you for the excellent presentation today um hopefully everyone can join us next week for the last uh seminar of the semester we'll be hearing about uh we'll be hearing from abhinav atreya about identification of collateral lethal "
+    },
+    {
+        "start": 1604.559,
+        "text": "metabolic targets for precision medicine and cancer so thanks everyone for joining us today "
+    }
+]

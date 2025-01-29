@@ -1,0 +1,5182 @@
+[
+    {
+        "text": "hi everyone",
+        "start": 97.04,
+        "duration": 5.28
+    },
+    {
+        "text": "uh i'm just going to share my screen",
+        "start": 98.84,
+        "duration": 5.72
+    },
+    {
+        "text": "here",
+        "start": 102.32,
+        "duration": 2.24
+    },
+    {
+        "text": "okay",
+        "start": 112.84,
+        "duration": 3.959
+    },
+    {
+        "text": "so thank you all for coming and thank",
+        "start": 114.479,
+        "duration": 4.401
+    },
+    {
+        "text": "you for the invitation to speak here",
+        "start": 116.799,
+        "duration": 6.0
+    },
+    {
+        "text": "um my name is abe huku i am a current",
+        "start": 118.88,
+        "duration": 6.04
+    },
+    {
+        "text": "phd student in the department of",
+        "start": 122.799,
+        "duration": 4.081
+    },
+    {
+        "text": "biostatistics and",
+        "start": 124.92,
+        "duration": 3.88
+    },
+    {
+        "text": "today i'm going to be talking about",
+        "start": 126.88,
+        "duration": 3.519
+    },
+    {
+        "text": "bagsy which is",
+        "start": 128.8,
+        "duration": 4.46
+    },
+    {
+        "text": "a bayesian hierarchical model",
+        "start": 130.399,
+        "duration": 5.92
+    },
+    {
+        "text": "[Music]",
+        "start": 133.26,
+        "duration": 5.699
+    },
+    {
+        "text": "enrichment analysis so at any time today",
+        "start": 136.319,
+        "duration": 4.0
+    },
+    {
+        "text": "if you have any questions",
+        "start": 138.959,
+        "duration": 3.201
+    },
+    {
+        "text": "about anything i talk about please just",
+        "start": 140.319,
+        "duration": 3.441
+    },
+    {
+        "text": "unmute and feel free to interrupt me",
+        "start": 142.16,
+        "duration": 2.4
+    },
+    {
+        "text": "whenever",
+        "start": 143.76,
+        "duration": 4.0
+    },
+    {
+        "text": "um and yeah",
+        "start": 144.56,
+        "duration": 3.2
+    },
+    {
+        "text": "so just as a general outline for this",
+        "start": 149.36,
+        "duration": 3.12
+    },
+    {
+        "text": "talk",
+        "start": 152.08,
+        "duration": 2.64
+    },
+    {
+        "text": "uh first i'll be talking about the",
+        "start": 152.48,
+        "duration": 3.039
+    },
+    {
+        "text": "motivation",
+        "start": 154.72,
+        "duration": 3.599
+    },
+    {
+        "text": "and background behind conducting jinsa",
+        "start": 155.519,
+        "duration": 4.961
+    },
+    {
+        "text": "enrichment analysis in general",
+        "start": 158.319,
+        "duration": 3.841
+    },
+    {
+        "text": "i'll then talk about some of the",
+        "start": 160.48,
+        "duration": 3.28
+    },
+    {
+        "text": "existing methods for gene sound",
+        "start": 162.16,
+        "duration": 2.88
+    },
+    {
+        "text": "enrichment analysis",
+        "start": 163.76,
+        "duration": 4.08
+    },
+    {
+        "text": "and their limitations i'll then",
+        "start": 165.04,
+        "duration": 4.64
+    },
+    {
+        "text": "introduce bagzi and some of its",
+        "start": 167.84,
+        "duration": 4.64
+    },
+    {
+        "text": "features and how we try to address those",
+        "start": 169.68,
+        "duration": 4.08
+    },
+    {
+        "text": "limitations",
+        "start": 172.48,
+        "duration": 4.479
+    },
+    {
+        "text": "and i'll go on and show bagzi's",
+        "start": 173.76,
+        "duration": 5.44
+    },
+    {
+        "text": "performance and simulations and real",
+        "start": 176.959,
+        "duration": 4.0
+    },
+    {
+        "text": "data applications before",
+        "start": 179.2,
+        "duration": 6.64
+    },
+    {
+        "text": "wrapping up with some conclusions",
+        "start": 180.959,
+        "duration": 4.881
+    },
+    {
+        "text": "so oftentimes the results of a",
+        "start": 186.959,
+        "duration": 5.121
+    },
+    {
+        "text": "g wasser differential expression",
+        "start": 190.239,
+        "duration": 3.441
+    },
+    {
+        "text": "analysis can give a",
+        "start": 192.08,
+        "duration": 4.48
+    },
+    {
+        "text": "very long list of seemingly biologically",
+        "start": 193.68,
+        "duration": 5.44
+    },
+    {
+        "text": "unrelated significant snips or genes",
+        "start": 196.56,
+        "duration": 5.599
+    },
+    {
+        "text": "and this is especially true over time as",
+        "start": 199.12,
+        "duration": 5.36
+    },
+    {
+        "text": "sample sizes have increased we end up",
+        "start": 202.159,
+        "duration": 3.041
+    },
+    {
+        "text": "with",
+        "start": 204.48,
+        "duration": 3.52
+    },
+    {
+        "text": "many signals of significant snips or",
+        "start": 205.2,
+        "duration": 4.399
+    },
+    {
+        "text": "genes from these studies",
+        "start": 208.0,
+        "duration": 3.12
+    },
+    {
+        "text": "and although having this many",
+        "start": 209.599,
+        "duration": 3.761
+    },
+    {
+        "text": "significant results is great",
+        "start": 211.12,
+        "duration": 4.56
+    },
+    {
+        "text": "it can become increasingly difficult to",
+        "start": 213.36,
+        "duration": 5.04
+    },
+    {
+        "text": "find any sort of unifying biological",
+        "start": 215.68,
+        "duration": 4.8
+    },
+    {
+        "text": "theme to link these results",
+        "start": 218.4,
+        "duration": 5.28
+    },
+    {
+        "text": "and so it becomes hard to subsequently",
+        "start": 220.48,
+        "duration": 5.28
+    },
+    {
+        "text": "use these results to gain more",
+        "start": 223.68,
+        "duration": 4.559
+    },
+    {
+        "text": "insights into biological mechanisms",
+        "start": 225.76,
+        "duration": 4.64
+    },
+    {
+        "text": "behind diseases",
+        "start": 228.239,
+        "duration": 5.28
+    },
+    {
+        "text": "and so there has become a need to",
+        "start": 230.4,
+        "duration": 6.08
+    },
+    {
+        "text": "you to develop techniques to extract",
+        "start": 233.519,
+        "duration": 4.561
+    },
+    {
+        "text": "more biological meaning",
+        "start": 236.48,
+        "duration": 4.319
+    },
+    {
+        "text": "from the results from these analyses to",
+        "start": 238.08,
+        "duration": 5.2
+    },
+    {
+        "text": "help to uncover these sort of biological",
+        "start": 240.799,
+        "duration": 6.561
+    },
+    {
+        "text": "causal mechanisms behind diseases",
+        "start": 243.28,
+        "duration": 4.08
+    },
+    {
+        "text": "and one such technique is known as gene",
+        "start": 247.84,
+        "duration": 4.399
+    },
+    {
+        "text": "said enrichment analysis",
+        "start": 250.319,
+        "duration": 4.0
+    },
+    {
+        "text": "so gene site enrichment analysis is",
+        "start": 252.239,
+        "duration": 3.2
+    },
+    {
+        "text": "performed",
+        "start": 254.319,
+        "duration": 3.281
+    },
+    {
+        "text": "downstream of a differential expression",
+        "start": 255.439,
+        "duration": 3.36
+    },
+    {
+        "text": "analysis or a g",
+        "start": 257.6,
+        "duration": 4.24
+    },
+    {
+        "text": "loss and the goal is to identify groups",
+        "start": 258.799,
+        "duration": 5.281
+    },
+    {
+        "text": "of genes that have a higher or a",
+        "start": 261.84,
+        "duration": 5.12
+    },
+    {
+        "text": "lower number of association signals than",
+        "start": 264.08,
+        "duration": 4.08
+    },
+    {
+        "text": "expected",
+        "start": 266.96,
+        "duration": 3.76
+    },
+    {
+        "text": "so oftentimes gene sets are defined as",
+        "start": 268.16,
+        "duration": 5.36
+    },
+    {
+        "text": "genes in the same biological pathway",
+        "start": 270.72,
+        "duration": 4.56
+    },
+    {
+        "text": "and in this way it can give more",
+        "start": 273.52,
+        "duration": 4.0
+    },
+    {
+        "text": "biologically meaningful results because",
+        "start": 275.28,
+        "duration": 4.72
+    },
+    {
+        "text": "now instead of saying we have these",
+        "start": 277.52,
+        "duration": 4.56
+    },
+    {
+        "text": "genes that are associated with this",
+        "start": 280.0,
+        "duration": 4.88
+    },
+    {
+        "text": "disease we can say genes involved with",
+        "start": 282.08,
+        "duration": 3.44
+    },
+    {
+        "text": "this",
+        "start": 284.88,
+        "duration": 2.8
+    },
+    {
+        "text": "biological function are associated with",
+        "start": 285.52,
+        "duration": 4.239
+    },
+    {
+        "text": "this phenotype or disease",
+        "start": 287.68,
+        "duration": 5.12
+    },
+    {
+        "text": "and so this can gain more insights to",
+        "start": 289.759,
+        "duration": 5.281
+    },
+    {
+        "text": "subsequently do further research into",
+        "start": 292.8,
+        "duration": 2.959
+    },
+    {
+        "text": "seeing",
+        "start": 295.04,
+        "duration": 3.52
+    },
+    {
+        "text": "maybe how that specific biological",
+        "start": 295.759,
+        "duration": 4.401
+    },
+    {
+        "text": "function could be connected with the",
+        "start": 298.56,
+        "duration": 2.88
+    },
+    {
+        "text": "disease",
+        "start": 300.16,
+        "duration": 3.2
+    },
+    {
+        "text": "and in this way genesis enrichment",
+        "start": 301.44,
+        "duration": 4.88
+    },
+    {
+        "text": "analysis was first developed in 2003 by",
+        "start": 303.36,
+        "duration": 4.399
+    },
+    {
+        "text": "mutha at all",
+        "start": 306.32,
+        "duration": 3.68
+    },
+    {
+        "text": "and they found that genes involved in",
+        "start": 307.759,
+        "duration": 4.401
+    },
+    {
+        "text": "oxidative phosphorylation",
+        "start": 310.0,
+        "duration": 4.72
+    },
+    {
+        "text": "had lower expression in human type 2",
+        "start": 312.16,
+        "duration": 4.08
+    },
+    {
+        "text": "diabetic muscle",
+        "start": 314.72,
+        "duration": 3.44
+    },
+    {
+        "text": "and so this is just one way gene said",
+        "start": 316.24,
+        "duration": 4.239
+    },
+    {
+        "text": "enrichment analysis has been used",
+        "start": 318.16,
+        "duration": 4.72
+    },
+    {
+        "text": "to gain more biological insights into",
+        "start": 320.479,
+        "duration": 5.361
+    },
+    {
+        "text": "certain diseases",
+        "start": 322.88,
+        "duration": 2.96
+    },
+    {
+        "text": "so one way that we believe is a natural",
+        "start": 327.6,
+        "duration": 4.879
+    },
+    {
+        "text": "way to think about gene set enrichment",
+        "start": 330.56,
+        "duration": 2.72
+    },
+    {
+        "text": "analysis",
+        "start": 332.479,
+        "duration": 2.961
+    },
+    {
+        "text": "is through this latent two by two",
+        "start": 333.28,
+        "duration": 5.359
+    },
+    {
+        "text": "contingency table interpretation",
+        "start": 335.44,
+        "duration": 6.16
+    },
+    {
+        "text": "so each gene in a study is either",
+        "start": 338.639,
+        "duration": 4.4
+    },
+    {
+        "text": "unannotated or",
+        "start": 341.6,
+        "duration": 3.92
+    },
+    {
+        "text": "not in the gene set or annotated in the",
+        "start": 343.039,
+        "duration": 3.521
+    },
+    {
+        "text": "gene set",
+        "start": 345.52,
+        "duration": 4.64
+    },
+    {
+        "text": "and the placement of the classification",
+        "start": 346.56,
+        "duration": 5.6
+    },
+    {
+        "text": "of genes as in the gene set or not",
+        "start": 350.16,
+        "duration": 4.8
+    },
+    {
+        "text": "is going to be determined prior to the",
+        "start": 352.16,
+        "duration": 3.759
+    },
+    {
+        "text": "study by",
+        "start": 354.96,
+        "duration": 3.84
+    },
+    {
+        "text": "the investigator researcher uh who",
+        "start": 355.919,
+        "duration": 4.321
+    },
+    {
+        "text": "classifies each gene as",
+        "start": 358.8,
+        "duration": 4.0
+    },
+    {
+        "text": "in the gene set of interest or not",
+        "start": 360.24,
+        "duration": 4.48
+    },
+    {
+        "text": "additionally each gene is either",
+        "start": 362.8,
+        "duration": 3.839
+    },
+    {
+        "text": "associated with the phenotype of",
+        "start": 364.72,
+        "duration": 3.12
+    },
+    {
+        "text": "interest or",
+        "start": 366.639,
+        "duration": 2.961
+    },
+    {
+        "text": "not associated with the phenotype of",
+        "start": 367.84,
+        "duration": 3.359
+    },
+    {
+        "text": "interest and",
+        "start": 369.6,
+        "duration": 3.2
+    },
+    {
+        "text": "in a differential expression setting",
+        "start": 371.199,
+        "duration": 3.761
+    },
+    {
+        "text": "this would also translate to each gene",
+        "start": 372.8,
+        "duration": 4.399
+    },
+    {
+        "text": "as either differentially expressed or",
+        "start": 374.96,
+        "duration": 5.2
+    },
+    {
+        "text": "not differentially expressed so thinking",
+        "start": 377.199,
+        "duration": 5.201
+    },
+    {
+        "text": "about it this way each gene can be",
+        "start": 380.16,
+        "duration": 5.12
+    },
+    {
+        "text": "mutually exclusively classified into one",
+        "start": 382.4,
+        "duration": 3.68
+    },
+    {
+        "text": "of these four",
+        "start": 385.28,
+        "duration": 4.08
+    },
+    {
+        "text": "cells and",
+        "start": 386.08,
+        "duration": 6.16
+    },
+    {
+        "text": "so we can create this two by two",
+        "start": 389.36,
+        "duration": 4.16
+    },
+    {
+        "text": "contingency table",
+        "start": 392.24,
+        "duration": 4.64
+    },
+    {
+        "text": "and when this table is developed we can",
+        "start": 393.52,
+        "duration": 6.08
+    },
+    {
+        "text": "then easily calculate an odds ratio",
+        "start": 396.88,
+        "duration": 5.599
+    },
+    {
+        "text": "and this odds ratio falls very well in",
+        "start": 399.6,
+        "duration": 5.599
+    },
+    {
+        "text": "line with our definition of enrichment",
+        "start": 402.479,
+        "duration": 5.361
+    },
+    {
+        "text": "because the literal interpretation of it",
+        "start": 405.199,
+        "duration": 5.12
+    },
+    {
+        "text": "is a gene that is annotated has",
+        "start": 407.84,
+        "duration": 5.199
+    },
+    {
+        "text": "or times higher odds of being associated",
+        "start": 410.319,
+        "duration": 4.401
+    },
+    {
+        "text": "with the phenotype of interest than a",
+        "start": 413.039,
+        "duration": 2.56
+    },
+    {
+        "text": "gene that is not",
+        "start": 414.72,
+        "duration": 4.479
+    },
+    {
+        "text": "annotated because of this and because",
+        "start": 415.599,
+        "duration": 6.16
+    },
+    {
+        "text": "odds ratios are used so prevalently",
+        "start": 419.199,
+        "duration": 3.12
+    },
+    {
+        "text": "throughout",
+        "start": 421.759,
+        "duration": 3.921
+    },
+    {
+        "text": "statistics in biology we believe that",
+        "start": 422.319,
+        "duration": 6.561
+    },
+    {
+        "text": "this value is the ideal quantification",
+        "start": 425.68,
+        "duration": 4.4
+    },
+    {
+        "text": "of enrichment",
+        "start": 428.88,
+        "duration": 7.68
+    },
+    {
+        "text": "and it will be the value that",
+        "start": 430.08,
+        "duration": 9.36
+    },
+    {
+        "text": "mating with our method so because we",
+        "start": 436.56,
+        "duration": 3.68
+    },
+    {
+        "text": "believe this",
+        "start": 439.44,
+        "duration": 2.8
+    },
+    {
+        "text": "two by two contingency table is a very",
+        "start": 440.24,
+        "duration": 3.6
+    },
+    {
+        "text": "natural way to think about enrichment i",
+        "start": 442.24,
+        "duration": 3.12
+    },
+    {
+        "text": "will be referencing this throughout the",
+        "start": 443.84,
+        "duration": 2.0
+    },
+    {
+        "text": "talk",
+        "start": 445.36,
+        "duration": 3.76
+    },
+    {
+        "text": "especially when explaining our method so",
+        "start": 445.84,
+        "duration": 5.919
+    },
+    {
+        "text": "so please keep it in mind and i will",
+        "start": 449.12,
+        "duration": 5.6
+    },
+    {
+        "text": "reference this again",
+        "start": 451.759,
+        "duration": 2.961
+    },
+    {
+        "text": "so for the existing methods for genesis",
+        "start": 455.919,
+        "duration": 4.72
+    },
+    {
+        "text": "enrichment analysis they typically fall",
+        "start": 458.4,
+        "duration": 2.72
+    },
+    {
+        "text": "into",
+        "start": 460.639,
+        "duration": 2.721
+    },
+    {
+        "text": "two different categories the first",
+        "start": 461.12,
+        "duration": 3.799
+    },
+    {
+        "text": "category is",
+        "start": 463.36,
+        "duration": 4.48
+    },
+    {
+        "text": "gsea-based methods for gene sun richmond",
+        "start": 464.919,
+        "duration": 4.12
+    },
+    {
+        "text": "analysis",
+        "start": 467.84,
+        "duration": 3.6
+    },
+    {
+        "text": "so in this school of method first",
+        "start": 469.039,
+        "duration": 4.72
+    },
+    {
+        "text": "association scores are assigned for each",
+        "start": 471.44,
+        "duration": 3.039
+    },
+    {
+        "text": "gene",
+        "start": 473.759,
+        "duration": 3.041
+    },
+    {
+        "text": "and this association score can be a",
+        "start": 474.479,
+        "duration": 3.761
+    },
+    {
+        "text": "variety of different things",
+        "start": 476.8,
+        "duration": 4.079
+    },
+    {
+        "text": "it can be a z-score it could be a",
+        "start": 478.24,
+        "duration": 4.56
+    },
+    {
+        "text": "p-value or it could be",
+        "start": 480.879,
+        "duration": 3.76
+    },
+    {
+        "text": "just an effect size estimate like",
+        "start": 482.8,
+        "duration": 5.679
+    },
+    {
+        "text": "estimated differential expression",
+        "start": 484.639,
+        "duration": 6.801
+    },
+    {
+        "text": "and then within the gsea-based methods",
+        "start": 488.479,
+        "duration": 3.521
+    },
+    {
+        "text": "there is",
+        "start": 491.44,
+        "duration": 3.68
+    },
+    {
+        "text": "unweighted there's the unweighted gse",
+        "start": 492.0,
+        "duration": 4.0
+    },
+    {
+        "text": "based approach",
+        "start": 495.12,
+        "duration": 3.12
+    },
+    {
+        "text": "where the distribution of these",
+        "start": 496.0,
+        "duration": 3.759
+    },
+    {
+        "text": "association scores",
+        "start": 498.24,
+        "duration": 4.72
+    },
+    {
+        "text": "are compared between genes in the gene",
+        "start": 499.759,
+        "duration": 3.681
+    },
+    {
+        "text": "set",
+        "start": 502.96,
+        "duration": 2.799
+    },
+    {
+        "text": "in genes not in the gene set using a",
+        "start": 503.44,
+        "duration": 3.52
+    },
+    {
+        "text": "statistical test",
+        "start": 505.759,
+        "duration": 3.601
+    },
+    {
+        "text": "such as a kolmogar smirnoff test or a",
+        "start": 506.96,
+        "duration": 4.239
+    },
+    {
+        "text": "matte whitney u test",
+        "start": 509.36,
+        "duration": 4.32
+    },
+    {
+        "text": "and then there is the weighted gse based",
+        "start": 511.199,
+        "duration": 3.441
+    },
+    {
+        "text": "test",
+        "start": 513.68,
+        "duration": 4.0
+    },
+    {
+        "text": "where you first generate a list",
+        "start": 514.64,
+        "duration": 5.12
+    },
+    {
+        "text": "a ranked list of genes by that",
+        "start": 517.68,
+        "duration": 3.68
+    },
+    {
+        "text": "association score",
+        "start": 519.76,
+        "duration": 3.839
+    },
+    {
+        "text": "and then you calculate a running sum",
+        "start": 521.36,
+        "duration": 3.76
+    },
+    {
+        "text": "statistic down the list",
+        "start": 523.599,
+        "duration": 4.24
+    },
+    {
+        "text": "so starting at the top you go down the",
+        "start": 525.12,
+        "duration": 3.68
+    },
+    {
+        "text": "list and",
+        "start": 527.839,
+        "duration": 3.12
+    },
+    {
+        "text": "when you run into a gene in the gene set",
+        "start": 528.8,
+        "duration": 3.28
+    },
+    {
+        "text": "of interest",
+        "start": 530.959,
+        "duration": 3.521
+    },
+    {
+        "text": "you go up by a certain weight and then",
+        "start": 532.08,
+        "duration": 4.08
+    },
+    {
+        "text": "when you run to a gene not in the gene",
+        "start": 534.48,
+        "duration": 3.359
+    },
+    {
+        "text": "set of interest you go down a certain",
+        "start": 536.16,
+        "duration": 2.56
+    },
+    {
+        "text": "way",
+        "start": 537.839,
+        "duration": 2.881
+    },
+    {
+        "text": "and in this procedure you then use",
+        "start": 538.72,
+        "duration": 3.36
+    },
+    {
+        "text": "permutations",
+        "start": 540.72,
+        "duration": 4.64
+    },
+    {
+        "text": "to obtain an empirical p-value oh sorry",
+        "start": 542.08,
+        "duration": 4.96
+    },
+    {
+        "text": "and the enrichment score is the",
+        "start": 545.36,
+        "duration": 4.96
+    },
+    {
+        "text": "maximum deviation from zero while",
+        "start": 547.04,
+        "duration": 6.08
+    },
+    {
+        "text": "calculating this running some statistic",
+        "start": 550.32,
+        "duration": 5.04
+    },
+    {
+        "text": "and some of the approaches that use this",
+        "start": 553.12,
+        "duration": 3.2
+    },
+    {
+        "text": "type of method",
+        "start": 555.36,
+        "duration": 5.479
+    },
+    {
+        "text": "are gene ontology gsea and",
+        "start": 556.32,
+        "duration": 7.519
+    },
+    {
+        "text": "magma",
+        "start": 560.839,
+        "duration": 3.0
+    },
+    {
+        "text": "so the second category of gene set",
+        "start": 566.24,
+        "duration": 3.92
+    },
+    {
+        "text": "enrichment",
+        "start": 568.8,
+        "duration": 3.92
+    },
+    {
+        "text": "uh type methods is the two-stage",
+        "start": 570.16,
+        "duration": 3.84
+    },
+    {
+        "text": "procedure",
+        "start": 572.72,
+        "duration": 3.04
+    },
+    {
+        "text": "so the first stage in this two-stage",
+        "start": 574.0,
+        "duration": 4.16
+    },
+    {
+        "text": "procedure is known as a classification",
+        "start": 575.76,
+        "duration": 3.28
+    },
+    {
+        "text": "stage",
+        "start": 578.16,
+        "duration": 4.0
+    },
+    {
+        "text": "and here each gene is first classified",
+        "start": 579.04,
+        "duration": 5.84
+    },
+    {
+        "text": "as annotated or unannotated as defined",
+        "start": 582.16,
+        "duration": 3.2
+    },
+    {
+        "text": "by the",
+        "start": 584.88,
+        "duration": 2.8
+    },
+    {
+        "text": "investigator and then classified as",
+        "start": 585.36,
+        "duration": 5.039
+    },
+    {
+        "text": "either associate or unassociated",
+        "start": 587.68,
+        "duration": 4.96
+    },
+    {
+        "text": "through different types of methods such",
+        "start": 590.399,
+        "duration": 4.88
+    },
+    {
+        "text": "as p-values using a bonferroni",
+        "start": 592.64,
+        "duration": 3.36
+    },
+    {
+        "text": "correction",
+        "start": 595.279,
+        "duration": 5.201
+    },
+    {
+        "text": "or q values or a p-value threshold",
+        "start": 596.0,
+        "duration": 7.2
+    },
+    {
+        "text": "and of course once this classification",
+        "start": 600.48,
+        "duration": 5.2
+    },
+    {
+        "text": "stage is over",
+        "start": 603.2,
+        "duration": 4.96
+    },
+    {
+        "text": "each gene can be assigned to one of",
+        "start": 605.68,
+        "duration": 4.48
+    },
+    {
+        "text": "these four cells in this contingency",
+        "start": 608.16,
+        "duration": 3.119
+    },
+    {
+        "text": "table",
+        "start": 610.16,
+        "duration": 4.48
+    },
+    {
+        "text": "and once this assignment is done",
+        "start": 611.279,
+        "duration": 5.281
+    },
+    {
+        "text": "some sort of statistical tests can be",
+        "start": 614.64,
+        "duration": 4.319
+    },
+    {
+        "text": "used to",
+        "start": 616.56,
+        "duration": 5.6
+    },
+    {
+        "text": "to calculate to calculate if there is",
+        "start": 618.959,
+        "duration": 5.281
+    },
+    {
+        "text": "significant enrichment such as a",
+        "start": 622.16,
+        "duration": 4.88
+    },
+    {
+        "text": "chi-squared test a fischer's exact test",
+        "start": 624.24,
+        "duration": 3.44
+    },
+    {
+        "text": "or",
+        "start": 627.04,
+        "duration": 3.6
+    },
+    {
+        "text": "another permutations based test and some",
+        "start": 627.68,
+        "duration": 3.52
+    },
+    {
+        "text": "of the",
+        "start": 630.64,
+        "duration": 2.8
+    },
+    {
+        "text": "approaches that use this type of method",
+        "start": 631.2,
+        "duration": 3.44
+    },
+    {
+        "text": "are david",
+        "start": 633.44,
+        "duration": 4.88
+    },
+    {
+        "text": "enrich and magenta so one thing to note",
+        "start": 634.64,
+        "duration": 4.56
+    },
+    {
+        "text": "is that",
+        "start": 638.32,
+        "duration": 3.44
+    },
+    {
+        "text": "using a two-stage procedure you can get",
+        "start": 639.2,
+        "duration": 3.36
+    },
+    {
+        "text": "this",
+        "start": 641.76,
+        "duration": 3.6
+    },
+    {
+        "text": "ideal odds ratio of enrichment because",
+        "start": 642.56,
+        "duration": 3.76
+    },
+    {
+        "text": "you have",
+        "start": 645.36,
+        "duration": 3.36
+    },
+    {
+        "text": "generated this two by two contingency",
+        "start": 646.32,
+        "duration": 4.72
+    },
+    {
+        "text": "table",
+        "start": 648.72,
+        "duration": 2.32
+    },
+    {
+        "text": "so some of the limitations within these",
+        "start": 653.44,
+        "duration": 3.839
+    },
+    {
+        "text": "existing methods",
+        "start": 655.6,
+        "duration": 5.12
+    },
+    {
+        "text": "so first for the gse8 based methods",
+        "start": 657.279,
+        "duration": 6.0
+    },
+    {
+        "text": "the permutations based procedure for the",
+        "start": 660.72,
+        "duration": 4.88
+    },
+    {
+        "text": "weighted version to obtain an empirical",
+        "start": 663.279,
+        "duration": 3.441
+    },
+    {
+        "text": "p-value",
+        "start": 665.6,
+        "duration": 3.44
+    },
+    {
+        "text": "is not exact and it can also be",
+        "start": 666.72,
+        "duration": 4.4
+    },
+    {
+        "text": "computationally expensive",
+        "start": 669.04,
+        "duration": 4.32
+    },
+    {
+        "text": "especially as the number of genes being",
+        "start": 671.12,
+        "duration": 3.279
+    },
+    {
+        "text": "investigated",
+        "start": 673.36,
+        "duration": 3.919
+    },
+    {
+        "text": "increases doing a permutations-based",
+        "start": 674.399,
+        "duration": 5.201
+    },
+    {
+        "text": "procedure to calculate a p-value can end",
+        "start": 677.279,
+        "duration": 2.961
+    },
+    {
+        "text": "up",
+        "start": 679.6,
+        "duration": 3.28
+    },
+    {
+        "text": "taking a lot of computational power and",
+        "start": 680.24,
+        "duration": 3.599
+    },
+    {
+        "text": "time",
+        "start": 682.88,
+        "duration": 3.44
+    },
+    {
+        "text": "and also there's no easily interpretable",
+        "start": 683.839,
+        "duration": 4.24
+    },
+    {
+        "text": "value quantifying enrichment",
+        "start": 686.32,
+        "duration": 4.24
+    },
+    {
+        "text": "that can be used to compare gene sets so",
+        "start": 688.079,
+        "duration": 3.601
+    },
+    {
+        "text": "there's now",
+        "start": 690.56,
+        "duration": 2.959
+    },
+    {
+        "text": "like odds ratio that we had talked about",
+        "start": 691.68,
+        "duration": 3.44
+    },
+    {
+        "text": "earlier",
+        "start": 693.519,
+        "duration": 4.241
+    },
+    {
+        "text": "and then for the two stage methods the",
+        "start": 695.12,
+        "duration": 4.48
+    },
+    {
+        "text": "uncertainty that's introduced in the",
+        "start": 697.76,
+        "duration": 3.519
+    },
+    {
+        "text": "classification stage",
+        "start": 699.6,
+        "duration": 3.919
+    },
+    {
+        "text": "specifically the uncertainty introduced",
+        "start": 701.279,
+        "duration": 3.761
+    },
+    {
+        "text": "when classifying the genes",
+        "start": 703.519,
+        "duration": 4.721
+    },
+    {
+        "text": "as associated or unassociated is then",
+        "start": 705.04,
+        "duration": 6.16
+    },
+    {
+        "text": "ignored in stage two the testing stage",
+        "start": 708.24,
+        "duration": 4.719
+    },
+    {
+        "text": "so although type one error for the",
+        "start": 711.2,
+        "duration": 3.92
+    },
+    {
+        "text": "classification stage can be accounted",
+        "start": 712.959,
+        "duration": 3.68
+    },
+    {
+        "text": "for through",
+        "start": 715.12,
+        "duration": 3.76
+    },
+    {
+        "text": "type 1 error correction methods such as",
+        "start": 716.639,
+        "duration": 3.681
+    },
+    {
+        "text": "bonferroni correction",
+        "start": 718.88,
+        "duration": 4.8
+    },
+    {
+        "text": "or using benjamini hatchberg approach",
+        "start": 720.32,
+        "duration": 5.44
+    },
+    {
+        "text": "the type 2 error introduced is not",
+        "start": 723.68,
+        "duration": 6.8
+    },
+    {
+        "text": "necessarily accounted for",
+        "start": 725.76,
+        "duration": 6.56
+    },
+    {
+        "text": "and so to address these concerns we",
+        "start": 730.48,
+        "duration": 4.4
+    },
+    {
+        "text": "developed",
+        "start": 732.32,
+        "duration": 2.56
+    },
+    {
+        "text": "bayesian analysis of gene set enrichment",
+        "start": 737.519,
+        "duration": 4.56
+    },
+    {
+        "text": "and so we developed a bayesian",
+        "start": 740.56,
+        "duration": 2.959
+    },
+    {
+        "text": "hierarchical model for gene site",
+        "start": 742.079,
+        "duration": 2.0
+    },
+    {
+        "text": "enrichment",
+        "start": 743.519,
+        "duration": 3.44
+    },
+    {
+        "text": "analysis that can be that can be run",
+        "start": 744.079,
+        "duration": 5.681
+    },
+    {
+        "text": "using only summary statistics so only",
+        "start": 746.959,
+        "duration": 5.68
+    },
+    {
+        "text": "z scores or beta hat and standard errors",
+        "start": 749.76,
+        "duration": 4.4
+    },
+    {
+        "text": "from a",
+        "start": 752.639,
+        "duration": 3.681
+    },
+    {
+        "text": "differential expression analysis or g",
+        "start": 754.16,
+        "duration": 3.44
+    },
+    {
+        "text": "loss and",
+        "start": 756.32,
+        "duration": 4.56
+    },
+    {
+        "text": "we quantify enrichment as the log odds",
+        "start": 757.6,
+        "duration": 4.72
+    },
+    {
+        "text": "ratio of interest",
+        "start": 760.88,
+        "duration": 3.92
+    },
+    {
+        "text": "that we talked about uh which we call",
+        "start": 762.32,
+        "duration": 4.24
+    },
+    {
+        "text": "alpha one in our model which i'll",
+        "start": 764.8,
+        "duration": 4.719
+    },
+    {
+        "text": "explain further in the next slide and a",
+        "start": 766.56,
+        "duration": 4.8
+    },
+    {
+        "text": "couple other interesting features about",
+        "start": 769.519,
+        "duration": 3.44
+    },
+    {
+        "text": "bagsy",
+        "start": 771.36,
+        "duration": 3.76
+    },
+    {
+        "text": "the enrichment that we calculate can",
+        "start": 772.959,
+        "duration": 3.12
+    },
+    {
+        "text": "then be used as",
+        "start": 775.12,
+        "duration": 4.0
+    },
+    {
+        "text": "prior information to improve power of",
+        "start": 776.079,
+        "duration": 4.32
+    },
+    {
+        "text": "gene level testing",
+        "start": 779.12,
+        "duration": 3.36
+    },
+    {
+        "text": "taking advantage of an empirical",
+        "start": 780.399,
+        "duration": 3.68
+    },
+    {
+        "text": "bayesian framework",
+        "start": 782.48,
+        "duration": 4.72
+    },
+    {
+        "text": "and also bagsy is adaptable to testing",
+        "start": 784.079,
+        "duration": 3.76
+    },
+    {
+        "text": "multiple",
+        "start": 787.2,
+        "duration": 4.079
+    },
+    {
+        "text": "overlapping gene sets",
+        "start": 787.839,
+        "duration": 3.44
+    },
+    {
+        "text": "so here is an overview of the bayesian",
+        "start": 795.36,
+        "duration": 5.12
+    },
+    {
+        "text": "hierarchical model we developed",
+        "start": 797.839,
+        "duration": 6.081
+    },
+    {
+        "text": "so on the left here is a graphical model",
+        "start": 800.48,
+        "duration": 4.64
+    },
+    {
+        "text": "representation",
+        "start": 803.92,
+        "duration": 4.32
+    },
+    {
+        "text": "of this bayesian hierarchical model",
+        "start": 805.12,
+        "duration": 6.399
+    },
+    {
+        "text": "so the first level is gamma i",
+        "start": 808.24,
+        "duration": 6.56
+    },
+    {
+        "text": "which is the binary association status",
+        "start": 811.519,
+        "duration": 4.961
+    },
+    {
+        "text": "of gene i",
+        "start": 814.8,
+        "duration": 4.719
+    },
+    {
+        "text": "and the distribution of gamma i is",
+        "start": 816.48,
+        "duration": 5.68
+    },
+    {
+        "text": "impacted by the enrichment parameters",
+        "start": 819.519,
+        "duration": 4.88
+    },
+    {
+        "text": "alpha 0 and alpha 1 which we have to",
+        "start": 822.16,
+        "duration": 3.2
+    },
+    {
+        "text": "estimate",
+        "start": 824.399,
+        "duration": 4.321
+    },
+    {
+        "text": "and also impacted by di which is the",
+        "start": 825.36,
+        "duration": 5.599
+    },
+    {
+        "text": "binary annotation of gene i",
+        "start": 828.72,
+        "duration": 4.799
+    },
+    {
+        "text": "and i should say that this model that",
+        "start": 830.959,
+        "duration": 3.521
+    },
+    {
+        "text": "we're looking at here",
+        "start": 833.519,
+        "duration": 2.961
+    },
+    {
+        "text": "is for when we are looking at one gene",
+        "start": 834.48,
+        "duration": 3.359
+    },
+    {
+        "text": "set at a time",
+        "start": 836.48,
+        "duration": 5.52
+    },
+    {
+        "text": "so d i is either zero or one",
+        "start": 837.839,
+        "duration": 6.881
+    },
+    {
+        "text": "and so the prior distribution of gamma i",
+        "start": 842.0,
+        "duration": 3.12
+    },
+    {
+        "text": "here",
+        "start": 844.72,
+        "duration": 3.919
+    },
+    {
+        "text": "is a bernoulli distribution that",
+        "start": 845.12,
+        "duration": 5.76
+    },
+    {
+        "text": "with the parameter impacted by these",
+        "start": 848.639,
+        "duration": 6.081
+    },
+    {
+        "text": "enrichment parameters and di",
+        "start": 850.88,
+        "duration": 3.84
+    },
+    {
+        "text": "and then for the next level of the",
+        "start": 855.12,
+        "duration": 3.44
+    },
+    {
+        "text": "hierarchical model we have the true",
+        "start": 856.56,
+        "duration": 4.24
+    },
+    {
+        "text": "effect size of gene i",
+        "start": 858.56,
+        "duration": 4.639
+    },
+    {
+        "text": "so this true effect size is conditional",
+        "start": 860.8,
+        "duration": 3.52
+    },
+    {
+        "text": "on gamma i",
+        "start": 863.199,
+        "duration": 4.481
+    },
+    {
+        "text": "in that when gamma i is zero that means",
+        "start": 864.32,
+        "duration": 5.04
+    },
+    {
+        "text": "gene i is not associated with the",
+        "start": 867.68,
+        "duration": 3.2
+    },
+    {
+        "text": "phenotype and",
+        "start": 869.36,
+        "duration": 4.56
+    },
+    {
+        "text": "the true effect size of gene i",
+        "start": 870.88,
+        "duration": 6.639
+    },
+    {
+        "text": "will be zero and not have a distribution",
+        "start": 873.92,
+        "duration": 4.479
+    },
+    {
+        "text": "it will just be a",
+        "start": 877.519,
+        "duration": 4.0
+    },
+    {
+        "text": "point mass of zero however when gamma i",
+        "start": 878.399,
+        "duration": 4.081
+    },
+    {
+        "text": "is one",
+        "start": 881.519,
+        "duration": 3.521
+    },
+    {
+        "text": "then beta i follows this mixture normal",
+        "start": 882.48,
+        "duration": 4.0
+    },
+    {
+        "text": "distribution",
+        "start": 885.04,
+        "duration": 4.799
+    },
+    {
+        "text": "with k components and",
+        "start": 886.48,
+        "duration": 5.84
+    },
+    {
+        "text": "one thing to note is that this number k",
+        "start": 889.839,
+        "duration": 4.081
+    },
+    {
+        "text": "so the number of components",
+        "start": 892.32,
+        "duration": 4.639
+    },
+    {
+        "text": "and phi which is the variance of each",
+        "start": 893.92,
+        "duration": 4.08
+    },
+    {
+        "text": "component",
+        "start": 896.959,
+        "duration": 5.281
+    },
+    {
+        "text": "is estimated in a data adaptive way",
+        "start": 898.0,
+        "duration": 7.36
+    },
+    {
+        "text": "proposed by matthew stevens in a 2016",
+        "start": 902.24,
+        "duration": 4.719
+    },
+    {
+        "text": "paper",
+        "start": 905.36,
+        "duration": 4.64
+    },
+    {
+        "text": "and this pi which is the",
+        "start": 906.959,
+        "duration": 5.201
+    },
+    {
+        "text": "probability of being drawn from each of",
+        "start": 910.0,
+        "duration": 4.0
+    },
+    {
+        "text": "those k components",
+        "start": 912.16,
+        "duration": 5.52
+    },
+    {
+        "text": "is a parameter that we have to estimate",
+        "start": 914.0,
+        "duration": 7.12
+    },
+    {
+        "text": "and one thing to note is that the",
+        "start": 917.68,
+        "duration": 6.48
+    },
+    {
+        "text": "pi parameters actually is different",
+        "start": 921.12,
+        "duration": 4.959
+    },
+    {
+        "text": "depending on whether the gene is in the",
+        "start": 924.16,
+        "duration": 3.119
+    },
+    {
+        "text": "gene set and",
+        "start": 926.079,
+        "duration": 3.76
+    },
+    {
+        "text": "the gene set of interest or not so that",
+        "start": 927.279,
+        "duration": 3.441
+    },
+    {
+        "text": "is one of the",
+        "start": 929.839,
+        "duration": 2.961
+    },
+    {
+        "text": "unique statistical capabilities of our",
+        "start": 930.72,
+        "duration": 3.359
+    },
+    {
+        "text": "model in that",
+        "start": 932.8,
+        "duration": 3.68
+    },
+    {
+        "text": "the prior distribution for the true",
+        "start": 934.079,
+        "duration": 4.721
+    },
+    {
+        "text": "effect size is not going to be the same",
+        "start": 936.48,
+        "duration": 4.08
+    },
+    {
+        "text": "across all genes it'll be different",
+        "start": 938.8,
+        "duration": 2.88
+    },
+    {
+        "text": "depending on if",
+        "start": 940.56,
+        "duration": 2.88
+    },
+    {
+        "text": "the gene is in the gene set of interest",
+        "start": 941.68,
+        "duration": 4.159
+    },
+    {
+        "text": "or not",
+        "start": 943.44,
+        "duration": 2.399
+    },
+    {
+        "text": "and then for the third level we have uh",
+        "start": 946.079,
+        "duration": 3.68
+    },
+    {
+        "text": "the",
+        "start": 949.199,
+        "duration": 3.44
+    },
+    {
+        "text": "observed estimated effect size beta hat",
+        "start": 949.759,
+        "duration": 3.681
+    },
+    {
+        "text": "i",
+        "start": 952.639,
+        "duration": 4.081
+    },
+    {
+        "text": "which is conditional on beta i and this",
+        "start": 953.44,
+        "duration": 5.36
+    },
+    {
+        "text": "distribution is just normal with mean",
+        "start": 956.72,
+        "duration": 2.64
+    },
+    {
+        "text": "beta",
+        "start": 958.8,
+        "duration": 2.88
+    },
+    {
+        "text": "and a standard error that we can",
+        "start": 959.36,
+        "duration": 4.159
+    },
+    {
+        "text": "estimate",
+        "start": 961.68,
+        "duration": 4.8
+    },
+    {
+        "text": "so one interesting thing to note here",
+        "start": 963.519,
+        "duration": 4.0
+    },
+    {
+        "text": "looking at",
+        "start": 966.48,
+        "duration": 4.4
+    },
+    {
+        "text": "the dis prior distribution of gamma i",
+        "start": 967.519,
+        "duration": 6.721
+    },
+    {
+        "text": "is that this distribution is exactly",
+        "start": 970.88,
+        "duration": 4.959
+    },
+    {
+        "text": "like how the distribution",
+        "start": 974.24,
+        "duration": 5.2
+    },
+    {
+        "text": "for a for an outcome of a logistic",
+        "start": 975.839,
+        "duration": 4.961
+    },
+    {
+        "text": "regression",
+        "start": 979.44,
+        "duration": 3.44
+    },
+    {
+        "text": "of the outcome variable for a logistic",
+        "start": 980.8,
+        "duration": 3.68
+    },
+    {
+        "text": "regression would look like",
+        "start": 982.88,
+        "duration": 3.759
+    },
+    {
+        "text": "and with d i being the predictor",
+        "start": 984.48,
+        "duration": 3.52
+    },
+    {
+        "text": "variable",
+        "start": 986.639,
+        "duration": 3.681
+    },
+    {
+        "text": "so when you think of it like that it",
+        "start": 988.0,
+        "duration": 4.48
+    },
+    {
+        "text": "becomes more clear how alpha 1",
+        "start": 990.32,
+        "duration": 5.68
+    },
+    {
+        "text": "is that log odds ratio of enrichment",
+        "start": 992.48,
+        "duration": 7.039
+    },
+    {
+        "text": "and the only difference here is that in",
+        "start": 996.0,
+        "duration": 5.68
+    },
+    {
+        "text": "a real logistic regression setting the",
+        "start": 999.519,
+        "duration": 3.921
+    },
+    {
+        "text": "outcome variable",
+        "start": 1001.68,
+        "duration": 4.079
+    },
+    {
+        "text": "will be observed whereas here of course",
+        "start": 1003.44,
+        "duration": 3.12
+    },
+    {
+        "text": "gamma i",
+        "start": 1005.759,
+        "duration": 3.601
+    },
+    {
+        "text": "the true association status of gene i is",
+        "start": 1006.56,
+        "duration": 3.44
+    },
+    {
+        "text": "not actually",
+        "start": 1009.36,
+        "duration": 3.919
+    },
+    {
+        "text": "observed so because of this",
+        "start": 1010.0,
+        "duration": 5.839
+    },
+    {
+        "text": "to estimate maximum likelihood",
+        "start": 1013.279,
+        "duration": 5.36
+    },
+    {
+        "text": "estimators for alpha 0 and alpha 1",
+        "start": 1015.839,
+        "duration": 5.44
+    },
+    {
+        "text": "we used an expectation maximization",
+        "start": 1018.639,
+        "duration": 3.601
+    },
+    {
+        "text": "algorithm",
+        "start": 1021.279,
+        "duration": 4.16
+    },
+    {
+        "text": "treating gamma as missing data but",
+        "start": 1022.24,
+        "duration": 5.679
+    },
+    {
+        "text": "before i go on i want to pause for a bit",
+        "start": 1025.439,
+        "duration": 4.721
+    },
+    {
+        "text": "because i know this slide is very",
+        "start": 1027.919,
+        "duration": 4.801
+    },
+    {
+        "text": "involved with sort of the meats of our",
+        "start": 1030.16,
+        "duration": 7.919
+    },
+    {
+        "text": "whole methods",
+        "start": 1032.72,
+        "duration": 7.199
+    },
+    {
+        "text": "in case there are any questions or",
+        "start": 1038.079,
+        "duration": 15.761
+    },
+    {
+        "text": "anything is unclear",
+        "start": 1039.919,
+        "duration": 13.921
+    },
+    {
+        "text": "okay if there's no further questions i",
+        "start": 1061.36,
+        "duration": 3.12
+    },
+    {
+        "text": "will",
+        "start": 1063.679,
+        "duration": 3.841
+    },
+    {
+        "text": "go on to explain some of",
+        "start": 1064.48,
+        "duration": 5.68
+    },
+    {
+        "text": "an intuitive explanation behind this em",
+        "start": 1067.52,
+        "duration": 3.44
+    },
+    {
+        "text": "algorithm",
+        "start": 1070.16,
+        "duration": 2.639
+    },
+    {
+        "text": "that we use to estimate the enrichment",
+        "start": 1070.96,
+        "duration": 4.4
+    },
+    {
+        "text": "parameters",
+        "start": 1072.799,
+        "duration": 5.921
+    },
+    {
+        "text": "so here i have we use this em algorithm",
+        "start": 1075.36,
+        "duration": 5.6
+    },
+    {
+        "text": "to estimate alpha zero and alpha one",
+        "start": 1078.72,
+        "duration": 5.199
+    },
+    {
+        "text": "and also pi but i won't really be going",
+        "start": 1080.96,
+        "duration": 4.88
+    },
+    {
+        "text": "into the estimation of the pi",
+        "start": 1083.919,
+        "duration": 5.041
+    },
+    {
+        "text": "parameters because they aren't as",
+        "start": 1085.84,
+        "duration": 5.04
+    },
+    {
+        "text": "relevant as the enrichment parameters",
+        "start": 1088.96,
+        "duration": 3.44
+    },
+    {
+        "text": "for this talk and",
+        "start": 1090.88,
+        "duration": 3.919
+    },
+    {
+        "text": "they're not as intuitive and a little",
+        "start": 1092.4,
+        "duration": 4.8
+    },
+    {
+        "text": "more computationally complex",
+        "start": 1094.799,
+        "duration": 4.88
+    },
+    {
+        "text": "so here i'm going to be just explaining",
+        "start": 1097.2,
+        "duration": 3.52
+    },
+    {
+        "text": "how we calculate",
+        "start": 1099.679,
+        "duration": 4.321
+    },
+    {
+        "text": "alpha 0 and alpha 1. so first we",
+        "start": 1100.72,
+        "duration": 4.959
+    },
+    {
+        "text": "initialize",
+        "start": 1104.0,
+        "duration": 3.919
+    },
+    {
+        "text": "all the parameters that we need to",
+        "start": 1105.679,
+        "duration": 3.041
+    },
+    {
+        "text": "estimate",
+        "start": 1107.919,
+        "duration": 3.76
+    },
+    {
+        "text": "and then in the e step we have to find",
+        "start": 1108.72,
+        "duration": 5.44
+    },
+    {
+        "text": "an expectation for the missing data",
+        "start": 1111.679,
+        "duration": 4.561
+    },
+    {
+        "text": "so here we end up having to find the",
+        "start": 1114.16,
+        "duration": 4.72
+    },
+    {
+        "text": "expectation of the indicator that gamma",
+        "start": 1116.24,
+        "duration": 4.08
+    },
+    {
+        "text": "i equals one",
+        "start": 1118.88,
+        "duration": 4.56
+    },
+    {
+        "text": "conditional on all the observed data",
+        "start": 1120.32,
+        "duration": 5.2
+    },
+    {
+        "text": "like the beta hats and their standard",
+        "start": 1123.44,
+        "duration": 4.96
+    },
+    {
+        "text": "errors and the annotation of the gene",
+        "start": 1125.52,
+        "duration": 5.12
+    },
+    {
+        "text": "and also our current parameter estimates",
+        "start": 1128.4,
+        "duration": 4.72
+    },
+    {
+        "text": "of alpha and pi",
+        "start": 1130.64,
+        "duration": 5.52
+    },
+    {
+        "text": "so this is so this term is actually",
+        "start": 1133.12,
+        "duration": 5.84
+    },
+    {
+        "text": "statistically equivalent to the",
+        "start": 1136.16,
+        "duration": 4.0
+    },
+    {
+        "text": "probability that",
+        "start": 1138.96,
+        "duration": 4.16
+    },
+    {
+        "text": "gamma i is equal to one uh conditional",
+        "start": 1140.16,
+        "duration": 3.6
+    },
+    {
+        "text": "on",
+        "start": 1143.12,
+        "duration": 3.6
+    },
+    {
+        "text": "all the observed data and the parameter",
+        "start": 1143.76,
+        "duration": 4.64
+    },
+    {
+        "text": "estimates",
+        "start": 1146.72,
+        "duration": 4.56
+    },
+    {
+        "text": "so if you can think about this again in",
+        "start": 1148.4,
+        "duration": 6.48
+    },
+    {
+        "text": "a latent 2x2 contingency table setting",
+        "start": 1151.28,
+        "duration": 5.6
+    },
+    {
+        "text": "uh this actually can be used to",
+        "start": 1154.88,
+        "duration": 4.08
+    },
+    {
+        "text": "basically fill out",
+        "start": 1156.88,
+        "duration": 5.44
+    },
+    {
+        "text": "iteratively this 2x2 contingency table",
+        "start": 1158.96,
+        "duration": 6.4
+    },
+    {
+        "text": "so let's just say gene i is",
+        "start": 1162.32,
+        "duration": 4.8
+    },
+    {
+        "text": "in the gene set of interest so it is",
+        "start": 1165.36,
+        "duration": 4.24
+    },
+    {
+        "text": "annotated and we calculate this",
+        "start": 1167.12,
+        "duration": 3.919
+    },
+    {
+        "text": "probability to be",
+        "start": 1169.6,
+        "duration": 4.64
+    },
+    {
+        "text": "0.8 so then we would fill in",
+        "start": 1171.039,
+        "duration": 6.721
+    },
+    {
+        "text": "point we would add 0.8 to n11 and point",
+        "start": 1174.24,
+        "duration": 6.0
+    },
+    {
+        "text": "2 to n10",
+        "start": 1177.76,
+        "duration": 5.68
+    },
+    {
+        "text": "and we do this for every single gene for",
+        "start": 1180.24,
+        "duration": 3.6
+    },
+    {
+        "text": "each",
+        "start": 1183.44,
+        "duration": 4.239
+    },
+    {
+        "text": "iteration to calculate a teeth iteration",
+        "start": 1183.84,
+        "duration": 6.8
+    },
+    {
+        "text": "of this whole 2x2 contingency table",
+        "start": 1187.679,
+        "duration": 5.441
+    },
+    {
+        "text": "and you can see how contrary to the",
+        "start": 1190.64,
+        "duration": 4.24
+    },
+    {
+        "text": "two-stage approach which",
+        "start": 1193.12,
+        "duration": 5.04
+    },
+    {
+        "text": "each gene is put in as a one or zero",
+        "start": 1194.88,
+        "duration": 5.039
+    },
+    {
+        "text": "in one of these four cells we",
+        "start": 1198.16,
+        "duration": 3.6
+    },
+    {
+        "text": "incorporate the uncertainty",
+        "start": 1199.919,
+        "duration": 5.521
+    },
+    {
+        "text": "and and insert this probability into one",
+        "start": 1201.76,
+        "duration": 4.64
+    },
+    {
+        "text": "of these force",
+        "start": 1205.44,
+        "duration": 3.92
+    },
+    {
+        "text": "into a couple of these four cells so",
+        "start": 1206.4,
+        "duration": 3.36
+    },
+    {
+        "text": "then",
+        "start": 1209.36,
+        "duration": 3.04
+    },
+    {
+        "text": "once this two by two contingency table",
+        "start": 1209.76,
+        "duration": 4.08
+    },
+    {
+        "text": "has been developed",
+        "start": 1212.4,
+        "duration": 4.399
+    },
+    {
+        "text": "for an iteration the m step can be used",
+        "start": 1213.84,
+        "duration": 5.839
+    },
+    {
+        "text": "just as calculating the log odds and",
+        "start": 1216.799,
+        "duration": 6.0
+    },
+    {
+        "text": "of course alpha 1 the log odds ratio",
+        "start": 1219.679,
+        "duration": 5.12
+    },
+    {
+        "text": "and this will end up being the maximum",
+        "start": 1222.799,
+        "duration": 3.921
+    },
+    {
+        "text": "likelihood estimate for alpha 1 which",
+        "start": 1224.799,
+        "duration": 2.88
+    },
+    {
+        "text": "can then be",
+        "start": 1226.72,
+        "duration": 4.56
+    },
+    {
+        "text": "used back into the e step",
+        "start": 1227.679,
+        "duration": 3.601
+    },
+    {
+        "text": "so this is a natural way to see how",
+        "start": 1231.36,
+        "duration": 5.92
+    },
+    {
+        "text": "our approach in bagsy incorporates the",
+        "start": 1235.039,
+        "duration": 4.721
+    },
+    {
+        "text": "uncertainty from classification whereas",
+        "start": 1237.28,
+        "duration": 4.0
+    },
+    {
+        "text": "the two-stage approach",
+        "start": 1239.76,
+        "duration": 4.56
+    },
+    {
+        "text": "does not and so we can do this em",
+        "start": 1241.28,
+        "duration": 4.639
+    },
+    {
+        "text": "algorithm until",
+        "start": 1244.32,
+        "duration": 4.4
+    },
+    {
+        "text": "convergence and obtain the maximum",
+        "start": 1245.919,
+        "duration": 4.801
+    },
+    {
+        "text": "likelihood estimates for the enrichment",
+        "start": 1248.72,
+        "duration": 3.199
+    },
+    {
+        "text": "parameters",
+        "start": 1250.72,
+        "duration": 3.839
+    },
+    {
+        "text": "and we can easily get standard errors",
+        "start": 1251.919,
+        "duration": 4.561
+    },
+    {
+        "text": "for these parameters also through a",
+        "start": 1254.559,
+        "duration": 9.281
+    },
+    {
+        "text": "profile likelihood approach",
+        "start": 1256.48,
+        "duration": 7.36
+    },
+    {
+        "text": "so one other unique feature of our",
+        "start": 1264.0,
+        "duration": 3.36
+    },
+    {
+        "text": "method is that",
+        "start": 1265.84,
+        "duration": 3.839
+    },
+    {
+        "text": "the enrichment information that we",
+        "start": 1267.36,
+        "duration": 5.28
+    },
+    {
+        "text": "calculate can then be used as priors",
+        "start": 1269.679,
+        "duration": 5.281
+    },
+    {
+        "text": "using a parametric empirical bayesian",
+        "start": 1272.64,
+        "duration": 5.44
+    },
+    {
+        "text": "framework outlined by matthew stevens",
+        "start": 1274.96,
+        "duration": 5.44
+    },
+    {
+        "text": "and it can be used to boost the power of",
+        "start": 1278.08,
+        "duration": 5.2
+    },
+    {
+        "text": "testing the hypothesis that gamma i",
+        "start": 1280.4,
+        "duration": 6.159
+    },
+    {
+        "text": "is equal to zero which means gene",
+        "start": 1283.28,
+        "duration": 6.24
+    },
+    {
+        "text": "i is not associated with the phenotype",
+        "start": 1286.559,
+        "duration": 5.12
+    },
+    {
+        "text": "so we do this by calculating this",
+        "start": 1289.52,
+        "duration": 5.039
+    },
+    {
+        "text": "local false discovery rate for each gene",
+        "start": 1291.679,
+        "duration": 5.041
+    },
+    {
+        "text": "and this local false discovery rate is",
+        "start": 1294.559,
+        "duration": 2.881
+    },
+    {
+        "text": "equal to",
+        "start": 1296.72,
+        "duration": 3.199
+    },
+    {
+        "text": "the probability that the null hypothesis",
+        "start": 1297.44,
+        "duration": 3.2
+    },
+    {
+        "text": "is true",
+        "start": 1299.919,
+        "duration": 2.64
+    },
+    {
+        "text": "given all the parameter estimates and",
+        "start": 1300.64,
+        "duration": 3.6
+    },
+    {
+        "text": "the observed data",
+        "start": 1302.559,
+        "duration": 3.841
+    },
+    {
+        "text": "which is here equal to the probability",
+        "start": 1304.24,
+        "duration": 3.04
+    },
+    {
+        "text": "that gamma i",
+        "start": 1306.4,
+        "duration": 4.56
+    },
+    {
+        "text": "is equal to zero and one interesting",
+        "start": 1307.28,
+        "duration": 6.0
+    },
+    {
+        "text": "thing to note is that this probability",
+        "start": 1310.96,
+        "duration": 5.12
+    },
+    {
+        "text": "is actually just one minus this",
+        "start": 1313.28,
+        "duration": 4.96
+    },
+    {
+        "text": "probability from the east up",
+        "start": 1316.08,
+        "duration": 5.76
+    },
+    {
+        "text": "and so we actually already have this",
+        "start": 1318.24,
+        "duration": 4.72
+    },
+    {
+        "text": "quantity",
+        "start": 1321.84,
+        "duration": 4.16
+    },
+    {
+        "text": "from that em algorithm so",
+        "start": 1322.96,
+        "duration": 6.079
+    },
+    {
+        "text": "no extra computational work is required",
+        "start": 1326.0,
+        "duration": 5.36
+    },
+    {
+        "text": "to get these local false discovery rates",
+        "start": 1329.039,
+        "duration": 4.161
+    },
+    {
+        "text": "for every single gene because we just",
+        "start": 1331.36,
+        "duration": 4.4
+    },
+    {
+        "text": "use the",
+        "start": 1333.2,
+        "duration": 2.56
+    },
+    {
+        "text": "from the last iteration and the em",
+        "start": 1338.64,
+        "duration": 4.08
+    },
+    {
+        "text": "algorithm for every single gene",
+        "start": 1340.96,
+        "duration": 4.32
+    },
+    {
+        "text": "and then this local false discovery rate",
+        "start": 1342.72,
+        "duration": 3.76
+    },
+    {
+        "text": "can subsequently",
+        "start": 1345.28,
+        "duration": 4.0
+    },
+    {
+        "text": "be used for gene level testing using a",
+        "start": 1346.48,
+        "duration": 3.52
+    },
+    {
+        "text": "standard",
+        "start": 1349.28,
+        "duration": 4.8
+    },
+    {
+        "text": "bayesian false discovery rate procedure",
+        "start": 1350.0,
+        "duration": 4.08
+    },
+    {
+        "text": "so now i want to give a brief overview",
+        "start": 1357.039,
+        "duration": 3.441
+    },
+    {
+        "text": "of how",
+        "start": 1359.44,
+        "duration": 4.4
+    },
+    {
+        "text": "bagsy can extend from one gene set to",
+        "start": 1360.48,
+        "duration": 5.04
+    },
+    {
+        "text": "multiple gene sets",
+        "start": 1363.84,
+        "duration": 4.24
+    },
+    {
+        "text": "so let's assume we have l gene sets that",
+        "start": 1365.52,
+        "duration": 3.279
+    },
+    {
+        "text": "we are",
+        "start": 1368.08,
+        "duration": 3.839
+    },
+    {
+        "text": "simultaneously investigating so now",
+        "start": 1368.799,
+        "duration": 5.441
+    },
+    {
+        "text": "d i instead of just being a zero or a",
+        "start": 1371.919,
+        "duration": 3.041
+    },
+    {
+        "text": "one",
+        "start": 1374.24,
+        "duration": 2.96
+    },
+    {
+        "text": "it is an l length vector where each",
+        "start": 1374.96,
+        "duration": 3.04
+    },
+    {
+        "text": "component",
+        "start": 1377.2,
+        "duration": 4.32
+    },
+    {
+        "text": "is either zero or one so this allows for",
+        "start": 1378.0,
+        "duration": 6.48
+    },
+    {
+        "text": "overlap of gene sets because",
+        "start": 1381.52,
+        "duration": 4.96
+    },
+    {
+        "text": "uh you can have multiple ones within",
+        "start": 1384.48,
+        "duration": 4.079
+    },
+    {
+        "text": "this vector for each gene",
+        "start": 1386.48,
+        "duration": 4.4
+    },
+    {
+        "text": "and each different configuration of the",
+        "start": 1388.559,
+        "duration": 3.441
+    },
+    {
+        "text": "vector",
+        "start": 1390.88,
+        "duration": 3.12
+    },
+    {
+        "text": "each possible different configuration of",
+        "start": 1392.0,
+        "duration": 3.919
+    },
+    {
+        "text": "the vector has its own associated",
+        "start": 1394.0,
+        "duration": 4.159
+    },
+    {
+        "text": "enrichment parameter",
+        "start": 1395.919,
+        "duration": 4.24
+    },
+    {
+        "text": "so one of the drawbacks to this",
+        "start": 1398.159,
+        "duration": 4.0
+    },
+    {
+        "text": "procedure is that we end up with",
+        "start": 1400.159,
+        "duration": 5.201
+    },
+    {
+        "text": "two to the l enrichment parameters",
+        "start": 1402.159,
+        "duration": 5.041
+    },
+    {
+        "text": "which you can see can become very",
+        "start": 1405.36,
+        "duration": 4.24
+    },
+    {
+        "text": "computationally expensive",
+        "start": 1407.2,
+        "duration": 6.08
+    },
+    {
+        "text": "as l increases however one of the",
+        "start": 1409.6,
+        "duration": 6.64
+    },
+    {
+        "text": "benefits to this approach is that it",
+        "start": 1413.28,
+        "duration": 5.84
+    },
+    {
+        "text": "maximizes the gene level discovery power",
+        "start": 1416.24,
+        "duration": 4.24
+    },
+    {
+        "text": "for the",
+        "start": 1419.12,
+        "duration": 3.36
+    },
+    {
+        "text": "incorporation of enrichment information",
+        "start": 1420.48,
+        "duration": 3.84
+    },
+    {
+        "text": "to gene level testing",
+        "start": 1422.48,
+        "duration": 4.96
+    },
+    {
+        "text": "which makes intuitive sense because",
+        "start": 1424.32,
+        "duration": 5.839
+    },
+    {
+        "text": "the more information that you're gaining",
+        "start": 1427.44,
+        "duration": 4.0
+    },
+    {
+        "text": "about the gene",
+        "start": 1430.159,
+        "duration": 3.361
+    },
+    {
+        "text": "the more power you'll have to discover",
+        "start": 1431.44,
+        "duration": 6.08
+    },
+    {
+        "text": "if the gene is associated or not",
+        "start": 1433.52,
+        "duration": 4.0
+    },
+    {
+        "text": "okay so now i will get into the",
+        "start": 1442.24,
+        "duration": 5.52
+    },
+    {
+        "text": "simulations where we talked about",
+        "start": 1444.96,
+        "duration": 5.76
+    },
+    {
+        "text": "the performance of baxi so here is a",
+        "start": 1447.76,
+        "duration": 4.48
+    },
+    {
+        "text": "overview of the",
+        "start": 1450.72,
+        "duration": 4.88
+    },
+    {
+        "text": "simulation scheme that we use uh so for",
+        "start": 1452.24,
+        "duration": 5.439
+    },
+    {
+        "text": "each simulation we",
+        "start": 1455.6,
+        "duration": 4.8
+    },
+    {
+        "text": "simulate ten thousand genes and the",
+        "start": 1457.679,
+        "duration": 5.36
+    },
+    {
+        "text": "proportion of genes annotated",
+        "start": 1460.4,
+        "duration": 4.96
+    },
+    {
+        "text": "varies between one percent and twenty",
+        "start": 1463.039,
+        "duration": 3.281
+    },
+    {
+        "text": "percent",
+        "start": 1465.36,
+        "duration": 3.04
+    },
+    {
+        "text": "and the proportion of genes annotated",
+        "start": 1466.32,
+        "duration": 3.2
+    },
+    {
+        "text": "does have a",
+        "start": 1468.4,
+        "duration": 3.279
+    },
+    {
+        "text": "very profound effect on the power and",
+        "start": 1469.52,
+        "duration": 3.279
+    },
+    {
+        "text": "stability",
+        "start": 1471.679,
+        "duration": 2.88
+    },
+    {
+        "text": "which is like the variance of the",
+        "start": 1472.799,
+        "duration": 3.441
+    },
+    {
+        "text": "enrichment estimate",
+        "start": 1474.559,
+        "duration": 4.72
+    },
+    {
+        "text": "but the effect it has on all methods is",
+        "start": 1476.24,
+        "duration": 7.28
+    },
+    {
+        "text": "around the same and so for each gene",
+        "start": 1479.279,
+        "duration": 7.601
+    },
+    {
+        "text": "we simulate a z-score for",
+        "start": 1483.52,
+        "duration": 6.24
+    },
+    {
+        "text": "null genes that are not associately",
+        "start": 1486.88,
+        "duration": 4.64
+    },
+    {
+        "text": "associated with the phenotype",
+        "start": 1489.76,
+        "duration": 3.6
+    },
+    {
+        "text": "we generate their z-score from a",
+        "start": 1491.52,
+        "duration": 3.92
+    },
+    {
+        "text": "standard normal distribution",
+        "start": 1493.36,
+        "duration": 4.64
+    },
+    {
+        "text": "and for associated genes we generate",
+        "start": 1495.44,
+        "duration": 4.0
+    },
+    {
+        "text": "their z-scores from a t",
+        "start": 1498.0,
+        "duration": 4.48
+    },
+    {
+        "text": "distribution with 10 degrees of freedom",
+        "start": 1499.44,
+        "duration": 5.2
+    },
+    {
+        "text": "and the number of associated genes",
+        "start": 1502.48,
+        "duration": 3.679
+    },
+    {
+        "text": "depends on the enrichment",
+        "start": 1504.64,
+        "duration": 4.56
+    },
+    {
+        "text": "parameters so basically for each gene we",
+        "start": 1506.159,
+        "duration": 3.921
+    },
+    {
+        "text": "already have",
+        "start": 1509.2,
+        "duration": 3.2
+    },
+    {
+        "text": "whether it is in the gene set of",
+        "start": 1510.08,
+        "duration": 4.88
+    },
+    {
+        "text": "interest or not and then",
+        "start": 1512.4,
+        "duration": 4.56
+    },
+    {
+        "text": "we use the enrichment parameters and the",
+        "start": 1514.96,
+        "duration": 3.44
+    },
+    {
+        "text": "annotation information",
+        "start": 1516.96,
+        "duration": 3.36
+    },
+    {
+        "text": "to generate from this bernoulli",
+        "start": 1518.4,
+        "duration": 3.279
+    },
+    {
+        "text": "distribution",
+        "start": 1520.32,
+        "duration": 3.839
+    },
+    {
+        "text": "to classify it as either truly",
+        "start": 1521.679,
+        "duration": 4.641
+    },
+    {
+        "text": "associated with the phenotype or not",
+        "start": 1524.159,
+        "duration": 5.201
+    },
+    {
+        "text": "associated with the phenotype",
+        "start": 1526.32,
+        "duration": 5.359
+    },
+    {
+        "text": "and so about these enrichment parameters",
+        "start": 1529.36,
+        "duration": 3.6
+    },
+    {
+        "text": "alpha 0",
+        "start": 1531.679,
+        "duration": 3.201
+    },
+    {
+        "text": "we set to negative 1 throughout",
+        "start": 1532.96,
+        "duration": 3.36
+    },
+    {
+        "text": "simulations",
+        "start": 1534.88,
+        "duration": 4.96
+    },
+    {
+        "text": "and this value is just from what we",
+        "start": 1536.32,
+        "duration": 5.12
+    },
+    {
+        "text": "observed in real data",
+        "start": 1539.84,
+        "duration": 4.719
+    },
+    {
+        "text": "the log odds of a gene being associated",
+        "start": 1541.44,
+        "duration": 5.599
+    },
+    {
+        "text": "generally seems to be around negative",
+        "start": 1544.559,
+        "duration": 3.441
+    },
+    {
+        "text": "one",
+        "start": 1547.039,
+        "duration": 4.0
+    },
+    {
+        "text": "and then we vary alpha one between",
+        "start": 1548.0,
+        "duration": 6.64
+    },
+    {
+        "text": "zero and one for these simulations",
+        "start": 1551.039,
+        "duration": 6.24
+    },
+    {
+        "text": "and for each parameter set we conduct",
+        "start": 1554.64,
+        "duration": 4.96
+    },
+    {
+        "text": "5000 simulations",
+        "start": 1557.279,
+        "duration": 5.041
+    },
+    {
+        "text": "so this is the general simulation scheme",
+        "start": 1559.6,
+        "duration": 4.079
+    },
+    {
+        "text": "we use",
+        "start": 1562.32,
+        "duration": 5.359
+    },
+    {
+        "text": "um we make a couple minor changes for",
+        "start": 1563.679,
+        "duration": 6.24
+    },
+    {
+        "text": "some of the individual simulations that",
+        "start": 1567.679,
+        "duration": 4.24
+    },
+    {
+        "text": "i'll mention when we get there but",
+        "start": 1569.919,
+        "duration": 4.081
+    },
+    {
+        "text": "in general this is the scheme we used in",
+        "start": 1571.919,
+        "duration": 3.681
+    },
+    {
+        "text": "our evaluation",
+        "start": 1574.0,
+        "duration": 4.88
+    },
+    {
+        "text": "of bagsy",
+        "start": 1575.6,
+        "duration": 6.559
+    },
+    {
+        "text": "so the first thing we looked at was uh",
+        "start": 1578.88,
+        "duration": 5.52
+    },
+    {
+        "text": "a closer look into the limitations of",
+        "start": 1582.159,
+        "duration": 3.921
+    },
+    {
+        "text": "the two-stage approach",
+        "start": 1584.4,
+        "duration": 4.56
+    },
+    {
+        "text": "so here we generate data only using an",
+        "start": 1586.08,
+        "duration": 3.68
+    },
+    {
+        "text": "alpha one",
+        "start": 1588.96,
+        "duration": 4.24
+    },
+    {
+        "text": "of one and a proportion of genes",
+        "start": 1589.76,
+        "duration": 5.519
+    },
+    {
+        "text": "annotated of ten percent",
+        "start": 1593.2,
+        "duration": 4.4
+    },
+    {
+        "text": "and we just look at how the gene level",
+        "start": 1595.279,
+        "duration": 4.0
+    },
+    {
+        "text": "power which is",
+        "start": 1597.6,
+        "duration": 4.24
+    },
+    {
+        "text": "basically the power to classify a gene",
+        "start": 1599.279,
+        "duration": 4.88
+    },
+    {
+        "text": "as associated in stage one of the",
+        "start": 1601.84,
+        "duration": 3.92
+    },
+    {
+        "text": "two-stage approach",
+        "start": 1604.159,
+        "duration": 5.361
+    },
+    {
+        "text": "and how that impacts the subsequent",
+        "start": 1605.76,
+        "duration": 6.08
+    },
+    {
+        "text": "estimate of the log-odds ratio of",
+        "start": 1609.52,
+        "duration": 3.36
+    },
+    {
+        "text": "enrichment",
+        "start": 1611.84,
+        "duration": 3.52
+    },
+    {
+        "text": "and we see that as expected as gene",
+        "start": 1612.88,
+        "duration": 5.84
+    },
+    {
+        "text": "level power is very low or close to zero",
+        "start": 1615.36,
+        "duration": 5.84
+    },
+    {
+        "text": "there's severe underestimation of the",
+        "start": 1618.72,
+        "duration": 4.959
+    },
+    {
+        "text": "log odds ratio of enrichment",
+        "start": 1621.2,
+        "duration": 5.68
+    },
+    {
+        "text": "whereas when the power gets close to one",
+        "start": 1623.679,
+        "duration": 5.761
+    },
+    {
+        "text": "to detect an associated gene the",
+        "start": 1626.88,
+        "duration": 4.159
+    },
+    {
+        "text": "underestimation is",
+        "start": 1629.44,
+        "duration": 4.64
+    },
+    {
+        "text": "much smaller and is very close to the",
+        "start": 1631.039,
+        "duration": 5.921
+    },
+    {
+        "text": "true estimate",
+        "start": 1634.08,
+        "duration": 2.88
+    },
+    {
+        "text": "works to help confirm our hypothesis",
+        "start": 1638.64,
+        "duration": 3.279
+    },
+    {
+        "text": "that",
+        "start": 1641.36,
+        "duration": 4.319
+    },
+    {
+        "text": "the two-stage approach um the ignoring",
+        "start": 1641.919,
+        "duration": 4.24
+    },
+    {
+        "text": "of",
+        "start": 1645.679,
+        "duration": 3.681
+    },
+    {
+        "text": "type two error in the first stage uh",
+        "start": 1646.159,
+        "duration": 6.801
+    },
+    {
+        "text": "does impact the subsequent uh",
+        "start": 1649.36,
+        "duration": 8.08
+    },
+    {
+        "text": "estimate of enrichment for the gene set",
+        "start": 1652.96,
+        "duration": 4.48
+    },
+    {
+        "text": "so now we looked at simulations to",
+        "start": 1661.6,
+        "duration": 6.0
+    },
+    {
+        "text": "uh compare this to two-stage approach",
+        "start": 1664.64,
+        "duration": 4.0
+    },
+    {
+        "text": "with bagsy",
+        "start": 1667.6,
+        "duration": 4.64
+    },
+    {
+        "text": "in terms of enrichment quantification so",
+        "start": 1668.64,
+        "duration": 6.56
+    },
+    {
+        "text": "this graph is looking at the results for",
+        "start": 1672.24,
+        "duration": 3.919
+    },
+    {
+        "text": "when 10",
+        "start": 1675.2,
+        "duration": 4.16
+    },
+    {
+        "text": "of genes were annotated and",
+        "start": 1676.159,
+        "duration": 5.681
+    },
+    {
+        "text": "we generate data from these five",
+        "start": 1679.36,
+        "duration": 3.039
+    },
+    {
+        "text": "different",
+        "start": 1681.84,
+        "duration": 3.439
+    },
+    {
+        "text": "true enrichment parameter values and we",
+        "start": 1682.399,
+        "duration": 3.201
+    },
+    {
+        "text": "see",
+        "start": 1685.279,
+        "duration": 3.441
+    },
+    {
+        "text": "the pattern we would expect in that",
+        "start": 1685.6,
+        "duration": 6.16
+    },
+    {
+        "text": "at low levels of enrichment both",
+        "start": 1688.72,
+        "duration": 5.679
+    },
+    {
+        "text": "are very close to the true value both",
+        "start": 1691.76,
+        "duration": 3.2
+    },
+    {
+        "text": "bagsy",
+        "start": 1694.399,
+        "duration": 3.121
+    },
+    {
+        "text": "and the two-stage approach but then as",
+        "start": 1694.96,
+        "duration": 3.28
+    },
+    {
+        "text": "the true",
+        "start": 1697.52,
+        "duration": 2.8
+    },
+    {
+        "text": "level of enrichment and the data grows",
+        "start": 1698.24,
+        "duration": 4.72
+    },
+    {
+        "text": "higher this two-stage approach starts to",
+        "start": 1700.32,
+        "duration": 3.44
+    },
+    {
+        "text": "severely",
+        "start": 1702.96,
+        "duration": 3.12
+    },
+    {
+        "text": "underestimate the true enrichment",
+        "start": 1703.76,
+        "duration": 3.039
+    },
+    {
+        "text": "parameter",
+        "start": 1706.08,
+        "duration": 4.24
+    },
+    {
+        "text": "while bags he seems to maintain a mostly",
+        "start": 1706.799,
+        "duration": 7.201
+    },
+    {
+        "text": "unbiased estimate of the enrichment",
+        "start": 1710.32,
+        "duration": 7.12
+    },
+    {
+        "text": "we see here a slight overestimation but",
+        "start": 1714.0,
+        "duration": 5.52
+    },
+    {
+        "text": "this doesn't seem to be a pattern as we",
+        "start": 1717.44,
+        "duration": 3.52
+    },
+    {
+        "text": "also looked at higher levels of",
+        "start": 1719.52,
+        "duration": 3.2
+    },
+    {
+        "text": "enrichment and",
+        "start": 1720.96,
+        "duration": 4.079
+    },
+    {
+        "text": "this amount of overestimation was around",
+        "start": 1722.72,
+        "duration": 4.959
+    },
+    {
+        "text": "what we saw",
+        "start": 1725.039,
+        "duration": 2.64
+    },
+    {
+        "text": "and so yes this confirms what we saw in",
+        "start": 1728.399,
+        "duration": 3.921
+    },
+    {
+        "text": "the",
+        "start": 1731.6,
+        "duration": 2.64
+    },
+    {
+        "text": "last simulation that the two-stage",
+        "start": 1732.32,
+        "duration": 4.479
+    },
+    {
+        "text": "approach at higher levels of enrichment",
+        "start": 1734.24,
+        "duration": 4.4
+    },
+    {
+        "text": "tends to underestimate",
+        "start": 1736.799,
+        "duration": 7.281
+    },
+    {
+        "text": "the log odds ratio of enrichment",
+        "start": 1738.64,
+        "duration": 5.44
+    },
+    {
+        "text": "so then we looked at the power to detect",
+        "start": 1745.2,
+        "duration": 3.52
+    },
+    {
+        "text": "enrichment",
+        "start": 1747.84,
+        "duration": 2.8
+    },
+    {
+        "text": "and again here we looked at just 10",
+        "start": 1748.72,
+        "duration": 4.16
+    },
+    {
+        "text": "percent of genes annotated",
+        "start": 1750.64,
+        "duration": 4.24
+    },
+    {
+        "text": "and so for this we also included",
+        "start": 1752.88,
+        "duration": 4.08
+    },
+    {
+        "text": "weighted and unweighted gsea in our",
+        "start": 1754.88,
+        "duration": 4.0
+    },
+    {
+        "text": "method comparisons",
+        "start": 1756.96,
+        "duration": 4.56
+    },
+    {
+        "text": "so one thing to note is that when the",
+        "start": 1758.88,
+        "duration": 3.039
+    },
+    {
+        "text": "true",
+        "start": 1761.52,
+        "duration": 2.96
+    },
+    {
+        "text": "enrichment parameter is zero this value",
+        "start": 1761.919,
+        "duration": 3.281
+    },
+    {
+        "text": "is actually",
+        "start": 1764.48,
+        "duration": 3.28
+    },
+    {
+        "text": "the type 1 error rate and we see that",
+        "start": 1765.2,
+        "duration": 3.76
+    },
+    {
+        "text": "all methods do",
+        "start": 1767.76,
+        "duration": 3.36
+    },
+    {
+        "text": "control the type 1 error rate reasonably",
+        "start": 1768.96,
+        "duration": 3.04
+    },
+    {
+        "text": "well",
+        "start": 1771.12,
+        "duration": 5.12
+    },
+    {
+        "text": "at around the 5 level",
+        "start": 1772.0,
+        "duration": 7.679
+    },
+    {
+        "text": "and we see that for the medium",
+        "start": 1776.24,
+        "duration": 7.039
+    },
+    {
+        "text": "enrichment parameters of around 0.1.25",
+        "start": 1779.679,
+        "duration": 6.641
+    },
+    {
+        "text": "bagsy and weighted gsea do seem to over",
+        "start": 1783.279,
+        "duration": 5.921
+    },
+    {
+        "text": "perform the other two methods uh and",
+        "start": 1786.32,
+        "duration": 3.68
+    },
+    {
+        "text": "then once",
+        "start": 1789.2,
+        "duration": 4.24
+    },
+    {
+        "text": "the enrichment parameter is around 0.5",
+        "start": 1790.0,
+        "duration": 6.48
+    },
+    {
+        "text": "all of these methods have very close to",
+        "start": 1793.44,
+        "duration": 3.839
+    },
+    {
+        "text": "100",
+        "start": 1796.48,
+        "duration": 4.16
+    },
+    {
+        "text": "power in detecting enrichment and so we",
+        "start": 1797.279,
+        "duration": 3.841
+    },
+    {
+        "text": "believe",
+        "start": 1800.64,
+        "duration": 3.68
+    },
+    {
+        "text": "that in terms of power",
+        "start": 1801.12,
+        "duration": 5.72
+    },
+    {
+        "text": "once the enrichment level is at a",
+        "start": 1804.32,
+        "duration": 5.2
+    },
+    {
+        "text": "reasonable level in real data",
+        "start": 1806.84,
+        "duration": 5.24
+    },
+    {
+        "text": "all methods do have very good power in",
+        "start": 1809.52,
+        "duration": 6.0
+    },
+    {
+        "text": "detecting the enrichment",
+        "start": 1812.08,
+        "duration": 3.44
+    },
+    {
+        "text": "so now we decide to look at",
+        "start": 1820.399,
+        "duration": 5.841
+    },
+    {
+        "text": "uh the incorporation of the enrichment",
+        "start": 1823.679,
+        "duration": 3.36
+    },
+    {
+        "text": "information",
+        "start": 1826.24,
+        "duration": 3.919
+    },
+    {
+        "text": "in subsequent gene level testing to see",
+        "start": 1827.039,
+        "duration": 6.801
+    },
+    {
+        "text": "how that impacts the power of gene level",
+        "start": 1830.159,
+        "duration": 5.12
+    },
+    {
+        "text": "testing",
+        "start": 1833.84,
+        "duration": 3.68
+    },
+    {
+        "text": "and so here we use the same simulation",
+        "start": 1835.279,
+        "duration": 5.441
+    },
+    {
+        "text": "scheme but we extend the alpha one",
+        "start": 1837.52,
+        "duration": 6.0
+    },
+    {
+        "text": "uh parameter set in order to see how the",
+        "start": 1840.72,
+        "duration": 4.4
+    },
+    {
+        "text": "pattern will evolve",
+        "start": 1843.52,
+        "duration": 4.72
+    },
+    {
+        "text": "so we saw that so for this graph the",
+        "start": 1845.12,
+        "duration": 3.919
+    },
+    {
+        "text": "y-axis",
+        "start": 1848.24,
+        "duration": 3.36
+    },
+    {
+        "text": "is the percentage of power increment",
+        "start": 1849.039,
+        "duration": 3.601
+    },
+    {
+        "text": "that we gain",
+        "start": 1851.6,
+        "duration": 3.92
+    },
+    {
+        "text": "using bagsy's method to incorporate",
+        "start": 1852.64,
+        "duration": 4.56
+    },
+    {
+        "text": "enrichment information",
+        "start": 1855.52,
+        "duration": 4.639
+    },
+    {
+        "text": "from these two approaches which is a",
+        "start": 1857.2,
+        "duration": 5.599
+    },
+    {
+        "text": "q-valley procedure and compared to a",
+        "start": 1860.159,
+        "duration": 3.841
+    },
+    {
+        "text": "local false discovery",
+        "start": 1862.799,
+        "duration": 3.681
+    },
+    {
+        "text": "rate procedure that does not include",
+        "start": 1864.0,
+        "duration": 4.64
+    },
+    {
+        "text": "enrichment information",
+        "start": 1866.48,
+        "duration": 4.88
+    },
+    {
+        "text": "and we see that low levels of enrichment",
+        "start": 1868.64,
+        "duration": 4.639
+    },
+    {
+        "text": "which is like we were looking at with",
+        "start": 1871.36,
+        "duration": 5.439
+    },
+    {
+        "text": "0.5 and 1. there's a very modest",
+        "start": 1873.279,
+        "duration": 6.081
+    },
+    {
+        "text": "power boost that we gain in gene level",
+        "start": 1876.799,
+        "duration": 4.081
+    },
+    {
+        "text": "testing maybe around",
+        "start": 1879.36,
+        "duration": 4.48
+    },
+    {
+        "text": "just two percent but then as the true",
+        "start": 1880.88,
+        "duration": 4.159
+    },
+    {
+        "text": "enrichment parameter",
+        "start": 1883.84,
+        "duration": 4.64
+    },
+    {
+        "text": "grows higher and especially as it grows",
+        "start": 1885.039,
+        "duration": 4.48
+    },
+    {
+        "text": "very high like",
+        "start": 1888.48,
+        "duration": 2.96
+    },
+    {
+        "text": "in the four or five range the",
+        "start": 1889.519,
+        "duration": 3.04
+    },
+    {
+        "text": "incorporation",
+        "start": 1891.44,
+        "duration": 4.0
+    },
+    {
+        "text": "of enrichment information can give a",
+        "start": 1892.559,
+        "duration": 4.801
+    },
+    {
+        "text": "pretty substantial boost",
+        "start": 1895.44,
+        "duration": 5.04
+    },
+    {
+        "text": "to uh the ability to detect",
+        "start": 1897.36,
+        "duration": 6.08
+    },
+    {
+        "text": "gene level associations of near 20",
+        "start": 1900.48,
+        "duration": 3.679
+    },
+    {
+        "text": "percent",
+        "start": 1903.44,
+        "duration": 3.04
+    },
+    {
+        "text": "from a q-valley procedure and from a",
+        "start": 1904.159,
+        "duration": 6.321
+    },
+    {
+        "text": "local false discovery procedure",
+        "start": 1906.48,
+        "duration": 4.0
+    },
+    {
+        "text": "so now i would like to talk about our",
+        "start": 1914.799,
+        "duration": 3.521
+    },
+    {
+        "text": "real data",
+        "start": 1917.12,
+        "duration": 4.48
+    },
+    {
+        "text": "applications of bagsy so firstly we",
+        "start": 1918.32,
+        "duration": 4.8
+    },
+    {
+        "text": "applied bagsy to this",
+        "start": 1921.6,
+        "duration": 4.319
+    },
+    {
+        "text": "differential expression analysis done in",
+        "start": 1923.12,
+        "duration": 4.32
+    },
+    {
+        "text": "moyer brilliant at all",
+        "start": 1925.919,
+        "duration": 4.401
+    },
+    {
+        "text": "in 2016 where they conducted",
+        "start": 1927.44,
+        "duration": 4.719
+    },
+    {
+        "text": "differential expression analysis",
+        "start": 1930.32,
+        "duration": 5.52
+    },
+    {
+        "text": "of 20 896 genes",
+        "start": 1932.159,
+        "duration": 5.921
+    },
+    {
+        "text": "under",
+        "start": 1935.84,
+        "duration": 2.24
+    },
+    {
+        "text": "cook's analysis we got p-values and",
+        "start": 1939.279,
+        "duration": 6.4
+    },
+    {
+        "text": "beta-hat estimates from dc2 so from this",
+        "start": 1942.72,
+        "duration": 5.36
+    },
+    {
+        "text": "information we're also able to",
+        "start": 1945.679,
+        "duration": 5.441
+    },
+    {
+        "text": "generate standard errors of the beta hat",
+        "start": 1948.08,
+        "duration": 6.4
+    },
+    {
+        "text": "which we could then use in our analysis",
+        "start": 1951.12,
+        "duration": 6.32
+    },
+    {
+        "text": "because we because bagsy only requires",
+        "start": 1954.48,
+        "duration": 5.36
+    },
+    {
+        "text": "summary statistics to be used",
+        "start": 1957.44,
+        "duration": 4.8
+    },
+    {
+        "text": "and through our conversations with",
+        "start": 1959.84,
+        "duration": 3.92
+    },
+    {
+        "text": "collaborators",
+        "start": 1962.24,
+        "duration": 3.76
+    },
+    {
+        "text": "we expected genes and pathways",
+        "start": 1963.76,
+        "duration": 4.48
+    },
+    {
+        "text": "corresponding with immune response to be",
+        "start": 1966.0,
+        "duration": 2.88
+    },
+    {
+        "text": "enriched",
+        "start": 1968.24,
+        "duration": 3.52
+    },
+    {
+        "text": "looking at this data set and we saw",
+        "start": 1968.88,
+        "duration": 4.0
+    },
+    {
+        "text": "using the keg",
+        "start": 1971.76,
+        "duration": 4.799
+    },
+    {
+        "text": "database that 21 pathways",
+        "start": 1972.88,
+        "duration": 7.84
+    },
+    {
+        "text": "were involved in immune response",
+        "start": 1976.559,
+        "duration": 4.161
+    },
+    {
+        "text": "and so because we weren't exactly sure",
+        "start": 1982.399,
+        "duration": 4.081
+    },
+    {
+        "text": "which of those pathways",
+        "start": 1985.039,
+        "duration": 4.721
+    },
+    {
+        "text": "should be associated um should be",
+        "start": 1986.48,
+        "duration": 4.88
+    },
+    {
+        "text": "implicated in this analysis",
+        "start": 1989.76,
+        "duration": 3.84
+    },
+    {
+        "text": "and each of these pathways had a very",
+        "start": 1991.36,
+        "duration": 4.24
+    },
+    {
+        "text": "small number of genes",
+        "start": 1993.6,
+        "duration": 4.959
+    },
+    {
+        "text": "uh present in our data set we ended up",
+        "start": 1995.6,
+        "duration": 4.72
+    },
+    {
+        "text": "aggregating all the genes in these",
+        "start": 1998.559,
+        "duration": 3.84
+    },
+    {
+        "text": "pathways for our analysis",
+        "start": 2000.32,
+        "duration": 4.16
+    },
+    {
+        "text": "so what that means is that the",
+        "start": 2002.399,
+        "duration": 4.081
+    },
+    {
+        "text": "annotation for each gene",
+        "start": 2004.48,
+        "duration": 5.52
+    },
+    {
+        "text": "was one if it was in any of those 21",
+        "start": 2006.48,
+        "duration": 5.199
+    },
+    {
+        "text": "pathways and it was zero",
+        "start": 2010.0,
+        "duration": 3.6
+    },
+    {
+        "text": "if it was not in any of those 21",
+        "start": 2011.679,
+        "duration": 3.521
+    },
+    {
+        "text": "pathways",
+        "start": 2013.6,
+        "duration": 5.76
+    },
+    {
+        "text": "so using this procedure we have 2.7",
+        "start": 2015.2,
+        "duration": 5.44
+    },
+    {
+        "text": "percent of genes that",
+        "start": 2019.36,
+        "duration": 4.64
+    },
+    {
+        "text": "ended up being annotated and then",
+        "start": 2020.64,
+        "duration": 5.919
+    },
+    {
+        "text": "we ran all four methods on the data and",
+        "start": 2024.0,
+        "duration": 3.279
+    },
+    {
+        "text": "saw",
+        "start": 2026.559,
+        "duration": 2.881
+    },
+    {
+        "text": "each of them detected significant",
+        "start": 2027.279,
+        "duration": 3.441
+    },
+    {
+        "text": "enrichment",
+        "start": 2029.44,
+        "duration": 4.4
+    },
+    {
+        "text": "while bagsy estimated the alpha 1",
+        "start": 2030.72,
+        "duration": 6.319
+    },
+    {
+        "text": "enrichment level to be 1.31",
+        "start": 2033.84,
+        "duration": 6.64
+    },
+    {
+        "text": "and the two-stage approach had a 0.87",
+        "start": 2037.039,
+        "duration": 6.48
+    },
+    {
+        "text": "estimate of enrichment so",
+        "start": 2040.48,
+        "duration": 5.36
+    },
+    {
+        "text": "this difference in enrichment estimates",
+        "start": 2043.519,
+        "duration": 4.64
+    },
+    {
+        "text": "does fall in line with our simulation",
+        "start": 2045.84,
+        "duration": 3.92
+    },
+    {
+        "text": "results showing that",
+        "start": 2048.159,
+        "duration": 3.121
+    },
+    {
+        "text": "the two-stage approach may have",
+        "start": 2049.76,
+        "duration": 4.079
+    },
+    {
+        "text": "underestimated the enrichment level",
+        "start": 2051.28,
+        "duration": 5.04
+    },
+    {
+        "text": "and at this level of enrichment it makes",
+        "start": 2053.839,
+        "duration": 4.881
+    },
+    {
+        "text": "sense that all four methods should have",
+        "start": 2056.32,
+        "duration": 3.359
+    },
+    {
+        "text": "a hundred 100",
+        "start": 2058.72,
+        "duration": 4.72
+    },
+    {
+        "text": "power to detect the enrichment",
+        "start": 2059.679,
+        "duration": 6.4
+    },
+    {
+        "text": "so we also incorporated this enrichment",
+        "start": 2063.44,
+        "duration": 4.159
+    },
+    {
+        "text": "information",
+        "start": 2066.079,
+        "duration": 5.121
+    },
+    {
+        "text": "to see if we could discover more genes",
+        "start": 2067.599,
+        "duration": 6.641
+    },
+    {
+        "text": "in this gene level testing and we see",
+        "start": 2071.2,
+        "duration": 3.84
+    },
+    {
+        "text": "that",
+        "start": 2074.24,
+        "duration": 4.0
+    },
+    {
+        "text": "compared to a local false discovery rate",
+        "start": 2075.04,
+        "duration": 5.839
+    },
+    {
+        "text": "we using enrichment information we can",
+        "start": 2078.24,
+        "duration": 3.439
+    },
+    {
+        "text": "discover",
+        "start": 2080.879,
+        "duration": 8.96
+    },
+    {
+        "text": "90 more genes in the analysis",
+        "start": 2081.679,
+        "duration": 8.16
+    },
+    {
+        "text": "so we also applied our method",
+        "start": 2090.0,
+        "duration": 5.679
+    },
+    {
+        "text": "to a transcriptome-wide association",
+        "start": 2093.2,
+        "duration": 3.52
+    },
+    {
+        "text": "study",
+        "start": 2095.679,
+        "duration": 4.801
+    },
+    {
+        "text": "so a tiwas is a type of study that",
+        "start": 2096.72,
+        "duration": 6.879
+    },
+    {
+        "text": "integrates eqtl and gwas to study",
+        "start": 2100.48,
+        "duration": 5.359
+    },
+    {
+        "text": "relationships between the expression of",
+        "start": 2103.599,
+        "duration": 3.52
+    },
+    {
+        "text": "candidate genes",
+        "start": 2105.839,
+        "duration": 3.76
+    },
+    {
+        "text": "to the complex trait of interest and the",
+        "start": 2107.119,
+        "duration": 4.561
+    },
+    {
+        "text": "way it does this is by first",
+        "start": 2109.599,
+        "duration": 4.24
+    },
+    {
+        "text": "training a predictive model of gene",
+        "start": 2111.68,
+        "duration": 4.48
+    },
+    {
+        "text": "expression using the eqtl data",
+        "start": 2113.839,
+        "duration": 4.961
+    },
+    {
+        "text": "sets and then applying that predictive",
+        "start": 2116.16,
+        "duration": 4.4
+    },
+    {
+        "text": "model to the g-loss",
+        "start": 2118.8,
+        "duration": 4.799
+    },
+    {
+        "text": "so you're in using that model to impute",
+        "start": 2120.56,
+        "duration": 5.68
+    },
+    {
+        "text": "gene expressions in the g-wasp data and",
+        "start": 2123.599,
+        "duration": 3.361
+    },
+    {
+        "text": "then",
+        "start": 2126.24,
+        "duration": 3.52
+    },
+    {
+        "text": "a t-wasp looks at the gene expression",
+        "start": 2126.96,
+        "duration": 3.44
+    },
+    {
+        "text": "and",
+        "start": 2129.76,
+        "duration": 4.0
+    },
+    {
+        "text": "complex trait associations to generate",
+        "start": 2130.4,
+        "duration": 7.04
+    },
+    {
+        "text": "z-scores on the gene level",
+        "start": 2133.76,
+        "duration": 3.68
+    },
+    {
+        "text": "so we get g-was summary statistics of",
+        "start": 2138.88,
+        "duration": 5.76
+    },
+    {
+        "text": "hdl levels from the global lipids",
+        "start": 2142.32,
+        "duration": 4.0
+    },
+    {
+        "text": "genetics consortium",
+        "start": 2144.64,
+        "duration": 5.04
+    },
+    {
+        "text": "and we also use multi-tissue eqtl from",
+        "start": 2146.32,
+        "duration": 5.279
+    },
+    {
+        "text": "the g-tech project",
+        "start": 2149.68,
+        "duration": 5.36
+    },
+    {
+        "text": "and to conduct the t-loss we use",
+        "start": 2151.599,
+        "duration": 6.881
+    },
+    {
+        "text": "s-predict scan to obtain tiwa's z-scores",
+        "start": 2155.04,
+        "duration": 4.96
+    },
+    {
+        "text": "and p-values for",
+        "start": 2158.48,
+        "duration": 4.879
+    },
+    {
+        "text": "32 362 genes",
+        "start": 2160.0,
+        "duration": 7.04
+    },
+    {
+        "text": "and so this was our way of uh",
+        "start": 2163.359,
+        "duration": 6.881
+    },
+    {
+        "text": "getting gene level statistics from the g",
+        "start": 2167.04,
+        "duration": 6.16
+    },
+    {
+        "text": "was so rather than using a method such",
+        "start": 2170.24,
+        "duration": 5.599
+    },
+    {
+        "text": "as a proximity based approach to get",
+        "start": 2173.2,
+        "duration": 5.2
+    },
+    {
+        "text": "the gene level statistics we used the",
+        "start": 2175.839,
+        "duration": 4.161
+    },
+    {
+        "text": "tiwas",
+        "start": 2178.4,
+        "duration": 4.719
+    },
+    {
+        "text": "and we compared our results of",
+        "start": 2180.0,
+        "duration": 5.2
+    },
+    {
+        "text": "running ginsen enrichment analysis on",
+        "start": 2183.119,
+        "duration": 3.041
+    },
+    {
+        "text": "this data",
+        "start": 2185.2,
+        "duration": 4.32
+    },
+    {
+        "text": "to those from glgc which used magenta",
+        "start": 2186.16,
+        "duration": 6.16
+    },
+    {
+        "text": "which i had mentioned is similar to a",
+        "start": 2189.52,
+        "duration": 5.12
+    },
+    {
+        "text": "two-stage type of approach",
+        "start": 2192.32,
+        "duration": 4.48
+    },
+    {
+        "text": "and they use magenta for the gene set",
+        "start": 2194.64,
+        "duration": 6.88
+    },
+    {
+        "text": "enrichment analysis",
+        "start": 2196.8,
+        "duration": 7.039
+    },
+    {
+        "text": "so we looked at six gene sets that were",
+        "start": 2201.52,
+        "duration": 3.12
+    },
+    {
+        "text": "implicated",
+        "start": 2203.839,
+        "duration": 3.841
+    },
+    {
+        "text": "in the glgc paper and",
+        "start": 2204.64,
+        "duration": 5.52
+    },
+    {
+        "text": "we analyzed them using dagsy and",
+        "start": 2207.68,
+        "duration": 4.56
+    },
+    {
+        "text": "weighted gsea",
+        "start": 2210.16,
+        "duration": 5.28
+    },
+    {
+        "text": "so we see that looking at the uh",
+        "start": 2212.24,
+        "duration": 5.44
+    },
+    {
+        "text": "actual point estimates of enrichment we",
+        "start": 2215.44,
+        "duration": 4.56
+    },
+    {
+        "text": "get from backseat there does seem",
+        "start": 2217.68,
+        "duration": 4.399
+    },
+    {
+        "text": "to be enrichment in each of these",
+        "start": 2220.0,
+        "duration": 3.599
+    },
+    {
+        "text": "different pathways",
+        "start": 2222.079,
+        "duration": 5.04
+    },
+    {
+        "text": "although looking at the p-values",
+        "start": 2223.599,
+        "duration": 6.48
+    },
+    {
+        "text": "the p-values may not be as super",
+        "start": 2227.119,
+        "duration": 4.96
+    },
+    {
+        "text": "significant as we might expect",
+        "start": 2230.079,
+        "duration": 4.401
+    },
+    {
+        "text": "seeing such high levels of enrichment",
+        "start": 2232.079,
+        "duration": 6.481
+    },
+    {
+        "text": "and we think this is because",
+        "start": 2234.48,
+        "duration": 4.08
+    },
+    {
+        "text": "tl study the sample size isn't as large",
+        "start": 2240.16,
+        "duration": 6.56
+    },
+    {
+        "text": "so that makes the tiwas lose a little",
+        "start": 2243.76,
+        "duration": 4.4
+    },
+    {
+        "text": "bit of power which may have",
+        "start": 2246.72,
+        "duration": 4.639
+    },
+    {
+        "text": "affected our subsequent analyses",
+        "start": 2248.16,
+        "duration": 6.4
+    },
+    {
+        "text": "but we still think that the fact that we",
+        "start": 2251.359,
+        "duration": 4.401
+    },
+    {
+        "text": "were able to",
+        "start": 2254.56,
+        "duration": 4.72
+    },
+    {
+        "text": "see some all point estimates being above",
+        "start": 2255.76,
+        "duration": 6.88
+    },
+    {
+        "text": "one is still a promising finding and we",
+        "start": 2259.28,
+        "duration": 5.44
+    },
+    {
+        "text": "mostly wanted to demonstrate",
+        "start": 2262.64,
+        "duration": 5.84
+    },
+    {
+        "text": "uh the ability to apply bagzi on this",
+        "start": 2264.72,
+        "duration": 6.96
+    },
+    {
+        "text": "type of data set as we think that a t",
+        "start": 2268.48,
+        "duration": 4.16
+    },
+    {
+        "text": "loss is a",
+        "start": 2271.68,
+        "duration": 4.64
+    },
+    {
+        "text": "growing type of data used to uh",
+        "start": 2272.64,
+        "duration": 6.32
+    },
+    {
+        "text": "to get gene level statistics from a g",
+        "start": 2276.32,
+        "duration": 3.039
+    },
+    {
+        "text": "was",
+        "start": 2278.96,
+        "duration": 2.72
+    },
+    {
+        "text": "study",
+        "start": 2279.359,
+        "duration": 2.321
+    },
+    {
+        "text": "and again we used the um additional",
+        "start": 2283.119,
+        "duration": 6.161
+    },
+    {
+        "text": "gene discovery feature of bagsy here to",
+        "start": 2286.32,
+        "duration": 3.36
+    },
+    {
+        "text": "see",
+        "start": 2289.28,
+        "duration": 3.44
+    },
+    {
+        "text": "how many more genes we can discover so",
+        "start": 2289.68,
+        "duration": 5.439
+    },
+    {
+        "text": "using a local false discovery rate with",
+        "start": 2292.72,
+        "duration": 4.08
+    },
+    {
+        "text": "no enrichment information",
+        "start": 2295.119,
+        "duration": 5.041
+    },
+    {
+        "text": "there were 578 genes discovered using",
+        "start": 2296.8,
+        "duration": 3.68
+    },
+    {
+        "text": "the",
+        "start": 2300.16,
+        "duration": 3.36
+    },
+    {
+        "text": "cholesterol metabolic process level of",
+        "start": 2300.48,
+        "duration": 4.879
+    },
+    {
+        "text": "enrichment which was the",
+        "start": 2303.52,
+        "duration": 3.76
+    },
+    {
+        "text": "which had the highest point estimate of",
+        "start": 2305.359,
+        "duration": 4.161
+    },
+    {
+        "text": "enrichment and using that as prior",
+        "start": 2307.28,
+        "duration": 2.96
+    },
+    {
+        "text": "information",
+        "start": 2309.52,
+        "duration": 3.92
+    },
+    {
+        "text": "we discovered 30 more genes and then if",
+        "start": 2310.24,
+        "duration": 3.839
+    },
+    {
+        "text": "we use",
+        "start": 2313.44,
+        "duration": 2.96
+    },
+    {
+        "text": "all three go terms in richmond as prior",
+        "start": 2314.079,
+        "duration": 3.361
+    },
+    {
+        "text": "information",
+        "start": 2316.4,
+        "duration": 5.439
+    },
+    {
+        "text": "so doing a uh using multiple gene sets",
+        "start": 2317.44,
+        "duration": 7.04
+    },
+    {
+        "text": "to conduct enrichment analysis and then",
+        "start": 2321.839,
+        "duration": 3.361
+    },
+    {
+        "text": "using that",
+        "start": 2324.48,
+        "duration": 3.44
+    },
+    {
+        "text": "as prior information we discover another",
+        "start": 2325.2,
+        "duration": 3.76
+    },
+    {
+        "text": "18 genes",
+        "start": 2327.92,
+        "duration": 3.679
+    },
+    {
+        "text": "so that just gives a bit of insight as",
+        "start": 2328.96,
+        "duration": 3.68
+    },
+    {
+        "text": "to how",
+        "start": 2331.599,
+        "duration": 4.0
+    },
+    {
+        "text": "this approach can be used to aid in gene",
+        "start": 2332.64,
+        "duration": 5.52
+    },
+    {
+        "text": "discovery",
+        "start": 2335.599,
+        "duration": 2.561
+    },
+    {
+        "text": "so now in conclusion uh our proposed",
+        "start": 2338.48,
+        "duration": 4.879
+    },
+    {
+        "text": "method bagzi",
+        "start": 2342.24,
+        "duration": 3.839
+    },
+    {
+        "text": "gives an easily interpretable and",
+        "start": 2343.359,
+        "duration": 5.041
+    },
+    {
+        "text": "accurate measure of enrichment for gene",
+        "start": 2346.079,
+        "duration": 2.801
+    },
+    {
+        "text": "sets",
+        "start": 2348.4,
+        "duration": 3.199
+    },
+    {
+        "text": "that maintains the power to detect",
+        "start": 2348.88,
+        "duration": 4.56
+    },
+    {
+        "text": "enrichment from the state-of-the-art",
+        "start": 2351.599,
+        "duration": 3.121
+    },
+    {
+        "text": "methods",
+        "start": 2353.44,
+        "duration": 3.76
+    },
+    {
+        "text": "also bagsy presents a framework to",
+        "start": 2354.72,
+        "duration": 3.28
+    },
+    {
+        "text": "naturally",
+        "start": 2357.2,
+        "duration": 3.36
+    },
+    {
+        "text": "improve power in gene level testing",
+        "start": 2358.0,
+        "duration": 5.2
+    },
+    {
+        "text": "using enrichment as prior information",
+        "start": 2360.56,
+        "duration": 4.96
+    },
+    {
+        "text": "and also bagsy can be naturally applied",
+        "start": 2363.2,
+        "duration": 4.879
+    },
+    {
+        "text": "to t-loss which is a growing data type",
+        "start": 2365.52,
+        "duration": 7.12
+    },
+    {
+        "text": "that integrates eqtl and gwas",
+        "start": 2368.079,
+        "duration": 4.561
+    },
+    {
+        "text": "so for more details we have this paper",
+        "start": 2374.079,
+        "duration": 4.121
+    },
+    {
+        "text": "published in",
+        "start": 2377.04,
+        "duration": 4.96
+    },
+    {
+        "text": "bioinformatics and we have our software",
+        "start": 2378.2,
+        "duration": 6.84
+    },
+    {
+        "text": "um at this github of",
+        "start": 2382.0,
+        "duration": 7.04
+    },
+    {
+        "text": "william when um and the software is",
+        "start": 2385.04,
+        "duration": 5.12
+    },
+    {
+        "text": "implemented in c",
+        "start": 2389.04,
+        "duration": 4.64
+    },
+    {
+        "text": "plus plus so it'd be",
+        "start": 2390.16,
+        "duration": 7.52
+    },
+    {
+        "text": "used in the command line",
+        "start": 2393.68,
+        "duration": 6.8
+    },
+    {
+        "text": "and yeah thank you to william uh corbin",
+        "start": 2397.68,
+        "duration": 3.84
+    },
+    {
+        "text": "quick",
+        "start": 2400.48,
+        "duration": 4.32
+    },
+    {
+        "text": "roger p greggy uh francesca luca",
+        "start": 2401.52,
+        "duration": 6.4
+    },
+    {
+        "text": "and gstp for funding this work and thank",
+        "start": 2404.8,
+        "duration": 5.92
+    },
+    {
+        "text": "you to all of you for listening",
+        "start": 2407.92,
+        "duration": 5.28
+    },
+    {
+        "text": "and i'd be happy to take any questions",
+        "start": 2410.72,
+        "duration": 4.72
+    },
+    {
+        "text": "now",
+        "start": 2413.2,
+        "duration": 2.24
+    },
+    {
+        "text": "thanks for the interesting method thanks",
+        "start": 2417.52,
+        "duration": 3.839
+    },
+    {
+        "text": "for the talk um",
+        "start": 2419.28,
+        "duration": 3.68
+    },
+    {
+        "text": "one of the applications of the gene said",
+        "start": 2421.359,
+        "duration": 3.121
+    },
+    {
+        "text": "arrangement is",
+        "start": 2422.96,
+        "duration": 4.56
+    },
+    {
+        "text": "as a retrospective analysis for a new",
+        "start": 2424.48,
+        "duration": 5.04
+    },
+    {
+        "text": "data source to say if it's",
+        "start": 2427.52,
+        "duration": 4.64
+    },
+    {
+        "text": "interesting for determining new gene",
+        "start": 2429.52,
+        "duration": 4.48
+    },
+    {
+        "text": "functions",
+        "start": 2432.16,
+        "duration": 5.36
+    },
+    {
+        "text": "but in this case part of the assumption",
+        "start": 2434.0,
+        "duration": 5.68
+    },
+    {
+        "text": "is that that there's new gene functions",
+        "start": 2437.52,
+        "duration": 6.48
+    },
+    {
+        "text": "to annotate to find um and so",
+        "start": 2439.68,
+        "duration": 6.639
+    },
+    {
+        "text": "built into this application is is the",
+        "start": 2444.0,
+        "duration": 3.92
+    },
+    {
+        "text": "idea that the annotations are somehow",
+        "start": 2446.319,
+        "duration": 3.121
+    },
+    {
+        "text": "incomplete",
+        "start": 2447.92,
+        "duration": 4.8
+    },
+    {
+        "text": "that uh that you have and there that",
+        "start": 2449.44,
+        "duration": 3.76
+    },
+    {
+        "text": "there's",
+        "start": 2452.72,
+        "duration": 3.44
+    },
+    {
+        "text": "um like say in the go term annotations",
+        "start": 2453.2,
+        "duration": 4.399
+    },
+    {
+        "text": "that there are",
+        "start": 2456.16,
+        "duration": 3.52
+    },
+    {
+        "text": "um some genes that are annotated for it",
+        "start": 2457.599,
+        "duration": 4.0
+    },
+    {
+        "text": "and some genes that are not annotated",
+        "start": 2459.68,
+        "duration": 4.24
+    },
+    {
+        "text": "and some of those are missing and i was",
+        "start": 2461.599,
+        "duration": 4.24
+    },
+    {
+        "text": "curious if you could",
+        "start": 2463.92,
+        "duration": 4.0
+    },
+    {
+        "text": "how you would incorporate that",
+        "start": 2465.839,
+        "duration": 3.921
+    },
+    {
+        "text": "assumption or that prior",
+        "start": 2467.92,
+        "duration": 3.36
+    },
+    {
+        "text": "or how that would fit into your model",
+        "start": 2469.76,
+        "duration": 4.079
+    },
+    {
+        "text": "for the idea that there's",
+        "start": 2471.28,
+        "duration": 5.28
+    },
+    {
+        "text": "uh that the annotations are there that",
+        "start": 2473.839,
+        "duration": 3.921
+    },
+    {
+        "text": "are good but then",
+        "start": 2476.56,
+        "duration": 4.0
+    },
+    {
+        "text": "there could be missing annotations so",
+        "start": 2477.76,
+        "duration": 3.92
+    },
+    {
+        "text": "okay",
+        "start": 2480.56,
+        "duration": 4.24
+    },
+    {
+        "text": "so you're saying that in a certain study",
+        "start": 2481.68,
+        "duration": 4.08
+    },
+    {
+        "text": "where",
+        "start": 2484.8,
+        "duration": 3.12
+    },
+    {
+        "text": "my genes are annotated but there's also",
+        "start": 2485.76,
+        "duration": 4.319
+    },
+    {
+        "text": "a lot of genes not annotated that should",
+        "start": 2487.92,
+        "duration": 3.6
+    },
+    {
+        "text": "be annotated",
+        "start": 2490.079,
+        "duration": 3.441
+    },
+    {
+        "text": "that's right okay so rather than just",
+        "start": 2491.52,
+        "duration": 3.04
+    },
+    {
+        "text": "the binary",
+        "start": 2493.52,
+        "duration": 2.96
+    },
+    {
+        "text": "annotated not annotated you have kind of",
+        "start": 2494.56,
+        "duration": 3.12
+    },
+    {
+        "text": "a missing",
+        "start": 2496.48,
+        "duration": 5.119
+    },
+    {
+        "text": "uh or you know uh nicely one",
+        "start": 2497.68,
+        "duration": 6.399
+    },
+    {
+        "text": "positive and unannotated versus positive",
+        "start": 2501.599,
+        "duration": 4.081
+    },
+    {
+        "text": "and negative",
+        "start": 2504.079,
+        "duration": 5.921
+    },
+    {
+        "text": "i see um yeah so that's not something we",
+        "start": 2505.68,
+        "duration": 4.8
+    },
+    {
+        "text": "actually",
+        "start": 2510.0,
+        "duration": 2.24
+    },
+    {
+        "text": "considered in this model and that would",
+        "start": 2510.48,
+        "duration": 3.68
+    },
+    {
+        "text": "definitely be something interesting to",
+        "start": 2512.24,
+        "duration": 3.04
+    },
+    {
+        "text": "look at",
+        "start": 2514.16,
+        "duration": 3.76
+    },
+    {
+        "text": "because yeah in this model we assume",
+        "start": 2515.28,
+        "duration": 3.92
+    },
+    {
+        "text": "that annotation",
+        "start": 2517.92,
+        "duration": 4.88
+    },
+    {
+        "text": "is known as being classified in the gene",
+        "start": 2519.2,
+        "duration": 4.159
+    },
+    {
+        "text": "set",
+        "start": 2522.8,
+        "duration": 2.0
+    },
+    {
+        "text": "so that would definitely be an",
+        "start": 2523.359,
+        "duration": 4.081
+    },
+    {
+        "text": "interesting future direction that we",
+        "start": 2524.8,
+        "duration": 3.36
+    },
+    {
+        "text": "should",
+        "start": 2527.44,
+        "duration": 4.0
+    },
+    {
+        "text": "definitely look into uh to",
+        "start": 2528.16,
+        "duration": 6.0
+    },
+    {
+        "text": "maybe not dichotomize the annotation for",
+        "start": 2531.44,
+        "duration": 3.679
+    },
+    {
+        "text": "each gene",
+        "start": 2534.16,
+        "duration": 5.199
+    },
+    {
+        "text": "i think that would be interesting",
+        "start": 2535.119,
+        "duration": 4.24
+    },
+    {
+        "text": "yeah yeah that would be interesting to",
+        "start": 2540.64,
+        "duration": 11.199
+    },
+    {
+        "text": "think about thank you",
+        "start": 2542.88,
+        "duration": 8.959
+    },
+    {
+        "text": "any other questions",
+        "start": 2559.52,
+        "duration": 6.319
+    },
+    {
+        "text": "you",
+        "start": 2568.8,
+        "duration": 2.08
+    }
+]

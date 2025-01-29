@@ -1,0 +1,1652 @@
+[
+    {
+        "text": "Two years ago, almost to the day actually, I put up the first video on this channel, ",
+        "start": 4.1,
+        "duration": 5.028
+    },
+    {
+        "text": "about Euler's formula, e to the pi i equals negative one.",
+        "start": 9.128,
+        "duration": 3.372
+    },
+    {
+        "text": "As an anniversary of sorts, I want to revisit that same idea.",
+        "start": 13.28,
+        "duration": 3.26
+    },
+    {
+        "text": "For one thing, I've always wanted to improve on the presentation, ",
+        "start": 17.24,
+        "duration": 2.979
+    },
+    {
+        "text": "but I wouldn't rehash an old topic if there wasn't something new to teach.",
+        "start": 20.219,
+        "duration": 3.341
+    },
+    {
+        "text": "You see, the idea underlying that video was to take certain concepts from ",
+        "start": 24.24,
+        "duration": 3.716
+    },
+    {
+        "text": "a field in math called group theory, and show how they give Euler's formula ",
+        "start": 27.956,
+        "duration": 3.818
+    },
+    {
+        "text": "a much richer interpretation than a mere association between numbers.",
+        "start": 31.774,
+        "duration": 3.466
+    },
+    {
+        "text": "And two years ago, I thought it might be fun to use those ideas without ",
+        "start": 35.98,
+        "duration": 3.585
+    },
+    {
+        "text": "referencing group theory itself, or any of the technical terms within it.",
+        "start": 39.565,
+        "duration": 3.635
+    },
+    {
+        "text": "But I've come to see that you all actually quite like getting into the math itself, ",
+        "start": 43.68,
+        "duration": 4.071
+    },
+    {
+        "text": "even if it takes some time.",
+        "start": 47.751,
+        "duration": 1.309
+    },
+    {
+        "text": "So here, two years later, lets you and me go through an introduction to the basics ",
+        "start": 49.76,
+        "duration": 4.56
+    },
+    {
+        "text": "of group theory, building up to how Euler's formula comes to life under this light.",
+        "start": 54.32,
+        "duration": 4.56
+    },
+    {
+        "text": "If all you want is a quick explanation of Euler's formula, ",
+        "start": 59.66,
+        "duration": 2.944
+    },
+    {
+        "text": "and if you're comfortable with vector calculus, ",
+        "start": 62.604,
+        "duration": 2.395
+    },
+    {
+        "text": "I'll go ahead and put up a particularly short explanation on the screen ",
+        "start": 64.999,
+        "duration": 3.594
+    },
+    {
+        "text": "that you can pause and ponder on.",
+        "start": 68.593,
+        "duration": 1.647
+    },
+    {
+        "text": "If it doesn't make sense, don't worry about it, it's not needed for where we're going.",
+        "start": 70.64,
+        "duration": 3.4
+    },
+    {
+        "text": "The reason I want to put out this group theory view, ",
+        "start": 74.8,
+        "duration": 2.495
+    },
+    {
+        "text": "though, is not because I think it's a better explanation.",
+        "start": 77.295,
+        "duration": 2.685
+    },
+    {
+        "text": "Heck, it's not even a complete proof, it's just an intuition really.",
+        "start": 80.58,
+        "duration": 3.42
+    },
+    {
+        "text": "It's because it has the chance to change how you think about numbers, ",
+        "start": 84.0,
+        "duration": 3.788
+    },
+    {
+        "text": "and how you think about algebra.",
+        "start": 87.788,
+        "duration": 1.732
+    },
+    {
+        "text": "You see, group theory is all about studying the nature of symmetry.",
+        "start": 90.52,
+        "duration": 3.34
+    },
+    {
+        "text": "For example, a square is a very symmetric shape, but what do we actually mean by that?",
+        "start": 94.82,
+        "duration": 4.82
+    },
+    {
+        "text": "One way to answer that is to ask about what are all the actions you can take ",
+        "start": 100.7,
+        "duration": 3.61
+    },
+    {
+        "text": "on the square that leave it looking indistinguishable from how it started.",
+        "start": 104.31,
+        "duration": 3.47
+    },
+    {
+        "text": "For example, you could rotate it 90 degrees counterclockwise, ",
+        "start": 110.2,
+        "duration": 3.596
+    },
+    {
+        "text": "and it looks totally the same to how it started.",
+        "start": 113.796,
+        "duration": 2.784
+    },
+    {
+        "text": "You could also flip it around this vertical line, and again, it still looks identical.",
+        "start": 117.24,
+        "duration": 4.32
+    },
+    {
+        "text": "In fact, the thing about such perfect symmetry is that it's ",
+        "start": 122.64,
+        "duration": 3.116
+    },
+    {
+        "text": "hard to keep track of what action has actually been taken, ",
+        "start": 125.756,
+        "duration": 3.064
+    },
+    {
+        "text": "so to help out I'm going to stick on an asymmetric image here.",
+        "start": 128.82,
+        "duration": 3.22
+    },
+    {
+        "text": "We call each one of these actions a symmetry of the square, ",
+        "start": 132.56,
+        "duration": 3.904
+    },
+    {
+        "text": "and all of the symmetries together make up a group of symmetries, or just group for short.",
+        "start": 136.464,
+        "duration": 5.856
+    },
+    {
+        "text": "This particular group consists of 8 symmetries.",
+        "start": 147.52,
+        "duration": 2.64
+    },
+    {
+        "text": "There's the action of doing nothing, which is one we count, ",
+        "start": 150.74,
+        "duration": 3.744
+    },
+    {
+        "text": "plus 3 different rotations, and then there's 4 ways you can flip it over.",
+        "start": 154.484,
+        "duration": 4.556
+    },
+    {
+        "text": "In fact, this group of 8 symmetries has a special name, ",
+        "start": 159.8,
+        "duration": 3.268
+    },
+    {
+        "text": "it's called the dihedral group of order 8.",
+        "start": 163.068,
+        "duration": 2.452
+    },
+    {
+        "text": "And that's an example of a finite group, consisting of only 8 actions, ",
+        "start": 166.62,
+        "duration": 4.109
+    },
+    {
+        "text": "but a lot of other groups consist of infinitely many actions.",
+        "start": 170.729,
+        "duration": 3.531
+    },
+    {
+        "text": "Think of all possible rotations, for example, of any angle.",
+        "start": 175.1,
+        "duration": 3.46
+    },
+    {
+        "text": "Maybe you think of this as a group that acts on a circle, ",
+        "start": 179.16,
+        "duration": 3.113
+    },
+    {
+        "text": "capturing all of the symmetries of that circle that don't involve flipping it.",
+        "start": 182.273,
+        "duration": 4.187
+    },
+    {
+        "text": "Here, every action from this group of rotation lies ",
+        "start": 186.46,
+        "duration": 3.789
+    },
+    {
+        "text": "somewhere on the infinite continuum between 0 and 2 pi radians.",
+        "start": 190.249,
+        "duration": 4.591
+    },
+    {
+        "text": "One nice aspect of these actions is that we can associate each one of ",
+        "start": 198.2,
+        "duration": 4.239
+    },
+    {
+        "text": "them with a single point on the circle itself, the thing being acted on.",
+        "start": 202.439,
+        "duration": 4.361
+    },
+    {
+        "text": "You start by choosing some arbitrary point, maybe the one on the right here.",
+        "start": 207.68,
+        "duration": 3.94
+    },
+    {
+        "text": "Then every circle symmetry, every possible rotation, ",
+        "start": 212.1,
+        "duration": 3.316
+    },
+    {
+        "text": "takes this marked point to some unique spot on the circle, ",
+        "start": 215.416,
+        "duration": 3.691
+    },
+    {
+        "text": "and the action itself is completely determined by where it takes that spot.",
+        "start": 219.107,
+        "duration": 4.693
+    },
+    {
+        "text": "Now, this doesn't always happen with groups, but it's nice when it does happen, ",
+        "start": 226.94,
+        "duration": 4.079
+    },
+    {
+        "text": "because it gives us a way to label the actions themselves, ",
+        "start": 231.019,
+        "duration": 3.009
+    },
+    {
+        "text": "which can otherwise be pretty tricky to think about.",
+        "start": 234.028,
+        "duration": 2.652
+    },
+    {
+        "text": "The study of groups is not just about what a particular set of symmetries is, ",
+        "start": 238.0,
+        "duration": 4.124
+    },
+    {
+        "text": "whether that's the 8 symmetries of a square, the infinite continuum ",
+        "start": 242.124,
+        "duration": 3.596
+    },
+    {
+        "text": "of symmetries of the circle, or anything else you dream up.",
+        "start": 245.72,
+        "duration": 3.12
+    },
+    {
+        "text": "The real heart and soul of the study is knowing how these symmetries play with each other.",
+        "start": 249.3,
+        "duration": 4.9
+    },
+    {
+        "text": "On the square, if I rotate 90 degrees and then flip around the vertical axis, ",
+        "start": 255.0,
+        "duration": 5.311
+    },
+    {
+        "text": "the overall effect is the same as if I had just flipped over this diagonal line.",
+        "start": 260.311,
+        "duration": 5.449
+    },
+    {
+        "text": "So in some sense, that rotation plus the vertical flip equals that diagonal flip.",
+        "start": 266.82,
+        "duration": 5.84
+    },
+    {
+        "text": "On the circle, if I rotate 270 degrees and then follow it with a rotation of 120 degrees, ",
+        "start": 275.98,
+        "duration": 6.284
+    },
+    {
+        "text": "the overall effect is the same as if I had just rotated 30 degrees to start with.",
+        "start": 282.264,
+        "duration": 5.656
+    },
+    {
+        "text": "So in this circle group, a 270 degree rotation plus ",
+        "start": 289.02,
+        "duration": 4.476
+    },
+    {
+        "text": "a 120 degree rotation equals a 30 degree rotation.",
+        "start": 293.496,
+        "duration": 4.304
+    },
+    {
+        "text": "And in general, with any group, any collection of these sorts of symmetric actions, ",
+        "start": 300.22,
+        "duration": 5.002
+    },
+    {
+        "text": "there's a kind of arithmetic, where you can always take two actions and add ",
+        "start": 305.222,
+        "duration": 4.527
+    },
+    {
+        "text": "them together to get a third one, by applying one after the other.",
+        "start": 309.749,
+        "duration": 3.931
+    },
+    {
+        "text": "Or maybe you think of it as multiplying actions, it doesn't really matter.",
+        "start": 314.42,
+        "duration": 3.56
+    },
+    {
+        "text": "The point is that there is some way to combine the two actions to get out another one.",
+        "start": 318.24,
+        "duration": 5.04
+    },
+    {
+        "text": "That collection of underlying relations, all associations between ",
+        "start": 325.52,
+        "duration": 4.06
+    },
+    {
+        "text": "pairs of actions and the single action that's equivalent to applying one after the other, ",
+        "start": 329.58,
+        "duration": 5.537
+    },
+    {
+        "text": "that's really what makes a group a group.",
+        "start": 335.117,
+        "duration": 2.523
+    },
+    {
+        "text": "It's actually crazy how much of modern math is rooted in, well, this, ",
+        "start": 338.52,
+        "duration": 4.097
+    },
+    {
+        "text": "in understanding how a collection of actions is organized by this relation, ",
+        "start": 342.617,
+        "duration": 4.449
+    },
+    {
+        "text": "this relation between pairs of actions and the single action you get by composing them.",
+        "start": 347.066,
+        "duration": 5.094
+    },
+    {
+        "text": "Groups are extremely general.",
+        "start": 353.16,
+        "duration": 1.58
+    },
+    {
+        "text": "A lot of different ideas can be framed in terms of symmetries and composing symmetries.",
+        "start": 355.1,
+        "duration": 4.36
+    },
+    {
+        "text": "And maybe the most familiar example is numbers, just ordinary numbers.",
+        "start": 360.12,
+        "duration": 4.42
+    },
+    {
+        "text": "And there are actually two separate ways to think about numbers as a group.",
+        "start": 365.1,
+        "duration": 3.72
+    },
+    {
+        "text": "One where composing actions is going to look like addition, ",
+        "start": 369.44,
+        "duration": 2.8
+    },
+    {
+        "text": "and another where composing actions will look like multiplication.",
+        "start": 372.24,
+        "duration": 3.08
+    },
+    {
+        "text": "It's a little weird, because we don't usually think of numbers as actions, ",
+        "start": 376.18,
+        "duration": 3.794
+    },
+    {
+        "text": "we usually think of them as counting things.",
+        "start": 379.974,
+        "duration": 2.226
+    },
+    {
+        "text": "But let me show you what I mean.",
+        "start": 382.64,
+        "duration": 1.28
+    },
+    {
+        "text": "Think of all of the ways that you can slide a number line left or right along itself.",
+        "start": 384.74,
+        "duration": 4.42
+    },
+    {
+        "text": "This collection of all sliding actions is a group, ",
+        "start": 389.96,
+        "duration": 2.951
+    },
+    {
+        "text": "what you might think of as the group of symmetries on an infinite line.",
+        "start": 392.911,
+        "duration": 4.109
+    },
+    {
+        "text": "And in the same way that actions from the circle group could be associated with ",
+        "start": 398.04,
+        "duration": 4.241
+    },
+    {
+        "text": "individual points on that circle, this is another one of those special groups where ",
+        "start": 402.281,
+        "duration": 4.454
+    },
+    {
+        "text": "we can associate each action with a unique point on the thing that it's actually acting ",
+        "start": 406.735,
+        "duration": 4.665
+    },
+    {
+        "text": "on.",
+        "start": 411.4,
+        "duration": 0.16
+    },
+    {
+        "text": "You just follow where the point that starts at zero ends up.",
+        "start": 412.16,
+        "duration": 3.62
+    },
+    {
+        "text": "For example, the number 3 is associated with the action of sliding right by 3 units.",
+        "start": 416.56,
+        "duration": 5.32
+    },
+    {
+        "text": "The number negative 2 is associated with the action of sliding 2 units to the left, ",
+        "start": 423.74,
+        "duration": 5.001
+    },
+    {
+        "text": "since that's the unique action that drags the point at zero over to the point at negative ",
+        "start": 428.741,
+        "duration": 5.359
+    },
+    {
+        "text": "2.",
+        "start": 434.1,
+        "duration": 0.12
+    },
+    {
+        "text": "The number zero itself, well, that's associated with the action of just doing nothing.",
+        "start": 435.22,
+        "duration": 4.22
+    },
+    {
+        "text": "This group of sliding actions, each one of which is associated with a unique real number, ",
+        "start": 440.12,
+        "duration": 5.685
+    },
+    {
+        "text": "has a special name, the additive group of real numbers.",
+        "start": 445.805,
+        "duration": 3.475
+    },
+    {
+        "text": "The reason the word additive is in there is because of what the ",
+        "start": 450.3,
+        "duration": 3.161
+    },
+    {
+        "text": "group operation of applying one action followed by another looks like.",
+        "start": 453.461,
+        "duration": 3.459
+    },
+    {
+        "text": "If I slide right by 3 units and then I slide right by 2 units, ",
+        "start": 457.48,
+        "duration": 4.267
+    },
+    {
+        "text": "the overall effect is the same as if I slid right by 3 plus 2, or 5 units.",
+        "start": 461.747,
+        "duration": 5.013
+    },
+    {
+        "text": "Simple enough, we're just adding the distances of each slide.",
+        "start": 466.76,
+        "duration": 3.72
+    },
+    {
+        "text": "But the point here is that this gives an alternate view for what numbers even are.",
+        "start": 471.22,
+        "duration": 3.82
+    },
+    {
+        "text": "They are one example in a much larger category of groups, ",
+        "start": 475.76,
+        "duration": 3.648
+    },
+    {
+        "text": "groups of symmetries acting on some object, and the arithmetic of adding ",
+        "start": 479.408,
+        "duration": 4.593
+    },
+    {
+        "text": "numbers is just one example of the arithmetic that any group of symmetries has within it.",
+        "start": 484.001,
+        "duration": 5.599
+    },
+    {
+        "text": "We could also extend this idea, instead asking ",
+        "start": 491.8,
+        "duration": 2.859
+    },
+    {
+        "text": "about the sliding actions on the complex plane.",
+        "start": 494.659,
+        "duration": 2.861
+    },
+    {
+        "text": "The newly introduced numbers i, 2i, 3i, and so on on this vertical line would ",
+        "start": 499.86,
+        "duration": 4.89
+    },
+    {
+        "text": "all be associated with vertical sliding motions, ",
+        "start": 504.75,
+        "duration": 3.072
+    },
+    {
+        "text": "since those are the actions that drag the point at zero up to the relevant ",
+        "start": 507.822,
+        "duration": 4.702
+    },
+    {
+        "text": "point on that vertical line.",
+        "start": 512.524,
+        "duration": 1.756
+    },
+    {
+        "text": "The point over here at 3 plus 2i would be associated with the action of sliding ",
+        "start": 517.159,
+        "duration": 5.154
+    },
+    {
+        "text": "the plane in such a way that drags zero up and to the right to that point.",
+        "start": 522.313,
+        "duration": 4.767
+    },
+    {
+        "text": "And it should make sense why we call this 3 plus 2i.",
+        "start": 528.0,
+        "duration": 3.14
+    },
+    {
+        "text": "That diagonal sliding action is the same as first sliding by 3 to the right, ",
+        "start": 531.86,
+        "duration": 4.873
+    },
+    {
+        "text": "and then following it with a slide that corresponds to 2i, which is 2 units vertically.",
+        "start": 536.733,
+        "duration": 5.507
+    },
+    {
+        "text": "Similarly, let's get a feel for how composing ",
+        "start": 544.7,
+        "duration": 2.364
+    },
+    {
+        "text": "any two of these actions generally breaks down.",
+        "start": 547.064,
+        "duration": 2.416
+    },
+    {
+        "text": "Consider this slide by 3 plus 2i action, as well as this slide by 1 minus 3i action, ",
+        "start": 550.2,
+        "duration": 5.877
+    },
+    {
+        "text": "and imagine applying one of them right after the other.",
+        "start": 556.077,
+        "duration": 3.803
+    },
+    {
+        "text": "The overall effect, the composition of these two sliding actions, ",
+        "start": 560.96,
+        "duration": 4.615
+    },
+    {
+        "text": "is the same as if we had slid 3 plus 1 to the right and 2 minus 3 vertically.",
+        "start": 565.575,
+        "duration": 5.385
+    },
+    {
+        "text": "Notice how that involves adding together each component.",
+        "start": 571.96,
+        "duration": 3.04
+    },
+    {
+        "text": "So composing sliding actions is another way to think ",
+        "start": 575.94,
+        "duration": 3.315
+    },
+    {
+        "text": "about what adding complex numbers actually means.",
+        "start": 579.255,
+        "duration": 3.065
+    },
+    {
+        "text": "This collection of all sliding actions on the 2d complex ",
+        "start": 583.36,
+        "duration": 3.497
+    },
+    {
+        "text": "plane goes by the name the additive group of complex numbers.",
+        "start": 586.857,
+        "duration": 3.743
+    },
+    {
+        "text": "Again, the upshot here is that numbers, even complex numbers, ",
+        "start": 591.54,
+        "duration": 3.747
+    },
+    {
+        "text": "are just one example of a group, and the idea of addition can be thought of in terms of ",
+        "start": 595.287,
+        "duration": 5.319
+    },
+    {
+        "text": "successively applying actions.",
+        "start": 600.606,
+        "duration": 1.814
+    },
+    {
+        "text": "But numbers, schizophrenic as they are, also lead a completely different life, ",
+        "start": 603.64,
+        "duration": 4.195
+    },
+    {
+        "text": "as a completely different kind of group.",
+        "start": 607.835,
+        "duration": 2.125
+    },
+    {
+        "text": "Consider a new group of actions on the number line, ",
+        "start": 611.18,
+        "duration": 2.955
+    },
+    {
+        "text": "all ways that you can stretch or squish it, keeping everything evenly spaced, ",
+        "start": 614.135,
+        "duration": 4.434
+    },
+    {
+        "text": "and keeping that number 0 fixed in place.",
+        "start": 618.569,
+        "duration": 2.331
+    },
+    {
+        "text": "Yet again, this group of actions has that nice property, ",
+        "start": 621.8,
+        "duration": 3.477
+    },
+    {
+        "text": "where we can associate each action in the group with a specific point on the ",
+        "start": 625.277,
+        "duration": 4.696
+    },
+    {
+        "text": "thing that it's acting on.",
+        "start": 629.973,
+        "duration": 1.587
+    },
+    {
+        "text": "In this case, follow where the point that starts at the number 1 goes.",
+        "start": 632.34,
+        "duration": 3.9
+    },
+    {
+        "text": "There is one and only one stretching action that brings that point at ",
+        "start": 636.82,
+        "duration": 4.2
+    },
+    {
+        "text": "1 to the point at 3, for instance, namely stretching by a factor of 3.",
+        "start": 641.02,
+        "duration": 4.2
+    },
+    {
+        "text": "Likewise, there is one and only one action that brings that point ",
+        "start": 645.88,
+        "duration": 3.969
+    },
+    {
+        "text": "at 1 to the point at 1 half, namely squishing by a factor of 1 half.",
+        "start": 649.849,
+        "duration": 4.091
+    },
+    {
+        "text": "I like to imagine using one hand to fix the number 0 in place, ",
+        "start": 655.18,
+        "duration": 3.515
+    },
+    {
+        "text": "and using the other to drag the number 1 wherever I like, ",
+        "start": 658.695,
+        "duration": 3.237
+    },
+    {
+        "text": "while the rest of the number line just does whatever it takes to stay evenly spaced.",
+        "start": 661.932,
+        "duration": 4.688
+    },
+    {
+        "text": "In this way, every single positive number is associated ",
+        "start": 667.44,
+        "duration": 3.537
+    },
+    {
+        "text": "with a unique stretching or squishing action.",
+        "start": 670.977,
+        "duration": 2.843
+    },
+    {
+        "text": "Now, notice what composing actions looks like in this group.",
+        "start": 677.48,
+        "duration": 3.58
+    },
+    {
+        "text": "If I apply the stretch by 3 action, and then follow it with the stretch by 2 action, ",
+        "start": 681.74,
+        "duration": 5.265
+    },
+    {
+        "text": "the overall effect is the same as if I had just applied the stretch by 6 action, ",
+        "start": 687.005,
+        "duration": 5.017
+    },
+    {
+        "text": "the product of the two original numbers.",
+        "start": 692.022,
+        "duration": 2.478
+    },
+    {
+        "text": "And in general, applying one of these actions followed by another ",
+        "start": 695.76,
+        "duration": 3.95
+    },
+    {
+        "text": "corresponds with multiplying the numbers that they're associated with.",
+        "start": 699.71,
+        "duration": 4.19
+    },
+    {
+        "text": "In fact, the name for this group is the multiplicative group of positive real numbers.",
+        "start": 705.22,
+        "duration": 5.24
+    },
+    {
+        "text": "So, multiplication, ordinary familiar multiplication, ",
+        "start": 711.46,
+        "duration": 3.187
+    },
+    {
+        "text": "is one more example of this very general and very far-reaching idea of groups, ",
+        "start": 714.647,
+        "duration": 4.664
+    },
+    {
+        "text": "and the arithmetic within groups.",
+        "start": 719.311,
+        "duration": 1.949
+    },
+    {
+        "text": "And we can also extend this idea to the complex plane.",
+        "start": 722.54,
+        "duration": 3.04
+    },
+    {
+        "text": "Again, I like to think of fixing 0 in place with one hand, ",
+        "start": 725.58,
+        "duration": 3.636
+    },
+    {
+        "text": "and dragging around the point at 1, keeping everything else evenly spaced while I do so.",
+        "start": 729.216,
+        "duration": 5.424
+    },
+    {
+        "text": "But this time, as we drag the number 1 to places that are off the real number line, ",
+        "start": 736.92,
+        "duration": 4.843
+    },
+    {
+        "text": "we see that our group includes not only stretching and squishing actions, ",
+        "start": 741.763,
+        "duration": 4.267
+    },
+    {
+        "text": "but actions that have some rotational component as well.",
+        "start": 746.03,
+        "duration": 3.23
+    },
+    {
+        "text": "The quintessential example of this is the action associated with that point at i, ",
+        "start": 750.18,
+        "duration": 5.234
+    },
+    {
+        "text": "one unit above 0.",
+        "start": 755.414,
+        "duration": 1.086
+    },
+    {
+        "text": "What it takes to drag the point at 1 to that point at i is a 90 degree rotation.",
+        "start": 757.3,
+        "duration": 5.88
+    },
+    {
+        "text": "So, the multiplicative action associated with i is a 90 degree rotation.",
+        "start": 764.06,
+        "duration": 5.26
+    },
+    {
+        "text": "And notice, if I apply that action twice in a row, ",
+        "start": 770.56,
+        "duration": 3.436
+    },
+    {
+        "text": "the overall effect is to flip the plane 180 degrees.",
+        "start": 773.996,
+        "duration": 3.504
+    },
+    {
+        "text": "And that is the unique action that brings the point at 1 over to negative 1.",
+        "start": 778.06,
+        "duration": 4.9
+    },
+    {
+        "text": "So, in this sense, i times i equals negative 1, ",
+        "start": 784.58,
+        "duration": 3.556
+    },
+    {
+        "text": "meaning the action associated with i, followed by that same action associated with i, ",
+        "start": 788.136,
+        "duration": 6.371
+    },
+    {
+        "text": "has the same overall effect as the action associated with negative 1.",
+        "start": 794.507,
+        "duration": 5.113
+    },
+    {
+        "text": "As another example, here's the action associated with 2 plus i, ",
+        "start": 800.96,
+        "duration": 4.006
+    },
+    {
+        "text": "dragging 1 up to that point.",
+        "start": 804.966,
+        "duration": 1.754
+    },
+    {
+        "text": "If you want, you could think of this as broken down as a rotation by 30 degrees, ",
+        "start": 808.38,
+        "duration": 5.052
+    },
+    {
+        "text": "followed by a stretch by a factor of square root of 5.",
+        "start": 813.432,
+        "duration": 3.368
+    },
+    {
+        "text": "And in general, every one of these multiplicative actions is some ",
+        "start": 817.96,
+        "duration": 3.928
+    },
+    {
+        "text": "combination of a stretch or a squish, an action associated with some ",
+        "start": 821.888,
+        "duration": 4.106
+    },
+    {
+        "text": "point on the positive real number line, followed by a pure rotation, ",
+        "start": 825.994,
+        "duration": 4.107
+    },
+    {
+        "text": "where pure rotations are associated with points on this circle, the one with radius 1.",
+        "start": 830.101,
+        "duration": 5.119
+    },
+    {
+        "text": "This is very similar to how the sliding actions in the additive group could be broken ",
+        "start": 837.34,
+        "duration": 4.891
+    },
+    {
+        "text": "down as some pure horizontal slide, represented with points on the real number line, ",
+        "start": 842.231,
+        "duration": 4.835
+    },
+    {
+        "text": "plus some purely vertical slide, represented with points on that vertical line.",
+        "start": 847.066,
+        "duration": 4.494
+    },
+    {
+        "text": "That comparison of how actions in each group breaks down is going to be important, ",
+        "start": 852.6,
+        "duration": 4.912
+    },
+    {
+        "text": "so remember it.",
+        "start": 857.512,
+        "duration": 0.888
+    },
+    {
+        "text": "In each one, you can break down any action as some purely real number action, ",
+        "start": 858.96,
+        "duration": 4.404
+    },
+    {
+        "text": "followed by something that's specific to complex numbers, ",
+        "start": 863.364,
+        "duration": 3.276
+    },
+    {
+        "text": "whether that's vertical slides for the additive group, ",
+        "start": 866.64,
+        "duration": 3.105
+    },
+    {
+        "text": "or pure rotations for the multiplicative group.",
+        "start": 869.745,
+        "duration": 2.655
+    },
+    {
+        "text": "So that's our quick introduction to groups.",
+        "start": 876.48,
+        "duration": 2.42
+    },
+    {
+        "text": "A group is a collection of symmetric actions on some mathematical object, ",
+        "start": 879.42,
+        "duration": 4.228
+    },
+    {
+        "text": "whether that's a square, a circle, the real number line, or anything else you dream up.",
+        "start": 883.648,
+        "duration": 4.972
+    },
+    {
+        "text": "And every group has a certain arithmetic, where you can combine ",
+        "start": 889.3,
+        "duration": 3.798
+    },
+    {
+        "text": "two actions by applying one after the other, and asking what ",
+        "start": 893.098,
+        "duration": 3.62
+    },
+    {
+        "text": "other action from the group gives the same overall effect.",
+        "start": 896.718,
+        "duration": 3.442
+    },
+    {
+        "text": "Numbers, both real and complex numbers, can be ",
+        "start": 901.8,
+        "duration": 2.468
+    },
+    {
+        "text": "thought of in two different ways as a group.",
+        "start": 904.268,
+        "duration": 2.312
+    },
+    {
+        "text": "They can act by sliding, in which case the group arithmetic just looks like ",
+        "start": 907.42,
+        "duration": 4.647
+    },
+    {
+        "text": "ordinary addition, or they can act by these stretching-squishing-rotating actions, ",
+        "start": 912.067,
+        "duration": 5.076
+    },
+    {
+        "text": "in which case the group arithmetic looks just like multiplication.",
+        "start": 917.143,
+        "duration": 4.037
+    },
+    {
+        "text": "And with that, let's talk about exponentiation.",
+        "start": 922.38,
+        "duration": 2.8
+    },
+    {
+        "text": "Our first introduction to exponents is to think ",
+        "start": 926.74,
+        "duration": 2.492
+    },
+    {
+        "text": "of them in terms of repeated multiplication, right?",
+        "start": 929.232,
+        "duration": 2.648
+    },
+    {
+        "text": "I mean, the meaning of something like 2 cubed is to take 2 times 2 times 2, ",
+        "start": 932.46,
+        "duration": 4.663
+    },
+    {
+        "text": "and the meaning of something like 2 to the fifth is 2 times 2 times 2 times 2 times 2.",
+        "start": 937.123,
+        "duration": 5.277
+    },
+    {
+        "text": "And a consequence of this, something you might call the exponential property, ",
+        "start": 942.96,
+        "duration": 5.428
+    },
+    {
+        "text": "is that if I add two numbers in the exponent, say 2 to the 3 plus 5, ",
+        "start": 948.388,
+        "duration": 4.802
+    },
+    {
+        "text": "this can be broken down as the product of 2 to the third times 2 to the 5.",
+        "start": 953.19,
+        "duration": 5.15
+    },
+    {
+        "text": "And when you expand things, this seems reasonable enough, right?",
+        "start": 959.3,
+        "duration": 3.22
+    },
+    {
+        "text": "But expressions like 2 to the 1 half, or 2 to the negative 1, and much less 2 to the i, ",
+        "start": 963.2,
+        "duration": 5.585
+    },
+    {
+        "text": "don't really make sense when you think of exponents as repeated multiplication.",
+        "start": 968.785,
+        "duration": 5.015
+    },
+    {
+        "text": "I mean, what does it mean to multiply 2 by itself half of a time, or negative 1 of a time?",
+        "start": 973.8,
+        "duration": 6.02
+    },
+    {
+        "text": "So we do something very common throughout math, ",
+        "start": 980.96,
+        "duration": 2.358
+    },
+    {
+        "text": "and extend beyond the original definition, which only makes sense for counting numbers, ",
+        "start": 983.318,
+        "duration": 4.325
+    },
+    {
+        "text": "to something that applies to all sorts of numbers.",
+        "start": 987.643,
+        "duration": 2.457
+    },
+    {
+        "text": "But we don't just do this randomly.",
+        "start": 990.8,
+        "duration": 1.52
+    },
+    {
+        "text": "If you think back to how fractional and negative exponents are defined, ",
+        "start": 992.8,
+        "duration": 4.575
+    },
+    {
+        "text": "it's always motivated by trying to make sure that this property, ",
+        "start": 997.375,
+        "duration": 4.13
+    },
+    {
+        "text": "2 to the x plus y equals 2 to the x times 2 to the y, still holds.",
+        "start": 1001.505,
+        "duration": 4.195
+    },
+    {
+        "text": "To see what this might mean for complex exponents, ",
+        "start": 1007.02,
+        "duration": 2.645
+    },
+    {
+        "text": "think about what this property is saying from a group theory light.",
+        "start": 1009.665,
+        "duration": 3.475
+    },
+    {
+        "text": "It's saying that adding the inputs corresponds with multiplying the outputs, ",
+        "start": 1014.16,
+        "duration": 4.247
+    },
+    {
+        "text": "and that makes it very tempting to think of the inputs not merely as numbers, ",
+        "start": 1018.407,
+        "duration": 4.303
+    },
+    {
+        "text": "but as members of the additive group of sliding actions.",
+        "start": 1022.71,
+        "duration": 3.09
+    },
+    {
+        "text": "And to think of the outputs not merely as numbers, ",
+        "start": 1025.8,
+        "duration": 2.982
+    },
+    {
+        "text": "but as members of this multiplicative group of stretching and squishing actions.",
+        "start": 1028.782,
+        "duration": 4.678
+    },
+    {
+        "text": "Now, it is weird and strange to think about functions that take in one kind of action, ",
+        "start": 1035.76,
+        "duration": 4.993
+    },
+    {
+        "text": "and spit out another kind of action.",
+        "start": 1040.753,
+        "duration": 2.066
+    },
+    {
+        "text": "But this is something that actually comes up all the time throughout group theory.",
+        "start": 1043.4,
+        "duration": 3.62
+    },
+    {
+        "text": "And this exponential property is very important for this association between groups.",
+        "start": 1047.56,
+        "duration": 4.92
+    },
+    {
+        "text": "It guarantees that if I compose two sliding actions, maybe a slide by negative 1, ",
+        "start": 1052.48,
+        "duration": 5.809
+    },
+    {
+        "text": "and then a slide by positive 2, it corresponds to composing the two output actions, ",
+        "start": 1058.289,
+        "duration": 5.952
+    },
+    {
+        "text": "in this case, squishing by 2 to the negative 1, and then stretching by 2 squared.",
+        "start": 1064.241,
+        "duration": 5.739
+    },
+    {
+        "text": "Mathematicians would describe a property like this by saying that the function preserves ",
+        "start": 1073.9,
+        "duration": 5.046
+    },
+    {
+        "text": "the group structure, in the sense that the arithmetic within a group is what gives it ",
+        "start": 1078.946,
+        "duration": 4.877
+    },
+    {
+        "text": "its structure, and a function like this exponential plays nicely with that arithmetic.",
+        "start": 1083.823,
+        "duration": 4.877
+    },
+    {
+        "text": "Functions between groups that preserve the arithmetic like ",
+        "start": 1091.08,
+        "duration": 3.264
+    },
+    {
+        "text": "this are really important throughout group theory, ",
+        "start": 1094.344,
+        "duration": 2.821
+    },
+    {
+        "text": "enough so that they've earned themselves a nice fancy name, homomorphisms.",
+        "start": 1097.165,
+        "duration": 4.095
+    },
+    {
+        "text": "Now, think about what all of this means for associating the additive group ",
+        "start": 1103.62,
+        "duration": 4.377
+    },
+    {
+        "text": "in the complex plane with the multiplicative group in the complex plane.",
+        "start": 1107.997,
+        "duration": 4.203
+    },
+    {
+        "text": "We already know that when you plug in a real number to 2 to the x, ",
+        "start": 1113.32,
+        "duration": 3.52
+    },
+    {
+        "text": "you get out a real number, a positive real number, in fact.",
+        "start": 1116.84,
+        "duration": 3.1
+    },
+    {
+        "text": "So this exponential function takes any purely horizontal slide, ",
+        "start": 1120.64,
+        "duration": 4.12
+    },
+    {
+        "text": "and turns it into some pure stretching or squishing action.",
+        "start": 1124.76,
+        "duration": 3.8
+    },
+    {
+        "text": "So wouldn't you agree that it would be reasonable for this new ",
+        "start": 1129.28,
+        "duration": 4.165
+    },
+    {
+        "text": "dimension of additive actions, slides up and down, ",
+        "start": 1133.445,
+        "duration": 3.372
+    },
+    {
+        "text": "to map directly into this new dimension of multiplicative actions, pure rotations?",
+        "start": 1136.817,
+        "duration": 5.423
+    },
+    {
+        "text": "Those vertical sliding actions correspond to points on this vertical axis, ",
+        "start": 1143.7,
+        "duration": 4.689
+    },
+    {
+        "text": "and those rotating multiplicative actions correspond to points on the circle with ",
+        "start": 1148.389,
+        "duration": 5.128
+    },
+    {
+        "text": "radius 1.",
+        "start": 1153.517,
+        "duration": 0.563
+    },
+    {
+        "text": "So what it would mean for an exponential function like 2 to the x to map purely ",
+        "start": 1154.88,
+        "duration": 5.358
+    },
+    {
+        "text": "vertical slides into pure rotations would be that complex numbers on this vertical line, ",
+        "start": 1160.238,
+        "duration": 5.961
+    },
+    {
+        "text": "multiples of i, get mapped to complex numbers on this unit circle.",
+        "start": 1166.199,
+        "duration": 4.421
+    },
+    {
+        "text": "In fact, for the function 2 to the x, the input i, a vertical slide of one unit, ",
+        "start": 1171.98,
+        "duration": 6.689
+    },
+    {
+        "text": "happens to map to a rotation of about 0.693 radians, that is, ",
+        "start": 1178.669,
+        "duration": 5.12
+    },
+    {
+        "text": "a walk around the unit circle that covers 0.693 units of distance.",
+        "start": 1183.789,
+        "duration": 5.451
+    },
+    {
+        "text": "With a different exponential function, say 5 to the x, that input i, ",
+        "start": 1190.08,
+        "duration": 5.684
+    },
+    {
+        "text": "a vertical slide of one unit, would map to a rotation of about 1.609 radians, ",
+        "start": 1195.764,
+        "duration": 6.426
+    },
+    {
+        "text": "a walk around the unit circle covering exactly 1.609 units of distance.",
+        "start": 1202.19,
+        "duration": 5.85
+    },
+    {
+        "text": "What makes the number e special is that when the exponential e to the x maps vertical ",
+        "start": 1208.92,
+        "duration": 6.143
+    },
+    {
+        "text": "slides to rotations, a vertical slide of one unit, corresponding to i, ",
+        "start": 1215.063,
+        "duration": 5.072
+    },
+    {
+        "text": "maps to a rotation of exactly one radian, a walk around the unit circle covering a ",
+        "start": 1220.135,
+        "duration": 5.93
+    },
+    {
+        "text": "distance of exactly one.",
+        "start": 1226.065,
+        "duration": 1.715
+    },
+    {
+        "text": "And so, a vertical slide of two units would map to a rotation of two radians.",
+        "start": 1227.78,
+        "duration": 6.08
+    },
+    {
+        "text": "A three unit slide up corresponds to a rotation of three radians.",
+        "start": 1235.08,
+        "duration": 4.02
+    },
+    {
+        "text": "And a vertical slide of exactly pi units up, corresponding to the input pi times i, ",
+        "start": 1239.86,
+        "duration": 6.355
+    },
+    {
+        "text": "maps to a rotation of exactly pi radians, halfway around the circle.",
+        "start": 1246.215,
+        "duration": 5.145
+    },
+    {
+        "text": "And that's the multiplicative action associated with the number negative one.",
+        "start": 1251.56,
+        "duration": 3.74
+    },
+    {
+        "text": "Now you might ask, why e?",
+        "start": 1256.18,
+        "duration": 1.76
+    },
+    {
+        "text": "Why not some other base?",
+        "start": 1258.24,
+        "duration": 1.04
+    },
+    {
+        "text": "Well, the full answer resides in calculus.",
+        "start": 1260.14,
+        "duration": 2.02
+    },
+    {
+        "text": "I mean, that's the birthplace of e and where it's even defined.",
+        "start": 1262.58,
+        "duration": 3.16
+    },
+    {
+        "text": "Again, I'll leave up another explanation on the screen if you're hungry ",
+        "start": 1266.32,
+        "duration": 3.196
+    },
+    {
+        "text": "for a fuller description and if you're comfortable with the calculus.",
+        "start": 1269.516,
+        "duration": 3.064
+    },
+    {
+        "text": "But at a high level, I'll say that it has to do with the fact that ",
+        "start": 1273.04,
+        "duration": 3.34
+    },
+    {
+        "text": "all exponential functions are proportional to their own derivative.",
+        "start": 1276.38,
+        "duration": 3.34
+    },
+    {
+        "text": "But e to the x alone is the one that's actually equal to its own derivative.",
+        "start": 1280.4,
+        "duration": 4.1
+    },
+    {
+        "text": "The important point that I want to make here, though, ",
+        "start": 1285.36,
+        "duration": 3.182
+    },
+    {
+        "text": "is that if you view things from the lens of group theory, ",
+        "start": 1288.542,
+        "duration": 3.418
+    },
+    {
+        "text": "thinking of the inputs to an exponential function as sliding actions, ",
+        "start": 1291.96,
+        "duration": 4.126
+    },
+    {
+        "text": "and thinking of the outputs as stretching and rotating actions, ",
+        "start": 1296.086,
+        "duration": 3.772
+    },
+    {
+        "text": "it gives a very vivid way to read what a formula like this is even saying.",
+        "start": 1299.858,
+        "duration": 4.362
+    },
+    {
+        "text": "When you read it, you can think that exponentials in general map purely vertical slides, ",
+        "start": 1305.12,
+        "duration": 5.032
+    },
+    {
+        "text": "the additive actions that are perpendicular to the real number line, into pure rotations, ",
+        "start": 1310.152,
+        "duration": 5.09
+    },
+    {
+        "text": "which are in some sense perpendicular to the real number stretching actions.",
+        "start": 1315.242,
+        "duration": 4.298
+    },
+    {
+        "text": "And moreover, e to the x does this in the very special way that ensures ",
+        "start": 1320.44,
+        "duration": 4.996
+    },
+    {
+        "text": "that a vertical slide of pi units corresponds to a rotation of exactly pi radians, ",
+        "start": 1325.436,
+        "duration": 5.761
+    },
+    {
+        "text": "the 180 degree rotation associated with the number negative 1.",
+        "start": 1331.197,
+        "duration": 4.303
+    },
+    {
+        "text": "To finish things off here, I want to show a way that you can think ",
+        "start": 1338.06,
+        "duration": 3.21
+    },
+    {
+        "text": "about this function e to the x as a transformation of the complex plane.",
+        "start": 1341.27,
+        "duration": 3.45
+    },
+    {
+        "text": "But before that, just two quick messages.",
+        "start": 1345.32,
+        "duration": 2.08
+    },
+    {
+        "text": "I've mentioned before just how thankful I am to you, the community, ",
+        "start": 1348.02,
+        "duration": 3.525
+    },
+    {
+        "text": "for making these videos possible through Patreon, ",
+        "start": 1351.545,
+        "duration": 2.592
+    },
+    {
+        "text": "but in much the same way that numbers become more meaningful when you think of them as ",
+        "start": 1354.137,
+        "duration": 4.511
+    },
+    {
+        "text": "actions, gratitude is also best expressed as an action.",
+        "start": 1358.648,
+        "duration": 2.852
+    },
+    {
+        "text": "So I've decided to turn off ads on new videos for their first month, ",
+        "start": 1362.1,
+        "duration": 3.6
+    },
+    {
+        "text": "in the hopes of giving you all a better viewing experience.",
+        "start": 1365.7,
+        "duration": 3.08
+    },
+    {
+        "text": "This video was sponsored by Emerald Cloud Lab, ",
+        "start": 1369.42,
+        "duration": 2.707
+    },
+    {
+        "text": "and actually I was the one to reach out to them on this one, ",
+        "start": 1372.127,
+        "duration": 3.514
+    },
+    {
+        "text": "since it's a company I find particularly inspiring.",
+        "start": 1375.641,
+        "duration": 2.939
+    },
+    {
+        "text": "Emerald is a very unusual startup, half software, half biotech.",
+        "start": 1379.42,
+        "duration": 4.04
+    },
+    {
+        "text": "The Cloud Lab that they're building essentially enables biologists and chemists ",
+        "start": 1384.1,
+        "duration": 3.831
+    },
+    {
+        "text": "to conduct research through a software platform, instead of working in a lab.",
+        "start": 1387.931,
+        "duration": 3.689
+    },
+    {
+        "text": "Scientists can program experiments, which are then executed remotely and robotically, ",
+        "start": 1392.32,
+        "duration": 4.618
+    },
+    {
+        "text": "in Emerald's industrialized research lab.",
+        "start": 1396.938,
+        "duration": 2.202
+    },
+    {
+        "text": "I know some of the people at the company, and the software ",
+        "start": 1399.92,
+        "duration": 2.475
+    },
+    {
+        "text": "challenges they're working on are really interesting.",
+        "start": 1402.395,
+        "duration": 2.225
+    },
+    {
+        "text": "Currently, they're looking to hire software engineers and web ",
+        "start": 1405.28,
+        "duration": 2.778
+    },
+    {
+        "text": "developers for their engineering team, as well as applied ",
+        "start": 1408.058,
+        "duration": 2.6
+    },
+    {
+        "text": "mathematicians and computer scientists for their scientific computing team.",
+        "start": 1410.658,
+        "duration": 3.362
+    },
+    {
+        "text": "If you're interested in applying, whether that's now or a few months from now, ",
+        "start": 1415.16,
+        "duration": 3.66
+    },
+    {
+        "text": "there are a couple special links in the description of this video, ",
+        "start": 1418.82,
+        "duration": 3.105
+    },
+    {
+        "text": "and if you apply through those, it lets Emerald know that you heard about them ",
+        "start": 1421.925,
+        "duration": 3.661
+    },
+    {
+        "text": "through this channel.",
+        "start": 1425.586,
+        "duration": 0.974
+    },
+    {
+        "text": "Alright, so e to the x transforming the plane.",
+        "start": 1428.18,
+        "duration": 2.22
+    },
+    {
+        "text": "I like to imagine first rolling that plane into a cylinder, ",
+        "start": 1431.16,
+        "duration": 3.335
+    },
+    {
+        "text": "wrapping all those vertical lines into circles, ",
+        "start": 1434.495,
+        "duration": 2.668
+    },
+    {
+        "text": "and then taking that cylinder and kind of smooshing it onto the plane around zero, ",
+        "start": 1437.163,
+        "duration": 4.613
+    },
+    {
+        "text": "where each of those concentric circles, spaced out exponentially, ",
+        "start": 1441.776,
+        "duration": 3.669
+    },
+    {
+        "text": "correspond with what started off as vertical lines.",
+        "start": 1445.445,
+        "duration": 2.835
+    }
+]

@@ -1,0 +1,1812 @@
+[
+    {
+        "text": "There's two things here, the main topic and the meta topic.",
+        "start": 3.06,
+        "duration": 3.08
+    },
+    {
+        "text": "The main topic is going to be this really neat algorithm for solving ",
+        "start": 6.64,
+        "duration": 3.416
+    },
+    {
+        "text": "two-dimensional equations, things that have two unknown real numbers, ",
+        "start": 10.056,
+        "duration": 3.466
+    },
+    {
+        "text": "or also those involving a single unknown which is a complex number.",
+        "start": 13.522,
+        "duration": 3.318
+    },
+    {
+        "text": "So for example, if you wanted to find the complex roots of a polynomial, ",
+        "start": 17.44,
+        "duration": 3.633
+    },
+    {
+        "text": "or maybe some of those million dollar zeros of the Riemann zeta function, ",
+        "start": 21.073,
+        "duration": 3.684
+    },
+    {
+        "text": "this algorithm would do it for you.",
+        "start": 24.757,
+        "duration": 1.743
+    },
+    {
+        "text": "And this method is super pretty, since a lot of colors are involved.",
+        "start": 26.8,
+        "duration": 3.26
+    },
+    {
+        "text": "And more importantly, the core underlying idea applies to all ",
+        "start": 30.54,
+        "duration": 3.139
+    },
+    {
+        "text": "sorts of math well beyond this algorithm for solving equations, ",
+        "start": 33.679,
+        "duration": 3.241
+    },
+    {
+        "text": "including a bit of topology, which I'll talk about afterwards.",
+        "start": 36.92,
+        "duration": 3.14
+    },
+    {
+        "text": "But what really makes this worth 20 minutes or so of your time is that ",
+        "start": 40.74,
+        "duration": 3.818
+    },
+    {
+        "text": "it illustrates a lesson much more generally useful throughout math, ",
+        "start": 44.558,
+        "duration": 3.657
+    },
+    {
+        "text": "which is try to define constructs that compose nicely with each other.",
+        "start": 48.215,
+        "duration": 3.765
+    },
+    {
+        "text": "You'll see what I mean by that as the story progresses.",
+        "start": 52.4,
+        "duration": 2.08
+    },
+    {
+        "text": "To motivate the case with functions that have 2D inputs and 2D outputs, ",
+        "start": 55.06,
+        "duration": 3.71
+    },
+    {
+        "text": "let's start off simpler with functions that just take in a real number and spit out ",
+        "start": 58.77,
+        "duration": 4.328
+    },
+    {
+        "text": "a real number.",
+        "start": 63.098,
+        "duration": 0.722
+    },
+    {
+        "text": "If you want to know when a function f of x equals some other function g of x, ",
+        "start": 65.08,
+        "duration": 4.305
+    },
+    {
+        "text": "you might think of this as searching for when the graphs of those functions intersect, ",
+        "start": 69.385,
+        "duration": 4.803
+    },
+    {
+        "text": "right?",
+        "start": 74.188,
+        "duration": 0.332
+    },
+    {
+        "text": "I mean that gives you an input where both functions have the same output.",
+        "start": 75.02,
+        "duration": 3.5
+    },
+    {
+        "text": "To take a very simple example, imagine f of x is x squared, ",
+        "start": 78.52,
+        "duration": 4.151
+    },
+    {
+        "text": "and g of x is the constant function 2.",
+        "start": 82.671,
+        "duration": 2.629
+    },
+    {
+        "text": "In other words, you want to find the square root of 2.",
+        "start": 85.96,
+        "duration": 2.68
+    },
+    {
+        "text": "Even if you know almost nothing about finding square roots, ",
+        "start": 89.46,
+        "duration": 3.292
+    },
+    {
+        "text": "you can probably see that 1 squared is less than 2, and 2 squared is bigger than 2, ",
+        "start": 92.752,
+        "duration": 4.608
+    },
+    {
+        "text": "so you realize, ah, there's going to be some solution in between those two values.",
+        "start": 97.36,
+        "duration": 4.5
+    },
+    {
+        "text": "And then if you wanted to narrow it down further, ",
+        "start": 102.58,
+        "duration": 2.375
+    },
+    {
+        "text": "maybe you try squaring the halfway point, 1.5.",
+        "start": 104.955,
+        "duration": 2.185
+    },
+    {
+        "text": "This comes out to be 2.25, a little too high, ",
+        "start": 107.72,
+        "duration": 2.987
+    },
+    {
+        "text": "so you'd focus on the region between 1 and 1.5.",
+        "start": 110.707,
+        "duration": 3.053
+    },
+    {
+        "text": "And so on, you can probably see how this would keep going, ",
+        "start": 114.76,
+        "duration": 2.596
+    },
+    {
+        "text": "you'd keep computing at the midpoint and then chopping your search space in half.",
+        "start": 117.356,
+        "duration": 3.564
+    },
+    {
+        "text": "Another way to think about this, which is going to make it easier for us ",
+        "start": 125.1,
+        "duration": 3.505
+    },
+    {
+        "text": "once we get up to higher dimensions, is to instead focus on the equivalent ",
+        "start": 128.605,
+        "duration": 3.601
+    },
+    {
+        "text": "question for when the difference between these two functions is zero.",
+        "start": 132.206,
+        "duration": 3.314
+    },
+    {
+        "text": "In those terms, we found a region of inputs where that difference ",
+        "start": 136.1,
+        "duration": 3.792
+    },
+    {
+        "text": "was negative on one end, and it was positive on another end.",
+        "start": 139.892,
+        "duration": 3.448
+    },
+    {
+        "text": "And then we split it into two, and the half that we narrowed our ",
+        "start": 143.84,
+        "duration": 3.235
+    },
+    {
+        "text": "attention to was the one where the outermost points had varying signs.",
+        "start": 147.075,
+        "duration": 3.485
+    },
+    {
+        "text": "And like this, we were able to keep going forever, ",
+        "start": 151.36,
+        "duration": 2.64
+    },
+    {
+        "text": "taking each region with varying signs on the border, ",
+        "start": 154.0,
+        "duration": 2.744
+    },
+    {
+        "text": "finding a smaller such region among its halves, ",
+        "start": 156.744,
+        "duration": 2.485
+    },
+    {
+        "text": "knowing that ultimately we have to be narrowing in on a point which is going to be ",
+        "start": 159.229,
+        "duration": 4.297
+    },
+    {
+        "text": "exactly zero.",
+        "start": 163.526,
+        "duration": 0.674
+    },
+    {
+        "text": "In short, solving equations can always be framed as finding when a certain ",
+        "start": 165.76,
+        "duration": 4.109
+    },
+    {
+        "text": "function is equal to zero, and to do that, we have this heuristic, ",
+        "start": 169.869,
+        "duration": 3.671
+    },
+    {
+        "text": "if f is positive at one point and negative at another point, ",
+        "start": 173.54,
+        "duration": 3.343
+    },
+    {
+        "text": "you can find someplace in between where it's zero, ",
+        "start": 176.883,
+        "duration": 2.794
+    },
+    {
+        "text": "at least if everything changes smoothly with no sudden jumps.",
+        "start": 179.677,
+        "duration": 3.343
+    },
+    {
+        "text": "Now the amazing thing I want to show you is that you can extend ",
+        "start": 183.88,
+        "duration": 3.33
+    },
+    {
+        "text": "this kind of thinking into two-dimensional equations, ",
+        "start": 187.21,
+        "duration": 2.81
+    },
+    {
+        "text": "equations between functions whose inputs and outputs are both two-dimensional.",
+        "start": 190.02,
+        "duration": 4.06
+    },
+    {
+        "text": "For example, complex numbers are 2D, and this tool we're ",
+        "start": 194.74,
+        "duration": 3.111
+    },
+    {
+        "text": "developing is perfect for finding solutions to complex equations.",
+        "start": 197.851,
+        "duration": 3.549
+    },
+    {
+        "text": "Now since we're going to be talking about these 2D functions so much, ",
+        "start": 202.36,
+        "duration": 3.077
+    },
+    {
+        "text": "let's take a brief side step and consider how we illustrate these.",
+        "start": 205.437,
+        "duration": 2.903
+    },
+    {
+        "text": "Graphing a function with a 2D input and a 2D output would require four dimensions, ",
+        "start": 209.06,
+        "duration": 4.75
+    },
+    {
+        "text": "and that's not going to work so well in our 3D world on our 2D screens, ",
+        "start": 213.81,
+        "duration": 4.12
+    },
+    {
+        "text": "but we still have a couple good options.",
+        "start": 217.93,
+        "duration": 2.29
+    },
+    {
+        "text": "One is to just look at both the input space and the output space side by side.",
+        "start": 220.86,
+        "duration": 4.58
+    },
+    {
+        "text": "Each point in the input space moves to a particular point in the output space, ",
+        "start": 225.54,
+        "duration": 4.653
+    },
+    {
+        "text": "and I can show how moving around that input point corresponds ",
+        "start": 230.193,
+        "duration": 3.652
+    },
+    {
+        "text": "to certain movements in the output space.",
+        "start": 233.845,
+        "duration": 2.415
+    },
+    {
+        "text": "All of the functions we consider will be continuous, ",
+        "start": 236.94,
+        "duration": 2.696
+    },
+    {
+        "text": "in the sense that small little changes to the input only ",
+        "start": 239.636,
+        "duration": 2.899
+    },
+    {
+        "text": "correspond to small little changes in the output, there's no sudden jumps.",
+        "start": 242.535,
+        "duration": 3.765
+    },
+    {
+        "text": "Another option we have is to imagine the arrow from the origin of the output space to ",
+        "start": 246.94,
+        "duration": 4.82
+    },
+    {
+        "text": "that output point, and to attach a miniature version of that arrow to the input point.",
+        "start": 251.76,
+        "duration": 4.819
+    },
+    {
+        "text": "This can give us a sense, at a glance, for where a given input point goes, ",
+        "start": 257.36,
+        "duration": 4.297
+    },
+    {
+        "text": "or where many different input points go by drawing the full vector field.",
+        "start": 261.657,
+        "duration": 4.183
+    },
+    {
+        "text": "And unfortunately when you do this at a lot of points it can get pretty cluttered, ",
+        "start": 267.6,
+        "duration": 3.65
+    },
+    {
+        "text": "so here let me make all of the arrows the same size, ",
+        "start": 271.25,
+        "duration": 2.331
+    },
+    {
+        "text": "and what this means is we can get a sense of the direction of each output point.",
+        "start": 273.581,
+        "duration": 3.519
+    },
+    {
+        "text": "But perhaps the prettiest way to illustrate two-dimensional functions, ",
+        "start": 277.78,
+        "duration": 3.469
+    },
+    {
+        "text": "and the one we'll be using most this video, is to associate each point in that output ",
+        "start": 281.249,
+        "duration": 4.202
+    },
+    {
+        "text": "space with a color.",
+        "start": 285.451,
+        "duration": 0.929
+    },
+    {
+        "text": "Here we've used hues, that is where the color falls along a rainbow or a color wheel, ",
+        "start": 287.22,
+        "duration": 4.622
+    },
+    {
+        "text": "to correspond to the direction away from the origin, ",
+        "start": 291.842,
+        "duration": 2.849
+    },
+    {
+        "text": "and we're using darkness or brightness to correspond to the distance from the origin.",
+        "start": 294.691,
+        "duration": 4.569
+    },
+    {
+        "text": "For example, focusing just on this array of outputs, ",
+        "start": 299.26,
+        "duration": 2.968
+    },
+    {
+        "text": "all of these points are red, but the ones closer to the origin are a little darker, ",
+        "start": 302.228,
+        "duration": 4.704
+    },
+    {
+        "text": "and the ones farther away are a little brighter.",
+        "start": 306.932,
+        "duration": 2.688
+    },
+    {
+        "text": "And focusing just on this array of outputs, all of the points are green, ",
+        "start": 310.36,
+        "duration": 3.81
+    },
+    {
+        "text": "and again, closer to the origin means darker, farther away means lighter.",
+        "start": 314.17,
+        "duration": 3.81
+    },
+    {
+        "text": "And so on, all we're doing here is assigning a specific color to each direction, ",
+        "start": 318.78,
+        "duration": 4.587
+    },
+    {
+        "text": "all changing continuously.",
+        "start": 323.367,
+        "duration": 1.473
+    },
+    {
+        "text": "You might notice the darkness and brightness differences here are pretty subtle, ",
+        "start": 325.36,
+        "duration": 3.782
+    },
+    {
+        "text": "but for this video, all we care about is the direction of outputs, ",
+        "start": 329.142,
+        "duration": 3.129
+    },
+    {
+        "text": "not the magnitudes, the hues, not the brightness.",
+        "start": 332.271,
+        "duration": 2.289
+    },
+    {
+        "text": "The one important thing about brightness for you to notice is that near the origin, ",
+        "start": 335.3,
+        "duration": 4.35
+    },
+    {
+        "text": "which has no particular direction, all of the colors fade to black.",
+        "start": 339.65,
+        "duration": 3.47
+    },
+    {
+        "text": "So for thinking about functions, now that we've decided on a color for each output, ",
+        "start": 344.44,
+        "duration": 4.768
+    },
+    {
+        "text": "we can visualize 2D functions by coloring each point in the input space ",
+        "start": 349.208,
+        "duration": 4.088
+    },
+    {
+        "text": "based on the color of the point where it lands in the output space.",
+        "start": 353.296,
+        "duration": 3.804
+    },
+    {
+        "text": "I like to imagine many different points from that input space hopping over to their ",
+        "start": 357.84,
+        "duration": 4.014
+    },
+    {
+        "text": "corresponding outputs in the output space, then getting painted based on the color of ",
+        "start": 361.854,
+        "duration": 4.109
+    },
+    {
+        "text": "the point where they land, and then hopping back to where they came from in the input ",
+        "start": 365.963,
+        "duration": 4.11
+    },
+    {
+        "text": "space.",
+        "start": 370.073,
+        "duration": 0.287
+    },
+    {
+        "text": "Doing this for every point in the input space, ",
+        "start": 371.64,
+        "duration": 2.11
+    },
+    {
+        "text": "you can get a sense just by looking at that input space for roughly where ",
+        "start": 373.75,
+        "duration": 3.322
+    },
+    {
+        "text": "the function takes each point.",
+        "start": 377.072,
+        "duration": 1.348
+    },
+    {
+        "text": "For example, this stripe of pink points on the left tells us that all of those points ",
+        "start": 379.12,
+        "duration": 4.745
+    },
+    {
+        "text": "get mapped somewhere in the pink direction, that lower left of the output space.",
+        "start": 383.865,
+        "duration": 4.415
+    },
+    {
+        "text": "Also those three points which are black with lots ",
+        "start": 389.78,
+        "duration": 2.534
+    },
+    {
+        "text": "of colors around them are the ones that go to zero.",
+        "start": 392.314,
+        "duration": 2.586
+    },
+    {
+        "text": "Alright, so just like the 1D case, solving equations of 2D functions ",
+        "start": 399.34,
+        "duration": 4.603
+    },
+    {
+        "text": "can always be reframed by asking when a certain function is equal to zero.",
+        "start": 403.943,
+        "duration": 4.937
+    },
+    {
+        "text": "So that's our challenge right now, create an algorithm that ",
+        "start": 409.58,
+        "duration": 3.771
+    },
+    {
+        "text": "finds which input points of a given 2D function go to zero.",
+        "start": 413.351,
+        "duration": 3.709
+    },
+    {
+        "text": "Now you might point out that if you're looking at a color map like this by ",
+        "start": 420.86,
+        "duration": 3.647
+    },
+    {
+        "text": "seeing those black dots, you already know where the zeros of the function are.",
+        "start": 424.507,
+        "duration": 3.793
+    },
+    {
+        "text": "So does that count?",
+        "start": 428.62,
+        "duration": 1.38
+    },
+    {
+        "text": "Well keep in mind that to create a diagram like this, ",
+        "start": 430.92,
+        "duration": 2.95
+    },
+    {
+        "text": "we've had the computer compute the function at all of the pixels on the plane, ",
+        "start": 433.87,
+        "duration": 4.317
+    },
+    {
+        "text": "but our goal is to find a more efficient algorithm that only requires computing ",
+        "start": 438.187,
+        "duration": 4.372
+    },
+    {
+        "text": "the function at as few points as possible, only having a limited view of the colors, ",
+        "start": 442.559,
+        "duration": 4.645
+    },
+    {
+        "text": "so to speak.",
+        "start": 447.204,
+        "duration": 0.656
+    },
+    {
+        "text": "And also from a more theoretical standpoint, it'd be nice to have a general construct ",
+        "start": 449.36,
+        "duration": 4.188
+    },
+    {
+        "text": "that tells us the conditions for whether or not a zero exists inside a given region.",
+        "start": 453.548,
+        "duration": 4.092
+    },
+    {
+        "text": "Now remember, in one dimension the main insight was that if a continuous function is ",
+        "start": 459.0,
+        "duration": 4.357
+    },
+    {
+        "text": "positive at one point and negative at another, then somewhere in between it must be zero.",
+        "start": 463.357,
+        "duration": 4.563
+    },
+    {
+        "text": "So how do we extend that into two dimensions?",
+        "start": 468.84,
+        "duration": 1.74
+    },
+    {
+        "text": "We need some sort of analog of talking about signs.",
+        "start": 470.94,
+        "duration": 2.64
+    },
+    {
+        "text": "One way to think about what signs even are is directions.",
+        "start": 474.7,
+        "duration": 3.44
+    },
+    {
+        "text": "Positive means you're pointing to the right along the number line, ",
+        "start": 478.8,
+        "duration": 2.762
+    },
+    {
+        "text": "and negative means you're pointing to the left.",
+        "start": 481.562,
+        "duration": 1.938
+    },
+    {
+        "text": "Two dimensional quantities also have direction, but for them the options are much wider, ",
+        "start": 484.2,
+        "duration": 4.479
+    },
+    {
+        "text": "they can point anywhere along a whole circle of possibilities.",
+        "start": 488.679,
+        "duration": 3.121
+    },
+    {
+        "text": "So the same way that in one dimension we were asking whether a given function ",
+        "start": 492.53,
+        "duration": 4.496
+    },
+    {
+        "text": "is positive or negative on the boundary of a range, which is just two points, ",
+        "start": 497.026,
+        "duration": 4.496
+    },
+    {
+        "text": "for 2D functions we're going to be looking at the boundary of a region, ",
+        "start": 501.522,
+        "duration": 4.15
+    },
+    {
+        "text": "which is a loop, and ask about the direction of the function's output along that boundary.",
+        "start": 505.672,
+        "duration": 5.188
+    },
+    {
+        "text": "For example, we see that along this loop around this zero, ",
+        "start": 513.64,
+        "duration": 3.076
+    },
+    {
+        "text": "the output goes through every possible direction, all the colors of the rainbow, ",
+        "start": 516.716,
+        "duration": 4.224
+    },
+    {
+        "text": "red, yellow, green, blue, back to red, and everything in between along the way.",
+        "start": 520.94,
+        "duration": 4.12
+    },
+    {
+        "text": "But along this loop over here, with no zeros inside of it, ",
+        "start": 525.7,
+        "duration": 3.014
+    },
+    {
+        "text": "the output doesn't go through every color, it goes through some of the orangish ones, ",
+        "start": 528.714,
+        "duration": 4.393
+    },
+    {
+        "text": "but never, say, green or blue.",
+        "start": 533.107,
+        "duration": 1.533
+    },
+    {
+        "text": "And this is promising, it looks a lot like how things worked in one dimension.",
+        "start": 535.3,
+        "duration": 3.16
+    },
+    {
+        "text": "Maybe in the same way that if a 1D function takes both possible signs on the boundary ",
+        "start": 539.34,
+        "duration": 5.347
+    },
+    {
+        "text": "of a 1D region, there was a zero somewhere inside, ",
+        "start": 544.687,
+        "duration": 3.171
+    },
+    {
+        "text": "we might hypothesize that if a 2D function hits outputs of all possible directions, ",
+        "start": 547.858,
+        "duration": 5.224
+    },
+    {
+        "text": "all possible colors, along the boundary of a 2D region, ",
+        "start": 553.082,
+        "duration": 3.482
+    },
+    {
+        "text": "then somewhere inside that region it must go to zero.",
+        "start": 556.564,
+        "duration": 3.296
+    },
+    {
+        "text": "So that's our guess, and take a moment to think about if this should be true, ",
+        "start": 560.96,
+        "duration": 4.327
+    },
+    {
+        "text": "and if so, why?",
+        "start": 565.287,
+        "duration": 0.833
+    },
+    {
+        "text": "If we start thinking about a tiny loop around some input point, ",
+        "start": 567.42,
+        "duration": 3.167
+    },
+    {
+        "text": "we know that since everything is continuous, our function takes it to some tiny loop near ",
+        "start": 570.587,
+        "duration": 4.455
+    },
+    {
+        "text": "the corresponding output.",
+        "start": 575.042,
+        "duration": 1.238
+    },
+    {
+        "text": "But look, for most tiny loops, the output varies in color.",
+        "start": 577.14,
+        "duration": 3.38
+    },
+    {
+        "text": "If you pick any output point other than zero, and draw a sufficiently tight loop near it, ",
+        "start": 580.98,
+        "duration": 4.66
+    },
+    {
+        "text": "the loop's colors are all going to be about the same color as that point.",
+        "start": 585.64,
+        "duration": 3.78
+    },
+    {
+        "text": "A tight loop over here is all bluish, a tight loop over here is all yellowish, ",
+        "start": 589.84,
+        "duration": 4.423
+    },
+    {
+        "text": "you certainly aren't going to get every color of the rainbow.",
+        "start": 594.263,
+        "duration": 3.417
+    },
+    {
+        "text": "The only point where you can tighten loops around it while ",
+        "start": 598.22,
+        "duration": 3.823
+    },
+    {
+        "text": "still getting all the colors is the colorless origin, zero itself.",
+        "start": 602.043,
+        "duration": 4.277
+    },
+    {
+        "text": "So it is indeed the case that if you have loops going through every color of the rainbow, ",
+        "start": 607.1,
+        "duration": 4.614
+    },
+    {
+        "text": "tightening and tightening, narrowing in on a point, ",
+        "start": 611.714,
+        "duration": 2.666
+    },
+    {
+        "text": "then that point must in fact be a zero.",
+        "start": 614.38,
+        "duration": 2.0
+    },
+    {
+        "text": "And so, let's set up a 2D equation solver just like our one-dimensional equation solver.",
+        "start": 617.32,
+        "duration": 4.54
+    },
+    {
+        "text": "When we find a large region whose border goes through every color, ",
+        "start": 622.26,
+        "duration": 3.579
+    },
+    {
+        "text": "split it into two, and then look at the colors on the boundary of each half.",
+        "start": 625.839,
+        "duration": 4.061
+    },
+    {
+        "text": "In the example shown here, the border on the left half doesn't go through all colors, ",
+        "start": 630.54,
+        "duration": 4.2
+    },
+    {
+        "text": "there are no points that map to the orangish-yellowish directions, for example.",
+        "start": 634.74,
+        "duration": 3.86
+    },
+    {
+        "text": "So I'll grey out this area as a way of saying we don't want to search it any further.",
+        "start": 639.06,
+        "duration": 3.56
+    },
+    {
+        "text": "The right half does go through all the colors, ",
+        "start": 643.38,
+        "duration": 2.163
+    },
+    {
+        "text": "spends a lot of time in the green direction, then passes through yellow-orange-red, ",
+        "start": 645.543,
+        "duration": 3.867
+    },
+    {
+        "text": "as well as blue-violet-pink.",
+        "start": 649.41,
+        "duration": 1.29
+    },
+    {
+        "text": "Now remember, what that means is that points of this ",
+        "start": 651.56,
+        "duration": 2.769
+    },
+    {
+        "text": "boundary get mapped to outputs of all possible directions.",
+        "start": 654.329,
+        "duration": 3.031
+    },
+    {
+        "text": "So we'll explore it further, subdividing again and checking the boundary for each region.",
+        "start": 657.84,
+        "duration": 4.02
+    },
+    {
+        "text": "The boundary of the top is all green, so we'll stop searching there.",
+        "start": 662.88,
+        "duration": 3.68
+    },
+    {
+        "text": "But the bottom is colorful enough to deserve a subdivision.",
+        "start": 666.86,
+        "duration": 2.66
+    },
+    {
+        "text": "And just continue like this.",
+        "start": 670.34,
+        "duration": 1.68
+    },
+    {
+        "text": "Check which subregion has a boundary covering all possible colors, ",
+        "start": 672.36,
+        "duration": 3.493
+    },
+    {
+        "text": "meaning points of that boundary get mapped to all possible directions, ",
+        "start": 675.853,
+        "duration": 3.702
+    },
+    {
+        "text": "and keep chopping those regions in half like we did for the one-dimensional case, ",
+        "start": 679.555,
+        "duration": 4.275
+    },
+    {
+        "text": "eventually leading us to a zero over the func- Well, hang on a second.",
+        "start": 683.83,
+        "duration": 3.65
+    },
+    {
+        "text": "What happened here?",
+        "start": 688.88,
+        "duration": 1.04
+    },
+    {
+        "text": "Neither of those last subdivisions on the bottom right passed through all the colors, ",
+        "start": 690.38,
+        "duration": 4.102
+    },
+    {
+        "text": "so our algorithm stopped because it didn't want to search through either of those, ",
+        "start": 694.482,
+        "duration": 3.959
+    },
+    {
+        "text": "but it also didn't find a zero.",
+        "start": 698.441,
+        "duration": 1.479
+    },
+    {
+        "text": "Okay, clearly something's wrong here.",
+        "start": 701.06,
+        "duration": 2.24
+    },
+    {
+        "text": "And that's okay, being wrong is a regular part of doing math.",
+        "start": 703.54,
+        "duration": 2.98
+    },
+    {
+        "text": "If we look back, we had this hypothesis, and it led us to this proposed algorithm, ",
+        "start": 706.52,
+        "duration": 4.744
+    },
+    {
+        "text": "so we were mistaken somewhere.",
+        "start": 711.264,
+        "duration": 1.716
+    },
+    {
+        "text": "And being good at math isn't about being right the first time, ",
+        "start": 713.66,
+        "duration": 2.864
+    },
+    {
+        "text": "it's about having the resilience to carefully look back and understand the mistakes, ",
+        "start": 716.524,
+        "duration": 3.866
+    },
+    {
+        "text": "and understand how to fix them.",
+        "start": 720.39,
+        "duration": 1.41
+    },
+    {
+        "text": "Now the problem here is that we had a region whose border went through every color, ",
+        "start": 722.48,
+        "duration": 4.022
+    },
+    {
+        "text": "but when we split it in the middle, neither subregion's border went through every color, ",
+        "start": 726.502,
+        "duration": 4.263
+    },
+    {
+        "text": "we had no options for where to keep searching next, and that broke the zero finder.",
+        "start": 730.765,
+        "duration": 3.975
+    },
+    {
+        "text": "Now in one dimension, this sort of thing never happened.",
+        "start": 734.74,
+        "duration": 2.82
+    },
+    {
+        "text": "Any time you had an interval whose endpoints have different signs, ",
+        "start": 737.98,
+        "duration": 3.795
+    },
+    {
+        "text": "if you split it up, you know that you're guaranteed to get ",
+        "start": 741.775,
+        "duration": 3.342
+    },
+    {
+        "text": "some subinterval whose endpoints also have different signs.",
+        "start": 745.117,
+        "duration": 3.343
+    },
+    {
+        "text": "Or, put another way, any time you have two intervals whose endpoints don't change signs, ",
+        "start": 749.02,
+        "duration": 4.68
+    },
+    {
+        "text": "if you combine them, you'll get a bigger interval whose endpoints also don't change sign.",
+        "start": 753.7,
+        "duration": 4.68
+    },
+    {
+        "text": "But in two dimensions, it's possible to find two regions whose ",
+        "start": 759.08,
+        "duration": 3.357
+    },
+    {
+        "text": "borders don't go through every color, but whose boundaries ",
+        "start": 762.437,
+        "duration": 3.145
+    },
+    {
+        "text": "combine to give a region whose border does go through every color.",
+        "start": 765.582,
+        "duration": 3.518
+    },
+    {
+        "text": "And in just this way, our proposed zero-finding algorithm broke.",
+        "start": 769.84,
+        "duration": 3.66
+    },
+    {
+        "text": "In fact, if you think about it, you can find a big loop whose border ",
+        "start": 774.38,
+        "duration": 3.86
+    },
+    {
+        "text": "goes through every possible color without there being a zero inside of it.",
+        "start": 778.24,
+        "duration": 4.14
+    },
+    {
+        "text": "Now that's not to say that we were wrong in our claims about tiny loops when we said ",
+        "start": 783.08,
+        "duration": 4.435
+    },
+    {
+        "text": "that a forever narrowing loop going through every color has to be narrowing in on a zero.",
+        "start": 787.515,
+        "duration": 4.645
+    },
+    {
+        "text": "But what made a mess of things for us is that this ",
+        "start": 792.8,
+        "duration": 2.753
+    },
+    {
+        "text": "does-my-border-go-through-every-color-or-not property doesn't combine in a nice, ",
+        "start": 795.553,
+        "duration": 4.373
+    },
+    {
+        "text": "predictable way when you combine regions.",
+        "start": 799.926,
+        "duration": 2.214
+    },
+    {
+        "text": "But don't worry, it turns out we can modify this slightly to a more ",
+        "start": 803.0,
+        "duration": 3.957
+    },
+    {
+        "text": "sophisticated property that does combine to give us what we want.",
+        "start": 806.957,
+        "duration": 3.783
+    },
+    {
+        "text": "The idea is that instead of simply asking whether we can find ",
+        "start": 818.18,
+        "duration": 3.244
+    },
+    {
+        "text": "a color at some point along the loop, let's keep more careful ",
+        "start": 821.424,
+        "duration": 3.244
+    },
+    {
+        "text": "track of how these colors change as we walk around that loop.",
+        "start": 824.668,
+        "duration": 3.192
+    },
+    {
+        "text": "Let me show you what I mean with an example.",
+        "start": 828.58,
+        "duration": 1.38
+    },
+    {
+        "text": "I'll keep a little color wheel up here in the corner to help us keep track.",
+        "start": 830.4,
+        "duration": 2.86
+    },
+    {
+        "text": "When the colors along a path of inputs move through the rainbow in a specific direction, ",
+        "start": 833.94,
+        "duration": 5.162
+    },
+    {
+        "text": "from red to yellow, yellow to green, green to blue, or blue to red, ",
+        "start": 839.102,
+        "duration": 3.944
+    },
+    {
+        "text": "the output is swinging clockwise.",
+        "start": 843.046,
+        "duration": 1.914
+    },
+    {
+        "text": "But on the other hand, if the colors move the other way through the rainbow, ",
+        "start": 845.7,
+        "duration": 4.42
+    },
+    {
+        "text": "from blue to green, green to yellow, yellow to red, or red to blue, ",
+        "start": 850.12,
+        "duration": 3.903
+    },
+    {
+        "text": "the output is swinging counterclockwise.",
+        "start": 854.023,
+        "duration": 2.297
+    },
+    {
+        "text": "So walking along this short path here, the colors wind ",
+        "start": 857.16,
+        "duration": 3.289
+    },
+    {
+        "text": "a fifth of the way clockwise through the color wheel.",
+        "start": 860.449,
+        "duration": 3.171
+    },
+    {
+        "text": "And walking along this path here, the colors wind ",
+        "start": 864.26,
+        "duration": 2.798
+    },
+    {
+        "text": "another fifth of the way clockwise through the color wheel.",
+        "start": 867.058,
+        "duration": 3.302
+    },
+    {
+        "text": "And of course that means that if you go through both paths, one after the other, ",
+        "start": 871.16,
+        "duration": 4.207
+    },
+    {
+        "text": "the colors wind a total of two-fifths of a full turn clockwise.",
+        "start": 875.367,
+        "duration": 3.273
+    },
+    {
+        "text": "The total amount of winding just adds up, and this is going to be key, ",
+        "start": 879.28,
+        "duration": 3.485
+    },
+    {
+        "text": "this is the kind of straightforward combining that will be useful to us.",
+        "start": 882.765,
+        "duration": 3.535
+    },
+    {
+        "text": "Now when I say total amount of winding, I want you to imagine ",
+        "start": 886.98,
+        "duration": 3.62
+    },
+    {
+        "text": "an old-fashioned odometer that ticks forward as the arrow spins clockwise, ",
+        "start": 890.6,
+        "duration": 4.38
+    },
+    {
+        "text": "but backwards as the arrow spins counterclockwise.",
+        "start": 894.98,
+        "duration": 2.92
+    },
+    {
+        "text": "So counterclockwise winding counts as negative clockwise winding.",
+        "start": 898.74,
+        "duration": 3.72
+    },
+    {
+        "text": "The outputs may turn a lot, but if some of that turning is in the opposite direction, ",
+        "start": 903.0,
+        "duration": 4.478
+    },
+    {
+        "text": "it cancels out.",
+        "start": 907.478,
+        "duration": 0.782
+    },
+    {
+        "text": "For example, if you move forward along this path, ",
+        "start": 908.92,
+        "duration": 2.566
+    },
+    {
+        "text": "and then move backwards along that same path, the total amount of winding ",
+        "start": 911.486,
+        "duration": 3.798
+    },
+    {
+        "text": "ends up being zero.",
+        "start": 915.284,
+        "duration": 0.976
+    },
+    {
+        "text": "The backwards movement literally rewinds through the previously seen colors, ",
+        "start": 916.26,
+        "duration": 4.116
+    },
+    {
+        "text": "reversing all the previous winding, and returning the odometer back to where it started.",
+        "start": 920.376,
+        "duration": 4.704
+    },
+    {
+        "text": "For our purposes, we'll care most about looking at the winding along loops.",
+        "start": 926.28,
+        "duration": 3.62
+    },
+    {
+        "text": "For example, let's say we walk around this entire loop clockwise.",
+        "start": 930.44,
+        "duration": 3.24
+    },
+    {
+        "text": "The outputs that we come across wind around a total of three full clockwise turns.",
+        "start": 934.24,
+        "duration": 4.68
+    },
+    {
+        "text": "The colors swung through the rainbow, ROYGBIV, in order, ",
+        "start": 939.36,
+        "duration": 3.667
+    },
+    {
+        "text": "from red to red again, and then again, and again.",
+        "start": 943.027,
+        "duration": 3.153
+    },
+    {
+        "text": "In the jargon mathematicians use, we say that along this loop, ",
+        "start": 946.92,
+        "duration": 3.767
+    },
+    {
+        "text": "the total winding number is three.",
+        "start": 950.687,
+        "duration": 2.033
+    },
+    {
+        "text": "Now for other loops, it could be any other whole number, ",
+        "start": 953.82,
+        "duration": 3.132
+    },
+    {
+        "text": "maybe a larger one if the output swings around many times as the input ",
+        "start": 956.952,
+        "duration": 3.902
+    },
+    {
+        "text": "walks around a single loop, or it could be a smaller number if the output ",
+        "start": 960.854,
+        "duration": 4.067
+    },
+    {
+        "text": "only swings around once or twice, or that winding number could even be a ",
+        "start": 964.921,
+        "duration": 4.012
+    },
+    {
+        "text": "negative integer if the output was swinging counterclockwise as we walk ",
+        "start": 968.933,
+        "duration": 3.958
+    },
+    {
+        "text": "clockwise around the loop.",
+        "start": 972.891,
+        "duration": 1.429
+    },
+    {
+        "text": "But along any loop, this total amount of winding has to be a whole number.",
+        "start": 975.18,
+        "duration": 3.68
+    },
+    {
+        "text": "I mean, by the time you get back to where you started, ",
+        "start": 980.88,
+        "duration": 2.158
+    },
+    {
+        "text": "you'll have the same output that you started with.",
+        "start": 983.038,
+        "duration": 1.962
+    },
+    {
+        "text": "Incidentally, if a path actually contains a point where the output is precisely zero, ",
+        "start": 986.18,
+        "duration": 4.645
+    },
+    {
+        "text": "then technically you can't define a winding number along that, ",
+        "start": 990.825,
+        "duration": 3.404
+    },
+    {
+        "text": "since the output has no particular direction.",
+        "start": 994.229,
+        "duration": 2.431
+    },
+    {
+        "text": "Now this isn't going to be a problem for us, because our whole goal is to find zeros, ",
+        "start": 997.4,
+        "duration": 4.168
+    },
+    {
+        "text": "so if this ever comes up, we just lucked out early.",
+        "start": 1001.568,
+        "duration": 2.472
+    },
+    {
+        "text": "Alright, so the main thing to notice about these winding numbers ",
+        "start": 1004.98,
+        "duration": 2.785
+    },
+    {
+        "text": "is that they add up nicely when you combine paths into bigger paths.",
+        "start": 1007.765,
+        "duration": 2.915
+    },
+    {
+        "text": "But what we really want is for the winding numbers along the borders of ",
+        "start": 1014.8,
+        "duration": 3.82
+    },
+    {
+        "text": "regions to add up nicely when we combine regions to make bigger regions.",
+        "start": 1018.62,
+        "duration": 3.82
+    },
+    {
+        "text": "So do we have that property?",
+        "start": 1022.98,
+        "duration": 1.54
+    },
+    {
+        "text": "Well, take a look.",
+        "start": 1027.76,
+        "duration": 1.3
+    },
+    {
+        "text": "The winding number as we go clockwise around this region on the left is the sum of ",
+        "start": 1029.54,
+        "duration": 4.94
+    },
+    {
+        "text": "the winding numbers from these four paths, and the winding as we go clockwise around ",
+        "start": 1034.48,
+        "duration": 5.059
+    },
+    {
+        "text": "this region on the right is the sum of the winding numbers from these four paths.",
+        "start": 1039.539,
+        "duration": 4.82
+    },
+    {
+        "text": "And when we combine those two regions into a bigger one, ",
+        "start": 1045.339,
+        "duration": 3.046
+    },
+    {
+        "text": "most of those paths become part of the clockwise border of the bigger region.",
+        "start": 1048.385,
+        "duration": 4.115
+    },
+    {
+        "text": "And as for those two paths that don't?",
+        "start": 1053.26,
+        "duration": 1.9
+    },
+    {
+        "text": "Well, they cancel out perfectly.",
+        "start": 1055.68,
+        "duration": 1.42
+    },
+    {
+        "text": "One of them is just the reverse, the rewinding of the other one, like we saw before.",
+        "start": 1057.52,
+        "duration": 4.24
+    },
+    {
+        "text": "So the winding numbers along borders of regions add up in just the way we want them to.",
+        "start": 1062.56,
+        "duration": 5.34
+    },
+    {
+        "text": "Also side note, this reasoning about oriented borders adding up nicely like this ",
+        "start": 1068.64,
+        "duration": 4.044
+    },
+    {
+        "text": "comes up a lot in mathematics, and it often goes under the name Stokes' theorem.",
+        "start": 1072.684,
+        "duration": 3.996
+    },
+    {
+        "text": "Those of you who've studied multivariable calculus might recognize it from that context.",
+        "start": 1077.06,
+        "duration": 3.96
+    },
+    {
+        "text": "So now, finally, with winding numbers in hand, ",
+        "start": 1082.36,
+        "duration": 2.567
+    },
+    {
+        "text": "we can get back to our equation solving goals.",
+        "start": 1084.927,
+        "duration": 2.513
+    },
+    {
+        "text": "The problem with the region we saw earlier is that even though its border ",
+        "start": 1088.0,
+        "duration": 3.997
+    },
+    {
+        "text": "passed through all possible colors, the winding number was actually zero.",
+        "start": 1091.997,
+        "duration": 3.943
+    },
+    {
+        "text": "The outputs wound around halfway, through yellow to red, ",
+        "start": 1096.5,
+        "duration": 3.197
+    },
+    {
+        "text": "and then started going counterclockwise back the other direction, ",
+        "start": 1099.697,
+        "duration": 3.702
+    },
+    {
+        "text": "then continued going through blue and hitting red from the other way, ",
+        "start": 1103.399,
+        "duration": 3.927
+    },
+    {
+        "text": "all in such a way that the total winding netted out to be zero.",
+        "start": 1107.326,
+        "duration": 3.534
+    },
+    {
+        "text": "But if you find a loop which not only hits every color, ",
+        "start": 1111.84,
+        "duration": 3.024
+    },
+    {
+        "text": "but has the stronger condition of a non-zero winding number, ",
+        "start": 1114.864,
+        "duration": 3.294
+    },
+    {
+        "text": "then if you were to split it in half, you're guaranteed that at least one ",
+        "start": 1118.158,
+        "duration": 3.996
+    },
+    {
+        "text": "of those halves has a non-zero winding number as well, ",
+        "start": 1122.154,
+        "duration": 2.969
+    },
+    {
+        "text": "since things add up nicely in the way we want them to.",
+        "start": 1125.123,
+        "duration": 2.917
+    },
+    {
+        "text": "So in this way, you can keep going, narrowing in further and further onto one point.",
+        "start": 1128.44,
+        "duration": 5.06
+    },
+    {
+        "text": "And as you narrow in onto a point, you'll be doing so with tiny loops that have ",
+        "start": 1134.05,
+        "duration": 4.099
+    },
+    {
+        "text": "non-zero winding numbers, which implies they go through all possible colors, ",
+        "start": 1138.149,
+        "duration": 3.946
+    },
+    {
+        "text": "and therefore, like I said before, the point they're narrowing in on must be a zero.",
+        "start": 1142.095,
+        "duration": 4.305
+    },
+    {
+        "text": "And that's it!",
+        "start": 1147.42,
+        "duration": 0.94
+    },
+    {
+        "text": "We have now created a two-dimensional equation solver, ",
+        "start": 1148.6,
+        "duration": 2.922
+    },
+    {
+        "text": "and this time, I promise, there are no bugs.",
+        "start": 1151.522,
+        "duration": 2.338
+    },
+    {
+        "text": "Winding numbers are precisely the tool we need to make this work.",
+        "start": 1154.56,
+        "duration": 2.98
+    },
+    {
+        "text": "We can now solve equations that look like where does f of x equal g of x in two ",
+        "start": 1158.1,
+        "duration": 4.387
+    },
+    {
+        "text": "dimensions just by considering how the difference between f and g winds around.",
+        "start": 1162.487,
+        "duration": 4.333
+    },
+    {
+        "text": "Whenever we have a loop whose winding number isn't zero, ",
+        "start": 1167.6,
+        "duration": 2.869
+    },
+    {
+        "text": "we can run this algorithm on it and we're guaranteed to find a solution ",
+        "start": 1170.469,
+        "duration": 3.624
+    },
+    {
+        "text": "somewhere within it.",
+        "start": 1174.093,
+        "duration": 1.007
+    },
+    {
+        "text": "And what's more, just like in one dimension, this algorithm is incredibly efficient.",
+        "start": 1175.66,
+        "duration": 4.18
+    },
+    {
+        "text": "We keep narrowing in on half the size of our region each round, ",
+        "start": 1180.24,
+        "duration": 3.498
+    },
+    {
+        "text": "thus quickly narrowing in on the zeros, and all the while, ",
+        "start": 1183.738,
+        "duration": 3.226
+    },
+    {
+        "text": "we only have to check the value of the function along points of these loops, ",
+        "start": 1186.964,
+        "duration": 4.21
+    },
+    {
+        "text": "rather than checking it on the many points of the interior.",
+        "start": 1191.174,
+        "duration": 3.226
+    },
+    {
+        "text": "So in some sense, the overall work done is proportional only to ",
+        "start": 1195.16,
+        "duration": 4.224
+    },
+    {
+        "text": "the search space's perimeter, not the full area, which is amazing.",
+        "start": 1199.384,
+        "duration": 4.356
+    },
+    {
+        "text": "Now once you understand what's going on, it's weirdly mesmerizing to just ",
+        "start": 1204.92,
+        "duration": 3.914
+    },
+    {
+        "text": "watch this in action, giving it some function and letting it search for zeros.",
+        "start": 1208.834,
+        "duration": 4.126
+    },
+    {
+        "text": "Like I said before, complex numbers are two-dimensional, ",
+        "start": 1213.62,
+        "duration": 2.996
+    },
+    {
+        "text": "so let's apply it to some equation with complex numbers.",
+        "start": 1216.616,
+        "duration": 2.944
+    },
+    {
+        "text": "For example, here's the algorithm finding the zeros of the ",
+        "start": 1220.3,
+        "duration": 3.711
+    },
+    {
+        "text": "function x to the fifth minus x minus one over the complex plane.",
+        "start": 1224.011,
+        "duration": 4.089
+    },
+    {
+        "text": "It started by considering a very large region around the origin, ",
+        "start": 1228.9,
+        "duration": 3.238
+    },
+    {
+        "text": "which ended up having a winding number of five.",
+        "start": 1232.138,
+        "duration": 2.342
+    },
+    {
+        "text": "Each time you find a loop with a non-zero winding number, ",
+        "start": 1235.28,
+        "duration": 2.874
+    },
+    {
+        "text": "you split it in half and figure out the winding number of the two smaller loops.",
+        "start": 1238.154,
+        "duration": 3.966
+    },
+    {
+        "text": "Either one or both of them is guaranteed to have a non-zero winding number, ",
+        "start": 1242.7,
+        "duration": 3.663
+    },
+    {
+        "text": "and when you see this, you know there's a zero somewhere inside that smaller loop, ",
+        "start": 1246.363,
+        "duration": 4.0
+    },
+    {
+        "text": "so you keep going in the same way, searching the smaller space.",
+        "start": 1250.363,
+        "duration": 3.037
+    },
+    {
+        "text": "We also stop exploring a region if the path we're computing along happens to stumble ",
+        "start": 1254.18,
+        "duration": 4.385
+    },
+    {
+        "text": "across a zero, which actually happened once for this example on the right half here.",
+        "start": 1258.565,
+        "duration": 4.335
+    },
+    {
+        "text": "Those rare occurrences interfere with our ability to compute winding numbers, ",
+        "start": 1263.28,
+        "duration": 3.753
+    },
+    {
+        "text": "but hey, we got a zero.",
+        "start": 1267.033,
+        "duration": 1.107
+    },
+    {
+        "text": "And as for loops whose winding number is zero, you just don't explore those further.",
+        "start": 1269.22,
+        "duration": 3.7
+    },
+    {
+        "text": "Maybe they have a solution inside, maybe they don't, we have no guarantees.",
+        "start": 1272.92,
+        "duration": 3.28
+    },
+    {
+        "text": "And letting our equation solver continue in the same way, ",
+        "start": 1278.4,
+        "duration": 2.739
+    },
+    {
+        "text": "it eventually converges to lots of zeros for this polynomial.",
+        "start": 1281.139,
+        "duration": 2.881
+    },
+    {
+        "text": "By the way, it is no coincidence that the total ",
+        "start": 1285.84,
+        "duration": 2.501
+    },
+    {
+        "text": "winding number in this example happened to be five.",
+        "start": 1288.341,
+        "duration": 2.659
+    },
+    {
+        "text": "With complex numbers, the operation x to the n directly corresponds to walking ",
+        "start": 1291.58,
+        "duration": 5.363
+    },
+    {
+        "text": "around the output's origin n times as you walk around the input's origin once.",
+        "start": 1296.943,
+        "duration": 5.297
+    },
+    {
+        "text": "So with the polynomial, for large enough inputs, ",
+        "start": 1304.68,
+        "duration": 2.884
+    },
+    {
+        "text": "every term other than the leading term becomes insignificant in comparison.",
+        "start": 1307.564,
+        "duration": 4.416
+    },
+    {
+        "text": "So any complex polynomial whose leading term is x to the ",
+        "start": 1312.48,
+        "duration": 3.715
+    },
+    {
+        "text": "n has a winding number of n around a large enough loop.",
+        "start": 1316.195,
+        "duration": 3.585
+    },
+    {
+        "text": "And in that way, our winding number technology actually ",
+        "start": 1320.54,
+        "duration": 3.256
+    },
+    {
+        "text": "guarantees that every complex polynomial has a zero.",
+        "start": 1323.796,
+        "duration": 3.024
+    },
+    {
+        "text": "This is such an important fact that mathematicians ",
+        "start": 1327.48,
+        "duration": 2.452
+    },
+    {
+        "text": "call it the fundamental theorem of algebra.",
+        "start": 1329.932,
+        "duration": 2.068
+    },
+    {
+        "text": "Having an algorithm for finding numerical solutions to equations like this is ",
+        "start": 1333.8,
+        "duration": 3.937
+    },
+    {
+        "text": "extremely practical, but the fundamental theorem of algebra is a good example ",
+        "start": 1337.737,
+        "duration": 3.937
+    },
+    {
+        "text": "of how these winding numbers are also quite useful on a theoretical level, ",
+        "start": 1341.674,
+        "duration": 3.786
+    },
+    {
+        "text": "guaranteeing the existence of a solution to a broad class of equations for ",
+        "start": 1345.46,
+        "duration": 3.785
+    },
+    {
+        "text": "suitable conditions, which is much more the kind of thing mathematicians like ",
+        "start": 1349.245,
+        "duration": 3.937
+    },
+    {
+        "text": "thinking about.",
+        "start": 1353.182,
+        "duration": 0.758
+    },
+    {
+        "text": "I'll show you a couple more amazing applications of this in the context of topology in ",
+        "start": 1353.94,
+        "duration": 4.805
+    },
+    {
+        "text": "a follow-up video, which includes correcting a mistake from an old 3blue1brown video.",
+        "start": 1358.745,
+        "duration": 4.695
+    },
+    {
+        "text": "Which one?",
+        "start": 1364.06,
+        "duration": 0.38
+    },
+    {
+        "text": "Well, watch all of the videos, everything on this channel, ",
+        "start": 1364.94,
+        "duration": 2.777
+    },
+    {
+        "text": "and see if you can spot the error first.",
+        "start": 1367.717,
+        "duration": 1.883
+    },
+    {
+        "text": "The primary author of this video is one of the newest 3blue1brown team members, ",
+        "start": 1371.3,
+        "duration": 4.564
+    },
+    {
+        "text": "Sridhar Ramesh.",
+        "start": 1375.864,
+        "duration": 0.856
+    },
+    {
+        "text": "Thank you for watching.",
+        "start": 1383.94,
+        "duration": 6.12
+    }
+]

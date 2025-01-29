@@ -1,0 +1,278 @@
+[
+    {
+        "start": 0.08,
+        "text": "it is truly a pleasure and an honor for me to host professor robert harlick for this week's talk so in our talk at [Music] computational medicine bioinformatics also co-hosted by michigan institute for data sciences uh robert doesn't need any introduction but maybe i just give like a few points about his outstanding work in korea dr harlick started his work as a principal investigator in nasa working on remote sensing so that's the part that you know he started working on image processing and essentially created the field of majority of field that we know as image processing at the same time he worked on the field of you know related field computer vision and in particular he worked on "
+    },
+    {
+        "start": 60.879,
+        "text": "uh 3d geometry for you know analyzing images for on more one on more perspective projection views um one thing that most of you are familiar with is the work that professor harlick did in 1970s on uh creating a set of image feature uh analysis technique which we call them you know glcm that are based on uh spatial great on co-occurrence texture features this is essentially a paper that robert published in 1973 in it journal in on man systems man and cybernetics this is one of the highly cited papers in in the field of engineering i think i checked that recently it was over 26 000 times cited and i can tell you that if you look at the curve the curve is still going up "
+    },
+    {
+        "start": 123.439,
+        "text": "and people in my lab know that in many of our research we are still using robert's features for texture analysis they're truly fundamental for the field of image processing roberts also work on shape analysis and and um working on mathematical morphology for different types of images he worked on a number of different uh fields of biomedical image analysis he worked on x-ray images he worked on echocardiography and when i say he worked on this mostly i mean he created these fields for us and we are essentially following the the fundamental work that he did uh dr harlick is a fellow of ieee for his contributions in computer vision and image processing he's a fellow of international association for patent recognition iapr "
+    },
+    {
+        "start": 184.8,
+        "text": "he has been the president of iapr since 1996 uh up until i guess 1998 he's been in the editorial board of many ieee and and acm transactions and i don't want to go into the details of that so what we want to do what we do today i'm not going to talk about uh robert's work on subspace classifiers because he's gonna talk about that i just wanna say that um our own uh jonathan griack dr greg who worked with us his phd was on this topic and he worked on the core supervision of professor harlick so we have this strong connection with one of the founders of of the field and robert this is a great pleasure again for us to have you here without further ado i i let you "
+    },
+    {
+        "start": 245.04,
+        "text": "um um talk about your recent research on subspace classifiers yeah thank you very much it's an honor to be here i'm not sure i recognized all the things that you told me about because all of those are in the past and you know we don't live in the past and the future for me is now is in certain respects very much like the future was for me in the 1970 69 when i got my phd degree so yeah i've been in the university systems now for over half a century today's talk is going to be on subspace classifiers let's get that up and it's a counter-culture talk by counter-culture i mean um that if you look where the "
+    },
+    {
+        "start": 305.68,
+        "text": "main research is being done let's say in machine learning it's all related to neural nets deep learning and and the advances there and today you cannot get a paper published um that has anything to do with classification if you don't have comparisons with deep learning and if you do have comparisons with deep learning and you say the method is better in whatever application you're looking at you'll raise a bunch of eyebrows so you're in a counter culture quick talk and i i hope that i can inspire you to see the things that i have seen i have intuitive about this this method so let's begin since we're working in subspaces actually multiple subspaces we're really trying to solve a complex "
+    },
+    {
+        "start": 367.759,
+        "text": "problem and complex problems it's not unusual to tackle them by breaking the big problem we'll call it the global problem into smaller sub-problems each of the sub-problems can be solved independently and because the problems are small enough it may be possible to do it optimally and then you combine the solution to the sub-problems to obtain the solution to the global problem and often this works very well the idea of the decompositions is to maximize the dependencies within each of the smaller problems and minimize the dependencies between each of the smaller problems and then you thread together the solutions to the smaller problem to make the solution to the larger problem decompositions occur in many ways "
+    },
+    {
+        "start": 428.08,
+        "text": "and in these ways it's often the case that there's actually theoretical papers that deal with aspects of the natures of these kind of decompositions and their optimality recursive decomposition data decompositions functional decompositions search space compositions well we're not surveying any of these i just want to mention these in passing so sometimes the solution to a decomposed problem is optimal and sometimes it's sub-optimal the solution obtained by a decomposition can be bad it can be approximate and it can be close to being optimal and sometimes it actually is because there's a theory that says it will be under certain conditions so let's go into the subspace classifier the subspace classifier is one that projects the measurement tuple to one or more subspaces where the projected tuple is processed "
+    },
+    {
+        "start": 490.08,
+        "text": "and the processed projected tuples are combined in a way to form an assigned classification it is typical for the projection operators to be orthogonal projection operators it's not unusual for the projection operators to be access aligned and indeed the subspace classifier by other names has existed well for over a half a century for example the classic feature selection where you have many many dimensions you select the most relevant dimensions called features and you use those in the classifier that indeed is an axis aligned orthogonal projection it's just you you're working in a subspace of course in those years it wasn't called subspace uh in particular the "
+    },
+    {
+        "start": 550.88,
+        "text": "the this particular method which gets to be called the n-tuple method was written about by bledsoe and browning in 1959 in the proceedings of the eastern joint computer conference 1959 you know what computers were in 1959 big huge rooms with big used air conditioners raised floors racks upon racks upon racks and even in some of them you didn't provide electricity directly you provided it to a motor generator set and then the output of the generator was the one that provided the electricity to the equipment and those rooms which i'm now thinking about 19 and the 19 even in the 19 mid 1960s early 1960s "
+    },
+    {
+        "start": 611.12,
+        "text": "the simplest of all of the smartphones has more capability in it and those machines have those states all right so printed character recognition was a an important thing in those days the each character is after its own normalization steps and so on is in a an image basically of iros by j columns and um the automatic thresholding was done in analog and it produced a image that was either zeros or ones and the method was designed for table lookup hardware because there wasn't much computational ability and you couldn't hook up your machine to the largest of the ibm machines or like the ge 635 which was the first time-sharing machine you couldn't do that because "
+    },
+    {
+        "start": 672.24,
+        "text": "your uh the value of doing the character recognition and the cost of using those kind of machines uh was completely out of balance the cost was much higher uh i just want to say something about uh browning because most of the talk is going to be about bledsoe uh about 15 years after 1959 he wrote a book the climate and the affairs of men and uh during the time between 59 and let's say 75 when the book came out he worked on um commodities particularly of of crops and my suspicion is is that the technique he used was the actually the end tuple method from that paper worked over to uh commodity trained "
+    },
+    {
+        "start": 733.2,
+        "text": "trading and i think he made a lot of money and that's all i'll say okay so let's take a look to see exactly how this works which right here is a pixelated image and let's see here nine [Music] positions have been selected those nine positions represent positions of let's just call it features or dimensions uh that constitute a particular subspace in the original technique those are chosen by random so a small number of pixel positions for each subspace are randomly selected there are multiple sets and again each one of these sets is random in the "
+    },
+    {
+        "start": 794.079,
+        "text": "first implementations these sets were mutually exclusive soon after it got implemented things were tried with overlapping sets mentioned before the pixel positions were thresholded again this is the analog side and the zero or ones you can think of as just concatenating all the binary values to form a binary number this number was used to access in the memory array it became the address and for each character class you have as many memory arrays as there are randomly selected pixel position sets uh here's a just a little quick sketch about the mathematics i just want to say on the side that these papers when they got published and "
+    },
+    {
+        "start": 855.36,
+        "text": "there was a huge number of papers that were published after a 1959 paper the people who did the publishing often had an electrical engineering diagram if you were to go to look at those papers to find out what was going on in those papers you would struggle a little bit because the way they illustrated what was going on was to do an engineering diagram and not just a general mathematical statement as to what it was so you had to dig into it to figure out what the mathematics was all right here we have m pattern sets of and each of which are n randomly selected pixel positions the printed character produces therefore m n digit binary numbers which we'll call b1 to bm there are k character classes and there are a bunch of tables which "
+    },
+    {
+        "start": 916.079,
+        "text": "are indexed by the pattern set and by the class so we'll call them tmk and if you look up what the argument is it was the fraction of times character in the training set of class k as the binary number bm for the for its address to the m pattern set and then the kinds of computations that were were done was to take the product because under a conditional independent assumption the product is something that is also a probability entity sometimes it was done by taking sums and sometimes it was done by taking logs and if it was taking logs often a small increment was added to the argument so that you didn't get a log of zero "
+    },
+    {
+        "start": 977.68,
+        "text": "how did the assignment work you assigned the character to the unique class k star if there is one for which that score is highest with the condition that the score had to be greater than some minimum value here called epsilon you don't have that you would have a reserved decision um one of the problems with various of the deep learning schemes is this is that they don't have a way of controlling for false alarms it's not usual that it's it's there and it's there in a probability form uh that epsilon the higher you make it the fewer false alarms you have but of course you've also increased the number of reserve decisions and i think since this talk is in part sponsored by a medical "
+    },
+    {
+        "start": 1039.199,
+        "text": "group that is doing work in this area when you make real machines and you put them out in the field and you want to have highly trained people such as doctors use them it's much better for the machine to say reserve decision than to make a classification which has a higher probability of being wrong right it's better to say i can't handle it than to indicate you're stupid to make a bad decision now there are a variety of all kinds of alternatives i'll just touch on uh one or two again we have m pattern sets with n randomly selected pixel positions the printed character produces the m binary numbers one binary number uh for each of the "
+    },
+    {
+        "start": 1100.48,
+        "text": "m pattern sets you have k classes and now our table lookups are just going to be indexed by the uh the m pattern sets and if you take the address that you get from the binary numbers and uh the pixel positions and you put it as an address into the table tm it's not holding a number it's not holding a fraction not holding a probability it's holding the set of classes associated with this particular address where the nth pattern set and there are a variety of ways of even doing this but i won't go into that but it's a set the computation you take the intersection over all of the m pattern sets of the tm of their respective addresses bm and you assign the character to unique class k star if there is one where k star "
+    },
+    {
+        "start": 1160.799,
+        "text": "is in that set and the number that's in that set is one if there's more than one then you reserve decision here's how it looks like a like a block diagram the initial features f1 to fv these could be real numbers if they are real numbers you have to do a quantization first difference between this and neural net stuff you have to do a quantization and you can see for the second layer a1 to am these are address generators and you can see that each one of these address generators are picking up three of the features three of the quantized features and forming an address of it which are at which is used to address the corresponding table and then the address for all of these and this one implementation here is shown is summing them all up "
+    },
+    {
+        "start": 1222.32,
+        "text": "and you get a score for the k class then all the scores go into an index generator a class index generator and the simplest one of those is just to take the arg max here we showed again that uh it's not just the k star that has the r max it's the k star whose maximum one is sufficiently greater than all of the others so there's an epsilon and that controls force on line rates uh just a little bit about the the math i'm not going to do much of this but just to show you the index tuple is the way we do it suppose you have a five dimensional feature vector or a tuple a b c d e for its corresponding values of features f1 to f5 suppose you project the measurement vector abcde to the third and fifth "
+    },
+    {
+        "start": 1284.159,
+        "text": "feature the resulting is a tuple ce obviously but if you just show ce you've lost from which the features c and e came in the database world every value comes from the field and the connection between the field and the value is actually never lost and so we use an index tuple the index sets we serve as the field name so the tuple abcde is written as a pair the first is the set of indexes for the features in this case one two three four five followed by the tuple cd would be written as a pair three four features three and four with the values c and d a b and e would be could be written for example as the features of 1 2 5 and a b and e as the corresponding values "
+    },
+    {
+        "start": 1344.799,
+        "text": "and if you had a tuple list the tuple list would be written as a pair the first component telling you what the field names are the second component telling you the list so suppose that s is a tuple list with respect to the index set i index set i is indexing all the features i have a subset of those index set of this index set i will call it j and now we can talk about the projection i s from the space index by i to the space index by j just by writing pi for projection j with the index set that the projection is of the index set i s and it produces a new index set j r this j agrees with the subscript we use the word projection here's an example of an axis behind "
+    },
+    {
+        "start": 1405.12,
+        "text": "projection um if you're familiar with the linear algebra idea of projections this is not a projection into the space that you start with its projection into the subspace um and it the subspace is the one that has the relative coordinates all right so here i have a diamond consisting of all the points marked in red projected to the x1 axis and here you have pi one the projection to the feature whose index is one of this set which is 1 2 and r as the list of the points and likewise for the second axis all right let's look at the two to the the two class case without loss of generality it just keeps our everything simpler our index at i is from 1 to v f1 to fd are the v quantized features "
+    },
+    {
+        "start": 1466.88,
+        "text": "here i'm just saying them already quantized l1 to lv are the corresponding range sets the variables or the features here called xv xp takes its value in its range set the measurement space is the cartesian product of the range sets and if i have to have a training set for class 1 and a training set for class 2 we have in this case i just showed to be the same number class 1 uses x1 to xz the class 2 uses y1 to yz the xz's of course are in the measurement space and the y's are for class what the x's are for class one the wiser for class two the pattern sets index the subspaces and so i can take to a projection of the full "
+    },
+    {
+        "start": 1527.039,
+        "text": "um let's call it the full feature vector ixz project it to the nth subspace whose index set is jm and i get another index tuple with the index tuple is in the cartesian products of the range sets that are involved in the um chosen from the chosen pattern set so this would be for the m little m one same thing for the the y's so from this kind of thing we can make tables so for example if we just want to um get probabilities in the table then tm1 is the table the empty table for class one "
+    },
+    {
+        "start": 1587.12,
+        "text": "the number of times in the training set that i get a index tuple i xz whose projection onto the nth is j m of u and it's the number of times that happens divided by z which is the number of instances in the training set and from this we develop scores so for example here i'm just showing the addition you could also have the addition of a log of those tables and the score you assign class 1 if s1 of iq is greater than s2 of iq by an amount epsilon and vice versa for class 2. and otherwise if both of those are not set neither of these are satisfied we do a reserve decision and just in passing um "
+    },
+    {
+        "start": 1647.52,
+        "text": "suppose we just had this one dimensional array which you could think of as a pedagogic example of a string and you scan along and each one of these uh three positions is uh analogous for example to what a small little convolution would be doing in the early layers of a deep learning machine so there you are with the range sets the index sets for the projections and if i wanted to tell you just uh totally what's in with the classifiers i need a measurement space calligraphic m a number of classes okay a number of subspaces m i have the collection of the subspaces and calligraph j and i have a collection of the tables "
+    },
+    {
+        "start": 1709.76,
+        "text": "in calligraphic t so i have a sixth tuple that defines what the classifier actually is so with the neural nets and therefore correspondingly with the deep learning there's a universal approximation theorem the universal approximation theorem says given any sufficiently simple and i want the finite function that you would like to approximate the neural network with multiple layers actually minimally two layers on the inside is sufficient to do an approximator and that's one of the one of the things that's that's important for the neural nets well this we don't have a theory for this but i have a conjecture but if i had a v dimensional subspace "
+    },
+    {
+        "start": 1770.0,
+        "text": "and i had a given classification function f and just for the sake of simplicity i i just say that provides a class index of zero or one two class case there's a probability distribution p on the measurement space if f is sufficiently simple then for every epsilon greater than zero there exists a number k smaller than z and a number m which is uh smaller than the vk choose k v k v v choose k and a two class n two plus subspace classifier such that the probability that i have a tuple in the measurement space where the class given to x by f is not equal to the one "
+    },
+    {
+        "start": 1832.64,
+        "text": "that you would get from the classifier is less than epsilon now the whole thing in this is what do you mean by the zz symbol i'll say a few words about that later but just let it go that this is at a place where some theoretical work needs to be done let's just make some comparisons now these comparisons are simple just to give you an idea neural net takes floating point values each of the units computes a weighted linear combination of its inputs and the weights are initially set at random linear combination is input to an activation function the activation function has bounded output is non-linear there can be multiple multiple of these units in any one layer the original form of the neural net if you go all the way back to this late 1960s was one let one inferior layer "
+    },
+    {
+        "start": 1893.039,
+        "text": "but of course there can be multiple and the layers can be cascade cascaded and the geometry of the cascading is has been often hand designed although now there are some programs which try to do the design the gen design of the geometry to optimize for you and there's an iterative training algorithm that optimizes the weights for a given dataset for the antupa classifier in general the first stage is going to be a quantization each unit has a table lookup memory to produce an output from the quantized values which are used to form an address the values in the table lookups are determined in one pass through the data there can be multiple units in any one layer meaning there can be multiple subspaces which in general there are and the original form of the enthusiasm classifier had only one in the layer "
+    },
+    {
+        "start": 1953.84,
+        "text": "but indeed these layers can be cascaded the geometry of the cascaded cascading is initialized at random there's an iterative algorithm for optimizing the index sets defining the projections so therefore the geometry the cascading is automated and there's an iterative algorithm for optimizing the quantizing functions neither one or which of which i'm going to talk about so for the neural net you have to have a choice of the activation function usually the same activation function is employed in each unit but the theory doesn't require this and the activation function has parameters which must be set by design the activation function is not linear in the activation function bounds and compresses in its output for the n-tuple classifier the quantization function is different for each of the lines or the variables "
+    },
+    {
+        "start": 2015.039,
+        "text": "that are on each layer quantization function in general is non-linear and the quantization function bounds and compresses the values so that can be used to form an address for the unit's memory i'll make the general of the statement that the n-tuple class classifier can do everything the neural network does modulo the quantization including the hidden layers and now i'll say something that is surprising the n-tuple classifier is more general how is it more general just look at whatever brand neural net you is your favorite it's it's really a function it takes the input and out this is the output for the class protein those people have also have to feel the survey about the pure symptoms "
+    },
+    {
+        "start": 2084.0,
+        "text": "it was hard to hear um me uh you'll have to ask that again you came up at a very important part of your talk professor so we might as well let you make that point again okay so i'm going to go on and then we'll go go back to this um why do i say the interval classifier is more general because if i have enough memory to make a sufficiently large table i can implement any function just in one layer and that's a special special case the problem of course is that the memory would have to be very large just to show a simple example a decision tree can be put in an empty form decision tree is a classifier whose structural form is a tree each node of the tree corresponds to a mutually exclusive subset of measurements space the nodes of the tree are either decision nodes or leaf nodes and in each "
+    },
+    {
+        "start": 2145.359,
+        "text": "decision node of the tree a distinction is made that partitions its subset of measurement space and each leaf node is associated with an assigned class so let's take a look at its advantages if you're understandable use rules quick online computation continuous or categorical variables and it provides a clear distinction of which dimensions are most relevant for accurate classification when any branch down the tree the decision region is specified by the conjunction of the constraints of the nodes in the branch and there are many branches each of which represent the disjunction of these conjunctions so let's take a simple example where did the olives come from classes are northern italy southern elderly or sardinia the measurements made are two different kinds of fatty acid measurements like and linoleic "
+    },
+    {
+        "start": 2206.24,
+        "text": "here's a scattergram which indicates yes these different classes can be very well isolated and the decision tree does exactly this first you look at the uh kind of cenolic variable and then you look at the lenovo variable here's the decision tree if i do a binary quantization meaning into two possibilities one quantization for the first variable one quantization for the second apply that quantization here's what i get and we get exactly the same answer that you would get with the decision tree for this case here again is the diagram for the end tuple calculation for a class k and then the scores for all the class k "
+    },
+    {
+        "start": 2267.44,
+        "text": "get combined but in particular i want to talk about the quantization because the first layer here was quantization so here's a non-uniform quantization it can be non-linear it can be non-monotonic and so you have some generality here now we're going to talk about the calculation for the class which uh here we've already mentioned before was in art max and in all of these things if we wanted we can do optimization for the projections for the tables for the combiner and for the optimize the way the class index is determined of the ways of doing this "
+    },
+    {
+        "start": 2328.48,
+        "text": "is by using conditional probabilities and so for example um the tmk when you normalize it is the estimated probability for the projected observation given class k the joint well the problem this is the conditional probability this is the joint probability here and by the definition of conditional probabilities the probability of k given the uh projection and so this tells us how to convert from the one form to the other and if you write it you with respect to the tables you get something like this so we now can now say we have the output from the tables like we had before we have a conditional probability conversion converter it's given the "
+    },
+    {
+        "start": 2390.32,
+        "text": "prior probabilities and it produces the probability of the class given the subspace projections we'll call them q1 to qk it's q1k each indexed by m and we can assign to class k star when um this conditional probability is greater than the corresponding probability for all of the others uh now this is actually i said a sign it's really not an assignment to really producing by the uh producing index sets and here these values go into the score generator which can do a sum which is similar in some sense to the sums that get done in random forests "
+    },
+    {
+        "start": 2452.8,
+        "text": "so here is the class assignment uh just another variation we're going to do in passing it's called bleaching if you look at the literature there's quite a bit there of all kinds of variations that people have done but this says here that we're going to look at each one of the tables and we're only going to consider the tables where the values in the tables are sufficiently large greater than this threshold and we're going to count how many tables for which we observed that the value in the table was greater than or equal to b and then we're going to find the the k star which maximizes that sum if we don't have a unique k star i could also do that with the epsilon and you reserve decision "
+    },
+    {
+        "start": 2513.359,
+        "text": "this is a typical example of what you might see in in these papers not a mathematical statement but actually a diagram so here you see a three row by four four row by three column little binary image you can see here the by these lines where the value of b is being taken from and so we're taking a zero zero one and here's the table zero zero one is the address to that table and it says happened one time but our threshold is two and so the value for that is zero take another one uh it turns out it's projected value is 0 1 1. you go into here you find that occurred 3 times 3 is greater than threshold 2. "
+    },
+    {
+        "start": 2574.56,
+        "text": "so we have an output of and so on and you sum them together and you get a score of three all right now i wanna just discuss a an experiment if this is the first of the experiments that we're going to be doing to understand what that zzz might mean in the conjecture i had we have a general approximator we're going to choose n the dimension of the measurement space the tuples themselves each take values each component of the tuple takes values zero or one we take all the two to the nth tuples in measurement space and permute them so the order is permuted "
+    },
+    {
+        "start": 2634.56,
+        "text": "you set the true class for the first half of the two equals to one you set the true class for the second half of the tuples to two and you set the probability of each tuple occurring to be just equal one over two this defines the pro the population no tuple that is assigned to class one is also has the possibility of i mean the true class one has the possibility of also having an instance of true class two so not only are these really the training sets but everything is set in such a way that we are we have defined the problem the population probabilities so in effect there's no training there's no testing and the base classifier will produce 100 correct classification so "
+    },
+    {
+        "start": 2694.96,
+        "text": "the experiment itself choose r the dimension of the subspaces now you repeat this for z times some large number you choose at random and mutually exclusive subspaces covering all the n features and when r the dimension of the subspace is the naught does not divide n one of the m subspaces actually you can do with one or more uh has a smaller dimension uh determine the accuracy of the subspace classifier is fire using the product rule for example and then since you have multiple times it's being done you can determine the classification accuracy what are statistics visualize those with a box plot and graph the block the box plots as a function of r the subspace dimension so here's an example "
+    },
+    {
+        "start": 2756.64,
+        "text": "for a 10 dimensional subspace here you can see very easily the the box plots and you notice just a general characteristic the general characteristic is is that the even with one dimensional subspace it's not below a half it's a little above half probability of correct classification as the sub space sizes the larger the accuracy increases and if you get up to a subscript sub space of size nine there's a bigger jump between it and you use a subspace of size 10 which would be the base classifier and and therefore we have accuracy next table shows what happens for a size two a size twenty and um it's the same the same kind of pattern "
+    },
+    {
+        "start": 2817.04,
+        "text": "with even a bigger jump between using subspace 19 for one and then of course the other subspace would be one dimension one and um and the base classifies the fire for a size 20. now in this experiment by design there's really no relationship between the class and the tuple and since there's no relationship there's no structure you can say there's no structure here except whatever happens by chance and we're going to start from this point of view and try to find out gradually as we introduce structure "
+    },
+    {
+        "start": 2878.16,
+        "text": "how these kind of curves change these experiments were done by alex varilov just the other week all right i want to go to one last point the stacking of the subspace classifiers and the stacking means here having a subspace classifier composed of layers of subspace classifiers and each successive layer has fewer smaller dimensional spaces and the last layer has enough has a small enough dimension that the classification can be made by a bayesian classifier the output from these subspace classes are each of the ones that are stacked the output is not a class but actually is a score it's not just one score but it's the score for each of the classes and in some sense this is sort of analogous to neural net hidden layers "
+    },
+    {
+        "start": 2939.839,
+        "text": "so we'll go through this very quickly we just look at the numbers we're going to start out an example where the total number of dimensions are 96. the number of subspaces per class is 12. and if here we do get eight dimensions for each of the mutually exclusive subspaces number of classes is three so we have 12 subspaces for class three classes the total number of scores calculated is 36. so now we've gone from 96 to 36 dimensions layer 2 takes the 36 dimensions number of subspaces per class is going to be nine the size of each subspace is four number of classes is three three times the three classes times the nine number of subspaces for class nine is 27 so now we've reduced the space "
+    },
+    {
+        "start": 3000.319,
+        "text": "from 36 to 27. here the 27 is the number of dimensions in the third layer number of subspaces per class is 6. here i've divided it into three fours and three fives in dimension number of classes is three three times six is eighteen and so now we've reduced it now to an eighth of the eighteen dimensional space i'm going to go another couple of layers three subspaces per class size of subspace is six number of classes is three and three classes times three subspaces per class there's nine scores that are calculated we'll do one more nine dimensions each subspace is size two one of four size and one of five dimensions three classes three times two is six we have six squares calculated "
+    },
+    {
+        "start": 3061.599,
+        "text": "and now we have six dimensions number of possibilities for dimension is six the size of the measurement space six to the sixth we can use a bayesian classifier and that's the way it ends so i've quickly gone through some of the ideas in the bayesian classifier for those of you who are interested in looking further at this let me say stop here yes you can take a look at this issue january 2021 volume 51 of systems man and cybernetics and it's the second paper and this has a huge number of references and it's a survey paper with some suggestions for generalizations that are that i didn't talk about but you'll find you'll find them in here "
+    },
+    {
+        "start": 3122.64,
+        "text": "if you want to go further or look at any of it in the literature so this will look at this point i'd like to stop and take the questions thank you very much robert we we cannot like applause you the way we want but you know that's that's the spiritual version of that uh so we have a few minutes for the questions um if you have questions please uh uh activate your uh mic and and just ask the question we had a question before and i didn't quite understand it maybe it could be re-asked while we're waiting oh jonathan go ahead i think what happened was you were talking about um why you felt that the um "
+    },
+    {
+        "start": 3182.96,
+        "text": "antuple classifier was more general than sort of the function approximation and that was being done by you know a typical you know deep network and i think you know that part there was an interruption we didn't hear uh the conclusion of that of that sentiment that's correct well robert i have a uh i think you might have mentioned that during the talk i just want to emphasize that if you look at the comparison between neural networks and in tuple classifiers uh can you tell me how we would like you know uh compare them in terms of sample complexity you know in a way you know in a way that if you set like a an accuracy level and a statistical confidence fix that for the for the two models and ask how many examples you want to you know train these models to achieve this statistical confidence and this "
+    },
+    {
+        "start": 3245.119,
+        "text": "like you know this accuracy then which one would require more examples sample complexes well it all depends upon the number of three parameters in the method um if you design a classification method and the number of free parameters you have is greater than the number of degrees of freedom you have in the measurement space the classifier is going to wind up memorizing if it's any good at all it will sent in to memorize uh this is memorization is well known it actually goes back to the 1950s i'll go back to 1950s was a cold war decade and the submarines that the soviets had were very quiet much quieter than the american submarines "
+    },
+    {
+        "start": 3305.599,
+        "text": "and at that time the united states had the best computers as simple as they were complex for the 1950s simple on our terms today and nobody could understand why and uh nato began an investigation to try to find out what's going on um mit or the one of the labs at mit was given the task of finding out what was going on can you design a machine that would help us identify well of course and so the data from the the sauna data classified top secret at that time was given to the lab and they designed the linear classifier "
+    },
+    {
+        "start": 3369.2,
+        "text": "and the accuracy was a hundred percent was very happy the navy then put the classifier into hardware put the hardware on the submarines and now you had the operator with his earphones and you had the the hardware implementation of the linear decision and then the navy was absolutely what's the right one i'll use the word depressed because the classification wasn't very good but mit was saying oh it's a hundred percent well you know what happened the number of samples that they gave "
+    },
+    {
+        "start": 3430.48,
+        "text": "compared to the complexity of the classifier was small and so they just memorized the result from the training set they didn't use a training set and that testing set they didn't use cross validation and from that year for a whole decade and those those in that time it was called target recognition but target recognition for the navy for the air force for the army was out because of this this issue so you have to look at the complexity of the decision rule and the complexity and you can measure complexity by looking at degrees of freedom what's the degrees of freedom for a measurement space or a data set that you have how many numbers and you want that complexity "
+    },
+    {
+        "start": 3492.64,
+        "text": "to be at least let's say 10 times more than the complexity of the decision and i think there have been some studies this is not a inherent fault of the deep learning stuff it's a fault of the researchers who didn't properly do cross validations and they made the classifier so good it produced very good values on the training sets but actually there have been papers now that have been written where a stop sign is the target it has to be recognized and they're showing pictures from [Music] experiments that have been done if you take a stop sign and you put some black blotches on it and the class of the deep learning thing comes up with some kind of an animal "
+    },
+    {
+        "start": 3553.599,
+        "text": "which has nothing to do with the stop sign it doesn't even have the same appearance of the stop sign but what's probably going on there is that the number of samples were not enough or to say it the other way around then the number of degrees of freedom in the decision rule in the learning net the deep learning net itself is too large anyway people who have gone through some kind of statistical training get to know these kinds of things and i think that the the group from maybe the i'm going to say let's say the mid 2014 2015 the people who have dominated the the deep learning by and large are people that didn't have that experience even though it's in the same field "
+    },
+    {
+        "start": 3614.559,
+        "text": "because they're not looking at the older papers the older papers sometimes you're into something excited the older paper has nothing to offer so here i gave an instance this instance by the way you're not going to find written about very much um but is was it was one of the things that did happen there are other things that happened as well and so the people who are doing the target recognition and the pattern recognition came to the knowledge that they had to watch this complexity so did i answer the uh that's a great answer i appreciate that having worked at hearing years ago and you would recognize that name we had that problem exactly uh we put it into hardware the whole thing uh you know everything you said i've lived through i mean it was very excellent excellent description brian you know that robert "
+    },
+    {
+        "start": 3674.96,
+        "text": "used to for at least a short period of time used to live in ann arbor if i remember correctly robert yes yes i was actually with uh working at that time at machine vision international i was vice president of research oh yeah i believe i'm lee from university and at that time um i was working in a place that steve sternberg stan sternberg was the president of and sternberg was very smart and he actually designed hardware at least the outline of the hardware that would do mathematical morphology for processing images yeah we had two we had the cyto computer and they asked your assistants and all those guys i mean i grew up with that stuff and what you say is exactly true and we built those machines but here's here's another example of communication so when stan sturdenberg would "
+    },
+    {
+        "start": 3735.359,
+        "text": "communicate he would not communicate with the mathematics he would not communicate from the statistics side he would not communicate fully from the theory side he would sit you down to a dog and pony show yes and then the academics that we came came to look at this uh quickly recognized where's the theory where is the how does it all go together he never did that um when i came along and i knew about the mathematical morphology even before stan sternberg the two of us talked about possibly going there really um and so uh i was going to introduce the the additional techniques for "
+    },
+    {
+        "start": 3796.799,
+        "text": "those days it was called pattern recognition and as well i wrote some fundamental papers that introduced the mathematical morphology in a way that could be understood because up to that point the mathematical morphology was written by the mathematicians in france yes they were doing the um they were doing it they were really smart guys so they were and they were they were doing it in a real real space and they had to worry about all of the funny things that can go on in a real space and the application of course was in a digital digital space and so i wrote the whole thing from that point of view and at that point the academics began to understand what was going on and then it moved into image processing and then that whole area of non-linear image processing that mathematical morphology became a piece of it all having to do with communication "
+    },
+    {
+        "start": 3859.52,
+        "text": "so here you have an instance of two instances of communication one the first one with the cross validations and so on um that was a lack of communication between let's call it the statistics people who knew that very early on to the people who began to do this target recognition and now here you have the communication between the mathematicians in france who nobody could read not unless you really had a good bad math background see the relevance of it stan didn't read that stuff he invented the mathematical morphology by himself and then eventually he he met john sarah who was uh one of the principal authors of the the second book that dealt with this mathematical morphology and they found out they were talking about the same thing so the communication is very is very "
+    },
+    {
+        "start": 3920.16,
+        "text": "important and a lot of things that are going on are not in the center of their respective fields they're on the boundaries and the place where the growth actually is is often on these interdisciplinary boundaries and here we had first an interdisciplinary boundary between let's say statistical people and the engineers who were turning uh pattern recognition people target recognition people the second one it was a mathematics that was natural for the mathematicians to think about because they don't work in discrete spaces but the engineers they were in discrete spaces from the beginning exactly it was yeah no i was my job was to translate the french stuff and the continuous variable to the discrete guys this is really fascinating and true i would say that what's happening now is very interesting because we've been able "
+    },
+    {
+        "start": 3981.599,
+        "text": "to get the applied math and the statistics people you know and the and the and the applications uh you know in the in the formation of the data science methods we brought those communities together and that's really as you as you point out i think this is a very important message and it's far beyond just bioinformatics it's the fact that data science has come together and has made that communication finally happen and then the interfaces are now between the data science and the applications of the data science it's really a shift yes and right now there are a lot of packages that one doesn't have to know the intricacies of the insights yeah now that's another thing and disadvantage simultaneously the advantage of course is that you're not programming it yourself using what somebody else proved the disadvantage is you may not really understand what is going on and it may be not the right thing for what you want to do "
+    },
+    {
+        "start": 4046.559,
+        "text": "so so that's what's so neat about what you've presented professor and we're very grateful to that to get uh you know so this this nice crosswalk between you know the cnn and the deep learning methods which everybody are applying and getting into the history a little bit and seeing the uh seeing the subspace representations and the and the bayesian classifiers and all this other stuff that makes it a more general theory that could be understood from multiple perspectives it's really good yeah for whatever it was worth it's obvious that my intuition and i don't say that i'm all-knowing by a long ways but intuition-wise something here to be explored that hasn't fully been explored there's some use here and i think it actually since it's the case that the memory has become very cheap subspace methods with your tables "
+    },
+    {
+        "start": 4107.279,
+        "text": "use memory you just have to be very careful that your sample size is sufficiently large and then it seems to to work well and jonathan can tell you the experiments that he did working in the cryptography area and and solving a problem which is basically np-hard conjugacy problem and and very complicated groups which you would never think that oh how how are you going to do that but he worked out a way both with getting the features and running the methods and in this case the n-tuple method worked better than most of the other methods there were just a few methods that worked in some instances better anyway i'm sure he must have given a talk here about this but um "
+    },
+    {
+        "start": 4168.48,
+        "text": "well you know sometimes they don't talk about those crypto things so if david we didn't want to steal the show but this has been a fascinating uh seminar inside and out i really appreciate you bringing you guys and jonathan bringing this together it's fascinating robert thank you again for the fantastic talk and and i always uh you know we we all owe you all these new fields of you know computational sciences that you created and you're leading and thank you for your guidance uh throughout the process thank you very much thank you thank you bye everybody bye "
+    }
+]

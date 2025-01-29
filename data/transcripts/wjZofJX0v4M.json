@@ -1,0 +1,2217 @@
+[
+    {
+        "text": "The initials GPT stand for Generative Pretrained Transformer.",
+        "start": 0.0,
+        "duration": 4.56
+    },
+    {
+        "text": "So that first word is straightforward enough, these are bots that generate new text.",
+        "start": 5.22,
+        "duration": 3.8
+    },
+    {
+        "text": "Pretrained refers to how the model went through a process of learning",
+        "start": 9.8,
+        "duration": 3.381
+    },
+    {
+        "text": "from a massive amount of data, and the prefix insinuates that there's",
+        "start": 13.181,
+        "duration": 3.429
+    },
+    {
+        "text": "more room to fine-tune it on specific tasks with additional training.",
+        "start": 16.61,
+        "duration": 3.43
+    },
+    {
+        "text": "But the last word, that's the real key piece.",
+        "start": 20.72,
+        "duration": 2.18
+    },
+    {
+        "text": "A transformer is a specific kind of neural network, a machine learning model,",
+        "start": 23.38,
+        "duration": 4.191
+    },
+    {
+        "text": "and it's the core invention underlying the current boom in AI.",
+        "start": 27.571,
+        "duration": 3.429
+    },
+    {
+        "text": "What I want to do with this video and the following chapters is go through a",
+        "start": 31.74,
+        "duration": 3.69
+    },
+    {
+        "text": "visually-driven explanation for what actually happens inside a transformer.",
+        "start": 35.43,
+        "duration": 3.69
+    },
+    {
+        "text": "We're going to follow the data that flows through it and go step by step.",
+        "start": 39.7,
+        "duration": 3.12
+    },
+    {
+        "text": "There are many different kinds of models that you can build using transformers.",
+        "start": 43.44,
+        "duration": 3.94
+    },
+    {
+        "text": "Some models take in audio and produce a transcript.",
+        "start": 47.8,
+        "duration": 3.0
+    },
+    {
+        "text": "This sentence comes from a model going the other way around,",
+        "start": 51.34,
+        "duration": 2.843
+    },
+    {
+        "text": "producing synthetic speech just from text.",
+        "start": 54.183,
+        "duration": 2.037
+    },
+    {
+        "text": "All those tools that took the world by storm in 2022 like DALL-E and Midjourney",
+        "start": 56.66,
+        "duration": 4.402
+    },
+    {
+        "text": "that take in a text description and produce an image are based on transformers.",
+        "start": 61.062,
+        "duration": 4.458
+    },
+    {
+        "text": "Even if I can't quite get it to understand what a pi creature is supposed to be,",
+        "start": 66.0,
+        "duration": 3.737
+    },
+    {
+        "text": "I'm still blown away that this kind of thing is even remotely possible.",
+        "start": 69.737,
+        "duration": 3.363
+    },
+    {
+        "text": "And the original transformer introduced in 2017 by Google was invented for",
+        "start": 73.9,
+        "duration": 4.1
+    },
+    {
+        "text": "the specific use case of translating text from one language into another.",
+        "start": 78.0,
+        "duration": 4.1
+    },
+    {
+        "text": "But the variant that you and I will focus on, which is the type that",
+        "start": 82.66,
+        "duration": 3.735
+    },
+    {
+        "text": "underlies tools like ChatGPT, will be a model that's trained to take in a piece of text,",
+        "start": 86.395,
+        "duration": 4.889
+    },
+    {
+        "text": "maybe even with some surrounding images or sound accompanying it,",
+        "start": 91.284,
+        "duration": 3.625
+    },
+    {
+        "text": "and produce a prediction for what comes next in the passage.",
+        "start": 94.909,
+        "duration": 3.351
+    },
+    {
+        "text": "That prediction takes the form of a probability distribution",
+        "start": 98.6,
+        "duration": 2.737
+    },
+    {
+        "text": "over many different chunks of text that might follow.",
+        "start": 101.337,
+        "duration": 2.463
+    },
+    {
+        "text": "At first glance, you might think that predicting the next word",
+        "start": 105.04,
+        "duration": 2.511
+    },
+    {
+        "text": "feels like a very different goal from generating new text.",
+        "start": 107.551,
+        "duration": 2.389
+    },
+    {
+        "text": "But once you have a prediction model like this,",
+        "start": 110.18,
+        "duration": 2.339
+    },
+    {
+        "text": "a simple thing you could try to make it generate, a longer piece of text,",
+        "start": 112.519,
+        "duration": 3.683
+    },
+    {
+        "text": "is to give it an initial snippet to work with,",
+        "start": 116.202,
+        "duration": 2.339
+    },
+    {
+        "text": "have it take a random sample from the distribution it just generated,",
+        "start": 118.541,
+        "duration": 3.484
+    },
+    {
+        "text": "append that sample to the text, and then run the whole process again to make",
+        "start": 122.025,
+        "duration": 3.832
+    },
+    {
+        "text": "a new prediction based on all the new text, including what it just added.",
+        "start": 125.857,
+        "duration": 3.683
+    },
+    {
+        "text": "I don't know about you, but it really doesn't feel like this should actually work.",
+        "start": 130.1,
+        "duration": 2.9
+    },
+    {
+        "text": "In this animation, for example, I'm running GPT-2 on my laptop and having it repeatedly",
+        "start": 133.42,
+        "duration": 4.526
+    },
+    {
+        "text": "predict and sample the next chunk of text to generate a story based on the seed text.",
+        "start": 137.946,
+        "duration": 4.474
+    },
+    {
+        "text": "The story just doesn't actually really make that much sense.",
+        "start": 142.42,
+        "duration": 3.7
+    },
+    {
+        "text": "But if I swap it out for API calls to GPT-3 instead, which is the same basic model,",
+        "start": 146.5,
+        "duration": 4.793
+    },
+    {
+        "text": "just much bigger, suddenly almost magically we do get a sensible story,",
+        "start": 151.293,
+        "duration": 4.158
+    },
+    {
+        "text": "one that even seems to infer that a pi creature would live in a land of math and",
+        "start": 155.451,
+        "duration": 4.678
+    },
+    {
+        "text": "computation.",
+        "start": 160.129,
+        "duration": 0.751
+    },
+    {
+        "text": "This process here of repeated prediction and sampling is essentially",
+        "start": 161.58,
+        "duration": 3.351
+    },
+    {
+        "text": "what's happening when you interact with ChatGPT,",
+        "start": 164.931,
+        "duration": 2.415
+    },
+    {
+        "text": "or any of these other large language models, and you see them producing",
+        "start": 167.346,
+        "duration": 3.548
+    },
+    {
+        "text": "one word at a time.",
+        "start": 170.894,
+        "duration": 0.986
+    },
+    {
+        "text": "In fact, one feature that I would very much enjoy is the ability to",
+        "start": 172.48,
+        "duration": 3.37
+    },
+    {
+        "text": "see the underlying distribution for each new word that it chooses.",
+        "start": 175.85,
+        "duration": 3.37
+    },
+    {
+        "text": "Let's kick things off with a very high level preview",
+        "start": 183.82,
+        "duration": 2.438
+    },
+    {
+        "text": "of how data flows through a transformer.",
+        "start": 186.258,
+        "duration": 1.922
+    },
+    {
+        "text": "We will spend much more time motivating and interpreting and expanding",
+        "start": 188.64,
+        "duration": 3.324
+    },
+    {
+        "text": "on the details of each step, but in broad strokes,",
+        "start": 191.964,
+        "duration": 2.422
+    },
+    {
+        "text": "when one of these chatbots generates a given word, here's what's going on under the hood.",
+        "start": 194.386,
+        "duration": 4.274
+    },
+    {
+        "text": "First, the input is broken up into a bunch of little pieces.",
+        "start": 199.08,
+        "duration": 2.96
+    },
+    {
+        "text": "These pieces are called tokens, and in the case of text these tend to be",
+        "start": 202.62,
+        "duration": 3.6
+    },
+    {
+        "text": "words or little pieces of words or other common character combinations.",
+        "start": 206.22,
+        "duration": 3.6
+    },
+    {
+        "text": "If images or sound are involved, then tokens could be little",
+        "start": 210.74,
+        "duration": 3.337
+    },
+    {
+        "text": "patches of that image or little chunks of that sound.",
+        "start": 214.077,
+        "duration": 3.003
+    },
+    {
+        "text": "Each one of these tokens is then associated with a vector, meaning some list of numbers,",
+        "start": 217.58,
+        "duration": 4.626
+    },
+    {
+        "text": "which is meant to somehow encode the meaning of that piece.",
+        "start": 222.206,
+        "duration": 3.154
+    },
+    {
+        "text": "If you think of these vectors as giving coordinates in some very high dimensional space,",
+        "start": 225.88,
+        "duration": 4.209
+    },
+    {
+        "text": "words with similar meanings tend to land on vectors that are",
+        "start": 230.089,
+        "duration": 2.917
+    },
+    {
+        "text": "close to each other in that space.",
+        "start": 233.006,
+        "duration": 1.674
+    },
+    {
+        "text": "This sequence of vectors then passes through an operation that's",
+        "start": 235.28,
+        "duration": 2.907
+    },
+    {
+        "text": "known as an attention block, and this allows the vectors to talk to",
+        "start": 238.187,
+        "duration": 3.088
+    },
+    {
+        "text": "each other and pass information back and forth to update their values.",
+        "start": 241.275,
+        "duration": 3.225
+    },
+    {
+        "text": "For example, the meaning of the word model in the phrase \"a machine learning",
+        "start": 244.88,
+        "duration": 3.602
+    },
+    {
+        "text": "model\" is different from its meaning in the phrase \"a fashion model\".",
+        "start": 248.482,
+        "duration": 3.318
+    },
+    {
+        "text": "The attention block is what's responsible for figuring out which",
+        "start": 252.26,
+        "duration": 3.25
+    },
+    {
+        "text": "words in context are relevant to updating the meanings of which other words,",
+        "start": 255.51,
+        "duration": 3.911
+    },
+    {
+        "text": "and how exactly those meanings should be updated.",
+        "start": 259.421,
+        "duration": 2.539
+    },
+    {
+        "text": "And again, whenever I use the word meaning, this is",
+        "start": 262.5,
+        "duration": 2.592
+    },
+    {
+        "text": "somehow entirely encoded in the entries of those vectors.",
+        "start": 265.092,
+        "duration": 2.948
+    },
+    {
+        "text": "After that, these vectors pass through a different kind of operation,",
+        "start": 269.18,
+        "duration": 3.096
+    },
+    {
+        "text": "and depending on the source that you're reading this will be referred",
+        "start": 272.276,
+        "duration": 3.142
+    },
+    {
+        "text": "to as a multi-layer perceptron or maybe a feed-forward layer.",
+        "start": 275.418,
+        "duration": 2.782
+    },
+    {
+        "text": "And here the vectors don't talk to each other,",
+        "start": 278.58,
+        "duration": 1.915
+    },
+    {
+        "text": "they all go through the same operation in parallel.",
+        "start": 280.495,
+        "duration": 2.165
+    },
+    {
+        "text": "And while this block is a little bit harder to interpret,",
+        "start": 283.06,
+        "duration": 2.688
+    },
+    {
+        "text": "later on we'll talk about how the step is a little bit like asking a long list",
+        "start": 285.748,
+        "duration": 3.725
+    },
+    {
+        "text": "of questions about each vector, and then updating them based on the answers",
+        "start": 289.473,
+        "duration": 3.584
+    },
+    {
+        "text": "to those questions.",
+        "start": 293.057,
+        "duration": 0.943
+    },
+    {
+        "text": "All of the operations in both of these blocks look like a",
+        "start": 294.9,
+        "duration": 3.281
+    },
+    {
+        "text": "giant pile of matrix multiplications, and our primary job is",
+        "start": 298.181,
+        "duration": 3.512
+    },
+    {
+        "text": "going to be to understand how to read the underlying matrices.",
+        "start": 301.693,
+        "duration": 3.627
+    },
+    {
+        "text": "I'm glossing over some details about some normalization steps that happen in between,",
+        "start": 306.98,
+        "duration": 3.953
+    },
+    {
+        "text": "but this is after all a high-level preview.",
+        "start": 310.933,
+        "duration": 2.047
+    },
+    {
+        "text": "After that, the process essentially repeats, you go back and forth",
+        "start": 313.68,
+        "duration": 3.557
+    },
+    {
+        "text": "between attention blocks and multi-layer perceptron blocks,",
+        "start": 317.237,
+        "duration": 3.233
+    },
+    {
+        "text": "until at the very end the hope is that all of the essential meaning",
+        "start": 320.47,
+        "duration": 3.665
+    },
+    {
+        "text": "of the passage has somehow been baked into the very last vector in the sequence.",
+        "start": 324.135,
+        "duration": 4.365
+    },
+    {
+        "text": "We then perform a certain operation on that last vector that produces a probability",
+        "start": 328.92,
+        "duration": 4.405
+    },
+    {
+        "text": "distribution over all possible tokens, all possible little chunks of text that might",
+        "start": 333.325,
+        "duration": 4.511
+    },
+    {
+        "text": "come next.",
+        "start": 337.836,
+        "duration": 0.584
+    },
+    {
+        "text": "And like I said, once you have a tool that predicts what comes next",
+        "start": 338.98,
+        "duration": 3.338
+    },
+    {
+        "text": "given a snippet of text, you can feed it a little bit of seed text and",
+        "start": 342.318,
+        "duration": 3.538
+    },
+    {
+        "text": "have it repeatedly play this game of predicting what comes next,",
+        "start": 345.856,
+        "duration": 3.238
+    },
+    {
+        "text": "sampling from the distribution, appending it, and then repeating over and over.",
+        "start": 349.094,
+        "duration": 3.986
+    },
+    {
+        "text": "Some of you in the know may remember how long before ChatGPT came into the scene,",
+        "start": 353.64,
+        "duration": 4.304
+    },
+    {
+        "text": "this is what early demos of GPT-3 looked like,",
+        "start": 357.944,
+        "duration": 2.498
+    },
+    {
+        "text": "you would have it autocomplete stories and essays based on an initial snippet.",
+        "start": 360.442,
+        "duration": 4.198
+    },
+    {
+        "text": "To make a tool like this into a chatbot, the easiest starting point is to have a",
+        "start": 365.58,
+        "duration": 4.24
+    },
+    {
+        "text": "little bit of text that establishes the setting of a user interacting with a",
+        "start": 369.82,
+        "duration": 4.081
+    },
+    {
+        "text": "helpful AI assistant, what you would call the system prompt,",
+        "start": 373.901,
+        "duration": 3.234
+    },
+    {
+        "text": "and then you would use the user's initial question or prompt as the first bit of",
+        "start": 377.135,
+        "duration": 4.293
+    },
+    {
+        "text": "dialogue, and then you have it start predicting what such a helpful AI assistant",
+        "start": 381.428,
+        "duration": 4.293
+    },
+    {
+        "text": "would say in response.",
+        "start": 385.721,
+        "duration": 1.219
+    },
+    {
+        "text": "There is more to say about an added step of training that's required",
+        "start": 387.72,
+        "duration": 3.254
+    },
+    {
+        "text": "to make this work well, but at a high level this is the idea.",
+        "start": 390.974,
+        "duration": 2.966
+    },
+    {
+        "text": "In this chapter, you and I are going to expand on the details of what happens at the very",
+        "start": 395.72,
+        "duration": 4.244
+    },
+    {
+        "text": "beginning of the network, at the very end of the network,",
+        "start": 399.964,
+        "duration": 2.765
+    },
+    {
+        "text": "and I also want to spend a lot of time reviewing some important bits of background",
+        "start": 402.729,
+        "duration": 3.958
+    },
+    {
+        "text": "knowledge, things that would have been second nature to any machine learning engineer by",
+        "start": 406.687,
+        "duration": 4.244
+    },
+    {
+        "text": "the time transformers came around.",
+        "start": 410.931,
+        "duration": 1.669
+    },
+    {
+        "text": "If you're comfortable with that background knowledge and a little impatient,",
+        "start": 413.06,
+        "duration": 3.157
+    },
+    {
+        "text": "you could probably feel free to skip to the next chapter,",
+        "start": 416.217,
+        "duration": 2.409
+    },
+    {
+        "text": "which is going to focus on the attention blocks,",
+        "start": 418.626,
+        "duration": 2.036
+    },
+    {
+        "text": "generally considered the heart of the transformer.",
+        "start": 420.662,
+        "duration": 2.118
+    },
+    {
+        "text": "After that, I want to talk more about these multi-layer perceptron blocks,",
+        "start": 423.36,
+        "duration": 3.622
+    },
+    {
+        "text": "how training works, and a number of other details that will have been skipped up to",
+        "start": 426.982,
+        "duration": 4.111
+    },
+    {
+        "text": "that point.",
+        "start": 431.093,
+        "duration": 0.587
+    },
+    {
+        "text": "For broader context, these videos are additions to a mini-series about deep learning,",
+        "start": 432.18,
+        "duration": 4.026
+    },
+    {
+        "text": "and it's okay if you haven't watched the previous ones,",
+        "start": 436.206,
+        "duration": 2.652
+    },
+    {
+        "text": "I think you can do it out of order, but before diving into transformers specifically,",
+        "start": 438.858,
+        "duration": 4.073
+    },
+    {
+        "text": "I do think it's worth making sure that we're on the same page about the basic premise",
+        "start": 442.931,
+        "duration": 4.073
+    },
+    {
+        "text": "and structure of deep learning.",
+        "start": 447.004,
+        "duration": 1.516
+    },
+    {
+        "text": "At the risk of stating the obvious, this is one approach to machine learning,",
+        "start": 449.02,
+        "duration": 4.228
+    },
+    {
+        "text": "which describes any model where you're using data to somehow determine how a model",
+        "start": 453.248,
+        "duration": 4.558
+    },
+    {
+        "text": "behaves.",
+        "start": 457.806,
+        "duration": 0.494
+    },
+    {
+        "text": "What I mean by that is, let's say you want a function that takes in",
+        "start": 459.14,
+        "duration": 3.335
+    },
+    {
+        "text": "an image and it produces a label describing it,",
+        "start": 462.475,
+        "duration": 2.39
+    },
+    {
+        "text": "or our example of predicting the next word given a passage of text,",
+        "start": 464.865,
+        "duration": 3.385
+    },
+    {
+        "text": "or any other task that seems to require some element of intuition",
+        "start": 468.25,
+        "duration": 3.285
+    },
+    {
+        "text": "and pattern recognition.",
+        "start": 471.535,
+        "duration": 1.245
+    },
+    {
+        "text": "We almost take this for granted these days, but the idea with machine learning is that",
+        "start": 473.2,
+        "duration": 4.495
+    },
+    {
+        "text": "rather than trying to explicitly define a procedure for how to do that task in code,",
+        "start": 477.695,
+        "duration": 4.443
+    },
+    {
+        "text": "which is what people would have done in the earliest days of AI,",
+        "start": 482.138,
+        "duration": 3.397
+    },
+    {
+        "text": "instead you set up a very flexible structure with tunable parameters,",
+        "start": 485.535,
+        "duration": 3.659
+    },
+    {
+        "text": "like a bunch of knobs and dials, and then, somehow,",
+        "start": 489.194,
+        "duration": 2.718
+    },
+    {
+        "text": "you use many examples of what the output should look like for a given input to tweak",
+        "start": 491.912,
+        "duration": 4.443
+    },
+    {
+        "text": "and tune the values of those parameters to mimic this behavior.",
+        "start": 496.355,
+        "duration": 3.345
+    },
+    {
+        "text": "For example, maybe the simplest form of machine learning is linear regression,",
+        "start": 499.7,
+        "duration": 4.417
+    },
+    {
+        "text": "where your inputs and outputs are each single numbers,",
+        "start": 504.117,
+        "duration": 3.114
+    },
+    {
+        "text": "something like the square footage of a house and its price,",
+        "start": 507.231,
+        "duration": 3.397
+    },
+    {
+        "text": "and what you want is to find a line of best fit through this data, you know,",
+        "start": 510.628,
+        "duration": 4.36
+    },
+    {
+        "text": "to predict future house prices.",
+        "start": 514.988,
+        "duration": 1.812
+    },
+    {
+        "text": "That line is described by two continuous parameters,",
+        "start": 517.44,
+        "duration": 3.08
+    },
+    {
+        "text": "say the slope and the y-intercept, and the goal of linear",
+        "start": 520.52,
+        "duration": 3.435
+    },
+    {
+        "text": "regression is to determine those parameters to closely match the data.",
+        "start": 523.955,
+        "duration": 4.205
+    },
+    {
+        "text": "Needless to say, deep learning models get much more complicated.",
+        "start": 528.88,
+        "duration": 3.22
+    },
+    {
+        "text": "GPT-3, for example, has not two, but 175 billion parameters.",
+        "start": 532.62,
+        "duration": 5.04
+    },
+    {
+        "text": "But here's the thing, it's not a given that you can create some giant",
+        "start": 538.12,
+        "duration": 3.832
+    },
+    {
+        "text": "model with a huge number of parameters without it either grossly",
+        "start": 541.952,
+        "duration": 3.61
+    },
+    {
+        "text": "overfitting the training data or being completely intractable to train.",
+        "start": 545.562,
+        "duration": 3.998
+    },
+    {
+        "text": "Deep learning describes a class of models that in the",
+        "start": 550.26,
+        "duration": 2.827
+    },
+    {
+        "text": "last couple decades have proven to scale remarkably well.",
+        "start": 553.087,
+        "duration": 3.093
+    },
+    {
+        "text": "What unifies them is that they all use the same training algorithm,",
+        "start": 556.48,
+        "duration": 3.178
+    },
+    {
+        "text": "it's called backpropagation, we talked about it in previous chapters,",
+        "start": 559.658,
+        "duration": 3.321
+    },
+    {
+        "text": "and the context that I want you to have as we go in is that in order for this",
+        "start": 562.979,
+        "duration": 3.7
+    },
+    {
+        "text": "training algorithm to work well at scale, these models have to follow a certain",
+        "start": 566.679,
+        "duration": 3.795
+    },
+    {
+        "text": "specific format.",
+        "start": 570.474,
+        "duration": 0.806
+    },
+    {
+        "text": "And if you know this format going in, it helps to explain many of the choices for how a",
+        "start": 571.8,
+        "duration": 4.251
+    },
+    {
+        "text": "transformer processes language, which otherwise run the risk of feeling kinda arbitrary.",
+        "start": 576.051,
+        "duration": 4.349
+    },
+    {
+        "text": "First, whatever kind of model you're making, the",
+        "start": 581.44,
+        "duration": 2.47
+    },
+    {
+        "text": "input has to be formatted as an array of real numbers.",
+        "start": 583.91,
+        "duration": 2.83
+    },
+    {
+        "text": "This could simply mean a list of numbers, it could be a two-dimensional array,",
+        "start": 586.74,
+        "duration": 4.199
+    },
+    {
+        "text": "or very often you deal with higher dimensional arrays,",
+        "start": 590.939,
+        "duration": 2.961
+    },
+    {
+        "text": "where the general term used is tensor.",
+        "start": 593.9,
+        "duration": 2.1
+    },
+    {
+        "text": "You often think of that input data as being progressively transformed into many",
+        "start": 596.56,
+        "duration": 3.957
+    },
+    {
+        "text": "distinct layers, where again, each layer is always structured as some kind of",
+        "start": 600.517,
+        "duration": 3.906
+    },
+    {
+        "text": "array of real numbers, until you get to a final layer which you consider the output.",
+        "start": 604.423,
+        "duration": 4.257
+    },
+    {
+        "text": "For example, the final layer in our text processing model is a list of numbers",
+        "start": 609.28,
+        "duration": 4.046
+    },
+    {
+        "text": "representing the probability distribution for all possible next tokens.",
+        "start": 613.326,
+        "duration": 3.734
+    },
+    {
+        "text": "In deep learning, these model parameters are almost always referred to as weights,",
+        "start": 617.82,
+        "duration": 4.215
+    },
+    {
+        "text": "and this is because a key feature of these models is that the only way these",
+        "start": 622.035,
+        "duration": 3.958
+    },
+    {
+        "text": "parameters interact with the data being processed is through weighted sums.",
+        "start": 625.993,
+        "duration": 3.907
+    },
+    {
+        "text": "You also sprinkle some non-linear functions throughout,",
+        "start": 630.34,
+        "duration": 2.403
+    },
+    {
+        "text": "but they won't depend on parameters.",
+        "start": 632.743,
+        "duration": 1.617
+    },
+    {
+        "text": "Typically, though, instead of seeing the weighted sums all naked",
+        "start": 635.2,
+        "duration": 3.42
+    },
+    {
+        "text": "and written out explicitly like this, you'll instead find them",
+        "start": 638.62,
+        "duration": 3.366
+    },
+    {
+        "text": "packaged together as various components in a matrix vector product.",
+        "start": 641.986,
+        "duration": 3.634
+    },
+    {
+        "text": "It amounts to saying the same thing, if you think back to how matrix vector",
+        "start": 646.74,
+        "duration": 3.676
+    },
+    {
+        "text": "multiplication works, each component in the output looks like a weighted sum.",
+        "start": 650.416,
+        "duration": 3.824
+    },
+    {
+        "text": "It's just often conceptually cleaner for you and me to think",
+        "start": 654.78,
+        "duration": 3.47
+    },
+    {
+        "text": "about matrices that are filled with tunable parameters that",
+        "start": 658.25,
+        "duration": 3.469
+    },
+    {
+        "text": "transform vectors that are drawn from the data being processed.",
+        "start": 661.719,
+        "duration": 3.701
+    },
+    {
+        "text": "For example, those 175 billion weights in GPT-3 are",
+        "start": 666.34,
+        "duration": 3.872
+    },
+    {
+        "text": "organized into just under 28,000 distinct matrices.",
+        "start": 670.212,
+        "duration": 3.948
+    },
+    {
+        "text": "Those matrices in turn fall into eight different categories,",
+        "start": 674.66,
+        "duration": 2.757
+    },
+    {
+        "text": "and what you and I are going to do is step through each one of those categories to",
+        "start": 677.417,
+        "duration": 3.813
+    },
+    {
+        "text": "understand what that type does.",
+        "start": 681.23,
+        "duration": 1.47
+    },
+    {
+        "text": "As we go through, I think it's kind of fun to reference the specific",
+        "start": 683.16,
+        "duration": 3.927
+    },
+    {
+        "text": "numbers from GPT-3 to count up exactly where those 175 billion come from.",
+        "start": 687.087,
+        "duration": 4.273
+    },
+    {
+        "text": "Even if nowadays there are bigger and better models,",
+        "start": 691.88,
+        "duration": 2.531
+    },
+    {
+        "text": "this one has a certain charm as the first large-language",
+        "start": 694.411,
+        "duration": 2.775
+    },
+    {
+        "text": "model to really capture the world's attention outside of ML communities.",
+        "start": 697.186,
+        "duration": 3.554
+    },
+    {
+        "text": "Also, practically speaking, companies tend to keep much tighter",
+        "start": 701.44,
+        "duration": 2.737
+    },
+    {
+        "text": "lips around the specific numbers for more modern networks.",
+        "start": 704.177,
+        "duration": 2.563
+    },
+    {
+        "text": "I just want to set the scene going in, that as you peek under the",
+        "start": 707.36,
+        "duration": 3.343
+    },
+    {
+        "text": "hood to see what happens inside a tool like ChatGPT,",
+        "start": 710.703,
+        "duration": 2.726
+    },
+    {
+        "text": "almost all of the actual computation looks like matrix vector multiplication.",
+        "start": 713.429,
+        "duration": 4.011
+    },
+    {
+        "text": "There's a little bit of a risk getting lost in the sea of billions of numbers,",
+        "start": 717.9,
+        "duration": 3.983
+    },
+    {
+        "text": "but you should draw a very sharp distinction in your mind between",
+        "start": 721.883,
+        "duration": 3.37
+    },
+    {
+        "text": "the weights of the model, which I'll always color in blue or red,",
+        "start": 725.253,
+        "duration": 3.37
+    },
+    {
+        "text": "and the data being processed, which I'll always color in gray.",
+        "start": 728.623,
+        "duration": 3.217
+    },
+    {
+        "text": "The weights are the actual brains, they are the things learned during training,",
+        "start": 732.18,
+        "duration": 3.978
+    },
+    {
+        "text": "and they determine how it behaves.",
+        "start": 736.158,
+        "duration": 1.762
+    },
+    {
+        "text": "The data being processed simply encodes whatever specific input is",
+        "start": 738.28,
+        "duration": 4.019
+    },
+    {
+        "text": "fed into the model for a given run, like an example snippet of text.",
+        "start": 742.299,
+        "duration": 4.201
+    },
+    {
+        "text": "With all of that as foundation, let's dig into the first step of this text processing",
+        "start": 747.48,
+        "duration": 4.222
+    },
+    {
+        "text": "example, which is to break up the input into little chunks and turn those chunks into",
+        "start": 751.702,
+        "duration": 4.271
+    },
+    {
+        "text": "vectors.",
+        "start": 755.973,
+        "duration": 0.447
+    },
+    {
+        "text": "I mentioned how those chunks are called tokens,",
+        "start": 757.02,
+        "duration": 2.241
+    },
+    {
+        "text": "which might be pieces of words or punctuation,",
+        "start": 759.261,
+        "duration": 2.24
+    },
+    {
+        "text": "but every now and then in this chapter and especially in the next one,",
+        "start": 761.501,
+        "duration": 3.385
+    },
+    {
+        "text": "I'd like to just pretend that it's broken more cleanly into words.",
+        "start": 764.886,
+        "duration": 3.194
+    },
+    {
+        "text": "Because we humans think in words, this will just make it much",
+        "start": 768.6,
+        "duration": 2.786
+    },
+    {
+        "text": "easier to reference little examples and clarify each step.",
+        "start": 771.386,
+        "duration": 2.694
+    },
+    {
+        "text": "The model has a predefined vocabulary, some list of all possible words,",
+        "start": 775.26,
+        "duration": 4.16
+    },
+    {
+        "text": "say 50,000 of them, and the first matrix that we'll encounter,",
+        "start": 779.42,
+        "duration": 3.692
+    },
+    {
+        "text": "known as the embedding matrix, has a single column for each one of these words.",
+        "start": 783.112,
+        "duration": 4.688
+    },
+    {
+        "text": "These columns are what determines what vector each word turns into in that first step.",
+        "start": 788.94,
+        "duration": 4.82
+    },
+    {
+        "text": "We label it We, and like all the matrices we see,",
+        "start": 795.1,
+        "duration": 2.94
+    },
+    {
+        "text": "its values begin random, but they're going to be learned based on data.",
+        "start": 798.04,
+        "duration": 4.32
+    },
+    {
+        "text": "Turning words into vectors was common practice in machine learning long before",
+        "start": 803.62,
+        "duration": 3.758
+    },
+    {
+        "text": "transformers, but it's a little weird if you've never seen it before,",
+        "start": 807.378,
+        "duration": 3.372
+    },
+    {
+        "text": "and it sets the foundation for everything that follows,",
+        "start": 810.75,
+        "duration": 2.698
+    },
+    {
+        "text": "so let's take a moment to get familiar with it.",
+        "start": 813.448,
+        "duration": 2.312
+    },
+    {
+        "text": "We often call this embedding a word, which invites you to think of these",
+        "start": 816.04,
+        "duration": 3.871
+    },
+    {
+        "text": "vectors very geometrically as points in some high dimensional space.",
+        "start": 819.911,
+        "duration": 3.709
+    },
+    {
+        "text": "Visualizing a list of three numbers as coordinates for points in 3D space would",
+        "start": 824.18,
+        "duration": 3.874
+    },
+    {
+        "text": "be no problem, but word embeddings tend to be much much higher dimensional.",
+        "start": 828.054,
+        "duration": 3.726
+    },
+    {
+        "text": "In GPT-3 they have 12,288 dimensions, and as you'll see,",
+        "start": 832.28,
+        "duration": 3.656
+    },
+    {
+        "text": "it matters to work in a space that has a lot of distinct directions.",
+        "start": 835.936,
+        "duration": 4.504
+    },
+    {
+        "text": "In the same way that you could take a two-dimensional slice through a 3D space",
+        "start": 841.18,
+        "duration": 3.88
+    },
+    {
+        "text": "and project all the points onto that slice, for the sake of animating word",
+        "start": 845.06,
+        "duration": 3.731
+    },
+    {
+        "text": "embeddings that a simple model is giving me, I'm going to do an analogous",
+        "start": 848.791,
+        "duration": 3.68
+    },
+    {
+        "text": "thing by choosing a three-dimensional slice through this very high dimensional space,",
+        "start": 852.471,
+        "duration": 4.278
+    },
+    {
+        "text": "and projecting the word vectors down onto that and displaying the results.",
+        "start": 856.749,
+        "duration": 3.731
+    },
+    {
+        "text": "The big idea here is that as a model tweaks and tunes its weights to determine",
+        "start": 861.28,
+        "duration": 4.242
+    },
+    {
+        "text": "how exactly words get embedded as vectors during training,",
+        "start": 865.522,
+        "duration": 3.208
+    },
+    {
+        "text": "it tends to settle on a set of embeddings where directions in the space have a",
+        "start": 868.73,
+        "duration": 4.296
+    },
+    {
+        "text": "kind of semantic meaning.",
+        "start": 873.026,
+        "duration": 1.414
+    },
+    {
+        "text": "For the simple word-to-vector model I'm running here,",
+        "start": 874.98,
+        "duration": 2.81
+    },
+    {
+        "text": "if I run a search for all the words whose embeddings are closest to that of tower,",
+        "start": 877.79,
+        "duration": 4.399
+    },
+    {
+        "text": "you'll notice how they all seem to give very similar tower-ish vibes.",
+        "start": 882.189,
+        "duration": 3.711
+    },
+    {
+        "text": "And if you want to pull up some Python and play along at home,",
+        "start": 886.34,
+        "duration": 2.441
+    },
+    {
+        "text": "this is the specific model that I'm using to make the animations.",
+        "start": 888.781,
+        "duration": 2.599
+    },
+    {
+        "text": "It's not a transformer, but it's enough to illustrate the",
+        "start": 891.62,
+        "duration": 2.864
+    },
+    {
+        "text": "idea that directions in the space can carry semantic meaning.",
+        "start": 894.484,
+        "duration": 3.116
+    },
+    {
+        "text": "A very classic example of this is how if you take the difference between",
+        "start": 898.3,
+        "duration": 3.887
+    },
+    {
+        "text": "the vectors for woman and man, something you would visualize as a",
+        "start": 902.187,
+        "duration": 3.563
+    },
+    {
+        "text": "little vector in the space connecting the tip of one to the tip of the other,",
+        "start": 905.75,
+        "duration": 4.211
+    },
+    {
+        "text": "it's very similar to the difference between king and queen.",
+        "start": 909.961,
+        "duration": 3.239
+    },
+    {
+        "text": "So let's say you didn't know the word for a female monarch,",
+        "start": 915.08,
+        "duration": 3.275
+    },
+    {
+        "text": "you could find it by taking king, adding this woman minus man direction,",
+        "start": 918.355,
+        "duration": 4.052
+    },
+    {
+        "text": "and searching for the embedding closest to that point.",
+        "start": 922.407,
+        "duration": 3.053
+    },
+    {
+        "text": "At least, kind of.",
+        "start": 927.0,
+        "duration": 1.2
+    },
+    {
+        "text": "Despite this being a classic example for the model I'm playing with,",
+        "start": 928.48,
+        "duration": 3.293
+    },
+    {
+        "text": "the true embedding of queen is actually a little farther off than this would suggest,",
+        "start": 931.773,
+        "duration": 4.164
+    },
+    {
+        "text": "presumably because the way queen is used in training data is not merely a feminine",
+        "start": 935.937,
+        "duration": 4.02
+    },
+    {
+        "text": "version of king.",
+        "start": 939.957,
+        "duration": 0.823
+    },
+    {
+        "text": "When I played around, family relations seemed to illustrate the idea much better.",
+        "start": 941.62,
+        "duration": 3.64
+    },
+    {
+        "text": "The point is, it looks like during training the model found it advantageous to",
+        "start": 946.34,
+        "duration": 4.121
+    },
+    {
+        "text": "choose embeddings such that one direction in this space encodes gender information.",
+        "start": 950.461,
+        "duration": 4.439
+    },
+    {
+        "text": "Another example is that if you take the embedding of Italy,",
+        "start": 956.8,
+        "duration": 3.281
+    },
+    {
+        "text": "and you subtract the embedding of Germany, and add that to the embedding of Hitler,",
+        "start": 960.081,
+        "duration": 4.672
+    },
+    {
+        "text": "you get something very close to the embedding of Mussolini.",
+        "start": 964.753,
+        "duration": 3.337
+    },
+    {
+        "text": "It's as if the model learned to associate some directions with Italian-ness,",
+        "start": 968.57,
+        "duration": 4.861
+    },
+    {
+        "text": "and others with WWII axis leaders.",
+        "start": 973.431,
+        "duration": 2.239
+    },
+    {
+        "text": "Maybe my favorite example in this vein is how in some models,",
+        "start": 976.47,
+        "duration": 3.461
+    },
+    {
+        "text": "if you take the difference between Germany and Japan, and add it to sushi,",
+        "start": 979.931,
+        "duration": 4.256
+    },
+    {
+        "text": "you end up very close to bratwurst.",
+        "start": 984.187,
+        "duration": 2.043
+    },
+    {
+        "text": "Also in playing this game of finding nearest neighbors,",
+        "start": 987.35,
+        "duration": 2.837
+    },
+    {
+        "text": "I was very pleased to see how close cat was to both beast and monster.",
+        "start": 990.187,
+        "duration": 3.663
+    },
+    {
+        "text": "One bit of mathematical intuition that's helpful to have in mind,",
+        "start": 994.69,
+        "duration": 3.053
+    },
+    {
+        "text": "especially for the next chapter, is how the dot product of two",
+        "start": 997.743,
+        "duration": 2.96
+    },
+    {
+        "text": "vectors can be thought of as a way to measure how well they align.",
+        "start": 1000.703,
+        "duration": 3.147
+    },
+    {
+        "text": "Computationally, dot products involve multiplying all the",
+        "start": 1004.87,
+        "duration": 2.823
+    },
+    {
+        "text": "corresponding components and then adding the results, which is good,",
+        "start": 1007.693,
+        "duration": 3.418
+    },
+    {
+        "text": "since so much of our computation has to look like weighted sums.",
+        "start": 1011.111,
+        "duration": 3.219
+    },
+    {
+        "text": "Geometrically, the dot product is positive when vectors point in similar directions,",
+        "start": 1015.19,
+        "duration": 4.809
+    },
+    {
+        "text": "it's zero if they're perpendicular, and it's negative whenever",
+        "start": 1019.999,
+        "duration": 3.607
+    },
+    {
+        "text": "they point in opposite directions.",
+        "start": 1023.606,
+        "duration": 2.004
+    },
+    {
+        "text": "For example, let's say you were playing with this model,",
+        "start": 1026.55,
+        "duration": 3.366
+    },
+    {
+        "text": "and you hypothesize that the embedding of cats minus cat might represent a sort of",
+        "start": 1029.916,
+        "duration": 4.99
+    },
+    {
+        "text": "plurality direction in this space.",
+        "start": 1034.906,
+        "duration": 2.104
+    },
+    {
+        "text": "To test this, I'm going to take this vector and compute its dot",
+        "start": 1037.43,
+        "duration": 3.14
+    },
+    {
+        "text": "product against the embeddings of certain singular nouns,",
+        "start": 1040.57,
+        "duration": 2.891
+    },
+    {
+        "text": "and compare it to the dot products with the corresponding plural nouns.",
+        "start": 1043.461,
+        "duration": 3.589
+    },
+    {
+        "text": "If you play around with this, you'll notice that the plural ones",
+        "start": 1047.27,
+        "duration": 2.949
+    },
+    {
+        "text": "do indeed seem to consistently give higher values than the singular ones,",
+        "start": 1050.219,
+        "duration": 3.409
+    },
+    {
+        "text": "indicating that they align more with this direction.",
+        "start": 1053.628,
+        "duration": 2.442
+    },
+    {
+        "text": "It's also fun how if you take this dot product with the embeddings of the words one,",
+        "start": 1057.07,
+        "duration": 4.546
+    },
+    {
+        "text": "two, three, and so on, they give increasing values,",
+        "start": 1061.616,
+        "duration": 2.814
+    },
+    {
+        "text": "so it's as if we can quantitatively measure how plural the model finds a given word.",
+        "start": 1064.43,
+        "duration": 4.6
+    },
+    {
+        "text": "Again, the specifics for how words get embedded is learned using data.",
+        "start": 1070.25,
+        "duration": 3.32
+    },
+    {
+        "text": "This embedding matrix, whose columns tell us what happens to each word,",
+        "start": 1074.05,
+        "duration": 3.425
+    },
+    {
+        "text": "is the first pile of weights in our model.",
+        "start": 1077.475,
+        "duration": 2.075
+    },
+    {
+        "text": "Using the GPT-3 numbers, the vocabulary size specifically is 50,257,",
+        "start": 1080.03,
+        "duration": 4.697
+    },
+    {
+        "text": "and again, technically this consists not of words per se, but of tokens.",
+        "start": 1084.727,
+        "duration": 5.043
+    },
+    {
+        "text": "The embedding dimension is 12,288, and multiplying those",
+        "start": 1090.63,
+        "duration": 3.679
+    },
+    {
+        "text": "tells us this consists of about 617 million weights.",
+        "start": 1094.309,
+        "duration": 3.481
+    },
+    {
+        "text": "Let's go ahead and add this to a running tally,",
+        "start": 1098.25,
+        "duration": 2.376
+    },
+    {
+        "text": "remembering that by the end we should count up to 175 billion.",
+        "start": 1100.626,
+        "duration": 3.184
+    },
+    {
+        "text": "In the case of transformers, you really want to think of the vectors",
+        "start": 1105.43,
+        "duration": 3.326
+    },
+    {
+        "text": "in this embedding space as not merely representing individual words.",
+        "start": 1108.756,
+        "duration": 3.374
+    },
+    {
+        "text": "For one thing, they also encode information about the position of that word,",
+        "start": 1112.55,
+        "duration": 3.963
+    },
+    {
+        "text": "which we'll talk about later, but more importantly,",
+        "start": 1116.513,
+        "duration": 2.711
+    },
+    {
+        "text": "you should think of them as having the capacity to soak in context.",
+        "start": 1119.224,
+        "duration": 3.546
+    },
+    {
+        "text": "A vector that started its life as the embedding of the word king, for example,",
+        "start": 1123.35,
+        "duration": 4.058
+    },
+    {
+        "text": "might progressively get tugged and pulled by various blocks in this network,",
+        "start": 1127.408,
+        "duration": 4.005
+    },
+    {
+        "text": "so that by the end it points in a much more specific and nuanced direction that",
+        "start": 1131.413,
+        "duration": 4.162
+    },
+    {
+        "text": "somehow encodes that it was a king who lived in Scotland,",
+        "start": 1135.575,
+        "duration": 3.017
+    },
+    {
+        "text": "and who had achieved his post after murdering the previous king,",
+        "start": 1138.592,
+        "duration": 3.381
+    },
+    {
+        "text": "and who's being described in Shakespearean language.",
+        "start": 1141.973,
+        "duration": 2.757
+    },
+    {
+        "text": "Think about your own understanding of a given word.",
+        "start": 1145.21,
+        "duration": 2.58
+    },
+    {
+        "text": "The meaning of that word is clearly informed by the surroundings,",
+        "start": 1148.25,
+        "duration": 3.477
+    },
+    {
+        "text": "and sometimes this includes context from a long distance away,",
+        "start": 1151.727,
+        "duration": 3.371
+    },
+    {
+        "text": "so in putting together a model that has the ability to predict what word comes next,",
+        "start": 1155.098,
+        "duration": 4.547
+    },
+    {
+        "text": "the goal is to somehow empower it to incorporate context efficiently.",
+        "start": 1159.645,
+        "duration": 3.745
+    },
+    {
+        "text": "To be clear, in that very first step, when you create the array of",
+        "start": 1164.05,
+        "duration": 3.086
+    },
+    {
+        "text": "vectors based on the input text, each one of those is simply plucked",
+        "start": 1167.136,
+        "duration": 3.227
+    },
+    {
+        "text": "out of the embedding matrix, so initially each one can only encode",
+        "start": 1170.363,
+        "duration": 3.133
+    },
+    {
+        "text": "the meaning of a single word without any input from its surroundings.",
+        "start": 1173.496,
+        "duration": 3.274
+    },
+    {
+        "text": "But you should think of the primary goal of this network that it flows through",
+        "start": 1177.71,
+        "duration": 3.852
+    },
+    {
+        "text": "as being to enable each one of those vectors to soak up a meaning that's much",
+        "start": 1181.562,
+        "duration": 3.852
+    },
+    {
+        "text": "more rich and specific than what mere individual words could represent.",
+        "start": 1185.414,
+        "duration": 3.556
+    },
+    {
+        "text": "The network can only process a fixed number of vectors at a time,",
+        "start": 1189.51,
+        "duration": 3.292
+    },
+    {
+        "text": "known as its context size.",
+        "start": 1192.802,
+        "duration": 1.368
+    },
+    {
+        "text": "For GPT-3 it was trained with a context size of 2048,",
+        "start": 1194.51,
+        "duration": 3.162
+    },
+    {
+        "text": "so the data flowing through the network always looks like this array of 2048 columns,",
+        "start": 1197.672,
+        "duration": 5.131
+    },
+    {
+        "text": "each of which has 12,000 dimensions.",
+        "start": 1202.803,
+        "duration": 2.207
+    },
+    {
+        "text": "This context size limits how much text the transformer can",
+        "start": 1205.59,
+        "duration": 3.067
+    },
+    {
+        "text": "incorporate when it's making a prediction of the next word.",
+        "start": 1208.657,
+        "duration": 3.173
+    },
+    {
+        "text": "This is why long conversations with certain chatbots,",
+        "start": 1212.37,
+        "duration": 2.672
+    },
+    {
+        "text": "like the early versions of ChatGPT, often gave the feeling of",
+        "start": 1215.042,
+        "duration": 3.126
+    },
+    {
+        "text": "the bot kind of losing the thread of conversation as you continued too long.",
+        "start": 1218.168,
+        "duration": 3.882
+    },
+    {
+        "text": "We'll go into the details of attention in due time,",
+        "start": 1223.03,
+        "duration": 2.2
+    },
+    {
+        "text": "but skipping ahead I want to talk for a minute about what happens at the very end.",
+        "start": 1225.23,
+        "duration": 3.58
+    },
+    {
+        "text": "Remember, the desired output is a probability",
+        "start": 1229.45,
+        "duration": 2.541
+    },
+    {
+        "text": "distribution over all tokens that might come next.",
+        "start": 1231.991,
+        "duration": 2.879
+    },
+    {
+        "text": "For example, if the very last word is Professor,",
+        "start": 1235.17,
+        "duration": 2.589
+    },
+    {
+        "text": "and the context includes words like Harry Potter,",
+        "start": 1237.759,
+        "duration": 2.697
+    },
+    {
+        "text": "and immediately preceding we see least favorite teacher,",
+        "start": 1240.456,
+        "duration": 3.075
+    },
+    {
+        "text": "and also if you give me some leeway by letting me pretend that tokens simply",
+        "start": 1243.531,
+        "duration": 4.154
+    },
+    {
+        "text": "look like full words, then a well-trained network that had built up knowledge",
+        "start": 1247.685,
+        "duration": 4.207
+    },
+    {
+        "text": "of Harry Potter would presumably assign a high number to the word Snape.",
+        "start": 1251.892,
+        "duration": 3.938
+    },
+    {
+        "text": "This involves two different steps.",
+        "start": 1256.51,
+        "duration": 1.46
+    },
+    {
+        "text": "The first one is to use another matrix that maps the very last vector in that",
+        "start": 1258.31,
+        "duration": 4.742
+    },
+    {
+        "text": "context to a list of 50,000 values, one for each token in the vocabulary.",
+        "start": 1263.052,
+        "duration": 4.558
+    },
+    {
+        "text": "Then there's a function that normalizes this into a probability distribution,",
+        "start": 1268.17,
+        "duration": 4.003
+    },
+    {
+        "text": "it's called softmax and we'll talk more about it in just a second,",
+        "start": 1272.173,
+        "duration": 3.484
+    },
+    {
+        "text": "but before that it might seem a little bit weird to only use this last embedding",
+        "start": 1275.657,
+        "duration": 4.211
+    },
+    {
+        "text": "to make a prediction, when after all in that last step there are thousands of",
+        "start": 1279.868,
+        "duration": 4.055
+    },
+    {
+        "text": "other vectors in the layer just sitting there with their own context-rich meanings.",
+        "start": 1283.923,
+        "duration": 4.367
+    },
+    {
+        "text": "This has to do with the fact that in the training process it turns out to be",
+        "start": 1288.93,
+        "duration": 3.747
+    },
+    {
+        "text": "much more efficient if you use each one of those vectors in the final layer",
+        "start": 1292.677,
+        "duration": 3.747
+    },
+    {
+        "text": "to simultaneously make a prediction for what would come immediately after it.",
+        "start": 1296.424,
+        "duration": 3.846
+    },
+    {
+        "text": "There's a lot more to be said about training later on,",
+        "start": 1300.97,
+        "duration": 2.27
+    },
+    {
+        "text": "but I just want to call that out right now.",
+        "start": 1303.24,
+        "duration": 1.85
+    },
+    {
+        "text": "This matrix is called the Unembedding matrix and we give it the label WU.",
+        "start": 1305.73,
+        "duration": 3.96
+    },
+    {
+        "text": "Again, like all the weight matrices we see, its entries begin at random,",
+        "start": 1310.21,
+        "duration": 3.364
+    },
+    {
+        "text": "but they are learned during the training process.",
+        "start": 1313.574,
+        "duration": 2.336
+    },
+    {
+        "text": "Keeping score on our total parameter count, this Unembedding",
+        "start": 1316.47,
+        "duration": 2.977
+    },
+    {
+        "text": "matrix has one row for each word in the vocabulary,",
+        "start": 1319.447,
+        "duration": 2.581
+    },
+    {
+        "text": "and each row has the same number of elements as the embedding dimension.",
+        "start": 1322.028,
+        "duration": 3.622
+    },
+    {
+        "text": "It's very similar to the embedding matrix, just with the order swapped,",
+        "start": 1326.41,
+        "duration": 3.971
+    },
+    {
+        "text": "so it adds another 617 million parameters to the network,",
+        "start": 1330.381,
+        "duration": 3.244
+    },
+    {
+        "text": "meaning our count so far is a little over a billion,",
+        "start": 1333.625,
+        "duration": 2.964
+    },
+    {
+        "text": "a small but not wholly insignificant fraction of the 175 billion",
+        "start": 1336.589,
+        "duration": 3.635
+    },
+    {
+        "text": "we'll end up with in total.",
+        "start": 1340.224,
+        "duration": 1.566
+    },
+    {
+        "text": "As the very last mini-lesson for this chapter,",
+        "start": 1342.55,
+        "duration": 2.107
+    },
+    {
+        "text": "I want to talk more about this softmax function,",
+        "start": 1344.657,
+        "duration": 2.244
+    },
+    {
+        "text": "since it makes another appearance for us once we dive into the attention blocks.",
+        "start": 1346.901,
+        "duration": 3.709
+    },
+    {
+        "text": "The idea is that if you want a sequence of numbers to act as a probability distribution,",
+        "start": 1351.43,
+        "duration": 5.124
+    },
+    {
+        "text": "say a distribution over all possible next words,",
+        "start": 1356.554,
+        "duration": 2.854
+    },
+    {
+        "text": "then each value has to be between 0 and 1, and you also need all of them to add up to 1.",
+        "start": 1359.408,
+        "duration": 5.182
+    },
+    {
+        "text": "However, if you're playing the deep learning game where everything you do looks like",
+        "start": 1365.25,
+        "duration": 4.642
+    },
+    {
+        "text": "matrix-vector multiplication, the outputs you get by default don't abide by this at all.",
+        "start": 1369.892,
+        "duration": 4.918
+    },
+    {
+        "text": "The values are often negative, or much bigger than 1,",
+        "start": 1375.33,
+        "duration": 2.455
+    },
+    {
+        "text": "and they almost certainly don't add up to 1.",
+        "start": 1377.785,
+        "duration": 2.085
+    },
+    {
+        "text": "Softmax is the standard way to turn an arbitrary list of numbers",
+        "start": 1380.51,
+        "duration": 3.52
+    },
+    {
+        "text": "into a valid distribution in such a way that the largest values end up closest to 1,",
+        "start": 1384.03,
+        "duration": 4.675
+    },
+    {
+        "text": "and the smaller values end up very close to 0.",
+        "start": 1388.705,
+        "duration": 2.585
+    },
+    {
+        "text": "That's all you really need to know.",
+        "start": 1391.83,
+        "duration": 1.24
+    },
+    {
+        "text": "But if you're curious, the way it works is to first raise e to the power",
+        "start": 1393.09,
+        "duration": 4.039
+    },
+    {
+        "text": "of each of the numbers, which means you now have a list of positive values,",
+        "start": 1397.129,
+        "duration": 4.263
+    },
+    {
+        "text": "and then you can take the sum of all those positive values and divide each",
+        "start": 1401.392,
+        "duration": 4.207
+    },
+    {
+        "text": "term by that sum, which normalizes it into a list that adds up to 1.",
+        "start": 1405.599,
+        "duration": 3.871
+    },
+    {
+        "text": "You'll notice that if one of the numbers in the input is meaningfully bigger than the",
+        "start": 1410.17,
+        "duration": 4.116
+    },
+    {
+        "text": "rest, then in the output the corresponding term dominates the distribution,",
+        "start": 1414.286,
+        "duration": 3.68
+    },
+    {
+        "text": "so if you were sampling from it you'd almost certainly just be picking the maximizing",
+        "start": 1417.966,
+        "duration": 4.165
+    },
+    {
+        "text": "input.",
+        "start": 1422.131,
+        "duration": 0.339
+    },
+    {
+        "text": "But it's softer than just picking the max in the sense that when other values",
+        "start": 1422.99,
+        "duration": 4.008
+    },
+    {
+        "text": "are similarly large, they also get meaningful weight in the distribution,",
+        "start": 1426.998,
+        "duration": 3.852
+    },
+    {
+        "text": "and everything changes continuously as you continuously vary the inputs.",
+        "start": 1430.85,
+        "duration": 3.8
+    },
+    {
+        "text": "In some situations, like when ChatGPT is using this distribution to create a next word,",
+        "start": 1435.13,
+        "duration": 4.854
+    },
+    {
+        "text": "there's room for a little bit of extra fun by adding a little extra spice into this",
+        "start": 1439.984,
+        "duration": 4.686
+    },
+    {
+        "text": "function, with a constant T thrown into the denominator of those exponents.",
+        "start": 1444.67,
+        "duration": 4.24
+    },
+    {
+        "text": "We call it the temperature, since it vaguely resembles the role of temperature in",
+        "start": 1449.55,
+        "duration": 4.45
+    },
+    {
+        "text": "certain thermodynamics equations, and the effect is that when T is larger,",
+        "start": 1454.0,
+        "duration": 4.121
+    },
+    {
+        "text": "you give more weight to the lower values, meaning the distribution is a little bit",
+        "start": 1458.121,
+        "duration": 4.56
+    },
+    {
+        "text": "more uniform, and if T is smaller, then the bigger values will dominate more",
+        "start": 1462.681,
+        "duration": 4.23
+    },
+    {
+        "text": "aggressively, where in the extreme, setting T equal to zero means all of the weight",
+        "start": 1466.911,
+        "duration": 4.615
+    },
+    {
+        "text": "goes to maximum value.",
+        "start": 1471.526,
+        "duration": 1.264
+    },
+    {
+        "text": "For example, I'll have GPT-3 generate a story with the seed text,",
+        "start": 1473.47,
+        "duration": 4.192
+    },
+    {
+        "text": "\"once upon a time there was A\", but I'll use different temperatures in each case.",
+        "start": 1477.662,
+        "duration": 5.288
+    },
+    {
+        "text": "Temperature zero means that it always goes with the most predictable word,",
+        "start": 1483.63,
+        "duration": 4.653
+    },
+    {
+        "text": "and what you get ends up being a trite derivative of Goldilocks.",
+        "start": 1488.283,
+        "duration": 4.087
+    },
+    {
+        "text": "A higher temperature gives it a chance to choose less likely words,",
+        "start": 1493.01,
+        "duration": 3.53
+    },
+    {
+        "text": "but it comes with a risk.",
+        "start": 1496.54,
+        "duration": 1.37
+    },
+    {
+        "text": "In this case, the story starts out more originally,",
+        "start": 1498.23,
+        "duration": 2.918
+    },
+    {
+        "text": "about a young web artist from South Korea, but it quickly degenerates into nonsense.",
+        "start": 1501.148,
+        "duration": 4.862
+    },
+    {
+        "text": "Technically speaking, the API doesn't actually let you pick a temperature bigger than 2.",
+        "start": 1506.95,
+        "duration": 3.88
+    },
+    {
+        "text": "There's no mathematical reason for this, it's just an arbitrary constraint imposed",
+        "start": 1511.17,
+        "duration": 4.166
+    },
+    {
+        "text": "to keep their tool from being seen generating things that are too nonsensical.",
+        "start": 1515.336,
+        "duration": 4.014
+    },
+    {
+        "text": "So if you're curious, the way this animation is actually working is I'm taking the",
+        "start": 1519.87,
+        "duration": 4.402
+    },
+    {
+        "text": "20 most probable next tokens that GPT-3 generates,",
+        "start": 1524.272,
+        "duration": 2.739
+    },
+    {
+        "text": "which seems to be the maximum they'll give me,",
+        "start": 1527.011,
+        "duration": 2.523
+    },
+    {
+        "text": "and then I tweak the probabilities based on an exponent of 1/5.",
+        "start": 1529.534,
+        "duration": 3.436
+    },
+    {
+        "text": "As another bit of jargon, in the same way that you might call the components of",
+        "start": 1533.13,
+        "duration": 4.304
+    },
+    {
+        "text": "the output of this function probabilities, people often refer to the inputs as logits,",
+        "start": 1537.434,
+        "duration": 4.739
+    },
+    {
+        "text": "or some people say logits, some people say logits, I'm gonna say logits.",
+        "start": 1542.173,
+        "duration": 3.977
+    },
+    {
+        "text": "So for instance, when you feed in some text, you have all these word embeddings",
+        "start": 1546.53,
+        "duration": 3.887
+    },
+    {
+        "text": "flow through the network, and you do this final multiplication with the",
+        "start": 1550.417,
+        "duration": 3.543
+    },
+    {
+        "text": "unembedding matrix, machine learning people would refer to the components in that raw,",
+        "start": 1553.96,
+        "duration": 4.281
+    },
+    {
+        "text": "unnormalized output as the logits for the next word prediction.",
+        "start": 1558.241,
+        "duration": 3.149
+    },
+    {
+        "text": "A lot of the goal with this chapter was to lay the foundations for",
+        "start": 1563.33,
+        "duration": 3.367
+    },
+    {
+        "text": "understanding the attention mechanism, Karate Kid wax-on-wax-off style.",
+        "start": 1566.697,
+        "duration": 3.673
+    },
+    {
+        "text": "You see, if you have a strong intuition for word embeddings, for softmax,",
+        "start": 1570.85,
+        "duration": 4.04
+    },
+    {
+        "text": "for how dot products measure similarity, and also the underlying premise that",
+        "start": 1574.89,
+        "duration": 4.316
+    },
+    {
+        "text": "most of the calculations have to look like matrix multiplication with matrices",
+        "start": 1579.206,
+        "duration": 4.371
+    },
+    {
+        "text": "full of tunable parameters, then understanding the attention mechanism,",
+        "start": 1583.577,
+        "duration": 3.985
+    },
+    {
+        "text": "this cornerstone piece in the whole modern boom in AI, should be relatively smooth.",
+        "start": 1587.562,
+        "duration": 4.648
+    },
+    {
+        "text": "For that, come join me in the next chapter.",
+        "start": 1592.65,
+        "duration": 1.86
+    },
+    {
+        "text": "As I'm publishing this, a draft of that next chapter",
+        "start": 1596.39,
+        "duration": 2.532
+    },
+    {
+        "text": "is available for review by Patreon supporters.",
+        "start": 1598.922,
+        "duration": 2.288
+    },
+    {
+        "text": "A final version should be up in public in a week or two,",
+        "start": 1601.77,
+        "duration": 2.469
+    },
+    {
+        "text": "it usually depends on how much I end up changing based on that review.",
+        "start": 1604.239,
+        "duration": 3.131
+    },
+    {
+        "text": "In the meantime, if you want to dive into attention,",
+        "start": 1607.81,
+        "duration": 1.898
+    },
+    {
+        "text": "and if you want to help the channel out a little bit, it's there waiting.",
+        "start": 1609.708,
+        "duration": 2.702
+    }
+]

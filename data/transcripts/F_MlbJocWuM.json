@@ -1,0 +1,5692 @@
+[
+    {
+        "text": "foreign",
+        "start": 2.46,
+        "duration": 2.24
+    },
+    {
+        "text": "which was an N polymer realigner for",
+        "start": 7.639,
+        "duration": 5.261
+    },
+    {
+        "text": "improving pileup based variant calling",
+        "start": 10.8,
+        "duration": 4.379
+    },
+    {
+        "text": "for nanopore sequencing",
+        "start": 12.9,
+        "duration": 4.62
+    },
+    {
+        "text": "um so before I start talking about my",
+        "start": 15.179,
+        "duration": 4.321
+    },
+    {
+        "text": "projects I'm gonna do about 15 minutes",
+        "start": 17.52,
+        "duration": 3.66
+    },
+    {
+        "text": "of background because I'm sure everyone",
+        "start": 19.5,
+        "duration": 4.56
+    },
+    {
+        "text": "has different levels of experience",
+        "start": 21.18,
+        "duration": 4.5
+    },
+    {
+        "text": "um talking a little bit about old genome",
+        "start": 24.06,
+        "duration": 4.799
+    },
+    {
+        "text": "sequencing then nanopore sequencing and",
+        "start": 25.68,
+        "duration": 5.16
+    },
+    {
+        "text": "finally some breed alignment and variant",
+        "start": 28.859,
+        "duration": 2.941
+    },
+    {
+        "text": "calling",
+        "start": 30.84,
+        "duration": 4.14
+    },
+    {
+        "text": "so whole genome sequencing just an",
+        "start": 31.8,
+        "duration": 5.4
+    },
+    {
+        "text": "overview of the whole pipeline",
+        "start": 34.98,
+        "duration": 4.38
+    },
+    {
+        "text": "um and in this example it will be viral",
+        "start": 37.2,
+        "duration": 3.9
+    },
+    {
+        "text": "genome sequencing although it's the",
+        "start": 39.36,
+        "duration": 4.08
+    },
+    {
+        "text": "exact same pipeline um for human genome",
+        "start": 41.1,
+        "duration": 4.74
+    },
+    {
+        "text": "sequencing you'd start with the nasal",
+        "start": 43.44,
+        "duration": 4.68
+    },
+    {
+        "text": "swab your sample for humans it might be",
+        "start": 45.84,
+        "duration": 4.559
+    },
+    {
+        "text": "a tissue sample and then you do some",
+        "start": 48.12,
+        "duration": 4.619
+    },
+    {
+        "text": "kind of laboratory prep to isolate the",
+        "start": 50.399,
+        "duration": 4.381
+    },
+    {
+        "text": "DNA with a virus you might be starting",
+        "start": 52.739,
+        "duration": 4.381
+    },
+    {
+        "text": "with RNA and reverse transcribe its DNA",
+        "start": 54.78,
+        "duration": 4.68
+    },
+    {
+        "text": "but in the end you have your dni and",
+        "start": 57.12,
+        "duration": 3.959
+    },
+    {
+        "text": "then you use that as input to a",
+        "start": 59.46,
+        "duration": 3.66
+    },
+    {
+        "text": "sequencer and I'll be talking about",
+        "start": 61.079,
+        "duration": 4.201
+    },
+    {
+        "text": "nanopore sequencing so this is their",
+        "start": 63.12,
+        "duration": 4.679
+    },
+    {
+        "text": "small handheld device the minion the",
+        "start": 65.28,
+        "duration": 5.22
+    },
+    {
+        "text": "output of that is a raw current signal",
+        "start": 67.799,
+        "duration": 5.401
+    },
+    {
+        "text": "which then using a machine learning tool",
+        "start": 70.5,
+        "duration": 6.06
+    },
+    {
+        "text": "called a base collar gets converted to a",
+        "start": 73.2,
+        "duration": 5.36
+    },
+    {
+        "text": "string of acgt",
+        "start": 76.56,
+        "duration": 5.0
+    },
+    {
+        "text": "so you're going to get",
+        "start": 78.56,
+        "duration": 7.48
+    },
+    {
+        "text": "strings of acgt anywhere length from 100",
+        "start": 81.56,
+        "duration": 8.86
+    },
+    {
+        "text": "to a million bases long and basically",
+        "start": 86.04,
+        "duration": 7.439
+    },
+    {
+        "text": "nanopore sequencing can read fragments",
+        "start": 90.42,
+        "duration": 4.86
+    },
+    {
+        "text": "of DNA that you'll need to use to figure",
+        "start": 93.479,
+        "duration": 5.161
+    },
+    {
+        "text": "out the actual genome sequence so the",
+        "start": 95.28,
+        "duration": 6.0
+    },
+    {
+        "text": "next step is aligning these reads to",
+        "start": 98.64,
+        "duration": 4.979
+    },
+    {
+        "text": "your reference genome in order to figure",
+        "start": 101.28,
+        "duration": 4.32
+    },
+    {
+        "text": "out where they came from and the last",
+        "start": 103.619,
+        "duration": 3.54
+    },
+    {
+        "text": "step is going to be variant following",
+        "start": 105.6,
+        "duration": 4.74
+    },
+    {
+        "text": "where you identify differences from the",
+        "start": 107.159,
+        "duration": 6.481
+    },
+    {
+        "text": "expected reference genome with the the",
+        "start": 110.34,
+        "duration": 6.48
+    },
+    {
+        "text": "measured actual reads so here we can see",
+        "start": 113.64,
+        "duration": 6.54
+    },
+    {
+        "text": "this a was mutated into a c and we are",
+        "start": 116.82,
+        "duration": 5.4
+    },
+    {
+        "text": "going to to mention that in our our",
+        "start": 120.18,
+        "duration": 4.259
+    },
+    {
+        "text": "final variant calling",
+        "start": 122.22,
+        "duration": 5.399
+    },
+    {
+        "text": "so my project in particular is focusing",
+        "start": 124.439,
+        "duration": 6.421
+    },
+    {
+        "text": "on this alignment stage and it's trying",
+        "start": 127.619,
+        "duration": 6.061
+    },
+    {
+        "text": "to align reads more consistently in",
+        "start": 130.86,
+        "duration": 5.519
+    },
+    {
+        "text": "order to help the the downstream variant",
+        "start": 133.68,
+        "duration": 5.22
+    },
+    {
+        "text": "calling step",
+        "start": 136.379,
+        "duration": 4.08
+    },
+    {
+        "text": "um a little bit farther back in the",
+        "start": 138.9,
+        "duration": 4.26
+    },
+    {
+        "text": "pipeline with sequencing there's kind of",
+        "start": 140.459,
+        "duration": 5.221
+    },
+    {
+        "text": "a few major players there's even more in",
+        "start": 143.16,
+        "duration": 4.799
+    },
+    {
+        "text": "recent years but kind of the industry",
+        "start": 145.68,
+        "duration": 4.199
+    },
+    {
+        "text": "standard has been Illumina short read",
+        "start": 147.959,
+        "duration": 4.261
+    },
+    {
+        "text": "sequencing where each read is a hundred",
+        "start": 149.879,
+        "duration": 4.86
+    },
+    {
+        "text": "to a thousand bases they've always had",
+        "start": 152.22,
+        "duration": 4.379
+    },
+    {
+        "text": "really good accuracy and they're",
+        "start": 154.739,
+        "duration": 3.421
+    },
+    {
+        "text": "currently one of the most cost efficient",
+        "start": 156.599,
+        "duration": 4.681
+    },
+    {
+        "text": "options more recently Oxford nanopore",
+        "start": 158.16,
+        "duration": 5.42
+    },
+    {
+        "text": "and Pac bio have become major players",
+        "start": 161.28,
+        "duration": 4.86
+    },
+    {
+        "text": "the main benefit of Oxford nanopore",
+        "start": 163.58,
+        "duration": 4.299
+    },
+    {
+        "text": "reads is that they can get incredibly",
+        "start": 166.14,
+        "duration": 3.3
+    },
+    {
+        "text": "long",
+        "start": 167.879,
+        "duration": 3.301
+    },
+    {
+        "text": "um and they've done a great job",
+        "start": 169.44,
+        "duration": 3.48
+    },
+    {
+        "text": "improving their accuracy in recent years",
+        "start": 171.18,
+        "duration": 6.9
+    },
+    {
+        "text": "from like 90 to 99 to 99.9 percent and",
+        "start": 172.92,
+        "duration": 6.899
+    },
+    {
+        "text": "the main benefit of having such long",
+        "start": 178.08,
+        "duration": 4.62
+    },
+    {
+        "text": "reads is that they can unambiguously map",
+        "start": 179.819,
+        "duration": 5.64
+    },
+    {
+        "text": "to the reference genome and even span",
+        "start": 182.7,
+        "duration": 6.3
+    },
+    {
+        "text": "long and credibly repetitive regions and",
+        "start": 185.459,
+        "duration": 5.221
+    },
+    {
+        "text": "once you have long reads you can also",
+        "start": 189.0,
+        "duration": 4.14
+    },
+    {
+        "text": "use that to phase variants on each of",
+        "start": 190.68,
+        "duration": 5.46
+    },
+    {
+        "text": "the two haplotypes and figure out which",
+        "start": 193.14,
+        "duration": 6.599
+    },
+    {
+        "text": "variants came from the mother father in",
+        "start": 196.14,
+        "duration": 5.94
+    },
+    {
+        "text": "the case of germline variants and Pac",
+        "start": 199.739,
+        "duration": 4.201
+    },
+    {
+        "text": "bio reads are a little bit shorter than",
+        "start": 202.08,
+        "duration": 4.62
+    },
+    {
+        "text": "nanopore reads but still pretty long and",
+        "start": 203.94,
+        "duration": 4.68
+    },
+    {
+        "text": "they're great for their accuracy and",
+        "start": 206.7,
+        "duration": 4.44
+    },
+    {
+        "text": "repetitive regions of the genome where",
+        "start": 208.62,
+        "duration": 5.82
+    },
+    {
+        "text": "nanopore sequencing sometimes struggles",
+        "start": 211.14,
+        "duration": 5.819
+    },
+    {
+        "text": "so for this project I focus on nanopore",
+        "start": 214.44,
+        "duration": 5.42
+    },
+    {
+        "text": "sequencing as the technology",
+        "start": 216.959,
+        "duration": 5.521
+    },
+    {
+        "text": "and now I want to mention that when",
+        "start": 219.86,
+        "duration": 4.299
+    },
+    {
+        "text": "you're doing the alignment there's",
+        "start": 222.48,
+        "duration": 3.539
+    },
+    {
+        "text": "actually different options for doing",
+        "start": 224.159,
+        "duration": 4.5
+    },
+    {
+        "text": "this you can either use a known",
+        "start": 226.019,
+        "duration": 5.461
+    },
+    {
+        "text": "reference genome and align your reads to",
+        "start": 228.659,
+        "duration": 4.681
+    },
+    {
+        "text": "that reference or you can start from",
+        "start": 231.48,
+        "duration": 4.38
+    },
+    {
+        "text": "scratch and identify the prefix and",
+        "start": 233.34,
+        "duration": 4.679
+    },
+    {
+        "text": "suffix overlaps within your read and",
+        "start": 235.86,
+        "duration": 4.56
+    },
+    {
+        "text": "construct a genome from scratch and I'll",
+        "start": 238.019,
+        "duration": 6.901
+    },
+    {
+        "text": "be focusing on reference-based alignment",
+        "start": 240.42,
+        "duration": 5.7
+    },
+    {
+        "text": "um so now in terms of applications",
+        "start": 244.92,
+        "duration": 2.64
+    },
+    {
+        "text": "there's a whole load of things you can",
+        "start": 246.12,
+        "duration": 3.42
+    },
+    {
+        "text": "do with this you can figure out the",
+        "start": 247.56,
+        "duration": 4.679
+    },
+    {
+        "text": "exact strain of our viruses and bacteria",
+        "start": 249.54,
+        "duration": 4.619
+    },
+    {
+        "text": "for contact tracing figuring out",
+        "start": 252.239,
+        "duration": 3.9
+    },
+    {
+        "text": "antibiotic resistance",
+        "start": 254.159,
+        "duration": 3.3
+    },
+    {
+        "text": "um you can do any kind of patient",
+        "start": 256.139,
+        "duration": 3.901
+    },
+    {
+        "text": "diagnoses for rare genetic diseases or",
+        "start": 257.459,
+        "duration": 5.581
+    },
+    {
+        "text": "cancer and there's also existing work on",
+        "start": 260.04,
+        "duration": 5.04
+    },
+    {
+        "text": "predicting drug response to certain",
+        "start": 263.04,
+        "duration": 4.74
+    },
+    {
+        "text": "treatments based on the unique genetic",
+        "start": 265.08,
+        "duration": 5.04
+    },
+    {
+        "text": "profile of each patient",
+        "start": 267.78,
+        "duration": 4.62
+    },
+    {
+        "text": "so now on to how nanopore sequencing",
+        "start": 270.12,
+        "duration": 6.42
+    },
+    {
+        "text": "Works basically you start with an ionic",
+        "start": 272.4,
+        "duration": 6.48
+    },
+    {
+        "text": "solution and you take a membrane that",
+        "start": 276.54,
+        "duration": 4.86
+    },
+    {
+        "text": "splits it into two compartments the next",
+        "start": 278.88,
+        "duration": 4.2
+    },
+    {
+        "text": "thing you do is you apply a voltage",
+        "start": 281.4,
+        "duration": 4.799
+    },
+    {
+        "text": "across this membrane so any ions on one",
+        "start": 283.08,
+        "duration": 4.8
+    },
+    {
+        "text": "side of the membrane are going to want",
+        "start": 286.199,
+        "duration": 2.94
+    },
+    {
+        "text": "to move to the other side of the",
+        "start": 287.88,
+        "duration": 3.72
+    },
+    {
+        "text": "membrane because they're charged at the",
+        "start": 289.139,
+        "duration": 4.141
+    },
+    {
+        "text": "moment they can't because the membranes",
+        "start": 291.6,
+        "duration": 4.56
+    },
+    {
+        "text": "in the way so what you do is you embed a",
+        "start": 293.28,
+        "duration": 5.76
+    },
+    {
+        "text": "small protein Channel or a nanoport into",
+        "start": 296.16,
+        "duration": 5.4
+    },
+    {
+        "text": "that membrane and that allows ions to",
+        "start": 299.04,
+        "duration": 4.439
+    },
+    {
+        "text": "move from one side of the solution to",
+        "start": 301.56,
+        "duration": 4.56
+    },
+    {
+        "text": "the other through the nanopore now if",
+        "start": 303.479,
+        "duration": 5.28
+    },
+    {
+        "text": "you put DNA on one side it's also going",
+        "start": 306.12,
+        "duration": 4.2
+    },
+    {
+        "text": "to want to move to the other side",
+        "start": 308.759,
+        "duration": 4.741
+    },
+    {
+        "text": "because it's charged as well and as this",
+        "start": 310.32,
+        "duration": 7.379
+    },
+    {
+        "text": "DNA moves through the pore the bases of",
+        "start": 313.5,
+        "duration": 8.58
+    },
+    {
+        "text": "the DNA end up altering the rate of ion",
+        "start": 317.699,
+        "duration": 6.421
+    },
+    {
+        "text": "movement through the through the pore",
+        "start": 322.08,
+        "duration": 3.36
+    },
+    {
+        "text": "because they're both trying to move",
+        "start": 324.12,
+        "duration": 3.299
+    },
+    {
+        "text": "through simultaneously",
+        "start": 325.44,
+        "duration": 4.56
+    },
+    {
+        "text": "so what you can do is you can measure",
+        "start": 327.419,
+        "duration": 5.28
+    },
+    {
+        "text": "the current over time and you can figure",
+        "start": 330.0,
+        "duration": 5.639
+    },
+    {
+        "text": "out which bases of the DNA are currently",
+        "start": 332.699,
+        "duration": 5.581
+    },
+    {
+        "text": "obstructing the port based on your",
+        "start": 335.639,
+        "duration": 5.161
+    },
+    {
+        "text": "measured current so in a very simplistic",
+        "start": 338.28,
+        "duration": 4.74
+    },
+    {
+        "text": "view there might be four different",
+        "start": 340.8,
+        "duration": 4.44
+    },
+    {
+        "text": "current levels for each of the four",
+        "start": 343.02,
+        "duration": 4.32
+    },
+    {
+        "text": "possible bases and based on the current",
+        "start": 345.24,
+        "duration": 4.26
+    },
+    {
+        "text": "over time you can figure out the DNA",
+        "start": 347.34,
+        "duration": 7.859
+    },
+    {
+        "text": "sequence and read your your whole read",
+        "start": 349.5,
+        "duration": 7.86
+    },
+    {
+        "text": "now in reality",
+        "start": 355.199,
+        "duration": 5.401
+    },
+    {
+        "text": "um this signals a lot a lot Messier you",
+        "start": 357.36,
+        "duration": 5.94
+    },
+    {
+        "text": "can see it's a little bit noisier and in",
+        "start": 360.6,
+        "duration": 4.92
+    },
+    {
+        "text": "reality instead of the current level",
+        "start": 363.3,
+        "duration": 4.8
+    },
+    {
+        "text": "being affected by a single base it's",
+        "start": 365.52,
+        "duration": 5.22
+    },
+    {
+        "text": "actually affected by around five to six",
+        "start": 368.1,
+        "duration": 5.879
+    },
+    {
+        "text": "adjacent faces because that's how large",
+        "start": 370.74,
+        "duration": 6.12
+    },
+    {
+        "text": "the constriction in the nanopore is so",
+        "start": 373.979,
+        "duration": 4.56
+    },
+    {
+        "text": "instead of having four possible current",
+        "start": 376.86,
+        "duration": 3.72
+    },
+    {
+        "text": "levels you actually have four to the",
+        "start": 378.539,
+        "duration": 4.321
+    },
+    {
+        "text": "fifth or four to the sixth so you need a",
+        "start": 380.58,
+        "duration": 3.6
+    },
+    {
+        "text": "lot of machine learning in order to",
+        "start": 382.86,
+        "duration": 3.899
+    },
+    {
+        "text": "figure out what the actual sequence was",
+        "start": 384.18,
+        "duration": 5.459
+    },
+    {
+        "text": "from your raw current trace and I'd like",
+        "start": 386.759,
+        "duration": 5.401
+    },
+    {
+        "text": "to mention right now that one to issue",
+        "start": 389.639,
+        "duration": 5.161
+    },
+    {
+        "text": "that Nano core sequencing runs into is",
+        "start": 392.16,
+        "duration": 4.979
+    },
+    {
+        "text": "if you have a repetitive DNA sequence",
+        "start": 394.8,
+        "duration": 4.8
+    },
+    {
+        "text": "because the current level is affected by",
+        "start": 397.139,
+        "duration": 4.801
+    },
+    {
+        "text": "only four to five bases if all those",
+        "start": 399.6,
+        "duration": 5.46
+    },
+    {
+        "text": "bases are the same as you shift over one",
+        "start": 401.94,
+        "duration": 5.099
+    },
+    {
+        "text": "base at a time the current level is",
+        "start": 405.06,
+        "duration": 5.04
+    },
+    {
+        "text": "going to stay pretty much the same so if",
+        "start": 407.039,
+        "duration": 5.1
+    },
+    {
+        "text": "you have a long repeated region it's",
+        "start": 410.1,
+        "duration": 3.96
+    },
+    {
+        "text": "really hard to identify the transitions",
+        "start": 412.139,
+        "duration": 4.321
+    },
+    {
+        "text": "from one base to another and know how",
+        "start": 414.06,
+        "duration": 5.22
+    },
+    {
+        "text": "long that repeated region actually is so",
+        "start": 416.46,
+        "duration": 5.54
+    },
+    {
+        "text": "here we can see some example reads",
+        "start": 419.28,
+        "duration": 5.699
+    },
+    {
+        "text": "aligned to the reference genome and we",
+        "start": 422.0,
+        "duration": 4.72
+    },
+    {
+        "text": "can see that it gets the length of this",
+        "start": 424.979,
+        "duration": 5.34
+    },
+    {
+        "text": "repeated sequence of A's incorrectly a",
+        "start": 426.72,
+        "duration": 7.38
+    },
+    {
+        "text": "lot uh relatively frequently",
+        "start": 430.319,
+        "duration": 6.481
+    },
+    {
+        "text": "so now on to the bioinformatics part the",
+        "start": 434.1,
+        "duration": 4.74
+    },
+    {
+        "text": "read alignment",
+        "start": 436.8,
+        "duration": 4.08
+    },
+    {
+        "text": "um the simplest way to align reads is",
+        "start": 438.84,
+        "duration": 5.1
+    },
+    {
+        "text": "with edit distance edit distance is the",
+        "start": 440.88,
+        "duration": 5.159
+    },
+    {
+        "text": "minimum number of edits required to",
+        "start": 443.94,
+        "duration": 6.12
+    },
+    {
+        "text": "transform one string to another and in",
+        "start": 446.039,
+        "duration": 6.481
+    },
+    {
+        "text": "this case the two strings are our",
+        "start": 450.06,
+        "duration": 5.28
+    },
+    {
+        "text": "expected reference genome and the read",
+        "start": 452.52,
+        "duration": 5.459
+    },
+    {
+        "text": "that we just sequenced and edits can",
+        "start": 455.34,
+        "duration": 5.579
+    },
+    {
+        "text": "take the form of substitutions where one",
+        "start": 457.979,
+        "duration": 5.06
+    },
+    {
+        "text": "base is changed to another",
+        "start": 460.919,
+        "duration": 5.881
+    },
+    {
+        "text": "insertions where we gain an additional",
+        "start": 463.039,
+        "duration": 5.741
+    },
+    {
+        "text": "read base that was not in the reference",
+        "start": 466.8,
+        "duration": 4.44
+    },
+    {
+        "text": "and deletions where we lose a base that",
+        "start": 468.78,
+        "duration": 4.56
+    },
+    {
+        "text": "was in the reference but is not in our",
+        "start": 471.24,
+        "duration": 4.32
+    },
+    {
+        "text": "sequence to read and now it's important",
+        "start": 473.34,
+        "duration": 4.919
+    },
+    {
+        "text": "to note that a lot of times there's",
+        "start": 475.56,
+        "duration": 5.4
+    },
+    {
+        "text": "there's many possible alignments for the",
+        "start": 478.259,
+        "duration": 5.101
+    },
+    {
+        "text": "same two sequences even with the same",
+        "start": 480.96,
+        "duration": 4.859
+    },
+    {
+        "text": "minimum at a distance so in this example",
+        "start": 483.36,
+        "duration": 4.02
+    },
+    {
+        "text": "the insertion could have happened here",
+        "start": 485.819,
+        "duration": 3.421
+    },
+    {
+        "text": "where it could have happened one base",
+        "start": 487.38,
+        "duration": 4.02
+    },
+    {
+        "text": "prior or even this insertion and",
+        "start": 489.24,
+        "duration": 3.54
+    },
+    {
+        "text": "deletion could have just been two",
+        "start": 491.4,
+        "duration": 3.78
+    },
+    {
+        "text": "substitutions and what we want to do",
+        "start": 492.78,
+        "duration": 4.919
+    },
+    {
+        "text": "with our alignment is actually end up",
+        "start": 495.18,
+        "duration": 5.04
+    },
+    {
+        "text": "with the alignment that best represents",
+        "start": 497.699,
+        "duration": 5.761
+    },
+    {
+        "text": "what probably happened and we want that",
+        "start": 500.22,
+        "duration": 6.18
+    },
+    {
+        "text": "to be consistent across breeds so that",
+        "start": 503.46,
+        "duration": 5.7
+    },
+    {
+        "text": "we can identify which mutations are",
+        "start": 506.4,
+        "duration": 6.84
+    },
+    {
+        "text": "actually present in the sequence",
+        "start": 509.16,
+        "duration": 6.299
+    },
+    {
+        "text": "so now in order to calculate this edit",
+        "start": 513.24,
+        "duration": 3.84
+    },
+    {
+        "text": "distance and find the optimal amount",
+        "start": 515.459,
+        "duration": 4.32
+    },
+    {
+        "text": "alignment imagine that you're aligning",
+        "start": 517.08,
+        "duration": 4.92
+    },
+    {
+        "text": "your your reference to your read and",
+        "start": 519.779,
+        "duration": 4.32
+    },
+    {
+        "text": "you've already aligned some prefix of",
+        "start": 522.0,
+        "duration": 3.899
+    },
+    {
+        "text": "your reference to some prefix of your",
+        "start": 524.099,
+        "duration": 4.201
+    },
+    {
+        "text": "read and you have some remaining",
+        "start": 525.899,
+        "duration": 4.861
+    },
+    {
+        "text": "reference spaces and some remaining read",
+        "start": 528.3,
+        "duration": 6.06
+    },
+    {
+        "text": "bases and a pointer to the first of each",
+        "start": 530.76,
+        "duration": 6.42
+    },
+    {
+        "text": "of those now when you're trying to align",
+        "start": 534.36,
+        "duration": 5.28
+    },
+    {
+        "text": "the next few bases you have three",
+        "start": 537.18,
+        "duration": 3.839
+    },
+    {
+        "text": "different options",
+        "start": 539.64,
+        "duration": 3.6
+    },
+    {
+        "text": "so ignoring",
+        "start": 541.019,
+        "duration": 4.621
+    },
+    {
+        "text": "um what you've previously aligned the",
+        "start": 543.24,
+        "duration": 4.92
+    },
+    {
+        "text": "next base could either be just the base",
+        "start": 545.64,
+        "duration": 4.5
+    },
+    {
+        "text": "in your read which would be an insertion",
+        "start": 548.16,
+        "duration": 4.739
+    },
+    {
+        "text": "or it could be just the base in your",
+        "start": 550.14,
+        "duration": 5.22
+    },
+    {
+        "text": "reference which would be a deletion or",
+        "start": 552.899,
+        "duration": 5.581
+    },
+    {
+        "text": "it could be both bases in both your read",
+        "start": 555.36,
+        "duration": 5.039
+    },
+    {
+        "text": "and reference and if they happen to be",
+        "start": 558.48,
+        "duration": 3.96
+    },
+    {
+        "text": "the same it'll be a match if they're not",
+        "start": 560.399,
+        "duration": 3.601
+    },
+    {
+        "text": "the same it'll end up being a",
+        "start": 562.44,
+        "duration": 4.56
+    },
+    {
+        "text": "substitution so at each position as you",
+        "start": 564.0,
+        "duration": 4.32
+    },
+    {
+        "text": "walk through the reference and read",
+        "start": 567.0,
+        "duration": 4.8
+    },
+    {
+        "text": "bases you have three possible options so",
+        "start": 568.32,
+        "duration": 5.1
+    },
+    {
+        "text": "there's three to the r possible",
+        "start": 571.8,
+        "duration": 4.32
+    },
+    {
+        "text": "alignments where R is the minimum length",
+        "start": 573.42,
+        "duration": 5.4
+    },
+    {
+        "text": "of your read and reference so this is a",
+        "start": 576.12,
+        "duration": 5.219
+    },
+    {
+        "text": "lot and in order to find the minimum at",
+        "start": 578.82,
+        "duration": 4.44
+    },
+    {
+        "text": "a distance we don't want to have to walk",
+        "start": 581.339,
+        "duration": 5.221
+    },
+    {
+        "text": "through all possible alignments so how",
+        "start": 583.26,
+        "duration": 5.24
+    },
+    {
+        "text": "can we do this more efficiently",
+        "start": 586.56,
+        "duration": 4.56
+    },
+    {
+        "text": "fortunately the edit distance is",
+        "start": 588.5,
+        "duration": 5.68
+    },
+    {
+        "text": "independent of the prefixes that you've",
+        "start": 591.12,
+        "duration": 5.399
+    },
+    {
+        "text": "already aligned so if we've already",
+        "start": 594.18,
+        "duration": 5.159
+    },
+    {
+        "text": "aligned the first four bases of the the",
+        "start": 596.519,
+        "duration": 4.801
+    },
+    {
+        "text": "reference in the read then if you you",
+        "start": 599.339,
+        "duration": 3.421
+    },
+    {
+        "text": "have an insertion it's just going to be",
+        "start": 601.32,
+        "duration": 3.78
+    },
+    {
+        "text": "that at a distance plus one if we have a",
+        "start": 602.76,
+        "duration": 3.84
+    },
+    {
+        "text": "deletion that's going to be that at a",
+        "start": 605.1,
+        "duration": 3.6
+    },
+    {
+        "text": "distance plus one we have a match the",
+        "start": 606.6,
+        "duration": 4.02
+    },
+    {
+        "text": "edit distance will stay the same and if",
+        "start": 608.7,
+        "duration": 3.54
+    },
+    {
+        "text": "you have a substitution the edit",
+        "start": 610.62,
+        "duration": 3.719
+    },
+    {
+        "text": "distance again increases by one so we",
+        "start": 612.24,
+        "duration": 5.159
+    },
+    {
+        "text": "can use dynamic programming to store the",
+        "start": 614.339,
+        "duration": 5.521
+    },
+    {
+        "text": "best possible alignment",
+        "start": 617.399,
+        "duration": 5.341
+    },
+    {
+        "text": "um of our read to our reference for each",
+        "start": 619.86,
+        "duration": 5.4
+    },
+    {
+        "text": "of the possible prefix lengths of both",
+        "start": 622.74,
+        "duration": 5.46
+    },
+    {
+        "text": "the the read and the reference so what",
+        "start": 625.26,
+        "duration": 7.199
+    },
+    {
+        "text": "we end up with is with is a matrix that",
+        "start": 628.2,
+        "duration": 7.079
+    },
+    {
+        "text": "contains all the possible prefixes of",
+        "start": 632.459,
+        "duration": 5.401
+    },
+    {
+        "text": "our read and our reference so at this",
+        "start": 635.279,
+        "duration": 4.801
+    },
+    {
+        "text": "highlighted position we've aligned the",
+        "start": 637.86,
+        "duration": 3.96
+    },
+    {
+        "text": "first four bases of our read and the",
+        "start": 640.08,
+        "duration": 4.319
+    },
+    {
+        "text": "first four bases of our reference and as",
+        "start": 641.82,
+        "duration": 4.74
+    },
+    {
+        "text": "I showed in the previous slide from here",
+        "start": 644.399,
+        "duration": 4.68
+    },
+    {
+        "text": "we have three possible options we can",
+        "start": 646.56,
+        "duration": 4.2
+    },
+    {
+        "text": "align one more base in the reference",
+        "start": 649.079,
+        "duration": 3.901
+    },
+    {
+        "text": "which would be a deletion we can align",
+        "start": 650.76,
+        "duration": 4.199
+    },
+    {
+        "text": "one more base in the read which would be",
+        "start": 652.98,
+        "duration": 4.979
+    },
+    {
+        "text": "an insertion or we can align the next",
+        "start": 654.959,
+        "duration": 5.401
+    },
+    {
+        "text": "base in each of the two sequences which",
+        "start": 657.959,
+        "duration": 4.981
+    },
+    {
+        "text": "would either not your substitution in",
+        "start": 660.36,
+        "duration": 4.08
+    },
+    {
+        "text": "this case insertions and deletions",
+        "start": 662.94,
+        "duration": 4.86
+    },
+    {
+        "text": "increase the score and a match does not",
+        "start": 664.44,
+        "duration": 5.459
+    },
+    {
+        "text": "actually it's a little bit easier to",
+        "start": 667.8,
+        "duration": 5.34
+    },
+    {
+        "text": "flip this around and looking at this",
+        "start": 669.899,
+        "duration": 5.041
+    },
+    {
+        "text": "position look at the three possible",
+        "start": 673.14,
+        "duration": 3.78
+    },
+    {
+        "text": "positions we could have come from",
+        "start": 674.94,
+        "duration": 4.8
+    },
+    {
+        "text": "and again considering the the score",
+        "start": 676.92,
+        "duration": 5.7
+    },
+    {
+        "text": "increases for each of those movements as",
+        "start": 679.74,
+        "duration": 5.76
+    },
+    {
+        "text": "long as we take the minimum then we can",
+        "start": 682.62,
+        "duration": 5.339
+    },
+    {
+        "text": "get the score for the best possible edit",
+        "start": 685.5,
+        "duration": 4.74
+    },
+    {
+        "text": "distance up to that point for this",
+        "start": 687.959,
+        "duration": 4.201
+    },
+    {
+        "text": "prefix of the read and this prefix of",
+        "start": 690.24,
+        "duration": 4.38
+    },
+    {
+        "text": "the reference and at the end after",
+        "start": 692.16,
+        "duration": 4.76
+    },
+    {
+        "text": "walking through the entire Matrix",
+        "start": 694.62,
+        "duration": 5.339
+    },
+    {
+        "text": "the spinal cell will be the minimum at a",
+        "start": 696.92,
+        "duration": 5.56
+    },
+    {
+        "text": "distance for aligning the read to the",
+        "start": 699.959,
+        "duration": 3.541
+    },
+    {
+        "text": "reference",
+        "start": 702.48,
+        "duration": 3.68
+    },
+    {
+        "text": "now the only problem with edit distance",
+        "start": 703.5,
+        "duration": 5.82
+    },
+    {
+        "text": "is that it doesn't account for the fact",
+        "start": 706.16,
+        "duration": 5.799
+    },
+    {
+        "text": "that one insertion or deletion is going",
+        "start": 709.32,
+        "duration": 5.459
+    },
+    {
+        "text": "to be much more likely than the",
+        "start": 711.959,
+        "duration": 5.94
+    },
+    {
+        "text": "summation of multiple smaller insertions",
+        "start": 714.779,
+        "duration": 5.641
+    },
+    {
+        "text": "or deletions so in these two examples",
+        "start": 717.899,
+        "duration": 4.741
+    },
+    {
+        "text": "here here there was an insertion of",
+        "start": 720.42,
+        "duration": 4.5
+    },
+    {
+        "text": "three bases here there was an insertion",
+        "start": 722.64,
+        "duration": 4.199
+    },
+    {
+        "text": "of two bases and an insertion of one",
+        "start": 724.92,
+        "duration": 5.46
+    },
+    {
+        "text": "base and according to this the two edit",
+        "start": 726.839,
+        "duration": 5.821
+    },
+    {
+        "text": "distances are the same they're both",
+        "start": 730.38,
+        "duration": 4.8
+    },
+    {
+        "text": "three however the one on the left is",
+        "start": 732.66,
+        "duration": 5.52
+    },
+    {
+        "text": "much more likely so in order to account",
+        "start": 735.18,
+        "duration": 6.18
+    },
+    {
+        "text": "for this and to prefer this alignment on",
+        "start": 738.18,
+        "duration": 6.3
+    },
+    {
+        "text": "the left when we align the reads",
+        "start": 741.36,
+        "duration": 6.719
+    },
+    {
+        "text": "um affine Gap scoring was invented and",
+        "start": 744.48,
+        "duration": 5.4
+    },
+    {
+        "text": "this is known as the Smith Waterman or",
+        "start": 748.079,
+        "duration": 4.801
+    },
+    {
+        "text": "needleman Bunch algorithm and basically",
+        "start": 749.88,
+        "duration": 5.94
+    },
+    {
+        "text": "the idea is that instead of having one",
+        "start": 752.88,
+        "duration": 5.399
+    },
+    {
+        "text": "state Matrix you end up with three",
+        "start": 755.82,
+        "duration": 4.74
+    },
+    {
+        "text": "so the first state Matrix is you're in",
+        "start": 758.279,
+        "duration": 4.441
+    },
+    {
+        "text": "the normal State your aligning bases to",
+        "start": 760.56,
+        "duration": 3.66
+    },
+    {
+        "text": "one another and then you have an",
+        "start": 762.72,
+        "duration": 3.299
+    },
+    {
+        "text": "inserting state where you're currently",
+        "start": 764.22,
+        "duration": 4.619
+    },
+    {
+        "text": "inserting bases or a deleting state",
+        "start": 766.019,
+        "duration": 6.0
+    },
+    {
+        "text": "where you're currently deleting bases",
+        "start": 768.839,
+        "duration": 5.701
+    },
+    {
+        "text": "now if we look back to the transitions I",
+        "start": 772.019,
+        "duration": 4.861
+    },
+    {
+        "text": "mentioned earlier if you're starting in",
+        "start": 774.54,
+        "duration": 3.32
+    },
+    {
+        "text": "this cell",
+        "start": 776.88,
+        "duration": 3.54
+    },
+    {
+        "text": "you can perform either a match or",
+        "start": 777.86,
+        "duration": 4.84
+    },
+    {
+        "text": "substitution moving diagonally and",
+        "start": 780.42,
+        "duration": 4.26
+    },
+    {
+        "text": "there's no penalty if the next two bases",
+        "start": 782.7,
+        "duration": 4.139
+    },
+    {
+        "text": "match but there is a penalty if the base",
+        "start": 784.68,
+        "duration": 4.74
+    },
+    {
+        "text": "is mismatch",
+        "start": 786.839,
+        "duration": 5.281
+    },
+    {
+        "text": "um but we are also allowed to start an",
+        "start": 789.42,
+        "duration": 6.659
+    },
+    {
+        "text": "insertion or a deletion and here we",
+        "start": 792.12,
+        "duration": 5.82
+    },
+    {
+        "text": "raise this to be a relatively large",
+        "start": 796.079,
+        "duration": 5.581
+    },
+    {
+        "text": "penalty so inserting a base might be a",
+        "start": 797.94,
+        "duration": 6.06
+    },
+    {
+        "text": "penalty of five and the same thing if",
+        "start": 801.66,
+        "duration": 4.679
+    },
+    {
+        "text": "we're starting a deletion where as a",
+        "start": 804.0,
+        "duration": 4.62
+    },
+    {
+        "text": "substitution will only cost three",
+        "start": 806.339,
+        "duration": 4.62
+    },
+    {
+        "text": "however once you're already in the",
+        "start": 808.62,
+        "duration": 4.8
+    },
+    {
+        "text": "insertion State you can continue making",
+        "start": 810.959,
+        "duration": 5.041
+    },
+    {
+        "text": "further insertions for a lesser lesser",
+        "start": 813.42,
+        "duration": 4.859
+    },
+    {
+        "text": "penalty and then you can move back to",
+        "start": 816.0,
+        "duration": 3.959
+    },
+    {
+        "text": "the normal State and end the insertion",
+        "start": 818.279,
+        "duration": 4.081
+    },
+    {
+        "text": "for no penalty at all the same thing in",
+        "start": 819.959,
+        "duration": 3.961
+    },
+    {
+        "text": "the deletion State once you've started",
+        "start": 822.36,
+        "duration": 3.84
+    },
+    {
+        "text": "deleting bases you can continue deleting",
+        "start": 823.92,
+        "duration": 6.12
+    },
+    {
+        "text": "bases at a lower penalty or you can",
+        "start": 826.2,
+        "duration": 7.22
+    },
+    {
+        "text": "transition back to to the normal",
+        "start": 830.04,
+        "duration": 6.539
+    },
+    {
+        "text": "state so what this does is basically",
+        "start": 833.42,
+        "duration": 5.5
+    },
+    {
+        "text": "there's an increased penalty for each",
+        "start": 836.579,
+        "duration": 4.56
+    },
+    {
+        "text": "time you start an insertion or a",
+        "start": 838.92,
+        "duration": 4.859
+    },
+    {
+        "text": "deletion so because you started two",
+        "start": 841.139,
+        "duration": 5.101
+    },
+    {
+        "text": "different insertions here you're going",
+        "start": 843.779,
+        "duration": 4.921
+    },
+    {
+        "text": "to get penalized twice for entering that",
+        "start": 846.24,
+        "duration": 4.62
+    },
+    {
+        "text": "insertion State whereas here you're only",
+        "start": 848.7,
+        "duration": 4.02
+    },
+    {
+        "text": "going to get penalized once for entering",
+        "start": 850.86,
+        "duration": 4.2
+    },
+    {
+        "text": "that insertion state so the alignment on",
+        "start": 852.72,
+        "duration": 5.76
+    },
+    {
+        "text": "the left is going to be preferred",
+        "start": 855.06,
+        "duration": 6.36
+    },
+    {
+        "text": "so now on to variant calling",
+        "start": 858.48,
+        "duration": 4.74
+    },
+    {
+        "text": "um for nanopore sequencing this is",
+        "start": 861.42,
+        "duration": 4.2
+    },
+    {
+        "text": "typically done in both steps so the",
+        "start": 863.22,
+        "duration": 4.679
+    },
+    {
+        "text": "first step is known as pile up calling",
+        "start": 865.62,
+        "duration": 5.459
+    },
+    {
+        "text": "whereas a a pile up is the alignment of",
+        "start": 867.899,
+        "duration": 5.94
+    },
+    {
+        "text": "all your reads to the reference",
+        "start": 871.079,
+        "duration": 5.161
+    },
+    {
+        "text": "um all piled up against one another and",
+        "start": 873.839,
+        "duration": 4.701
+    },
+    {
+        "text": "this first stage is just to identify",
+        "start": 876.24,
+        "duration": 5.58
+    },
+    {
+        "text": "candidate variance So within a small",
+        "start": 878.54,
+        "duration": 4.32
+    },
+    {
+        "text": "window",
+        "start": 881.82,
+        "duration": 4.319
+    },
+    {
+        "text": "it looks at each reference position what",
+        "start": 882.86,
+        "duration": 6.039
+    },
+    {
+        "text": "bases are aligned to those positions",
+        "start": 886.139,
+        "duration": 5.76
+    },
+    {
+        "text": "um a c g or T and using those summary",
+        "start": 888.899,
+        "duration": 5.221
+    },
+    {
+        "text": "statistics it figures out whether or not",
+        "start": 891.899,
+        "duration": 5.461
+    },
+    {
+        "text": "there's likely a variant relative to the",
+        "start": 894.12,
+        "duration": 6.18
+    },
+    {
+        "text": "reference and in this step which is",
+        "start": 897.36,
+        "duration": 4.919
+    },
+    {
+        "text": "where current nanopore sequencing",
+        "start": 900.3,
+        "duration": 3.899
+    },
+    {
+        "text": "variant calling struggles it's important",
+        "start": 902.279,
+        "duration": 4.261
+    },
+    {
+        "text": "that the alignments are consistent so",
+        "start": 904.199,
+        "duration": 4.32
+    },
+    {
+        "text": "that all of the the changes to the",
+        "start": 906.54,
+        "duration": 4.02
+    },
+    {
+        "text": "reference sequence are reported in",
+        "start": 908.519,
+        "duration": 4.201
+    },
+    {
+        "text": "pretty much the same place otherwise",
+        "start": 910.56,
+        "duration": 3.66
+    },
+    {
+        "text": "you're not going to realize that there",
+        "start": 912.72,
+        "duration": 5.1
+    },
+    {
+        "text": "was actually a mutation there and the",
+        "start": 914.22,
+        "duration": 6.119
+    },
+    {
+        "text": "second step is full alignment calling",
+        "start": 917.82,
+        "duration": 5.28
+    },
+    {
+        "text": "where basically instead of just looking",
+        "start": 920.339,
+        "duration": 4.261
+    },
+    {
+        "text": "at a narrow window you look at a much",
+        "start": 923.1,
+        "duration": 3.84
+    },
+    {
+        "text": "wider window and you have higher",
+        "start": 924.6,
+        "duration": 4.979
+    },
+    {
+        "text": "dimensional information about the reads",
+        "start": 926.94,
+        "duration": 4.74
+    },
+    {
+        "text": "in order to do the the final variant",
+        "start": 929.579,
+        "duration": 5.461
+    },
+    {
+        "text": "calling and we're focusing on improving",
+        "start": 931.68,
+        "duration": 6.06
+    },
+    {
+        "text": "the alignment so that we can identify a",
+        "start": 935.04,
+        "duration": 5.64
+    },
+    {
+        "text": "better set of candidate variants during",
+        "start": 937.74,
+        "duration": 5.88
+    },
+    {
+        "text": "this pile up calling stage",
+        "start": 940.68,
+        "duration": 4.98
+    },
+    {
+        "text": "this is kind of what the input looks",
+        "start": 943.62,
+        "duration": 3.18
+    },
+    {
+        "text": "like",
+        "start": 945.66,
+        "duration": 3.299
+    },
+    {
+        "text": "um in one of the the current tools",
+        "start": 946.8,
+        "duration": 5.159
+    },
+    {
+        "text": "called the pepper it's encoded the",
+        "start": 948.959,
+        "duration": 4.801
+    },
+    {
+        "text": "reference genome in these four colors",
+        "start": 951.959,
+        "duration": 5.641
+    },
+    {
+        "text": "and then forward mapped acgt and reverse",
+        "start": 953.76,
+        "duration": 6.0
+    },
+    {
+        "text": "mapped reads",
+        "start": 957.6,
+        "duration": 5.52
+    },
+    {
+        "text": "um the uh the color basically represents",
+        "start": 959.76,
+        "duration": 5.46
+    },
+    {
+        "text": "the proportion of reads which support",
+        "start": 963.12,
+        "duration": 4.38
+    },
+    {
+        "text": "that base at each position and in",
+        "start": 965.22,
+        "duration": 3.78
+    },
+    {
+        "text": "general they agree with the reference",
+        "start": 967.5,
+        "duration": 5.04
+    },
+    {
+        "text": "but for example at position 23 there's a",
+        "start": 969.0,
+        "duration": 5.24
+    },
+    {
+        "text": "little bit of disagreement",
+        "start": 972.54,
+        "duration": 4.44
+    },
+    {
+        "text": "on whether",
+        "start": 974.24,
+        "duration": 5.92
+    },
+    {
+        "text": "um the the bases green or red so in a or",
+        "start": 976.98,
+        "duration": 6.0
+    },
+    {
+        "text": "T and then using a sliding window",
+        "start": 980.16,
+        "duration": 5.22
+    },
+    {
+        "text": "approach we decide at each position",
+        "start": 982.98,
+        "duration": 5.28
+    },
+    {
+        "text": "whether or not there's a variant using a",
+        "start": 985.38,
+        "duration": 6.06
+    },
+    {
+        "text": "convolutional neural network",
+        "start": 988.26,
+        "duration": 7.259
+    },
+    {
+        "text": "so now on to what my alignment yep",
+        "start": 991.44,
+        "duration": 8.04
+    },
+    {
+        "text": "what'd you asked",
+        "start": 995.519,
+        "duration": 3.961
+    },
+    {
+        "text": "um how they basically like determine",
+        "start": 1003.079,
+        "duration": 4.801
+    },
+    {
+        "text": "um",
+        "start": 1006.139,
+        "duration": 3.661
+    },
+    {
+        "text": "this particular",
+        "start": 1007.88,
+        "duration": 4.44
+    },
+    {
+        "text": "protein",
+        "start": 1009.8,
+        "duration": 5.479
+    },
+    {
+        "text": "yeah so they're just a general",
+        "start": 1012.32,
+        "duration": 6.48
+    },
+    {
+        "text": "proportional Department of nucleotide",
+        "start": 1015.279,
+        "duration": 6.041
+    },
+    {
+        "text": "yeah so this does",
+        "start": 1018.8,
+        "duration": 6.119
+    },
+    {
+        "text": "um so this input here is like an image",
+        "start": 1021.32,
+        "duration": 6.239
+    },
+    {
+        "text": "which is going to be an input to the",
+        "start": 1024.919,
+        "duration": 5.461
+    },
+    {
+        "text": "network which basically decides for each",
+        "start": 1027.559,
+        "duration": 6.661
+    },
+    {
+        "text": "position in a sliding window so this",
+        "start": 1030.38,
+        "duration": 6.959
+    },
+    {
+        "text": "purple window here will refer to this",
+        "start": 1034.22,
+        "duration": 6.0
+    },
+    {
+        "text": "one position on the reference",
+        "start": 1037.339,
+        "duration": 4.98
+    },
+    {
+        "text": "um and it's trying to decide at this",
+        "start": 1040.22,
+        "duration": 5.699
+    },
+    {
+        "text": "position is there a variant or not",
+        "start": 1042.319,
+        "duration": 8.041
+    },
+    {
+        "text": "so these these color values",
+        "start": 1045.919,
+        "duration": 6.0
+    },
+    {
+        "text": "um these are the encoded reference",
+        "start": 1050.36,
+        "duration": 5.819
+    },
+    {
+        "text": "spaces and then each of the other rows",
+        "start": 1051.919,
+        "duration": 7.681
+    },
+    {
+        "text": "are the proportion of read bases once",
+        "start": 1056.179,
+        "duration": 5.88
+    },
+    {
+        "text": "you've aligned all the reads",
+        "start": 1059.6,
+        "duration": 4.92
+    },
+    {
+        "text": "um to the reference so here we've",
+        "start": 1062.059,
+        "duration": 4.561
+    },
+    {
+        "text": "aligned all the reads you count",
+        "start": 1064.52,
+        "duration": 4.019
+    },
+    {
+        "text": "basically the number of A's the number",
+        "start": 1066.62,
+        "duration": 6.9
+    },
+    {
+        "text": "of C's G's G's and deletions at each",
+        "start": 1068.539,
+        "duration": 8.701
+    },
+    {
+        "text": "position and then you increment the",
+        "start": 1073.52,
+        "duration": 6.659
+    },
+    {
+        "text": "values in each of these correspondingly",
+        "start": 1077.24,
+        "duration": 6.86
+    },
+    {
+        "text": "and it uses this small small image",
+        "start": 1080.179,
+        "duration": 6.181
+    },
+    {
+        "text": "basically to try and make a binary",
+        "start": 1084.1,
+        "duration": 5.74
+    },
+    {
+        "text": "classification of whether or not",
+        "start": 1086.36,
+        "duration": 6.12
+    },
+    {
+        "text": "um the the reads support a different",
+        "start": 1089.84,
+        "duration": 6.12
+    },
+    {
+        "text": "base than than what the reference says",
+        "start": 1092.48,
+        "duration": 6.8
+    },
+    {
+        "text": "is contained at that position",
+        "start": 1095.96,
+        "duration": 3.32
+    },
+    {
+        "text": "did that answer your question or no",
+        "start": 1099.5,
+        "duration": 3.74
+    },
+    {
+        "text": "um this is done across the entire genome",
+        "start": 1110.059,
+        "duration": 5.061
+    },
+    {
+        "text": "okay",
+        "start": 1123.02,
+        "duration": 2.48
+    },
+    {
+        "text": "okay so now on to",
+        "start": 1126.679,
+        "duration": 4.38
+    },
+    {
+        "text": "um the motivation",
+        "start": 1129.32,
+        "duration": 3.599
+    },
+    {
+        "text": "um for my algorithm",
+        "start": 1131.059,
+        "duration": 2.941
+    },
+    {
+        "text": "um but before talking about the",
+        "start": 1132.919,
+        "duration": 4.081
+    },
+    {
+        "text": "motivation I want to uh clarify a",
+        "start": 1134.0,
+        "duration": 5.7
+    },
+    {
+        "text": "definition so in the title of my talk I",
+        "start": 1137.0,
+        "duration": 5.46
+    },
+    {
+        "text": "referred to n polymers but more",
+        "start": 1139.7,
+        "duration": 5.46
+    },
+    {
+        "text": "typically repeated sequences are",
+        "start": 1142.46,
+        "duration": 5.579
+    },
+    {
+        "text": "referred to as homopolymers or simple",
+        "start": 1145.16,
+        "duration": 6.18
+    },
+    {
+        "text": "tandem repeats I referred to them as n",
+        "start": 1148.039,
+        "duration": 6.721
+    },
+    {
+        "text": "polymers just to uh to simplify it so",
+        "start": 1151.34,
+        "duration": 5.88
+    },
+    {
+        "text": "it's more succinct so if you have a one",
+        "start": 1154.76,
+        "duration": 5.159
+    },
+    {
+        "text": "nucleotide repeating sequence I call it",
+        "start": 1157.22,
+        "duration": 4.8
+    },
+    {
+        "text": "a one polymer instead of a homopolymer",
+        "start": 1159.919,
+        "duration": 4.441
+    },
+    {
+        "text": "if you have a two nucleotide repeated",
+        "start": 1162.02,
+        "duration": 4.74
+    },
+    {
+        "text": "sequence I call it a two polymer instead",
+        "start": 1164.36,
+        "duration": 3.96
+    },
+    {
+        "text": "of a simple tandem repeat with repeat",
+        "start": 1166.76,
+        "duration": 5.039
+    },
+    {
+        "text": "length unit two and so forth if we have",
+        "start": 1168.32,
+        "duration": 7.02
+    },
+    {
+        "text": "a three nucleotide repeating sequence",
+        "start": 1171.799,
+        "duration": 6.0
+    },
+    {
+        "text": "and so forth",
+        "start": 1175.34,
+        "duration": 4.62
+    },
+    {
+        "text": "um and the next important definition to",
+        "start": 1177.799,
+        "duration": 4.5
+    },
+    {
+        "text": "know is copy number so I've already",
+        "start": 1179.96,
+        "duration": 6.719
+    },
+    {
+        "text": "defined n as the uh the length of the",
+        "start": 1182.299,
+        "duration": 6.901
+    },
+    {
+        "text": "repeat unit so it's two bases that get",
+        "start": 1186.679,
+        "duration": 3.961
+    },
+    {
+        "text": "repeated",
+        "start": 1189.2,
+        "duration": 3.42
+    },
+    {
+        "text": "um and then the copy number the expected",
+        "start": 1190.64,
+        "duration": 4.56
+    },
+    {
+        "text": "number L is the number of times that",
+        "start": 1192.62,
+        "duration": 5.76
+    },
+    {
+        "text": "this repeat unit length is repeated so L",
+        "start": 1195.2,
+        "duration": 4.74
+    },
+    {
+        "text": "is the expected length from the",
+        "start": 1198.38,
+        "duration": 4.679
+    },
+    {
+        "text": "reference L Prime is the measured uh",
+        "start": 1199.94,
+        "duration": 4.859
+    },
+    {
+        "text": "length from our read",
+        "start": 1203.059,
+        "duration": 4.801
+    },
+    {
+        "text": "and here we can see that GA was was only",
+        "start": 1204.799,
+        "duration": 6.021
+    },
+    {
+        "text": "repeated twice",
+        "start": 1207.86,
+        "duration": 2.96
+    },
+    {
+        "text": "okay so now the the main motivation for",
+        "start": 1211.22,
+        "duration": 6.72
+    },
+    {
+        "text": "this whole project was the fact that for",
+        "start": 1214.94,
+        "duration": 5.34
+    },
+    {
+        "text": "nanopore sequencing",
+        "start": 1217.94,
+        "duration": 4.56
+    },
+    {
+        "text": "um basically they split the evaluation",
+        "start": 1220.28,
+        "duration": 6.84
+    },
+    {
+        "text": "into uh Snips and indels so snip is a",
+        "start": 1222.5,
+        "duration": 6.78
+    },
+    {
+        "text": "single nucleotide polymorphism or",
+        "start": 1227.12,
+        "duration": 4.62
+    },
+    {
+        "text": "basically a substitution mutation where",
+        "start": 1229.28,
+        "duration": 4.98
+    },
+    {
+        "text": "one base is changed to another and an",
+        "start": 1231.74,
+        "duration": 4.38
+    },
+    {
+        "text": "indel is either an insertion or deletion",
+        "start": 1234.26,
+        "duration": 4.68
+    },
+    {
+        "text": "where bases are either added or missing",
+        "start": 1236.12,
+        "duration": 5.34
+    },
+    {
+        "text": "from the reference and now for nanopore",
+        "start": 1238.94,
+        "duration": 6.54
+    },
+    {
+        "text": "sequencing the accuracy performs very",
+        "start": 1241.46,
+        "duration": 6.3
+    },
+    {
+        "text": "well on Snips with high precision and",
+        "start": 1245.48,
+        "duration": 4.62
+    },
+    {
+        "text": "recall but for insertions or deletions",
+        "start": 1247.76,
+        "duration": 5.58
+    },
+    {
+        "text": "it has much lower precision and pretty",
+        "start": 1250.1,
+        "duration": 5.52
+    },
+    {
+        "text": "much abysmal recall",
+        "start": 1253.34,
+        "duration": 4.68
+    },
+    {
+        "text": "um and as I mentioned earlier this is",
+        "start": 1255.62,
+        "duration": 4.26
+    },
+    {
+        "text": "largely due to the fact that it",
+        "start": 1258.02,
+        "duration": 6.019
+    },
+    {
+        "text": "struggles in in repetitive regions",
+        "start": 1259.88,
+        "duration": 4.159
+    },
+    {
+        "text": "um so here we can see as I mentioned",
+        "start": 1264.14,
+        "duration": 2.58
+    },
+    {
+        "text": "earlier",
+        "start": 1265.52,
+        "duration": 2.88
+    },
+    {
+        "text": "um the current level is affected by",
+        "start": 1266.72,
+        "duration": 4.44
+    },
+    {
+        "text": "multiple bases at a time and so when you",
+        "start": 1268.4,
+        "duration": 4.86
+    },
+    {
+        "text": "have a lot of bases that are the same",
+        "start": 1271.16,
+        "duration": 4.32
+    },
+    {
+        "text": "repeated after one another your current",
+        "start": 1273.26,
+        "duration": 4.38
+    },
+    {
+        "text": "Trace is going to stay relatively flat",
+        "start": 1275.48,
+        "duration": 4.68
+    },
+    {
+        "text": "and it's hard to detect transitions from",
+        "start": 1277.64,
+        "duration": 4.8
+    },
+    {
+        "text": "one base to another and know how long",
+        "start": 1280.16,
+        "duration": 5.6
+    },
+    {
+        "text": "this the sequence actually is",
+        "start": 1282.44,
+        "duration": 6.359
+    },
+    {
+        "text": "and here are some statistics for how",
+        "start": 1285.76,
+        "duration": 5.68
+    },
+    {
+        "text": "frequently it gets it wrong so these are",
+        "start": 1288.799,
+        "duration": 5.821
+    },
+    {
+        "text": "confusion matrices for one polymers so",
+        "start": 1291.44,
+        "duration": 4.56
+    },
+    {
+        "text": "it would be a single base that gets",
+        "start": 1294.62,
+        "duration": 4.08
+    },
+    {
+        "text": "repeated and then the percentage of time",
+        "start": 1296.0,
+        "duration": 5.419
+    },
+    {
+        "text": "that in each Square the actual length",
+        "start": 1298.7,
+        "duration": 5.7
+    },
+    {
+        "text": "was called the predicted line so if we",
+        "start": 1301.419,
+        "duration": 4.481
+    },
+    {
+        "text": "have three A's in a row we'll get it",
+        "start": 1304.4,
+        "duration": 3.899
+    },
+    {
+        "text": "right 96 percent of the time but if you",
+        "start": 1305.9,
+        "duration": 4.139
+    },
+    {
+        "text": "have 10 A's in a row we'll only get that",
+        "start": 1308.299,
+        "duration": 5.401
+    },
+    {
+        "text": "right like 58 of the time and if you",
+        "start": 1310.039,
+        "duration": 5.0
+    },
+    {
+        "text": "look at",
+        "start": 1313.7,
+        "duration": 3.839
+    },
+    {
+        "text": "repeated sequences with a larger repeat",
+        "start": 1315.039,
+        "duration": 3.701
+    },
+    {
+        "text": "unit",
+        "start": 1317.539,
+        "duration": 3.541
+    },
+    {
+        "text": "say three bases it does a little bit",
+        "start": 1318.74,
+        "duration": 6.179
+    },
+    {
+        "text": "better starting at 98 but as we move on",
+        "start": 1321.08,
+        "duration": 6.599
+    },
+    {
+        "text": "to longer repeat lengths",
+        "start": 1324.919,
+        "duration": 4.981
+    },
+    {
+        "text": "um we see the same Trend it it",
+        "start": 1327.679,
+        "duration": 4.201
+    },
+    {
+        "text": "progressively gets worse",
+        "start": 1329.9,
+        "duration": 6.24
+    },
+    {
+        "text": "um with around 87 accuracy",
+        "start": 1331.88,
+        "duration": 4.26
+    },
+    {
+        "text": "um and further I want to point out",
+        "start": 1336.679,
+        "duration": 5.401
+    },
+    {
+        "text": "um that these insertions and deletions",
+        "start": 1339.5,
+        "duration": 6.72
+    },
+    {
+        "text": "in N polymer regions are very important",
+        "start": 1342.08,
+        "duration": 6.42
+    },
+    {
+        "text": "um and they're a large fraction of both",
+        "start": 1346.22,
+        "duration": 4.92
+    },
+    {
+        "text": "the the calls that we get wrong when",
+        "start": 1348.5,
+        "duration": 4.799
+    },
+    {
+        "text": "variant calling and also the true",
+        "start": 1351.14,
+        "duration": 3.96
+    },
+    {
+        "text": "insertions and deletions",
+        "start": 1353.299,
+        "duration": 4.38
+    },
+    {
+        "text": "so on the very left we can see the",
+        "start": 1355.1,
+        "duration": 5.1
+    },
+    {
+        "text": "different variant call types there's",
+        "start": 1357.679,
+        "duration": 5.401
+    },
+    {
+        "text": "mostly substitutions a few insertions a",
+        "start": 1360.2,
+        "duration": 5.64
+    },
+    {
+        "text": "few deletions and then very few complex",
+        "start": 1363.08,
+        "duration": 6.3
+    },
+    {
+        "text": "variants and we can see that almost all",
+        "start": 1365.84,
+        "duration": 6.54
+    },
+    {
+        "text": "the substitutions we got correct",
+        "start": 1369.38,
+        "duration": 4.86
+    },
+    {
+        "text": "um but if we look at the false positive",
+        "start": 1372.38,
+        "duration": 4.38
+    },
+    {
+        "text": "and false negative variance the majority",
+        "start": 1374.24,
+        "duration": 5.22
+    },
+    {
+        "text": "of them stem from incorrectly calling",
+        "start": 1376.76,
+        "duration": 5.76
+    },
+    {
+        "text": "insertions and deletions and if we then",
+        "start": 1379.46,
+        "duration": 5.699
+    },
+    {
+        "text": "blow up these errors to look at all the",
+        "start": 1382.52,
+        "duration": 4.519
+    },
+    {
+        "text": "mistakes we made",
+        "start": 1385.159,
+        "duration": 4.041
+    },
+    {
+        "text": "then I",
+        "start": 1387.039,
+        "duration": 4.421
+    },
+    {
+        "text": "categorized the the genome into",
+        "start": 1389.2,
+        "duration": 5.32
+    },
+    {
+        "text": "different regions so other is any kind",
+        "start": 1391.46,
+        "duration": 6.12
+    },
+    {
+        "text": "of non-repeating region in the genome",
+        "start": 1394.52,
+        "duration": 4.86
+    },
+    {
+        "text": "one polymer is when you have the same",
+        "start": 1397.58,
+        "duration": 4.38
+    },
+    {
+        "text": "base repeating and so forth so we can",
+        "start": 1399.38,
+        "duration": 4.94
+    },
+    {
+        "text": "see that in the genome the vast majority",
+        "start": 1401.96,
+        "duration": 5.82
+    },
+    {
+        "text": "majority of it is non-repetitive",
+        "start": 1404.32,
+        "duration": 6.099
+    },
+    {
+        "text": "um so even though more than 50 of the",
+        "start": 1407.78,
+        "duration": 4.62
+    },
+    {
+        "text": "genome is non-repetitive that only",
+        "start": 1410.419,
+        "duration": 4.14
+    },
+    {
+        "text": "accounts for less than 10 percent of the",
+        "start": 1412.4,
+        "duration": 4.019
+    },
+    {
+        "text": "total error",
+        "start": 1414.559,
+        "duration": 4.081
+    },
+    {
+        "text": "um and any of these repetitive regions",
+        "start": 1416.419,
+        "duration": 4.5
+    },
+    {
+        "text": "with repeat unit length one to six",
+        "start": 1418.64,
+        "duration": 5.399
+    },
+    {
+        "text": "they're vastly over represented in terms",
+        "start": 1420.919,
+        "duration": 6.481
+    },
+    {
+        "text": "of the the errors that we end up making",
+        "start": 1424.039,
+        "duration": 5.581
+    },
+    {
+        "text": "and then if you look at the true",
+        "start": 1427.4,
+        "duration": 4.62
+    },
+    {
+        "text": "insertions and deletions so this is",
+        "start": 1429.62,
+        "duration": 4.38
+    },
+    {
+        "text": "based on some form of variant calling",
+        "start": 1432.02,
+        "duration": 3.92
+    },
+    {
+        "text": "ground truth against a reference genome",
+        "start": 1434.0,
+        "duration": 4.679
+    },
+    {
+        "text": "we can see that again the repetitive",
+        "start": 1435.94,
+        "duration": 6.359
+    },
+    {
+        "text": "regions are overrepresented so actual",
+        "start": 1438.679,
+        "duration": 6.661
+    },
+    {
+        "text": "insertions and deletions are fairly",
+        "start": 1442.299,
+        "duration": 6.281
+    },
+    {
+        "text": "likely to be copy number variants",
+        "start": 1445.34,
+        "duration": 6.959
+    },
+    {
+        "text": "um of these repetitive regions and",
+        "start": 1448.58,
+        "duration": 6.839
+    },
+    {
+        "text": "general indels are are much less likely",
+        "start": 1452.299,
+        "duration": 5.721
+    },
+    {
+        "text": "in general",
+        "start": 1455.419,
+        "duration": 2.601
+    },
+    {
+        "text": "so the main motivation for this project",
+        "start": 1458.179,
+        "duration": 4.74
+    },
+    {
+        "text": "is",
+        "start": 1460.88,
+        "duration": 5.279
+    },
+    {
+        "text": "um the fact that alignments end up being",
+        "start": 1462.919,
+        "duration": 6.901
+    },
+    {
+        "text": "inconsistent if you use the Gap I find",
+        "start": 1466.159,
+        "duration": 5.341
+    },
+    {
+        "text": "scoring that I mentioned previously",
+        "start": 1469.82,
+        "duration": 4.26
+    },
+    {
+        "text": "because that doesn't account for the",
+        "start": 1471.5,
+        "duration": 3.96
+    },
+    {
+        "text": "fact",
+        "start": 1474.08,
+        "duration": 3.54
+    },
+    {
+        "text": "um that getting the lengths of repeated",
+        "start": 1475.46,
+        "duration": 5.64
+    },
+    {
+        "text": "regions wrong is very common for",
+        "start": 1477.62,
+        "duration": 5.1
+    },
+    {
+        "text": "nanopore sequencing",
+        "start": 1481.1,
+        "duration": 5.04
+    },
+    {
+        "text": "so here we see a bunch of A's and a",
+        "start": 1482.72,
+        "duration": 6.18
+    },
+    {
+        "text": "bunch of T's and if we say there was an",
+        "start": 1486.14,
+        "duration": 6.659
+    },
+    {
+        "text": "extra to a and one fewer T's then it's",
+        "start": 1488.9,
+        "duration": 5.7
+    },
+    {
+        "text": "going to choose to place it as a",
+        "start": 1492.799,
+        "duration": 4.74
+    },
+    {
+        "text": "substitution at this position whereas if",
+        "start": 1494.6,
+        "duration": 4.86
+    },
+    {
+        "text": "we say there was an extra a but no",
+        "start": 1497.539,
+        "duration": 5.221
+    },
+    {
+        "text": "expertise it's going to choose to left a",
+        "start": 1499.46,
+        "duration": 5.699
+    },
+    {
+        "text": "line an insertion at the start of all",
+        "start": 1502.76,
+        "duration": 4.38
+    },
+    {
+        "text": "the A's and then if we have two extra",
+        "start": 1505.159,
+        "duration": 4.621
+    },
+    {
+        "text": "A's and two fewer T's then we're going",
+        "start": 1507.14,
+        "duration": 6.0
+    },
+    {
+        "text": "to see substitutions at position seven",
+        "start": 1509.78,
+        "duration": 5.94
+    },
+    {
+        "text": "and eight so the issue comes later when",
+        "start": 1513.14,
+        "duration": 5.039
+    },
+    {
+        "text": "you try and do the variant polling and",
+        "start": 1515.72,
+        "duration": 4.079
+    },
+    {
+        "text": "you have these pile up summary",
+        "start": 1518.179,
+        "duration": 4.62
+    },
+    {
+        "text": "statistics or reference position",
+        "start": 1519.799,
+        "duration": 4.801
+    },
+    {
+        "text": "um and even though there was an extra a",
+        "start": 1522.799,
+        "duration": 4.321
+    },
+    {
+        "text": "in all three of these cases when you",
+        "start": 1524.6,
+        "duration": 4.079
+    },
+    {
+        "text": "look at position two you're only going",
+        "start": 1527.12,
+        "duration": 3.679
+    },
+    {
+        "text": "to see one out of three had an extra a",
+        "start": 1528.679,
+        "duration": 5.941
+    },
+    {
+        "text": "and then you're going to see two out of",
+        "start": 1530.799,
+        "duration": 6.341
+    },
+    {
+        "text": "three substitutions at position seven so",
+        "start": 1534.62,
+        "duration": 4.679
+    },
+    {
+        "text": "because the alignment isn't really that",
+        "start": 1537.14,
+        "duration": 5.039
+    },
+    {
+        "text": "consistent there's no one position where",
+        "start": 1539.299,
+        "duration": 4.921
+    },
+    {
+        "text": "there's clearly an insertion or a",
+        "start": 1542.179,
+        "duration": 5.461
+    },
+    {
+        "text": "deletion and that's why to some extent",
+        "start": 1544.22,
+        "duration": 5.64
+    },
+    {
+        "text": "the variant calling struggles with",
+        "start": 1547.64,
+        "duration": 4.98
+    },
+    {
+        "text": "insertions and deletions",
+        "start": 1549.86,
+        "duration": 5.4
+    },
+    {
+        "text": "and as I mentioned the alignment doesn't",
+        "start": 1552.62,
+        "duration": 5.52
+    },
+    {
+        "text": "really reflect the probability",
+        "start": 1555.26,
+        "duration": 5.46
+    },
+    {
+        "text": "um that substitutions and insertions and",
+        "start": 1558.14,
+        "duration": 4.8
+    },
+    {
+        "text": "deletions are actually happening because",
+        "start": 1560.72,
+        "duration": 5.579
+    },
+    {
+        "text": "your scoring Matrix and functions are",
+        "start": 1562.94,
+        "duration": 5.52
+    },
+    {
+        "text": "totally static everywhere on the genome",
+        "start": 1566.299,
+        "duration": 4.86
+    },
+    {
+        "text": "and they don't account for the fact that",
+        "start": 1568.46,
+        "duration": 4.74
+    },
+    {
+        "text": "substitution sorry insertions and",
+        "start": 1571.159,
+        "duration": 4.14
+    },
+    {
+        "text": "deletions are orbs of magnitude more",
+        "start": 1573.2,
+        "duration": 5.219
+    },
+    {
+        "text": "likely in repetitive regions so at the",
+        "start": 1575.299,
+        "duration": 5.041
+    },
+    {
+        "text": "moment you have this one substitution",
+        "start": 1578.419,
+        "duration": 4.74
+    },
+    {
+        "text": "penalty Matrix where if you mess up any",
+        "start": 1580.34,
+        "duration": 5.459
+    },
+    {
+        "text": "of the calls you have this penalty score",
+        "start": 1583.159,
+        "duration": 5.101
+    },
+    {
+        "text": "and for insertions and deletions the",
+        "start": 1585.799,
+        "duration": 4.26
+    },
+    {
+        "text": "cost is always going to be the same",
+        "start": 1588.26,
+        "duration": 5.159
+    },
+    {
+        "text": "whether you're adding an a to a sequence",
+        "start": 1590.059,
+        "duration": 6.0
+    },
+    {
+        "text": "of 20 A's or whether you're adding an A",
+        "start": 1593.419,
+        "duration": 5.521
+    },
+    {
+        "text": "and a non-repetitive region and that",
+        "start": 1596.059,
+        "duration": 5.1
+    },
+    {
+        "text": "that's kind of the issue with with the",
+        "start": 1598.94,
+        "duration": 3.54
+    },
+    {
+        "text": "current alignment",
+        "start": 1601.159,
+        "duration": 3.12
+    },
+    {
+        "text": "so now I'm going to talk a little bit",
+        "start": 1602.48,
+        "duration": 4.199
+    },
+    {
+        "text": "about my algorithm what I changed to",
+        "start": 1604.279,
+        "duration": 4.321
+    },
+    {
+        "text": "improve this alignment",
+        "start": 1606.679,
+        "duration": 5.401
+    },
+    {
+        "text": "um and basically I instead calculated",
+        "start": 1608.6,
+        "duration": 6.059
+    },
+    {
+        "text": "um the actual probabilities so on the",
+        "start": 1612.08,
+        "duration": 4.88
+    },
+    {
+        "text": "left over here I have a confusion Matrix",
+        "start": 1614.659,
+        "duration": 6.061
+    },
+    {
+        "text": "and this is the count in millions of all",
+        "start": 1616.96,
+        "duration": 6.339
+    },
+    {
+        "text": "the reads that I align to a genome and I",
+        "start": 1620.72,
+        "duration": 4.62
+    },
+    {
+        "text": "counted every time that the reference",
+        "start": 1623.299,
+        "duration": 5.341
+    },
+    {
+        "text": "said there was an A and our read said",
+        "start": 1625.34,
+        "duration": 5.4
+    },
+    {
+        "text": "there was an A and the same thing our",
+        "start": 1628.64,
+        "duration": 3.659
+    },
+    {
+        "text": "reference that there was an A but our",
+        "start": 1630.74,
+        "duration": 3.72
+    },
+    {
+        "text": "read said there was a c",
+        "start": 1632.299,
+        "duration": 4.021
+    },
+    {
+        "text": "um and then I have the measured",
+        "start": 1634.46,
+        "duration": 4.44
+    },
+    {
+        "text": "probabilities of all of these different",
+        "start": 1636.32,
+        "duration": 4.14
+    },
+    {
+        "text": "errors",
+        "start": 1638.9,
+        "duration": 4.92
+    },
+    {
+        "text": "and now on the right I converted these",
+        "start": 1640.46,
+        "duration": 5.64
+    },
+    {
+        "text": "to penalty scores",
+        "start": 1643.82,
+        "duration": 5.16
+    },
+    {
+        "text": "um using the negative log probability of",
+        "start": 1646.1,
+        "duration": 5.76
+    },
+    {
+        "text": "one base being called another so",
+        "start": 1648.98,
+        "duration": 5.1
+    },
+    {
+        "text": "basically I just divide",
+        "start": 1651.86,
+        "duration": 4.38
+    },
+    {
+        "text": "um the number of times and a was called",
+        "start": 1654.08,
+        "duration": 6.62
+    },
+    {
+        "text": "a c by the summation of that entire row",
+        "start": 1656.24,
+        "duration": 7.14
+    },
+    {
+        "text": "so given an a what's the probability",
+        "start": 1660.7,
+        "duration": 5.44
+    },
+    {
+        "text": "that it was called a c and then I take",
+        "start": 1663.38,
+        "duration": 5.52
+    },
+    {
+        "text": "the negative log probability of that and",
+        "start": 1666.14,
+        "duration": 5.1
+    },
+    {
+        "text": "the nice thing of about this is that",
+        "start": 1668.9,
+        "duration": 4.68
+    },
+    {
+        "text": "when you're doing the alignment and you",
+        "start": 1671.24,
+        "duration": 5.76
+    },
+    {
+        "text": "have multiple substitution errors",
+        "start": 1673.58,
+        "duration": 5.699
+    },
+    {
+        "text": "um as you do the alignment you sum the",
+        "start": 1677.0,
+        "duration": 4.44
+    },
+    {
+        "text": "penalty scores",
+        "start": 1679.279,
+        "duration": 3.841
+    },
+    {
+        "text": "um and if you're looking at statistics",
+        "start": 1681.44,
+        "duration": 4.68
+    },
+    {
+        "text": "the probability of two independent",
+        "start": 1683.12,
+        "duration": 5.28
+    },
+    {
+        "text": "events both happening you take the two",
+        "start": 1686.12,
+        "duration": 4.799
+    },
+    {
+        "text": "probabilities and you multiply them but",
+        "start": 1688.4,
+        "duration": 4.639
+    },
+    {
+        "text": "by shifting this over to log space",
+        "start": 1690.919,
+        "duration": 4.161
+    },
+    {
+        "text": "multiplication is the same as addition",
+        "start": 1693.039,
+        "duration": 5.861
+    },
+    {
+        "text": "so by calculating the actual",
+        "start": 1695.08,
+        "duration": 6.099
+    },
+    {
+        "text": "probabilities in log space space and",
+        "start": 1698.9,
+        "duration": 4.019
+    },
+    {
+        "text": "then adding them as we do the alignment",
+        "start": 1701.179,
+        "duration": 4.141
+    },
+    {
+        "text": "what we're actually doing is calculating",
+        "start": 1702.919,
+        "duration": 6.301
+    },
+    {
+        "text": "the most probable alignment or sequence",
+        "start": 1705.32,
+        "duration": 6.08
+    },
+    {
+        "text": "of edits that actually happened",
+        "start": 1709.22,
+        "duration": 5.22
+    },
+    {
+        "text": "given the measured profile of these",
+        "start": 1711.4,
+        "duration": 6.42
+    },
+    {
+        "text": "errors in our data set",
+        "start": 1714.44,
+        "duration": 3.38
+    },
+    {
+        "text": "so if you change the substitution",
+        "start": 1717.919,
+        "duration": 5.341
+    },
+    {
+        "text": "scoring Matrix a little bit and same",
+        "start": 1720.2,
+        "duration": 5.099
+    },
+    {
+        "text": "with the insertion and deletion penalty",
+        "start": 1723.26,
+        "duration": 4.919
+    },
+    {
+        "text": "in general but the main Improvement was",
+        "start": 1725.299,
+        "duration": 5.041
+    },
+    {
+        "text": "adding a lookup table",
+        "start": 1728.179,
+        "duration": 2.88
+    },
+    {
+        "text": "um",
+        "start": 1730.34,
+        "duration": 5.699
+    },
+    {
+        "text": "based on the actual rates of certain",
+        "start": 1731.059,
+        "duration": 7.201
+    },
+    {
+        "text": "length and polymers getting called other",
+        "start": 1736.039,
+        "duration": 6.721
+    },
+    {
+        "text": "lengths so again we did the similar",
+        "start": 1738.26,
+        "duration": 7.26
+    },
+    {
+        "text": "um error probability calculation where",
+        "start": 1742.76,
+        "duration": 6.24
+    },
+    {
+        "text": "if a repeat unit is of length n",
+        "start": 1745.52,
+        "duration": 5.58
+    },
+    {
+        "text": "um and it was expected to be length I",
+        "start": 1749.0,
+        "duration": 4.799
+    },
+    {
+        "text": "but it got called length J",
+        "start": 1751.1,
+        "duration": 5.34
+    },
+    {
+        "text": "um then we calculate for each of those",
+        "start": 1753.799,
+        "duration": 5.521
+    },
+    {
+        "text": "possible repeat unit lengths",
+        "start": 1756.44,
+        "duration": 5.76
+    },
+    {
+        "text": "um what our penalty score should be for",
+        "start": 1759.32,
+        "duration": 4.859
+    },
+    {
+        "text": "accidentally adding an A or dropping an",
+        "start": 1762.2,
+        "duration": 5.459
+    },
+    {
+        "text": "A and so forth so we end up with these",
+        "start": 1764.179,
+        "duration": 6.841
+    },
+    {
+        "text": "score matrices for each of the different",
+        "start": 1767.659,
+        "duration": 7.02
+    },
+    {
+        "text": "and polymer lines so homopolymers if you",
+        "start": 1771.02,
+        "duration": 5.82
+    },
+    {
+        "text": "have one repeated sequence if you have",
+        "start": 1774.679,
+        "duration": 5.401
+    },
+    {
+        "text": "four A's in a row actually but you call",
+        "start": 1776.84,
+        "duration": 6.18
+    },
+    {
+        "text": "Three A's then you have a slight penalty",
+        "start": 1780.08,
+        "duration": 6.24
+    },
+    {
+        "text": "for doing so but if you had 10 A's in a",
+        "start": 1783.02,
+        "duration": 5.639
+    },
+    {
+        "text": "row and you called Nine this time you",
+        "start": 1786.32,
+        "duration": 4.8
+    },
+    {
+        "text": "still dropped 1A it's the same change",
+        "start": 1788.659,
+        "duration": 4.981
+    },
+    {
+        "text": "but the score is lower because it was",
+        "start": 1791.12,
+        "duration": 5.7
+    },
+    {
+        "text": "measured to be much more likely to occur",
+        "start": 1793.64,
+        "duration": 5.22
+    },
+    {
+        "text": "um based on the the statistics in your",
+        "start": 1796.82,
+        "duration": 3.12
+    },
+    {
+        "text": "data set",
+        "start": 1798.86,
+        "duration": 3.12
+    },
+    {
+        "text": "and then if you have a longer repeat",
+        "start": 1799.94,
+        "duration": 4.02
+    },
+    {
+        "text": "unit length",
+        "start": 1801.98,
+        "duration": 4.26
+    },
+    {
+        "text": "um again things are similar but the",
+        "start": 1803.96,
+        "duration": 3.78
+    },
+    {
+        "text": "scores are a little bit higher because",
+        "start": 1806.24,
+        "duration": 4.679
+    },
+    {
+        "text": "it's less likely to lose a copy of AAC",
+        "start": 1807.74,
+        "duration": 5.46
+    },
+    {
+        "text": "than to just lose a copy of a single",
+        "start": 1810.919,
+        "duration": 5.721
+    },
+    {
+        "text": "base and we can see interestingly",
+        "start": 1813.2,
+        "duration": 7.14
+    },
+    {
+        "text": "that that losing a base so bottom left",
+        "start": 1816.64,
+        "duration": 6.279
+    },
+    {
+        "text": "of the diagonal generally has much lower",
+        "start": 1820.34,
+        "duration": 5.459
+    },
+    {
+        "text": "scores than the upper right or adding",
+        "start": 1822.919,
+        "duration": 5.521
+    },
+    {
+        "text": "bases because as I mentioned the",
+        "start": 1825.799,
+        "duration": 4.98
+    },
+    {
+        "text": "nanopore signal stays relatively",
+        "start": 1828.44,
+        "duration": 3.9
+    },
+    {
+        "text": "constant",
+        "start": 1830.779,
+        "duration": 2.341
+    },
+    {
+        "text": "um",
+        "start": 1832.34,
+        "duration": 3.059
+    },
+    {
+        "text": "in repetitive regions so it's difficult",
+        "start": 1833.12,
+        "duration": 4.98
+    },
+    {
+        "text": "to detect transitions so it generally",
+        "start": 1835.399,
+        "duration": 4.681
+    },
+    {
+        "text": "ends up underestimating the number of",
+        "start": 1838.1,
+        "duration": 4.88
+    },
+    {
+        "text": "bases that there are",
+        "start": 1840.08,
+        "duration": 6.959
+    },
+    {
+        "text": "so this does end up complicating the",
+        "start": 1842.98,
+        "duration": 7.38
+    },
+    {
+        "text": "alignment algorithm so instead of having",
+        "start": 1847.039,
+        "duration": 7.561
+    },
+    {
+        "text": "one table with edit distance or three",
+        "start": 1850.36,
+        "duration": 7.539
+    },
+    {
+        "text": "tables with affine gap scoring now we",
+        "start": 1854.6,
+        "duration": 5.4
+    },
+    {
+        "text": "end up with five different state tables",
+        "start": 1857.899,
+        "duration": 4.201
+    },
+    {
+        "text": "so we have",
+        "start": 1860.0,
+        "duration": 4.08
+    },
+    {
+        "text": "um M for when you're in the matching",
+        "start": 1862.1,
+        "duration": 6.179
+    },
+    {
+        "text": "State IND for inserting a deletion but",
+        "start": 1864.08,
+        "duration": 6.959
+    },
+    {
+        "text": "now we also have tables L and S for",
+        "start": 1868.279,
+        "duration": 5.161
+    },
+    {
+        "text": "lengthening and shortening these",
+        "start": 1871.039,
+        "duration": 3.901
+    },
+    {
+        "text": "repetitive regions",
+        "start": 1873.44,
+        "duration": 4.26
+    },
+    {
+        "text": "so for each Matrix",
+        "start": 1874.94,
+        "duration": 5.58
+    },
+    {
+        "text": "um I've I've marked with a symbol",
+        "start": 1877.7,
+        "duration": 4.979
+    },
+    {
+        "text": "according to that Matrix so if we're in",
+        "start": 1880.52,
+        "duration": 4.68
+    },
+    {
+        "text": "the match State and we're Computing this",
+        "start": 1882.679,
+        "duration": 5.341
+    },
+    {
+        "text": "cell with the star then the star",
+        "start": 1885.2,
+        "duration": 4.62
+    },
+    {
+        "text": "superscripts represent possible",
+        "start": 1888.02,
+        "duration": 5.159
+    },
+    {
+        "text": "predecessors so if we're at position I",
+        "start": 1889.82,
+        "duration": 5.94
+    },
+    {
+        "text": "and J in our read and reference and",
+        "start": 1893.179,
+        "duration": 4.141
+    },
+    {
+        "text": "we're trying to calculate the score at",
+        "start": 1895.76,
+        "duration": 4.019
+    },
+    {
+        "text": "this state then we move one previous",
+        "start": 1897.32,
+        "duration": 5.099
+    },
+    {
+        "text": "base in the read and reference and we",
+        "start": 1899.779,
+        "duration": 4.681
+    },
+    {
+        "text": "take our substitution penalties for",
+        "start": 1902.419,
+        "duration": 4.561
+    },
+    {
+        "text": "converting this reference space to this",
+        "start": 1904.46,
+        "duration": 5.219
+    },
+    {
+        "text": "read base and that's one possible",
+        "start": 1906.98,
+        "duration": 4.559
+    },
+    {
+        "text": "predecessor the other possible",
+        "start": 1909.679,
+        "duration": 4.281
+    },
+    {
+        "text": "predecessors are leaving the deletion",
+        "start": 1911.539,
+        "duration": 4.921
+    },
+    {
+        "text": "insertion shortening or lengthening",
+        "start": 1913.96,
+        "duration": 6.219
+    },
+    {
+        "text": "States each with penalty zero and then",
+        "start": 1916.46,
+        "duration": 5.52
+    },
+    {
+        "text": "as I mentioned earlier for The affine",
+        "start": 1920.179,
+        "duration": 3.72
+    },
+    {
+        "text": "Gap scoring",
+        "start": 1921.98,
+        "duration": 5.22
+    },
+    {
+        "text": "um if we are Computing cell IJ in the",
+        "start": 1923.899,
+        "duration": 5.52
+    },
+    {
+        "text": "insertion State you can either be",
+        "start": 1927.2,
+        "duration": 4.32
+    },
+    {
+        "text": "extending a previous insertion for a",
+        "start": 1929.419,
+        "duration": 4.561
+    },
+    {
+        "text": "lower penalty or starting an insertion",
+        "start": 1931.52,
+        "duration": 4.74
+    },
+    {
+        "text": "penalty starting an insertion with a",
+        "start": 1933.98,
+        "duration": 4.919
+    },
+    {
+        "text": "higher penalty from the match State and",
+        "start": 1936.26,
+        "duration": 5.34
+    },
+    {
+        "text": "so forth and then for lengthening and",
+        "start": 1938.899,
+        "duration": 4.5
+    },
+    {
+        "text": "shortening things are complicated",
+        "start": 1941.6,
+        "duration": 3.36
+    },
+    {
+        "text": "because",
+        "start": 1943.399,
+        "duration": 4.201
+    },
+    {
+        "text": "um you have to look a number of cells",
+        "start": 1944.96,
+        "duration": 4.68
+    },
+    {
+        "text": "back depending on what your repeat unit",
+        "start": 1947.6,
+        "duration": 5.579
+    },
+    {
+        "text": "length is but basically it allows",
+        "start": 1949.64,
+        "duration": 6.659
+    },
+    {
+        "text": "jumping there from that state based on",
+        "start": 1953.179,
+        "duration": 6.86
+    },
+    {
+        "text": "looking up the the score for that error",
+        "start": 1956.299,
+        "duration": 7.38
+    },
+    {
+        "text": "in the penalty Matrix and these",
+        "start": 1960.039,
+        "duration": 5.74
+    },
+    {
+        "text": "transitions are only allowed if certain",
+        "start": 1963.679,
+        "duration": 4.38
+    },
+    {
+        "text": "conditions are met and those conditions",
+        "start": 1965.779,
+        "duration": 4.561
+    },
+    {
+        "text": "are basically enforcing that we're only",
+        "start": 1968.059,
+        "duration": 5.041
+    },
+    {
+        "text": "going to allow these transitions when we",
+        "start": 1970.34,
+        "duration": 5.819
+    },
+    {
+        "text": "are in an unpolymer at the start of a",
+        "start": 1973.1,
+        "duration": 5.88
+    },
+    {
+        "text": "repeat unit so this allows adding and",
+        "start": 1976.159,
+        "duration": 6.24
+    },
+    {
+        "text": "dropping individual repeat units based",
+        "start": 1978.98,
+        "duration": 7.5
+    },
+    {
+        "text": "on on the scoring in that lookup Matrix",
+        "start": 1982.399,
+        "duration": 7.02
+    },
+    {
+        "text": "and then there's some nice properties of",
+        "start": 1986.48,
+        "duration": 5.4
+    },
+    {
+        "text": "of having this additional possibility",
+        "start": 1989.419,
+        "duration": 4.74
+    },
+    {
+        "text": "for transitions",
+        "start": 1991.88,
+        "duration": 5.279
+    },
+    {
+        "text": "um so first the penalty will depend on",
+        "start": 1994.159,
+        "duration": 5.221
+    },
+    {
+        "text": "what your expected and measured length",
+        "start": 1997.159,
+        "duration": 3.36
+    },
+    {
+        "text": "was going to be",
+        "start": 1999.38,
+        "duration": 3.299
+    },
+    {
+        "text": "so here we can see if the expected",
+        "start": 2000.519,
+        "duration": 4.76
+    },
+    {
+        "text": "length is Three A's versus five A's",
+        "start": 2002.679,
+        "duration": 6.301
+    },
+    {
+        "text": "versus a days the penalty for dropping",
+        "start": 2005.279,
+        "duration": 6.701
+    },
+    {
+        "text": "1A if you only started with three is is",
+        "start": 2008.98,
+        "duration": 6.48
+    },
+    {
+        "text": "higher because it was less likely but as",
+        "start": 2011.98,
+        "duration": 4.86
+    },
+    {
+        "text": "the length of the formal polymer",
+        "start": 2015.46,
+        "duration": 3.719
+    },
+    {
+        "text": "increases your score for dropping in a",
+        "start": 2016.84,
+        "duration": 4.319
+    },
+    {
+        "text": "decreases because that's that's more",
+        "start": 2019.179,
+        "duration": 3.6
+    },
+    {
+        "text": "likely",
+        "start": 2021.159,
+        "duration": 3.36
+    },
+    {
+        "text": "um and then I'd like to mention that the",
+        "start": 2022.779,
+        "duration": 5.461
+    },
+    {
+        "text": "penalty depends on the length of the",
+        "start": 2024.519,
+        "duration": 7.38
+    },
+    {
+        "text": "repeat unit so losing a base",
+        "start": 2028.24,
+        "duration": 5.46
+    },
+    {
+        "text": "um from a homopolymer is more likely",
+        "start": 2031.899,
+        "duration": 5.041
+    },
+    {
+        "text": "than than losing three bases",
+        "start": 2033.7,
+        "duration": 6.839
+    },
+    {
+        "text": "um from uh and then polymer with with n",
+        "start": 2036.94,
+        "duration": 7.04
+    },
+    {
+        "text": "equals three and I only allow",
+        "start": 2040.539,
+        "duration": 6.841
+    },
+    {
+        "text": "inserting or deleting uh like one entire",
+        "start": 2043.98,
+        "duration": 6.359
+    },
+    {
+        "text": "unit at a time",
+        "start": 2047.38,
+        "duration": 2.959
+    },
+    {
+        "text": "um and another thing to note is that the",
+        "start": 2050.74,
+        "duration": 4.139
+    },
+    {
+        "text": "actual sequence isn't really considered",
+        "start": 2052.659,
+        "duration": 5.821
+    },
+    {
+        "text": "so for a given repeat unit length so",
+        "start": 2054.879,
+        "duration": 6.0
+    },
+    {
+        "text": "here the repeat unit length is three and",
+        "start": 2058.48,
+        "duration": 4.199
+    },
+    {
+        "text": "there's three copies I'm not actually",
+        "start": 2060.879,
+        "duration": 3.54
+    },
+    {
+        "text": "looking at what the underlying sequence",
+        "start": 2062.679,
+        "duration": 3.96
+    },
+    {
+        "text": "is I'm just saying",
+        "start": 2064.419,
+        "duration": 4.26
+    },
+    {
+        "text": "um this is kind of the the repeat",
+        "start": 2066.639,
+        "duration": 5.48
+    },
+    {
+        "text": "pattern and assigning penalty scores",
+        "start": 2068.679,
+        "duration": 5.94
+    },
+    {
+        "text": "based on that instead of breaking it",
+        "start": 2072.119,
+        "duration": 5.52
+    },
+    {
+        "text": "down by each possible",
+        "start": 2074.619,
+        "duration": 6.78
+    },
+    {
+        "text": "sequence because for unit length n",
+        "start": 2077.639,
+        "duration": 6.581
+    },
+    {
+        "text": "there's 4 to the N possible sequences",
+        "start": 2081.399,
+        "duration": 5.041
+    },
+    {
+        "text": "and quickly that kind of grows out of",
+        "start": 2084.22,
+        "duration": 4.86
+    },
+    {
+        "text": "hand and then this alignment does allow",
+        "start": 2086.44,
+        "duration": 5.52
+    },
+    {
+        "text": "considering overlaps so if there's kind",
+        "start": 2089.08,
+        "duration": 5.279
+    },
+    {
+        "text": "of nesting with one repeated sequence",
+        "start": 2091.96,
+        "duration": 4.26
+    },
+    {
+        "text": "within another repeated sequence we can",
+        "start": 2094.359,
+        "duration": 3.721
+    },
+    {
+        "text": "handle that",
+        "start": 2096.22,
+        "duration": 4.86
+    },
+    {
+        "text": "uh last thing to mention was that I did",
+        "start": 2098.08,
+        "duration": 5.84
+    },
+    {
+        "text": "do some banded alignment for efficiency",
+        "start": 2101.08,
+        "duration": 5.64
+    },
+    {
+        "text": "so if we're aligning a read to the",
+        "start": 2103.92,
+        "duration": 4.96
+    },
+    {
+        "text": "reference nanopore reads can be a",
+        "start": 2106.72,
+        "duration": 3.72
+    },
+    {
+        "text": "hundred thousand or even a million bases",
+        "start": 2108.88,
+        "duration": 4.68
+    },
+    {
+        "text": "long so instead of doing o of N squared",
+        "start": 2110.44,
+        "duration": 6.0
+    },
+    {
+        "text": "A Million by a million Matrix uh we",
+        "start": 2113.56,
+        "duration": 4.799
+    },
+    {
+        "text": "already have the alignment we're just",
+        "start": 2116.44,
+        "duration": 3.78
+    },
+    {
+        "text": "trying to modify the fine grained",
+        "start": 2118.359,
+        "duration": 4.441
+    },
+    {
+        "text": "alignment around these repetitive",
+        "start": 2120.22,
+        "duration": 6.6
+    },
+    {
+        "text": "regions so if the Red Band shows the",
+        "start": 2122.8,
+        "duration": 5.819
+    },
+    {
+        "text": "previous alignment",
+        "start": 2126.82,
+        "duration": 4.38
+    },
+    {
+        "text": "um we can actually only look within 30",
+        "start": 2128.619,
+        "duration": 5.521
+    },
+    {
+        "text": "or 50 bases of that original alignment",
+        "start": 2131.2,
+        "duration": 7.26
+    },
+    {
+        "text": "and now we're doing 60 or 100 by 100",
+        "start": 2134.14,
+        "duration": 6.9
+    },
+    {
+        "text": "000 instead of 100 000 by a hundred",
+        "start": 2138.46,
+        "duration": 4.86
+    },
+    {
+        "text": "thousand and there there we gain a lot",
+        "start": 2141.04,
+        "duration": 3.96
+    },
+    {
+        "text": "of a lot of efficiency during the",
+        "start": 2143.32,
+        "duration": 4.22
+    },
+    {
+        "text": "computation",
+        "start": 2145.0,
+        "duration": 2.54
+    },
+    {
+        "text": "um and now so the main goal of",
+        "start": 2147.88,
+        "duration": 4.739
+    },
+    {
+        "text": "introducing these lower Gap penalties",
+        "start": 2149.619,
+        "duration": 6.24
+    },
+    {
+        "text": "for repeated sequences is that now if we",
+        "start": 2152.619,
+        "duration": 5.401
+    },
+    {
+        "text": "look at the aligned reads it should",
+        "start": 2155.859,
+        "duration": 5.161
+    },
+    {
+        "text": "realize that getting the length of this",
+        "start": 2158.02,
+        "duration": 4.8
+    },
+    {
+        "text": "chunk of A's and the length of this",
+        "start": 2161.02,
+        "duration": 4.44
+    },
+    {
+        "text": "chunk of T's incorrect that was probably",
+        "start": 2162.82,
+        "duration": 4.32
+    },
+    {
+        "text": "two separate events",
+        "start": 2165.46,
+        "duration": 4.26
+    },
+    {
+        "text": "so we probably added some extra A's here",
+        "start": 2167.14,
+        "duration": 5.36
+    },
+    {
+        "text": "and dropped some T's here",
+        "start": 2169.72,
+        "duration": 6.119
+    },
+    {
+        "text": "instead of preferring substitutions",
+        "start": 2172.5,
+        "duration": 6.04
+    },
+    {
+        "text": "because it doesn't have a kind of Gap",
+        "start": 2175.839,
+        "duration": 5.101
+    },
+    {
+        "text": "penalty for looking at repeated regions",
+        "start": 2178.54,
+        "duration": 4.74
+    },
+    {
+        "text": "so now if we look at the pileup we can",
+        "start": 2180.94,
+        "duration": 4.56
+    },
+    {
+        "text": "see that all three reads agree that",
+        "start": 2183.28,
+        "duration": 5.9
+    },
+    {
+        "text": "there is an insertion of an a here",
+        "start": 2185.5,
+        "duration": 3.68
+    },
+    {
+        "text": "thanks for coming",
+        "start": 2191.2,
+        "duration": 5.28
+    },
+    {
+        "text": "um so now on to the results",
+        "start": 2193.78,
+        "duration": 4.559
+    },
+    {
+        "text": "um we measured alignment consistency",
+        "start": 2196.48,
+        "duration": 6.78
+    },
+    {
+        "text": "using Genie Purity which is basically a",
+        "start": 2198.339,
+        "duration": 6.841
+    },
+    {
+        "text": "squared summation of the probabilities",
+        "start": 2203.26,
+        "duration": 4.5
+    },
+    {
+        "text": "for each of the categories so if we're",
+        "start": 2205.18,
+        "duration": 4.14
+    },
+    {
+        "text": "looking at a particular reference",
+        "start": 2207.76,
+        "duration": 3.18
+    },
+    {
+        "text": "position",
+        "start": 2209.32,
+        "duration": 4.32
+    },
+    {
+        "text": "um we split it up into insertions and",
+        "start": 2210.94,
+        "duration": 5.78
+    },
+    {
+        "text": "then everything else because basically",
+        "start": 2213.64,
+        "duration": 6.24
+    },
+    {
+        "text": "the five other categories are acgt or",
+        "start": 2216.72,
+        "duration": 5.56
+    },
+    {
+        "text": "deletion but insertions are kind of a",
+        "start": 2219.88,
+        "duration": 4.92
+    },
+    {
+        "text": "special case because there's an infinite",
+        "start": 2222.28,
+        "duration": 4.86
+    },
+    {
+        "text": "number of possible insertions at a",
+        "start": 2224.8,
+        "duration": 5.76
+    },
+    {
+        "text": "position so we had to calculate that a",
+        "start": 2227.14,
+        "duration": 5.52
+    },
+    {
+        "text": "little bit separately but if we first",
+        "start": 2230.56,
+        "duration": 5.36
+    },
+    {
+        "text": "look at acgt and the deletion",
+        "start": 2232.66,
+        "duration": 6.419
+    },
+    {
+        "text": "then to kind of give you an intuitive",
+        "start": 2235.92,
+        "duration": 5.679
+    },
+    {
+        "text": "understanding of Genie Purity if all",
+        "start": 2239.079,
+        "duration": 4.741
+    },
+    {
+        "text": "reads say that there was a c then",
+        "start": 2241.599,
+        "duration": 4.441
+    },
+    {
+        "text": "probability of C is one one squared is",
+        "start": 2243.82,
+        "duration": 5.279
+    },
+    {
+        "text": "one so your Purity is one if ninety",
+        "start": 2246.04,
+        "duration": 4.44
+    },
+    {
+        "text": "percent of the reads said there was a c",
+        "start": 2249.099,
+        "duration": 2.881
+    },
+    {
+        "text": "and ten percent said it was something",
+        "start": 2250.48,
+        "duration": 5.46
+    },
+    {
+        "text": "else 0.9 squared is 0.81 so regardless",
+        "start": 2251.98,
+        "duration": 6.359
+    },
+    {
+        "text": "of where the other 10 percent went your",
+        "start": 2255.94,
+        "duration": 4.32
+    },
+    {
+        "text": "your Purity is going to be between 0.8",
+        "start": 2258.339,
+        "duration": 3.181
+    },
+    {
+        "text": "and 1",
+        "start": 2260.26,
+        "duration": 2.88
+    },
+    {
+        "text": "um if the REITs are evenly split between",
+        "start": 2261.52,
+        "duration": 4.92
+    },
+    {
+        "text": "C and G then that's 0.5 squared equals",
+        "start": 2263.14,
+        "duration": 6.78
+    },
+    {
+        "text": "0.5 squared which is 0.5",
+        "start": 2266.44,
+        "duration": 6.78
+    },
+    {
+        "text": "um so that's going to be 50 Purity",
+        "start": 2269.92,
+        "duration": 5.04
+    },
+    {
+        "text": "um and anything less than that your",
+        "start": 2273.22,
+        "duration": 4.5
+    },
+    {
+        "text": "reads are very discordant and not really",
+        "start": 2274.96,
+        "duration": 5.52
+    },
+    {
+        "text": "agreeing what happened",
+        "start": 2277.72,
+        "duration": 6.139
+    },
+    {
+        "text": "um so down here on the bottom we show",
+        "start": 2280.48,
+        "duration": 7.02
+    },
+    {
+        "text": "this is a logarithmic y-axis so we can",
+        "start": 2283.859,
+        "duration": 5.861
+    },
+    {
+        "text": "see that it's very common for reads to",
+        "start": 2287.5,
+        "duration": 5.52
+    },
+    {
+        "text": "agree or does magnitude less common for",
+        "start": 2289.72,
+        "duration": 6.54
+    },
+    {
+        "text": "for REITs to disagree that terribly",
+        "start": 2293.02,
+        "duration": 5.579
+    },
+    {
+        "text": "um and green and blue are after applying",
+        "start": 2296.26,
+        "duration": 4.2
+    },
+    {
+        "text": "our realignment",
+        "start": 2298.599,
+        "duration": 3.601
+    },
+    {
+        "text": "um and red and yellow are before",
+        "start": 2300.46,
+        "duration": 3.3
+    },
+    {
+        "text": "applying our realignment on the two",
+        "start": 2302.2,
+        "duration": 3.24
+    },
+    {
+        "text": "haplotypes",
+        "start": 2303.76,
+        "duration": 4.14
+    },
+    {
+        "text": "um it's hard to make out the uh the",
+        "start": 2305.44,
+        "duration": 3.899
+    },
+    {
+        "text": "amount of improvement that we've gotten",
+        "start": 2307.9,
+        "duration": 5.1
+    },
+    {
+        "text": "so on the top I show the ratio",
+        "start": 2309.339,
+        "duration": 4.981
+    },
+    {
+        "text": "um per",
+        "start": 2313.0,
+        "duration": 4.74
+    },
+    {
+        "text": "um her position of the Reeds that had",
+        "start": 2314.32,
+        "duration": 6.299
+    },
+    {
+        "text": "that Purity after realignment divided by",
+        "start": 2317.74,
+        "duration": 5.64
+    },
+    {
+        "text": "prior to alignment realignment so we can",
+        "start": 2320.619,
+        "duration": 4.321
+    },
+    {
+        "text": "see that",
+        "start": 2323.38,
+        "duration": 5.459
+    },
+    {
+        "text": "um from a baseline ratio of one we",
+        "start": 2324.94,
+        "duration": 5.82
+    },
+    {
+        "text": "decrease the amount of reads with High",
+        "start": 2328.839,
+        "duration": 3.601
+    },
+    {
+        "text": "discordance",
+        "start": 2330.76,
+        "duration": 3.3
+    },
+    {
+        "text": "um by a little bit more than 50 percent",
+        "start": 2332.44,
+        "duration": 5.04
+    },
+    {
+        "text": "so this this realignment did improve how",
+        "start": 2334.06,
+        "duration": 5.22
+    },
+    {
+        "text": "much the reads agreed at different",
+        "start": 2337.48,
+        "duration": 3.42
+    },
+    {
+        "text": "positions",
+        "start": 2339.28,
+        "duration": 3.72
+    },
+    {
+        "text": "um and then for insertion specifically",
+        "start": 2340.9,
+        "duration": 4.98
+    },
+    {
+        "text": "it didn't really make that much of a",
+        "start": 2343.0,
+        "duration": 4.56
+    },
+    {
+        "text": "difference",
+        "start": 2345.88,
+        "duration": 5.52
+    },
+    {
+        "text": "so here's kind of an example of what the",
+        "start": 2347.56,
+        "duration": 6.0
+    },
+    {
+        "text": "uh the alignments looks like prior to",
+        "start": 2351.4,
+        "duration": 5.58
+    },
+    {
+        "text": "and after to the realignment",
+        "start": 2353.56,
+        "duration": 6.42
+    },
+    {
+        "text": "um and here this is a very compressed",
+        "start": 2356.98,
+        "duration": 5.34
+    },
+    {
+        "text": "um like 50 to 80 reads that were aligned",
+        "start": 2359.98,
+        "duration": 4.379
+    },
+    {
+        "text": "to our reference",
+        "start": 2362.32,
+        "duration": 3.9
+    },
+    {
+        "text": "um and there was a deletion at this",
+        "start": 2364.359,
+        "duration": 5.101
+    },
+    {
+        "text": "position so purple shows insertions the",
+        "start": 2366.22,
+        "duration": 5.879
+    },
+    {
+        "text": "black lines show deletions and then",
+        "start": 2369.46,
+        "duration": 5.22
+    },
+    {
+        "text": "anything colored is a substitution to",
+        "start": 2372.099,
+        "duration": 4.861
+    },
+    {
+        "text": "that colored base we can see that there",
+        "start": 2374.68,
+        "duration": 3.659
+    },
+    {
+        "text": "were a bunch of A's and then a bunch of",
+        "start": 2376.96,
+        "duration": 5.399
+    },
+    {
+        "text": "T's and RV aligner figured out that okay",
+        "start": 2378.339,
+        "duration": 6.121
+    },
+    {
+        "text": "changing the length of a was independent",
+        "start": 2382.359,
+        "duration": 4.321
+    },
+    {
+        "text": "from changing the length of T so it",
+        "start": 2384.46,
+        "duration": 4.26
+    },
+    {
+        "text": "aligns insertions and deletions to the",
+        "start": 2386.68,
+        "duration": 4.82
+    },
+    {
+        "text": "start of those two regions respectively",
+        "start": 2388.72,
+        "duration": 5.399
+    },
+    {
+        "text": "whereas minimap using the affine Gap",
+        "start": 2391.5,
+        "duration": 5.68
+    },
+    {
+        "text": "scoring what it does is if only A's were",
+        "start": 2394.119,
+        "duration": 4.98
+    },
+    {
+        "text": "inserted or deleted then it puts them",
+        "start": 2397.18,
+        "duration": 5.22
+    },
+    {
+        "text": "all left aligned but if both A's and T's",
+        "start": 2399.099,
+        "duration": 6.24
+    },
+    {
+        "text": "were deleted then it prefers one Gap",
+        "start": 2402.4,
+        "duration": 4.98
+    },
+    {
+        "text": "over two like I mentioned because of the",
+        "start": 2405.339,
+        "duration": 4.621
+    },
+    {
+        "text": "gap about fine scoring and as a result",
+        "start": 2407.38,
+        "duration": 4.38
+    },
+    {
+        "text": "it puts that deletion somewhere in the",
+        "start": 2409.96,
+        "duration": 4.56
+    },
+    {
+        "text": "middle of the a'smts and then if there",
+        "start": 2411.76,
+        "duration": 4.98
+    },
+    {
+        "text": "were substitutions sorry if there were",
+        "start": 2414.52,
+        "duration": 4.88
+    },
+    {
+        "text": "extra A's and fewer T's then it will be",
+        "start": 2416.74,
+        "duration": 5.64
+    },
+    {
+        "text": "represented as substitutions from T to a",
+        "start": 2419.4,
+        "duration": 6.219
+    },
+    {
+        "text": "and same thing vice versa so basically",
+        "start": 2422.38,
+        "duration": 4.62
+    },
+    {
+        "text": "instead of having a lot of different",
+        "start": 2425.619,
+        "duration": 4.561
+    },
+    {
+        "text": "representations it chooses to to align",
+        "start": 2427.0,
+        "duration": 5.52
+    },
+    {
+        "text": "them to either the start of the A's or",
+        "start": 2430.18,
+        "duration": 4.02
+    },
+    {
+        "text": "the start of the t's because",
+        "start": 2432.52,
+        "duration": 3.9
+    },
+    {
+        "text": "statistically that's most likely what",
+        "start": 2434.2,
+        "duration": 3.6
+    },
+    {
+        "text": "happened",
+        "start": 2436.42,
+        "duration": 2.64
+    },
+    {
+        "text": "um because we're doing nanopore",
+        "start": 2437.8,
+        "duration": 2.4
+    },
+    {
+        "text": "sequencing",
+        "start": 2439.06,
+        "duration": 3.299
+    },
+    {
+        "text": "and then if you look at the actual",
+        "start": 2440.2,
+        "duration": 4.56
+    },
+    {
+        "text": "accuracy improvements for the pile up",
+        "start": 2442.359,
+        "duration": 4.801
+    },
+    {
+        "text": "variant calling typically they evaluate",
+        "start": 2444.76,
+        "duration": 5.339
+    },
+    {
+        "text": "substitutions and indel separately and",
+        "start": 2447.16,
+        "duration": 5.699
+    },
+    {
+        "text": "they do Precision recall curves",
+        "start": 2450.099,
+        "duration": 5.221
+    },
+    {
+        "text": "um here we kind of have two baselines",
+        "start": 2452.859,
+        "duration": 5.641
+    },
+    {
+        "text": "because the initial variant color layer",
+        "start": 2455.32,
+        "duration": 6.98
+    },
+    {
+        "text": "3 didn't do free sorting by hablow type",
+        "start": 2458.5,
+        "duration": 7.38
+    },
+    {
+        "text": "so I added that to claire3 in order to",
+        "start": 2462.3,
+        "duration": 6.76
+    },
+    {
+        "text": "get a more realistic red Baseline and",
+        "start": 2465.88,
+        "duration": 4.44
+    },
+    {
+        "text": "then we can see that with the",
+        "start": 2469.06,
+        "duration": 3.779
+    },
+    {
+        "text": "realignment in green we improved",
+        "start": 2470.32,
+        "duration": 5.22
+    },
+    {
+        "text": "substitution precision and we improved",
+        "start": 2472.839,
+        "duration": 7.621
+    },
+    {
+        "text": "indel precision and recall a little bit",
+        "start": 2475.54,
+        "duration": 7.079
+    },
+    {
+        "text": "um and then this project is on GitHub if",
+        "start": 2480.46,
+        "duration": 4.139
+    },
+    {
+        "text": "you want to check it out",
+        "start": 2482.619,
+        "duration": 4.5
+    },
+    {
+        "text": "um I was funded by the NSF",
+        "start": 2484.599,
+        "duration": 6.02
+    },
+    {
+        "text": "um and thanks everyone for listening",
+        "start": 2487.119,
+        "duration": 3.5
+    },
+    {
+        "text": "yeah well if anyone in the room has a",
+        "start": 2494.5,
+        "duration": 4.02
+    },
+    {
+        "text": "question again feel free to raise your",
+        "start": 2496.42,
+        "duration": 3.84
+    },
+    {
+        "text": "hand and talk to questions and if anyone",
+        "start": 2498.52,
+        "duration": 4.02
+    },
+    {
+        "text": "online and the question uh you can put",
+        "start": 2500.26,
+        "duration": 3.66
+    },
+    {
+        "text": "it in the chat and you want to read it",
+        "start": 2502.54,
+        "duration": 3.36
+    },
+    {
+        "text": "through with him uh if you're in the",
+        "start": 2503.92,
+        "duration": 4.02
+    },
+    {
+        "text": "room if you can speak up and and if you",
+        "start": 2505.9,
+        "duration": 4.58
+    },
+    {
+        "text": "remember yeah",
+        "start": 2507.94,
+        "duration": 2.54
+    },
+    {
+        "text": "yeah",
+        "start": 2511.06,
+        "duration": 3.12
+    },
+    {
+        "text": "um so you you use this in the context of",
+        "start": 2512.44,
+        "duration": 3.84
+    },
+    {
+        "text": "all genome sequencing and if I",
+        "start": 2514.18,
+        "duration": 4.38
+    },
+    {
+        "text": "understood correctly you train this what",
+        "start": 2516.28,
+        "duration": 4.319
+    },
+    {
+        "text": "actually happened Matrix on the",
+        "start": 2518.56,
+        "duration": 3.42
+    },
+    {
+        "text": "alignment of the whole genome you're",
+        "start": 2520.599,
+        "duration": 3.48
+    },
+    {
+        "text": "trying to sequence yeah have you started",
+        "start": 2521.98,
+        "duration": 4.68
+    },
+    {
+        "text": "with changing what you've made it if",
+        "start": 2524.079,
+        "duration": 4.02
+    },
+    {
+        "text": "you're trying to focus on realigning",
+        "start": 2526.66,
+        "duration": 3.12
+    },
+    {
+        "text": "things inside repeated regions have you",
+        "start": 2528.099,
+        "duration": 2.76
+    },
+    {
+        "text": "tried feeding an information",
+        "start": 2529.78,
+        "duration": 3.18
+    },
+    {
+        "text": "specifically from those regions and",
+        "start": 2530.859,
+        "duration": 4.081
+    },
+    {
+        "text": "seeing how that changes the output",
+        "start": 2532.96,
+        "duration": 2.58
+    },
+    {
+        "text": "um",
+        "start": 2534.94,
+        "duration": 2.04
+    },
+    {
+        "text": "I don't know if that would help at all",
+        "start": 2535.54,
+        "duration": 3.66
+    },
+    {
+        "text": "but it doesn't let the benefit is not",
+        "start": 2536.98,
+        "duration": 5.34
+    },
+    {
+        "text": "necessarily in the SNP rate like at some",
+        "start": 2539.2,
+        "duration": 5.34
+    },
+    {
+        "text": "point of the change the idea is to get",
+        "start": 2542.32,
+        "duration": 3.84
+    },
+    {
+        "text": "those the ingredients to be fixed it",
+        "start": 2544.54,
+        "duration": 2.819
+    },
+    {
+        "text": "could just be the information from there",
+        "start": 2546.16,
+        "duration": 5.52
+    },
+    {
+        "text": "try that yeah so the question was",
+        "start": 2547.359,
+        "duration": 7.441
+    },
+    {
+        "text": "um basically when here when I calculate",
+        "start": 2551.68,
+        "duration": 5.46
+    },
+    {
+        "text": "both the substitution penalties and",
+        "start": 2554.8,
+        "duration": 3.9
+    },
+    {
+        "text": "later",
+        "start": 2557.14,
+        "duration": 3.06
+    },
+    {
+        "text": "um the uh",
+        "start": 2558.7,
+        "duration": 4.32
+    },
+    {
+        "text": "the repeated region Gap penalties right",
+        "start": 2560.2,
+        "duration": 4.379
+    },
+    {
+        "text": "now I'm Computing it based on the",
+        "start": 2563.02,
+        "duration": 3.78
+    },
+    {
+        "text": "alignments to the entire sequence",
+        "start": 2564.579,
+        "duration": 4.681
+    },
+    {
+        "text": "um the question was would it help to",
+        "start": 2566.8,
+        "duration": 5.279
+    },
+    {
+        "text": "compute those scores based on just the",
+        "start": 2569.26,
+        "duration": 5.3
+    },
+    {
+        "text": "alignments to specific",
+        "start": 2572.079,
+        "duration": 6.861
+    },
+    {
+        "text": "subsections of the genome even like yeah",
+        "start": 2574.56,
+        "duration": 8.44
+    },
+    {
+        "text": "yeah so the the reason that",
+        "start": 2578.94,
+        "duration": 5.74
+    },
+    {
+        "text": "um basically I aligned it to the whole",
+        "start": 2583.0,
+        "duration": 3.78
+    },
+    {
+        "text": "genome is so that basically you can get",
+        "start": 2584.68,
+        "duration": 4.939
+    },
+    {
+        "text": "both the general substitution penalties",
+        "start": 2586.78,
+        "duration": 5.52
+    },
+    {
+        "text": "and the general insertion and deletion",
+        "start": 2589.619,
+        "duration": 4.181
+    },
+    {
+        "text": "penalties so if you're in non-repeated",
+        "start": 2592.3,
+        "duration": 2.94
+    },
+    {
+        "text": "regions",
+        "start": 2593.8,
+        "duration": 3.48
+    },
+    {
+        "text": "um and then the N polymer lookup table",
+        "start": 2595.24,
+        "duration": 5.22
+    },
+    {
+        "text": "which is these matrices they're only",
+        "start": 2597.28,
+        "duration": 4.319
+    },
+    {
+        "text": "being",
+        "start": 2600.46,
+        "duration": 3.0
+    },
+    {
+        "text": "so this Matrix even though it's like",
+        "start": 2601.599,
+        "duration": 4.02
+    },
+    {
+        "text": "aligned to the whole genome",
+        "start": 2603.46,
+        "duration": 3.899
+    },
+    {
+        "text": "um the number of counts in each of these",
+        "start": 2605.619,
+        "duration": 4.5
+    },
+    {
+        "text": "is only going to be incremented if there",
+        "start": 2607.359,
+        "duration": 4.801
+    },
+    {
+        "text": "was actually",
+        "start": 2610.119,
+        "duration": 5.7
+    },
+    {
+        "text": "um like a repeat of of Chunk three",
+        "start": 2612.16,
+        "duration": 5.28
+    },
+    {
+        "text": "um of a certain line",
+        "start": 2615.819,
+        "duration": 4.321
+    },
+    {
+        "text": "so it's kind of all this Matrix is kind",
+        "start": 2617.44,
+        "duration": 5.28
+    },
+    {
+        "text": "of already only looking at 10 repeat",
+        "start": 2620.14,
+        "duration": 4.86
+    },
+    {
+        "text": "regions were you wondering like if",
+        "start": 2622.72,
+        "duration": 4.379
+    },
+    {
+        "text": "there's it's looking at 10 repeats like",
+        "start": 2625.0,
+        "duration": 4.26
+    },
+    {
+        "text": "as they occur but planning is their",
+        "start": 2627.099,
+        "duration": 4.381
+    },
+    {
+        "text": "region the G phone the reason regions of",
+        "start": 2629.26,
+        "duration": 4.02
+    },
+    {
+        "text": "the genome in which that is a lot more",
+        "start": 2631.48,
+        "duration": 4.04
+    },
+    {
+        "text": "common than it is",
+        "start": 2633.28,
+        "duration": 4.559
+    },
+    {
+        "text": "yeah that's a good question",
+        "start": 2635.52,
+        "duration": 4.24
+    },
+    {
+        "text": "um so basically right now it's kind of",
+        "start": 2637.839,
+        "duration": 3.061
+    },
+    {
+        "text": "implemented",
+        "start": 2639.76,
+        "duration": 2.46
+    },
+    {
+        "text": "um so that basically like you can",
+        "start": 2640.9,
+        "duration": 3.54
+    },
+    {
+        "text": "provide a bed file to mass whatever",
+        "start": 2642.22,
+        "duration": 3.72
+    },
+    {
+        "text": "regions of the genome you want to",
+        "start": 2644.44,
+        "duration": 4.2
+    },
+    {
+        "text": "compute the statistics on uh basically",
+        "start": 2645.94,
+        "duration": 4.32
+    },
+    {
+        "text": "because like I was providing this as",
+        "start": 2648.64,
+        "duration": 3.719
+    },
+    {
+        "text": "like a general case tool I just did it",
+        "start": 2650.26,
+        "duration": 4.68
+    },
+    {
+        "text": "for the for the entire genome",
+        "start": 2652.359,
+        "duration": 4.98
+    },
+    {
+        "text": "um but yeah you're right like if you're",
+        "start": 2654.94,
+        "duration": 5.7
+    },
+    {
+        "text": "interested in like specific regions",
+        "start": 2657.339,
+        "duration": 6.301
+    },
+    {
+        "text": "um then the really nice thing about",
+        "start": 2660.64,
+        "duration": 5.479
+    },
+    {
+        "text": "um like calculating all these like",
+        "start": 2663.64,
+        "duration": 5.58
+    },
+    {
+        "text": "statistics and setting your scores based",
+        "start": 2666.119,
+        "duration": 5.5
+    },
+    {
+        "text": "on what your data set actually contains",
+        "start": 2669.22,
+        "duration": 4.68
+    },
+    {
+        "text": "yeah is that you can just redo that if",
+        "start": 2671.619,
+        "duration": 4.98
+    },
+    {
+        "text": "your data set or regions change so it",
+        "start": 2673.9,
+        "duration": 4.62
+    },
+    {
+        "text": "would totally be feasible to recalculate",
+        "start": 2676.599,
+        "duration": 4.74
+    },
+    {
+        "text": "this for a specific subset of regions",
+        "start": 2678.52,
+        "duration": 5.94
+    },
+    {
+        "text": "that you're you're interested in yeah",
+        "start": 2681.339,
+        "duration": 5.881
+    },
+    {
+        "text": "clear the question online Damian is",
+        "start": 2684.46,
+        "duration": 4.98
+    },
+    {
+        "text": "wondering what is the basic input for",
+        "start": 2687.22,
+        "duration": 5.899
+    },
+    {
+        "text": "your software is IT band file DCF files",
+        "start": 2689.44,
+        "duration": 6.54
+    },
+    {
+        "text": "yeah so the basic input",
+        "start": 2693.119,
+        "duration": 4.441
+    },
+    {
+        "text": "um is just a bam",
+        "start": 2695.98,
+        "duration": 5.04
+    },
+    {
+        "text": "and if you want to recalculate the",
+        "start": 2697.56,
+        "duration": 6.039
+    },
+    {
+        "text": "statistics like that's an option and you",
+        "start": 2701.02,
+        "duration": 4.799
+    },
+    {
+        "text": "can provide a vet file for like where in",
+        "start": 2703.599,
+        "duration": 3.421
+    },
+    {
+        "text": "the band you're going to recalculate the",
+        "start": 2705.819,
+        "duration": 3.901
+    },
+    {
+        "text": "statistics from you can also just take",
+        "start": 2707.02,
+        "duration": 4.92
+    },
+    {
+        "text": "the pre-computed statistics and you just",
+        "start": 2709.72,
+        "duration": 5.22
+    },
+    {
+        "text": "give it a bam and it gives you a new bam",
+        "start": 2711.94,
+        "duration": 5.34
+    },
+    {
+        "text": "um just with like the small realignment",
+        "start": 2714.94,
+        "duration": 4.82
+    },
+    {
+        "text": "changes",
+        "start": 2717.28,
+        "duration": 2.48
+    },
+    {
+        "text": "yeah you're saying basically like these",
+        "start": 2730.619,
+        "duration": 4.781
+    },
+    {
+        "text": "these matrices especially like for",
+        "start": 2733.359,
+        "duration": 4.26
+    },
+    {
+        "text": "longer likes if you have like a smaller",
+        "start": 2735.4,
+        "duration": 3.48
+    },
+    {
+        "text": "subset or something it could be",
+        "start": 2737.619,
+        "duration": 3.361
+    },
+    {
+        "text": "completely unstable",
+        "start": 2738.88,
+        "duration": 5.64
+    },
+    {
+        "text": "um and how do you kind of make sure that",
+        "start": 2740.98,
+        "duration": 5.82
+    },
+    {
+        "text": "um the scores still makes sense",
+        "start": 2744.52,
+        "duration": 3.66
+    },
+    {
+        "text": "um so basically I kind of glossed over",
+        "start": 2746.8,
+        "duration": 3.36
+    },
+    {
+        "text": "it but",
+        "start": 2748.18,
+        "duration": 5.399
+    },
+    {
+        "text": "um I do apply some amount of smoothing",
+        "start": 2750.16,
+        "duration": 6.179
+    },
+    {
+        "text": "and imputation to this Matrix so",
+        "start": 2753.579,
+        "duration": 4.861
+    },
+    {
+        "text": "basically I enforce certain properties",
+        "start": 2756.339,
+        "duration": 5.28
+    },
+    {
+        "text": "to make sure that all the scores still",
+        "start": 2758.44,
+        "duration": 4.98
+    },
+    {
+        "text": "make sense",
+        "start": 2761.619,
+        "duration": 3.96
+    },
+    {
+        "text": "um so basically",
+        "start": 2763.42,
+        "duration": 4.08
+    },
+    {
+        "text": "um I enforce like a few different",
+        "start": 2765.579,
+        "duration": 5.221
+    },
+    {
+        "text": "properties one is that",
+        "start": 2767.5,
+        "duration": 5.16
+    },
+    {
+        "text": "um if you have",
+        "start": 2770.8,
+        "duration": 4.74
+    },
+    {
+        "text": "um say a one base deletion that's always",
+        "start": 2772.66,
+        "duration": 5.159
+    },
+    {
+        "text": "going to be more likely from a longer",
+        "start": 2775.54,
+        "duration": 4.86
+    },
+    {
+        "text": "homopolymer than a shorter one",
+        "start": 2777.819,
+        "duration": 5.161
+    },
+    {
+        "text": "um and then a few different things so",
+        "start": 2780.4,
+        "duration": 4.679
+    },
+    {
+        "text": "that basically",
+        "start": 2782.98,
+        "duration": 5.52
+    },
+    {
+        "text": "um at lower repeat lengths as long as",
+        "start": 2785.079,
+        "duration": 4.981
+    },
+    {
+        "text": "you have like a reasonable region that",
+        "start": 2788.5,
+        "duration": 2.88
+    },
+    {
+        "text": "you're sampling you're going to get",
+        "start": 2790.06,
+        "duration": 3.6
+    },
+    {
+        "text": "plenty of examples and good statistics",
+        "start": 2791.38,
+        "duration": 5.58
+    },
+    {
+        "text": "but you might not for example ever get",
+        "start": 2793.66,
+        "duration": 6.48
+    },
+    {
+        "text": "an example of a four polymer that was",
+        "start": 2796.96,
+        "duration": 7.139
+    },
+    {
+        "text": "repeated 57 times so basically some of",
+        "start": 2800.14,
+        "duration": 5.64
+    },
+    {
+        "text": "those values are imputed and there's",
+        "start": 2804.099,
+        "duration": 3.601
+    },
+    {
+        "text": "some amount of smoothing to make sure",
+        "start": 2805.78,
+        "duration": 4.14
+    },
+    {
+        "text": "that all the values are reasonable",
+        "start": 2807.7,
+        "duration": 3.96
+    },
+    {
+        "text": "yeah",
+        "start": 2809.92,
+        "duration": 4.32
+    },
+    {
+        "text": "um I was also thinking about",
+        "start": 2811.66,
+        "duration": 3.48
+    },
+    {
+        "text": "um",
+        "start": 2814.24,
+        "duration": 3.18
+    },
+    {
+        "text": "kind of like this affine Gap scoring",
+        "start": 2815.14,
+        "duration": 4.62
+    },
+    {
+        "text": "people use like different functions for",
+        "start": 2817.42,
+        "duration": 5.1
+    },
+    {
+        "text": "that some people instead of just having",
+        "start": 2819.76,
+        "duration": 6.66
+    },
+    {
+        "text": "like an insertion score and then a like",
+        "start": 2822.52,
+        "duration": 7.319
+    },
+    {
+        "text": "sorry an opening an extension score",
+        "start": 2826.42,
+        "duration": 5.159
+    },
+    {
+        "text": "um they either like Smooth that out into",
+        "start": 2829.839,
+        "duration": 4.561
+    },
+    {
+        "text": "like something actually like logarithmic",
+        "start": 2831.579,
+        "duration": 5.941
+    },
+    {
+        "text": "um or whatever so basically instead of",
+        "start": 2834.4,
+        "duration": 4.8
+    },
+    {
+        "text": "doing my own kind of like custom",
+        "start": 2837.52,
+        "duration": 3.48
+    },
+    {
+        "text": "smoothing I could also do some kind of",
+        "start": 2839.2,
+        "duration": 3.6
+    },
+    {
+        "text": "best fit",
+        "start": 2841.0,
+        "duration": 4.04
+    },
+    {
+        "text": "um that would be like Tire dimensional",
+        "start": 2842.8,
+        "duration": 6.74
+    },
+    {
+        "text": "but would also work yeah",
+        "start": 2845.04,
+        "duration": 4.5
+    },
+    {
+        "text": "the problem I hope reset men for this",
+        "start": 2853.06,
+        "duration": 5.34
+    },
+    {
+        "text": "employers were",
+        "start": 2855.52,
+        "duration": 6.24
+    },
+    {
+        "text": "yes I think the preset start at 50 by 50",
+        "start": 2858.4,
+        "duration": 5.219
+    },
+    {
+        "text": "or 100 by 100",
+        "start": 2861.76,
+        "duration": 4.68
+    },
+    {
+        "text": "um and then if it's longer then I would",
+        "start": 2863.619,
+        "duration": 4.921
+    },
+    {
+        "text": "just take the value in like the last row",
+        "start": 2866.44,
+        "duration": 5.399
+    },
+    {
+        "text": "so like 50 by 50 and then just say okay",
+        "start": 2868.54,
+        "duration": 5.76
+    },
+    {
+        "text": "the same same penalty for the same",
+        "start": 2871.839,
+        "duration": 6.441
+    },
+    {
+        "text": "amount of deletions as that",
+        "start": 2874.3,
+        "duration": 3.98
+    },
+    {
+        "text": "questions",
+        "start": 2883.0,
+        "duration": 2.66
+    },
+    {
+        "text": "don't see anything else online either so",
+        "start": 2887.26,
+        "duration": 5.18
+    },
+    {
+        "text": "thank you again",
+        "start": 2889.359,
+        "duration": 3.081
+    },
+    {
+        "text": "[Music]",
+        "start": 2893.31,
+        "duration": 4.549
+    },
+    {
+        "text": "oh can you bring back a little bit",
+        "start": 2898.02,
+        "duration": 5.2
+    },
+    {
+        "text": "traffic again oh yeah yeah",
+        "start": 2900.099,
+        "duration": 5.121
+    },
+    {
+        "text": "um",
+        "start": 2903.22,
+        "duration": 2.0
+    },
+    {
+        "text": "oh my",
+        "start": 2910.119,
+        "duration": 2.48
+    },
+    {
+        "text": "God",
+        "start": 2911.859,
+        "duration": 4.521
+    },
+    {
+        "text": "I'm gonna grab some pizza",
+        "start": 2912.599,
+        "duration": 3.781
+    },
+    {
+        "text": "I mean that's what I'm gonna do for um",
+        "start": 2923.46,
+        "duration": 4.379
+    },
+    {
+        "text": "[Music]",
+        "start": 2942.96,
+        "duration": 5.46
+    },
+    {
+        "text": "you know yes",
+        "start": 2944.859,
+        "duration": 3.561
+    },
+    {
+        "text": "how nice yeah",
+        "start": 2976.98,
+        "duration": 4.24
+    },
+    {
+        "text": "[Music]",
+        "start": 2990.63,
+        "duration": 5.31
+    },
+    {
+        "text": "yeah I know",
+        "start": 2992.339,
+        "duration": 3.601
+    },
+    {
+        "text": "I know yeah",
+        "start": 2998.4,
+        "duration": 4.12
+    }
+]

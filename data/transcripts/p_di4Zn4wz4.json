@@ -1,0 +1,2072 @@
+[
+    {
+        "text": "Taking a quote from Stephen Strogatz, since Newton, ",
+        "start": 3.5,
+        "duration": 2.773
+    },
+    {
+        "text": "mankind has come to realize that the laws of physics are always expressed in the ",
+        "start": 6.273,
+        "duration": 4.32
+    },
+    {
+        "text": "language of differential equations.",
+        "start": 10.593,
+        "duration": 1.867
+    },
+    {
+        "text": "Of course, this language is spoken well beyond the boundaries of physics as well, ",
+        "start": 13.16,
+        "duration": 3.898
+    },
+    {
+        "text": "and being able to speak it and read it adds a new color to how you view the world around ",
+        "start": 17.058,
+        "duration": 4.231
+    },
+    {
+        "text": "you.",
+        "start": 21.289,
+        "duration": 0.191
+    },
+    {
+        "text": "In the next few videos, I want to give a sort of tour of this topic.",
+        "start": 22.18,
+        "duration": 3.22
+    },
+    {
+        "text": "The aim is to give a big picture view of what this piece of math is all about, ",
+        "start": 25.84,
+        "duration": 3.79
+    },
+    {
+        "text": "while at the same time being happy to dig into the details of specific examples as they ",
+        "start": 29.63,
+        "duration": 4.222
+    },
+    {
+        "text": "come along.",
+        "start": 33.852,
+        "duration": 0.528
+    },
+    {
+        "text": "I'll be assuming you know the basics of calculus, ",
+        "start": 35.06,
+        "duration": 2.46
+    },
+    {
+        "text": "like what derivatives and integrals are, and in later videos we'll need some basic linear ",
+        "start": 37.52,
+        "duration": 4.429
+    },
+    {
+        "text": "algebra, but not too much beyond that.",
+        "start": 41.949,
+        "duration": 1.871
+    },
+    {
+        "text": "Differential equations arise whenever it's easier ",
+        "start": 44.6,
+        "duration": 2.659
+    },
+    {
+        "text": "to describe change than absolute amounts.",
+        "start": 47.259,
+        "duration": 2.181
+    },
+    {
+        "text": "It's easier to say why population sizes, for example, ",
+        "start": 49.44,
+        "duration": 3.157
+    },
+    {
+        "text": "grow or shrink than it is to describe why they have the particular values they ",
+        "start": 52.597,
+        "duration": 4.62
+    },
+    {
+        "text": "do at some point in time.",
+        "start": 57.217,
+        "duration": 1.463
+    },
+    {
+        "text": "It may be easier to describe why your love for someone ",
+        "start": 59.5,
+        "duration": 2.613
+    },
+    {
+        "text": "is changing than why it happens to be where it is now.",
+        "start": 62.113,
+        "duration": 2.567
+    },
+    {
+        "text": "In physics, more specifically Newtonian mechanics, ",
+        "start": 65.18,
+        "duration": 2.88
+    },
+    {
+        "text": "motion is often described in terms of force, and force determines acceleration, ",
+        "start": 68.06,
+        "duration": 4.519
+    },
+    {
+        "text": "which is a statement about change.",
+        "start": 72.579,
+        "duration": 1.921
+    },
+    {
+        "text": "These equations come in two different flavors, ordinary differential equations, ",
+        "start": 75.16,
+        "duration": 4.768
+    },
+    {
+        "text": "or ODEs, involving functions with a single input, often thought of as time, ",
+        "start": 79.928,
+        "duration": 4.529
+    },
+    {
+        "text": "and partial differential equations, or PDEs, dealing with functions that have multiple ",
+        "start": 84.457,
+        "duration": 5.185
+    },
+    {
+        "text": "inputs.",
+        "start": 89.642,
+        "duration": 0.418
+    },
+    {
+        "text": "Partial differential equations are something we'll ",
+        "start": 90.8,
+        "duration": 2.018
+    },
+    {
+        "text": "be looking at more closely in the next video.",
+        "start": 92.818,
+        "duration": 1.782
+    },
+    {
+        "text": "You often think of them as involving a whole continuum of values changing with time, ",
+        "start": 95.14,
+        "duration": 4.794
+    },
+    {
+        "text": "like the temperature at every point of a solid body, ",
+        "start": 99.934,
+        "duration": 2.989
+    },
+    {
+        "text": "or the velocity of a fluid at every point in space.",
+        "start": 102.923,
+        "duration": 2.877
+    },
+    {
+        "text": "Ordinary differential equations, our focus for now, ",
+        "start": 106.6,
+        "duration": 2.837
+    },
+    {
+        "text": "involve only a finite collection of values changing with time.",
+        "start": 109.437,
+        "duration": 3.383
+    },
+    {
+        "text": "And it doesn't have to be time per se, your one independent variable ",
+        "start": 113.52,
+        "duration": 3.361
+    },
+    {
+        "text": "could be something else, but things changing with time are the ",
+        "start": 116.881,
+        "duration": 3.069
+    },
+    {
+        "text": "prototypical and most common example of differential equations.",
+        "start": 119.95,
+        "duration": 3.07
+    },
+    {
+        "text": "Physics offers a nice playground for us here, with simple examples to start with, ",
+        "start": 124.02,
+        "duration": 4.35
+    },
+    {
+        "text": "and no shortage of intricacy and nuance as we delve deeper.",
+        "start": 128.37,
+        "duration": 3.13
+    },
+    {
+        "text": "As a nice warmup, consider the trajectory of something you throw in the air.",
+        "start": 133.26,
+        "duration": 4.1
+    },
+    {
+        "text": "The force of gravity near the surface of Earth causes things ",
+        "start": 137.88,
+        "duration": 3.873
+    },
+    {
+        "text": "to accelerate downward at 9.8 meters per second per second.",
+        "start": 141.753,
+        "duration": 3.747
+    },
+    {
+        "text": "Now unpack what that's really saying.",
+        "start": 146.26,
+        "duration": 1.8
+    },
+    {
+        "text": "It means if you look at that object free from other forces, ",
+        "start": 148.5,
+        "duration": 4.133
+    },
+    {
+        "text": "and record its velocity at every second, these velocity vectors will accrue an ",
+        "start": 152.633,
+        "duration": 5.443
+    },
+    {
+        "text": "additional small downward component of 9.8 meters per second every second, ",
+        "start": 158.076,
+        "duration": 5.168
+    },
+    {
+        "text": "we call this constant 9.8 g for gravity.",
+        "start": 163.244,
+        "duration": 2.756
+    },
+    {
+        "text": "This is enough to give us an example of a differential equation, ",
+        "start": 167.24,
+        "duration": 3.073
+    },
+    {
+        "text": "albeit a relatively simple one.",
+        "start": 170.313,
+        "duration": 1.467
+    },
+    {
+        "text": "Focus on the y-coordinate as a function of time.",
+        "start": 172.26,
+        "duration": 2.86
+    },
+    {
+        "text": "Its derivative gives the vertical component of velocity, ",
+        "start": 177.28,
+        "duration": 4.443
+    },
+    {
+        "text": "whose derivative in turn gives the vertical component of acceleration.",
+        "start": 181.723,
+        "duration": 5.457
+    },
+    {
+        "text": "For compactness, let's write the first derivative ",
+        "start": 190.04,
+        "duration": 2.663
+    },
+    {
+        "text": "as y-dot and the second derivative as y-double-dot.",
+        "start": 192.703,
+        "duration": 2.717
+    },
+    {
+        "text": "Our equation says that y-double-dot is equal to negative g, a simple constant.",
+        "start": 195.98,
+        "duration": 5.34
+    },
+    {
+        "text": "This is one we can solve by integrating, which ",
+        "start": 202.1,
+        "duration": 2.264
+    },
+    {
+        "text": "is essentially working the question backwards.",
+        "start": 204.364,
+        "duration": 2.216
+    },
+    {
+        "text": "First, to find velocity, you ask, what function has negative g as a derivative?",
+        "start": 207.32,
+        "duration": 5.02
+    },
+    {
+        "text": "Well, it's negative g times t, or more specifically, ",
+        "start": 212.34,
+        "duration": 4.298
+    },
+    {
+        "text": "negative gt plus the initial velocity.",
+        "start": 216.638,
+        "duration": 3.082
+    },
+    {
+        "text": "Notice that there are many functions with this particular derivative, ",
+        "start": 220.3,
+        "duration": 3.184
+    },
+    {
+        "text": "so you have an extra degree of freedom which is determined by an initial condition.",
+        "start": 223.484,
+        "duration": 3.776
+    },
+    {
+        "text": "Now what function has this as a derivative?",
+        "start": 228.36,
+        "duration": 2.5
+    },
+    {
+        "text": "It turns out to be negative one-half g times t squared plus that initial velocity ",
+        "start": 231.92,
+        "duration": 4.643
+    },
+    {
+        "text": "times t, and again we're free to add an additional constant without changing the ",
+        "start": 236.563,
+        "duration": 4.586
+    },
+    {
+        "text": "derivative, and that constant is determined by whatever the initial position is.",
+        "start": 241.149,
+        "duration": 4.531
+    },
+    {
+        "text": "And there you go, we just solved a differential equation, ",
+        "start": 246.34,
+        "duration": 2.993
+    },
+    {
+        "text": "figuring out what a function is based on information about its rate of change.",
+        "start": 249.333,
+        "duration": 4.027
+    },
+    {
+        "text": "Things get more interesting when the forces acting on a body depend on where that body is.",
+        "start": 254.22,
+        "duration": 5.48
+    },
+    {
+        "text": "For example, studying the motion of planets, stars, ",
+        "start": 260.3,
+        "duration": 2.614
+    },
+    {
+        "text": "and moons, gravity can no longer be considered a constant.",
+        "start": 262.914,
+        "duration": 2.916
+    },
+    {
+        "text": "Given two bodies, the pole on one of them is in the direction of the other, ",
+        "start": 266.51,
+        "duration": 4.473
+    },
+    {
+        "text": "with a strength inversely proportional to the square of the distance between them.",
+        "start": 270.983,
+        "duration": 4.827
+    },
+    {
+        "text": "As always, the rate of change of position is velocity, ",
+        "start": 277.11,
+        "duration": 3.448
+    },
+    {
+        "text": "but now the rate of change of velocity, acceleration, is some function of position, ",
+        "start": 280.558,
+        "duration": 5.267
+    },
+    {
+        "text": "so you have this dance between two mutually interacting variables, ",
+        "start": 285.825,
+        "duration": 4.202
+    },
+    {
+        "text": "reminiscent of the dance between the two moving bodies which they describe.",
+        "start": 290.027,
+        "duration": 4.703
+    },
+    {
+        "text": "This is reflective of the fact that often in differential equations, ",
+        "start": 298.33,
+        "duration": 3.732
+    },
+    {
+        "text": "the puzzles you face involve finding a function whose derivative and ",
+        "start": 302.062,
+        "duration": 3.733
+    },
+    {
+        "text": "or higher order derivatives are defined in terms of the function itself.",
+        "start": 305.795,
+        "duration": 3.895
+    },
+    {
+        "text": "In physics it's most common to work with second order differential equations, ",
+        "start": 310.49,
+        "duration": 4.09
+    },
+    {
+        "text": "which means the highest derivative you find in this expression is a second derivative.",
+        "start": 314.58,
+        "duration": 4.51
+    },
+    {
+        "text": "Higher order differential equations would be ones involving third derivatives, ",
+        "start": 319.85,
+        "duration": 4.366
+    },
+    {
+        "text": "fourth derivatives, and so on, puzzles with more intricate clues.",
+        "start": 324.216,
+        "duration": 3.594
+    },
+    {
+        "text": "The sensation you get when really meditating on one of these ",
+        "start": 328.83,
+        "duration": 3.059
+    },
+    {
+        "text": "equations is one of solving an infinite continuous jigsaw puzzle.",
+        "start": 331.889,
+        "duration": 3.261
+    },
+    {
+        "text": "In a sense, you have to find infinitely many numbers, one for each point in time t, ",
+        "start": 335.77,
+        "duration": 4.99
+    },
+    {
+        "text": "but they're constrained by a very specific way that these values intertwine with ",
+        "start": 340.76,
+        "duration": 4.812
+    },
+    {
+        "text": "their own rate of change, and the rate of change of that rate of change.",
+        "start": 345.572,
+        "duration": 4.278
+    },
+    {
+        "text": "To get a feel for what studying these can look like, ",
+        "start": 350.57,
+        "duration": 2.626
+    },
+    {
+        "text": "I want you to take some time digging into a deceptively simple example, a pendulum.",
+        "start": 353.196,
+        "duration": 4.114
+    },
+    {
+        "text": "How does this angle theta that it makes with the vertical change as a function of time?",
+        "start": 357.91,
+        "duration": 5.2
+    },
+    {
+        "text": "This is often given as an example in introductory physics classes of harmonic motion, ",
+        "start": 364.03,
+        "duration": 4.637
+    },
+    {
+        "text": "meaning it oscillates like a sine wave.",
+        "start": 368.667,
+        "duration": 2.103
+    },
+    {
+        "text": "More specifically, one with a period of 2 pi times the square root of l over g, ",
+        "start": 370.77,
+        "duration": 5.509
+    },
+    {
+        "text": "where l is the length of the pendulum and g is the strength of gravity.",
+        "start": 376.279,
+        "duration": 4.891
+    },
+    {
+        "text": "However, these formulas are actually lies, or rather, ",
+        "start": 382.71,
+        "duration": 3.192
+    },
+    {
+        "text": "approximations which only work in the realm of small angles.",
+        "start": 385.902,
+        "duration": 3.548
+    },
+    {
+        "text": "If you were to go and measure an actual pendulum, ",
+        "start": 389.95,
+        "duration": 2.766
+    },
+    {
+        "text": "what you'd find is that as you pull it out farther, ",
+        "start": 392.716,
+        "duration": 2.878
+    },
+    {
+        "text": "the period is longer than what the high school physics formulas would suggest.",
+        "start": 395.594,
+        "duration": 4.316
+    },
+    {
+        "text": "And when you pull it out really far, this value of theta ",
+        "start": 403.75,
+        "duration": 3.277
+    },
+    {
+        "text": "plotted versus time doesn't even look like a sine wave anymore.",
+        "start": 407.027,
+        "duration": 3.623
+    },
+    {
+        "text": "To understand what's really going on, first things first, ",
+        "start": 414.91,
+        "duration": 2.559
+    },
+    {
+        "text": "let's set up the differential equation.",
+        "start": 417.469,
+        "duration": 1.721
+    },
+    {
+        "text": "We'll measure the position of the pendulum's weight as a distance x along this arc, ",
+        "start": 419.77,
+        "duration": 4.97
+    },
+    {
+        "text": "and if the angle theta we care about is measured in radians, ",
+        "start": 424.74,
+        "duration": 3.609
+    },
+    {
+        "text": "we can write x as l times theta, where l is the length of the pendulum.",
+        "start": 428.349,
+        "duration": 4.201
+    },
+    {
+        "text": "As usual, gravity pulls down with an acceleration of g, ",
+        "start": 433.35,
+        "duration": 3.133
+    },
+    {
+        "text": "but because the pendulum constrains the motion of this mass, ",
+        "start": 436.483,
+        "duration": 3.414
+    },
+    {
+        "text": "we have to look at the component of this acceleration in the direction of motion.",
+        "start": 439.897,
+        "duration": 4.533
+    },
+    {
+        "text": "A little geometry exercise for you is to show ",
+        "start": 445.19,
+        "duration": 2.944
+    },
+    {
+        "text": "that this little angle here is the same as theta.",
+        "start": 448.134,
+        "duration": 3.136
+    },
+    {
+        "text": "So the component of gravity in the direction of motion ",
+        "start": 455.01,
+        "duration": 4.564
+    },
+    {
+        "text": "opposite this angle will be negative g times sine of theta.",
+        "start": 459.574,
+        "duration": 4.896
+    },
+    {
+        "text": "Here we're considering theta to be positive when the pendulum is swung to the right, ",
+        "start": 466.13,
+        "duration": 4.02
+    },
+    {
+        "text": "and negative when it's swung to the left.",
+        "start": 470.15,
+        "duration": 1.94
+    },
+    {
+        "text": "This minus sign in the acceleration indicates that it's ",
+        "start": 472.65,
+        "duration": 3.135
+    },
+    {
+        "text": "always pointed in the opposite direction from displacement.",
+        "start": 475.785,
+        "duration": 3.305
+    },
+    {
+        "text": "So what we have is that the second derivative of x, ",
+        "start": 480.45,
+        "duration": 3.099
+    },
+    {
+        "text": "the acceleration, is negative g times sine of theta.",
+        "start": 483.549,
+        "duration": 3.101
+    },
+    {
+        "text": "As always, it's nice to do a quick gut check that our formula makes physical sense.",
+        "start": 487.55,
+        "duration": 3.96
+    },
+    {
+        "text": "When theta is zero, sine of zero is zero, so there's ",
+        "start": 492.11,
+        "duration": 3.104
+    },
+    {
+        "text": "no acceleration in the direction of movement.",
+        "start": 495.214,
+        "duration": 2.636
+    },
+    {
+        "text": "When theta is 90 degrees, sine of theta is 1, so the ",
+        "start": 498.33,
+        "duration": 3.16
+    },
+    {
+        "text": "acceleration is the same as it would be for freefall.",
+        "start": 501.49,
+        "duration": 3.16
+    },
+    {
+        "text": "Alright, that checks out.",
+        "start": 505.31,
+        "duration": 1.2
+    },
+    {
+        "text": "And because x is L times theta, that means the second ",
+        "start": 507.15,
+        "duration": 3.944
+    },
+    {
+        "text": "derivative of theta is negative g over L times sine of theta.",
+        "start": 511.094,
+        "duration": 4.455
+    },
+    {
+        "text": "To be a little more realistic, let's add in a term to account for the air resistance, ",
+        "start": 516.33,
+        "duration": 4.234
+    },
+    {
+        "text": "which maybe we model as being proportional to the velocity.",
+        "start": 520.564,
+        "duration": 2.906
+    },
+    {
+        "text": "We'll write this as negative mu times theta dot, ",
+        "start": 524.049,
+        "duration": 2.624
+    },
+    {
+        "text": "where mu is some constant that encapsulates all the air resistance ",
+        "start": 526.673,
+        "duration": 3.587
+    },
+    {
+        "text": "and friction and such that determines how quickly the pendulum loses energy.",
+        "start": 530.26,
+        "duration": 4.07
+    },
+    {
+        "text": "Now this, my friends, is a particularly juicy differential equation.",
+        "start": 535.65,
+        "duration": 4.16
+    },
+    {
+        "text": "It's not easy to solve, but it's not so hard that we can't ",
+        "start": 540.21,
+        "duration": 2.877
+    },
+    {
+        "text": "reasonably get some meaningful understanding out of it.",
+        "start": 543.087,
+        "duration": 2.683
+    },
+    {
+        "text": "At first glance, you might think that the sine function you ",
+        "start": 546.23,
+        "duration": 2.732
+    },
+    {
+        "text": "see here relates to the sine wave pattern for the pendulum.",
+        "start": 548.962,
+        "duration": 2.688
+    },
+    {
+        "text": "Ironically, though, what you'll eventually find is that the opposite is true.",
+        "start": 552.17,
+        "duration": 3.62
+    },
+    {
+        "text": "The presence of the sine in this equation is precisely ",
+        "start": 556.31,
+        "duration": 3.108
+    },
+    {
+        "text": "why real pendulums don't oscillate with a sine wave pattern.",
+        "start": 559.418,
+        "duration": 3.392
+    },
+    {
+        "text": "If that sounds odd, consider the fact that here, ",
+        "start": 563.49,
+        "duration": 2.781
+    },
+    {
+        "text": "the sine function is taking theta as an input, ",
+        "start": 566.271,
+        "duration": 2.669
+    },
+    {
+        "text": "but in the approximate solution you might see in a physics class, ",
+        "start": 568.94,
+        "duration": 3.746
+    },
+    {
+        "text": "theta itself is oscillating as the output of a sine function.",
+        "start": 572.686,
+        "duration": 3.464
+    },
+    {
+        "text": "Clearly something fishy is afoot.",
+        "start": 576.95,
+        "duration": 1.6
+    },
+    {
+        "text": "One thing I like about this example is that, even though it's comparatively simple, ",
+        "start": 579.36,
+        "duration": 4.015
+    },
+    {
+        "text": "it exposes an important truth about differential equations that you need to grapple with.",
+        "start": 583.375,
+        "duration": 4.255
+    },
+    {
+        "text": "They're really freaking hard to solve.",
+        "start": 588.07,
+        "duration": 1.68
+    },
+    {
+        "text": "In this case, if we remove that dampening term, ",
+        "start": 590.33,
+        "duration": 2.923
+    },
+    {
+        "text": "we can just barely write down an analytic solution, but it's hilariously complicated.",
+        "start": 593.253,
+        "duration": 5.177
+    },
+    {
+        "text": "It involves all these functions you've probably never heard of, ",
+        "start": 598.89,
+        "duration": 2.963
+    },
+    {
+        "text": "written in terms of integrals and weird inverse integral problems.",
+        "start": 601.853,
+        "duration": 3.057
+    },
+    {
+        "text": "When you step back, presumably the reason for finding a solution is to then be able ",
+        "start": 604.91,
+        "duration": 4.664
+    },
+    {
+        "text": "to make computations and build an understanding for whatever dynamics you're studying.",
+        "start": 609.574,
+        "duration": 4.776
+    },
+    {
+        "text": "In this case, those questions have been punted off to figuring out how to compute, ",
+        "start": 615.05,
+        "duration": 4.313
+    },
+    {
+        "text": "and more importantly, understand, these new functions.",
+        "start": 619.363,
+        "duration": 2.807
+    },
+    {
+        "text": "And more often, like if we add back in that dampening term, ",
+        "start": 623.07,
+        "duration": 3.638
+    },
+    {
+        "text": "there's not a known way to write down an exact analytic solution.",
+        "start": 626.708,
+        "duration": 3.942
+    },
+    {
+        "text": "Well, for any hard problem you could just define a new function to be the answer of ",
+        "start": 631.17,
+        "duration": 4.4
+    },
+    {
+        "text": "that problem, heck, even name it after yourself if you want, but again, ",
+        "start": 635.57,
+        "duration": 3.771
+    },
+    {
+        "text": "that's pointless unless it leads you to being able to make computations and build ",
+        "start": 639.341,
+        "duration": 4.295
+    },
+    {
+        "text": "understanding.",
+        "start": 643.636,
+        "duration": 0.734
+    },
+    {
+        "text": "So instead, in the study of differential equations, we often do a sort of short circuit, ",
+        "start": 645.35,
+        "duration": 4.82
+    },
+    {
+        "text": "and skip the actual solution part, since it's unattainable, ",
+        "start": 650.17,
+        "duration": 3.25
+    },
+    {
+        "text": "and go straight to building understanding and making computations from the ",
+        "start": 653.42,
+        "duration": 4.063
+    },
+    {
+        "text": "equations alone.",
+        "start": 657.483,
+        "duration": 0.867
+    },
+    {
+        "text": "Let me walk through what that might look like with a pendulum.",
+        "start": 658.35,
+        "duration": 2.96
+    },
+    {
+        "text": "What do you hold in your head, or what visualization can you get some software ",
+        "start": 662.81,
+        "duration": 4.176
+    },
+    {
+        "text": "to pull up for you, to understand the many possible ways that a pendulum, ",
+        "start": 666.986,
+        "duration": 3.912
+    },
+    {
+        "text": "governed by these laws, might evolve depending on its starting conditions?",
+        "start": 670.898,
+        "duration": 3.912
+    },
+    {
+        "text": "You might be tempted to try imagining the graph of theta vs.",
+        "start": 675.73,
+        "duration": 3.1
+    },
+    {
+        "text": "t, and somehow interpreting how this slope, position, ",
+        "start": 678.95,
+        "duration": 3.121
+    },
+    {
+        "text": "and curvature all interrelate with each other.",
+        "start": 682.071,
+        "duration": 2.659
+    },
+    {
+        "text": "However, what will turn out to be both easier and more general is to ",
+        "start": 685.25,
+        "duration": 4.2
+    },
+    {
+        "text": "start by visualizing all possible states in a two-dimensional plane.",
+        "start": 689.45,
+        "duration": 4.14
+    },
+    {
+        "text": "What I mean by the state of the pendulum is that you can describe it with two numbers, ",
+        "start": 697.19,
+        "duration": 4.421
+    },
+    {
+        "text": "the angle and the angular velocity.",
+        "start": 701.611,
+        "duration": 1.779
+    },
+    {
+        "text": "You can freely change either one of those two values without necessarily ",
+        "start": 703.93,
+        "duration": 3.909
+    },
+    {
+        "text": "changing the other, but the acceleration is purely a function of those two values.",
+        "start": 707.839,
+        "duration": 4.391
+    },
+    {
+        "text": "So each point of this two-dimensional plane fully ",
+        "start": 712.99,
+        "duration": 3.0
+    },
+    {
+        "text": "describes the pendulum at any given moment.",
+        "start": 715.99,
+        "duration": 2.58
+    },
+    {
+        "text": "You might think of these as all possible initial conditions of that pendulum.",
+        "start": 719.39,
+        "duration": 3.94
+    },
+    {
+        "text": "If you know the initial angle and the angular velocity, ",
+        "start": 723.63,
+        "duration": 3.575
+    },
+    {
+        "text": "that's enough to predict how the system will evolve as time moves forward.",
+        "start": 727.205,
+        "duration": 4.725
+    },
+    {
+        "text": "If you haven't worked with them before, these ",
+        "start": 734.21,
+        "duration": 2.037
+    },
+    {
+        "text": "sorts of diagrams can take a little getting used to.",
+        "start": 736.247,
+        "duration": 2.303
+    },
+    {
+        "text": "What you're looking at now, this inward spiral, ",
+        "start": 738.55,
+        "duration": 2.728
+    },
+    {
+        "text": "is a fairly typical trajectory for our pendulum, ",
+        "start": 741.278,
+        "duration": 2.786
+    },
+    {
+        "text": "so take a moment to think carefully about what is being represented.",
+        "start": 744.064,
+        "duration": 3.866
+    },
+    {
+        "text": "Notice how at the start, as theta decreases, theta dot, ",
+        "start": 750.07,
+        "duration": 3.721
+    },
+    {
+        "text": "the y-coordinate, gets more negative.",
+        "start": 753.791,
+        "duration": 2.459
+    },
+    {
+        "text": "Which makes sense, because the pendulum moves faster ",
+        "start": 756.99,
+        "duration": 2.833
+    },
+    {
+        "text": "in the leftward direction as it approaches the bottom.",
+        "start": 759.823,
+        "duration": 2.887
+    },
+    {
+        "text": "Keep in mind, even though the velocity vector on this pendulum is pointed to the left, ",
+        "start": 763.59,
+        "duration": 4.921
+    },
+    {
+        "text": "the value of that velocity is always being represented by ",
+        "start": 768.511,
+        "duration": 3.282
+    },
+    {
+        "text": "the vertical component of our space.",
+        "start": 771.793,
+        "duration": 2.037
+    },
+    {
+        "text": "It's important to remind yourself that this state space is an abstract thing, ",
+        "start": 774.53,
+        "duration": 4.056
+    },
+    {
+        "text": "and is distinct from the physical space where the pendulum itself lives and moves.",
+        "start": 778.586,
+        "duration": 4.264
+    },
+    {
+        "text": "Since we're modeling this as losing some of its energy to air resistance, ",
+        "start": 784.8,
+        "duration": 4.302
+    },
+    {
+        "text": "this trajectory spirals inward, meaning the peak velocity and ",
+        "start": 789.102,
+        "duration": 3.606
+    },
+    {
+        "text": "peak displacement each go down a bit with each swing.",
+        "start": 792.708,
+        "duration": 3.082
+    },
+    {
+        "text": "Our point is, in a sense, attracted to the origin, where theta and theta dot both equal 0.",
+        "start": 796.35,
+        "duration": 6.26
+    },
+    {
+        "text": "With this space, we can visualize a differential equation as a vector field.",
+        "start": 805.81,
+        "duration": 4.1
+    },
+    {
+        "text": "Here, let me show you what I mean.",
+        "start": 810.49,
+        "duration": 1.14
+    },
+    {
+        "text": "The pendulum state is a vector, theta, theta dot.",
+        "start": 811.95,
+        "duration": 3.08
+    },
+    {
+        "text": "Maybe you think of that as an arrow from the origin, or maybe you think of it as a point.",
+        "start": 815.57,
+        "duration": 3.74
+    },
+    {
+        "text": "What matters is that it has two coordinates, each a function of time.",
+        "start": 819.75,
+        "duration": 3.92
+    },
+    {
+        "text": "Taking the derivative of that vector gives you its rate of change, ",
+        "start": 823.67,
+        "duration": 4.564
+    },
+    {
+        "text": "the direction and speed that it will tend to move in this diagram.",
+        "start": 828.234,
+        "duration": 4.496
+    },
+    {
+        "text": "That derivative is a new vector, theta dot theta double dot, ",
+        "start": 833.67,
+        "duration": 3.451
+    },
+    {
+        "text": "which we visualize as being attached to the relevant point in space.",
+        "start": 837.121,
+        "duration": 3.849
+    },
+    {
+        "text": "Take a moment to interpret what this is saying.",
+        "start": 843.79,
+        "duration": 1.88
+    },
+    {
+        "text": "The first component for this rate of change vector is theta dot, ",
+        "start": 846.37,
+        "duration": 3.627
+    },
+    {
+        "text": "which is also a coordinate in our space.",
+        "start": 849.997,
+        "duration": 2.233
+    },
+    {
+        "text": "The higher up we are in the diagram, the more the point tends to move to the right, ",
+        "start": 852.79,
+        "duration": 5.063
+    },
+    {
+        "text": "and the lower we are, the more it tends to move to the left.",
+        "start": 857.853,
+        "duration": 3.617
+    },
+    {
+        "text": "The vertical component is theta double dot, which our differential ",
+        "start": 864.33,
+        "duration": 3.838
+    },
+    {
+        "text": "equation lets us rewrite entirely in terms of theta and theta dot itself.",
+        "start": 868.168,
+        "duration": 4.182
+    },
+    {
+        "text": "In other words, the first derivative of our state vector is some function of ",
+        "start": 872.95,
+        "duration": 4.064
+    },
+    {
+        "text": "that vector itself, with most of the intricacy tied up in that second coordinate.",
+        "start": 877.014,
+        "duration": 4.276
+    },
+    {
+        "text": "Doing the same at all points of this space will show ",
+        "start": 881.29,
+        "duration": 3.107
+    },
+    {
+        "text": "how that state tends to change from any position.",
+        "start": 884.397,
+        "duration": 2.873
+    },
+    {
+        "text": "As is typical with vector fields, we artificially scale down the vectors when ",
+        "start": 888.27,
+        "duration": 3.713
+    },
+    {
+        "text": "we draw them to prevent clutter, but use color to loosely indicate magnitude.",
+        "start": 891.983,
+        "duration": 3.667
+    },
+    {
+        "text": "Notice we've effectively broken up a single second-order ",
+        "start": 896.95,
+        "duration": 3.44
+    },
+    {
+        "text": "equation into a system of two first-order equations.",
+        "start": 900.39,
+        "duration": 3.14
+    },
+    {
+        "text": "You might even give theta dot a different name, ",
+        "start": 904.23,
+        "duration": 2.493
+    },
+    {
+        "text": "to emphasize that we're really thinking of two separate values, ",
+        "start": 906.723,
+        "duration": 3.326
+    },
+    {
+        "text": "intertwined via this mutual effect they have on one another's rate of change.",
+        "start": 910.049,
+        "duration": 4.001
+    },
+    {
+        "text": "This is a common trick in the study of differential equations.",
+        "start": 914.59,
+        "duration": 2.8
+    },
+    {
+        "text": "Instead of thinking about higher order changes of a single value, ",
+        "start": 917.85,
+        "duration": 3.63
+    },
+    {
+        "text": "we often prefer to think of the first derivative of vector values.",
+        "start": 921.48,
+        "duration": 3.63
+    },
+    {
+        "text": "In this form, we have a wonderful visual way to ",
+        "start": 925.95,
+        "duration": 2.514
+    },
+    {
+        "text": "think about what solving the equation means.",
+        "start": 928.464,
+        "duration": 2.306
+    },
+    {
+        "text": "As our system evolves from some initial state, ",
+        "start": 931.21,
+        "duration": 3.021
+    },
+    {
+        "text": "our point in this space will move along some trajectory in such a ",
+        "start": 934.231,
+        "duration": 4.242
+    },
+    {
+        "text": "way that at every moment, the velocity of that point matches the vector from this field.",
+        "start": 938.473,
+        "duration": 5.657
+    },
+    {
+        "text": "And again, keep in mind, this velocity is not the same thing as ",
+        "start": 944.79,
+        "duration": 3.665
+    },
+    {
+        "text": "the physical velocity of the pendulum, it's a more abstract rate of change, ",
+        "start": 948.455,
+        "duration": 4.353
+    },
+    {
+        "text": "encoding the rates of change for both theta and theta dot.",
+        "start": 952.808,
+        "duration": 3.322
+    },
+    {
+        "text": "You might find it fun to pause for a moment and think through ",
+        "start": 957.23,
+        "duration": 2.989
+    },
+    {
+        "text": "what exactly some of these trajectory lines say about the possible ",
+        "start": 960.219,
+        "duration": 3.23
+    },
+    {
+        "text": "ways the pendulum evolves from different starting conditions.",
+        "start": 963.449,
+        "duration": 2.941
+    },
+    {
+        "text": "For example, in regions where theta dot is quite high, ",
+        "start": 969.43,
+        "duration": 3.198
+    },
+    {
+        "text": "the vectors guide the point to travel to the right quite a ways before settling ",
+        "start": 972.628,
+        "duration": 4.652
+    },
+    {
+        "text": "down into an inward spiral.",
+        "start": 977.28,
+        "duration": 1.57
+    },
+    {
+        "text": "This corresponds to a pendulum with a high enough initial velocity that it ",
+        "start": 979.67,
+        "duration": 4.213
+    },
+    {
+        "text": "fully rotates around several times before settling into a decaying back and forth.",
+        "start": 983.883,
+        "duration": 4.607
+    },
+    {
+        "text": "Having a little more fun?",
+        "start": 991.21,
+        "duration": 1.56
+    },
+    {
+        "text": "When I tweak this air resistance term, mu, say increasing it, ",
+        "start": 993.27,
+        "duration": 3.877
+    },
+    {
+        "text": "you can immediately see how this will result in trajectories that spiral inward faster, ",
+        "start": 997.147,
+        "duration": 5.503
+    },
+    {
+        "text": "which is to say the pendulum slows down faster.",
+        "start": 1002.65,
+        "duration": 2.94
+    },
+    {
+        "text": "That's obvious when I call it the air resistance term, ",
+        "start": 1006.13,
+        "duration": 2.611
+    },
+    {
+        "text": "but imagine that you saw these equations out of context, ",
+        "start": 1008.741,
+        "duration": 2.707
+    },
+    {
+        "text": "not knowing that they described a pendulum.",
+        "start": 1011.448,
+        "duration": 2.042
+    },
+    {
+        "text": "It's not obvious just looking at them that increasing this value of mu ",
+        "start": 1014.01,
+        "duration": 4.29
+    },
+    {
+        "text": "means the system as a whole tends towards some attracting state faster.",
+        "start": 1018.3,
+        "duration": 4.29
+    },
+    {
+        "text": "So getting some software to draw these vector fields for you ",
+        "start": 1023.39,
+        "duration": 2.85
+    },
+    {
+        "text": "can be a great way to build an intuition for how they behave.",
+        "start": 1026.24,
+        "duration": 2.849
+    },
+    {
+        "text": "What's wonderful is that any system of ordinary differential equations can be ",
+        "start": 1029.93,
+        "duration": 4.175
+    },
+    {
+        "text": "described by a vector field like this, so it's a very general way to get a feel for them.",
+        "start": 1034.105,
+        "duration": 4.764
+    },
+    {
+        "text": "Usually, though, they have many more dimensions.",
+        "start": 1039.47,
+        "duration": 2.619
+    },
+    {
+        "text": "For example, consider the famous three-body problem, ",
+        "start": 1042.72,
+        "duration": 2.843
+    },
+    {
+        "text": "which is to predict how three masses in three-dimensional space evolve if ",
+        "start": 1045.563,
+        "duration": 3.97
+    },
+    {
+        "text": "they act on each other with gravity, and if you know their initial positions ",
+        "start": 1049.533,
+        "duration": 4.132
+    },
+    {
+        "text": "and velocities.",
+        "start": 1053.665,
+        "duration": 0.805
+    },
+    {
+        "text": "Each mass has three coordinates describing its position, ",
+        "start": 1055.29,
+        "duration": 3.135
+    },
+    {
+        "text": "and three more describing its momentum.",
+        "start": 1058.425,
+        "duration": 2.145
+    },
+    {
+        "text": "So the system has 18 degrees of freedom in total, ",
+        "start": 1061.27,
+        "duration": 3.116
+    },
+    {
+        "text": "and hence an 18-dimensional space of possible states.",
+        "start": 1064.386,
+        "duration": 3.304
+    },
+    {
+        "text": "It's a bizarre thought, isn't it?",
+        "start": 1068.25,
+        "duration": 1.72
+    },
+    {
+        "text": "A single point meandering through an 18-dimensional space that we cannot visualize, ",
+        "start": 1070.23,
+        "duration": 4.748
+    },
+    {
+        "text": "obediently taking steps through time based on whatever vector it happens to ",
+        "start": 1074.978,
+        "duration": 4.295
+    },
+    {
+        "text": "be sitting on from moment to moment, completely encoding the positions and ",
+        "start": 1079.273,
+        "duration": 4.24
+    },
+    {
+        "text": "the momenta of the three masses we see in ordinary, physical 3D space.",
+        "start": 1083.513,
+        "duration": 3.957
+    },
+    {
+        "text": "In practice, you can reduce the number of dimensions here by taking ",
+        "start": 1088.65,
+        "duration": 3.202
+    },
+    {
+        "text": "advantage of the symmetries of your setup, but the point that more ",
+        "start": 1091.852,
+        "duration": 3.156
+    },
+    {
+        "text": "degrees of freedom results in higher dimensional state spaces remains the same.",
+        "start": 1095.008,
+        "duration": 3.722
+    },
+    {
+        "text": "In math, we often call a space like this a phase space.",
+        "start": 1101.29,
+        "duration": 3.24
+    },
+    {
+        "text": "You'll hear me use that term broadly for spaces encoding all kinds of ",
+        "start": 1105.09,
+        "duration": 3.814
+    },
+    {
+        "text": "states of changing systems, but you should know that in the context of physics, ",
+        "start": 1108.904,
+        "duration": 4.359
+    },
+    {
+        "text": "especially Hamiltonian mechanics, the term is often reserved for a more special case, ",
+        "start": 1113.263,
+        "duration": 4.686
+    },
+    {
+        "text": "namely a space whose axes represent position and momentum.",
+        "start": 1117.949,
+        "duration": 3.161
+    },
+    {
+        "text": "So a physicist would agree that the 18-dimensional space describing the ",
+        "start": 1121.89,
+        "duration": 3.673
+    },
+    {
+        "text": "three-body problem is a phase space, but they might ask that we make a couple ",
+        "start": 1125.563,
+        "duration": 3.98
+    },
+    {
+        "text": "of modifications to our pendulum setup for it to properly deserve the term.",
+        "start": 1129.543,
+        "duration": 3.827
+    },
+    {
+        "text": "For those of you who just watched the block collision video, ",
+        "start": 1134.25,
+        "duration": 2.951
+    },
+    {
+        "text": "the planes we worked with there would be called phase spaces by math folk, ",
+        "start": 1137.201,
+        "duration": 3.629
+    },
+    {
+        "text": "though a physicist might prefer other terminology.",
+        "start": 1140.83,
+        "duration": 2.42
+    },
+    {
+        "text": "Just know that the specific meaning may depend on your context.",
+        "start": 1143.89,
+        "duration": 2.94
+    },
+    {
+        "text": "It may seem like a simple idea, depending on how well indoctrinated you ",
+        "start": 1147.87,
+        "duration": 3.829
+    },
+    {
+        "text": "are to modern ways of thinking about math, but it's worth keeping in mind ",
+        "start": 1151.699,
+        "duration": 3.937
+    },
+    {
+        "text": "that it took humanity quite a while to really embrace thinking of dynamics ",
+        "start": 1155.636,
+        "duration": 3.989
+    },
+    {
+        "text": "spatially like this, especially when the dimensions get very large.",
+        "start": 1159.625,
+        "duration": 3.565
+    },
+    {
+        "text": "In his book Chaos, the author James Glick describes phase space as, ",
+        "start": 1163.89,
+        "duration": 4.215
+    },
+    {
+        "text": "\"One of the most powerful inventions of modern science\". ",
+        "start": 1168.105,
+        "duration": 3.534
+    },
+    {
+        "text": "One reason its powerful is that you can ask questions, ",
+        "start": 1171.639,
+        "duration": 3.41
+    },
+    {
+        "text": "not just about a single initial condition but about a whole spectrum of initial states. ",
+        "start": 1175.049,
+        "duration": 5.455
+    },
+    {
+        "text": "The collection of all possible trajectories is reminiscent of a moving fluid. ",
+        "start": 1180.504,
+        "duration": 4.836
+    },
+    {
+        "text": "So we call it phase flow.",
+        "start": 1185.34,
+        "duration": 1.55
+    },
+    {
+        "text": "To take one example of why phase flow is a fruitful idea, ",
+        "start": 1186.89,
+        "duration": 3.205
+    },
+    {
+        "text": "consider the question of stability.",
+        "start": 1190.095,
+        "duration": 1.935
+    },
+    {
+        "text": "The origin of our space corresponds to the pendulum standing still, ",
+        "start": 1192.91,
+        "duration": 3.754
+    },
+    {
+        "text": "and so does this point over here, representing when the pendulum is perfectly ",
+        "start": 1196.664,
+        "duration": 4.307
+    },
+    {
+        "text": "balanced upright.",
+        "start": 1200.971,
+        "duration": 0.939
+    },
+    {
+        "text": "These are the so-called fixed points of our system, ",
+        "start": 1202.77,
+        "duration": 2.848
+    },
+    {
+        "text": "and one natural question to ask is whether or not they're stable, that is, ",
+        "start": 1205.618,
+        "duration": 4.109
+    },
+    {
+        "text": "will tiny nudges to the system result in a state that tends back towards that ",
+        "start": 1209.727,
+        "duration": 4.274
+    },
+    {
+        "text": "fixed point, or away from it?",
+        "start": 1214.001,
+        "duration": 1.589
+    },
+    {
+        "text": "Physical intuition for the pendulum makes the answer here kind of obvious, ",
+        "start": 1216.15,
+        "duration": 3.791
+    },
+    {
+        "text": "but how would you think about stability just looking at the equations, ",
+        "start": 1219.941,
+        "duration": 3.59
+    },
+    {
+        "text": "say if they arose in some completely different less intuitive context?",
+        "start": 1223.531,
+        "duration": 3.539
+    },
+    {
+        "text": "We'll go over how to compute the answers to questions like this in following videos, ",
+        "start": 1228.05,
+        "duration": 4.394
+    },
+    {
+        "text": "and the intuition for the relevant computations are guided heavily by ",
+        "start": 1232.444,
+        "duration": 3.619
+    },
+    {
+        "text": "the thought of looking at small regions in space around a fixed point, ",
+        "start": 1236.063,
+        "duration": 3.671
+    },
+    {
+        "text": "and asking whether the flow tends to contract or expand.",
+        "start": 1239.734,
+        "duration": 2.896
+    },
+    {
+        "text": "And speaking of attraction and stability, let's take a brief side-step to talk about love.",
+        "start": 1244.81,
+        "duration": 4.92
+    },
+    {
+        "text": "The Strogatz quote that I mentioned earlier comes from a whimsical column in ",
+        "start": 1250.57,
+        "duration": 3.524
+    },
+    {
+        "text": "the New York Times on the mathematics of modelling affection, ",
+        "start": 1254.094,
+        "duration": 2.838
+    },
+    {
+        "text": "an example well worth pilfering to illustrate that we're not just talking ",
+        "start": 1256.932,
+        "duration": 3.388
+    },
+    {
+        "text": "about physics here.",
+        "start": 1260.32,
+        "duration": 0.87
+    },
+    {
+        "text": "Imagine you've been flirting with someone, but there's been some frustrating ",
+        "start": 1261.55,
+        "duration": 3.77
+    },
+    {
+        "text": "inconsistency to how mutual your affection seems, ",
+        "start": 1265.32,
+        "duration": 2.448
+    },
+    {
+        "text": "and perhaps during a moment when you turn your attention towards physics ",
+        "start": 1267.768,
+        "duration": 3.574
+    },
+    {
+        "text": "to keep your mind off the romantic turmoil, mulling over the broken-up ",
+        "start": 1271.342,
+        "duration": 3.476
+    },
+    {
+        "text": "pendulum equations, you suddenly understand the on-again-off-again dynamics ",
+        "start": 1274.818,
+        "duration": 3.721
+    },
+    {
+        "text": "of your flirtation.",
+        "start": 1278.539,
+        "duration": 0.931
+    },
+    {
+        "text": "You've noticed that your own affection tends to increase when your ",
+        "start": 1279.89,
+        "duration": 4.342
+    },
+    {
+        "text": "companion seems interested in you, but decrease when they seem colder.",
+        "start": 1284.232,
+        "duration": 4.538
+    },
+    {
+        "text": "That is, the rate of change for your love is proportional to their feelings for you.",
+        "start": 1289.91,
+        "duration": 5.28
+    },
+    {
+        "text": "But this sweetheart of yours is precisely the opposite, ",
+        "start": 1295.81,
+        "duration": 3.209
+    },
+    {
+        "text": "strangely attracted to you when you seem uninterested, ",
+        "start": 1299.019,
+        "duration": 3.153
+    },
+    {
+        "text": "but turned off once you seem too keen.",
+        "start": 1302.172,
+        "duration": 2.178
+    },
+    {
+        "text": "The phase space for these equations looks very ",
+        "start": 1306.45,
+        "duration": 2.354
+    },
+    {
+        "text": "similar to the center part of your pendulum diagram.",
+        "start": 1308.804,
+        "duration": 2.606
+    },
+    {
+        "text": "The two of you will go back and forth between affection and repulsion in an endless cycle.",
+        "start": 1311.79,
+        "duration": 5.2
+    },
+    {
+        "text": "A metaphor of pendulum swings in your feelings would not just be apt, ",
+        "start": 1318.81,
+        "duration": 3.414
+    },
+    {
+        "text": "but mathematically verified.",
+        "start": 1322.224,
+        "duration": 1.366
+    },
+    {
+        "text": "In fact, if your partner's feelings were further slowed when they feel ",
+        "start": 1323.59,
+        "duration": 3.81
+    },
+    {
+        "text": "themselves too in love, let's say out of a fear of being made vulnerable, ",
+        "start": 1327.4,
+        "duration": 3.972
+    },
+    {
+        "text": "we'd have a term matching the friction in the pendulum, ",
+        "start": 1331.372,
+        "duration": 3.005
+    },
+    {
+        "text": "and you too would be destined to an inward spiral towards mutual ambivalence.",
+        "start": 1334.377,
+        "duration": 4.133
+    },
+    {
+        "text": "I hear wedding bells already.",
+        "start": 1339.09,
+        "duration": 1.22
+    },
+    {
+        "text": "The point is that two very different-seeming laws of dynamics, one from physics, ",
+        "start": 1341.31,
+        "duration": 4.559
+    },
+    {
+        "text": "involving a single variable, and another from, uh, chemistry, with two variables, ",
+        "start": 1345.869,
+        "duration": 4.615
+    },
+    {
+        "text": "actually have a very similar structure, easier to recognize when you're looking at the ",
+        "start": 1350.484,
+        "duration": 4.897
+    },
+    {
+        "text": "phase diagram.",
+        "start": 1355.381,
+        "duration": 0.789
+    },
+    {
+        "text": "Most notably, even though the equations are different, ",
+        "start": 1356.89,
+        "duration": 2.847
+    },
+    {
+        "text": "for example there's no sine function in the romance equations, ",
+        "start": 1359.737,
+        "duration": 3.262
+    },
+    {
+        "text": "the phase space exposes an underlying similarity nevertheless.",
+        "start": 1362.999,
+        "duration": 3.211
+    },
+    {
+        "text": "In other words, you're not just studying a pendulum right now, ",
+        "start": 1367.23,
+        "duration": 3.328
+    },
+    {
+        "text": "the tactics you develop to study one case have a tendency to transfer to many others.",
+        "start": 1370.558,
+        "duration": 4.492
+    },
+    {
+        "text": "Okay, so phase diagrams are a nice way to build understanding, ",
+        "start": 1377.45,
+        "duration": 3.404
+    },
+    {
+        "text": "but what about actually computing the answer to our equation?",
+        "start": 1380.854,
+        "duration": 3.296
+    },
+    {
+        "text": "One way to do this is to essentially simulate what the universe would do, ",
+        "start": 1385.11,
+        "duration": 3.952
+    },
+    {
+        "text": "but using finite time steps instead of the infinitesimals and limits defining calculus.",
+        "start": 1389.062,
+        "duration": 4.648
+    },
+    {
+        "text": "The basic idea is that if you're at some point in this phase diagram, ",
+        "start": 1394.43,
+        "duration": 3.903
+    },
+    {
+        "text": "take a step based on the vector you're sitting on for a small time step, delta t.",
+        "start": 1398.333,
+        "duration": 4.517
+    },
+    {
+        "text": "Specifically, take a step equal to delta t times that vector.",
+        "start": 1402.85,
+        "duration": 4.14
+    },
+    {
+        "text": "As a reminder, in drawing these vector fields, ",
+        "start": 1407.85,
+        "duration": 2.133
+    },
+    {
+        "text": "the magnitude for each vector has been artificially scaled down to prevent clutter.",
+        "start": 1409.983,
+        "duration": 3.767
+    },
+    {
+        "text": "When you do this repeatedly, your final location will be an approximation of theta t, ",
+        "start": 1414.91,
+        "duration": 5.626
+    },
+    {
+        "text": "where t is the sum of all those time steps.",
+        "start": 1420.536,
+        "duration": 2.814
+    },
+    {
+        "text": "If you think about what's being shown right now, though, ",
+        "start": 1424.33,
+        "duration": 2.57
+    },
+    {
+        "text": "and what that would imply for the pendulum's movement, ",
+        "start": 1426.9,
+        "duration": 2.48
+    },
+    {
+        "text": "you'd probably agree that this is grossly inaccurate.",
+        "start": 1429.38,
+        "duration": 2.39
+    },
+    {
+        "text": "But that's only because the time step delta t of 0.5 is way too big.",
+        "start": 1432.21,
+        "duration": 4.5
+    },
+    {
+        "text": "If we turned it down, say to 0.01, you can get a much more accurate approximation, ",
+        "start": 1437.21,
+        "duration": 5.408
+    },
+    {
+        "text": "it just takes more repeated steps is all.",
+        "start": 1442.618,
+        "duration": 2.672
+    },
+    {
+        "text": "In this case, computing theta of 10 requires 1000 little steps.",
+        "start": 1445.87,
+        "duration": 4.7
+    },
+    {
+        "text": "Luckily, we live in a world with computers, so repeating a simple task 1000 ",
+        "start": 1451.35,
+        "duration": 3.927
+    },
+    {
+        "text": "times is as simple as articulating that task with a programming language.",
+        "start": 1455.277,
+        "duration": 3.773
+    },
+    {
+        "text": "In fact, let's finish things off by writing a little ",
+        "start": 1459.59,
+        "duration": 2.681
+    },
+    {
+        "text": "python program that computes theta of t for us.",
+        "start": 1462.271,
+        "duration": 2.379
+    },
+    {
+        "text": "What it has to do is make use of the differential equation, ",
+        "start": 1465.27,
+        "duration": 3.38
+    },
+    {
+        "text": "which returns the second derivative of theta as a function of theta and theta dot.",
+        "start": 1468.65,
+        "duration": 4.62
+    },
+    {
+        "text": "You start off by defining two variables, theta and theta dot, ",
+        "start": 1474.23,
+        "duration": 3.443
+    },
+    {
+        "text": "each in terms of some initial conditions.",
+        "start": 1477.673,
+        "duration": 2.277
+    },
+    {
+        "text": "In this case I'll have theta start at pi thirds, ",
+        "start": 1480.59,
+        "duration": 2.991
+    },
+    {
+        "text": "which is 60 degrees, and theta dot start at 0.",
+        "start": 1483.581,
+        "duration": 2.809
+    },
+    {
+        "text": "Next, write a loop that corresponds to taking many little time steps ",
+        "start": 1487.05,
+        "duration": 5.003
+    },
+    {
+        "text": "between 0 and time t, each of size delta t, which I'm setting here to be 0.01.",
+        "start": 1492.053,
+        "duration": 5.657
+    },
+    {
+        "text": "In each step of this loop, increase theta by theta dot times delta t, ",
+        "start": 1498.57,
+        "duration": 4.387
+    },
+    {
+        "text": "and increase theta dot by theta double dot times delta t, ",
+        "start": 1502.957,
+        "duration": 3.635
+    },
+    {
+        "text": "where theta double dot can be computed based on the differential equation.",
+        "start": 1506.592,
+        "duration": 4.638
+    },
+    {
+        "text": "After all these little time steps, simply return the value of theta.",
+        "start": 1511.91,
+        "duration": 3.74
+    },
+    {
+        "text": "This is called solving a differential equation numerically.",
+        "start": 1516.69,
+        "duration": 2.72
+    },
+    {
+        "text": "Numerical methods can get way more sophisticated and intricate than this to better ",
+        "start": 1520.05,
+        "duration": 4.15
+    },
+    {
+        "text": "balance the tradeoff between accuracy and efficiency, but this loop gives the basic idea.",
+        "start": 1524.2,
+        "duration": 4.45
+    },
+    {
+        "text": "So even though it sucks that we can't always find exact solutions, ",
+        "start": 1530.53,
+        "duration": 3.295
+    },
+    {
+        "text": "there are still meaningful ways to study differential equations in the face of ",
+        "start": 1533.825,
+        "duration": 3.887
+    },
+    {
+        "text": "this inability.",
+        "start": 1537.712,
+        "duration": 0.738
+    },
+    {
+        "text": "In the following videos, we'll look at several methods for finding exact ",
+        "start": 1538.79,
+        "duration": 4.168
+    },
+    {
+        "text": "solutions when it's possible, but one theme I'd like to focus on is how these ",
+        "start": 1542.958,
+        "duration": 4.454
+    },
+    {
+        "text": "exact solutions can also help us to study the more general, unsolvable cases.",
+        "start": 1547.412,
+        "duration": 4.398
+    },
+    {
+        "text": "But it gets worse.",
+        "start": 1552.79,
+        "duration": 1.26
+    },
+    {
+        "text": "Just as there's a limit to how far exact analytic solutions can get us, ",
+        "start": 1554.69,
+        "duration": 3.678
+    },
+    {
+        "text": "one of the great fields to have emerged in the last century, chaos theory, ",
+        "start": 1558.368,
+        "duration": 3.831
+    },
+    {
+        "text": "has exposed that there are further limits on how well we can use these systems for ",
+        "start": 1562.199,
+        "duration": 4.24
+    },
+    {
+        "text": "prediction with or without solutions.",
+        "start": 1566.439,
+        "duration": 1.891
+    },
+    {
+        "text": "Specifically, we know that for some systems, small variations to the initial conditions, ",
+        "start": 1569.21,
+        "duration": 5.195
+    },
+    {
+        "text": "say the kind due to necessarily imperfect measurements, ",
+        "start": 1574.405,
+        "duration": 3.269
+    },
+    {
+        "text": "result in wildly different trajectories.",
+        "start": 1577.674,
+        "duration": 2.336
+    },
+    {
+        "text": "We've even built some good understanding for why this happens.",
+        "start": 1580.53,
+        "duration": 2.74
+    },
+    {
+        "text": "The three-body problem, for example, is known to have seeds of chaos within it.",
+        "start": 1583.83,
+        "duration": 4.44
+    },
+    {
+        "text": "So looking back at the quote from earlier, it seems almost cruel of the ",
+        "start": 1588.87,
+        "duration": 3.59
+    },
+    {
+        "text": "universe to fill its language with riddles that we either can't solve, ",
+        "start": 1592.46,
+        "duration": 3.541
+    },
+    {
+        "text": "or where we know that any solution would be useless for long-term prediction anyway.",
+        "start": 1596.001,
+        "duration": 4.189
+    },
+    {
+        "text": "It is cruel, but then again it should also be reassuring.",
+        "start": 1600.67,
+        "duration": 3.68
+    },
+    {
+        "text": "It gives some hope that the complexity we see in the world around us can be studied ",
+        "start": 1605.01,
+        "duration": 4.022
+    },
+    {
+        "text": "somewhere in this math, and that it's not hidden away in the mismatch between model and ",
+        "start": 1609.032,
+        "duration": 4.214
+    },
+    {
+        "text": "reality.",
+        "start": 1613.246,
+        "duration": 0.384
+    }
+]

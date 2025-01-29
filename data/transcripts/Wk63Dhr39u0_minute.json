@@ -1,0 +1,274 @@
+[
+    {
+        "start": 0.0,
+        "text": "i'd like to uh introduce today's uh dcmb speaker um stewart silfron from uh icon school of medicine at miles sinai um been the i've had the pleasure of getting to know stuart over the last couple of years as part of the motor pack project molecular transducers of physical activity um that we both um our pis on uh one of uh i guess 20 grants that were are funded as part of this larger nih common fund project um stewart did his undergrad in comparative literature at princeton university um one of the things i got to know about stuart is that he is he's a well-read guy and we've discussed the books on several occasions and now i know why then he went to medical school at columbia university and did an internship in internal medicine and residency in neurology at the mass general and then he did a post-doctoral fellowship at mount sinai "
+    },
+    {
+        "start": 60.399,
+        "text": "and then stayed on and actually rose through the uh uh the ranks where he's now a professor of neurology and neurobiology at the icon school of medicine um he's held numerous uh administrative physicians at mount sinai including serving as chair uh from 2009 to 2015 and now is the director of the center for advanced research and diagnostic assays um at the medical school um his basic and translational research has been mostly focused on pituitary and uh related um activities his he has a strong translational bent to his research career and it has led to over 200 publications in some of the highest quality journals around um he's also a number of patents and and contributed to the development of a couple of drugs in his career which is exciting for any uh clinical translational researcher um stuart uh is an assay genius and and "
+    },
+    {
+        "start": 120.719,
+        "text": "he's going to uh talk to us today about his work with the u.s navy and looking at the spread of the covet virus um he's been telling me a little bit about this work over the last couple of months and that's one of the reasons i twisted his arms to come give us a talk so stewart i want to give you the time you deserve thanks for coming as it were to university of michigan um looking forward to your talk thanks a lot for that very nice introduction check let me find the slides here and you can full screen there we go so um i guess this graph on the right is the increase in covet 19 diagnosed cases and the increase in covet 19 "
+    },
+    {
+        "start": 181.599,
+        "text": "papers and there's almost exactly one to 400 cases paper to cases worldwide so and it's tracked quite consistently through through the pandemic with no lag interestingly enough so um so many of us have become covet 19 researchers and in my case i've also ended up getting deeply involved in clinical studies for the first time in my career and so i'm going to take you a little bit through how we got there and what we've learned and it evolved out of this darpa program involved in which works on blood signature development for infection and then we were asked to support and help stand up this navy program of new marine recruits so i'll take you through "
+    },
+    {
+        "start": 242.959,
+        "text": "um and then the reason we got involved in some darpa godzilla this in large part was to try to generate samples for uh a diagnostic test for covid that might be earlier than the pcr test although i think it was really designed for a different country that did not have so many cases that our test positivity is running at 10 much of the time so i think a more sensitive test is not necessarily needed the idea of this was for trying to uh facilitate limiting quarantine and ruling people out from being infected many of them the darpa program was is called echo it started in may 2019 and the idea is to try to use epigenetic characterization to "
+    },
+    {
+        "start": 303.68,
+        "text": "predict someone's exposure to specific infections when they were exposed and also to chemicals and radiation and other components of weapons of mass destruction but significant emphasis on infection and also to develop a portable device that would work in a field on a small blood sample which which i won't go into that aspect of it and in part you know chuck and i are involved in motor pack and motor pack was has been so slow and and so lumbering in getting things going getting samples generated it's it's incredible study but it's very complicated and so when when i saw the announcement for this program i thought gee this is something that maybe we could do we could do faster and uh as a sort of a motor mini motor pack like study that we'd have "
+    },
+    {
+        "start": 364.4,
+        "text": "control over more of the aspects and not have to deal with as many committees but it was ended up being a little faster than i would have expected so the approach um we follow is a consortium we've assembled of investigators to various institutions and we take bbmc samples cryopreserved and and put them through data generation also integrated with any public data we can obtain we've developed some new ml tools for for building models and we identify a diagnostic signature down sample it and then try to validate it on independent data and to give you kind of a couple examples of things we got to before covet hit this this is a small data set of uh singles lrnaseq and "
+    },
+    {
+        "start": 426.96,
+        "text": "single cell attack seek on on the same samples of individuals who had been infected with mrsa or mssa and xi chen and i know olga trying skya spoke here uh uh a while ago i work very closely with her a number of people were collaborating with in her group and she chen took the differential expressed enhancers and mapped them to differential express genes via geopad and their enhancement prediction compendium and then use that to train a classifier it's not a huge data set but you can get a nice segregation of the mssa and mrsa samples from their chromatin accessibility differential accessibility and and differential enhancers uh winnowed down to this group "
+    },
+    {
+        "start": 487.12,
+        "text": "we also did a study that's still ongoing of organophosphate exposure uh pesticide exposure in in migrant field workers that's being led by lisa satterwhite at duke and um uh in this case uh we've we've only studied the rna-seq at this point the other data we're just getting around to generate now it got held up by the pandemic but interesting enough you can you can pretty nicely separate your control individuals from your pesticide exposed individuals and the transcripts that are differentially expressed have an incredibly high mapping rate to degenerative diseases cancers things like that it's it's kind of a shocking group of differentially expressed transcripts that are that underlie the model prediction with quite good accuracy of who's who's "
+    },
+    {
+        "start": 548.399,
+        "text": "exposed and who's who's not so when coveted darp asked us to turn our attention to trying to generate a covert 19 blood test with the idea that there's a intergenerational period here between when you're infected between when you can shed that's somewhere between three and eight days according to the modeling studies that have come out since when you know if you've been infected you'll have a negative virus pcr test and and the idea was that by looking at host response-based assay and blood you could find a test that would turn positive earlier and in principle use this if you've got individuals exposed and you're tracing you could you could more accurately rule out who's actually infected and who's not uh and not need to quarantine everyone "
+    },
+    {
+        "start": 610.32,
+        "text": "um who's been exposed and so uh you know the idea is to basically put this through the same type of analysis pipeline i described with some some tweaks for covid the problem uh especially early this started back in february march was was obtaining samples and obtaining data and so we ended up getting involved in collaboration with unmc who had sort of the first samples in the country because they they collected the patients from the princess cruise that was first infected although we ended up getting very very little information from their their sample collection um and then we've supported these uh two related studies of covet infected and and longitudinal um new marine recruits uh called the charm study i'll tell you about it we also ran a "
+    },
+    {
+        "start": 670.32,
+        "text": "high-risk health care worker about sinai but unfortunately or fortunately the pandemic just passed the new york the first peak as as we launched the study so we had a very very few subjects turned positive during the longitudinal study so the charm study is the covid health action response for marine study it's led by andrew letizia who's a physician infectious disease researcher and it really was planned in april 2020 the first subjects were enrolled in may mid-may 2020 the initial longitudinal study was completed by november 15th and it comprised more than 3 000 subjects 20 000 study visits "
+    },
+    {
+        "start": 730.32,
+        "text": "seventy thousand biosamples um we filled up nearly every freezer mount sinai um this was unlike motor pack everything did not come in perfectly labeled we would get boxes of tubes that were floating around it was quite something to handle especially in the beginning eventually it became more orderly but it was adapted quite on quite on the fly and we actually had to field a team of of eight to 10 research and nursing people to support the program in south carolina so it's based on the marine corps recruit depot in paris island south carolina which is where all the marines all females in the u.s train there and all of the recruits east of the mississippi they have 300 to 400 crews of life weekly for 13 weeks of very very arduous "
+    },
+    {
+        "start": 793.279,
+        "text": "basic training and the navy has a number of large coveted outbreaks um the theodore roosevelt uh received a tremendous amount of national press in march and april but um what got less attention was that paris island was shut down by a coronavirus outbreak in march and april which for the military they absolutely don't want their pipeline of training marines to stop and so this was an enormous wake-up call and it led to them implementing a mitigation extensive and elaborate mitigation plan and they're interested in launching this longitudinal study to give them some more information so what the marines put in place "
+    },
+    {
+        "start": 854.56,
+        "text": "uh following that uh march and april outbreak at paris island is that uh all new recruits um spent two weeks on home quarantine then they would arrive to a dedicated location so through july they took over the citadel which is a military college it was closed and they used it surely for the purpose of this two-week strictly supervised quarantine with very strict control measures put into place and august through october it was this is then at the sheridan atlanta because they reopened the citadel after the two-week period there would be a navy mandated pcr test and in order to go on to parasaurol for basic plant training they would have to test negative and the idea is that they they cleared paris island of the outbreak from march to april and the idea of this was "
+    },
+    {
+        "start": 914.56,
+        "text": "they would try to maintain paris island as a bubble free of covid to proceed with the training as we'll see it didn't quite work out as planned although the training managed to proceed so the charm study was built on top of this this navy mandated structure and enrollees in the study would get uh during the two-week quarantine week zero week one and and week two enrollees we'd handle the pcr testing so be clinical eoa approved sars cove 2 thermal efficient pcr testing blood sampling questionnaire temperature check and then after they moved to paris island two weeks after there so week four week six and week eight the same procedure would pertain in addition subjects who "
+    },
+    {
+        "start": 975.44,
+        "text": "tested positive were going to be offered enrollment in a separate covent positive sub-study that would have more frequent sampling so so we did have a second group of samples and and as part of the sub-study we actually also enrolled 148 marines um who had been in the march and april outbreak and so this was in may when the when they first enrolled in the charm study or this coveted positive arm of the chump study so we we did a long-term follow-up in them but mostly we're going to focus on this longitudinal group arriving for two-week quarantine and then for basic training so what were they like at baseline just under one percent with seropositive 28 individuals were uh infected when they arrived 28 were actively infected pcr positive nine percent was seropositive "
+    },
+    {
+        "start": 1037.28,
+        "text": "um sierra positivity as you might expect related to areas of the country with new york and louisiana having the highest rates of sierra positivity most of these subjects were were males especially from the easter i mean about seven or eight percent were females in the study population if you look at the cumulative rate of tsar's cove two positivity reported you can divide your states into sort of three groups the early spring group with new york taking the lead the late spring group and the summer group and if you look at the cumulative zero positive positivity of the recruits you can see that that here's the cumulative source code two positivity from these regions "
+    },
+    {
+        "start": 1097.28,
+        "text": "and in the solid line is the zero positivity the three week running average and it tracks pretty well with the rate of rate of uh infections cumulative rate of infections in those areas for these for these three arbitrarily constructed regions of the country in addition hispanics had the highest rate of seropositivity and they maintained that through the study so by the end of the study they're they're starting to approach 30 percent of hispanic recruits with sierra positive on arrival and the differences were highly significant between hispanics and non-hispanic recruits so now we're going to turn to the the first two weeks of supervised quarantine at the citadel and look at what happened there so the "
+    },
+    {
+        "start": 1160.559,
+        "text": "marines mandated extensive non-pharmacological interactions they had directional traffic movement mask wearing at all times hygiene social distancing everything was was controlled they kept them outdoors as much as they could and so we we studied um with the weekly pcr test what happened during this supervised quarantine and as we mentioned you know 16 of this group were positive on arrival 24 were positive at one week and 11 positive at day 14 additional and then out of the non-recruits there there were 1848 marines enrolled in the study in 1554 were either not eligible or declined they got tested at day 14 26 of them "
+    },
+    {
+        "start": 1222.559,
+        "text": "were positive from the charm subjects we sequenced 36 viral isolates from 32 individuals if we look at the clinical characteristics almost none of these subjects were symptomatic at the time of diagnosis and absolutely nobody either all of the marines had daily temperature checks and it detected zero cases inside of the 51 cases that out of the 77 cases they were identified they were all found by testing done at uh specific times scheduled testing and none of them were found by symptom screening or by temperature checks which was at the time that was a common practice in colleges and workplaces and at least for "
+    },
+    {
+        "start": 1282.72,
+        "text": "this population of of young healthy mostly males it's got no yield so that's summarized here if we look at the phylogenetics of the virus isolates there were a few uh uh uh scattered uh individuals but we had um shared sequences that represented monophyletic monopholic genetic clusters there were six of them identified so these represent single case introductions that then are are spreading under this quarantine condition and if we look at the epidemiology the most of these clusters were associated "
+    },
+    {
+        "start": 1344.32,
+        "text": "with either a roommate or being in the same platoon and so those those were the major risk factors and it turned out to two of the clusters happened to occur in the same class and a lot of them were actually on the same hallway so it shows an interesting illustration of of what contributed and what not what did not so the the blue uh individuals here represent the cluster five strain the black individuals are are subjects we don't have sequence on but they were infected and those are the room locations to the left here is platoon f to the right here is platoon e and what we see is first of all this tremendous co-infection within rooms and within platoons the same strain is uh preserved within the same platoon with the exception of these two individuals from platoon f and platoon e who share uh the same room "
+    },
+    {
+        "start": 1405.039,
+        "text": "um so this is not jumping other than sharing a room from platoon to platoon so we can eliminate shared bathroom other activities it's group interaction within the platoon and and sharing roommates are the major risk factors for transmission here okay so that's what happened in in citadel what happened in atlanta um they they atlanta they just left them in the rooms and it was a very small transmission within roommates but other than that transmission rates during the quarantine were much lower in atlanta same number of cases on arrival then then after their two weeks all the recruits have to test pcr negative and then they travel to paris island this is a picture of "
+    },
+    {
+        "start": 1465.039,
+        "text": "how they were handling things in paris island so they're introducing mass squaring other measures and if we look at for example other infections to historical averages um here's the march and april outbreak at paris island and they started introducing a variety of measures here um social distancing hygiene mass squaring et cetera isolation of the companies from each other um to try to control the outbreak which they did but what we see here is just the respiratory infection rate and in blue is the historical average and here we see what happened in 2020 probably this very high level early is is including some coveted cases and most of these cases in the march and april outfit were not pcr diagnosed uh they didn't have much testing available so they actually only had a couple dozen cases were "
+    },
+    {
+        "start": 1527.2,
+        "text": "confirmed by pcr at that point in time but but the rate of respiratory infection plummets and in general stays well below the historical average so their intervention is having an effect if you look at pneumonia respiratory inflammation you see the same pattern it plummets after the outbreak and stays very very low compared to historical averages and now this is not the study data this is the medical surveillance data but if you look at the covid case rate um it's it's enormous after these letters up here mark the various interventions that they've introduced to suppress coven infection and despite that they had a very high number of covert cases here's your respiratory infections here we're plotting it year by year and here's 2020. and these are the covet cases which are you know on a much higher scale that's "
+    },
+    {
+        "start": 1590.24,
+        "text": "occurring during that period so despite interventions that are suppressing other infections and they're getting transmission of covet 19. so uh what are the numbers like uh we followed about uh 2400 marines who were followed into paris island had not previously had a positive infection and stayed in the study until their first paris at least until their first paris island pcr test at four weeks of the study and you know a little below half of them tested pcr positive during the the uh six weeks observation on on paris island and we've sequenced uh now more than this but we sequenced uh uh uh over 600 "
+    },
+    {
+        "start": 1650.399,
+        "text": "of the uh infected individuals and about 700 isolates this summarizes the strains and substrates are identified so there were five clusters identified um and you can see they sort of come in waves and then they break into into subclusters um coming over time so it's a uh uh uh essentially every case with just a couple of exceptions our members of these five introduction events um one of them was one of the clusters we had identified in citadel and and it carried through presumably in one of the non-study members who was infected tested negative at day 14 but was "
+    },
+    {
+        "start": 1711.44,
+        "text": "infected at that point and brought it in and spread it one of them came from south carolina we don't know the origin of the other ones so if we if we plot all of these on a median joining network graph we can look at how these various strains are evolving and moving from company to companies this is um a little complicated figure so the size of the circles are then are related to the number of of cases um with the largest circles being about 60 60 cases or so and the numbers are the companies and the companies are numbered roughly in order of when they've went through paris island from june "
+    },
+    {
+        "start": 1774.64,
+        "text": "into october and so you can see in the in the most of the cases are p1 and p2 so these are uh single introduction events that are all there all these are related we can see them evolving so you start in the p1 starts in june it's in company one and two then it mutates to a sub strain two substrates b and c that both are in company three so it's kind of a bottleneck and everyone here has either strain b or strain c presumably it was brought across as a variant and then it mutated within company three and then it uh uh when it's spread to companies 10 and 13 uh it's now collected another mutation so it's it's uh strain d "
+    },
+    {
+        "start": 1836.559,
+        "text": "and in time this is moving as well june july and august and then p2 we see similar um the initial strain shows up in july goes into it's in three companies goes into two other companies in august as as strain b p2b p2c and then p2d out here in september 4 5 3 4 and 5 are smaller and more restricted in terms of companies and there aren't clear sub strains to find so daniel park and jessica metcalf and brian grenfell that princeton um modeled the transmission dynamics in each of these "
+    },
+    {
+        "start": 1898.159,
+        "text": "companies and so this is an seir differential equation model and and the parameterization is selected randomly from a distribution of the parameters so that's what gives the variation and estimates of the reproductive rate from this and so um the data fits for all of the companies pretty well and the uh reproductive rate is looks within the era fairly consistent across all of these i mean some of the combinations have no cases so they fit with very low number but in general it seems as if the reproductive rate is reasonably constant um the differences in the numbers are largely attributed to super spreader events but there is in general a bit of an underestimation here of these curves and the reproductive number this is an um stochastic model "
+    },
+    {
+        "start": 1960.96,
+        "text": "is is a bit underestimated from what's observed by the model and this can be attributed so if if you look at the initial number of exposed individuals the data fits better that more than one individual is exposed initially so what this is consistent with is that these companies couldn't leave paris island and they were isolated themselves so what the data is reflecting and the modeling is reflecting is that the introduction occurred from individuals who were either staff or drill instructors that were outside of the companies interacted with more than one company and also allowed to go off of the base they brought it in and so the initial in general the t0 case of the members who are in the study the company members themselves "
+    },
+    {
+        "start": 2022.559,
+        "text": "involved more than a single individual being exposed at that point so the t0 the actual individual bringing in the case came from outside the company so it's consistent with the data and the modeling are consistent with what we know of the structure of this outbreak in the epidemiology and also why it's so cleanly moved in block and with specific mutations from company to company so so what's happening here is you know when it's when it's jumping from company one and two to company three and the mutation is changing presumably there's a drill instructor or or some other personnel interacting with this company picking it up it's mutating and then bringing it on uh in a you know uh so it's completely changed when it's introduced the next company and we see the initial infection of these companies is typically more than one individual from the modeling so daniel also modeled what sort of "
+    },
+    {
+        "start": 2083.919,
+        "text": "testing regimen would be effective at suppressing this so if you you know getting above the dot this is the proportion of transmission prevented if you get above the dotted line you'll you'll keep the infection from propagating and what he's comparing here is the frequency of testing on the bottom the mean generational interval which in the literature very varies between five and eight days and in our data looks to be more like eight days but most the studies have it at five to six that's the time between when you're infected and then when you transmit it to someone else that's the generation interval and then the number of days it takes to get back the test result and so what what we see from this analysis is that you know more more frequent testing is is critical and having a rapid "
+    },
+    {
+        "start": 2144.24,
+        "text": "turnaround is critical and this is the accuracy of the test at the top sensitivity between 50 and 95 and sacrificing sensitivity um is it has a less drastic effect so that if you wanted to suppress these infections do something like a antigen-based lateral lateral flow test um that would give you an you know very rapid read back and and could be administered on a daily basis and then you isolate the people infected would would enable suppression of infection whereas other testing approaches you could decrease the number of infections but you're not going to eliminate the propagation so if we look at the p1 cluster when we go from b p1 a to b c and d this is a this is b c and d b c and d all share a single mutation of serine 3883 to alanine 3883 which is "
+    },
+    {
+        "start": 2207.52,
+        "text": "ends up being a syrian that's highly conserved across the corona coronavirus's larger family it's located in the nsp7 which is a subunit of the polymerase and it's also appears to be associated with a reduction in in the number of symptoms um the recruits who were infected with the s variants seem to be more symptomatic than recruits that are infected with the alanine variant so this may be the marines attempt to generate their own live vaccine they have what appears to be an attenuated virus that's that's spreading when they get to version b c and d of the p1 cluster "
+    },
+    {
+        "start": 2271.04,
+        "text": "so long-term follow-up has just started and this is this is now six to nine months after study enrollment and we've analyzed the first out of the recruits who had no infection and were seronegative initially and through the initial part of the study we've looked at 135 individuals now the team has to travel around the country to the basis where they are stationed they've left paris island to run the studies so we've got the data back on the first 135 of uninfected and 75 of them are now sero positive and so this suggests that roughly 85 to 90 percent of the new marines have been affected by sars cove too so interestingly in the downstream "
+    },
+    {
+        "start": 2332.24,
+        "text": "locations they're not seeing any infections so they have clearly achieved herd immunity levels from natural infection possibly the only group in the country that's managed to do that okay so we also did an analysis of reinfection rate so um we can take the baseline serology and we're using a very stringent test of being sero positive they need to be one to one fifty tighter or above on both the full spike protein elisa and an rbd elisa titering so we had 225 were baseline sierra positive after we eliminate anybody who's infected et cetera um and 2851 we're baseline sierra negative we can follow these to see how many were infected in paris island "
+    },
+    {
+        "start": 2393.52,
+        "text": "and um we have an infection rate of of 10.1 percent um in the seropositive group and of 48 in the zero negative group so the the relative risk is uh 0.18 in the zero positive the previously infected marines so we know that these are these these zero positive individuals have gone through home quarantine two weeks of marine quarantine three negative tests and then another two weeks before the next test so this is not a persistent infection the the sero seropositivity is four weeks ascertained four weeks at least four weeks before their positive pcr and they've had at least three negative uh pcr diagnostic tests before they turn positive and um the the uh "
+    },
+    {
+        "start": 2454.88,
+        "text": "incidence is of course extremely high it's it's six cases per year in the sierra negative one case per year uh excuse me i um a rate of six per individual per year and a rate of one per individual per year in the in the zero positive and a ratio of 0.18 is the risk confidence intervals 0.11 to 0.28 the viral ct levels were a little bit lower but it's not very dramatic in the seropositive group symptoms were less and and duration of symptoms duration of how long their pca positive was less but it was not statistically significant and this is the km plot showing the uh attack rate over time in the uh sierra negative and the zero "
+    },
+    {
+        "start": 2516.88,
+        "text": "positive group so the um the in the zero positive group almost all the infections were in the individuals with the lower titans went to 150 or 1 to 450. um that's shown here and the neutralizing antibody uh run by alex buchrev's lab at utmp um they were the sierra positive individuals who are pcr positive were much more likely to to not have neutralizing antibodies is a very significant decrease compared to uh we tested 54 sequential subjects who did not become infected during the study and started zero positive and they have a much much higher rate of having neutralizing antibodies "
+    },
+    {
+        "start": 2580.72,
+        "text": "we also found that the reinfected individuals can shed viable virus this is from culturing the virus and out of uh out of the 19 reinfections we had samples on 16 and we could recover live virus from four of them um 12 of them we couldn't so um so this is a pretty high reinfection rate and this is also with the same strains this is not the british variant or the south african or brazilian variants this is a reinfection rate with the same strains that were prevalent earlier in the year in the united states okay so fine limit turn to um studies of the host response signatures "
+    },
+    {
+        "start": 2645.359,
+        "text": "this is the uh pipeline we followed for uh uh developing these signatures so we were emphasizing blood transcriptome to try to get a test that could be more rapidly deployed uh and uh we would integrate other data sources such as a taxi car pathway information um uh into the into the signature selection um and as well as public data that was curated on non-non-coveted exposures that might be confounds all of the data use was split in three for training validation training development and then validation studies and the um signatures were selected by a multi-objective fitness where we would "
+    },
+    {
+        "start": 2705.52,
+        "text": "try to optimize the identification of the covert exposure the similarity of the signature via projection we'd represent the signature as a vector and we'd look at for example attack seek from covid data which which genes were identified and try to optimize the projection of the attack seek onto the coveter and then we do not want to be identifying non-covered viral infection confounds etc and then after genetic algorithm to identify the best signature for this fitness function we then would work on optimizing it on a clinical platform and it's taken a while but it's actually very close to fda submission at this point um "
+    },
+    {
+        "start": 2765.76,
+        "text": "and also characterizing the biology underlying the signatures so i'll just show you a little bit of that um so this is the specificity data compendium that gen daniel ciaola and stephen kleinstein's group at yale assembled a very large number of of samples from many studies that we could use to assess signature specificity this is the signature fitness function to involve optimizing coded sensitivity and and penalizing cross-reactivity with other viral exposures other infections other comorbidities and and to also optimize the projection with other types of data sets then went through a genetic algorithm to optimize the fitness value "
+    },
+    {
+        "start": 2827.76,
+        "text": "and eventually we came out with an 11 gene signature from this that we show here for example looking at specificity against all these other studies and it's showing not not the signature shows not much uh cross reactivity with with other confounds and then if we take the signature and we look at pseudobulk it's still showing discrimination in rna single cell rna-seq pseudobulk data so that can be used to then look at what's driving the various components of the signature so shown here for example is one of the genes pif1 and we can show that if there's a single gene knockout in plasmoblasts we can degrade the performance of the classifier "
+    },
+    {
+        "start": 2892.96,
+        "text": "most dramatically if we've not got pif one and also if we knock out uh pif one in the plasma blast we have a similar effect so this identifies if one as as marking a subclass of plasma blasts that that the signature's relying on and so using this type of approach we can get a handle on what's driving the underlying biology of of the signature okay frank zang and olska's group has also been looking at alternate splicing for signature development so the study we can break our rna-seq samples into uh you know here's a it could be a complete collection often we're missing certain some samples and individual subjects but you know the first is when the subject first becomes pcr positive "
+    },
+    {
+        "start": 2954.96,
+        "text": "a pre-sample is in the two weeks before we're kind of interested in these samples because some of these subjects have been infected but their pcr test has not turned positive so these are subjects have a negative pcr test it's an rna-seq taken in the two weeks before they first turned pcr-positive earlier samples are our control so these are more than two weeks before they developed their first pcr test and then we have the ones that are following which we call mid and then when they turn negative we call post so frank has used a model to identify four types of alternate splicing events that are summarized here the most common is skipped exons and these are at an fdr 0.05 so most uh the largest effect is is in first and "
+    },
+    {
+        "start": 3016.48,
+        "text": "then in mid as might be expected and as you look at this over time the upregulated alternate splicing versus down regulated alternate splicing you see that the biggest change is at the first time in which the subjects are pcr positive is a summary of all of the events and so we get a nice time course it persists through when they're pcr-positive and drops back to its baseline post-infection in both the upregulated and down-regulated auto-splicing offense if you take the best represented go terms neutrophil degranulation is included and also regulation of alternate splicing you look at the percent of genes showing alternate splicing again you see very similar representation of the percent of each of these four goat terms that are showing alternate splicing through the course of infection "
+    },
+    {
+        "start": 3079.52,
+        "text": "so in order to see if you can uh reliably detect infection um uh we took a we trained on the charm data to build the model and then to test we used a separate cohort that was collected at duke which is an rna-seq study that they've they've run out patient and inpatient there mostly outpatient and if we look um at the cross-cohort accuracy we get better results at an fdr of 0.001 so we apply that fdr and we can see we can get a cross-cohort accuracy of about 0.84 auc which is pretty good and we show uh two examples uh uh jl and s and lst1 both of these are immune related genes so you can see that they're the uh exxon use is going up in charm "
+    },
+    {
+        "start": 3139.68,
+        "text": "it's going up in duke and here the lst1 is going down in charm it's going down a duke so these changes are nicely replicatable and can support predictive modeling across cohorts then if we turn to the more difficult problem of can we see infection before the pcr has turned positive now this is going to be a mixture of individuals who are infected but have not yet turned pcr positive or individuals who are not yet infected so you know you know the uh earliest you know you know since this is over a two-week period these samples and you would normally turn positive within a week of infection so a number of these are just not not yet infected some of these are going to be infected so in order to deal with that "
+    },
+    {
+        "start": 3200.96,
+        "text": "probability problem um what frank did was just compare the model that was trained and its prediction of the probability of infection on the control samples for these same subjects versus the pre-samples and what what we see is this a significant difference between the control and the pre uh it's uh p 10 to the minus six um in terms of the probability of infection and there are a few of these samples these three here that have you know quite high probability of being infected from the model if you look at the two alternate spice groups lst1 two alternately spliced exons lst and lsd1 alternate splicing event you can see it's it's uh starting to go down in the pre on average and it of course drops more in the first "
+    },
+    {
+        "start": 3261.599,
+        "text": "um then up again in the mid and and similarly srsf3 it's starting to increase in on average in the pre-samples the blue dash blue line is the control levels so this suggests that the alternate splicing can pick up evidence for infection before the pcr has turned positive the other aspect that frank has looked at is is sex-specific changes i'm just going to show one example here genes you know ultimate spice events that are male or female predominant this is a ptp which is actually cd45 so it's a t cell marker it doesn't change in males but it goes up "
+    },
+    {
+        "start": 3321.839,
+        "text": "in females you can see here in the sashimi plots you see this exon is is becoming more heavily used in the first sample excuse me it's in the males it's not really very dramatically changing it's about the same the females um it's very low in the uh control and then in the first sample and in the mid sample it's it's um significantly increased so um this is a hubby gene in the trans guy human net analysis which tells you the linkage of the gene to other other transcripts via a bayesian trained bayesian network that they've generated so so it's consistent that with the formulation this is still under study but that what we're picking up here is is a subtype of a t cell identified by "
+    },
+    {
+        "start": 3386.079,
+        "text": "differential cd45 splicing um that is being altered uh its level is being altered in females only and not in males with infection so um i'm not going through some of the other things i'm just going to mention very briefly here at the end um we studied um a hamster model of severe covet and single cell rna-seq in response to different um moderna vaccines with alex bucharov's group and with moderna we looked at the antibody responses to the march outbreak that we started following in may and we've also done a study with steve kleinstein's group where we find that if we do b cell receptors single cell sequencing um the repertoires in the mild subjects compared with severe subjects are quite "
+    },
+    {
+        "start": 3446.96,
+        "text": "different and consistent with a less effective response for generating a sustained immune response and severe covet and i mentioned uh many of the people involved in these studies they've taken the work's been done by a large number of very very talented and committed folks working under incredibly hard conditions to get these studies completed thank you very much thank you stewart that was a quite a journey across one year i'm i'm impressed with all the you know you've said it at the end i'm really impressed that how much work got done and and how much you were able to produce uh you know under the conditions uh i don't know how long you probably weren't shut down very long or at all but uh it's really impressive so i'll open up the questions uh and while people if they want to just uh chime in but one "
+    },
+    {
+        "start": 3508.64,
+        "text": "of the things that struck me that i'm really interested in was this reinfection data that you had it suggests that 10 of the people of these young individuals who were infected originally were able to be reinfected uh do we know that they really had we assumed that they had cleared their infection and then got reinfected was there any any uh assessment of the variance um you know that the reinfection that happened with a different variant than the original infection well we we have um the the reinfection um uh the reinfections were caused by the same variants that we've you know we have five five strains going through paris island right three infections were those five strains so so it's coming from its transmission on paris island it's uh um and those strains are "
+    },
+    {
+        "start": 3572.24,
+        "text": "you know they're not going to be identi i mean they are unique at this point in time they're not identical to whatever infected them before they came we don't have we're identifying them by being seropositive on arrival so we don't have sequence from their first infection we do have one we have one individual who got infected twice during the study and we have both his sequences and they're different but that person is encountered in the study because this study was just on the people who were sera positive on arrival and then and then later got infected but um we don't think there are dramatic strain differences here we expect the reinfection with different strains is going to be much higher i mean the evidence from brazil is there's almost no protection um with the predominant variant going through now with what previously you know saturated the amazonia area um so the reinfection risk is huge in in this "
+    },
+    {
+        "start": 3632.319,
+        "text": "disease yeah and you know it goes back to you know both the her immunity but you know the vaccinations you know the vaccinations going to be as effective it seems like the vaccines tend to be very uh effective at knocking down most of the other variants right the the uk variant seems to be covered really nicely by by the current vaccines but then but with this data suggests that that either a natural infection in young people don't mount a good response allows them to be infected and when we see the same 10 percent reinfection rate and individuals have been vaccinated is there any way to extrapolate the findings what's up in the literature um vaccinationists develop so much more effective immunity um you know the the virus has evolved you know mechanisms to suppress the development of immunity and you know so it's you know with vaccination you're getting all of the "
+    },
+    {
+        "start": 3694.079,
+        "text": "immune epitope exposure with none of the viruses you know evolutionary adaptations to shut down your immune system so i do think um i mean it's not a it's not a 10 percent reinfectionary it's really a it's a close to a 20 risk so um you know comparative risk so it really depends on the number of infections you're having but i think i think the vaccine certainly will be less and even with the variance should be less okay thanks anyone else josh yeah yeah i had a question um stuart thanks for a great talk um i was curious about the example you mentioned briefly at the beginning where you had some single cell data from mrsa and mssa infection is it possible to tell for a single cell whether it came from mrsa or mssa or did "
+    },
+    {
+        "start": 3754.559,
+        "text": "you have to kind of average the cells per donor um i mean we've you know we've we've done a lot of different perturbations of that comparison but it's it's it's not a huge number of samples in the data i showed you it's it's a pseudo bulk analysis of the of the rna-seq and the attack seek we've also done cell type identification and proportion differences and using them to classify you can do that as well but you know we were hoping to get some more samples and expand the numbers that hasn't proven possible so the data i showed you was based on a pseudo bulk analysis although pseudobulk from single cell data is kind of better data than than bulk data by itself sure yeah i just wonder especially since you have such a small number of donors whether you might be able to get more statistical power if you look at each cell as its own classification problem "
+    },
+    {
+        "start": 3823.359,
+        "text": "how are you structured how exactly so um let's say you have uh 10 mrsa and mssa donors instead of uh using 20 data points treat each cell as its own data point and let's say you have 10 000 cells from each donor now you have 200 000 data points instead of 20. okay we haven't tried that yeah i'd be really curious to know if that gives you anything different at least do it at least do within cell subtypes yeah because with it you know with uh single cell technologies are so new that i think exactly how you can use them in these kind of clinical settings is really an open question all right anybody else have a question because i have another one this is also going back to early in your talk you said the the serial positive rate tracks really close to the infection rate within you know within each one of these "
+    },
+    {
+        "start": 3885.039,
+        "text": "states that you uh looked at right so if we uh can we get a good idea of how how close we are to herd immunity in the if we took a random sample of people across the state of michigan and see how close we are because there's been some you know there's been a lot of editorials saying oh we're we're so close to hurt immunity already but then some other studies would suggest that we're only at you know forty percent chuck the the herd immunity is the the herd immunity depends on your uh reproductive virus reproductive rate the virus reproductive rate depends on the environment so what um herd immunity is is there's not a fixed number for herd immunity it depends on the environment you know probably in in rural areas with less contact it will be lower in cities it's going to be higher um it depends on how much interaction "
+    },
+    {
+        "start": 3945.2,
+        "text": "you have how much uh exposure you have because the reproduct you know you can dramatically change the reproductive rate by putting measures in place for example it changes it and herd immunity is just i mean for example in these marines um you know the reproductive i mean we're seeing a reproductive rate of probably approximately six which is enormous compared to what's been reported in any study except for the outbreaks on ships so they're they're acting like a ship outbreak and that's that requires 90 percent uh to get hurt immunity because the reproductive rate is so high if you you know if you have a lower rate um so you know so for example these variants aside from the fact that they can cross-react and re-infect in all of this if if they have a higher reproductive rate because they're more infectious they also require just from that alone a higher higher rate so "
+    },
+    {
+        "start": 4008.0,
+        "text": "i mean you can plot it out it's they're directly correlated so there's there's absolutely no answer there oh so i understand that but but if let's just let's take an example you take ann arbor and if we took a random sample of you know the 500 people in ann arbor you know we're we're sort of a herd right it's close it's a community of representatives if you look at the zero positive rate in this community um can we you can because the server positivity tracked with the rate of infection at any given time or does that no longer apply since a lot of people have been infected already and that that's changing that this this curve because very early on you should the zero positive rate tracks with the rate of infection in in in the communities that you look at right so maybe i'm misunderstanding it but um but you know can can we estimate something like that the zero positivity is basically it's an integra it's the cumulative infection rate the zero positivity is is just an "
+    },
+    {
+        "start": 4069.039,
+        "text": "integration of the infection rate over over time um anyway i don't i don't know the answer to your question i mean i don't okay i don't i don't know i don't know what level is going to give us herd immunity but probably when we get to something like you know something like 70 we're going to be in pretty good shape i would guess you know yeah so it also doesn't uh uh uh if variants can reinfect you know the reinfection rate is going to be um i mean you'll have a lot of people vaccinated and then you'll have some people who just had natural infection but i think you know we're going to get there and it's not going to be too long okay i i like your positivity anybody else have a question uh if there's none uh thanks a lot josh had to step out but uh for for everybody here thanks a lot uh stewart this was really it was very cool i learned a lot today and um and good luck with the getting all these "
+    },
+    {
+        "start": 4130.4,
+        "text": "papers published i mean it looks like you're going to have you know 20 papers out of one years of work for the work which is pretty darn good all right thanks chuck great to see you thank you everyone bye goodbye everyone "
+    }
+]

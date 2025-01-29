@@ -1,0 +1,2627 @@
+[
+    {
+        "text": "The game Wurdle has gone pretty viral in the last month or two, ",
+        "start": 0.0,
+        "duration": 2.957
+    },
+    {
+        "text": "and never one to overlook an opportunity for a math lesson, ",
+        "start": 2.957,
+        "duration": 2.772
+    },
+    {
+        "text": "it occurs to me that this game makes for a very good central example ",
+        "start": 5.729,
+        "duration": 3.188
+    },
+    {
+        "text": "in a lesson about information theory, and in particular a topic known as entropy.",
+        "start": 8.917,
+        "duration": 3.743
+    },
+    {
+        "text": "You see, like a lot of people I got kind of sucked into the puzzle, ",
+        "start": 13.92,
+        "duration": 2.998
+    },
+    {
+        "text": "and like a lot of programmers I also got sucked into trying to ",
+        "start": 16.918,
+        "duration": 2.779
+    },
+    {
+        "text": "write an algorithm that would play the game as optimally as it could.",
+        "start": 19.697,
+        "duration": 3.043
+    },
+    {
+        "text": "And what I thought I'd do here is just talk through with you some of my process in that, ",
+        "start": 23.18,
+        "duration": 3.605
+    },
+    {
+        "text": "and explain some of the math that went into it, ",
+        "start": 26.785,
+        "duration": 1.945
+    },
+    {
+        "text": "since the whole algorithm centers on this idea of entropy.",
+        "start": 28.73,
+        "duration": 2.35
+    },
+    {
+        "text": "First things first, in case you haven't heard of it, what is Wurdle?",
+        "start": 38.7,
+        "duration": 2.94
+    },
+    {
+        "text": "And to kill two birds with one stone here while we go through the rules of the game, ",
+        "start": 42.04,
+        "duration": 3.574
+    },
+    {
+        "text": "let me also preview where we're going with this, ",
+        "start": 45.614,
+        "duration": 2.061
+    },
+    {
+        "text": "which is to develop a little algorithm that will basically play the game for us.",
+        "start": 47.675,
+        "duration": 3.365
+    },
+    {
+        "text": "Though I haven't done today's Wurdle, this is February 4th, ",
+        "start": 51.36,
+        "duration": 2.465
+    },
+    {
+        "text": "and we'll see how the bot does.",
+        "start": 53.825,
+        "duration": 1.275
+    },
+    {
+        "text": "The goal of Wurdle is to guess a mystery five letter word, ",
+        "start": 55.48,
+        "duration": 2.679
+    },
+    {
+        "text": "and you're given six different chances to guess.",
+        "start": 58.159,
+        "duration": 2.181
+    },
+    {
+        "text": "For example, my Wurdle bot suggests that I start with the guess crane.",
+        "start": 60.84,
+        "duration": 3.539
+    },
+    {
+        "text": "Each time that you make a guess, you get some information ",
+        "start": 65.18,
+        "duration": 2.731
+    },
+    {
+        "text": "about how close your guess is to the true answer.",
+        "start": 67.911,
+        "duration": 2.309
+    },
+    {
+        "text": "Here the grey box is telling me there's no C in the actual answer.",
+        "start": 70.92,
+        "duration": 3.18
+    },
+    {
+        "text": "The yellow box is telling me there is an R, but it's not in that position.",
+        "start": 74.52,
+        "duration": 3.32
+    },
+    {
+        "text": "The green box is telling me that the secret word does have an A, ",
+        "start": 78.24,
+        "duration": 2.708
+    },
+    {
+        "text": "and it's in the third position.",
+        "start": 80.948,
+        "duration": 1.292
+    },
+    {
+        "text": "And then there's no N and there's no E.",
+        "start": 82.72,
+        "duration": 1.86
+    },
+    {
+        "text": "So let me just go in and tell the Wurdle bot that information.",
+        "start": 85.2,
+        "duration": 2.14
+    },
+    {
+        "text": "We started with crane, we got grey, yellow, green, grey, grey.",
+        "start": 87.34,
+        "duration": 2.98
+    },
+    {
+        "text": "Don't worry about all the data that it's showing right now, I'll explain that in due time.",
+        "start": 91.42,
+        "duration": 3.52
+    },
+    {
+        "text": "But its top suggestion for our second pick is shtick.",
+        "start": 95.46,
+        "duration": 3.36
+    },
+    {
+        "text": "And your guess does have to be an actual five letter word, but as you'll see, ",
+        "start": 99.56,
+        "duration": 3.277
+    },
+    {
+        "text": "it's pretty liberal with what it will actually let you guess.",
+        "start": 102.837,
+        "duration": 2.563
+    },
+    {
+        "text": "In this case, we try shtick.",
+        "start": 106.2,
+        "duration": 1.24
+    },
+    {
+        "text": "And alright, things are looking pretty good.",
+        "start": 108.78,
+        "duration": 1.4
+    },
+    {
+        "text": "We hit the S and the H, so we know the first three letters, we know that there's an R.",
+        "start": 110.26,
+        "duration": 3.72
+    },
+    {
+        "text": "And so it's going to be like S-H-A something R, or S-H-A R something.",
+        "start": 113.98,
+        "duration": 4.72
+    },
+    {
+        "text": "And it looks like the Wurdle bot knows that it's down to just two possibilities, ",
+        "start": 119.62,
+        "duration": 3.633
+    },
+    {
+        "text": "either shard or sharp.",
+        "start": 123.253,
+        "duration": 0.987
+    },
+    {
+        "text": "That's kind of a tossup between them at this point, ",
+        "start": 125.1,
+        "duration": 2.122
+    },
+    {
+        "text": "so I guess probably just because it's alphabetical it goes with shard.",
+        "start": 127.222,
+        "duration": 2.858
+    },
+    {
+        "text": "Which hooray, is the actual answer, so we got it in three.",
+        "start": 131.22,
+        "duration": 2.56
+    },
+    {
+        "text": "If you're wondering if that's any good, the way I heard one person ",
+        "start": 134.6,
+        "duration": 2.968
+    },
+    {
+        "text": "phrase it is that with Wurdle, four is par and three is birdie.",
+        "start": 137.568,
+        "duration": 2.792
+    },
+    {
+        "text": "Which I think is a pretty apt analogy.",
+        "start": 140.68,
+        "duration": 1.8
+    },
+    {
+        "text": "You have to be consistently on your game to be getting four, but it's certainly not crazy.",
+        "start": 142.48,
+        "duration": 4.54
+    },
+    {
+        "text": "But when you get it in three, it just feels great.",
+        "start": 147.18,
+        "duration": 2.74
+    },
+    {
+        "text": "So if you're down for it, what I'd like to do here is just talk through ",
+        "start": 150.88,
+        "duration": 2.54
+    },
+    {
+        "text": "my thought process from the beginning for how I approach the Wurdle bot.",
+        "start": 153.42,
+        "duration": 2.54
+    },
+    {
+        "text": "And like I said, really it's an excuse for an information theory lesson.",
+        "start": 156.48,
+        "duration": 2.96
+    },
+    {
+        "text": "The main goal is to explain what is information and what is entropy.",
+        "start": 159.74,
+        "duration": 3.08
+    },
+    {
+        "text": "My first thought in approaching this was to take a look at the ",
+        "start": 168.22,
+        "duration": 2.686
+    },
+    {
+        "text": "relative frequencies of different letters in the English language.",
+        "start": 170.906,
+        "duration": 2.814
+    },
+    {
+        "text": "So I thought, okay, is there an opening guess or an opening ",
+        "start": 174.38,
+        "duration": 2.38
+    },
+    {
+        "text": "pair of guesses that hits a lot of these most frequent letters?",
+        "start": 176.76,
+        "duration": 2.5
+    },
+    {
+        "text": "And one that I was pretty fond of was doing other followed by nails.",
+        "start": 179.96,
+        "duration": 3.04
+    },
+    {
+        "text": "The thought is that if you hit a letter, you know, you get a green or a yellow, ",
+        "start": 183.76,
+        "duration": 2.802
+    },
+    {
+        "text": "that always feels good, it feels like you're getting information.",
+        "start": 186.562,
+        "duration": 2.278
+    },
+    {
+        "text": "But in these cases, even if you don't hit and you always get grays, ",
+        "start": 189.34,
+        "duration": 2.869
+    },
+    {
+        "text": "that's still giving you a lot of information, since it's pretty ",
+        "start": 192.209,
+        "duration": 2.701
+    },
+    {
+        "text": "rare to find a word that doesn't have any of these letters.",
+        "start": 194.91,
+        "duration": 2.49
+    },
+    {
+        "text": "But even still, that doesn't feel super systematic, because for example, ",
+        "start": 198.14,
+        "duration": 2.931
+    },
+    {
+        "text": "it does nothing to consider the order of the letters.",
+        "start": 201.071,
+        "duration": 2.129
+    },
+    {
+        "text": "Why type nails when I could type snail?",
+        "start": 203.56,
+        "duration": 1.74
+    },
+    {
+        "text": "Is it better to have that S at the end?",
+        "start": 206.08,
+        "duration": 1.42
+    },
+    {
+        "text": "I'm not really sure.",
+        "start": 207.82,
+        "duration": 0.86
+    },
+    {
+        "text": "Now, a friend of mine said that he liked to open with the word weary, ",
+        "start": 209.24,
+        "duration": 3.115
+    },
+    {
+        "text": "which kind of surprised me because it has some uncommon letters in there like the ",
+        "start": 212.355,
+        "duration": 3.65
+    },
+    {
+        "text": "W and the Y.",
+        "start": 216.005,
+        "duration": 0.535
+    },
+    {
+        "text": "But who knows, maybe that is a better opener.",
+        "start": 217.12,
+        "duration": 1.88
+    },
+    {
+        "text": "Is there some kind of quantitative score that we ",
+        "start": 219.32,
+        "duration": 2.449
+    },
+    {
+        "text": "can give to judge the quality of a potential guess?",
+        "start": 221.769,
+        "duration": 2.551
+    },
+    {
+        "text": "Now to set up for the way that we're going to rank possible guesses, ",
+        "start": 225.34,
+        "duration": 2.954
+    },
+    {
+        "text": "let's go back and add a little clarity to how exactly the game is set up.",
+        "start": 228.294,
+        "duration": 3.126
+    },
+    {
+        "text": "So there's a list of words that it will allow you to enter that ",
+        "start": 231.42,
+        "duration": 3.204
+    },
+    {
+        "text": "are considered valid guesses that's just about 13,000 words long.",
+        "start": 234.624,
+        "duration": 3.256
+    },
+    {
+        "text": "But when you look at it, there's a lot of really uncommon things, ",
+        "start": 238.32,
+        "duration": 3.062
+    },
+    {
+        "text": "things like a head or Ali and ARG, the kind of words that bring about family arguments ",
+        "start": 241.382,
+        "duration": 4.037
+    },
+    {
+        "text": "in a game of Scrabble.",
+        "start": 245.419,
+        "duration": 1.021
+    },
+    {
+        "text": "But the vibe of the game is that the answer is always going to be a decently common word.",
+        "start": 246.96,
+        "duration": 3.58
+    },
+    {
+        "text": "And in fact, there's another list of around 2300 words that are the possible answers.",
+        "start": 250.96,
+        "duration": 4.4
+    },
+    {
+        "text": "And this is a human curated list, I think specifically by the game creators girlfriend, ",
+        "start": 255.94,
+        "duration": 4.214
+    },
+    {
+        "text": "which is kind of fun.",
+        "start": 260.154,
+        "duration": 1.006
+    },
+    {
+        "text": "But what I would like to do, our challenge for this project is to see if we can write ",
+        "start": 261.82,
+        "duration": 4.204
+    },
+    {
+        "text": "a program solving wordle that doesn't incorporate previous knowledge about this list.",
+        "start": 266.024,
+        "duration": 4.156
+    },
+    {
+        "text": "For one thing, there's plenty of pretty common ",
+        "start": 270.72,
+        "duration": 1.88
+    },
+    {
+        "text": "five letter words that you won't find in that list.",
+        "start": 272.6,
+        "duration": 2.04
+    },
+    {
+        "text": "So it would be better to write a program that's a little more resilient and ",
+        "start": 274.94,
+        "duration": 3.116
+    },
+    {
+        "text": "would play wordle against anyone, not just what happens to be the official website.",
+        "start": 278.056,
+        "duration": 3.404
+    },
+    {
+        "text": "And also, the reason that we know what this list of possible answers is, ",
+        "start": 281.92,
+        "duration": 3.196
+    },
+    {
+        "text": "is because it's visible in the source code.",
+        "start": 285.116,
+        "duration": 1.884
+    },
+    {
+        "text": "But the way that it's visible in the source code is in the ",
+        "start": 287.0,
+        "duration": 2.865
+    },
+    {
+        "text": "specific order in which answers come up from day to day, ",
+        "start": 289.865,
+        "duration": 2.769
+    },
+    {
+        "text": "that you could always just look up what tomorrow's answer will be.",
+        "start": 292.634,
+        "duration": 3.206
+    },
+    {
+        "text": "So clearly, there's some sense in which using the list is cheating.",
+        "start": 296.42,
+        "duration": 2.46
+    },
+    {
+        "text": "And what makes for a more interesting puzzle and a richer information theory ",
+        "start": 299.1,
+        "duration": 3.638
+    },
+    {
+        "text": "lesson is to instead use some more universal data like relative word frequencies ",
+        "start": 302.738,
+        "duration": 3.827
+    },
+    {
+        "text": "in general to capture this intuition of having a preference for more common words.",
+        "start": 306.565,
+        "duration": 3.875
+    },
+    {
+        "text": "So of these 13,000 possibilities, how should we choose the opening guess?",
+        "start": 311.6,
+        "duration": 4.3
+    },
+    {
+        "text": "For example, if my friend proposes weary, how should we analyze its quality?",
+        "start": 316.4,
+        "duration": 3.38
+    },
+    {
+        "text": "Well, the reason he said he likes that unlikely W is that he likes ",
+        "start": 320.52,
+        "duration": 3.384
+    },
+    {
+        "text": "the long shot nature of just how good it feels if you do hit that W.",
+        "start": 323.904,
+        "duration": 3.436
+    },
+    {
+        "text": "For example, if the first pattern revealed was something like this, ",
+        "start": 327.92,
+        "duration": 3.347
+    },
+    {
+        "text": "then it turns out there are only 58 words in this giant lexicon that match that pattern.",
+        "start": 331.267,
+        "duration": 4.333
+    },
+    {
+        "text": "So that's a huge reduction from 13,000.",
+        "start": 336.06,
+        "duration": 2.34
+    },
+    {
+        "text": "But the flip side of that, of course, is that ",
+        "start": 338.78,
+        "duration": 2.12
+    },
+    {
+        "text": "it's very uncommon to get a pattern like this.",
+        "start": 340.9,
+        "duration": 2.12
+    },
+    {
+        "text": "Specifically, if each word was equally likely to be the answer, ",
+        "start": 343.02,
+        "duration": 3.64
+    },
+    {
+        "text": "the probability of hitting this pattern would be 58 divided by around 13,000.",
+        "start": 346.66,
+        "duration": 4.38
+    },
+    {
+        "text": "Of course, they're not equally likely to be answers.",
+        "start": 351.58,
+        "duration": 2.02
+    },
+    {
+        "text": "Most of these are very obscure and even questionable words.",
+        "start": 353.72,
+        "duration": 2.5
+    },
+    {
+        "text": "But at least for our first pass at all of this, ",
+        "start": 356.6,
+        "duration": 1.904
+    },
+    {
+        "text": "let's assume that they're all equally likely and then refine that a bit later.",
+        "start": 358.504,
+        "duration": 3.096
+    },
+    {
+        "text": "The point is, the pattern with a lot of information is, ",
+        "start": 362.02,
+        "duration": 2.8
+    },
+    {
+        "text": "by its very nature, unlikely to occur.",
+        "start": 364.82,
+        "duration": 1.9
+    },
+    {
+        "text": "In fact, what it means to be informative is that it's unlikely.",
+        "start": 367.28,
+        "duration": 3.52
+    },
+    {
+        "text": "A much more probable pattern to see with this opening would be something like this, ",
+        "start": 371.72,
+        "duration": 4.335
+    },
+    {
+        "text": "where, of course, there's not a W in it.",
+        "start": 376.055,
+        "duration": 2.065
+    },
+    {
+        "text": "Maybe there's an E, and maybe there's no A, there's no R, there's no Y.",
+        "start": 378.24,
+        "duration": 3.16
+    },
+    {
+        "text": "In this case, there are 1400 possible matches.",
+        "start": 382.08,
+        "duration": 2.48
+    },
+    {
+        "text": "If all were equally likely, it works out to be a probability ",
+        "start": 385.08,
+        "duration": 2.979
+    },
+    {
+        "text": "of about 11% that this is the pattern you would see.",
+        "start": 388.059,
+        "duration": 2.541
+    },
+    {
+        "text": "So the most likely outcomes are also the least informative.",
+        "start": 390.9,
+        "duration": 2.44
+    },
+    {
+        "text": "To get a more global view here, let me show you the full distribution ",
+        "start": 394.24,
+        "duration": 3.377
+    },
+    {
+        "text": "of probabilities across all of the different patterns that you might see.",
+        "start": 397.617,
+        "duration": 3.523
+    },
+    {
+        "text": "So each bar that you're looking at corresponds to a possible pattern of ",
+        "start": 401.74,
+        "duration": 3.469
+    },
+    {
+        "text": "colors that could be revealed, of which there are 3 to the 5th possibilities, ",
+        "start": 405.209,
+        "duration": 3.758
+    },
+    {
+        "text": "and they're organized from left to right, most common to least common.",
+        "start": 408.967,
+        "duration": 3.373
+    },
+    {
+        "text": "So the most common possibility here is that you get all grays.",
+        "start": 412.92,
+        "duration": 3.08
+    },
+    {
+        "text": "That happens about 14% of the time.",
+        "start": 416.1,
+        "duration": 2.02
+    },
+    {
+        "text": "And what you're hoping for when you make a guess is that you end up ",
+        "start": 418.58,
+        "duration": 3.355
+    },
+    {
+        "text": "somewhere out in this long tail, like over here, ",
+        "start": 421.935,
+        "duration": 2.418
+    },
+    {
+        "text": "where there's only 18 possibilities for what matches this pattern, ",
+        "start": 424.353,
+        "duration": 3.306
+    },
+    {
+        "text": "that evidently look like this.",
+        "start": 427.659,
+        "duration": 1.481
+    },
+    {
+        "text": "Or if we venture a little farther to the left, ",
+        "start": 429.92,
+        "duration": 2.003
+    },
+    {
+        "text": "you know, maybe we go all the way over here.",
+        "start": 431.923,
+        "duration": 1.877
+    },
+    {
+        "text": "Okay, here's a good puzzle for you.",
+        "start": 434.94,
+        "duration": 1.24
+    },
+    {
+        "text": "What are the three words in the English language that start with a W, ",
+        "start": 436.54,
+        "duration": 3.294
+    },
+    {
+        "text": "end with a Y, and have an R somewhere in them?",
+        "start": 439.834,
+        "duration": 2.166
+    },
+    {
+        "text": "Turns out, the answers are, let's see, wordy, wormy, and wryly.",
+        "start": 442.48,
+        "duration": 4.32
+    },
+    {
+        "text": "So to judge how good this word is overall, we want some kind of measure of the ",
+        "start": 447.5,
+        "duration": 4.12
+    },
+    {
+        "text": "expected amount of information that you're going to get from this distribution.",
+        "start": 451.62,
+        "duration": 4.12
+    },
+    {
+        "text": "If we go through each pattern and we multiply its probability of occurring times ",
+        "start": 455.74,
+        "duration": 4.278
+    },
+    {
+        "text": "something that measures how informative it is, that can maybe give us an objective score.",
+        "start": 460.018,
+        "duration": 4.702
+    },
+    {
+        "text": "Now your first instinct for what that something should be might be the number of matches.",
+        "start": 465.96,
+        "duration": 3.88
+    },
+    {
+        "text": "You want a lower average number of matches.",
+        "start": 470.16,
+        "duration": 2.24
+    },
+    {
+        "text": "But instead I'd like to use a more universal measurement that we often ascribe to ",
+        "start": 472.8,
+        "duration": 3.714
+    },
+    {
+        "text": "information, and one that will be more flexible once we have a different probability ",
+        "start": 476.514,
+        "duration": 3.85
+    },
+    {
+        "text": "assigned to each of these 13,000 words for whether or not they're actually the answer.",
+        "start": 480.364,
+        "duration": 3.896
+    },
+    {
+        "text": "The standard unit of information is the bit, which has a little bit of a funny formula, ",
+        "start": 490.32,
+        "duration": 4.186
+    },
+    {
+        "text": "but is really intuitive if we just look at examples.",
+        "start": 494.506,
+        "duration": 2.474
+    },
+    {
+        "text": "If you have an observation that cuts your space of possibilities in half, ",
+        "start": 497.78,
+        "duration": 3.648
+    },
+    {
+        "text": "we say that it has one bit of information.",
+        "start": 501.428,
+        "duration": 2.072
+    },
+    {
+        "text": "In our example, the space of possibilities is all possible words, ",
+        "start": 504.18,
+        "duration": 2.748
+    },
+    {
+        "text": "and it turns out about half of the five letter words have an S, a little less than that, ",
+        "start": 506.928,
+        "duration": 3.707
+    },
+    {
+        "text": "but about half.",
+        "start": 510.635,
+        "duration": 0.625
+    },
+    {
+        "text": "So that observation would give you one bit of information.",
+        "start": 511.78,
+        "duration": 2.54
+    },
+    {
+        "text": "If instead a new fact chops down that space of possibilities by a factor of four, ",
+        "start": 514.88,
+        "duration": 4.342
+    },
+    {
+        "text": "we say that it has two bits of information.",
+        "start": 519.222,
+        "duration": 2.278
+    },
+    {
+        "text": "For example, it turns out about a quarter of these words have a T.",
+        "start": 521.98,
+        "duration": 2.48
+    },
+    {
+        "text": "If the observation cuts that space by a factor of eight, ",
+        "start": 525.02,
+        "duration": 2.73
+    },
+    {
+        "text": "we say it's three bits of information, and so on and so forth.",
+        "start": 527.75,
+        "duration": 2.97
+    },
+    {
+        "text": "Four bits cuts it into a sixteenth, five bits cuts it into a thirty second.",
+        "start": 530.9,
+        "duration": 2.98
+    },
+    {
+        "text": "So now's when you might want to take a moment and pause and ask for yourself, ",
+        "start": 534.96,
+        "duration": 3.437
+    },
+    {
+        "text": "what is the formula for information for the number of bits ",
+        "start": 538.397,
+        "duration": 2.6
+    },
+    {
+        "text": "in terms of the probability of an occurrence?",
+        "start": 540.997,
+        "duration": 1.983
+    },
+    {
+        "text": "Well, what we're saying here is basically that when you take one half to the number ",
+        "start": 543.92,
+        "duration": 3.684
+    },
+    {
+        "text": "of bits, that's the same thing as the probability, ",
+        "start": 547.604,
+        "duration": 2.237
+    },
+    {
+        "text": "which is the same thing as saying two to the power of the number of bits is one over ",
+        "start": 549.841,
+        "duration": 3.728
+    },
+    {
+        "text": "the probability, which rearranges further to saying the information is the log base ",
+        "start": 553.569,
+        "duration": 3.684
+    },
+    {
+        "text": "two of one divided by the probability.",
+        "start": 557.253,
+        "duration": 1.667
+    },
+    {
+        "text": "And sometimes you see this with one more rearrangement still where ",
+        "start": 559.62,
+        "duration": 2.7
+    },
+    {
+        "text": "the information is the negative log base two of the probability.",
+        "start": 562.32,
+        "duration": 2.58
+    },
+    {
+        "text": "Expressed like this, it can look a little bit weird to the uninitiated, ",
+        "start": 565.66,
+        "duration": 3.259
+    },
+    {
+        "text": "but it really is just the very intuitive idea of asking how ",
+        "start": 568.919,
+        "duration": 2.716
+    },
+    {
+        "text": "many times you've cut down your possibilities in half.",
+        "start": 571.635,
+        "duration": 2.445
+    },
+    {
+        "text": "Now if you're wondering, you know, I thought we were just playing a fun word game, ",
+        "start": 575.18,
+        "duration": 2.78
+    },
+    {
+        "text": "why are logarithms entering the picture?",
+        "start": 577.96,
+        "duration": 1.34
+    },
+    {
+        "text": "One reason this is a nicer unit is it's just a lot easier to talk about very ",
+        "start": 579.78,
+        "duration": 4.239
+    },
+    {
+        "text": "unlikely events, much easier to say that an observation has 20 bits of information ",
+        "start": 584.019,
+        "duration": 4.571
+    },
+    {
+        "text": "than it is to say that the probability of such and such occurring is 0.0000095.",
+        "start": 588.59,
+        "duration": 4.35
+    },
+    {
+        "text": "But a more substantive reason that this logarithmic expression turned out to be a very ",
+        "start": 593.3,
+        "duration": 4.08
+    },
+    {
+        "text": "useful addition to the theory of probability is the way that information adds together.",
+        "start": 597.38,
+        "duration": 4.08
+    },
+    {
+        "text": "For example, if one observation gives you two bits of information, ",
+        "start": 602.06,
+        "duration": 3.142
+    },
+    {
+        "text": "cutting your space down by four, and then a second observation like your second ",
+        "start": 605.202,
+        "duration": 3.752
+    },
+    {
+        "text": "guess in Wordle gives you another three bits of information, ",
+        "start": 608.954,
+        "duration": 2.861
+    },
+    {
+        "text": "chopping you down further by another factor of eight, ",
+        "start": 611.815,
+        "duration": 2.533
+    },
+    {
+        "text": "the two together give you five bits of information.",
+        "start": 614.348,
+        "duration": 2.392
+    },
+    {
+        "text": "In the same way that probabilities like to multiply, information likes to add.",
+        "start": 617.16,
+        "duration": 3.86
+    },
+    {
+        "text": "So as soon as we're in the realm of something like an expected value, ",
+        "start": 621.96,
+        "duration": 2.736
+    },
+    {
+        "text": "where we're adding a bunch of numbers up, the logs make it a lot nicer to deal with.",
+        "start": 624.696,
+        "duration": 3.284
+    },
+    {
+        "text": "Let's go back to our distribution for weary and add another little tracker on here, ",
+        "start": 628.48,
+        "duration": 3.821
+    },
+    {
+        "text": "showing us how much information there is for each pattern.",
+        "start": 632.301,
+        "duration": 2.639
+    },
+    {
+        "text": "The main thing I want you to notice is that the higher the probability as we get ",
+        "start": 635.58,
+        "duration": 3.577
+    },
+    {
+        "text": "to those more likely patterns, the lower the information, the fewer bits you gain.",
+        "start": 639.157,
+        "duration": 3.623
+    },
+    {
+        "text": "The way we measure the quality of this guess will ",
+        "start": 643.5,
+        "duration": 2.26
+    },
+    {
+        "text": "be to take the expected value of this information.",
+        "start": 645.76,
+        "duration": 2.26
+    },
+    {
+        "text": "When we go through each pattern, we say how probable is it and ",
+        "start": 648.42,
+        "duration": 2.797
+    },
+    {
+        "text": "then we multiply that by how many bits of information do we get.",
+        "start": 651.217,
+        "duration": 2.843
+    },
+    {
+        "text": "And in the example of weary, that turns out to be 4.9 bits.",
+        "start": 654.71,
+        "duration": 3.41
+    },
+    {
+        "text": "So on average, the information you get from this opening guess is as ",
+        "start": 658.56,
+        "duration": 3.435
+    },
+    {
+        "text": "good as chopping your space of possibilities in half about five times.",
+        "start": 661.995,
+        "duration": 3.485
+    },
+    {
+        "text": "By contrast, an example of a guess with a higher ",
+        "start": 665.96,
+        "duration": 2.625
+    },
+    {
+        "text": "expected information value would be something like slate.",
+        "start": 668.585,
+        "duration": 3.055
+    },
+    {
+        "text": "In this case, you'll notice the distribution looks a lot flatter.",
+        "start": 673.12,
+        "duration": 2.5
+    },
+    {
+        "text": "In particular, the most probable occurrence of all grays only has about a 6% ",
+        "start": 675.94,
+        "duration": 4.457
+    },
+    {
+        "text": "chance of occurring, so at minimum you're getting evidently 3.9 bits of information.",
+        "start": 680.397,
+        "duration": 4.863
+    },
+    {
+        "text": "But that's a minimum, more typically you'd get something better than that.",
+        "start": 685.92,
+        "duration": 2.64
+    },
+    {
+        "text": "And it turns out when you crunch the numbers on this one and add ",
+        "start": 689.1,
+        "duration": 3.426
+    },
+    {
+        "text": "up all the relevant terms, the average information is about 5.8.",
+        "start": 692.526,
+        "duration": 3.374
+    },
+    {
+        "text": "So in contrast with weary, your space of possibilities will ",
+        "start": 697.36,
+        "duration": 3.196
+    },
+    {
+        "text": "be about half as big after this first guess, on average.",
+        "start": 700.556,
+        "duration": 2.984
+    },
+    {
+        "text": "There's actually a fun story about the name for ",
+        "start": 704.42,
+        "duration": 2.024
+    },
+    {
+        "text": "this expected value of information quantity.",
+        "start": 706.444,
+        "duration": 1.856
+    },
+    {
+        "text": "You see, information theory was developed by Claude Shannon, ",
+        "start": 708.3,
+        "duration": 2.846
+    },
+    {
+        "text": "who was working at Bell Labs in the 1940s, but he was talking about some of his ",
+        "start": 711.146,
+        "duration": 3.733
+    },
+    {
+        "text": "yet-to-be-published ideas with John von Neumann, ",
+        "start": 714.879,
+        "duration": 2.287
+    },
+    {
+        "text": "who was this intellectual giant of the time, very prominent in math and physics ",
+        "start": 717.166,
+        "duration": 3.734
+    },
+    {
+        "text": "and the beginnings of what was becoming computer science.",
+        "start": 720.9,
+        "duration": 2.66
+    },
+    {
+        "text": "And when he mentioned that he didn't really have a good name for this ",
+        "start": 724.1,
+        "duration": 3.334
+    },
+    {
+        "text": "expected value of information quantity, von Neumann supposedly said, ",
+        "start": 727.434,
+        "duration": 3.288
+    },
+    {
+        "text": "so the story goes, well, you should call it entropy, and for two reasons.",
+        "start": 730.722,
+        "duration": 3.478
+    },
+    {
+        "text": "In the first place, your uncertainty function has been used in statistical mechanics ",
+        "start": 734.54,
+        "duration": 4.025
+    },
+    {
+        "text": "under that name, so it already has a name, and in the second place, and more important, ",
+        "start": 738.565,
+        "duration": 4.169
+    },
+    {
+        "text": "nobody knows what entropy really is, so in a debate you'll always have the advantage.",
+        "start": 742.734,
+        "duration": 4.026
+    },
+    {
+        "text": "So if the name seems a little bit mysterious, and if this story is to be believed, ",
+        "start": 747.7,
+        "duration": 3.658
+    },
+    {
+        "text": "that's kind of by design.",
+        "start": 751.358,
+        "duration": 1.102
+    },
+    {
+        "text": "Also if you're wondering about its relation to all of that second law of thermodynamics ",
+        "start": 753.28,
+        "duration": 4.098
+    },
+    {
+        "text": "stuff from physics, there definitely is a connection, ",
+        "start": 757.378,
+        "duration": 2.515
+    },
+    {
+        "text": "but in its origins Shannon was just dealing with pure probability theory, ",
+        "start": 759.893,
+        "duration": 3.446
+    },
+    {
+        "text": "and for our purposes here, when I use the word entropy, ",
+        "start": 763.339,
+        "duration": 2.608
+    },
+    {
+        "text": "I just want you to think the expected information value of a particular guess.",
+        "start": 765.947,
+        "duration": 3.633
+    },
+    {
+        "text": "You can think of entropy as measuring two things simultaneously.",
+        "start": 770.7,
+        "duration": 3.08
+    },
+    {
+        "text": "The first one is how flat is the distribution?",
+        "start": 774.24,
+        "duration": 2.54
+    },
+    {
+        "text": "The closer a distribution is to uniform, the higher that entropy will be.",
+        "start": 777.32,
+        "duration": 3.8
+    },
+    {
+        "text": "In our case, where there are 3 to the 5th total patterns, for a uniform distribution, ",
+        "start": 781.58,
+        "duration": 5.063
+    },
+    {
+        "text": "observing any one of them would have information log base 2 of 3 to the 5th, ",
+        "start": 786.643,
+        "duration": 4.533
+    },
+    {
+        "text": "which happens to be 7.92, so that is the absolute maximum that you could possibly have ",
+        "start": 791.176,
+        "duration": 5.123
+    },
+    {
+        "text": "for this entropy.",
+        "start": 796.299,
+        "duration": 1.001
+    },
+    {
+        "text": "But entropy is also kind of a measure of how many ",
+        "start": 797.84,
+        "duration": 2.279
+    },
+    {
+        "text": "possibilities there are in the first place.",
+        "start": 800.119,
+        "duration": 1.961
+    },
+    {
+        "text": "For example, if you happen to have some word where there's only 16 possible patterns, ",
+        "start": 802.32,
+        "duration": 4.845
+    },
+    {
+        "text": "and each one is equally likely, this entropy, this expected information, would be 4 bits.",
+        "start": 807.165,
+        "duration": 5.015
+    },
+    {
+        "text": "But if you have another word where there's 64 possible patterns that could come up, ",
+        "start": 812.58,
+        "duration": 4.121
+    },
+    {
+        "text": "and they're all equally likely, then the entropy would work out to be 6 bits.",
+        "start": 816.701,
+        "duration": 3.779
+    },
+    {
+        "text": "So if you see some distribution out in the wild that has an entropy of 6 bits, ",
+        "start": 821.5,
+        "duration": 4.289
+    },
+    {
+        "text": "it's sort of like it's saying there's as much variation and uncertainty ",
+        "start": 825.789,
+        "duration": 3.91
+    },
+    {
+        "text": "in what's about to happen as if there were 64 equally likely outcomes.",
+        "start": 829.699,
+        "duration": 3.801
+    },
+    {
+        "text": "For my first pass at the Wurtelebot, I basically had it just do this.",
+        "start": 834.36,
+        "duration": 3.6
+    },
+    {
+        "text": "It goes through all of the different possible guesses that you could have, ",
+        "start": 837.96,
+        "duration": 3.735
+    },
+    {
+        "text": "all 13,000 words, it computes the entropy for each one, or more specifically, ",
+        "start": 841.695,
+        "duration": 3.885
+    },
+    {
+        "text": "the entropy of the distribution across all patterns that you might see for each one, ",
+        "start": 845.58,
+        "duration": 4.234
+    },
+    {
+        "text": "and then it picks the highest, since that's the one that's likely to chop ",
+        "start": 849.814,
+        "duration": 3.686
+    },
+    {
+        "text": "down your space of possibilities as much as possible.",
+        "start": 853.5,
+        "duration": 2.64
+    },
+    {
+        "text": "And even though I've only been talking about the first guess here, ",
+        "start": 857.14,
+        "duration": 2.307
+    },
+    {
+        "text": "it does the same thing for the next few guesses.",
+        "start": 859.447,
+        "duration": 1.653
+    },
+    {
+        "text": "For example, after you see some pattern on that first guess, ",
+        "start": 861.56,
+        "duration": 2.751
+    },
+    {
+        "text": "which would restrict you to a smaller number of possible words based on what ",
+        "start": 864.311,
+        "duration": 3.474
+    },
+    {
+        "text": "matches with that, you just play the same game with respect to that smaller set of words.",
+        "start": 867.785,
+        "duration": 4.015
+    },
+    {
+        "text": "For a proposed second guess, you look at the distribution of all patterns ",
+        "start": 872.26,
+        "duration": 3.808
+    },
+    {
+        "text": "that could occur from that more restricted set of words, ",
+        "start": 876.068,
+        "duration": 2.934
+    },
+    {
+        "text": "you search through all 13,000 possibilities, and you find the one that ",
+        "start": 879.002,
+        "duration": 3.654
+    },
+    {
+        "text": "maximizes that entropy.",
+        "start": 882.656,
+        "duration": 1.184
+    },
+    {
+        "text": "To show you how this works in action, let me just pull up a little variant of ",
+        "start": 885.42,
+        "duration": 3.358
+    },
+    {
+        "text": "Wurtele that I wrote that shows the highlights of this analysis in the margins.",
+        "start": 888.778,
+        "duration": 3.402
+    },
+    {
+        "text": "So after doing all its entropy calculations, on the right here ",
+        "start": 893.68,
+        "duration": 2.943
+    },
+    {
+        "text": "it's showing us which ones have the highest expected information.",
+        "start": 896.623,
+        "duration": 3.037
+    },
+    {
+        "text": "Turns out the top answer, at least at the moment, we'll refine this later, ",
+        "start": 900.28,
+        "duration": 5.364
+    },
+    {
+        "text": "is Tares, which means, um, of course, a vetch, the most common vetch.",
+        "start": 905.644,
+        "duration": 4.936
+    },
+    {
+        "text": "Each time we make a guess here, where maybe I kind of ignore its ",
+        "start": 911.04,
+        "duration": 2.988
+    },
+    {
+        "text": "recommendations and go with slate, because I like slate, ",
+        "start": 914.028,
+        "duration": 2.621
+    },
+    {
+        "text": "we can see how much expected information it had, ",
+        "start": 916.649,
+        "duration": 2.253
+    },
+    {
+        "text": "but then on the right of the word here it's showing us how much actual ",
+        "start": 918.902,
+        "duration": 3.265
+    },
+    {
+        "text": "information we got given this particular pattern.",
+        "start": 922.167,
+        "duration": 2.253
+    },
+    {
+        "text": "So here it looks like we were a little unlucky, we were expected to get 5.8, ",
+        "start": 925.0,
+        "duration": 3.032
+    },
+    {
+        "text": "but we happened to get something with less than that.",
+        "start": 928.032,
+        "duration": 2.088
+    },
+    {
+        "text": "And then on the left side here it's showing us all of ",
+        "start": 930.6,
+        "duration": 2.251
+    },
+    {
+        "text": "the different possible words given where we are now.",
+        "start": 932.851,
+        "duration": 2.169
+    },
+    {
+        "text": "The blue bars are telling us how likely it thinks each word is, ",
+        "start": 935.8,
+        "duration": 2.897
+    },
+    {
+        "text": "so at the moment it's assuming each word is equally likely to occur, ",
+        "start": 938.697,
+        "duration": 3.123
+    },
+    {
+        "text": "but we'll refine that in a moment.",
+        "start": 941.82,
+        "duration": 1.54
+    },
+    {
+        "text": "And then this uncertainty measurement is telling us the entropy of this distribution ",
+        "start": 944.06,
+        "duration": 4.214
+    },
+    {
+        "text": "across the possible words, which right now, because it's a uniform distribution, ",
+        "start": 948.274,
+        "duration": 4.016
+    },
+    {
+        "text": "is just a needlessly complicated way to count the number of possibilities.",
+        "start": 952.29,
+        "duration": 3.67
+    },
+    {
+        "text": "For example, if we were to take 2 to the power of 13.66, ",
+        "start": 956.56,
+        "duration": 3.08
+    },
+    {
+        "text": "that should be around the 13,000 possibilities.",
+        "start": 959.64,
+        "duration": 2.54
+    },
+    {
+        "text": "Um, a little bit off here, but only because I'm not showing all the decimal places.",
+        "start": 962.9,
+        "duration": 3.24
+    },
+    {
+        "text": "At the moment that might feel redundant and like it's overly complicating things, ",
+        "start": 966.72,
+        "duration": 3.156
+    },
+    {
+        "text": "but you'll see why it's useful to have both numbers in a minute.",
+        "start": 969.876,
+        "duration": 2.464
+    },
+    {
+        "text": "So here it looks like it's suggesting the highest entropy for our second guess is Raman, ",
+        "start": 972.76,
+        "duration": 4.282
+    },
+    {
+        "text": "which again just really doesn't feel like a word.",
+        "start": 977.042,
+        "duration": 2.358
+    },
+    {
+        "text": "So to take the moral high ground here I'm going to go ahead and type in Rains.",
+        "start": 979.98,
+        "duration": 4.08
+    },
+    {
+        "text": "And again it looks like we were a little unlucky.",
+        "start": 985.44,
+        "duration": 1.9
+    },
+    {
+        "text": "We were expecting 4.3 bits and we only got 3.39 bits of information.",
+        "start": 987.52,
+        "duration": 3.84
+    },
+    {
+        "text": "So that takes us down to 55 possibilities.",
+        "start": 991.94,
+        "duration": 2.0
+    },
+    {
+        "text": "And here maybe I'll just actually go with what it's suggesting, ",
+        "start": 994.9,
+        "duration": 2.905
+    },
+    {
+        "text": "which is combo, whatever that means.",
+        "start": 997.805,
+        "duration": 1.635
+    },
+    {
+        "text": "And, okay, this is actually a good chance for a puzzle.",
+        "start": 1000.04,
+        "duration": 2.88
+    },
+    {
+        "text": "It's telling us this pattern gives us 4.7 bits of information.",
+        "start": 1002.92,
+        "duration": 3.46
+    },
+    {
+        "text": "But over on the left, before we see that pattern, there were 5.78 bits of uncertainty.",
+        "start": 1007.06,
+        "duration": 4.66
+    },
+    {
+        "text": "So as a quiz for you, what does that mean about the number of remaining possibilities?",
+        "start": 1012.42,
+        "duration": 3.92
+    },
+    {
+        "text": "Well it means that we're reduced down to 1 bit of uncertainty, ",
+        "start": 1018.04,
+        "duration": 3.174
+    },
+    {
+        "text": "which is the same thing as saying that there's 2 possible answers.",
+        "start": 1021.214,
+        "duration": 3.326
+    },
+    {
+        "text": "It's a 50-50 choice.",
+        "start": 1024.7,
+        "duration": 1.0
+    },
+    {
+        "text": "And from here, because you and I know which words are more common, ",
+        "start": 1026.5,
+        "duration": 2.592
+    },
+    {
+        "text": "we know that the answer should be abyss.",
+        "start": 1029.092,
+        "duration": 1.548
+    },
+    {
+        "text": "But as it's written right now, the program doesn't know that.",
+        "start": 1031.18,
+        "duration": 2.1
+    },
+    {
+        "text": "So it just keeps going, trying to gain as much information as it can, ",
+        "start": 1033.54,
+        "duration": 3.377
+    },
+    {
+        "text": "until it's only one possibility left, and then it guesses it.",
+        "start": 1036.917,
+        "duration": 2.942
+    },
+    {
+        "text": "So obviously we need a better endgame strategy, ",
+        "start": 1040.38,
+        "duration": 2.278
+    },
+    {
+        "text": "but let's say we call this version 1 of our wordle solver, ",
+        "start": 1042.658,
+        "duration": 2.801
+    },
+    {
+        "text": "and then we go and run some simulations to see how it does.",
+        "start": 1045.459,
+        "duration": 2.801
+    },
+    {
+        "text": "So the way this is working is it's playing every possible wordle game.",
+        "start": 1050.36,
+        "duration": 3.76
+    },
+    {
+        "text": "It's going through all of those 2315 words that are the actual wordle answers.",
+        "start": 1054.24,
+        "duration": 4.3
+    },
+    {
+        "text": "It's basically using that as a testing set.",
+        "start": 1058.54,
+        "duration": 2.04
+    },
+    {
+        "text": "And with this naive method of not considering how common a word is, ",
+        "start": 1061.36,
+        "duration": 3.092
+    },
+    {
+        "text": "and just trying to maximize the information at each step along the way, ",
+        "start": 1064.452,
+        "duration": 3.275
+    },
+    {
+        "text": "until it gets down to one and only one choice.",
+        "start": 1067.727,
+        "duration": 2.093
+    },
+    {
+        "text": "By the end of the simulation, the average score works out to be about 4.124.",
+        "start": 1070.36,
+        "duration": 3.94
+    },
+    {
+        "text": "Which is not bad, to be honest, I kind of expect it to do worse.",
+        "start": 1075.32,
+        "duration": 3.92
+    },
+    {
+        "text": "But the people who play wordle will tell you that they can usually get it in 4.",
+        "start": 1079.66,
+        "duration": 2.94
+    },
+    {
+        "text": "The real challenge is to get as many in 3 as you can.",
+        "start": 1082.86,
+        "duration": 2.52
+    },
+    {
+        "text": "It's a pretty big jump between the score of 4 and the score of 3.",
+        "start": 1085.38,
+        "duration": 2.7
+    },
+    {
+        "text": "The obvious low-hanging fruit here is to somehow incorporate ",
+        "start": 1088.86,
+        "duration": 3.01
+    },
+    {
+        "text": "whether or not a word is common, and how exactly do we do that.",
+        "start": 1091.87,
+        "duration": 3.11
+    },
+    {
+        "text": "The way I approached it is to get a list of the relative frequencies for all of ",
+        "start": 1102.8,
+        "duration": 3.937
+    },
+    {
+        "text": "the words in the English language, and I just used Mathematica's word frequency ",
+        "start": 1106.737,
+        "duration": 3.938
+    },
+    {
+        "text": "data function, which itself pulls from the Google Books English Ngram public dataset.",
+        "start": 1110.675,
+        "duration": 4.185
+    },
+    {
+        "text": "And it's kind of fun to look at, for example if we sort ",
+        "start": 1115.46,
+        "duration": 2.25
+    },
+    {
+        "text": "it from the most common words to the least common words.",
+        "start": 1117.71,
+        "duration": 2.25
+    },
+    {
+        "text": "Evidently these are the most common, 5-letter words in the English language.",
+        "start": 1120.12,
+        "duration": 2.96
+    },
+    {
+        "text": "Or rather, these is the 8th most common.",
+        "start": 1123.7,
+        "duration": 2.14
+    },
+    {
+        "text": "First is which, after which there's there and there.",
+        "start": 1126.28,
+        "duration": 2.6
+    },
+    {
+        "text": "First itself is not first, but 9th, and it makes sense that these ",
+        "start": 1129.26,
+        "duration": 3.154
+    },
+    {
+        "text": "other words could come about more often, where those after first are after, ",
+        "start": 1132.414,
+        "duration": 3.632
+    },
+    {
+        "text": "where, and those being just a little bit less common.",
+        "start": 1136.046,
+        "duration": 2.534
+    },
+    {
+        "text": "Now, in using this data to model how likely each of these words is to ",
+        "start": 1139.16,
+        "duration": 3.96
+    },
+    {
+        "text": "be the final answer, it shouldn't just be proportional to the frequency, ",
+        "start": 1143.12,
+        "duration": 4.131
+    },
+    {
+        "text": "because for example which is given a score of 0.002 in this dataset, ",
+        "start": 1147.251,
+        "duration": 3.904
+    },
+    {
+        "text": "whereas the word braid is in some sense about 1000 times less likely.",
+        "start": 1151.155,
+        "duration": 3.905
+    },
+    {
+        "text": "But both of these are common enough words that they're almost ",
+        "start": 1155.56,
+        "duration": 2.676
+    },
+    {
+        "text": "certainly worth considering, so we want more of a binary cutoff.",
+        "start": 1158.236,
+        "duration": 2.764
+    },
+    {
+        "text": "The way I went about it is to imagine taking this whole sorted list of words, ",
+        "start": 1161.86,
+        "duration": 3.948
+    },
+    {
+        "text": "and then arranging it on an x-axis, and then applying the sigmoid function, ",
+        "start": 1165.808,
+        "duration": 3.847
+    },
+    {
+        "text": "which is the standard way to have a function whose output is basically binary, ",
+        "start": 1169.655,
+        "duration": 3.998
+    },
+    {
+        "text": "it's either 0 or it's 1, but there's a smoothing in between for that region of ",
+        "start": 1173.653,
+        "duration": 3.999
+    },
+    {
+        "text": "uncertainty.",
+        "start": 1177.652,
+        "duration": 0.608
+    },
+    {
+        "text": "So essentially, the probability that I'm assigning to each word for being in the final ",
+        "start": 1179.16,
+        "duration": 4.721
+    },
+    {
+        "text": "list will be the value of the sigmoid function above wherever it sits on the x-axis.",
+        "start": 1183.881,
+        "duration": 4.559
+    },
+    {
+        "text": "Now obviously this depends on a few parameters, ",
+        "start": 1189.52,
+        "duration": 2.622
+    },
+    {
+        "text": "for example how wide a space on the x-axis those words fill determines how ",
+        "start": 1192.142,
+        "duration": 4.097
+    },
+    {
+        "text": "gradually or steeply we drop off from 1 to 0, and where we situate them left ",
+        "start": 1196.239,
+        "duration": 4.207
+    },
+    {
+        "text": "to right determines the cutoff.",
+        "start": 1200.446,
+        "duration": 1.694
+    },
+    {
+        "text": "And to be honest the way I did this was kind of ",
+        "start": 1202.98,
+        "duration": 1.872
+    },
+    {
+        "text": "just licking my finger and sticking it into the wind.",
+        "start": 1204.852,
+        "duration": 2.068
+    },
+    {
+        "text": "I looked through the sorted list and tried to find a window where ",
+        "start": 1207.14,
+        "duration": 2.978
+    },
+    {
+        "text": "when I looked at it I figured about half of these words are more ",
+        "start": 1210.118,
+        "duration": 2.933
+    },
+    {
+        "text": "likely than not to be the final answer, and used that as the cutoff.",
+        "start": 1213.051,
+        "duration": 3.069
+    },
+    {
+        "text": "Now once we have a distribution like this across the words, ",
+        "start": 1217.1,
+        "duration": 2.836
+    },
+    {
+        "text": "it gives us another situation where entropy becomes this really useful measurement.",
+        "start": 1219.936,
+        "duration": 3.924
+    },
+    {
+        "text": "For example, let's say we were playing a game and we start with my old openers, ",
+        "start": 1224.5,
+        "duration": 3.739
+    },
+    {
+        "text": "which were other and nails, and we end up with a situation ",
+        "start": 1228.239,
+        "duration": 2.757
+    },
+    {
+        "text": "where there's four possible words that match it.",
+        "start": 1230.996,
+        "duration": 2.244
+    },
+    {
+        "text": "And let's say we consider them all equally likely, ",
+        "start": 1233.56,
+        "duration": 2.512
+    },
+    {
+        "text": "let me ask you, what is the entropy of this distribution?",
+        "start": 1236.072,
+        "duration": 2.808
+    },
+    {
+        "text": "Well, the information associated with each one of these possibilities is ",
+        "start": 1241.08,
+        "duration": 4.59
+    },
+    {
+        "text": "going to be the log base 2 of 4, since each one is 1 and 4, and that's 2.",
+        "start": 1245.67,
+        "duration": 4.59
+    },
+    {
+        "text": "2 bits of information, 4 possibilities.",
+        "start": 1250.64,
+        "duration": 1.82
+    },
+    {
+        "text": "All very well and good.",
+        "start": 1252.76,
+        "duration": 0.82
+    },
+    {
+        "text": "But what if I told you that actually there's more than 4 matches?",
+        "start": 1254.3,
+        "duration": 3.5
+    },
+    {
+        "text": "In reality, when we look through the full word list, there are 16 words that match it.",
+        "start": 1258.26,
+        "duration": 4.2
+    },
+    {
+        "text": "But suppose our model puts a really low probability on those other 12 words of actually ",
+        "start": 1262.58,
+        "duration": 4.284
+    },
+    {
+        "text": "being the final answer, something like 1 in 1000 because they're really obscure.",
+        "start": 1266.864,
+        "duration": 3.896
+    },
+    {
+        "text": "Now let me ask you, what is the entropy of this distribution?",
+        "start": 1271.5,
+        "duration": 2.76
+    },
+    {
+        "text": "If entropy was purely measuring the number of matches here, ",
+        "start": 1275.42,
+        "duration": 3.179
+    },
+    {
+        "text": "then you might expect it to be something like the log base 2 of 16, ",
+        "start": 1278.599,
+        "duration": 3.603
+    },
+    {
+        "text": "which would be 4, two more bits of uncertainty than we had before.",
+        "start": 1282.202,
+        "duration": 3.498
+    },
+    {
+        "text": "But of course the actual uncertainty is not really that different from what we had before.",
+        "start": 1286.18,
+        "duration": 3.68
+    },
+    {
+        "text": "Just because there's these 12 really obscure words doesn't mean that it would ",
+        "start": 1290.16,
+        "duration": 3.532
+    },
+    {
+        "text": "be all that more surprising to learn that the final answer is charm, for example.",
+        "start": 1293.692,
+        "duration": 3.668
+    },
+    {
+        "text": "So when you actually do the calculation here and you add up the probability of ",
+        "start": 1298.18,
+        "duration": 3.92
+    },
+    {
+        "text": "each occurrence times the corresponding information, what you get is 2.11 bits.",
+        "start": 1302.1,
+        "duration": 3.92
+    },
+    {
+        "text": "Just saying, it's basically two bits, basically those four possibilities, ",
+        "start": 1306.02,
+        "duration": 3.401
+    },
+    {
+        "text": "but there's a little more uncertainty because of all of those highly unlikely events, ",
+        "start": 1309.421,
+        "duration": 3.953
+    },
+    {
+        "text": "though if you did learn them you'd get a ton of information from it.",
+        "start": 1313.374,
+        "duration": 3.126
+    },
+    {
+        "text": "So zooming out, this is part of what makes Wordle ",
+        "start": 1317.16,
+        "duration": 2.058
+    },
+    {
+        "text": "such a nice example for an information theory lesson.",
+        "start": 1319.218,
+        "duration": 2.182
+    },
+    {
+        "text": "We have these two distinct feeling applications for entropy.",
+        "start": 1321.6,
+        "duration": 3.04
+    },
+    {
+        "text": "The first one telling us what's the expected information we'll get from a given guess, ",
+        "start": 1325.16,
+        "duration": 4.619
+    },
+    {
+        "text": "and the second one saying can we measure the remaining uncertainty ",
+        "start": 1329.779,
+        "duration": 3.557
+    },
+    {
+        "text": "among all of the words we have possible.",
+        "start": 1333.336,
+        "duration": 2.124
+    },
+    {
+        "text": "And I should emphasize, in that first case where we're looking ",
+        "start": 1336.46,
+        "duration": 2.707
+    },
+    {
+        "text": "at the expected information of a guess, once we have an unequal weighting to the words, ",
+        "start": 1339.167,
+        "duration": 3.782
+    },
+    {
+        "text": "that affects the entropy calculation.",
+        "start": 1342.949,
+        "duration": 1.591
+    },
+    {
+        "text": "For example, let me pull up that same case we were looking at ",
+        "start": 1344.98,
+        "duration": 2.913
+    },
+    {
+        "text": "earlier of the distribution associated with Weary, ",
+        "start": 1347.893,
+        "duration": 2.396
+    },
+    {
+        "text": "but this time using a non-uniform distribution across all possible words.",
+        "start": 1350.289,
+        "duration": 3.431
+    },
+    {
+        "text": "So let me see if I can find a part here that illustrates it pretty well.",
+        "start": 1354.5,
+        "duration": 3.78
+    },
+    {
+        "text": "Okay, here, this is pretty good.",
+        "start": 1360.94,
+        "duration": 1.42
+    },
+    {
+        "text": "Here we have two adjacent patterns that are about equally likely, ",
+        "start": 1362.36,
+        "duration": 3.448
+    },
+    {
+        "text": "but one of them we're told has 32 possible words that match it.",
+        "start": 1365.808,
+        "duration": 3.292
+    },
+    {
+        "text": "And if we check what they are, these are those 32, ",
+        "start": 1369.28,
+        "duration": 2.641
+    },
+    {
+        "text": "which are all just very unlikely words as you scan your eyes over them.",
+        "start": 1371.921,
+        "duration": 3.679
+    },
+    {
+        "text": "It's hard to find any that feel like plausible answers, maybe yells, ",
+        "start": 1375.84,
+        "duration": 3.378
+    },
+    {
+        "text": "but if we look at the neighboring pattern in the distribution, ",
+        "start": 1379.218,
+        "duration": 3.084
+    },
+    {
+        "text": "which is considered just about as likely, we're told that it only has 8 possible matches.",
+        "start": 1382.302,
+        "duration": 4.358
+    },
+    {
+        "text": "So a quarter as many matches, but it's about as likely.",
+        "start": 1386.88,
+        "duration": 2.64
+    },
+    {
+        "text": "And when we pull up those matches, we can see why.",
+        "start": 1389.86,
+        "duration": 2.28
+    },
+    {
+        "text": "Some of these are actual plausible answers like ring or wrath or raps.",
+        "start": 1392.5,
+        "duration": 3.8
+    },
+    {
+        "text": "To illustrate how we incorporate all that, let ",
+        "start": 1397.9,
+        "duration": 2.247
+    },
+    {
+        "text": "me pull up version two of the Wordlebot here.",
+        "start": 1400.147,
+        "duration": 2.153
+    },
+    {
+        "text": "And there are two or three main differences from the first one that we saw.",
+        "start": 1402.56,
+        "duration": 2.72
+    },
+    {
+        "text": "First off, like I just said, the way that we're computing these entropies, ",
+        "start": 1405.86,
+        "duration": 3.598
+    },
+    {
+        "text": "these expected values of information, is now using the more refined distributions across ",
+        "start": 1409.458,
+        "duration": 4.271
+    },
+    {
+        "text": "the patterns that incorporates the probability that a given word would actually be the ",
+        "start": 1413.729,
+        "duration": 4.175
+    },
+    {
+        "text": "answer.",
+        "start": 1417.904,
+        "duration": 0.336
+    },
+    {
+        "text": "As it happens, tears is still number one, though the ones following are a bit different.",
+        "start": 1418.88,
+        "duration": 4.94
+    },
+    {
+        "text": "Second, when it ranks its top picks, it's now going to keep a model of the ",
+        "start": 1424.36,
+        "duration": 3.45
+    },
+    {
+        "text": "probability that each word is the actual answer, ",
+        "start": 1427.81,
+        "duration": 2.255
+    },
+    {
+        "text": "and it'll incorporate that into its decision, which is easier to see once we ",
+        "start": 1430.065,
+        "duration": 3.542
+    },
+    {
+        "text": "have a few guesses on the table.",
+        "start": 1433.607,
+        "duration": 1.473
+    },
+    {
+        "text": "Again, ignoring its recommendation because we can't let machines rule our lives.",
+        "start": 1435.86,
+        "duration": 3.92
+    },
+    {
+        "text": "And I suppose I should mention another thing different here is over on the left, ",
+        "start": 1441.14,
+        "duration": 3.623
+    },
+    {
+        "text": "that uncertainty value, that number of bits, is no longer just ",
+        "start": 1444.763,
+        "duration": 2.819
+    },
+    {
+        "text": "redundant with the number of possible matches.",
+        "start": 1447.582,
+        "duration": 2.058
+    },
+    {
+        "text": "Now if we pull it up and calculate 2 to the 8.02, which would be a little above 256, ",
+        "start": 1450.08,
+        "duration": 5.39
+    },
+    {
+        "text": "I guess 259, what it's saying is even though there are 526 total words that ",
+        "start": 1455.47,
+        "duration": 4.821
+    },
+    {
+        "text": "actually match this pattern, the amount of uncertainty it has is more akin ",
+        "start": 1460.291,
+        "duration": 4.756
+    },
+    {
+        "text": "to what it would be if there were 259 equally likely outcomes.",
+        "start": 1465.047,
+        "duration": 3.933
+    },
+    {
+        "text": "You can think of it like this.",
+        "start": 1469.72,
+        "duration": 1.02
+    },
+    {
+        "text": "It knows borks is not the answer, same with yorts and zorl and zorus.",
+        "start": 1471.02,
+        "duration": 3.64
+    },
+    {
+        "text": "So it's a little less uncertain than it was in the previous case.",
+        "start": 1474.66,
+        "duration": 3.02
+    },
+    {
+        "text": "This number of bits will be smaller.",
+        "start": 1477.82,
+        "duration": 1.46
+    },
+    {
+        "text": "And if I keep playing the game, I'm refining this down with a ",
+        "start": 1480.22,
+        "duration": 2.991
+    },
+    {
+        "text": "couple guesses that are apropos of what I would like to explain here.",
+        "start": 1483.211,
+        "duration": 3.329
+    },
+    {
+        "text": "By the fourth guess, if you look over at its top picks, ",
+        "start": 1488.36,
+        "duration": 2.724
+    },
+    {
+        "text": "you can see it's no longer just maximizing the entropy.",
+        "start": 1491.084,
+        "duration": 2.676
+    },
+    {
+        "text": "So at this point, there's technically seven possibilities, ",
+        "start": 1494.46,
+        "duration": 2.824
+    },
+    {
+        "text": "but the only ones with a meaningful chance are dorms and words.",
+        "start": 1497.284,
+        "duration": 3.016
+    },
+    {
+        "text": "And you can see it ranks choosing both of those above all of these ",
+        "start": 1500.3,
+        "duration": 3.283
+    },
+    {
+        "text": "other values that strictly speaking would give more information.",
+        "start": 1503.583,
+        "duration": 3.137
+    },
+    {
+        "text": "The very first time I did this, I just added up these two numbers to measure ",
+        "start": 1507.24,
+        "duration": 3.287
+    },
+    {
+        "text": "the quality of each guess, which actually worked better than you might suspect.",
+        "start": 1510.527,
+        "duration": 3.373
+    },
+    {
+        "text": "But it really didn't feel systematic.",
+        "start": 1514.3,
+        "duration": 1.6
+    },
+    {
+        "text": "And I'm sure there's other approaches people could take.",
+        "start": 1516.1,
+        "duration": 1.78
+    },
+    {
+        "text": "But here's the one I landed on.",
+        "start": 1517.9,
+        "duration": 1.44
+    },
+    {
+        "text": "If we're considering the prospect of a next guess, like in this case words, ",
+        "start": 1519.76,
+        "duration": 4.124
+    },
+    {
+        "text": "what we really care about is the expected score of our game if we do that.",
+        "start": 1523.884,
+        "duration": 4.016
+    },
+    {
+        "text": "And to calculate that expected score, we say what's the probability ",
+        "start": 1528.23,
+        "duration": 3.699
+    },
+    {
+        "text": "that words is the actual answer, which at the moment it describes 58% to.",
+        "start": 1531.929,
+        "duration": 3.971
+    },
+    {
+        "text": "We say with a 58% chance, our score in this game would be four.",
+        "start": 1536.04,
+        "duration": 3.5
+    },
+    {
+        "text": "And then with the probability of one minus that 58%, ",
+        "start": 1540.32,
+        "duration": 3.098
+    },
+    {
+        "text": "our score will be more than that four.",
+        "start": 1543.418,
+        "duration": 2.222
+    },
+    {
+        "text": "How much more we don't know, but we can estimate it based on how ",
+        "start": 1546.22,
+        "duration": 3.144
+    },
+    {
+        "text": "much uncertainty there's likely to be once we get to that point.",
+        "start": 1549.364,
+        "duration": 3.096
+    },
+    {
+        "text": "Specifically, at the moment, there's 1.44 bits of uncertainty.",
+        "start": 1552.96,
+        "duration": 2.98
+    },
+    {
+        "text": "If we guess words, it's telling us the expected information we'll get is 1.27 bits.",
+        "start": 1556.44,
+        "duration": 4.68
+    },
+    {
+        "text": "So if we guess words, this difference represents how much ",
+        "start": 1561.62,
+        "duration": 2.968
+    },
+    {
+        "text": "uncertainty we're likely to be left with after that happens.",
+        "start": 1564.588,
+        "duration": 3.072
+    },
+    {
+        "text": "What we need is some kind of function, which I'm calling f here, ",
+        "start": 1568.26,
+        "duration": 2.943
+    },
+    {
+        "text": "that associates this uncertainty with an expected score.",
+        "start": 1571.203,
+        "duration": 2.537
+    },
+    {
+        "text": "And the way it went about this was to just plot a bunch of the data from ",
+        "start": 1574.24,
+        "duration": 3.801
+    },
+    {
+        "text": "previous games based on version one of the bot to say, hey, ",
+        "start": 1578.041,
+        "duration": 3.124
+    },
+    {
+        "text": "what was the actual score after various points with certain very measurable ",
+        "start": 1581.165,
+        "duration": 3.957
+    },
+    {
+        "text": "amounts of uncertainty?",
+        "start": 1585.122,
+        "duration": 1.198
+    },
+    {
+        "text": "For example, these data points here that are sitting above a value that's ",
+        "start": 1587.02,
+        "duration": 3.909
+    },
+    {
+        "text": "around like 8.7 or so are saying for some games, ",
+        "start": 1590.929,
+        "duration": 2.589
+    },
+    {
+        "text": "after a point at which there were 8.7 bits of uncertainty, ",
+        "start": 1593.518,
+        "duration": 3.117
+    },
+    {
+        "text": "it took two guesses to get the final answer.",
+        "start": 1596.635,
+        "duration": 2.325
+    },
+    {
+        "text": "For other games, it took three guesses.",
+        "start": 1599.32,
+        "duration": 1.34
+    },
+    {
+        "text": "For other games, it took four guesses.",
+        "start": 1600.82,
+        "duration": 1.42
+    },
+    {
+        "text": "If we shift over to the left here, all the points over zero are saying whenever ",
+        "start": 1603.14,
+        "duration": 3.769
+    },
+    {
+        "text": "there's zero bits of uncertainty, which is to say there's only one possibility, ",
+        "start": 1606.909,
+        "duration": 3.769
+    },
+    {
+        "text": "then the number of guesses required is always just one, which is reassuring.",
+        "start": 1610.678,
+        "duration": 3.582
+    },
+    {
+        "text": "Whenever there was one bit of uncertainty, meaning it was essentially ",
+        "start": 1614.78,
+        "duration": 3.437
+    },
+    {
+        "text": "just down to two possibilities, then sometimes it required one more guess, ",
+        "start": 1618.217,
+        "duration": 3.683
+    },
+    {
+        "text": "sometimes it required two more guesses, and so on and so forth here.",
+        "start": 1621.9,
+        "duration": 3.34
+    },
+    {
+        "text": "Maybe a slightly easier way to visualize this ",
+        "start": 1625.74,
+        "duration": 2.192
+    },
+    {
+        "text": "data is to bucket it together and take averages.",
+        "start": 1627.932,
+        "duration": 2.288
+    },
+    {
+        "text": "For example, this bar here is saying among all the points where we had one ",
+        "start": 1631.0,
+        "duration": 4.335
+    },
+    {
+        "text": "bit of uncertainty, on average the number of new guesses required was about 1.5.",
+        "start": 1635.335,
+        "duration": 4.625
+    },
+    {
+        "text": "And the bar over here is saying among all of the different games where ",
+        "start": 1642.14,
+        "duration": 3.393
+    },
+    {
+        "text": "at some point the uncertainty was a little above four bits, ",
+        "start": 1645.533,
+        "duration": 2.868
+    },
+    {
+        "text": "which is like narrowing it down to 16 different possibilities, ",
+        "start": 1648.401,
+        "duration": 3.011
+    },
+    {
+        "text": "then on average it requires a little more than two guesses from that point forward.",
+        "start": 1651.412,
+        "duration": 3.968
+    },
+    {
+        "text": "And from here I just did a regression to fit a function that seemed reasonable to this.",
+        "start": 1656.06,
+        "duration": 3.4
+    },
+    {
+        "text": "And remember, the whole point of doing any of that is so that we can quantify this ",
+        "start": 1659.98,
+        "duration": 4.21
+    },
+    {
+        "text": "intuition that the more information we gain from a word, ",
+        "start": 1664.19,
+        "duration": 2.892
+    },
+    {
+        "text": "the lower the expected score will be.",
+        "start": 1667.082,
+        "duration": 1.878
+    },
+    {
+        "text": "So, with this as version 2.0, if we go back and run the same set of simulations, ",
+        "start": 1669.68,
+        "duration": 5.061
+    },
+    {
+        "text": "having it play against all 2315 possible wordle answers, how does it do?",
+        "start": 1674.741,
+        "duration": 4.499
+    },
+    {
+        "text": "Well in contrast to our first version, it's definitely better, which is reassuring.",
+        "start": 1680.28,
+        "duration": 3.14
+    },
+    {
+        "text": "All said and done, the average is around 3.6.",
+        "start": 1684.02,
+        "duration": 2.16
+    },
+    {
+        "text": "Although unlike the first version, there are a couple times that it loses, ",
+        "start": 1686.54,
+        "duration": 3.402
+    },
+    {
+        "text": "and requires more than six in this circumstance.",
+        "start": 1689.942,
+        "duration": 2.178
+    },
+    {
+        "text": "Presumably because there's times when it's making that tradeoff ",
+        "start": 1692.64,
+        "duration": 2.67
+    },
+    {
+        "text": "to actually go for the goal rather than maximizing information.",
+        "start": 1695.31,
+        "duration": 2.63
+    },
+    {
+        "text": "So can we do better than 3.6?",
+        "start": 1699.04,
+        "duration": 1.96
+    },
+    {
+        "text": "We definitely can.",
+        "start": 1702.08,
+        "duration": 0.84
+    },
+    {
+        "text": "Now, I said at the start that it's most fun to try not incorporating ",
+        "start": 1703.28,
+        "duration": 3.018
+    },
+    {
+        "text": "the true list of wordle answers into the way that it builds its model.",
+        "start": 1706.298,
+        "duration": 3.062
+    },
+    {
+        "text": "But if we do incorporate it, the best performance I could get was around 3.43.",
+        "start": 1709.88,
+        "duration": 4.3
+    },
+    {
+        "text": "So if we try to get more sophisticated than just using word frequency data ",
+        "start": 1715.16,
+        "duration": 3.606
+    },
+    {
+        "text": "to choose this prior distribution, this 3.43 probably gives a max at how ",
+        "start": 1718.766,
+        "duration": 3.511
+    },
+    {
+        "text": "good we could get with that, or at least how good I could get with that.",
+        "start": 1722.277,
+        "duration": 3.463
+    },
+    {
+        "text": "That best performance essentially just uses the ideas that I've been talking about here, ",
+        "start": 1726.24,
+        "duration": 3.781
+    },
+    {
+        "text": "but it goes a little farther, like it does a search for the expected ",
+        "start": 1730.021,
+        "duration": 2.932
+    },
+    {
+        "text": "information two steps forward rather than just one.",
+        "start": 1732.953,
+        "duration": 2.167
+    },
+    {
+        "text": "Originally I was planning on talking more about that, ",
+        "start": 1735.62,
+        "duration": 2.3
+    },
+    {
+        "text": "but I realize we've actually gone quite long as it is.",
+        "start": 1737.92,
+        "duration": 2.3
+    },
+    {
+        "text": "The one thing I'll say is after doing this two-step search and ",
+        "start": 1740.58,
+        "duration": 2.766
+    },
+    {
+        "text": "then running a couple sample simulations in the top candidates, ",
+        "start": 1743.346,
+        "duration": 2.811
+    },
+    {
+        "text": "so far for me at least, it's looking like Crane is the best opener.",
+        "start": 1746.157,
+        "duration": 2.943
+    },
+    {
+        "text": "Who would have guessed?",
+        "start": 1749.1,
+        "duration": 0.96
+    },
+    {
+        "text": "Also if you use the true wordle list to determine your space of possibilities, ",
+        "start": 1750.92,
+        "duration": 3.893
+    },
+    {
+        "text": "then the uncertainty you start with is a little over 11 bits.",
+        "start": 1754.813,
+        "duration": 3.007
+    },
+    {
+        "text": "And it turns out just from a brute force search, ",
+        "start": 1758.3,
+        "duration": 2.711
+    },
+    {
+        "text": "the maximum possible expected information after the first two guesses is around 10 bits.",
+        "start": 1761.011,
+        "duration": 4.869
+    },
+    {
+        "text": "Which suggests that best case scenario, after your first two guesses, ",
+        "start": 1766.5,
+        "duration": 3.786
+    },
+    {
+        "text": "with perfectly optimal play, you'll be left with around one bit of uncertainty.",
+        "start": 1770.286,
+        "duration": 4.274
+    },
+    {
+        "text": "Which is the same as being down to two possible guesses.",
+        "start": 1774.8,
+        "duration": 2.52
+    },
+    {
+        "text": "But I think it's fair and probably pretty conservative to say that you could never ",
+        "start": 1777.74,
+        "duration": 3.736
+    },
+    {
+        "text": "possibly write an algorithm that gets this average as low as three, ",
+        "start": 1781.476,
+        "duration": 3.061
+    },
+    {
+        "text": "because with the words available to you, there's simply not room to get enough ",
+        "start": 1784.537,
+        "duration": 3.556
+    },
+    {
+        "text": "information after only two steps to be able to guarantee the answer in the third slot ",
+        "start": 1788.093,
+        "duration": 3.871
+    },
+    {
+        "text": "every single time without fail.",
+        "start": 1791.964,
+        "duration": 1.396
+    }
+]

@@ -1,0 +1,1757 @@
+[
+    {
+        "text": "Some of you may have heard this paradoxical fact about medical tests.",
+        "start": 0.0,
+        "duration": 3.14
+    },
+    {
+        "text": "It's very commonly used to introduce the topic of Bayes' rule in probability.",
+        "start": 3.58,
+        "duration": 3.16
+    },
+    {
+        "text": "The paradox is that you could take a test which is highly accurate, ",
+        "start": 7.5,
+        "duration": 3.579
+    },
+    {
+        "text": "in the sense that it gives correct results to a large majority of the people taking it.",
+        "start": 11.079,
+        "duration": 4.581
+    },
+    {
+        "text": "And yet, under the right circumstances, when assessing the ",
+        "start": 16.04,
+        "duration": 3.326
+    },
+    {
+        "text": "probability that your particular test result is correct, ",
+        "start": 19.366,
+        "duration": 3.213
+    },
+    {
+        "text": "you can still land on a very low number, arbitrarily low, in fact.",
+        "start": 22.579,
+        "duration": 3.721
+    },
+    {
+        "text": "In short, an accurate test is not necessarily a very predictive test.",
+        "start": 26.78,
+        "duration": 5.04
+    },
+    {
+        "text": "Now when people think about math and formulas, ",
+        "start": 33.06,
+        "duration": 2.144
+    },
+    {
+        "text": "they don't often think of it as a design process.",
+        "start": 35.204,
+        "duration": 2.236
+    },
+    {
+        "text": "I mean, maybe in the case of notation it's easy to see that different choices ",
+        "start": 38.08,
+        "duration": 3.968
+    },
+    {
+        "text": "are possible, but when it comes to the structure of the formulas themselves ",
+        "start": 42.048,
+        "duration": 3.867
+    },
+    {
+        "text": "and how we use them, that's something that people typically view as fixed.",
+        "start": 45.915,
+        "duration": 3.765
+    },
+    {
+        "text": "In this video, you and I will dig into this paradox, ",
+        "start": 50.68,
+        "duration": 2.685
+    },
+    {
+        "text": "but instead of using it to talk about the usual version of Bayes' rule, ",
+        "start": 53.365,
+        "duration": 3.648
+    },
+    {
+        "text": "I'd like to motivate an alternate version, an alternate design choice.",
+        "start": 57.013,
+        "duration": 3.547
+    },
+    {
+        "text": "Now, what's up on the screen now is a little bit abstract, ",
+        "start": 61.66,
+        "duration": 2.646
+    },
+    {
+        "text": "which makes it difficult to justify that there really is a substantive difference here, ",
+        "start": 64.306,
+        "duration": 3.946
+    },
+    {
+        "text": "especially when I haven't explained either one yet.",
+        "start": 68.252,
+        "duration": 2.288
+    },
+    {
+        "text": "To see what I'm talking about though, we should really start by spending some ",
+        "start": 71.04,
+        "duration": 3.485
+    },
+    {
+        "text": "time a little more concretely, and just laying out what exactly this paradox is.",
+        "start": 74.525,
+        "duration": 3.575
+    },
+    {
+        "text": "Picture a thousand women and suppose that 1% of them have breast cancer.",
+        "start": 84.02,
+        "duration": 3.92
+    },
+    {
+        "text": "And let's say they all undergo a certain breast cancer screening, ",
+        "start": 88.68,
+        "duration": 3.279
+    },
+    {
+        "text": "and that 9 of those with cancer correctly get positive results, ",
+        "start": 91.959,
+        "duration": 3.18
+    },
+    {
+        "text": "and there's one false negative.",
+        "start": 95.139,
+        "duration": 1.541
+    },
+    {
+        "text": "And then suppose that among the remainder without cancer, ",
+        "start": 97.48,
+        "duration": 3.566
+    },
+    {
+        "text": "89 get false positives, and 901 correctly get negative results.",
+        "start": 101.046,
+        "duration": 3.874
+    },
+    {
+        "text": "So if all you know about a woman is that she does the screening and she gets a positive ",
+        "start": 105.72,
+        "duration": 4.361
+    },
+    {
+        "text": "result, you don't have information about symptoms or anything like that, ",
+        "start": 110.081,
+        "duration": 3.619
+    },
+    {
+        "text": "you know that she's either one of these 9 true positives or one of these 89 false ",
+        "start": 113.7,
+        "duration": 4.064
+    },
+    {
+        "text": "positives.",
+        "start": 117.764,
+        "duration": 0.496
+    },
+    {
+        "text": "So the probability that she's in the cancer group given the test ",
+        "start": 119.36,
+        "duration": 4.39
+    },
+    {
+        "text": "result is 9 divided by 9 plus 89, which is approximately 1 in 11.",
+        "start": 123.75,
+        "duration": 4.389
+    },
+    {
+        "text": "In medical parlance, you would call this the positive predictive value of the test, ",
+        "start": 129.08,
+        "duration": 4.605
+    },
+    {
+        "text": "or PPV, the number of true positives divided by the total number of positive test results.",
+        "start": 133.685,
+        "duration": 4.935
+    },
+    {
+        "text": "You can see where the name comes from.",
+        "start": 138.62,
+        "duration": 1.82
+    },
+    {
+        "text": "To what extent does a positive test result actually predict that you have the disease?",
+        "start": 140.74,
+        "duration": 4.62
+    },
+    {
+        "text": "Now, hopefully, as I've presented it this way where we're thinking ",
+        "start": 146.82,
+        "duration": 3.247
+    },
+    {
+        "text": "concretely about a sample population, all of this makes perfect sense.",
+        "start": 150.067,
+        "duration": 3.393
+    },
+    {
+        "text": "But where it comes across as counterintuitive is if you just look ",
+        "start": 153.96,
+        "duration": 3.176
+    },
+    {
+        "text": "at the accuracy of the test, present it to people as a statistic, ",
+        "start": 157.136,
+        "duration": 3.176
+    },
+    {
+        "text": "and then ask them to make judgments about their test result.",
+        "start": 160.312,
+        "duration": 2.888
+    },
+    {
+        "text": "Test accuracy is not actually one number, but two.",
+        "start": 164.02,
+        "duration": 2.24
+    },
+    {
+        "text": "First, you ask how often is the test correct on those with the disease.",
+        "start": 166.26,
+        "duration": 4.86
+    },
+    {
+        "text": "This is known as the test sensitivity, as in how ",
+        "start": 171.7,
+        "duration": 2.653
+    },
+    {
+        "text": "sensitive is it to detecting the presence of the disease.",
+        "start": 174.353,
+        "duration": 3.087
+    },
+    {
+        "text": "In our example, test sensitivity is 9 in 10, or 90%.",
+        "start": 178.26,
+        "duration": 3.0
+    },
+    {
+        "text": "And another way to say the same fact would be to say the false negative rate is 10%.",
+        "start": 182.02,
+        "duration": 4.66
+    },
+    {
+        "text": "And then a separate, not necessarily related number is how often it's correct for those ",
+        "start": 186.68,
+        "duration": 5.031
+    },
+    {
+        "text": "without the disease, which is known as the test specificity, ",
+        "start": 191.711,
+        "duration": 3.488
+    },
+    {
+        "text": "as in are positive results caused specifically by the disease, ",
+        "start": 195.199,
+        "duration": 3.602
+    },
+    {
+        "text": "or are there confounding triggers giving false positives.",
+        "start": 198.801,
+        "duration": 3.259
+    },
+    {
+        "text": "In our example, the specificity is about 91%.",
+        "start": 203.08,
+        "duration": 3.5
+    },
+    {
+        "text": "Or another way to say the same fact would be to say the false positive rate is 9%.",
+        "start": 206.58,
+        "duration": 5.08
+    },
+    {
+        "text": "So the paradox here is that in one sense, the test is over 90% accurate.",
+        "start": 211.66,
+        "duration": 5.1
+    },
+    {
+        "text": "It gives correct results to over 90% of the patients who take it.",
+        "start": 217.02,
+        "duration": 3.64
+    },
+    {
+        "text": "And yet, if you learn that someone gets a positive result without any added information, ",
+        "start": 220.66,
+        "duration": 4.736
+    },
+    {
+        "text": "there's actually only a 1 in 11 chance that that particular result is accurate.",
+        "start": 225.396,
+        "duration": 4.204
+    },
+    {
+        "text": "This is a bit of a problem, because of all of the places for math to be counterintuitive, ",
+        "start": 230.62,
+        "duration": 4.217
+    },
+    {
+        "text": "medical tests are one area where it matters a lot.",
+        "start": 234.837,
+        "duration": 2.343
+    },
+    {
+        "text": "In 2006 and 2007, the psychologist Gerd Gigerenzer gave a series of statistics ",
+        "start": 237.94,
+        "duration": 4.43
+    },
+    {
+        "text": "seminars to practicing gynecologists, and he opened with the following example.",
+        "start": 242.37,
+        "duration": 4.43
+    },
+    {
+        "text": "A 50-year-old woman, no symptoms, participates in a routine mammography screening.",
+        "start": 246.8,
+        "duration": 4.94
+    },
+    {
+        "text": "She tests positive, is alarmed, and wants to know from you ",
+        "start": 252.28,
+        "duration": 2.879
+    },
+    {
+        "text": "whether she has breast cancer for certain or what her chances are.",
+        "start": 255.159,
+        "duration": 3.221
+    },
+    {
+        "text": "Apart from the screening result, you know nothing else about this woman.",
+        "start": 258.88,
+        "duration": 2.86
+    },
+    {
+        "text": "In that seminar, the doctors were then told that the prevalence of ",
+        "start": 262.58,
+        "duration": 3.847
+    },
+    {
+        "text": "breast cancer for women of this age is about 1%, ",
+        "start": 266.427,
+        "duration": 2.814
+    },
+    {
+        "text": "and then to suppose that the test sensitivity is 90% and that its specificity was 91%.",
+        "start": 269.241,
+        "duration": 4.939
+    },
+    {
+        "text": "You might notice these are exactly the same numbers ",
+        "start": 274.18,
+        "duration": 2.101
+    },
+    {
+        "text": "from the example that you and I just looked at.",
+        "start": 276.281,
+        "duration": 1.899
+    },
+    {
+        "text": "This is where I got them.",
+        "start": 278.36,
+        "duration": 1.08
+    },
+    {
+        "text": "So, having already thought it through, you and I know the answer.",
+        "start": 279.76,
+        "duration": 2.84
+    },
+    {
+        "text": "It's about 1 in 11.",
+        "start": 282.88,
+        "duration": 0.96
+    },
+    {
+        "text": "However, the doctors in this session were not primed with the suggestion to ",
+        "start": 284.6,
+        "duration": 3.381
+    },
+    {
+        "text": "picture a concrete sample of a thousand individuals, the way that you and I had.",
+        "start": 287.981,
+        "duration": 3.559
+    },
+    {
+        "text": "All they saw were these numbers.",
+        "start": 292.04,
+        "duration": 1.3
+    },
+    {
+        "text": "They were then asked, how many women who test positive actually have breast cancer?",
+        "start": 294.14,
+        "duration": 4.28
+    },
+    {
+        "text": "What is the best answer?",
+        "start": 298.62,
+        "duration": 1.12
+    },
+    {
+        "text": "And they were presented with these four choices.",
+        "start": 299.9,
+        "duration": 1.78
+    },
+    {
+        "text": "In one of the sessions, over half the doctors present ",
+        "start": 301.68,
+        "duration": 3.641
+    },
+    {
+        "text": "said that the correct answer was 9 in 10, which is way off.",
+        "start": 305.321,
+        "duration": 3.979
+    },
+    {
+        "text": "Only a fifth of them gave the correct answer, which is worse ",
+        "start": 310.02,
+        "duration": 2.636
+    },
+    {
+        "text": "than what it would have been if everybody had randomly guessed.",
+        "start": 312.656,
+        "duration": 2.724
+    },
+    {
+        "text": "It might seem a little extreme to be calling this a paradox.",
+        "start": 316.66,
+        "duration": 2.62
+    },
+    {
+        "text": "I mean, it's just a fact.",
+        "start": 319.76,
+        "duration": 1.38
+    },
+    {
+        "text": "It's not something intrinsically self-contradictory.",
+        "start": 321.26,
+        "duration": 2.24
+    },
+    {
+        "text": "But, as these seminars with Gigerenzer show, people, including doctors, ",
+        "start": 324.2,
+        "duration": 4.016
+    },
+    {
+        "text": "definitely find it counterintuitive that a test with high accuracy can give you such a ",
+        "start": 328.216,
+        "duration": 4.852
+    },
+    {
+        "text": "low predictive value.",
+        "start": 333.068,
+        "duration": 1.172
+    },
+    {
+        "text": "We might call this a veridical paradox, which refers to facts that are provably true, ",
+        "start": 335.2,
+        "duration": 4.898
+    },
+    {
+        "text": "but which nevertheless can feel false when phrased a certain way.",
+        "start": 340.098,
+        "duration": 3.702
+    },
+    {
+        "text": "It's sort of the softest form of a paradox, saying ",
+        "start": 344.3,
+        "duration": 2.348
+    },
+    {
+        "text": "more about human psychology than about logic.",
+        "start": 346.648,
+        "duration": 2.072
+    },
+    {
+        "text": "The question is how we can combat this.",
+        "start": 349.58,
+        "duration": 2.4
+    },
+    {
+        "text": "Where we're going with this, by the way, is that I want you to be able ",
+        "start": 353.8,
+        "duration": 3.446
+    },
+    {
+        "text": "to look at numbers like this and quickly estimate in your head that it ",
+        "start": 357.246,
+        "duration": 3.447
+    },
+    {
+        "text": "means the predictive value of a positive test should be around 1 in 11.",
+        "start": 360.693,
+        "duration": 3.447
+    },
+    {
+        "text": "Or, if I changed things and asked, what if it ",
+        "start": 364.76,
+        "duration": 2.427
+    },
+    {
+        "text": "was 10% of the population who had breast cancer?",
+        "start": 367.187,
+        "duration": 2.533
+    },
+    {
+        "text": "You should be able to quickly turn around and say ",
+        "start": 370.12,
+        "duration": 2.454
+    },
+    {
+        "text": "that the final answer would be a little over 50%.",
+        "start": 372.574,
+        "duration": 2.406
+    },
+    {
+        "text": "Or, if I said imagine a really low prevalence, ",
+        "start": 375.92,
+        "duration": 2.584
+    },
+    {
+        "text": "something like 0.1% of patients having cancer, ",
+        "start": 378.504,
+        "duration": 2.584
+    },
+    {
+        "text": "you should again quickly estimate that the predictive value of the test is around 1 in ",
+        "start": 381.088,
+        "duration": 4.783
+    },
+    {
+        "text": "100, that 1 in 100 of those with positive test results in that case would have cancer.",
+        "start": 385.871,
+        "duration": 4.729
+    },
+    {
+        "text": "Or, let's say we go back to the 1% prevalence, but I make the test more accurate.",
+        "start": 391.58,
+        "duration": 3.66
+    },
+    {
+        "text": "I tell you to imagine the specificity is 99%.",
+        "start": 395.44,
+        "duration": 2.96
+    },
+    {
+        "text": "There, you should be able to relatively quickly ",
+        "start": 398.4,
+        "duration": 2.618
+    },
+    {
+        "text": "estimate that the answer is a little less than 50%.",
+        "start": 401.018,
+        "duration": 2.782
+    },
+    {
+        "text": "The hope is that you're doing all of this with minimal calculations in your head.",
+        "start": 404.32,
+        "duration": 3.42
+    },
+    {
+        "text": "Now, the goals of quick calculations might feel very different from the goals of ",
+        "start": 408.54,
+        "duration": 3.726
+    },
+    {
+        "text": "addressing whatever misconception underlies this paradox, ",
+        "start": 412.266,
+        "duration": 2.669
+    },
+    {
+        "text": "but they actually go hand in hand.",
+        "start": 414.935,
+        "duration": 1.565
+    },
+    {
+        "text": "Let me show you what I mean.",
+        "start": 416.9,
+        "duration": 0.78
+    },
+    {
+        "text": "On the side of addressing misconceptions, what would you ",
+        "start": 418.46,
+        "duration": 2.76
+    },
+    {
+        "text": "tell to the people in that seminar who answered 9 and 10?",
+        "start": 421.22,
+        "duration": 2.76
+    },
+    {
+        "text": "What fundamental misconception are they revealing?",
+        "start": 424.48,
+        "duration": 2.42
+    },
+    {
+        "text": "What I might tell them is that in much the same way that you shouldn't think ",
+        "start": 428.18,
+        "duration": 3.519
+    },
+    {
+        "text": "of tests as telling you deterministically whether you have a disease, ",
+        "start": 431.699,
+        "duration": 3.199
+    },
+    {
+        "text": "you shouldn't even think of them as telling you your chances of having a disease.",
+        "start": 434.898,
+        "duration": 3.702
+    },
+    {
+        "text": "Instead, the healthy view of what tests do is that they update your chances.",
+        "start": 439.56,
+        "duration": 4.9
+    },
+    {
+        "text": "In our example, before taking the test, a patient's ",
+        "start": 446.04,
+        "duration": 2.651
+    },
+    {
+        "text": "chances of having cancer were 1 in 100.",
+        "start": 448.691,
+        "duration": 1.989
+    },
+    {
+        "text": "In Bayesian terms, we call this the prior probability.",
+        "start": 451.12,
+        "duration": 2.52
+    },
+    {
+        "text": "The effect of this test was to update that prior by almost an order of magnitude, ",
+        "start": 454.38,
+        "duration": 4.76
+    },
+    {
+        "text": "up to around 1 in 11.",
+        "start": 459.14,
+        "duration": 1.22
+    },
+    {
+        "text": "The accuracy of a test is telling us about the strength of this updating.",
+        "start": 461.02,
+        "duration": 3.8
+    },
+    {
+        "text": "It's not telling us a final answer.",
+        "start": 465.12,
+        "duration": 1.62
+    },
+    {
+        "text": "What does this have to do with quick approximations?",
+        "start": 467.9,
+        "duration": 1.74
+    },
+    {
+        "text": "Well, a key number for those approximations is something called the Bayes factor, ",
+        "start": 470.3,
+        "duration": 4.483
+    },
+    {
+        "text": "and the very act of defining this number serves to reinforce this ",
+        "start": 474.783,
+        "duration": 3.609
+    },
+    {
+        "text": "central lesson about reframing what it is the tests do.",
+        "start": 478.392,
+        "duration": 3.008
+    },
+    {
+        "text": "You see, one of the things that makes test statistics so very confusing ",
+        "start": 482.42,
+        "duration": 3.173
+    },
+    {
+        "text": "is that there are at least 4 numbers that you'll hear associated with them.",
+        "start": 485.593,
+        "duration": 3.307
+    },
+    {
+        "text": "For those with the disease, there's the sensitivity and the false negative rate, ",
+        "start": 488.9,
+        "duration": 3.441
+    },
+    {
+        "text": "and then for those without, there's the specificity and the false positive rate, ",
+        "start": 492.341,
+        "duration": 3.442
+    },
+    {
+        "text": "and none of these numbers actually tell you the thing you want to know.",
+        "start": 495.783,
+        "duration": 3.017
+    },
+    {
+        "text": "Luckily, if you want to interpret a positive test result, ",
+        "start": 499.5,
+        "duration": 3.033
+    },
+    {
+        "text": "you can pull out just one number to focus on from all this.",
+        "start": 502.533,
+        "duration": 3.087
+    },
+    {
+        "text": "Take the sensitivity divided by the false positive rate.",
+        "start": 506.04,
+        "duration": 2.56
+    },
+    {
+        "text": "In other words, how much more likely are you to see ",
+        "start": 509.16,
+        "duration": 2.79
+    },
+    {
+        "text": "the positive test result with cancer versus without?",
+        "start": 511.95,
+        "duration": 2.79
+    },
+    {
+        "text": "In our example, this number is 10.",
+        "start": 514.74,
+        "duration": 2.4
+    },
+    {
+        "text": "This is the Bayes factor, also sometimes called the likelihood ratio.",
+        "start": 517.9,
+        "duration": 3.82
+    },
+    {
+        "text": "A very handy rule of thumb is that to update a small prior, ",
+        "start": 523.1,
+        "duration": 2.923
+    },
+    {
+        "text": "or at least to approximate the answer, you simply multiply it by the Bayes factor.",
+        "start": 526.023,
+        "duration": 3.997
+    },
+    {
+        "text": "So in our example, where the prior was 1 in 100, ",
+        "start": 530.76,
+        "duration": 2.296
+    },
+    {
+        "text": "you would estimate that the final answer should be around 1 in 10, ",
+        "start": 533.056,
+        "duration": 3.139
+    },
+    {
+        "text": "which is in fact slightly above the true correct answer.",
+        "start": 536.195,
+        "duration": 2.625
+    },
+    {
+        "text": "So based on this rule of thumb, if I asked you what would happen if the ",
+        "start": 539.4,
+        "duration": 3.829
+    },
+    {
+        "text": "prior from our example was instead 1 in 1000, you could quickly estimate ",
+        "start": 543.229,
+        "duration": 3.882
+    },
+    {
+        "text": "that the effect of the test should be to update those chances to around 1 in 100.",
+        "start": 547.111,
+        "duration": 4.309
+    },
+    {
+        "text": "And in fact, take a moment to check yourself by thinking through a sample population.",
+        "start": 552.36,
+        "duration": 3.36
+    },
+    {
+        "text": "In this case, you might picture 10,000 patients where only 10 of them really have cancer.",
+        "start": 556.7,
+        "duration": 4.18
+    },
+    {
+        "text": "And then based on that 90% sensitivity, we would ",
+        "start": 562.14,
+        "duration": 2.74
+    },
+    {
+        "text": "expect 9 of those cancer cases to give true positives.",
+        "start": 564.88,
+        "duration": 3.02
+    },
+    {
+        "text": "And on the other side, a 91% specificity means that ",
+        "start": 569.0,
+        "duration": 3.285
+    },
+    {
+        "text": "9% of those without cancer are getting false positives.",
+        "start": 572.285,
+        "duration": 3.475
+    },
+    {
+        "text": "So we'd expect 9% of the remaining patients, which is around 900, ",
+        "start": 576.66,
+        "duration": 3.538
+    },
+    {
+        "text": "to give false positive results.",
+        "start": 580.198,
+        "duration": 1.662
+    },
+    {
+        "text": "Here, with such a low prevalence, the false positives ",
+        "start": 582.7,
+        "duration": 3.005
+    },
+    {
+        "text": "really do dominate the true positives.",
+        "start": 585.705,
+        "duration": 2.115
+    },
+    {
+        "text": "So the probability that a randomly chosen positive case from this population ",
+        "start": 587.9,
+        "duration": 4.56
+    },
+    {
+        "text": "actually has cancer is only around 1%, just like the rule of thumb predicted.",
+        "start": 592.46,
+        "duration": 4.56
+    },
+    {
+        "text": "Now, this rule of thumb clearly cannot work for higher priors.",
+        "start": 598.7,
+        "duration": 3.22
+    },
+    {
+        "text": "For example, it would predict that a prior of ",
+        "start": 602.42,
+        "duration": 2.69
+    },
+    {
+        "text": "10% gets updated all the way to 100% certainty.",
+        "start": 605.11,
+        "duration": 2.75
+    },
+    {
+        "text": "But that can't be right.",
+        "start": 608.36,
+        "duration": 0.96
+    },
+    {
+        "text": "In fact, take a moment to think through what the answer should be, ",
+        "start": 610.02,
+        "duration": 3.001
+    },
+    {
+        "text": "again, using a sample population.",
+        "start": 613.021,
+        "duration": 1.479
+    },
+    {
+        "text": "Maybe this time we picture 10 out of 100 having cancer.",
+        "start": 615.06,
+        "duration": 2.8
+    },
+    {
+        "text": "Again, based on the 90% sensitivity of the test, ",
+        "start": 618.54,
+        "duration": 2.742
+    },
+    {
+        "text": "we'd expect 9 of those true cancer cases to get positive results.",
+        "start": 621.282,
+        "duration": 3.638
+    },
+    {
+        "text": "But what about the false positives?",
+        "start": 624.92,
+        "duration": 1.68
+    },
+    {
+        "text": "How many do we expect there?",
+        "start": 626.98,
+        "duration": 1.12
+    },
+    {
+        "text": "About 9% of the remaining 90.",
+        "start": 629.88,
+        "duration": 1.86
+    },
+    {
+        "text": "About 8.",
+        "start": 632.12,
+        "duration": 0.5
+    },
+    {
+        "text": "So, upon seeing a positive test result, it tells you that you're ",
+        "start": 633.82,
+        "duration": 3.55
+    },
+    {
+        "text": "either one of these 9 true positives or one of the 8 false positives.",
+        "start": 637.37,
+        "duration": 3.77
+    },
+    {
+        "text": "So this means the chances are a little over 50%, roughly 9 out of 17, or 53%.",
+        "start": 641.86,
+        "duration": 5.06
+    },
+    {
+        "text": "At this point, having dared to dream that Bayesian updating could look ",
+        "start": 648.02,
+        "duration": 3.181
+    },
+    {
+        "text": "as simple as multiplication, you might tear down your hopes and pragmatically ",
+        "start": 651.201,
+        "duration": 3.496
+    },
+    {
+        "text": "acknowledge that sometimes life is just more complicated than that.",
+        "start": 654.697,
+        "duration": 3.003
+    },
+    {
+        "text": "Except it's not.",
+        "start": 659.92,
+        "duration": 1.2
+    },
+    {
+        "text": "This rule of thumb turns into a precise mathematical fact as long as we ",
+        "start": 661.62,
+        "duration": 3.639
+    },
+    {
+        "text": "shift away from talking about probabilities to instead talking about odds.",
+        "start": 665.259,
+        "duration": 3.741
+    },
+    {
+        "text": "If you've ever heard someone talk about the chances of an event being 1 to 1 or 2 to 1, ",
+        "start": 670.32,
+        "duration": 4.426
+    },
+    {
+        "text": "things like that, you already know about odds.",
+        "start": 674.746,
+        "duration": 2.314
+    },
+    {
+        "text": "With probability, we're taking the ratio of the number ",
+        "start": 677.06,
+        "duration": 3.113
+    },
+    {
+        "text": "of positive cases out of all possible cases, right?",
+        "start": 680.173,
+        "duration": 2.887
+    },
+    {
+        "text": "Things like 1 in 5 or 1 in 10.",
+        "start": 683.4,
+        "duration": 1.88
+    },
+    {
+        "text": "With odds, what you do is take the ratio of all positive cases to all negative cases.",
+        "start": 685.88,
+        "duration": 4.44
+    },
+    {
+        "text": "You commonly see odds written with a colon to emphasize the distinction, ",
+        "start": 691.54,
+        "duration": 3.386
+    },
+    {
+        "text": "but it's still just a fraction, just a number.",
+        "start": 694.926,
+        "duration": 2.134
+    },
+    {
+        "text": "So an event with a 50% probability would be described as having 1 to 1 odds.",
+        "start": 697.94,
+        "duration": 4.58
+    },
+    {
+        "text": "A 10% probability is the same as 1 to 9 odds.",
+        "start": 702.52,
+        "duration": 3.64
+    },
+    {
+        "text": "An 80% probability is the same as 4 to 1 odds.",
+        "start": 706.76,
+        "duration": 2.74
+    },
+    {
+        "text": "You get the point.",
+        "start": 709.94,
+        "duration": 0.52
+    },
+    {
+        "text": "It's the same information.",
+        "start": 711.48,
+        "duration": 0.92
+    },
+    {
+        "text": "It still describes the chances of a random event, ",
+        "start": 712.74,
+        "duration": 2.333
+    },
+    {
+        "text": "but it's presented a little differently, like a different unit system.",
+        "start": 715.073,
+        "duration": 3.267
+    },
+    {
+        "text": "Probabilities are constrained between 0 and 1, with even chances sitting at 0.5.",
+        "start": 719.32,
+        "duration": 4.36
+    },
+    {
+        "text": "But odds range from 0 up to infinity, with even chances sitting at the number 1.",
+        "start": 724.8,
+        "duration": 4.74
+    },
+    {
+        "text": "The beauty here is that a completely accurate, ",
+        "start": 731.88,
+        "duration": 2.62
+    },
+    {
+        "text": "not even approximating things way to frame Bayes' rule is to say, ",
+        "start": 734.5,
+        "duration": 3.679
+    },
+    {
+        "text": "express your prior using odds, and then just multiply by the Bayes' factor.",
+        "start": 738.179,
+        "duration": 4.181
+    },
+    {
+        "text": "Think about what the prior odds are really saying.",
+        "start": 743.44,
+        "duration": 1.78
+    },
+    {
+        "text": "It's the number of people with cancer divided by the number without it.",
+        "start": 745.58,
+        "duration": 3.68
+    },
+    {
+        "text": "Here, let's just write that down as a normal fraction for a moment so we can multiply it.",
+        "start": 749.7,
+        "duration": 3.66
+    },
+    {
+        "text": "When you filter down just to those with positive test results, ",
+        "start": 753.36,
+        "duration": 3.349
+    },
+    {
+        "text": "the number of people with cancer gets scaled down, ",
+        "start": 756.709,
+        "duration": 2.712
+    },
+    {
+        "text": "scaled down by the probability of seeing a positive test result given ",
+        "start": 759.421,
+        "duration": 3.722
+    },
+    {
+        "text": "that someone has cancer.",
+        "start": 763.143,
+        "duration": 1.277
+    },
+    {
+        "text": "And then similarly, the number of people without cancer also gets scaled down, ",
+        "start": 765.12,
+        "duration": 4.133
+    },
+    {
+        "text": "this time by the probability of seeing a positive test result, but in that case.",
+        "start": 769.253,
+        "duration": 4.187
+    },
+    {
+        "text": "So the ratio between these two counts, the new odds upon seeing the test, ",
+        "start": 774.18,
+        "duration": 4.423
+    },
+    {
+        "text": "looks just like the prior odds except multiplied by this term here, ",
+        "start": 778.603,
+        "duration": 4.064
+    },
+    {
+        "text": "which is exactly the Bayes' factor.",
+        "start": 782.667,
+        "duration": 2.093
+    },
+    {
+        "text": "Look back at our example, where the Bayes' factor was 10.",
+        "start": 787.8,
+        "duration": 2.7
+    },
+    {
+        "text": "And as a reminder, this came from the 90% sensitivity ",
+        "start": 791.0,
+        "duration": 3.263
+    },
+    {
+        "text": "divided by the 9% false positive rate.",
+        "start": 794.263,
+        "duration": 2.297
+    },
+    {
+        "text": "How much more likely are you to see a positive result with cancer versus without?",
+        "start": 796.88,
+        "duration": 3.86
+    },
+    {
+        "text": "If the prior is 1%, expressed as odds, this looks like 1 to 99.",
+        "start": 801.72,
+        "duration": 4.22
+    },
+    {
+        "text": "So by our rule, this gets updated to 10 to 99, ",
+        "start": 806.9,
+        "duration": 2.909
+    },
+    {
+        "text": "which if you want you could convert back to a probability.",
+        "start": 809.809,
+        "duration": 3.591
+    },
+    {
+        "text": "It would be 10 divided by 10 plus 99, or about 1 in 11.",
+        "start": 813.66,
+        "duration": 3.56
+    },
+    {
+        "text": "If instead, the prior was 10%, which was the example that tripped up ",
+        "start": 818.2,
+        "duration": 4.03
+    },
+    {
+        "text": "our rule of thumb earlier, expressed as odds, this looks like 1 to 9.",
+        "start": 822.23,
+        "duration": 4.03
+    },
+    {
+        "text": "By our simple rule, this gets updated to 10 to 9, ",
+        "start": 826.94,
+        "duration": 2.75
+    },
+    {
+        "text": "which you can already read off pretty intuitively.",
+        "start": 829.69,
+        "duration": 2.75
+    },
+    {
+        "text": "It's a little above even chances, a little above 1 to 1.",
+        "start": 832.44,
+        "duration": 3.22
+    },
+    {
+        "text": "If you prefer, you can convert it back to a probability.",
+        "start": 836.34,
+        "duration": 2.5
+    },
+    {
+        "text": "You would write it as 10 out of 19, or about 53%.",
+        "start": 839.18,
+        "duration": 4.1
+    },
+    {
+        "text": "And indeed, that is what we already found by thinking ",
+        "start": 843.28,
+        "duration": 2.263
+    },
+    {
+        "text": "things through with a sample population.",
+        "start": 845.543,
+        "duration": 1.677
+    },
+    {
+        "text": "Let's say we go back to the 1% prevalence, but I make the test more accurate.",
+        "start": 848.3,
+        "duration": 3.4
+    },
+    {
+        "text": "Now what if I told you to imagine that the false positive rate was only 1% instead of 9%?",
+        "start": 852.06,
+        "duration": 4.58
+    },
+    {
+        "text": "What that would mean is that our Bayes factor is 90 instead of 10.",
+        "start": 857.12,
+        "duration": 3.4
+    },
+    {
+        "text": "The test is doing more work for us.",
+        "start": 860.84,
+        "duration": 1.62
+    },
+    {
+        "text": "In this case, with the more accurate test, it gets updated to 90 to 99, ",
+        "start": 863.16,
+        "duration": 4.239
+    },
+    {
+        "text": "which is a little less than even chances, something a little under 50%.",
+        "start": 867.399,
+        "duration": 4.181
+    },
+    {
+        "text": "To be more precise, you could make the conversion ",
+        "start": 871.58,
+        "duration": 2.874
+    },
+    {
+        "text": "back to probability and work out that it's around 48%.",
+        "start": 874.454,
+        "duration": 3.106
+    },
+    {
+        "text": "But honestly, if you're just going for a gut feel, it's fine to stick with the odds.",
+        "start": 877.56,
+        "duration": 3.84
+    },
+    {
+        "text": "Do you see what I mean about how just defining this ",
+        "start": 882.22,
+        "duration": 2.714
+    },
+    {
+        "text": "number helps to combat potential misconceptions?",
+        "start": 884.934,
+        "duration": 2.506
+    },
+    {
+        "text": "For anybody who's a little hasty in connecting test accuracy directly to your probability ",
+        "start": 888.24,
+        "duration": 4.685
+    },
+    {
+        "text": "of having a disease, it's worth emphasizing that you could administer the same test with ",
+        "start": 892.925,
+        "duration": 4.633
+    },
+    {
+        "text": "the same accuracy to multiple different patients who all get the same exact result, ",
+        "start": 897.558,
+        "duration": 4.372
+    },
+    {
+        "text": "but if they're coming from different contexts, ",
+        "start": 901.93,
+        "duration": 2.447
+    },
+    {
+        "text": "that result can mean wildly different things.",
+        "start": 904.377,
+        "duration": 2.343
+    },
+    {
+        "text": "However, the one thing that does stay constant in every case ",
+        "start": 906.72,
+        "duration": 3.97
+    },
+    {
+        "text": "is the factor by which each patient's prior odds get updated.",
+        "start": 910.69,
+        "duration": 3.97
+    },
+    {
+        "text": "And by the way, this whole time we've been using the prevalence of the disease, ",
+        "start": 916.3,
+        "duration": 3.761
+    },
+    {
+        "text": "which is the proportion of people in a population who have it, ",
+        "start": 920.061,
+        "duration": 2.963
+    },
+    {
+        "text": "as a substitute for the prior, the probability of having it before you see a test.",
+        "start": 923.024,
+        "duration": 3.856
+    },
+    {
+        "text": "However, that's not necessarily the case.",
+        "start": 927.52,
+        "duration": 1.94
+    },
+    {
+        "text": "If there are other known factors, things like symptoms, ",
+        "start": 929.78,
+        "duration": 2.713
+    },
+    {
+        "text": "or in the case of a contagious disease, things like known contacts, ",
+        "start": 932.493,
+        "duration": 3.296
+    },
+    {
+        "text": "those also factor into the prior, and they could potentially make a huge difference.",
+        "start": 935.789,
+        "duration": 4.071
+    },
+    {
+        "text": "As another side note, so far we've only talked about positive test results, ",
+        "start": 940.76,
+        "duration": 3.689
+    },
+    {
+        "text": "but way more often you would be seeing a negative test result.",
+        "start": 944.449,
+        "duration": 3.011
+    },
+    {
+        "text": "The logic there is completely the same, but the base ",
+        "start": 948.1,
+        "duration": 2.15
+    },
+    {
+        "text": "factor that you compute is going to look different.",
+        "start": 950.25,
+        "duration": 2.07
+    },
+    {
+        "text": "Instead, you look at the probability of seeing this negative ",
+        "start": 952.76,
+        "duration": 3.065
+    },
+    {
+        "text": "test result with the disease versus without the disease.",
+        "start": 955.825,
+        "duration": 2.815
+    },
+    {
+        "text": "So in our cancer example, this would have been the 10% false ",
+        "start": 958.64,
+        "duration": 4.165
+    },
+    {
+        "text": "negative rate divided by the 91% specificity, or about 1 in 9.",
+        "start": 962.805,
+        "duration": 4.235
+    },
+    {
+        "text": "In other words, seeing a negative test result in that example ",
+        "start": 967.78,
+        "duration": 3.394
+    },
+    {
+        "text": "would reduce your prior odds by about an order of magnitude.",
+        "start": 971.174,
+        "duration": 3.286
+    },
+    {
+        "text": "When you write it all out as a formula, here's how it looks.",
+        "start": 975.9,
+        "duration": 2.52
+    },
+    {
+        "text": "It says your odds of having a disease given a test result equals your ",
+        "start": 978.76,
+        "duration": 4.189
+    },
+    {
+        "text": "odds before taking the test, the prior odds, times the base factor.",
+        "start": 982.949,
+        "duration": 4.011
+    },
+    {
+        "text": "Now let's contrast this with the usual way Bayes' rule is written, ",
+        "start": 986.96,
+        "duration": 3.586
+    },
+    {
+        "text": "which is a bit more complicated.",
+        "start": 990.546,
+        "duration": 1.714
+    },
+    {
+        "text": "In case you haven't seen it before, it's essentially just what we were ",
+        "start": 993.06,
+        "duration": 2.942
+    },
+    {
+        "text": "doing with sample populations, but you wrap it all up symbolically.",
+        "start": 996.002,
+        "duration": 2.778
+    },
+    {
+        "text": "Remember how every time we were counting the number of true positives and ",
+        "start": 999.5,
+        "duration": 3.38
+    },
+    {
+        "text": "then dividing it by the sum of the true positives and the false positives?",
+        "start": 1002.88,
+        "duration": 3.38
+    },
+    {
+        "text": "We do just that, except instead of talking about absolute amounts, ",
+        "start": 1006.8,
+        "duration": 3.517
+    },
+    {
+        "text": "we talk of each term as a proportion.",
+        "start": 1010.317,
+        "duration": 1.943
+    },
+    {
+        "text": "So the proportion of true positives in the population comes ",
+        "start": 1012.26,
+        "duration": 3.243
+    },
+    {
+        "text": "from the prior probability of having the disease multiplied ",
+        "start": 1015.503,
+        "duration": 3.243
+    },
+    {
+        "text": "by the probability of seeing a positive test result in that case.",
+        "start": 1018.746,
+        "duration": 3.514
+    },
+    {
+        "text": "Then we copy that term down again into the denominator, ",
+        "start": 1023.0,
+        "duration": 2.932
+    },
+    {
+        "text": "and then the proportion of false positives comes from the prior ",
+        "start": 1025.932,
+        "duration": 3.351
+    },
+    {
+        "text": "probability of not having the disease times the probability of a positive ",
+        "start": 1029.283,
+        "duration": 3.874
+    },
+    {
+        "text": "test in that case.",
+        "start": 1033.157,
+        "duration": 0.942
+    },
+    {
+        "text": "If you want, you could also write this down with words instead of symbols, ",
+        "start": 1035.079,
+        "duration": 2.97
+    },
+    {
+        "text": "if terms like sensitivity and false positive rate are more comfortable.",
+        "start": 1038.049,
+        "duration": 2.81
+    },
+    {
+        "text": "And this is one of those formulas where once you say it out loud it seems like a bit ",
+        "start": 1041.38,
+        "duration": 3.53
+    },
+    {
+        "text": "much, but it really is no different from what we were doing with sample populations.",
+        "start": 1044.91,
+        "duration": 3.49
+    },
+    {
+        "text": "If you wanted to make the whole thing look simpler, ",
+        "start": 1049.22,
+        "duration": 2.466
+    },
+    {
+        "text": "you often see this entire denominator written just as the probability of seeing a ",
+        "start": 1051.686,
+        "duration": 3.89
+    },
+    {
+        "text": "positive test result, overall.",
+        "start": 1055.576,
+        "duration": 1.424
+    },
+    {
+        "text": "While that does make for a really elegant little expression, ",
+        "start": 1057.98,
+        "duration": 2.815
+    },
+    {
+        "text": "if you intend to use this for calculations, it's a little disingenuous, ",
+        "start": 1060.795,
+        "duration": 3.323
+    },
+    {
+        "text": "because in practice, every single time you do this you need to break ",
+        "start": 1064.118,
+        "duration": 3.185
+    },
+    {
+        "text": "down that denominator into two separate parts, breaking down the cases.",
+        "start": 1067.303,
+        "duration": 3.277
+    },
+    {
+        "text": "So taking this more honest representation of it, ",
+        "start": 1071.7,
+        "duration": 2.228
+    },
+    {
+        "text": "let's compare our two versions of Bayes' rule.",
+        "start": 1073.928,
+        "duration": 2.092
+    },
+    {
+        "text": "And again, maybe it looks nicer if we use the words sensitivity and false positive rate.",
+        "start": 1076.82,
+        "duration": 3.46
+    },
+    {
+        "text": "If nothing else, it helps emphasize which parts of the ",
+        "start": 1080.66,
+        "duration": 2.402
+    },
+    {
+        "text": "formula are coming from statistics about the test accuracy.",
+        "start": 1083.062,
+        "duration": 2.578
+    },
+    {
+        "text": "I mean, this actually emphasizes one thing I really like about the framing with ",
+        "start": 1085.64,
+        "duration": 3.443
+    },
+    {
+        "text": "odds and a Bayes' factor, which is that it cleanly factors out the parts that ",
+        "start": 1089.083,
+        "duration": 3.357
+    },
+    {
+        "text": "have to do with the prior and the parts that have to do with the test accuracy.",
+        "start": 1092.44,
+        "duration": 3.4
+    },
+    {
+        "text": "But over in the usual formula, all of those are very intermingled together.",
+        "start": 1096.66,
+        "duration": 3.54
+    },
+    {
+        "text": "And this has a very practical benefit.",
+        "start": 1100.58,
+        "duration": 1.78
+    },
+    {
+        "text": "It's really nice if you want to swap out different priors and easily see their effects.",
+        "start": 1102.48,
+        "duration": 3.78
+    },
+    {
+        "text": "This is what we were doing earlier.",
+        "start": 1106.6,
+        "duration": 1.3
+    },
+    {
+        "text": "But with the other formula, to do that, you have to recompute everything each time.",
+        "start": 1108.42,
+        "duration": 3.78
+    },
+    {
+        "text": "You can't leverage a precomputed Bayes' factor the same way.",
+        "start": 1112.38,
+        "duration": 2.98
+    },
+    {
+        "text": "The odds framing also makes things really nice if you want to do ",
+        "start": 1115.96,
+        "duration": 2.901
+    },
+    {
+        "text": "multiple different Bayesian updates based on multiple pieces of evidence.",
+        "start": 1118.861,
+        "duration": 3.259
+    },
+    {
+        "text": "For example, let's say you took not one test, but two.",
+        "start": 1122.74,
+        "duration": 2.12
+    },
+    {
+        "text": "Or you wanted to think about how the presence of symptoms plays into it.",
+        "start": 1125.36,
+        "duration": 3.18
+    },
+    {
+        "text": "For each piece of new evidence you see, you always ask the question, ",
+        "start": 1129.12,
+        "duration": 3.254
+    },
+    {
+        "text": "how much more likely would you be to see that with the disease versus without the disease?",
+        "start": 1132.374,
+        "duration": 4.246
+    },
+    {
+        "text": "Each answer to that question gives you a new Bayes' factor, ",
+        "start": 1137.24,
+        "duration": 2.772
+    },
+    {
+        "text": "a new thing that you multiply by your odds.",
+        "start": 1140.012,
+        "duration": 1.988
+    },
+    {
+        "text": "Beyond just making calculations easier, there's something I really like about ",
+        "start": 1142.88,
+        "duration": 3.52
+    },
+    {
+        "text": "attaching a number to test accuracy that doesn't even look like a probability.",
+        "start": 1146.4,
+        "duration": 3.52
+    },
+    {
+        "text": "I mean, if you hear that a test has, for example, ",
+        "start": 1150.74,
+        "duration": 2.639
+    },
+    {
+        "text": "a 9% false positive rate, that's just such a disastrously ambiguous phrase.",
+        "start": 1153.379,
+        "duration": 3.961
+    },
+    {
+        "text": "It's so easy to misinterpret it to mean there's a ",
+        "start": 1157.78,
+        "duration": 2.399
+    },
+    {
+        "text": "9% chance that your positive test result is false.",
+        "start": 1160.179,
+        "duration": 2.401
+    },
+    {
+        "text": "But imagine if instead the number that we heard tacked on to test ",
+        "start": 1163.3,
+        "duration": 3.309
+    },
+    {
+        "text": "results was that the Bayes' factor for a positive test result is, say, 10.",
+        "start": 1166.609,
+        "duration": 3.711
+    },
+    {
+        "text": "There's no room to confuse that for your probability of having a disease.",
+        "start": 1170.82,
+        "duration": 3.32
+    },
+    {
+        "text": "The entire framing of what a Bayes' factor is, ",
+        "start": 1174.64,
+        "duration": 2.272
+    },
+    {
+        "text": "is that it's something that acts on a prior.",
+        "start": 1176.912,
+        "duration": 2.128
+    },
+    {
+        "text": "It forces your hand to acknowledge the prior as something that's separate entirely, ",
+        "start": 1179.5,
+        "duration": 3.808
+    },
+    {
+        "text": "and highly necessary to drawing any conclusion.",
+        "start": 1183.308,
+        "duration": 2.132
+    },
+    {
+        "text": "All that said, the usual formula is definitely not without its merits.",
+        "start": 1187.26,
+        "duration": 3.48
+    },
+    {
+        "text": "If you view it not simply as something to plug numbers into, ",
+        "start": 1191.08,
+        "duration": 2.903
+    },
+    {
+        "text": "but as an encapsulation of the sample population idea that we've been using throughout, ",
+        "start": 1193.983,
+        "duration": 4.189
+    },
+    {
+        "text": "you could very easily argue that that's actually much better for your intuition.",
+        "start": 1198.172,
+        "duration": 3.808
+    },
+    {
+        "text": "After all, it's what we were routinely falling back on in order to check ",
+        "start": 1202.56,
+        "duration": 3.158
+    },
+    {
+        "text": "ourselves that the Bayes' factor computation even made sense in the first place.",
+        "start": 1205.718,
+        "duration": 3.462
+    },
+    {
+        "text": "Like any design decision, there is no clear-cut objective best here.",
+        "start": 1211.6,
+        "duration": 3.78
+    },
+    {
+        "text": "But it's almost certainly the case that giving serious consideration ",
+        "start": 1215.42,
+        "duration": 3.082
+    },
+    {
+        "text": "to that question will lead you to a better understanding of Bayes' rule.",
+        "start": 1218.502,
+        "duration": 3.218
+    },
+    {
+        "text": "Also, since we're on the topic of kind of paradoxical things, ",
+        "start": 1230.1,
+        "duration": 2.806
+    },
+    {
+        "text": "a friend of mine, Matt Cook, recently wrote a book all about paradoxes.",
+        "start": 1232.906,
+        "duration": 3.214
+    },
+    {
+        "text": "I actually contributed a small chapter to it with thoughts ",
+        "start": 1237.04,
+        "duration": 2.41
+    },
+    {
+        "text": "on the question of whether math is invented or discovered.",
+        "start": 1239.45,
+        "duration": 2.37
+    },
+    {
+        "text": "And the book as a whole is this really nice connection of thought-provoking ",
+        "start": 1242.3,
+        "duration": 3.335
+    },
+    {
+        "text": "paradoxical things ranging from philosophy to math and physics.",
+        "start": 1245.635,
+        "duration": 2.765
+    },
+    {
+        "text": "You can, of course, find all the details in the description.\n352\n00:20:58,100 --> 00:20:51,040\n.",
+        "start": 1248.82,
+        "duration": 2.22
+    }
+]

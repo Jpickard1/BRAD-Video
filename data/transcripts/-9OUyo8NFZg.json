@@ -1,0 +1,377 @@
+[
+    {
+        "text": "In my video on the circle division problem, I referenced Euler's characteristic formula,",
+        "start": 0.0,
+        "duration": 8.64
+    },
+    {
+        "text": "and here I would like to share a particularly nice proof of this fact. It's very different",
+        "start": 8.64,
+        "duration": 4.7
+    },
+    {
+        "text": "from the inductive proof, typically given, but I'm not trying to argue that this is somehow",
+        "start": 13.34,
+        "duration": 4.3
+    },
+    {
+        "text": "better or easier to understand than other proofs. Instead, I chose this topic to illustrate",
+        "start": 17.64,
+        "duration": 5.02
+    },
+    {
+        "text": "one example of the incredible notion of duality, and how it can produce wonderfully elegant",
+        "start": 22.66,
+        "duration": 4.96
+    },
+    {
+        "text": "math. First, let's go over what the theorem states. If you draw some dots and some lines",
+        "start": 27.62,
+        "duration": 6.0
+    },
+    {
+        "text": "between them, that is, a graph, and if none of these lines intersect, which is to say",
+        "start": 33.62,
+        "duration": 4.8
+    },
+    {
+        "text": "you have a planar graph, and if your drawing is connected, then Euler's formula tells us",
+        "start": 38.42,
+        "duration": 5.32
+    },
+    {
+        "text": "that the number of dots minus the number of lines plus the number of regions these lines",
+        "start": 43.74,
+        "duration": 5.28
+    },
+    {
+        "text": "cut the plane into, including that outer region, will always be 2. Because Euler was originally",
+        "start": 49.02,
+        "duration": 6.58
+    },
+    {
+        "text": "talking about 3D polyhedra when he found this formula, which was only later reframed in terms",
+        "start": 55.64,
+        "duration": 5.2
+    },
+    {
+        "text": "of planar graphs, instead of saying dots, we say vertices, instead of saying lines, we say edges,",
+        "start": 60.84,
+        "duration": 5.36
+    },
+    {
+        "text": "and instead of saying regions, we say faces. Hence, we write Euler's discovery as V minus",
+        "start": 66.2,
+        "duration": 5.6
+    },
+    {
+        "text": "E plus F equals 2. Before describing the proof, I need to go through three pieces of graph theory",
+        "start": 71.8,
+        "duration": 6.32
+    },
+    {
+        "text": "terminology. Cycles, spanning trees, and dual graphs. If you are already familiar with some",
+        "start": 78.12,
+        "duration": 6.04
+    },
+    {
+        "text": "of these topics and don't care to see how I describe them, feel free to click the appropriate",
+        "start": 84.16,
+        "duration": 4.0
+    },
+    {
+        "text": "annotation and skip ahead. Imagine a tiny creature sitting on one of the vertices. Let's name him",
+        "start": 88.16,
+        "duration": 6.0
+    },
+    {
+        "text": "Randolph. If we think of edges as something Randolph might travel along from one vertex to",
+        "start": 94.16,
+        "duration": 4.72
+    },
+    {
+        "text": "the next, we can sensibly talk about a path as being a sequence of edges that Randolph could",
+        "start": 98.88,
+        "duration": 4.88
+    },
+    {
+        "text": "travel along, where we don't allow him to backtrack on the same edge. A cycle is simply a path that",
+        "start": 103.76,
+        "duration": 7.36
+    },
+    {
+        "text": "ends on the same vertex where it begins. You might be able to guess how cycles will be important for",
+        "start": 111.16,
+        "duration": 5.08
+    },
+    {
+        "text": "our purposes, since they will always enclose a set of faces. Now imagine that Randolph wants access",
+        "start": 116.24,
+        "duration": 6.8
+    },
+    {
+        "text": "to all other vertices, but edges are expensive, so he'll only buy access to an edge if it gives",
+        "start": 123.04,
+        "duration": 5.8
+    },
+    {
+        "text": "him a path to an untouched vertex. This frugality will leave him with a set of edges without any",
+        "start": 128.84,
+        "duration": 5.56
+    },
+    {
+        "text": "cycles, since the edge finishing off a cycle would always be unnecessary. In general, a connected",
+        "start": 134.4,
+        "duration": 7.92
+    },
+    {
+        "text": "graph without cycles is called a tree, so named because we can move things around and make it look",
+        "start": 142.32,
+        "duration": 5.4
+    },
+    {
+        "text": "like a system of branches, and any tree inside a graph which touches all the vertices is called",
+        "start": 147.72,
+        "duration": 5.64
+    },
+    {
+        "text": "a spanning tree. Before defining the dual graph, which runs the risk of being confusing, it's",
+        "start": 153.36,
+        "duration": 6.28
+    },
+    {
+        "text": "important to remember why people actually care about graphs in the first place. I was actually",
+        "start": 159.64,
+        "duration": 4.6
+    },
+    {
+        "text": "lying earlier when I said a graph is a set of dots and lines. Really, it's a set of anything with any",
+        "start": 164.28,
+        "duration": 5.32
+    },
+    {
+        "text": "notion of connection, but we typically represent those things with dots and those connections with",
+        "start": 169.6,
+        "duration": 5.0
+    },
+    {
+        "text": "lines. For instance, Facebook stores an enormous graph where vertices are accounts and edges are",
+        "start": 174.6,
+        "duration": 6.52
+    },
+    {
+        "text": "friendships. Although we could use drawings to represent this graph, the graph itself is the",
+        "start": 181.12,
+        "duration": 5.24
+    },
+    {
+        "text": "abstract set of accounts and friendships, completely distinct from the drawing. All sorts of things are",
+        "start": 186.36,
+        "duration": 6.0
+    },
+    {
+        "text": "undrawn graphs, the set of English words considered connected when they differ by one letter,",
+        "start": 192.4,
+        "duration": 5.16
+    },
+    {
+        "text": "mathematicians considered connected if they've written a paper together, neurons connected by",
+        "start": 197.56,
+        "duration": 6.0
+    },
+    {
+        "text": "synapses. Or, maybe, for those of us reasoning about the actual drawing of a graph on the plane,",
+        "start": 203.56,
+        "duration": 6.12
+    },
+    {
+        "text": "we can take the set of faces this graph cuts the plane into and consider two of them connected if",
+        "start": 209.68,
+        "duration": 6.4
+    },
+    {
+        "text": "they share an edge. In other words, if you can draw a graph on the plane without intersecting",
+        "start": 216.32,
+        "duration": 6.04
+    },
+    {
+        "text": "edges, you automatically get a second, as of yet undrawn, graph whose vertices are the faces and",
+        "start": 222.36,
+        "duration": 6.44
+    },
+    {
+        "text": "whose edges are, well, edges of the original graph. We call this the dual of the original graph. If",
+        "start": 228.8,
+        "duration": 7.52
+    },
+    {
+        "text": "you want to represent the dual graph with dots and lines, first put a dot inside each one of the faces.",
+        "start": 236.32,
+        "duration": 6.48
+    },
+    {
+        "text": "I personally like to visualize the dot for that outer region as being a point somewhere at infinity",
+        "start": 243.24,
+        "duration": 5.6
+    },
+    {
+        "text": "where you can travel in any direction to get there. Next, connect these new dots with new lines that",
+        "start": 248.84,
+        "duration": 6.32
+    },
+    {
+        "text": "pass through the centers of the old lines, where lines connected to that point at infinity can go",
+        "start": 255.16,
+        "duration": 5.08
+    },
+    {
+        "text": "off the screen in any direction, as long as it's understood that they all meet up at the same one",
+        "start": 260.24,
+        "duration": 4.48
+    },
+    {
+        "text": "point. But keep in mind, this is just the drawing of the dual graph, just like the representation",
+        "start": 264.72,
+        "duration": 5.8
+    },
+    {
+        "text": "of Facebook accounts and friendships with dots and lines is just a drawing of the social graph.",
+        "start": 270.52,
+        "duration": 4.68
+    },
+    {
+        "text": "The dual graph itself is the collection of faces and edges. The reason I stress this point is to",
+        "start": 275.2,
+        "duration": 6.64
+    },
+    {
+        "text": "emphasize that edges of the original graph and edges of the dual graph are not just related,",
+        "start": 281.84,
+        "duration": 4.56
+    },
+    {
+        "text": "they're the same thing. You see, what makes the dual graph all kinds of awesome is the many ways",
+        "start": 286.4,
+        "duration": 6.72
+    },
+    {
+        "text": "that it relates to the original graph. For example, cycles in the original graph correspond to",
+        "start": 293.12,
+        "duration": 5.72
+    },
+    {
+        "text": "connected components of the dual graph, and likewise, cycles in the dual graph correspond",
+        "start": 298.84,
+        "duration": 5.64
+    },
+    {
+        "text": "with connected components in the original graph. Now for the cool part. Suppose our friend Randolph",
+        "start": 304.48,
+        "duration": 6.48
+    },
+    {
+        "text": "has an alter ego, Mortimer, living in the dual graph, traveling from face to face instead of",
+        "start": 310.96,
+        "duration": 5.32
+    },
+    {
+        "text": "from vertex to vertex, passing over edges as he does so. Let's say Randolph has bought all the",
+        "start": 316.28,
+        "duration": 5.68
+    },
+    {
+        "text": "edges of a spanning tree and that Mortimer is forbidden from crossing those edges. It turns",
+        "start": 321.96,
+        "duration": 5.68
+    },
+    {
+        "text": "out the edges that Mortimer has available to him are guaranteed to form a spanning tree of the dual",
+        "start": 327.64,
+        "duration": 6.44
+    },
+    {
+        "text": "graph. To see why, we only need to check the two defining properties of spanning trees. They must",
+        "start": 334.08,
+        "duration": 8.0
+    },
+    {
+        "text": "give Mortimer access to all faces and there can be no cycles. The reason he still has access to",
+        "start": 342.08,
+        "duration": 8.52
+    },
+    {
+        "text": "all faces is that it would take a cycle in Randolph's spanning tree to insulate him from",
+        "start": 350.6,
+        "duration": 5.04
+    },
+    {
+        "text": "a face, but trees cannot have cycles. The reason Mortimer cannot traverse a cycle in the dual graph",
+        "start": 355.68,
+        "duration": 7.96
+    },
+    {
+        "text": "feels completely symmetric. If he could, he would separate one set of Randolph's vertices from the",
+        "start": 363.64,
+        "duration": 6.36
+    },
+    {
+        "text": "rest, so the spanning tree from which he is banned could not have spanned the whole graph.",
+        "start": 370.0,
+        "duration": 4.72
+    },
+    {
+        "text": "So not only does the planar graph have a dual graph, any spanning tree within that graph always",
+        "start": 374.72,
+        "duration": 9.6
+    },
+    {
+        "text": "has a dual spanning tree in the dual graph. Here's the kicker. The number of vertices in",
+        "start": 384.32,
+        "duration": 6.6
+    },
+    {
+        "text": "any tree is always one more than the number of edges. To see this, note that after you start with",
+        "start": 390.92,
+        "duration": 6.92
+    },
+    {
+        "text": "the root vertex, each new edge gives exactly one new vertex. Alternatively, within our narrative,",
+        "start": 397.84,
+        "duration": 6.48
+    },
+    {
+        "text": "you could think of Randolph as starting with one vertex and gaining exactly one more for each edge",
+        "start": 404.32,
+        "duration": 5.88
+    },
+    {
+        "text": "in what will become a spanning tree. Since this tree covers all vertices in our graph,",
+        "start": 410.92,
+        "duration": 5.04
+    },
+    {
+        "text": "the number of vertices is one more than the number of edges owned by Randolph. Moreover,",
+        "start": 415.96,
+        "duration": 5.72
+    },
+    {
+        "text": "since the remaining edges make up a spanning tree for Mortimer's dual graph, the number of edges he",
+        "start": 421.68,
+        "duration": 5.84
+    },
+    {
+        "text": "gets is one more than the number of vertices in the dual graph, which are faces of the original",
+        "start": 427.52,
+        "duration": 4.8
+    },
+    {
+        "text": "graph. Putting this together, it means the total number of edges is two more than the number of",
+        "start": 432.32,
+        "duration": 5.28
+    },
+    {
+        "text": "vertices plus the number of faces, which is exactly what Euler's formula states.",
+        "start": 437.6,
+        "duration": 4.32
+    }
+]

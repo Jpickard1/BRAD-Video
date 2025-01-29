@@ -1,0 +1,226 @@
+[
+    {
+        "start": 0.0,
+        "text": "this is a better child than I expected the topic very specialized so I thought many of you what may not be interested monkey signed this up okay that's your seat I'll eat the mark you will pick on the second half so my goal is to speak for the first well 30 minutes or whenever Peter comes I did consent is okay so we'll talk about repeat sequences on how to call repeat expansion with a short read next gen secrets bud huh I thought about talking about the motivation actually don't remember why we started on this project there was never a big selection of the moment of inspiration it must be because a student only who got inspired "
+    },
+    {
+        "start": 65.659,
+        "text": "okay so you're the inspiration STR and some people kudos microsatellites they're bigger than the window the short tandem repeats two three four nucleotide repeated many times so there are important class of genetic variation associated neurodevelopmental disorders have many cancers monkey we'll talk about how we applied it to studies with ataxia technologically these STRs used to be discovered by sequencing but it's not very scalable if you want to do a genome-wide scan hundred samples that's impossible you can now do a genome sequence its next-generation sequencing but the read length is only 100 typically if you st are expanded close to that or exceeds that you don't get you have a recovery in the entire allele so there were two previously "
+    },
+    {
+        "start": 129.03,
+        "text": "developed methods now there are three so it's still quite specialized I can only locate three pop occasions talking about methodology the uses therefore can only detect short alleles a shorter they are read so here where we come in both develop massive to overcome the limit so we can call the longer alleles longer than a read a Peter haven't capitalized your name and Peters rotation student made additional improvement on a method and the market portion we also have Aaron in her group who contributed to the experimental work to existing method Lobster and repeat seek try to call STRs here the black is the repeat region let's imagine try a new clip I'd switched in a minute hands if they are short they can be covered by a read so you have unique sequences on "
+    },
+    {
+        "start": 190.03,
+        "text": "both end so you can call it genotype and estimate the length but if you have longer ones this black bar is now coming close to the red lens and this in another case when you have really long Leo's it's going to be longer than I read well completely read so well when I thought about this we decided to formally define read types ll left outside left Junction read T for transversal reads right Junction RJ right outside so that's five read types already if the allele is longer than read so you have this in I for inside read so exhaustively there are six reached types but now we have read paradise a 100 nucleotide paired sequencing so how many combinations of such six-feet types can "
+    },
+    {
+        "start": 252.579,
+        "text": "form so we looked at it I thought need to exhaust its dictionary so that's the six-feet types and then I should color that read parotitis if you don't go to the 6x6 combinations there are only 13 combination that are possible there is no time for you to mentally compute all of this but trust me you know the 13 possible repair types and then we give them names 1 through 13 the shorthand more descriptive name such a IRL kappa 2i so these are the information these "
+    },
+    {
+        "start": 314.009,
+        "text": "are the Puritans but I have a next slide to to explain the reed types so that's still the table from the previous one our types of six would be called Loa that we left outside and left Junction okay number seven is our object left outside right Junction and so on so forth and this host of the types are possible when the allele is shorter than a reed but if this black part if the Leo is longer than a reed you get additional big types such as III both Reed are inside or outside in or Junction in and so on so forth okay that's it there okay so that we are talking about having "
+    },
+    {
+        "start": 374.719,
+        "text": "learn in a short read data when we have a situation where short candle repeat gets expanded to a longer meds we define six types of reads outside Junction inside right Junction or outside and then we curse out we build a dictionary of possible Artie please read pair types RPGs we have thirteen kinds and then turns out that the information we can extract is a relative abundance of the thirteen types there will tell us whether we have two short STRs or shorthand long or long and law and how long it might be so so that is the heart of the technology that's information we want to uncover [Music] types at a function of dr theta let me "
+    },
+    {
+        "start": 436.84,
+        "text": "give the definition i wanted to use a white board but apparently is the length of str a Leo okay so that's the length of this black power and Sita is the length of the read pair but not including that you reads so minus two times R R is that read length typically "
+    },
+    {
+        "start": 498.88,
+        "text": "a hundred nucleotide if you order it from the core okay so if the insert is 300 you're minus 100 and 100 we would have said hi equals 100 right in the middle so so once you know these three you can calculate the relative proportion of read types like how much is six how much is eight in so there are multiple combinations of the situation in this case the STR and ER it's in a range of the oil to fear okay so that shortens virial out long as this is theta their interval inside insert subtracting the two weeks when this happened if you tie all the reed password to think about how the reed can be generated your uniform density you would have this leaves three bars indicating the type 6 that is you "
+    },
+    {
+        "start": 560.26,
+        "text": "have a left Junction Reed sticking in and it will transform into the type eight once this end hits other Junction and then if this end goes from this Junction to the other Junction you transform from types 8 and 7 so the relative distance that's been traveled will tile across the transition from one Reed type to another tells you the relative abundance of these good cars so so this is a situation specific for D is within this range and still height less than R but there are other combinations have a few more slides showing this type of highly but so don't different genes have the same kind of the trick these are you doing these like the triplet repeat lets can be a nucleotide triplet or whatever but sometimes multiple genes have the same it will complicate the "
+    },
+    {
+        "start": 625.99,
+        "text": "inside read so if you have a certain technical repeat you don't know how to map it yes but all of these three types have unique sequences outside to anchor it so the question for map is very important let me go back one more go to this that's what you missed bright and the five types left and left outside left junction transversal by junctional right outside if the idea is really long you have inside this is action now are not matter pool they could go in many other places in the genome rest can be uniquely anchored with the exception that some if this ends are too short right now we defy it by studying BW le we think if it's 20 nucleotide it's mapable you have 20 nucleotide of unique sequence couldn't you there even if you identify ones that have that repeat type go back to since "
+    },
+    {
+        "start": 686.08,
+        "text": "you have a very small set of potential locations actually map them that's 20 potentially yes yes so think about all the reads say if you get a whole genome sequencing you really rely on this uniquely mapped once to bother us what we call reset a local cluster of which set containing these ambiguous portions that needs to have problematic map so in this example you have the chance of in type 6 R minus T to be type 8 the theta minus D and D D so these are the distances traveled before you transition to the next type therefore the dictates the relative abundance if you think about the in range of 0 to theta if the T is in the range of see that you are "
+    },
+    {
+        "start": 746.35,
+        "text": "you get different kind of proportion you go from and then this way is stated rather than to you the next place in minus theta and so on so forth especially so we were talking about will be the 8 and 9 times where you have the that you call it transition transversal reversal read if you got the other end which does actually get you to the right locus right so you could check for consistency check for consistency so so 8 and 9 are the most informative ones when the situation is favorable but when you have redux to be limited limited you may only have more to read on that pipe so it's a trade-off do you use less perfect formative plans but more numerous or you use a few of these most informative three types again so if the further is in the range of our to fit our plans are you have another series of numbers and "
+    },
+    {
+        "start": 808.32,
+        "text": "then further if from set of plans are to new uses closing up last you are it will give you additional type so this all can be you can do the algebra portion of the thirteen types the relative portion will go this way and it will transition further and then the you know iron theta have its own contest they were changed numbers so so that's a population you can well this will help you to do the inference later on as you can see moving from very short to gradually longer and longer you will initially have type eight and nine which are in the black bar not a relative proportion of the thirteen colors and as you move longer longer you transition to the type that's "
+    },
+    {
+        "start": 882.06,
+        "text": "a second complication you have a diploid genome you need to know your reads how they are good sort it to short earlier and long allele I cannot claim we solve all the problems I don't fully understand that Peter understood but there are something stuff to us understood actually but since that my time is short I trust you don't scratch too much deeper into it again the principle is there if you happen to observe the abundance is in this range you you have some information about how long the Leo is if you can sort out the facing of the to diploid genesis of the reeds this is both picture he would need screen masters of reeds that presumably come "
+    },
+    {
+        "start": 943.62,
+        "text": "out of a single str and then make a guess on whether it's short short long long or short long and then this can be made further complicated by you know if you do short medium long you get to get with six genotype lot less three so if it's truly short and short that's the equation method after or a repeat seek that can do the split read map you what I've talked with you about is to build some likelihood model using the relative abundance of three types to estimate its length this part I think Peter wrote better than what initially did so this is from Peters right up if you observe and such read pairs if you know the console from 1 to 13 you say you got certain number of type need pair type 1 2 and 13 and then you want "
+    },
+    {
+        "start": 1005.09,
+        "text": "to estimate D then you also know the probability of observing type I given D R and theta going to that big table earlier you get some kind of a relative proportion then this observation observing these 13 numbers the chance of seeing that it's really a polynomial well it Pike ways to k IP to educate you and so on so on so forth so once you can construct the likelihood function you have some ways to differentiate or numerically estimate unknown with another complication that they've had now is not a singular value it's a distribution it's a people who sent they'll have you asked for 300 if you type sequence in the I should get say 250 to 550 or range so so that can and still don't quite know how feasible to use empirical distribution well now "
+    },
+    {
+        "start": 1067.05,
+        "text": "when implementation is to just treat 300 over this pollution a lot of the analysis become easier okay so this is actually the shakiest part of algorithm if you I'll move forward just don't challenge it too much so so both this comparison ours is called star finder existing ones are geared to start it short and short as you can see and we performed comparably way into short and short but when you have a short and long both methods performed quite well it's hard with sensitivity measures and I don't mind that out it's really because they are not designed to call longer leo's therefore they fail completely so there's it's not embarrassment on their site it's really demonstrating that we are doing what supposed to be doing and "
+    },
+    {
+        "start": 1127.32,
+        "text": "then there are other reports about how ours performed for short short and short intermediate long intermediate and so and so forth so so that's one demonstration of height and then people did something else to estimate the importance of the read depth so if the two STR is 140 that you have imperfect data let's say if you have coverage of 12x you will send every other 12 pairs into the machinery it will turn out estimates with a wide range if you allow yourself the luxury of 50x coverage you have a much tighter estimation for this STR that's truly longer than read but shorter that read pair how how much variation that is interesting I "
+    },
+    {
+        "start": 1191.85,
+        "text": "this was published I heard this and a talk there was this amazing talk where they shot the difference between like three 1990 and GM NGS and post 1995 or whatever where people no longer do gel purification of of libraries and once as long as they did jarick ation it was much much tighter and that will help with this - definitely definitely complications are used for this estimation the actual libraries now have a bigger variations - yes this is just what I created plus - okay last slide is "
+    },
+    {
+        "start": 1259.5,
+        "text": "still Peters on he is sharing trying to calculate confidence intervals going by going back to the likelihood function so the likelihood is computed for every scenario where if it's 12x it's this wide if it's 25 X it's a blue if it's a table weight again 47 X the truth is black so you can see it's hiddenness but at least we have a toolkit to locate the best estimation and give you a confidence interval he generated he got a genome he put in the repeat sequence but also the insert size like he said 300 normally distributed we have 300 so this is also dealing with a very nice situation where you have unique sequence "
+    },
+    {
+        "start": 1322.01,
+        "text": "basically on each side but but it's working now on dealing with the complications where you have a lot of non unique forever now that's something we should tell people is a lot of repeats have slightly different other repeats next to the repeat so if you have a CAG repeat you're very often end up having also some CTG or some CPG nearby and so repeats are coming usually in in groups they are not like unique unique unique repeat repeat repeat unique unique unique so this there is a structure most repeats is that there are regions near the repeats that are not unique either and that's makes that's so so we kind of wrote quite upfront about the limit we set ourself out to deal with first of all pure it's not units is a singular one okay the minute hand it "
+    },
+    {
+        "start": 1382.38,
+        "text": "does get a switch in the middle of it and then the two ends are there flanked by truly genome-wide unique sequences and then you don't have to STR stamp to close that they would compete for the unique sequences in between so they're the host of abomination that we excluded we don't deal with those at additional trials Peters hand and with my push so that's a short introduction to to the spirit of the method the writing and the coding and the maintenance of the code is still rather involved "
+    },
+    {
+        "start": 1461.25,
+        "text": "[Music] [Music] "
+    },
+    {
+        "start": 1543.21,
+        "text": "you travel mark did such a nice job over and the that the CEO higher has the flu rant and run a via the yeah "
+    },
+    {
+        "start": 1609.14,
+        "text": "[Music] "
+    },
+    {
+        "start": 1682.04,
+        "text": "[Music] [Laughter] "
+    },
+    {
+        "start": 1763.18,
+        "text": "[Music] there "
+    },
+    {
+        "start": 1843.85,
+        "text": "[Music] today now this is something I don't "
+    },
+    {
+        "start": 1956.72,
+        "text": "advanced I want click on this part of the picture and I don't know whether there's no mouse oh there is a mouse okay yeah I was looking for the mouse okay guys so ataxia is the disease that I'm talking about that I work on and that we want to apply this to and this is a person who's actually hired a subject in my study so he isn't he has an ataxic gait does that remind you of anything if you see how he is walks I can't stand here but then I can't move up so how does how does that look to you I can walk like this too so I'd like an attack sick person how does that look to you if I walk like this say it loud yes if it doesn't like idle intoxication and alcohol intoxication has actually "
+    },
+    {
+        "start": 2016.88,
+        "text": "this effect of giving you an air taxi game ataxia have troubles when they walk to their cart who are in order to drive many of them have been arrested by the police thinking that they will be driving drunk when they are not drunk that they can still go as they were able to drive so they have doctors letters for this so this is ataxia also has sensory neuropathy and I movement things and we don't want to talk too much about it but one of the motivations of that that you're kind of I guess begin in the beginning mentioned is that the most common way of getting dominant ataxia is by a CAG poly glutamate expansion so a CG expansion in the protein coding part that leads to a lot of glutamate that makes a protein that precipitates in the cell and that messes up the auto PG system and that the cell tries to remove and thereby in the end or so ends up "
+    },
+    {
+        "start": 2078.59,
+        "text": "dying and if do this to a certain type of cells called for cancer cells in the cerebellum you end up messing up with a with the coordination between the brain and your lives so ataxia is not a problem with the muscles it's a problem of the brain telling appropriately to the muscles what to do and we have been looking at my first paper was in on ataxia was like in 2003 which I actually started when I came here in 1991 so I've been working on this for 25 years and my exome sequencing will find new mutations about access that we identified that way and it's fine to find them but we cannot find anything like CAG expansions so if there is a new gene with a new expansion we would miss it and if they have if someone happens to have a mutation "
+    },
+    {
+        "start": 2140.72,
+        "text": "that's a CAG rip expansion and the uncuttable I don't know where I should stand so that so so so there are two problems one is new CAG expansions or any other expansion we would miss and secondly we would miss known once so to try to find these are repeats and most of this journal already talked about so it uses a MGS exomes are files specifically identify sequences of a hundred of more than a hundred of pure small unaligned repeats and then figures out all these different Junction fragments to try to estimate you these repeat expansions and as June was mentioning but maybe I should stress more is virtually all of the known CG repeat expansions that cause disease "
+    },
+    {
+        "start": 2201.77,
+        "text": "will be more than 34 repeats so the situation that the other programs can identify which is that the repeats fit within the rate remember 30-foot high three is 112 so that's more than 100 more right but that situation is basically useless for us because virtually all ataxia causing pathogenic mutations are in this ROM beyond the read like so the it's only relevant for when when your accommodate for all of them you can figure out the smaller ones but what we are really interested in are their larger ones and so so so that it's different for different genes and I will give you the next slide actually has one of the examples so I what I should also say is they're only had one real life "
+    },
+    {
+        "start": 2261.77,
+        "text": "examples and I think PETA has that too so we had once wasted like a thousand dollars on sequencing a known CAG repeat expansion in SCH 3 because you don't usually want to spend a lot of money on no cases because it's quite expensive so the length in the normal case depends on the repeat the specific gene but it can be very close as I will show in the next one very close to this 34 but a lot of them are let's say 10 to 20 they're nearly always variable so nearly all of these CAG repeats are variable even before they become pathologic expanded but it can be 20 times it can be certified and as we as I was saying the next one so the first case that were identified in addition to the known case was very astonishing he said keep on hunting I'm like what Huntington's is a very different movement disorder than "
+    },
+    {
+        "start": 2321.8,
+        "text": "ataxia so he said and at that time and I think this is still true now that maybe PETA has can we do this at the time ball was pretty good in finding new ones at least the ones that he found we could verify experimentally but he wasn't very good in estimating how long they were and that has to do probably with the variability in the fragments that we have so he just said that it seems to be that this particular case one particular case have an expanded HT t G so we but met molecular Li explode at the HT t so these are unrelated individuals and these are to repeat extractions of the same patients where both verbal saw the expansion and you can clearly see that there is one allele that's much larger than these and when we we can actually generate feathers and sequins this and figure out how long it is and it was interesting the repeaters "
+    },
+    {
+        "start": 2382.02,
+        "text": "was 35 now actually yesterday just talked to someone who is working on Huntington and he said that this is extremely rare to have repeat length than more than 35 and there's actually a literature on in right now in the in the in pubmed that suggests that maybe expanded HTTP alleles may be a modifying factor in ataxia so this may actually be relevant although it's not an ataxia gene so what we found is 35 which is clearly more than 34 just barely and Huntington disease usually starts only when you have more than 40 repeats with your 36 to 39 repeats you may have late onset mild or no hunting's it's kind of variable and unpredictable so 35 rupees is still within the normal range but these are all patients with ataxia but this was first telling us yes this what he found was relevant and was correct in what he did find a repeat or an "
+    },
+    {
+        "start": 2442.71,
+        "text": "expansion of it ever repeat that was maybe not relevant for ataxia but that was correct the second card was very interesting we had two siblings with so when we gave both the exome sequencing data he had them with whole numbers he did not know who is related and was unrelated and he found an expansion in this gene which is called a taxon 8 other strand which is opposite strength not other strain which which has a historical reason and he found us in two samples that when we looked at that were siblings so that made it very very likely to be real and that was very interesting because these siblings were two sisters who were refer to us as having recessive ataxia so they were predicted to have a homozygous mutation or a compound heterozygous mutation but what both found is two heterozygous pathological expansions in "
+    },
+    {
+        "start": 2504.16,
+        "text": "this that were associated in the literature with dominant ataxia for attacks and 800s and just for those of you who want to do wet lab work Aaron additionally said this is a false positive I can't amplify this and I'm a stickler on these kind of things so I said well we need to have a positive control before we can say with absolute certainty that we could not detect this so they receive control DNA is from someone called Lauren I'm from Minnesota who has basically identified the scheme where she said okay this is a sample with 60 repeats this is a sample it's 100 repeats etc and so that was used to optimize the PCR and so these numbers of repeats are just the controls she gave us and once we got the controls working lo and behold the two cases were both founded expansion actually had expansion and they were slightly different which is something that I don't know we can talk about a little bit more these "
+    },
+    {
+        "start": 2564.579,
+        "text": "repeats are when they are pathologically are often unstable so hunting you for example is a disease where over the generations it often gets worse because once it gets to a male germline they repeat gets larger and larger so the answer is early and earlier and so these two siblings actually had two different repeat repeat sizes and they were both different which is not unusual so what does this mean this is actually practically very important for this family it changes the diagnosis from recessive to dominant ataxia and that means that there are four children so each of them has two children instead of being basically total you know two percent or whatever list basically being told there's very little risk for your children because they were the genetic counselor said well this is a case the parents aren't affected neither children have had 50% risk so the chance that one of our "
+    },
+    {
+        "start": 2625.799,
+        "text": "children actually inherited this expansion and will get this disease is pretty high so that this is very relevant for the family and so we've talked with this is a family from Italy and so we we talked to the clinician there and made clear that that this needs to be verified in a clinical test so this is something we don't need to spend too much time on but I as a researcher cannot give results to patients in Italy all here but it has to be verified and this is a little tricky here because the Italians will have the same problem we had initially of both getting this si to work and in fact this that we have had cases where this was excluded initially I think this was one of the cases where it initially was excluded but when we look in on them which is a very good database for clinical information it actually says that this gene expands very rapidly "
+    },
+    {
+        "start": 2687.809,
+        "text": "through the generation it very often can be techni stating as we excessive just because the parents may have 20 repeats and we don't have the parents in this case and then the next generation may have pathological number of repeats and this is true for a lot of these repeating expansions so they may actually be mistaken for recessive and that specifically - in this case if they ever in families seemed somebody get the long form but it's not expressed one of these expressed or they always I've not heard but I mean that's that there may be there's maybe a nice attainment bias because people look at these repeats in cases with a disease that what you're asking for is other people no other people wear wear that that don't have the disease and I'm not sure we have assess that to a very large extent because these such an such an "
+    },
+    {
+        "start": 2748.65,
+        "text": "allele would usually be missed unless you do with special tricks as I said so in and yes you wouldn't necessarily find it so that's that's it's a very it's a big issue in general I mean for most of these pathological variants we don't know how many normal people have so called pathological variants because usually people get sequins right now because of them because they have a pathological one and you can't go to the child's genome project for this because they don't have these turkeys they will miss them this will be in the underlying garbage can treats I mean they start they are in the thousand genomes unless someone now does thousand genomes with very very long reads so if there is a thousand genome project with 400 500 phase reads then we will get this information and I don't know don't do you know if anyone is doing that or is basically all of these large-scale things for doing a little bit up shortly so we may find this out in the next 10 "
+    },
+    {
+        "start": 2812.22,
+        "text": "years when the victim lab Jim myself or or they view multiple in the somatic cells so it cannot mean the germline but it's also unstable afterwards so the I'm not 100% sure but my guess is that if you see here there is a little bit of a shade here so my thinking is that this person actually has both this allele and then and expanded allele and B definitely so there are cases reported we're not always the same so there may be more expansion going on in after the germline it's a good question people people know in general how does repeats lead to expansion overall it's basically something called slippage for the DNA polymerase but that "
+    },
+    {
+        "start": 2873.46,
+        "text": "can happen both in the germline and in the in the cells my guess is the same answer is to Jeff that if it has some attic Lee only after you were born and some up yourselves we would never know it may be there over time I don't know what I know is in Huntington for example of whether you get it through the father or the mother the expansion is faster through the father then through the mother and I don't know whether that your sperm competition is that reason or something else that I don't think it's known in ataxia in general this we are working also with a person called Summa - which has a clinical medical genetic sequencing facility in the University of "
+    },
+    {
+        "start": 2933.609,
+        "text": "Chicago and we and our neurologist and like four or five of us got together to figure out what our potential ataxia genes that work would be worth sequencing so what she's currently offering and I think I have this here is an ataxia exon panel that she's actually she has now done over a hundred cases like this which oftentimes the insurance pays where she's doing exome sequencing but she says from the start but she's only looking at and I said over 250 it's actually 346 genes that associated with ataxia or what could be confused with ataxia so she's looking when we made this we made it clear that there are some diseases that have attack see as a component that can be confused with it so it it's very generous in terms of anything that could possibly be confused with ataxia we are sequencing in this case and so what she's doing is she's "
+    },
+    {
+        "start": 2996.099,
+        "text": "doing clinical sequencing which is a 12 to a tool up to 75 days 4x average which is more than what we usually do for research and anything that she reports back to the patient she actually Sanger verifies which is a lot of work and which is why this is relatively expensive now that she says on her website and what every lab that does anything with ataxia sequencing has to say is that currently this exon sequencing does not screen for trying to collect I repeat expansions which are the known cause of the majority of SES and actually also the most common autosomal recessive ataxia Friedreich's ataxia these need to be clean it before you come to us so what we would love to be able to do is to have combined exome sequencing which will probably be replaced by whole genome sequencing and use STR finder and so that we have that in the future there will be a one-stop "
+    },
+    {
+        "start": 3057.099,
+        "text": "shopping so you send your DNA to solo or just someone else and as the are kind of finds if there are any repeats and I think if you limit it to the known ataxia genes the mass will be slightly easier when you say okay there are these 15 different genes that can cause ataxia the only test for those and we only test mental point mutations in other genes if you don't find it and CAG repeat because that's the most common form so my my sort of vision for the future is you send your DNA sample to one facility and they will use SDR finder to find the CAG repeats and if there's nothing in the CAG repeats then you look for point mutations in one of those 350 or so genes so that's kind of where this can be used in the future that was alive to say how many genes including works have a candidate pre-existing CAG repeat in "
+    },
+    {
+        "start": 3119.66,
+        "text": "other words just what the genome on the bone [Music] that caused ataxia how many CAG repeats there are in the genome that in a coding region and a coding region I don't know I was wondering it make apparel it just targeted this kinda this is like 20 or 30 or 50 maybe but make not all of these all of the repeat containing ataxia genes i CAG repeats it's the most common but there are cg geez there are CT geez there are and there are also like a small number of like five base repeats a 12 base repeats so it's not all coding region and it's not all just CAG and I wouldn't limit myself "
+    },
+    {
+        "start": 3181.01,
+        "text": "to those but we can still make a list of all known ataxia causing any kind of repeats and look for those so this this method would look for known genes and the current scheme of them is but that for some logistical reasons doesn't seem to work is if about 50% of the cases that she gets they don't find any mutations in Mon genes and we would love to get those next-generation sequencing data to do research on and somehow it never works say they have on there when they say we didn't find any mutations but if your patient wants to participate in research optic market or mice so they have that on on all of the reports but somehow the communication between the lab and the physician and their patients never work so we get so I'll take most of our patients by self referral I don't believe that it's because most people don't want to participate in research most people who have ataxia woodland and pay for an hour thousand dollars to get "
+    },
+    {
+        "start": 3242.93,
+        "text": "find out what they have they would be interested in participating in research but that's one of the sort of practical things still working okay now we can discussion for both the practical and the theoretical you want to have the why everyone wants to so what does it mean that they can get you know tested like you know you know testing that can be done now in the future does it mean that you know people who already have it would come and find out exactly what the risks are for their children and so on and so forth is that the main goal of that oh so so this is something I'm actually on the net ataxia "
+    },
+    {
+        "start": 3303.13,
+        "text": "Foundation's Facebook page and I there are many discussions among the patients about this kind of issue so there are some patients who say well why bother I know I have it I know it's going to be progressive why bother finding out and there are a lot of people and and some people say oh now I know I am a CA sorry it doesn't change the thing I can tell you I've I've met one of the patients who said that he's not a habit he was caring for his mother he knew what the disease was about and for a long time didn't decide it that he didn't want to know and then he decided that he wanted to buy a house and he said you know that's when I got myself tested because I wanted to know if I needed a ranch and something that is wheelchair accessible pretty soon and he said with in so the other thing is for a lot of these diseases where you don't have a proper cure when people have theoretically a 50 50 percent risk if you ask the labs that do these tests they always find more than 50% having being positive which "
+    },
+    {
+        "start": 3366.97,
+        "text": "basically says most likely people people have like I I sometimes tunnel you know if I had ataxia and my family if you lean towards being very worried and anxious you would start worrying about do I have it don't I have it I as a family that I recruited with 15 siblings every single affected in the family says Connie hazard and Connie didn't comment she is not because she was having some flaky things showing a coffee cup around the room as what they said so there are these rumors and stories where you want to know do I have it or not but part of it is when people start to be symptomatic it's very often when they get to know it they buy a house as I said the other thing is if you want to participate in clinical trials they often want to have it limited to one form so for example Buddha as offbeat had found that lithium "
+    },
+    {
+        "start": 3429.55,
+        "text": "which is a commonly used drug for bipolar disorder works on mice with samr mutations so she did a clinical trial for people with SCA one and only those who had a CA one mutations were allowed to participate so the genetic test was required in order to look at the clinical trial and the other thing is ataxia can have a very variable onset and a very variable progression so somewhat Axius you can get very old with so a lot most ataxias don't have a mental involvement and you can be diagnosed at age 25 and gets up to seven age of 75 but some ataxias have a much more progressive course and some people would like to know what kind of course they have so there are a lot of answers to that question but it's actually one of Neurology in general is one of the fields that has embraced genetics genetic testing much earlier than many other fields so it's very common in if "
+    },
+    {
+        "start": 3492.22,
+        "text": "you go to any sort of academic medical system and even a neurologist in the in the community it's very common that they would immediately send out a blood sample for genetic testing just to know and to be able to talk with patients about prognosis yeah but I think there's a lot of it is psychological a lot of it is that people tend to want to know and I figure out what's the status in China and the status and China is basically that they're neurologists don't even see the point so I have not met neurologists and they basically said we don't have we don't bother what's the point it doesn't change treatment nobody would pay money for getting a gene has done so it is I think part of it is culture that we tend to be a culture that would like to have explanations and knowing and many patients kind of like the idea okay I know now what we have and we've I mean "
+    },
+    {
+        "start": 3554.47,
+        "text": "I found you art axial jeans but very often when we didn't see it some sequence and we found either you know a no ataxia gene or a gene a mutation in a gene that doesn't cross formally ataxia but some other kind of syndrome and so for for a family to know our kids have 4-h centromere there's a 4h syndrome support Society and I can talk to other people who have kids just like mine it makes a world of difference for them okay what about STR no no all these fine for magicians are not masking Christians about okay thanks [Music] "
+    }
+]

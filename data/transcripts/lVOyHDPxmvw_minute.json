@@ -1,0 +1,214 @@
+[
+    {
+        "start": 0.0,
+        "text": "I think we'll go ahead and get started welcome everyone the tools and technology seminar series I think you've all been here before so I don't think I need to give you really much feel about the seminar series and there's a sign in sheet going around please remember to sign in just helps with the pizza and lets us know how many people came so we can justify the pizza I sound like a broken record but I am looking for speakers for next semester there are a few gaps in the schedule right now that I'd like to fill so if anyone's interested please let me know or that um please introduce our speaker today we have a jinghuan Dan from the Brooks lab and him I realize first thank "
+    },
+    {
+        "start": 64.83,
+        "text": "our rc4 of an adage in this presentation and Alex for the technologists part Thank You Oprah here especially lunchtime for those of you who know me I'm a fourth-year PhD student in mathematics department I work in Brooks Lab which is in chemistry building the work in our lab is normally we focus on using molecular simulation or molecular dynamics to study how food he moves hopefully interact with another protein and protein ligand interaction extract design kind of thing so today I will talk about the project I have done in the last year which is accelerating protein living dog community on GPUs so as you can see there are three keywords "
+    },
+    {
+        "start": 125.219,
+        "text": "over here it's protein ligand Augean ice fft which stands for fast fourier transform and we make it work on GPU to make it faster so before I dive into the details I want to give you some background because our departments are in the same department sometimes do not aware about what other people are doing so first is about the fruiting live in Duncan imagine this you have routine and you know the structure of the protein and you are giving a ligand so what do you want to know is two questions as if this league in band with this protein and if this living binds how is the binding affinity or where it binds so to answer the question fully we needed this quantity called a pending for energy "
+    },
+    {
+        "start": 185.29,
+        "text": "because this quantity capture really captured what is going on in this binding and unbinding process but this funding for energy is is even though it is captured fully of the process but from the computational standpoint it's very difficult to calculate this accurately even though the last effect is I would say are we in our field we have makeup were very large progress code to calculate this quantity and this is generally speaking this is very difficult to get so what do we so what we should do if it is difficult the Oh another another thing to see is the reason this is difficult because of this if you remember from your P chem class the dirty G is equal to e is equal to e "
+    },
+    {
+        "start": 248.66,
+        "text": "minus TS which has an entropy part so that the intrepid parties are difficult to calculate so that's the reason why this is difficult so the approach we have important living dog he is instead of calculate this quantity directly we make and approximation to reap to design a energy function to approximate this quantity hopefully we can recapitulate what is happening in the binding process generally you know doki-doki meters or talking algorithms they are mainly two parts why is the energy function which is approximation to the final energy the other one is a search algorithm because we assume that the binding post we are corresponding to the post with lowest energy so we need through parts energy function and a search algorithm so what "
+    },
+    {
+        "start": 311.34,
+        "text": "kind of energy search function have we used not without in the field in the protein link in talking field one kind of energy function is physics faced force field the most of well-known one is the charm force field which is we used in our lab and another way is amber phosphate which is using auto talk which is a very popular way of knowing open source talking a greeter or talking software why did it widely used some other energy function is like empirical energy function which is learned from protein ligand poking database with Amex score and can score a well-known and the third class like a knowledge-based act like the drug score which is you analyze all the drugs that is on the market and to see if they have some special property so you can design the corpnet "
+    },
+    {
+        "start": 372.33,
+        "text": "too quickly screen the compounds you have so a little bit about the first field we use you can see we use this charm frost field so this 12 are similar in terms of the formula but they are different in the parameter so in our frost field or in general in molecular dynamics the first really we we use is like this so this is the potential energy U is equal to its corresponding step own energy so you have to Adam have a bound between them so we have bound energy which is a harmonic oscillator approximation because apana energy is so strong so you early learn Greek usually it's just oscillate around the equilibrium position so this is the reason we used harmonic oscillator the steam as the angle we have three atoms you will have "
+    },
+    {
+        "start": 433.25,
+        "text": "angle so this is the energy corresponding to this angle and this is a torsion angle in which case you have four atoms it's like the angle between two plane and this is corresponding to the van der Waal interaction which is a non bonding interaction and this corresponding to the electron studied interaction so the most difficult part to calculate or the most time-consuming part calculate is this two parts one is a van der Waal the other one is a electron stagnant action why because if you can't how many terms are here and how many parameter here there about aim squared if you if in your system you have in atoms the term over here we are about half Instagram which means the time complexity of this evaluation is "
+    },
+    {
+        "start": 495.849,
+        "text": "this increase in stored into n square as you increase the number of atoms the same over here or over here they are linear so most of your computer your timer will spin out this part this is the force field we use another product is there you know docking protein ligand oh yes but that's the hydrogen bound energy follows that rule it's like this is a development of positive as a between you and they have a specific energy term down here corresponding to hydrogen but now as the force field now moves out or is a new development which is that don't treat hydrogen bonds pacifically just use the money directly for that and also when two items comes "
+    },
+    {
+        "start": 566.3,
+        "text": "too close they have crash right so that will correspond into this part the card come to close right yeah this will be really high because in verse 12 okay another part I'll use the protein ligand docking is once you have this energy function you want to find the post that has the minimum energy according to this formula so you need a search algorithm so in order to appreciate how hard the problem is we need to consider how many degree of freedom we have let's say you have this protein fixed you have this Lybian and you want to talk this ligand on to the protein if you if you assume the protein is rigid the ligand is rigid you only have this six degree of freedom which is corresponding to translations and rotation right so this will be easier but the reality is not so this simple because when its ligand binding "
+    },
+    {
+        "start": 627.89,
+        "text": "to this protein the league in kind you know can be can change they are flexible so if you add in the league in conformation in the storage it will increase the degree the number of degree of freedom to a large number so for relatively medium sized living you can usually have 10 or 15 number of beautiful bounc so which means the degree freedom will increase by 50 another more challenging problem is when the ligand binding to the protein the protein also changes and the cigarette freedom over here is overwhelming like your protein the side chin can move if you don't if you assume the backbone is fixed but there are too many side chains even though it's just outrun the binding pocket so because we have so many degree freedom we really have some heuristic search algorithm "
+    },
+    {
+        "start": 688.76,
+        "text": "instead of solve the problem exactly we can't do that so you're early people use Monte Carlo for similar annealing or molecular dynamics for similar meaning to search to the lowest energy and another approach Recker ISM is genetic algorithm which stretches the minimum energy pose which is quite effective okay any questions so far about protein even talking this is the background I guess no move on to this a transform so why these two things are connected I'll give you very simple about this discrete Fourier transform which is the fully transform other discrete step so just give you some very simple example what it is what it is and what it is useful so the definition is very simple like you have a regional signal F it's a "
+    },
+    {
+        "start": 753.05,
+        "text": "vector overlay in Spain and you want to calculate this Fourier transform capital F which is also a vector of length n so so why would you want to do that you may ask there are many reason you want to do this so I won't go to the the reason so basically you want to do this calculation it's very useful for all kinds of purpose so if you look at this this is like it's only it's nothing more than matrix time or vector so this is capital F this is original so if you do this calculation is the equivalent to do this calculation and this is transform matrix so it's like this this is your Riza this is what you want to calculate this is the input and this is the transform matrix so if you calculate how many computation and you need to calculate this capital F you will need about into "
+    },
+    {
+        "start": 815.18,
+        "text": "the two into the square number what you have to use this hand this sum them up your this time they stand them up you will do in square calculation it was your attic into the in square time in general if the metrics are arbitrary matrix however because this is Fourier transform this matrix is a very special so this is the reason you can design an algorithm to do the calculation play some tricks out C to calculate the F which is basically divided a divide-and-conquer algorithm so so what they did is if you calculate this naively you would given it about in square time if you use FFT you will need n log in time which is a huge increase against you computer science if you have a grism into is where it's you're not good enough if you in login it's it's "
+    },
+    {
+        "start": 879.35,
+        "text": "pretty fast I guess so how they do this you can Gugu it there is a lot of thing about it so I won't go to the details and also if there is why I agrees on you to know or you want to know this is I guess the most well-known and most useful so one of the top thing agrees I mean 28th century so and a lot of digital stuff rely on this egg rhythm to work the new the if you listening of all kinds of things so why doing in the by the way are we interested in the event here and what it is useful I just give you a simple example where we can use FFT to accelerate our calculation for example you want to calculate you are giving two signals Y is f Y is G they are very generous you know you can look at live in here whatever quantity you "
+    },
+    {
+        "start": 940.28,
+        "text": "are in Tuesday and what you want to calculate this cross correlation H between F and G so the definition of the cross correlation is like this the cross correlation is also a vector of lanes capital n so at each position in H is equal to this formula which basically correspondent we have to signal F and G the cross correlation is just shifted offset by a fixed amount which is a right then you multiply the corresponding term and sum them over which is your cross correlation this is some quantity that email applications they want to calculate this quality so how will you calculate each giving this F and G well you can do this naively right so you can write a for loop for small me from 0 to n minus 1 "
+    },
+    {
+        "start": 1000.96,
+        "text": "calculators directly so if you calculate how many calculation you did you will see you did N squared calculation which means the algorithm the time complexity is n square so this is where the FFT can come in so this H cross correlation is equal to this quantity and we have a symbol for that F star G so the trick we played here is we take the Fourier transform on both side so this style will become free transform of each and fully transform of this F star G okay and the Fourier transform has a very nice property another thing is f star g the cross correlation is you can also view the cross correlation as a convolution between two signal except we "
+    },
+    {
+        "start": 1062.62,
+        "text": "just reversal a signal so basically you take the free transform the Fourier transform of each is the fully transform of the convolution between F energy and the fully transform has a nice property that the fully transform of convolution between two signal is equal to the product of the Fourier transform of each now we do it as in Europe this this quantity fully transform is an equal to this is conjugate so you don't that you can you can just view this as the product of two Fourier transform now we play the trick we use we do an inverse Fourier transform so on the Left we will get each back on the right we just do whatever the inverse for the transform did okay so now we can Kate how many "
+    },
+    {
+        "start": 1124.09,
+        "text": "calculation we need to calculate this each vector so you see in this part because I already told you that the fully transform one time for the transfer only takes n log in time so over here it will take us in log in hand over here in what you cast in log in time in that's him so right so if you calculate this way do n log in time it's not only in square this is why it is useful it is I can accelerate a specific calculation or specific quantity you want okay any questions so far about FFT no ok then how is FFT "
+    },
+    {
+        "start": 1184.57,
+        "text": "related to talking so this has a long history are not quite long but the first application of a 13 talking is important protein talking and in this 1992 paper so the problem they solve is this stuff is a rigidbody protein-protein talking so you have one protein a and another protein B you want to talk them together and you assume that whose protein are rigid body so you only have a six degree of freedom so what they did is they make greed so for protein a you have vector three-dimensional vector a the value of the vector at each point is like when you have this protein you make a grid around the protein so at each grid point you assign a value to it the value will be equal to one if the grid is on the "
+    },
+    {
+        "start": 1246.739,
+        "text": "surface of the protein it will be equal to zero if the grid is outside the fruity it will be equal to so if the protein is if the grid point is inside the surface protein and this is so here is an active number small negative number and you do the same thing for the other protein B okay it's like this you have two protein protein a and protein B you assign this a and B vector or each protein you see the white here corresponding to zero the black is sensei the black around the surface corresponding to Y and AZ agree inside the protein corresponding to a negative number now in order to talk these two protein together you can only you can you only need to take it one quantity "
+    },
+    {
+        "start": 1307.839,
+        "text": "which is this C which is a cross correlation between a and B so if you calculate this quantity and the value of this quantity at alpha beta and gamma is equal to this you can see this is the cross correlation evaluated at alpha beta gamma alpha beta gamma is offset it's like the aim in the cross-correlation I showed you in the wine dimension and she assumed that the binding holes corresponding to the booze that has the highest cross correlation because if your result is like this this 48 is protein B so what will be the cross correlation between in this case what will be the cross correlation in this case this corresponding atrium time the "
+    },
+    {
+        "start": 1368.389,
+        "text": "corresponding B term because because they are not touching each other so every every term in this protein we are time with a value 0 the same thing for the protein B which means the cross correlation in this case is equal to 0 and the cross correlation for this case you can see this two proteins are docked they will have a positive number for this cross correlation but that positive number will be not very large compared to this one because it only does well for small set of dystrophies compared to this one if you calculate the cross correlation for this way anyway I'll have it it will be a large podium number and in this case there is some clear if you have collision you will have the term that wine this wine over here times "
+    },
+    {
+        "start": 1431.6,
+        "text": "R so here the zoo is negative which means if you have a collision it will decrease your cross correlation so which means if you set up there really like this you're bounded pose is corresponding to the pose that has the highest correlation quick cross correlation value has it ever happened that that they found has a higher score than the native month which means does nature always maximize this you mean they find a pose that should be our most positive highest I mean yes the highest underneath here I would get I'm not sure our guess it could be possible for that "
+    },
+    {
+        "start": 1492.279,
+        "text": "but you know the Native opposed to the chorus for maximum so if you plot the cross cross correlation plot the cross correlation in respect to alpha beta and gamma you will see some peak okay which occurred on to the higher to the local maximum an idiot post corresponding to one of the local Maxima not necessary for the highest one I guess they only assume so they think the reason the two dogs is only because of che complimentary yes yes nothing to do with I don't hope the interaction or electrostatic yes we can consider the electron static later but in the process people are doing they consider the ship company three you're right it's the only consider ship which basically commonly consider the band wall okay I'll "
+    },
+    {
+        "start": 1558.859,
+        "text": "introduce you for the protein ligand dog king and the FFP and how they are related through what we have done in the past several months is we use the idea of empty to do the protein ligand okay and he said in this one I only consider the ship didn't consider the energy so basically this is an approximation so what we did is we express the number on the interaction energy which is electrons that you can track the energy at a valuable interaction energy as a cross correlation between the protein of a game we have done that we can use an empty to accelerate their calculation okay and we do this we find a way to do this and also we implement the algorithm host CPU and GPU and see your really speed up and also we compare our new egg reason with "
+    },
+    {
+        "start": 1620.479,
+        "text": "previous way our benchmark set so what we did is like this as I said between the protein a legging there's only non bonding interaction which has two terms which is it's like no more interaction it's correspond to some overall the legging in all the atoms in the leg in all the atoms in the protein and the normal interaction includes the electrostatic potential energy and vanuatu energy if you plug in the formula at the beginning your pants like this so it's thumb over its sum over the energy of the ice atom in legging list number someone would elect the bandwidth energy field for the legging for the atom in the ligand okay so I would go "
+    },
+    {
+        "start": 1681.08,
+        "text": "through some example fix the electron step potential as I example how we express the energy as a cross correlation between the protein taking so you see this is electron studying energy for the ice item in the likud right so the energy for them well for this atom in the legging it will fill the electrons that occur for all the atoms in a protein right so it's a sum over all the electrons that interaction for all the atoms in the protein and this is the charge of the iSight emulating that yes atoms in the protein and you can put the Q I out of this formula it's like this so and you write this as a switch corresponding to the ice the energy is the ice at home in the leg in the league "
+    },
+    {
+        "start": 1741.08,
+        "text": "in field is equal to the charge of this atom times the electrons that in the potential at that point they are separated this Q I here is the charge of the ligand this electron static petitio only depend on the protein so what you do here is you find the binding pocket you make a grid so and each grid at each grid point you calculate the electron static potential this be here okay and if an atom is sitting on this grid point the energy of the atom fields will be equal to Qi times 3 it's actually simple it's just the energy is equal to the charge times the potential okay what I'm problem with this is whatever the atom is seeking instead of exactly on the "
+    },
+    {
+        "start": 1803.24,
+        "text": "grid point it's the inside of our unit okay how would you calculate the energy we use a simple trick called the Charlie nearing completion like this you have the electron static potential on all the points for a unit cell and you also you want to calculate the electron static potential of a point inside of the unit cell what we do is we use elect trilinear interpolation which basically you use a linear combination of all the plant to approximate the energy potential of this point and the coefficient depends on the distance of this point to the left and right left wall the bottom wall the back and front wall it's at this point near this point if this point in near this grid point is grid point will have a larger weight in "
+    },
+    {
+        "start": 1865.1,
+        "text": "the linear compression the same thing for the legging so here is for the protein because this electron static potential only depend on your protein once you have the protein you can calculate this now you can do the same thing for the legging so let's say you have an term for the leg in at this position and it has charged Qi so what do you do is you distribute the charge onto this grid point okay basically you just divide them up and put part of it at this point part of it at that point part of it at this point okay and how much you put here depending on the distance between this point at this point it is closer or you put more there this further away you put let's chant there so after you do this you will find that energy this is the electrons telling G of the eyes at "
+    },
+    {
+        "start": 1926.399,
+        "text": "home in the ligand for the ligand is equal to the inner product of this Q charge distribution of this electron static distribution so it's a cross correlation I would say between two vector they still what I did for the story slices we find a way to represent the electrons that is in packaging as a cross correlation like this the procedure is like this this is the protein the binding pocket and you put a grid around this binding pocket and you calculate the electron static potential on the grid and giving a leg in you do the same thing you distribute the charge of each atom onto the grid point now the energy is equal to if they overlap like this the energy will be sorry the energy will you go to this which is inner product between this two vector right but as I said the league in can move "
+    },
+    {
+        "start": 1990.149,
+        "text": "around around the binding pocket so like this is the league in the league in is red so the league in can move up by one unit of the length of the unit cell then their charisma the energy of this post or this position is equal to the cross-correlation evaluated at a 0-0 way which means this Y here means you move the league in up I when you need and you can move it around where direction as well the energy will be like this so you can do generally the league in Campbell three-dimensionally for every point but the energy is always a cross correlation so if it is because it is a cross correlation we can play the trick we played in the one-dimensional case which means the energy corresponding to all possible translation on a grid is equal to a "
+    },
+    {
+        "start": 2051.829,
+        "text": "cross correlation between two vector basically is you go to a convolution between two vector if you do this naively it will take about a Moodle sixth power because you have three dimensional now each dimension has employed so we play the trick we we take the Fourier transform on both sides and we take the inverse Fourier transform on both side we can get this new back like by just doing this amount of work basically you do this naively your ticket into the sixth power you use empty riveting into a sleep our login which is a very big speed-up okay and this is the electron static energy last means we have been wise well right so it works almost the same for Vienna will accept ah it's more complicated so I won't show that because any need instead "
+    },
+    {
+        "start": 2114.38,
+        "text": "of torque reading it a set of grid so but the principle Sam but just a little bit of calm complicated so we did the same thing for almost the same scene for the van der Waal and it works so let's let me show you some benchmark on the running time how much video app we have the benchmark used like this the grid has size are 60 60 is the number of point along each dimension okay what this agreed from the protein the I recorded grid potential grid so this is the grid from the lake in the legging is smaller than the binding pocket right permission is like this this is X Y Z this is number of grid points and this grisly game can move around inside of this big grid right so it can translate along x y&z direction and the number of translation different translation is about this number about 60,000 so the purpose here "
+    },
+    {
+        "start": 2178.97,
+        "text": "is to calculate the energy corresponding to all these 60,000 position so what you can do is you can write a for loop again naively you can for for loop over all possible chain translation and you calculate the energy for each position I did a test this kind of CPU which is already very good CPU if you do this now you believe it take about 30 seconds to do all the work but if you use the FFT we just described you use about 0.3 second which is 100 times better all right but you get a same readout you got exactly the same thing you in this time instead of this time that gruesome scene okay as I told you at the beginning we take a step further we make a walk on GPU as well so we did a same page mark "
+    },
+    {
+        "start": 2239.99,
+        "text": "this is a fianc\u00e9e on CPU this act on GPU which is about 0.01 second which is another 28 times speed up so I publish the mention that this time is not her the time that you run when FMP because on GPU the speed-up come from you can run multiple fmt simultaneously but then the one on CPU you can only run away at empty at one time at a time right but on a GPU you can write a white handler to handler at the same time this is corresponding to like a-- it takes one second from our one hand your keys so this is where it happens this is give you some more results for the rigid docking so to make sure we implement this correctly this is "
+    },
+    {
+        "start": 2300.2,
+        "text": "the energy landscape for talking the leaking into the protein and this is the x-axis corresponding to the x position x coordinate of the legging is corresponding to the y coordinate of the legging and as you can see the picture is changing as you move room gene along the Z dimension like each point is corresponding to a energy current running through that position that oppose of the ligand so X Y as they say is changing okay so as you can see we can find a local energy minimum this is aware of the net he opposes because he's a native around here we "
+    },
+    {
+        "start": 2361.5,
+        "text": "have a local minimum so this pollute point corresponding to the energy that is lowest spiritual house energy changes as you move the leg in around the bend in pocket so this is this is for the rigid talking rigid are leaking put rigid baking protein a conducting because I as I told you at the beginning when you have routinely interaction the league in can be flexible the protein can be flexible as well but in our previous FFT work and the FFT it only works for rigid protein are rigid leaking and also for specific orientation so well but however we wherever we we can do the FFT correspondence with translation so fast which means we can do this for multiple orientations simultaneously on GPU so we "
+    },
+    {
+        "start": 2425.1,
+        "text": "incorporate this acceleration into our previous protein ligand docking algorithm which is a talker so this is sittin Chris the talking algorithm in charm what it does what it does is to read you the protein called flexible leaving docking so this is a previous docking protocol it's like you giving a league in you generate a random post of the league in the random holes corresponding to its conformation basically you rotate the rootbound of the ligand you choose a random orientation which was a random position and you put the leg in inside as a binding pocket then you run simulated annealing using molecular dynamics basically you hit it up with the hit up put down and at the end you do energy minimization hopefully once you do this multiple here put it down you can find the energy "
+    },
+    {
+        "start": 2486.21,
+        "text": "minimum this is the local energy minimum if you find the many local minimum and you compare them over you can find the global energy minimum so this is a previous protocol this is our new protocol with our ft accelerated procedure basically what we did is a as soon as this originally daugher we generated an initial confirmation of the league in and we generate a multiple candidate orientation of the lydian because our aircraft he only works for specific conformation specific orientation then we do the FMT search parallel FFT search on GPU right so for each conformation is oriented for each conformation they have multiple orientation you do translation or search each or all these orientations and you find the energy minimum once you find the enemy the minimum corresponding to "
+    },
+    {
+        "start": 2548.19,
+        "text": "this conformation you can do energy minimization quickly then hopefully you can find the energy minimum at least energy minimum so this is something to reserve our talking accuracy so the red one is what I told you what will be the end talking accuracy if you follow this protocol whatever builder the blue one is the talking inclusive transparent were our new accelerated protocol so docking accuracy defines as the minimum energy pose as MST smaller which back to the native post smaller than 20 or if the aresty between the minimum energy poles and the native pose is smaller than 20 on we will we will see it's a stock successfully it's close enough to do some useful work red one is "
+    },
+    {
+        "start": 2610.29,
+        "text": "previous blue one is our new talking prism and this x-axis a correspondent for how many doc you try like generate a random leg in your talk once there is another one you talk wise its corresponding to how many random confirmation you generate at its end you will take the lowest energy pose you find across all the trials that were defined you're talking amputee as you can see we have an increase of the dog genome PC you need our accelerated see doctor okay I did thank you if you have any question yes question it's not my area puss but so I assumed that the scale of the grid for the ligand and the scale that grid for the protein had to be the same yes and and the number of vertices those increased and the cooking "
+    },
+    {
+        "start": 2675.14,
+        "text": "you know the performance is going to be affected by how do they optimize for the scale of the grid was me like like the distance between the oh it's the beasts yeah over here we choose 0.5 Pentagon is that just first of all you can choose paper number to compare the energy because once you have space in the energy is an approximation for your energy so you can change this and see how your proximation how where your proximation is because if you choose this too small the number of vertices as you said is too much that will hurt your calculation it will take a longer time but if it is too large the energy is not accurate anymore which also heard you're talking accuracy so we try different for example from 0.1 to 1 and strong and see how the talking accuracy changes and how "
+    },
+    {
+        "start": 2735.98,
+        "text": "the energy approximation changes then we chose a 3.5 which is a compromised yes yes no Solent as well no soul yeah there's no solving over here so why do you think it is a cool assumption what why do you think no soul without someone you will still January good position well that's will be your assumption right because you want to generate a model you want to do the calculation you cannot consider everything because you want to make if you consider solving you can use you know a implicit solving or explicit solvent which is very time-consuming but the purpose of the protein living talking is to do it quickly because you're you have millions of compounds so you want to quickly filter out those compounds that's not binding at all so you don't have to do extra work on them so if if you want to "
+    },
+    {
+        "start": 2798.559,
+        "text": "calculate calculate the penny for energy like the dirty G at the beginning you have to consider solve it right that would be our assumption in your benchmark said yes you only showed the Delta is the smaller their cholesterol you didn't show with was enrichment vector how will you are able to distinguish corrigan from incorrectly done yes well I have been a tissue it I have a distribution around the energy poles you find so it's not other slice like you have the original talking algorithm and your document resume right you choose the lowest one hand your energy post and you plot the amnesty distribution of this white hand your post but your own your poses for the same weekend yeah no no no this is this is average for different again this is odd until step this is on about 64 "
+    },
+    {
+        "start": 2866.93,
+        "text": "million pairs this is like Reese's across all the protein 18 pairs so in your benchmark said what is the portion true wiggins the native mystery daughter who's awesome actually means so yes I think the most important the most important thing of protein Lincoln talking is for you see to squint which weakened is most possible to talk upload link yes the benchmark here is not that is core cross docking understand yeah yeah but Batman here is only from Rodolfo yeah which is the basic requirement for you're talking regular yeah if you cannot do where are this you cannot expect to do where are more difficult problem which is cross docking yeah so your performance on cross stop we haven't tested yet we are planning to do that we definitely need to do that "
+    },
+    {
+        "start": 2929.849,
+        "text": "you have showed a number of translation of your better how about you number on notation number of rotations you consider all this this Tokioka see is across many across all PO not all possible orientation across the stretch down here it's not only translation it's also orientation confirmation but we use the empty ecstatic translation in this process Thanks no this one hand you're corresponding to trials when trial means you generate the wine jet by random confirmation of the leg in and you dog it that's correspond to one trial and there in another way docket second trial at the end you will because when trial will generate you will give you a low energy pose and its energy and at the end you "
+    },
+    {
+        "start": 2991.079,
+        "text": "combine all the energy pose from all the trial and it true the lowest energy one which is as the final invoice yep for for testing this you said you generate random confirmation given like it yeah so I'm guessing this would depend on the starting confirmation right because if you you have your native library then you generate hundred confirmations you find the lowest that would have some dependents starting now you just random routed at the root rope and then depend on the starting confirmations so you enumerate all possible choice no not enumerated you cannot possible nor it's done you just find the local minima missile you can do is you you're giving the legging you do similar annealing for the legging you vacuum then you have had many energy "
+    },
+    {
+        "start": 3053.69,
+        "text": "local minima for the energy for the leak in confirmation and your talk is taken confirmation might as dead as shouldn't that be dependent my initial information if you do simulated and your rain if you do but if you do multi what time each time will give you a local minimum this would be different but it's still cooperation o of long time of death so basically you start from when starting structure if you heat the temperature is high enough the end local minimum doesn't depends much on your starting structure how do you test is what you just write two times you get the same you just write from the two different standing structure you get the same set of local minima you can see yeah that's it yes that's a that's not very much "
+    },
+    {
+        "start": 3127.28,
+        "text": "better than the random actually yeah there's also curious about so if you generate like different confirmations and then you find like energy for each of 100 conformation is their dependence on like the rmsd with the native lag and so I understand that when you're generating tortious rotation [Music] how was that different from if you just take the native well what do I mean you just pick the native we just use the conformation of the leg and you still have to figure out where you put it let's touch the pollution that would be "
+    },
+    {
+        "start": 3192.01,
+        "text": "party D if you know the conformation yeah I mean we obviously know because we're testing it but they're saying that what would be the distribution of the energy and the RMS into the meter of just the ligands you're not that's again what happened on is I choose use the confirmation of native post use the orientation of the medium post only to translation but dr. Chris is really high it's about 98 if you use native conformation of the legging you search the translational orientation the doctor is also very high about 85% but over here we can only go to 70% which means wise you're adding mixed up eight leg in flex points become much more difficult yeah we have done that any more personal "
+    },
+    {
+        "start": 3253.19,
+        "text": "[Music] "
+    }
+]

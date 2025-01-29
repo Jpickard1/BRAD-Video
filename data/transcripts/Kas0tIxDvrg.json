@@ -1,0 +1,617 @@
+[
+    {
+        "text": "The phrase exponential growth is familiar to most people, ",
+        "start": 2.94,
+        "duration": 3.356
+    },
+    {
+        "text": "and yet human intuition has a hard time really recognizing what it means sometimes.",
+        "start": 6.296,
+        "duration": 4.804
+    },
+    {
+        "text": "We can anchor on a sequence of small seeming numbers and then ",
+        "start": 11.32,
+        "duration": 3.227
+    },
+    {
+        "text": "become surprised when suddenly those numbers look big, ",
+        "start": 14.547,
+        "duration": 2.864
+    },
+    {
+        "text": "even if the overall trend follows an exponential perfectly consistently.",
+        "start": 17.411,
+        "duration": 3.749
+    },
+    {
+        "text": "This right here is the data for the recorded cases of COVID-19, ",
+        "start": 22.12,
+        "duration": 4.1
+    },
+    {
+        "text": "aka the coronavirus, at least at the time I'm writing this.",
+        "start": 26.22,
+        "duration": 3.78
+    },
+    {
+        "text": "Never one to waste an opportunity for a math lesson, ",
+        "start": 30.42,
+        "duration": 2.596
+    },
+    {
+        "text": "I thought this might be a good time for all of us to go back to the basics on what ",
+        "start": 33.016,
+        "duration": 4.067
+    },
+    {
+        "text": "exponential growth really is, where it comes from, what it implies, ",
+        "start": 37.083,
+        "duration": 3.332
+    },
+    {
+        "text": "and maybe most pressingly how to know when it's coming to an end.",
+        "start": 40.415,
+        "duration": 3.185
+    },
+    {
+        "text": "Exponential growth means that as you go from one day to the next, ",
+        "start": 44.32,
+        "duration": 3.38
+    },
+    {
+        "text": "it involves multiplying by some constant.",
+        "start": 47.7,
+        "duration": 2.1
+    },
+    {
+        "text": "In our data, the number of cases in each day tends to be a multiple ",
+        "start": 50.38,
+        "duration": 4.697
+    },
+    {
+        "text": "of about 1.15 to 1.25 of the number of cases the previous day.",
+        "start": 55.077,
+        "duration": 4.283
+    },
+    {
+        "text": "Viruses are a textbook example of this kind of growth, ",
+        "start": 60.28,
+        "duration": 3.452
+    },
+    {
+        "text": "because what causes new cases are the existing cases.",
+        "start": 63.732,
+        "duration": 3.328
+    },
+    {
+        "text": "If the number of cases on a given day is n, and we say that each individual ",
+        "start": 69.34,
+        "duration": 5.064
+    },
+    {
+        "text": "with the virus is exposed to, on average, e people on a given day, ",
+        "start": 74.404,
+        "duration": 4.466
+    },
+    {
+        "text": "and each one of those exposures has a probability p of becoming a new infection, ",
+        "start": 78.87,
+        "duration": 5.398
+    },
+    {
+        "text": "then the number of new cases on a given day is e times p times n.",
+        "start": 84.268,
+        "duration": 4.332
+    },
+    {
+        "text": "The fact that n itself is a factor in its own change is what really makes things go fast, ",
+        "start": 89.96,
+        "duration": 5.344
+    },
+    {
+        "text": "because if n gets big, it means the rate of growth itself is getting big.",
+        "start": 95.304,
+        "duration": 4.336
+    },
+    {
+        "text": "One way to think about this is that as you add the new cases to ",
+        "start": 100.48,
+        "duration": 3.773
+    },
+    {
+        "text": "get the next day's growth, you can factor out the n, ",
+        "start": 104.253,
+        "duration": 3.125
+    },
+    {
+        "text": "so it's just the same as multiplying by some constant that's bigger than 1.",
+        "start": 107.378,
+        "duration": 4.422
+    },
+    {
+        "text": "This is sometimes easier to see if we put the y-axis of our graph on a logarithmic scale, ",
+        "start": 112.86,
+        "duration": 4.745
+    },
+    {
+        "text": "which means that each step of a fixed distance corresponds to multiplying by ",
+        "start": 117.605,
+        "duration": 4.06
+    },
+    {
+        "text": "a certain factor, in this case each step is another power of 10.",
+        "start": 121.665,
+        "duration": 3.375
+    },
+    {
+        "text": "On this scale, exponential growth should look like a straight line.",
+        "start": 125.86,
+        "duration": 3.2
+    },
+    {
+        "text": "Looking at our data, it seems like it took 20 days to go from 100 to 1000, ",
+        "start": 129.06,
+        "duration": 4.711
+    },
+    {
+        "text": "and 13 days to go from that to 10,000, and if you do a simple linear ",
+        "start": 133.771,
+        "duration": 4.334
+    },
+    {
+        "text": "regression to find the best fit line, you can look at the slope of that ",
+        "start": 138.105,
+        "duration": 4.523
+    },
+    {
+        "text": "line to draw a conclusion like we tend to multiply by 10 every 16 days on average.",
+        "start": 142.628,
+        "duration": 5.152
+    },
+    {
+        "text": "This regression also lets us be a little more quantitative about exactly ",
+        "start": 148.62,
+        "duration": 3.441
+    },
+    {
+        "text": "how close the exponential fit really is, and to use the technical ",
+        "start": 152.061,
+        "duration": 3.111
+    },
+    {
+        "text": "statistical jargon here, the answer is that it's really freaking close.",
+        "start": 155.172,
+        "duration": 3.348
+    },
+    {
+        "text": "But it can be hard to digest exactly what that means if true.",
+        "start": 159.04,
+        "duration": 3.0
+    },
+    {
+        "text": "When you see one country with, say, 6000 cases and another with 60, ",
+        "start": 162.58,
+        "duration": 4.004
+    },
+    {
+        "text": "it's easy to think that the second is doing 100 times better, and hence fine.",
+        "start": 166.584,
+        "duration": 4.536
+    },
+    {
+        "text": "But if you're actually in a situation where numbers multiply by 10 every 16 days, ",
+        "start": 171.68,
+        "duration": 4.28
+    },
+    {
+        "text": "another way to view the same fact is that the second country is about a month behind the ",
+        "start": 175.96,
+        "duration": 4.646
+    },
+    {
+        "text": "first.",
+        "start": 180.606,
+        "duration": 0.314
+    },
+    {
+        "text": "This is of course rather worrying if you draw out the line.",
+        "start": 181.6,
+        "duration": 3.02
+    },
+    {
+        "text": "I'm recording this on March 6th, and if the present trend continues ",
+        "start": 184.62,
+        "duration": 4.78
+    },
+    {
+        "text": "it would mean hitting a million cases in 30 days, hitting 10 million in 47 days, ",
+        "start": 189.4,
+        "duration": 5.695
+    },
+    {
+        "text": "100 million in 64 days, and 1 billion in 81 days.",
+        "start": 195.095,
+        "duration": 3.445
+    },
+    {
+        "text": "Needless to say, though, you can't just draw out a line like this forever, ",
+        "start": 199.44,
+        "duration": 3.571
+    },
+    {
+        "text": "it clearly has to start slowing down at some point.",
+        "start": 203.011,
+        "duration": 2.429
+    },
+    {
+        "text": "But the crucial question is when.",
+        "start": 205.7,
+        "duration": 1.82
+    },
+    {
+        "text": "Is it like the SARS outbreak of 2002 which capped out around 8000 cases, ",
+        "start": 208.34,
+        "duration": 4.551
+    },
+    {
+        "text": "or the Spanish flu of 1918 which ultimately infected about 27% of the world's population?",
+        "start": 212.891,
+        "duration": 5.549
+    },
+    {
+        "text": "In general, with no context, just drawing a line through your data is not a great way to ",
+        "start": 219.62,
+        "duration": 4.753
+    },
+    {
+        "text": "make predictions, but remember, there's an actual reason to expect an exponential here.",
+        "start": 224.373,
+        "duration": 4.647
+    },
+    {
+        "text": "If the number of new cases each day is proportional to the number of existing cases, ",
+        "start": 229.34,
+        "duration": 4.756
+    },
+    {
+        "text": "it necessarily means each day you multiply by some constant, ",
+        "start": 234.096,
+        "duration": 3.414
+    },
+    {
+        "text": "so moving forward d days is the same as multiplying by that constant d times.",
+        "start": 237.51,
+        "duration": 4.31
+    },
+    {
+        "text": "The only way that stops is if either the number E or P goes down.",
+        "start": 242.42,
+        "duration": 4.48
+    },
+    {
+        "text": "It's inevitable that this will eventually happen.",
+        "start": 247.98,
+        "duration": 1.94
+    },
+    {
+        "text": "Even in the most perfectly pernicious model for a virus, ",
+        "start": 250.6,
+        "duration": 2.938
+    },
+    {
+        "text": "which would be where every day each person with the infection is exposed ",
+        "start": 253.538,
+        "duration": 3.764
+    },
+    {
+        "text": "to a random subset of the world's population, at some point most of the ",
+        "start": 257.302,
+        "duration": 3.712
+    },
+    {
+        "text": "people they're exposed to would already be sick, and so they couldn't become new cases.",
+        "start": 261.014,
+        "duration": 4.486
+    },
+    {
+        "text": "In our equation, that would mean that the probability of an exposure ",
+        "start": 267.78,
+        "duration": 3.38
+    },
+    {
+        "text": "becoming a new infection would have to include some kind of factor to ",
+        "start": 271.16,
+        "duration": 3.429
+    },
+    {
+        "text": "account for the probability that someone you're exposed to is already infected.",
+        "start": 274.589,
+        "duration": 3.871
+    },
+    {
+        "text": "For a random shuffling model like this, that could mean including a factor ",
+        "start": 279.24,
+        "duration": 3.556
+    },
+    {
+        "text": "like 1 minus the proportion of people in the world who are already infected.",
+        "start": 282.796,
+        "duration": 3.604
+    },
+    {
+        "text": "Including that factor, and then solving for how N grows, ",
+        "start": 287.7,
+        "duration": 4.998
+    },
+    {
+        "text": "you get what's known in the model.",
+        "start": 292.698,
+        "duration": 2.982
+    },
+    {
+        "text": "ss as a logistic curve, which is essentially indistinguishable from ",
+        "start": 295.68,
+        "duration": 2.29
+    },
+    {
+        "text": "an exponential at the beginning, but ultimately levels out once you're ",
+        "start": 297.97,
+        "duration": 2.392
+    },
+    {
+        "text": "approaching the total population size, which is what you would expect.",
+        "start": 300.362,
+        "duration": 2.358
+    },
+    {
+        "text": "True exponentials essentially never exist in the real world, ",
+        "start": 303.36,
+        "duration": 3.18
+    },
+    {
+        "text": "every one of them is the start of a logistic curve.",
+        "start": 306.54,
+        "duration": 2.66
+    },
+    {
+        "text": "This point right here, where that logistic curve goes from curving ",
+        "start": 310.04,
+        "duration": 3.212
+    },
+    {
+        "text": "upward to instead curving downward, is known as the inflection point.",
+        "start": 313.252,
+        "duration": 3.308
+    },
+    {
+        "text": "There, the number of new cases each day, represented by the slope of this curve, ",
+        "start": 317.32,
+        "duration": 4.838
+    },
+    {
+        "text": "stops increasing and stays roughly constant before it starts decreasing.",
+        "start": 322.158,
+        "duration": 4.302
+    },
+    {
+        "text": "One number that people often follow with epidemics is the growth factor, ",
+        "start": 330.14,
+        "duration": 4.193
+    },
+    {
+        "text": "which is defined as the ratio between the number of new cases ",
+        "start": 334.333,
+        "duration": 3.562
+    },
+    {
+        "text": "one day and the number of new cases the previous day.",
+        "start": 337.895,
+        "duration": 3.045
+    },
+    {
+        "text": "Just to be clear, if you were looking at all of the totals from one day to the next, ",
+        "start": 342.34,
+        "duration": 4.782
+    },
+    {
+        "text": "then tracking the changes between those totals, ",
+        "start": 347.122,
+        "duration": 2.701
+    },
+    {
+        "text": "the growth factor is a ratio between two successive changes.",
+        "start": 349.823,
+        "duration": 3.377
+    },
+    {
+        "text": "While you're on the exponential part, this factor stays consistently above one, ",
+        "start": 355.44,
+        "duration": 3.929
+    },
+    {
+        "text": "whereas as soon as your growth factor looks closer to one, ",
+        "start": 359.369,
+        "duration": 2.898
+    },
+    {
+        "text": "it's a sign that you've hit the inflection.",
+        "start": 362.267,
+        "duration": 2.113
+    },
+    {
+        "text": "This can make for another counterintuitive fact while following the data.",
+        "start": 365.56,
+        "duration": 3.28
+    },
+    {
+        "text": "Think about what it would feel like for the number of new cases one day ",
+        "start": 369.32,
+        "duration": 3.79
+    },
+    {
+        "text": "to be about 15% more than the number of new cases the previous day, ",
+        "start": 373.11,
+        "duration": 3.581
+    },
+    {
+        "text": "and contrast that with what it would feel like for it to be about the same.",
+        "start": 376.691,
+        "duration": 3.949
+    },
+    {
+        "text": "Just looking at the totals they result in, they don't really feel that different.",
+        "start": 381.24,
+        "duration": 3.8
+    },
+    {
+        "text": "But if the growth factor is one, it could mean you're at the ",
+        "start": 387.0,
+        "duration": 3.037
+    },
+    {
+        "text": "inflection point of a logistic, which would mean the total number ",
+        "start": 390.037,
+        "duration": 3.287
+    },
+    {
+        "text": "of cases is going to max out at about two times wherever you are now.",
+        "start": 393.324,
+        "duration": 3.436
+    },
+    {
+        "text": "But a growth factor bigger than one, subtle though that might seem, ",
+        "start": 397.2,
+        "duration": 3.246
+    },
+    {
+        "text": "means you're on the exponential part, which could imply there ",
+        "start": 400.446,
+        "duration": 2.961
+    },
+    {
+        "text": "are orders of magnitude of growth still waiting ahead of you.",
+        "start": 403.407,
+        "duration": 2.913
+    },
+    {
+        "text": "Now, while it's true that in the worst-case situation the saturation point ",
+        "start": 408.72,
+        "duration": 3.621
+    },
+    {
+        "text": "is around the total population, it's of course not at all true that people ",
+        "start": 412.341,
+        "duration": 3.621
+    },
+    {
+        "text": "with the virus are randomly shuffled around the world's population like this.",
+        "start": 415.962,
+        "duration": 3.718
+    },
+    {
+        "text": "People are clustered in local communities.",
+        "start": 420.2,
+        "duration": 1.96
+    },
+    {
+        "text": "However, if you run simulations where there's even a little bit of travel ",
+        "start": 423.38,
+        "duration": 3.526
+    },
+    {
+        "text": "between clusters like this, the growth is actually not that much different.",
+        "start": 426.906,
+        "duration": 3.574
+    },
+    {
+        "text": "What you end up with is a kind of fractal pattern, ",
+        "start": 434.12,
+        "duration": 2.771
+    },
+    {
+        "text": "where communities themselves function like individuals.",
+        "start": 436.891,
+        "duration": 2.989
+    },
+    {
+        "text": "Each one has some exposure to others, with some probability of spreading the infection, ",
+        "start": 440.66,
+        "duration": 5.411
+    },
+    {
+        "text": "so the same underlying and exponential-inducing laws apply.",
+        "start": 446.071,
+        "duration": 3.629
+    },
+    {
+        "text": "Fortunately, saturating the whole population is not the only ",
+        "start": 462.94,
+        "duration": 2.926
+    },
+    {
+        "text": "thing that can cause the two factors we care about to go down.",
+        "start": 465.866,
+        "duration": 2.974
+    },
+    {
+        "text": "The amount of exposure can also go down when people stop gathering and traveling, ",
+        "start": 469.66,
+        "duration": 3.532
+    },
+    {
+        "text": "and the infection rate can go down when people just wash their hands more.",
+        "start": 473.192,
+        "duration": 3.188
+    },
+    {
+        "text": "The other thing that's counterintuitive about exponential growth, ",
+        "start": 477.1,
+        "duration": 3.198
+    },
+    {
+        "text": "this time in a more optimistic sense, is just how sensitive it is to this constant.",
+        "start": 480.298,
+        "duration": 4.022
+    },
+    {
+        "text": "For example, if it's 15%, like it is as I'm recording this, ",
+        "start": 485.02,
+        "duration": 3.576
+    },
+    {
+        "text": "and we're at 21,000 cases now, that would mean that 61 days from now you hit ",
+        "start": 488.596,
+        "duration": 4.59
+    },
+    {
+        "text": "over 100 million.",
+        "start": 493.186,
+        "duration": 1.014
+    },
+    {
+        "text": "But if through a bit less exposure and infection, ",
+        "start": 495.02,
+        "duration": 3.01
+    },
+    {
+        "text": "that rate drops down to 5%, it doesn't mean the projection ",
+        "start": 498.03,
+        "duration": 3.553
+    },
+    {
+        "text": "also drops down by a factor of 3, it actually drops down to around 400,000.",
+        "start": 501.583,
+        "duration": 4.517
+    },
+    {
+        "text": "So if people are sufficiently worried, there's a lot less to worry about.",
+        "start": 506.66,
+        "duration": 3.54
+    },
+    {
+        "text": "But if no one is worried, that's when you should worry.",
+        "start": 510.2,
+        "duration": 2.12
+    }
+]

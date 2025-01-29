@@ -1,0 +1,502 @@
+[
+    {
+        "text": "In a moment, I'll point you to a separate website hosting ",
+        "start": 2.959,
+        "duration": 2.865
+    },
+    {
+        "text": "a short sequence of what we're calling explorable videos.",
+        "start": 5.824,
+        "duration": 2.816
+    },
+    {
+        "text": "It was done in collaboration with Ben Eater, who some of you may ",
+        "start": 9.22,
+        "duration": 2.784
+    },
+    {
+        "text": "know as that guy who runs the excellent computer engineering channel.",
+        "start": 12.004,
+        "duration": 2.956
+    },
+    {
+        "text": "And if you don't know who he is, viewers of this channel ",
+        "start": 15.48,
+        "duration": 2.579
+    },
+    {
+        "text": "would certainly enjoy the content of his, so do check it out.",
+        "start": 18.059,
+        "duration": 2.761
+    },
+    {
+        "text": "This collaboration was something a little different though, for both of us, ",
+        "start": 21.3,
+        "duration": 3.449
+    },
+    {
+        "text": "and all of the web development that made these explorable videos possible is completely ",
+        "start": 24.749,
+        "duration": 3.995
+    },
+    {
+        "text": "thanks to Ben.",
+        "start": 28.744,
+        "duration": 0.636
+    },
+    {
+        "text": "I don't want to say too much about it here, it's really something you have to experience ",
+        "start": 29.86,
+        "duration": 4.032
+    },
+    {
+        "text": "for yourself, certainly one of the coolest projects I've had the pleasure of working on.",
+        "start": 33.892,
+        "duration": 3.988
+    },
+    {
+        "text": "Before that though, if you can contain your excitement, ",
+        "start": 38.3,
+        "duration": 2.655
+    },
+    {
+        "text": "I want to use this video as a chance to tee things up with a little bit of ",
+        "start": 40.955,
+        "duration": 3.556
+    },
+    {
+        "text": "surrounding context.",
+        "start": 44.511,
+        "duration": 0.949
+    },
+    {
+        "text": "So to set the stage, last video I described quaternions, ",
+        "start": 46.9,
+        "duration": 3.023
+    },
+    {
+        "text": "a certain 4-dimensional number system that the 19th century versions of ",
+        "start": 49.923,
+        "duration": 3.818
+    },
+    {
+        "text": "Wolverine and the old man from Home Alone called evil for how convoluted ",
+        "start": 53.741,
+        "duration": 3.872
+    },
+    {
+        "text": "it seemed at the time.",
+        "start": 57.613,
+        "duration": 1.167
+    },
+    {
+        "text": "And perhaps you too are wondering why on earth anyone ",
+        "start": 59.06,
+        "duration": 2.63
+    },
+    {
+        "text": "would bother with such an alien-seeming number system.",
+        "start": 61.69,
+        "duration": 2.629
+    },
+    {
+        "text": "One of the big reasons, especially for programmers, ",
+        "start": 65.2,
+        "duration": 2.771
+    },
+    {
+        "text": "is that they give a really nice way for describing 3D orientation, ",
+        "start": 67.971,
+        "duration": 3.571
+    },
+    {
+        "text": "which is not susceptible to the bugs and edge cases of other methods.",
+        "start": 71.542,
+        "duration": 3.678
+    },
+    {
+        "text": "I mean they're interesting mathematically for a lot of reasons, ",
+        "start": 75.82,
+        "duration": 2.982
+    },
+    {
+        "text": "but this application for computer graphics and robotics and virtual reality ",
+        "start": 78.802,
+        "duration": 3.543
+    },
+    {
+        "text": "and anything involving 3D orientation is probably the biggest use case for quaternions.",
+        "start": 82.345,
+        "duration": 4.055
+    },
+    {
+        "text": "To take one example, a friend of mine who used to work at Apple, Andy Matuszczak, ",
+        "start": 86.4,
+        "duration": 4.3
+    },
+    {
+        "text": "delighted in telling me about shipping code to hundreds of millions of devices ",
+        "start": 90.7,
+        "duration": 4.144
+    },
+    {
+        "text": "that uses quaternions to track the phone's model for how it's oriented in space.",
+        "start": 94.844,
+        "duration": 4.196
+    },
+    {
+        "text": "That's right, your phone almost certainly has software ",
+        "start": 99.66,
+        "duration": 2.715
+    },
+    {
+        "text": "running somewhere inside of it that relies on quaternions.",
+        "start": 102.375,
+        "duration": 2.865
+    },
+    {
+        "text": "The thing is, there are other ways to think about computing rotations, ",
+        "start": 106.34,
+        "duration": 3.512
+    },
+    {
+        "text": "many of which are way simpler to think about than quaternions.",
+        "start": 109.852,
+        "duration": 3.068
+    },
+    {
+        "text": "For example, any of you familiar with linear algebra will know ",
+        "start": 113.25,
+        "duration": 3.735
+    },
+    {
+        "text": "that 3x3 matrices can really nicely describe 3D transformations.",
+        "start": 116.985,
+        "duration": 3.795
+    },
+    {
+        "text": "And a common way that many programmers think about constructing a rotation matrix for ",
+        "start": 121.34,
+        "duration": 4.781
+    },
+    {
+        "text": "a desired orientation is to imagine rotating an object around three easy-to-think-about ",
+        "start": 126.121,
+        "duration": 4.893
+    },
+    {
+        "text": "axes, where the relevant angles for these rotations are commonly called Euler angles.",
+        "start": 131.014,
+        "duration": 4.726
+    },
+    {
+        "text": "And this mostly works, but one big problem is that it's ",
+        "start": 136.58,
+        "duration": 2.913
+    },
+    {
+        "text": "vulnerable to something called gimbal lock, where when two of ",
+        "start": 139.493,
+        "duration": 3.225
+    },
+    {
+        "text": "your axes of rotation get lined up, you lose a degree of freedom.",
+        "start": 142.718,
+        "duration": 3.382
+    },
+    {
+        "text": "And it can also cause difficulties and ambiguities when ",
+        "start": 146.7,
+        "duration": 2.819
+    },
+    {
+        "text": "trying to interpolate between two separate orientations.",
+        "start": 149.519,
+        "duration": 2.821
+    },
+    {
+        "text": "If you're curious for more of the details, there are many ",
+        "start": 152.94,
+        "duration": 2.326
+    },
+    {
+        "text": "great sources online for learning about Euler angles and gimbal lock, ",
+        "start": 155.266,
+        "duration": 2.807
+    },
+    {
+        "text": "and I've left links in the description to a few of them.",
+        "start": 158.073,
+        "duration": 2.247
+    },
+    {
+        "text": "Not only do quaternions avoid issues like gimbal lock, ",
+        "start": 161.04,
+        "duration": 2.783
+    },
+    {
+        "text": "they give a really seamless way to interpolate between two three-dimensional ",
+        "start": 163.823,
+        "duration": 3.897
+    },
+    {
+        "text": "orientations, one which lacks the ambiguities of Euler angles, ",
+        "start": 167.72,
+        "duration": 3.188
+    },
+    {
+        "text": "and which avoids the issues of numerical precision and normalization that arise in ",
+        "start": 170.908,
+        "duration": 4.2
+    },
+    {
+        "text": "trying to interpolate between two rotation matrices.",
+        "start": 175.108,
+        "duration": 2.632
+    },
+    {
+        "text": "To warm up to the idea of how multiplication in some higher-dimensional ",
+        "start": 178.78,
+        "duration": 3.848
+    },
+    {
+        "text": "number system might be used to compute rotations, ",
+        "start": 182.628,
+        "duration": 2.673
+    },
+    {
+        "text": "take a moment to remember how it is that complex numbers give a slick method ",
+        "start": 185.301,
+        "duration": 4.115
+    },
+    {
+        "text": "for computing 2D rotations.",
+        "start": 189.416,
+        "duration": 1.444
+    },
+    {
+        "text": "Specifically, let's say you have some point in two-dimensional space, ",
+        "start": 191.54,
+        "duration": 3.68
+    },
+    {
+        "text": "like 4, 1, and you want to know the new coordinates you'd get ",
+        "start": 195.22,
+        "duration": 3.26
+    },
+    {
+        "text": "if you rotate this point 30 degrees around the origin.",
+        "start": 198.48,
+        "duration": 2.84
+    },
+    {
+        "text": "Complex numbers give a sort of snazzy way to do this.",
+        "start": 202.24,
+        "duration": 2.38
+    },
+    {
+        "text": "You take the complex number that's 30 degrees off the horizontal with magnitude 1, ",
+        "start": 205.08,
+        "duration": 4.77
+    },
+    {
+        "text": "cos 30 degrees plus sin 30 degrees times i, and then you just multiply ",
+        "start": 209.85,
+        "duration": 4.081
+    },
+    {
+        "text": "this by your point, represented as a complex number.",
+        "start": 213.931,
+        "duration": 2.989
+    },
+    {
+        "text": "The only rule you need to know to carry out this computation is that i2 equals negative 1.",
+        "start": 217.5,
+        "duration": 4.62
+    },
+    {
+        "text": "Then in what might feel like a bit of black magic to those first learning it, ",
+        "start": 222.12,
+        "duration": 4.251
+    },
+    {
+        "text": "carrying out this product from that one simple rule gives the coordinates of a new point, ",
+        "start": 226.371,
+        "duration": 4.906
+    },
+    {
+        "text": "the point rotated 30 degrees from the original.",
+        "start": 231.277,
+        "duration": 2.563
+    },
+    {
+        "text": "Using quaternions to describe 3D rotations is similar, ",
+        "start": 235.34,
+        "duration": 2.782
+    },
+    {
+        "text": "though the look and feel is slightly different.",
+        "start": 238.122,
+        "duration": 2.378
+    },
+    {
+        "text": "Let's say you want to rotate some angle about some axis.",
+        "start": 241.1,
+        "duration": 2.88
+    },
+    {
+        "text": "You first define that axis with a unit vector, which we'll write as having i, j, ",
+        "start": 244.7,
+        "duration": 4.664
+    },
+    {
+        "text": "and k components, normalized so that the sum of the squares of those components is 1.",
+        "start": 249.364,
+        "duration": 4.896
+    },
+    {
+        "text": "Similar to the case of complex numbers, you use the angle to construct ",
+        "start": 255.16,
+        "duration": 4.183
+    },
+    {
+        "text": "a quaternion by taking cosine of that angle as the real part, ",
+        "start": 259.343,
+        "duration": 3.653
+    },
+    {
+        "text": "plus sin of that angle times an imaginary part, ",
+        "start": 262.996,
+        "duration": 2.829
+    },
+    {
+        "text": "except this time the imaginary part has three components, ",
+        "start": 265.825,
+        "duration": 3.418
+    },
+    {
+        "text": "the coordinates of our axis of rotation.",
+        "start": 269.243,
+        "duration": 2.357
+    },
+    {
+        "text": "Well, actually you take half of the angle, which might feel totally arbitrary, ",
+        "start": 272.52,
+        "duration": 3.895
+    },
+    {
+        "text": "but hopefully that makes sense by the end of this whole experience.",
+        "start": 276.415,
+        "duration": 3.305
+    },
+    {
+        "text": "Let's say you have some 3D point, which we'll write with i, j, ",
+        "start": 280.54,
+        "duration": 3.364
+    },
+    {
+        "text": "and k components, and you want to know the coordinates you'd get when ",
+        "start": 283.904,
+        "duration": 3.737
+    },
+    {
+        "text": "you rotate this point by your specified angle around your specified axis.",
+        "start": 287.641,
+        "duration": 3.899
+    },
+    {
+        "text": "What you do is not just a single quaternion product, but a sort of quaternion sandwich, ",
+        "start": 292.36,
+        "duration": 5.203
+    },
+    {
+        "text": "where you multiply by q from the left and the inverse of q from the right.",
+        "start": 297.563,
+        "duration": 4.377
+    },
+    {
+        "text": "If you know the rules for how i, j, and k multiply amongst themselves, ",
+        "start": 302.64,
+        "duration": 3.63
+    },
+    {
+        "text": "you can carry out these two products by expanding everything out, ",
+        "start": 306.27,
+        "duration": 3.375
+    },
+    {
+        "text": "or more realistically by having a computer do it for you.",
+        "start": 309.645,
+        "duration": 2.915
+    },
+    {
+        "text": "And in what might feel like a bit of black magic, ",
+        "start": 313.1,
+        "duration": 2.943
+    },
+    {
+        "text": "this big computation will return for you the rotated version of the point.",
+        "start": 316.043,
+        "duration": 4.357
+    },
+    {
+        "text": "Our goal is to break this down and visualize what's ",
+        "start": 321.16,
+        "duration": 2.544
+    },
+    {
+        "text": "happening with each of these two products.",
+        "start": 323.704,
+        "duration": 2.056
+    },
+    {
+        "text": "I'll review the method for thinking about quaternion multiplication described last video, ",
+        "start": 326.34,
+        "duration": 4.244
+    },
+    {
+        "text": "and explain why half the angle is used, and why you would ",
+        "start": 330.584,
+        "duration": 2.736
+    },
+    {
+        "text": "multiply from the right by the inverse.",
+        "start": 333.32,
+        "duration": 1.84
+    },
+    {
+        "text": "On the screen now and at the top of the description you'll find a link to ",
+        "start": 335.94,
+        "duration": 3.617
+    },
+    {
+        "text": "eater.net slash quaternions, which is where Ben set up the explorable video tutorial, ",
+        "start": 339.557,
+        "duration": 4.203
+    },
+    {
+        "text": "where I explain what's going on with this rotation computation.",
+        "start": 343.76,
+        "duration": 3.08
+    },
+    {
+        "text": "It's just really cool.",
+        "start": 347.64,
+        "duration": 1.36
+    },
+    {
+        "text": "Eater did something awesome here.",
+        "start": 349.22,
+        "duration": 1.12
+    },
+    {
+        "text": "So at the very least just take a couple minutes to go look at it, ",
+        "start": 350.54,
+        "duration": 2.196
+    },
+    {
+        "text": "but I'd love it if you went through the full experience.",
+        "start": 352.736,
+        "duration": 1.864
+    }
+]

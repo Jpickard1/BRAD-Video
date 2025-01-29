@@ -1,0 +1,210 @@
+[
+    {
+        "start": 12.889,
+        "text": "all right well thank you for inviting me to because part of this series the basis for this invitation I think was some software that I advertised that I advertised on my website and so that's what I will will talk about and but I want to point out right away that this is just a small part of what I do in the primary focus of my lab is to understand self-organization in human pluripotent stem cells and what that means is that on the one hand I'm actively looking for students that want to bridge the gap between experiments and theory in my lab and I'm also very eager to find collaborators that are generally computationally focused so looking looking at some of the boxes semester I saw a very wide range of subjects I try to keep things hopefully general general enough so this talk will be about you "
+    },
+    {
+        "start": 77.1,
+        "text": "know dealing with large life-image data to understand developmental processes in particular morphogenesis and patterning and before i build things up systematically let me just show you a nice video that's getting pretty old by now and I hear some people have already seen it but it still demonstrates an important point which is that in recent years microscopy has advanced to a point where we can record the development of entire organisms with subcellular resolution over over long periods of time and with high enough time resolution that you can track individual cells throughout development and so what you see here is a Drosophila fruit fly embryo that starts with with gastrulation the first patterning event but that happens and it develops all the way through to a larva that's ready to "
+    },
+    {
+        "start": 139.41,
+        "text": "hatch and you start to see muscle contractions and everything at the end and and of course there's there's an incredible amount of information in you know a dataset like this but the question is how do you get that information out whether you what do you do with this and wears fur fly embryos no people have been able to do this for a couple years now I know lots of groups since this video I was made it's only a few months ago yes I hear you see the end where it starts to move only a few months ago that the first paper came out where people did the same thing for a mouse embryo and were able to image an entire mouse embryo that's at a single cell like subcellular resolution throughout gastrulation so for two days and and this is technically super impressive where for a number of reasons one of which is that this mouse embryo changes size substantially over the "
+    },
+    {
+        "start": 202.38,
+        "text": "course of this process but I will not further get into that and other day hopefully gotten you intrigued I thought I would you know introduce myself just a little more detail so you have some idea of where where I'm coming from with some of the things I'm going to tell you about does Marci mentioned I just started my own lab install developmental biology in in October and we are focused on understanding using clear potent human stem cells as a model and in with a particular focus on the relation between cell signaling and cell faith and the interplay between mechanics and signaling but my formal education was actually in physics and computer science and I did not start working on biology until I was postdoc so so through my through my first postdoc I worked on "
+    },
+    {
+        "start": 262.64,
+        "text": "basically on modeling and analysis rules of epithelial work with Genesis and that's what I'll be talking about now and then I did a few years of experimental work on cell signaling and patterning in stem cells and so now I'm bringing these two things together as a guide and the scientific question that that got me into biology is that development so now how does a single fertilized Excel give rise to it and a fire precisely proportioned body consisting of many different cell types and all the right places and then in a more recent incarnation how do pluripotent stem cells in the fish are they able to recapitulate some aspects of this development of organized manner and well of course this well at least the first version of that question people have been working on for hundreds of years and geneticists have produced at least for some important developmental "
+    },
+    {
+        "start": 322.77,
+        "text": "processes a fairly complete list of the genes that are involved and some of their their interactions but it's still very poorly understood how these genes are regulated in space and find to give rise to precise patterns and shapes and improve things as a quantitative systems level understanding of development that I'm aiming for requires high quality quantitative data so for example if you want to understand the true shape change but in in general so the question is how do you relate behavior of individual cells to behavior of a tissue or the organism as a whole hobbie bridge these skills are you you can understand the collective behavior and if you if you look at morphogenesis of the tissue shape change it and you want to understand how this comes about in terms "
+    },
+    {
+        "start": 384.18,
+        "text": "of the behavior of the individual cells you want to be able to measure the growth individual cells their division you want to see rearrangements between Nate neighbors and an aside from those geometric aspects you may want to locally measure things like forces that beat the movement um and what that means is that you know you need very high-resolution images like this where you can see the precise geometry and neighbor relations between cells and with high enough time resolution that you can track how these neighbor relations change during development and then you want to record you know at this resolution for an entire organ or an entire embryo so here you see a cassava flat egg chamber so that you can relate at the local behavior of these cells to the overall shape changes of the tissue and and on "
+    },
+    {
+        "start": 447.12,
+        "text": "the patterning side of things you basically I got spatial domains different sulfates so this is the the system I'm primarily working with now these are these are spatially patterned human embryonic stem cells and you see the sulfates visualized and and basically that there's a similar challenging that we want to measure nuclear levels of different signaling proteins in individual cells over time to understand how 6000 cells together form this this very precise spatial pattern right and so in both cases and and and and in both cases you want to track individual cells through this process so you need you need to record entire very large structures at very high resolution both in space and time and so you know the amazing thing is that the amazing thing is that you know "
+    },
+    {
+        "start": 510.419,
+        "text": "we can actually do this is that data volumes quickly get large so weird alleged video of yourself of development that I showed thanks well if you just look at gastrulation which is just the beginning of that video takes about two hours but you think a hundred these slices every 30 seconds with multiple cameras from multiple directions and the end so it comes down to six gigabytes per minute in about 720 gigabytes for single video and then although the timescales are very different for you know the stem cell model that I showed the total volume just come out about the same so want to follow a couple colonies over over to pattern formation process which takes two days for that particular case and "
+    },
+    {
+        "start": 572.37,
+        "text": "with a couple minutes time resolution which is enough to track the cells then two days of of this also comes in the couple hundred gigabit range and so basically if you if you try to get this kind of data each experiment comes in in the range of about a terabyte of data and write it it picks up they take less than a week to fill up a typical hard drive and so how do you have you keep working with with volumes of data like that so that's that's the technical question I'm free to remainder of my talk I'm going to spend a big chunk talking about one particular solution I developed for specific case which is called tissue cryptography and then I'll spend a little bit of time talking about vertex vertex model tools as a way to condense information in image datasets and also "
+    },
+    {
+        "start": 634.8,
+        "text": "as a framework for mathematical modeling of the underlying mechanisms so so the the the tissue cryptography part that I'm gonna discuss now is based on the nature paper 2015 so as I said and you see I switch the styles between black and white slides at some point a couple of years ago so yeah as I said it's a challenge working with large volumes data but also if you if you record entire organs or organisms there are additional challenges that basically have to do with imaging a complex three-dimensional structure and and 3d and the house is being hard so if you "
+    },
+    {
+        "start": 697.19,
+        "text": "have the membrane label embryo and you want to others you know you want to see which cells are neighbors it's very good for second and membranes basically in 3d and very costly but you know simple projections on kakou be like a maximal intensity projection lead to very messy pictures that that you cannot work with and and so basically right you need to do do something else or or or you know the difficulty of the problem just gets out of control but luckily it's not completely hopeless because in this case and in many other cases and I'll give you a whole range of examples everything that we're interested in is happening in actually a very small fraction of the total volume that's "
+    },
+    {
+        "start": 757.97,
+        "text": "being recorded because the early fly embryo all the cells are sitting in a in a single layer on the surface of the egg and so you know rather than a region of interest there's a surface of interest and outside that service of interest nine the box is being recorded don't you think anything we want to know and so first of all if you could just isolate information on that surface the data would become very manageable even small and the second thing is that you know this problem is quite a bit like dealing with the surface of earth and describing it and and so the analysis can be approached in much same way all right so when we want to describe something happening on the surface of Earth what we do is we make maps and maps I will try to consistently called charts from here on out because mapping also has a "
+    },
+    {
+        "start": 820.089,
+        "text": "more general definition that gets confusing and and the simplest way to make a map of something sphere like it's the projected on so here's the example Earth and so you can do the same thing or apply embryo which you see here and now you got a very clean two-dimensional image that's that's easy to sick meant but you know you're probably also aware of the shortcomings of these charts which is that well to turn a sphere into a square they have different apology so you have to cut it somewhere so you're introducing artificial I just and because the geometry is different you inevitably get distortion and and depending on your choices meant that distortion will end up in one place or another but in typical maps of Earth right the North and South Poles are "
+    },
+    {
+        "start": 880.36,
+        "text": "heavily distorted similarly in this section of the fly embryo office under the anterior and posterior poles are very distorted and so when you have cells that enter the polar regions you lose them and if you have cells that move across well you could barely pick them up on the other side but it's picky bookkeeping oh no it's that's the same video here so yeah you can actually see this this map as a video and you see this is a pole that separates off the head grow here on the ventral side the visa there moves in and here they've got Lucas starting form from the posterior so the solution this "
+    },
+    {
+        "start": 949.72,
+        "text": "this problem is is to make more than one one chart make a number of overlapping charts that have their cuts and distortion in different places so that you know every location you're interested in is it is easy to look at in at least one of the maps and in so here's and a collection of charts is called Annapolis here you see an example of an atlas of the fly embryo I'm so now they're two new maps or two charts that covered an anterior and posterior pole in a way that there's no distortion right at the poles and a little bit that way that there's a cylindrical map that I showed you before and now you can "
+    },
+    {
+        "start": 1010.08,
+        "text": "start to segment attract cells pick them up in different in different maps and follow them across cuts here but that's not completely trivial uh yeah and again before before I get further into that let me show you a video version of of the Atlas so now you see this gastrulation of the fly embryo again and once in a cylindrical projection I want in a chart that centers around the posterior all as the exact same data in that in two different ways but the cells that appear move along the posterior pole from the ventral to dorsal side that are impossible to follow here are actually relatively using the follow here but like I said it's it's not "
+    },
+    {
+        "start": 1073.53,
+        "text": "completely trivial to actually work with multiple charts like that is if you want to pick up a cell in that leaves one chart you want to pick it up in another you have to have to keep very careful track of the relations between your different different charts right so you need to strike transition maps from the coordinates that you used to make your insurance so that you can precisely map locations in one on to the other and match up your cell segmentation thing each and then do some fitting to come up with a way who if you have no signification errors in one or the other how to resolve them but as far as the transition between the two goes it's basically just just doing the math right and you know depending on the audience "
+    },
+    {
+        "start": 1136.68,
+        "text": "some people think that this is completely new math but it's it's right it's standard differential geometry that every mathematician physicist learns and and all we did was apply it to this this image analysis problem and then you can start to who the individual cells and follow them like this so dealing with the transitions is not the only thing that requires carefully doing the math because as I said there's Distortion and although the choice of chart and sort of minimizes distortion in some region there's always some and so if you want to measure anything geometrical like the length of the track the area of the cell the velocity by which the cell is moving you cannot naively measure it in the two "
+    },
+    {
+        "start": 1198.73,
+        "text": "dimensional images that you're working with but beginning in constructing in constructing these these charts that you introduce a coordinate system on surface elements laid out a little bit more in a few minutes and and if you carefully keep track of them and you can you can calculate the surface called the metric tensor and and if you if you use that right you can unfaithfully as you're all done metric quantities in any chart you know I'm incorrect work for distortion and so that's that's demonstrated here so if you take these facts they can have quite different lengths from their true length if you measure just you know the naive blank in the two dimensional image there's uncorrected versus you know correctly measured and you can also get completely different answers in different charts but if you if you use "
+    },
+    {
+        "start": 1260.74,
+        "text": "the proper way of measuring things with the metric is you get the right answer time and and so basically you know what we did is build a MATLAB toolbox that deals with this in general where wants you to find a surface in some image data set it creates an atlas and it has built in a little functions that correctly measure due to geometric or quantities on the charts in the atlas so as I mentioned before it's in it mm-hmm paper from a couple years ago on code is on github and you know with one hand you can then start to do things like this where you make a map of cell areas across an entire embryo and you can start to go up on spatial patterns felt "
+    },
+    {
+        "start": 1322.16,
+        "text": "Aragon and so this is yet another kind of chart again it's related to the cylindrical one but then the other coordinating that but let's say Y Direction is is different to minimize the distortion near the pole as much as possible and and what I should say that but you can see that this was not the information Interpol was not corrected by the segmentation from other choice which is like a lot of curse but the error rate in this center part is very low so if you get up and you can really look at all thousands of cells in in we go simultaneously like this in a very easy way this was a video lumen I'll skip over it don't get away that's "
+    },
+    {
+        "start": 1387.8,
+        "text": "convenience of analysis and visualization but getting back to the problem that I started with it will not surprise you that if you reduce this three dimensional data set with two dimensional data set that corresponds to a small fraction of the volume that the size of your data goes down by by orders of magnitudes 10 to 100 times and that could you get a corresponding improvement in performance when analyzing it and and that has a lot of practical value because I mean some people to say oh whatever terabytes we have fast fast Network here bus computers it's fine but when we if you're collaborating long distance for example it's not so easy so when we started this project we were getting the raw data from Germany and it would take a couple days based the transfer the data for one experiment but the moment "
+    },
+    {
+        "start": 1449.24,
+        "text": "that the pre-processing and reducing it to an atlas of who dimensional videos was done there would take 10 minutes to get an experiment from Germany who know all right live in Santa Barbara at the time so there's a lot to say for that approach [Music] ok so so now obviously a little bit more about how it works again oh and feel free ping from questions because again I'm not super sure but the audience and and so to some audiences it seems completely obvious how this works and for others it seems like black magic but basically right there are three steps through that process and the first is to identify your surface of interest second is and you turn that into some sort of know represented abstract representation "
+    },
+    {
+        "start": 1512.659,
+        "text": "of the surface then you chop it into into regions overlapping regions that your Kermit rice put surface coordinates on it so you can think you know if it's a professor it's longitude Atlanta tube and then creating the 2-dimensional charts is basically make a square grid of these surface coordinates associating praedyth find it to them latitude and then interpolate the intensities from the 3-dimensional image on that square grade of longitude and latitude that's two dimensional image experience so clearly the the surface detection is is is the most sensitive to the specifics of problem and so it's you know it's the input to that the tool box that you have to do have to do something with yourself really specific specifically the problem but it's it's standard image segmentation so there's a wide range of strategies to "
+    },
+    {
+        "start": 1573.0,
+        "text": "do this like edge detection magnet contours and there is in fact a near universal solution for it which is well deploy I usually use side lastic which is a machine learning rule classifies pixels and so you can very easily train it identify each you know embryo versus non embryo and create a binary mask of your embryo and and this works very well on bouncing data so you don't have the Train it on very large images which is computationally expensive and then you can just take the surfaces of your binary image as the surface of interest and you know you can propagate them up or down with a normal vector is if you want to be somewhere in the middle of things and and you know you see this works pretty well this is a pretty "
+    },
+    {
+        "start": 1633.57,
+        "text": "complex shape this is a and B 8 points:5 mouse embryo and you know here's for example the amnion one of the protective membranes around the embryo that's that's for me and it picked it up fine and then you know when you have a binary image you can turn it into a cloud of surface points and and then use that as input to generate a smooth mesh that connects these points but then you have a measure of presentation of your surface and then there are many tools out there do a quick matches with different coordinate sets and it's also easy to develop ways of putting surface coordinates on bird is still not gonna match your self and then as I said I could turn it into a into a 2d image all "
+    },
+    {
+        "start": 1695.7,
+        "text": "you have to do is is interpolate the original image data on the square grid of your with your mass coordinates particular so that's how it works and now I'm just gonna give you you know a couple couple examples of what you can do with that so the first example your sawfly wing disc um doesn't an organ in the Drosophila larvae that's kind of formed the wing during metamorphosis and it consists of goo epithelial layers one that's very squamous so so big flat cells and then a kilometer so tall and and narrow cells underneath and normally it's almost impossible to separate these Google layers in a max and you know they're not "
+    },
+    {
+        "start": 1760.97,
+        "text": "flat enough that they align with the Zee slices of the microscope I'm so in the maximum Tennessee projection you'll just get both and if you want to measure cell areas and ships Dibble right the the famous else will throw you off from getting the right segmentation with the columnar layer and I'm just getting the squamous cells themselves I should do something special which we just try to protect these surfaces of interest and and so that's that's not that's that's cool so here you see it the surface of interest and a side view of this seat stick running one running through the blonde ourselves which so the thing that's being labeled here is it's kept hearin which is only on the apical side of the cells so these go on their selves extend out you only see like the membrane on the apical "
+    },
+    {
+        "start": 1822.52,
+        "text": "lateral labeled this rut goes through the quality self and then here you see a surface of interest going to get their poyo don't and now you can make a mouth it's just very simple here because you can just use standard XY grid behind there's behemoths and get a green image of each of these tissue layers separate them like this you could even map them back in different different colors and nonsense to get virtual virtual issue markers so in a similar example of separating different tissues but in a more three-dimensional setting this is a Drosophila heck chamber that's making the egg it's part of the ovary and so what you have these is a outer layer of mono layer of cells the follicular "
+    },
+    {
+        "start": 1882.94,
+        "text": "epithelium that surrounds nerve cells that are forming the egg and if you again if you look at a maximal and constitute projection it's a complete mess because it's a complex three-dimensional structure but it's very easy with the outside of the egg chamber and then make a map of the cell shapes of the in the follicular epithelium like this and then analyze the cell or follow Jason and exit that it's very in a straightforward way to another example that's that's similar but more challenging and is this is a mouse embryo dose after gastrulation and so this is three layers here that endoderm on the outside which will form "
+    },
+    {
+        "start": 1945.079,
+        "text": "the future gut there's mediator ritual for muscle and bone and the inner layers the ectodermal formed skin and the nervous system and it's very dense and part the image through but on the outside at least on the end of their image about this high and you can expect the surface of the mouse embryo like a cylindrical projection or projection around this will pull use that to segment individual nuclei and then also mount them back with the original three-dimensional surface again and and so get measurements of things like cell density in in the end of them of the developing embryo that way yeah of course you could attempt to do this with purely 3-dimensional image analysis "
+    },
+    {
+        "start": 2006.27,
+        "text": "that's a good approach but it's hard to write this making use of the of the known structure of the sample makes mixing a lot easier I have to interpret and see that that it's working this is a final example which is by far the most complex was really just a show go after this this works quite generally now which is a beating and trionic zebrafish art but this is a very complex shape that rapidly changes in time but one of the challenges is how do you map shapes different shapes of different flames which others have a continuous map or continuous setup video and and then well the only thing is that I don't the more complex the shape is the more curvature "
+    },
+    {
+        "start": 2068.11,
+        "text": "you have the more distortion you're going to have when you map it to a square or circle and so if you want to have George with with not insane amounts of distortion it means you're gonna chop up the surface into more and more separate regions but now other than that you can just do it and and then here you see the kind of thing you know one application of that which is you can follow them individual nuclei on the surface of this beating heart there's not juts I don't think I included here and then use this this you know metric corrective measurement measure the area spanned by these nuclei and make a plot of the local area deprivation on in that part of the heart so that's you know that's as much as I "
+    },
+    {
+        "start": 2129.67,
+        "text": "was gonna tell you about issue photography so just the summarize it so when you do in toto live imaging it produces huge data volumes but for in many cases right there's a curved surface of interest that is only a small fraction of the volume you're recording and this can be effectively visualized and analyzed using photography and this actually raises an interesting question about what we shoot to consider broad data at so NIH requires that you hold onto raw data for at least three years after completion of a project project can take five years and you might have hold onto raw data for eight years now if you're collecting a couple terabytes a week or project that means you're talking about petabyte range image data and it just that's just insane at this time and you know nobody complains about the fact that you defined a region of "
+    },
+    {
+        "start": 2190.22,
+        "text": "interest when you were recording and there were stuff happening in the room outside you know that that's not recorded you know so why should we be required to hold on to the entire volume we recorded and actually not consider you know these two dimensional atlases of videos the relevant raw data and exclude all those pixels where stuff didn't happening that we're not not interested in and you know similar things are happening in other settings for Illumina sequencing you don't hold on to the volume in imaging data and in CERN radio recording you know particles flying through the detector they they throw out most of the data in real-time but it's just that you know in developmental biology and microscopy it's just hitting a point where the data is getting so big that this problem has never been dealt with and and the rules have not been adapted "
+    },
+    {
+        "start": 2250.79,
+        "text": "to that yeah okay so now in the time I have left I just wanted to talk a little bit about now you have a video of your tissue that you can submit then what can you do with it to learn about development about parkinsonism a Durning and I'm going to keep this very superficial I mostly want to talk about it for a few minutes as a conversation starter with with anyone that would be interested also working on it so one way that you can represent what an epithelial monolayer looks like if one way one way to represent it in a simplified way is using a vertex representation but basically turning it "
+    },
+    {
+        "start": 2313.13,
+        "text": "into a into a mesh we're done for the vertices are that actually varies between cells and the interfaces between cells are represented as straight lines and as you can see from this image where you can barely see the membrane labeling underneath sometimes that is a very good approximation sometimes it's not as good as an approximation but in this way but you at least capture the pathology of the tissue so the neighbor relations between us cells accurately and in a simple way and then if you want to understand cell rearrangement and the vision how it contributes to the overall deformation issue that becomes straight forward and I've I keep track of different positions you can have some approximation of the the geometry of each cells and you can measure both formation rates straining rates of both "
+    },
+    {
+        "start": 2373.25,
+        "text": "individual cells in the tissue overall and then poppin actually pull so you also want to keep track of where the nucleus or the center of the nucleus is and now you know if you can track of nuclear positions and the nearest neighbors the nuclear lattice as well you basically the finding of the wolf graphed with the graph that's defined by the primary perfect representation of the tissue which is a useful property but I'll them to make use of and yeah and so there's a lot you can do to understand overall tissue that formation with this but if you want to look at patterning this kind of coarse-grained representation layer is also very useful because generally you know if you want to measure protein intensities you're "
+    },
+    {
+        "start": 2433.73,
+        "text": "interested in them in overall intensities in some specific compartment at least for the problems I have work on public problems for example you want to know the overall level nucleus or the overall level of some junction of protein on their particular cell cell interface and and so you can basically assign all these for strength properties to other edges in your in your vertex representation or our vertices either on the primary or the dual will lattice and have the simple data structure that keeps track of you know all these coarse-grained features of your tissue in an efficient way and and use that to analyze things you're interested in so just know it's a bit abstract like that so just to give you a concrete example here's there's a project where we were "
+    },
+    {
+        "start": 2495.49,
+        "text": "interested in del polarity arising from heterodimers of clean food proteins that are on the membrane and/or also expressed on the membrane but they're labeled in red and green and and these form heterodimers on the solu interfaces where it were cells expressing the red border green protein touch and and so basically there is a birthday I made a vertex model representation of these cells assigned the overall level of heterodimers I guess we measure yellow who particular interfaces and a measured an overall level of retro green in each cell and from that I could expect quantitative relation between the red and green levels in cells and the probability of a foreman grandeur of dimers on the interface between those "
+    },
+    {
+        "start": 2556.97,
+        "text": "cells and we were identified that that their concentration thresholds or or at least level thresholds in this in this relationship so it's a nice way to start them you know handle the data you can get out but this vertex representation is also very natural if you want to write down mathematical models to understand the underlying mechanisms what you're looking at by discretizing into into cells which are then the natural units that you know in real life dis critize the tissue it's easy to to incorporate proliferation and cell rearrange let me hear your model easy to interpret the results of biologically and it's also easy the linked to de peau de models of you know the internal workings of the cell for signaling and gene regulation and this is in contrast "
+    },
+    {
+        "start": 2618.05,
+        "text": "with you know modeling frameworks where you define to sell this on spatial domain in a continuum like a Potts model or something so the simplest example give up a model like that is it's a purely mechanical one where you just say each cell has a pressure and each interface has attention and and you keep track of the coordinates of each vertex and then you can write down an energy that governs the behavior of this this Sun epithelium in terms of the area and the length of each interface and now you can add you know whatever complex if you want to this so red cells so this this thing are you can the ride the continuum limit it behaves us as an elastic material but cells are very very different from elastic materials in that they can actively respond to their environment and regulation mechanical "
+    },
+    {
+        "start": 2679.46,
+        "text": "properties on these kind of feedback you can easily incorporated in this model and start simulating different scenarios and so here you see application of that oh this is a video I would already late okay yeah so this is a simulation of a locally overgrowing blown in a tissue and what's visualized on one side are the the tensions on each edge of spatial lives there are the pressures inside each cell and this bobbling incorporates a feedback where the tension on edges is bound regulated when the pressure increases so that the cell minimizes it's that formation and and and that's why the tensions inside it over drying can go down and this single simulation explained some features we experiment the observe of our growing phones in the Drosophila wing disc of which I showed "
+    },
+    {
+        "start": 2740.48,
+        "text": "you some images earlier so this is almost my last slide but another thing you can do rather than you know putting in some parameters for some model for your tissue and and seeing what happens in a simulation you can and that basically predicts the geometry of your tissue at different times you can also try to solve the inverse problem and use the jungle of yourselves the parameters your model and if you take that simple mechanical model that I have those slides ago you say there's a tension on each interface and a fracture in each cell and you assume that settles are close to mechanical equilibrium then you can actually solve this inverse model and you can predict tensions on each interface and pressures in each cell now of course it you have a "
+    },
+    {
+        "start": 2802.619,
+        "text": "well-defined mathematical problem you know you can always produce numbers and maybe what comes out it's complete nonsense but in this case you can actually verify that in various ways and and for example you can look at if you have a maizing label epithelium ison is the molecular motor that generates tension on interfaces and and you can look at the correlation between predicted pension firm geometry and the intensity of maizing on the interface and Inter the most recent incarnation of this method because they're you know they're certainly there's some subtleties in how sensitive it is to poison their different ways to get around them but the most recent version there are eight percent correlation as being myosin levels on interfaces and predictive tension which on the one hand it's surprising that you can explain "
+    },
+    {
+        "start": 2862.829,
+        "text": "that much of the tension with just Meissen levels is the activity it's not just captured by levels but on the other hand it really indicates that be inferred from images again to be very accurate and they're powerful and so this is this is I'm just gonna end on with a future direction so so one of the questions I've been wondering about this um you know that there's a no a mechanistic model for the mechanics with issue underlying this but could we not do the same thing with a purely statistical model train some classifier to predict myosin levels and us and see that those as well or maybe even better and if that works you know could we not predict many other features of issues that are hard to measure for example sulfate so when cells differentiate it also affects their morphology and and maybe they're forced grain representations of the "
+    },
+    {
+        "start": 2923.8,
+        "text": "tissue where we can actually predict the pattern of sulfates in cases where we cannot measure it by directly visualizing the relevant transcription factors so I'd be very interested in talking to anyone else that you know would like to think about this well that's it it is back in the cartography part of the time I may have missed this but when you're putting the coordinate system onto the structure then taking into account the dental biology so if you want to compare across samples everything's on the same coordinate system but matching I'm different sample this is a challenge so I mean I mean it just adds another level on top right so "
+    },
+    {
+        "start": 2984.06,
+        "text": "you would deal with create a map or you know a chart of of who embryos if you want to match them up and and they have slightly different shapes then and your image should actually lately landmarks and then you can try to adjust your coordinate system with those landmarks but then it has to be iterative because you identify the landmarks you have to make a chart first unless you are gonna do 3d image and also the point was to avoid that and so just go straight okay so maybe you know if we if we want to look at average properties of multiple fly embryos we want we want to align this the points for the head and the "
+    },
+    {
+        "start": 3044.39,
+        "text": "body are separated so then we have to first make this then segment of this line then construct a new coordinate system based on this they could like but are locally eventual to do this and then use that to register them well did the multiple clients so something that happens somewhat often during development is cell death yeah can you tell the difference between a cell dying and just going below the surf you know when you look if you don't know anything about development we look at like just the video you just showed right it's almost like cells are disappearing which you know we know from what we know about Genesis here that they're moving below the surface but there are other times where they're actually dying yeah but I mean you're the essence what your question is things are not really to be great and and so "
+    },
+    {
+        "start": 3107.82,
+        "text": "you can deal with that with this this approach by basically I'm making an onion right so you think you take your surface that and then you propagate it in along the normal vector and you just make a collection of surfaces of which you make dinner dimensional charts and then you can do things like yourself that disappears in one layer of beer in another but yeah there is definitely a point of which in approximating things is to be is just not a reasonable approach anymore so that you have to determine basis there's are some morphological changes that you know occur during a pitocin yeah you may be able to see it and like build a differentiate between the two without having anything go back to multiple surfaces "
+    },
+    {
+        "start": 3167.839,
+        "text": "well so so you can you can definitely make and I haven't well I should have included it in the talk I guess make like a virtual Z spec where you have you sell near maps from the April through the basal surface but you can just look at it as if it's it was a platinum issue could begin with and then you know you can you can see things like during the vision like the spindle moves to the apical surface and expands there and then it goes down again like the nucleus goes on again answer is you know the more straightforward the other questions here "
+    }
+]

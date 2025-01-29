@@ -1,0 +1,792 @@
+[
+    {
+        "text": "Hey everyone!",
+        "start": 12.04,
+        "duration": 0.88
+    },
+    {
+        "text": "If I had to choose just one topic that makes all of the others in ",
+        "start": 13.32,
+        "duration": 2.956
+    },
+    {
+        "text": "linear algebra start to click, and which too often goes unlearned ",
+        "start": 16.276,
+        "duration": 2.957
+    },
+    {
+        "text": "the first time a student takes linear algebra, it would be this one.",
+        "start": 19.233,
+        "duration": 3.047
+    },
+    {
+        "text": "The idea of a linear transformation and its relation to matrices.",
+        "start": 22.7,
+        "duration": 3.5
+    },
+    {
+        "text": "For this video, I'm just going to focus on what these transformations look like in the ",
+        "start": 26.95,
+        "duration": 4.031
+    },
+    {
+        "text": "case of two dimensions, and how they relate to the idea of matrix vector multiplication.",
+        "start": 30.981,
+        "duration": 4.079
+    },
+    {
+        "text": "In particular, I want to show you a way to think about matrix ",
+        "start": 35.88,
+        "duration": 3.257
+    },
+    {
+        "text": "vector multiplication that doesn't rely on memorization.",
+        "start": 39.137,
+        "duration": 2.943
+    },
+    {
+        "text": "To start, let's just parse this term, linear transformation.",
+        "start": 43.16,
+        "duration": 3.42
+    },
+    {
+        "text": "Transformation is essentially a fancy word for function.",
+        "start": 47.42,
+        "duration": 2.46
+    },
+    {
+        "text": "It's something that takes in inputs and spits out an output for each one.",
+        "start": 50.26,
+        "duration": 3.72
+    },
+    {
+        "text": "Specifically, in the context of linear algebra, ",
+        "start": 53.98,
+        "duration": 2.434
+    },
+    {
+        "text": "we like to think about transformations that take in some vector and ",
+        "start": 56.414,
+        "duration": 3.448
+    },
+    {
+        "text": "spit out another vector.",
+        "start": 59.862,
+        "duration": 1.218
+    },
+    {
+        "text": "So why use the word transformation instead of function if they mean the same thing?",
+        "start": 62.5,
+        "duration": 3.88
+    },
+    {
+        "text": "Well, it's to be suggestive of a certain way to visualize this input-output relation.",
+        "start": 67.12,
+        "duration": 4.22
+    },
+    {
+        "text": "You see, a great way to understand functions of vectors is to use movement.",
+        "start": 71.86,
+        "duration": 3.94
+    },
+    {
+        "text": "If a transformation takes some input vector to some output vector, ",
+        "start": 76.78,
+        "duration": 4.196
+    },
+    {
+        "text": "we imagine that input vector moving over to the output vector.",
+        "start": 80.976,
+        "duration": 3.884
+    },
+    {
+        "text": "Then to understand the transformation as a whole, ",
+        "start": 85.68,
+        "duration": 2.818
+    },
+    {
+        "text": "we might imagine watching every possible input vector move over to its ",
+        "start": 88.498,
+        "duration": 4.003
+    },
+    {
+        "text": "corresponding output vector.",
+        "start": 92.501,
+        "duration": 1.579
+    },
+    {
+        "text": "It gets really crowded to think about all of the vectors all at once, ",
+        "start": 94.98,
+        "duration": 3.184
+    },
+    {
+        "text": "each one as an arrow.",
+        "start": 98.164,
+        "duration": 0.956
+    },
+    {
+        "text": "So as I mentioned last video, a nice trick is to conceptualize each vector ",
+        "start": 99.5,
+        "duration": 4.125
+    },
+    {
+        "text": "not as an arrow, but as a single point, the point where its tip sits.",
+        "start": 103.625,
+        "duration": 3.795
+    },
+    {
+        "text": "That way, to think about a transformation taking every possible input vector ",
+        "start": 108.03,
+        "duration": 4.075
+    },
+    {
+        "text": "to some output vector, we watch every point in space moving to some other point.",
+        "start": 112.105,
+        "duration": 4.235
+    },
+    {
+        "text": "In the case of transformations in two dimensions, ",
+        "start": 117.22,
+        "duration": 2.445
+    },
+    {
+        "text": "to get a better feel for the whole shape of the transformation, ",
+        "start": 119.665,
+        "duration": 3.131
+    },
+    {
+        "text": "I like to do this with all of the points on an infinite grid.",
+        "start": 122.796,
+        "duration": 2.984
+    },
+    {
+        "text": "I also sometimes like to keep a copy of the grid in the background, ",
+        "start": 126.56,
+        "duration": 2.885
+    },
+    {
+        "text": "just to help keep track of where everything ends up relative to where it starts.",
+        "start": 129.445,
+        "duration": 3.395
+    },
+    {
+        "text": "The effect for various transformations moving around all of the points in space is, ",
+        "start": 134.46,
+        "duration": 4.835
+    },
+    {
+        "text": "you've got to admit, beautiful.",
+        "start": 139.295,
+        "duration": 1.785
+    },
+    {
+        "text": "It gives the feeling of squishing and morphing space itself.",
+        "start": 141.88,
+        "duration": 2.76
+    },
+    {
+        "text": "As you can imagine though, arbitrary transformations can look pretty complicated.",
+        "start": 145.6,
+        "duration": 4.32
+    },
+    {
+        "text": "But luckily, linear algebra limits itself to a special type of transformation, ",
+        "start": 150.38,
+        "duration": 4.304
+    },
+    {
+        "text": "ones that are easier to understand, called linear transformations.",
+        "start": 154.684,
+        "duration": 3.596
+    },
+    {
+        "text": "Visually speaking, a transformation is linear if it has two properties.",
+        "start": 159.12,
+        "duration": 3.94
+    },
+    {
+        "text": "All lines must remain lines without getting curved, ",
+        "start": 163.7,
+        "duration": 3.263
+    },
+    {
+        "text": "and the origin must remain fixed in place.",
+        "start": 166.963,
+        "duration": 2.637
+    },
+    {
+        "text": "For example, this right here would not be a linear transformation, ",
+        "start": 170.62,
+        "duration": 3.398
+    },
+    {
+        "text": "since the lines get all curvy.",
+        "start": 174.018,
+        "duration": 1.522
+    },
+    {
+        "text": "And this one right here, although it keeps the lines straight, ",
+        "start": 176.1,
+        "duration": 2.95
+    },
+    {
+        "text": "is not a linear transformation, because it moves the origin.",
+        "start": 179.05,
+        "duration": 2.81
+    },
+    {
+        "text": "This one here fixes the origin, and it might look like it keeps lines straight, ",
+        "start": 182.68,
+        "duration": 3.28
+    },
+    {
+        "text": "but that's just because I'm only showing the horizontal and vertical grid lines.",
+        "start": 185.96,
+        "duration": 3.28
+    },
+    {
+        "text": "When you see what it does to a diagonal line, it becomes clear ",
+        "start": 189.54,
+        "duration": 2.867
+    },
+    {
+        "text": "that it's not at all linear, since it turns that line all curvy.",
+        "start": 192.407,
+        "duration": 2.913
+    },
+    {
+        "text": "In general, you should think of linear transformations ",
+        "start": 196.76,
+        "duration": 2.898
+    },
+    {
+        "text": "as keeping grid lines parallel and evenly spaced.",
+        "start": 199.658,
+        "duration": 2.582
+    },
+    {
+        "text": "Some linear transformations are simple to think about, like rotations about the origin.",
+        "start": 203.4,
+        "duration": 4.14
+    },
+    {
+        "text": "Others are a little trickier to describe with words.",
+        "start": 208.12,
+        "duration": 2.48
+    },
+    {
+        "text": "So, how do you think you could describe these transformations numerically?",
+        "start": 212.04,
+        "duration": 3.44
+    },
+    {
+        "text": "If you were, say, programming some animations to make a video teaching the topic, ",
+        "start": 215.48,
+        "duration": 4.174
+    },
+    {
+        "text": "what formula do you give the computer so that if you give it the coordinates of a vector, ",
+        "start": 219.654,
+        "duration": 4.582
+    },
+    {
+        "text": "it can give you the coordinates of where that vector lands?",
+        "start": 224.236,
+        "duration": 3.004
+    },
+    {
+        "text": "It turns out that you only need to record where the two basis vectors, ",
+        "start": 228.48,
+        "duration": 4.088
+    },
+    {
+        "text": "i-hat and j-hat, each land, and everything else will follow from that.",
+        "start": 232.568,
+        "duration": 4.032
+    },
+    {
+        "text": "For example, consider the vector v with coordinates negative 1, 2, ",
+        "start": 237.5,
+        "duration": 4.162
+    },
+    {
+        "text": "meaning that it equals negative 1 times i-hat plus 2 times j-hat.",
+        "start": 241.662,
+        "duration": 4.038
+    },
+    {
+        "text": "If we play some transformation and follow where all three of these vectors go, ",
+        "start": 248.68,
+        "duration": 4.293
+    },
+    {
+        "text": "the property that grid lines remain parallel and evenly spaced has a really important ",
+        "start": 252.973,
+        "duration": 4.674
+    },
+    {
+        "text": "consequence.",
+        "start": 257.647,
+        "duration": 0.653
+    },
+    {
+        "text": "The place where v lands will be negative 1 times the vector ",
+        "start": 259.1,
+        "duration": 3.098
+    },
+    {
+        "text": "where i-hat landed plus 2 times the vector where j-hat landed.",
+        "start": 262.198,
+        "duration": 3.202
+    },
+    {
+        "text": "In other words, it started off as a certain linear combination of i-hat and j-hat, ",
+        "start": 265.98,
+        "duration": 4.352
+    },
+    {
+        "text": "and it ends up as that same linear combination of where those two vectors landed.",
+        "start": 270.332,
+        "duration": 4.248
+    },
+    {
+        "text": "This means you can deduce where v must go based only on where i-hat and j-hat each land.",
+        "start": 275.62,
+        "duration": 5.3
+    },
+    {
+        "text": "This is why I like keeping a copy of the original grid in the background.",
+        "start": 281.58,
+        "duration": 2.96
+    },
+    {
+        "text": "For the transformation shown here, we can read off that i-hat lands on the coordinates 1, ",
+        "start": 285.08,
+        "duration": 5.511
+    },
+    {
+        "text": "negative 2, and j-hat lands on the x-axis over at the coordinates 3, 0.",
+        "start": 290.591,
+        "duration": 4.349
+    },
+    {
+        "text": "This means that the vector represented by negative 1 i-hat plus 2 times j-hat ",
+        "start": 295.54,
+        "duration": 5.167
+    },
+    {
+        "text": "ends up at negative 1 times the vector 1, negative 2 plus 2 times the vector 3, 0.",
+        "start": 300.707,
+        "duration": 5.433
+    },
+    {
+        "text": "Adding that all together, you can deduce that it has to land on the vector 5, 2.",
+        "start": 307.1,
+        "duration": 4.58
+    },
+    {
+        "text": "This is a good point to pause and ponder, because it's pretty important.",
+        "start": 314.26,
+        "duration": 2.98
+    },
+    {
+        "text": "Now, given that I'm actually showing you the full transformation, ",
+        "start": 318.52,
+        "duration": 3.38
+    },
+    {
+        "text": "you could have just looked to see that v has the coordinates 5, 2.",
+        "start": 321.9,
+        "duration": 3.38
+    },
+    {
+        "text": "But the cool part here is that this gives us a technique to deduce ",
+        "start": 325.76,
+        "duration": 3.816
+    },
+    {
+        "text": "where any vectors land so long as we have a record of where i-hat ",
+        "start": 329.576,
+        "duration": 3.759
+    },
+    {
+        "text": "and j-hat each land without needing to watch the transformation itself.",
+        "start": 333.335,
+        "duration": 4.045
+    },
+    {
+        "text": "Write the vector with more general coordinates, x and y, ",
+        "start": 338.6,
+        "duration": 3.842
+    },
+    {
+        "text": "and it will land on x times the vector where i-hat lands, 1, negative 2, ",
+        "start": 342.442,
+        "duration": 4.922
+    },
+    {
+        "text": "plus y times the vector where j-hat lands, 3, 0.",
+        "start": 347.364,
+        "duration": 3.236
+    },
+    {
+        "text": "Carrying out that sum, you see that it lands at 1x plus 3y, negative 2x plus 0y.",
+        "start": 351.86,
+        "duration": 6.24
+    },
+    {
+        "text": "I give you any vector, and you can tell me where that vector lands using this formula.",
+        "start": 358.74,
+        "duration": 4.84
+    },
+    {
+        "text": "What all of this is saying is that a two-dimensional linear transformation ",
+        "start": 364.86,
+        "duration": 4.177
+    },
+    {
+        "text": "is completely described by just four numbers, the two coordinates for ",
+        "start": 369.037,
+        "duration": 3.898
+    },
+    {
+        "text": "where i-hat lands and the two coordinates for where j-hat lands.",
+        "start": 372.935,
+        "duration": 3.565
+    },
+    {
+        "text": "Isn't that cool?",
+        "start": 377.08,
+        "duration": 0.56
+    },
+    {
+        "text": "It's common to package these coordinates into a 2x2 grid of numbers called a 2x2 matrix, ",
+        "start": 378.38,
+        "duration": 5.446
+    },
+    {
+        "text": "where you can interpret the columns as the two special vectors ",
+        "start": 383.826,
+        "duration": 3.855
+    },
+    {
+        "text": "where i-hat and j-hat each land.",
+        "start": 387.681,
+        "duration": 1.959
+    },
+    {
+        "text": "If you're given a 2x2 matrix describing a linear transformation and some specific vector, ",
+        "start": 390.38,
+        "duration": 5.156
+    },
+    {
+        "text": "and you want to know where that linear transformation takes that vector, ",
+        "start": 395.536,
+        "duration": 4.183
+    },
+    {
+        "text": "you can take the coordinates of the vector, multiply them by the corresponding ",
+        "start": 399.719,
+        "duration": 4.526
+    },
+    {
+        "text": "columns of the matrix, then add together what you get.",
+        "start": 404.245,
+        "duration": 3.095
+    },
+    {
+        "text": "This corresponds with the idea of adding the scaled versions of our new basis vectors.",
+        "start": 408.18,
+        "duration": 4.54
+    },
+    {
+        "text": "Let's see what this looks like in the most general case, ",
+        "start": 414.72,
+        "duration": 3.385
+    },
+    {
+        "text": "where your matrix has entries A, B, C, D.",
+        "start": 418.105,
+        "duration": 2.435
+    },
+    {
+        "text": "And remember, this matrix is just a way of packaging the ",
+        "start": 421.1,
+        "duration": 2.615
+    },
+    {
+        "text": "information needed to describe a linear transformation.",
+        "start": 423.715,
+        "duration": 2.525
+    },
+    {
+        "text": "Always remember to interpret that first column, AC, ",
+        "start": 426.24,
+        "duration": 2.979
+    },
+    {
+        "text": "as the place where the first basis vector lands, and that second column, BD, ",
+        "start": 429.219,
+        "duration": 4.413
+    },
+    {
+        "text": "as the place where the second basis vector lands.",
+        "start": 433.632,
+        "duration": 2.808
+    },
+    {
+        "text": "When we apply this transformation to some vector xy, what do you get?",
+        "start": 437.5,
+        "duration": 3.5
+    },
+    {
+        "text": "Well, it'll be x times AC plus y times BD.",
+        "start": 442.06,
+        "duration": 4.92
+    },
+    {
+        "text": "Putting this together, you get a vector Ax plus By, Cx plus Dy.",
+        "start": 448.06,
+        "duration": 5.24
+    },
+    {
+        "text": "You could even define this as matrix vector multiplication, ",
+        "start": 453.98,
+        "duration": 3.187
+    },
+    {
+        "text": "when you put the matrix on the left of the vector like it's a function.",
+        "start": 457.167,
+        "duration": 3.773
+    },
+    {
+        "text": "Then, you could make high schoolers memorize this without ",
+        "start": 461.66,
+        "duration": 2.458
+    },
+    {
+        "text": "showing them the crucial part that makes it feel intuitive.",
+        "start": 464.118,
+        "duration": 2.502
+    },
+    {
+        "text": "But, isn't it more fun to think about these columns as the ",
+        "start": 468.3,
+        "duration": 3.031
+    },
+    {
+        "text": "transformed versions of your basis vectors, and to think about ",
+        "start": 471.331,
+        "duration": 3.237
+    },
+    {
+        "text": "the result as the appropriate linear combination of those vectors?",
+        "start": 474.568,
+        "duration": 3.392
+    },
+    {
+        "text": "Let's practice describing a few linear transformations with matrices.",
+        "start": 480.72,
+        "duration": 3.06
+    },
+    {
+        "text": "For example, if we rotate all of space 90 degrees counterclockwise, ",
+        "start": 484.58,
+        "duration": 4.778
+    },
+    {
+        "text": "then i-hat lands on the coordinates 0, 1.",
+        "start": 489.358,
+        "duration": 2.882
+    },
+    {
+        "text": "And j-hat lands on the coordinates negative 1, 0.",
+        "start": 493.98,
+        "duration": 3.2
+    },
+    {
+        "text": "So the matrix we end up with has columns 0, 1, negative 1, 0.",
+        "start": 497.98,
+        "duration": 3.98
+    },
+    {
+        "text": "To figure out what happens to any vector after a 90-degree rotation, ",
+        "start": 502.88,
+        "duration": 3.75
+    },
+    {
+        "text": "you could just multiply its coordinates by this matrix.",
+        "start": 506.63,
+        "duration": 2.99
+    },
+    {
+        "text": "Here's a fun transformation with a special name, called a shear.",
+        "start": 511.56,
+        "duration": 2.739
+    },
+    {
+        "text": "In it, i-hat remains fixed, so the first column of the matrix is 1, 0.",
+        "start": 515.0,
+        "duration": 4.159
+    },
+    {
+        "text": "But j-hat moves over to the coordinates 1, 1, ",
+        "start": 519.6,
+        "duration": 2.881
+    },
+    {
+        "text": "which become the second column of the matrix.",
+        "start": 522.481,
+        "duration": 2.819
+    },
+    {
+        "text": "And at the risk of being redundant here, figuring out how a shear transforms ",
+        "start": 525.3,
+        "duration": 4.662
+    },
+    {
+        "text": "a given vector comes down to multiplying this matrix by that vector.",
+        "start": 529.962,
+        "duration": 4.118
+    },
+    {
+        "text": "Let's say we want to go the other way around, starting with a matrix, ",
+        "start": 535.76,
+        "duration": 3.856
+    },
+    {
+        "text": "say with columns 1, 2 and 3, 1, and we want to deduce what its transformation looks like.",
+        "start": 539.616,
+        "duration": 4.904
+    },
+    {
+        "text": "Pause and take a moment to see if you can imagine it.",
+        "start": 544.96,
+        "duration": 2.48
+    },
+    {
+        "text": "One way to do this is to first move i-hat to 1, 2, then move j-hat to 3, 1.",
+        "start": 548.42,
+        "duration": 6.68
+    },
+    {
+        "text": "Always moving the rest of space in such a way ",
+        "start": 555.1,
+        "duration": 2.505
+    },
+    {
+        "text": "that keeps gridlines parallel and evenly spaced.",
+        "start": 557.605,
+        "duration": 2.615
+    },
+    {
+        "text": "If the vectors that i-hat and j-hat land on are linearly dependent, which, ",
+        "start": 561.68,
+        "duration": 4.548
+    },
+    {
+        "text": "if you recall from last video, means that one is a scaled version of the other, ",
+        "start": 566.228,
+        "duration": 4.851
+    },
+    {
+        "text": "it means that the linear transformation squishes all of 2D space onto the line where ",
+        "start": 571.079,
+        "duration": 5.155
+    },
+    {
+        "text": "those two vectors sit, also known as the one-dimensional span of those two linearly ",
+        "start": 576.234,
+        "duration": 5.094
+    },
+    {
+        "text": "dependent vectors.",
+        "start": 581.328,
+        "duration": 1.092
+    },
+    {
+        "text": "To sum up, linear transformations are a way to move around space such that ",
+        "start": 584.42,
+        "duration": 4.49
+    },
+    {
+        "text": "gridlines remain parallel and evenly spaced, and such that the origin remains fixed.",
+        "start": 588.91,
+        "duration": 5.03
+    },
+    {
+        "text": "Delightfully, these transformations can be described using only a handful of numbers, ",
+        "start": 594.54,
+        "duration": 4.452
+    },
+    {
+        "text": "the coordinates of where each basis vector lands.",
+        "start": 598.992,
+        "duration": 2.538
+    },
+    {
+        "text": "Matrices give us a language to describe these transformations, ",
+        "start": 602.76,
+        "duration": 3.47
+    },
+    {
+        "text": "where the columns represent those coordinates, ",
+        "start": 606.23,
+        "duration": 2.59
+    },
+    {
+        "text": "and matrix-vector multiplication is just a way to compute what that ",
+        "start": 608.82,
+        "duration": 3.746
+    },
+    {
+        "text": "transformation does to a given vector.",
+        "start": 612.566,
+        "duration": 2.094
+    },
+    {
+        "text": "The important takeaway here is that every time you see a matrix, ",
+        "start": 615.36,
+        "duration": 3.445
+    },
+    {
+        "text": "you can interpret it as a certain transformation of space.",
+        "start": 618.805,
+        "duration": 3.075
+    },
+    {
+        "text": "Once you really digest this idea, you're in a ",
+        "start": 622.58,
+        "duration": 2.247
+    },
+    {
+        "text": "great position to understand linear algebra deeply.",
+        "start": 624.827,
+        "duration": 2.493
+    },
+    {
+        "text": "Almost all of the topics coming up, from matrix multiplication to determinants, ",
+        "start": 627.66,
+        "duration": 4.627
+    },
+    {
+        "text": "change of basis, eigenvalues, all of these will become easier to understand ",
+        "start": 632.287,
+        "duration": 4.397
+    },
+    {
+        "text": "once you start thinking about matrices as transformations of space.",
+        "start": 636.684,
+        "duration": 3.876
+    },
+    {
+        "text": "Most immediately, in the next video, I'll be talking about ",
+        "start": 641.3,
+        "duration": 2.26
+    },
+    {
+        "text": "multiplying two matrices together. See you then! Thank you for watching!",
+        "start": 643.56,
+        "duration": 2.76
+    }
+]

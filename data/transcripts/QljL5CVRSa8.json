@@ -1,0 +1,6287 @@
+[
+    {
+        "text": "yeah she was in we're gonna go ahead and",
+        "start": 3.049,
+        "duration": 96.491
+    },
+    {
+        "text": "get started the technology seminar",
+        "start": 97.17,
+        "duration": 3.989
+    },
+    {
+        "text": "series for anyone who is unsure about",
+        "start": 99.54,
+        "duration": 3.869
+    },
+    {
+        "text": "that there's a sign in sheet going",
+        "start": 101.159,
+        "duration": 6.21
+    },
+    {
+        "text": "around these do you want to mention they",
+        "start": 103.409,
+        "duration": 6.841
+    },
+    {
+        "text": "come about next week so an email I sent",
+        "start": 107.369,
+        "duration": 4.71
+    },
+    {
+        "text": "out about this week's talk you might",
+        "start": 110.25,
+        "duration": 3.78
+    },
+    {
+        "text": "notice that the next week's is cancelled",
+        "start": 112.079,
+        "duration": 5.43
+    },
+    {
+        "text": "however it's been uncounseled the",
+        "start": 114.03,
+        "duration": 6.21
+    },
+    {
+        "text": "original speaker had to cancel but one",
+        "start": 117.509,
+        "duration": 4.5
+    },
+    {
+        "text": "phone gone will actually be giving next",
+        "start": 120.24,
+        "duration": 3.6
+    },
+    {
+        "text": "week's presentation so there is a",
+        "start": 122.009,
+        "duration": 2.671
+    },
+    {
+        "text": "top-speed",
+        "start": 123.84,
+        "duration": 2.489
+    },
+    {
+        "text": "don't play with our emotions like that I",
+        "start": 124.68,
+        "duration": 2.28
+    },
+    {
+        "text": "know",
+        "start": 126.329,
+        "duration": 4.771
+    },
+    {
+        "text": "sorry but you get your pizza now next",
+        "start": 126.96,
+        "duration": 6.12
+    },
+    {
+        "text": "week too so everyone should be happy",
+        "start": 131.1,
+        "duration": 4.38
+    },
+    {
+        "text": "oh they're pleased to present today's",
+        "start": 133.08,
+        "duration": 6.06
+    },
+    {
+        "text": "speaker Johann gongyuan barche and he is",
+        "start": 135.48,
+        "duration": 8.31
+    },
+    {
+        "text": "assistant professor in statistics thank",
+        "start": 139.14,
+        "duration": 5.46
+    },
+    {
+        "text": "you",
+        "start": 143.79,
+        "duration": 2.31
+    },
+    {
+        "text": "so I'm going to be talking today about",
+        "start": 144.6,
+        "duration": 4.71
+    },
+    {
+        "text": "the ruv package are you Stanford moving",
+        "start": 146.1,
+        "duration": 5.4
+    },
+    {
+        "text": "or interrogation it's tools to move",
+        "start": 149.31,
+        "duration": 7.649
+    },
+    {
+        "text": "batch effects and another variation this",
+        "start": 151.5,
+        "duration": 7.95
+    },
+    {
+        "text": "is a heads up everything that's in the",
+        "start": 156.959,
+        "duration": 6.481
+    },
+    {
+        "text": "talk today is on docker so if you go to",
+        "start": 159.45,
+        "duration": 7.38
+    },
+    {
+        "text": "this URL you can you can get all the",
+        "start": 163.44,
+        "duration": 5.4
+    },
+    {
+        "text": "code that I use and also even these",
+        "start": 166.83,
+        "duration": 5.37
+    },
+    {
+        "text": "sites in fact I'm running all of this",
+        "start": 168.84,
+        "duration": 5.19
+    },
+    {
+        "text": "from within dr. at the moment",
+        "start": 172.2,
+        "duration": 6.78
+    },
+    {
+        "text": "okay so outline I'm going to start off",
+        "start": 174.03,
+        "duration": 8.75
+    },
+    {
+        "text": "by giving an example dataset to to",
+        "start": 178.98,
+        "duration": 5.7
+    },
+    {
+        "text": "motivate everything that I'm going to",
+        "start": 182.78,
+        "duration": 4.24
+    },
+    {
+        "text": "say I'm then going to make some",
+        "start": 184.68,
+        "duration": 5.67
+    },
+    {
+        "text": "high-level comments on normalization and",
+        "start": 187.02,
+        "duration": 4.68
+    },
+    {
+        "text": "then also make some some high-level",
+        "start": 190.35,
+        "duration": 4.76
+    },
+    {
+        "text": "comments about the the Reeb framework",
+        "start": 191.7,
+        "duration": 6.12
+    },
+    {
+        "text": "then I'll get into discussing natural re",
+        "start": 195.11,
+        "duration": 4.84
+    },
+    {
+        "text": "be packaged and at the end I'll do a",
+        "start": 197.82,
+        "duration": 9.69
+    },
+    {
+        "text": "couple examples with the shiny app ok so",
+        "start": 199.95,
+        "duration": 11.22
+    },
+    {
+        "text": "to motivate everything I have got an",
+        "start": 207.51,
+        "duration": 7.08
+    },
+    {
+        "text": "example dataset this is a microarray",
+        "start": 211.17,
+        "duration": 5.789
+    },
+    {
+        "text": "data set from several years ago in which",
+        "start": 214.59,
+        "duration": 3.78
+    },
+    {
+        "text": "the board of the study was to do",
+        "start": 216.959,
+        "duration": 3.451
+    },
+    {
+        "text": "differential expression analysis to find",
+        "start": 218.37,
+        "duration": 3.119
+    },
+    {
+        "text": "genes differentially expressed between",
+        "start": 220.41,
+        "duration": 4.02
+    },
+    {
+        "text": "men and women in the brain so do you",
+        "start": 221.489,
+        "duration": 5.211
+    },
+    {
+        "text": "design there are five men five women",
+        "start": 224.43,
+        "duration": 5.16
+    },
+    {
+        "text": "tissues were taken from each of these",
+        "start": 226.7,
+        "duration": 5.02
+    },
+    {
+        "text": "ten people postmortem",
+        "start": 229.59,
+        "duration": 4.17
+    },
+    {
+        "text": "one tissue sample from each person from",
+        "start": 231.72,
+        "duration": 4.019
+    },
+    {
+        "text": "the anterior cingulate cortex went from",
+        "start": 233.76,
+        "duration": 3.69
+    },
+    {
+        "text": "the girth lateral prefrontal cortex and",
+        "start": 235.739,
+        "duration": 3.541
+    },
+    {
+        "text": "one from the cerebellum so for a total",
+        "start": 237.45,
+        "duration": 4.47
+    },
+    {
+        "text": "of 32 samples three from each of the ten",
+        "start": 239.28,
+        "duration": 5.4
+    },
+    {
+        "text": "people and then each of the 32 tissue",
+        "start": 241.92,
+        "duration": 7.23
+    },
+    {
+        "text": "samples one aliquot was sent to each of",
+        "start": 244.68,
+        "duration": 9.809
+    },
+    {
+        "text": "three labs Davis Irvine and Michigan so",
+        "start": 249.15,
+        "duration": 7.679
+    },
+    {
+        "text": "we end up at the end of the day with 90",
+        "start": 254.489,
+        "duration": 3.381
+    },
+    {
+        "text": "microarrays",
+        "start": 256.829,
+        "duration": 2.571
+    },
+    {
+        "text": "three arrays for each of 30 tissue",
+        "start": 257.87,
+        "duration": 6.42
+    },
+    {
+        "text": "samples so the screen is a little bit",
+        "start": 259.4,
+        "duration": 8.37
+    },
+    {
+        "text": "off here but I don't hear that for for",
+        "start": 264.29,
+        "duration": 8.25
+    },
+    {
+        "text": "each of these each of these 90 they were",
+        "start": 267.77,
+        "duration": 6.78
+    },
+    {
+        "text": "assayed by microarray and we have data",
+        "start": 272.54,
+        "duration": 10.379
+    },
+    {
+        "text": "on twelve thousand citizens so I'm gonna",
+        "start": 274.55,
+        "duration": 12.869
+    },
+    {
+        "text": "just show you the the data here I've",
+        "start": 282.919,
+        "duration": 8.451
+    },
+    {
+        "text": "I've loaded in this state of set in dark",
+        "start": 287.419,
+        "duration": 7.951
+    },
+    {
+        "text": "type LS and here's what's inside we've",
+        "start": 291.37,
+        "duration": 6.22
+    },
+    {
+        "text": "got a data frame with information on the",
+        "start": 295.37,
+        "duration": 4.59
+    },
+    {
+        "text": "genes data set with data frame with",
+        "start": 297.59,
+        "duration": 5.19
+    },
+    {
+        "text": "information on the on samples and then",
+        "start": 299.96,
+        "duration": 4.44
+    },
+    {
+        "text": "we have two two versions of the",
+        "start": 302.78,
+        "duration": 2.88
+    },
+    {
+        "text": "expression data",
+        "start": 304.4,
+        "duration": 5.04
+    },
+    {
+        "text": "I've got in the comments one is if the",
+        "start": 305.66,
+        "duration": 5.85
+    },
+    {
+        "text": "raw data which is to say that it's been",
+        "start": 309.44,
+        "duration": 5.0
+    },
+    {
+        "text": "summarized by are made but without the",
+        "start": 311.51,
+        "duration": 5.25
+    },
+    {
+        "text": "quantile normalization or a background",
+        "start": 314.44,
+        "duration": 4.479
+    },
+    {
+        "text": "correction steps and then I also have",
+        "start": 316.76,
+        "duration": 3.96
+    },
+    {
+        "text": "the more standard normalized version",
+        "start": 318.919,
+        "duration": 4.381
+    },
+    {
+        "text": "which has been background corrected in",
+        "start": 320.72,
+        "duration": 9.33
+    },
+    {
+        "text": "quantumwise okay so here just so you can",
+        "start": 323.3,
+        "duration": 9.869
+    },
+    {
+        "text": "see it there's the data I've got reliefs",
+        "start": 330.05,
+        "duration": 6.15
+    },
+    {
+        "text": "are the microwaves and columns are the",
+        "start": 333.169,
+        "duration": 6.781
+    },
+    {
+        "text": "genes and inside here's the data frame",
+        "start": 336.2,
+        "duration": 6.27
+    },
+    {
+        "text": "of the the sample information again rows",
+        "start": 339.95,
+        "duration": 4.68
+    },
+    {
+        "text": "for the for the different micro arrays",
+        "start": 342.47,
+        "duration": 4.86
+    },
+    {
+        "text": "and then I've got information on which",
+        "start": 344.63,
+        "duration": 5.33
+    },
+    {
+        "text": "of the ten patients it was their gender",
+        "start": 347.33,
+        "duration": 6.66
+    },
+    {
+        "text": "which brain region it was which lab it",
+        "start": 349.96,
+        "duration": 6.34
+    },
+    {
+        "text": "was that say that and then also chip",
+        "start": 353.99,
+        "duration": 4.53
+    },
+    {
+        "text": "version that there are two different",
+        "start": 356.3,
+        "duration": 5.33
+    },
+    {
+        "text": "versions of microarray that they used",
+        "start": 358.52,
+        "duration": 5.55
+    },
+    {
+        "text": "Dean information I've got information on",
+        "start": 361.63,
+        "duration": 6.25
+    },
+    {
+        "text": "on all the genes I've got the the simple",
+        "start": 364.07,
+        "duration": 6.84
+    },
+    {
+        "text": "chromosome and these things I'll talk",
+        "start": 367.88,
+        "duration": 5.13
+    },
+    {
+        "text": "more about as the talk goes on but this",
+        "start": 370.91,
+        "duration": 3.87
+    },
+    {
+        "text": "is whether or not the housekeeping gene",
+        "start": 373.01,
+        "duration": 3.81
+    },
+    {
+        "text": "is not whether or not spike in control",
+        "start": 374.78,
+        "duration": 5.0
+    },
+    {
+        "text": "is whether or not it's positive control",
+        "start": 376.82,
+        "duration": 6.68
+    },
+    {
+        "text": "again I'll I'll come back to all of this",
+        "start": 379.78,
+        "duration": 6.79
+    },
+    {
+        "text": "here I load the ruv package and set a",
+        "start": 383.5,
+        "duration": 5.49
+    },
+    {
+        "text": "couple graphical parameters and then",
+        "start": 386.57,
+        "duration": 4.17
+    },
+    {
+        "text": "here",
+        "start": 388.99,
+        "duration": 4.78
+    },
+    {
+        "text": "yeah we can see that okay okay here I've",
+        "start": 390.74,
+        "duration": 8.97
+    },
+    {
+        "text": "got a PC block of of the data and I I",
+        "start": 393.77,
+        "duration": 9.959
+    },
+    {
+        "text": "have it colored by my brain region so",
+        "start": 399.71,
+        "duration": 5.579
+    },
+    {
+        "text": "the three colors are the three different",
+        "start": 403.729,
+        "duration": 3.211
+    },
+    {
+        "text": "rain regions and then the plot symbol",
+        "start": 405.289,
+        "duration": 5.461
+    },
+    {
+        "text": "I've got for the laboratory and what",
+        "start": 406.94,
+        "duration": 6.15
+    },
+    {
+        "text": "should strike you when you look at this",
+        "start": 410.75,
+        "duration": 6.36
+    },
+    {
+        "text": "is that by far the the strongest signal",
+        "start": 413.09,
+        "duration": 7.47
+    },
+    {
+        "text": "and the data is the lab effect so you",
+        "start": 417.11,
+        "duration": 6.149
+    },
+    {
+        "text": "have all of the Michigan data here and",
+        "start": 420.56,
+        "duration": 5.88
+    },
+    {
+        "text": "all of the Irvine data here all of the",
+        "start": 423.259,
+        "duration": 8.13
+    },
+    {
+        "text": "Davis data appeared so again this this",
+        "start": 426.44,
+        "duration": 6.569
+    },
+    {
+        "text": "is the data that has already been caught",
+        "start": 431.389,
+        "duration": 4.021
+    },
+    {
+        "text": "on normalized so it's been pre processed",
+        "start": 433.009,
+        "duration": 4.741
+    },
+    {
+        "text": "in some sense but still finally the",
+        "start": 435.41,
+        "duration": 6.77
+    },
+    {
+        "text": "largest signal and the data is black and",
+        "start": 437.75,
+        "duration": 6.69
+    },
+    {
+        "text": "getting rid of this sort of stuff that's",
+        "start": 442.18,
+        "duration": 4.769
+    },
+    {
+        "text": "going to be the focus of this time oh",
+        "start": 444.44,
+        "duration": 4.62
+    },
+    {
+        "text": "one other slide I want to show you real",
+        "start": 446.949,
+        "duration": 6.131
+    },
+    {
+        "text": "quick so one thing that is sometimes",
+        "start": 449.06,
+        "duration": 6.329
+    },
+    {
+        "text": "done in situations like this is people",
+        "start": 453.08,
+        "duration": 4.14
+    },
+    {
+        "text": "will distribute remove the first couple",
+        "start": 455.389,
+        "duration": 3.631
+    },
+    {
+        "text": "of principal components when it looks",
+        "start": 457.22,
+        "duration": 2.759
+    },
+    {
+        "text": "like the first couple of principal",
+        "start": 459.02,
+        "duration": 3.69
+    },
+    {
+        "text": "components are our technical effect here",
+        "start": 459.979,
+        "duration": 4.201
+    },
+    {
+        "text": "I've done that I've removed",
+        "start": 462.71,
+        "duration": 3.989
+    },
+    {
+        "text": "I removed the first five principal",
+        "start": 464.18,
+        "duration": 6.269
+    },
+    {
+        "text": "components you look at the different",
+        "start": 466.699,
+        "duration": 12.301
+    },
+    {
+        "text": "versions of chips also yes and to a",
+        "start": 470.449,
+        "duration": 10.231
+    },
+    {
+        "text": "large extent although not exactly it's",
+        "start": 479.0,
+        "duration": 4.409
+    },
+    {
+        "text": "if I remember right Michigan the other",
+        "start": 480.68,
+        "duration": 4.95
+    },
+    {
+        "text": "different places reason yeah so there's",
+        "start": 483.409,
+        "duration": 4.921
+    },
+    {
+        "text": "there's two things these lab plus the",
+        "start": 485.63,
+        "duration": 15.24
+    },
+    {
+        "text": "chip yeah oh yeah so sometimes you might",
+        "start": 488.33,
+        "duration": 13.709
+    },
+    {
+        "text": "just want to remove the first couple of",
+        "start": 500.87,
+        "duration": 4.26
+    },
+    {
+        "text": "principal components but you see if you",
+        "start": 502.039,
+        "duration": 5.071
+    },
+    {
+        "text": "have more or less removes the the lab",
+        "start": 505.13,
+        "duration": 5.55
+    },
+    {
+        "text": "effect but there's also no biology",
+        "start": 507.11,
+        "duration": 5.039
+    },
+    {
+        "text": "remaining either you don't see",
+        "start": 510.68,
+        "duration": 6.029
+    },
+    {
+        "text": "clustering by by brain region so this is",
+        "start": 512.149,
+        "duration": 7.101
+    },
+    {
+        "text": "just to to flag the point that",
+        "start": 516.709,
+        "duration": 4.921
+    },
+    {
+        "text": "normalization can't be too strong and",
+        "start": 519.25,
+        "duration": 4.45
+    },
+    {
+        "text": "you can throw out the biology that your",
+        "start": 521.63,
+        "duration": 2.4
+    },
+    {
+        "text": "interest",
+        "start": 523.7,
+        "duration": 2.85
+    },
+    {
+        "text": "in along with technical effects if",
+        "start": 524.03,
+        "duration": 6.99
+    },
+    {
+        "text": "you're not careful and then as a preview",
+        "start": 526.55,
+        "duration": 9.3
+    },
+    {
+        "text": "here is data that all here's a",
+        "start": 531.02,
+        "duration": 6.6
+    },
+    {
+        "text": "normalized version that I'll get to",
+        "start": 535.85,
+        "duration": 4.04
+    },
+    {
+        "text": "later in the talk that's been",
+        "start": 537.62,
+        "duration": 4.68
+    },
+    {
+        "text": "generalized using one of the ruv",
+        "start": 539.89,
+        "duration": 5.07
+    },
+    {
+        "text": "approaches and here we see that the",
+        "start": 542.3,
+        "duration": 5.61
+    },
+    {
+        "text": "batch effects are gone and we also have",
+        "start": 544.96,
+        "duration": 5.35
+    },
+    {
+        "text": "a nice clustering by my brain region so",
+        "start": 547.91,
+        "duration": 4.59
+    },
+    {
+        "text": "we've got called cerebellar near and all",
+        "start": 550.31,
+        "duration": 4.65
+    },
+    {
+        "text": "of the of the cortex how would you ever",
+        "start": 552.5,
+        "duration": 4.26
+    },
+    {
+        "text": "in the batch of that that's the point",
+        "start": 554.96,
+        "duration": 7.94
+    },
+    {
+        "text": "doc yeah I'll show you just a preview to",
+        "start": 556.76,
+        "duration": 11.64
+    },
+    {
+        "text": "keep your attention ok so before I get",
+        "start": 562.9,
+        "duration": 7.0
+    },
+    {
+        "text": "into the details I want to make some",
+        "start": 568.4,
+        "duration": 3.75
+    },
+    {
+        "text": "some high-level some high-level comments",
+        "start": 569.9,
+        "duration": 7.86
+    },
+    {
+        "text": "on normalization the first comment I",
+        "start": 572.15,
+        "duration": 10.53
+    },
+    {
+        "text": "want to make is that and mind you there",
+        "start": 577.76,
+        "duration": 11.1
+    },
+    {
+        "text": "is no one right normalization and what",
+        "start": 582.68,
+        "duration": 8.55
+    },
+    {
+        "text": "I'm not saying by this is I'm not saying",
+        "start": 588.86,
+        "duration": 3.9
+    },
+    {
+        "text": "just that there is no one right",
+        "start": 591.23,
+        "duration": 3.66
+    },
+    {
+        "text": "normalization algorithm although I think",
+        "start": 592.76,
+        "duration": 5.13
+    },
+    {
+        "text": "that's true also I'm making even",
+        "start": 594.89,
+        "duration": 4.53
+    },
+    {
+        "text": "stronger statement that even for a given",
+        "start": 597.89,
+        "duration": 4.17
+    },
+    {
+        "text": "data set there is one no right",
+        "start": 599.42,
+        "duration": 4.83
+    },
+    {
+        "text": "normalization and the reason I say that",
+        "start": 602.06,
+        "duration": 4.68
+    },
+    {
+        "text": "is because the normalization that you're",
+        "start": 604.25,
+        "duration": 5.19
+    },
+    {
+        "text": "going to do it's gonna depend on what",
+        "start": 606.74,
+        "duration": 5.22
+    },
+    {
+        "text": "variation is wanted or another words",
+        "start": 609.44,
+        "duration": 4.44
+    },
+    {
+        "text": "what variation is is of interest to you",
+        "start": 611.96,
+        "duration": 5.25
+    },
+    {
+        "text": "and what variation is unwanted and that",
+        "start": 613.88,
+        "duration": 7.38
+    },
+    {
+        "text": "will depend on your context it will also",
+        "start": 617.21,
+        "duration": 6.21
+    },
+    {
+        "text": "depend somewhat on the on the goal of",
+        "start": 621.26,
+        "duration": 6.78
+    },
+    {
+        "text": "your downstream analysis but I would",
+        "start": 623.42,
+        "duration": 5.85
+    },
+    {
+        "text": "just want to highlight this one if for",
+        "start": 628.04,
+        "duration": 3.09
+    },
+    {
+        "text": "no other reason the the normalization",
+        "start": 629.27,
+        "duration": 5.04
+    },
+    {
+        "text": "that you that you want to do will depend",
+        "start": 631.13,
+        "duration": 4.98
+    },
+    {
+        "text": "on what variation you're interested in",
+        "start": 634.31,
+        "duration": 10.95
+    },
+    {
+        "text": "in what variation so vibrating on that",
+        "start": 636.11,
+        "duration": 12.06
+    },
+    {
+        "text": "point a little bit I'm going to",
+        "start": 645.26,
+        "duration": 4.8
+    },
+    {
+        "text": "distinguish between wanted and unwanted",
+        "start": 648.17,
+        "duration": 7.74
+    },
+    {
+        "text": "variation and our observed data is going",
+        "start": 650.06,
+        "duration": 7.14
+    },
+    {
+        "text": "to be composed of",
+        "start": 655.91,
+        "duration": 2.81
+    },
+    {
+        "text": "both variations from many sources",
+        "start": 657.2,
+        "duration": 4.05
+    },
+    {
+        "text": "there's going to be a bunch of variation",
+        "start": 658.72,
+        "duration": 5.44
+    },
+    {
+        "text": "that's unwanted that's the technical",
+        "start": 661.25,
+        "duration": 4.89
+    },
+    {
+        "text": "effects so things like the the lab or",
+        "start": 664.16,
+        "duration": 5.34
+    },
+    {
+        "text": "the batch variation due to quality of",
+        "start": 666.14,
+        "duration": 7.08
+    },
+    {
+        "text": "the reagents due to RNA degradation even",
+        "start": 669.5,
+        "duration": 4.74
+    },
+    {
+        "text": "things like composition of the",
+        "start": 673.22,
+        "duration": 3.18
+    },
+    {
+        "text": "atmosphere and I could go on and on with",
+        "start": 674.24,
+        "duration": 5.07
+    },
+    {
+        "text": "a long list here but then there's going",
+        "start": 676.4,
+        "duration": 5.88
+    },
+    {
+        "text": "to be sources of variation of interest",
+        "start": 679.31,
+        "duration": 5.73
+    },
+    {
+        "text": "also a ginger for sure in this example",
+        "start": 682.28,
+        "duration": 5.22
+    },
+    {
+        "text": "that was the original goal of study and",
+        "start": 685.04,
+        "duration": 3.9
+    },
+    {
+        "text": "then I've got a brain region with",
+        "start": 687.5,
+        "duration": 5.15
+    },
+    {
+        "text": "question mark next to it meaning that",
+        "start": 688.94,
+        "duration": 10.83
+    },
+    {
+        "text": "this is a brain region may or may not be",
+        "start": 692.65,
+        "duration": 8.59
+    },
+    {
+        "text": "of interest if all you're interested in",
+        "start": 699.77,
+        "duration": 2.82
+    },
+    {
+        "text": "is a differential expression with",
+        "start": 701.24,
+        "duration": 3.51
+    },
+    {
+        "text": "respect to gender you might think of",
+        "start": 702.59,
+        "duration": 4.05
+    },
+    {
+        "text": "brain region as a as an instance",
+        "start": 704.75,
+        "duration": 4.56
+    },
+    {
+        "text": "variable but in other contexts it might",
+        "start": 706.64,
+        "duration": 4.11
+    },
+    {
+        "text": "very well be what you're interested in",
+        "start": 709.31,
+        "duration": 4.17
+    },
+    {
+        "text": "so here again I'm just highlighting that",
+        "start": 710.75,
+        "duration": 5.19
+    },
+    {
+        "text": "what variation is once in an unwanted",
+        "start": 713.48,
+        "duration": 5.93
+    },
+    {
+        "text": "it's going to depend on the context and",
+        "start": 715.94,
+        "duration": 5.82
+    },
+    {
+        "text": "the normalization will want to reflect",
+        "start": 719.41,
+        "duration": 7.45
+    },
+    {
+        "text": "that saying that again here should we",
+        "start": 721.76,
+        "duration": 6.45
+    },
+    {
+        "text": "think of brain region is wanted or what",
+        "start": 726.86,
+        "duration": 3.78
+    },
+    {
+        "text": "I wanted I'm going to argue that it",
+        "start": 728.21,
+        "duration": 4.68
+    },
+    {
+        "text": "depends and that the normalization",
+        "start": 730.64,
+        "duration": 5.07
+    },
+    {
+        "text": "should reflect that I should point out",
+        "start": 732.89,
+        "duration": 7.58
+    },
+    {
+        "text": "that this is not an entirely trivial",
+        "start": 735.71,
+        "duration": 7.08
+    },
+    {
+        "text": "thing that I'm saying because you could",
+        "start": 740.47,
+        "duration": 5.23
+    },
+    {
+        "text": "imagine a counter argument someone",
+        "start": 742.79,
+        "duration": 6.24
+    },
+    {
+        "text": "saying that when we normalize what we",
+        "start": 745.7,
+        "duration": 4.86
+    },
+    {
+        "text": "really want to do if we want to remove",
+        "start": 749.03,
+        "duration": 3.75
+    },
+    {
+        "text": "anything that is a technical artifact",
+        "start": 750.56,
+        "duration": 7.4
+    },
+    {
+        "text": "and we want to preserve all biology so",
+        "start": 752.78,
+        "duration": 8.04
+    },
+    {
+        "text": "brain region would be biology and we'd",
+        "start": 757.96,
+        "duration": 5.74
+    },
+    {
+        "text": "want to we'd want to keep it and if if",
+        "start": 760.82,
+        "duration": 4.5
+    },
+    {
+        "text": "I'm not interested in brain region well",
+        "start": 763.7,
+        "duration": 3.75
+    },
+    {
+        "text": "okay all adjust for that in the in the",
+        "start": 765.32,
+        "duration": 7.38
+    },
+    {
+        "text": "downstream analysis so that is",
+        "start": 767.45,
+        "duration": 12.33
+    },
+    {
+        "text": "reasonable but I'll say that a well I'll",
+        "start": 772.7,
+        "duration": 9.27
+    },
+    {
+        "text": "make two points one being that some",
+        "start": 779.78,
+        "duration": 5.19
+    },
+    {
+        "text": "biology is nearly always all in wanted",
+        "start": 781.97,
+        "duration": 6.09
+    },
+    {
+        "text": "so for example any sort of changes in",
+        "start": 784.97,
+        "duration": 4.5
+    },
+    {
+        "text": "the gene expression because he just ate",
+        "start": 788.06,
+        "duration": 2.61
+    },
+    {
+        "text": "or just exercise",
+        "start": 789.47,
+        "duration": 4.77
+    },
+    {
+        "text": "or anything like that changes due to the",
+        "start": 790.67,
+        "duration": 5.49
+    },
+    {
+        "text": "circadian rhythm let's just specifically",
+        "start": 794.24,
+        "duration": 4.44
+    },
+    {
+        "text": "studying circadian rhythm that's",
+        "start": 796.16,
+        "duration": 3.57
+    },
+    {
+        "text": "probably something that you want to",
+        "start": 798.68,
+        "duration": 5.9
+    },
+    {
+        "text": "normalize away but even more than that",
+        "start": 799.73,
+        "duration": 7.53
+    },
+    {
+        "text": "and this is I think what is really",
+        "start": 804.58,
+        "duration": 3.25
+    },
+    {
+        "text": "critical",
+        "start": 807.26,
+        "duration": 3.66
+    },
+    {
+        "text": "it's a lot of these biological factors",
+        "start": 807.83,
+        "duration": 4.74
+    },
+    {
+        "text": "that you might want to adjust for our",
+        "start": 810.92,
+        "duration": 7.05
+    },
+    {
+        "text": "unknown their unknown or you don't you",
+        "start": 812.57,
+        "duration": 9.03
+    },
+    {
+        "text": "don't have information on them and so it",
+        "start": 817.97,
+        "duration": 5.85
+    },
+    {
+        "text": "won't be possible to explicitly account",
+        "start": 821.6,
+        "duration": 4.11
+    },
+    {
+        "text": "for them in the downstream analysis and",
+        "start": 823.82,
+        "duration": 4.86
+    },
+    {
+        "text": "so we do want to try and adjust for them",
+        "start": 825.71,
+        "duration": 10.46
+    },
+    {
+        "text": "at the at the normalization stage okay",
+        "start": 828.68,
+        "duration": 10.14
+    },
+    {
+        "text": "so elaborating a little bit more on this",
+        "start": 836.17,
+        "duration": 5.26
+    },
+    {
+        "text": "idea of unknown sources of variation",
+        "start": 838.82,
+        "duration": 6.54
+    },
+    {
+        "text": "just highlighting it again so will very",
+        "start": 841.43,
+        "duration": 6.09
+    },
+    {
+        "text": "often the unwanted variation comes from",
+        "start": 845.36,
+        "duration": 4.68
+    },
+    {
+        "text": "sources that are unknown this is true of",
+        "start": 847.52,
+        "duration": 4.71
+    },
+    {
+        "text": "both technical and biological on one in",
+        "start": 850.04,
+        "duration": 6.8
+    },
+    {
+        "text": "variation and identifying and then then",
+        "start": 852.23,
+        "duration": 6.69
+    },
+    {
+        "text": "removing the Sun women variation is",
+        "start": 856.84,
+        "duration": 5.92
+    },
+    {
+        "text": "especially challenging if I'm gonna say",
+        "start": 858.92,
+        "duration": 4.5
+    },
+    {
+        "text": "just a couple words about",
+        "start": 862.76,
+        "duration": 4.32
+    },
+    {
+        "text": "identifiability here imagine in this",
+        "start": 863.42,
+        "duration": 6.87
+    },
+    {
+        "text": "this simple case we've we're just gonna",
+        "start": 867.08,
+        "duration": 5.43
+    },
+    {
+        "text": "say our observed variation it's just",
+        "start": 870.29,
+        "duration": 4.83
+    },
+    {
+        "text": "gonna lead to some wanted variation and",
+        "start": 872.51,
+        "duration": 5.58
+    },
+    {
+        "text": "unwanted variation and I'm going to make",
+        "start": 875.12,
+        "duration": 6.54
+    },
+    {
+        "text": "the point here on the next slide not at",
+        "start": 878.09,
+        "duration": 5.4
+    },
+    {
+        "text": "all surprising but I think we're still",
+        "start": 881.66,
+        "duration": 4.26
+    },
+    {
+        "text": "worth stating that different patterns of",
+        "start": 883.49,
+        "duration": 4.02
+    },
+    {
+        "text": "wanted unwanted variation can produce",
+        "start": 885.92,
+        "duration": 4.83
+    },
+    {
+        "text": "the same observed variation so I have",
+        "start": 887.51,
+        "duration": 8.46
+    },
+    {
+        "text": "back in the picture here I've got that",
+        "start": 890.75,
+        "duration": 7.08
+    },
+    {
+        "text": "our observed variation it's a sum of",
+        "start": 895.97,
+        "duration": 4.56
+    },
+    {
+        "text": "wanted variation and unwanted variation",
+        "start": 897.83,
+        "duration": 6.96
+    },
+    {
+        "text": "and I've got two different examples here",
+        "start": 900.53,
+        "duration": 8.85
+    },
+    {
+        "text": "where where the observed variation is",
+        "start": 904.79,
+        "duration": 7.59
+    },
+    {
+        "text": "the same in both of these examples but",
+        "start": 909.38,
+        "duration": 4.77
+    },
+    {
+        "text": "the part that's watch it is different",
+        "start": 912.38,
+        "duration": 4.53
+    },
+    {
+        "text": "between these two and the part that is",
+        "start": 914.15,
+        "duration": 4.65
+    },
+    {
+        "text": "unwanted is different between these two",
+        "start": 916.91,
+        "duration": 7.16
+    },
+    {
+        "text": "but they add up to two the same okay",
+        "start": 918.8,
+        "duration": 8.04
+    },
+    {
+        "text": "if we could it's a good look and we",
+        "start": 924.07,
+        "duration": 6.88
+    },
+    {
+        "text": "could see within this observed data what",
+        "start": 926.84,
+        "duration": 5.46
+    },
+    {
+        "text": "part was wanted and what part was I",
+        "start": 930.95,
+        "duration": 4.98
+    },
+    {
+        "text": "wanted well then we can't we only we",
+        "start": 932.3,
+        "duration": 6.84
+    },
+    {
+        "text": "only see the Sun here so again nothing",
+        "start": 935.93,
+        "duration": 6.53
+    },
+    {
+        "text": "surprising but and when I'm feeling fine",
+        "start": 939.14,
+        "duration": 6.42
+    },
+    {
+        "text": "but I point this out explicitly just to",
+        "start": 942.46,
+        "duration": 4.54
+    },
+    {
+        "text": "highlight the fact that any",
+        "start": 945.56,
+        "duration": 4.53
+    },
+    {
+        "text": "normalizations are gonna do it is going",
+        "start": 947.0,
+        "duration": 5.1
+    },
+    {
+        "text": "to require some sort of extra",
+        "start": 950.09,
+        "duration": 5.43
+    },
+    {
+        "text": "information because without at least",
+        "start": 952.1,
+        "duration": 4.74
+    },
+    {
+        "text": "some sort of extra piece of information",
+        "start": 955.52,
+        "duration": 3.57
+    },
+    {
+        "text": "we're not able to distinguish between",
+        "start": 956.84,
+        "duration": 7.14
+    },
+    {
+        "text": "these two cases so again not nothing too",
+        "start": 959.09,
+        "duration": 7.08
+    },
+    {
+        "text": "surprising but still we're stating that",
+        "start": 963.98,
+        "duration": 3.87
+    },
+    {
+        "text": "any normalization we're gonna do is",
+        "start": 966.17,
+        "duration": 3.45
+    },
+    {
+        "text": "going to require some sort of extra",
+        "start": 967.85,
+        "duration": 4.86
+    },
+    {
+        "text": "information and here's examples of",
+        "start": 969.62,
+        "duration": 6.75
+    },
+    {
+        "text": "things that you might use so you might",
+        "start": 972.71,
+        "duration": 5.64
+    },
+    {
+        "text": "use for example an assumption that the",
+        "start": 976.37,
+        "duration": 3.36
+    },
+    {
+        "text": "marginal distribution is the same for",
+        "start": 978.35,
+        "duration": 3.15
+    },
+    {
+        "text": "microwave that's something that you",
+        "start": 979.73,
+        "duration": 4.71
+    },
+    {
+        "text": "might justify doing the quantile",
+        "start": 981.5,
+        "duration": 5.82
+    },
+    {
+        "text": "normalization for example you might have",
+        "start": 984.44,
+        "duration": 5.16
+    },
+    {
+        "text": "information on what the unwanted factors",
+        "start": 987.32,
+        "duration": 3.87
+    },
+    {
+        "text": "are so you might have information on the",
+        "start": 989.6,
+        "duration": 4.23
+    },
+    {
+        "text": "batches for example you might know that",
+        "start": 991.19,
+        "duration": 4.53
+    },
+    {
+        "text": "your factor of interest is that will",
+        "start": 993.83,
+        "duration": 7.26
+    },
+    {
+        "text": "make it a little bit easier you might",
+        "start": 995.72,
+        "duration": 7.59
+    },
+    {
+        "text": "have various sparsity assumptions you",
+        "start": 1001.09,
+        "duration": 3.21
+    },
+    {
+        "text": "might have various independence",
+        "start": 1003.31,
+        "duration": 5.18
+    },
+    {
+        "text": "assumptions but again you need something",
+        "start": 1004.3,
+        "duration": 7.56
+    },
+    {
+        "text": "ok one one special case I wanna",
+        "start": 1008.49,
+        "duration": 4.87
+    },
+    {
+        "text": "highlight is when you do have a known",
+        "start": 1011.86,
+        "duration": 4.32
+    },
+    {
+        "text": "factor of interest which is the case",
+        "start": 1013.36,
+        "duration": 3.84
+    },
+    {
+        "text": "when we're doing a differential",
+        "start": 1016.18,
+        "duration": 4.62
+    },
+    {
+        "text": "expression analysis even even if you",
+        "start": 1017.2,
+        "duration": 5.57
+    },
+    {
+        "text": "have a normal known factor of interest",
+        "start": 1020.8,
+        "duration": 6.59
+    },
+    {
+        "text": "you do still have identifiability issues",
+        "start": 1022.77,
+        "duration": 4.62
+    },
+    {
+        "text": "the the key problem is that if if you",
+        "start": 1027.48,
+        "duration": 6.459
+    },
+    {
+        "text": "don't know what the unwanted variation",
+        "start": 1031.6,
+        "duration": 4.38
+    },
+    {
+        "text": "is you don't know whether the unwanted",
+        "start": 1033.939,
+        "duration": 3.961
+    },
+    {
+        "text": "variation and the variation of interests",
+        "start": 1035.98,
+        "duration": 5.28
+    },
+    {
+        "text": "are correlated and depending on whether",
+        "start": 1037.9,
+        "duration": 4.559
+    },
+    {
+        "text": "or not they're correlated and to what",
+        "start": 1041.26,
+        "duration": 6.0
+    },
+    {
+        "text": "extent um that can very much change the",
+        "start": 1042.459,
+        "duration": 8.851
+    },
+    {
+        "text": "analysis that you do so we just show",
+        "start": 1047.26,
+        "duration": 6.18
+    },
+    {
+        "text": "this picture one more time it's it's a",
+        "start": 1051.31,
+        "duration": 4.44
+    },
+    {
+        "text": "little bit hard to tell from from the",
+        "start": 1053.44,
+        "duration": 3.51
+    },
+    {
+        "text": "screen",
+        "start": 1055.75,
+        "duration": 4.59
+    },
+    {
+        "text": "but I made these matrices in such a way",
+        "start": 1056.95,
+        "duration": 5.849
+    },
+    {
+        "text": "that the wanted variation in both cases",
+        "start": 1060.34,
+        "duration": 6.0
+    },
+    {
+        "text": "the factor of interest is the same there",
+        "start": 1062.799,
+        "duration": 8.01
+    },
+    {
+        "text": "are there are six six rows in one group",
+        "start": 1066.34,
+        "duration": 7.74
+    },
+    {
+        "text": "and six rows in another group here",
+        "start": 1070.809,
+        "duration": 6.931
+    },
+    {
+        "text": "you've got off off on off on so you can",
+        "start": 1074.08,
+        "duration": 6.17
+    },
+    {
+        "text": "think of these as control for example",
+        "start": 1077.74,
+        "duration": 4.8
+    },
+    {
+        "text": "and you'll notice that the the factor of",
+        "start": 1080.25,
+        "duration": 5.13
+    },
+    {
+        "text": "interest is and is the same in both so",
+        "start": 1082.54,
+        "duration": 5.19
+    },
+    {
+        "text": "basically control control treated and",
+        "start": 1085.38,
+        "duration": 5.919
+    },
+    {
+        "text": "control treated so on what different",
+        "start": 1087.73,
+        "duration": 5.37
+    },
+    {
+        "text": "with differs between the two though is",
+        "start": 1091.299,
+        "duration": 5.581
+    },
+    {
+        "text": "how each gene is affected so for example",
+        "start": 1093.1,
+        "duration": 6.51
+    },
+    {
+        "text": "in the flower matrix these two genes",
+        "start": 1096.88,
+        "duration": 3.96
+    },
+    {
+        "text": "aren't affected by the factor of",
+        "start": 1099.61,
+        "duration": 4.949
+    },
+    {
+        "text": "interest at all whereas in this one they",
+        "start": 1100.84,
+        "duration": 7.02
+    },
+    {
+        "text": "are so just knowing the factor of",
+        "start": 1104.559,
+        "duration": 5.971
+    },
+    {
+        "text": "interest alone isn't isn't enough to",
+        "start": 1107.86,
+        "duration": 5.37
+    },
+    {
+        "text": "solve the identifiability issue and",
+        "start": 1110.53,
+        "duration": 6.149
+    },
+    {
+        "text": "again the critical issue is that the",
+        "start": 1113.23,
+        "duration": 5.25
+    },
+    {
+        "text": "wanted variation and the unwanted",
+        "start": 1116.679,
+        "duration": 5.581
+    },
+    {
+        "text": "variation could be correlated okay",
+        "start": 1118.48,
+        "duration": 9.93
+    },
+    {
+        "text": "so just highlight the the challenges the",
+        "start": 1122.26,
+        "duration": 7.83
+    },
+    {
+        "text": "the two that I've more or less focused",
+        "start": 1128.41,
+        "duration": 5.13
+    },
+    {
+        "text": "on in these last couple of comments are",
+        "start": 1130.09,
+        "duration": 6.45
+    },
+    {
+        "text": "that these are are related solely",
+        "start": 1133.54,
+        "duration": 5.46
+    },
+    {
+        "text": "distinct we need to worry about defining",
+        "start": 1136.54,
+        "duration": 5.46
+    },
+    {
+        "text": "unwanted variation so in any context we",
+        "start": 1139.0,
+        "duration": 5.34
+    },
+    {
+        "text": "need to be some way to define what",
+        "start": 1142.0,
+        "duration": 4.11
+    },
+    {
+        "text": "variation is because of interest to us",
+        "start": 1144.34,
+        "duration": 4.38
+    },
+    {
+        "text": "and which variation is not and then",
+        "start": 1146.11,
+        "duration": 5.28
+    },
+    {
+        "text": "aside from just in some sense defining",
+        "start": 1148.72,
+        "duration": 4.53
+    },
+    {
+        "text": "what variation is wanted and I wanted we",
+        "start": 1151.39,
+        "duration": 3.24
+    },
+    {
+        "text": "need some way statistically have",
+        "start": 1153.25,
+        "duration": 4.95
+    },
+    {
+        "text": "identified okay so those are two of our",
+        "start": 1154.63,
+        "duration": 7.74
+    },
+    {
+        "text": "key challenges in addition I haven't",
+        "start": 1158.2,
+        "duration": 6.75
+    },
+    {
+        "text": "collaborated on these too much but we",
+        "start": 1162.37,
+        "duration": 5.22
+    },
+    {
+        "text": "once we've defined and I identified our",
+        "start": 1164.95,
+        "duration": 3.99
+    },
+    {
+        "text": "on what a variation we still need some",
+        "start": 1167.59,
+        "duration": 3.18
+    },
+    {
+        "text": "sort of statistical method for actually",
+        "start": 1168.94,
+        "duration": 3.9
+    },
+    {
+        "text": "separating them out and at the end of",
+        "start": 1170.77,
+        "duration": 4.77
+    },
+    {
+        "text": "the day we also need methods to validate",
+        "start": 1172.84,
+        "duration": 5.79
+    },
+    {
+        "text": "our analysis I'm not going to go into",
+        "start": 1175.54,
+        "duration": 6.45
+    },
+    {
+        "text": "too much detail on those but decide flag",
+        "start": 1178.63,
+        "duration": 9.51
+    },
+    {
+        "text": "it okay so now I'm going to just talk a",
+        "start": 1181.99,
+        "duration": 8.46
+    },
+    {
+        "text": "little bit about in general the",
+        "start": 1188.14,
+        "duration": 5.99
+    },
+    {
+        "text": "are you the framework which will help",
+        "start": 1190.45,
+        "duration": 7.23
+    },
+    {
+        "text": "give us ways to deal with all of these",
+        "start": 1194.13,
+        "duration": 8.35
+    },
+    {
+        "text": "problems put mini outline for the next",
+        "start": 1197.68,
+        "duration": 6.78
+    },
+    {
+        "text": "couple of minutes I'm going to first",
+        "start": 1202.48,
+        "duration": 4.23
+    },
+    {
+        "text": "present a model that is common to all of",
+        "start": 1204.46,
+        "duration": 6.0
+    },
+    {
+        "text": "our Evie methods and then going to talk",
+        "start": 1206.71,
+        "duration": 5.79
+    },
+    {
+        "text": "about negative controls which are one of",
+        "start": 1210.46,
+        "duration": 4.38
+    },
+    {
+        "text": "the key tools that the arguing methods",
+        "start": 1212.5,
+        "duration": 5.72
+    },
+    {
+        "text": "make yourself the the negative controls",
+        "start": 1214.84,
+        "duration": 7.73
+    },
+    {
+        "text": "help us both define and identify",
+        "start": 1218.22,
+        "duration": 11.35
+    },
+    {
+        "text": "unwanted variation sometimes or actually",
+        "start": 1222.57,
+        "duration": 8.38
+    },
+    {
+        "text": "always in addition to the negative",
+        "start": 1229.57,
+        "duration": 2.79
+    },
+    {
+        "text": "controls we still need at least a little",
+        "start": 1230.95,
+        "duration": 3.66
+    },
+    {
+        "text": "bit more information to fully identify",
+        "start": 1232.36,
+        "duration": 5.22
+    },
+    {
+        "text": "the unwanted variation and there's",
+        "start": 1234.61,
+        "duration": 4.26
+    },
+    {
+        "text": "various different ways we can do that I",
+        "start": 1237.58,
+        "duration": 3.84
+    },
+    {
+        "text": "refer to these as secondary identifying",
+        "start": 1238.87,
+        "duration": 4.71
+    },
+    {
+        "text": "assumptions and the one that I'm going",
+        "start": 1241.42,
+        "duration": 5.94
+    },
+    {
+        "text": "to to focus on quite a bit is replicants",
+        "start": 1243.58,
+        "duration": 7.11
+    },
+    {
+        "text": "so in the rav framework two things that",
+        "start": 1247.36,
+        "duration": 7.35
+    },
+    {
+        "text": "you you make a lot of use are make a lot",
+        "start": 1250.69,
+        "duration": 6.06
+    },
+    {
+        "text": "of use out of our negative controls and",
+        "start": 1254.71,
+        "duration": 5.25
+    },
+    {
+        "text": "replicates so I'll explain what these",
+        "start": 1256.75,
+        "duration": 5.34
+    },
+    {
+        "text": "are tell that used and then I'll just",
+        "start": 1259.96,
+        "duration": 4.65
+    },
+    {
+        "text": "conclude with the slide explaining why I",
+        "start": 1262.09,
+        "duration": 6.15
+    },
+    {
+        "text": "think this is useful okay so here's the",
+        "start": 1264.61,
+        "duration": 6.72
+    },
+    {
+        "text": "model um this is a model that will be",
+        "start": 1268.24,
+        "duration": 7.35
+    },
+    {
+        "text": "used for all of the Reeb methods it's",
+        "start": 1271.33,
+        "duration": 6.84
+    },
+    {
+        "text": "that we've got our observed expression",
+        "start": 1275.59,
+        "duration": 5.91
+    },
+    {
+        "text": "data why it's gonna be equal to some",
+        "start": 1278.17,
+        "duration": 7.47
+    },
+    {
+        "text": "wanted variation which is the product of",
+        "start": 1281.5,
+        "duration": 5.73
+    },
+    {
+        "text": "a factor of interest in some regression",
+        "start": 1285.64,
+        "duration": 4.71
+    },
+    {
+        "text": "coefficients plus unwanted variation the",
+        "start": 1287.23,
+        "duration": 5.94
+    },
+    {
+        "text": "W alpha which again is unwanted factors",
+        "start": 1290.35,
+        "duration": 6.57
+    },
+    {
+        "text": "and regression coefficients plus some",
+        "start": 1293.17,
+        "duration": 7.86
+    },
+    {
+        "text": "some random error and then I've got this",
+        "start": 1296.92,
+        "duration": 7.35
+    },
+    {
+        "text": "table here the the Y is the observed",
+        "start": 1301.03,
+        "duration": 7.95
+    },
+    {
+        "text": "data M is the number of observations in",
+        "start": 1304.27,
+        "duration": 7.62
+    },
+    {
+        "text": "this case it's 84 I lied a little bit at",
+        "start": 1308.98,
+        "duration": 4.5
+    },
+    {
+        "text": "the beginning of the talk I said that",
+        "start": 1311.89,
+        "duration": 4.02
+    },
+    {
+        "text": "there were many microwaves six of them",
+        "start": 1313.48,
+        "duration": 4.59
+    },
+    {
+        "text": "for whatever reason are missing from GE",
+        "start": 1315.91,
+        "duration": 4.53
+    },
+    {
+        "text": "oh so it's actually before that we have",
+        "start": 1318.07,
+        "duration": 4.53
+    },
+    {
+        "text": "there's four thousand six hundred genes",
+        "start": 1320.44,
+        "duration": 3.84
+    },
+    {
+        "text": "X is the factory",
+        "start": 1322.6,
+        "duration": 3.36
+    },
+    {
+        "text": "which might be something like gender or",
+        "start": 1324.28,
+        "duration": 5.3
+    },
+    {
+        "text": "brain region WR WR the unwanted factors",
+        "start": 1325.96,
+        "duration": 6.24
+    },
+    {
+        "text": "and then very importantly this w",
+        "start": 1329.58,
+        "duration": 5.71
+    },
+    {
+        "text": "typically it's it's unobserved we don't",
+        "start": 1332.2,
+        "duration": 5.22
+    },
+    {
+        "text": "know it but it consists of things like",
+        "start": 1335.29,
+        "duration": 6.24
+    },
+    {
+        "text": "reagent quality and just to point it out",
+        "start": 1337.42,
+        "duration": 7.02
+    },
+    {
+        "text": "this model is originally due to leak and",
+        "start": 1341.53,
+        "duration": 11.12
+    },
+    {
+        "text": "story and to stay go into okay so now",
+        "start": 1344.44,
+        "duration": 12.3
+    },
+    {
+        "text": "negative controls negative controls and",
+        "start": 1352.65,
+        "duration": 6.07
+    },
+    {
+        "text": "these are central to all of the method",
+        "start": 1356.74,
+        "duration": 4.32
+    },
+    {
+        "text": "thing in the describe they are features",
+        "start": 1358.72,
+        "duration": 6.41
+    },
+    {
+        "text": "by which I mean typically genes that are",
+        "start": 1361.06,
+        "duration": 7.68
+    },
+    {
+        "text": "unaffected by the factor of interest so",
+        "start": 1365.13,
+        "duration": 5.8
+    },
+    {
+        "text": "in our case unaffected by gender for",
+        "start": 1368.74,
+        "duration": 6.15
+    },
+    {
+        "text": "example but are affected by the unwanted",
+        "start": 1370.93,
+        "duration": 12.0
+    },
+    {
+        "text": "factors okay so as an example um one",
+        "start": 1374.89,
+        "duration": 10.14
+    },
+    {
+        "text": "example might be spike in controls and a",
+        "start": 1382.93,
+        "duration": 3.78
+    },
+    {
+        "text": "lot of micro experiments this one",
+        "start": 1385.03,
+        "duration": 5.49
+    },
+    {
+        "text": "included a a researcher will spike in",
+        "start": 1386.71,
+        "duration": 7.59
+    },
+    {
+        "text": "bacterial RNA and then there's some of",
+        "start": 1390.52,
+        "duration": 5.01
+    },
+    {
+        "text": "the probes on the microarray that",
+        "start": 1394.3,
+        "duration": 4.53
+    },
+    {
+        "text": "respond to this bacterial RNA spike in a",
+        "start": 1395.53,
+        "duration": 7.02
+    },
+    {
+        "text": "fix little quantities and typically this",
+        "start": 1398.83,
+        "duration": 7.92
+    },
+    {
+        "text": "is used as a as a quality check I like",
+        "start": 1402.55,
+        "duration": 5.52
+    },
+    {
+        "text": "to be using it as the basis of a",
+        "start": 1406.75,
+        "duration": 4.05
+    },
+    {
+        "text": "normalization basically the the logic is",
+        "start": 1408.07,
+        "duration": 5.21
+    },
+    {
+        "text": "going to be that the spike in controls",
+        "start": 1410.8,
+        "duration": 5.01
+    },
+    {
+        "text": "any observed variation in the spike in",
+        "start": 1413.28,
+        "duration": 3.94
+    },
+    {
+        "text": "controls is not going to be due to",
+        "start": 1415.81,
+        "duration": 3.75
+    },
+    {
+        "text": "gender because it's this external spike",
+        "start": 1417.22,
+        "duration": 6.27
+    },
+    {
+        "text": "in but it will hopefully pick up a lot",
+        "start": 1419.56,
+        "duration": 6.09
+    },
+    {
+        "text": "of these unwanted factors so that will",
+        "start": 1423.49,
+        "duration": 5.73
+    },
+    {
+        "text": "form the basis of our adjustment to be a",
+        "start": 1425.65,
+        "duration": 7.11
+    },
+    {
+        "text": "little bit more explicit so suppose that",
+        "start": 1429.22,
+        "duration": 6.63
+    },
+    {
+        "text": "we have a number and sub peak of our our",
+        "start": 1432.76,
+        "duration": 4.8
+    },
+    {
+        "text": "end columns of white or negative",
+        "start": 1435.85,
+        "duration": 6.27
+    },
+    {
+        "text": "controls we're gonna let Y sub C be the",
+        "start": 1437.56,
+        "duration": 7.35
+    },
+    {
+        "text": "N by n sub C sub matrix of Y that",
+        "start": 1442.12,
+        "duration": 4.05
+    },
+    {
+        "text": "contains only the columns of the",
+        "start": 1444.91,
+        "duration": 3.6
+    },
+    {
+        "text": "negative controls we're also going to",
+        "start": 1446.17,
+        "duration": 4.14
+    },
+    {
+        "text": "define this beta sub C alpha sub C and",
+        "start": 1448.51,
+        "duration": 3.51
+    },
+    {
+        "text": "epsilon sub C similarly these are all",
+        "start": 1450.31,
+        "duration": 6.09
+    },
+    {
+        "text": "sub matrices and we then have this this",
+        "start": 1452.02,
+        "duration": 5.62
+    },
+    {
+        "text": "equation",
+        "start": 1456.4,
+        "duration": 3.67
+    },
+    {
+        "text": "it's the same model but just applied now",
+        "start": 1457.64,
+        "duration": 6.18
+    },
+    {
+        "text": "to just the negative controls now what's",
+        "start": 1460.07,
+        "duration": 12.44
+    },
+    {
+        "text": "important here if that is let's down",
+        "start": 1463.82,
+        "duration": 12.3
+    },
+    {
+        "text": "this beta sub C that's equal to 0 by",
+        "start": 1472.51,
+        "duration": 5.919
+    },
+    {
+        "text": "assumption that is our assumption that",
+        "start": 1476.12,
+        "duration": 4.08
+    },
+    {
+        "text": "the negative controls are unaffected by",
+        "start": 1478.429,
+        "duration": 4.5
+    },
+    {
+        "text": "the factor of interest so that term",
+        "start": 1480.2,
+        "duration": 5.97
+    },
+    {
+        "text": "disappears and we're left with what",
+        "start": 1482.929,
+        "duration": 4.801
+    },
+    {
+        "text": "looks like just an ordinary factor",
+        "start": 1486.17,
+        "duration": 5.4
+    },
+    {
+        "text": "analysis model and so we can actually",
+        "start": 1487.73,
+        "duration": 6.24
+    },
+    {
+        "text": "estimate W by factor analysis and that",
+        "start": 1491.57,
+        "duration": 4.55
+    },
+    {
+        "text": "is what essentially solves our",
+        "start": 1493.97,
+        "duration": 5.25
+    },
+    {
+        "text": "identifiability problem the the negative",
+        "start": 1496.12,
+        "duration": 5.11
+    },
+    {
+        "text": "controls are give us a way to estimate",
+        "start": 1499.22,
+        "duration": 6.75
+    },
+    {
+        "text": "the W even for when the unknown or when",
+        "start": 1501.23,
+        "duration": 6.15
+    },
+    {
+        "text": "the sources of unwanted variation are",
+        "start": 1505.97,
+        "duration": 6.06
+    },
+    {
+        "text": "unknown to us so I want to I want to",
+        "start": 1507.38,
+        "duration": 6.929
+    },
+    {
+        "text": "stop and just talk for a second about",
+        "start": 1512.03,
+        "duration": 5.69
+    },
+    {
+        "text": "this this negative control assumption so",
+        "start": 1514.309,
+        "duration": 6.781
+    },
+    {
+        "text": "this is this is our key assumption it's",
+        "start": 1517.72,
+        "duration": 4.959
+    },
+    {
+        "text": "this assumption that the negative",
+        "start": 1521.09,
+        "duration": 6.3
+    },
+    {
+        "text": "controls are unaffected by our factor of",
+        "start": 1522.679,
+        "duration": 8.011
+    },
+    {
+        "text": "interest and what I really want to point",
+        "start": 1527.39,
+        "duration": 6.72
+    },
+    {
+        "text": "out is that this is this has to be some",
+        "start": 1530.69,
+        "duration": 5.34
+    },
+    {
+        "text": "sort of assumption based on on prior",
+        "start": 1534.11,
+        "duration": 5.28
+    },
+    {
+        "text": "knowledge the negative controls cannot",
+        "start": 1536.03,
+        "duration": 7.32
+    },
+    {
+        "text": "be discovered novo from our data and in",
+        "start": 1539.39,
+        "duration": 8.659
+    },
+    {
+        "text": "particular what this assumption does not",
+        "start": 1543.35,
+        "duration": 7.41
+    },
+    {
+        "text": "or what we cannot do if we cannot just",
+        "start": 1548.049,
+        "duration": 4.271
+    },
+    {
+        "text": "look at our data find genes that are",
+        "start": 1550.76,
+        "duration": 3.51
+    },
+    {
+        "text": "uncorrelated with our factor of interest",
+        "start": 1552.32,
+        "duration": 4.05
+    },
+    {
+        "text": "and call them negative controls we can't",
+        "start": 1554.27,
+        "duration": 7.38
+    },
+    {
+        "text": "do that because it's actually possible",
+        "start": 1556.37,
+        "duration": 7.679
+    },
+    {
+        "text": "that the the negative controls are",
+        "start": 1561.65,
+        "duration": 5.01
+    },
+    {
+        "text": "things that are correlated with the",
+        "start": 1564.049,
+        "duration": 4.321
+    },
+    {
+        "text": "factor of interest and that would happen",
+        "start": 1566.66,
+        "duration": 4.74
+    },
+    {
+        "text": "if the if the unwanted factors are",
+        "start": 1568.37,
+        "duration": 4.559
+    },
+    {
+        "text": "themselves correlated with the factor of",
+        "start": 1571.4,
+        "duration": 3.75
+    },
+    {
+        "text": "interest then the negative controls",
+        "start": 1572.929,
+        "duration": 3.75
+    },
+    {
+        "text": "should be all set okay",
+        "start": 1575.15,
+        "duration": 4.019
+    },
+    {
+        "text": "so this assumption this assumption is",
+        "start": 1576.679,
+        "duration": 5.13
+    },
+    {
+        "text": "not an assumption about correlated",
+        "start": 1579.169,
+        "duration": 5.01
+    },
+    {
+        "text": "negatively factor of interest",
+        "start": 1581.809,
+        "duration": 5.911
+    },
+    {
+        "text": "this is assumption about whether it",
+        "start": 1584.179,
+        "duration": 5.311
+    },
+    {
+        "text": "might be slightly too strong a word but",
+        "start": 1587.72,
+        "duration": 2.58
+    },
+    {
+        "text": "all",
+        "start": 1589.49,
+        "duration": 3.57
+    },
+    {
+        "text": "it's hopeful it's it's an assumption",
+        "start": 1590.3,
+        "duration": 4.83
+    },
+    {
+        "text": "about whether or not the the factor of",
+        "start": 1593.06,
+        "duration": 5.96
+    },
+    {
+        "text": "interest actually causes changes in the",
+        "start": 1595.13,
+        "duration": 7.08
+    },
+    {
+        "text": "in the negative controls this is saying",
+        "start": 1599.02,
+        "duration": 4.81
+    },
+    {
+        "text": "that the unwanted in fact the unwind",
+        "start": 1602.21,
+        "duration": 3.78
+    },
+    {
+        "text": "factor does not have any effect on the",
+        "start": 1603.83,
+        "duration": 10.74
+    },
+    {
+        "text": "on the negative controls I'm talking",
+        "start": 1605.99,
+        "duration": 10.68
+    },
+    {
+        "text": "about the negative controls they don't",
+        "start": 1614.57,
+        "duration": 11.12
+    },
+    {
+        "text": "need to be perfect so it can it it is a",
+        "start": 1616.67,
+        "duration": 12.18
+    },
+    {
+        "text": "seemingly strong assumption that these",
+        "start": 1625.69,
+        "duration": 7.63
+    },
+    {
+        "text": "that we need to pick jeans or Vikings or",
+        "start": 1628.85,
+        "duration": 5.94
+    },
+    {
+        "text": "something like that that are unaffected",
+        "start": 1633.32,
+        "duration": 4.92
+    },
+    {
+        "text": "by the factor of interest but they don't",
+        "start": 1634.79,
+        "duration": 5.93
+    },
+    {
+        "text": "need to be perfect and in a lot of cases",
+        "start": 1638.24,
+        "duration": 5.67
+    },
+    {
+        "text": "having a set of jeans that at least most",
+        "start": 1640.72,
+        "duration": 5.29
+    },
+    {
+        "text": "of them are unaffected by the factor of",
+        "start": 1643.91,
+        "duration": 4.5
+    },
+    {
+        "text": "interest will do or in some situations",
+        "start": 1646.01,
+        "duration": 4.32
+    },
+    {
+        "text": "depending on exactly which method we're",
+        "start": 1648.41,
+        "duration": 4.86
+    },
+    {
+        "text": "using will even work if on average there",
+        "start": 1650.33,
+        "duration": 4.41
+    },
+    {
+        "text": "are they're unaffected by the factor of",
+        "start": 1653.27,
+        "duration": 7.29
+    },
+    {
+        "text": "interest okay so it's a somewhat strong",
+        "start": 1654.74,
+        "duration": 7.44
+    },
+    {
+        "text": "assumption but also it's not one that",
+        "start": 1660.56,
+        "duration": 5.37
+    },
+    {
+        "text": "needs to be perfect okay",
+        "start": 1662.18,
+        "duration": 7.62
+    },
+    {
+        "text": "so that's that's a negative controls not",
+        "start": 1665.93,
+        "duration": 5.7
+    },
+    {
+        "text": "going to talk about secondary",
+        "start": 1669.8,
+        "duration": 4.14
+    },
+    {
+        "text": "identifying assumptions so I said that",
+        "start": 1671.63,
+        "duration": 3.72
+    },
+    {
+        "text": "we need the negative controls but then",
+        "start": 1673.94,
+        "duration": 5.1
+    },
+    {
+        "text": "we also need something else so we saw",
+        "start": 1675.35,
+        "duration": 5.07
+    },
+    {
+        "text": "that the negative controls say help us",
+        "start": 1679.04,
+        "duration": 3.87
+    },
+    {
+        "text": "get W but we still need to get also",
+        "start": 1680.42,
+        "duration": 5.16
+    },
+    {
+        "text": "somehow or other and here are some ways",
+        "start": 1682.91,
+        "duration": 5.52
+    },
+    {
+        "text": "that we can do that one is to have to",
+        "start": 1685.58,
+        "duration": 5.43
+    },
+    {
+        "text": "have a known factor of interest so if",
+        "start": 1688.43,
+        "duration": 3.63
+    },
+    {
+        "text": "we're doing a differential expression",
+        "start": 1691.01,
+        "duration": 3.83
+    },
+    {
+        "text": "analysis and we've got negative controls",
+        "start": 1692.06,
+        "duration": 6.45
+    },
+    {
+        "text": "we're pretty much good to go in some",
+        "start": 1694.84,
+        "duration": 5.92
+    },
+    {
+        "text": "cases though we won't have a known",
+        "start": 1698.51,
+        "duration": 5.49
+    },
+    {
+        "text": "factor of interest which that might",
+        "start": 1700.76,
+        "duration": 5.13
+    },
+    {
+        "text": "sound kind of weird like what kind of",
+        "start": 1704.0,
+        "duration": 3.18
+    },
+    {
+        "text": "analysis are we doing if we don't have a",
+        "start": 1705.89,
+        "duration": 3.57
+    },
+    {
+        "text": "known factor of interest what I mean by",
+        "start": 1707.18,
+        "duration": 3.6
+    },
+    {
+        "text": "that if something for example like if",
+        "start": 1709.46,
+        "duration": 4.68
+    },
+    {
+        "text": "we're doing a clustering analysis where",
+        "start": 1710.78,
+        "duration": 5.61
+    },
+    {
+        "text": "the the biology of interest is these",
+        "start": 1714.14,
+        "duration": 3.87
+    },
+    {
+        "text": "clusters that we are discovering but",
+        "start": 1716.39,
+        "duration": 5.58
+    },
+    {
+        "text": "they're not known ahead of time so in",
+        "start": 1718.01,
+        "duration": 5.79
+    },
+    {
+        "text": "situations where we don't have a known",
+        "start": 1721.97,
+        "duration": 3.27
+    },
+    {
+        "text": "Proctor Pinterest other things that we",
+        "start": 1723.8,
+        "duration": 3.66
+    },
+    {
+        "text": "can do we can make you send the",
+        "start": 1725.24,
+        "duration": 4.14
+    },
+    {
+        "text": "assumption that the the factor of",
+        "start": 1727.46,
+        "duration": 4.76
+    },
+    {
+        "text": "interest and unlimited actors are",
+        "start": 1729.38,
+        "duration": 5.67
+    },
+    {
+        "text": "uncorrelated that might be justified for",
+        "start": 1732.22,
+        "duration": 5.14
+    },
+    {
+        "text": "example if we've got a randomized study",
+        "start": 1735.05,
+        "duration": 4.92
+    },
+    {
+        "text": "where the factor of interest is",
+        "start": 1737.36,
+        "duration": 4.29
+    },
+    {
+        "text": "treatment or control and with assigned",
+        "start": 1739.97,
+        "duration": 5.76
+    },
+    {
+        "text": "at random another thing that we might",
+        "start": 1741.65,
+        "duration": 6.39
+    },
+    {
+        "text": "that we can make you so this is if we",
+        "start": 1745.73,
+        "duration": 6.75
+    },
+    {
+        "text": "have gene wide covariance this is",
+        "start": 1748.04,
+        "duration": 5.82
+    },
+    {
+        "text": "something that I I'm not going to talk",
+        "start": 1752.48,
+        "duration": 2.76
+    },
+    {
+        "text": "very much about in this talk fine let's",
+        "start": 1753.86,
+        "duration": 3.6
+    },
+    {
+        "text": "skip over that the one thing that I'm",
+        "start": 1755.24,
+        "duration": 4.08
+    },
+    {
+        "text": "going to talk about a lot though is we",
+        "start": 1757.46,
+        "duration": 5.58
+    },
+    {
+        "text": "might have replicates and replicates are",
+        "start": 1759.32,
+        "duration": 9.54
+    },
+    {
+        "text": "a another way of getting alpha okay so",
+        "start": 1763.04,
+        "duration": 9.11
+    },
+    {
+        "text": "I'm going to talk about what gets them",
+        "start": 1768.86,
+        "duration": 3.29
+    },
+    {
+        "text": "so suppose that we have two replicates",
+        "start": 1772.66,
+        "duration": 7.93
+    },
+    {
+        "text": "y1 and y2 and so what I mean by this",
+        "start": 1776.08,
+        "duration": 7.12
+    },
+    {
+        "text": "would be for example that say both y1",
+        "start": 1780.59,
+        "duration": 3.36
+    },
+    {
+        "text": "and y2",
+        "start": 1783.2,
+        "duration": 3.03
+    },
+    {
+        "text": "they're both micro rays from the same",
+        "start": 1783.95,
+        "duration": 5.09
+    },
+    {
+        "text": "same sample so say they should one",
+        "start": 1786.23,
+        "duration": 6.12
+    },
+    {
+        "text": "cerebellum but one of them was done it",
+        "start": 1789.04,
+        "duration": 4.75
+    },
+    {
+        "text": "Irvine and one of them was done at",
+        "start": 1792.35,
+        "duration": 3.3
+    },
+    {
+        "text": "Michigan for example so we have two",
+        "start": 1793.79,
+        "duration": 5.46
+    },
+    {
+        "text": "relatives this is this is an expression",
+        "start": 1795.65,
+        "duration": 7.98
+    },
+    {
+        "text": "for or from the model for the for one of",
+        "start": 1799.25,
+        "duration": 6.12
+    },
+    {
+        "text": "them and then was about also to the",
+        "start": 1803.63,
+        "duration": 4.11
+    },
+    {
+        "text": "second one and then critically this part",
+        "start": 1805.37,
+        "duration": 5.55
+    },
+    {
+        "text": "here down to the bottom this is key the",
+        "start": 1807.74,
+        "duration": 4.62
+    },
+    {
+        "text": "factor of interest in both of them is",
+        "start": 1810.92,
+        "duration": 5.01
+    },
+    {
+        "text": "going to be the same because again both",
+        "start": 1812.36,
+        "duration": 5.01
+    },
+    {
+        "text": "of these come from the same tissue",
+        "start": 1815.93,
+        "duration": 3.15
+    },
+    {
+        "text": "sample so the biology is going to be the",
+        "start": 1817.37,
+        "duration": 5.58
+    },
+    {
+        "text": "same in both it's not a replication of",
+        "start": 1819.08,
+        "duration": 5.34
+    },
+    {
+        "text": "the same apartment since it's a",
+        "start": 1822.95,
+        "duration": 5.33
+    },
+    {
+        "text": "different place same tissue sample and",
+        "start": 1824.42,
+        "duration": 6.09
+    },
+    {
+        "text": "then they had different heliports and",
+        "start": 1828.28,
+        "duration": 4.39
+    },
+    {
+        "text": "sent them off to the different labs so",
+        "start": 1830.51,
+        "duration": 3.86
+    },
+    {
+        "text": "the the biology should be the same",
+        "start": 1832.67,
+        "duration": 6.26
+    },
+    {
+        "text": "because it's come from the same tissues",
+        "start": 1834.37,
+        "duration": 4.56
+    },
+    {
+        "text": "you've got you've got different people",
+        "start": 1840.82,
+        "duration": 4.81
+    },
+    {
+        "text": "like lab techs can have an amazing",
+        "start": 1843.29,
+        "duration": 7.14
+    },
+    {
+        "text": "effect on how these things work oh yeah",
+        "start": 1845.63,
+        "duration": 6.51
+    },
+    {
+        "text": "train that was different chip versions",
+        "start": 1850.43,
+        "duration": 3.54
+    },
+    {
+        "text": "between some of the sons and that can",
+        "start": 1852.14,
+        "duration": 2.49
+    },
+    {
+        "text": "hit me",
+        "start": 1853.97,
+        "duration": 3.72
+    },
+    {
+        "text": "but but in both cases it comes from the",
+        "start": 1854.63,
+        "duration": 6.06
+    },
+    {
+        "text": "same same tissue sample extracted so the",
+        "start": 1857.69,
+        "duration": 4.83
+    },
+    {
+        "text": "whatever biology that you're going to be",
+        "start": 1860.69,
+        "duration": 4.229
+    },
+    {
+        "text": "interested in that factor is gonna be",
+        "start": 1862.52,
+        "duration": 9.93
+    },
+    {
+        "text": "the same started was it yes the",
+        "start": 1864.919,
+        "duration": 9.331
+    },
+    {
+        "text": "biological factor the the thing that",
+        "start": 1872.45,
+        "duration": 4.08
+    },
+    {
+        "text": "you're interested in that it's not",
+        "start": 1874.25,
+        "duration": 6.26
+    },
+    {
+        "text": "varying from from one to the other",
+        "start": 1876.53,
+        "duration": 3.98
+    },
+    {
+        "text": "okay so if we usually subtract these two",
+        "start": 1881.33,
+        "duration": 8.87
+    },
+    {
+        "text": "if we subtract these two replicates",
+        "start": 1887.289,
+        "duration": 7.361
+    },
+    {
+        "text": "there's there's a math of it but then",
+        "start": 1890.2,
+        "duration": 7.75
+    },
+    {
+        "text": "critically this x2 minus x1 so the",
+        "start": 1894.65,
+        "duration": 5.61
+    },
+    {
+        "text": "whatever the biology is that's gonna",
+        "start": 1897.95,
+        "duration": 6.479
+    },
+    {
+        "text": "that's going to cancel out this term",
+        "start": 1900.26,
+        "duration": 7.38
+    },
+    {
+        "text": "will disappear and we'll be left with",
+        "start": 1904.429,
+        "duration": 6.931
+    },
+    {
+        "text": "this so we're now left with just the",
+        "start": 1907.64,
+        "duration": 6.96
+    },
+    {
+        "text": "unwanted variation so again we started",
+        "start": 1911.36,
+        "duration": 5.76
+    },
+    {
+        "text": "this is the the same tissue sample was",
+        "start": 1914.6,
+        "duration": 6.689
+    },
+    {
+        "text": "sent to two different labs and the what",
+        "start": 1917.12,
+        "duration": 6.96
+    },
+    {
+        "text": "I'm saying here is that any variation",
+        "start": 1921.289,
+        "duration": 5.941
+    },
+    {
+        "text": "that exists between what one lab says",
+        "start": 1924.08,
+        "duration": 5.03
+    },
+    {
+        "text": "and what the other lab says is",
+        "start": 1927.23,
+        "duration": 5.189
+    },
+    {
+        "text": "essentially by definition stuff that",
+        "start": 1929.11,
+        "duration": 6.13
+    },
+    {
+        "text": "some wanted an idea world the two labs",
+        "start": 1932.419,
+        "duration": 9.601
+    },
+    {
+        "text": "would say the same thing okay and so if",
+        "start": 1935.24,
+        "duration": 9.36
+    },
+    {
+        "text": "we now have a bunch of replicates we",
+        "start": 1942.02,
+        "duration": 3.93
+    },
+    {
+        "text": "could build up a matrix of these",
+        "start": 1944.6,
+        "duration": 4.47
+    },
+    {
+        "text": "differences and do factor analysis and",
+        "start": 1945.95,
+        "duration": 4.969
+    },
+    {
+        "text": "that would give us a way of identifying",
+        "start": 1949.07,
+        "duration": 12.93
+    },
+    {
+        "text": "this alpha so just a highlight here what",
+        "start": 1950.919,
+        "duration": 12.341
+    },
+    {
+        "text": "I said about negative controls the",
+        "start": 1962.0,
+        "duration": 3.059
+    },
+    {
+        "text": "replicates there they're similar in a",
+        "start": 1963.26,
+        "duration": 4.11
+    },
+    {
+        "text": "lot of ways you can think of them as has",
+        "start": 1965.059,
+        "duration": 4.801
+    },
+    {
+        "text": "dual to each other the negative controls",
+        "start": 1967.37,
+        "duration": 5.01
+    },
+    {
+        "text": "these are genes where we assume that the",
+        "start": 1969.86,
+        "duration": 4.23
+    },
+    {
+        "text": "beta and zero and they allow",
+        "start": 1972.38,
+        "duration": 4.76
+    },
+    {
+        "text": "identification of the W and then",
+        "start": 1974.09,
+        "duration": 6.15
+    },
+    {
+        "text": "conversely replicates these are rate",
+        "start": 1977.14,
+        "duration": 6.039
+    },
+    {
+        "text": "differences and we're in taking the",
+        "start": 1980.24,
+        "duration": 5.97
+    },
+    {
+        "text": "difference the X is zero and this allows",
+        "start": 1983.179,
+        "duration": 5.13
+    },
+    {
+        "text": "us identification of",
+        "start": 1986.21,
+        "duration": 3.99
+    },
+    {
+        "text": "so between the two of those were able to",
+        "start": 1988.309,
+        "duration": 6.061
+    },
+    {
+        "text": "get W and alpha and identify the",
+        "start": 1990.2,
+        "duration": 7.97
+    },
+    {
+        "text": "unwanted variation and then remove it",
+        "start": 1994.37,
+        "duration": 3.8
+    },
+    {
+        "text": "okay so just a highlight why I think all",
+        "start": 1998.47,
+        "duration": 10.0
+    },
+    {
+        "text": "of this is useful why why do we want to",
+        "start": 2002.71,
+        "duration": 8.31
+    },
+    {
+        "text": "try and remove unwanted variation using",
+        "start": 2008.47,
+        "duration": 5.49
+    },
+    {
+        "text": "negative controls and replicates one",
+        "start": 2011.02,
+        "duration": 5.4
+    },
+    {
+        "text": "reason is because this general framework",
+        "start": 2013.96,
+        "duration": 5.91
+    },
+    {
+        "text": "is somewhat flexible in that by and by",
+        "start": 2016.42,
+        "duration": 5.639
+    },
+    {
+        "text": "that I mean that the the negative",
+        "start": 2019.87,
+        "duration": 4.14
+    },
+    {
+        "text": "controls in the replicates they not only",
+        "start": 2022.059,
+        "duration": 3.99
+    },
+    {
+        "text": "help us identify the unwanted variation",
+        "start": 2024.01,
+        "duration": 3.9
+    },
+    {
+        "text": "but when we go to choose what is a",
+        "start": 2026.049,
+        "duration": 3.771
+    },
+    {
+        "text": "negative control and when we go to",
+        "start": 2027.91,
+        "duration": 6.899
+    },
+    {
+        "text": "choose what is a replicate and I guess I",
+        "start": 2029.82,
+        "duration": 7.45
+    },
+    {
+        "text": "should say for a second there are",
+        "start": 2034.809,
+        "duration": 3.931
+    },
+    {
+        "text": "different notions of replicates there's",
+        "start": 2037.27,
+        "duration": 3.09
+    },
+    {
+        "text": "technical replicates there's biological",
+        "start": 2038.74,
+        "duration": 3.78
+    },
+    {
+        "text": "replicates when we choose what we mean",
+        "start": 2040.36,
+        "duration": 4.71
+    },
+    {
+        "text": "by a replicant we are implicitly also",
+        "start": 2042.52,
+        "duration": 5.07
+    },
+    {
+        "text": "defining what variation is wanted and",
+        "start": 2045.07,
+        "duration": 5.609
+    },
+    {
+        "text": "what variation is unwanted and I'll make",
+        "start": 2047.59,
+        "duration": 4.319
+    },
+    {
+        "text": "this a little bit more explicit when I",
+        "start": 2050.679,
+        "duration": 3.72
+    },
+    {
+        "text": "give some examples in a little bit but",
+        "start": 2051.909,
+        "duration": 5.7
+    },
+    {
+        "text": "in any case again the net by choosing",
+        "start": 2054.399,
+        "duration": 4.831
+    },
+    {
+        "text": "negative controls and choosing their",
+        "start": 2057.609,
+        "duration": 4.32
+    },
+    {
+        "text": "replicates we're not only identifying",
+        "start": 2059.23,
+        "duration": 4.879
+    },
+    {
+        "text": "the unwanted variation but we're also",
+        "start": 2061.929,
+        "duration": 6.21
+    },
+    {
+        "text": "defined at the same time so that is",
+        "start": 2064.109,
+        "duration": 17.411
+    },
+    {
+        "text": "helpful to us it well depends a little",
+        "start": 2068.139,
+        "duration": 15.571
+    },
+    {
+        "text": "bit on what you mean by by biological",
+        "start": 2081.52,
+        "duration": 10.409
+    },
+    {
+        "text": "replicates you said yo I see that",
+        "start": 2083.71,
+        "duration": 11.31
+    },
+    {
+        "text": "technically because it's by orbit but",
+        "start": 2091.929,
+        "duration": 8.19
+    },
+    {
+        "text": "you want biological replicas days that I",
+        "start": 2095.02,
+        "duration": 7.589
+    },
+    {
+        "text": "don't I'm not sure how often you can see",
+        "start": 2100.119,
+        "duration": 10.231
+    },
+    {
+        "text": "them um say I'll say often enough and",
+        "start": 2102.609,
+        "duration": 14.671
+    },
+    {
+        "text": "I'll also say that you do not very often",
+        "start": 2110.35,
+        "duration": 9.69
+    },
+    {
+        "text": "see experiments like this one that I've",
+        "start": 2117.28,
+        "duration": 3.96
+    },
+    {
+        "text": "showed where",
+        "start": 2120.04,
+        "duration": 3.69
+    },
+    {
+        "text": "everything is replicated or in this case",
+        "start": 2121.24,
+        "duration": 7.05
+    },
+    {
+        "text": "duplicated that is pretty rare but it is",
+        "start": 2123.73,
+        "duration": 6.45
+    },
+    {
+        "text": "not that uncommon to find experiments",
+        "start": 2128.29,
+        "duration": 3.54
+    },
+    {
+        "text": "where at least a handful of the samples",
+        "start": 2130.18,
+        "duration": 5.37
+    },
+    {
+        "text": "are replicated and even just having a",
+        "start": 2131.83,
+        "duration": 5.789
+    },
+    {
+        "text": "couple of them and can often be good",
+        "start": 2135.55,
+        "duration": 9.42
+    },
+    {
+        "text": "enough so if they can't do biological",
+        "start": 2137.619,
+        "duration": 10.981
+    },
+    {
+        "text": "replicates hmm that means they have the",
+        "start": 2144.97,
+        "duration": 6.149
+    },
+    {
+        "text": "resource to do everything on a set with",
+        "start": 2148.6,
+        "duration": 5.58
+    },
+    {
+        "text": "the same technical conditions then why",
+        "start": 2151.119,
+        "duration": 4.621
+    },
+    {
+        "text": "do they bother to do the power to",
+        "start": 2154.18,
+        "duration": 6.66
+    },
+    {
+        "text": "electric case in the first place so say",
+        "start": 2155.74,
+        "duration": 8.25
+    },
+    {
+        "text": "they can so they have the same brain",
+        "start": 2160.84,
+        "duration": 5.22
+    },
+    {
+        "text": "tissue they want to send two different",
+        "start": 2163.99,
+        "duration": 5.25
+    },
+    {
+        "text": "that I don't when they do everything on",
+        "start": 2166.06,
+        "duration": 6.51
+    },
+    {
+        "text": "the same in the same lab what can can I",
+        "start": 2169.24,
+        "duration": 6.78
+    },
+    {
+        "text": "talk about that at the end okay sorry I",
+        "start": 2172.57,
+        "duration": 4.92
+    },
+    {
+        "text": "fell hard a bit that I want to get to",
+        "start": 2176.02,
+        "duration": 3.99
+    },
+    {
+        "text": "but yeah let's talk about that at the",
+        "start": 2177.49,
+        "duration": 4.32
+    },
+    {
+        "text": "end okay",
+        "start": 2180.01,
+        "duration": 5.91
+    },
+    {
+        "text": "so why just again why I think this is",
+        "start": 2181.81,
+        "duration": 5.67
+    },
+    {
+        "text": "good it's it's flexible it's also",
+        "start": 2185.92,
+        "duration": 3.96
+    },
+    {
+        "text": "transparent like I said whenever you do",
+        "start": 2187.48,
+        "duration": 4.2
+    },
+    {
+        "text": "some sort of normalization you're gonna",
+        "start": 2189.88,
+        "duration": 6.18
+    },
+    {
+        "text": "be right relying on something to to get",
+        "start": 2191.68,
+        "duration": 8.07
+    },
+    {
+        "text": "the normalization going and by by doing",
+        "start": 2196.06,
+        "duration": 5.61
+    },
+    {
+        "text": "everything in terms of negative controls",
+        "start": 2199.75,
+        "duration": 4.47
+    },
+    {
+        "text": "of replicates the assumptions are really",
+        "start": 2201.67,
+        "duration": 4.8
+    },
+    {
+        "text": "front and center which I think it's good",
+        "start": 2204.22,
+        "duration": 4.889
+    },
+    {
+        "text": "because it makes it easy to to debate",
+        "start": 2206.47,
+        "duration": 5.37
+    },
+    {
+        "text": "them people can discuss whether or not",
+        "start": 2209.109,
+        "duration": 6.901
+    },
+    {
+        "text": "it makes sense and then as as I hope all",
+        "start": 2211.84,
+        "duration": 5.97
+    },
+    {
+        "text": "I'll show in the next couple slides also",
+        "start": 2216.01,
+        "duration": 6.96
+    },
+    {
+        "text": "it seems to work well okay so that is",
+        "start": 2217.81,
+        "duration": 7.83
+    },
+    {
+        "text": "that is all the high-level comments that",
+        "start": 2222.97,
+        "duration": 4.74
+    },
+    {
+        "text": "I'm going to make I'm not going to go",
+        "start": 2225.64,
+        "duration": 4.469
+    },
+    {
+        "text": "through the details of actually using",
+        "start": 2227.71,
+        "duration": 6.0
+    },
+    {
+        "text": "the Reeb package like I said all of this",
+        "start": 2230.109,
+        "duration": 7.471
+    },
+    {
+        "text": "is is on docker so some points I might",
+        "start": 2233.71,
+        "duration": 7.11
+    },
+    {
+        "text": "skip over fairly quickly in interest of",
+        "start": 2237.58,
+        "duration": 9.36
+    },
+    {
+        "text": "time but quickly outline of what's",
+        "start": 2240.82,
+        "duration": 8.1
+    },
+    {
+        "text": "included here in in the discussion of",
+        "start": 2246.94,
+        "duration": 4.919
+    },
+    {
+        "text": "the package I'll just give a quick",
+        "start": 2248.92,
+        "duration": 4.17
+    },
+    {
+        "text": "overview of the functions that are",
+        "start": 2251.859,
+        "duration": 3.811
+    },
+    {
+        "text": "included in the rav package",
+        "start": 2253.09,
+        "duration": 4.8
+    },
+    {
+        "text": "broadly speaking there is going to be",
+        "start": 2255.67,
+        "duration": 4.77
+    },
+    {
+        "text": "mission methods for regression analysis",
+        "start": 2257.89,
+        "duration": 5.28
+    },
+    {
+        "text": "or just to say differential expression",
+        "start": 2260.44,
+        "duration": 5.55
+    },
+    {
+        "text": "analysis and then also methods for for",
+        "start": 2263.17,
+        "duration": 5.55
+    },
+    {
+        "text": "global adjustments so I'll talk about",
+        "start": 2265.99,
+        "duration": 5.609
+    },
+    {
+        "text": "those separately and then once I do I'll",
+        "start": 2268.72,
+        "duration": 5.01
+    },
+    {
+        "text": "go we'll move on to the case studies",
+        "start": 2271.599,
+        "duration": 5.941
+    },
+    {
+        "text": "with the show you okay so quick overview",
+        "start": 2273.73,
+        "duration": 6.35
+    },
+    {
+        "text": "of the functions",
+        "start": 2277.54,
+        "duration": 2.54
+    },
+    {
+        "text": "there's there's basically so here the",
+        "start": 2280.41,
+        "duration": 7.39
+    },
+    {
+        "text": "the core are you via just ask there's",
+        "start": 2283.619,
+        "duration": 6.341
+    },
+    {
+        "text": "there's two for global adjustments are",
+        "start": 2287.8,
+        "duration": 5.7
+    },
+    {
+        "text": "you v1 and are you be 3 and there's four",
+        "start": 2289.96,
+        "duration": 7.38
+    },
+    {
+        "text": "for regression or differential",
+        "start": 2293.5,
+        "duration": 6.0
+    },
+    {
+        "text": "expression I'm going to talk about",
+        "start": 2297.34,
+        "duration": 4.32
+    },
+    {
+        "text": "hobbies separately in a minute so those",
+        "start": 2299.5,
+        "duration": 4.98
+    },
+    {
+        "text": "these are the the main adjustment",
+        "start": 2301.66,
+        "duration": 7.35
+    },
+    {
+        "text": "algorithms there's some helper functions",
+        "start": 2304.48,
+        "duration": 9.06
+    },
+    {
+        "text": "to help use these the the ones that I",
+        "start": 2309.01,
+        "duration": 6.33
+    },
+    {
+        "text": "have highlighted here and no these are",
+        "start": 2313.54,
+        "duration": 3.21
+    },
+    {
+        "text": "ones that you'll use on a pretty regular",
+        "start": 2315.34,
+        "duration": 9.42
+    },
+    {
+        "text": "basis there are some some functions for",
+        "start": 2316.75,
+        "duration": 11.88
+    },
+    {
+        "text": "making nice plots and there's also a",
+        "start": 2324.76,
+        "duration": 5.64
+    },
+    {
+        "text": "couple functions that they're they're",
+        "start": 2328.63,
+        "duration": 4.11
+    },
+    {
+        "text": "exposed to the user but not actually",
+        "start": 2330.4,
+        "duration": 6.56
+    },
+    {
+        "text": "intended to the east on a regular basis",
+        "start": 2332.74,
+        "duration": 6.48
+    },
+    {
+        "text": "there there are some cases where they",
+        "start": 2336.96,
+        "duration": 3.79
+    },
+    {
+        "text": "might be useful but on a regular basis",
+        "start": 2339.22,
+        "duration": 3.6
+    },
+    {
+        "text": "probably not the one that I really want",
+        "start": 2340.75,
+        "duration": 3.69
+    },
+    {
+        "text": "to draw your attention to is this one",
+        "start": 2342.82,
+        "duration": 4.88
+    },
+    {
+        "text": "gig get K which I've highlighted red",
+        "start": 2344.44,
+        "duration": 8.49
+    },
+    {
+        "text": "this is a function that returns a number",
+        "start": 2347.7,
+        "duration": 7.51
+    },
+    {
+        "text": "K which is the number of factors that",
+        "start": 2352.93,
+        "duration": 5.55
+    },
+    {
+        "text": "you might want to adjust for I want to",
+        "start": 2355.21,
+        "duration": 7.02
+    },
+    {
+        "text": "point out that this function should not",
+        "start": 2358.48,
+        "duration": 6.359
+    },
+    {
+        "text": "be relied upon at best it will",
+        "start": 2362.23,
+        "duration": 6.78
+    },
+    {
+        "text": "occasionally be useful for for an ruv",
+        "start": 2364.839,
+        "duration": 6.061
+    },
+    {
+        "text": "for analysis but in general it's not",
+        "start": 2369.01,
+        "duration": 3.69
+    },
+    {
+        "text": "something that you that you want to rely",
+        "start": 2370.9,
+        "duration": 5.969
+    },
+    {
+        "text": "on and then there's also the the shiny",
+        "start": 2372.7,
+        "duration": 6.899
+    },
+    {
+        "text": "oh okay so I'm gonna I'm gonna start off",
+        "start": 2376.869,
+        "duration": 4.201
+    },
+    {
+        "text": "by talking about the the regression",
+        "start": 2379.599,
+        "duration": 4.461
+    },
+    {
+        "text": "methods they they all have a fairly",
+        "start": 2381.07,
+        "duration": 7.28
+    },
+    {
+        "text": "similar format they take its input",
+        "start": 2384.06,
+        "duration": 9.57
+    },
+    {
+        "text": "y & x + a ctrl R u b2 + 4 also take a",
+        "start": 2388.35,
+        "duration": 9.15
+    },
+    {
+        "text": "tuning parameter K there's an optional Z",
+        "start": 2393.63,
+        "duration": 7.44
+    },
+    {
+        "text": "matrix an optional EDA matrix and for",
+        "start": 2397.5,
+        "duration": 8.73
+    },
+    {
+        "text": "our UV partners there is an optional",
+        "start": 2401.07,
+        "duration": 7.92
+    },
+    {
+        "text": "lambda parameter so I mean just explain",
+        "start": 2406.23,
+        "duration": 5.73
+    },
+    {
+        "text": "what these are but why is the expression",
+        "start": 2408.99,
+        "duration": 7.5
+    },
+    {
+        "text": "data that is that's going to be an M by",
+        "start": 2411.96,
+        "duration": 9.69
+    },
+    {
+        "text": "n matrix so observations by by genes X",
+        "start": 2416.49,
+        "duration": 9.33
+    },
+    {
+        "text": "is your factor of interest control",
+        "start": 2421.65,
+        "duration": 6.59
+    },
+    {
+        "text": "what's an index of the negative controls",
+        "start": 2425.82,
+        "duration": 6.84
+    },
+    {
+        "text": "the is any other covariance that you",
+        "start": 2428.24,
+        "duration": 6.33
+    },
+    {
+        "text": "might want to include in the analysis",
+        "start": 2432.66,
+        "duration": 5.13
+    },
+    {
+        "text": "data is Jeanne Weiss covariance that you",
+        "start": 2434.57,
+        "duration": 4.92
+    },
+    {
+        "text": "might want to include in the analysis",
+        "start": 2437.79,
+        "duration": 4.71
+    },
+    {
+        "text": "and then there's K which is number of",
+        "start": 2439.49,
+        "duration": 5.32
+    },
+    {
+        "text": "factors to address 4 and lambda which is",
+        "start": 2442.5,
+        "duration": 4.68
+    },
+    {
+        "text": "a image I'm gonna go through each of",
+        "start": 2444.81,
+        "duration": 6.81
+    },
+    {
+        "text": "these quickly but individually so again",
+        "start": 2447.18,
+        "duration": 7.29
+    },
+    {
+        "text": "what is the expression data its arrays",
+        "start": 2451.62,
+        "duration": 6.9
+    },
+    {
+        "text": "by genes those least for microarray data",
+        "start": 2454.47,
+        "duration": 6.27
+    },
+    {
+        "text": "you wanna you'll want the day to be long",
+        "start": 2458.52,
+        "duration": 5.73
+    },
+    {
+        "text": "performed but interestingly enough other",
+        "start": 2460.74,
+        "duration": 6.21
+    },
+    {
+        "text": "than log transforming it's often best",
+        "start": 2464.25,
+        "duration": 5.79
+    },
+    {
+        "text": "not to do any further pre-processing so",
+        "start": 2466.95,
+        "duration": 6.47
+    },
+    {
+        "text": "things like want to all normalization",
+        "start": 2470.04,
+        "duration": 3.38
+    },
+    {
+        "text": "the reason for that is that a lot of a",
+        "start": 2473.66,
+        "duration": 7.83
+    },
+    {
+        "text": "lot of cases if there's quite a bit of",
+        "start": 2477.93,
+        "duration": 6.12
+    },
+    {
+        "text": "variation between between different",
+        "start": 2481.49,
+        "duration": 4.84
+    },
+    {
+        "text": "biological groups the the quantum",
+        "start": 2484.05,
+        "duration": 6.27
+    },
+    {
+        "text": "normalization can introduce more warping",
+        "start": 2486.33,
+        "duration": 8.52
+    },
+    {
+        "text": "than then itself X is a factor of",
+        "start": 2490.32,
+        "duration": 6.99
+    },
+    {
+        "text": "interest so things like Janene gender",
+        "start": 2494.85,
+        "duration": 5.64
+    },
+    {
+        "text": "averages if you you do not want to",
+        "start": 2497.31,
+        "duration": 7.2
+    },
+    {
+        "text": "include an intercept in X and just as a",
+        "start": 2500.49,
+        "duration": 6.6
+    },
+    {
+        "text": "rule of thumb the the fewer factors that",
+        "start": 2504.51,
+        "duration": 6.12
+    },
+    {
+        "text": "you include the better and the basic",
+        "start": 2507.09,
+        "duration": 6.99
+    },
+    {
+        "text": "reason for that is the more stuff you",
+        "start": 2510.63,
+        "duration": 7.14
+    },
+    {
+        "text": "put into X the less can be estimated and",
+        "start": 2514.08,
+        "duration": 6.99
+    },
+    {
+        "text": "adjusted for in in the in are estimated",
+        "start": 2517.77,
+        "duration": 4.17
+    },
+    {
+        "text": "W",
+        "start": 2521.07,
+        "duration": 2.67
+    },
+    {
+        "text": "and if you do have several factors of",
+        "start": 2521.94,
+        "duration": 3.69
+    },
+    {
+        "text": "interest in general it's gonna be best",
+        "start": 2523.74,
+        "duration": 6.42
+    },
+    {
+        "text": "to just several times one for each",
+        "start": 2525.63,
+        "duration": 8.67
+    },
+    {
+        "text": "factor that you're interested in Z if",
+        "start": 2530.16,
+        "duration": 5.88
+    },
+    {
+        "text": "any additional covariance that you want",
+        "start": 2534.3,
+        "duration": 4.38
+    },
+    {
+        "text": "to include things like if you have a",
+        "start": 2536.04,
+        "duration": 8.22
+    },
+    {
+        "text": "known batch stuff like that if if you do",
+        "start": 2538.68,
+        "duration": 7.439
+    },
+    {
+        "text": "have if you want to include an intercept",
+        "start": 2544.26,
+        "duration": 3.9
+    },
+    {
+        "text": "which generally you do and that's the",
+        "start": 2546.119,
+        "duration": 5.161
+    },
+    {
+        "text": "default V is the place to put it and",
+        "start": 2548.16,
+        "duration": 7.199
+    },
+    {
+        "text": "then like with X just as a rule of thumb",
+        "start": 2551.28,
+        "duration": 7.799
+    },
+    {
+        "text": "the less stuff you put in into Z the",
+        "start": 2555.359,
+        "duration": 6.0
+    },
+    {
+        "text": "better so actually in most cases I would",
+        "start": 2559.079,
+        "duration": 4.77
+    },
+    {
+        "text": "recommend just not having anything in Z",
+        "start": 2561.359,
+        "duration": 4.561
+    },
+    {
+        "text": "other than the intercept again the",
+        "start": 2563.849,
+        "duration": 5.431
+    },
+    {
+        "text": "reason is the more you could entity the",
+        "start": 2565.92,
+        "duration": 5.97
+    },
+    {
+        "text": "less you the less or the fewer",
+        "start": 2569.28,
+        "duration": 6.089
+    },
+    {
+        "text": "dimensions you have available to to",
+        "start": 2571.89,
+        "duration": 6.8
+    },
+    {
+        "text": "include in your estimated and",
+        "start": 2575.369,
+        "duration": 5.911
+    },
+    {
+        "text": "elaborating on that point slightly so",
+        "start": 2578.69,
+        "duration": 5.169
+    },
+    {
+        "text": "even if you have for example known",
+        "start": 2581.28,
+        "duration": 6.63
+    },
+    {
+        "text": "batches and there's variation there's",
+        "start": 2583.859,
+        "duration": 6.271
+    },
+    {
+        "text": "yeah there's differences between the",
+        "start": 2587.91,
+        "duration": 6.48
+    },
+    {
+        "text": "batches it's typically not the case that",
+        "start": 2590.13,
+        "duration": 10.32
+    },
+    {
+        "text": "batch per se is causing the or it's a",
+        "start": 2594.39,
+        "duration": 7.77
+    },
+    {
+        "text": "source of the unwanted variation it's",
+        "start": 2600.45,
+        "duration": 6.2
+    },
+    {
+        "text": "things like differences in the reagents",
+        "start": 2602.16,
+        "duration": 7.32
+    },
+    {
+        "text": "various technical differences that",
+        "start": 2606.65,
+        "duration": 6.85
+    },
+    {
+        "text": "differ between the batches and so I",
+        "start": 2609.48,
+        "duration": 6.629
+    },
+    {
+        "text": "guess what I'm saying here is that the",
+        "start": 2613.5,
+        "duration": 5.849
+    },
+    {
+        "text": "batches are at best a proxy for the",
+        "start": 2616.109,
+        "duration": 7.831
+    },
+    {
+        "text": "actual unwanted variation and letting",
+        "start": 2619.349,
+        "duration": 6.75
+    },
+    {
+        "text": "the the algorithm estimate that unwanted",
+        "start": 2623.94,
+        "duration": 3.75
+    },
+    {
+        "text": "variation rather than including it",
+        "start": 2626.099,
+        "duration": 5.311
+    },
+    {
+        "text": "yourself often performs better there's",
+        "start": 2627.69,
+        "duration": 7.08
+    },
+    {
+        "text": "one very notable exception to this which",
+        "start": 2631.41,
+        "duration": 6.86
+    },
+    {
+        "text": "is a if you have a co variant that",
+        "start": 2634.77,
+        "duration": 5.549
+    },
+    {
+        "text": "affects only a very small number of",
+        "start": 2638.27,
+        "duration": 7.48
+    },
+    {
+        "text": "genes and specifically the the same",
+        "start": 2640.319,
+        "duration": 9.361
+    },
+    {
+        "text": "genes that you might be that you might",
+        "start": 2645.75,
+        "duration": 5.369
+    },
+    {
+        "text": "expect to be affected by your factor of",
+        "start": 2649.68,
+        "duration": 4.11
+    },
+    {
+        "text": "interest then you might want to",
+        "start": 2651.119,
+        "duration": 4.24
+    },
+    {
+        "text": "explicitly include",
+        "start": 2653.79,
+        "duration": 5.289
+    },
+    {
+        "text": "this factor in your Z because since it",
+        "start": 2655.359,
+        "duration": 5.16
+    },
+    {
+        "text": "affects only a small number of genes it",
+        "start": 2659.079,
+        "duration": 2.82
+    },
+    {
+        "text": "might not get picked up in the factor",
+        "start": 2660.519,
+        "duration": 3.21
+    },
+    {
+        "text": "analysis so just to be a little bit more",
+        "start": 2661.899,
+        "duration": 4.02
+    },
+    {
+        "text": "explicit an example would be if your",
+        "start": 2663.729,
+        "duration": 3.901
+    },
+    {
+        "text": "factor of interest is disease that",
+        "start": 2665.919,
+        "duration": 3.29
+    },
+    {
+        "text": "affects only a small number of genes and",
+        "start": 2667.63,
+        "duration": 4.019
+    },
+    {
+        "text": "then the co variant that you want to",
+        "start": 2669.209,
+        "duration": 6.39
+    },
+    {
+        "text": "adjust for is a drug that also affects",
+        "start": 2671.649,
+        "duration": 7.2
+    },
+    {
+        "text": "similar genes so for them you know a lot",
+        "start": 2675.599,
+        "duration": 4.21
+    },
+    {
+        "text": "of the people that have the disease",
+        "start": 2678.849,
+        "duration": 3.18
+    },
+    {
+        "text": "might be taking a specific drug in which",
+        "start": 2679.809,
+        "duration": 3.71
+    },
+    {
+        "text": "case you'd want to adjust for that",
+        "start": 2682.029,
+        "duration": 6.02
+    },
+    {
+        "text": "explicitly with your with your z minutes",
+        "start": 2683.519,
+        "duration": 13.78
+    },
+    {
+        "text": "okay the controls these are very",
+        "start": 2688.049,
+        "duration": 12.52
+    },
+    {
+        "text": "critical to success you want your",
+        "start": 2697.299,
+        "duration": 4.68
+    },
+    {
+        "text": "negative controls to be unaffected by",
+        "start": 2700.569,
+        "duration": 4.8
+    },
+    {
+        "text": "the factor of interest you want them to",
+        "start": 2701.979,
+        "duration": 5.24
+    },
+    {
+        "text": "be affected by the unwanted factors and",
+        "start": 2705.369,
+        "duration": 3.9
+    },
+    {
+        "text": "ideally you'd also have it that they're",
+        "start": 2707.219,
+        "duration": 3.64
+    },
+    {
+        "text": "somewhat representative of the other",
+        "start": 2709.269,
+        "duration": 3.0
+    },
+    {
+        "text": "genes meaning they have similar ranges",
+        "start": 2710.859,
+        "duration": 4.08
+    },
+    {
+        "text": "of expression not affected by their own",
+        "start": 2712.269,
+        "duration": 6.21
+    },
+    {
+        "text": "unone factors that of some extent of",
+        "start": 2714.939,
+        "duration": 5.28
+    },
+    {
+        "text": "reference to spike in spike ins have a",
+        "start": 2718.479,
+        "duration": 3.84
+    },
+    {
+        "text": "lot of their own noise just due to their",
+        "start": 2720.219,
+        "duration": 7.44
+    },
+    {
+        "text": "own administration and so already these",
+        "start": 2722.319,
+        "duration": 7.44
+    },
+    {
+        "text": "are not things that you can discover",
+        "start": 2727.659,
+        "duration": 4.88
+    },
+    {
+        "text": "from the data it needs to be based on",
+        "start": 2729.759,
+        "duration": 6.96
+    },
+    {
+        "text": "prior knowledge and but that said they",
+        "start": 2732.539,
+        "duration": 9.16
+    },
+    {
+        "text": "don't need to be correct okay that is",
+        "start": 2736.719,
+        "duration": 8.88
+    },
+    {
+        "text": "number of factors to adjust for for",
+        "start": 2741.699,
+        "duration": 6.77
+    },
+    {
+        "text": "youths only with re B 2 & 4 and it's",
+        "start": 2745.599,
+        "duration": 6.06
+    },
+    {
+        "text": "useful to use this specifically when you",
+        "start": 2748.469,
+        "duration": 5.44
+    },
+    {
+        "text": "are concerned that your negative",
+        "start": 2751.659,
+        "duration": 3.96
+    },
+    {
+        "text": "controls might contain at least some",
+        "start": 2753.909,
+        "duration": 5.4
+    },
+    {
+        "text": "biology in that case keeping small are",
+        "start": 2755.619,
+        "duration": 6.39
+    },
+    {
+        "text": "keeping case small will help reduce the",
+        "start": 2759.309,
+        "duration": 9.99
+    },
+    {
+        "text": "list of over adjusting meaning that if",
+        "start": 2762.009,
+        "duration": 9.06
+    },
+    {
+        "text": "for example you're not using spiking but",
+        "start": 2769.299,
+        "duration": 2.76
+    },
+    {
+        "text": "you're using something like housekeeping",
+        "start": 2771.069,
+        "duration": 6.72
+    },
+    {
+        "text": "genes yeah alright and this is partly",
+        "start": 2772.059,
+        "duration": 8.88
+    },
+    {
+        "text": "why I say that you want to wear cheese",
+        "start": 2777.789,
+        "duration": 6.091
+    },
+    {
+        "text": "cheese k by hand and not use this a",
+        "start": 2780.939,
+        "duration": 5.84
+    },
+    {
+        "text": "function",
+        "start": 2783.88,
+        "duration": 2.899
+    },
+    {
+        "text": "here's a quick comparison of the methods",
+        "start": 2786.94,
+        "duration": 7.86
+    },
+    {
+        "text": "their their various strengths and",
+        "start": 2792.75,
+        "duration": 3.67
+    },
+    {
+        "text": "weaknesses I'm gonna skip over this you",
+        "start": 2794.8,
+        "duration": 6.24
+    },
+    {
+        "text": "can you can look at it on online but",
+        "start": 2796.42,
+        "duration": 6.0
+    },
+    {
+        "text": "I'll just point out that are you the",
+        "start": 2801.04,
+        "duration": 2.789
+    },
+    {
+        "text": "invert or excuse me are you the are",
+        "start": 2802.42,
+        "duration": 4.59
+    },
+    {
+        "text": "inverse if a good compromise of features",
+        "start": 2803.829,
+        "duration": 7.921
+    },
+    {
+        "text": "it's useful as a good default quick",
+        "start": 2807.01,
+        "duration": 8.79
+    },
+    {
+        "text": "technical note so the the different",
+        "start": 2811.75,
+        "duration": 6.119
+    },
+    {
+        "text": "methods make make use of the negative",
+        "start": 2815.8,
+        "duration": 3.779
+    },
+    {
+        "text": "controls in slightly different ways the",
+        "start": 2817.869,
+        "duration": 4.321
+    },
+    {
+        "text": "ruv - you actually do need the negative",
+        "start": 2819.579,
+        "duration": 6.151
+    },
+    {
+        "text": "controls for them to be unaffected by",
+        "start": 2822.19,
+        "duration": 6.45
+    },
+    {
+        "text": "the factor of interest whereas you you",
+        "start": 2825.73,
+        "duration": 6.359
+    },
+    {
+        "text": "have a weaker condition for for the",
+        "start": 2828.64,
+        "duration": 8.28
+    },
+    {
+        "text": "other methods okay so and I'm going to",
+        "start": 2832.089,
+        "duration": 11.28
+    },
+    {
+        "text": "give an example analysis here I've got",
+        "start": 2836.92,
+        "duration": 9.179
+    },
+    {
+        "text": "in the code I'm going to run the Reeb",
+        "start": 2843.369,
+        "duration": 5.761
+    },
+    {
+        "text": "our inverse function I'm going to pass",
+        "start": 2846.099,
+        "duration": 8.341
+    },
+    {
+        "text": "it my my data matrix Y gender and I'm",
+        "start": 2849.13,
+        "duration": 8.76
+    },
+    {
+        "text": "going to say that my Mike's my negative",
+        "start": 2854.44,
+        "duration": 6.6
+    },
+    {
+        "text": "controls are the spikes and metals that",
+        "start": 2857.89,
+        "duration": 7.709
+    },
+    {
+        "text": "all return a fit I know then put the the",
+        "start": 2861.04,
+        "duration": 7.799
+    },
+    {
+        "text": "fit into this re be summary function and",
+        "start": 2865.599,
+        "duration": 5.46
+    },
+    {
+        "text": "the re be summary function it takes in",
+        "start": 2868.839,
+        "duration": 4.051
+    },
+    {
+        "text": "addition to the fit it takes again the",
+        "start": 2871.059,
+        "duration": 4.681
+    },
+    {
+        "text": "original data matrix the data frame with",
+        "start": 2872.89,
+        "duration": 4.14
+    },
+    {
+        "text": "the sample information the data frame",
+        "start": 2875.74,
+        "duration": 3.359
+    },
+    {
+        "text": "with the T and information and then what",
+        "start": 2877.03,
+        "duration": 5.839
+    },
+    {
+        "text": "that returns is this nice summary of",
+        "start": 2879.099,
+        "duration": 7.411
+    },
+    {
+        "text": "it's got for example F P values from an",
+        "start": 2882.869,
+        "duration": 6.7
+    },
+    {
+        "text": "F test if this case I only have one",
+        "start": 2886.51,
+        "duration": 5.94
+    },
+    {
+        "text": "factor of interest so the values for the",
+        "start": 2889.569,
+        "duration": 5.04
+    },
+    {
+        "text": "individual factor there's only one and",
+        "start": 2892.45,
+        "duration": 4.23
+    },
+    {
+        "text": "that's them you could look to the F test",
+        "start": 2894.609,
+        "duration": 3.99
+    },
+    {
+        "text": "but when you've got more than one factor",
+        "start": 2896.68,
+        "duration": 3.48
+    },
+    {
+        "text": "it'll give you the people who submit for",
+        "start": 2898.599,
+        "duration": 5.7
+    },
+    {
+        "text": "them individually along with a bunch of",
+        "start": 2900.16,
+        "duration": 9.78
+    },
+    {
+        "text": "other information forward there are a",
+        "start": 2904.299,
+        "duration": 8.431
+    },
+    {
+        "text": "bunch of plots that you can that you can",
+        "start": 2909.94,
+        "duration": 5.73
+    },
+    {
+        "text": "make then just by taking this this fit",
+        "start": 2912.73,
+        "duration": 5.94
+    },
+    {
+        "text": "summary and plotting them here we've got",
+        "start": 2915.67,
+        "duration": 5.669
+    },
+    {
+        "text": "a p-value histogram",
+        "start": 2918.67,
+        "duration": 5.1
+    },
+    {
+        "text": "this is war that's what you want to see",
+        "start": 2921.339,
+        "duration": 6.96
+    },
+    {
+        "text": "if in once I'm wearing variation have",
+        "start": 2923.77,
+        "duration": 7.41
+    },
+    {
+        "text": "been adjusted for the the p-values",
+        "start": 2928.299,
+        "duration": 4.26
+    },
+    {
+        "text": "should have more or less a uniform",
+        "start": 2931.18,
+        "duration": 5.04
+    },
+    {
+        "text": "distribution except for the ones that",
+        "start": 2932.559,
+        "duration": 5.76
+    },
+    {
+        "text": "are significant the ones that are truly",
+        "start": 2936.22,
+        "duration": 3.359
+    },
+    {
+        "text": "differentially expressed and for those",
+        "start": 2938.319,
+        "duration": 3.391
+    },
+    {
+        "text": "you get a spike right so this is looking",
+        "start": 2939.579,
+        "duration": 4.01
+    },
+    {
+        "text": "good",
+        "start": 2941.71,
+        "duration": 4.26
+    },
+    {
+        "text": "there's also function to make an",
+        "start": 2943.589,
+        "duration": 4.27
+    },
+    {
+        "text": "empirical CDF if you don't want to look",
+        "start": 2945.97,
+        "duration": 6.0
+    },
+    {
+        "text": "at a histogram you can power transform",
+        "start": 2947.859,
+        "duration": 6.331
+    },
+    {
+        "text": "on that so you can this is basically",
+        "start": 2951.97,
+        "duration": 3.389
+    },
+    {
+        "text": "allows us to see that there is that",
+        "start": 2954.19,
+        "duration": 6.409
+    },
+    {
+        "text": "spike there using various ggplot things",
+        "start": 2955.359,
+        "duration": 7.891
+    },
+    {
+        "text": "here i've got for example the different",
+        "start": 2960.599,
+        "duration": 6.071
+    },
+    {
+        "text": "ec gifts for for the spike in controls",
+        "start": 2963.25,
+        "duration": 6.21
+    },
+    {
+        "text": "for housekeeping so on you know skip",
+        "start": 2966.67,
+        "duration": 5.55
+    },
+    {
+        "text": "through these clocks that well there's",
+        "start": 2969.46,
+        "duration": 4.26
+    },
+    {
+        "text": "one other one this so i'm gonna",
+        "start": 2972.22,
+        "duration": 3.69
+    },
+    {
+        "text": "highlight if an important way to to be",
+        "start": 2973.72,
+        "duration": 3.629
+    },
+    {
+        "text": "able to validate your analysis to know",
+        "start": 2975.91,
+        "duration": 3.449
+    },
+    {
+        "text": "if you're helping or not if you have",
+        "start": 2977.349,
+        "duration": 5.581
+    },
+    {
+        "text": "some notion of positive controls so in",
+        "start": 2979.359,
+        "duration": 9.151
+    },
+    {
+        "text": "the case of a gender study you are you",
+        "start": 2982.93,
+        "duration": 6.869
+    },
+    {
+        "text": "don't know necessarily for sure which",
+        "start": 2988.51,
+        "duration": 2.46
+    },
+    {
+        "text": "genes are going to be differentially",
+        "start": 2989.799,
+        "duration": 2.881
+    },
+    {
+        "text": "expressed between men and women but you",
+        "start": 2990.97,
+        "duration": 3.24
+    },
+    {
+        "text": "have a pretty good guess that at least a",
+        "start": 2992.68,
+        "duration": 3.33
+    },
+    {
+        "text": "lot of them are gonna come from the XY",
+        "start": 2994.21,
+        "duration": 3.75
+    },
+    {
+        "text": "chromosome so what I can do is I can",
+        "start": 2996.01,
+        "duration": 3.87
+    },
+    {
+        "text": "treat genes from X and Y chromosome have",
+        "start": 2997.96,
+        "duration": 5.159
+    },
+    {
+        "text": "positive controls once I rank my genes I",
+        "start": 2999.88,
+        "duration": 4.739
+    },
+    {
+        "text": "can go through and I can count for",
+        "start": 3003.119,
+        "duration": 3.541
+    },
+    {
+        "text": "example how many of the extra gene XY",
+        "start": 3004.619,
+        "duration": 4.351
+    },
+    {
+        "text": "chromosomes show up in the top 10 once I",
+        "start": 3006.66,
+        "duration": 4.02
+    },
+    {
+        "text": "rank them and I see that for example",
+        "start": 3008.97,
+        "duration": 5.22
+    },
+    {
+        "text": "mind you how many in the top 50 and I",
+        "start": 3010.68,
+        "duration": 6.629
+    },
+    {
+        "text": "see that so looking at a plot like this",
+        "start": 3014.19,
+        "duration": 6.96
+    },
+    {
+        "text": "can help us give us a sense of whether",
+        "start": 3017.309,
+        "duration": 5.701
+    },
+    {
+        "text": "or not we are helping or hurting and",
+        "start": 3021.15,
+        "duration": 5.669
+    },
+    {
+        "text": "there's this there's this line here this",
+        "start": 3023.01,
+        "duration": 6.089
+    },
+    {
+        "text": "shows us what this plot would have",
+        "start": 3026.819,
+        "duration": 5.55
+    },
+    {
+        "text": "looked like if I had just find p-values",
+        "start": 3029.099,
+        "duration": 5.401
+    },
+    {
+        "text": "at random to everything Thanks so we're",
+        "start": 3032.369,
+        "duration": 7.861
+    },
+    {
+        "text": "clearly doing a lot better okay these",
+        "start": 3034.5,
+        "duration": 11.79
+    },
+    {
+        "text": "other plots I went to oh this is just a",
+        "start": 3040.23,
+        "duration": 10.29
+    },
+    {
+        "text": "highlight again have we have we helped",
+        "start": 3046.29,
+        "duration": 6.809
+    },
+    {
+        "text": "this is what Anna unadjusted Libba",
+        "start": 3050.52,
+        "duration": 3.089
+    },
+    {
+        "text": "analysis",
+        "start": 3053.099,
+        "duration": 1.77
+    },
+    {
+        "text": "would have looked like the p-value",
+        "start": 3053.609,
+        "duration": 3.39
+    },
+    {
+        "text": "histogram is messed up we don't find as",
+        "start": 3054.869,
+        "duration": 8.67
+    },
+    {
+        "text": "many positive girls okay I want to I'll",
+        "start": 3056.999,
+        "duration": 8.07
+    },
+    {
+        "text": "try to keep it to just an extra five",
+        "start": 3063.539,
+        "duration": 4.29
+    },
+    {
+        "text": "minutes but I want to show you some of",
+        "start": 3065.069,
+        "duration": 9.24
+    },
+    {
+        "text": "the global adjustments I'm going to skip",
+        "start": 3067.829,
+        "duration": 9.66
+    },
+    {
+        "text": "over already one stuff speak to the rev3",
+        "start": 3074.309,
+        "duration": 9.99
+    },
+    {
+        "text": "stuff are UV three replicates and is",
+        "start": 3077.489,
+        "duration": 9.211
+    },
+    {
+        "text": "going to be the mapping matrix that",
+        "start": 3084.299,
+        "duration": 6.121
+    },
+    {
+        "text": "describes the replicate structure so it",
+        "start": 3086.7,
+        "duration": 6.93
+    },
+    {
+        "text": "takes our observed expression data it",
+        "start": 3090.42,
+        "duration": 4.379
+    },
+    {
+        "text": "takes the matrix that describes the",
+        "start": 3093.63,
+        "duration": 3.03
+    },
+    {
+        "text": "replicate structure it takes our",
+        "start": 3094.799,
+        "duration": 4.95
+    },
+    {
+        "text": "negative controls and then some some",
+        "start": 3096.66,
+        "duration": 6.179
+    },
+    {
+        "text": "other parameters what I mean by the",
+        "start": 3099.749,
+        "duration": 5.461
+    },
+    {
+        "text": "mapping matrix this is a matrix of dummy",
+        "start": 3102.839,
+        "duration": 7.02
+    },
+    {
+        "text": "variables where for row I and J of this",
+        "start": 3105.21,
+        "duration": 7.529
+    },
+    {
+        "text": "matrix it's one if observation one is in",
+        "start": 3109.859,
+        "duration": 7.38
+    },
+    {
+        "text": "replicate set J and it's zero otherwise",
+        "start": 3112.739,
+        "duration": 7.35
+    },
+    {
+        "text": "so basically each each column of this",
+        "start": 3117.239,
+        "duration": 5.34
+    },
+    {
+        "text": "mapping matrix represents a set of",
+        "start": 3120.089,
+        "duration": 5.49
+    },
+    {
+        "text": "replicates and the rows of that column",
+        "start": 3122.579,
+        "duration": 5.641
+    },
+    {
+        "text": "that are one tell you which of the which",
+        "start": 3125.579,
+        "duration": 5.16
+    },
+    {
+        "text": "of the micro arrays are part of that set",
+        "start": 3128.22,
+        "duration": 5.849
+    },
+    {
+        "text": "of replicants okay and of course it's",
+        "start": 3130.739,
+        "duration": 6.84
+    },
+    {
+        "text": "certainly the case that some what we'll",
+        "start": 3134.069,
+        "duration": 5.581
+    },
+    {
+        "text": "refer to as replicate sets are really",
+        "start": 3137.579,
+        "duration": 5.401
+    },
+    {
+        "text": "just a single array so in other words",
+        "start": 3139.65,
+        "duration": 6.959
+    },
+    {
+        "text": "they can be Singleton's again the the",
+        "start": 3142.98,
+        "duration": 5.039
+    },
+    {
+        "text": "key assumption when we're using our ub 3",
+        "start": 3146.609,
+        "duration": 3.571
+    },
+    {
+        "text": "into any variation within a replica set",
+        "start": 3148.019,
+        "duration": 4.111
+    },
+    {
+        "text": "is assumed more or less by definition to",
+        "start": 3150.18,
+        "duration": 6.359
+    },
+    {
+        "text": "be unwanted okay there's a function here",
+        "start": 3152.13,
+        "duration": 8.1
+    },
+    {
+        "text": "that helps you create these mapping",
+        "start": 3156.539,
+        "duration": 6.33
+    },
+    {
+        "text": "matrices I'll skip over that it's in the",
+        "start": 3160.23,
+        "duration": 5.22
+    },
+    {
+        "text": "documentation I'll skip over that it's",
+        "start": 3162.869,
+        "duration": 4.261
+    },
+    {
+        "text": "in the documentation but I want to at",
+        "start": 3165.45,
+        "duration": 5.789
+    },
+    {
+        "text": "least show some results here and in this",
+        "start": 3167.13,
+        "duration": 6.689
+    },
+    {
+        "text": "this first example I'm going to have as",
+        "start": 3171.239,
+        "duration": 5.431
+    },
+    {
+        "text": "my negative controls I'm gonna have the",
+        "start": 3173.819,
+        "duration": 5.73
+    },
+    {
+        "text": "spike ins and if my replicates I'm going",
+        "start": 3176.67,
+        "duration": 5.01
+    },
+    {
+        "text": "to have the technical replicates",
+        "start": 3179.549,
+        "duration": 4.861
+    },
+    {
+        "text": "so the the same tissue samples but at",
+        "start": 3181.68,
+        "duration": 5.31
+    },
+    {
+        "text": "the three different levels",
+        "start": 3184.41,
+        "duration": 4.68
+    },
+    {
+        "text": "as a reminder that is what the data look",
+        "start": 3186.99,
+        "duration": 6.78
+    },
+    {
+        "text": "like the sir before normalizing and here",
+        "start": 3189.09,
+        "duration": 8.37
+    },
+    {
+        "text": "is what my what my mapping matrix looks",
+        "start": 3193.77,
+        "duration": 6.3
+    },
+    {
+        "text": "like so again these three samples are",
+        "start": 3197.46,
+        "duration": 5.91
+    },
+    {
+        "text": "all the same these three samples are all",
+        "start": 3200.07,
+        "duration": 5.01
+    },
+    {
+        "text": "replicates these three samples are all",
+        "start": 3203.37,
+        "duration": 5.7
+    },
+    {
+        "text": "replicates and so on and then here is",
+        "start": 3205.08,
+        "duration": 6.96
+    },
+    {
+        "text": "the normalized version of the data using",
+        "start": 3209.07,
+        "duration": 14.99
+    },
+    {
+        "text": "our UV 3 ok I want to get to example 2",
+        "start": 3212.04,
+        "duration": 15.36
+    },
+    {
+        "text": "in example 2 I'm going to do essentially",
+        "start": 3224.06,
+        "duration": 4.3
+    },
+    {
+        "text": "what I just did",
+        "start": 3227.4,
+        "duration": 3.78
+    },
+    {
+        "text": "except this time when I make the the PC",
+        "start": 3228.36,
+        "duration": 4.83
+    },
+    {
+        "text": "pot I'm going to make the PC pot only",
+        "start": 3231.18,
+        "duration": 4.79
+    },
+    {
+        "text": "the genes from the X and Y chromosome",
+        "start": 3233.19,
+        "duration": 5.82
+    },
+    {
+        "text": "and when I I want you to think just for",
+        "start": 3235.97,
+        "duration": 5.14
+    },
+    {
+        "text": "a second so now I'm taking just genes",
+        "start": 3239.01,
+        "duration": 6.0
+    },
+    {
+        "text": "from the next Y chromosome what do you",
+        "start": 3241.11,
+        "duration": 6.45
+    },
+    {
+        "text": "expect that we will see the 4 adjustment",
+        "start": 3245.01,
+        "duration": 9.06
+    },
+    {
+        "text": "and after adjustment before adjustment",
+        "start": 3247.56,
+        "duration": 8.01
+    },
+    {
+        "text": "it actually looks pretty much exactly",
+        "start": 3254.07,
+        "duration": 3.36
+    },
+    {
+        "text": "the same again these are genes just from",
+        "start": 3255.57,
+        "duration": 5.4
+    },
+    {
+        "text": "the extra Y chromosome but still the by",
+        "start": 3257.43,
+        "duration": 5.58
+    },
+    {
+        "text": "far the biggest signal in the data is",
+        "start": 3260.97,
+        "duration": 6.36
+    },
+    {
+        "text": "the lab effect I've changed the graphic",
+        "start": 3263.01,
+        "duration": 6.24
+    },
+    {
+        "text": "parameters here a little bit so that now",
+        "start": 3267.33,
+        "duration": 4.32
+    },
+    {
+        "text": "I can look at the difference between men",
+        "start": 3269.25,
+        "duration": 6.57
+    },
+    {
+        "text": "and women and there is no sign of the",
+        "start": 3271.65,
+        "duration": 7.26
+    },
+    {
+        "text": "gender effect in here now I'm going to",
+        "start": 3275.82,
+        "duration": 6.84
+    },
+    {
+        "text": "adjust interestingly after this",
+        "start": 3278.91,
+        "duration": 6.51
+    },
+    {
+        "text": "adjustment now the biggest source of",
+        "start": 3282.66,
+        "duration": 7.38
+    },
+    {
+        "text": "variation is the the brain region ok so",
+        "start": 3285.42,
+        "duration": 6.33
+    },
+    {
+        "text": "again this is just the genes from X Y",
+        "start": 3290.04,
+        "duration": 4.53
+    },
+    {
+        "text": "chromosome but even there the biggest",
+        "start": 3291.75,
+        "duration": 6.56
+    },
+    {
+        "text": "source of variation is the brain region",
+        "start": 3294.57,
+        "duration": 10.22
+    },
+    {
+        "text": "okay now this next example is going to",
+        "start": 3298.31,
+        "duration": 12.22
+    },
+    {
+        "text": "to help make the the point of that I was",
+        "start": 3304.79,
+        "duration": 7.45
+    },
+    {
+        "text": "trying to make earlier about how the",
+        "start": 3310.53,
+        "duration": 3.9
+    },
+    {
+        "text": "negative controls and the replicates can",
+        "start": 3312.24,
+        "duration": 4.98
+    },
+    {
+        "text": "help define which variation is wanted in",
+        "start": 3314.43,
+        "duration": 5.01
+    },
+    {
+        "text": "which variation is unloaded so what I'm",
+        "start": 3317.22,
+        "duration": 3.51
+    },
+    {
+        "text": "going to do now",
+        "start": 3319.44,
+        "duration": 3.06
+    },
+    {
+        "text": "if I'm going to use of my negative",
+        "start": 3320.73,
+        "duration": 4.98
+    },
+    {
+        "text": "controls housekeeping genes and I'm",
+        "start": 3322.5,
+        "duration": 4.95
+    },
+    {
+        "text": "going to use as replicates all",
+        "start": 3325.71,
+        "duration": 5.04
+    },
+    {
+        "text": "observations from a single patient so",
+        "start": 3327.45,
+        "duration": 6.18
+    },
+    {
+        "text": "for each patient there's the the three",
+        "start": 3330.75,
+        "duration": 4.14
+    },
+    {
+        "text": "different tissue samples from the three",
+        "start": 3333.63,
+        "duration": 2.7
+    },
+    {
+        "text": "different brain regions and each of each",
+        "start": 3334.89,
+        "duration": 3.6
+    },
+    {
+        "text": "of those are sent to the same there are",
+        "start": 3336.33,
+        "duration": 4.74
+    },
+    {
+        "text": "three labs so for each patient there's",
+        "start": 3338.49,
+        "duration": 4.59
+    },
+    {
+        "text": "there's nine microarrays I can use all",
+        "start": 3341.07,
+        "duration": 5.64
+    },
+    {
+        "text": "of them as my notion of replicate again",
+        "start": 3343.08,
+        "duration": 4.71
+    },
+    {
+        "text": "for the negative controls I'm using",
+        "start": 3346.71,
+        "duration": 4.77
+    },
+    {
+        "text": "housekeeping genes so now the mapping",
+        "start": 3347.79,
+        "duration": 5.82
+    },
+    {
+        "text": "matrix looks like this these first nine",
+        "start": 3351.48,
+        "duration": 3.96
+    },
+    {
+        "text": "are all from patient one the second nine",
+        "start": 3353.61,
+        "duration": 5.16
+    },
+    {
+        "text": "are all from patient two and so on now",
+        "start": 3355.44,
+        "duration": 7.41
+    },
+    {
+        "text": "after just this way the biggest source",
+        "start": 3358.77,
+        "duration": 7.5
+    },
+    {
+        "text": "of variation is here is the difference",
+        "start": 3362.85,
+        "duration": 5.49
+    },
+    {
+        "text": "between men and women okay so by",
+        "start": 3366.27,
+        "duration": 4.41
+    },
+    {
+        "text": "changing my notion of replicate and by",
+        "start": 3368.34,
+        "duration": 5.52
+    },
+    {
+        "text": "changing my notion of negative control I",
+        "start": 3370.68,
+        "duration": 6.33
+    },
+    {
+        "text": "have changed what implicitly I am",
+        "start": 3373.86,
+        "duration": 5.43
+    },
+    {
+        "text": "calling wanted an unwanted variation I",
+        "start": 3377.01,
+        "duration": 5.34
+    },
+    {
+        "text": "now get a very different result I want",
+        "start": 3379.29,
+        "duration": 4.38
+    },
+    {
+        "text": "to pause and linger on this just for a",
+        "start": 3382.35,
+        "duration": 3.92
+    },
+    {
+        "text": "second more I want to point out that",
+        "start": 3383.67,
+        "duration": 5.22
+    },
+    {
+        "text": "what I just did there's more going on",
+        "start": 3386.27,
+        "duration": 5.65
+    },
+    {
+        "text": "here than simply just in some sense",
+        "start": 3388.89,
+        "duration": 4.83
+    },
+    {
+        "text": "progressing a brain I've done a little",
+        "start": 3391.92,
+        "duration": 4.62
+    },
+    {
+        "text": "bit more than them so just as a",
+        "start": 3393.72,
+        "duration": 5.72
+    },
+    {
+        "text": "comparison Here I am quite literally",
+        "start": 3396.54,
+        "duration": 5.46
+    },
+    {
+        "text": "regressing out brain regions so I I do",
+        "start": 3399.44,
+        "duration": 5.29
+    },
+    {
+        "text": "the adjustment that I had already done",
+        "start": 3402.0,
+        "duration": 5.13
+    },
+    {
+        "text": "using the spike in controls and just the",
+        "start": 3404.73,
+        "duration": 3.96
+    },
+    {
+        "text": "technical replicates and then I",
+        "start": 3407.13,
+        "duration": 4.65
+    },
+    {
+        "text": "explicitly regress out brain region when",
+        "start": 3408.69,
+        "duration": 6.36
+    },
+    {
+        "text": "I do that I get a get a different",
+        "start": 3411.78,
+        "duration": 6.33
+    },
+    {
+        "text": "looking thing I I do not see the gender",
+        "start": 3415.05,
+        "duration": 7.68
+    },
+    {
+        "text": "effect partly that's because this is",
+        "start": 3418.11,
+        "duration": 6.99
+    },
+    {
+        "text": "driven by the 16 outlier but if I even",
+        "start": 3422.73,
+        "duration": 4.17
+    },
+    {
+        "text": "if after I remove that outlier I still",
+        "start": 3425.1,
+        "duration": 4.89
+    },
+    {
+        "text": "do not see gender coming up as the the",
+        "start": 3426.9,
+        "duration": 5.91
+    },
+    {
+        "text": "main effect if I skip forward to now I'm",
+        "start": 3429.99,
+        "duration": 4.47
+    },
+    {
+        "text": "looking at the third and fourth",
+        "start": 3432.81,
+        "duration": 3.87
+    },
+    {
+        "text": "principal components it's well it's only",
+        "start": 3434.46,
+        "duration": 3.36
+    },
+    {
+        "text": "by the time I get to the third and",
+        "start": 3436.68,
+        "duration": 2.67
+    },
+    {
+        "text": "fourth principle components that I'm",
+        "start": 3437.82,
+        "duration": 5.9
+    },
+    {
+        "text": "beginning to see this gender effect so I",
+        "start": 3439.35,
+        "duration": 7.41
+    },
+    {
+        "text": "are using this other notion of",
+        "start": 3443.72,
+        "duration": 4.69
+    },
+    {
+        "text": "replicates in this other notion of",
+        "start": 3446.76,
+        "duration": 5.13
+    },
+    {
+        "text": "negative controls using the housekeeping",
+        "start": 3448.41,
+        "duration": 5.79
+    },
+    {
+        "text": "genes and biological replicates I",
+        "start": 3451.89,
+        "duration": 5.13
+    },
+    {
+        "text": "I've come up with a stronger adjustment",
+        "start": 3454.2,
+        "duration": 7.02
+    },
+    {
+        "text": "I have adjusted for not not just brain",
+        "start": 3457.02,
+        "duration": 8.9
+    },
+    {
+        "text": "region but many many other sources of",
+        "start": 3461.22,
+        "duration": 8.34
+    },
+    {
+        "text": "biological unwanted variation and",
+        "start": 3465.92,
+        "duration": 6.01
+    },
+    {
+        "text": "another important difference between",
+        "start": 3469.56,
+        "duration": 5.91
+    },
+    {
+        "text": "what I just did and simply regressing",
+        "start": 3471.93,
+        "duration": 6.0
+    },
+    {
+        "text": "out brain region that actually isn't",
+        "start": 3475.47,
+        "duration": 4.02
+    },
+    {
+        "text": "relevant to this example because we have",
+        "start": 3477.93,
+        "duration": 3.36
+    },
+    {
+        "text": "a nice balanced design but you can",
+        "start": 3479.49,
+        "duration": 3.15
+    },
+    {
+        "text": "imagine that if I had a design that was",
+        "start": 3481.29,
+        "duration": 5.43
+    },
+    {
+        "text": "not balanced yes I just naively regress",
+        "start": 3482.64,
+        "duration": 5.969
+    },
+    {
+        "text": "our brain region but brain region was",
+        "start": 3486.72,
+        "duration": 3.81
+    },
+    {
+        "text": "itself correlated with other biology I",
+        "start": 3488.609,
+        "duration": 4.23
+    },
+    {
+        "text": "might be wiping out that other biology",
+        "start": 3490.53,
+        "duration": 6.87
+    },
+    {
+        "text": "as well and with rev3 however even if",
+        "start": 3492.839,
+        "duration": 7.381
+    },
+    {
+        "text": "you have an imbalance design you won't",
+        "start": 3497.4,
+        "duration": 7.02
+    },
+    {
+        "text": "be wiping out biology of interest even",
+        "start": 3500.22,
+        "duration": 6.69
+    },
+    {
+        "text": "if it's correlated with your unwanted",
+        "start": 3504.42,
+        "duration": 9.54
+    },
+    {
+        "text": "factors one final example here I'm going",
+        "start": 3506.91,
+        "duration": 10.02
+    },
+    {
+        "text": "to use one yet another different notion",
+        "start": 3513.96,
+        "duration": 5.76
+    },
+    {
+        "text": "of replicates I'm going to treat all of",
+        "start": 3516.93,
+        "duration": 4.56
+    },
+    {
+        "text": "the samples from the same brain region",
+        "start": 3519.72,
+        "duration": 3.869
+    },
+    {
+        "text": "as a replicant so in this case my",
+        "start": 3521.49,
+        "duration": 4.19
+    },
+    {
+        "text": "mapping matrix looks like this I've got",
+        "start": 3523.589,
+        "duration": 4.411
+    },
+    {
+        "text": "one set of replicates is the interior",
+        "start": 3525.68,
+        "duration": 4.0
+    },
+    {
+        "text": "single cortex one is the cerebellum and",
+        "start": 3528.0,
+        "duration": 2.76
+    },
+    {
+        "text": "one is the berth lateral prefrontal",
+        "start": 3529.68,
+        "duration": 4.11
+    },
+    {
+        "text": "cortex when I do that okay so not",
+        "start": 3530.76,
+        "duration": 6.329
+    },
+    {
+        "text": "surprisingly the the brain the brain",
+        "start": 3533.79,
+        "duration": 6.72
+    },
+    {
+        "text": "regions pop right out but actually be",
+        "start": 3537.089,
+        "duration": 5.971
+    },
+    {
+        "text": "surprising I basically fed information",
+        "start": 3540.51,
+        "duration": 4.2
+    },
+    {
+        "text": "about the brain regions into the",
+        "start": 3543.06,
+        "duration": 5.67
+    },
+    {
+        "text": "algorithm what I'm gonna do here though",
+        "start": 3544.71,
+        "duration": 6.05
+    },
+    {
+        "text": "is I'm going to do what I call bursting",
+        "start": 3548.73,
+        "duration": 4.41
+    },
+    {
+        "text": "I'm going to burst the cerebellum and",
+        "start": 3550.76,
+        "duration": 4.329
+    },
+    {
+        "text": "the door final prefrontal cortex meaning",
+        "start": 3553.14,
+        "duration": 3.51
+    },
+    {
+        "text": "I'm going to treat everything that's",
+        "start": 3555.089,
+        "duration": 3.601
+    },
+    {
+        "text": "cerebellum and anything that's or file",
+        "start": 3556.65,
+        "duration": 4.439
+    },
+    {
+        "text": "prefrontal cortex I'm going to treat all",
+        "start": 3558.69,
+        "duration": 4.26
+    },
+    {
+        "text": "of those as Singleton's I'm not going to",
+        "start": 3561.089,
+        "duration": 3.78
+    },
+    {
+        "text": "treat any of them as replicates of each",
+        "start": 3562.95,
+        "duration": 2.28
+    },
+    {
+        "text": "other",
+        "start": 3564.869,
+        "duration": 3.901
+    },
+    {
+        "text": "so in fact what I'm going to have is a",
+        "start": 3565.23,
+        "duration": 5.43
+    },
+    {
+        "text": "replicant structure where I'm only going",
+        "start": 3568.77,
+        "duration": 4.62
+    },
+    {
+        "text": "to treat samples from the AC cortex as",
+        "start": 3570.66,
+        "duration": 7.35
+    },
+    {
+        "text": "replicates so to see this visually this",
+        "start": 3573.39,
+        "duration": 6.57
+    },
+    {
+        "text": "is what my what my replicate structure",
+        "start": 3578.01,
+        "duration": 3.18
+    },
+    {
+        "text": "is going to look like a Nicole",
+        "start": 3579.96,
+        "duration": 2.609
+    },
+    {
+        "text": "everything from the anterior cingulate",
+        "start": 3581.19,
+        "duration": 5.669
+    },
+    {
+        "text": "cortex a replicant and then everything",
+        "start": 3582.569,
+        "duration": 5.01
+    },
+    {
+        "text": "else is going",
+        "start": 3586.859,
+        "duration": 7.11
+    },
+    {
+        "text": "be treated as when I do this oh we're",
+        "start": 3587.579,
+        "duration": 6.75
+    },
+    {
+        "text": "good to go",
+        "start": 3593.969,
+        "duration": 16.86
+    },
+    {
+        "text": "oh shoot okay well you can you can go",
+        "start": 3594.329,
+        "duration": 17.88
+    },
+    {
+        "text": "back when darker and you can rerun it",
+        "start": 3610.829,
+        "duration": 2.851
+    },
+    {
+        "text": "yourself but I'll tell you what it would",
+        "start": 3612.209,
+        "duration": 3.75
+    },
+    {
+        "text": "have looked like what it would have",
+        "start": 3613.68,
+        "duration": 3.599
+    },
+    {
+        "text": "looked like is that the anterior",
+        "start": 3615.959,
+        "duration": 2.941
+    },
+    {
+        "text": "cingulate cortex samples those are the",
+        "start": 3617.279,
+        "duration": 3.93
+    },
+    {
+        "text": "ones that I treated as replicates they",
+        "start": 3618.9,
+        "duration": 3.48
+    },
+    {
+        "text": "have all been very very tightly",
+        "start": 3621.209,
+        "duration": 3.451
+    },
+    {
+        "text": "clustered and that's because I basically",
+        "start": 3622.38,
+        "duration": 4.229
+    },
+    {
+        "text": "told the algorithm but those are",
+        "start": 3624.66,
+        "duration": 3.059
+    },
+    {
+        "text": "replicates and it removed all the",
+        "start": 3626.609,
+        "duration": 4.25
+    },
+    {
+        "text": "variation within that replicant set but",
+        "start": 3627.719,
+        "duration": 6.0
+    },
+    {
+        "text": "then also you would have gotten still a",
+        "start": 3630.859,
+        "duration": 5.71
+    },
+    {
+        "text": "very nice separation between the",
+        "start": 3633.719,
+        "duration": 4.201
+    },
+    {
+        "text": "cerebellum and the dorsal lateral",
+        "start": 3636.569,
+        "duration": 4.44
+    },
+    {
+        "text": "prefrontal cortex another things that I",
+        "start": 3637.92,
+        "duration": 5.579
+    },
+    {
+        "text": "did not explicitly tell the algorithm",
+        "start": 3641.009,
+        "duration": 6.931
+    },
+    {
+        "text": "were replicant but they do posture very",
+        "start": 3643.499,
+        "duration": 10.47
+    },
+    {
+        "text": "nicely and what I want to say about this",
+        "start": 3647.94,
+        "duration": 9.059
+    },
+    {
+        "text": "one is that bursting is a useful for",
+        "start": 3653.969,
+        "duration": 5.461
+    },
+    {
+        "text": "validating adjustment so for example I",
+        "start": 3656.999,
+        "duration": 4.32
+    },
+    {
+        "text": "only tell the algorithm that the AC",
+        "start": 3659.43,
+        "duration": 4.589
+    },
+    {
+        "text": "cortex replicates but then I see very",
+        "start": 3661.319,
+        "duration": 4.23
+    },
+    {
+        "text": "nice clustering between the other two",
+        "start": 3664.019,
+        "duration": 3.78
+    },
+    {
+        "text": "groups so I know that I've done a good",
+        "start": 3665.549,
+        "duration": 8.73
+    },
+    {
+        "text": "job but even more exciting I think if",
+        "start": 3667.799,
+        "duration": 8.67
+    },
+    {
+        "text": "what I think that this says that I might",
+        "start": 3674.279,
+        "duration": 6.121
+    },
+    {
+        "text": "be able to do in in a particular example",
+        "start": 3676.469,
+        "duration": 5.79
+    },
+    {
+        "text": "that I'm that I'm pretty excited about",
+        "start": 3680.4,
+        "duration": 5.79
+    },
+    {
+        "text": "pursuing the idea would be this say that",
+        "start": 3682.259,
+        "duration": 5.61
+    },
+    {
+        "text": "I want to do some sort of cluster",
+        "start": 3686.19,
+        "duration": 3.72
+    },
+    {
+        "text": "analysis and I want to discover diseased",
+        "start": 3687.869,
+        "duration": 6.511
+    },
+    {
+        "text": "subjects and so now very often when you",
+        "start": 3689.91,
+        "duration": 6.539
+    },
+    {
+        "text": "do a cluster analysis to try and",
+        "start": 3694.38,
+        "duration": 4.8
+    },
+    {
+        "text": "discover disease subtypes you find",
+        "start": 3696.449,
+        "duration": 6.06
+    },
+    {
+        "text": "clusters but then very often it's kind",
+        "start": 3699.18,
+        "duration": 5.819
+    },
+    {
+        "text": "of an open question of these clusters",
+        "start": 3702.509,
+        "duration": 5.161
+    },
+    {
+        "text": "that I found do they actually have",
+        "start": 3704.999,
+        "duration": 5.28
+    },
+    {
+        "text": "anything to do with the disease so there",
+        "start": 3707.67,
+        "duration": 4.71
+    },
+    {
+        "text": "might clearly get some clusters but are",
+        "start": 3710.279,
+        "duration": 5.0
+    },
+    {
+        "text": "they are they disease relevant clusters",
+        "start": 3712.38,
+        "duration": 6.689
+    },
+    {
+        "text": "and what I'm hopeful that I might be",
+        "start": 3715.279,
+        "duration": 5.201
+    },
+    {
+        "text": "able to be done",
+        "start": 3719.069,
+        "duration": 4.681
+    },
+    {
+        "text": "using using this ruv framework is to do",
+        "start": 3720.48,
+        "duration": 5.25
+    },
+    {
+        "text": "something like this to say I'm going to",
+        "start": 3723.75,
+        "duration": 3.63
+    },
+    {
+        "text": "you I'm going to get myself some healthy",
+        "start": 3725.73,
+        "duration": 3.66
+    },
+    {
+        "text": "controls and I'm going to treat all of",
+        "start": 3727.38,
+        "duration": 5.07
+    },
+    {
+        "text": "the healthy controls as biological",
+        "start": 3729.39,
+        "duration": 6.6
+    },
+    {
+        "text": "replicates and by treating all of these",
+        "start": 3732.45,
+        "duration": 5.76
+    },
+    {
+        "text": "by these healthy controls of biological",
+        "start": 3735.99,
+        "duration": 4.619
+    },
+    {
+        "text": "replicates I will be capturing all of",
+        "start": 3738.21,
+        "duration": 4.47
+    },
+    {
+        "text": "what might be considered ordinary",
+        "start": 3740.609,
+        "duration": 6.331
+    },
+    {
+        "text": "biological variation I can then just for",
+        "start": 3742.68,
+        "duration": 6.84
+    },
+    {
+        "text": "that ordinary biological variation and",
+        "start": 3746.94,
+        "duration": 4.97
+    },
+    {
+        "text": "then with any luck",
+        "start": 3749.52,
+        "duration": 4.65
+    },
+    {
+        "text": "afterwards what will be left it's only",
+        "start": 3751.91,
+        "duration": 5.11
+    },
+    {
+        "text": "disease related information and so when",
+        "start": 3754.17,
+        "duration": 3.84
+    },
+    {
+        "text": "I looked at my clusters",
+        "start": 3757.02,
+        "duration": 3.75
+    },
+    {
+        "text": "I'll have at least some extra reason to",
+        "start": 3758.01,
+        "duration": 4.02
+    },
+    {
+        "text": "believe that these clusters that I'm",
+        "start": 3760.77,
+        "duration": 3.63
+    },
+    {
+        "text": "looking at are actually related to",
+        "start": 3762.03,
+        "duration": 6.9
+    },
+    {
+        "text": "disease okay so I know that I'm already",
+        "start": 3764.4,
+        "duration": 15.75
+    },
+    {
+        "text": "over there's a shiny app and you can use",
+        "start": 3768.93,
+        "duration": 24.59
+    },
+    {
+        "text": "it all right thanks sort of make sense",
+        "start": 3780.15,
+        "duration": 13.37
+    },
+    {
+        "text": "thank you",
+        "start": 3793.64,
+        "duration": 3.12
+    }
+]

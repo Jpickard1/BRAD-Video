@@ -1,0 +1,1267 @@
+[
+    {
+        "text": "Let's talk about space-filling curves.",
+        "start": 4.14,
+        "duration": 1.86
+    },
+    {
+        "text": "They are incredibly fun to animate, and they also give ",
+        "start": 6.42,
+        "duration": 2.444
+    },
+    {
+        "text": "a chance to address a certain philosophical question.",
+        "start": 8.864,
+        "duration": 2.356
+    },
+    {
+        "text": "Math often deals with infinite quantities, sometimes so intimately that the ",
+        "start": 11.82,
+        "duration": 4.235
+    },
+    {
+        "text": "very substance of a result only actually makes sense in an infinite world.",
+        "start": 16.055,
+        "duration": 4.125
+    },
+    {
+        "text": "So the question is, how can these results ever be useful in a finite context?",
+        "start": 20.94,
+        "duration": 4.74
+    },
+    {
+        "text": "As with all philosophizing, this is best left to discuss ",
+        "start": 26.66,
+        "duration": 2.938
+    },
+    {
+        "text": "until after we look at the concrete case and the real math.",
+        "start": 29.598,
+        "duration": 3.042
+    },
+    {
+        "text": "So I'll begin by laying down an application of something called a Hilbert curve, ",
+        "start": 33.24,
+        "duration": 4.264
+    },
+    {
+        "text": "followed by a description of some of its origins in infinite math.",
+        "start": 37.504,
+        "duration": 3.476
+    },
+    {
+        "text": "Let's say you wanted to write some software that ",
+        "start": 44.52,
+        "duration": 2.492
+    },
+    {
+        "text": "would enable people to see with their ears.",
+        "start": 47.012,
+        "duration": 2.188
+    },
+    {
+        "text": "It would take in data from a camera, and then somehow ",
+        "start": 49.9,
+        "duration": 3.261
+    },
+    {
+        "text": "translate that into a sound in a meaningful way.",
+        "start": 53.161,
+        "duration": 2.899
+    },
+    {
+        "text": "The thought here is that brains are plastic enough to build an intuition ",
+        "start": 56.9,
+        "duration": 3.639
+    },
+    {
+        "text": "from sight even when the raw data is scrambled into a different format.",
+        "start": 60.539,
+        "duration": 3.541
+    },
+    {
+        "text": "I've left a few links in the description to studies to this effect.",
+        "start": 64.8,
+        "duration": 2.88
+    },
+    {
+        "text": "To make initial experiments easier, you might start by treating ",
+        "start": 68.3,
+        "duration": 4.122
+    },
+    {
+        "text": "incoming images with a low resolution, maybe 256 by 256 pixels.",
+        "start": 72.422,
+        "duration": 4.058
+    },
+    {
+        "text": "And to make my own animation efforts easier, let's represent one of ",
+        "start": 77.34,
+        "duration": 3.4
+    },
+    {
+        "text": "these images with a square grid, each cell corresponding with a pixel.",
+        "start": 80.74,
+        "duration": 3.5
+    },
+    {
+        "text": "One approach to this sound-to-sight software would be to find a nice ",
+        "start": 85.08,
+        "duration": 4.433
+    },
+    {
+        "text": "way to associate each one of those pixels with a unique frequency value.",
+        "start": 89.513,
+        "duration": 4.627
+    },
+    {
+        "text": "Then when that pixel is brighter, the frequency associated with it would be ",
+        "start": 95.02,
+        "duration": 3.739
+    },
+    {
+        "text": "played louder, and if the pixel were darker, the frequency would be quiet.",
+        "start": 98.759,
+        "duration": 3.641
+    },
+    {
+        "text": "Listening to all of the pixels all at once would then sound like a bunch of ",
+        "start": 103.4,
+        "duration": 4.306
+    },
+    {
+        "text": "frequencies overlaid on top of one another, with dominant frequencies ",
+        "start": 107.706,
+        "duration": 3.967
+    },
+    {
+        "text": "corresponding to the brighter regions of the image sounding like some ",
+        "start": 111.673,
+        "duration": 3.967
+    },
+    {
+        "text": "cacophonous mess until your brain learns to make sense out of the information it contains.",
+        "start": 115.64,
+        "duration": 5.1
+    },
+    {
+        "text": "Let's temporarily set aside worries about whether or not this would actually work, ",
+        "start": 121.9,
+        "duration": 4.555
+    },
+    {
+        "text": "and instead think about what function, from pixel space down to frequency space, ",
+        "start": 126.455,
+        "duration": 4.445
+    },
+    {
+        "text": "gives this software the best chance of working.",
+        "start": 130.9,
+        "duration": 2.58
+    },
+    {
+        "text": "The tricky part is that pixel space is two-dimensional, ",
+        "start": 134.5,
+        "duration": 3.407
+    },
+    {
+        "text": "but frequency space is one-dimensional.",
+        "start": 137.907,
+        "duration": 2.373
+    },
+    {
+        "text": "You could, of course, try doing this with a random mapping.",
+        "start": 141.659,
+        "duration": 3.441
+    },
+    {
+        "text": "After all, we're hoping that people's brains make sense out of pretty wonky data anyway.",
+        "start": 145.7,
+        "duration": 3.9
+    },
+    {
+        "text": "However, it might be nice to leverage some of the ",
+        "start": 150.4,
+        "duration": 2.681
+    },
+    {
+        "text": "intuitions that a given human brain already has about sound.",
+        "start": 153.081,
+        "duration": 3.219
+    },
+    {
+        "text": "For example, if we think in terms of the reverse mapping from frequency space to pixel ",
+        "start": 156.96,
+        "duration": 5.091
+    },
+    {
+        "text": "space, frequencies that are close together should stay close together in the pixel space.",
+        "start": 162.051,
+        "duration": 5.209
+    },
+    {
+        "text": "That way, even if an ear has a hard time distinguishing between two nearby frequencies, ",
+        "start": 167.7,
+        "duration": 5.195
+    },
+    {
+        "text": "they will at least refer to the same basic point in space.",
+        "start": 172.895,
+        "duration": 3.425
+    },
+    {
+        "text": "To ensure this happens, you could first describe a ",
+        "start": 177.4,
+        "duration": 2.854
+    },
+    {
+        "text": "way to weave a line through each one of these pixels.",
+        "start": 180.254,
+        "duration": 2.966
+    },
+    {
+        "text": "Then if you fix each pixel to a spot on that line and unravel the ",
+        "start": 184.22,
+        "duration": 4.374
+    },
+    {
+        "text": "whole thread to make it straight, you could interpret this line as a frequency space, ",
+        "start": 188.594,
+        "duration": 5.7
+    },
+    {
+        "text": "and you have an association from pixels to frequencies.",
+        "start": 194.294,
+        "duration": 3.646
+    },
+    {
+        "text": "One weaving method would be to just go one row at a time, ",
+        "start": 199.84,
+        "duration": 3.312
+    },
+    {
+        "text": "alternating between left and right as it moves up that pixel space.",
+        "start": 203.152,
+        "duration": 3.828
+    },
+    {
+        "text": "This is like a well-played game of Snake, so let's call this a Snake Curve.",
+        "start": 207.78,
+        "duration": 3.62
+    },
+    {
+        "text": "When you tell your mathematician friend about this idea, ",
+        "start": 212.6,
+        "duration": 2.916
+    },
+    {
+        "text": "she says, why not use a Hilbert curve?",
+        "start": 215.516,
+        "duration": 1.944
+    },
+    {
+        "text": "When you ask her what that is, she stumbles for a moment.",
+        "start": 218.22,
+        "duration": 2.38
+    },
+    {
+        "text": "So it's not a curve, but an infinite family of curves.",
+        "start": 221.22,
+        "duration": 3.16
+    },
+    {
+        "text": "She starts, well no, it's just one thing, but I need ",
+        "start": 224.38,
+        "duration": 3.169
+    },
+    {
+        "text": "to tell you about a certain infinite family first.",
+        "start": 227.549,
+        "duration": 2.991
+    },
+    {
+        "text": "She pulls out a piece of paper and starts explaining what she ",
+        "start": 231.12,
+        "duration": 3.231
+    },
+    {
+        "text": "decides to call pseudo-Hilbert curves, for lack of a better term.",
+        "start": 234.351,
+        "duration": 3.389
+    },
+    {
+        "text": "For an order-one pseudo-Hilbert curve, you divide a square into a 2x2 grid, ",
+        "start": 238.32,
+        "duration": 4.812
+    },
+    {
+        "text": "and connect the center of the lower left quadrant to the center of the upper left, ",
+        "start": 243.132,
+        "duration": 5.255
+    },
+    {
+        "text": "over to the upper right, and then down in the lower right.",
+        "start": 248.387,
+        "duration": 3.673
+    },
+    {
+        "text": "For an order-two pseudo-Hilbert curve, rather than just going straight from one quadrant ",
+        "start": 252.62,
+        "duration": 4.96
+    },
+    {
+        "text": "to another, we let our curve do a little work to fill out each quadrant while it does so.",
+        "start": 257.58,
+        "duration": 4.96
+    },
+    {
+        "text": "Specifically, subdivide the square further into a 4x4 grid, ",
+        "start": 263.06,
+        "duration": 3.715
+    },
+    {
+        "text": "and we have our curve trace out a miniature order-one pseudo-Hilbert ",
+        "start": 266.775,
+        "duration": 4.273
+    },
+    {
+        "text": "curve inside each quadrant before it moves on to the next.",
+        "start": 271.048,
+        "duration": 3.592
+    },
+    {
+        "text": "If we left those mini-curves oriented as they are, ",
+        "start": 275.52,
+        "duration": 2.741
+    },
+    {
+        "text": "going from the end of the mini-curve in the lower left to the start of the mini-curve ",
+        "start": 278.261,
+        "duration": 4.622
+    },
+    {
+        "text": "in the upper left requires an awkward jump, same deal with going from the upper right ",
+        "start": 282.883,
+        "duration": 4.623
+    },
+    {
+        "text": "down to the lower right, so we flip the curves in the lower left and lower right to ",
+        "start": 287.506,
+        "duration": 4.515
+    },
+    {
+        "text": "make that connection shorter.",
+        "start": 292.021,
+        "duration": 1.559
+    },
+    {
+        "text": "Going from an order-two to an order-three pseudo-Hilbert curve is similar.",
+        "start": 294.78,
+        "duration": 4.0
+    },
+    {
+        "text": "You divide the square into an 8x8 grid, then put an order-two ",
+        "start": 299.46,
+        "duration": 3.941
+    },
+    {
+        "text": "pseudo-Hilbert curve in each quadrant, flip the lower left and lower right appropriately, ",
+        "start": 303.401,
+        "duration": 5.721
+    },
+    {
+        "text": "and connect them all tip to tail.",
+        "start": 309.122,
+        "duration": 2.098
+    },
+    {
+        "text": "And the pattern continues like that for higher orders.",
+        "start": 312.1,
+        "duration": 2.68
+    },
+    {
+        "text": "For the 256x256 pixel array, your mathematician friend explains, ",
+        "start": 322.02,
+        "duration": 4.589
+    },
+    {
+        "text": "you would use an order-eight pseudo-Hilbert curve.",
+        "start": 326.609,
+        "duration": 3.531
+    },
+    {
+        "text": "And remember, defining a curve which weaves through each pixel is ",
+        "start": 331.0,
+        "duration": 4.184
+    },
+    {
+        "text": "basically the same as defining a function from pixel space to frequency space, ",
+        "start": 335.184,
+        "duration": 5.008
+    },
+    {
+        "text": "since you're associating each pixel with a point on the line.",
+        "start": 340.192,
+        "duration": 3.868
+    },
+    {
+        "text": "Now this is nice as a piece of art, but why would these ",
+        "start": 345.44,
+        "duration": 2.894
+    },
+    {
+        "text": "pseudo-Hilbert curves be any better than just the snake curve?",
+        "start": 348.334,
+        "duration": 3.206
+    },
+    {
+        "text": "Well here's one very important reason.",
+        "start": 352.46,
+        "duration": 1.92
+    },
+    {
+        "text": "Imagine that you go through with this project, ",
+        "start": 354.96,
+        "duration": 2.206
+    },
+    {
+        "text": "you integrate the software with real cameras and headphones, and it works!",
+        "start": 357.166,
+        "duration": 3.474
+    },
+    {
+        "text": "People around the world are using the device, building intuitions for vision via sound.",
+        "start": 361.1,
+        "duration": 4.26
+    },
+    {
+        "text": "What happens when you issue an upgrade that increases the ",
+        "start": 366.2,
+        "duration": 4.589
+    },
+    {
+        "text": "resolution of the camera's image from 256x256 to 512x512?",
+        "start": 370.789,
+        "duration": 4.511
+    },
+    {
+        "text": "If you were using the snake curve, as you transition to a higher resolution, ",
+        "start": 376.58,
+        "duration": 4.416
+    },
+    {
+        "text": "many points on this frequency line would have to go to completely different parts of ",
+        "start": 380.996,
+        "duration": 4.875
+    },
+    {
+        "text": "pixel space.",
+        "start": 385.871,
+        "duration": 0.689
+    },
+    {
+        "text": "For example, let's follow a point about halfway along the frequency line.",
+        "start": 387.19,
+        "duration": 3.71
+    },
+    {
+        "text": "It'll end up about halfway up the pixel space, no matter the resolution, ",
+        "start": 391.56,
+        "duration": 5.054
+    },
+    {
+        "text": "but where it is left to right can differ wildly as you go from 256x256 up to 512x512.",
+        "start": 396.614,
+        "duration": 5.886
+    },
+    {
+        "text": "This means everyone using your software would have to re-learn ",
+        "start": 402.92,
+        "duration": 3.507
+    },
+    {
+        "text": "how to see with their ears, since the original intuitions of ",
+        "start": 406.427,
+        "duration": 3.396
+    },
+    {
+        "text": "which points in space correspond to which frequencies no longer apply.",
+        "start": 409.823,
+        "duration": 3.897
+    },
+    {
+        "text": "However, with the Hilbert curve technique, as you increase the ",
+        "start": 414.719,
+        "duration": 4.278
+    },
+    {
+        "text": "order of a pseudo-Hilbert curve, a given point on the line moves around less and less, ",
+        "start": 418.997,
+        "duration": 5.908
+    },
+    {
+        "text": "it just approaches a more specific point in space.",
+        "start": 424.905,
+        "duration": 3.395
+    },
+    {
+        "text": "That way, you've given your users the opportunity to fine-tune their intuitions, ",
+        "start": 429.52,
+        "duration": 4.524
+    },
+    {
+        "text": "rather than re-learning everything.",
+        "start": 434.044,
+        "duration": 1.956
+    },
+    {
+        "text": "So, for this sound-to-sight application, the Hilbert ",
+        "start": 439.46,
+        "duration": 2.88
+    },
+    {
+        "text": "curve approach turns out to be exactly what you want.",
+        "start": 442.34,
+        "duration": 2.88
+    },
+    {
+        "text": "In fact, given how specific the goal is, it seems almost weirdly perfect.",
+        "start": 446.22,
+        "duration": 5.3
+    },
+    {
+        "text": "So you go back to your mathematician friend and ask her, ",
+        "start": 452.22,
+        "duration": 2.928
+    },
+    {
+        "text": "what was the original motivation for defining one of these curves?",
+        "start": 455.148,
+        "duration": 3.392
+    },
+    {
+        "text": "She explains that near the end of the 19th century, ",
+        "start": 459.74,
+        "duration": 2.878
+    },
+    {
+        "text": "in the aftershock of Cantor's research on infinity, ",
+        "start": 462.618,
+        "duration": 2.879
+    },
+    {
+        "text": "mathematicians were interested in finding a mapping from a one-dimensional ",
+        "start": 465.497,
+        "duration": 4.151
+    },
+    {
+        "text": "line into two-dimensional space in such a way that the line runs through ",
+        "start": 469.648,
+        "duration": 4.042
+    },
+    {
+        "text": "every single point in space.",
+        "start": 473.69,
+        "duration": 1.55
+    },
+    {
+        "text": "To be clear, we're not talking about a finite bounded grid of pixels, ",
+        "start": 476.24,
+        "duration": 3.463
+    },
+    {
+        "text": "like we had in the sound-to-sight application.",
+        "start": 479.703,
+        "duration": 2.277
+    },
+    {
+        "text": "This is continuous space, which is very infinite, ",
+        "start": 482.68,
+        "duration": 3.298
+    },
+    {
+        "text": "and the goal is to have a line which is as thin as can be and has zero area, ",
+        "start": 485.978,
+        "duration": 5.079
+    },
+    {
+        "text": "somehow pass through every single one of those infinitely many points that makes ",
+        "start": 491.057,
+        "duration": 5.344
+    },
+    {
+        "text": "up the infinite area of space.",
+        "start": 496.401,
+        "duration": 1.979
+    },
+    {
+        "text": "Before 1890, a lot of people thought this was obviously impossible, ",
+        "start": 499.68,
+        "duration": 4.088
+    },
+    {
+        "text": "but then Peano discovered the first of what would come to be known as space-filling ",
+        "start": 503.768,
+        "duration": 5.051
+    },
+    {
+        "text": "curves.",
+        "start": 508.819,
+        "duration": 0.421
+    },
+    {
+        "text": "In 1891, Hilbert followed with his own slightly simpler space-filling curve.",
+        "start": 510.18,
+        "duration": 4.22
+    },
+    {
+        "text": "Technically, each one fills a square, not all of space, ",
+        "start": 515.4,
+        "duration": 2.806
+    },
+    {
+        "text": "but I'll show you later on how once you filled a square with a line, ",
+        "start": 518.206,
+        "duration": 3.459
+    },
+    {
+        "text": "filling all of space is not an issue.",
+        "start": 521.665,
+        "duration": 1.855
+    },
+    {
+        "text": "By the way, mathematicians use the word curve to talk about ",
+        "start": 524.62,
+        "duration": 3.418
+    },
+    {
+        "text": "a line running through space even if it has jagged corners.",
+        "start": 528.038,
+        "duration": 3.362
+    },
+    {
+        "text": "This is especially counterintuitive terminology in the context of a space-filling curve, ",
+        "start": 532.2,
+        "duration": 5.018
+    },
+    {
+        "text": "which in a sense consists of nothing but sharp corners.",
+        "start": 537.218,
+        "duration": 3.102
+    },
+    {
+        "text": "A better name might be something like space-filling fractal, ",
+        "start": 540.86,
+        "duration": 3.502
+    },
+    {
+        "text": "which some people do use, but hey, it's math, so we live with bad terminology.",
+        "start": 544.362,
+        "duration": 4.478
+    },
+    {
+        "text": "None of the pseudo-Hilbert curves that you use to fill pixelated space ",
+        "start": 550.36,
+        "duration": 3.704
+    },
+    {
+        "text": "would count as a space-filling curve, no matter how high the order.",
+        "start": 554.064,
+        "duration": 3.496
+    },
+    {
+        "text": "Just zoom in on one of the pixels.",
+        "start": 558.48,
+        "duration": 1.72
+    },
+    {
+        "text": "When this pixel is considered part of infinite, continuous space, ",
+        "start": 560.94,
+        "duration": 4.136
+    },
+    {
+        "text": "the curve only passes through the tiniest zero-area slice of it, ",
+        "start": 565.076,
+        "duration": 4.074
+    },
+    {
+        "text": "and it certainly doesn't hit every point.",
+        "start": 569.15,
+        "duration": 2.57
+    },
+    {
+        "text": "Your mathematician friend explains that an actual bonafide ",
+        "start": 573.42,
+        "duration": 3.331
+    },
+    {
+        "text": "Hilbert curve is not any one of these pseudo-Hilbert curves.",
+        "start": 576.751,
+        "duration": 3.389
+    },
+    {
+        "text": "Instead it's the limit of all of them.",
+        "start": 580.82,
+        "duration": 1.74
+    },
+    {
+        "text": "Defining this limit rigorously is delicate.",
+        "start": 583.7,
+        "duration": 2.98
+    },
+    {
+        "text": "You first have to formalize what these curves are as functions, ",
+        "start": 587.42,
+        "duration": 3.846
+    },
+    {
+        "text": "specifically functions which take in a single number somewhere ",
+        "start": 591.266,
+        "duration": 3.787
+    },
+    {
+        "text": "between 0 and 1 as their input, and output a pair of numbers.",
+        "start": 595.053,
+        "duration": 3.667
+    },
+    {
+        "text": "This input can be thought of as a point on the line, ",
+        "start": 599.6,
+        "duration": 2.56
+    },
+    {
+        "text": "and the output can be thought of as coordinates in 2D space.",
+        "start": 602.16,
+        "duration": 2.9
+    },
+    {
+        "text": "But in principle it's just an association between a single number and pairs of numbers.",
+        "start": 605.48,
+        "duration": 4.84
+    },
+    {
+        "text": "For example, an order-2 pseudo-Hilbert curve as a ",
+        "start": 611.28,
+        "duration": 4.752
+    },
+    {
+        "text": "function maps the input 0.3 to the output pair 0.125, 0.75.",
+        "start": 616.032,
+        "duration": 5.608
+    },
+    {
+        "text": "An order-3 pseudo-Hilbert curve maps that same input 0.3 to the output pair 0.0758, ",
+        "start": 622.58,
+        "duration": 8.529
+    },
+    {
+        "text": "0.6875.",
+        "start": 631.109,
+        "duration": 0.711
+    },
+    {
+        "text": "Now the core property that makes a function like this a curve, ",
+        "start": 633.14,
+        "duration": 3.723
+    },
+    {
+        "text": "and not just any ol' association between single numbers and pairs of numbers, ",
+        "start": 636.863,
+        "duration": 4.609
+    },
+    {
+        "text": "is continuity.",
+        "start": 641.472,
+        "duration": 0.828
+    },
+    {
+        "text": "The intuition behind continuity is that you don't want the output of your ",
+        "start": 643.66,
+        "duration": 4.007
+    },
+    {
+        "text": "function to suddenly jump at any point when the input is only changing smoothly.",
+        "start": 647.667,
+        "duration": 4.333
+    },
+    {
+        "text": "And the way this is made rigorous in math is actually pretty clever, ",
+        "start": 652.82,
+        "duration": 4.349
+    },
+    {
+        "text": "and fully appreciating space-filling curves requires digesting the formal idea ",
+        "start": 657.169,
+        "duration": 4.979
+    },
+    {
+        "text": "of continuity, so it's definitely worth taking a brief side-step to go over it now.",
+        "start": 662.148,
+        "duration": 5.232
+    },
+    {
+        "text": "Consider a particular input point, a, and the corresponding output of the function, b.",
+        "start": 668.339,
+        "duration": 5.821
+    },
+    {
+        "text": "Draw a circle centered around a, and look at all the other input points inside that ",
+        "start": 675.14,
+        "duration": 5.492
+    },
+    {
+        "text": "circle, and consider where the function takes all those points in the output space.",
+        "start": 680.632,
+        "duration": 5.428
+    },
+    {
+        "text": "Now draw the smallest circle you can centered at b that contains those outputs.",
+        "start": 687.06,
+        "duration": 5.1
+    },
+    {
+        "text": "Different choices for the size of the input circle might ",
+        "start": 693.24,
+        "duration": 3.369
+    },
+    {
+        "text": "result in larger or smaller circles in the output space.",
+        "start": 696.609,
+        "duration": 3.311
+    },
+    {
+        "text": "But notice what happens when we go through this process at a point ",
+        "start": 700.7,
+        "duration": 4.152
+    },
+    {
+        "text": "where the function jumps, drawing a circle around a, ",
+        "start": 704.852,
+        "duration": 3.285
+    },
+    {
+        "text": "and looking at the input points within the circle, seeing where they map, ",
+        "start": 708.137,
+        "duration": 4.586
+    },
+    {
+        "text": "and drawing the smallest possible circle centered at b containing those points.",
+        "start": 712.723,
+        "duration": 4.897
+    },
+    {
+        "text": "No matter how small the circle around a, the corresponding ",
+        "start": 718.54,
+        "duration": 3.863
+    },
+    {
+        "text": "circle around b just cannot be smaller than that jump.",
+        "start": 722.403,
+        "duration": 3.537
+    },
+    {
+        "text": "For this reason, we say that the function is discontinuous at a if ",
+        "start": 727.34,
+        "duration": 4.387
+    },
+    {
+        "text": "there's any lower bound on the size of this circle that surrounds b.",
+        "start": 731.727,
+        "duration": 4.453
+    },
+    {
+        "text": "If the circle around b can be made as small as you want, ",
+        "start": 737.46,
+        "duration": 3.31
+    },
+    {
+        "text": "with sufficiently small choices for circles around a, ",
+        "start": 740.77,
+        "duration": 3.136
+    },
+    {
+        "text": "you say that the function is continuous at a.",
+        "start": 743.906,
+        "duration": 2.614
+    },
+    {
+        "text": "A function as a whole is called continuous if ",
+        "start": 747.34,
+        "duration": 2.41
+    },
+    {
+        "text": "it's continuous at every possible input point.",
+        "start": 749.75,
+        "duration": 2.41
+    },
+    {
+        "text": "Now with that as a formal definition of curves, ",
+        "start": 752.98,
+        "duration": 2.833
+    },
+    {
+        "text": "you're ready to define what an actual Hilbert curve is.",
+        "start": 755.813,
+        "duration": 3.247
+    },
+    {
+        "text": "Doing this relies on a wonderful property of the sequence of pseudo-Hilbert curves, ",
+        "start": 760.02,
+        "duration": 4.828
+    },
+    {
+        "text": "which should feel familiar.",
+        "start": 764.848,
+        "duration": 1.552
+    },
+    {
+        "text": "Take a given input point, like 0.3, and apply each ",
+        "start": 767.4,
+        "duration": 3.281
+    },
+    {
+        "text": "successive pseudo-Hilbert curve function to this point.",
+        "start": 770.681,
+        "duration": 3.539
+    },
+    {
+        "text": "The corresponding outputs, as we increase the order of the curve, ",
+        "start": 775.06,
+        "duration": 3.825
+    },
+    {
+        "text": "approaches some particular point in space.",
+        "start": 778.885,
+        "duration": 2.435
+    },
+    {
+        "text": "It doesn't matter what input you start with, this sequence of outputs ",
+        "start": 782.34,
+        "duration": 3.944
+    },
+    {
+        "text": "you get by applying each successive pseudo-Hilbert curve to this point ",
+        "start": 786.284,
+        "duration": 4.0
+    },
+    {
+        "text": "always stabilizes and approaches some particular point in 2D space.",
+        "start": 790.284,
+        "duration": 3.776
+    },
+    {
+        "text": "This is absolutely not true, by the way, for snake curves, ",
+        "start": 795.34,
+        "duration": 3.104
+    },
+    {
+        "text": "or for that matter most sequences of curves filling pixelated space of higher ",
+        "start": 798.444,
+        "duration": 4.105
+    },
+    {
+        "text": "and higher resolutions.",
+        "start": 802.549,
+        "duration": 1.211
+    },
+    {
+        "text": "The outputs associated with a given input become wildly erratic as the resolution ",
+        "start": 804.37,
+        "duration": 5.012
+    },
+    {
+        "text": "increases, always jumping from left to right, and never actually approaching anything.",
+        "start": 809.382,
+        "duration": 5.258
+    },
+    {
+        "text": "Now because of this property, we can define a Hilbert curve function like this.",
+        "start": 815.9,
+        "duration": 4.48
+    },
+    {
+        "text": "For a given input value between 0 and 1, consider the sequence of points in 2D ",
+        "start": 821.04,
+        "duration": 4.711
+    },
+    {
+        "text": "space you get by applying each successive pseudo-Hilbert curve function at that point.",
+        "start": 825.751,
+        "duration": 5.129
+    },
+    {
+        "text": "The output of the Hilbert curve function evaluated on ",
+        "start": 831.42,
+        "duration": 3.622
+    },
+    {
+        "text": "this input is just defined to be the limit of those points.",
+        "start": 835.042,
+        "duration": 3.958
+    },
+    {
+        "text": "Because the sequence of pseudo-Hilbert curve outputs always converges ",
+        "start": 840.38,
+        "duration": 3.816
+    },
+    {
+        "text": "no matter what input you start with, this is actually a well-defined ",
+        "start": 844.196,
+        "duration": 3.763
+    },
+    {
+        "text": "function in a way that it never could have been had we used snake curves.",
+        "start": 847.959,
+        "duration": 3.981
+    },
+    {
+        "text": "Now I'm not going to go through the proof for why this gives a space-filling curve, ",
+        "start": 853.44,
+        "duration": 3.783
+    },
+    {
+        "text": "but let's at least see what needs to be proved.",
+        "start": 857.223,
+        "duration": 2.117
+    },
+    {
+        "text": "First, verify that this is a well-defined function by proving that the outputs of ",
+        "start": 859.34,
+        "duration": 4.646
+    },
+    {
+        "text": "the pseudo-Hilbert curve functions really do converge the way I'm telling you they do.",
+        "start": 863.986,
+        "duration": 4.874
+    },
+    {
+        "text": "Second, show that this function gives a curve, meaning it's continuous.",
+        "start": 869.4,
+        "duration": 4.58
+    },
+    {
+        "text": "Third, and most important, show that it fills space, ",
+        "start": 875.14,
+        "duration": 3.248
+    },
+    {
+        "text": "in the sense that every single point in the unit square is an output of this function.",
+        "start": 878.388,
+        "duration": 5.272
+    },
+    {
+        "text": "I really do encourage anyone watching this to take a stab at each one of these.",
+        "start": 884.58,
+        "duration": 3.78
+    },
+    {
+        "text": "Spoiler alert, all three of these facts turn out to be true.",
+        "start": 888.88,
+        "duration": 2.98
+    },
+    {
+        "text": "You can extend this to a curve that fills all of space just by tiling ",
+        "start": 893.66,
+        "duration": 3.659
+    },
+    {
+        "text": "space with squares and then chaining a bunch of Hilbert curves together ",
+        "start": 897.319,
+        "duration": 3.764
+    },
+    {
+        "text": "in a spiraling pattern of tiles, connecting the end of one tile to the ",
+        "start": 901.083,
+        "duration": 3.712
+    },
+    {
+        "text": "start of a new tile with an added little stretch of line if you need to.",
+        "start": 904.795,
+        "duration": 3.765
+    },
+    {
+        "text": "You can think of the first tile as coming from the interval from 0 to 1, ",
+        "start": 909.66,
+        "duration": 4.964
+    },
+    {
+        "text": "the second tile as coming from the interval from 1 to 2, and so on, ",
+        "start": 914.624,
+        "duration": 4.624
+    },
+    {
+        "text": "so the entire positive real number line is getting mapped into all of 2D space.",
+        "start": 919.248,
+        "duration": 5.372
+    },
+    {
+        "text": "Take a moment to let that fact sink in.",
+        "start": 925.42,
+        "duration": 1.9
+    },
+    {
+        "text": "A line, the platonic form of thinness itself, can wander through an ",
+        "start": 927.66,
+        "duration": 5.156
+    },
+    {
+        "text": "infinitely extending and richly dense space and hit every single point.",
+        "start": 932.816,
+        "duration": 5.384
+    },
+    {
+        "text": "Notice, the core property that made pseudo-Hilbert curves useful in both the ",
+        "start": 943.24,
+        "duration": 4.894
+    },
+    {
+        "text": "sound-to-sight application and in their infinite origins is that points on ",
+        "start": 948.134,
+        "duration": 4.767
+    },
+    {
+        "text": "the curve move around less and less as you increase the order of those curves.",
+        "start": 952.901,
+        "duration": 4.959
+    },
+    {
+        "text": "While translating images to sound, this was useful because it means upgrading ",
+        "start": 958.78,
+        "duration": 4.132
+    },
+    {
+        "text": "to higher resolutions doesn't require retraining your senses all over again.",
+        "start": 962.912,
+        "duration": 4.028
+    },
+    {
+        "text": "For mathematicians interested in filling continuous space, ",
+        "start": 967.46,
+        "duration": 3.698
+    },
+    {
+        "text": "this property is what ensured that talking about the limit of a sequence of curves ",
+        "start": 971.158,
+        "duration": 5.203
+    },
+    {
+        "text": "was a meaningful thing to do.",
+        "start": 976.361,
+        "duration": 1.819
+    },
+    {
+        "text": "And this connection here between the infinite and finite ",
+        "start": 979.06,
+        "duration": 2.962
+    },
+    {
+        "text": "worlds seems to be more of a rule in math than an exception.",
+        "start": 982.022,
+        "duration": 3.118
+    },
+    {
+        "text": "Another example that several astute commenters on the Inventing Math video ",
+        "start": 986.02,
+        "duration": 4.262
+    },
+    {
+        "text": "pointed out is the connection between the divergent sum of all powers of ",
+        "start": 990.282,
+        "duration": 4.149
+    },
+    {
+        "text": "2 and the way that the number of 1 is represented in computers with bits.",
+        "start": 994.431,
+        "duration": 4.149
+    },
+    {
+        "text": "It's not so much that the infinite result is directly useful, ",
+        "start": 999.58,
+        "duration": 4.06
+    },
+    {
+        "text": "but instead the same patterns and constructs that are used to define and ",
+        "start": 1003.64,
+        "duration": 4.781
+    },
+    {
+        "text": "prove infinite facts have finite analogs, and these finite analogs are directly useful.",
+        "start": 1008.421,
+        "duration": 5.699
+    },
+    {
+        "text": "But the connection is often deeper than a mere analogy.",
+        "start": 1015.1,
+        "duration": 2.5
+    },
+    {
+        "text": "Many theorems about an infinite object are often equivalent ",
+        "start": 1018.28,
+        "duration": 3.769
+    },
+    {
+        "text": "to some theorem regarding a family of finite objects.",
+        "start": 1022.049,
+        "duration": 3.331
+    },
+    {
+        "text": "For example, if during your sound-to-sight project you were to sit down ",
+        "start": 1026.28,
+        "duration": 4.131
+    },
+    {
+        "text": "and really formalize what it means for your curve to stay stable as ",
+        "start": 1030.411,
+        "duration": 3.901
+    },
+    {
+        "text": "you increase camera resolution, you would end up effectively writing ",
+        "start": 1034.312,
+        "duration": 3.959
+    },
+    {
+        "text": "the definition of what it means for a sequence of curves to have a limit.",
+        "start": 1038.271,
+        "duration": 4.189
+    },
+    {
+        "text": "In fact, a statement about some infinite object, ",
+        "start": 1043.4,
+        "duration": 3.236
+    },
+    {
+        "text": "whether that's a sequence or a fractal, can usually be viewed as ",
+        "start": 1046.636,
+        "duration": 4.293
+    },
+    {
+        "text": "a particularly clean way to encapsulate a truth about a family of finite objects.",
+        "start": 1050.929,
+        "duration": 5.351
+    },
+    {
+        "text": "The lesson to take away here is that even when a statement seems ",
+        "start": 1057.48,
+        "duration": 3.301
+    },
+    {
+        "text": "very far removed from reality, you should always be willing to look ",
+        "start": 1060.781,
+        "duration": 3.454
+    },
+    {
+        "text": "under the hood and at the nuts and bolts of what's really being said.",
+        "start": 1064.235,
+        "duration": 3.505
+    },
+    {
+        "text": "Who knows, you might find insights for representing numbers from divergent sums, ",
+        "start": 1068.48,
+        "duration": 4.031
+    },
+    {
+        "text": "or for seeing with your ears from filling space.",
+        "start": 1072.511,
+        "duration": 2.389
+    }
+]

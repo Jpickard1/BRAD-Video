@@ -1,0 +1,322 @@
+[
+    {
+        "text": "Hey everyone, I've got another quick footnote for you between chapters today.",
+        "start": 10.62,
+        "duration": 3.96
+    },
+    {
+        "text": "When I've talked about linear transformations so far, ",
+        "start": 15.24,
+        "duration": 2.913
+    },
+    {
+        "text": "I've only really talked about transformations from 2D vectors to other 2D vectors, ",
+        "start": 18.153,
+        "duration": 4.478
+    },
+    {
+        "text": "represented with 2x2 matrices, or from 3D vectors to other 3D vectors, ",
+        "start": 22.631,
+        "duration": 3.83
+    },
+    {
+        "text": "represented with 3x3 matrices.",
+        "start": 26.461,
+        "duration": 1.619
+    },
+    {
+        "text": "But several commenters have asked about non-square matrices, ",
+        "start": 28.78,
+        "duration": 2.62
+    },
+    {
+        "text": "so I thought I'd take a moment to just show what those mean geometrically.",
+        "start": 31.4,
+        "duration": 3.18
+    },
+    {
+        "text": "By now in the series, you actually have most of the background ",
+        "start": 35.38,
+        "duration": 2.494
+    },
+    {
+        "text": "you need to start pondering a question like this on your own, ",
+        "start": 37.874,
+        "duration": 2.455
+    },
+    {
+        "text": "but I'll start talking through it just to give a little mental momentum.",
+        "start": 40.329,
+        "duration": 2.851
+    },
+    {
+        "text": "It's perfectly reasonable to talk about transformations between dimensions, ",
+        "start": 44.02,
+        "duration": 4.449
+    },
+    {
+        "text": "such as one that takes 2D vectors to 3D vectors.",
+        "start": 48.469,
+        "duration": 2.811
+    },
+    {
+        "text": "Again, what makes one of these linear is that gridlines remain ",
+        "start": 51.92,
+        "duration": 3.479
+    },
+    {
+        "text": "parallel and evenly spaced, and that the origin maps to the origin.",
+        "start": 55.399,
+        "duration": 3.701
+    },
+    {
+        "text": "What I have pictured here is the input space on the left, ",
+        "start": 60.02,
+        "duration": 2.656
+    },
+    {
+        "text": "which is just 2D space, and the output of the transformation shown on the right.",
+        "start": 62.676,
+        "duration": 3.664
+    },
+    {
+        "text": "The reason I'm not showing the inputs move over to the outputs like I usually do is not ",
+        "start": 67.0,
+        "duration": 4.598
+    },
+    {
+        "text": "just animation laziness, it's worth emphasizing that 2D vector inputs are very different ",
+        "start": 71.598,
+        "duration": 4.651
+    },
+    {
+        "text": "animals from these 3D vector outputs, living in a completely separate, unconnected space.",
+        "start": 76.249,
+        "duration": 4.651
+    },
+    {
+        "text": "Encoding one of these transformations with a matrix is ",
+        "start": 81.86,
+        "duration": 2.505
+    },
+    {
+        "text": "really just the same thing as what we've done before.",
+        "start": 84.365,
+        "duration": 2.415
+    },
+    {
+        "text": "You look at where each basis vector lands, and write the ",
+        "start": 87.38,
+        "duration": 2.786
+    },
+    {
+        "text": "coordinates of the landing spots as the columns of a matrix.",
+        "start": 90.166,
+        "duration": 2.934
+    },
+    {
+        "text": "For example, what you're looking at here is an output of a transformation that takes ",
+        "start": 93.76,
+        "duration": 5.568
+    },
+    {
+        "text": "i-hat to the coordinates 2, negative 1, negative 2, and j-hat to the coordinates 0, 1, 1.",
+        "start": 99.328,
+        "duration": 5.832
+    },
+    {
+        "text": "Notice, this means the matrix encoding our transformation has three rows and two columns, ",
+        "start": 107.68,
+        "duration": 5.46
+    },
+    {
+        "text": "which, to use standard terminology, makes it a 3x2 matrix.",
+        "start": 113.14,
+        "duration": 3.52
+    },
+    {
+        "text": "In the language of last video, the column space of this matrix, ",
+        "start": 117.88,
+        "duration": 3.724
+    },
+    {
+        "text": "the place where all the vectors land, is a 2D plane slicing through the origin ",
+        "start": 121.604,
+        "duration": 4.597
+    },
+    {
+        "text": "of 3D space.",
+        "start": 126.201,
+        "duration": 0.699
+    },
+    {
+        "text": "But the matrix is still full rank, since the number of dimensions in this ",
+        "start": 127.36,
+        "duration": 4.115
+    },
+    {
+        "text": "column space is the same as the number of dimensions of the input space.",
+        "start": 131.475,
+        "duration": 4.005
+    },
+    {
+        "text": "So if you see a 3x2 matrix out in the wild, you can know that it has the geometric ",
+        "start": 137.14,
+        "duration": 4.717
+    },
+    {
+        "text": "interpretation of mapping two dimensions to three dimensions, ",
+        "start": 141.857,
+        "duration": 3.524
+    },
+    {
+        "text": "since the two columns indicate that the input space has two basis vectors, ",
+        "start": 145.381,
+        "duration": 4.263
+    },
+    {
+        "text": "and the three rows indicate that the landing spots for each of those basis vectors is ",
+        "start": 149.644,
+        "duration": 4.888
+    },
+    {
+        "text": "described with three separate coordinates.",
+        "start": 154.532,
+        "duration": 2.388
+    },
+    {
+        "text": "Likewise, if you see a 2x3 matrix with two rows and three columns, ",
+        "start": 157.9,
+        "duration": 3.559
+    },
+    {
+        "text": "what do you think that means?",
+        "start": 161.459,
+        "duration": 1.541
+    },
+    {
+        "text": "Well, the three columns indicate that you're starting in a space that has ",
+        "start": 163.66,
+        "duration": 3.93
+    },
+    {
+        "text": "three basis vectors, so we're starting in three dimensions, ",
+        "start": 167.59,
+        "duration": 3.187
+    },
+    {
+        "text": "and the two rows indicate that the landing spot for each of those three ",
+        "start": 170.777,
+        "duration": 3.824
+    },
+    {
+        "text": "basis vectors is described with only two coordinates, ",
+        "start": 174.601,
+        "duration": 2.868
+    },
+    {
+        "text": "so they must be landing in two dimensions.",
+        "start": 177.469,
+        "duration": 2.231
+    },
+    {
+        "text": "So it's a transformation from 3D space onto the 2D plane, ",
+        "start": 180.52,
+        "duration": 3.593
+    },
+    {
+        "text": "a transformation that should feel very uncomfortable if you imagine going through it.",
+        "start": 184.113,
+        "duration": 5.267
+    },
+    {
+        "text": "You could also have a transformation from two dimensions to one dimension.",
+        "start": 193.48,
+        "duration": 3.6
+    },
+    {
+        "text": "One-dimensional space is really just the number line, ",
+        "start": 197.72,
+        "duration": 3.068
+    },
+    {
+        "text": "so a transformation like this takes in 2D vectors and spits out numbers.",
+        "start": 200.788,
+        "duration": 4.092
+    },
+    {
+        "text": "Thinking about grid lines remaining parallel and evenly spaced is a little bit ",
+        "start": 205.84,
+        "duration": 4.03
+    },
+    {
+        "text": "messy due to all of the squishification happening here, so in this case, ",
+        "start": 209.87,
+        "duration": 3.725
+    },
+    {
+        "text": "the visual understanding for what linearity means is that if you have a line of ",
+        "start": 213.595,
+        "duration": 4.082
+    },
+    {
+        "text": "evenly spaced dots, it would remain evenly spaced once they're mapped onto the ",
+        "start": 217.677,
+        "duration": 4.03
+    },
+    {
+        "text": "number line.",
+        "start": 221.707,
+        "duration": 0.613
+    },
+    {
+        "text": "One of these transformations is encoded with a 1x2 matrix, ",
+        "start": 223.38,
+        "duration": 3.68
+    },
+    {
+        "text": "each of whose two columns has just a single entry.",
+        "start": 227.06,
+        "duration": 3.12
+    },
+    {
+        "text": "The two columns represent where the basis vectors land, ",
+        "start": 230.86,
+        "duration": 2.677
+    },
+    {
+        "text": "and each one of those columns requires just one number, ",
+        "start": 233.537,
+        "duration": 2.678
+    },
+    {
+        "text": "the number that that basis vector landed on.",
+        "start": 236.215,
+        "duration": 2.105
+    },
+    {
+        "text": "This is actually a surprisingly meaningful type of transformation with ",
+        "start": 239.24,
+        "duration": 3.185
+    },
+    {
+        "text": "close ties to the dot product, and I'll be talking about that next video.",
+        "start": 242.425,
+        "duration": 3.275
+    },
+    {
+        "text": "Until then, I encourage you to play around with this idea on your own, ",
+        "start": 246.4,
+        "duration": 3.526
+    },
+    {
+        "text": "contemplating the meanings of things like matrix multiplication and linear systems ",
+        "start": 249.926,
+        "duration": 4.122
+    },
+    {
+        "text": "of equations in the context of transformations between different dimensions. Have fun!",
+        "start": 254.048,
+        "duration": 4.272
+    }
+]

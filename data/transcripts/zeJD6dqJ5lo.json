@@ -1,0 +1,2612 @@
+[
+    {
+        "text": "This is a Galton board.",
+        "start": 0.0,
+        "duration": 1.26
+    },
+    {
+        "text": "Maybe you've seen one before, it's a popular demonstration of how, ",
+        "start": 2.52,
+        "duration": 3.367
+    },
+    {
+        "text": "even when a single event is chaotic and random, with an effectively unknowable outcome, ",
+        "start": 5.887,
+        "duration": 4.422
+    },
+    {
+        "text": "it's still possible to make precise statements about a large number of events, ",
+        "start": 10.309,
+        "duration": 3.97
+    },
+    {
+        "text": "namely how the relative proportions for many different outcomes are distributed.",
+        "start": 14.279,
+        "duration": 4.021
+    },
+    {
+        "text": "More specifically, the Galton board illustrates one of the most prominent ",
+        "start": 20.38,
+        "duration": 3.822
+    },
+    {
+        "text": "distributions in all probability, known as the normal distribution, ",
+        "start": 24.202,
+        "duration": 3.513
+    },
+    {
+        "text": "more colloquially known as a bell curve, and also called a Gaussian distribution.",
+        "start": 27.715,
+        "duration": 4.185
+    },
+    {
+        "text": "There's a very specific function to describe this distribution, it's very pretty, ",
+        "start": 32.5,
+        "duration": 3.865
+    },
+    {
+        "text": "we'll get into it later, but right now I just want to emphasize how the normal ",
+        "start": 36.365,
+        "duration": 3.724
+    },
+    {
+        "text": "distribution is, as the name suggests, very common, ",
+        "start": 40.089,
+        "duration": 2.452
+    },
+    {
+        "text": "it shows up in a lot of seemingly unrelated contexts.",
+        "start": 42.541,
+        "duration": 2.499
+    },
+    {
+        "text": "If you were to take a large number of people who sit in a similar demographic ",
+        "start": 46.02,
+        "duration": 3.558
+    },
+    {
+        "text": "and plot their heights, those heights tend to follow a normal distribution.",
+        "start": 49.578,
+        "duration": 3.422
+    },
+    {
+        "text": "If you look at a large swath of very big natural numbers, ",
+        "start": 53.66,
+        "duration": 3.12
+    },
+    {
+        "text": "and you ask how many distinct prime factors does each one of those numbers have, ",
+        "start": 56.78,
+        "duration": 4.359
+    },
+    {
+        "text": "the answers will very closely track with a certain normal distribution.",
+        "start": 61.139,
+        "duration": 3.82
+    },
+    {
+        "text": "Now our topic for today is one of the crown jewels in all of probability theory, ",
+        "start": 65.58,
+        "duration": 4.207
+    },
+    {
+        "text": "it's one of the key facts that explains why this distribution is as common as it is, ",
+        "start": 69.787,
+        "duration": 4.415
+    },
+    {
+        "text": "known as the central limit theorem.",
+        "start": 74.202,
+        "duration": 1.818
+    },
+    {
+        "text": "This lesson is meant to go back to the basics, ",
+        "start": 76.64,
+        "duration": 2.121
+    },
+    {
+        "text": "giving you the fundamentals on what the central limit theorem is saying, ",
+        "start": 78.761,
+        "duration": 3.294
+    },
+    {
+        "text": "what normal distributions are, and I want to assume minimal background.",
+        "start": 82.055,
+        "duration": 3.205
+    },
+    {
+        "text": "We're going to go decently deep into it, but after this I'd still like to ",
+        "start": 85.26,
+        "duration": 4.104
+    },
+    {
+        "text": "go deeper and explain why the theorem is true, ",
+        "start": 89.364,
+        "duration": 2.607
+    },
+    {
+        "text": "why the function underlying the normal distribution has the very specific ",
+        "start": 91.971,
+        "duration": 4.104
+    },
+    {
+        "text": "form that it does, why that formula has a pi in it, and, most fun, ",
+        "start": 96.075,
+        "duration": 3.716
+    },
+    {
+        "text": "why those last two facts are actually more related than a lot of traditional ",
+        "start": 99.791,
+        "duration": 4.271
+    },
+    {
+        "text": "explanations would suggest.",
+        "start": 104.062,
+        "duration": 1.498
+    },
+    {
+        "text": "That second lesson is also meant to be the follow-on to the convolutions ",
+        "start": 106.48,
+        "duration": 3.567
+    },
+    {
+        "text": "video that I promised, so there's a lot of interrelated topics here.",
+        "start": 110.047,
+        "duration": 3.323
+    },
+    {
+        "text": "But right now, back to the fundamentals, I'd like to kick ",
+        "start": 113.57,
+        "duration": 2.684
+    },
+    {
+        "text": "things off with an overly simplified model of the Galton board.",
+        "start": 116.254,
+        "duration": 2.916
+    },
+    {
+        "text": "In this model we will assume that each ball falls directly onto a certain central peg, ",
+        "start": 120.89,
+        "duration": 4.356
+    },
+    {
+        "text": "and that it has a 50-50 probability of bouncing to the left or to the right, ",
+        "start": 125.246,
+        "duration": 3.856
+    },
+    {
+        "text": "and we'll think of each of those outcomes as either adding one or subtracting one from ",
+        "start": 129.102,
+        "duration": 4.357
+    },
+    {
+        "text": "its position.",
+        "start": 133.459,
+        "duration": 0.651
+    },
+    {
+        "text": "Once one of those is chosen, we make the highly unrealistic assumption that it ",
+        "start": 134.67,
+        "duration": 4.064
+    },
+    {
+        "text": "happens to land dead on in the middle of the peg adjacent below it, ",
+        "start": 138.734,
+        "duration": 3.499
+    },
+    {
+        "text": "where again it'll be faced with the same 50-50 choice of bouncing to the left or ",
+        "start": 142.233,
+        "duration": 4.168
+    },
+    {
+        "text": "to the right.",
+        "start": 146.401,
+        "duration": 0.669
+    },
+    {
+        "text": "For the one I'm showing on screen, there are five different rows of pegs, ",
+        "start": 147.43,
+        "duration": 3.686
+    },
+    {
+        "text": "so our little hopping ball makes five different random choices between plus one ",
+        "start": 151.116,
+        "duration": 3.985
+    },
+    {
+        "text": "and minus one, and we can think of its final position as basically being the ",
+        "start": 155.101,
+        "duration": 3.835
+    },
+    {
+        "text": "sum of all of those different numbers, which in this case happens to be one, ",
+        "start": 158.936,
+        "duration": 3.836
+    },
+    {
+        "text": "and we might label all of the different buckets with the sum that they represent, ",
+        "start": 162.772,
+        "duration": 4.084
+    },
+    {
+        "text": "as we repeat this we're looking at different possible sums for those five random numbers.",
+        "start": 166.856,
+        "duration": 4.434
+    },
+    {
+        "text": "And for those of you who are inclined to complain that this is a highly unrealistic model ",
+        "start": 173.05,
+        "duration": 4.292
+    },
+    {
+        "text": "for the true Galton board, let me emphasize the goal right now is not to accurately model ",
+        "start": 177.342,
+        "duration": 4.293
+    },
+    {
+        "text": "physics, the goal is to give a simple example to illustrate the central limit theorem, ",
+        "start": 181.635,
+        "duration": 4.15
+    },
+    {
+        "text": "and for that, idealized though this might be, it actually gives us a really good example.",
+        "start": 185.785,
+        "duration": 4.245
+    },
+    {
+        "text": "If we let many different balls fall, making yet another unrealistic ",
+        "start": 190.57,
+        "duration": 3.17
+    },
+    {
+        "text": "assumption that they don't influence each other, as if they're all ghosts, ",
+        "start": 193.74,
+        "duration": 3.496
+    },
+    {
+        "text": "then the number of balls that fall into each different bucket gives ",
+        "start": 197.236,
+        "duration": 3.17
+    },
+    {
+        "text": "us some loose sense for how likely each one of those buckets is.",
+        "start": 200.406,
+        "duration": 2.984
+    },
+    {
+        "text": "In this example, the numbers are simple enough that it's not too hard to ",
+        "start": 203.83,
+        "duration": 3.068
+    },
+    {
+        "text": "explicitly calculate what the probability is for falling into each bucket.",
+        "start": 206.898,
+        "duration": 3.112
+    },
+    {
+        "text": "If you do want to think that through, you'll find it very reminiscent of Pascal's ",
+        "start": 210.27,
+        "duration": 3.748
+    },
+    {
+        "text": "triangle, but the neat thing about our theorem is how far it goes beyond the simple ",
+        "start": 214.018,
+        "duration": 3.84
+    },
+    {
+        "text": "examples.",
+        "start": 217.858,
+        "duration": 0.412
+    },
+    {
+        "text": "So to start off at least, rather than making explicit calculations, ",
+        "start": 218.67,
+        "duration": 3.013
+    },
+    {
+        "text": "let's just simulate things by running a large number of samples and letting the total ",
+        "start": 221.683,
+        "duration": 3.811
+    },
+    {
+        "text": "number of results in each different outcome give us some sense for what that distribution ",
+        "start": 225.494,
+        "duration": 3.988
+    },
+    {
+        "text": "looks like.",
+        "start": 229.482,
+        "duration": 0.488
+    },
+    {
+        "text": "As I said, the one on screen has five rows, so each ",
+        "start": 230.45,
+        "duration": 2.825
+    },
+    {
+        "text": "sum that we're considering includes only five numbers.",
+        "start": 233.275,
+        "duration": 2.935
+    },
+    {
+        "text": "The basic idea of the central limit theorem is that if you increase the size of that sum, ",
+        "start": 236.81,
+        "duration": 5.091
+    },
+    {
+        "text": "for example here would mean increasing the number of rows of pegs for each ",
+        "start": 241.901,
+        "duration": 4.243
+    },
+    {
+        "text": "ball to bounce off, then the distribution that describes where that sum ",
+        "start": 246.144,
+        "duration": 4.074
+    },
+    {
+        "text": "is going to fall looks more and more like a bell curve.",
+        "start": 250.218,
+        "duration": 3.112
+    },
+    {
+        "text": "Here, it's actually worth taking a moment to write down that general idea.",
+        "start": 255.47,
+        "duration": 2.88
+    },
+    {
+        "text": "The setup is that we have a random variable, and that's basically shorthand for ",
+        "start": 259.269,
+        "duration": 4.378
+    },
+    {
+        "text": "a random process where each outcome of that process is associated with some number.",
+        "start": 263.647,
+        "duration": 4.543
+    },
+    {
+        "text": "We'll call that random number x.",
+        "start": 268.49,
+        "duration": 1.48
+    },
+    {
+        "text": "For example, each bounce off the peg is a random process modeled with two outcomes.",
+        "start": 269.97,
+        "duration": 4.42
+    },
+    {
+        "text": "Those outcomes are associated with the numbers negative one and positive one.",
+        "start": 274.85,
+        "duration": 3.04
+    },
+    {
+        "text": "Another example of a random variable would be rolling a die, ",
+        "start": 278.53,
+        "duration": 2.867
+    },
+    {
+        "text": "where you have six different outcomes, each one associated with a number.",
+        "start": 281.397,
+        "duration": 3.433
+    },
+    {
+        "text": "What we're doing is taking multiple different ",
+        "start": 285.47,
+        "duration": 2.272
+    },
+    {
+        "text": "samples of that variable and adding them all together.",
+        "start": 287.742,
+        "duration": 2.668
+    },
+    {
+        "text": "On our Galton board, that looks like letting the ball bounce off multiple ",
+        "start": 290.77,
+        "duration": 3.462
+    },
+    {
+        "text": "different pegs on its way down to the bottom, and in the case of a die, ",
+        "start": 294.232,
+        "duration": 3.369
+    },
+    {
+        "text": "you might imagine rolling many different dice and adding up the results.",
+        "start": 297.601,
+        "duration": 3.369
+    },
+    {
+        "text": "The claim of the central limit theorem is that as you let the size of that sum ",
+        "start": 301.43,
+        "duration": 4.244
+    },
+    {
+        "text": "get bigger and bigger, then the distribution of that sum, ",
+        "start": 305.674,
+        "duration": 3.116
+    },
+    {
+        "text": "how likely it is to fall into different possible values, ",
+        "start": 308.79,
+        "duration": 3.063
+    },
+    {
+        "text": "will look more and more like a bell curve.",
+        "start": 311.853,
+        "duration": 2.257
+    },
+    {
+        "text": "That's it, that is the general idea.",
+        "start": 315.43,
+        "duration": 1.7
+    },
+    {
+        "text": "Over the course of this lesson, our job is to make that statement more quantitative.",
+        "start": 317.55,
+        "duration": 3.98
+    },
+    {
+        "text": "We're going to put some numbers to it, put some formulas to it, ",
+        "start": 322.07,
+        "duration": 2.536
+    },
+    {
+        "text": "show how you can use it to make predictions.",
+        "start": 324.606,
+        "duration": 1.744
+    },
+    {
+        "text": "For example, here's the kind of question I want ",
+        "start": 327.21,
+        "duration": 2.135
+    },
+    {
+        "text": "you to be able to answer by the end of this video.",
+        "start": 329.345,
+        "duration": 2.225
+    },
+    {
+        "text": "Suppose you rolled a die 100 times and you added together the results.",
+        "start": 332.19,
+        "duration": 3.7
+    },
+    {
+        "text": "Could you find a range of values such that you're ",
+        "start": 336.63,
+        "duration": 2.77
+    },
+    {
+        "text": "95% sure that the sum will fall within that range?",
+        "start": 339.4,
+        "duration": 2.77
+    },
+    {
+        "text": "Or maybe I should say find the smallest possible range of values such that this is true.",
+        "start": 342.83,
+        "duration": 3.72
+    },
+    {
+        "text": "The neat thing is you'll be able to answer this question ",
+        "start": 347.39,
+        "duration": 2.525
+    },
+    {
+        "text": "whether it's a fair die or if it's a weighted die.",
+        "start": 349.915,
+        "duration": 2.215
+    },
+    {
+        "text": "Now let me say at the top that this theorem has three different assumptions ",
+        "start": 353.45,
+        "duration": 3.296
+    },
+    {
+        "text": "that go into it, three things that have to be true before the theorem follows.",
+        "start": 356.746,
+        "duration": 3.384
+    },
+    {
+        "text": "And I'm actually not going to tell you what they are until the very end of the video.",
+        "start": 360.43,
+        "duration": 3.36
+    },
+    {
+        "text": "Instead I want you to keep your eye out and see if you can notice ",
+        "start": 364.27,
+        "duration": 2.762
+    },
+    {
+        "text": "and maybe predict what those three assumptions are going to be.",
+        "start": 367.032,
+        "duration": 2.638
+    },
+    {
+        "text": "As a next step, to better illustrate just how general this theorem is, ",
+        "start": 370.71,
+        "duration": 3.226
+    },
+    {
+        "text": "I want to run a couple more simulations for you focused on the dice example.",
+        "start": 373.936,
+        "duration": 3.454
+    },
+    {
+        "text": "Usually if you think of rolling a die you think of the six outcomes as ",
+        "start": 380.91,
+        "duration": 3.313
+    },
+    {
+        "text": "being equally probable, but the theorem actually doesn't care about that.",
+        "start": 384.223,
+        "duration": 3.407
+    },
+    {
+        "text": "We could start with a weighted die, something with a non-trivial ",
+        "start": 387.83,
+        "duration": 3.386
+    },
+    {
+        "text": "distribution across the outcomes, and the core idea still holds.",
+        "start": 391.216,
+        "duration": 3.334
+    },
+    {
+        "text": "For the simulation what I'll do is take some distribution ",
+        "start": 395.03,
+        "duration": 2.631
+    },
+    {
+        "text": "like this one that is skewed towards lower values.",
+        "start": 397.661,
+        "duration": 2.269
+    },
+    {
+        "text": "I'm going to take 10 distinct samples from that distribution and ",
+        "start": 400.25,
+        "duration": 3.622
+    },
+    {
+        "text": "then I'll record the sum of that sample on the plot on the bottom.",
+        "start": 403.872,
+        "duration": 3.678
+    },
+    {
+        "text": "Then I'm going to do this many many different times, always with a sum of size 10, ",
+        "start": 408.63,
+        "duration": 3.98
+    },
+    {
+        "text": "but keep track of where those sums ended up to give us a sense of the distribution.",
+        "start": 412.61,
+        "duration": 3.98
+    },
+    {
+        "text": "And in fact let me rescale the y direction to give ",
+        "start": 419.97,
+        "duration": 2.452
+    },
+    {
+        "text": "us room to run an even larger number of samples.",
+        "start": 422.422,
+        "duration": 2.308
+    },
+    {
+        "text": "And I'll let it go all the way up to a couple thousand, ",
+        "start": 425.03,
+        "duration": 2.861
+    },
+    {
+        "text": "and as it does you'll notice that the shape that starts to emerge looks like a bell curve.",
+        "start": 427.891,
+        "duration": 4.599
+    },
+    {
+        "text": "Maybe if you squint your eyes you can see it skews a tiny bit to the left, ",
+        "start": 432.87,
+        "duration": 3.591
+    },
+    {
+        "text": "but it's neat that something so symmetric emerged from a starting point that was so ",
+        "start": 436.461,
+        "duration": 4.022
+    },
+    {
+        "text": "asymmetric.",
+        "start": 440.483,
+        "duration": 0.527
+    },
+    {
+        "text": "To better illustrate what the central limit theorem is all about, ",
+        "start": 441.47,
+        "duration": 3.267
+    },
+    {
+        "text": "let me run four of these simulations in parallel, ",
+        "start": 444.737,
+        "duration": 2.475
+    },
+    {
+        "text": "where on the upper left I'm doing it where we're only adding two dice at a time, ",
+        "start": 447.212,
+        "duration": 4.009
+    },
+    {
+        "text": "on the upper right we're doing it where we're adding five dice at a time, ",
+        "start": 451.221,
+        "duration": 3.664
+    },
+    {
+        "text": "the lower left is the one that we just saw adding 10 dice at a time, ",
+        "start": 454.885,
+        "duration": 3.415
+    },
+    {
+        "text": "and then we'll do another one with a bigger sum, 15 at a time.",
+        "start": 458.3,
+        "duration": 3.07
+    },
+    {
+        "text": "Notice how on the upper left when we're just adding two dice, ",
+        "start": 462.25,
+        "duration": 2.86
+    },
+    {
+        "text": "the resulting distribution doesn't really look like a bell curve, ",
+        "start": 465.11,
+        "duration": 3.044
+    },
+    {
+        "text": "it looks a lot more reminiscent of the one we started with, skewed towards the left.",
+        "start": 468.154,
+        "duration": 3.876
+    },
+    {
+        "text": "But as we allow for more and more dice in each sum, ",
+        "start": 472.81,
+        "duration": 2.618
+    },
+    {
+        "text": "the resulting shape that comes up in these distributions looks more and more symmetric.",
+        "start": 475.428,
+        "duration": 4.382
+    },
+    {
+        "text": "It has the lump in the middle and fade towards the tail's shape of a bell curve.",
+        "start": 479.95,
+        "duration": 3.94
+    },
+    {
+        "text": "And let me emphasize again, you can start with any different distribution.",
+        "start": 487.05,
+        "duration": 3.44
+    },
+    {
+        "text": "Here I'll run it again, but where most of the probability is tied up ",
+        "start": 490.49,
+        "duration": 3.5
+    },
+    {
+        "text": "in the numbers 1 and 6, with very low probability for the mid values.",
+        "start": 493.99,
+        "duration": 3.5
+    },
+    {
+        "text": "Despite completely changing the distribution for an individual roll of the die, ",
+        "start": 498.19,
+        "duration": 3.934
+    },
+    {
+        "text": "it's still the case that a bell curve shape will emerge as we consider the different sums.",
+        "start": 502.124,
+        "duration": 4.426
+    },
+    {
+        "text": "Illustrating things with a simulation like this is very fun, ",
+        "start": 507.27,
+        "duration": 3.114
+    },
+    {
+        "text": "and it's kind of neat to see order emerge from chaos, ",
+        "start": 510.384,
+        "duration": 2.757
+    },
+    {
+        "text": "but it also feels a little imprecise.",
+        "start": 513.141,
+        "duration": 1.889
+    },
+    {
+        "text": "Like in this case, when I cut off the simulation at 3000 samples, ",
+        "start": 515.39,
+        "duration": 3.169
+    },
+    {
+        "text": "even though it kind of looks like a bell curve, ",
+        "start": 518.559,
+        "duration": 2.306
+    },
+    {
+        "text": "the different buckets seem pretty spiky, and you might wonder, ",
+        "start": 520.865,
+        "duration": 3.026
+    },
+    {
+        "text": "is it supposed to look that way, or is that just an artifact of the ",
+        "start": 523.891,
+        "duration": 3.266
+    },
+    {
+        "text": "randomness in the simulation?",
+        "start": 527.157,
+        "duration": 1.393
+    },
+    {
+        "text": "And if it is, how many samples do we need before we can be sure that ",
+        "start": 529.01,
+        "duration": 3.141
+    },
+    {
+        "text": "what we're looking at is representative of the true distribution?",
+        "start": 532.151,
+        "duration": 2.959
+    },
+    {
+        "text": "Instead moving forward, let's get a little more theoretical and show ",
+        "start": 539.19,
+        "duration": 3.186
+    },
+    {
+        "text": "the precise shape these distributions will take on in the long run.",
+        "start": 542.376,
+        "duration": 3.094
+    },
+    {
+        "text": "The easiest case to make this calculation is if we have a uniform distribution, ",
+        "start": 546.13,
+        "duration": 4.237
+    },
+    {
+        "text": "where each possible face of the die has an equal probability, 1 6th.",
+        "start": 550.367,
+        "duration": 3.603
+    },
+    {
+        "text": "For example, if you then want to know how likely different sums are for a pair of dice, ",
+        "start": 553.99,
+        "duration": 4.281
+    },
+    {
+        "text": "it's essentially a counting game, where you count up how many distinct ",
+        "start": 558.271,
+        "duration": 3.455
+    },
+    {
+        "text": "pairs take on the same sum, which in the diagram I've drawn, ",
+        "start": 561.726,
+        "duration": 2.968
+    },
+    {
+        "text": "you can conveniently think about by going through all the different diagonals.",
+        "start": 564.694,
+        "duration": 3.796
+    },
+    {
+        "text": "Since each such pair has an equal chance of showing up, ",
+        "start": 571.41,
+        "duration": 2.856
+    },
+    {
+        "text": "1 in 36, all you have to do is count the sizes of these buckets.",
+        "start": 574.266,
+        "duration": 3.264
+    },
+    {
+        "text": "That gives us a definitive shape for the distribution describing a sum of two dice, ",
+        "start": 578.19,
+        "duration": 4.238
+    },
+    {
+        "text": "and if we were to play the same game with all possible triplets, ",
+        "start": 582.428,
+        "duration": 3.28
+    },
+    {
+        "text": "the resulting distribution would look like this.",
+        "start": 585.708,
+        "duration": 2.422
+    },
+    {
+        "text": "Now what's more challenging, but a lot more interesting, ",
+        "start": 588.69,
+        "duration": 2.602
+    },
+    {
+        "text": "is to ask what happens if we have a non-uniform distribution for that single die.",
+        "start": 591.292,
+        "duration": 3.698
+    },
+    {
+        "text": "We actually talked all about this in the last video.",
+        "start": 595.55,
+        "duration": 2.42
+    },
+    {
+        "text": "You do essentially the same thing, you go through all ",
+        "start": 598.45,
+        "duration": 2.516
+    },
+    {
+        "text": "the distinct pairs of dice which add up to the same value.",
+        "start": 600.966,
+        "duration": 2.704
+    },
+    {
+        "text": "It's just that instead of counting those pairs, ",
+        "start": 603.97,
+        "duration": 2.508
+    },
+    {
+        "text": "for each pair you multiply the two probabilities of each particular face coming up, ",
+        "start": 606.478,
+        "duration": 4.39
+    },
+    {
+        "text": "and then you add all those together.",
+        "start": 610.868,
+        "duration": 1.882
+    },
+    {
+        "text": "The computation that does this for all possible sums has a fancy name, ",
+        "start": 613.29,
+        "duration": 3.392
+    },
+    {
+        "text": "it's called a convolution, but it's essentially just the weighted version of ",
+        "start": 616.682,
+        "duration": 3.679
+    },
+    {
+        "text": "the counting game that anyone who's played with a pair of dice already finds familiar.",
+        "start": 620.361,
+        "duration": 4.109
+    },
+    {
+        "text": "For our purposes in this lesson, I'll have the computer calculate all that, ",
+        "start": 625.03,
+        "duration": 3.914
+    },
+    {
+        "text": "simply display the results for you, and invite you to observe certain patterns, ",
+        "start": 628.944,
+        "duration": 4.12
+    },
+    {
+        "text": "but under the hood, this is what's going on.",
+        "start": 633.064,
+        "duration": 2.266
+    },
+    {
+        "text": "So just to be crystal clear on what's being represented here, ",
+        "start": 636.65,
+        "duration": 3.274
+    },
+    {
+        "text": "if you imagine sampling two different values from that top distribution, ",
+        "start": 639.924,
+        "duration": 3.855
+    },
+    {
+        "text": "the one describing a single die, and adding them together, ",
+        "start": 643.779,
+        "duration": 3.116
+    },
+    {
+        "text": "then the second distribution I'm drawing represents how likely you are to ",
+        "start": 646.895,
+        "duration": 3.909
+    },
+    {
+        "text": "see various different sums.",
+        "start": 650.804,
+        "duration": 1.426
+    },
+    {
+        "text": "Likewise, if you imagine sampling three distinct values from that top distribution, ",
+        "start": 652.89,
+        "duration": 4.178
+    },
+    {
+        "text": "and adding them together, the next plot represents the probabilities ",
+        "start": 657.068,
+        "duration": 3.432
+    },
+    {
+        "text": "for various different sums in that case.",
+        "start": 660.5,
+        "duration": 1.99
+    },
+    {
+        "text": "So if I compute what the distributions for these sums look like for larger and larger ",
+        "start": 663.51,
+        "duration": 4.492
+    },
+    {
+        "text": "sums, well you know what I'm going to say, it looks more and more like a bell curve.",
+        "start": 668.002,
+        "duration": 4.388
+    },
+    {
+        "text": "But before we get to that, I want you to make a couple more simple observations.",
+        "start": 673.35,
+        "duration": 3.1
+    },
+    {
+        "text": "For example, these distributions seem to be wandering to the right, ",
+        "start": 677.45,
+        "duration": 3.442
+    },
+    {
+        "text": "and also they seem to be getting more spread out, and a little bit more flat.",
+        "start": 680.892,
+        "duration": 3.898
+    },
+    {
+        "text": "You cannot describe the central limit theorem quantitatively ",
+        "start": 685.25,
+        "duration": 2.661
+    },
+    {
+        "text": "without taking into account both of those effects, ",
+        "start": 687.911,
+        "duration": 2.225
+    },
+    {
+        "text": "which in turn requires describing the mean and the standard deviation.",
+        "start": 690.136,
+        "duration": 3.054
+    },
+    {
+        "text": "Maybe you're already familiar with those, but I want to make minimal assumptions here, ",
+        "start": 693.95,
+        "duration": 3.714
+    },
+    {
+        "text": "and it never hurts to review, so let's quickly go over both of those.",
+        "start": 697.664,
+        "duration": 2.946
+    },
+    {
+        "text": "The mean of a distribution, often denoted with the Greek letter mu, ",
+        "start": 703.41,
+        "duration": 3.789
+    },
+    {
+        "text": "is a way of capturing the center of mass for that distribution.",
+        "start": 707.199,
+        "duration": 3.511
+    },
+    {
+        "text": "It's calculated as the expected value of our random variable, ",
+        "start": 711.19,
+        "duration": 3.241
+    },
+    {
+        "text": "which is a way of saying you go through all of the different possible outcomes, ",
+        "start": 714.431,
+        "duration": 4.183
+    },
+    {
+        "text": "and you multiply the probability of that outcome times the value of the variable.",
+        "start": 718.614,
+        "duration": 4.236
+    },
+    {
+        "text": "If higher values are more probable, that weighted sum is going to be bigger.",
+        "start": 723.19,
+        "duration": 3.22
+    },
+    {
+        "text": "If lower values are more probable, that weighted sum is going to be smaller.",
+        "start": 726.75,
+        "duration": 3.2
+    },
+    {
+        "text": "A little more interesting is if you want to measure how spread out this distribution is, ",
+        "start": 730.79,
+        "duration": 3.891
+    },
+    {
+        "text": "because there's multiple different ways you might do it.",
+        "start": 734.681,
+        "duration": 2.449
+    },
+    {
+        "text": "One of them is called the variance.",
+        "start": 738.53,
+        "duration": 1.76
+    },
+    {
+        "text": "The idea there is to look at the difference between each possible value and the mean, ",
+        "start": 740.83,
+        "duration": 4.537
+    },
+    {
+        "text": "square that difference, and ask for its expected value.",
+        "start": 745.367,
+        "duration": 2.903
+    },
+    {
+        "text": "The idea is that whether your value is below or above the mean, ",
+        "start": 748.73,
+        "duration": 2.847
+    },
+    {
+        "text": "when you square that difference, you get a positive number, ",
+        "start": 751.577,
+        "duration": 2.67
+    },
+    {
+        "text": "and the larger the difference, the bigger that number.",
+        "start": 754.247,
+        "duration": 2.403
+    },
+    {
+        "text": "Squaring it like this turns out to make the math much much nicer than if we did ",
+        "start": 757.37,
+        "duration": 3.795
+    },
+    {
+        "text": "something like an absolute value, but the downside is that it's hard to think about ",
+        "start": 761.165,
+        "duration": 3.985
+    },
+    {
+        "text": "this as a distance in our diagram because the units are off, ",
+        "start": 765.15,
+        "duration": 2.894
+    },
+    {
+        "text": "kind of like the units here are square units, whereas a distance in our diagram would ",
+        "start": 768.044,
+        "duration": 4.079
+    },
+    {
+        "text": "be a kind of linear unit.",
+        "start": 772.123,
+        "duration": 1.187
+    },
+    {
+        "text": "So another way to measure spread is what's called the standard deviation, ",
+        "start": 773.71,
+        "duration": 3.588
+    },
+    {
+        "text": "which is the square root of this value.",
+        "start": 777.298,
+        "duration": 1.892
+    },
+    {
+        "text": "That can be interpreted much more reasonably as a distance on our diagram, ",
+        "start": 779.47,
+        "duration": 3.856
+    },
+    {
+        "text": "and it's commonly denoted with the Greek letter sigma, ",
+        "start": 783.326,
+        "duration": 2.827
+    },
+    {
+        "text": "so you know m for mean as for standard deviation, but both in Greek.",
+        "start": 786.153,
+        "duration": 3.497
+    },
+    {
+        "text": "Looking back at our sequence of distributions, ",
+        "start": 791.87,
+        "duration": 2.095
+    },
+    {
+        "text": "let's talk about the mean and standard deviation.",
+        "start": 793.965,
+        "duration": 2.185
+    },
+    {
+        "text": "If we call the mean of the initial distribution mu, ",
+        "start": 796.63,
+        "duration": 2.665
+    },
+    {
+        "text": "which for the one illustrated happens to be 2.24, ",
+        "start": 799.295,
+        "duration": 2.564
+    },
+    {
+        "text": "hopefully it won't be too surprising if I tell you that the mean ",
+        "start": 801.859,
+        "duration": 3.332
+    },
+    {
+        "text": "of the next one is 2 times mu.",
+        "start": 805.191,
+        "duration": 1.539
+    },
+    {
+        "text": "That is, you roll a pair of dice, you want to know the expected value of the sum, ",
+        "start": 807.13,
+        "duration": 3.501
+    },
+    {
+        "text": "it's two times the expected value for a single die.",
+        "start": 810.631,
+        "duration": 2.179
+    },
+    {
+        "text": "Similarly, the expected value for our sum of size 3 is 3 times mu, and so on and so forth.",
+        "start": 813.85,
+        "duration": 5.56
+    },
+    {
+        "text": "The mean just marches steadily on to the right, ",
+        "start": 819.63,
+        "duration": 2.078
+    },
+    {
+        "text": "which is why our distributions seem to be drifting off in that direction.",
+        "start": 821.708,
+        "duration": 3.162
+    },
+    {
+        "text": "A little more challenging, but very important, ",
+        "start": 825.35,
+        "duration": 2.209
+    },
+    {
+        "text": "is to describe how the standard deviation changes.",
+        "start": 827.559,
+        "duration": 2.351
+    },
+    {
+        "text": "The key fact here is that if you have two different random variables, ",
+        "start": 830.49,
+        "duration": 3.415
+    },
+    {
+        "text": "then the variance for the sum of those variables is the same ",
+        "start": 833.905,
+        "duration": 2.976
+    },
+    {
+        "text": "as just adding together the original two variances.",
+        "start": 836.881,
+        "duration": 2.489
+    },
+    {
+        "text": "This is one of those facts that you can just compute when you unpack all the definitions.",
+        "start": 839.93,
+        "duration": 3.7
+    },
+    {
+        "text": "There are a couple nice intuitions for why it's true.",
+        "start": 843.63,
+        "duration": 2.58
+    },
+    {
+        "text": "My tentative plan is to just actually make a series about probability and ",
+        "start": 846.63,
+        "duration": 3.403
+    },
+    {
+        "text": "talk about things like intuitions underlying variance and its cousins there.",
+        "start": 850.033,
+        "duration": 3.497
+    },
+    {
+        "text": "But right now, the main thing I want you to highlight is how it's the variance that adds, ",
+        "start": 854.01,
+        "duration": 4.186
+    },
+    {
+        "text": "it's not the standard deviation that adds.",
+        "start": 858.196,
+        "duration": 1.954
+    },
+    {
+        "text": "So, critically, if you were to take n different realizations of the same random ",
+        "start": 860.41,
+        "duration": 4.516
+    },
+    {
+        "text": "variable and ask what the sum looks like, the variance of sum is n times the ",
+        "start": 864.926,
+        "duration": 4.347
+    },
+    {
+        "text": "variance of your original variable, meaning the standard deviation, ",
+        "start": 869.273,
+        "duration": 3.839
+    },
+    {
+        "text": "the square root of all this, is the square root of n times the original standard ",
+        "start": 873.112,
+        "duration": 4.573
+    },
+    {
+        "text": "deviation.",
+        "start": 877.685,
+        "duration": 0.565
+    },
+    {
+        "text": "For example, back in our sequence of distributions, ",
+        "start": 879.29,
+        "duration": 2.625
+    },
+    {
+        "text": "if we label the standard deviation of our initial one with sigma, ",
+        "start": 881.915,
+        "duration": 3.333
+    },
+    {
+        "text": "then the next standard deviation is going to be the square root of 2 times sigma, ",
+        "start": 885.248,
+        "duration": 4.14
+    },
+    {
+        "text": "and after that it looks like the square root of 3 times sigma, and so on and so forth. ",
+        "start": 889.388,
+        "duration": 4.393
+    },
+    {
+        "text": "This, like I said, is very important.",
+        "start": 893.781,
+        "duration": 1.869
+    },
+    {
+        "text": "It means that even though our distributions are getting spread out, ",
+        "start": 896.07,
+        "duration": 2.978
+    },
+    {
+        "text": "they're not spreading out all that quickly, they only do so ",
+        "start": 899.048,
+        "duration": 2.628
+    },
+    {
+        "text": "in proportion to the square root of the size of the sum.",
+        "start": 901.676,
+        "duration": 2.454
+    },
+    {
+        "text": "As we prepare to make a more quantitative description of the central limit theorem, ",
+        "start": 904.71,
+        "duration": 4.084
+    },
+    {
+        "text": "the core intuition I want you to keep in your head is that we'll basically realign ",
+        "start": 908.794,
+        "duration": 4.036
+    },
+    {
+        "text": "all of these distributions so that their means line up together, ",
+        "start": 912.83,
+        "duration": 3.16
+    },
+    {
+        "text": "and then rescale them so that all of the standard deviations are just going to be ",
+        "start": 915.99,
+        "duration": 3.987
+    },
+    {
+        "text": "equal to one.",
+        "start": 919.977,
+        "duration": 0.633
+    },
+    {
+        "text": "And when we do that, the shape that results gets closer and closer to a certain universal ",
+        "start": 921.29,
+        "duration": 4.437
+    },
+    {
+        "text": "shape, described with an elegant little function that we'll unpack in just a moment.",
+        "start": 925.727,
+        "duration": 4.143
+    },
+    {
+        "text": "And let me say one more time, the real magic here is how we could have started with ",
+        "start": 930.47,
+        "duration": 4.381
+    },
+    {
+        "text": "any distribution, describing a single roll of the die, and if we play the same game, ",
+        "start": 934.851,
+        "duration": 4.433
+    },
+    {
+        "text": "considering what the distributions for the many different sums look like, ",
+        "start": 939.284,
+        "duration": 3.86
+    },
+    {
+        "text": "and we realign them so that the means line up, ",
+        "start": 943.144,
+        "duration": 2.451
+    },
+    {
+        "text": "and we rescale them so that the standard deviations are all one, ",
+        "start": 945.595,
+        "duration": 3.391
+    },
+    {
+        "text": "we still approach that same universal shape, which is kind of mind-boggling.",
+        "start": 948.986,
+        "duration": 3.964
+    },
+    {
+        "text": "And now, my friends, is probably as good a time as any ",
+        "start": 954.81,
+        "duration": 2.939
+    },
+    {
+        "text": "to finally get into the formula for a normal distribution.",
+        "start": 957.749,
+        "duration": 3.101
+    },
+    {
+        "text": "And the way I'd like to do this is to basically peel ",
+        "start": 961.49,
+        "duration": 2.158
+    },
+    {
+        "text": "back all the layers and build it up one piece at a time.",
+        "start": 963.648,
+        "duration": 2.282
+    },
+    {
+        "text": "The function e to the x, or anything to the x, describes exponential growth, ",
+        "start": 966.53,
+        "duration": 4.08
+    },
+    {
+        "text": "and if you make that exponent negative, which flips around the graph horizontally, ",
+        "start": 970.61,
+        "duration": 4.398
+    },
+    {
+        "text": "you might think of it as describing exponential decay.",
+        "start": 975.008,
+        "duration": 2.862
+    },
+    {
+        "text": "To make this decay in both directions, you could do something to make sure the ",
+        "start": 978.51,
+        "duration": 3.416
+    },
+    {
+        "text": "exponent is always negative and growing, like taking the negative absolute value.",
+        "start": 981.926,
+        "duration": 3.504
+    },
+    {
+        "text": "That would give us this kind of awkward sharp point in the middle, ",
+        "start": 985.93,
+        "duration": 3.167
+    },
+    {
+        "text": "but if instead you make that exponent the negative square of x, ",
+        "start": 989.097,
+        "duration": 3.025
+    },
+    {
+        "text": "you get a smoother version of the same thing, which decays in both directions.",
+        "start": 992.122,
+        "duration": 3.688
+    },
+    {
+        "text": "This gives us the basic bell curve shape.",
+        "start": 996.33,
+        "duration": 1.86
+    },
+    {
+        "text": "Now if you throw a constant in front of that x, ",
+        "start": 998.65,
+        "duration": 2.356
+    },
+    {
+        "text": "and you scale that constant up and down, it lets you stretch and ",
+        "start": 1001.006,
+        "duration": 3.191
+    },
+    {
+        "text": "squish the graph horizontally, allowing you to describe narrow and wider bell curves.",
+        "start": 1004.197,
+        "duration": 4.173
+    },
+    {
+        "text": "And a quick thing I'd like to point out here is that based on the ",
+        "start": 1009.01,
+        "duration": 3.424
+    },
+    {
+        "text": "rules of exponentiation, as we tweak around that constant c, ",
+        "start": 1012.434,
+        "duration": 3.165
+    },
+    {
+        "text": "you could also think about it as simply changing the base of the exponentiation.",
+        "start": 1015.599,
+        "duration": 4.151
+    },
+    {
+        "text": "And in that sense, the number e is not really all that special for our formula.",
+        "start": 1020.15,
+        "duration": 3.48
+    },
+    {
+        "text": "We could replace it with any other positive constant, ",
+        "start": 1024.05,
+        "duration": 2.874
+    },
+    {
+        "text": "and you'll get the same family of curves as we tweak that constant.",
+        "start": 1026.924,
+        "duration": 3.566
+    },
+    {
+        "text": "Make it a 2, same family of curves.",
+        "start": 1031.51,
+        "duration": 1.599
+    },
+    {
+        "text": "Make it a 3, same family of curves.",
+        "start": 1033.329,
+        "duration": 1.74
+    },
+    {
+        "text": "The reason we use e is that it gives that constant a very readable meaning.",
+        "start": 1035.75,
+        "duration": 3.74
+    },
+    {
+        "text": "Or rather, if we reconfigure things a little bit so that the exponent looks ",
+        "start": 1040.109,
+        "duration": 4.206
+    },
+    {
+        "text": "like negative 1 half times x divided by a certain constant, ",
+        "start": 1044.315,
+        "duration": 3.321
+    },
+    {
+        "text": "which we'll suggestively call sigma squared, then once we turn this into a ",
+        "start": 1047.636,
+        "duration": 4.15
+    },
+    {
+        "text": "probability distribution, that constant sigma will be the standard deviation ",
+        "start": 1051.786,
+        "duration": 4.261
+    },
+    {
+        "text": "of that distribution.",
+        "start": 1056.047,
+        "duration": 1.163
+    },
+    {
+        "text": "And that's very nice.",
+        "start": 1057.81,
+        "duration": 0.76
+    },
+    {
+        "text": "But before we can interpret this as a probability distribution, ",
+        "start": 1058.91,
+        "duration": 3.291
+    },
+    {
+        "text": "we need the area under the curve to be 1.",
+        "start": 1062.201,
+        "duration": 2.109
+    },
+    {
+        "text": "And the reason for that is how the curve is interpreted.",
+        "start": 1064.83,
+        "duration": 2.08
+    },
+    {
+        "text": "Unlike discrete distributions, when it comes to something continuous, ",
+        "start": 1067.37,
+        "duration": 3.281
+    },
+    {
+        "text": "you don't ask about the probability of a particular point.",
+        "start": 1070.651,
+        "duration": 2.719
+    },
+    {
+        "text": "Instead, you ask for the probability that a value falls between two different values.",
+        "start": 1073.79,
+        "duration": 4.44
+    },
+    {
+        "text": "And what the curve is telling you is that that probability ",
+        "start": 1078.75,
+        "duration": 3.397
+    },
+    {
+        "text": "equals the area under the curve between those two values.",
+        "start": 1082.147,
+        "duration": 3.283
+    },
+    {
+        "text": "There's a whole other video about this, they're called probability density functions.",
+        "start": 1086.03,
+        "duration": 3.4
+    },
+    {
+        "text": "The main point right now is that the area under the entire curve represents ",
+        "start": 1089.83,
+        "duration": 3.917
+    },
+    {
+        "text": "the probability that something happens, that some number comes up.",
+        "start": 1093.747,
+        "duration": 3.403
+    },
+    {
+        "text": "That should be 1, which is why we want the area under this to be 1.",
+        "start": 1097.41,
+        "duration": 3.22
+    },
+    {
+        "text": "As it stands with the basic bell curve shape of e to the negative x squared, ",
+        "start": 1101.05,
+        "duration": 3.931
+    },
+    {
+        "text": "the area is not 1, it's actually the square root of pi.",
+        "start": 1104.981,
+        "duration": 2.809
+    },
+    {
+        "text": "I know, right?",
+        "start": 1108.41,
+        "duration": 0.74
+    },
+    {
+        "text": "What is pi doing here?",
+        "start": 1109.27,
+        "duration": 0.92
+    },
+    {
+        "text": "What does this have to do with circles?",
+        "start": 1110.29,
+        "duration": 1.18
+    },
+    {
+        "text": "Like I said at the start, I'd love to talk all about that in the next video.",
+        "start": 1112.01,
+        "duration": 3.04
+    },
+    {
+        "text": "But if you can spare your excitement, for our purposes right now, ",
+        "start": 1115.33,
+        "duration": 2.923
+    },
+    {
+        "text": "all it means is that we should divide this function by the square root of pi, ",
+        "start": 1118.253,
+        "duration": 3.455
+    },
+    {
+        "text": "and it gives us the area we want.",
+        "start": 1121.708,
+        "duration": 1.462
+    },
+    {
+        "text": "Throwing back in the constants we had earlier, the one half and the sigma, ",
+        "start": 1123.61,
+        "duration": 3.651
+    },
+    {
+        "text": "the effect there is to stretch out the graph by a factor of sigma times the square ",
+        "start": 1127.261,
+        "duration": 4.042
+    },
+    {
+        "text": "root of 2.",
+        "start": 1131.303,
+        "duration": 0.487
+    },
+    {
+        "text": "So we also need to divide out by that in order to make sure it has an area of 1, ",
+        "start": 1132.41,
+        "duration": 4.07
+    },
+    {
+        "text": "and combining those fractions, the factor out front looks like ",
+        "start": 1136.48,
+        "duration": 3.167
+    },
+    {
+        "text": "1 divided by sigma times the square root of 2 pi.",
+        "start": 1139.647,
+        "duration": 2.463
+    },
+    {
+        "text": "This, finally, is a valid probability distribution.",
+        "start": 1142.91,
+        "duration": 2.94
+    },
+    {
+        "text": "As we tweak that value sigma, resulting in narrower and wider curves, ",
+        "start": 1146.45,
+        "duration": 3.986
+    },
+    {
+        "text": "that constant in the front always guarantees that the area equals 1.",
+        "start": 1150.436,
+        "duration": 3.874
+    },
+    {
+        "text": "The special case where sigma equals 1 has a specific name, ",
+        "start": 1155.91,
+        "duration": 2.899
+    },
+    {
+        "text": "we call it the standard normal distribution, which plays an especially important role ",
+        "start": 1158.809,
+        "duration": 4.226
+    },
+    {
+        "text": "for you and me in this lesson.",
+        "start": 1163.035,
+        "duration": 1.475
+    },
+    {
+        "text": "And all possible normal distributions are not only parameterized with this value sigma, ",
+        "start": 1165.13,
+        "duration": 4.808
+    },
+    {
+        "text": "but we also subtract off another constant mu from the variable x, ",
+        "start": 1169.938,
+        "duration": 3.606
+    },
+    {
+        "text": "and this essentially just lets you slide the graph left and right so ",
+        "start": 1173.544,
+        "duration": 3.77
+    },
+    {
+        "text": "that you can prescribe the mean of this distribution.",
+        "start": 1177.314,
+        "duration": 2.896
+    },
+    {
+        "text": "So in short, we have two parameters, one describing the mean, ",
+        "start": 1180.99,
+        "duration": 2.905
+    },
+    {
+        "text": "one describing the standard deviation, and they're all tied together in this big formula ",
+        "start": 1183.895,
+        "duration": 4.17
+    },
+    {
+        "text": "involving an e and a pi.",
+        "start": 1188.065,
+        "duration": 1.125
+    },
+    {
+        "text": "Now that all of that is on the table, let's look back again at the idea of starting with ",
+        "start": 1189.19,
+        "duration": 5.251
+    },
+    {
+        "text": "some random variable and asking what the distributions for sums of that variable look ",
+        "start": 1194.441,
+        "duration": 5.074
+    },
+    {
+        "text": "like.",
+        "start": 1199.515,
+        "duration": 0.295
+    },
+    {
+        "text": "As we've already gone over, when you increase the size of that sum, ",
+        "start": 1200.13,
+        "duration": 3.242
+    },
+    {
+        "text": "the resulting distribution will shift according to a growing mean, ",
+        "start": 1203.372,
+        "duration": 3.195
+    },
+    {
+        "text": "and it slowly spreads out according to a growing standard deviation.",
+        "start": 1206.567,
+        "duration": 3.243
+    },
+    {
+        "text": "And putting some actual formulas to it, if we know the mean of our underlying ",
+        "start": 1210.33,
+        "duration": 4.15
+    },
+    {
+        "text": "random variable, we call it mu, and we also know its standard deviation, ",
+        "start": 1214.48,
+        "duration": 3.884
+    },
+    {
+        "text": "and we call it sigma, then the mean for the sum on the bottom will be mu times ",
+        "start": 1218.364,
+        "duration": 4.204
+    },
+    {
+        "text": "the size of the sum, and the standard deviation will be sigma times the square ",
+        "start": 1222.568,
+        "duration": 4.204
+    },
+    {
+        "text": "root of that size.",
+        "start": 1226.772,
+        "duration": 0.958
+    },
+    {
+        "text": "So now, if we want to claim that this looks more and more like a bell curve, ",
+        "start": 1228.19,
+        "duration": 3.702
+    },
+    {
+        "text": "and a bell curve is only described by two different parameters, ",
+        "start": 1231.892,
+        "duration": 3.077
+    },
+    {
+        "text": "the mean and the standard deviation, you know what to do.",
+        "start": 1234.969,
+        "duration": 2.741
+    },
+    {
+        "text": "You could plug those two values into the formula, and it gives you a highly explicit, ",
+        "start": 1237.93,
+        "duration": 4.452
+    },
+    {
+        "text": "albeit kind of complicated, formula for a curve that should closely fit our distribution.",
+        "start": 1242.382,
+        "duration": 4.608
+    },
+    {
+        "text": "But there's another way we can describe it that's a little more ",
+        "start": 1248.39,
+        "duration": 3.066
+    },
+    {
+        "text": "elegant and lends itself to a very fun visual that we can build up to.",
+        "start": 1251.456,
+        "duration": 3.354
+    },
+    {
+        "text": "Instead of focusing on the sum of all of these random variables, ",
+        "start": 1255.27,
+        "duration": 3.306
+    },
+    {
+        "text": "let's modify this expression a little bit, where what we'll do is we'll look ",
+        "start": 1258.576,
+        "duration": 3.916
+    },
+    {
+        "text": "at the mean that we expect that sum to take, and we subtract it off so that ",
+        "start": 1262.492,
+        "duration": 3.866
+    },
+    {
+        "text": "our new expression has a mean of zero, and then we're going to look at the ",
+        "start": 1266.358,
+        "duration": 3.815
+    },
+    {
+        "text": "standard deviation we expect of our sum, and divide out by that, ",
+        "start": 1270.173,
+        "duration": 3.306
+    },
+    {
+        "text": "which basically just rescales the units so that the standard deviation of our ",
+        "start": 1273.479,
+        "duration": 3.968
+    },
+    {
+        "text": "expression will equal one.",
+        "start": 1277.447,
+        "duration": 1.323
+    },
+    {
+        "text": "This might seem like a more complicated expression, ",
+        "start": 1279.35,
+        "duration": 2.515
+    },
+    {
+        "text": "but it actually has a highly readable meaning.",
+        "start": 1281.865,
+        "duration": 2.225
+    },
+    {
+        "text": "It's essentially saying how many standard deviations away from the mean is this sum?",
+        "start": 1284.45,
+        "duration": 5.22
+    },
+    {
+        "text": "For example, this bar here corresponds to a certain value that you might find when you ",
+        "start": 1290.75,
+        "duration": 4.227
+    },
+    {
+        "text": "roll 10 dice and you add them all up, and its position a little above negative one is ",
+        "start": 1294.977,
+        "duration": 4.179
+    },
+    {
+        "text": "telling you that that value is a little bit less than one standard deviation lower than ",
+        "start": 1299.156,
+        "duration": 4.276
+    },
+    {
+        "text": "the mean.",
+        "start": 1303.432,
+        "duration": 0.438
+    },
+    {
+        "text": "Also, by the way, in anticipation for the animation I'm trying to build to here, ",
+        "start": 1305.13,
+        "duration": 3.767
+    },
+    {
+        "text": "the way I'm representing things on that lower plot is that the area of each one of ",
+        "start": 1308.897,
+        "duration": 3.86
+    },
+    {
+        "text": "these bars is telling us the probability of the corresponding value rather than the ",
+        "start": 1312.757,
+        "duration": 3.907
+    },
+    {
+        "text": "height.",
+        "start": 1316.664,
+        "duration": 0.326
+    },
+    {
+        "text": "You might think of the y-axis as representing ",
+        "start": 1317.23,
+        "duration": 2.252
+    },
+    {
+        "text": "not probability but a kind of probability density.",
+        "start": 1319.482,
+        "duration": 2.448
+    },
+    {
+        "text": "The reason for this is to set the stage so that it aligns with the way we ",
+        "start": 1322.27,
+        "duration": 3.726
+    },
+    {
+        "text": "interpret continuous distributions, where the probability of falling between ",
+        "start": 1325.996,
+        "duration": 3.877
+    },
+    {
+        "text": "a range of values is equal to an area under a curve between those values.",
+        "start": 1329.873,
+        "duration": 3.677
+    },
+    {
+        "text": "In particular, the area of all the bars together is going to be one.",
+        "start": 1333.91,
+        "duration": 2.82
+    },
+    {
+        "text": "Now, with all of that in place, let's have a little fun.",
+        "start": 1338.23,
+        "duration": 2.72
+    },
+    {
+        "text": "Let me start by rolling things back so that the distribution on the bottom represents ",
+        "start": 1341.33,
+        "duration": 4.027
+    },
+    {
+        "text": "a relatively small sum, like adding together only three such random variables.",
+        "start": 1345.357,
+        "duration": 3.653
+    },
+    {
+        "text": "Notice what happens as I change the distribution we start with.",
+        "start": 1349.45,
+        "duration": 2.98
+    },
+    {
+        "text": "As it changes, the distribution on the bottom completely changes its shape.",
+        "start": 1352.73,
+        "duration": 3.56
+    },
+    {
+        "text": "It's very dependent on what we started with.",
+        "start": 1356.51,
+        "duration": 2.26
+    },
+    {
+        "text": "If we let the size of our sum get a little bit bigger, say going up to 10, ",
+        "start": 1360.35,
+        "duration": 3.828
+    },
+    {
+        "text": "and as I change the distribution for x, it largely stays looking like a bell curve, ",
+        "start": 1364.178,
+        "duration": 4.287
+    },
+    {
+        "text": "but I can find some distributions that get it to change shape.",
+        "start": 1368.465,
+        "duration": 3.165
+    },
+    {
+        "text": "For example, the really lopsided one where almost all the probability ",
+        "start": 1372.23,
+        "duration": 3.644
+    },
+    {
+        "text": "is in the numbers 1 or 6 results in this kind of spiky bell curve.",
+        "start": 1375.874,
+        "duration": 3.436
+    },
+    {
+        "text": "And if you'll recall, earlier on I actually showed this in the form of a simulation.",
+        "start": 1379.77,
+        "duration": 3.74
+    },
+    {
+        "text": "Though if you were wondering whether that spikiness was an artifact of the randomness ",
+        "start": 1384.13,
+        "duration": 3.999
+    },
+    {
+        "text": "or reflected the true distribution, turns out it reflects the true distribution.",
+        "start": 1388.129,
+        "duration": 3.721
+    },
+    {
+        "text": "In this case, 10 is not a large enough sum for the central limit theorem to kick in.",
+        "start": 1392.29,
+        "duration": 4.18
+    },
+    {
+        "text": "But if instead I let that sum grow and I consider adding 50 different values, ",
+        "start": 1396.47,
+        "duration": 4.282
+    },
+    {
+        "text": "which is actually not that big, then no matter how I change the distribution for our ",
+        "start": 1400.752,
+        "duration": 4.667
+    },
+    {
+        "text": "underlying random variable, it has essentially no effect on the shape of the plot on ",
+        "start": 1405.419,
+        "duration": 4.667
+    },
+    {
+        "text": "the bottom.",
+        "start": 1410.086,
+        "duration": 0.604
+    },
+    {
+        "text": "No matter where we start, all of the information and nuance for the ",
+        "start": 1411.17,
+        "duration": 3.665
+    },
+    {
+        "text": "distribution of x gets washed away, and we tend towards this single ",
+        "start": 1414.835,
+        "duration": 3.665
+    },
+    {
+        "text": "universal shape described by a very elegant function for the standard ",
+        "start": 1418.5,
+        "duration": 3.773
+    },
+    {
+        "text": "normal distribution, 1 over square root of 2 pi times e to the negative x squared over 2.",
+        "start": 1422.273,
+        "duration": 4.797
+    },
+    {
+        "text": "This, this right here is what the central limit theorem is all about.",
+        "start": 1427.81,
+        "duration": 3.0
+    },
+    {
+        "text": "Almost nothing you can do to this initial distribution changes the shape we tend towards.",
+        "start": 1431.13,
+        "duration": 4.18
+    },
+    {
+        "text": "Now, the more theoretically minded among you might still be ",
+        "start": 1439.03,
+        "duration": 3.024
+    },
+    {
+        "text": "wondering what is the actual theorem, like what's the mathematical ",
+        "start": 1442.054,
+        "duration": 3.377
+    },
+    {
+        "text": "statement that could be proved or disproved that we're claiming here.",
+        "start": 1445.431,
+        "duration": 3.479
+    },
+    {
+        "text": "If you want a nice formal statement, here's how it might go.",
+        "start": 1449.03,
+        "duration": 2.64
+    },
+    {
+        "text": "Consider this value where we're summing up n different instantiations of our variable, ",
+        "start": 1452.13,
+        "duration": 4.51
+    },
+    {
+        "text": "but tweaked and tuned so that its mean and standard deviation are 1, ",
+        "start": 1456.64,
+        "duration": 3.577
+    },
+    {
+        "text": "again meaning you can read it as asking how many standard deviations away from the ",
+        "start": 1460.217,
+        "duration": 4.303
+    },
+    {
+        "text": "mean is the sum.",
+        "start": 1464.52,
+        "duration": 0.83
+    },
+    {
+        "text": "Then the actual rigorous no-jokes-this-time statement of the central limit theorem ",
+        "start": 1465.77,
+        "duration": 4.719
+    },
+    {
+        "text": "is that if you consider the probability that this value falls between two given real ",
+        "start": 1470.489,
+        "duration": 4.833
+    },
+    {
+        "text": "numbers, a and b, and you consider the limit of that probability as the size of your ",
+        "start": 1475.322,
+        "duration": 4.832
+    },
+    {
+        "text": "sum goes to infinity, then that limit is equal to a certain integral, ",
+        "start": 1480.154,
+        "duration": 3.98
+    },
+    {
+        "text": "which basically describes the area under a standard normal distribution between those ",
+        "start": 1484.134,
+        "duration": 4.89
+    },
+    {
+        "text": "two values.",
+        "start": 1489.024,
+        "duration": 0.626
+    },
+    {
+        "text": "Again, there are three underlying assumptions that I have yet to tell you, ",
+        "start": 1491.25,
+        "duration": 3.896
+    },
+    {
+        "text": "but other than those, in all of its gory detail, ",
+        "start": 1495.146,
+        "duration": 2.546
+    },
+    {
+        "text": "this right here is the central limit theorem.",
+        "start": 1497.692,
+        "duration": 2.338
+    },
+    {
+        "text": "All of that is a bit theoretical, so it might be helpful to bring things ",
+        "start": 1504.55,
+        "duration": 3.442
+    },
+    {
+        "text": "back down to earth and turn back to the concrete example that I mentioned at the start, ",
+        "start": 1507.992,
+        "duration": 4.149
+    },
+    {
+        "text": "where you imagine rolling a die 100 times, and let's assume it's a fair ",
+        "start": 1512.141,
+        "duration": 3.395
+    },
+    {
+        "text": "die for this example, and you add together the results.",
+        "start": 1515.536,
+        "duration": 2.594
+    },
+    {
+        "text": "The challenge for you is to find a range of values such that ",
+        "start": 1518.87,
+        "duration": 3.597
+    },
+    {
+        "text": "you're 95% sure that the sum will fall within this range.",
+        "start": 1522.467,
+        "duration": 3.363
+    },
+    {
+        "text": "For questions like this, there's a handy rule of thumb about normal distributions, ",
+        "start": 1527.13,
+        "duration": 4.474
+    },
+    {
+        "text": "which is that about 68% of your values are going to fall within one standard ",
+        "start": 1531.604,
+        "duration": 4.152
+    },
+    {
+        "text": "deviation of the mean, 95% of your values, the thing we care about, ",
+        "start": 1535.756,
+        "duration": 3.666
+    },
+    {
+        "text": "fall within two standard deviations of the mean, ",
+        "start": 1539.422,
+        "duration": 2.641
+    },
+    {
+        "text": "and a whopping 99.7% of your values will fall within three standard ",
+        "start": 1542.063,
+        "duration": 3.667
+    },
+    {
+        "text": "deviations of the mean.",
+        "start": 1545.73,
+        "duration": 1.24
+    },
+    {
+        "text": "It's a rule of thumb that's commonly memorized ",
+        "start": 1547.45,
+        "duration": 1.978
+    },
+    {
+        "text": "by people who do a lot of probability and stats.",
+        "start": 1549.428,
+        "duration": 2.022
+    },
+    {
+        "text": "Naturally, this gives us what we need for our example, ",
+        "start": 1552.49,
+        "duration": 2.651
+    },
+    {
+        "text": "and let me go ahead and draw out what this would look like, ",
+        "start": 1555.141,
+        "duration": 2.892
+    },
+    {
+        "text": "where I'll show the distribution for a fair die up at the top, ",
+        "start": 1558.033,
+        "duration": 3.038
+    },
+    {
+        "text": "and the distribution for a sum of 100 such dice on the bottom, ",
+        "start": 1561.071,
+        "duration": 3.037
+    },
+    {
+        "text": "which by now as you know looks like a certain normal distribution.",
+        "start": 1564.108,
+        "duration": 3.182
+    },
+    {
+        "text": "Step 1 with a problem like this is to find the mean of your initial distribution, ",
+        "start": 1567.95,
+        "duration": 4.705
+    },
+    {
+        "text": "which in this case will look like 1 6th times 1 plus 1 6th times 2 on and on and on, ",
+        "start": 1572.655,
+        "duration": 4.877
+    },
+    {
+        "text": "and works out to be 3.5.",
+        "start": 1577.532,
+        "duration": 1.378
+    },
+    {
+        "text": "We also need the standard deviation, which requires calculating the variance, ",
+        "start": 1579.41,
+        "duration": 4.046
+    },
+    {
+        "text": "which as you know involves adding all the squares of the differences between the ",
+        "start": 1583.456,
+        "duration": 4.201
+    },
+    {
+        "text": "values and the means, and it works out to be 2.92, ",
+        "start": 1587.657,
+        "duration": 2.646
+    },
+    {
+        "text": "square root of that comes out to be 1.71.",
+        "start": 1590.303,
+        "duration": 2.127
+    },
+    {
+        "text": "Those are the only two numbers we need, and I will invite you ",
+        "start": 1592.95,
+        "duration": 2.793
+    },
+    {
+        "text": "again to reflect on how magical it is that those are the only ",
+        "start": 1595.743,
+        "duration": 2.793
+    },
+    {
+        "text": "two numbers you need to completely understand the bottom distribution.",
+        "start": 1598.536,
+        "duration": 3.154
+    },
+    {
+        "text": "Its mean will be 100 times mu, which is 350, and its standard deviation ",
+        "start": 1602.43,
+        "duration": 5.235
+    },
+    {
+        "text": "will be the square root of 100 times sigma, so 10 times sigma, 17.1.",
+        "start": 1607.665,
+        "duration": 4.945
+    },
+    {
+        "text": "Remembering our handy rule of thumb, we're looking for values two standard ",
+        "start": 1613.03,
+        "duration": 4.554
+    },
+    {
+        "text": "deviations away from the mean, and when you subtract 2 sigma from mean, ",
+        "start": 1617.584,
+        "duration": 4.373
+    },
+    {
+        "text": "you end up with about 316, and when you add 2 sigma you end up with 384.",
+        "start": 1621.957,
+        "duration": 4.373
+    },
+    {
+        "text": "There you go, that gives us the answer.",
+        "start": 1627.35,
+        "duration": 1.6
+    },
+    {
+        "text": "Okay, I promised to wrap things up shortly, but while we're on this example, ",
+        "start": 1631.47,
+        "duration": 3.385
+    },
+    {
+        "text": "there's one more question that's worth your time to ponder.",
+        "start": 1634.855,
+        "duration": 2.595
+    },
+    {
+        "text": "Instead of just asking about the sum of 100 die rolls, ",
+        "start": 1638.25,
+        "duration": 2.878
+    },
+    {
+        "text": "let's say I had you divide that number by 100, ",
+        "start": 1641.128,
+        "duration": 2.46
+    },
+    {
+        "text": "which basically means all the numbers in our diagram in the bottom get divided by 100.",
+        "start": 1643.588,
+        "duration": 4.502
+    },
+    {
+        "text": "Take a moment to interpret what this all would be saying then.",
+        "start": 1648.57,
+        "duration": 3.0
+    },
+    {
+        "text": "The expression essentially tells you the empirical average for 100 different die rolls, ",
+        "start": 1652.07,
+        "duration": 5.101
+    },
+    {
+        "text": "and that interval we found is now telling you what range you are ",
+        "start": 1657.171,
+        "duration": 3.768
+    },
+    {
+        "text": "expecting to see for that empirical average.",
+        "start": 1660.939,
+        "duration": 2.551
+    },
+    {
+        "text": "In other words, you might expect it to be around 3.5, ",
+        "start": 1664.35,
+        "duration": 2.693
+    },
+    {
+        "text": "that's the expected value for a die roll, but what's much less obvious and what ",
+        "start": 1667.043,
+        "duration": 3.99
+    },
+    {
+        "text": "the central limit theorem lets you compute is how close to that expected value ",
+        "start": 1671.033,
+        "duration": 3.94
+    },
+    {
+        "text": "you'll reasonably find yourself.",
+        "start": 1674.973,
+        "duration": 1.597
+    },
+    {
+        "text": "In particular, it's worth your time to take a moment mulling over ",
+        "start": 1677.59,
+        "duration": 3.101
+    },
+    {
+        "text": "what the standard deviation for this empirical average is, ",
+        "start": 1680.691,
+        "duration": 2.773
+    },
+    {
+        "text": "and what happens to it as you look at a bigger and bigger sample of die rolls.",
+        "start": 1683.464,
+        "duration": 3.666
+    },
+    {
+        "text": "Lastly, but probably most importantly, let's talk ",
+        "start": 1692.95,
+        "duration": 2.275
+    },
+    {
+        "text": "about the assumptions that go into this theorem.",
+        "start": 1695.225,
+        "duration": 2.185
+    },
+    {
+        "text": "The first one is that all of these variables that ",
+        "start": 1698.01,
+        "duration": 2.306
+    },
+    {
+        "text": "we're adding up are independent from each other.",
+        "start": 1700.316,
+        "duration": 2.214
+    },
+    {
+        "text": "The outcome of one process doesn't influence the outcome of any other process.",
+        "start": 1702.85,
+        "duration": 3.46
+    },
+    {
+        "text": "The second is that all of these variables are drawn from the same distribution.",
+        "start": 1707.25,
+        "duration": 3.7
+    },
+    {
+        "text": "Both of these have been implicitly assumed with our dice example.",
+        "start": 1711.31,
+        "duration": 3.08
+    },
+    {
+        "text": "We've been treating the outcome of each die roll as independent from the outcome ",
+        "start": 1714.79,
+        "duration": 3.597
+    },
+    {
+        "text": "of all the others, and we're assuming that each die follows the same distribution.",
+        "start": 1718.387,
+        "duration": 3.643
+    },
+    {
+        "text": "Sometimes in the literature you'll see these two assumptions lumped ",
+        "start": 1722.85,
+        "duration": 3.333
+    },
+    {
+        "text": "together under the initials IID for independent and identically distributed.",
+        "start": 1726.183,
+        "duration": 3.727
+    },
+    {
+        "text": "One situation where these assumptions are decidedly not true would be the Galton board.",
+        "start": 1730.53,
+        "duration": 4.58
+    },
+    {
+        "text": "I mean, think about it.",
+        "start": 1735.71,
+        "duration": 1.12
+    },
+    {
+        "text": "Is it the case that the way a ball bounces off of one of the pegs ",
+        "start": 1736.97,
+        "duration": 3.207
+    },
+    {
+        "text": "is independent from how it's going to bounce off the next peg?",
+        "start": 1740.177,
+        "duration": 3.013
+    },
+    {
+        "text": "Absolutely not.",
+        "start": 1743.83,
+        "duration": 0.78
+    },
+    {
+        "text": "Depending on the last bounce, it's coming in with a completely different trajectory.",
+        "start": 1744.77,
+        "duration": 3.1
+    },
+    {
+        "text": "And is it the case that the distribution of possible outcomes ",
+        "start": 1748.21,
+        "duration": 3.423
+    },
+    {
+        "text": "off of each peg are the same for each peg that it hits?",
+        "start": 1751.633,
+        "duration": 3.037
+    },
+    {
+        "text": "Again, almost certainly not.",
+        "start": 1755.19,
+        "duration": 1.52
+    },
+    {
+        "text": "Maybe it hits one peg glancing to the left, meaning the outcomes are hugely ",
+        "start": 1756.71,
+        "duration": 3.523
+    },
+    {
+        "text": "skewed in that direction, and then hits the next one glancing to the right.",
+        "start": 1760.233,
+        "duration": 3.477
+    },
+    {
+        "text": "When I made all those simplifying assumptions in the opening example, ",
+        "start": 1765.73,
+        "duration": 3.441
+    },
+    {
+        "text": "it wasn't just to make this easier to think about.",
+        "start": 1769.171,
+        "duration": 2.459
+    },
+    {
+        "text": "It's also that those assumptions were necessary for this ",
+        "start": 1771.97,
+        "duration": 2.595
+    },
+    {
+        "text": "to actually be an example of the central limit theorem.",
+        "start": 1774.565,
+        "duration": 2.505
+    },
+    {
+        "text": "Nevertheless, it seems to be true that for the real Galton board, ",
+        "start": 1778.13,
+        "duration": 3.34
+    },
+    {
+        "text": "despite violating both of these, a normal distribution does kind of come about?",
+        "start": 1781.47,
+        "duration": 4.0
+    },
+    {
+        "text": "Part of the reason might be that there are generalizations of the theorem beyond ",
+        "start": 1786.05,
+        "duration": 3.944
+    },
+    {
+        "text": "the scope of this video that relax these assumptions, especially the second one.",
+        "start": 1789.994,
+        "duration": 3.896
+    },
+    {
+        "text": "But I do want to caution you against the fact that many times people seem to assume that ",
+        "start": 1794.49,
+        "duration": 4.338
+    },
+    {
+        "text": "a variable is normally distributed, even when there's no actual justification to do so.",
+        "start": 1798.828,
+        "duration": 4.242
+    },
+    {
+        "text": "The third assumption is actually fairly subtle.",
+        "start": 1804.29,
+        "duration": 1.92
+    },
+    {
+        "text": "It's that the variance we've been computing for these variables is finite.",
+        "start": 1806.21,
+        "duration": 4.06
+    },
+    {
+        "text": "This was never an issue for the dice example because ",
+        "start": 1810.81,
+        "duration": 2.352
+    },
+    {
+        "text": "there were only six possible outcomes.",
+        "start": 1813.162,
+        "duration": 1.688
+    },
+    {
+        "text": "But in certain situations where you have an infinite set of outcomes, ",
+        "start": 1815.03,
+        "duration": 3.514
+    },
+    {
+        "text": "when you go to compute the variance, the sum ends up diverging off to infinity.",
+        "start": 1818.544,
+        "duration": 3.966
+    },
+    {
+        "text": "These can be perfectly valid probability distributions, and they do come up in practice.",
+        "start": 1823.45,
+        "duration": 3.8
+    },
+    {
+        "text": "But in those situations, as you consider adding many different ",
+        "start": 1827.55,
+        "duration": 3.124
+    },
+    {
+        "text": "instantiations of that variable and letting that sum approach infinity, ",
+        "start": 1830.674,
+        "duration": 3.571
+    },
+    {
+        "text": "even if the first two assumptions hold, it is very much a possibility ",
+        "start": 1834.245,
+        "duration": 3.472
+    },
+    {
+        "text": "that the thing you tend towards is not actually a normal distribution.",
+        "start": 1837.717,
+        "duration": 3.473
+    },
+    {
+        "text": "If you've understood everything up to this point, ",
+        "start": 1842.15,
+        "duration": 2.037
+    },
+    {
+        "text": "you now have a very strong foundation in what the central limit theorem is all about.",
+        "start": 1844.187,
+        "duration": 3.463
+    },
+    {
+        "text": "And next up, I'd like to explain why it is that this particular function is the ",
+        "start": 1848.29,
+        "duration": 3.71
+    },
+    {
+        "text": "thing that we tend towards, and why it has a pi in it, what it has to do with circles.",
+        "start": 1852.0,
+        "duration": 3.99
+    },
+    {
+        "text": "Thank you.",
+        "start": 1871.95,
+        "duration": 2.22
+    }
+]

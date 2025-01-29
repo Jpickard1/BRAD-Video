@@ -1,0 +1,5797 @@
+[
+    {
+        "text": "what development great thanks you I'm",
+        "start": 0.0,
+        "duration": 8.519
+    },
+    {
+        "text": "very excited to talk to you all today",
+        "start": 7.08,
+        "duration": 3.78
+    },
+    {
+        "text": "I'm gonna be telling you about some work",
+        "start": 8.519,
+        "duration": 6.091
+    },
+    {
+        "text": "I did you mentioned recently partly",
+        "start": 10.86,
+        "duration": 6.63
+    },
+    {
+        "text": "overlapping with my postdoc and the the",
+        "start": 14.61,
+        "duration": 6.089
+    },
+    {
+        "text": "we named our algorithm lagger and this",
+        "start": 17.49,
+        "duration": 5.73
+    },
+    {
+        "text": "is a picture of the liger but you get if",
+        "start": 20.699,
+        "duration": 5.701
+    },
+    {
+        "text": "you cross a lion and a tiger and I'm",
+        "start": 23.22,
+        "duration": 5.52
+    },
+    {
+        "text": "excited for this talk because I'm going",
+        "start": 26.4,
+        "duration": 3.69
+    },
+    {
+        "text": "to get to focus on some of the",
+        "start": 28.74,
+        "duration": 3.87
+    },
+    {
+        "text": "algorithmic details which I don't",
+        "start": 30.09,
+        "duration": 4.32
+    },
+    {
+        "text": "usually get to talk about because there",
+        "start": 32.61,
+        "duration": 3.27
+    },
+    {
+        "text": "are a lot of biologists in the audience",
+        "start": 34.41,
+        "duration": 4.649
+    },
+    {
+        "text": "and usually these things get relegated",
+        "start": 35.88,
+        "duration": 6.03
+    },
+    {
+        "text": "to the the end of the supplement so I'm",
+        "start": 39.059,
+        "duration": 4.02
+    },
+    {
+        "text": "excited to get to share a little bit",
+        "start": 41.91,
+        "duration": 3.329
+    },
+    {
+        "text": "about the the actual inner workings of",
+        "start": 43.079,
+        "duration": 4.561
+    },
+    {
+        "text": "the approach and the the heart of the",
+        "start": 45.239,
+        "duration": 3.84
+    },
+    {
+        "text": "approach is non-negative matrix",
+        "start": 47.64,
+        "duration": 4.919
+    },
+    {
+        "text": "factorization and so I'm going to share",
+        "start": 49.079,
+        "duration": 4.681
+    },
+    {
+        "text": "some of the things that I've learned",
+        "start": 52.559,
+        "duration": 3.541
+    },
+    {
+        "text": "about the spectrum of options that are",
+        "start": 53.76,
+        "duration": 4.47
+    },
+    {
+        "text": "available when you're implementing a",
+        "start": 56.1,
+        "duration": 3.06
+    },
+    {
+        "text": "non-negative matrix factorization",
+        "start": 58.23,
+        "duration": 6.209
+    },
+    {
+        "text": "approach to the overall problem that",
+        "start": 59.16,
+        "duration": 7.95
+    },
+    {
+        "text": "we're interested in solving with this",
+        "start": 64.439,
+        "duration": 6.631
+    },
+    {
+        "text": "algorithm is moving from qualitative",
+        "start": 67.11,
+        "duration": 6.66
+    },
+    {
+        "text": "definition of cellular identity which is",
+        "start": 71.07,
+        "duration": 4.17
+    },
+    {
+        "text": "the traditional way biologists think",
+        "start": 73.77,
+        "duration": 3.57
+    },
+    {
+        "text": "about cell identity to a quantitative",
+        "start": 75.24,
+        "duration": 6.21
+    },
+    {
+        "text": "definition so qualitative definition of",
+        "start": 77.34,
+        "duration": 6.09
+    },
+    {
+        "text": "cell types has traditionally been based",
+        "start": 81.45,
+        "duration": 4.8
+    },
+    {
+        "text": "on things like morphology so how does",
+        "start": 83.43,
+        "duration": 4.799
+    },
+    {
+        "text": "the cell look under microscope we can",
+        "start": 86.25,
+        "duration": 3.57
+    },
+    {
+        "text": "see that there are clearly different",
+        "start": 88.229,
+        "duration": 3.18
+    },
+    {
+        "text": "stall shapes and these are likely",
+        "start": 89.82,
+        "duration": 5.03
+    },
+    {
+        "text": "different cell types surface markers",
+        "start": 91.409,
+        "duration": 6.03
+    },
+    {
+        "text": "painstakingly characterizing a handful",
+        "start": 94.85,
+        "duration": 5.68
+    },
+    {
+        "text": "of surface markers which the presence or",
+        "start": 97.439,
+        "duration": 6.091
+    },
+    {
+        "text": "absence decides whether a cell is a type",
+        "start": 100.53,
+        "duration": 7.07
+    },
+    {
+        "text": "A or B or phenotypic properties where",
+        "start": 103.53,
+        "duration": 6.449
+    },
+    {
+        "text": "you can do some kind of measurement on",
+        "start": 107.6,
+        "duration": 3.4
+    },
+    {
+        "text": "the cell like if you're thinking about",
+        "start": 109.979,
+        "duration": 2.761
+    },
+    {
+        "text": "neurons the phenotypic property of",
+        "start": 111.0,
+        "duration": 4.89
+    },
+    {
+        "text": "interest could be the firing pattern and",
+        "start": 112.74,
+        "duration": 6.54
+    },
+    {
+        "text": "so based on some ad hoc combination of",
+        "start": 115.89,
+        "duration": 5.43
+    },
+    {
+        "text": "these qualitative properties biologists",
+        "start": 119.28,
+        "duration": 3.86
+    },
+    {
+        "text": "have traditionally defined cell types",
+        "start": 121.32,
+        "duration": 5.04
+    },
+    {
+        "text": "but now with the with the invention of",
+        "start": 123.14,
+        "duration": 5.2
+    },
+    {
+        "text": "various single cell genomic technologies",
+        "start": 126.36,
+        "duration": 4.55
+    },
+    {
+        "text": "we have the opportunity to revisit the",
+        "start": 128.34,
+        "duration": 5.2
+    },
+    {
+        "text": "definition of cell type and",
+        "start": 130.91,
+        "duration": 5.34
+    },
+    {
+        "text": "properties of cell identity from a",
+        "start": 133.54,
+        "duration": 4.839
+    },
+    {
+        "text": "quantitative perspective using all these",
+        "start": 136.25,
+        "duration": 4.26
+    },
+    {
+        "text": "different types of omics which have been",
+        "start": 138.379,
+        "duration": 5.761
+    },
+    {
+        "text": "initially developed in bulk and now we",
+        "start": 140.51,
+        "duration": 4.89
+    },
+    {
+        "text": "could perform them on a single cell",
+        "start": 144.14,
+        "duration": 4.59
+    },
+    {
+        "text": "level so we can measure expression in",
+        "start": 145.4,
+        "duration": 5.22
+    },
+    {
+        "text": "single cell RNA seek is by far the most",
+        "start": 148.73,
+        "duration": 7.08
+    },
+    {
+        "text": "widely used method for measuring single",
+        "start": 150.62,
+        "duration": 8.699
+    },
+    {
+        "text": "cell properties you can also do single",
+        "start": 155.81,
+        "duration": 6.45
+    },
+    {
+        "text": "cell methylation sequencing and attack",
+        "start": 159.319,
+        "duration": 4.53
+    },
+    {
+        "text": "seek which gives you comfort and",
+        "start": 162.26,
+        "duration": 3.36
+    },
+    {
+        "text": "accessibility measurements you can also",
+        "start": 163.849,
+        "duration": 4.441
+    },
+    {
+        "text": "do hi-c and most recently people have",
+        "start": 165.62,
+        "duration": 4.53
+    },
+    {
+        "text": "started doing spatial transcriptomics",
+        "start": 168.29,
+        "duration": 4.68
+    },
+    {
+        "text": "where you have a 2d or 3d coordinate for",
+        "start": 170.15,
+        "duration": 5.669
+    },
+    {
+        "text": "the cell along with its gene expression",
+        "start": 172.97,
+        "duration": 9.239
+    },
+    {
+        "text": "profile and so the kind of grand goal",
+        "start": 175.819,
+        "duration": 10.801
+    },
+    {
+        "text": "that I set out to feed was to try to",
+        "start": 182.209,
+        "duration": 6.241
+    },
+    {
+        "text": "leverage all these different types of",
+        "start": 186.62,
+        "duration": 3.75
+    },
+    {
+        "text": "measurements across a range of",
+        "start": 188.45,
+        "duration": 4.95
+    },
+    {
+        "text": "biological settings to move toward a",
+        "start": 190.37,
+        "duration": 4.619
+    },
+    {
+        "text": "quantitative definition of cellular",
+        "start": 193.4,
+        "duration": 4.619
+    },
+    {
+        "text": "identity and in order to accomplish this",
+        "start": 194.989,
+        "duration": 5.161
+    },
+    {
+        "text": "we want several properties we want to be",
+        "start": 198.019,
+        "duration": 4.65
+    },
+    {
+        "text": "able to identify both similarities and",
+        "start": 200.15,
+        "duration": 4.199
+    },
+    {
+        "text": "differences in corresponding cells",
+        "start": 202.669,
+        "duration": 4.701
+    },
+    {
+        "text": "across conditions species in tissues and",
+        "start": 204.349,
+        "duration": 6.5
+    },
+    {
+        "text": "part of the reason for this is because",
+        "start": 207.37,
+        "duration": 5.799
+    },
+    {
+        "text": "we want to be able to understand the",
+        "start": 210.849,
+        "duration": 3.941
+    },
+    {
+        "text": "distinction between sort of the",
+        "start": 213.169,
+        "duration": 3.57
+    },
+    {
+        "text": "invariant properties of the cell type",
+        "start": 214.79,
+        "duration": 3.539
+    },
+    {
+        "text": "that makes it that cell type across",
+        "start": 216.739,
+        "duration": 3.45
+    },
+    {
+        "text": "settings but we also want to understand",
+        "start": 218.329,
+        "duration": 3.571
+    },
+    {
+        "text": "the main modes of variation in which",
+        "start": 220.189,
+        "duration": 6.23
+    },
+    {
+        "text": "particular cell type in vary for example",
+        "start": 221.9,
+        "duration": 4.519
+    },
+    {
+        "text": "in response to treatments or",
+        "start": 226.599,
+        "duration": 5.801
+    },
+    {
+        "text": "environmental conditions or rows we also",
+        "start": 228.979,
+        "duration": 5.13
+    },
+    {
+        "text": "want to be able to capture continuous",
+        "start": 232.4,
+        "duration": 3.509
+    },
+    {
+        "text": "and discrete modes of cellular variation",
+        "start": 234.109,
+        "duration": 5.46
+    },
+    {
+        "text": "so the traditional way in which people",
+        "start": 235.909,
+        "duration": 5.04
+    },
+    {
+        "text": "have thought about cell identity is",
+        "start": 239.569,
+        "duration": 5.85
+    },
+    {
+        "text": "cells occupying discrete types but it",
+        "start": 240.949,
+        "duration": 6.99
+    },
+    {
+        "text": "looks increasingly like in many cases",
+        "start": 245.419,
+        "duration": 4.77
+    },
+    {
+        "text": "some identity is more of a continuous",
+        "start": 247.939,
+        "duration": 4.98
+    },
+    {
+        "text": "phenomenon where cells can kind of",
+        "start": 250.189,
+        "duration": 6.26
+    },
+    {
+        "text": "transition between stable minima",
+        "start": 252.919,
+        "duration": 6.87
+    },
+    {
+        "text": "continuously we also want to be able to",
+        "start": 256.449,
+        "duration": 5.201
+    },
+    {
+        "text": "distinguish technical confounders for",
+        "start": 259.789,
+        "duration": 3.481
+    },
+    {
+        "text": "biological signals because one of the",
+        "start": 261.65,
+        "duration": 3.509
+    },
+    {
+        "text": "main challenges with single cell data is",
+        "start": 263.27,
+        "duration": 3.33
+    },
+    {
+        "text": "a large amount of",
+        "start": 265.159,
+        "duration": 3.871
+    },
+    {
+        "text": "technical noise due to uncontrolled",
+        "start": 266.6,
+        "duration": 5.52
+    },
+    {
+        "text": "variation across experiments as well as",
+        "start": 269.03,
+        "duration": 4.98
+    },
+    {
+        "text": "just the inherent challenges of",
+        "start": 272.12,
+        "duration": 4.74
+    },
+    {
+        "text": "measuring quantities from an individual",
+        "start": 274.01,
+        "duration": 6.33
+    },
+    {
+        "text": "cell and additionally we want to be able",
+        "start": 276.86,
+        "duration": 5.52
+    },
+    {
+        "text": "to incorporate these multiple kinds of",
+        "start": 280.34,
+        "duration": 4.28
+    },
+    {
+        "text": "data which is very challenging because",
+        "start": 282.38,
+        "duration": 4.89
+    },
+    {
+        "text": "the data each have their own intrinsic",
+        "start": 284.62,
+        "duration": 4.27
+    },
+    {
+        "text": "technical biases which are completely",
+        "start": 287.27,
+        "duration": 3.48
+    },
+    {
+        "text": "different and they often measure",
+        "start": 288.89,
+        "duration": 3.09
+    },
+    {
+        "text": "completely different features for",
+        "start": 290.75,
+        "duration": 3.87
+    },
+    {
+        "text": "example gene expression is a completely",
+        "start": 291.98,
+        "duration": 3.99
+    },
+    {
+        "text": "different type of measurement than",
+        "start": 294.62,
+        "duration": 4.98
+    },
+    {
+        "text": "chromatin accessibility we expect them",
+        "start": 295.97,
+        "duration": 5.46
+    },
+    {
+        "text": "to be correlated in some way but there",
+        "start": 299.6,
+        "duration": 4.13
+    },
+    {
+        "text": "are different modalities and so",
+        "start": 301.43,
+        "duration": 4.29
+    },
+    {
+        "text": "integrating them is challenging so",
+        "start": 303.73,
+        "duration": 4.75
+    },
+    {
+        "text": "that's kind of the space in which I'm",
+        "start": 305.72,
+        "duration": 6.69
+    },
+    {
+        "text": "working here until last year during my",
+        "start": 308.48,
+        "duration": 6.06
+    },
+    {
+        "text": "postdoc with Evan and also into this",
+        "start": 312.41,
+        "duration": 4.29
+    },
+    {
+        "text": "year I'm still working on this we",
+        "start": 314.54,
+        "duration": 3.51
+    },
+    {
+        "text": "developed an approach called logger",
+        "start": 316.7,
+        "duration": 3.66
+    },
+    {
+        "text": "linked inference of genomic experimental",
+        "start": 318.05,
+        "duration": 4.8
+    },
+    {
+        "text": "relationships and the name came from a",
+        "start": 320.36,
+        "duration": 5.61
+    },
+    {
+        "text": "liger which is what you get if you read",
+        "start": 322.85,
+        "duration": 6.96
+    },
+    {
+        "text": "a line in the tiger and the this is kind",
+        "start": 325.97,
+        "duration": 5.28
+    },
+    {
+        "text": "of a metaphor for what we're doing with",
+        "start": 329.81,
+        "duration": 2.88
+    },
+    {
+        "text": "the approach which is blending different",
+        "start": 331.25,
+        "duration": 5.55
+    },
+    {
+        "text": "kinds of data together and we released a",
+        "start": 332.69,
+        "duration": 5.97
+    },
+    {
+        "text": "preprint on the bio archive last fall",
+        "start": 336.8,
+        "duration": 4.14
+    },
+    {
+        "text": "and just within the last couple of weeks",
+        "start": 338.66,
+        "duration": 5.49
+    },
+    {
+        "text": "the paper was accepted by self and so",
+        "start": 340.94,
+        "duration": 4.98
+    },
+    {
+        "text": "this is our graphical abstract from the",
+        "start": 344.15,
+        "duration": 3.6
+    },
+    {
+        "text": "salt paper so basically what we did is",
+        "start": 345.92,
+        "duration": 5.28
+    },
+    {
+        "text": "we developed this approach logger which",
+        "start": 347.75,
+        "duration": 4.74
+    },
+    {
+        "text": "uses integrative non-negative matrix",
+        "start": 351.2,
+        "duration": 4.77
+    },
+    {
+        "text": "factorization and we investigated",
+        "start": 352.49,
+        "duration": 5.22
+    },
+    {
+        "text": "several different ways of performing",
+        "start": 355.97,
+        "duration": 4.08
+    },
+    {
+        "text": "data integration we did it across",
+        "start": 357.71,
+        "duration": 4.23
+    },
+    {
+        "text": "individuals to identify human subject",
+        "start": 360.05,
+        "duration": 4.44
+    },
+    {
+        "text": "variation across species to any great",
+        "start": 361.94,
+        "duration": 4.53
+    },
+    {
+        "text": "amounts of human cells and then we also",
+        "start": 364.49,
+        "duration": 3.33
+    },
+    {
+        "text": "integrated different modalities",
+        "start": 366.47,
+        "duration": 3.62
+    },
+    {
+        "text": "including gene expression facial trick",
+        "start": 367.82,
+        "duration": 6.98
+    },
+    {
+        "text": "transcriptomic data and genomic data and",
+        "start": 370.09,
+        "duration": 9.43
+    },
+    {
+        "text": "bragger outputs a set of meta-gene",
+        "start": 374.8,
+        "duration": 6.73
+    },
+    {
+        "text": "factors which allow us to identify both",
+        "start": 379.52,
+        "duration": 3.87
+    },
+    {
+        "text": "similarities and differences in cells",
+        "start": 381.53,
+        "duration": 4.14
+    },
+    {
+        "text": "across datasets and also perform multi",
+        "start": 383.39,
+        "duration": 7.62
+    },
+    {
+        "text": "omec integration so this is kind of the",
+        "start": 385.67,
+        "duration": 7.74
+    },
+    {
+        "text": "summary of paper and now I'm going to",
+        "start": 391.01,
+        "duration": 4.65
+    },
+    {
+        "text": "walk you through sort of how I developed",
+        "start": 393.41,
+        "duration": 4.32
+    },
+    {
+        "text": "this approach and some of the decisions",
+        "start": 395.66,
+        "duration": 4.14
+    },
+    {
+        "text": "that I made and alternative approaches",
+        "start": 397.73,
+        "duration": 2.85
+    },
+    {
+        "text": "can see",
+        "start": 399.8,
+        "duration": 3.079
+    },
+    {
+        "text": "and also give you an overview of the",
+        "start": 400.58,
+        "duration": 4.319
+    },
+    {
+        "text": "what I learned about non-negative matrix",
+        "start": 402.879,
+        "duration": 5.46
+    },
+    {
+        "text": "factorization in the process so a",
+        "start": 404.899,
+        "duration": 5.49
+    },
+    {
+        "text": "necessary first step for a lot of",
+        "start": 408.339,
+        "duration": 3.91
+    },
+    {
+        "text": "single-cell data processing is",
+        "start": 410.389,
+        "duration": 3.95
+    },
+    {
+        "text": "performing dimensionality reduction and",
+        "start": 412.249,
+        "duration": 6.48
+    },
+    {
+        "text": "this is helpful for two reasons first as",
+        "start": 414.339,
+        "duration": 7.33
+    },
+    {
+        "text": "a simply computational and practical",
+        "start": 418.729,
+        "duration": 6.39
+    },
+    {
+        "text": "reason the reducing the number of",
+        "start": 421.669,
+        "duration": 6.06
+    },
+    {
+        "text": "dimensions and the data allows you to",
+        "start": 425.119,
+        "duration": 4.41
+    },
+    {
+        "text": "operate more efficiently on it so rather",
+        "start": 427.729,
+        "duration": 4.62
+    },
+    {
+        "text": "than working with say a 10,000 by 20,000",
+        "start": 429.529,
+        "duration": 5.61
+    },
+    {
+        "text": "dimensional matrix we can now work with",
+        "start": 432.349,
+        "duration": 5.33
+    },
+    {
+        "text": "10,000 by 20 dimensional matrix and",
+        "start": 435.139,
+        "duration": 4.441
+    },
+    {
+        "text": "there are a number of techniques that",
+        "start": 437.679,
+        "duration": 3.371
+    },
+    {
+        "text": "are used to perform dimensionality",
+        "start": 439.58,
+        "duration": 3.72
+    },
+    {
+        "text": "reduction including PCA and I see a map",
+        "start": 441.05,
+        "duration": 5.579
+    },
+    {
+        "text": "and all of these approaches can also be",
+        "start": 443.3,
+        "duration": 5.519
+    },
+    {
+        "text": "thought of as denoising the data or",
+        "start": 446.629,
+        "duration": 4.53
+    },
+    {
+        "text": "extracting the most dominant signals",
+        "start": 448.819,
+        "duration": 4.231
+    },
+    {
+        "text": "that you can use summarize the structure",
+        "start": 451.159,
+        "duration": 3.9
+    },
+    {
+        "text": "data so in addition to just",
+        "start": 453.05,
+        "duration": 4.289
+    },
+    {
+        "text": "computational efficiency dimensionality",
+        "start": 455.059,
+        "duration": 4.17
+    },
+    {
+        "text": "reduction allows us to denoise the data",
+        "start": 457.339,
+        "duration": 5.34
+    },
+    {
+        "text": "and account for some of these biases and",
+        "start": 459.229,
+        "duration": 6.27
+    },
+    {
+        "text": "qualitative data and so on a first step",
+        "start": 462.679,
+        "duration": 4.71
+    },
+    {
+        "text": "for a lot of single cell approaches is",
+        "start": 465.499,
+        "duration": 4.58
+    },
+    {
+        "text": "to do dimensionality reduction and a",
+        "start": 467.389,
+        "duration": 4.86
+    },
+    {
+        "text": "common choice for dimensionality",
+        "start": 470.079,
+        "duration": 4.93
+    },
+    {
+        "text": "reduction is PCA principal component",
+        "start": 472.249,
+        "duration": 10.5
+    },
+    {
+        "text": "analysis and PCA is an optimal approach",
+        "start": 475.009,
+        "duration": 10.74
+    },
+    {
+        "text": "under certain assumptions and it",
+        "start": 482.749,
+        "duration": 4.62
+    },
+    {
+        "text": "produces a low dimensional",
+        "start": 485.749,
+        "duration": 2.82
+    },
+    {
+        "text": "representation that has certain",
+        "start": 487.369,
+        "duration": 5.19
+    },
+    {
+        "text": "properties including that it is each of",
+        "start": 488.569,
+        "duration": 6.08
+    },
+    {
+        "text": "the components are mutually orthogonal",
+        "start": 492.559,
+        "duration": 5.31
+    },
+    {
+        "text": "nmf is an alternative approach which",
+        "start": 494.649,
+        "duration": 4.51
+    },
+    {
+        "text": "makes different assumptions about the",
+        "start": 497.869,
+        "duration": 4.77
+    },
+    {
+        "text": "data and produces a representation that",
+        "start": 499.159,
+        "duration": 6.06
+    },
+    {
+        "text": "has some different properties in",
+        "start": 502.639,
+        "duration": 5.221
+    },
+    {
+        "text": "particular the factors that you get",
+        "start": 505.219,
+        "duration": 5.13
+    },
+    {
+        "text": "after performing nmf are not necessarily",
+        "start": 507.86,
+        "duration": 7.82
+    },
+    {
+        "text": "orthogonal and PCA is globally optimal a",
+        "start": 510.349,
+        "duration": 7.62
+    },
+    {
+        "text": "globally optimal solution to the",
+        "start": 515.68,
+        "duration": 4.63
+    },
+    {
+        "text": "optimization problem by which it's",
+        "start": 517.969,
+        "duration": 5.521
+    },
+    {
+        "text": "formulated whereas nmf the objective",
+        "start": 520.31,
+        "duration": 5.82
+    },
+    {
+        "text": "function is a non convex problem and so",
+        "start": 523.49,
+        "duration": 4.11
+    },
+    {
+        "text": "you can't hope to obtain a globally",
+        "start": 526.13,
+        "duration": 4.05
+    },
+    {
+        "text": "optimal solution all you can hope for is",
+        "start": 527.6,
+        "duration": 5.98
+    },
+    {
+        "text": "a locally optimal solution and so pretty",
+        "start": 530.18,
+        "duration": 5.14
+    },
+    {
+        "text": "when people do enema they have to",
+        "start": 533.58,
+        "duration": 3.57
+    },
+    {
+        "text": "perform all restarts and take the best",
+        "start": 535.32,
+        "duration": 5.79
+    },
+    {
+        "text": "objective however there are some cases",
+        "start": 537.15,
+        "duration": 6.18
+    },
+    {
+        "text": "in which the orthogonality restriction",
+        "start": 541.11,
+        "duration": 7.14
+    },
+    {
+        "text": "of PCA is actually a limitation and nmf",
+        "start": 543.33,
+        "duration": 6.69
+    },
+    {
+        "text": "is since it doesn't have this limitation",
+        "start": 548.25,
+        "duration": 4.05
+    },
+    {
+        "text": "sometimes it can better capture distinct",
+        "start": 550.02,
+        "duration": 3.06
+    },
+    {
+        "text": "factors",
+        "start": 552.3,
+        "duration": 2.82
+    },
+    {
+        "text": "whereas PCA might live naturally",
+        "start": 553.08,
+        "duration": 3.81
+    },
+    {
+        "text": "together and here's the geometric",
+        "start": 555.12,
+        "duration": 3.24
+    },
+    {
+        "text": "example of how this could be the case so",
+        "start": 556.89,
+        "duration": 4.11
+    },
+    {
+        "text": "if you have this point cloud' to",
+        "start": 558.36,
+        "duration": 4.35
+    },
+    {
+        "text": "principal components would be these",
+        "start": 561.0,
+        "duration": 3.87
+    },
+    {
+        "text": "green arrows note that there are THOG",
+        "start": 562.71,
+        "duration": 4.23
+    },
+    {
+        "text": "'''l but neither of them really captures",
+        "start": 564.87,
+        "duration": 3.66
+    },
+    {
+        "text": "the actual directions of variations of",
+        "start": 566.94,
+        "duration": 3.95
+    },
+    {
+        "text": "data so both of them kind of capture a",
+        "start": 568.53,
+        "duration": 4.71
+    },
+    {
+        "text": "combination of these two axes of",
+        "start": 570.89,
+        "duration": 4.63
+    },
+    {
+        "text": "variation which a different approach",
+        "start": 573.24,
+        "duration": 3.66
+    },
+    {
+        "text": "that doesn't have your thuggin allottee",
+        "start": 575.52,
+        "duration": 3.39
+    },
+    {
+        "text": "restriction like ica or and MF but",
+        "start": 576.9,
+        "duration": 4.77
+    },
+    {
+        "text": "actually better capture and this turns",
+        "start": 578.91,
+        "duration": 3.87
+    },
+    {
+        "text": "out to be an important property which",
+        "start": 581.67,
+        "duration": 4.08
+    },
+    {
+        "text": "I'll come back to but um another",
+        "start": 582.78,
+        "duration": 5.79
+    },
+    {
+        "text": "advantage of n MF is that it yields",
+        "start": 585.75,
+        "duration": 17.97
+    },
+    {
+        "text": "interprete belated watts or is the 4th",
+        "start": 588.57,
+        "duration": 16.59
+    },
+    {
+        "text": "organ ality is just a simple",
+        "start": 603.72,
+        "duration": 3.6
+    },
+    {
+        "text": "mathematical definition that this",
+        "start": 605.16,
+        "duration": 4.38
+    },
+    {
+        "text": "essentially means that the axes are",
+        "start": 607.32,
+        "duration": 6.06
+    },
+    {
+        "text": "perpendicular in multiple dimensions so",
+        "start": 609.54,
+        "duration": 19.38
+    },
+    {
+        "text": "the well yeah the axes are the principal",
+        "start": 613.38,
+        "duration": 16.65
+    },
+    {
+        "text": "components that you have clear from the",
+        "start": 628.92,
+        "duration": 2.22
+    },
+    {
+        "text": "data that's correct",
+        "start": 630.03,
+        "duration": 3.84
+    },
+    {
+        "text": "so the question is how do those axes",
+        "start": 631.14,
+        "duration": 4.32
+    },
+    {
+        "text": "relate to the actual underlying",
+        "start": 633.87,
+        "duration": 3.39
+    },
+    {
+        "text": "biological signals ortho",
+        "start": 635.46,
+        "duration": 6.11
+    },
+    {
+        "text": "I'll come back in a second so another",
+        "start": 637.26,
+        "duration": 7.17
+    },
+    {
+        "text": "benefit of n MF is that it yields",
+        "start": 641.57,
+        "duration": 4.75
+    },
+    {
+        "text": "interpretable factors so this is a",
+        "start": 644.43,
+        "duration": 3.9
+    },
+    {
+        "text": "figure from the original n MF paper in",
+        "start": 646.32,
+        "duration": 5.88
+    },
+    {
+        "text": "nature doing the difference between the",
+        "start": 648.33,
+        "duration": 7.29
+    },
+    {
+        "text": "way n MF and pca represent faces when",
+        "start": 652.2,
+        "duration": 5.19
+    },
+    {
+        "text": "you do dimensionality reduction on base",
+        "start": 655.62,
+        "duration": 5.82
+    },
+    {
+        "text": "images you can see that this is an",
+        "start": 657.39,
+        "duration": 5.97
+    },
+    {
+        "text": "example reconstructed image using the",
+        "start": 661.44,
+        "duration": 5.1
+    },
+    {
+        "text": "PCA and the n MF low dimensional",
+        "start": 663.36,
+        "duration": 3.99
+    },
+    {
+        "text": "representation",
+        "start": 666.54,
+        "duration": 2.49
+    },
+    {
+        "text": "you can see the reconstructions are",
+        "start": 667.35,
+        "duration": 3.51
+    },
+    {
+        "text": "essentially identical but what's",
+        "start": 669.03,
+        "duration": 3.95
+    },
+    {
+        "text": "different is that if you look at the",
+        "start": 670.86,
+        "duration": 5.43
+    },
+    {
+        "text": "dimensions themselves the pixels here",
+        "start": 672.98,
+        "duration": 5.74
+    },
+    {
+        "text": "are colored by the intensity of their",
+        "start": 676.29,
+        "duration": 4.65
+    },
+    {
+        "text": "loading on each dimension you can see",
+        "start": 678.72,
+        "duration": 6.18
+    },
+    {
+        "text": "that with the nmf factors the factor",
+        "start": 680.94,
+        "duration": 7.56
+    },
+    {
+        "text": "each factor kind of represents a part of",
+        "start": 684.9,
+        "duration": 6.51
+    },
+    {
+        "text": "the face so you can see mouth here and",
+        "start": 688.5,
+        "duration": 6.33
+    },
+    {
+        "text": "here you can see some some eyelashes or",
+        "start": 691.41,
+        "duration": 5.88
+    },
+    {
+        "text": "eyelids here whereas if you look at the",
+        "start": 694.83,
+        "duration": 4.53
+    },
+    {
+        "text": "principal components it's really not",
+        "start": 697.29,
+        "duration": 4.5
+    },
+    {
+        "text": "easy to understand what each individual",
+        "start": 699.36,
+        "duration": 4.08
+    },
+    {
+        "text": "principal component represents it's some",
+        "start": 701.79,
+        "duration": 4.97
+    },
+    {
+        "text": "kind of ballistic property of the faces",
+        "start": 703.44,
+        "duration": 5.37
+    },
+    {
+        "text": "the other thing that makes it hard to",
+        "start": 706.76,
+        "duration": 5.05
+    },
+    {
+        "text": "understand the nmf are the principal",
+        "start": 708.81,
+        "duration": 5.67
+    },
+    {
+        "text": "components is that individual components",
+        "start": 711.81,
+        "duration": 4.2
+    },
+    {
+        "text": "can contribute either positively or",
+        "start": 714.48,
+        "duration": 3.18
+    },
+    {
+        "text": "negatively to the reconstruction and",
+        "start": 716.01,
+        "duration": 2.79
+    },
+    {
+        "text": "that's why they're some of them are",
+        "start": 717.66,
+        "duration": 2.28
+    },
+    {
+        "text": "colored black and some of them are",
+        "start": 718.8,
+        "duration": 4.17
+    },
+    {
+        "text": "colored red and so it makes it really",
+        "start": 719.94,
+        "duration": 4.71
+    },
+    {
+        "text": "hard to understand how you're actually",
+        "start": 722.97,
+        "duration": 3.39
+    },
+    {
+        "text": "reconstructing this face in terms of the",
+        "start": 724.65,
+        "duration": 3.21
+    },
+    {
+        "text": "individual principal components whereas",
+        "start": 726.36,
+        "duration": 4.73
+    },
+    {
+        "text": "with nmf you can clearly see for example",
+        "start": 727.86,
+        "duration": 8.51
+    },
+    {
+        "text": "this factor right here corresponds to",
+        "start": 731.09,
+        "duration": 10.68
+    },
+    {
+        "text": "chin and so the office way up at the top",
+        "start": 736.37,
+        "duration": 5.4
+    },
+    {
+        "text": "here here's a mouth bacteria and that",
+        "start": 743.03,
+        "duration": 9.82
+    },
+    {
+        "text": "one's actually activated so the idea is",
+        "start": 748.17,
+        "duration": 7.8
+    },
+    {
+        "text": "that an advantage of nmf is that you can",
+        "start": 752.85,
+        "duration": 6.0
+    },
+    {
+        "text": "actually point to how a particular",
+        "start": 755.97,
+        "duration": 4.95
+    },
+    {
+        "text": "factor contributes to the reconstruction",
+        "start": 758.85,
+        "duration": 5.36
+    },
+    {
+        "text": "of hydrogen allele so now if we imagine",
+        "start": 760.92,
+        "duration": 7.44
+    },
+    {
+        "text": "doing nmf on gene expression data we",
+        "start": 764.21,
+        "duration": 6.4
+    },
+    {
+        "text": "have a matrix that has n cells and g",
+        "start": 768.36,
+        "duration": 4.65
+    },
+    {
+        "text": "genes and we want to decompose it in",
+        "start": 770.61,
+        "duration": 6.15
+    },
+    {
+        "text": "such a way that we have K factors which",
+        "start": 773.01,
+        "duration": 6.03
+    },
+    {
+        "text": "we use to reconstruct the data and we're",
+        "start": 776.76,
+        "duration": 5.07
+    },
+    {
+        "text": "gonna identify the game loading values",
+        "start": 779.04,
+        "duration": 5.43
+    },
+    {
+        "text": "so we can think of each of these rows of",
+        "start": 781.83,
+        "duration": 4.95
+    },
+    {
+        "text": "the W matrix as being a meta-gene and",
+        "start": 784.47,
+        "duration": 5.88
+    },
+    {
+        "text": "each of the columns in this matrix as",
+        "start": 786.78,
+        "duration": 6.3
+    },
+    {
+        "text": "being a expression of that meta gene in",
+        "start": 790.35,
+        "duration": 5.6
+    },
+    {
+        "text": "a particular cell",
+        "start": 793.08,
+        "duration": 2.87
+    },
+    {
+        "text": "yeah yes that would be called I think",
+        "start": 797.59,
+        "duration": 29.64
+    },
+    {
+        "text": "it's called semi nmf yes good question I",
+        "start": 807.37,
+        "duration": 24.3
+    },
+    {
+        "text": "don't think that there's anything in the",
+        "start": 827.23,
+        "duration": 7.29
+    },
+    {
+        "text": "optimization that would require that to",
+        "start": 831.67,
+        "duration": 6.39
+    },
+    {
+        "text": "be the case so my guess would be no but",
+        "start": 834.52,
+        "duration": 4.38
+    },
+    {
+        "text": "one thing I should mention",
+        "start": 838.06,
+        "duration": 3.57
+    },
+    {
+        "text": "mathematically about this is that the",
+        "start": 838.9,
+        "duration": 6.06
+    },
+    {
+        "text": "solution is not unique so for any H and",
+        "start": 841.63,
+        "duration": 7.29
+    },
+    {
+        "text": "W if you multiply H by a matrix and then",
+        "start": 844.96,
+        "duration": 6.62
+    },
+    {
+        "text": "multiply W by the inverse of that matrix",
+        "start": 848.92,
+        "duration": 5.07
+    },
+    {
+        "text": "you get another solution that has the",
+        "start": 851.58,
+        "duration": 5.41
+    },
+    {
+        "text": "same objective function value so that",
+        "start": 853.99,
+        "duration": 6.27
+    },
+    {
+        "text": "probably means that in your in your case",
+        "start": 856.99,
+        "duration": 11.37
+    },
+    {
+        "text": "the matrices will not be okay so here",
+        "start": 860.26,
+        "duration": 11.73
+    },
+    {
+        "text": "I'm showing one example of the advantage",
+        "start": 868.36,
+        "duration": 5.13
+    },
+    {
+        "text": "of this interpreter ability property",
+        "start": 871.99,
+        "duration": 3.66
+    },
+    {
+        "text": "I'll show some others later in the talk",
+        "start": 873.49,
+        "duration": 6.12
+    },
+    {
+        "text": "this is one of the things that got Evan",
+        "start": 875.65,
+        "duration": 5.64
+    },
+    {
+        "text": "and myself excited about these",
+        "start": 879.61,
+        "duration": 4.44
+    },
+    {
+        "text": "factorization approaches here I'm",
+        "start": 881.29,
+        "duration": 5.58
+    },
+    {
+        "text": "showing factor xi from this is a",
+        "start": 884.05,
+        "duration": 5.57
+    },
+    {
+        "text": "zebrafish heart regeneration data set",
+        "start": 886.87,
+        "duration": 6.12
+    },
+    {
+        "text": "and you can see that this so this is a",
+        "start": 889.62,
+        "duration": 5.11
+    },
+    {
+        "text": "two-dimensional representation of the",
+        "start": 892.99,
+        "duration": 4.76
+    },
+    {
+        "text": "data and I'm coloring each cell by the",
+        "start": 894.73,
+        "duration": 6.0
+    },
+    {
+        "text": "loading value on this factor and you can",
+        "start": 897.75,
+        "duration": 6.25
+    },
+    {
+        "text": "see that this factor loads on all the",
+        "start": 900.73,
+        "duration": 5.97
+    },
+    {
+        "text": "cell clusters and within each cluster it",
+        "start": 904.0,
+        "duration": 4.32
+    },
+    {
+        "text": "has kind of different values for some",
+        "start": 906.7,
+        "duration": 4.8
+    },
+    {
+        "text": "cells than others and if we look at the",
+        "start": 908.32,
+        "duration": 5.21
+    },
+    {
+        "text": "the top-loading genes on this factor",
+        "start": 911.5,
+        "duration": 6.42
+    },
+    {
+        "text": "they're all mitochondrial genes and we",
+        "start": 913.53,
+        "duration": 7.75
+    },
+    {
+        "text": "know that the difference in the amount",
+        "start": 917.92,
+        "duration": 5.49
+    },
+    {
+        "text": "of mitochondrial genes per cell is a",
+        "start": 921.28,
+        "duration": 3.81
+    },
+    {
+        "text": "common source of technical variation",
+        "start": 923.41,
+        "duration": 4.62
+    },
+    {
+        "text": "this tends to vary between batches and",
+        "start": 925.09,
+        "duration": 4.59
+    },
+    {
+        "text": "it's an uncontrolled variable even",
+        "start": 928.03,
+        "duration": 2.559
+    },
+    {
+        "text": "within batches",
+        "start": 929.68,
+        "duration": 3.19
+    },
+    {
+        "text": "and so the fact that we have a factor",
+        "start": 930.589,
+        "duration": 6.0
+    },
+    {
+        "text": "that indicates the amount of sort of",
+        "start": 932.87,
+        "duration": 5.159
+    },
+    {
+        "text": "mitochondrial gene expression here",
+        "start": 936.589,
+        "duration": 4.86
+    },
+    {
+        "text": "allows us to either use or not use that",
+        "start": 938.029,
+        "duration": 4.92
+    },
+    {
+        "text": "source of variation when we're",
+        "start": 941.449,
+        "duration": 3.51
+    },
+    {
+        "text": "clustering themselves and we've observed",
+        "start": 942.949,
+        "duration": 4.26
+    },
+    {
+        "text": "in a lot of cases that if we identify a",
+        "start": 944.959,
+        "duration": 4.771
+    },
+    {
+        "text": "technical factor like this and then",
+        "start": 947.209,
+        "duration": 5.221
+    },
+    {
+        "text": "remove it before clustering we get",
+        "start": 949.73,
+        "duration": 4.519
+    },
+    {
+        "text": "clusters that more accurately represent",
+        "start": 952.43,
+        "duration": 3.87
+    },
+    {
+        "text": "biological differences among selves",
+        "start": 954.249,
+        "duration": 4.69
+    },
+    {
+        "text": "because for example this this group of",
+        "start": 956.3,
+        "duration": 5.49
+    },
+    {
+        "text": "cells right here if we just naively",
+        "start": 958.939,
+        "duration": 4.71
+    },
+    {
+        "text": "perform clustering using all the factors",
+        "start": 961.79,
+        "duration": 3.539
+    },
+    {
+        "text": "this might show up as a separate cluster",
+        "start": 963.649,
+        "duration": 5.43
+    },
+    {
+        "text": "whereas if we remove this factor then it",
+        "start": 965.329,
+        "duration": 6.0
+    },
+    {
+        "text": "turns out that these cells are really",
+        "start": 969.079,
+        "duration": 3.51
+    },
+    {
+        "text": "not very different from these cells",
+        "start": 971.329,
+        "duration": 3.271
+    },
+    {
+        "text": "biologically and they get merged into a",
+        "start": 972.589,
+        "duration": 5.79
+    },
+    {
+        "text": "single more correct cluster so this is",
+        "start": 974.6,
+        "duration": 6.12
+    },
+    {
+        "text": "one advantage of having interpretable",
+        "start": 978.379,
+        "duration": 12.21
+    },
+    {
+        "text": "factors genes here not necessarily",
+        "start": 980.72,
+        "duration": 16.039
+    },
+    {
+        "text": "always but it's it's pretty stable yeah",
+        "start": 990.589,
+        "duration": 6.17
+    },
+    {
+        "text": "but be surprised by logic it's true you",
+        "start": 998.709,
+        "duration": 23.43
+    },
+    {
+        "text": "might be yeah so in some cases the",
+        "start": 1018.519,
+        "duration": 6.121
+    },
+    {
+        "text": "mitochondrial content of the stones",
+        "start": 1022.139,
+        "duration": 4.081
+    },
+    {
+        "text": "would actually be an important variable",
+        "start": 1024.64,
+        "duration": 7.14
+    },
+    {
+        "text": "but in this case we actually we found",
+        "start": 1026.22,
+        "duration": 8.65
+    },
+    {
+        "text": "that removing the escape from that for a",
+        "start": 1031.78,
+        "duration": 6.029
+    },
+    {
+        "text": "number of other independent reasons look",
+        "start": 1034.87,
+        "duration": 10.799
+    },
+    {
+        "text": "much more okay so that's nmf in general",
+        "start": 1037.809,
+        "duration": 11.011
+    },
+    {
+        "text": "and in order to integrate data from",
+        "start": 1045.669,
+        "duration": 6.12
+    },
+    {
+        "text": "multiple data sets we use the modified",
+        "start": 1048.82,
+        "duration": 4.829
+    },
+    {
+        "text": "version of nmf called integrative n",
+        "start": 1051.789,
+        "duration": 5.491
+    },
+    {
+        "text": "enough and the main difference between i",
+        "start": 1053.649,
+        "duration": 6.77
+    },
+    {
+        "text": "n MF and regular n MF is that we now",
+        "start": 1057.28,
+        "duration": 5.879
+    },
+    {
+        "text": "have multiple data sets which share a",
+        "start": 1060.419,
+        "duration": 3.88
+    },
+    {
+        "text": "set of genes",
+        "start": 1063.159,
+        "duration": 2.97
+    },
+    {
+        "text": "but have different potentially different",
+        "start": 1064.299,
+        "duration": 4.26
+    },
+    {
+        "text": "numbers of cells and we're going to",
+        "start": 1066.129,
+        "duration": 5.221
+    },
+    {
+        "text": "force the meta-gene matrix to be a sum",
+        "start": 1068.559,
+        "duration": 4.801
+    },
+    {
+        "text": "of two different matrices one which is",
+        "start": 1071.35,
+        "duration": 4.86
+    },
+    {
+        "text": "shared across data sets and one which is",
+        "start": 1073.36,
+        "duration": 8.37
+    },
+    {
+        "text": "data set specific and this has several",
+        "start": 1076.21,
+        "duration": 10.14
+    },
+    {
+        "text": "advantages so by having this shared",
+        "start": 1081.73,
+        "duration": 7.62
+    },
+    {
+        "text": "matrix across data sets this causes each",
+        "start": 1086.35,
+        "duration": 5.01
+    },
+    {
+        "text": "factor to essentially have the same",
+        "start": 1089.35,
+        "duration": 4.26
+    },
+    {
+        "text": "biological interpretation across data",
+        "start": 1091.36,
+        "duration": 5.49
+    },
+    {
+        "text": "sets because there's a common set of",
+        "start": 1093.61,
+        "duration": 5.789
+    },
+    {
+        "text": "genes that define this factor across the",
+        "start": 1096.85,
+        "duration": 5.34
+    },
+    {
+        "text": "data sets but at the same time we can",
+        "start": 1099.399,
+        "duration": 5.941
+    },
+    {
+        "text": "also identify the data set specific ways",
+        "start": 1102.19,
+        "duration": 4.829
+    },
+    {
+        "text": "in which these factors of variation",
+        "start": 1105.34,
+        "duration": 4.949
+    },
+    {
+        "text": "change and this has two advantages one",
+        "start": 1107.019,
+        "duration": 5.88
+    },
+    {
+        "text": "is that it allows us to account for sort",
+        "start": 1110.289,
+        "duration": 5.97
+    },
+    {
+        "text": "of nuisance variation for example if we",
+        "start": 1112.899,
+        "duration": 5.16
+    },
+    {
+        "text": "have two different batches where we",
+        "start": 1116.259,
+        "duration": 5.91
+    },
+    {
+        "text": "expect identical cell composition and we",
+        "start": 1118.059,
+        "duration": 5.791
+    },
+    {
+        "text": "do PCA and we find that the cells",
+        "start": 1122.169,
+        "duration": 4.74
+    },
+    {
+        "text": "separate by batches these data set",
+        "start": 1123.85,
+        "duration": 4.949
+    },
+    {
+        "text": "specific terms can allow us to identify",
+        "start": 1126.909,
+        "duration": 3.75
+    },
+    {
+        "text": "for each factor what is the nuisance",
+        "start": 1128.799,
+        "duration": 4.021
+    },
+    {
+        "text": "variable that makes this factor",
+        "start": 1130.659,
+        "duration": 4.801
+    },
+    {
+        "text": "different at the same time it also",
+        "start": 1132.82,
+        "duration": 7.559
+    },
+    {
+        "text": "allows us to actually identify these",
+        "start": 1135.46,
+        "duration": 6.87
+    },
+    {
+        "text": "data set specific signals themselves",
+        "start": 1140.379,
+        "duration": 4.8
+    },
+    {
+        "text": "which in a lot of cases if there are",
+        "start": 1142.33,
+        "duration": 5.069
+    },
+    {
+        "text": "biological differences among your data",
+        "start": 1145.179,
+        "duration": 6.421
+    },
+    {
+        "text": "sets these factor differences can give",
+        "start": 1147.399,
+        "duration": 5.431
+    },
+    {
+        "text": "you insights into the biological",
+        "start": 1151.6,
+        "duration": 6.659
+    },
+    {
+        "text": "differences immediately and before we",
+        "start": 1152.83,
+        "duration": 6.929
+    },
+    {
+        "text": "try this we tried something simpler",
+        "start": 1158.259,
+        "duration": 3.66
+    },
+    {
+        "text": "which was to just simply stack our data",
+        "start": 1159.759,
+        "duration": 5.28
+    },
+    {
+        "text": "sets dosac easy mate receipts and",
+        "start": 1161.919,
+        "duration": 5.401
+    },
+    {
+        "text": "perform regular nmf on them and we found",
+        "start": 1165.039,
+        "duration": 5.191
+    },
+    {
+        "text": "that if we did this we didn't get the",
+        "start": 1167.32,
+        "duration": 5.04
+    },
+    {
+        "text": "effect we wanted because the resulting",
+        "start": 1170.23,
+        "duration": 4.47
+    },
+    {
+        "text": "factors contain some factors where the",
+        "start": 1172.36,
+        "duration": 4.74
+    },
+    {
+        "text": "the signal was essentially is it from",
+        "start": 1174.7,
+        "duration": 4.89
+    },
+    {
+        "text": "data set a or for they sent me and the",
+        "start": 1177.1,
+        "duration": 4.829
+    },
+    {
+        "text": "rest of the factors had some mingling of",
+        "start": 1179.59,
+        "duration": 5.659
+    },
+    {
+        "text": "Sheriden distinct sources variation so",
+        "start": 1181.929,
+        "duration": 5.431
+    },
+    {
+        "text": "explicitly separating out these data",
+        "start": 1185.249,
+        "duration": 3.821
+    },
+    {
+        "text": "sets specific effects allows us to much",
+        "start": 1187.36,
+        "duration": 4.38
+    },
+    {
+        "text": "more accurately identify corresponding",
+        "start": 1189.07,
+        "duration": 6.65
+    },
+    {
+        "text": "factors of variation constants and",
+        "start": 1191.74,
+        "duration": 3.98
+    },
+    {
+        "text": "so we use this integrative non-negative",
+        "start": 1196.01,
+        "duration": 6.299
+    },
+    {
+        "text": "matrix factorization and vigor and we",
+        "start": 1199.76,
+        "duration": 4.409
+    },
+    {
+        "text": "developed an additional approach that",
+        "start": 1202.309,
+        "duration": 5.46
+    },
+    {
+        "text": "performs robust joint clustering using a",
+        "start": 1204.169,
+        "duration": 4.951
+    },
+    {
+        "text": "sharing factory neighborhood graph",
+        "start": 1207.769,
+        "duration": 4.051
+    },
+    {
+        "text": "across data sets and this allows us to",
+        "start": 1209.12,
+        "duration": 6.63
+    },
+    {
+        "text": "be able to robustly identify shared and",
+        "start": 1211.82,
+        "duration": 7.02
+    },
+    {
+        "text": "data set specific population so now I'm",
+        "start": 1215.75,
+        "duration": 6.36
+    },
+    {
+        "text": "going to tell you some about nmf and how",
+        "start": 1218.84,
+        "duration": 6.929
+    },
+    {
+        "text": "we actually implemented this the",
+        "start": 1222.11,
+        "duration": 5.88
+    },
+    {
+        "text": "objective function for regular nmf is",
+        "start": 1225.769,
+        "duration": 3.091
+    },
+    {
+        "text": "Polly",
+        "start": 1227.99,
+        "duration": 4.679
+    },
+    {
+        "text": "we want to minimize the squared for",
+        "start": 1228.86,
+        "duration": 6.36
+    },
+    {
+        "text": "beanie it's norm between the matrix and",
+        "start": 1232.669,
+        "duration": 5.461
+    },
+    {
+        "text": "its reconstructed HW subject to the",
+        "start": 1235.22,
+        "duration": 4.38
+    },
+    {
+        "text": "constraint that H and W are both",
+        "start": 1238.13,
+        "duration": 3.899
+    },
+    {
+        "text": "positive here's the objective for",
+        "start": 1239.6,
+        "duration": 4.5
+    },
+    {
+        "text": "integrative nmf it's essentially the",
+        "start": 1242.029,
+        "duration": 4.86
+    },
+    {
+        "text": "same except we have the addition of a",
+        "start": 1244.1,
+        "duration": 5.4
+    },
+    {
+        "text": "data set specific term and we have a",
+        "start": 1246.889,
+        "duration": 5.491
+    },
+    {
+        "text": "shared meta-gene matrix the shared",
+        "start": 1249.5,
+        "duration": 5.279
+    },
+    {
+        "text": "across all data sets we also introduced",
+        "start": 1252.38,
+        "duration": 5.49
+    },
+    {
+        "text": "a regularization term which minimizes",
+        "start": 1254.779,
+        "duration": 7.981
+    },
+    {
+        "text": "the data set specific effects that's",
+        "start": 1257.87,
+        "duration": 6.99
+    },
+    {
+        "text": "great subject to the constraints that HD",
+        "start": 1262.76,
+        "duration": 9.18
+    },
+    {
+        "text": "and W are all non-negative and so this",
+        "start": 1264.86,
+        "duration": 10.77
+    },
+    {
+        "text": "optimization problem is non convex and",
+        "start": 1271.94,
+        "duration": 5.31
+    },
+    {
+        "text": "there have been several different",
+        "start": 1275.63,
+        "duration": 4.259
+    },
+    {
+        "text": "approaches developed to solving it so",
+        "start": 1277.25,
+        "duration": 4.5
+    },
+    {
+        "text": "the first approach that is developed by",
+        "start": 1279.889,
+        "duration": 3.78
+    },
+    {
+        "text": "Li and sung in the nature paper is",
+        "start": 1281.75,
+        "duration": 4.5
+    },
+    {
+        "text": "called multiplicative update algorithm",
+        "start": 1283.669,
+        "duration": 6.091
+    },
+    {
+        "text": "and this algorithm is easy to derive and",
+        "start": 1286.25,
+        "duration": 5.34
+    },
+    {
+        "text": "easy to implement the way you derive it",
+        "start": 1289.76,
+        "duration": 4.409
+    },
+    {
+        "text": "is you essentially write out the first",
+        "start": 1291.59,
+        "duration": 4.26
+    },
+    {
+        "text": "order optimality conditions for this",
+        "start": 1294.169,
+        "duration": 3.151
+    },
+    {
+        "text": "optimization problem which are defined",
+        "start": 1295.85,
+        "duration": 5.48
+    },
+    {
+        "text": "by the KKT conditions you take an",
+        "start": 1297.32,
+        "duration": 7.77
+    },
+    {
+        "text": "optimization and then once you do that",
+        "start": 1301.33,
+        "duration": 6.969
+    },
+    {
+        "text": "you can actually solve for H the",
+        "start": 1305.09,
+        "duration": 5.699
+    },
+    {
+        "text": "individual elements of H and W in closed",
+        "start": 1308.299,
+        "duration": 4.951
+    },
+    {
+        "text": "form but the problem is that H and W",
+        "start": 1310.789,
+        "duration": 4.201
+    },
+    {
+        "text": "occur on both sides of the equations you",
+        "start": 1313.25,
+        "duration": 3.899
+    },
+    {
+        "text": "have to iterate these updates the way",
+        "start": 1314.99,
+        "duration": 4.38
+    },
+    {
+        "text": "that you do it this algorithm is you",
+        "start": 1317.149,
+        "duration": 4.231
+    },
+    {
+        "text": "initialize H and W with random values",
+        "start": 1319.37,
+        "duration": 3.95
+    },
+    {
+        "text": "and then you iterate until convergence",
+        "start": 1321.38,
+        "duration": 5.639
+    },
+    {
+        "text": "update each element of H following way",
+        "start": 1323.32,
+        "duration": 5.559
+    },
+    {
+        "text": "update each element of W using this",
+        "start": 1327.019,
+        "duration": 2.881
+    },
+    {
+        "text": "equation",
+        "start": 1328.879,
+        "duration": 4.441
+    },
+    {
+        "text": "and insulting versions and you can show",
+        "start": 1329.9,
+        "duration": 7.1
+    },
+    {
+        "text": "based on the kk k-- KKT conditions that",
+        "start": 1333.32,
+        "duration": 7.23
+    },
+    {
+        "text": "these updates do not increase the",
+        "start": 1337.0,
+        "duration": 10.66
+    },
+    {
+        "text": "objective function value so this",
+        "start": 1340.55,
+        "duration": 9.3
+    },
+    {
+        "text": "approach works but there's two main",
+        "start": 1347.66,
+        "duration": 3.48
+    },
+    {
+        "text": "drawbacks one is the speed of",
+        "start": 1349.85,
+        "duration": 2.88
+    },
+    {
+        "text": "convergence and two is that there's no",
+        "start": 1351.14,
+        "duration": 3.89
+    },
+    {
+        "text": "theoretical convergence and the only",
+        "start": 1352.73,
+        "duration": 5.73
+    },
+    {
+        "text": "thing we know about the solution is that",
+        "start": 1355.03,
+        "duration": 5.05
+    },
+    {
+        "text": "the updates do not increase the",
+        "start": 1358.46,
+        "duration": 5.58
+    },
+    {
+        "text": "objective function generation so we",
+        "start": 1360.08,
+        "duration": 5.96
+    },
+    {
+        "text": "don't actually have a guarantee that the",
+        "start": 1364.04,
+        "duration": 5.07
+    },
+    {
+        "text": "that the optimization strategy converges",
+        "start": 1366.04,
+        "duration": 7.96
+    },
+    {
+        "text": "to the local rate so people after the",
+        "start": 1369.11,
+        "duration": 6.3
+    },
+    {
+        "text": "multiplicative updates develop new",
+        "start": 1374.0,
+        "duration": 3.03
+    },
+    {
+        "text": "approaches based on block coordinate",
+        "start": 1375.41,
+        "duration": 7.65
+    },
+    {
+        "text": "descent so gradient descent is a very",
+        "start": 1377.03,
+        "duration": 8.25
+    },
+    {
+        "text": "commonly used way of optimizing these",
+        "start": 1383.06,
+        "duration": 3.57
+    },
+    {
+        "text": "sorts of objective functions and yeah",
+        "start": 1385.28,
+        "duration": 3.48
+    },
+    {
+        "text": "ideas essentially it you start at a",
+        "start": 1386.63,
+        "duration": 4.44
+    },
+    {
+        "text": "random point and at each step in the",
+        "start": 1388.76,
+        "duration": 5.37
+    },
+    {
+        "text": "optimization you compute the gradient",
+        "start": 1391.07,
+        "duration": 5.07
+    },
+    {
+        "text": "and then take a step in the direction of",
+        "start": 1394.13,
+        "duration": 3.3
+    },
+    {
+        "text": "the gradient this morning and you repeat",
+        "start": 1396.14,
+        "duration": 3.72
+    },
+    {
+        "text": "that coordinate descent is different in",
+        "start": 1397.43,
+        "duration": 4.98
+    },
+    {
+        "text": "that you only move along one coordinate",
+        "start": 1399.86,
+        "duration": 6.41
+    },
+    {
+        "text": "at a time during the optimization and",
+        "start": 1402.41,
+        "duration": 3.86
+    },
+    {
+        "text": "the gradient descent is often more well",
+        "start": 1406.48,
+        "duration": 5.74
+    },
+    {
+        "text": "behaved but for certain types of",
+        "start": 1410.33,
+        "duration": 4.08
+    },
+    {
+        "text": "objective functions including the one",
+        "start": 1412.22,
+        "duration": 4.2
+    },
+    {
+        "text": "that we're working on coordinate descent",
+        "start": 1414.41,
+        "duration": 4.23
+    },
+    {
+        "text": "can work just as well and it has the",
+        "start": 1416.42,
+        "duration": 4.26
+    },
+    {
+        "text": "additional advantage that it's often",
+        "start": 1418.64,
+        "duration": 4.29
+    },
+    {
+        "text": "easier to solve the optimization problem",
+        "start": 1420.68,
+        "duration": 4.08
+    },
+    {
+        "text": "along one coordinate at a time holding",
+        "start": 1422.93,
+        "duration": 3.78
+    },
+    {
+        "text": "the others fixed as opposed to trying to",
+        "start": 1424.76,
+        "duration": 6.35
+    },
+    {
+        "text": "solve it for all coordinates at once and",
+        "start": 1426.71,
+        "duration": 11.4
+    },
+    {
+        "text": "in our case we can actually break the",
+        "start": 1431.11,
+        "duration": 9.6
+    },
+    {
+        "text": "optimization problem into blocks and",
+        "start": 1438.11,
+        "duration": 4.95
+    },
+    {
+        "text": "optimize blocks of coordinates at a time",
+        "start": 1440.71,
+        "duration": 4.75
+    },
+    {
+        "text": "holding the others fixed so this is a",
+        "start": 1443.06,
+        "duration": 4.89
+    },
+    {
+        "text": "diagram from a paper a very helpful",
+        "start": 1445.46,
+        "duration": 5.13
+    },
+    {
+        "text": "working paper by Kim and parks where",
+        "start": 1447.95,
+        "duration": 4.29
+    },
+    {
+        "text": "they review block coordinate descent",
+        "start": 1450.59,
+        "duration": 3.6
+    },
+    {
+        "text": "algorithms for nmf and non-negative",
+        "start": 1452.24,
+        "duration": 5.52
+    },
+    {
+        "text": "tensor factorization and so you can",
+        "start": 1454.19,
+        "duration": 7.83
+    },
+    {
+        "text": "think of blocks of variables here as",
+        "start": 1457.76,
+        "duration": 6.12
+    },
+    {
+        "text": "being either the entire matrix",
+        "start": 1462.02,
+        "duration": 4.56
+    },
+    {
+        "text": "in the entire matrix h or individual",
+        "start": 1463.88,
+        "duration": 4.95
+    },
+    {
+        "text": "factors which are columns of w and rows",
+        "start": 1466.58,
+        "duration": 4.86
+    },
+    {
+        "text": "of H or individual elements of each of",
+        "start": 1468.83,
+        "duration": 5.7
+    },
+    {
+        "text": "these matrices and and then you can",
+        "start": 1471.44,
+        "duration": 5.22
+    },
+    {
+        "text": "perform ROC coordinate descent by taking",
+        "start": 1474.53,
+        "duration": 3.99
+    },
+    {
+        "text": "steps along one block well thank you go",
+        "start": 1476.66,
+        "duration": 6.0
+    },
+    {
+        "text": "to sleep and there's a really helpful",
+        "start": 1478.52,
+        "duration": 6.24
+    },
+    {
+        "text": "classic theorem in non linear",
+        "start": 1482.66,
+        "duration": 3.72
+    },
+    {
+        "text": "optimization are sorry non convex",
+        "start": 1484.76,
+        "duration": 4.799
+    },
+    {
+        "text": "optimization from Vegas which is that a",
+        "start": 1486.38,
+        "duration": 5.039
+    },
+    {
+        "text": "block coordinate descent algorithm is",
+        "start": 1489.559,
+        "duration": 3.601
+    },
+    {
+        "text": "guaranteed to converge parameters lie in",
+        "start": 1491.419,
+        "duration": 4.411
+    },
+    {
+        "text": "a closed convex set which parts do and",
+        "start": 1493.16,
+        "duration": 4.139
+    },
+    {
+        "text": "if the block coordinate descent",
+        "start": 1495.83,
+        "duration": 4.53
+    },
+    {
+        "text": "subproblems are convex so because we",
+        "start": 1497.299,
+        "duration": 6.211
+    },
+    {
+        "text": "have this rubinius norm loss if we hold",
+        "start": 1500.36,
+        "duration": 5.52
+    },
+    {
+        "text": "W or H six problem is convex and the",
+        "start": 1503.51,
+        "duration": 5.37
+    },
+    {
+        "text": "other and the block coordinate descent",
+        "start": 1505.88,
+        "duration": 4.679
+    },
+    {
+        "text": "algorithm empirically converges very",
+        "start": 1508.88,
+        "duration": 7.47
+    },
+    {
+        "text": "fast or the NMS problem so now I'm going",
+        "start": 1510.559,
+        "duration": 6.661
+    },
+    {
+        "text": "to walk you through some of the",
+        "start": 1516.35,
+        "duration": 3.09
+    },
+    {
+        "text": "different strategies we tried so the",
+        "start": 1517.22,
+        "duration": 5.64
+    },
+    {
+        "text": "first one that we tried the first block",
+        "start": 1519.44,
+        "duration": 5.099
+    },
+    {
+        "text": "for data set is an alternating least",
+        "start": 1522.86,
+        "duration": 5.52
+    },
+    {
+        "text": "squares algorithm and essentially what",
+        "start": 1524.539,
+        "duration": 8.071
+    },
+    {
+        "text": "you do here is you fix W and then you",
+        "start": 1528.38,
+        "duration": 6.39
+    },
+    {
+        "text": "use non-negative least squares",
+        "start": 1532.61,
+        "duration": 5.13
+    },
+    {
+        "text": "regression do identify the optimal age",
+        "start": 1534.77,
+        "duration": 7.26
+    },
+    {
+        "text": "given that W and then you repeat and",
+        "start": 1537.74,
+        "duration": 7.559
+    },
+    {
+        "text": "this is quite easy to implement if you",
+        "start": 1542.03,
+        "duration": 6.47
+    },
+    {
+        "text": "have a non-negative least squares solver",
+        "start": 1545.299,
+        "duration": 5.521
+    },
+    {
+        "text": "and it has the advantage that you solve",
+        "start": 1548.5,
+        "duration": 5.95
+    },
+    {
+        "text": "each subproblem exactly and it's fairly",
+        "start": 1550.82,
+        "duration": 5.609
+    },
+    {
+        "text": "straightforward to do this because it's",
+        "start": 1554.45,
+        "duration": 4.5
+    },
+    {
+        "text": "just a least squares problem the the",
+        "start": 1556.429,
+        "duration": 3.901
+    },
+    {
+        "text": "thing that makes it a little difficult",
+        "start": 1558.95,
+        "duration": 5.359
+    },
+    {
+        "text": "is the non negativity constraint and so",
+        "start": 1560.33,
+        "duration": 6.66
+    },
+    {
+        "text": "here are the updates that you would have",
+        "start": 1564.309,
+        "duration": 5.081
+    },
+    {
+        "text": "to iterate for integrative non-negative",
+        "start": 1566.99,
+        "duration": 4.2
+    },
+    {
+        "text": "matrix factorization you can see that",
+        "start": 1569.39,
+        "duration": 5.909
+    },
+    {
+        "text": "it's it's not too difficult to write out",
+        "start": 1571.19,
+        "duration": 6.27
+    },
+    {
+        "text": "the objective and it's actually quite",
+        "start": 1575.299,
+        "duration": 3.601
+    },
+    {
+        "text": "similar to what you would do for regular",
+        "start": 1577.46,
+        "duration": 7.26
+    },
+    {
+        "text": "and in that it just involves stacking so",
+        "start": 1578.9,
+        "duration": 8.009
+    },
+    {
+        "text": "the challenge and the limitation of this",
+        "start": 1584.72,
+        "duration": 4.709
+    },
+    {
+        "text": "approach is that the non-negative least",
+        "start": 1586.909,
+        "duration": 6.15
+    },
+    {
+        "text": "squares of problems it's difficult to",
+        "start": 1589.429,
+        "duration": 5.581
+    },
+    {
+        "text": "solve them all efficiently because you",
+        "start": 1593.059,
+        "duration": 3.211
+    },
+    {
+        "text": "essentially have to solve a different",
+        "start": 1595.01,
+        "duration": 2.64
+    },
+    {
+        "text": "subproblem for each of the",
+        "start": 1596.27,
+        "duration": 4.68
+    },
+    {
+        "text": "that's a W but it turns out that there's",
+        "start": 1597.65,
+        "duration": 6.3
+    },
+    {
+        "text": "sufficient overlap among the subproblems",
+        "start": 1600.95,
+        "duration": 5.25
+    },
+    {
+        "text": "you can actually leverage the overlap in",
+        "start": 1603.95,
+        "duration": 4.38
+    },
+    {
+        "text": "a smart way using a strategy called",
+        "start": 1606.2,
+        "duration": 3.45
+    },
+    {
+        "text": "block principle pivoting which was",
+        "start": 1608.33,
+        "duration": 3.3
+    },
+    {
+        "text": "developed by Professor Park at Georgia",
+        "start": 1609.65,
+        "duration": 4.59
+    },
+    {
+        "text": "Tech and with block principle pivoting",
+        "start": 1611.63,
+        "duration": 5.43
+    },
+    {
+        "text": "you can leverage the commonalities among",
+        "start": 1614.24,
+        "duration": 5.93
+    },
+    {
+        "text": "regression sub problems to solve quickly",
+        "start": 1617.06,
+        "duration": 7.29
+    },
+    {
+        "text": "and you still have the property that",
+        "start": 1620.17,
+        "duration": 6.3
+    },
+    {
+        "text": "you're you're solving the optimization",
+        "start": 1624.35,
+        "duration": 6.66
+    },
+    {
+        "text": "exactly for this for the block that you",
+        "start": 1626.47,
+        "duration": 8.4
+    },
+    {
+        "text": "are updating at that point",
+        "start": 1631.01,
+        "duration": 3.86
+    },
+    {
+        "text": "another popular strategy for optimizing",
+        "start": 1636.49,
+        "duration": 6.76
+    },
+    {
+        "text": "the nmf objective is called hierarchical",
+        "start": 1640.7,
+        "duration": 4.95
+    },
+    {
+        "text": "alternating least squares and it's",
+        "start": 1643.25,
+        "duration": 5.4
+    },
+    {
+        "text": "called hierarchical because again you",
+        "start": 1645.65,
+        "duration": 6.12
+    },
+    {
+        "text": "hold W fixed and solve for H but you do",
+        "start": 1648.65,
+        "duration": 4.8
+    },
+    {
+        "text": "it hierarchically where you solve for",
+        "start": 1651.77,
+        "duration": 6.81
+    },
+    {
+        "text": "each of the factors iteratively and so",
+        "start": 1653.45,
+        "duration": 6.3
+    },
+    {
+        "text": "essentially you're dividing the",
+        "start": 1658.58,
+        "duration": 4.05
+    },
+    {
+        "text": "variables it did for IMF we're dividing",
+        "start": 1659.75,
+        "duration": 5.16
+    },
+    {
+        "text": "the variables into two D plus 1 times K",
+        "start": 1662.63,
+        "duration": 4.41
+    },
+    {
+        "text": "subproblems vector blocks instead of",
+        "start": 1664.91,
+        "duration": 6.54
+    },
+    {
+        "text": "matrix blocks and this for the case of",
+        "start": 1667.04,
+        "duration": 8.58
+    },
+    {
+        "text": "vector blocks you can actually calculate",
+        "start": 1671.45,
+        "duration": 6.36
+    },
+    {
+        "text": "just using the derivatives in closed",
+        "start": 1675.62,
+        "duration": 5.31
+    },
+    {
+        "text": "form what the optimal update is for each",
+        "start": 1677.81,
+        "duration": 6.72
+    },
+    {
+        "text": "of the factors and if you do this or I",
+        "start": 1680.93,
+        "duration": 6.72
+    },
+    {
+        "text": "nmf you get these updates here and the",
+        "start": 1684.53,
+        "duration": 6.84
+    },
+    {
+        "text": "the bracket plus means we're going to",
+        "start": 1687.65,
+        "duration": 7.02
+    },
+    {
+        "text": "take the max between X and epsilon where",
+        "start": 1691.37,
+        "duration": 5.54
+    },
+    {
+        "text": "epsilon is a small positive value and",
+        "start": 1694.67,
+        "duration": 6.18
+    },
+    {
+        "text": "this both enforces the non negativity",
+        "start": 1696.91,
+        "duration": 6.7
+    },
+    {
+        "text": "constraints and avoids numerical",
+        "start": 1700.85,
+        "duration": 6.89
+    },
+    {
+        "text": "problems with factors that are all 0 and",
+        "start": 1703.61,
+        "duration": 6.21
+    },
+    {
+        "text": "so if you look at the form of these",
+        "start": 1707.74,
+        "duration": 5.65
+    },
+    {
+        "text": "updates you can see that they will be",
+        "start": 1709.82,
+        "duration": 6.27
+    },
+    {
+        "text": "fairly straightforward to code and most",
+        "start": 1713.39,
+        "duration": 4.8
+    },
+    {
+        "text": "of the work actually goes into computing",
+        "start": 1716.09,
+        "duration": 7.92
+    },
+    {
+        "text": "these matrix products here so if you're",
+        "start": 1718.19,
+        "duration": 8.1
+    },
+    {
+        "text": "using a language like MATLAB or R or",
+        "start": 1724.01,
+        "duration": 3.96
+    },
+    {
+        "text": "Python that has highly optimized an",
+        "start": 1726.29,
+        "duration": 2.91
+    },
+    {
+        "text": "acreage routine it's usually pretty",
+        "start": 1727.97,
+        "duration": 3.61
+    },
+    {
+        "text": "efficient",
+        "start": 1729.2,
+        "duration": 5.33
+    },
+    {
+        "text": "though you can actually go up further",
+        "start": 1731.58,
+        "duration": 5.53
+    },
+    {
+        "text": "and accelerate the house algorithm even",
+        "start": 1734.53,
+        "duration": 8.94
+    },
+    {
+        "text": "more by using a clever trick which is",
+        "start": 1737.11,
+        "duration": 9.72
+    },
+    {
+        "text": "that we update each block up to a times",
+        "start": 1743.47,
+        "duration": 5.67
+    },
+    {
+        "text": "in a row which allows reuse of the",
+        "start": 1746.83,
+        "duration": 4.77
+    },
+    {
+        "text": "matrix products here which are actually",
+        "start": 1749.14,
+        "duration": 7.26
+    },
+    {
+        "text": "fixed for the entire block and the",
+        "start": 1751.6,
+        "duration": 8.52
+    },
+    {
+        "text": "theorem of bertsekas still holds in the",
+        "start": 1756.4,
+        "duration": 7.2
+    },
+    {
+        "text": "case where you update a fixed number of",
+        "start": 1760.12,
+        "duration": 6.12
+    },
+    {
+        "text": "times each coordinate before updating",
+        "start": 1763.6,
+        "duration": 5.22
+    },
+    {
+        "text": "next as long as each coordinate gets",
+        "start": 1766.24,
+        "duration": 4.4
+    },
+    {
+        "text": "updated within a fixed number of",
+        "start": 1768.82,
+        "duration": 6.54
+    },
+    {
+        "text": "iterations the block coordinate descent",
+        "start": 1770.64,
+        "duration": 7.9
+    },
+    {
+        "text": "algorithm will still converge and so",
+        "start": 1775.36,
+        "duration": 7.44
+    },
+    {
+        "text": "it's actually possible to calculate this",
+        "start": 1778.54,
+        "duration": 8.13
+    },
+    {
+        "text": "optimal value of a empirically based on",
+        "start": 1782.8,
+        "duration": 6.95
+    },
+    {
+        "text": "the sparsity pattern of your matrix and",
+        "start": 1786.67,
+        "duration": 8.97
+    },
+    {
+        "text": "the relative sizes of the matrices and I",
+        "start": 1789.75,
+        "duration": 9.76
+    },
+    {
+        "text": "also tried out this approach but the",
+        "start": 1795.64,
+        "duration": 5.52
+    },
+    {
+        "text": "matrices that that we're using our",
+        "start": 1799.51,
+        "duration": 2.7
+    },
+    {
+        "text": "sufficiently sparse",
+        "start": 1801.16,
+        "duration": 9.21
+    },
+    {
+        "text": "that it really didn't help very much so",
+        "start": 1802.21,
+        "duration": 9.75
+    },
+    {
+        "text": "the the algorithm we ended up going with",
+        "start": 1810.37,
+        "duration": 6.42
+    },
+    {
+        "text": "was the ALS algorithm and actually this",
+        "start": 1811.96,
+        "duration": 6.48
+    },
+    {
+        "text": "is the algorithm that's preferred by",
+        "start": 1816.79,
+        "duration": 3.96
+    },
+    {
+        "text": "park as well as their implementation of",
+        "start": 1818.44,
+        "duration": 6.06
+    },
+    {
+        "text": "n enough and it's it's hard to beat",
+        "start": 1820.75,
+        "duration": 6.8
+    },
+    {
+        "text": "just because since you're solving the",
+        "start": 1824.5,
+        "duration": 8.01
+    },
+    {
+        "text": "the coordinate updates exactly on each",
+        "start": 1827.55,
+        "duration": 6.52
+    },
+    {
+        "text": "iteration it really decreases the",
+        "start": 1832.51,
+        "duration": 3.51
+    },
+    {
+        "text": "objective function quickly so here's a",
+        "start": 1834.07,
+        "duration": 5.01
+    },
+    {
+        "text": "benchmark showing how the multiplicative",
+        "start": 1836.02,
+        "duration": 5.13
+    },
+    {
+        "text": "updates approach prepares with the ALS",
+        "start": 1839.08,
+        "duration": 5.01
+    },
+    {
+        "text": "approach for different values of K on",
+        "start": 1841.15,
+        "duration": 4.67
+    },
+    {
+        "text": "two different single cell data sets and",
+        "start": 1844.09,
+        "duration": 5.31
+    },
+    {
+        "text": "that this PBMC data set has about 12,000",
+        "start": 1845.82,
+        "duration": 6.54
+    },
+    {
+        "text": "cells and the pancreas data set has",
+        "start": 1849.4,
+        "duration": 7.68
+    },
+    {
+        "text": "about 10,000 and so you can see that",
+        "start": 1852.36,
+        "duration": 8.61
+    },
+    {
+        "text": "we're converging much more rapidly and",
+        "start": 1857.08,
+        "duration": 6.84
+    },
+    {
+        "text": "in a lot of cases the objective value",
+        "start": 1860.97,
+        "duration": 4.3
+    },
+    {
+        "text": "that we're achieving is",
+        "start": 1863.92,
+        "duration": 3.18
+    },
+    {
+        "text": "than what the ultimate about dates",
+        "start": 1865.27,
+        "duration": 6.15
+    },
+    {
+        "text": "emergency and it also converges in what",
+        "start": 1867.1,
+        "duration": 6.33
+    },
+    {
+        "text": "I would consider to be reasonable amount",
+        "start": 1871.42,
+        "duration": 4.23
+    },
+    {
+        "text": "of time for the datasets overanalyzing",
+        "start": 1873.43,
+        "duration": 4.5
+    },
+    {
+        "text": "which is around two to three four",
+        "start": 1875.65,
+        "duration": 10.92
+    },
+    {
+        "text": "minutes okay so another type of nmf",
+        "start": 1877.93,
+        "duration": 11.34
+    },
+    {
+        "text": "algorithm which i didn't know about but",
+        "start": 1886.57,
+        "duration": 5.43
+    },
+    {
+        "text": "discovered versus this project is online",
+        "start": 1889.27,
+        "duration": 4.86
+    },
+    {
+        "text": "and that algorithms this is a really",
+        "start": 1892.0,
+        "duration": 5.16
+    },
+    {
+        "text": "interesting area online approaches",
+        "start": 1894.13,
+        "duration": 5.61
+    },
+    {
+        "text": "essentially address the problem where",
+        "start": 1897.16,
+        "duration": 4.14
+    },
+    {
+        "text": "you have data that's continually coming",
+        "start": 1899.74,
+        "duration": 3.33
+    },
+    {
+        "text": "in and you can't store it all but you",
+        "start": 1901.3,
+        "duration": 3.78
+    },
+    {
+        "text": "want to compute some result essentially",
+        "start": 1903.07,
+        "duration": 4.14
+    },
+    {
+        "text": "using the whole data set and it's",
+        "start": 1905.08,
+        "duration": 3.84
+    },
+    {
+        "text": "they're called online algorithms because",
+        "start": 1907.21,
+        "duration": 4.59
+    },
+    {
+        "text": "this is a common problem with online web",
+        "start": 1908.92,
+        "duration": 4.08
+    },
+    {
+        "text": "applications where you have data",
+        "start": 1911.8,
+        "duration": 2.76
+    },
+    {
+        "text": "constantly coming in and have to update",
+        "start": 1913.0,
+        "duration": 6.03
+    },
+    {
+        "text": "your analysis of the data so there's a",
+        "start": 1914.56,
+        "duration": 7.59
+    },
+    {
+        "text": "really interesting field that tries to",
+        "start": 1919.03,
+        "duration": 4.74
+    },
+    {
+        "text": "develop online algorithms and there's",
+        "start": 1922.15,
+        "duration": 3.78
+    },
+    {
+        "text": "actually a number of online algorithms",
+        "start": 1923.77,
+        "duration": 7.83
+    },
+    {
+        "text": "for performing an event so two key",
+        "start": 1925.93,
+        "duration": 8.04
+    },
+    {
+        "text": "advantages in these approaches one is",
+        "start": 1931.6,
+        "duration": 3.69
+    },
+    {
+        "text": "that you can avoid storing the entire",
+        "start": 1933.97,
+        "duration": 3.81
+    },
+    {
+        "text": "data set in memory and the other is that",
+        "start": 1935.29,
+        "duration": 4.11
+    },
+    {
+        "text": "you can refine the results as data",
+        "start": 1937.78,
+        "duration": 4.74
+    },
+    {
+        "text": "continuously arrive so um I thought this",
+        "start": 1939.4,
+        "duration": 5.37
+    },
+    {
+        "text": "would be a nice feature to have vigor",
+        "start": 1942.52,
+        "duration": 5.97
+    },
+    {
+        "text": "because we can continually update our",
+        "start": 1944.77,
+        "duration": 5.52
+    },
+    {
+        "text": "definition of so identity as new data",
+        "start": 1948.49,
+        "duration": 4.62
+    },
+    {
+        "text": "sets arrive and also we're getting to",
+        "start": 1950.29,
+        "duration": 4.44
+    },
+    {
+        "text": "the point now where we're analyzing data",
+        "start": 1953.11,
+        "duration": 3.09
+    },
+    {
+        "text": "sets that have hundreds of thousands of",
+        "start": 1954.73,
+        "duration": 2.88
+    },
+    {
+        "text": "millions of cells and storing all",
+        "start": 1956.2,
+        "duration": 8.37
+    },
+    {
+        "text": "memories is annoying so rather than",
+        "start": 1957.61,
+        "duration": 8.97
+    },
+    {
+        "text": "implementing something that's a true",
+        "start": 1964.57,
+        "duration": 5.82
+    },
+    {
+        "text": "online algorithm I first tried sort of a",
+        "start": 1966.58,
+        "duration": 6.06
+    },
+    {
+        "text": "smart initialization strategy just to",
+        "start": 1970.39,
+        "duration": 3.93
+    },
+    {
+        "text": "see how this would work and it actually",
+        "start": 1972.64,
+        "duration": 4.44
+    },
+    {
+        "text": "turned out to work quite well the idea",
+        "start": 1974.32,
+        "duration": 8.19
+    },
+    {
+        "text": "was that since we know the meta-gene the",
+        "start": 1977.08,
+        "duration": 7.65
+    },
+    {
+        "text": "identity of the meta genes from initial",
+        "start": 1982.51,
+        "duration": 4.92
+    },
+    {
+        "text": "run through the data we can use those",
+        "start": 1984.73,
+        "duration": 4.83
+    },
+    {
+        "text": "meta genes to come up with a smart",
+        "start": 1987.43,
+        "duration": 6.33
+    },
+    {
+        "text": "initialization for new data points by",
+        "start": 1989.56,
+        "duration": 6.72
+    },
+    {
+        "text": "simply solving this non negative least",
+        "start": 1993.76,
+        "duration": 6.21
+    },
+    {
+        "text": "squares problem and then we can",
+        "start": 1996.28,
+        "duration": 6.84
+    },
+    {
+        "text": "use this initial value for our H on the",
+        "start": 1999.97,
+        "duration": 5.34
+    },
+    {
+        "text": "new cells and just restart the",
+        "start": 2003.12,
+        "duration": 5.09
+    },
+    {
+        "text": "optimization at that point using the",
+        "start": 2005.31,
+        "duration": 7.14
+    },
+    {
+        "text": "initialization from the previous version",
+        "start": 2008.21,
+        "duration": 5.62
+    },
+    {
+        "text": "of the data set and then we can just",
+        "start": 2012.45,
+        "duration": 4.67
+    },
+    {
+        "text": "iterate those updates until convergence",
+        "start": 2013.83,
+        "duration": 3.29
+    },
+    {
+        "text": "we can also use a similar strategy to",
+        "start": 2018.62,
+        "duration": 4.96
+    },
+    {
+        "text": "update the number of factors on the fly",
+        "start": 2021.99,
+        "duration": 4.05
+    },
+    {
+        "text": "and so there's two different cases you",
+        "start": 2023.58,
+        "duration": 4.02
+    },
+    {
+        "text": "have to consider depending on whether",
+        "start": 2026.04,
+        "duration": 4.23
+    },
+    {
+        "text": "you're increasing or decreasing number",
+        "start": 2027.6,
+        "duration": 6.3
+    },
+    {
+        "text": "of factors and so if we're increasing",
+        "start": 2030.27,
+        "duration": 11.33
+    },
+    {
+        "text": "the number of factors we can we can",
+        "start": 2033.9,
+        "duration": 10.91
+    },
+    {
+        "text": "initialize the new factors using these",
+        "start": 2041.6,
+        "duration": 7.799
+    },
+    {
+        "text": "updates based on the existing factors",
+        "start": 2044.81,
+        "duration": 11.41
+    },
+    {
+        "text": "and then we just restart the",
+        "start": 2049.399,
+        "duration": 8.471
+    },
+    {
+        "text": "optimization using these visualizations",
+        "start": 2056.22,
+        "duration": 5.61
+    },
+    {
+        "text": "or if we want to decrease k then we",
+        "start": 2057.87,
+        "duration": 5.97
+    },
+    {
+        "text": "first compute this Sigma value that",
+        "start": 2061.83,
+        "duration": 3.93
+    },
+    {
+        "text": "essentially tells us how much each",
+        "start": 2063.84,
+        "duration": 3.93
+    },
+    {
+        "text": "factor contributes to reconstruction and",
+        "start": 2065.76,
+        "duration": 4.95
+    },
+    {
+        "text": "we picked the k2 factors with the",
+        "start": 2067.77,
+        "duration": 6.75
+    },
+    {
+        "text": "largest Sigma value and then simply",
+        "start": 2070.71,
+        "duration": 7.74
+    },
+    {
+        "text": "restart the optimization and when we",
+        "start": 2074.52,
+        "duration": 5.639
+    },
+    {
+        "text": "benchmark these approaches they actually",
+        "start": 2078.45,
+        "duration": 3.9
+    },
+    {
+        "text": "work quite well and you can see that",
+        "start": 2080.159,
+        "duration": 4.411
+    },
+    {
+        "text": "especially in the case of adding new",
+        "start": 2082.35,
+        "duration": 6.27
+    },
+    {
+        "text": "data the approach converges extremely",
+        "start": 2084.57,
+        "duration": 7.859
+    },
+    {
+        "text": "fast in less than 1/4 of the time that's",
+        "start": 2088.62,
+        "duration": 5.88
+    },
+    {
+        "text": "required to recompute from scratch using",
+        "start": 2092.429,
+        "duration": 6.991
+    },
+    {
+        "text": "all of the data we also I didn't mention",
+        "start": 2094.5,
+        "duration": 7.44
+    },
+    {
+        "text": "this but it's also straightforward to",
+        "start": 2099.42,
+        "duration": 4.35
+    },
+    {
+        "text": "show that you can change the value of",
+        "start": 2101.94,
+        "duration": 7.23
+    },
+    {
+        "text": "the regularization parameter lambda 2 to",
+        "start": 2103.77,
+        "duration": 9.06
+    },
+    {
+        "text": "try a different constraint on the",
+        "start": 2109.17,
+        "duration": 6.9
+    },
+    {
+        "text": "similarity of data sets much more",
+        "start": 2112.83,
+        "duration": 4.29
+    },
+    {
+        "text": "efficiently than you could from",
+        "start": 2116.07,
+        "duration": 3.57
+    },
+    {
+        "text": "restarting the factorization from",
+        "start": 2117.12,
+        "duration": 9.06
+    },
+    {
+        "text": "scratch ok so the this was a initial",
+        "start": 2119.64,
+        "duration": 10.38
+    },
+    {
+        "text": "online approach but not a true online",
+        "start": 2126.18,
+        "duration": 6.58
+    },
+    {
+        "text": "approach because it's mostly just",
+        "start": 2130.02,
+        "duration": 5.44
+    },
+    {
+        "text": "zatia strategy even though it in",
+        "start": 2132.76,
+        "duration": 6.69
+    },
+    {
+        "text": "practice it gives you a similar fact so",
+        "start": 2135.46,
+        "duration": 6.63
+    },
+    {
+        "text": "the way that you can perform nmf online",
+        "start": 2139.45,
+        "duration": 6.44
+    },
+    {
+        "text": "is to identify a surrogate function and",
+        "start": 2142.09,
+        "duration": 6.54
+    },
+    {
+        "text": "and then optimize it using stochastic",
+        "start": 2145.89,
+        "duration": 5.77
+    },
+    {
+        "text": "gradient descent and someone showed in",
+        "start": 2148.63,
+        "duration": 4.89
+    },
+    {
+        "text": "2010 that if you use this surrogate",
+        "start": 2151.66,
+        "duration": 5.73
+    },
+    {
+        "text": "function or the nmf objective that",
+        "start": 2153.52,
+        "duration": 6.09
+    },
+    {
+        "text": "converges almost surely to the optimal",
+        "start": 2157.39,
+        "duration": 6.87
+    },
+    {
+        "text": "value of n enough as T approaches so the",
+        "start": 2159.61,
+        "duration": 6.75
+    },
+    {
+        "text": "nice thing about this approach it's kind",
+        "start": 2164.26,
+        "duration": 3.99
+    },
+    {
+        "text": "of a neat trick of the updates for the",
+        "start": 2166.36,
+        "duration": 4.11
+    },
+    {
+        "text": "meta-gene matrix depend only on the sell",
+        "start": 2168.25,
+        "duration": 5.61
+    },
+    {
+        "text": "factors and data they depend only",
+        "start": 2170.47,
+        "duration": 6.36
+    },
+    {
+        "text": "through two matrix products a and B and",
+        "start": 2173.86,
+        "duration": 5.37
+    },
+    {
+        "text": "you can compute these matrix products",
+        "start": 2176.83,
+        "duration": 4.74
+    },
+    {
+        "text": "incremental as new data arrives so",
+        "start": 2179.23,
+        "duration": 4.86
+    },
+    {
+        "text": "essentially when you get new data you",
+        "start": 2181.57,
+        "duration": 5.34
+    },
+    {
+        "text": "just form this matrix product on the new",
+        "start": 2184.09,
+        "duration": 5.34
+    },
+    {
+        "text": "data and then add it to the accumulated",
+        "start": 2186.91,
+        "duration": 6.56
+    },
+    {
+        "text": "matrix product from the previous data",
+        "start": 2189.43,
+        "duration": 4.04
+    },
+    {
+        "text": "and I I tried out the implementation of",
+        "start": 2193.5,
+        "duration": 6.91
+    },
+    {
+        "text": "this online learning algorithm from the",
+        "start": 2198.61,
+        "duration": 4.05
+    },
+    {
+        "text": "2010 paper I tried it out on some",
+        "start": 2200.41,
+        "duration": 4.23
+    },
+    {
+        "text": "single-cell data and it performs quite",
+        "start": 2202.66,
+        "duration": 6.93
+    },
+    {
+        "text": "well so this is a batch nmf using the",
+        "start": 2204.64,
+        "duration": 8.37
+    },
+    {
+        "text": "house optimization strategy and the red",
+        "start": 2209.59,
+        "duration": 5.1
+    },
+    {
+        "text": "line is the online @ MF and you can see",
+        "start": 2213.01,
+        "duration": 4.89
+    },
+    {
+        "text": "that it converges in less than a sixth",
+        "start": 2214.69,
+        "duration": 5.33
+    },
+    {
+        "text": "of the time that's required for the",
+        "start": 2217.9,
+        "duration": 7.08
+    },
+    {
+        "text": "batch algorithm and in addition it has",
+        "start": 2220.02,
+        "duration": 7.42
+    },
+    {
+        "text": "the the online version has the advantage",
+        "start": 2224.98,
+        "duration": 4.41
+    },
+    {
+        "text": "that you don't have to store the data in",
+        "start": 2227.44,
+        "duration": 6.33
+    },
+    {
+        "text": "memory so another another trick you can",
+        "start": 2229.39,
+        "duration": 6.96
+    },
+    {
+        "text": "do with n MF is missing data imputation",
+        "start": 2233.77,
+        "duration": 4.16
+    },
+    {
+        "text": "and n MF is actually really good at this",
+        "start": 2236.35,
+        "duration": 4.46
+    },
+    {
+        "text": "because of its parts base representation",
+        "start": 2237.93,
+        "duration": 5.37
+    },
+    {
+        "text": "so a simple extension that allows",
+        "start": 2240.81,
+        "duration": 6.58
+    },
+    {
+        "text": "imputation in n MF is to define a weight",
+        "start": 2243.3,
+        "duration": 8.05
+    },
+    {
+        "text": "matrix where a IJ is 1 if the data is",
+        "start": 2247.39,
+        "duration": 5.22
+    },
+    {
+        "text": "observed at 0 otherwise",
+        "start": 2251.35,
+        "duration": 4.17
+    },
+    {
+        "text": "and then just perform optimize this",
+        "start": 2252.61,
+        "duration": 5.55
+    },
+    {
+        "text": "objective where we take the element wise",
+        "start": 2255.52,
+        "duration": 4.98
+    },
+    {
+        "text": "matrix product between the egg and the",
+        "start": 2258.16,
+        "duration": 5.94
+    },
+    {
+        "text": "loss and you can optimize the subjective",
+        "start": 2260.5,
+        "duration": 4.95
+    },
+    {
+        "text": "using any of the strategies that I",
+        "start": 2264.1,
+        "duration": 1.99
+    },
+    {
+        "text": "presented",
+        "start": 2265.45,
+        "duration": 5.1
+    },
+    {
+        "text": "and then at the end you have a matrix",
+        "start": 2266.09,
+        "duration": 7.74
+    },
+    {
+        "text": "where you can impute you can compute the",
+        "start": 2270.55,
+        "duration": 6.43
+    },
+    {
+        "text": "missing elements of the matrix using an",
+        "start": 2273.83,
+        "duration": 5.97
+    },
+    {
+        "text": "objective that was trained only on the",
+        "start": 2276.98,
+        "duration": 5.94
+    },
+    {
+        "text": "observed elements of the data so I",
+        "start": 2279.8,
+        "duration": 5.37
+    },
+    {
+        "text": "haven't implemented this yet for IMF but",
+        "start": 2282.92,
+        "duration": 6.78
+    },
+    {
+        "text": "it's something that um a couple other",
+        "start": 2285.17,
+        "duration": 7.98
+    },
+    {
+        "text": "moves you can make with n MF is to use a",
+        "start": 2289.7,
+        "duration": 5.46
+    },
+    {
+        "text": "different loss so instead of taking the",
+        "start": 2293.15,
+        "duration": 4.59
+    },
+    {
+        "text": "simple Euclidean distance between your",
+        "start": 2295.16,
+        "duration": 5.7
+    },
+    {
+        "text": "reconstruction and the data you can use",
+        "start": 2297.74,
+        "duration": 4.92
+    },
+    {
+        "text": "different versions like the KL",
+        "start": 2300.86,
+        "duration": 3.78
+    },
+    {
+        "text": "divergence or the eat Icarus Saito",
+        "start": 2302.66,
+        "duration": 5.16
+    },
+    {
+        "text": "divergence and people have found this to",
+        "start": 2304.64,
+        "duration": 4.68
+    },
+    {
+        "text": "be better for count data in some cases",
+        "start": 2307.82,
+        "duration": 5.36
+    },
+    {
+        "text": "and this to be better for audio spectrum",
+        "start": 2309.32,
+        "duration": 7.68
+    },
+    {
+        "text": "another trick is you can actually write",
+        "start": 2313.18,
+        "duration": 8.17
+    },
+    {
+        "text": "the n MF objective probabilistically and",
+        "start": 2317.0,
+        "duration": 6.24
+    },
+    {
+        "text": "this is what David Bly and his graduate",
+        "start": 2321.35,
+        "duration": 4.23
+    },
+    {
+        "text": "students did in 2015 when they developed",
+        "start": 2323.24,
+        "duration": 4.32
+    },
+    {
+        "text": "an approach called hierarchical Poisson",
+        "start": 2325.58,
+        "duration": 6.74
+    },
+    {
+        "text": "factorization the idea of hpf is your",
+        "start": 2327.56,
+        "duration": 8.16
+    },
+    {
+        "text": "observed counts are produced by a",
+        "start": 2332.32,
+        "duration": 5.47
+    },
+    {
+        "text": "Poisson distribution where the rate",
+        "start": 2335.72,
+        "duration": 3.87
+    },
+    {
+        "text": "parameter is determined by the vector",
+        "start": 2337.79,
+        "duration": 4.14
+    },
+    {
+        "text": "product of a row vector and the column",
+        "start": 2339.59,
+        "duration": 6.47
+    },
+    {
+        "text": "vector and then you can further put",
+        "start": 2341.93,
+        "duration": 6.9
+    },
+    {
+        "text": "distributional assumptions on these row",
+        "start": 2346.06,
+        "duration": 6.16
+    },
+    {
+        "text": "and column vectors using a gamma",
+        "start": 2348.83,
+        "duration": 6.03
+    },
+    {
+        "text": "distribution and this gamma Poisson",
+        "start": 2352.22,
+        "duration": 4.74
+    },
+    {
+        "text": "model actually gives you something where",
+        "start": 2354.86,
+        "duration": 4.92
+    },
+    {
+        "text": "the account for in the individual gene",
+        "start": 2356.96,
+        "duration": 5.07
+    },
+    {
+        "text": "across cells is negative binomial a",
+        "start": 2359.78,
+        "duration": 5.55
+    },
+    {
+        "text": "distributed which matches well with how",
+        "start": 2362.03,
+        "duration": 4.74
+    },
+    {
+        "text": "people think about the distributional",
+        "start": 2365.33,
+        "duration": 5.58
+    },
+    {
+        "text": "properties of single cell organs and",
+        "start": 2366.77,
+        "duration": 9.33
+    },
+    {
+        "text": "somebody recently implemented hbf for",
+        "start": 2370.91,
+        "duration": 10.02
+    },
+    {
+        "text": "single cell RNA seek data MSB systems",
+        "start": 2376.1,
+        "duration": 8.76
+    },
+    {
+        "text": "biology we've tried this out and it it",
+        "start": 2380.93,
+        "duration": 5.82
+    },
+    {
+        "text": "works pretty well but it's extremely",
+        "start": 2384.86,
+        "duration": 6.06
+    },
+    {
+        "text": "slow because I estimating the posterior",
+        "start": 2386.75,
+        "duration": 5.88
+    },
+    {
+        "text": "distribution under these assumptions for",
+        "start": 2390.92,
+        "duration": 3.99
+    },
+    {
+        "text": "a large matrix is quite challenging and",
+        "start": 2392.63,
+        "duration": 6.09
+    },
+    {
+        "text": "very slow and in practice we also notice",
+        "start": 2394.91,
+        "duration": 4.66
+    },
+    {
+        "text": "that it tends to",
+        "start": 2398.72,
+        "duration": 3.73
+    },
+    {
+        "text": "they possibly because of the uh the",
+        "start": 2399.57,
+        "duration": 6.93
+    },
+    {
+        "text": "Bayesian nature of optimization so now",
+        "start": 2402.45,
+        "duration": 5.67
+    },
+    {
+        "text": "I'm I'm just gonna go through quickly",
+        "start": 2406.5,
+        "duration": 3.98
+    },
+    {
+        "text": "some of the things that we use this for",
+        "start": 2408.12,
+        "duration": 6.69
+    },
+    {
+        "text": "and give you a sense for what the liger",
+        "start": 2410.48,
+        "duration": 7.57
+    },
+    {
+        "text": "algorithm do we uh we generated a data",
+        "start": 2414.81,
+        "duration": 5.22
+    },
+    {
+        "text": "set from the mouse edge nucleus which is",
+        "start": 2418.05,
+        "duration": 4.19
+    },
+    {
+        "text": "this tiny little region inside the brain",
+        "start": 2420.03,
+        "duration": 6.06
+    },
+    {
+        "text": "and this had never been sequenced using",
+        "start": 2422.24,
+        "duration": 6.43
+    },
+    {
+        "text": "single-cell RNA seek and we found a",
+        "start": 2426.09,
+        "duration": 4.71
+    },
+    {
+        "text": "crazy number of cell types we have",
+        "start": 2428.67,
+        "duration": 3.45
+    },
+    {
+        "text": "actually never seen a region in the",
+        "start": 2430.8,
+        "duration": 3.24
+    },
+    {
+        "text": "brain that has this many distinct cell",
+        "start": 2432.12,
+        "duration": 4.41
+    },
+    {
+        "text": "types and it may be partly because this",
+        "start": 2434.04,
+        "duration": 4.41
+    },
+    {
+        "text": "region has kind of an integrative role",
+        "start": 2436.53,
+        "duration": 3.51
+    },
+    {
+        "text": "in integrating signals from all",
+        "start": 2438.45,
+        "duration": 5.22
+    },
+    {
+        "text": "throughout the brain um and the thing",
+        "start": 2440.04,
+        "duration": 5.07
+    },
+    {
+        "text": "that's really interesting about the Fed",
+        "start": 2443.67,
+        "duration": 3.21
+    },
+    {
+        "text": "nucleus is that it's the most sexually",
+        "start": 2445.11,
+        "duration": 4.56
+    },
+    {
+        "text": "dimorphic region in the brain we did we",
+        "start": 2446.88,
+        "duration": 4.67
+    },
+    {
+        "text": "sequenced male and female mice and",
+        "start": 2449.67,
+        "duration": 4.17
+    },
+    {
+        "text": "compared the gene expression from the",
+        "start": 2451.55,
+        "duration": 6.52
+    },
+    {
+        "text": "mics and the a lot of the cell types",
+        "start": 2453.84,
+        "duration": 6.12
+    },
+    {
+        "text": "come from the principal nucleus of the",
+        "start": 2458.07,
+        "duration": 3.18
+    },
+    {
+        "text": "bed nucleus which is also the most",
+        "start": 2459.96,
+        "duration": 3.81
+    },
+    {
+        "text": "amorphic region within the bed nucleus",
+        "start": 2461.25,
+        "duration": 7.38
+    },
+    {
+        "text": "and if we look at the managing factor",
+        "start": 2463.77,
+        "duration": 7.41
+    },
+    {
+        "text": "that loads most strongly on this region",
+        "start": 2468.63,
+        "duration": 5.64
+    },
+    {
+        "text": "we can identify the male and female",
+        "start": 2471.18,
+        "duration": 6.0
+    },
+    {
+        "text": "specific genes that are specific that",
+        "start": 2474.27,
+        "duration": 4.35
+    },
+    {
+        "text": "are dimorphic specifically within this",
+        "start": 2477.18,
+        "duration": 3.42
+    },
+    {
+        "text": "population by looking at the data set",
+        "start": 2478.62,
+        "duration": 6.3
+    },
+    {
+        "text": "specific factors and the the genes that",
+        "start": 2480.6,
+        "duration": 6.87
+    },
+    {
+        "text": "we found here there were some known hits",
+        "start": 2484.92,
+        "duration": 4.59
+    },
+    {
+        "text": "there's I think 12 genes that somebody",
+        "start": 2487.47,
+        "duration": 4.74
+    },
+    {
+        "text": "painstakingly validated as dimorphic in",
+        "start": 2489.51,
+        "duration": 4.56
+    },
+    {
+        "text": "this region but we also found a bunch of",
+        "start": 2492.21,
+        "duration": 4.91
+    },
+    {
+        "text": "new ones including some very clear",
+        "start": 2494.07,
+        "duration": 7.94
+    },
+    {
+        "text": "dimorphic genes like et al for a CDR 1c",
+        "start": 2497.12,
+        "duration": 7.54
+    },
+    {
+        "text": "so again the interpretability of the",
+        "start": 2502.01,
+        "duration": 5.11
+    },
+    {
+        "text": "factors is he here because it allows us",
+        "start": 2504.66,
+        "duration": 5.64
+    },
+    {
+        "text": "to identify not only that cell types are",
+        "start": 2507.12,
+        "duration": 4.68
+    },
+    {
+        "text": "shared between male and female but",
+        "start": 2510.3,
+        "duration": 3.72
+    },
+    {
+        "text": "specifically how each of those cell",
+        "start": 2511.8,
+        "duration": 6.84
+    },
+    {
+        "text": "types differs we also did a related",
+        "start": 2514.02,
+        "duration": 7.14
+    },
+    {
+        "text": "analysis in the substantia which",
+        "start": 2518.64,
+        "duration": 3.63
+    },
+    {
+        "text": "is the part of the brain that produces",
+        "start": 2521.16,
+        "duration": 2.91
+    },
+    {
+        "text": "dopamine and it goes wrong in",
+        "start": 2522.27,
+        "duration": 6.33
+    },
+    {
+        "text": "Parkinson's disease and we were able to",
+        "start": 2524.07,
+        "duration": 6.83
+    },
+    {
+        "text": "identify",
+        "start": 2528.6,
+        "duration": 4.47
+    },
+    {
+        "text": "corresponding cells across human",
+        "start": 2530.9,
+        "duration": 5.04
+    },
+    {
+        "text": "owners he had seven human donors and",
+        "start": 2533.07,
+        "duration": 5.79
+    },
+    {
+        "text": "putting the data from these different",
+        "start": 2535.94,
+        "duration": 4.48
+    },
+    {
+        "text": "samples together was actually quite",
+        "start": 2538.86,
+        "duration": 4.59
+    },
+    {
+        "text": "challenging because there are so many",
+        "start": 2540.42,
+        "duration": 4.8
+    },
+    {
+        "text": "uncontrolled factors of variation so",
+        "start": 2543.45,
+        "duration": 5.04
+    },
+    {
+        "text": "this was frozen brain Bank tissue and we",
+        "start": 2545.22,
+        "duration": 5.81
+    },
+    {
+        "text": "had like three males and four females",
+        "start": 2548.49,
+        "duration": 6.12
+    },
+    {
+        "text": "ages between 20 and 70 and cause of",
+        "start": 2551.03,
+        "duration": 5.37
+    },
+    {
+        "text": "death everything from heart attack to",
+        "start": 2554.61,
+        "duration": 7.02
+    },
+    {
+        "text": "brain trauma and so we were able to put",
+        "start": 2556.4,
+        "duration": 8.14
+    },
+    {
+        "text": "these together using the shared factors",
+        "start": 2561.63,
+        "duration": 5.31
+    },
+    {
+        "text": "that logger at first and we were also",
+        "start": 2564.54,
+        "duration": 4.77
+    },
+    {
+        "text": "able to identify some human subject",
+        "start": 2566.94,
+        "duration": 5.04
+    },
+    {
+        "text": "differences among these patients I'm",
+        "start": 2569.31,
+        "duration": 4.41
+    },
+    {
+        "text": "using the data set specific factors of",
+        "start": 2571.98,
+        "duration": 3.69
+    },
+    {
+        "text": "migrant we found a couple of interesting",
+        "start": 2573.72,
+        "duration": 6.45
+    },
+    {
+        "text": "things one was that there was the",
+        "start": 2575.67,
+        "duration": 10.68
+    },
+    {
+        "text": "patient 5828 had a lot of genes related",
+        "start": 2580.17,
+        "duration": 9.96
+    },
+    {
+        "text": "to cell activation upregulated and it",
+        "start": 2586.35,
+        "duration": 5.43
+    },
+    {
+        "text": "turned out that this was the patient who",
+        "start": 2590.13,
+        "duration": 4.88
+    },
+    {
+        "text": "had died from head trauma and this is",
+        "start": 2591.78,
+        "duration": 5.58
+    },
+    {
+        "text": "the genes that we found as being games",
+        "start": 2595.01,
+        "duration": 4.96
+    },
+    {
+        "text": "at specific are known genes that are",
+        "start": 2597.36,
+        "duration": 5.64
+    },
+    {
+        "text": "related to response to traumatic brain",
+        "start": 2599.97,
+        "duration": 7.05
+    },
+    {
+        "text": "injury we also noticed some genes",
+        "start": 2603.0,
+        "duration": 7.41
+    },
+    {
+        "text": "upregulated related to unfolded protein",
+        "start": 2607.02,
+        "duration": 6.9
+    },
+    {
+        "text": "response and also a toe e which is a",
+        "start": 2610.41,
+        "duration": 6.0
+    },
+    {
+        "text": "gene that's commonly seen in a number of",
+        "start": 2613.92,
+        "duration": 4.65
+    },
+    {
+        "text": "neurodegenerative diseases and it turned",
+        "start": 2616.41,
+        "duration": 5.58
+    },
+    {
+        "text": "out that 5840 had a post mortem",
+        "start": 2618.57,
+        "duration": 6.26
+    },
+    {
+        "text": "diagnosis of cerebral amyloid angiopathy",
+        "start": 2621.99,
+        "duration": 5.58
+    },
+    {
+        "text": "which is a neurodegenerative disease",
+        "start": 2624.83,
+        "duration": 9.64
+    },
+    {
+        "text": "related to amyloid accumulation so it",
+        "start": 2627.57,
+        "duration": 8.01
+    },
+    {
+        "text": "was interesting that we were able to",
+        "start": 2634.47,
+        "duration": 3.87
+    },
+    {
+        "text": "identify these datasets specific",
+        "start": 2635.58,
+        "duration": 5.64
+    },
+    {
+        "text": "differences from the dataset specific",
+        "start": 2638.34,
+        "duration": 6.8
+    },
+    {
+        "text": "factors we were also able to take the",
+        "start": 2641.22,
+        "duration": 6.24
+    },
+    {
+        "text": "substantial Niagra sauce or human and",
+        "start": 2645.14,
+        "duration": 4.6
+    },
+    {
+        "text": "map them to mouths substantially",
+        "start": 2647.46,
+        "duration": 4.38
+    },
+    {
+        "text": "ourselves to identify corresponding cell",
+        "start": 2649.74,
+        "duration": 3.93
+    },
+    {
+        "text": "types and we were hoping that we would",
+        "start": 2651.84,
+        "duration": 3.72
+    },
+    {
+        "text": "find some cell types that were human",
+        "start": 2653.67,
+        "duration": 4.53
+    },
+    {
+        "text": "specific but we didn't really we",
+        "start": 2655.56,
+        "duration": 4.17
+    },
+    {
+        "text": "actually found some cell types that were",
+        "start": 2658.2,
+        "duration": 3.78
+    },
+    {
+        "text": "mouth specific but it turned out that",
+        "start": 2659.73,
+        "duration": 6.09
+    },
+    {
+        "text": "they were related to anatomical and",
+        "start": 2661.98,
+        "duration": 4.8
+    },
+    {
+        "text": "dissection different",
+        "start": 2665.82,
+        "duration": 3.81
+    },
+    {
+        "text": "so for example we found this population",
+        "start": 2666.78,
+        "duration": 7.08
+    },
+    {
+        "text": "of astrocytes was mouth specific and it",
+        "start": 2669.63,
+        "duration": 6.57
+    },
+    {
+        "text": "turns out that this particular subtype",
+        "start": 2673.86,
+        "duration": 5.67
+    },
+    {
+        "text": "of astrocytes only located in a certain",
+        "start": 2676.2,
+        "duration": 4.95
+    },
+    {
+        "text": "part of the brain that's very much",
+        "start": 2679.53,
+        "duration": 2.91
+    },
+    {
+        "text": "closer to the substantial Niagra",
+        "start": 2681.15,
+        "duration": 5.58
+    },
+    {
+        "text": "announcement on so the the cross species",
+        "start": 2682.44,
+        "duration": 6.96
+    },
+    {
+        "text": "analysis essentially showed that the",
+        "start": 2686.73,
+        "duration": 4.56
+    },
+    {
+        "text": "subtypes are quite similar between",
+        "start": 2689.4,
+        "duration": 7.01
+    },
+    {
+        "text": "thousand we were also able to integrate",
+        "start": 2691.29,
+        "duration": 7.53
+    },
+    {
+        "text": "single-cell RNA seek with spatial",
+        "start": 2696.41,
+        "duration": 6.01
+    },
+    {
+        "text": "transcriptomic data and we use data from",
+        "start": 2698.82,
+        "duration": 6.18
+    },
+    {
+        "text": "a protocol called star map which can",
+        "start": 2702.42,
+        "duration": 4.29
+    },
+    {
+        "text": "measure up to a thousand cells a",
+        "start": 2705.0,
+        "duration": 4.47
+    },
+    {
+        "text": "thousand genes per cell with spatial",
+        "start": 2706.71,
+        "duration": 7.34
+    },
+    {
+        "text": "resolution and so we we were able to",
+        "start": 2709.47,
+        "duration": 7.35
+    },
+    {
+        "text": "using the shared factors that logger",
+        "start": 2714.05,
+        "duration": 8.58
+    },
+    {
+        "text": "produces we were able to identify which",
+        "start": 2716.82,
+        "duration": 8.55
+    },
+    {
+        "text": "clusters from dropsy correspondent to",
+        "start": 2722.63,
+        "duration": 5.38
+    },
+    {
+        "text": "which clusters from star map and we're",
+        "start": 2725.37,
+        "duration": 5.01
+    },
+    {
+        "text": "actually able to plot with spatial",
+        "start": 2728.01,
+        "duration": 5.76
+    },
+    {
+        "text": "distributions of the cell types using",
+        "start": 2730.38,
+        "duration": 6.14
+    },
+    {
+        "text": "the coordinates of the star map data and",
+        "start": 2733.77,
+        "duration": 5.55
+    },
+    {
+        "text": "when we did this one thing that we found",
+        "start": 2736.52,
+        "duration": 5.17
+    },
+    {
+        "text": "which was unexpected and interesting is",
+        "start": 2739.32,
+        "duration": 5.33
+    },
+    {
+        "text": "that there's a subtype of astrocytes",
+        "start": 2741.69,
+        "duration": 5.73
+    },
+    {
+        "text": "which has this spatial distribution",
+        "start": 2744.65,
+        "duration": 4.9
+    },
+    {
+        "text": "according to the star map data which we",
+        "start": 2747.42,
+        "duration": 4.62
+    },
+    {
+        "text": "confirmed with its c2 staining from the",
+        "start": 2749.55,
+        "duration": 5.58
+    },
+    {
+        "text": "Allen Brain atlas and it turns out that",
+        "start": 2752.04,
+        "duration": 5.07
+    },
+    {
+        "text": "this is the same subtype of astrocytes",
+        "start": 2755.13,
+        "duration": 5.16
+    },
+    {
+        "text": "that we saw else and this helped us to",
+        "start": 2757.11,
+        "duration": 5.7
+    },
+    {
+        "text": "understand why because this part of the",
+        "start": 2760.29,
+        "duration": 4.56
+    },
+    {
+        "text": "brain here is very much closer to the",
+        "start": 2762.81,
+        "duration": 8.58
+    },
+    {
+        "text": "substantia in Dobson so once we",
+        "start": 2764.85,
+        "duration": 9.96
+    },
+    {
+        "text": "had this mapping from dropsy to star map",
+        "start": 2771.39,
+        "duration": 6.27
+    },
+    {
+        "text": "we were able to impute the spatial gene",
+        "start": 2774.81,
+        "duration": 5.31
+    },
+    {
+        "text": "expression patterns of genes not",
+        "start": 2777.66,
+        "duration": 4.17
+    },
+    {
+        "text": "measured by star map because star map",
+        "start": 2780.12,
+        "duration": 3.21
+    },
+    {
+        "text": "the only measure about a thousand years",
+        "start": 2781.83,
+        "duration": 6.48
+    },
+    {
+        "text": "or so and we we were able to confirm",
+        "start": 2783.33,
+        "duration": 7.89
+    },
+    {
+        "text": "using by holding out some genes and then",
+        "start": 2788.31,
+        "duration": 4.77
+    },
+    {
+        "text": "feeding them that we could correctly",
+        "start": 2791.22,
+        "duration": 3.3
+    },
+    {
+        "text": "impute the spatial patterns of these",
+        "start": 2793.08,
+        "duration": 6.21
+    },
+    {
+        "text": "genes and we were also able to do this",
+        "start": 2794.52,
+        "duration": 6.0
+    },
+    {
+        "text": "for",
+        "start": 2799.29,
+        "duration": 3.96
+    },
+    {
+        "text": "for complex spatial patterns like this",
+        "start": 2800.52,
+        "duration": 4.86
+    },
+    {
+        "text": "PSG which is a marker of endothelial",
+        "start": 2803.25,
+        "duration": 5.25
+    },
+    {
+        "text": "cells and this is a strip of vasculature",
+        "start": 2805.38,
+        "duration": 7.68
+    },
+    {
+        "text": "that apparently was left in them we were",
+        "start": 2808.5,
+        "duration": 7.29
+    },
+    {
+        "text": "also able to do multi modal integration",
+        "start": 2813.06,
+        "duration": 7.02
+    },
+    {
+        "text": "with RNA and methylation data and this",
+        "start": 2815.79,
+        "duration": 5.7
+    },
+    {
+        "text": "was the most challenging type of",
+        "start": 2820.08,
+        "duration": 4.02
+    },
+    {
+        "text": "integration that we did because it's not",
+        "start": 2821.49,
+        "duration": 4.379
+    },
+    {
+        "text": "clear exactly what the relationship",
+        "start": 2824.1,
+        "duration": 4.38
+    },
+    {
+        "text": "between methylation impression is but we",
+        "start": 2825.869,
+        "duration": 4.981
+    },
+    {
+        "text": "were able to identify corresponding cell",
+        "start": 2828.48,
+        "duration": 5.01
+    },
+    {
+        "text": "types by assuming that the gene body",
+        "start": 2830.85,
+        "duration": 4.74
+    },
+    {
+        "text": "methylation for a gene is negatively",
+        "start": 2833.49,
+        "duration": 5.58
+    },
+    {
+        "text": "correlated with this expression and",
+        "start": 2835.59,
+        "duration": 7.32
+    },
+    {
+        "text": "doing this we identified a set of joint",
+        "start": 2839.07,
+        "duration": 6.81
+    },
+    {
+        "text": "clusters that matched very closely with",
+        "start": 2842.91,
+        "duration": 5.61
+    },
+    {
+        "text": "the annotations of the RNA and",
+        "start": 2845.88,
+        "duration": 4.2
+    },
+    {
+        "text": "methylation that had already been",
+        "start": 2848.52,
+        "duration": 5.13
+    },
+    {
+        "text": "published and then also helped us to",
+        "start": 2850.08,
+        "duration": 5.789
+    },
+    {
+        "text": "clarify a couple of the methylation",
+        "start": 2853.65,
+        "duration": 4.11
+    },
+    {
+        "text": "populations which are hard to identify",
+        "start": 2855.869,
+        "duration": 5.371
+    },
+    {
+        "text": "because most of the previous studies",
+        "start": 2857.76,
+        "duration": 5.97
+    },
+    {
+        "text": "that identify cell types have looked at",
+        "start": 2861.24,
+        "duration": 4.59
+    },
+    {
+        "text": "either protein or RNA expression so if",
+        "start": 2863.73,
+        "duration": 3.72
+    },
+    {
+        "text": "you just have methylation for a cell",
+        "start": 2865.83,
+        "duration": 3.12
+    },
+    {
+        "text": "it's sometimes hard to figure out what",
+        "start": 2867.45,
+        "duration": 4.26
+    },
+    {
+        "text": "cell type it is but by mapping the RNA",
+        "start": 2868.95,
+        "duration": 4.919
+    },
+    {
+        "text": "data onto the methylation data or",
+        "start": 2871.71,
+        "duration": 4.68
+    },
+    {
+        "text": "vice-versa we were able to identify for",
+        "start": 2873.869,
+        "duration": 6.091
+    },
+    {
+        "text": "example MDL 3 mouse deep layer 3 is",
+        "start": 2876.39,
+        "duration": 7.95
+    },
+    {
+        "text": "actually Foxtrot and also there is a",
+        "start": 2879.96,
+        "duration": 9.39
+    },
+    {
+        "text": "discrepancy between clusters layer 5b",
+        "start": 2884.34,
+        "duration": 8.46
+    },
+    {
+        "text": "which the methylation analysis thought",
+        "start": 2889.35,
+        "duration": 6.269
+    },
+    {
+        "text": "that it was actually from layer 6 it",
+        "start": 2892.8,
+        "duration": 4.2
+    },
+    {
+        "text": "turns out the reason for this and this",
+        "start": 2895.619,
+        "duration": 4.111
+    },
+    {
+        "text": "annotation was that these cells have",
+        "start": 2897.0,
+        "duration": 4.65
+    },
+    {
+        "text": "very low overall levels of methylation",
+        "start": 2899.73,
+        "duration": 4.55
+    },
+    {
+        "text": "and none at the common layer 5 markers",
+        "start": 2901.65,
+        "duration": 8.85
+    },
+    {
+        "text": "from expression actually we're another",
+        "start": 2904.28,
+        "duration": 9.07
+    },
+    {
+        "text": "thing that we were able to do with the",
+        "start": 2910.5,
+        "duration": 5.25
+    },
+    {
+        "text": "methylation data was actually identify",
+        "start": 2913.35,
+        "duration": 4.74
+    },
+    {
+        "text": "cell types with better resolution than",
+        "start": 2915.75,
+        "duration": 4.55
+    },
+    {
+        "text": "was possible with the methylation alone",
+        "start": 2918.09,
+        "duration": 5.88
+    },
+    {
+        "text": "do we zoomed in on this bot we pulled",
+        "start": 2920.3,
+        "duration": 8.14
+    },
+    {
+        "text": "out just these MGE cells and did a",
+        "start": 2923.97,
+        "duration": 7.47
+    },
+    {
+        "text": "second level of clustering and were able",
+        "start": 2928.44,
+        "duration": 5.91
+    },
+    {
+        "text": "to identify a total of 12 clusters",
+        "start": 2931.44,
+        "duration": 4.38
+    },
+    {
+        "text": "whereas before I think they had",
+        "start": 2934.35,
+        "duration": 3.39
+    },
+    {
+        "text": "identified two in the methylation",
+        "start": 2935.82,
+        "duration": 4.23
+    },
+    {
+        "text": "analysis alone and when we look at these",
+        "start": 2937.74,
+        "duration": 4.5
+    },
+    {
+        "text": "clusters we can confirm that they're not",
+        "start": 2940.05,
+        "duration": 6.75
+    },
+    {
+        "text": "just sort of spurious computed structure",
+        "start": 2942.24,
+        "duration": 6.93
+    },
+    {
+        "text": "by comparing the methylation and",
+        "start": 2946.8,
+        "duration": 4.83
+    },
+    {
+        "text": "expression for these genes some of the",
+        "start": 2949.17,
+        "duration": 4.62
+    },
+    {
+        "text": "markers of these clusters and noting",
+        "start": 2951.63,
+        "duration": 5.69
+    },
+    {
+        "text": "that they have extremely anti-correlated",
+        "start": 2953.79,
+        "duration": 6.66
+    },
+    {
+        "text": "expression and methylation we were able",
+        "start": 2957.32,
+        "duration": 5.8
+    },
+    {
+        "text": "even able to identify this type of",
+        "start": 2960.45,
+        "duration": 5.57
+    },
+    {
+        "text": "selves here MGE flow which are called",
+        "start": 2963.12,
+        "duration": 5.82
+    },
+    {
+        "text": "toddled cells and they represent point 1",
+        "start": 2966.02,
+        "duration": 4.86
+    },
+    {
+        "text": "percent of all the cells in the dataset",
+        "start": 2968.94,
+        "duration": 3.87
+    },
+    {
+        "text": "so the fact that we were able to",
+        "start": 2970.88,
+        "duration": 3.61
+    },
+    {
+        "text": "identify these and the methylation data",
+        "start": 2972.81,
+        "duration": 9.15
+    },
+    {
+        "text": "was was pretty surprising and we also we",
+        "start": 2974.49,
+        "duration": 8.88
+    },
+    {
+        "text": "didn't include this in the paper but",
+        "start": 2981.96,
+        "duration": 3.6
+    },
+    {
+        "text": "we're now working on integrating RNA and",
+        "start": 2983.37,
+        "duration": 3.84
+    },
+    {
+        "text": "single-cell attack seek data which is",
+        "start": 2985.56,
+        "duration": 3.3
+    },
+    {
+        "text": "even more challenging because the",
+        "start": 2987.21,
+        "duration": 3.96
+    },
+    {
+        "text": "attacks the data is extremely sparse you",
+        "start": 2988.86,
+        "duration": 4.44
+    },
+    {
+        "text": "usually only get about 10,000 reads per",
+        "start": 2991.17,
+        "duration": 3.39
+    },
+    {
+        "text": "cell",
+        "start": 2993.3,
+        "duration": 4.26
+    },
+    {
+        "text": "and so in addition the relationship",
+        "start": 2994.56,
+        "duration": 5.22
+    },
+    {
+        "text": "between accessibility and expression is",
+        "start": 2997.56,
+        "duration": 5.19
+    },
+    {
+        "text": "fairly weak correlation it's challenging",
+        "start": 2999.78,
+        "duration": 4.8
+    },
+    {
+        "text": "but we have some initial results that",
+        "start": 3002.75,
+        "duration": 6.21
+    },
+    {
+        "text": "it's possible this is a mouse cortex RNA",
+        "start": 3004.58,
+        "duration": 7.89
+    },
+    {
+        "text": "and ataxia configuration another",
+        "start": 3008.96,
+        "duration": 5.43
+    },
+    {
+        "text": "application that I'm actively working on",
+        "start": 3012.47,
+        "duration": 6.96
+    },
+    {
+        "text": "is using lagger to integrate data across",
+        "start": 3014.39,
+        "duration": 6.84
+    },
+    {
+        "text": "different time points and development",
+        "start": 3019.43,
+        "duration": 3.96
+    },
+    {
+        "text": "and using this to study cardiac",
+        "start": 3021.23,
+        "duration": 5.61
+    },
+    {
+        "text": "regeneration in zebrafish and human",
+        "start": 3023.39,
+        "duration": 8.94
+    },
+    {
+        "text": "cortical development and we can also use",
+        "start": 3026.84,
+        "duration": 7.65
+    },
+    {
+        "text": "vigor to integrate drop seek data and",
+        "start": 3032.33,
+        "duration": 3.96
+    },
+    {
+        "text": "slide seek slide seek is a new",
+        "start": 3034.49,
+        "duration": 3.75
+    },
+    {
+        "text": "experimental technique that my post on",
+        "start": 3036.29,
+        "duration": 4.59
+    },
+    {
+        "text": "mentor evan usually published that gives",
+        "start": 3038.24,
+        "duration": 5.67
+    },
+    {
+        "text": "you unbiased transcriptome wide spatial",
+        "start": 3040.88,
+        "duration": 5.43
+    },
+    {
+        "text": "measurements and using logger we can",
+        "start": 3043.91,
+        "duration": 4.62
+    },
+    {
+        "text": "identify the spatial locations in these",
+        "start": 3046.31,
+        "duration": 7.74
+    },
+    {
+        "text": "or clusters in the drop seek data with",
+        "start": 3048.53,
+        "duration": 8.88
+    },
+    {
+        "text": "that I will end and acknowledge the",
+        "start": 3054.05,
+        "duration": 5.25
+    },
+    {
+        "text": "folks in the macaques collab who did the",
+        "start": 3057.41,
+        "duration": 4.5
+    },
+    {
+        "text": "actual experiments valina helped some",
+        "start": 3059.3,
+        "duration": 4.85
+    },
+    {
+        "text": "with coding the liger r package and",
+        "start": 3061.91,
+        "duration": 5.91
+    },
+    {
+        "text": "Marta and RP from Steve McGarrett slab",
+        "start": 3064.15,
+        "duration": 14.44
+    },
+    {
+        "text": "thank you I have a question of that's",
+        "start": 3067.82,
+        "duration": 13.14
+    },
+    {
+        "text": "like you're required to have the same",
+        "start": 3078.59,
+        "duration": 5.01
+    },
+    {
+        "text": "set of genes",
+        "start": 3080.96,
+        "duration": 4.02
+    },
+    {
+        "text": "yes it requires that you have",
+        "start": 3083.6,
+        "duration": 5.22
+    },
+    {
+        "text": "corresponding injures across campuses so",
+        "start": 3084.98,
+        "duration": 7.71
+    },
+    {
+        "text": "following up on that for the kind of",
+        "start": 3088.82,
+        "duration": 6.33
+    },
+    {
+        "text": "attack and RNA integration great kind of",
+        "start": 3092.69,
+        "duration": 4.68
+    },
+    {
+        "text": "which way have you found is best to",
+        "start": 3095.15,
+        "duration": 3.9
+    },
+    {
+        "text": "unify the feature set is it like just",
+        "start": 3097.37,
+        "duration": 3.39
+    },
+    {
+        "text": "taking promoter accessibility or is it",
+        "start": 3099.05,
+        "duration": 3.66
+    },
+    {
+        "text": "taking accessibility or pathology body",
+        "start": 3100.76,
+        "duration": 5.82
+    },
+    {
+        "text": "or yeah I'm actually working on I've",
+        "start": 3102.71,
+        "duration": 6.63
+    },
+    {
+        "text": "seen that out right now I have two data",
+        "start": 3106.58,
+        "duration": 5.4
+    },
+    {
+        "text": "sets and in one data set the gene",
+        "start": 3109.34,
+        "duration": 5.04
+    },
+    {
+        "text": "cluster motor is the best and the other",
+        "start": 3111.98,
+        "duration": 5.82
+    },
+    {
+        "text": "promoter only sees the best but it's not",
+        "start": 3114.38,
+        "duration": 5.31
+    },
+    {
+        "text": "it's not entirely clear why that's the",
+        "start": 3117.8,
+        "duration": 3.92
+    },
+    {
+        "text": "case",
+        "start": 3119.69,
+        "duration": 2.03
+    },
+    {
+        "text": "good so did you do any Studies on one",
+        "start": 3126.19,
+        "duration": 5.65
+    },
+    {
+        "text": "stick we don't get done the same versus",
+        "start": 3130.28,
+        "duration": 4.32
+    },
+    {
+        "text": "on one of imputation works I haven't",
+        "start": 3131.84,
+        "duration": 5.7
+    },
+    {
+        "text": "actually tried it for oh so the only",
+        "start": 3134.6,
+        "duration": 8.72
+    },
+    {
+        "text": "imputation we did was this spatial and",
+        "start": 3137.54,
+        "duration": 9.3
+    },
+    {
+        "text": "so we investigated several ways is this",
+        "start": 3143.32,
+        "duration": 5.41
+    },
+    {
+        "text": "what you're asking about the half",
+        "start": 3146.84,
+        "duration": 4.77
+    },
+    {
+        "text": "station of tradition yeah so just to be",
+        "start": 3148.73,
+        "duration": 4.5
+    },
+    {
+        "text": "clear I haven't actually implemented the",
+        "start": 3151.61,
+        "duration": 5.37
+    },
+    {
+        "text": "weighted and performs imputation on",
+        "start": 3153.23,
+        "duration": 6.72
+    },
+    {
+        "text": "missing data here we did the imputation",
+        "start": 3156.98,
+        "duration": 7.68
+    },
+    {
+        "text": "by identifying for each facial cell it's",
+        "start": 3159.95,
+        "duration": 9.21
+    },
+    {
+        "text": "and nearest drops each cells and then",
+        "start": 3164.66,
+        "duration": 6.63
+    },
+    {
+        "text": "just simply taking the average and that",
+        "start": 3169.16,
+        "duration": 7.29
+    },
+    {
+        "text": "was good enough to get this but we",
+        "start": 3171.29,
+        "duration": 8.09
+    },
+    {
+        "text": "assess this in a couple ways so we tried",
+        "start": 3176.45,
+        "duration": 5.78
+    },
+    {
+        "text": "leaving out one gene at a time and",
+        "start": 3179.38,
+        "duration": 5.8
+    },
+    {
+        "text": "recomputing the factorization and then",
+        "start": 3182.23,
+        "duration": 4.63
+    },
+    {
+        "text": "imputing that missing gene and we",
+        "start": 3185.18,
+        "duration": 4.71
+    },
+    {
+        "text": "compared that to using all of the data",
+        "start": 3186.86,
+        "duration": 5.85
+    },
+    {
+        "text": "and imputing genes that were used in the",
+        "start": 3189.89,
+        "duration": 5.34
+    },
+    {
+        "text": "alignment and we found that the results",
+        "start": 3192.71,
+        "duration": 4.89
+    },
+    {
+        "text": "were essentially identical so we so",
+        "start": 3195.23,
+        "duration": 4.26
+    },
+    {
+        "text": "leaving out genes didn't really change",
+        "start": 3197.6,
+        "duration": 3.82
+    },
+    {
+        "text": "the results at all",
+        "start": 3199.49,
+        "duration": 5.41
+    },
+    {
+        "text": "but comparing the measured genes with",
+        "start": 3201.42,
+        "duration": 5.27
+    },
+    {
+        "text": "their imputed versions",
+        "start": 3204.9,
+        "duration": 4.92
+    },
+    {
+        "text": "dude that we were able to do pretty well",
+        "start": 3206.69,
+        "duration": 7.33
+    },
+    {
+        "text": "another thing we tried was we used a",
+        "start": 3209.82,
+        "duration": 6.54
+    },
+    {
+        "text": "sort of a dumb imputation strategy which",
+        "start": 3214.02,
+        "duration": 4.77
+    },
+    {
+        "text": "was to take the joint clusters and then",
+        "start": 3216.36,
+        "duration": 5.13
+    },
+    {
+        "text": "just simply set the imputed value to",
+        "start": 3218.79,
+        "duration": 5.1
+    },
+    {
+        "text": "being the expression average across the",
+        "start": 3221.49,
+        "duration": 5.07
+    },
+    {
+        "text": "cluster and we found that the mean",
+        "start": 3223.89,
+        "duration": 4.5
+    },
+    {
+        "text": "square error was actually significantly",
+        "start": 3226.56,
+        "duration": 3.63
+    },
+    {
+        "text": "higher when we did that compared when we",
+        "start": 3228.39,
+        "duration": 4.19
+    },
+    {
+        "text": "looked at the twenty here's neighbors",
+        "start": 3230.19,
+        "duration": 19.68
+    },
+    {
+        "text": "across datasets many questions putting",
+        "start": 3232.58,
+        "duration": 20.23
+    },
+    {
+        "text": "in a picture I think a technique when",
+        "start": 3249.87,
+        "duration": 5.43
+    },
+    {
+        "text": "the problem is open there's a few hour",
+        "start": 3252.81,
+        "duration": 12.93
+    },
+    {
+        "text": "delay of the genes right so I've looked",
+        "start": 3255.3,
+        "duration": 12.87
+    },
+    {
+        "text": "at I guess three data sets now do of the",
+        "start": 3265.74,
+        "duration": 4.11
+    },
+    {
+        "text": "data sets are mature fully",
+        "start": 3268.17,
+        "duration": 3.15
+    },
+    {
+        "text": "differentiated cells where there's",
+        "start": 3269.85,
+        "duration": 4.32
+    },
+    {
+        "text": "essentially steady-state no",
+        "start": 3271.32,
+        "duration": 5.61
+    },
+    {
+        "text": "differentiation expected for those cases",
+        "start": 3274.17,
+        "duration": 6.71
+    },
+    {
+        "text": "I haven't seen any examples where the",
+        "start": 3276.93,
+        "duration": 7.76
+    },
+    {
+        "text": "PAC is decoupled from the RNA but I also",
+        "start": 3280.88,
+        "duration": 8.38
+    },
+    {
+        "text": "missed up and I observed that in this",
+        "start": 3284.69,
+        "duration": 7.21
+    },
+    {
+        "text": "data set there's intermediate population",
+        "start": 3289.26,
+        "duration": 4.65
+    },
+    {
+        "text": "which is kind of between two sulfates",
+        "start": 3291.9,
+        "duration": 4.86
+    },
+    {
+        "text": "and that was significantly less",
+        "start": 3293.91,
+        "duration": 4.71
+    },
+    {
+        "text": "correlated with expression than any of",
+        "start": 3296.76,
+        "duration": 4.71
+    },
+    {
+        "text": "the other populations so for that for",
+        "start": 3298.62,
+        "duration": 5.85
+    },
+    {
+        "text": "that case essentially lagger just says",
+        "start": 3301.47,
+        "duration": 6.63
+    },
+    {
+        "text": "these populations are different but yeah",
+        "start": 3304.47,
+        "duration": 4.92
+    },
+    {
+        "text": "that's that's definitely something",
+        "start": 3308.1,
+        "duration": 9.78
+    },
+    {
+        "text": "interesting to look at more the other",
+        "start": 3309.39,
+        "duration": 13.01
+    },
+    {
+        "text": "questions all right",
+        "start": 3317.88,
+        "duration": 4.52
+    },
+    {
+        "text": "[Applause]",
+        "start": 3325.32,
+        "duration": 3.21
+    }
+]

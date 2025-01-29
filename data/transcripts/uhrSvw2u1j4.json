@@ -1,0 +1,5672 @@
+[
+    {
+        "text": "full for this semester but I'm already",
+        "start": 0.03,
+        "duration": 3.45
+    },
+    {
+        "text": "starting to look for people for the fall",
+        "start": 2.31,
+        "duration": 3.509
+    },
+    {
+        "text": "so if anyone's interested please let me",
+        "start": 3.48,
+        "duration": 2.819
+    },
+    {
+        "text": "know",
+        "start": 5.819,
+        "duration": 3.03
+    },
+    {
+        "text": "and with that introduce our speaker so",
+        "start": 6.299,
+        "duration": 5.151
+    },
+    {
+        "text": "today we have a slanty das from",
+        "start": 8.849,
+        "duration": 4.231
+    },
+    {
+        "text": "biostatistics and he's going to talk to",
+        "start": 11.45,
+        "duration": 3.46
+    },
+    {
+        "text": "us about next-generation imputation",
+        "start": 13.08,
+        "duration": 10.47
+    },
+    {
+        "text": "methods alright so today I'm mainly",
+        "start": 14.91,
+        "duration": 10.529
+    },
+    {
+        "text": "going to talk about some of the efforts",
+        "start": 23.55,
+        "duration": 3.569
+    },
+    {
+        "text": "that me and some of our colleagues in",
+        "start": 25.439,
+        "duration": 3.51
+    },
+    {
+        "text": "that department have made like in",
+        "start": 27.119,
+        "duration": 3.631
+    },
+    {
+        "text": "addressing some of the problems in",
+        "start": 28.949,
+        "duration": 3.871
+    },
+    {
+        "text": "next-generation imputation methods they",
+        "start": 30.75,
+        "duration": 4.38
+    },
+    {
+        "text": "particularly like scaling to really big",
+        "start": 32.82,
+        "duration": 5.64
+    },
+    {
+        "text": "data issues arising from different kinds",
+        "start": 35.13,
+        "duration": 7.29
+    },
+    {
+        "text": "of data restrictions for some of the",
+        "start": 38.46,
+        "duration": 6.27
+    },
+    {
+        "text": "topics I usually end up making too many",
+        "start": 42.42,
+        "duration": 4.65
+    },
+    {
+        "text": "slides so if I find that I'm running out",
+        "start": 44.73,
+        "duration": 5.28
+    },
+    {
+        "text": "of time I might skip a few slides so I'm",
+        "start": 47.07,
+        "duration": 4.469
+    },
+    {
+        "text": "going to give an introduction a brief",
+        "start": 50.01,
+        "duration": 3.569
+    },
+    {
+        "text": "review about imputation then we are",
+        "start": 51.539,
+        "duration": 3.691
+    },
+    {
+        "text": "going to talk about mini Mac 3 which is",
+        "start": 53.579,
+        "duration": 3.841
+    },
+    {
+        "text": "one of the commonly used software's for",
+        "start": 55.23,
+        "duration": 5.009
+    },
+    {
+        "text": "imputation one of our imputation servers",
+        "start": 57.42,
+        "duration": 4.979
+    },
+    {
+        "text": "then I'll talk about a few utilities",
+        "start": 60.239,
+        "duration": 4.38
+    },
+    {
+        "text": "like we have like in order to let you",
+        "start": 62.399,
+        "duration": 5.311
+    },
+    {
+        "text": "know aid in the imputation process then",
+        "start": 64.619,
+        "duration": 4.831
+    },
+    {
+        "text": "some ideas about mini Mac 4 and",
+        "start": 67.71,
+        "duration": 4.769
+    },
+    {
+        "text": "conclusion I will try to skip I try to",
+        "start": 69.45,
+        "duration": 4.68
+    },
+    {
+        "text": "skip the details in most of the methods",
+        "start": 72.479,
+        "duration": 3.301
+    },
+    {
+        "text": "and just try to give a brief overview of",
+        "start": 74.13,
+        "duration": 3.36
+    },
+    {
+        "text": "the results and you know like how we are",
+        "start": 75.78,
+        "duration": 5.07
+    },
+    {
+        "text": "trying to address all of the problems so",
+        "start": 77.49,
+        "duration": 6.629
+    },
+    {
+        "text": "just to kind of make a nice segue to the",
+        "start": 80.85,
+        "duration": 6.51
+    },
+    {
+        "text": "topic so we all know about genome-wide",
+        "start": 84.119,
+        "duration": 5.341
+    },
+    {
+        "text": "Association studies in human genetic",
+        "start": 87.36,
+        "duration": 4.049
+    },
+    {
+        "text": "studies the main purpose is to find",
+        "start": 89.46,
+        "duration": 4.199
+    },
+    {
+        "text": "regions on the human genome that might",
+        "start": 91.409,
+        "duration": 4.07
+    },
+    {
+        "text": "be associated with some kind of binary",
+        "start": 93.659,
+        "duration": 3.871
+    },
+    {
+        "text": "disease or some kind of quantitative",
+        "start": 95.479,
+        "duration": 4.631
+    },
+    {
+        "text": "trait and the main method it is quite",
+        "start": 97.53,
+        "duration": 4.769
+    },
+    {
+        "text": "simple we get a big sample of cases and",
+        "start": 100.11,
+        "duration": 4.23
+    },
+    {
+        "text": "controls we find out the genotype of",
+        "start": 102.299,
+        "duration": 3.901
+    },
+    {
+        "text": "these samples all along the genome and",
+        "start": 104.34,
+        "duration": 3.36
+    },
+    {
+        "text": "then we do some kind of statistical",
+        "start": 106.2,
+        "duration": 5.16
+    },
+    {
+        "text": "methods to find out p-values so the Pope",
+        "start": 107.7,
+        "duration": 6.09
+    },
+    {
+        "text": "the second bullet point is that what we",
+        "start": 111.36,
+        "duration": 3.78
+    },
+    {
+        "text": "are going to concert it on today like",
+        "start": 113.79,
+        "duration": 2.969
+    },
+    {
+        "text": "how do we find out the genotype of a",
+        "start": 115.14,
+        "duration": 3.299
+    },
+    {
+        "text": "person so if you know like in general",
+        "start": 116.759,
+        "duration": 3.481
+    },
+    {
+        "text": "there are two ways of finding so one",
+        "start": 118.439,
+        "duration": 3.511
+    },
+    {
+        "text": "either we can do whole genome sequencing",
+        "start": 120.24,
+        "duration": 4.68
+    },
+    {
+        "text": "just sequencing or commercial genotyping",
+        "start": 121.95,
+        "duration": 5.61
+    },
+    {
+        "text": "and I'm sure most of you know what's the",
+        "start": 124.92,
+        "duration": 4.08
+    },
+    {
+        "text": "basic difference but just to give an",
+        "start": 127.56,
+        "duration": 3.419
+    },
+    {
+        "text": "idea making sequencing we usually get",
+        "start": 129.0,
+        "duration": 4.23
+    },
+    {
+        "text": "the whole stretch of the DNA whereas in",
+        "start": 130.979,
+        "duration": 2.971
+    },
+    {
+        "text": "genotyping the",
+        "start": 133.23,
+        "duration": 3.69
+    },
+    {
+        "text": "balance only had some common variants",
+        "start": 133.95,
+        "duration": 5.46
+    },
+    {
+        "text": "and also which are predator mind but of",
+        "start": 136.92,
+        "duration": 4.05
+    },
+    {
+        "text": "course genotyping is really cheap",
+        "start": 139.41,
+        "duration": 3.24
+    },
+    {
+        "text": "whereas sequencing is expensive which is",
+        "start": 140.97,
+        "duration": 3.51
+    },
+    {
+        "text": "why most really big studies they end up",
+        "start": 142.65,
+        "duration": 3.75
+    },
+    {
+        "text": "using chips instead of trying to go to a",
+        "start": 144.48,
+        "duration": 4.95
+    },
+    {
+        "text": "sequencing so this brings us to",
+        "start": 146.4,
+        "duration": 7.199
+    },
+    {
+        "text": "imputation because since in chips 99%",
+        "start": 149.43,
+        "duration": 6.21
+    },
+    {
+        "text": "not I mean different person based on the",
+        "start": 153.599,
+        "duration": 4.14
+    },
+    {
+        "text": "density of the chip but most a big",
+        "start": 155.64,
+        "duration": 3.48
+    },
+    {
+        "text": "percentage of the variants are missing",
+        "start": 157.739,
+        "duration": 2.911
+    },
+    {
+        "text": "on chips therefore we need to impute",
+        "start": 159.12,
+        "duration": 3.3
+    },
+    {
+        "text": "them back or estimate them back and that",
+        "start": 160.65,
+        "duration": 4.41
+    },
+    {
+        "text": "is what we call genotype imputation",
+        "start": 162.42,
+        "duration": 5.46
+    },
+    {
+        "text": "which means missing estimating those",
+        "start": 165.06,
+        "duration": 5.399
+    },
+    {
+        "text": "missing genotypes for samples which were",
+        "start": 167.88,
+        "duration": 5.639
+    },
+    {
+        "text": "typed on chips and trying to do that as",
+        "start": 170.459,
+        "duration": 5.461
+    },
+    {
+        "text": "accurately as we can and this fits us",
+        "start": 173.519,
+        "duration": 4.141
+    },
+    {
+        "text": "because it in helps us increasing power",
+        "start": 175.92,
+        "duration": 3.96
+    },
+    {
+        "text": "of the gos we have a much bigger set of",
+        "start": 177.66,
+        "duration": 4.53
+    },
+    {
+        "text": "variance to analyze it helps in",
+        "start": 179.88,
+        "duration": 3.57
+    },
+    {
+        "text": "meta-analysis mainly we are combining",
+        "start": 182.19,
+        "duration": 2.82
+    },
+    {
+        "text": "you know information across different",
+        "start": 183.45,
+        "duration": 4.23
+    },
+    {
+        "text": "studies for fine mapping again gives us",
+        "start": 185.01,
+        "duration": 4.92
+    },
+    {
+        "text": "a bigger resolution and this weather can",
+        "start": 187.68,
+        "duration": 4.83
+    },
+    {
+        "text": "also be used to estimate inder's or each",
+        "start": 189.93,
+        "duration": 7.68
+    },
+    {
+        "text": "other lilz things like that so this",
+        "start": 192.51,
+        "duration": 7.17
+    },
+    {
+        "text": "brings us to giving a brief review about",
+        "start": 197.61,
+        "duration": 4.89
+    },
+    {
+        "text": "how imputation works so once again",
+        "start": 199.68,
+        "duration": 4.529
+    },
+    {
+        "text": "coming back to the original problem so",
+        "start": 202.5,
+        "duration": 3.48
+    },
+    {
+        "text": "we have a sample that was typed on an",
+        "start": 204.209,
+        "duration": 4.891
+    },
+    {
+        "text": "array and most of it is missing and we",
+        "start": 205.98,
+        "duration": 5.97
+    },
+    {
+        "text": "need to include those missing values and",
+        "start": 209.1,
+        "duration": 5.009
+    },
+    {
+        "text": "the intuition behind imputation is that",
+        "start": 211.95,
+        "duration": 4.409
+    },
+    {
+        "text": "we know that if two samples they are",
+        "start": 214.109,
+        "duration": 4.201
+    },
+    {
+        "text": "related they end up sharing long",
+        "start": 216.359,
+        "duration": 3.901
+    },
+    {
+        "text": "stretches of haplotypes from the common",
+        "start": 218.31,
+        "duration": 4.86
+    },
+    {
+        "text": "ancestor however even if individuals are",
+        "start": 220.26,
+        "duration": 6.18
+    },
+    {
+        "text": "unrelated we drop from the same ancestry",
+        "start": 223.17,
+        "duration": 5.73
+    },
+    {
+        "text": "there's they they're still expected to",
+        "start": 226.44,
+        "duration": 4.23
+    },
+    {
+        "text": "share short stretches of chromosome",
+        "start": 228.9,
+        "duration": 3.75
+    },
+    {
+        "text": "between themselves and that is the main",
+        "start": 230.67,
+        "duration": 5.219
+    },
+    {
+        "text": "idea that we use we bring a huge being a",
+        "start": 232.65,
+        "duration": 5.25
+    },
+    {
+        "text": "big reference panel that has densely",
+        "start": 235.889,
+        "duration": 5.011
+    },
+    {
+        "text": "sequence individuals and we try to match",
+        "start": 237.9,
+        "duration": 5.91
+    },
+    {
+        "text": "this sample to the samples in the",
+        "start": 240.9,
+        "duration": 4.47
+    },
+    {
+        "text": "reference panel using only the type",
+        "start": 243.81,
+        "duration": 3.989
+    },
+    {
+        "text": "sites and thereby try to impute the",
+        "start": 245.37,
+        "duration": 6.57
+    },
+    {
+        "text": "sites in between so for example just to",
+        "start": 247.799,
+        "duration": 6.211
+    },
+    {
+        "text": "give a brief I like intuition what we do",
+        "start": 251.94,
+        "duration": 3.96
+    },
+    {
+        "text": "like say for example this is a sample",
+        "start": 254.01,
+        "duration": 3.96
+    },
+    {
+        "text": "that's typed on an array and here we",
+        "start": 255.9,
+        "duration": 4.5
+    },
+    {
+        "text": "have a big reference panel of densely",
+        "start": 257.97,
+        "duration": 4.53
+    },
+    {
+        "text": "sequence individuals so the idea is to",
+        "start": 260.4,
+        "duration": 4.949
+    },
+    {
+        "text": "like find segments of shared stretches",
+        "start": 262.5,
+        "duration": 4.8
+    },
+    {
+        "text": "of haplotypes between the sample and the",
+        "start": 265.349,
+        "duration": 2.281
+    },
+    {
+        "text": "G",
+        "start": 267.3,
+        "duration": 2.19
+    },
+    {
+        "text": "Spaniel for example if you observe here",
+        "start": 267.63,
+        "duration": 5.04
+    },
+    {
+        "text": "the first three L is TG NT they match",
+        "start": 269.49,
+        "duration": 4.86
+    },
+    {
+        "text": "with the second haplotype in the panel",
+        "start": 272.67,
+        "duration": 5.79
+    },
+    {
+        "text": "and but the fourth one C the C doesn't",
+        "start": 274.35,
+        "duration": 6.48
+    },
+    {
+        "text": "match with the G over here so we then",
+        "start": 278.46,
+        "duration": 4.32
+    },
+    {
+        "text": "try to match it next and we see that the",
+        "start": 280.83,
+        "duration": 3.9
+    },
+    {
+        "text": "C C and G kind of mat matches with the",
+        "start": 282.78,
+        "duration": 4.71
+    },
+    {
+        "text": "CC over here so we assume that you know",
+        "start": 284.73,
+        "duration": 4.71
+    },
+    {
+        "text": "it matches with that stretch over there",
+        "start": 287.49,
+        "duration": 5.85
+    },
+    {
+        "text": "and we keep going on like that so the",
+        "start": 289.44,
+        "duration": 5.76
+    },
+    {
+        "text": "idea is that this whole big sample our",
+        "start": 293.34,
+        "duration": 5.49
+    },
+    {
+        "text": "diva sample it shares this part from the",
+        "start": 295.2,
+        "duration": 5.22
+    },
+    {
+        "text": "second haplotype this part from the",
+        "start": 298.83,
+        "duration": 4.56
+    },
+    {
+        "text": "fifth haplotype and so on and this will",
+        "start": 300.42,
+        "duration": 4.77
+    },
+    {
+        "text": "help us to impute the sites in between",
+        "start": 303.39,
+        "duration": 4.41
+    },
+    {
+        "text": "where we can kind of copy the alleles",
+        "start": 305.19,
+        "duration": 6.06
+    },
+    {
+        "text": "from the sites in between now of course",
+        "start": 307.8,
+        "duration": 5.16
+    },
+    {
+        "text": "the things aren't as simple as that",
+        "start": 311.25,
+        "duration": 3.48
+    },
+    {
+        "text": "because we don't always find exact",
+        "start": 312.96,
+        "duration": 4.23
+    },
+    {
+        "text": "matches even if we do we might find",
+        "start": 314.73,
+        "duration": 6.42
+    },
+    {
+        "text": "multiple matches and which is why you",
+        "start": 317.19,
+        "duration": 6.15
+    },
+    {
+        "text": "know they think sine always discreet",
+        "start": 321.15,
+        "duration": 3.78
+    },
+    {
+        "text": "like this but which is why we have to",
+        "start": 323.34,
+        "duration": 3.51
+    },
+    {
+        "text": "bring in probability or probabilistic",
+        "start": 324.93,
+        "duration": 6.45
+    },
+    {
+        "text": "models and this is I won't go into the",
+        "start": 326.85,
+        "duration": 6.21
+    },
+    {
+        "text": "details of what the model does but just",
+        "start": 331.38,
+        "duration": 4.08
+    },
+    {
+        "text": "to give an idea like you so Markov model",
+        "start": 333.06,
+        "duration": 4.62
+    },
+    {
+        "text": "is something that Musa first know it's",
+        "start": 335.46,
+        "duration": 5.49
+    },
+    {
+        "text": "kind of its kind of a statistical",
+        "start": 337.68,
+        "duration": 6.54
+    },
+    {
+        "text": "process that moves we have H 1 H 2 H M",
+        "start": 340.95,
+        "duration": 6.81
+    },
+    {
+        "text": "each of the H is depend only on the last",
+        "start": 344.22,
+        "duration": 5.19
+    },
+    {
+        "text": "one then the idea of a Markov model is",
+        "start": 347.76,
+        "duration": 4.95
+    },
+    {
+        "text": "that if you condition on H 1 to H I",
+        "start": 349.41,
+        "duration": 6.15
+    },
+    {
+        "text": "minus 1 the distribution of H I only",
+        "start": 352.71,
+        "duration": 5.31
+    },
+    {
+        "text": "depends on the last position H I minus 1",
+        "start": 355.56,
+        "duration": 5.46
+    },
+    {
+        "text": "it doesn't depend on anything else what",
+        "start": 358.02,
+        "duration": 4.74
+    },
+    {
+        "text": "we use for imputation is called the",
+        "start": 361.02,
+        "duration": 3.39
+    },
+    {
+        "text": "hidden Markov model which is similar to",
+        "start": 362.76,
+        "duration": 4.8
+    },
+    {
+        "text": "a Markov model but the underlying markov",
+        "start": 364.41,
+        "duration": 5.34
+    },
+    {
+        "text": "model that was done process that was",
+        "start": 367.56,
+        "duration": 4.11
+    },
+    {
+        "text": "happening that gets hidden we don't",
+        "start": 369.75,
+        "duration": 5.25
+    },
+    {
+        "text": "observe those variables instead each of",
+        "start": 371.67,
+        "duration": 5.88
+    },
+    {
+        "text": "these variables H 1 H 2 H M they emit",
+        "start": 375.0,
+        "duration": 4.98
+    },
+    {
+        "text": "some other variable si based on a",
+        "start": 377.55,
+        "duration": 5.73
+    },
+    {
+        "text": "distribution if I give an H I and we",
+        "start": 379.98,
+        "duration": 6.24
+    },
+    {
+        "text": "observe these variables instead and the",
+        "start": 383.28,
+        "duration": 4.95
+    },
+    {
+        "text": "idea is that we try to make inferences",
+        "start": 386.22,
+        "duration": 5.1
+    },
+    {
+        "text": "about the underlying H is based on what",
+        "start": 388.23,
+        "duration": 6.72
+    },
+    {
+        "text": "we observe so this is called the usually",
+        "start": 391.32,
+        "duration": 5.55
+    },
+    {
+        "text": "remark of a hidden Markov model has two",
+        "start": 394.95,
+        "duration": 3.96
+    },
+    {
+        "text": "main parameters it has the transition",
+        "start": 396.87,
+        "duration": 4.41
+    },
+    {
+        "text": "function that comes from usual Markov",
+        "start": 398.91,
+        "duration": 5.7
+    },
+    {
+        "text": "which describes how age variables depend",
+        "start": 401.28,
+        "duration": 6.39
+    },
+    {
+        "text": "on the one before it and we have a",
+        "start": 404.61,
+        "duration": 5.88
+    },
+    {
+        "text": "emission probability well zero to what I",
+        "start": 407.67,
+        "duration": 4.8
+    },
+    {
+        "text": "in general I mean yeah I should",
+        "start": 410.49,
+        "duration": 3.57
+    },
+    {
+        "text": "introduce the phenotype over here just",
+        "start": 412.47,
+        "duration": 3.39
+    },
+    {
+        "text": "in general their emission probabilities",
+        "start": 414.06,
+        "duration": 4.38
+    },
+    {
+        "text": "where which describes how the variables",
+        "start": 415.86,
+        "duration": 4.5
+    },
+    {
+        "text": "in size are emitted from the H is and",
+        "start": 418.44,
+        "duration": 4.38
+    },
+    {
+        "text": "the reason each ms are used for",
+        "start": 420.36,
+        "duration": 5.01
+    },
+    {
+        "text": "imputation is because this already good",
+        "start": 422.82,
+        "duration": 4.53
+    },
+    {
+        "text": "existing literature on how to like do",
+        "start": 425.37,
+        "duration": 3.99
+    },
+    {
+        "text": "parameter estimation using n algorithms",
+        "start": 427.35,
+        "duration": 5.85
+    },
+    {
+        "text": "or Markov chain processes and they all",
+        "start": 429.36,
+        "duration": 6.51
+    },
+    {
+        "text": "we focus mean to make the efficient in",
+        "start": 433.2,
+        "duration": 4.86
+    },
+    {
+        "text": "terms of complexity and it fits very",
+        "start": 435.87,
+        "duration": 5.28
+    },
+    {
+        "text": "well in our imputation setup so I can",
+        "start": 438.06,
+        "duration": 5.19
+    },
+    {
+        "text": "see we can understand that the a size",
+        "start": 441.15,
+        "duration": 3.72
+    },
+    {
+        "text": "are going to be our observed genotypes",
+        "start": 443.25,
+        "duration": 4.86
+    },
+    {
+        "text": "which we get from the array where as HS",
+        "start": 444.87,
+        "duration": 4.47
+    },
+    {
+        "text": "are going to be the underlying",
+        "start": 448.11,
+        "duration": 4.04
+    },
+    {
+        "text": "haplotypes which we are going to",
+        "start": 449.34,
+        "duration": 4.92
+    },
+    {
+        "text": "estimate and that is going to give us",
+        "start": 452.15,
+        "duration": 7.989
+    },
+    {
+        "text": "the imputed results so that leads us to",
+        "start": 454.26,
+        "duration": 8.43
+    },
+    {
+        "text": "minimize 3 which is one of the commonly",
+        "start": 460.139,
+        "duration": 4.951
+    },
+    {
+        "text": "used tools that people use nowadays for",
+        "start": 462.69,
+        "duration": 5.43
+    },
+    {
+        "text": "imputation just reduce how many make",
+        "start": 465.09,
+        "duration": 4.62
+    },
+    {
+        "text": "three came into being it is actually the",
+        "start": 468.12,
+        "duration": 3.27
+    },
+    {
+        "text": "fourth version in a series of imputation",
+        "start": 469.71,
+        "duration": 4.17
+    },
+    {
+        "text": "tools that people from our department",
+        "start": 471.39,
+        "duration": 5.1
+    },
+    {
+        "text": "has been working on in 2010 newly",
+        "start": 473.88,
+        "duration": 5.7
+    },
+    {
+        "text": "developed Mac which used to do facing as",
+        "start": 476.49,
+        "duration": 5.46
+    },
+    {
+        "text": "well as imputation then mini Mac was",
+        "start": 479.58,
+        "duration": 4.26
+    },
+    {
+        "text": "first developed and it came in it came",
+        "start": 481.95,
+        "duration": 5.07
+    },
+    {
+        "text": "in on 2012 Patricia on the second",
+        "start": 483.84,
+        "duration": 6.449
+    },
+    {
+        "text": "function of mini Mac let me listen 2014",
+        "start": 487.02,
+        "duration": 5.399
+    },
+    {
+        "text": "and mini make three copies last year",
+        "start": 490.289,
+        "duration": 6.481
+    },
+    {
+        "text": "some checking the middle the they're all",
+        "start": 492.419,
+        "duration": 6.12
+    },
+    {
+        "text": "of the same kind indices they all work",
+        "start": 496.77,
+        "duration": 3.33
+    },
+    {
+        "text": "on the same idea of feeder mark of",
+        "start": 498.539,
+        "duration": 3.361
+    },
+    {
+        "text": "models but slight modifications have",
+        "start": 500.1,
+        "duration": 3.3
+    },
+    {
+        "text": "been made over time just to make them",
+        "start": 501.9,
+        "duration": 3.9
+    },
+    {
+        "text": "more and more efficient just to give a",
+        "start": 503.4,
+        "duration": 3.63
+    },
+    {
+        "text": "brief summary like you know what has",
+        "start": 505.8,
+        "duration": 8.97
+    },
+    {
+        "text": "been done in general so the final aim is",
+        "start": 507.03,
+        "duration": 9.84
+    },
+    {
+        "text": "to find out for each marker and",
+        "start": 514.77,
+        "duration": 4.8
+    },
+    {
+        "text": "specifically for each untyped marker to",
+        "start": 516.87,
+        "duration": 4.38
+    },
+    {
+        "text": "find out the posterior probability of",
+        "start": 519.57,
+        "duration": 6.66
+    },
+    {
+        "text": "each of the states the H is and this or",
+        "start": 521.25,
+        "duration": 8.339
+    },
+    {
+        "text": "if we have you know the complexity of",
+        "start": 526.23,
+        "duration": 5.66
+    },
+    {
+        "text": "this is going to be number of states",
+        "start": 529.589,
+        "duration": 5.151
+    },
+    {
+        "text": "times the number of markers",
+        "start": 531.89,
+        "duration": 5.74
+    },
+    {
+        "text": "so this is the difference between Mac",
+        "start": 534.74,
+        "duration": 6.43
+    },
+    {
+        "text": "and mini Mac comes up so people when met",
+        "start": 537.63,
+        "duration": 5.64
+    },
+    {
+        "text": "what's that we the idea was that it",
+        "start": 541.17,
+        "duration": 4.859
+    },
+    {
+        "text": "would take in unphased genotypes and so",
+        "start": 543.27,
+        "duration": 4.92
+    },
+    {
+        "text": "do phasing as well as imputation at the",
+        "start": 546.029,
+        "duration": 4.891
+    },
+    {
+        "text": "same time as their hidden state space",
+        "start": 548.19,
+        "duration": 4.709
+    },
+    {
+        "text": "for Mac was every pair of haplotype",
+        "start": 550.92,
+        "duration": 4.83
+    },
+    {
+        "text": "because we're trying to impute butta",
+        "start": 552.899,
+        "duration": 4.591
+    },
+    {
+        "text": "products at the same time and therefore",
+        "start": 555.75,
+        "duration": 4.8
+    },
+    {
+        "text": "for each for handling states are every",
+        "start": 557.49,
+        "duration": 5.31
+    },
+    {
+        "text": "possible pair of haplotype when it's in",
+        "start": 560.55,
+        "duration": 4.86
+    },
+    {
+        "text": "mini Mac the idea was that it was",
+        "start": 562.8,
+        "duration": 4.68
+    },
+    {
+        "text": "assumed that we can just face samples",
+        "start": 565.41,
+        "duration": 4.23
+    },
+    {
+        "text": "before instead of computing them and",
+        "start": 567.48,
+        "duration": 4.41
+    },
+    {
+        "text": "then use of spheres haplotypes through",
+        "start": 569.64,
+        "duration": 4.38
+    },
+    {
+        "text": "the imputation process that way we are",
+        "start": 571.89,
+        "duration": 3.93
+    },
+    {
+        "text": "imputing into half the types and not",
+        "start": 574.02,
+        "duration": 4.77
+    },
+    {
+        "text": "genotypes in that case the hidden state",
+        "start": 575.82,
+        "duration": 4.86
+    },
+    {
+        "text": "space becomes every reference haplotype",
+        "start": 578.79,
+        "duration": 7.89
+    },
+    {
+        "text": "and not every pair of haplotype so",
+        "start": 580.68,
+        "duration": 9.87
+    },
+    {
+        "text": "facing means so we do you have when you",
+        "start": 586.68,
+        "duration": 5.79
+    },
+    {
+        "text": "have genotypes of samples one after the",
+        "start": 590.55,
+        "duration": 5.039
+    },
+    {
+        "text": "other so the T it actually exists is to",
+        "start": 592.47,
+        "duration": 6.119
+    },
+    {
+        "text": "haplotypes right so if I say that you",
+        "start": 595.589,
+        "duration": 4.531
+    },
+    {
+        "text": "know for one has a beginning as small a",
+        "start": 598.589,
+        "duration": 3.06
+    },
+    {
+        "text": "and the second one has a big B and a",
+        "start": 600.12,
+        "duration": 3.779
+    },
+    {
+        "text": "small B it could be either that the",
+        "start": 601.649,
+        "duration": 4.081
+    },
+    {
+        "text": "capital the big letters are together and",
+        "start": 603.899,
+        "duration": 3.211
+    },
+    {
+        "text": "the smaller ones are together or it",
+        "start": 605.73,
+        "duration": 3.45
+    },
+    {
+        "text": "could be the opposite way so the phasing",
+        "start": 607.11,
+        "duration": 3.99
+    },
+    {
+        "text": "determines what you know what alignment",
+        "start": 609.18,
+        "duration": 5.76
+    },
+    {
+        "text": "they are like it essentially means like",
+        "start": 611.1,
+        "duration": 6.66
+    },
+    {
+        "text": "you get the haplotypes and you you just",
+        "start": 614.94,
+        "duration": 4.769
+    },
+    {
+        "text": "don't it's not that you just know that",
+        "start": 617.76,
+        "duration": 4.23
+    },
+    {
+        "text": "genotype 0 1 or B get smaller like that",
+        "start": 619.709,
+        "duration": 3.87
+    },
+    {
+        "text": "but you know which half the time they're",
+        "start": 621.99,
+        "duration": 9.3
+    },
+    {
+        "text": "lying does that make sense so the mini",
+        "start": 623.579,
+        "duration": 9.541
+    },
+    {
+        "text": "Mac introduced this idea of prefacing",
+        "start": 631.29,
+        "duration": 4.44
+    },
+    {
+        "text": "that when you have genotype if de you",
+        "start": 633.12,
+        "duration": 5.49
+    },
+    {
+        "text": "know just don't try to face and impute",
+        "start": 635.73,
+        "duration": 5.01
+    },
+    {
+        "text": "them at the same time instead face them",
+        "start": 638.61,
+        "duration": 4.56
+    },
+    {
+        "text": "first and then impute them and that way",
+        "start": 640.74,
+        "duration": 5.159
+    },
+    {
+        "text": "mini map was developed and since the",
+        "start": 643.17,
+        "duration": 5.22
+    },
+    {
+        "text": "state space reduces it it was you know",
+        "start": 645.899,
+        "duration": 4.591
+    },
+    {
+        "text": "now instead of doing aim times H square",
+        "start": 648.39,
+        "duration": 4.02
+    },
+    {
+        "text": "so one important point that the H over",
+        "start": 650.49,
+        "duration": 4.62
+    },
+    {
+        "text": "here denotes the number of half-lives in",
+        "start": 652.41,
+        "duration": 4.77
+    },
+    {
+        "text": "the difference manner and that is",
+        "start": 655.11,
+        "duration": 5.82
+    },
+    {
+        "text": "usually around thousands so a square is",
+        "start": 657.18,
+        "duration": 6.06
+    },
+    {
+        "text": "a big difference so H square is really",
+        "start": 660.93,
+        "duration": 4.26
+    },
+    {
+        "text": "big compared to H and which is why when",
+        "start": 663.24,
+        "duration": 3.81
+    },
+    {
+        "text": "minimax was tablet was much faster than",
+        "start": 665.19,
+        "duration": 2.42
+    },
+    {
+        "text": "Mac",
+        "start": 667.05,
+        "duration": 5.09
+    },
+    {
+        "text": "and with many Mac - it wasn't any kind",
+        "start": 667.61,
+        "duration": 7.23
+    },
+    {
+        "text": "of new genetic algorithm but Christian",
+        "start": 672.14,
+        "duration": 3.78
+    },
+    {
+        "text": "mainly worked on software engineering",
+        "start": 674.84,
+        "duration": 5.39
+    },
+    {
+        "text": "techniques like using a lot of",
+        "start": 675.92,
+        "duration": 7.32
+    },
+    {
+        "text": "visualizations are transposing the",
+        "start": 680.23,
+        "duration": 5.07
+    },
+    {
+        "text": "reference panel",
+        "start": 683.24,
+        "duration": 4.29
+    },
+    {
+        "text": "what are you threading automating",
+        "start": 685.3,
+        "duration": 3.67
+    },
+    {
+        "text": "multi-threading and stuff like that and",
+        "start": 687.53,
+        "duration": 3.81
+    },
+    {
+        "text": "based on that minimize to was found to",
+        "start": 688.97,
+        "duration": 8.51
+    },
+    {
+        "text": "be 18 times faster than many Mac Mini 3",
+        "start": 691.34,
+        "duration": 10.23
+    },
+    {
+        "text": "so when effect 3 in spite of its PI",
+        "start": 697.48,
+        "duration": 6.79
+    },
+    {
+        "text": "tough you know around 2012 me miss to",
+        "start": 701.57,
+        "duration": 5.97
+    },
+    {
+        "text": "being quite fast so using some of the",
+        "start": 704.27,
+        "duration": 4.53
+    },
+    {
+        "text": "imputation methods using the current",
+        "start": 707.54,
+        "duration": 4.29
+    },
+    {
+        "text": "reference panel was we still take four",
+        "start": 708.8,
+        "duration": 6.27
+    },
+    {
+        "text": "years to impute just one sample so HRC",
+        "start": 711.83,
+        "duration": 5.19
+    },
+    {
+        "text": "is a reference panel just like thousand",
+        "start": 715.07,
+        "duration": 5.16
+    },
+    {
+        "text": "genomes or hapmap it's just is a very",
+        "start": 717.02,
+        "duration": 5.7
+    },
+    {
+        "text": "modern reference planner it has 30,000",
+        "start": 720.23,
+        "duration": 3.84
+    },
+    {
+        "text": "samples whereas the thousand genomes",
+        "start": 722.72,
+        "duration": 5.82
+    },
+    {
+        "text": "only had like 2,000 samples so and in",
+        "start": 724.07,
+        "duration": 5.88
+    },
+    {
+        "text": "the previous slide since you saw that",
+        "start": 728.54,
+        "duration": 3.03
+    },
+    {
+        "text": "the complexities depends on the number",
+        "start": 729.95,
+        "duration": 4.11
+    },
+    {
+        "text": "of panels so the more reference - you",
+        "start": 731.57,
+        "duration": 4.02
+    },
+    {
+        "text": "have more the size of the reference",
+        "start": 734.06,
+        "duration": 3.3
+    },
+    {
+        "text": "panel the more time it will take of",
+        "start": 735.59,
+        "duration": 3.93
+    },
+    {
+        "text": "course increases accuracy of the",
+        "start": 737.36,
+        "duration": 6.17
+    },
+    {
+        "text": "imputation so this kind of gives us",
+        "start": 739.52,
+        "duration": 7.14
+    },
+    {
+        "text": "motivation to find out another faster",
+        "start": 743.53,
+        "duration": 5.35
+    },
+    {
+        "text": "method to do imputation but instead of",
+        "start": 746.66,
+        "duration": 5.67
+    },
+    {
+        "text": "bringing it down the accuracy so I'm",
+        "start": 748.88,
+        "duration": 4.98
+    },
+    {
+        "text": "just going to give a brief idea about",
+        "start": 752.33,
+        "duration": 4.02
+    },
+    {
+        "text": "state-space reduction which is the idea",
+        "start": 753.86,
+        "duration": 3.96
+    },
+    {
+        "text": "of reducing the state space of the",
+        "start": 756.35,
+        "duration": 3.9
+    },
+    {
+        "text": "hidden Markov model the ideas that are",
+        "start": 757.82,
+        "duration": 5.04
+    },
+    {
+        "text": "in small genomic regions the number of",
+        "start": 760.25,
+        "duration": 4.71
+    },
+    {
+        "text": "unique haplotypes is much less than the",
+        "start": 762.86,
+        "duration": 4.05
+    },
+    {
+        "text": "total number of haplotypes and it",
+        "start": 764.96,
+        "duration": 3.93
+    },
+    {
+        "text": "suffices to just analyze those unique",
+        "start": 766.91,
+        "duration": 3.99
+    },
+    {
+        "text": "haplotypes instead of all the different",
+        "start": 768.89,
+        "duration": 7.85
+    },
+    {
+        "text": "subtypes I can take like give an example",
+        "start": 770.9,
+        "duration": 8.88
+    },
+    {
+        "text": "if you have is a reference panel with",
+        "start": 776.74,
+        "duration": 6.82
+    },
+    {
+        "text": "nine habits and 37 markers and we found",
+        "start": 779.78,
+        "duration": 5.88
+    },
+    {
+        "text": "out that in the previous version in the",
+        "start": 783.56,
+        "duration": 3.9
+    },
+    {
+        "text": "previous of meaning like the latest",
+        "start": 785.66,
+        "duration": 4.59
+    },
+    {
+        "text": "complexity was H times M so that would",
+        "start": 787.46,
+        "duration": 6.62
+    },
+    {
+        "text": "be due to 53 constant operations when we",
+        "start": 790.25,
+        "duration": 8.19
+    },
+    {
+        "text": "set up what we observe is that we first",
+        "start": 794.08,
+        "duration": 6.04
+    },
+    {
+        "text": "become the whole panel the whole",
+        "start": 798.44,
+        "duration": 2.72
+    },
+    {
+        "text": "reference the",
+        "start": 800.12,
+        "duration": 3.14
+    },
+    {
+        "text": "some into for example in this case we",
+        "start": 801.16,
+        "duration": 4.47
+    },
+    {
+        "text": "break it up into three segments in the",
+        "start": 803.26,
+        "duration": 4.77
+    },
+    {
+        "text": "first segment we notice that all the we",
+        "start": 805.63,
+        "duration": 3.69
+    },
+    {
+        "text": "have nine haplotypes there are only",
+        "start": 808.03,
+        "duration": 3.09
+    },
+    {
+        "text": "three of them are unique for example the",
+        "start": 809.32,
+        "duration": 4.08
+    },
+    {
+        "text": "first four are exactly same the second",
+        "start": 811.12,
+        "duration": 4.53
+    },
+    {
+        "text": "two segments are again same and sorted",
+        "start": 813.4,
+        "duration": 8.4
+    },
+    {
+        "text": "so this is one but anyways similarly if",
+        "start": 815.65,
+        "duration": 10.02
+    },
+    {
+        "text": "we move on to next two segments we find",
+        "start": 821.8,
+        "duration": 6.81
+    },
+    {
+        "text": "that in segments the number of",
+        "start": 825.67,
+        "duration": 4.38
+    },
+    {
+        "text": "haplotypes are much less and this",
+        "start": 828.61,
+        "duration": 2.76
+    },
+    {
+        "text": "happens because of linkage between",
+        "start": 830.05,
+        "duration": 3.03
+    },
+    {
+        "text": "variants that are very close to each",
+        "start": 831.37,
+        "duration": 4.86
+    },
+    {
+        "text": "other so the idea is that instead of the",
+        "start": 833.08,
+        "duration": 5.97
+    },
+    {
+        "text": "nine haplotypes that 27 markers we can",
+        "start": 836.23,
+        "duration": 4.83
+    },
+    {
+        "text": "compress or reduce the state space so",
+        "start": 839.05,
+        "duration": 5.1
+    },
+    {
+        "text": "that we kind of end up with only three",
+        "start": 841.06,
+        "duration": 5.67
+    },
+    {
+        "text": "haplotypes preferring the first block we",
+        "start": 844.15,
+        "duration": 4.2
+    },
+    {
+        "text": "have seven markers and three haplotypes",
+        "start": 846.73,
+        "duration": 5.1
+    },
+    {
+        "text": "so that gives us 21 operations in the",
+        "start": 848.35,
+        "duration": 5.88
+    },
+    {
+        "text": "first segment in the second one we have",
+        "start": 851.83,
+        "duration": 5.16
+    },
+    {
+        "text": "12 times 4 and we have 8 times 3 over",
+        "start": 854.23,
+        "duration": 6.3
+    },
+    {
+        "text": "here so initially when we had to do 243",
+        "start": 856.99,
+        "duration": 5.43
+    },
+    {
+        "text": "operations now we have to do only 93",
+        "start": 860.53,
+        "duration": 3.36
+    },
+    {
+        "text": "operations which is like a quarter of",
+        "start": 862.42,
+        "duration": 4.5
+    },
+    {
+        "text": "that and of course this you know 50",
+        "start": 863.89,
+        "duration": 4.68
+    },
+    {
+        "text": "times faster isn't that big a deal but",
+        "start": 866.92,
+        "duration": 3.27
+    },
+    {
+        "text": "these ratios are much higher in real",
+        "start": 868.57,
+        "duration": 5.07
+    },
+    {
+        "text": "life examples but one important thing I",
+        "start": 870.19,
+        "duration": 5.43
+    },
+    {
+        "text": "miss that hidden Markov model usually",
+        "start": 873.64,
+        "duration": 4.14
+    },
+    {
+        "text": "works as a recursion so whenever we make",
+        "start": 875.62,
+        "duration": 4.89
+    },
+    {
+        "text": "these breaks over here it kind of breaks",
+        "start": 877.78,
+        "duration": 4.2
+    },
+    {
+        "text": "affection because for example this",
+        "start": 880.51,
+        "duration": 3.09
+    },
+    {
+        "text": "haplotype did not have any existence",
+        "start": 881.98,
+        "duration": 3.66
+    },
+    {
+        "text": "over here which is what you have to do",
+        "start": 883.6,
+        "duration": 5.84
+    },
+    {
+        "text": "some calculations at these junctions and",
+        "start": 885.64,
+        "duration": 9.0
+    },
+    {
+        "text": "yeah so this calculation that is going",
+        "start": 889.44,
+        "duration": 7.36
+    },
+    {
+        "text": "to add a few more calculations over",
+        "start": 894.64,
+        "duration": 5.25
+    },
+    {
+        "text": "there so this is just a schematic",
+        "start": 896.8,
+        "duration": 5.43
+    },
+    {
+        "text": "diagram of what we do in mini Mac 3 I",
+        "start": 899.89,
+        "duration": 3.78
+    },
+    {
+        "text": "won't go into the details of the",
+        "start": 902.23,
+        "duration": 4.65
+    },
+    {
+        "text": "formulas we take a segment we find the",
+        "start": 903.67,
+        "duration": 4.86
+    },
+    {
+        "text": "unique haplotype in that segment for",
+        "start": 906.88,
+        "duration": 2.79
+    },
+    {
+        "text": "example over here",
+        "start": 908.53,
+        "duration": 3.03
+    },
+    {
+        "text": "you know we end up with only 3 main box",
+        "start": 909.67,
+        "duration": 6.03
+    },
+    {
+        "text": "and we sorry we do for the probabilities",
+        "start": 911.56,
+        "duration": 6.63
+    },
+    {
+        "text": "we use the term fold because the state",
+        "start": 915.7,
+        "duration": 4.44
+    },
+    {
+        "text": "space is kind of being reduced initially",
+        "start": 918.19,
+        "duration": 5.43
+    },
+    {
+        "text": "with 9 now we have 3 model as a",
+        "start": 920.14,
+        "duration": 5.13
+    },
+    {
+        "text": "recursion only across these three",
+        "start": 923.62,
+        "duration": 4.2
+    },
+    {
+        "text": "haplotypes the three unique haplotypes",
+        "start": 925.27,
+        "duration": 4.71
+    },
+    {
+        "text": "and once we reach the end position you",
+        "start": 927.82,
+        "duration": 4.74
+    },
+    {
+        "text": "can unfold them back we call them again",
+        "start": 929.98,
+        "duration": 3.87
+    },
+    {
+        "text": "uncertainty because now we are coming",
+        "start": 932.56,
+        "duration": 1.75
+    },
+    {
+        "text": "back",
+        "start": 933.85,
+        "duration": 2.11
+    },
+    {
+        "text": "from the smaller space to the bigger",
+        "start": 934.31,
+        "duration": 4.26
+    },
+    {
+        "text": "space and again we move on to the next",
+        "start": 935.96,
+        "duration": 6.18
+    },
+    {
+        "text": "vlog so that way it kind of keeps",
+        "start": 938.57,
+        "duration": 8.85
+    },
+    {
+        "text": "working as a recursion yes that's a good",
+        "start": 942.14,
+        "duration": 8.55
+    },
+    {
+        "text": "question so the boundary is comes as we",
+        "start": 947.42,
+        "duration": 5.52
+    },
+    {
+        "text": "optimize a cost function so that problem",
+        "start": 950.69,
+        "duration": 4.89
+    },
+    {
+        "text": "the point is that if the box up top a",
+        "start": 952.94,
+        "duration": 4.89
+    },
+    {
+        "text": "the number of unique haplotypes is",
+        "start": 955.58,
+        "duration": 3.96
+    },
+    {
+        "text": "almost same to the number of total",
+        "start": 957.83,
+        "duration": 3.27
+    },
+    {
+        "text": "number of heretics so we are not gaining",
+        "start": 959.54,
+        "duration": 4.26
+    },
+    {
+        "text": "much right same thing with the box are",
+        "start": 961.1,
+        "duration": 5.01
+    },
+    {
+        "text": "too small the unique half is really less",
+        "start": 963.8,
+        "duration": 4.289
+    },
+    {
+        "text": "but you would have too many blocks and",
+        "start": 966.11,
+        "duration": 5.16
+    },
+    {
+        "text": "if this step the unfolding probabilities",
+        "start": 968.089,
+        "duration": 4.861
+    },
+    {
+        "text": "you know the steps we have to do at the",
+        "start": 971.27,
+        "duration": 3.81
+    },
+    {
+        "text": "junctions that's a very expensive step",
+        "start": 972.95,
+        "duration": 5.34
+    },
+    {
+        "text": "because we are doing that at all the",
+        "start": 975.08,
+        "duration": 5.4
+    },
+    {
+        "text": "original haplotypes at the order of age",
+        "start": 978.29,
+        "duration": 4.83
+    },
+    {
+        "text": "so if you have too many blocks we are",
+        "start": 980.48,
+        "duration": 4.109
+    },
+    {
+        "text": "having too many calculations of the",
+        "start": 983.12,
+        "duration": 3.93
+    },
+    {
+        "text": "junctions which are very expensive so we",
+        "start": 984.589,
+        "duration": 4.351
+    },
+    {
+        "text": "don't want too many blocks either at the",
+        "start": 987.05,
+        "duration": 4.02
+    },
+    {
+        "text": "same time we don't want too few blocks",
+        "start": 988.94,
+        "duration": 4.2
+    },
+    {
+        "text": "so we have a cost function we can device",
+        "start": 991.07,
+        "duration": 4.11
+    },
+    {
+        "text": "which is just you know the complexity of",
+        "start": 993.14,
+        "duration": 4.98
+    },
+    {
+        "text": "this process and we optimize that cost",
+        "start": 995.18,
+        "duration": 4.62
+    },
+    {
+        "text": "function and based on that we find the",
+        "start": 998.12,
+        "duration": 21.5
+    },
+    {
+        "text": "allocation we know no because like",
+        "start": 999.8,
+        "duration": 22.5
+    },
+    {
+        "text": "different panels you know based on",
+        "start": 1019.62,
+        "duration": 4.809
+    },
+    {
+        "text": "different methods some are for genome",
+        "start": 1022.3,
+        "duration": 3.51
+    },
+    {
+        "text": "sequencing some are more eggs on",
+        "start": 1024.429,
+        "duration": 3.571
+    },
+    {
+        "text": "sequencing so it's better to not have",
+        "start": 1025.81,
+        "duration": 3.99
+    },
+    {
+        "text": "anything that's biology specific but",
+        "start": 1028.0,
+        "duration": 3.81
+    },
+    {
+        "text": "rather that's very more dynamic to the",
+        "start": 1029.8,
+        "duration": 5.129
+    },
+    {
+        "text": "data reference panel that is very you",
+        "start": 1031.81,
+        "duration": 4.23
+    },
+    {
+        "text": "know that doesn't have many rare",
+        "start": 1034.929,
+        "duration": 3.15
+    },
+    {
+        "text": "variants then it will be it won't be a",
+        "start": 1036.04,
+        "duration": 4.86
+    },
+    {
+        "text": "very effective measure in that case but",
+        "start": 1038.079,
+        "duration": 5.071
+    },
+    {
+        "text": "main point is that we have we can do",
+        "start": 1040.9,
+        "duration": 4.08
+    },
+    {
+        "text": "things faster but at the same accuracy",
+        "start": 1043.15,
+        "duration": 3.539
+    },
+    {
+        "text": "we don't because it's still the same",
+        "start": 1044.98,
+        "duration": 3.33
+    },
+    {
+        "text": "equivalent model that we're doing in the",
+        "start": 1046.689,
+        "duration": 4.411
+    },
+    {
+        "text": "original space so these are some results",
+        "start": 1048.31,
+        "duration": 5.79
+    },
+    {
+        "text": "of how this method brings up you know a",
+        "start": 1051.1,
+        "duration": 4.17
+    },
+    {
+        "text": "speed-up",
+        "start": 1054.1,
+        "duration": 3.81
+    },
+    {
+        "text": "so we use different reference panel",
+        "start": 1055.27,
+        "duration": 4.86
+    },
+    {
+        "text": "sizes of thousand five thousand on all",
+        "start": 1057.91,
+        "duration": 4.11
+    },
+    {
+        "text": "the way up to fifty thousand and we are",
+        "start": 1060.13,
+        "duration": 4.32
+    },
+    {
+        "text": "comparing the time required and the",
+        "start": 1062.02,
+        "duration": 4.96
+    },
+    {
+        "text": "physical memory used and",
+        "start": 1064.45,
+        "duration": 4.39
+    },
+    {
+        "text": "between minimus three and mini meant to",
+        "start": 1066.98,
+        "duration": 3.6
+    },
+    {
+        "text": "sew mini Mac two was based on a simple",
+        "start": 1068.84,
+        "duration": 3.81
+    },
+    {
+        "text": "hidden Markov model and this is based on",
+        "start": 1070.58,
+        "duration": 4.95
+    },
+    {
+        "text": "the state's mess reduction so we see",
+        "start": 1072.65,
+        "duration": 6.9
+    },
+    {
+        "text": "that you know a bigger panel size the",
+        "start": 1075.53,
+        "duration": 5.55
+    },
+    {
+        "text": "more efficient this method is going to",
+        "start": 1079.55,
+        "duration": 4.02
+    },
+    {
+        "text": "be because in thousand samples you know",
+        "start": 1081.08,
+        "duration": 4.5
+    },
+    {
+        "text": "the number of unique haplotypes might be",
+        "start": 1083.57,
+        "duration": 3.93
+    },
+    {
+        "text": "500 but in this case the ratio would be",
+        "start": 1085.58,
+        "duration": 4.89
+    },
+    {
+        "text": "more so a thousand samples is just 11",
+        "start": 1087.5,
+        "duration": 4.98
+    },
+    {
+        "text": "times faster whereas to be bigger",
+        "start": 1090.47,
+        "duration": 4.8
+    },
+    {
+        "text": "samples is almost 45 times faster of",
+        "start": 1092.48,
+        "duration": 6.08
+    },
+    {
+        "text": "similar kind of train we see in the",
+        "start": 1095.27,
+        "duration": 8.16
+    },
+    {
+        "text": "physical memory so these are some",
+        "start": 1098.56,
+        "duration": 7.03
+    },
+    {
+        "text": "results were comparing minimize 3 to",
+        "start": 1103.43,
+        "duration": 4.56
+    },
+    {
+        "text": "other companies contemporary methods",
+        "start": 1105.59,
+        "duration": 6.09
+    },
+    {
+        "text": "like bigger 4.1 mini Mac 2 and impute -",
+        "start": 1107.99,
+        "duration": 6.21
+    },
+    {
+        "text": "so the I have used different reference",
+        "start": 1111.68,
+        "duration": 4.43
+    },
+    {
+        "text": "panels like thousand genomes aim deep",
+        "start": 1114.2,
+        "duration": 5.67
+    },
+    {
+        "text": "Sardinia and these are precises so in",
+        "start": 1116.11,
+        "duration": 5.68
+    },
+    {
+        "text": "most cases viewing all the cases we find",
+        "start": 1119.87,
+        "duration": 3.6
+    },
+    {
+        "text": "that mini Mac 3 still the fastest among",
+        "start": 1121.79,
+        "duration": 3.2
+    },
+    {
+        "text": "all the country many methods available",
+        "start": 1123.47,
+        "duration": 5.16
+    },
+    {
+        "text": "being able is closest and the show gets",
+        "start": 1124.99,
+        "duration": 6.19
+    },
+    {
+        "text": "as the panel size increases for example",
+        "start": 1128.63,
+        "duration": 5.73
+    },
+    {
+        "text": "it's twice fast use panel sizes like per",
+        "start": 1131.18,
+        "duration": 5.58
+    },
+    {
+        "text": "thousand but for the HRC panel it is a",
+        "start": 1134.36,
+        "duration": 6.6
+    },
+    {
+        "text": "huge panel 330 thousand samples tribute",
+        "start": 1136.76,
+        "duration": 6.81
+    },
+    {
+        "text": "one sample he still takes 8 days with",
+        "start": 1140.96,
+        "duration": 6.06
+    },
+    {
+        "text": "mini Mac 3 whereas to take 2 months with",
+        "start": 1143.57,
+        "duration": 6.36
+    },
+    {
+        "text": "the next fastest method and mini Mac -",
+        "start": 1147.02,
+        "duration": 4.38
+    },
+    {
+        "text": "an impute to would always be infeasible",
+        "start": 1149.93,
+        "duration": 5.58
+    },
+    {
+        "text": "to run with them so just to summarize or",
+        "start": 1151.4,
+        "duration": 8.73
+    },
+    {
+        "text": "what we did in mini like 3 on increasing",
+        "start": 1155.51,
+        "duration": 6.78
+    },
+    {
+        "text": "the panel about 50 times we find that",
+        "start": 1160.13,
+        "duration": 6.33
+    },
+    {
+        "text": "you know it's the time becomes only 15",
+        "start": 1162.29,
+        "duration": 6.54
+    },
+    {
+        "text": "times whereas the memories 13 times for",
+        "start": 1166.46,
+        "duration": 5.7
+    },
+    {
+        "text": "a really large panel like HRC its mini",
+        "start": 1168.83,
+        "duration": 6.06
+    },
+    {
+        "text": "Mac - was 45 slower than our method",
+        "start": 1172.16,
+        "duration": 4.86
+    },
+    {
+        "text": "impute we 60 times slower and bigger",
+        "start": 1174.89,
+        "duration": 3.87
+    },
+    {
+        "text": "there was a time slower it also gives",
+        "start": 1177.02,
+        "duration": 3.42
+    },
+    {
+        "text": "the highest imputation accuracy among",
+        "start": 1178.76,
+        "duration": 3.3
+    },
+    {
+        "text": "the above methods I've skipped those",
+        "start": 1180.44,
+        "duration": 4.29
+    },
+    {
+        "text": "results because because the mini Mac -",
+        "start": 1182.06,
+        "duration": 4.05
+    },
+    {
+        "text": "was already known to be most accurate",
+        "start": 1184.73,
+        "duration": 3.78
+    },
+    {
+        "text": "among them and we haven't changed any",
+        "start": 1186.11,
+        "duration": 7.47
+    },
+    {
+        "text": "accuracy so so this",
+        "start": 1188.51,
+        "duration": 8.41
+    },
+    {
+        "text": "emitted by that correlation so usually",
+        "start": 1193.58,
+        "duration": 4.81
+    },
+    {
+        "text": "you do experiments when you have the",
+        "start": 1196.92,
+        "duration": 4.32
+    },
+    {
+        "text": "sequence data you mask you know you",
+        "start": 1198.39,
+        "duration": 4.77
+    },
+    {
+        "text": "mimic as if they were typed on AG was",
+        "start": 1201.24,
+        "duration": 3.6
+    },
+    {
+        "text": "sorry like you mask some of the variance",
+        "start": 1203.16,
+        "duration": 3.42
+    },
+    {
+        "text": "then you pass it through the algorithm",
+        "start": 1204.84,
+        "duration": 4.8
+    },
+    {
+        "text": "and do a genotype correlation to do an",
+        "start": 1206.58,
+        "duration": 7.98
+    },
+    {
+        "text": "accuracy so the imputation server is",
+        "start": 1209.64,
+        "duration": 7.2
+    },
+    {
+        "text": "another feature that we wanted I wanted",
+        "start": 1214.56,
+        "duration": 4.29
+    },
+    {
+        "text": "to talk about because that that just",
+        "start": 1216.84,
+        "duration": 3.33
+    },
+    {
+        "text": "makes the whole process of imputation",
+        "start": 1218.85,
+        "duration": 5.04
+    },
+    {
+        "text": "much easier the motivation when we",
+        "start": 1220.17,
+        "duration": 7.37
+    },
+    {
+        "text": "needed a server like we realize analysis",
+        "start": 1223.89,
+        "duration": 5.67
+    },
+    {
+        "text": "for still quite challenging especially",
+        "start": 1227.54,
+        "duration": 3.61
+    },
+    {
+        "text": "for someone was doing it for the first",
+        "start": 1229.56,
+        "duration": 3.27
+    },
+    {
+        "text": "time first you have to read online",
+        "start": 1231.15,
+        "duration": 3.87
+    },
+    {
+        "text": "tutorials of the software you have to",
+        "start": 1232.83,
+        "duration": 3.75
+    },
+    {
+        "text": "the tower and install the software you",
+        "start": 1235.02,
+        "duration": 3.45
+    },
+    {
+        "text": "have to download reference panels which",
+        "start": 1236.58,
+        "duration": 4.11
+    },
+    {
+        "text": "is the because there are lots of modern",
+        "start": 1238.47,
+        "duration": 4.14
+    },
+    {
+        "text": "reference panels which are not public",
+        "start": 1240.69,
+        "duration": 3.84
+    },
+    {
+        "text": "data so you can't always download them",
+        "start": 1242.61,
+        "duration": 4.68
+    },
+    {
+        "text": "so you can you know but at the same time",
+        "start": 1244.53,
+        "duration": 4.56
+    },
+    {
+        "text": "it's something good if you can if you",
+        "start": 1247.29,
+        "duration": 3.63
+    },
+    {
+        "text": "should just can't use or you know have",
+        "start": 1249.09,
+        "duration": 4.05
+    },
+    {
+        "text": "no benefit out of them but you know",
+        "start": 1250.92,
+        "duration": 4.35
+    },
+    {
+        "text": "after downloading everything we didn't",
+        "start": 1253.14,
+        "duration": 4.05
+    },
+    {
+        "text": "students often realize that you know we",
+        "start": 1255.27,
+        "duration": 3.03
+    },
+    {
+        "text": "can't really run this on a laptop",
+        "start": 1257.19,
+        "duration": 2.82
+    },
+    {
+        "text": "because it takes too much compute power",
+        "start": 1258.3,
+        "duration": 4.11
+    },
+    {
+        "text": "then about custom management and finally",
+        "start": 1260.01,
+        "duration": 5.91
+    },
+    {
+        "text": "they are able to run imputation issues",
+        "start": 1262.41,
+        "duration": 7.08
+    },
+    {
+        "text": "because since 2010 included you know you",
+        "start": 1265.92,
+        "duration": 5.43
+    },
+    {
+        "text": "have to prefix like I said like whenever",
+        "start": 1269.49,
+        "duration": 3.72
+    },
+    {
+        "text": "you get genotype data from the sample",
+        "start": 1271.35,
+        "duration": 3.39
+    },
+    {
+        "text": "you have to first determine what",
+        "start": 1273.21,
+        "duration": 3.63
+    },
+    {
+        "text": "happened I swear and then do the",
+        "start": 1274.74,
+        "duration": 5.31
+    },
+    {
+        "text": "imputation if France panel there are",
+        "start": 1276.84,
+        "duration": 5.25
+    },
+    {
+        "text": "this quality control issues and lots of",
+        "start": 1280.05,
+        "duration": 5.1
+    },
+    {
+        "text": "other data processing stuff which is why",
+        "start": 1282.09,
+        "duration": 6.84
+    },
+    {
+        "text": "we thought imputation server would be",
+        "start": 1285.15,
+        "duration": 5.85
+    },
+    {
+        "text": "the researchers will just upload their",
+        "start": 1288.93,
+        "duration": 5.97
+    },
+    {
+        "text": "data this will be the server and finally",
+        "start": 1291.0,
+        "duration": 5.1
+    },
+    {
+        "text": "they would again be able to download",
+        "start": 1294.9,
+        "duration": 5.48
+    },
+    {
+        "text": "their results and yeah",
+        "start": 1296.1,
+        "duration": 4.28
+    },
+    {
+        "text": "I am but then making something in your",
+        "start": 1312.04,
+        "duration": 11.9
+    },
+    {
+        "text": "reference panel is a good model yes yes",
+        "start": 1318.64,
+        "duration": 5.3
+    },
+    {
+        "text": "yes that does happen I feel like you",
+        "start": 1331.08,
+        "duration": 7.06
+    },
+    {
+        "text": "know because even when you do g1 studies",
+        "start": 1336.01,
+        "duration": 4.41
+    },
+    {
+        "text": "leaking often not all of them are not",
+        "start": 1338.14,
+        "duration": 3.87
+    },
+    {
+        "text": "the same ancestor although they might",
+        "start": 1340.42,
+        "duration": 4.98
+    },
+    {
+        "text": "report it to be and if in that case the",
+        "start": 1342.01,
+        "duration": 5.49
+    },
+    {
+        "text": "reference panel that you are using would",
+        "start": 1345.4,
+        "duration": 7.23
+    },
+    {
+        "text": "not give you much good accuracy yeah it",
+        "start": 1347.5,
+        "duration": 7.28
+    },
+    {
+        "text": "might happen that you know if it doesn't",
+        "start": 1352.63,
+        "duration": 4.74
+    },
+    {
+        "text": "that as European samples and I mean",
+        "start": 1354.78,
+        "duration": 3.67
+    },
+    {
+        "text": "putting into an african-american",
+        "start": 1357.37,
+        "duration": 3.33
+    },
+    {
+        "text": "population then we won't get good",
+        "start": 1358.45,
+        "duration": 14.04
+    },
+    {
+        "text": "accuracy it does give it does report",
+        "start": 1360.7,
+        "duration": 14.76
+    },
+    {
+        "text": "something and a variant level like that",
+        "start": 1372.49,
+        "duration": 5.1
+    },
+    {
+        "text": "is my universe attraction of samples so",
+        "start": 1375.46,
+        "duration": 4.11
+    },
+    {
+        "text": "each variant will have an imputation",
+        "start": 1377.59,
+        "duration": 4.71
+    },
+    {
+        "text": "accuracy reported that can be used so",
+        "start": 1379.57,
+        "duration": 4.59
+    },
+    {
+        "text": "they for example variants which are so",
+        "start": 1382.3,
+        "duration": 4.86
+    },
+    {
+        "text": "rare of varieties the more difficult it",
+        "start": 1384.16,
+        "duration": 5.55
+    },
+    {
+        "text": "is to impute for example in our sample",
+        "start": 1387.16,
+        "duration": 4.29
+    },
+    {
+        "text": "if the variant is a single term it's",
+        "start": 1389.71,
+        "duration": 3.12
+    },
+    {
+        "text": "obvious that we can never impute that",
+        "start": 1391.45,
+        "duration": 2.97
+    },
+    {
+        "text": "from a reference panel because no one in",
+        "start": 1392.83,
+        "duration": 4.26
+    },
+    {
+        "text": "the panel even has that variant so the",
+        "start": 1394.42,
+        "duration": 3.99
+    },
+    {
+        "text": "pair of the variant is the more",
+        "start": 1397.09,
+        "duration": 3.18
+    },
+    {
+        "text": "difficult it is to impute I have a few",
+        "start": 1398.41,
+        "duration": 3.69
+    },
+    {
+        "text": "graphs in later on that shows some",
+        "start": 1400.27,
+        "duration": 3.21
+    },
+    {
+        "text": "imputation accuracy maybe that will give",
+        "start": 1402.1,
+        "duration": 5.43
+    },
+    {
+        "text": "a better idea so this is these are the",
+        "start": 1403.48,
+        "duration": 7.2
+    },
+    {
+        "text": "main summary what the solver does so now",
+        "start": 1407.53,
+        "duration": 7.47
+    },
+    {
+        "text": "from the side of the user we do serve in",
+        "start": 1410.68,
+        "duration": 5.76
+    },
+    {
+        "text": "whatever format they have their data",
+        "start": 1415.0,
+        "duration": 3.18
+    },
+    {
+        "text": "they just need to convert it to a VCF",
+        "start": 1416.44,
+        "duration": 4.32
+    },
+    {
+        "text": "format and you know zip it and",
+        "start": 1418.18,
+        "duration": 4.74
+    },
+    {
+        "text": "techniques index it there are tools on",
+        "start": 1420.76,
+        "duration": 4.32
+    },
+    {
+        "text": "the server through which they can you",
+        "start": 1422.92,
+        "duration": 3.66
+    },
+    {
+        "text": "know pipe it through and just check if",
+        "start": 1425.08,
+        "duration": 3.66
+    },
+    {
+        "text": "the finest you know if it's running of",
+        "start": 1426.58,
+        "duration": 3.72
+    },
+    {
+        "text": "course otherwise you know it might get",
+        "start": 1428.74,
+        "duration": 3.03
+    },
+    {
+        "text": "in the queue and after two days they",
+        "start": 1430.3,
+        "duration": 2.64
+    },
+    {
+        "text": "will know that oh there was some kind of",
+        "start": 1431.77,
+        "duration": 3.36
+    },
+    {
+        "text": "quality control issues so this is the CH",
+        "start": 1432.94,
+        "duration": 4.59
+    },
+    {
+        "text": "and there are lots of ways to share the",
+        "start": 1435.13,
+        "duration": 4.98
+    },
+    {
+        "text": "data SFTP and even global sharing when",
+        "start": 1437.53,
+        "duration": 4.17
+    },
+    {
+        "text": "you have lots of data you know and then",
+        "start": 1440.11,
+        "duration": 3.84
+    },
+    {
+        "text": "seek you and the SFTP doesn't work",
+        "start": 1441.7,
+        "duration": 4.41
+    },
+    {
+        "text": "on the software we have automatic",
+        "start": 1443.95,
+        "duration": 4.47
+    },
+    {
+        "text": "quality control check we do prefacing in",
+        "start": 1446.11,
+        "duration": 4.41
+    },
+    {
+        "text": "case the samples are not phased we do",
+        "start": 1448.42,
+        "duration": 3.9
+    },
+    {
+        "text": "the computation and we encrypt the data",
+        "start": 1450.52,
+        "duration": 4.44
+    },
+    {
+        "text": "and then finally notified the users by",
+        "start": 1452.32,
+        "duration": 5.43
+    },
+    {
+        "text": "email and since you know most of the",
+        "start": 1454.96,
+        "duration": 4.23
+    },
+    {
+        "text": "time the data is secure we provide a",
+        "start": 1457.75,
+        "duration": 3.54
+    },
+    {
+        "text": "one-time password the data is also",
+        "start": 1459.19,
+        "duration": 4.53
+    },
+    {
+        "text": "deleted after seven days and quality",
+        "start": 1461.29,
+        "duration": 4.94
+    },
+    {
+        "text": "control reports available for download",
+        "start": 1463.72,
+        "duration": 5.73
+    },
+    {
+        "text": "so the imputation server has been for",
+        "start": 1466.23,
+        "duration": 5.41
+    },
+    {
+        "text": "over more than a year till now we have",
+        "start": 1469.45,
+        "duration": 6.33
+    },
+    {
+        "text": "impeded over three million genomes we",
+        "start": 1471.64,
+        "duration": 7.35
+    },
+    {
+        "text": "have over 900 users we have produce over",
+        "start": 1475.78,
+        "duration": 7.59
+    },
+    {
+        "text": "660 terabytes of data users paid almost",
+        "start": 1478.99,
+        "duration": 9.3
+    },
+    {
+        "text": "all across the world and yet using for",
+        "start": 1483.37,
+        "duration": 7.02
+    },
+    {
+        "text": "example just in the last four months we",
+        "start": 1488.29,
+        "duration": 3.93
+    },
+    {
+        "text": "have imputed 1 million genomes out of",
+        "start": 1490.39,
+        "duration": 4.14
+    },
+    {
+        "text": "the total 3 million genomes in a one and",
+        "start": 1492.22,
+        "duration": 9.42
+    },
+    {
+        "text": "a half years difference - for imputation",
+        "start": 1494.53,
+        "duration": 9.09
+    },
+    {
+        "text": "be a thousand genomes phase 1 and phase",
+        "start": 1501.64,
+        "duration": 2.7
+    },
+    {
+        "text": "3",
+        "start": 1503.62,
+        "duration": 2.91
+    },
+    {
+        "text": "we have CA APA which is a reference",
+        "start": 1504.34,
+        "duration": 3.99
+    },
+    {
+        "text": "panel for african-american populations",
+        "start": 1506.53,
+        "duration": 4.65
+    },
+    {
+        "text": "we have the hapmap we have the HRC so",
+        "start": 1508.33,
+        "duration": 4.71
+    },
+    {
+        "text": "for difference panels in general are",
+        "start": 1511.18,
+        "duration": 5.1
+    },
+    {
+        "text": "also publicly available so if you just",
+        "start": 1513.04,
+        "duration": 4.62
+    },
+    {
+        "text": "wanted they could download the reference",
+        "start": 1516.28,
+        "duration": 2.7
+    },
+    {
+        "text": "panels they could download mini make",
+        "start": 1517.66,
+        "duration": 2.79
+    },
+    {
+        "text": "free and do the imputation themselves",
+        "start": 1518.98,
+        "duration": 4.98
+    },
+    {
+        "text": "but HR says in the public panel so you",
+        "start": 1520.45,
+        "duration": 5.37
+    },
+    {
+        "text": "know if someone wants to use the HRC",
+        "start": 1523.96,
+        "duration": 3.54
+    },
+    {
+        "text": "panel they must go through the",
+        "start": 1525.82,
+        "duration": 6.42
+    },
+    {
+        "text": "imputation server so researchers can",
+        "start": 1527.5,
+        "duration": 8.13
+    },
+    {
+        "text": "exact what the imputation server and",
+        "start": 1532.24,
+        "duration": 6.05
+    },
+    {
+        "text": "they have tweeted",
+        "start": 1535.63,
+        "duration": 2.66
+    },
+    {
+        "text": "that's never like us correctly since",
+        "start": 1544.39,
+        "duration": 7.45
+    },
+    {
+        "text": "there is since we have HIC almost more",
+        "start": 1549.11,
+        "duration": 4.17
+    },
+    {
+        "text": "than 50% of the studies are being",
+        "start": 1551.84,
+        "duration": 4.23
+    },
+    {
+        "text": "impeded like as they chassis but it is",
+        "start": 1553.28,
+        "duration": 9.81
+    },
+    {
+        "text": "encrypted it has at least once at the",
+        "start": 1556.07,
+        "duration": 8.7
+    },
+    {
+        "text": "pastry in new ways and even if they are",
+        "start": 1563.09,
+        "duration": 3.75
+    },
+    {
+        "text": "not like you can always mail us and we",
+        "start": 1564.77,
+        "duration": 4.23
+    },
+    {
+        "text": "will try to work around that and finally",
+        "start": 1566.84,
+        "duration": 4.83
+    },
+    {
+        "text": "in the we see that you know this kind of",
+        "start": 1569.0,
+        "duration": 5.34
+    },
+    {
+        "text": "services help us researchers in the long",
+        "start": 1571.67,
+        "duration": 7.8
+    },
+    {
+        "text": "run has also been used to make other",
+        "start": 1574.34,
+        "duration": 8.25
+    },
+    {
+        "text": "servers for analyzing mtDNA for tracing",
+        "start": 1579.47,
+        "duration": 4.83
+    },
+    {
+        "text": "genetic ancestries both from our",
+        "start": 1582.59,
+        "duration": 3.66
+    },
+    {
+        "text": "department and other universities that",
+        "start": 1584.3,
+        "duration": 7.98
+    },
+    {
+        "text": "means the time so that the thing that",
+        "start": 1586.25,
+        "duration": 9.48
+    },
+    {
+        "text": "brings us to some of the utilities that",
+        "start": 1592.28,
+        "duration": 5.88
+    },
+    {
+        "text": "we have to kind of aid in the imputation",
+        "start": 1595.73,
+        "duration": 5.73
+    },
+    {
+        "text": "process so like I have been talking",
+        "start": 1598.16,
+        "duration": 5.07
+    },
+    {
+        "text": "about for a while I'll be referring to",
+        "start": 1601.46,
+        "duration": 5.79
+    },
+    {
+        "text": "HRC I'll just show you what you can talk",
+        "start": 1603.23,
+        "duration": 6.45
+    },
+    {
+        "text": "about what the HRC is it is an effects",
+        "start": 1607.25,
+        "duration": 6.39
+    },
+    {
+        "text": "panel of 30,000 samples and that will be",
+        "start": 1609.68,
+        "duration": 6.6
+    },
+    {
+        "text": "the next two topics which is if you have",
+        "start": 1613.64,
+        "duration": 5.85
+    },
+    {
+        "text": "large samples we need methods that scale",
+        "start": 1616.28,
+        "duration": 5.19
+    },
+    {
+        "text": "well even for simple stuff like saving",
+        "start": 1619.49,
+        "duration": 4.44
+    },
+    {
+        "text": "the data doing simple data query or",
+        "start": 1621.47,
+        "duration": 4.17
+    },
+    {
+        "text": "simple summary statistics like L in",
+        "start": 1623.93,
+        "duration": 3.96
+    },
+    {
+        "text": "frequency alas table introduced a novel",
+        "start": 1625.64,
+        "duration": 4.86
+    },
+    {
+        "text": "idea called meta imputation that also is",
+        "start": 1627.89,
+        "duration": 4.53
+    },
+    {
+        "text": "kind of important given that panels like",
+        "start": 1630.5,
+        "duration": 4.58
+    },
+    {
+        "text": "EHRs are not available for download so",
+        "start": 1632.42,
+        "duration": 4.68
+    },
+    {
+        "text": "it's just you know it's a simple",
+        "start": 1635.08,
+        "duration": 3.79
+    },
+    {
+        "text": "reference panel just to give an idea of",
+        "start": 1637.1,
+        "duration": 4.8
+    },
+    {
+        "text": "what reference panels are so in 2005 we",
+        "start": 1638.87,
+        "duration": 4.65
+    },
+    {
+        "text": "started off with half map which was one",
+        "start": 1641.9,
+        "duration": 3.15
+    },
+    {
+        "text": "of the very first reference panels that",
+        "start": 1643.52,
+        "duration": 2.73
+    },
+    {
+        "text": "were used for imputation",
+        "start": 1645.05,
+        "duration": 3.53
+    },
+    {
+        "text": "then we had happen to have made three",
+        "start": 1646.25,
+        "duration": 5.61
+    },
+    {
+        "text": "genomes came in 2010 it had two phases",
+        "start": 1648.58,
+        "duration": 5.56
+    },
+    {
+        "text": "phase 1 and phase 3 there was an interim",
+        "start": 1651.86,
+        "duration": 4.65
+    },
+    {
+        "text": "period which never got released for some",
+        "start": 1654.14,
+        "duration": 4.56
+    },
+    {
+        "text": "reasons the number of haplotypes is",
+        "start": 1656.51,
+        "duration": 6.27
+    },
+    {
+        "text": "increased from 420 to 5000 phase 3 the",
+        "start": 1658.7,
+        "duration": 5.82
+    },
+    {
+        "text": "number of variants has also increased",
+        "start": 1662.78,
+        "duration": 4.08
+    },
+    {
+        "text": "considerably and this brings us to the",
+        "start": 1664.52,
+        "duration": 3.93
+    },
+    {
+        "text": "next reference panel that we are correct",
+        "start": 1666.86,
+        "duration": 4.17
+    },
+    {
+        "text": "we have developed now so the HIV was",
+        "start": 1668.45,
+        "duration": 5.76
+    },
+    {
+        "text": "instead of having since doing not scale",
+        "start": 1671.03,
+        "duration": 4.62
+    },
+    {
+        "text": "whole genome sequencing is really",
+        "start": 1674.21,
+        "duration": 2.43
+    },
+    {
+        "text": "expensive",
+        "start": 1675.65,
+        "duration": 2.94
+    },
+    {
+        "text": "which is what kind of couldn't get much",
+        "start": 1676.64,
+        "duration": 5.039
+    },
+    {
+        "text": "larger but different studies have you",
+        "start": 1678.59,
+        "duration": 5.189
+    },
+    {
+        "text": "know like different universities or",
+        "start": 1681.679,
+        "duration": 3.48
+    },
+    {
+        "text": "institutes have done studies all across",
+        "start": 1683.779,
+        "duration": 3.211
+    },
+    {
+        "text": "the world so one good way would be to",
+        "start": 1685.159,
+        "duration": 4.201
+    },
+    {
+        "text": "like you know combine them so that was",
+        "start": 1686.99,
+        "duration": 4.38
+    },
+    {
+        "text": "the main idea HRC we had around 20",
+        "start": 1689.36,
+        "duration": 3.929
+    },
+    {
+        "text": "different studies some of the main",
+        "start": 1691.37,
+        "duration": 3.63
+    },
+    {
+        "text": "studies are from cause disease in k2 MK",
+        "start": 1693.289,
+        "duration": 6.091
+    },
+    {
+        "text": "Sardinia MD diabetes phase 3 thousand",
+        "start": 1695.0,
+        "duration": 8.279
+    },
+    {
+        "text": "genomes and we took this data across 20",
+        "start": 1699.38,
+        "duration": 5.789
+    },
+    {
+        "text": "different studies we combined them",
+        "start": 1703.279,
+        "duration": 2.461
+    },
+    {
+        "text": "together",
+        "start": 1705.169,
+        "duration": 3.061
+    },
+    {
+        "text": "finally ending up with 32,000 samples",
+        "start": 1705.74,
+        "duration": 6.899
+    },
+    {
+        "text": "and this big difference panic would",
+        "start": 1708.23,
+        "duration": 6.419
+    },
+    {
+        "text": "mainly be used as a next-generation",
+        "start": 1712.639,
+        "duration": 5.13
+    },
+    {
+        "text": "resource for imputation and facing so",
+        "start": 1714.649,
+        "duration": 4.5
+    },
+    {
+        "text": "the next slide just kind of gives you a",
+        "start": 1717.769,
+        "duration": 2.91
+    },
+    {
+        "text": "result so this is the first verse that I",
+        "start": 1719.149,
+        "duration": 3.721
+    },
+    {
+        "text": "kind of happy shows you how imputation",
+        "start": 1720.679,
+        "duration": 5.37
+    },
+    {
+        "text": "accuracy works from the y axis on the x",
+        "start": 1722.87,
+        "duration": 5.46
+    },
+    {
+        "text": "axis I have the reference allele",
+        "start": 1726.049,
+        "duration": 6.781
+    },
+    {
+        "text": "frequency and the imputation r-square",
+        "start": 1728.33,
+        "duration": 6.24
+    },
+    {
+        "text": "imputation r-square means just a",
+        "start": 1732.83,
+        "duration": 5.67
+    },
+    {
+        "text": "genotype R square so it's like so you",
+        "start": 1734.57,
+        "duration": 5.729
+    },
+    {
+        "text": "can see that for common variants like",
+        "start": 1738.5,
+        "duration": 4.2
+    },
+    {
+        "text": "the would be one person the accuracy is",
+        "start": 1740.299,
+        "duration": 3.75
+    },
+    {
+        "text": "quite high around like eighty percent",
+        "start": 1742.7,
+        "duration": 6.329
+    },
+    {
+        "text": "and as curious as we it gets read at the",
+        "start": 1744.049,
+        "duration": 7.86
+    },
+    {
+        "text": "QSC Falls so the legend what I'm doing",
+        "start": 1749.029,
+        "duration": 3.27
+    },
+    {
+        "text": "over here",
+        "start": 1751.909,
+        "duration": 3.24
+    },
+    {
+        "text": "I'm company two panels HRC versus",
+        "start": 1752.299,
+        "duration": 4.771
+    },
+    {
+        "text": "thousand genomes Phase three and I'm",
+        "start": 1755.149,
+        "duration": 3.931
+    },
+    {
+        "text": "also covering two methods so minimag 3",
+        "start": 1757.07,
+        "duration": 3.329
+    },
+    {
+        "text": "is the method that we talked about in",
+        "start": 1759.08,
+        "duration": 3.809
+    },
+    {
+        "text": "the last line and PBW is a competing",
+        "start": 1760.399,
+        "duration": 6.181
+    },
+    {
+        "text": "method from Oxford I don't know if you",
+        "start": 1762.889,
+        "duration": 6.361
+    },
+    {
+        "text": "know it's missing that works on",
+        "start": 1766.58,
+        "duration": 4.02
+    },
+    {
+        "text": "burrows-wheeler transformation that's",
+        "start": 1769.25,
+        "duration": 4.26
+    },
+    {
+        "text": "also an imputation tool so the red line",
+        "start": 1770.6,
+        "duration": 5.039
+    },
+    {
+        "text": "kind of shows the result so in general",
+        "start": 1773.51,
+        "duration": 3.72
+    },
+    {
+        "text": "we see that mini make 3 has more",
+        "start": 1775.639,
+        "duration": 3.15
+    },
+    {
+        "text": "accuracy than PB WT",
+        "start": 1777.23,
+        "duration": 5.24
+    },
+    {
+        "text": "the red line usually always above the",
+        "start": 1778.789,
+        "duration": 7.651
+    },
+    {
+        "text": "blue lines and the solid lines show that",
+        "start": 1782.47,
+        "duration": 6.309
+    },
+    {
+        "text": "copy to the dotted line show that the",
+        "start": 1786.44,
+        "duration": 5.88
+    },
+    {
+        "text": "HRC HRC shows a much improvement in",
+        "start": 1788.779,
+        "duration": 5.49
+    },
+    {
+        "text": "accuracy from thousand genomes for",
+        "start": 1792.32,
+        "duration": 5.849
+    },
+    {
+        "text": "example using mini Mac 3 from it jumps",
+        "start": 1794.269,
+        "duration": 7.081
+    },
+    {
+        "text": "from 65 percent to 80 percent and the",
+        "start": 1798.169,
+        "duration": 10.461
+    },
+    {
+        "text": "top is even more for error variance so",
+        "start": 1801.35,
+        "duration": 9.5
+    },
+    {
+        "text": "this already said this one this hoc data",
+        "start": 1808.63,
+        "duration": 4.8
+    },
+    {
+        "text": "is not public which is why users won't",
+        "start": 1810.85,
+        "duration": 6.06
+    },
+    {
+        "text": "be able to download it and you can",
+        "start": 1813.43,
+        "duration": 5.01
+    },
+    {
+        "text": "always in the take advantage of it by",
+        "start": 1816.91,
+        "duration": 4.35
+    },
+    {
+        "text": "imputing through the servers subset of",
+        "start": 1818.44,
+        "duration": 4.29
+    },
+    {
+        "text": "it would be available because some",
+        "start": 1821.26,
+        "duration": 3.09
+    },
+    {
+        "text": "studies they don't have it a restriction",
+        "start": 1822.73,
+        "duration": 4.11
+    },
+    {
+        "text": "issues like for example so for those",
+        "start": 1824.35,
+        "duration": 4.71
+    },
+    {
+        "text": "cases some a subset of that would be",
+        "start": 1826.84,
+        "duration": 8.7
+    },
+    {
+        "text": "available to DB gap Nega so this brings",
+        "start": 1829.06,
+        "duration": 9.45
+    },
+    {
+        "text": "us to the next motivation that we have",
+        "start": 1835.54,
+        "duration": 5.46
+    },
+    {
+        "text": "been we end up with really large data",
+        "start": 1838.51,
+        "duration": 6.51
+    },
+    {
+        "text": "sets like HRC simple things become",
+        "start": 1841.0,
+        "duration": 5.94
+    },
+    {
+        "text": "really difficult just to load the HS is",
+        "start": 1845.02,
+        "duration": 3.39
+    },
+    {
+        "text": "you know genome on the physical memory",
+        "start": 1846.94,
+        "duration": 4.14
+    },
+    {
+        "text": "using a commonly used tools like VCF",
+        "start": 1848.41,
+        "duration": 5.1
+    },
+    {
+        "text": "tools it takes 10 hours and the",
+        "start": 1851.08,
+        "duration": 3.87
+    },
+    {
+        "text": "frequency calculation over the whole",
+        "start": 1853.51,
+        "duration": 4.47
+    },
+    {
+        "text": "genome take 90 hours zipped VCF file is",
+        "start": 1854.95,
+        "duration": 7.35
+    },
+    {
+        "text": "80 gigs and unzipped it's 2 terabytes so",
+        "start": 1857.98,
+        "duration": 5.7
+    },
+    {
+        "text": "which is why we developed a new tool",
+        "start": 1862.3,
+        "duration": 4.02
+    },
+    {
+        "text": "called m3 VC of truth which is we're",
+        "start": 1863.68,
+        "duration": 5.52
+    },
+    {
+        "text": "just going to do all these stuff much",
+        "start": 1866.32,
+        "duration": 8.1
+    },
+    {
+        "text": "faster and also just because HSE cannot",
+        "start": 1869.2,
+        "duration": 8.01
+    },
+    {
+        "text": "be shared and you just can't use them so",
+        "start": 1874.42,
+        "duration": 6.12
+    },
+    {
+        "text": "whenever people if you want if someone",
+        "start": 1877.21,
+        "duration": 5.25
+    },
+    {
+        "text": "wants to March the reference panel with",
+        "start": 1880.54,
+        "duration": 3.75
+    },
+    {
+        "text": "their common private reference plan and",
+        "start": 1882.46,
+        "duration": 3.84
+    },
+    {
+        "text": "then do an imputation they won't be able",
+        "start": 1884.29,
+        "duration": 3.87
+    },
+    {
+        "text": "to do that so that's why we are",
+        "start": 1886.3,
+        "duration": 3.66
+    },
+    {
+        "text": "introducing an idea called meta",
+        "start": 1888.16,
+        "duration": 3.84
+    },
+    {
+        "text": "imputation which is like meta analysis",
+        "start": 1889.96,
+        "duration": 4.59
+    },
+    {
+        "text": "for Association tests when you combine",
+        "start": 1892.0,
+        "duration": 6.93
+    },
+    {
+        "text": "imputed data from anyways so then 3 BC",
+        "start": 1894.55,
+        "duration": 7.11
+    },
+    {
+        "text": "of tools is just a fast tool for",
+        "start": 1898.93,
+        "duration": 4.89
+    },
+    {
+        "text": "compression and analysis big genetic",
+        "start": 1901.66,
+        "duration": 5.97
+    },
+    {
+        "text": "data just to kind of introduce like",
+        "start": 1903.82,
+        "duration": 6.21
+    },
+    {
+        "text": "standardized file formats have been for",
+        "start": 1907.63,
+        "duration": 4.8
+    },
+    {
+        "text": "ages the pedigree format that was one of",
+        "start": 1910.03,
+        "duration": 4.68
+    },
+    {
+        "text": "the most you know original formats that",
+        "start": 1912.43,
+        "duration": 4.26
+    },
+    {
+        "text": "link introduced the binary pedigree",
+        "start": 1914.71,
+        "duration": 4.35
+    },
+    {
+        "text": "format in 2007 which was just making a",
+        "start": 1916.69,
+        "duration": 5.43
+    },
+    {
+        "text": "binary file to save space the variant",
+        "start": 1919.06,
+        "duration": 4.74
+    },
+    {
+        "text": "form and we see a first introduced in",
+        "start": 1922.12,
+        "duration": 3.99
+    },
+    {
+        "text": "thousand thousand genomes the pinnacle",
+        "start": 1923.8,
+        "duration": 3.51
+    },
+    {
+        "text": "process was you know so that you can",
+        "start": 1926.11,
+        "duration": 3.69
+    },
+    {
+        "text": "also have biological annotations along",
+        "start": 1927.31,
+        "duration": 4.92
+    },
+    {
+        "text": "with the variants but it also moved it",
+        "start": 1929.8,
+        "duration": 4.62
+    },
+    {
+        "text": "to marker cross sample format rather",
+        "start": 1932.23,
+        "duration": 4.62
+    },
+    {
+        "text": "than sample cross marker because that's",
+        "start": 1934.42,
+        "duration": 4.38
+    },
+    {
+        "text": "looking much better compression when you",
+        "start": 1936.85,
+        "duration": 3.35
+    },
+    {
+        "text": "run it through zip",
+        "start": 1938.8,
+        "duration": 3.199
+    },
+    {
+        "text": "the Oxford universities have their own",
+        "start": 1940.2,
+        "duration": 3.9
+    },
+    {
+        "text": "format half legend and sample format",
+        "start": 1941.999,
+        "duration": 7.14
+    },
+    {
+        "text": "recently the gqt genotype query tool was",
+        "start": 1944.1,
+        "duration": 6.689
+    },
+    {
+        "text": "also developed for the same purpose",
+        "start": 1949.139,
+        "duration": 3.691
+    },
+    {
+        "text": "really fast query on genotype data and",
+        "start": 1950.789,
+        "duration": 4.02
+    },
+    {
+        "text": "Haley who has been working on samples",
+        "start": 1952.83,
+        "duration": 4.289
+    },
+    {
+        "text": "she also developed a tool called bgt but",
+        "start": 1954.809,
+        "duration": 4.71
+    },
+    {
+        "text": "the second purpose to kind of work on",
+        "start": 1957.119,
+        "duration": 4.351
+    },
+    {
+        "text": "some of the issues the you know already",
+        "start": 1959.519,
+        "duration": 3.72
+    },
+    {
+        "text": "existing tools have like for example",
+        "start": 1961.47,
+        "duration": 4.559
+    },
+    {
+        "text": "pedigree binary files in spite of being",
+        "start": 1963.239,
+        "duration": 5.341
+    },
+    {
+        "text": "binary there are still four times larger",
+        "start": 1966.029,
+        "duration": 5.13
+    },
+    {
+        "text": "than zip the VCF files which is why",
+        "start": 1968.58,
+        "duration": 4.38
+    },
+    {
+        "text": "they're not they say which is worse if",
+        "start": 1971.159,
+        "duration": 3.45
+    },
+    {
+        "text": "VCF files are way more using binary",
+        "start": 1972.96,
+        "duration": 2.87
+    },
+    {
+        "text": "prevails",
+        "start": 1974.609,
+        "duration": 3.57
+    },
+    {
+        "text": "VCF talks on the other hand is very very",
+        "start": 1975.83,
+        "duration": 6.76
+    },
+    {
+        "text": "slow third group this is not a very",
+        "start": 1978.179,
+        "duration": 6.271
+    },
+    {
+        "text": "genetic format and it's mainly used for",
+        "start": 1982.59,
+        "duration": 3.36
+    },
+    {
+        "text": "their own tools it's not so much used",
+        "start": 1984.45,
+        "duration": 3.39
+    },
+    {
+        "text": "worldwide especially not in the US and",
+        "start": 1985.95,
+        "duration": 4.5
+    },
+    {
+        "text": "these two methods although they kind of",
+        "start": 1987.84,
+        "duration": 3.87
+    },
+    {
+        "text": "work around some of these issues but",
+        "start": 1990.45,
+        "duration": 3.24
+    },
+    {
+        "text": "they still don't work with linkage and",
+        "start": 1991.71,
+        "duration": 6.829
+    },
+    {
+        "text": "stuff like that so which is why we",
+        "start": 1993.69,
+        "duration": 4.849
+    },
+    {
+        "text": "developed in three VCF tools the idea is",
+        "start": 1998.899,
+        "duration": 6.701
+    },
+    {
+        "text": "same as what we said in mini Mac three",
+        "start": 2003.32,
+        "duration": 4.229
+    },
+    {
+        "text": "we take the whole genome we break it up",
+        "start": 2005.6,
+        "duration": 4.319
+    },
+    {
+        "text": "into small segments and in each segment",
+        "start": 2007.549,
+        "duration": 4.35
+    },
+    {
+        "text": "we find only the unique haplotypes and",
+        "start": 2009.919,
+        "duration": 3.84
+    },
+    {
+        "text": "we saved them for example on the left is",
+        "start": 2011.899,
+        "duration": 4.35
+    },
+    {
+        "text": "how we have a normal VCF format we save",
+        "start": 2013.759,
+        "duration": 4.681
+    },
+    {
+        "text": "all markers and all samples but our main",
+        "start": 2016.249,
+        "duration": 4.38
+    },
+    {
+        "text": "three VCF format we only saved the",
+        "start": 2018.44,
+        "duration": 8.51
+    },
+    {
+        "text": "unique haplotypes and so these are some",
+        "start": 2020.629,
+        "duration": 10.351
+    },
+    {
+        "text": "results or features it's also the CBC a",
+        "start": 2026.95,
+        "duration": 6.37
+    },
+    {
+        "text": "format is tatics indexable for fast",
+        "start": 2030.98,
+        "duration": 5.22
+    },
+    {
+        "text": "accessing it has a command line",
+        "start": 2033.32,
+        "duration": 4.949
+    },
+    {
+        "text": "parameters as VCF tools so users who",
+        "start": 2036.2,
+        "duration": 4.439
+    },
+    {
+        "text": "already have been using VCF tools for",
+        "start": 2038.269,
+        "duration": 3.51
+    },
+    {
+        "text": "most of the stuff they don't need to",
+        "start": 2040.639,
+        "duration": 5.67
+    },
+    {
+        "text": "change their pipelines it's faster so",
+        "start": 2041.779,
+        "duration": 7.05
+    },
+    {
+        "text": "the advantages of our VCF tools it's 60",
+        "start": 2046.309,
+        "duration": 4.5
+    },
+    {
+        "text": "times faster for an in frequency",
+        "start": 2048.829,
+        "duration": 4.35
+    },
+    {
+        "text": "calculation - 50 times faster for",
+        "start": 2050.809,
+        "duration": 4.25
+    },
+    {
+        "text": "linkage even the files are much smaller",
+        "start": 2053.179,
+        "duration": 4.68
+    },
+    {
+        "text": "for clean files it can store phase and",
+        "start": 2055.059,
+        "duration": 4.57
+    },
+    {
+        "text": "multi and excites because plink still",
+        "start": 2057.859,
+        "duration": 3.57
+    },
+    {
+        "text": "doesn't store have an app store phase",
+        "start": 2059.629,
+        "duration": 7.371
+    },
+    {
+        "text": "information of my tenant excites and",
+        "start": 2061.429,
+        "duration": 8.281
+    },
+    {
+        "text": "instability particularly being the fork",
+        "start": 2067.0,
+        "duration": 5.049
+    },
+    {
+        "text": "reading like they do any frequency",
+        "start": 2069.71,
+        "duration": 4.11
+    },
+    {
+        "text": "faster but the",
+        "start": 2072.049,
+        "duration": 3.091
+    },
+    {
+        "text": "you see of tools is still faster and",
+        "start": 2073.82,
+        "duration": 3.24
+    },
+    {
+        "text": "they don't do any kind of help or die",
+        "start": 2075.14,
+        "duration": 7.98
+    },
+    {
+        "text": "based or square estimation so I'll just",
+        "start": 2077.06,
+        "duration": 8.58
+    },
+    {
+        "text": "skip this slide for now and just come to",
+        "start": 2083.12,
+        "duration": 4.23
+    },
+    {
+        "text": "the last thing so the meta mini Mac the",
+        "start": 2085.64,
+        "duration": 3.15
+    },
+    {
+        "text": "last thing that I wanted to talk about",
+        "start": 2087.35,
+        "duration": 5.01
+    },
+    {
+        "text": "is from a time pew Titian so that is",
+        "start": 2088.79,
+        "duration": 7.59
+    },
+    {
+        "text": "that now you don't have to imputed data",
+        "start": 2092.36,
+        "duration": 6.74
+    },
+    {
+        "text": "from two different reference panels the",
+        "start": 2096.38,
+        "duration": 6.03
+    },
+    {
+        "text": "view that we can integrate them and in a",
+        "start": 2099.1,
+        "duration": 4.72
+    },
+    {
+        "text": "way that does not interfere with the",
+        "start": 2102.41,
+        "duration": 3.99
+    },
+    {
+        "text": "algorithm and it would also want to",
+        "start": 2103.82,
+        "duration": 4.11
+    },
+    {
+        "text": "require access to the reference panel",
+        "start": 2106.4,
+        "duration": 3.54
+    },
+    {
+        "text": "and the advantages of that would be that",
+        "start": 2107.93,
+        "duration": 3.81
+    },
+    {
+        "text": "it would be the best solution to",
+        "start": 2109.94,
+        "duration": 4.17
+    },
+    {
+        "text": "marching reference panels which is a big",
+        "start": 2111.74,
+        "duration": 4.29
+    },
+    {
+        "text": "problem in general because when you have",
+        "start": 2114.11,
+        "duration": 3.81
+    },
+    {
+        "text": "to reference panels the problems that",
+        "start": 2116.03,
+        "duration": 4.02
+    },
+    {
+        "text": "happen when you try to merge them is how",
+        "start": 2117.92,
+        "duration": 3.78
+    },
+    {
+        "text": "do you determine the final set of",
+        "start": 2120.05,
+        "duration": 4.68
+    },
+    {
+        "text": "variants if its intersection the",
+        "start": 2121.7,
+        "duration": 4.86
+    },
+    {
+        "text": "variants decrease the number of variants",
+        "start": 2124.73,
+        "duration": 3.57
+    },
+    {
+        "text": "if its Union he will end up with missing",
+        "start": 2126.56,
+        "duration": 3.66
+    },
+    {
+        "text": "variants you end up here I might have to",
+        "start": 2128.3,
+        "duration": 4.05
+    },
+    {
+        "text": "do joint calling which is very lot of",
+        "start": 2130.22,
+        "duration": 4.74
+    },
+    {
+        "text": "work and it requires access to the panel",
+        "start": 2132.35,
+        "duration": 4.38
+    },
+    {
+        "text": "and of course marching to panels would",
+        "start": 2134.96,
+        "duration": 3.15
+    },
+    {
+        "text": "give you a bigger panel you know that's",
+        "start": 2136.73,
+        "duration": 4.8
+    },
+    {
+        "text": "an increased burden so that's why we",
+        "start": 2138.11,
+        "duration": 5.73
+    },
+    {
+        "text": "have the idea are called meta",
+        "start": 2141.53,
+        "duration": 4.74
+    },
+    {
+        "text": "computation which is just that is simple",
+        "start": 2143.84,
+        "duration": 3.72
+    },
+    {
+        "text": "in the sense we just do a weighted",
+        "start": 2146.27,
+        "duration": 3.03
+    },
+    {
+        "text": "combination of the individual imputed",
+        "start": 2147.56,
+        "duration": 5.19
+    },
+    {
+        "text": "values but it's the way we determine the",
+        "start": 2149.3,
+        "duration": 6.27
+    },
+    {
+        "text": "weights they are yeah they are based on",
+        "start": 2152.75,
+        "duration": 5.31
+    },
+    {
+        "text": "some factors like and how the imputation",
+        "start": 2155.57,
+        "duration": 6.03
+    },
+    {
+        "text": "works so skipping into the details of",
+        "start": 2158.06,
+        "duration": 6.54
+    },
+    {
+        "text": "what those weights determine so for",
+        "start": 2161.6,
+        "duration": 4.59
+    },
+    {
+        "text": "example just to give a result of how the",
+        "start": 2164.6,
+        "duration": 4.29
+    },
+    {
+        "text": "metal imputation can help us give more",
+        "start": 2166.19,
+        "duration": 7.02
+    },
+    {
+        "text": "accuracy so we included in 268 stubble",
+        "start": 2168.89,
+        "duration": 5.64
+    },
+    {
+        "text": "samples is there B samples or",
+        "start": 2173.21,
+        "duration": 3.06
+    },
+    {
+        "text": "african-american samples from the United",
+        "start": 2174.53,
+        "duration": 4.62
+    },
+    {
+        "text": "States so these these Co textures are",
+        "start": 2176.27,
+        "duration": 4.65
+    },
+    {
+        "text": "all from the thousand genomes data and",
+        "start": 2179.15,
+        "duration": 4.71
+    },
+    {
+        "text": "we imputed and using two panels one of",
+        "start": 2180.92,
+        "duration": 6.42
+    },
+    {
+        "text": "500 samples European and 600 African",
+        "start": 2183.86,
+        "duration": 5.76
+    },
+    {
+        "text": "samples because uhm the african-american",
+        "start": 2187.34,
+        "duration": 3.99
+    },
+    {
+        "text": "samples might have shared ancestry with",
+        "start": 2189.62,
+        "duration": 4.62
+    },
+    {
+        "text": "both the Europeans and Africans so and",
+        "start": 2191.33,
+        "duration": 4.47
+    },
+    {
+        "text": "this is the claim the imputation",
+        "start": 2194.24,
+        "duration": 6.3
+    },
+    {
+        "text": "accuracy graph so we see that in general",
+        "start": 2195.8,
+        "duration": 7.92
+    },
+    {
+        "text": "the African reference panel is much more",
+        "start": 2200.54,
+        "duration": 5.94
+    },
+    {
+        "text": "helpful for giving a bit",
+        "start": 2203.72,
+        "duration": 4.68
+    },
+    {
+        "text": "see but it's not that the Europeans are",
+        "start": 2206.48,
+        "duration": 6.0
+    },
+    {
+        "text": "totally still does help us here so when",
+        "start": 2208.4,
+        "duration": 6.0
+    },
+    {
+        "text": "we do a meta imputation we find that if",
+        "start": 2212.48,
+        "duration": 3.84
+    },
+    {
+        "text": "we kind of combine the joint imputed",
+        "start": 2214.4,
+        "duration": 4.35
+    },
+    {
+        "text": "values of from these two panels without",
+        "start": 2216.32,
+        "duration": 4.83
+    },
+    {
+        "text": "actually having access to the panel we",
+        "start": 2218.75,
+        "duration": 4.44
+    },
+    {
+        "text": "can bring up a slight improvement in the",
+        "start": 2221.15,
+        "duration": 4.44
+    },
+    {
+        "text": "accuracy and this is still a work in",
+        "start": 2223.19,
+        "duration": 5.06
+    },
+    {
+        "text": "progress which is a very minor stage and",
+        "start": 2225.59,
+        "duration": 4.92
+    },
+    {
+        "text": "we're just going to just working in",
+        "start": 2228.25,
+        "duration": 4.9
+    },
+    {
+        "text": "simpler models and we hope that if you",
+        "start": 2230.51,
+        "duration": 4.47
+    },
+    {
+        "text": "tweak around the modulus we might get",
+        "start": 2233.15,
+        "duration": 3.959
+    },
+    {
+        "text": "more accuracy and if we compare that to",
+        "start": 2234.98,
+        "duration": 4.11
+    },
+    {
+        "text": "the joint imputation so the joint is",
+        "start": 2237.109,
+        "duration": 3.661
+    },
+    {
+        "text": "like when I actually can combine them",
+        "start": 2239.09,
+        "duration": 4.32
+    },
+    {
+        "text": "together and impute so this is as good",
+        "start": 2240.77,
+        "duration": 7.7
+    },
+    {
+        "text": "as it can get so I hope is that like",
+        "start": 2243.41,
+        "duration": 7.89
+    },
+    {
+        "text": "using our methods of meta imputation we",
+        "start": 2248.47,
+        "duration": 5.8
+    },
+    {
+        "text": "can make the redline come as close as",
+        "start": 2251.3,
+        "duration": 8.58
+    },
+    {
+        "text": "possible to the joint results so yeah",
+        "start": 2254.27,
+        "duration": 8.13
+    },
+    {
+        "text": "I'll skip the mini make formal easy this",
+        "start": 2259.88,
+        "duration": 4.02
+    },
+    {
+        "text": "is the work in progress so I'll just",
+        "start": 2262.4,
+        "duration": 10.32
+    },
+    {
+        "text": "skip to the last slide yeah so just to",
+        "start": 2263.9,
+        "duration": 10.65
+    },
+    {
+        "text": "summarize like you know to summarize the",
+        "start": 2272.72,
+        "duration": 6.45
+    },
+    {
+        "text": "minimax there are like tools in the",
+        "start": 2274.55,
+        "duration": 6.809
+    },
+    {
+        "text": "series of imputation tools and they're",
+        "start": 2279.17,
+        "duration": 3.54
+    },
+    {
+        "text": "mainly made for genotype imputation",
+        "start": 2281.359,
+        "duration": 3.121
+    },
+    {
+        "text": "they've been bringing increasing speed",
+        "start": 2282.71,
+        "duration": 4.14
+    },
+    {
+        "text": "and memory efficiency a negligible",
+        "start": 2284.48,
+        "duration": 5.52
+    },
+    {
+        "text": "almost no loss in accuracy from Mac to",
+        "start": 2286.85,
+        "duration": 5.28
+    },
+    {
+        "text": "mini Mac the main idea was you pre-phase",
+        "start": 2290.0,
+        "duration": 5.04
+    },
+    {
+        "text": "instead of imputing into genotypes that",
+        "start": 2292.13,
+        "duration": 6.57
+    },
+    {
+        "text": "we can impute into haplotypes for",
+        "start": 2295.04,
+        "duration": 4.98
+    },
+    {
+        "text": "minimax to minimize - it was mainly",
+        "start": 2298.7,
+        "duration": 4.11
+    },
+    {
+        "text": "software engineering techniques from two",
+        "start": 2300.02,
+        "duration": 5.28
+    },
+    {
+        "text": "to three we introduced the idea of state",
+        "start": 2302.81,
+        "duration": 3.87
+    },
+    {
+        "text": "space reduction which is just using",
+        "start": 2305.3,
+        "duration": 4.29
+    },
+    {
+        "text": "local redundancy is in the haplotypes",
+        "start": 2306.68,
+        "duration": 5.25
+    },
+    {
+        "text": "and in the minimax foresight which I",
+        "start": 2309.59,
+        "duration": 4.529
+    },
+    {
+        "text": "skipped is a an IV con aggressive safe",
+        "start": 2311.93,
+        "duration": 4.32
+    },
+    {
+        "text": "space reduction that is going to further",
+        "start": 2314.119,
+        "duration": 5.641
+    },
+    {
+        "text": "bring down the computational cost and we",
+        "start": 2316.25,
+        "duration": 5.58
+    },
+    {
+        "text": "might also exploit some other ideas like",
+        "start": 2319.76,
+        "duration": 4.59
+    },
+    {
+        "text": "doing interpolation which might again",
+        "start": 2321.83,
+        "duration": 4.32
+    },
+    {
+        "text": "bring up a further boost in speed but",
+        "start": 2324.35,
+        "duration": 4.98
+    },
+    {
+        "text": "even like that the flights right fall in",
+        "start": 2326.15,
+        "duration": 6.03
+    },
+    {
+        "text": "accuracy and to summarize like you know",
+        "start": 2329.33,
+        "duration": 5.64
+    },
+    {
+        "text": "how these minimax of develop like what",
+        "start": 2332.18,
+        "duration": 6.27
+    },
+    {
+        "text": "might have taken 3,000 years to do back",
+        "start": 2334.97,
+        "duration": 5.01
+    },
+    {
+        "text": "in 2010",
+        "start": 2338.45,
+        "duration": 3.65
+    },
+    {
+        "text": "we can do that in 12 minutes now add",
+        "start": 2339.98,
+        "duration": 6.12
+    },
+    {
+        "text": "almost the same accuracy so the biggest",
+        "start": 2342.1,
+        "duration": 5.92
+    },
+    {
+        "text": "jumps way from Mac to mini Mac and then",
+        "start": 2346.1,
+        "duration": 4.2
+    },
+    {
+        "text": "you know the fold increase has of course",
+        "start": 2348.02,
+        "duration": 11.4
+    },
+    {
+        "text": "decreased but yeah and thanks to all my",
+        "start": 2350.3,
+        "duration": 12.41
+    },
+    {
+        "text": "collaborators goes always my advisor",
+        "start": 2359.42,
+        "duration": 6.18
+    },
+    {
+        "text": "Christian helped me a lot with all the",
+        "start": 2362.71,
+        "duration": 4.96
+    },
+    {
+        "text": "imputation tools as well as he's the",
+        "start": 2365.6,
+        "duration": 3.69
+    },
+    {
+        "text": "main person who works on the imputation",
+        "start": 2367.67,
+        "duration": 5.04
+    },
+    {
+        "text": "server and maintain said the difference",
+        "start": 2369.29,
+        "duration": 4.829
+    },
+    {
+        "text": "construction it was a collaboration",
+        "start": 2372.71,
+        "duration": 6.56
+    },
+    {
+        "text": "between Michigan Oxford and Sanger so",
+        "start": 2374.119,
+        "duration": 5.151
+    },
+    {
+        "text": "yeah that's pretty much it doing pre",
+        "start": 2379.48,
+        "duration": 19.69
+    },
+    {
+        "text": "phasing and then haplotypic separately",
+        "start": 2397.64,
+        "duration": 3.09
+    },
+    {
+        "text": "like it seems like when you're facing",
+        "start": 2399.17,
+        "duration": 4.17
+    },
+    {
+        "text": "you're trying to discover some haplotype",
+        "start": 2400.73,
+        "duration": 8.37
+    },
+    {
+        "text": "information so I'm confused why so good",
+        "start": 2403.34,
+        "duration": 7.68
+    },
+    {
+        "text": "point so the technical that kind of",
+        "start": 2409.1,
+        "duration": 3.6
+    },
+    {
+        "text": "depends on like how you do phasing so",
+        "start": 2411.02,
+        "duration": 4.17
+    },
+    {
+        "text": "currently if you have so even when you",
+        "start": 2412.7,
+        "duration": 4.2
+    },
+    {
+        "text": "use 52 phasing people often use",
+        "start": 2415.19,
+        "duration": 3.09
+    },
+    {
+        "text": "different spanners they you should do",
+        "start": 2416.9,
+        "duration": 3.54
+    },
+    {
+        "text": "that you know but now when you have",
+        "start": 2418.28,
+        "duration": 4.38
+    },
+    {
+        "text": "really large samples like if you have",
+        "start": 2420.44,
+        "duration": 4.919
+    },
+    {
+        "text": "say 5000 samples in your chivas data we",
+        "start": 2422.66,
+        "duration": 4.47
+    },
+    {
+        "text": "no longer use reference panels anymore",
+        "start": 2425.359,
+        "duration": 4.471
+    },
+    {
+        "text": "we can just face themselves like liquid",
+        "start": 2427.13,
+        "duration": 4.86
+    },
+    {
+        "text": "in themselves and that is really fast",
+        "start": 2429.83,
+        "duration": 4.2
+    },
+    {
+        "text": "because you jeewa samples have only one",
+        "start": 2431.99,
+        "duration": 4.23
+    },
+    {
+        "text": "percent of the variance you know it's",
+        "start": 2434.03,
+        "duration": 4.32
+    },
+    {
+        "text": "just like say 20 million variants you",
+        "start": 2436.22,
+        "duration": 4.23
+    },
+    {
+        "text": "know or maybe five so that's very fast",
+        "start": 2438.35,
+        "duration": 3.69
+    },
+    {
+        "text": "to face so the facing gets really fast",
+        "start": 2440.45,
+        "duration": 3.51
+    },
+    {
+        "text": "and you don't need to like yeah so the",
+        "start": 2442.04,
+        "duration": 3.69
+    },
+    {
+        "text": "whole idea of haplotype being only",
+        "start": 2443.96,
+        "duration": 16.23
+    },
+    {
+        "text": "happens within the sample so yes yes",
+        "start": 2445.73,
+        "duration": 16.71
+    },
+    {
+        "text": "just cause like I said I always end up",
+        "start": 2460.19,
+        "duration": 3.78
+    },
+    {
+        "text": "making way more slides that I can talk",
+        "start": 2462.44,
+        "duration": 4.53
+    },
+    {
+        "text": "about i skipped on that but i did yeah",
+        "start": 2463.97,
+        "duration": 4.44
+    },
+    {
+        "text": "so far they were talking about an",
+        "start": 2466.97,
+        "duration": 3.24
+    },
+    {
+        "text": "aggressive stage stress reduction so in",
+        "start": 2468.41,
+        "duration": 5.16
+    },
+    {
+        "text": "essence are how we just compressed half",
+        "start": 2470.21,
+        "duration": 6.06
+    },
+    {
+        "text": "in small regions and so in implications",
+        "start": 2473.57,
+        "duration": 5.52
+    },
+    {
+        "text": "one important point we found that what",
+        "start": 2476.27,
+        "duration": 6.39
+    },
+    {
+        "text": "we found but after the information the",
+        "start": 2479.09,
+        "duration": 5.88
+    },
+    {
+        "text": "genotype sample of the Geo sample comes",
+        "start": 2482.66,
+        "duration": 5.46
+    },
+    {
+        "text": "only to the typed sites the untyped",
+        "start": 2484.97,
+        "duration": 4.77
+    },
+    {
+        "text": "sighting on the g1 sample doesn't",
+        "start": 2488.12,
+        "duration": 3.81
+    },
+    {
+        "text": "provide any information right so our",
+        "start": 2489.74,
+        "duration": 4.65
+    },
+    {
+        "text": "next idea for the aggressive state space",
+        "start": 2491.93,
+        "duration": 4.02
+    },
+    {
+        "text": "reduction which I was saying is that I",
+        "start": 2494.39,
+        "duration": 4.32
+    },
+    {
+        "text": "mean now we will collapse haplotype just",
+        "start": 2495.95,
+        "duration": 6.72
+    },
+    {
+        "text": "based on the type side so I can just you",
+        "start": 2498.71,
+        "duration": 8.37
+    },
+    {
+        "text": "know so for example like here it surely",
+        "start": 2502.67,
+        "duration": 6.51
+    },
+    {
+        "text": "we had three haplotypes so in the first",
+        "start": 2507.08,
+        "duration": 4.2
+    },
+    {
+        "text": "block you know because these three by",
+        "start": 2509.18,
+        "duration": 4.86
+    },
+    {
+        "text": "now unique they are no longer them so",
+        "start": 2511.28,
+        "duration": 5.61
+    },
+    {
+        "text": "for example this and the G don't match",
+        "start": 2514.04,
+        "duration": 4.68
+    },
+    {
+        "text": "here so I can't merge them further but",
+        "start": 2516.89,
+        "duration": 4.17
+    },
+    {
+        "text": "if the blue lines these are the just the",
+        "start": 2518.72,
+        "duration": 4.08
+    },
+    {
+        "text": "genotype sites you know if I do you know",
+        "start": 2521.06,
+        "duration": 4.08
+    },
+    {
+        "text": "the movements and the genotype sites the",
+        "start": 2522.8,
+        "duration": 4.17
+    },
+    {
+        "text": "space reduction the idea is that we will",
+        "start": 2525.14,
+        "duration": 3.57
+    },
+    {
+        "text": "merge them only based on these blue",
+        "start": 2526.97,
+        "duration": 4.17
+    },
+    {
+        "text": "lines and as a result they still",
+        "start": 2528.71,
+        "duration": 4.65
+    },
+    {
+        "text": "disagree in between for example here",
+        "start": 2531.14,
+        "duration": 3.78
+    },
+    {
+        "text": "these two most half the types I don't",
+        "start": 2533.36,
+        "duration": 2.16
+    },
+    {
+        "text": "agree",
+        "start": 2534.92,
+        "duration": 2.16
+    },
+    {
+        "text": "which is why we have to go back and",
+        "start": 2535.52,
+        "duration": 3.81
+    },
+    {
+        "text": "modify our calculations a bit but",
+        "start": 2537.08,
+        "duration": 5.7
+    },
+    {
+        "text": "general look this kind of shows you this",
+        "start": 2539.33,
+        "duration": 6.0
+    },
+    {
+        "text": "was the original space where we have 9",
+        "start": 2542.78,
+        "duration": 5.34
+    },
+    {
+        "text": "plus 27 243 marker you know constant",
+        "start": 2545.33,
+        "duration": 3.48
+    },
+    {
+        "text": "operations",
+        "start": 2548.12,
+        "duration": 3.77
+    },
+    {
+        "text": "this was me Mac 3 where we have three",
+        "start": 2548.81,
+        "duration": 6.11
+    },
+    {
+        "text": "and three haplotypes in blocks and",
+        "start": 2551.89,
+        "duration": 5.2
+    },
+    {
+        "text": "multiplying that linearly that gives us",
+        "start": 2554.92,
+        "duration": 4.45
+    },
+    {
+        "text": "83 which is like a quarter of 243 and",
+        "start": 2557.09,
+        "duration": 4.56
+    },
+    {
+        "text": "this was this is supposed to be mini",
+        "start": 2559.37,
+        "duration": 4.38
+    },
+    {
+        "text": "math for where these three has reduced",
+        "start": 2561.65,
+        "duration": 3.96
+    },
+    {
+        "text": "to two you know even these two and these",
+        "start": 2563.75,
+        "duration": 5.07
+    },
+    {
+        "text": "two will combine further the top group",
+        "start": 2565.61,
+        "duration": 4.89
+    },
+    {
+        "text": "will combine here so the number of",
+        "start": 2568.82,
+        "duration": 4.08
+    },
+    {
+        "text": "haplotypes has reduced even further in",
+        "start": 2570.5,
+        "duration": 5.67
+    },
+    {
+        "text": "mini-map for making it 54 like these",
+        "start": 2572.9,
+        "duration": 5.94
+    },
+    {
+        "text": "folds would be much more they would make",
+        "start": 2576.17,
+        "duration": 5.01
+    },
+    {
+        "text": "much bigger numbers in real-life data",
+        "start": 2578.84,
+        "duration": 7.29
+    },
+    {
+        "text": "but next idea mini Mac for but yeah it's",
+        "start": 2581.18,
+        "duration": 6.69
+    },
+    {
+        "text": "just going to make the comp capsules",
+        "start": 2586.13,
+        "duration": 4.32
+    },
+    {
+        "text": "more complicated because we have this",
+        "start": 2587.87,
+        "duration": 4.44
+    },
+    {
+        "text": "new thing called fuzzy areas which are",
+        "start": 2590.45,
+        "duration": 3.54
+    },
+    {
+        "text": "going to be served to half the banks",
+        "start": 2592.31,
+        "duration": 3.39
+    },
+    {
+        "text": "which are now collapse like I said they",
+        "start": 2593.99,
+        "duration": 4.74
+    },
+    {
+        "text": "might not agree at intervening size at",
+        "start": 2595.7,
+        "duration": 5.01
+    },
+    {
+        "text": "the intermediate positions so those",
+        "start": 2598.73,
+        "duration": 3.57
+    },
+    {
+        "text": "positions where they don't agree we have",
+        "start": 2600.71,
+        "duration": 3.63
+    },
+    {
+        "text": "to keep track of those we are calling",
+        "start": 2602.3,
+        "duration": 3.5
+    },
+    {
+        "text": "them fuzzy alleles and we have to",
+        "start": 2604.34,
+        "duration": 3.56
+    },
+    {
+        "text": "properly speed up the speed up the",
+        "start": 2605.8,
+        "duration": 3.69
+    },
+    {
+        "text": "probabilities when we are doing the",
+        "start": 2607.9,
+        "duration": 4.92
+    },
+    {
+        "text": "final imputation so yeah that is",
+        "start": 2609.49,
+        "duration": 15.39
+    },
+    {
+        "text": "supposed to be mini-map for question",
+        "start": 2612.82,
+        "duration": 15.87
+    },
+    {
+        "text": "about so when you initially within your",
+        "start": 2624.88,
+        "duration": 6.23
+    },
+    {
+        "text": "city inferring a haplotype so have you",
+        "start": 2628.69,
+        "duration": 10.08
+    },
+    {
+        "text": "compared it with six a maximum this is a",
+        "start": 2631.11,
+        "duration": 9.1
+    },
+    {
+        "text": "different booth altogether because we",
+        "start": 2638.77,
+        "duration": 3.75
+    },
+    {
+        "text": "don't infer haplotypes any movie edge",
+        "start": 2640.21,
+        "duration": 4.97
+    },
+    {
+        "text": "[Music]",
+        "start": 2642.52,
+        "duration": 5.46
+    },
+    {
+        "text": "and we are just computing the sites in",
+        "start": 2645.18,
+        "duration": 5.11
+    },
+    {
+        "text": "between so phasing is kind of like a",
+        "start": 2647.98,
+        "duration": 3.9
+    },
+    {
+        "text": "problem the issue has been addressed",
+        "start": 2650.29,
+        "duration": 8.94
+    },
+    {
+        "text": "already yeah in the the one that you",
+        "start": 2651.88,
+        "duration": 9.21
+    },
+    {
+        "text": "have in the server so you have a couple",
+        "start": 2659.23,
+        "duration": 4.35
+    },
+    {
+        "text": "of reference not I'm not in the fields",
+        "start": 2661.09,
+        "duration": 4.2
+    },
+    {
+        "text": "I'm not sure but these might be the gold",
+        "start": 2663.58,
+        "duration": 3.72
+    },
+    {
+        "text": "standard or ones used for the reference",
+        "start": 2665.29,
+        "duration": 5.03
+    },
+    {
+        "text": "but it's a way to upload your own panel",
+        "start": 2667.3,
+        "duration": 5.22
+    },
+    {
+        "text": "anyone can make their own hands but the",
+        "start": 2670.32,
+        "duration": 3.67
+    },
+    {
+        "text": "point is we don't have a lot of",
+        "start": 2672.52,
+        "duration": 3.06
+    },
+    {
+        "text": "difference panels around because they're",
+        "start": 2673.99,
+        "duration": 10.23
+    },
+    {
+        "text": "expensive hapmap ten thousand genomes",
+        "start": 2675.58,
+        "duration": 11.69
+    },
+    {
+        "text": "and we have UK team game but in",
+        "start": 2684.22,
+        "duration": 5.37
+    },
+    {
+        "text": "everything is private so that's the",
+        "start": 2687.27,
+        "duration": 5.29
+    },
+    {
+        "text": "reason people so that makes it yeah",
+        "start": 2689.59,
+        "duration": 4.98
+    },
+    {
+        "text": "becomes difficult so whenever we have a",
+        "start": 2692.56,
+        "duration": 4.17
+    },
+    {
+        "text": "big study each study will have almost",
+        "start": 2694.57,
+        "duration": 3.75
+    },
+    {
+        "text": "all the time they will have their one",
+        "start": 2696.73,
+        "duration": 4.32
+    },
+    {
+        "text": "reference panel along with a public",
+        "start": 2698.32,
+        "duration": 4.98
+    },
+    {
+        "text": "reference panel just because whenever",
+        "start": 2701.05,
+        "duration": 4.5
+    },
+    {
+        "text": "you do a do a disease specific study or",
+        "start": 2703.3,
+        "duration": 4.05
+    },
+    {
+        "text": "something that's population specific for",
+        "start": 2705.55,
+        "duration": 5.18
+    },
+    {
+        "text": "example the Han study which is based on",
+        "start": 2707.35,
+        "duration": 6.0
+    },
+    {
+        "text": "population in Norway so we have found",
+        "start": 2710.73,
+        "duration": 3.9
+    },
+    {
+        "text": "that minimal we will get into",
+        "start": 2713.35,
+        "duration": 3.42
+    },
+    {
+        "text": "populations in Norway which is actually",
+        "start": 2714.63,
+        "duration": 4.48
+    },
+    {
+        "text": "a kind of a secluded population although",
+        "start": 2716.77,
+        "duration": 4.17
+    },
+    {
+        "text": "they are independent they are found that",
+        "start": 2719.11,
+        "duration": 4.56
+    },
+    {
+        "text": "they get way more accuracy from a hunter",
+        "start": 2720.94,
+        "duration": 4.8
+    },
+    {
+        "text": "if a standard or a sorry from a norm nor",
+        "start": 2723.67,
+        "duration": 4.02
+    },
+    {
+        "text": "winning reference method then from",
+        "start": 2725.74,
+        "duration": 3.54
+    },
+    {
+        "text": "something that's more common thing to",
+        "start": 2727.69,
+        "duration": 5.1
+    },
+    {
+        "text": "claim that thousand genomes so yeah like",
+        "start": 2729.28,
+        "duration": 5.4
+    },
+    {
+        "text": "of course this witches can always make",
+        "start": 2732.79,
+        "duration": 5.27
+    },
+    {
+        "text": "the reference time and I use this",
+        "start": 2734.68,
+        "duration": 3.38
+    },
+    {
+        "text": "it's someone minor point is are they",
+        "start": 2743.569,
+        "duration": 5.411
+    },
+    {
+        "text": "gonna me make three as a tool but on the",
+        "start": 2746.73,
+        "duration": 3.0
+    },
+    {
+        "text": "server",
+        "start": 2748.98,
+        "duration": 4.319
+    },
+    {
+        "text": "I think chromosome makes the chance to",
+        "start": 2749.73,
+        "duration": 7.109
+    },
+    {
+        "text": "deliver the other thousand genomes but",
+        "start": 2753.299,
+        "duration": 5.881
+    },
+    {
+        "text": "the last panel agency I think you are",
+        "start": 2756.839,
+        "duration": 13.051
+    },
+    {
+        "text": "still working on chromosome eight you",
+        "start": 2759.18,
+        "duration": 12.81
+    },
+    {
+        "text": "explain a little bit about our even",
+        "start": 2769.89,
+        "duration": 6.03
+    },
+    {
+        "text": "though you just created the home from",
+        "start": 2771.99,
+        "duration": 6.809
+    },
+    {
+        "text": "going to chunks there is no loss of",
+        "start": 2775.92,
+        "duration": 8.149
+    },
+    {
+        "text": "accuracy so those are like kind of",
+        "start": 2778.799,
+        "duration": 9.951
+    },
+    {
+        "text": "detailed calculations which I've escaped",
+        "start": 2784.069,
+        "duration": 4.681
+    },
+    {
+        "text": "general I there is no intuitive way to",
+        "start": 2789.2,
+        "duration": 7.3
+    },
+    {
+        "text": "explain that because the like if I come",
+        "start": 2793.079,
+        "duration": 6.451
+    },
+    {
+        "text": "back to this slide which I mainly talk",
+        "start": 2796.5,
+        "duration": 5.19
+    },
+    {
+        "text": "about much was the schematic diagram of",
+        "start": 2799.53,
+        "duration": 8.76
+    },
+    {
+        "text": "imminently so in this like these",
+        "start": 2801.69,
+        "duration": 10.8
+    },
+    {
+        "text": "formulas they we devised these formulas",
+        "start": 2808.29,
+        "duration": 6.15
+    },
+    {
+        "text": "in a waste so as to be get the same",
+        "start": 2812.49,
+        "duration": 5.46
+    },
+    {
+        "text": "answers you know so we have a space and",
+        "start": 2814.44,
+        "duration": 5.639
+    },
+    {
+        "text": "we had calculations that we did on this",
+        "start": 2817.95,
+        "duration": 4.23
+    },
+    {
+        "text": "huge space now we are reducing something",
+        "start": 2820.079,
+        "duration": 4.621
+    },
+    {
+        "text": "to a smaller space and we are doing our",
+        "start": 2822.18,
+        "duration": 8.58
+    },
+    {
+        "text": "calculations on them right and so I try",
+        "start": 2824.7,
+        "duration": 7.95
+    },
+    {
+        "text": "to say is they the way we do the",
+        "start": 2830.76,
+        "duration": 4.62
+    },
+    {
+        "text": "calculation is on the smaller space or",
+        "start": 2832.65,
+        "duration": 4.98
+    },
+    {
+        "text": "we have modified our formulas in a way",
+        "start": 2835.38,
+        "duration": 7.65
+    },
+    {
+        "text": "so that to make it equally the reason",
+        "start": 2837.63,
+        "duration": 7.5
+    },
+    {
+        "text": "behind that is just like either as some",
+        "start": 2843.03,
+        "duration": 3.9
+    },
+    {
+        "text": "algebra are showing that oh yeah what we",
+        "start": 2845.13,
+        "duration": 3.479
+    },
+    {
+        "text": "did in the reduced space is same as in",
+        "start": 2846.93,
+        "duration": 4.98
+    },
+    {
+        "text": "the original space this just Angela this",
+        "start": 2848.609,
+        "duration": 7.74
+    },
+    {
+        "text": "not much intention bond that it is I",
+        "start": 2851.91,
+        "duration": 12.75
+    },
+    {
+        "text": "don't get how do I break them into",
+        "start": 2856.349,
+        "duration": 10.49
+    },
+    {
+        "text": "chunks",
+        "start": 2864.66,
+        "duration": 2.179
+    },
+    {
+        "text": "yes right that Junction like that's what",
+        "start": 2869.78,
+        "duration": 5.65
+    },
+    {
+        "text": "so but initially we were supposed to",
+        "start": 2872.55,
+        "duration": 5.25
+    },
+    {
+        "text": "move across this child you know normally",
+        "start": 2875.43,
+        "duration": 4.29
+    },
+    {
+        "text": "like go from this side to this one and",
+        "start": 2877.8,
+        "duration": 3.84
+    },
+    {
+        "text": "then this one by recursion right now we",
+        "start": 2879.72,
+        "duration": 4.26
+    },
+    {
+        "text": "are not doing this on the original space",
+        "start": 2881.64,
+        "duration": 4.68
+    },
+    {
+        "text": "they're doing it on a smaller space like",
+        "start": 2883.98,
+        "duration": 5.88
+    },
+    {
+        "text": "this so once we come to the end so for",
+        "start": 2886.32,
+        "duration": 5.22
+    },
+    {
+        "text": "example we have some probabilities for",
+        "start": 2889.86,
+        "duration": 4.62
+    },
+    {
+        "text": "these three haplotypes we unfold them",
+        "start": 2891.54,
+        "duration": 5.76
+    },
+    {
+        "text": "back this unfolding state gives us the",
+        "start": 2894.48,
+        "duration": 4.53
+    },
+    {
+        "text": "probabilities for the original line",
+        "start": 2897.3,
+        "duration": 4.65
+    },
+    {
+        "text": "haplotypes and it would give us the same",
+        "start": 2899.01,
+        "duration": 5.64
+    },
+    {
+        "text": "numbers if we did the calculations on",
+        "start": 2901.95,
+        "duration": 5.88
+    },
+    {
+        "text": "the original space so once we come to",
+        "start": 2904.65,
+        "duration": 6.15
+    },
+    {
+        "text": "this end and then we get ready for the",
+        "start": 2907.83,
+        "duration": 4.83
+    },
+    {
+        "text": "next clock so mean once again because",
+        "start": 2910.8,
+        "duration": 3.45
+    },
+    {
+        "text": "the reason we have to move from block to",
+        "start": 2912.66,
+        "duration": 3.0
+    },
+    {
+        "text": "block is different blocks we have",
+        "start": 2914.25,
+        "duration": 3.48
+    },
+    {
+        "text": "different configurations right for",
+        "start": 2915.66,
+        "duration": 3.96
+    },
+    {
+        "text": "example in the first block saying these",
+        "start": 2917.73,
+        "duration": 3.45
+    },
+    {
+        "text": "four were much together",
+        "start": 2919.62,
+        "duration": 3.81
+    },
+    {
+        "text": "in the second block you know we stored a",
+        "start": 2921.18,
+        "duration": 5.25
+    },
+    {
+        "text": "merge together so I cannot keep moving",
+        "start": 2923.43,
+        "duration": 5.01
+    },
+    {
+        "text": "from blocks to block without doing a",
+        "start": 2926.43,
+        "duration": 5.01
+    },
+    {
+        "text": "jump in between so this jump in between",
+        "start": 2928.44,
+        "duration": 5.57
+    },
+    {
+        "text": "is called the unfolding step maybe a",
+        "start": 2931.44,
+        "duration": 5.19
+    },
+    {
+        "text": "foot back the probabilities we come back",
+        "start": 2934.01,
+        "duration": 5.08
+    },
+    {
+        "text": "to the original space and once we are",
+        "start": 2936.63,
+        "duration": 3.81
+    },
+    {
+        "text": "back to the original space it's a",
+        "start": 2939.09,
+        "duration": 3.12
+    },
+    {
+        "text": "recursion again for the next block we",
+        "start": 2940.44,
+        "duration": 3.27
+    },
+    {
+        "text": "use the same if it again you take the",
+        "start": 2942.21,
+        "duration": 3.9
+    },
+    {
+        "text": "block you fold then move across the",
+        "start": 2943.71,
+        "duration": 5.34
+    },
+    {
+        "text": "block get to the bar and unfold them and",
+        "start": 2946.11,
+        "duration": 4.64
+    },
+    {
+        "text": "I didn't get ready for the next block",
+        "start": 2949.05,
+        "duration": 7.5
+    },
+    {
+        "text": "yeah so the initial recursion was",
+        "start": 2950.75,
+        "duration": 8.56
+    },
+    {
+        "text": "martyred by marker and now it's like you",
+        "start": 2956.55,
+        "duration": 4.71
+    },
+    {
+        "text": "could talk look at it like a necessary",
+        "start": 2959.31,
+        "duration": 3.33
+    },
+    {
+        "text": "question like the first recursion is",
+        "start": 2961.26,
+        "duration": 3.6
+    },
+    {
+        "text": "block by block and within block there is",
+        "start": 2962.64,
+        "duration": 5.75
+    },
+    {
+        "text": "a marker by mark records",
+        "start": 2964.86,
+        "duration": 3.53
+    },
+    {
+        "text": "any other questions",
+        "start": 2976.41,
+        "duration": 3.6
+    },
+    {
+        "text": "[Applause]",
+        "start": 2984.42,
+        "duration": 3.119
+    }
+]

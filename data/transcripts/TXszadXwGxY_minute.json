@@ -1,0 +1,166 @@
+[
+    {
+        "start": 0.0,
+        "text": "i'm just going to do a brief introduction to seminar series for anyone who's not familiar with it this is the tools and technology seminar series it's basically a venue to discuss tools technologies methodologies uh they might be recently developed they might be currently in development they may not be developed by the speaker at all just something that they're using and or our interest and of interest um i am scheduling speakers for next semester so if anyone is interested please feel free to contact me we do have some open slots still um so this is sort of we've always done this seminar series in a hybrid uh sort of atmosphere like this but we're sort of flipping it a little bit and that we may actually end up with more people online than in the room uh so we'll see how that goes this semester in addition uh some speakers like today's are online but some will actually be in this room so for those of you who are interested in attending in person and continue attending in person you'll get to see some live speakers uh hopefully so today's speaker is chiang chang dong from the boyle lab and she's going to talk to us about regulum db and with "
+    },
+    {
+        "start": 60.8,
+        "text": "that i'll let her further introduce herself thanks okay thanks magic uh can you guys hear me clearly my voice good yes okay cool yeah okay so thanks for joining my talk uh i'm shane chen from boy lab so i just graduated earlier this year and i'm now doing a short postdoc in boy life um so today i'm gonna start with some general overview on those regulatory snips and how to annotate them in the non-coding regions and then i will introduce the regular db database developed from our lab so this is a brief diagram showing the process of gene regulation as many of you are familiar with the transcription factors so in this process the transcription factors in this case are those activators are recruited to bind with the regulatory elements in the non-coding regions like those enhancer regions "
+    },
+    {
+        "start": 120.96,
+        "text": "and then the g-regulation will be triggered here to activate the gene expression level here downstream so those regulatory elements in the non-coding images can also be those silencers so in that case the repressors as another type of transcription factor tfs in short where we bind with those silencers regions and then downregulates the gene expression level downstream so when a genetic variation occurs within those regulatory elements so like uh the case shown here this is a type of snip of a single nucleotide virus as the most common variation for uh genetic virus so this case shown here is the situation when the allele changes from a allele to a c allele here and this can actually change in the binding status "
+    },
+    {
+        "start": 182.319,
+        "text": "for uh the binding with the tf here so like this case if you see an a leo it will have a perfect binding with this tf here and triggers the downstream gene expression level here but in other cases if it changes to c it might be decreased the binding affinity with the tf uh funny side here and so in that case the downstream gene expression level may be decreased uh there can also be other success uh scenarios happen here like it can in other cases increase the binding affinity with the tf here and will increase the gene expression level or um you can even create a nova binding site with another tf and this uh those will have effects with the gene expression level from other neutrons um instead of the gene here so why we care about those regular developments in regular in non-coding "
+    },
+    {
+        "start": 244.4,
+        "text": "regions because actually many of them are associated with our diseases so like the results from jiva studies which essentially is comparing the allele frequency from the patient's group versus the non-patient's group for different disease all different traits so like the case shown here this particular snip is found associated with the disease so in the non-patients group you can see the t allele frequency is about a half across the population in non-patients but in a patient's group the t of allele frequency is actually much lower than the non-patient's group so this implies this sniff is associated with a tested disease and so it is kind of a snip you will find from those jiva studies associated with your study disease and actually more than 90 percent of the virus found from jiva studies are in the "
+    },
+    {
+        "start": 306.08,
+        "text": "non-coding regions so some of the variants are valid to be regulatory variants that cause the disease but many of those non-coding viruses from give us actually remain underexplored um so one reason is because the jiva studies essentially are a type of a social asian study so it is actually hard to distinguish which snippy is actually the sniff that caused the disease so like the case here showing there's a cluster of snips there in high led which means they're integrated together across the population so very likely they will be having the similar level of association with your study disease but it is hard to distinguish which one is really the variance that caused the disease so the challenge here is really to "
+    },
+    {
+        "start": 366.88,
+        "text": "identify the disease causal regulative virus in the non-coding images from association studies like the jiva studies um because like in many times the association doesn't necessarily mean the causal relationship here so this is just showing you a most particular case of the study from associating studies so like in this case uh some studies found the snips in this particular locus on chromosome 1 are associated with changes in cholesterol levels so in the studies actually this particular sniff is used as an index snip for the association study which is like a probe basically used in those kind of stats um studies uh but the following studies actually found this snip "
+    },
+    {
+        "start": 428.24,
+        "text": "which is apart from the index snip from like one kilobase apart this is actually the regulatory virus that affects the gene expression level in liver tissue by creating a tf binding here in this site for the for the virus so the idea here is that from those association study very likely you were come up with a candidate list usually consists of like hundreds of candidate variants but it is hard to distinguish which one is really cause the disease so is there any like experimental evidence or other source of evidence we can look at to further narrow down the candidate list from those association studies so some um some things we can look at here is first to look at the sequence context "
+    },
+    {
+        "start": 489.599,
+        "text": "so we know that different tfs have different binding affinity across the dna elements it is usually represented by this position weight matrix or pwm in short so like the case here showing a particular pwm for tf binding region like uh the fourth position here will have the most strong bunny affinity for a allele and the case is different for other positions within the body motif but another challenging thing for identifying regulatory environments variance is that there also depends on the epigenetics factors around them so like here um the first we can look at is the chromatin accessibility so we know that across the whole genome some genome "
+    },
+    {
+        "start": 551.44,
+        "text": "regions have like closed chromatin status while the other regions are more accessible for tf bind with the regulatory elements so like they're here basically showing this region as a open chromatin regions and also there's histone modifications so different genome genomic regions have marked with different histone marks so we know that h3k for trimethylation is usually a histone mark associated with enhancer regions while like h3k9 trimethylation or other message um other histomax associated with more like closed um genomic regions here and also uh there's chromatom looping so because the enhancer regions and the target genes can sometimes be hundreds "
+    },
+    {
+        "start": 612.0,
+        "text": "of kilobases apart so the regulation between those two elements will be depend will be dependent on those chromatin looping which can bring them to get a closer together in the spatial distance here so this is usually rely on the protein like cdcf or other cohesion proteins so basically the sequence context plus those uh epigenetic factors contributes to the dynamics of gene regulatory network across various tissues or environmental conditions so there are many functional genomics assets that help us to characterizing those regulatory elements based on those different epigenomic factors so for open chromatin regions "
+    },
+    {
+        "start": 672.64,
+        "text": "as you may heard of their dnac can basically capture those open chromatin regions across in a genome-wide scale and for history modifications or tf binding sites there's um chip seek asses uh can target either the histone different histone marks or different tfs binding sites so the dns footprint is basically a computational method to further identify those dips from the dna seek acids so basically it provides a more a more physically identifies those tf binding sites with a more risk of high resolution than the dnac gases and then there's also assets looking at the gene exception levels variations so the eqts equitail stator basically also can prove "
+    },
+    {
+        "start": 735.279,
+        "text": "either some additional evidence on identifying those regulatory variants so there's like large projects providing uh a huge set of those available data in various tissues or cell types like the encode project um and those roadmap epigenomics project also there's our gtex project providing those eqtls data sets so an a common idea of developing computational methods to predicting regulator variants using those different layers of functional genomics evidence is simply to overlapping the private variant with those different layers of evidence so basically acquire variance if it's overlapping like a dna sick peak which means it's in open chromatin regions "
+    },
+    {
+        "start": 795.44,
+        "text": "then it's uh then it implies this variant is more likely to be a regulatory variant within the regulatory elements and changing the tf binding status so basically by over layering those different uh functional genomics evidence and recently managers are using machine learning measures to find a better way to incorporate those different layers of evidence and also there are other tools using deep learning techniques to learn the regulatory grammars in virus cells from different assets simultaneously so basically eventually uh you can get our candidate list from those kind of tools uh basically give you uh some a prediction score list for your acquiring variance so the highest score basically means it will "
+    },
+    {
+        "start": 856.399,
+        "text": "this variant will be more likely to be a regulatory virulence that affects tf binding status and might cause the disease you are looking at from the association studies so basically this is a way to further narrow down your candidate list from the association studies um so the regular db database is the database uh developed from our lab i'll first walk through uh this simple demo first and then talk about the how the scores or the data source in detail later so this is the interface from our website there's a query and box here so you can type in your acquired variants in a list it can be a list of db sleeve ids from db uh division database or it can also be a list of coordinates for your query "
+    },
+    {
+        "start": 916.88,
+        "text": "virus and you can also acquire it by a specific chromosomal chromosomal region so we will be outputting the scores on for the snips within this region um as the results list so uh so currently we have a maximum limit of like 100 to 200 input acquiring snips at most from the website interface uh so the case here is just showing you if we input this like uh five choir variants here then click the search box uh search bar here it will initially showing you a list on your acquired variants so the locations the db snip ids and the rank score and the probability score i will explain in detail later but you "
+    },
+    {
+        "start": 977.44,
+        "text": "can also download your query results as a bad file or a tsv file with more details on how the evidence looks like and then we also provide a downloading option to for all the pre-calculated scores for those common variants from db smith database essentially i improved like 10 million variants here because currently it's not so feasible to pre-calculate all the scores for the whole genome so we currently provide this pre-calculated list on the common snaps here so if you click any of the fields here you can see more details on your private variant uh individually so like if i clicked one of the variant here it will shows you uh like how many peaks from those functional genomics assets is "
+    },
+    {
+        "start": 1038.16,
+        "text": "overlapping with and the rank score the probe score uh the allele frequency from different projects and it's nearby snips you're looking at and if you scroll down a little bit further you will see essentially a six summary table here each can be clicked further to see more details and i will show later but it's essentially some summarized tables on which of the uh like chipset evidence is overlapping with your query variant or the other source of evidence you you will be looking at where per variant uh so i want to first explain um more in detail for how the rank score and the probes go here um so the rank score here is essentially a manually designed scoring schema here so as i explained in the background we are "
+    },
+    {
+        "start": 1099.039,
+        "text": "essentially looking at the evidence from dna sequences and the tf binding sites from chipseek data sets so um like the case here this particular variant you can see its position is overlapping with the dhs region so open chromatin region from dna seek data and it's also overlapping with the rest bindings or tf binding sites and also a dna's footprint from dna seek data and it's also have a hit on the pwm merchant here for the rest tf so this gives this variance a 2a score here in this case so this is the detail for all the different ranking score we have in regular db database so essentially the more evidence is overlapping with the highest score it will get from this ranking score schemer "
+    },
+    {
+        "start": 1164.96,
+        "text": "uh so if you think uh for this ranking schemer it's essentially our manually designed decision tree so looking at each uh the different layers of evidence and if it's matching with all those evidence it will give a higher score here so in this case it's 1a but we also want to further improve this ranking schema by using machine learning methods so essentially we incorporate the first all those binary features from the initial ranking schema so like the six binary features here and we also included some other numerical features to further improve the performance so like the cheap six signal other than those binary features they are numerical features so better describe the profiles for chipset data across different assets "
+    },
+    {
+        "start": 1225.039,
+        "text": "and also we include our information content change in pwm and the deep c scores so this is essentially our deep learning model um that pre that under different regulatory grammar for various cell types and it has a functional significant score basically a summarizing score to describe how distinguished uh how how significant the changing for the prior variant is um so the technique here we use is uh simply the random forest model uh so essentially we are changing this uh manually designed decision tree into a bunch of uh like 500 decision trees here so essentially each of the tree is using a subset of our total feature set and it's between our subset of our "
+    },
+    {
+        "start": 1285.52,
+        "text": "trinity data set so this is uh basically a technique to avoid um overfitting and also improve the model performance at the end so the average route from those 500 trees will be our final score so the prob score is showing before from our random forest training step so uh yeah so this just goes here is the um prediction score from the random forest model and here is a box port where we compare our new score versus the original the initial ranking score here so essentially you can still see your trend here the lower ranking score initially the law it also has a lower uh new problem score here but the idea is now we can have like better distinguish further variance in the same score category initially "
+    },
+    {
+        "start": 1346.4,
+        "text": "and we have also tested the new score on some npra so essentially validated variance from experiments and show they have improved the prediction accuracy with a new proxy so regular db database essentially directly mirrors the encode data portal so for the human or for all the human uh data they have uh we have uh over like 2 thousand chipseq datasets from different cell lines or tissues or other differential cells and we also include over 1000 dna data from different biosamples or under different treatment or conditions uh so all those genomic intervals are stored in an amazon s3 bucket "
+    },
+    {
+        "start": 1406.72,
+        "text": "and those bad files are indexed in elastic search to enable our efficient search against our query that acquiry position from the credit variant uh so just go back to the summary table on the genomics evidence uh if you click like each of them like the dnase table in this case it will show you uh the overlapping peak from the dna seek and what's the data set id and the derived organ and uh some some more details can be get if you click on the um the link here so uh for the chipseek uh data we will show you like the the binding tf for each experiment so a summary uh plot here and also more details can be "
+    },
+    {
+        "start": 1468.559,
+        "text": "get if you clicked so there's also a general browser view for you to you can move uh your window here so you can see the nearby genes overlapping your private variants and also housed you can click or filter those different peaks from different ad by the assets or by the cell lines so kind of a closer view to see how the signals looks like from different assets uh so i also want to talk about some of the uh work we are currently working on for further extending regular db uh prediction score so uh i'll one aspect we are extending those scores to uh further predict regulative variance in a tissue or over specific context so uh the idea is here so currently when querying over those functional genomics "
+    },
+    {
+        "start": 1530.799,
+        "text": "annotations we are just simply um simply graphs or evidence across different tissues or different cell types so this is essentially a generic score we will get from the random forest model uh but we also um here we also further uh to query it in a tissue specifically so we further look at what's the specific um like uh in blood particularly the prior warranty is overlapping if it's overlapping with the dna sig peak or the histomark from enhancers reach enhancer regions of promoter regions here so we designed another uh when we trained another random first model here and at the end have this tissue specific score so which is essentially a weight from the uh the previous generic score so predicts whether the variance is "
+    },
+    {
+        "start": 1590.88,
+        "text": "particularly functional in the tissue you're looking at so like in the case is the blood tissue so we also leverage in those tissue-specific scores to our urban specific context so the idea is just simply combine all the acids or the annotations from the biosamples mapping to the same relevant organ here um so in this so in this way we are able to generate our organ specific score across essentially 51 orbits from encode project so all the purple labeled bars here are those organs we have available over specific scores from our algorithm and this is basically a validated "
+    },
+    {
+        "start": 1651.44,
+        "text": "variant i show at the beginning so they will actually have effect on the cholesterol level changing in the liver tissue and uh in this plot actually you can so under x-axis is the different uh organs so the 51 organs we have available of a specific school and this is basically the candidate list from the association study and this validated variant you can see actually it has the highest level specific score uh compared with the other candidate variants so uh this is essentially a validation uh showing our turf level specific score is able to pick out the actual regulatory variant across the candidate list so we also validated the scores across our the organs from "
+    },
+    {
+        "start": 1712.159,
+        "text": "more various organs from jiva studies so here this part is showing uh on the on so each row is a giveaway straight from the jiva studies we downloaded and on the each column is the 51 organs we have the available our specific scores uh these are the z scores shown here so essentially uh the trait has an enrichment of regulatory variance functional in the corresponding organ will have a highest z-score showing here so like um this is the top organ with the most enrichment for the regulator violence from our school from our autism so just give you a close looker here closer look here so um we found uh actually that "
+    },
+    {
+        "start": 1774.88,
+        "text": "various uh traits are associated or most english has most engagement with their corresponding organs like some canary artery disease they have the most highest instrument in the arterial blood vessel organs or like other the immune disease actually most engagement have most engagement in those immune relevant organs and also some like blood pressure or cross steroid most english in liver tissue here so another thing we want to further incorporate is the uh target genes so we want to also also tell user what might be the candidate type of gene you are looking at for those putative regulatory variants so we have come up with like three uh "
+    },
+    {
+        "start": 1838.72,
+        "text": "strategies here so yeah most naive ways uh you can just look at the gene with the nearest tss uh so transcription starting site uh from your quiet variant but we also want to incorporate with some topological evidence from test regions from like hi-c data sets so so essentially we can tell you like the genes what what are the genes in the same tests with the prior variants so um which means they are close in the spatial distance uh so also we want to incorporate the evidence from eqtls so from the query variant uh which e snip is uh has the strong ld with the quad variant then its associated each gene will be the target gene for your acquired valentine "
+    },
+    {
+        "start": 1900.24,
+        "text": "okay so i guess i end up with a little bit earlier but um essentially regular db data scores prioritizes putative regulatory variants in the non-coding regions and we have this regulatory this regular db web interface basically provides the interactive annotations on the non-coding environments so showing you what's the specific evidence you are looking at that's overlapping or query variant and we are also working on integrating our new our specific scores and publishing assignments into regular db so hopefully uh can be inter implemented in that in future and we are also moving all our data sets from a g19 to a g38 so it's also been in progress um so with that i want to thank all the lab members from boy lab and also the "
+    },
+    {
+        "start": 1961.36,
+        "text": "collaborators from cherry lab uh ben lehigh emmer and pedro they help us and work with us for designing the lab the website interface and i'm happy to take any questions thank you thank you for that excellent talk so if anyone has questions in the room raise your hand and i can bring you the microphone if you have questions online then you can put them in the chat and we can read them from there or you can use the zoom controls to raise your hand and then unmute yourself there's a question in the room hi this is maureen um i was wondering how you define the gold standard to use when training the random forest model "
+    },
+    {
+        "start": 2023.2,
+        "text": "yeah so um the golden standard uh data set essentially comes from the mpi data sets i don't have like a detailed uh slide here but they are from para massively parallel uh reported assets so basically we have data sets from our three cell lines uh gm1278 k562 and um g2 so basically they are the standard golden standard data sets we are compared with because uh there's like several previous studies also using this kind of um uh data sets to compare with other tools so we can easily uh to compare our performance wisdom yeah so it looks like there's a question in "
+    },
+    {
+        "start": 2084.56,
+        "text": "chat and the question is how often do you update regular mdb that's a great question so we actually uh just updated it for the uh 2.0.3 uh version uh so the the plan is actually to at least give it a update on a half of a year base so um yes so we are looking at like another uh updation so after we incorporate those hg38 datasets so hopefully within next year i think so yeah again if anyone else online has a question feel free to put it in the chat or to use the zoom controls to raise your hand "
+    },
+    {
+        "start": 2146.079,
+        "text": "so it looks like there's another question in the chat so it says uh there are lots of functional tools like yours can you list few unique features of yours yeah sure uh i guess yeah there are like different functional tools uh i think the first thing is uh uh basically the toe tools uh using machine learning measures uh they are using like different types of training data set so like some of them are using basically uh more like disease relevant uh variants from like a gmd database uh so the others uh like from uh same similar to us are using datasets from like in a more regulatory aspect so like we are using uh those mpi data sets or we actually call some uh chipseq validated so a little specific binding snips from chipset data sets so i guess that's one aspect so i think our tools have "
+    },
+    {
+        "start": 2207.599,
+        "text": "more emphasis on specifically identifying those regulator variants that are changing the binding status with tf binding sets in the relevant tissues uh so this is one c and the other the other aspects i think is because we have a directory mirror the encode portal so i think we have a large data set and it it can be updated in easily with the encode project as they are uh including more data sets for different tissues or uh different conditions and also so uh in the future list i showed before so par part of the features that come from essentially overlapping those functional genomics assets from encode project but we also "
+    },
+    {
+        "start": 2268.32,
+        "text": "include deep sea scores so the deep learning uh scores uh from the deep sea group and actually we found in our uh studies so it gives benefit to actually uh uh combined like the direct experiment evidence from uh encode project like the binary features and also with those deep those features from um deep learning techniques so essentially uh the deep learning i think the deep learning techniques are providing the regulated grammar uh from a large trini um set but they may be uh they may have like low performance for those underrepresented represented cell lines from their trini set but our like binary features give like another complementary aspect to adding those experiment features directory "
+    },
+    {
+        "start": 2329.599,
+        "text": "apart from those deep learning skills are there any other questions it looks like another question came in via chat so is your tool able to distinguish between lead snips for which we have the most information from gywa studies and likely causal variants that would be segregating with the snips being measured yeah um so so i just want to make sure i understand your question uh so so essentially our the idea of our tour is uh to um give a more like accurate prediction on "
+    },
+    {
+        "start": 2390.88,
+        "text": "those causal variants so it's actually uh exactly the idea for our database so so ideally if you have a candidate list which consists of the lead snips and you can include other candidates uh seems like something uh some snips in strong ld with the lead snip and uh import them all in our database and the idea is our probe score will give you uh will prioritizes those viruses that are most likely to cause the disease because we are looking at the other genomics evidence like if this particular body with a tier bonus out there or if it's a open chromatin uh region so gives you another layer of evidence besides the association evidence which is like the lead snippets "
+    },
+    {
+        "start": 2452.56,
+        "text": "i don't know if that's an answer that's your question sure sounds like that did answer the question excellent thank you for explaining the utility for lead versus associated snips cool just give it another moment in case anyone else wants to enter a question "
+    }
+]

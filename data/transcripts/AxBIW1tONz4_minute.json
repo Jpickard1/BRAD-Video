@@ -1,0 +1,198 @@
+[
+    {
+        "start": 36.64,
+        "text": "all right shall we start yes okay oh hi everyone thank you for coming to the talk today my name is david and i'm a fifth year phd student from the department of biostatistics and um let me share my screen can you see here can you see the screen yes all right okay thank you for giving me the opportunity to talk about the method and software proposal that i have developed is for a fast and robust ancestry prediction by using principle component analysis so first i would like to give a talk of the motivation of this method the main goal for this method is to "
+    },
+    {
+        "start": 98.079,
+        "text": "adjust for population stratification so population stratification is a major confounder for genetic association of analysis and principle component analysis or pca is a multivariate statistical method that finds the direction of maximal variability so by aggregating information across genetic markers pc has been shown to be effective for population stratification adjustment and we use the principal component scores or pc scores as a ancestry covariate to adjust for and just a brief overview of principal component analysis so in pca we find the direction at which the samples vary the most at least the linear direction and this can be computed by using a singular value decomposition so suppose our data matrix is x and it has p rows which correspond to the "
+    },
+    {
+        "start": 158.8,
+        "text": "features and n columns corresponding to the individual samples and we also assume that x has been has been standardized which means its mean is zero and the standard deviation is one and we run a singular value decomposition on it to get the um the product u times d times v transpose here u is a p by n matrix and it's our pc loading matrix so each pc loading is is a is a unit unit directional vector and that tells us the direction at which the sample varies the most and d is a diagonal matrix of the pc standard deviations and we store them in descending order so the top pc is corresponds to the most useful pcs and the matrix v is actually what we uh we are interested the most "
+    },
+    {
+        "start": 220.159,
+        "text": "that's the pc scores the standardized pc scores so by using that we can adjust for the population stratification and for computation instead of doing a svd we can also use eigen decomposition if all we want is the u only or v only so that way we can speed up the speed a little bit so uh commonly um i found that people use pca by just doing a svd on the how the study samples they try to analyze and here we use a alternative approach we try to predict the study sample species worth by using a reference panel and this will allow us to integrate and match the study samples from different studies and we can also use this method to predict the ancestry membership of each of the study samples if we have the detailed accessory information in the reference panel "
+    },
+    {
+        "start": 282.32,
+        "text": "and there are several methods for pc score prediction by using a reference panel the most straightforward one is we just call it simple projection and then there is also a more uh sophisticated and also more robust method called we call it augment decompose and procrastinate transformation we call it adp what we propose are two alternative methods the bias adjusted projection and the online adp and we will start with a simple projection so for simple projection we first do an svd on the reference panel so this gives us the the pc loading matrix u and once we have the u we know what is the direction that the reference samples vary the most and we can simply uh project our new study sample onto the reference pc loadings and since the pc loading is already a unit vector we "
+    },
+    {
+        "start": 342.88,
+        "text": "can simply multiply the new uh sample x new to to the pc loading matrix uref the um the biggest advantage is that it's computationally very fast um if you have m samples then and you want the top k pcs and you have p features which usually corresponds to the minor allele counts of the snips then the whole um whole computation complexity is just o of m times k times p and also this method is very simple to implement but the downside is that the study pc scores will tend to shrink towards zero when the number of features greatly exceed the number of samples so essentially this is a overfitting issue once you have too many uh features once you have too many uh genetic markers "
+    },
+    {
+        "start": 402.96,
+        "text": "in your reference samples instead of looking for the maximum direction of variability for the true signal the pca actually starts to explain the noise in the reference panel of course this is not transferable to your study set so as a result the um your your the pc loadings for the reference panel actually cannot separate the study samples very well so as a result you can see that um the study sample species score will be much closer to zero than in the reference panel's pc score and i will show examples later and there are many softwares that implement this method you can use plain titansoft or just use write your own code you can probably get it down in 10 or 20 20 lines of codes and a more robust method is the adp method so what we do here is quite "
+    },
+    {
+        "start": 463.12,
+        "text": "similar before in the earlier stage so we first find the uh the reference covariance matrix uh x ref transpose x ref and then we do an agony composition on the reference covariance matrix and this gives us the reference pc scores and then every time we have a new study sample we will just append this new study sample to the reference panel so now the reference panel is uh has one extra sample and then we just find this uh the covariance matrix of this augmented matrix and then we do a eigen decomposition on the covariance matrix so now you have a pc score matrix v out so this vr and the vref the dimension is different only by one only one for the new study sample and as you "
+    },
+    {
+        "start": 524.24,
+        "text": "can imagine since you only have one more sample the rest of the matrix of v r actually is very close to v and if we take only the uh the last row of this v arc then that is just the pc score of the new uh of the new study sample and that's what we want so essentially we are uh we have a reference sample that's fixed and every time we have a new sample we just add this sample to the pool and do a pca and that way is the new sample um pc score is always calculated based on the reference samples and after that we do a we find a linear transformation that's uh that minimize the difference between um f of v our graph and the v ref so vr graph is 10 is simply the the top "
+    },
+    {
+        "start": 586.8,
+        "text": "top and rows in vr so that corresponds to the reference samples um because we added a new study sample so the pc score changed a little bit so we just want to uh restore this slight difference to the original um pc pc space and once we find this transformation um this linear transformation which is called a procrastic transformation we just i apply this transformation to our to our the pcs tour of the of the new sample and then guys get the pc scores in the original pc space so that is how the adp method works and the pro the one of the greatest advantage of the adp method is that it has a higher accuracy and has a minimum shrinkage um different from the the simple projection mesh method but the downside is also very "
+    },
+    {
+        "start": 648.24,
+        "text": "clear it is very computationally costly for a large reference size so because every time um we need to do a eigen every time we do a diagonally composition on the augmented matrix we are essentially uh running a n-cubed algorithm um for very essentially running an n-cubed algorithm so the total computation complexity is m times mp plus n cubed m is the number of your study samples so for each study sample the complexity is the the reference sample size cube and when you have lots of reference samples this is very slow but but oftentimes when we need very fine scaled ancestry information we do need a very large reference sample so adp has a big computation "
+    },
+    {
+        "start": 708.24,
+        "text": "limiting factor here the software that implements this method is the tree software by chao long wang who used to be in the biostats department at ulfm and any questions so far okay i'll continue uh yes so what what what is ancestor prediction and how is that related to pca so ancestry prediction essentially um we want to know the ancestral information of our study samples because that can be a big confounder in the analysis so um one one way to uh to require accessory information is simply do it categorically so say this sample belongs to european that example belong "
+    },
+    {
+        "start": 769.12,
+        "text": "to the african and uh but what we do here is actually before you go on i i'm sorry but what does the ancestry sample mean and actually what is the biological problem you want to address not exactly clear for example in g was a gos analysis we always need to adjust for the the the covariance and ancestry information is um quite often is a confounder so the effect in the africans is quite different from the uh the genomic democracy effects on the on the europeans say and so we need to adjust for this uh the difference across different ancestry groups and that's the main motivation so here when you say ancestry information it sounds more like the difference "
+    },
+    {
+        "start": 830.72,
+        "text": "between different cohorts rather than what you rather than predicting is ancestor so um yeah you can call it population stratification so there are different population groups and they have um they have uh they will make a difference on the effects in your for the variance you are the most interested in okay so we need to adjust for the ancestry information then uh why do you why do you call it an ancestry prediction problem because when you do geos you you always know what is your cohort well whether it's african or american or asian if you know if you do know your um your participants ancestry information then that's good and uh yeah that you can just use the categorical "
+    },
+    {
+        "start": 890.959,
+        "text": "uh data directly and but there are cases when you don't know that information and all you have is the genotype samples in that case we can just use the genotype samples to predict the ancestry information and there are also cases um that you have some vague idea you have some vague information about the ancestry like you know this person is european or non-european but nothing else but you like to get a more detailed information about the non-european group whether they are african or asian or maybe you want to know better about within your european group whether they are british or finnish or spanish and in that case if your reference panel has detailed ancestral information you can use that to predict the uh ancestry information of your study samples and also there are um cases when the the self-reported ancestry information your study sample is not "
+    },
+    {
+        "start": 951.44,
+        "text": "is questionable so that case you want to use the genotypes instead and also if people don't want to use the categorical result but use numerical covariance to adjust for instead then pca is also be useful okay yeah thanks for the question any other question okay i will move up so after uh overviewing the existing messages now i'm about to address our proposed methods so one of the our proposed method is we call the bias adjusted projection so that remembering the simple projection method we have a shrinkage effect going on and a simple way is to a simple way to adjust for that is to estimate this shrinkage factor and then pull back all the tc scores and another approach is to improve the adp method so adp method is "
+    },
+    {
+        "start": 1013.68,
+        "text": "quite accurate but slow so we just try to improve its speed remember every time we do an eigen decomposition on augmented matrix all except the last entry are the same so there is a lot of repetitive computation going on and if we do some smart linear algebra we can we can greatly reduce the computation time and we both we implement both methods in the fraposa software which is available on github and now more details about the bias digest projection so we first do an svd on the reference samples in and um and after we do the uh reference uh do the f svd we would estimate the magnitude of this shrinkage for each pc because gamma one two gamma k where k is the number of pieces you want and we use the um asymptotic properties of the general "
+    },
+    {
+        "start": 1073.76,
+        "text": "generalized spiked population model and by using this method we can compute we can estimate the degree of shrinkage by using the eigenvalues essentially we are assuming um we are we are assuming a distribution for the for the uh matrix and then we we will we will try to estimate the degree of shrinkage and angle of frame shrinkage under this assumed distribution and after we find the shrinkage factor we would uh we will still project a new study sample to the reference pc loadings and but after doing this projection we will just adjust for the shrinkage and get a new pc uh pc score so we we can just doing a multiply the old pc scores by the by a diagonal matrix of the inverse of "
+    },
+    {
+        "start": 1134.16,
+        "text": "the shrinkage vector and that will pull back all the pc scores the computation complexity is the same as a simple projection which is the o of m times k times p so it's very fast and also notice that when we calculate the shrinkage factor this stream page factor is particular to the reference set only so it is a computation that's done once for all so it doesn't affect most of your computation time and the software that does this is uh there is our package called hdpca and we also wrote a python wrapper in in the verposa software and the next proposed method is the online augment decomposing process method so in this method we also do a svd on the reference matrix first and then we every time we have a um "
+    },
+    {
+        "start": 1196.559,
+        "text": "we have a new uh we have a new person coming in we will use the online svd svd algorithm to update the the the original reference pc score matrix to the new pc score matrix and for doing that we need the pc loadings and the eigenvalues of the reference matrix and also the of course the new samples and we are our show the details of the algorithm in the later slide and this method was originally developed by a researcher in image processing but we found that message is quite useful in our case about genetics data and after we do that we it's the same as the adp before you would get the split the matrix into into the the samples that correspond to the reference samples and "
+    },
+    {
+        "start": 1257.36,
+        "text": "the parallel response to the new samples and again finding a progressive transformation to project the pc scores of the new sample and yeah that's how the oedp method works and what we found empirically is that the outputted pc scores are very close to adps and but but the computation is much more efficient although adp had a complexity of o of m times mp plus n cubed in our case the complexity is only linearly with respect to n which is our reference size so the oadp is much faster than adp when the reference sample has when the reference size is very large essentially the speed up comes from the almost repetitive eigen decomposition of the n plus one by "
+    },
+    {
+        "start": 1319.2,
+        "text": "n plus one augmented for augmented matrix for each study sample and they also avoid computing the bottom pieces because in a standard svd we decompose a whole matrix that will give you the all the pieces but you usually only need the top few ones to um to to use to adjust for ancestry we also find that this message is very effective um when approximating the top pc score from adp and for example if you need top four pcs you can just compute the top eight pcs by using the online svd method and that will even make the accuracy higher we are and if you do compute all the pcs in the online svd method then the speed of oadp is actually is identical "
+    },
+    {
+        "start": 1381.76,
+        "text": "to it adps so don't do that and you also don't need that and the software our software proposal implements this method and here is a more detailed description of the online svd method essentially it is a a bunch of quite clever linear algebra on your reference matrix so that you can update the old reference matrix to the augmented one without doing much computation and i won't go too much into the details here but the slides will be a little available later on and you can look into for more details if you're interested in so here is a table to summarize the computation complexity of each method you can break down the runtime into a reference part and a study part for the for "
+    },
+    {
+        "start": 1444.159,
+        "text": "decomposing the reference matrix all the methods have the same complexity because we always need a um we always need our svd on the reference on the reference panel to use pca and but the study complexity is very different you can see that for sp and ap the complexity does not depend on the reference sample at all which is in here so it's um each mess so each method always uh the capacity is always linearly proportional to your study samples which makes sense so each study samples has the same has the same runtime and for sp and ap you the more pieces you want the longer it takes and also the more markers you have the longer your you take longer it takes um but for adp is uh quite slow so if the reference "
+    },
+    {
+        "start": 1504.159,
+        "text": "size is larger then your does your study your study complexity while goals goes up cubicle but for oedp this would only go up linearly which is much more manageable so here we have some simulation studies to to demonstrate the performance of each of the methods we used a coalescence-based grid simulation approach with population migration we simulate four population on a two by two grid we first generated the haploids and then paired them up into diploids and the immigration the the migration rate here is set to quite large so that we can test the fine scale population differentiation are two samples 200 samples are randomly selected as the study samples and the and the rest are for the reference "
+    },
+    {
+        "start": 1564.72,
+        "text": "and the reference size we change it from 1000 to 3000 to see how the reference size affects the accuracy and the efficiency of each of the algorithm we compute only the top two pieces since there's only a 2x2 grid and to measure the accuracy we scale the mean square difference between the reference and the study population centers so if the population if the reference population center is close to the reference if the reference population center is close to study population center then that's good that means um your study samples is not drifted away far from your reference samples but if it's far away especially if the string towards zero then that means is the reference samples the reference pc is not good at explaining the variation in the study samples "
+    },
+    {
+        "start": 1625.679,
+        "text": "so here is the result in each of the four panels one method is shown sp ap oadp and adp so the colored circles are the colored uh the colored markers are the reference samples so we have four pop we have four populations here and um each of the uh the reference sample from each each population is colored differently so you can see we have the the green reference sample the reference sample the sine reference sample and the blue reference sample and i also draw a circle of a um of draw draw a circle that covers 95 of the reference samples to uh to better visualize the the center of the population and the black markers are the study "
+    },
+    {
+        "start": 1686.72,
+        "text": "samples these are the samples with unknown ancestry and we use pca to predict their population stratification so you can see that in the case of sp the study samples has visibly drifted away from the center of the population from the reference population towards zero but on the other hand if we look at the ap and oad oadp and adp you can see that the reference samples and the study samples are much closer to each other at least within each population so this is the kind of the good the this is the the the way we want things to be and as and for sp when things are drifted towards zero um it's just things are less accurate "
+    },
+    {
+        "start": 1747.039,
+        "text": "so in this case uh although you can visibly see the shrinkage effect the damage is not that big because each of the study samples are still far away from each other but you can imagine if the number of markers go larger than this well this four black circles will be very closely clustered and that's what we cause a lot of mistake in ancestry information prediction so this is a scatter plot of the of the each of the four message um um each format is pcs and also we have there the the mean square different distance between the pc square of each method so you can see that sp as we have expected expected um has a has strength is pc score closer to zero and sp is "
+    },
+    {
+        "start": 1808.88,
+        "text": "also pieces were also far away from the other three messages and the other three matches have almost identical pc scores and their pc their square difference is also very short and here is to i'll show you the effect of the reference size on the on the pc score prediction so this is the plot for for using a reference panel of 1000 samples and if we increase the reference size to 2000 you can see that the shrinkage effect for sp is less severe than before e4 is much closer to zero and far away from the reference center than now and for the other three methods is the change is not that big different and this is consistent with what we had said earlier the shrinkage effect of your of "
+    },
+    {
+        "start": 1869.679,
+        "text": "simple projection is the most severe when the number of features greatly exceeds the number of reference samples so when the um the reference size increases the shrinkage effect also got milder and when you increase to three thousand sp's performance is not much lower than the other three methods so this is the the plot of the for the accuracy of each of the four messages and the y-axis is msd the lower the better and the x-axis is the reference size so you can see that as we change the reference set from 1000 to 3000 the um for ap odp and adp the performance is well the same but for sp um it's really you can see that it's quite sensitive to the reference size "
+    },
+    {
+        "start": 1931.679,
+        "text": "and this plot is the the axis is the same as before but uh here we show the runtime the empirical runtime of the each of the four methods and this time the adp is one that single sound from the other three you can see the runtime increases much faster than linearly compared to the other three methods which look almost flat in this plot and this is a table to that for the this is a table it's the same uh same numbers for the for the generator the previous plot so you can see the sp and ap is very fast it's it's too um it took uh only a split of second to get the results uh for for each sample and for oadp is uh um it's it takes a longer time but not that slow but for adp is much slower "
+    },
+    {
+        "start": 1993.279,
+        "text": "we then applied our message to the uk bank data to see how it runs on the real data and for our our study data we we have about 400 148 variants for 488 individuals these samples are collected from collected from multiple centers in the uk for the reference reference panel we used the 1000 genomes project we have 84.4 million variants and uh that covers most of the variants in the uh bank we have 2492 individuals where the children have been removed since they are related to the parents there are 26 populations um which all fall into the five super populations which are africans americans east asians europeans and south asians "
+    },
+    {
+        "start": 2054.079,
+        "text": "then we do an ancestry membership prediction we use the top four pcs and we we use the majority vote among a study samples nearest 20 reference samples so essentially it's a the k nearest neighbor method and also we are interested in um later on we are interested in finding the finer scale ancestral information inside each superpopulation and so in in this case we um determine whether a study samples is uh has a mixed ancestry background so if the study samples highest vote um the percentage is less than seven seven eighths so then we classify this as a mixed and then we run the pca on each predicted predicted population separately to "
+    },
+    {
+        "start": 2115.359,
+        "text": "obtain the final scale ancestry membership so this table shows all the populations and the number of samples available in the 1000 genomes project so you can see the number of samples are more or less evenly distributed among the five super populations and inside each population we can uh get a we also have the smaller stop populations so this is a pc scores for the reference samples for the 1000 genome samples so the top the left panel is the pc1 and pc2 and the right panel is pc3 and pc4 and we we colored we colored each um each super population differently so you can see that the european is a science so it's here and the africans are the blues as "
+    },
+    {
+        "start": 2176.0,
+        "text": "the um left bottom corner and the asians are under oh sorry i said it it's definitely wrong the asians are the at the bottom left and the africans are on the right and here in the middle you have green which is amer the admixed americans and also the um the south asians which is purple so you uh you can see that pc1 pc2 already separate the the african asian and europeans quite well and if you look also into pc3 you can see that pc3 mostly separates the americans and the south asians from the the other three groups so we we can um yeah so you can see all the five populations all the five super populations are very well separated in the top "
+    },
+    {
+        "start": 2238.64,
+        "text": "four or just top three pcs and we also computed the shrinkage factors for each of the top four pcs and it's very minimal even pc4 only have a 0.94 shrinkage and now we we project the the study samples pc scores on the on the uh reference pc space so yeah now we have um much more samples and we also add we add a group of samples of mixed ancestry information so these colors are the represent the predicted population of the study samples and the reference samples now are color gray in the back so this is a mess this is this "
+    },
+    {
+        "start": 2300.24,
+        "text": "these two panels are done by sp and if we compare them to compa compare that to ap so you can see that there is some shrinkage that has been adjusted in this case the shrinkage is not that strong so you can see the difference that clearly uh later on we will see how one because the shrinkage works if you compare that to oadp it's pretty much the same these three methods are the same and we didn't include adp here because adp takes a lot of time to run and in our small sample study of the uk biobank they have almost identical results so all dp and adp are both look like this so this is the table that summarizes the number of yucabao band samples that is predicted to belong to each of the five "
+    },
+    {
+        "start": 2361.96,
+        "text": "superpopulation and as what we can expect is most of them are are predictably europeans and also the there are also a lot of predicted to be south asians and africans and now we look into the results inside each superpopulation so this is reference samples for the europeans these are the 1000 genome samples that are identified that are labeled as the of european ancestry so inside european we have five um we have five populations so these two the the red and blue are the the blue is british red is one thousand genomes call it the utah residence of northern and western and european ancestry so which is "
+    },
+    {
+        "start": 2424.4,
+        "text": "pretty much british so these two groups are almost have the same ancestor ancestry membership and here on the right is the fin it's a fins so it's quite far away from the others and down here does the sign and the purple are the spanish and the italian respectively we also included the pc three and four here although they're um not that useful in this case although pc3 can probably separate the spanish and the italian better than just using pc one two so this is the study pc scores and their predicted ancestry membership that's done by sp and you can see that the reference samples are covered in grid in the back so the study samples which are colored with different colors are clearly "
+    },
+    {
+        "start": 2487.44,
+        "text": "shrinked away from the reference ones if you look at the results by ap now the big the difference is pretty big so in the case of sp you can see that many of the studies since they are all shrink towards the center they are classified as british or utah of east eastern western and northern european ancestry so this will cause a lot of misclassification now compared to oadp adp ap and oadp are very close you can see that if you look at pc 3 and 4. oadp actually separates the study samples slightly better than ap but these two are both are much better than just by just using sp "
+    },
+    {
+        "start": 2549.2,
+        "text": "yeah something like here pc3 and pc4 is all clustered together that's something you really don't want for adjusting for population stratification and this is a summary of the accuracy of each of the four methods so the reference size uh so because on in the in the first column is uh is the study of all the global samples so in the global samples we have uh about 2500 reference samples from each of the five super population and we randomly selected 5000 study sample and then we do a pc pca on the reference and study samples and we find their shrinkage factors and here and also the fst the fixation index that shows "
+    },
+    {
+        "start": 2612.0,
+        "text": "um that shows the population differentiation inside each population we also include the pc one two first contribution uh to see how much it can be explained the variation can be explained by the top four pcs and yeah in comparison you can see that since the since the um european study inside the european study we only have about 500 reference samples compared to the global study of 2500 samples the number of reference samples smaller and also the differentiate the the difference between the the population differentiation is also smaller as you can see by the fixation index so because of that the shrinkage factor become much stronger in the european samples than in the global samples and you can see the top "
+    },
+    {
+        "start": 2673.68,
+        "text": "european the top one that the first the pc ones um shrinkage factor for the european samples is already as bad as 0.7 when the global sample is only 0.99 and for pc4 the shrinkage is 0.14 so that's like 1 1 7 of the of the original reference scale so that so that is very bad and also the top four pc is contributed less than in the global case and you can see that as uh as a result sps performance in the european sample analysis is much worse than in the global sample analysis on the other hand the the other three methods have about the same performance this table shows the runtimes "
+    },
+    {
+        "start": 2734.16,
+        "text": "for the five uh for all the yokaiba bank uh samples so we we run sp ap and odp on all the uk bank samples but for adp we only run it on 5000 randomly selected uk by bank sample since well um takes a very long time to really run it but we just we just linearly scale the the runtime to predict the how long will it take if you really run that many um that many samples so if you uh first look at the global global analysis sp and ap took less than one hour to finish almost 500 500 000 samples and oedp took slightly more than 20 hours which is also doable it's just up overnight but adp is uh to if you really want to run it "
+    },
+    {
+        "start": 2795.92,
+        "text": "it will take you uh 1600 hours which is not very practical and for the europeans is because the reference size is only 500 oadp and also oedb has a smaller runtime and adp is runtime is greatly reduced in comparison sv and apa is um is the speed is about the same compared to the global analysis since it doesn't need um it doesn't need um it's not its computation complexity does not depend on the reference size so to wrap up the talk today so we compared two existing methods sp and ap and two novel methods ap and oedp for predicting population structure by using pca oadp and ap are much faster than adp "
+    },
+    {
+        "start": 2856.72,
+        "text": "when the reference size is large for oadp the the the complexity of odp is off and for ap is of one but for adp is o of n cubed with respect to the reference size in the uk biobank analysis the runtime of oadp is 80 times faster than adp and ap is 2000 times faster than adp and for accuracy oadp and ap do not have the shrinkage bias unlike sp and sp shrinks many european samples towards zero and cannot distinguish them while oedp and ap have successfully separated the european samples at a finer levels the software for all the four methods and the tutorials are are included on the github for proposal it's written in python and you're afraid "
+    },
+    {
+        "start": 2920.48,
+        "text": "i'll be happy if you um find it useful and then play with it and give me some feedback and we also have a paper here um for the method and the data analysis i have talked so far for your reference and that's all thank you any question questions comments anything you are curious oh thank you david for a good talk we appreciate you um starting off our our fall semester tools and technology seminar series all right thank you for organizing this "
+    },
+    {
+        "start": 2991.04,
+        "text": "all right then i guess this is the end of the talk and if you have any question you feel free to show me an email "
+    }
+]

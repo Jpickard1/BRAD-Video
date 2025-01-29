@@ -1,0 +1,1597 @@
+[
+    {
+        "text": "Have you ever wondered how it's possible to scratch a CD ",
+        "start": 3.62,
+        "duration": 3.184
+    },
+    {
+        "text": "or a DVD and still have it play back whatever it's storing?",
+        "start": 6.804,
+        "duration": 3.296
+    },
+    {
+        "text": "The scratch really does affect the 1s and 0s on the disk, ",
+        "start": 10.9,
+        "duration": 3.401
+    },
+    {
+        "text": "so it reads off different data from what was stored, ",
+        "start": 14.301,
+        "duration": 3.109
+    },
+    {
+        "text": "but unless it's really scratched up, the bits it reads off are decoded ",
+        "start": 17.41,
+        "duration": 4.164
+    },
+    {
+        "text": "into precisely the same file that was encoded onto it, a bit for bit copy, ",
+        "start": 21.574,
+        "duration": 4.399
+    },
+    {
+        "text": "despite all those errors.",
+        "start": 25.973,
+        "duration": 1.467
+    },
+    {
+        "text": "There is a whole pile of mathematical cleverness that allows us to store data, ",
+        "start": 27.44,
+        "duration": 4.639
+    },
+    {
+        "text": "and just as importantly to transmit data, in a way that's resilient to errors.",
+        "start": 32.079,
+        "duration": 4.581
+    },
+    {
+        "text": "Well, okay, actually it doesn't take that much ",
+        "start": 37.52,
+        "duration": 2.107
+    },
+    {
+        "text": "cleverness to come up with a way to do this.",
+        "start": 39.627,
+        "duration": 1.973
+    },
+    {
+        "text": "Any file, whether it's a video or sound or text, some code, ",
+        "start": 42.06,
+        "duration": 4.125
+    },
+    {
+        "text": "an image, whatever, is ultimately some sequence of 1s and 0s.",
+        "start": 46.185,
+        "duration": 4.195
+    },
+    {
+        "text": "And a simple strategy to correct any bit that gets ",
+        "start": 50.68,
+        "duration": 2.66
+    },
+    {
+        "text": "flipped would be to store three copies of each bit.",
+        "start": 53.34,
+        "duration": 2.66
+    },
+    {
+        "text": "Then the machine reading this file could compare these three copies ",
+        "start": 57.58,
+        "duration": 3.263
+    },
+    {
+        "text": "and always take the best 2 out of 3 whenever there's a discrepancy.",
+        "start": 60.843,
+        "duration": 3.217
+    },
+    {
+        "text": "But what that means is using two thirds of your space for redundancy.",
+        "start": 67.16,
+        "duration": 3.7
+    },
+    {
+        "text": "And even then, for all of that space given up, ",
+        "start": 71.48,
+        "duration": 2.115
+    },
+    {
+        "text": "there's no strong guarantee about what happens if more than one bit gets flipped.",
+        "start": 73.595,
+        "duration": 3.645
+    },
+    {
+        "text": "The much more interesting question is how to make it so that ",
+        "start": 77.98,
+        "duration": 2.856
+    },
+    {
+        "text": "errors can be corrected while giving up as little space as possible.",
+        "start": 80.836,
+        "duration": 3.184
+    },
+    {
+        "text": "For example, using the method you'll learn about this video, ",
+        "start": 84.52,
+        "duration": 3.702
+    },
+    {
+        "text": "you could store your data in 256-bit blocks, where each block uses 9 bits, 9(!), ",
+        "start": 88.222,
+        "duration": 4.916
+    },
+    {
+        "text": "to act as a kind of redundancy, and the other 247 bits are free to carry whatever ",
+        "start": 93.138,
+        "duration": 4.977
+    },
+    {
+        "text": "meaningful message or data you want.",
+        "start": 98.115,
+        "duration": 2.185
+    },
+    {
+        "text": "And it will still be the case that if any bit gets flipped here, ",
+        "start": 100.9,
+        "duration": 3.266
+    },
+    {
+        "text": "just by looking at this block and nothing more, ",
+        "start": 104.166,
+        "duration": 2.412
+    },
+    {
+        "text": "a machine will be able to identify that there was an error and precisely where ",
+        "start": 106.578,
+        "duration": 3.971
+    },
+    {
+        "text": "it was so that it knows how to correct it.",
+        "start": 110.549,
+        "duration": 2.111
+    },
+    {
+        "text": "And honestly, that feels like magic.",
+        "start": 112.66,
+        "duration": 1.96
+    },
+    {
+        "text": "And for this particular scheme, if two bits get flipped, ",
+        "start": 115.44,
+        "duration": 2.547
+    },
+    {
+        "text": "the machine will at least be able to detect that there were two errors, ",
+        "start": 117.987,
+        "duration": 3.219
+    },
+    {
+        "text": "though it won't know how to fix them.",
+        "start": 121.206,
+        "duration": 1.654
+    },
+    {
+        "text": "We'll talk a little bit later about how this scales for blocks with different sizes.",
+        "start": 123.52,
+        "duration": 3.38
+    },
+    {
+        "text": "Methods that let you correct errors like this are known, ",
+        "start": 127.86,
+        "duration": 2.816
+    },
+    {
+        "text": "reasonably enough, as error correction codes.",
+        "start": 130.676,
+        "duration": 2.224
+    },
+    {
+        "text": "For the better part of the last century, this field has been a really rich source ",
+        "start": 133.66,
+        "duration": 4.217
+    },
+    {
+        "text": "of surprisingly deep math that gets incorporated into devices we use every day.",
+        "start": 137.877,
+        "duration": 4.063
+    },
+    {
+        "text": "The goal here is to give you a very thorough understanding ",
+        "start": 142.84,
+        "duration": 2.96
+    },
+    {
+        "text": "of one of the earliest examples, known as a Hamming code.",
+        "start": 145.8,
+        "duration": 2.86
+    },
+    {
+        "text": "And by the way, the way I'm thinking about the structure of this video is less ",
+        "start": 149.52,
+        "duration": 3.522
+    },
+    {
+        "text": "about explaining it as directly as possible, and more a matter of prompting ",
+        "start": 153.042,
+        "duration": 3.389
+    },
+    {
+        "text": "you to invent it for yourself, with a little gentle guidance here and there.",
+        "start": 156.431,
+        "duration": 3.389
+    },
+    {
+        "text": "So when you feel like you see where it's going at some point, take that moment to pause, ",
+        "start": 160.12,
+        "duration": 3.789
+    },
+    {
+        "text": "actively predict what the scheme is going to be before I tell you.",
+        "start": 163.909,
+        "duration": 2.811
+    },
+    {
+        "text": "Also, if you want your understanding to get down to the hardware level, ",
+        "start": 167.24,
+        "duration": 3.504
+    },
+    {
+        "text": "Ben Eater has made a video in conjunction with this one showing you how to ",
+        "start": 170.744,
+        "duration": 3.65
+    },
+    {
+        "text": "actually implement Hamming codes on breadboards, which is extremely satisfying.",
+        "start": 174.394,
+        "duration": 3.846
+    },
+    {
+        "text": "You should know, Hamming codes are not as widely used as more modern codes, ",
+        "start": 179.3,
+        "duration": 3.758
+    },
+    {
+        "text": "like the Reed-Solomon algorithm, but there is a certain magic to the ",
+        "start": 183.058,
+        "duration": 3.413
+    },
+    {
+        "text": "contrast between just how impossible this task feels at the start, ",
+        "start": 186.471,
+        "duration": 3.314
+    },
+    {
+        "text": "and how utterly reasonable it seems once you learn about Hamming.",
+        "start": 189.785,
+        "duration": 3.215
+    },
+    {
+        "text": "The basic principle of error correction is that in a vast space of all possible messages, ",
+        "start": 193.72,
+        "duration": 5.11
+    },
+    {
+        "text": "only some subset are going to be considered valid messages.",
+        "start": 198.83,
+        "duration": 3.35
+    },
+    {
+        "text": "As an analogy, think about correctly spelled words vs incorrectly spelled words.",
+        "start": 202.8,
+        "duration": 4.14
+    },
+    {
+        "text": "Whenever a valid message gets altered, the receiver is responsible for correcting ",
+        "start": 208.9,
+        "duration": 4.325
+    },
+    {
+        "text": "what they see back to the nearest valid neighbor, as you might do with a typo.",
+        "start": 213.225,
+        "duration": 4.115
+    },
+    {
+        "text": "Coming up with a concrete algorithm to efficiently categorize messages like this, ",
+        "start": 218.22,
+        "duration": 4.092
+    },
+    {
+        "text": "though, takes a certain cleverness.",
+        "start": 222.312,
+        "duration": 1.748
+    },
+    {
+        "text": "The story begins in the 1940s, when a young Richard Hamming was working for Bell Labs, ",
+        "start": 226.78,
+        "duration": 4.651
+    },
+    {
+        "text": "and some of his work involved using a very big expensive punch card ",
+        "start": 231.431,
+        "duration": 3.636
+    },
+    {
+        "text": "computer that he had only limited access to.",
+        "start": 235.067,
+        "duration": 2.353
+    },
+    {
+        "text": "And the programs he kept putting through it kept failing, ",
+        "start": 237.8,
+        "duration": 2.447
+    },
+    {
+        "text": "because every now and then a bit would get misread.",
+        "start": 240.247,
+        "duration": 2.153
+    },
+    {
+        "text": "Frustration being the crucible of invention, he got so fed ",
+        "start": 243.12,
+        "duration": 2.627
+    },
+    {
+        "text": "up that he invented the world's first error correction code.",
+        "start": 245.747,
+        "duration": 2.673
+    },
+    {
+        "text": "There are many different ways to frame Hamming codes, ",
+        "start": 249.06,
+        "duration": 2.337
+    },
+    {
+        "text": "but as a first pass we're going to go through it the way Hamming himself ",
+        "start": 251.397,
+        "duration": 3.16
+    },
+    {
+        "text": "thought about them.",
+        "start": 254.557,
+        "duration": 0.823
+    },
+    {
+        "text": "Let's use an example that's simple, but not too simple, a block of 16 bits.",
+        "start": 256.519,
+        "duration": 4.421
+    },
+    {
+        "text": "We'll number the positions of these bits from 0 up to 15.",
+        "start": 261.82,
+        "duration": 2.92
+    },
+    {
+        "text": "The actual data we want to store is only going to make up 12 of these bits, ",
+        "start": 265.62,
+        "duration": 4.064
+    },
+    {
+        "text": "while 4 of the positions are reserved as a kind of redundancy.",
+        "start": 269.684,
+        "duration": 3.316
+    },
+    {
+        "text": "The word redundant here doesn't simply mean copy, after all, ",
+        "start": 273.9,
+        "duration": 2.996
+    },
+    {
+        "text": "those 4 bits don't give us enough room to blindly copy the data.",
+        "start": 276.896,
+        "duration": 3.144
+    },
+    {
+        "text": "Instead, they'll need to be a much more nuanced and clever kind of redundancy, ",
+        "start": 280.72,
+        "duration": 3.896
+    },
+    {
+        "text": "not adding any new information, but adding resilience.",
+        "start": 284.616,
+        "duration": 2.664
+    },
+    {
+        "text": "You might expect these 4 special bits to come nicely packaged together, ",
+        "start": 288.6,
+        "duration": 3.347
+    },
+    {
+        "text": "maybe at the end or something like that, but as you'll see, ",
+        "start": 291.947,
+        "duration": 2.79
+    },
+    {
+        "text": "having them sit in positions which are powers of 2 allows for something that's ",
+        "start": 294.737,
+        "duration": 3.674
+    },
+    {
+        "text": "really elegant by the end.",
+        "start": 298.411,
+        "duration": 1.209
+    },
+    {
+        "text": "It also might give you a little hint about how this scales for larger blocks.",
+        "start": 300.2,
+        "duration": 3.34
+    },
+    {
+        "text": "Also technically it ends up being only 11 bits of data, ",
+        "start": 304.9,
+        "duration": 2.981
+    },
+    {
+        "text": "you'll find there's a mild nuance for what goes on at position 0, ",
+        "start": 307.881,
+        "duration": 3.515
+    },
+    {
+        "text": "but don't worry about that for now.",
+        "start": 311.396,
+        "duration": 1.864
+    },
+    {
+        "text": "Like any error correction algorithm, this will involve two players, ",
+        "start": 314.14,
+        "duration": 3.491
+    },
+    {
+        "text": "a sender who's responsible for setting these 4 special bits, ",
+        "start": 317.631,
+        "duration": 3.133
+    },
+    {
+        "text": "and a receiver who's responsible for performing some kind of check and ",
+        "start": 320.764,
+        "duration": 3.646
+    },
+    {
+        "text": "correcting the errors.",
+        "start": 324.41,
+        "duration": 1.13
+    },
+    {
+        "text": "Of course, the words sender and receiver really refer to machines ",
+        "start": 326.3,
+        "duration": 2.947
+    },
+    {
+        "text": "or software that's doing all the checks, and the idea of a ",
+        "start": 329.247,
+        "duration": 2.635
+    },
+    {
+        "text": "message is meant really broadly, to include things like storage.",
+        "start": 331.882,
+        "duration": 2.858
+    },
+    {
+        "text": "After all, storing data is the same thing as sending a message just ",
+        "start": 335.34,
+        "duration": 3.241
+    },
+    {
+        "text": "from the past to the future instead of from one place to another.",
+        "start": 338.581,
+        "duration": 3.099
+    },
+    {
+        "text": "So that's the setup, but before we can dive in we need to talk about a related idea which ",
+        "start": 342.56,
+        "duration": 4.631
+    },
+    {
+        "text": "was fresh on Hamming's mind in the time of his discovery, ",
+        "start": 347.191,
+        "duration": 2.985
+    },
+    {
+        "text": "a method which lets you detect any single bit errors, but not to correct them, ",
+        "start": 350.176,
+        "duration": 4.065
+    },
+    {
+        "text": "known in the business as a parity check.",
+        "start": 354.241,
+        "duration": 2.059
+    },
+    {
+        "text": "For a parity check, we separate out only one single bit that the sender ",
+        "start": 356.88,
+        "duration": 3.569
+    },
+    {
+        "text": "is responsible for tuning, and the rest are free to carry a message.",
+        "start": 360.449,
+        "duration": 3.371
+    },
+    {
+        "text": "The only job of this special bit is to make sure that ",
+        "start": 364.88,
+        "duration": 3.141
+    },
+    {
+        "text": "the total number of 1s in the message is an even number.",
+        "start": 368.021,
+        "duration": 3.259
+    },
+    {
+        "text": "So for example right now, that total number of 1s is 7, that's odd, ",
+        "start": 372.08,
+        "duration": 3.67
+    },
+    {
+        "text": "so the sender needs to flip that special bit to be a 1, making the count even.",
+        "start": 375.75,
+        "duration": 4.21
+    },
+    {
+        "text": "But if the block had already started off with an even number of 1s, ",
+        "start": 380.8,
+        "duration": 3.238
+    },
+    {
+        "text": "then this special bit would have been kept at a 0.",
+        "start": 384.038,
+        "duration": 2.382
+    },
+    {
+        "text": "This is pretty simple, deceptively simple, but it's an incredibly elegant way to distill ",
+        "start": 387.34,
+        "duration": 4.746
+    },
+    {
+        "text": "the idea of change anywhere in a message to be reflected in a single bit of information.",
+        "start": 392.086,
+        "duration": 4.694
+    },
+    {
+        "text": "Notice if any bit of this message gets flipped, either from 0 to 1 or 1 to 0, ",
+        "start": 397.5,
+        "duration": 5.036
+    },
+    {
+        "text": "it changes the total count of 1s from being even to being odd.",
+        "start": 402.536,
+        "duration": 4.004
+    },
+    {
+        "text": "So if you're the receiver, you look at this message, ",
+        "start": 407.98,
+        "duration": 2.701
+    },
+    {
+        "text": "and you see an odd number of 1s, you can know for sure that some error has occurred, ",
+        "start": 410.681,
+        "duration": 4.332
+    },
+    {
+        "text": "even though you might have no idea where it was.",
+        "start": 415.013,
+        "duration": 2.447
+    },
+    {
+        "text": "In the jargon, whether a group of bits has an ",
+        "start": 418.5,
+        "duration": 2.368
+    },
+    {
+        "text": "even or odd number of 1s is known as its parity.",
+        "start": 420.868,
+        "duration": 2.472
+    },
+    {
+        "text": "You could also use numbers and say the parity is 0 or 1, ",
+        "start": 424.86,
+        "duration": 2.589
+    },
+    {
+        "text": "which is typically more helpful once you start doing math with the idea.",
+        "start": 427.449,
+        "duration": 3.271
+    },
+    {
+        "text": "And this special bit that the sender uses to control the parity is called the parity bit.",
+        "start": 431.22,
+        "duration": 4.3
+    },
+    {
+        "text": "And actually, we should be clear, if the receiver sees an odd parity, ",
+        "start": 437.56,
+        "duration": 3.545
+    },
+    {
+        "text": "it doesn't necessarily mean there was just one error, there might have been 3 errors, ",
+        "start": 441.105,
+        "duration": 4.356
+    },
+    {
+        "text": "or 5, or any other odd number, but they can know for sure that it wasn't 0.",
+        "start": 445.461,
+        "duration": 3.799
+    },
+    {
+        "text": "On the other hand, if there had been 2 errors, or any even number of errors, ",
+        "start": 449.98,
+        "duration": 4.179
+    },
+    {
+        "text": "that final count of 1s would still be even, so the receiver can't have full ",
+        "start": 454.159,
+        "duration": 4.124
+    },
+    {
+        "text": "confidence that an even count necessarily means the message is error-free.",
+        "start": 458.283,
+        "duration": 4.017
+    },
+    {
+        "text": "You might complain that a message which gets messed up by only ",
+        "start": 462.84,
+        "duration": 3.144
+    },
+    {
+        "text": "2 bit flips is pretty weak, and you would be absolutely right.",
+        "start": 465.984,
+        "duration": 3.096
+    },
+    {
+        "text": "Keep in mind, though, there is no method for error detection or correction that could ",
+        "start": 469.7,
+        "duration": 4.626
+    },
+    {
+        "text": "give you 100% confidence that the message you receive is the one the sender intended.",
+        "start": 474.326,
+        "duration": 4.574
+    },
+    {
+        "text": "After all, enough random noise could always change one ",
+        "start": 479.58,
+        "duration": 2.778
+    },
+    {
+        "text": "valid message into another valid message just by pure chance.",
+        "start": 482.358,
+        "duration": 3.082
+    },
+    {
+        "text": "Instead, the goal is to come up with a scheme that's robust up to a certain maximum ",
+        "start": 486.24,
+        "duration": 4.597
+    },
+    {
+        "text": "number of errors, or maybe to reduce the probability of a false positive like this.",
+        "start": 490.837,
+        "duration": 4.543
+    },
+    {
+        "text": "Parity checks on their own are pretty weak, but by distilling the ",
+        "start": 496.26,
+        "duration": 3.543
+    },
+    {
+        "text": "idea of change across a full message down to a single bit, ",
+        "start": 499.803,
+        "duration": 3.168
+    },
+    {
+        "text": "what they give us is a powerful building block for more sophisticated schemes.",
+        "start": 502.971,
+        "duration": 4.189
+    },
+    {
+        "text": "For example, as Hamming was searching for a way to identify where an error happened, ",
+        "start": 507.94,
+        "duration": 4.567
+    },
+    {
+        "text": "not just that it happened, his key insight was that if you apply some parity checks ",
+        "start": 512.507,
+        "duration": 4.513
+    },
+    {
+        "text": "not to the full message, but to certain carefully selected subsets, ",
+        "start": 517.02,
+        "duration": 3.654
+    },
+    {
+        "text": "you can ask a more refined series of questions that pin down the location of any ",
+        "start": 520.674,
+        "duration": 4.352
+    },
+    {
+        "text": "single bit error.",
+        "start": 525.026,
+        "duration": 0.914
+    },
+    {
+        "text": "The overall feeling is a bit like playing a game of 20 questions, ",
+        "start": 526.68,
+        "duration": 3.251
+    },
+    {
+        "text": "asking yes or no queries that chop the space of possibilities in half.",
+        "start": 529.931,
+        "duration": 3.449
+    },
+    {
+        "text": "For example, let's say we do a parity check just on these 8 bits, ",
+        "start": 534.16,
+        "duration": 3.445
+    },
+    {
+        "text": "all of the odd numbered positions.",
+        "start": 537.605,
+        "duration": 1.775
+    },
+    {
+        "text": "Then if an error is detected, it gives the receiver a little more information ",
+        "start": 540.1,
+        "duration": 4.149
+    },
+    {
+        "text": "about where specifically the error is, namely that it's in an odd position.",
+        "start": 544.249,
+        "duration": 3.991
+    },
+    {
+        "text": "If no error is detected among those 8 bits, it either means there's no error at all, ",
+        "start": 548.94,
+        "duration": 4.847
+    },
+    {
+        "text": "or it sits somewhere in the even positions.",
+        "start": 553.787,
+        "duration": 2.453
+    },
+    {
+        "text": "You might think that limiting a parity check to half the bits makes it less effective, ",
+        "start": 557.18,
+        "duration": 4.092
+    },
+    {
+        "text": "but when it's done in conjunction with other well-chosen checks, ",
+        "start": 561.272,
+        "duration": 3.058
+    },
+    {
+        "text": "it counterintuitively gives us something a lot more powerful.",
+        "start": 564.33,
+        "duration": 2.87
+    },
+    {
+        "text": "To actually set up that parity check, remember, ",
+        "start": 569.24,
+        "duration": 2.548
+    },
+    {
+        "text": "it requires earmarking some special bit that has control for the parity ",
+        "start": 571.788,
+        "duration": 3.823
+    },
+    {
+        "text": "of that full group.",
+        "start": 575.611,
+        "duration": 1.009
+    },
+    {
+        "text": "Here let's just choose position 1.",
+        "start": 577.48,
+        "duration": 1.7
+    },
+    {
+        "text": "For the example shown, the parity of these 8 bits is currently odd, ",
+        "start": 579.72,
+        "duration": 3.404
+    },
+    {
+        "text": "so the sender is responsible for toggling that parity bit, and now it's even.",
+        "start": 583.124,
+        "duration": 3.856
+    },
+    {
+        "text": "This is only 1 out of 4 parity checks that we'll do.",
+        "start": 587.94,
+        "duration": 2.74
+    },
+    {
+        "text": "The second check is among the 8 bits on the right half of the grid, ",
+        "start": 590.92,
+        "duration": 3.658
+    },
+    {
+        "text": "at least as we've drawn it here.",
+        "start": 594.578,
+        "duration": 1.722
+    },
+    {
+        "text": "This time we might use position 2 as a parity bit, ",
+        "start": 596.68,
+        "duration": 2.971
+    },
+    {
+        "text": "so these 8 bits already have an even parity, and the sender can feel good leaving ",
+        "start": 599.651,
+        "duration": 4.777
+    },
+    {
+        "text": "that bit number 2 unchanged.",
+        "start": 604.428,
+        "duration": 1.632
+    },
+    {
+        "text": "Then on the other end, if the receiver checks the parity of this group and they find ",
+        "start": 607.02,
+        "duration": 4.107
+    },
+    {
+        "text": "that it's odd, they'll know that the error is somewhere among these 8 bits on the right.",
+        "start": 611.127,
+        "duration": 4.253
+    },
+    {
+        "text": "Otherwise it means either there's no error, or the error is somewhere on the left half.",
+        "start": 615.82,
+        "duration": 4.76
+    },
+    {
+        "text": "Or I guess there could have been two errors, but for right now we're ",
+        "start": 621.12,
+        "duration": 2.729
+    },
+    {
+        "text": "going to assume that there's at most one error in the entire block.",
+        "start": 623.849,
+        "duration": 2.651
+    },
+    {
+        "text": "Things break down completely for more than that.",
+        "start": 626.94,
+        "duration": 1.8
+    },
+    {
+        "text": "Here, before we look at the next two checks, take a moment to think ",
+        "start": 629.16,
+        "duration": 2.844
+    },
+    {
+        "text": "about what these first two allow us to do when you consider them together.",
+        "start": 632.004,
+        "duration": 3.096
+    },
+    {
+        "text": "Let's say you detect an error among the odd columns, and among the right half.",
+        "start": 635.8,
+        "duration": 3.86
+    },
+    {
+        "text": "It necessarily means the error is somewhere in the last column.",
+        "start": 640.2,
+        "duration": 2.84
+    },
+    {
+        "text": "If there was no error in the odd column but there was one in the right half, ",
+        "start": 643.82,
+        "duration": 3.593
+    },
+    {
+        "text": "that tells you it's in the second to last column.",
+        "start": 647.413,
+        "duration": 2.287
+    },
+    {
+        "text": "Likewise if there is an error in the odd columns but not in the right half, ",
+        "start": 650.44,
+        "duration": 3.504
+    },
+    {
+        "text": "you know it's somewhere in the second column.",
+        "start": 653.944,
+        "duration": 2.076
+    },
+    {
+        "text": "And if neither of those two parity checks detects anything, ",
+        "start": 656.02,
+        "duration": 3.179
+    },
+    {
+        "text": "it means the only place that an error could be is in that leftmost column.",
+        "start": 659.199,
+        "duration": 3.921
+    },
+    {
+        "text": "But it also might simply mean there's no error at all.",
+        "start": 663.34,
+        "duration": 2.78
+    },
+    {
+        "text": "Which is all a rather belabored way to say that ",
+        "start": 666.3,
+        "duration": 2.343
+    },
+    {
+        "text": "two parity checks let us pin down the column.",
+        "start": 668.643,
+        "duration": 2.197
+    },
+    {
+        "text": "From here, you can probably guess what follows.",
+        "start": 671.48,
+        "duration": 2.16
+    },
+    {
+        "text": "We do basically the same thing but for the rows.",
+        "start": 673.8,
+        "duration": 2.34
+    },
+    {
+        "text": "There's going to be a parity check on the odd rows, using position 4 as a parity bit.",
+        "start": 676.44,
+        "duration": 4.46
+    },
+    {
+        "text": "So in this example that group already has an even parity, so bit 4 would be set to a 0.",
+        "start": 681.38,
+        "duration": 4.44
+    },
+    {
+        "text": "And finally there's a parity check on the bottom two rows, ",
+        "start": 686.56,
+        "duration": 3.219
+    },
+    {
+        "text": "using position 8 as a parity bit.",
+        "start": 689.779,
+        "duration": 1.801
+    },
+    {
+        "text": "In this case, it looks like the sender needs to turn ",
+        "start": 692.12,
+        "duration": 2.35
+    },
+    {
+        "text": "that bit 8 on in order to give the group even parity.",
+        "start": 694.47,
+        "duration": 2.35
+    },
+    {
+        "text": "Just as the first two checks let us pin down the column, ",
+        "start": 697.7,
+        "duration": 2.432
+    },
+    {
+        "text": "these next two let you pin down the row.",
+        "start": 700.132,
+        "duration": 1.708
+    },
+    {
+        "text": "As an example, imagine that during the transmission there's an error at, say, position 3.",
+        "start": 702.88,
+        "duration": 4.66
+    },
+    {
+        "text": "Well this affects the first parity group, and it also affects the second parity group, ",
+        "start": 708.18,
+        "duration": 3.963
+    },
+    {
+        "text": "so the receiver knows that there's an error somewhere in that right column.",
+        "start": 712.143,
+        "duration": 3.417
+    },
+    {
+        "text": "But it doesn't affect the third group, and it doesn't affect the fourth group.",
+        "start": 716.1,
+        "duration": 4.44
+    },
+    {
+        "text": "And that lets the receiver pinpoint the error up to the first row, ",
+        "start": 721.24,
+        "duration": 3.261
+    },
+    {
+        "text": "which necessarily means position 3, so they can fix the error.",
+        "start": 724.501,
+        "duration": 3.019
+    },
+    {
+        "text": "You might enjoy taking a moment to convince yourself that the ",
+        "start": 728.58,
+        "duration": 2.824
+    },
+    {
+        "text": "answers to these four questions really will always let you pin down a specific location, ",
+        "start": 731.404,
+        "duration": 4.055
+    },
+    {
+        "text": "no matter where they turn out to be.",
+        "start": 735.459,
+        "duration": 1.641
+    },
+    {
+        "text": "In fact, the astute among you might even notice a ",
+        "start": 737.72,
+        "duration": 2.542
+    },
+    {
+        "text": "connection between these questions and binary counting.",
+        "start": 740.262,
+        "duration": 2.798
+    },
+    {
+        "text": "And if you do, again let me emphasize, pause, try ",
+        "start": 743.5,
+        "duration": 2.605
+    },
+    {
+        "text": "for yourself to draw the connection before I spoil it.",
+        "start": 746.105,
+        "duration": 2.815
+    },
+    {
+        "text": "If you're wondering what happens if a parity bit itself gets affected, ",
+        "start": 750.5,
+        "duration": 4.069
+    },
+    {
+        "text": "well, you can just try it.",
+        "start": 754.569,
+        "duration": 1.491
+    },
+    {
+        "text": "Take a moment to think about how any error among these four special bits is going ",
+        "start": 756.44,
+        "duration": 3.966
+    },
+    {
+        "text": "to be tracked down just like any other, with the same group of four questions.",
+        "start": 760.406,
+        "duration": 3.774
+    },
+    {
+        "text": "It doesn't really matter, since at the end of the day what we want is to ",
+        "start": 767.06,
+        "duration": 2.999
+    },
+    {
+        "text": "protect the message bits, the error correction bits are just riding along.",
+        "start": 770.059,
+        "duration": 3.041
+    },
+    {
+        "text": "But protecting those bits as well is something that ",
+        "start": 773.6,
+        "duration": 2.172
+    },
+    {
+        "text": "naturally falls out of the scheme as a byproduct.",
+        "start": 775.772,
+        "duration": 2.048
+    },
+    {
+        "text": "You might also enjoy anticipating how this scales.",
+        "start": 779.2,
+        "duration": 2.56
+    },
+    {
+        "text": "If we used a block of size 256 bits, for example, in order to pin down a location, ",
+        "start": 782.3,
+        "duration": 4.942
+    },
+    {
+        "text": "you need only eight yes or no questions to binary search your way down to some specific ",
+        "start": 787.242,
+        "duration": 5.24
+    },
+    {
+        "text": "spot.",
+        "start": 792.482,
+        "duration": 0.298
+    },
+    {
+        "text": "And remember, each question requires giving up only ",
+        "start": 795.64,
+        "duration": 2.502
+    },
+    {
+        "text": "a single bit to set the appropriate parity check.",
+        "start": 798.142,
+        "duration": 2.358
+    },
+    {
+        "text": "Some of you may already see it, but we'll talk later about the ",
+        "start": 803.16,
+        "duration": 2.893
+    },
+    {
+        "text": "systematic way to find what these questions are in just a minute or two.",
+        "start": 806.053,
+        "duration": 3.307
+    },
+    {
+        "text": "Hopefully this sketch is enough to appreciate ",
+        "start": 809.88,
+        "duration": 1.91
+    },
+    {
+        "text": "the efficiency of what we're developing here.",
+        "start": 811.79,
+        "duration": 1.87
+    },
+    {
+        "text": "The first thing, except for those eight highlighted parity bits, ",
+        "start": 813.66,
+        "duration": 3.336
+    },
+    {
+        "text": "can be whatever you want it to be, carrying whatever message or data you want.",
+        "start": 816.996,
+        "duration": 4.004
+    },
+    {
+        "text": "The 8 bits are redundant in the sense that they're completely determined by the rest of ",
+        "start": 821.72,
+        "duration": 4.173
+    },
+    {
+        "text": "the message, but it's in a much smarter way than simply copying the message as a whole.",
+        "start": 825.893,
+        "duration": 4.127
+    },
+    {
+        "text": "And still, for so little given up, you would be ",
+        "start": 833.6,
+        "duration": 2.44
+    },
+    {
+        "text": "able to identify and fix any single bit error.",
+        "start": 836.04,
+        "duration": 2.34
+    },
+    {
+        "text": "Well, almost.",
+        "start": 839.2,
+        "duration": 1.2
+    },
+    {
+        "text": "Okay, so the one problem here is that if none of the four parity checks detect an error, ",
+        "start": 840.96,
+        "duration": 4.982
+    },
+    {
+        "text": "meaning that the specially selected subsets of 8 bits all have even parities, ",
+        "start": 845.942,
+        "duration": 4.367
+    },
+    {
+        "text": "just like the sender intended, then it either means there was no error at all, ",
+        "start": 850.309,
+        "duration": 4.423
+    },
+    {
+        "text": "or it narrows us down into position 0.",
+        "start": 854.732,
+        "duration": 2.128
+    },
+    {
+        "text": "You see, with four yes or no questions, we have 16 possible outcomes for our parity ",
+        "start": 857.74,
+        "duration": 4.796
+    },
+    {
+        "text": "checks, and at first that feels perfect for pinpointing 1 out of 16 positions in ",
+        "start": 862.536,
+        "duration": 4.624
+    },
+    {
+        "text": "the block, but you also need to communicate a 17th outcome, the no error condition.",
+        "start": 867.16,
+        "duration": 4.74
+    },
+    {
+        "text": "The solution here is actually pretty simple, just forget about that 0th bit entirely.",
+        "start": 873.02,
+        "duration": 4.28
+    },
+    {
+        "text": "So when we do our four parity checks and we see that they're all even, ",
+        "start": 877.84,
+        "duration": 3.41
+    },
+    {
+        "text": "it unambiguously means that there is no error.",
+        "start": 881.25,
+        "duration": 2.21
+    },
+    {
+        "text": "What that means is rather than working with a 16-bit block, we work with a 15-bit block, ",
+        "start": 884.24,
+        "duration": 4.515
+    },
+    {
+        "text": "where 11 of the bits are free to carry a message and 4 of them are there for redundancy.",
+        "start": 888.755,
+        "duration": 4.465
+    },
+    {
+        "text": "And with that, we now have what people in the ",
+        "start": 893.78,
+        "duration": 2.456
+    },
+    {
+        "text": "business would refer to as a 15-11 Hamming code.",
+        "start": 896.236,
+        "duration": 2.564
+    },
+    {
+        "text": "That said, it's nice to have a block size that's a clean power of 2, ",
+        "start": 899.86,
+        "duration": 3.36
+    },
+    {
+        "text": "and there's a clever way we can keep that 0th bit around and get it to do a little ",
+        "start": 903.22,
+        "duration": 4.043
+    },
+    {
+        "text": "extra work for us.",
+        "start": 907.263,
+        "duration": 0.877
+    },
+    {
+        "text": "If we use it as a parity bit across the whole block, ",
+        "start": 908.7,
+        "duration": 2.923
+    },
+    {
+        "text": "it lets us actually detect, even though we can't correct, 2-bit errors.",
+        "start": 911.623,
+        "duration": 3.917
+    },
+    {
+        "text": "Here's how it works.",
+        "start": 916.16,
+        "duration": 0.66
+    },
+    {
+        "text": "After setting those four special error-correcting bits, ",
+        "start": 917.18,
+        "duration": 2.821
+    },
+    {
+        "text": "we set that 0th one so that the parity of the full block is even, ",
+        "start": 920.001,
+        "duration": 3.326
+    },
+    {
+        "text": "just like a normal parity check.",
+        "start": 923.327,
+        "duration": 1.613
+    },
+    {
+        "text": "Now, if there's a single bit error, then the parity of the full block toggles to be odd, ",
+        "start": 925.7,
+        "duration": 4.313
+    },
+    {
+        "text": "but we would catch that anyway thanks to the four error-correcting checks.",
+        "start": 930.013,
+        "duration": 3.587
+    },
+    {
+        "text": "However, if there's two errors, then the overall parity is going to toggle ",
+        "start": 934.16,
+        "duration": 3.706
+    },
+    {
+        "text": "back to being even, but the receiver would still see that there's been at ",
+        "start": 937.866,
+        "duration": 3.657
+    },
+    {
+        "text": "least some error because of what's going on with those four parity checks.",
+        "start": 941.523,
+        "duration": 3.657
+    },
+    {
+        "text": "So if they notice an even parity overall, but something non-zero happening ",
+        "start": 945.18,
+        "duration": 3.944
+    },
+    {
+        "text": "with the other checks, it tells them there were at least two errors.",
+        "start": 949.124,
+        "duration": 3.576
+    },
+    {
+        "text": "Isn't that clever?",
+        "start": 953.52,
+        "duration": 0.48
+    },
+    {
+        "text": "Even though we can't correct those 2-bit errors, ",
+        "start": 954.3,
+        "duration": 2.489
+    },
+    {
+        "text": "just by putting that one little bothersome 0th bit back to work, it lets us detect them.",
+        "start": 956.789,
+        "duration": 4.471
+    },
+    {
+        "text": "This is pretty standard, it's known as an extended Hamming code.",
+        "start": 962.26,
+        "duration": 2.96
+    },
+    {
+        "text": "Technically speaking, you now have a full description of what a Hamming code does, ",
+        "start": 966.54,
+        "duration": 4.176
+    },
+    {
+        "text": "at least for the example of a 16-bit block.",
+        "start": 970.716,
+        "duration": 2.164
+    },
+    {
+        "text": "But I think you'll find it more satisfying to check your understanding and solidify ",
+        "start": 972.88,
+        "duration": 4.22
+    },
+    {
+        "text": "everything up to this point by doing one full example from start to finish yourself.",
+        "start": 977.1,
+        "duration": 4.22
+    },
+    {
+        "text": "I'll step through it with you though so you can check yourself.",
+        "start": 982.08,
+        "duration": 2.22
+    },
+    {
+        "text": "To set up a message, whether that's a literal message you're translating over space or ",
+        "start": 985.12,
+        "duration": 4.636
+    },
+    {
+        "text": "some data you want to store over time, the first step is to divide it up into 11-bit ",
+        "start": 989.756,
+        "duration": 4.53
+    },
+    {
+        "text": "chunks.",
+        "start": 994.286,
+        "duration": 0.374
+    },
+    {
+        "text": "Each chunk is going to get packaged into an error-resistant 16-bit block.",
+        "start": 995.58,
+        "duration": 4.18
+    },
+    {
+        "text": "So let's take this one as an example and actually work it out.",
+        "start": 999.76,
+        "duration": 3.46
+    },
+    {
+        "text": "Go ahead, actually do it!",
+        "start": 1003.74,
+        "duration": 1.2
+    },
+    {
+        "text": "Let's pause and try putting together this block.",
+        "start": 1005.22,
+        "duration": 1.8
+    },
+    {
+        "text": "Okay, you ready?",
+        "start": 1012.72,
+        "duration": 0.96
+    },
+    {
+        "text": "Remember, position 0 along with the other powers of 2 are reserved for error correction ",
+        "start": 1014.24,
+        "duration": 4.565
+    },
+    {
+        "text": "duty, so you start by placing the message bits in all of the remaining spots, in order.",
+        "start": 1018.805,
+        "duration": 4.515
+    },
+    {
+        "text": "You need this group to have an even parity, which it already does, ",
+        "start": 1025.339,
+        "duration": 3.608
+    },
+    {
+        "text": "so you should have set that parity bit in position 1 to be a 0.",
+        "start": 1028.947,
+        "duration": 3.392
+    },
+    {
+        "text": "The next group starts off with an odd parity, ",
+        "start": 1033.02,
+        "duration": 2.43
+    },
+    {
+        "text": "so you should have set its parity bit to be 1.",
+        "start": 1035.45,
+        "duration": 2.43
+    },
+    {
+        "text": "The group after that starts with an odd parity, ",
+        "start": 1039.16,
+        "duration": 2.513
+    },
+    {
+        "text": "so again you should have set its parity bit to 1.",
+        "start": 1041.673,
+        "duration": 2.567
+    },
+    {
+        "text": "And the final group also has an odd parity, meaning ",
+        "start": 1044.78,
+        "duration": 2.984
+    },
+    {
+        "text": "we set that bit in position 8 to be a 1.",
+        "start": 1047.764,
+        "duration": 2.296
+    },
+    {
+        "text": "And then as the final step, the full block now has an even parity, ",
+        "start": 1051.3,
+        "duration": 4.255
+    },
+    {
+        "text": "meaning you can set that bit number 0, the overarching parity bit, to be 0.",
+        "start": 1055.555,
+        "duration": 4.765
+    },
+    {
+        "text": "So as this block is sent off, the parity of the four special ",
+        "start": 1061.34,
+        "duration": 3.545
+    },
+    {
+        "text": "subsets and the block as a whole will all be even, or 0.",
+        "start": 1064.885,
+        "duration": 3.255
+    },
+    {
+        "text": "As the second part of the exercise, let's have you play the role of the receiver.",
+        "start": 1068.82,
+        "duration": 3.36
+    },
+    {
+        "text": "Of course, that would mean you don't already know what this message is, ",
+        "start": 1073.48,
+        "duration": 3.286
+    },
+    {
+        "text": "maybe some of you memorized it, but let's assume that you haven't.",
+        "start": 1076.766,
+        "duration": 3.014
+    },
+    {
+        "text": "What I'm going to do is change either 0, 1, or 2 of the bits in that block, ",
+        "start": 1080.02,
+        "duration": 4.548
+    },
+    {
+        "text": "and then ask you to figure out what it is that I did.",
+        "start": 1084.568,
+        "duration": 3.172
+    },
+    {
+        "text": "So again, pause and try working it out.",
+        "start": 1088.26,
+        "duration": 2.55
+    },
+    {
+        "text": "Okay, so you as the receiver now check the first parity group and you can see ",
+        "start": 1098.79,
+        "duration": 4.619
+    },
+    {
+        "text": "that it's even, so any error that exists would have to be in an even column.",
+        "start": 1103.409,
+        "duration": 4.501
+    },
+    {
+        "text": "The next check gives us an odd number, telling us both that there's at least one error, ",
+        "start": 1109.69,
+        "duration": 4.749
+    },
+    {
+        "text": "and narrowing us down into this specific column.",
+        "start": 1114.439,
+        "duration": 2.591
+    },
+    {
+        "text": "The third check is even, chopping down the possibilities even further.",
+        "start": 1118.55,
+        "duration": 3.24
+    },
+    {
+        "text": "And the last parity check is odd, telling us there's an error somewhere in the bottom, ",
+        "start": 1122.65,
+        "duration": 4.319
+    },
+    {
+        "text": "which by now we can see must be in position number 10.",
+        "start": 1126.969,
+        "duration": 2.681
+    },
+    {
+        "text": "What's more, the parity of the whole block is odd, ",
+        "start": 1131.49,
+        "duration": 2.852
+    },
+    {
+        "text": "giving us confidence that there was one flip and not two.",
+        "start": 1134.342,
+        "duration": 3.188
+    },
+    {
+        "text": "If it's three or more, all bets are off.",
+        "start": 1138.07,
+        "duration": 1.9
+    },
+    {
+        "text": "After correcting that bit number 10, pulling out the 11 bits that were not ",
+        "start": 1141.31,
+        "duration": 4.21
+    },
+    {
+        "text": "used for correction gives us the relevant segment of the original message, ",
+        "start": 1145.52,
+        "duration": 4.21
+    },
+    {
+        "text": "which if you rewind and compare is indeed exactly what we started the example with.",
+        "start": 1149.73,
+        "duration": 4.66
+    },
+    {
+        "text": "And now that you know how to do all this by hand, ",
+        "start": 1155.71,
+        "duration": 2.302
+    },
+    {
+        "text": "I'd like to show you how you can carry out the core part of all of this logic with ",
+        "start": 1158.012,
+        "duration": 3.822
+    },
+    {
+        "text": "a single line of Python code.",
+        "start": 1161.834,
+        "duration": 1.336
+    },
+    {
+        "text": "You see, what I haven't told you yet is just how elegant this algorithm really is, ",
+        "start": 1163.87,
+        "duration": 4.288
+    },
+    {
+        "text": "how simple it is to get a machine to point to the position of an error, ",
+        "start": 1168.158,
+        "duration": 3.72
+    },
+    {
+        "text": "how to systematically scale it, and how we can frame all of this as one ",
+        "start": 1171.878,
+        "duration": 3.72
+    },
+    {
+        "text": "single operation rather than multiple separate parity checks.",
+        "start": 1175.598,
+        "duration": 3.152
+    },
+    {
+        "text": "To see what I mean, come join me in part 2.",
+        "start": 1179.43,
+        "duration": 1.88
+    }
+]

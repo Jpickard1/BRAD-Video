@@ -1,0 +1,5427 @@
+[
+    {
+        "text": "uh what i'm going to be what we're going",
+        "start": 0.64,
+        "duration": 3.6
+    },
+    {
+        "text": "to be talking about today is joint",
+        "start": 2.0,
+        "duration": 4.879
+    },
+    {
+        "text": "modeling of",
+        "start": 4.24,
+        "duration": 5.84
+    },
+    {
+        "text": "exercise response and circadian rhythm",
+        "start": 6.879,
+        "duration": 6.481
+    },
+    {
+        "text": "and rna-seq data across 15 tissues",
+        "start": 10.08,
+        "duration": 5.679
+    },
+    {
+        "text": "this was really a team effort",
+        "start": 13.36,
+        "duration": 5.919
+    },
+    {
+        "text": "led by joon lee and chuck buran",
+        "start": 15.759,
+        "duration": 7.201
+    },
+    {
+        "text": "and myself jay you zang and ling dang",
+        "start": 19.279,
+        "duration": 7.561
+    },
+    {
+        "text": "really put all this together",
+        "start": 22.96,
+        "duration": 3.88
+    },
+    {
+        "text": "okay so here's today's talk in a",
+        "start": 30.88,
+        "duration": 3.6
+    },
+    {
+        "text": "nutshell we're going to talk about the",
+        "start": 32.96,
+        "duration": 3.84
+    },
+    {
+        "text": "purpose and the design of the study",
+        "start": 34.48,
+        "duration": 4.16
+    },
+    {
+        "text": "really the purpose of this study is to",
+        "start": 36.8,
+        "duration": 3.759
+    },
+    {
+        "text": "measure the achieved exercise response",
+        "start": 38.64,
+        "duration": 3.599
+    },
+    {
+        "text": "that was the original purpose",
+        "start": 40.559,
+        "duration": 4.32
+    },
+    {
+        "text": "but then we ran into a problem uh a",
+        "start": 42.239,
+        "duration": 6.0
+    },
+    {
+        "text": "problem with uh confounding specifically",
+        "start": 44.879,
+        "duration": 6.401
+    },
+    {
+        "text": "circadian rhythm and circadian effects",
+        "start": 48.239,
+        "duration": 6.561
+    },
+    {
+        "text": "seem to be influencing gene expression",
+        "start": 51.28,
+        "duration": 5.919
+    },
+    {
+        "text": "and so what we want to do is",
+        "start": 54.8,
+        "duration": 4.0
+    },
+    {
+        "text": "in today's talk we're going to model",
+        "start": 57.199,
+        "duration": 3.281
+    },
+    {
+        "text": "we're going to create two models",
+        "start": 58.8,
+        "duration": 3.36
+    },
+    {
+        "text": "we're going to model the acute exercise",
+        "start": 60.48,
+        "duration": 3.92
+    },
+    {
+        "text": "response we're also going to model",
+        "start": 62.16,
+        "duration": 4.16
+    },
+    {
+        "text": "circadian rhythm",
+        "start": 64.4,
+        "duration": 2.719
+    },
+    {
+        "text": "and then",
+        "start": 66.32,
+        "duration": 2.96
+    },
+    {
+        "text": "the ultimate solution is really to",
+        "start": 67.119,
+        "duration": 5.04
+    },
+    {
+        "text": "combine those models into one where we",
+        "start": 69.28,
+        "duration": 4.879
+    },
+    {
+        "text": "have one part of that model",
+        "start": 72.159,
+        "duration": 3.921
+    },
+    {
+        "text": "measuring the",
+        "start": 74.159,
+        "duration": 4.081
+    },
+    {
+        "text": "acute exercise response and one",
+        "start": 76.08,
+        "duration": 4.64
+    },
+    {
+        "text": "measuring the circadian rhythm so we're",
+        "start": 78.24,
+        "duration": 4.4
+    },
+    {
+        "text": "simultaneously",
+        "start": 80.72,
+        "duration": 4.0
+    },
+    {
+        "text": "modeling both of these effects in a",
+        "start": 82.64,
+        "duration": 5.04
+    },
+    {
+        "text": "joint model and computing them",
+        "start": 84.72,
+        "duration": 5.52
+    },
+    {
+        "text": "for their percent variance explained now",
+        "start": 87.68,
+        "duration": 4.0
+    },
+    {
+        "text": "if that doesn't make sense right now",
+        "start": 90.24,
+        "duration": 4.0
+    },
+    {
+        "text": "don't worry we will walk through these",
+        "start": 91.68,
+        "duration": 5.6
+    },
+    {
+        "text": "steps one by one",
+        "start": 94.24,
+        "duration": 3.04
+    },
+    {
+        "text": "so in the lead lab we work in",
+        "start": 97.84,
+        "duration": 5.919
+    },
+    {
+        "text": "motor pack and motor pack stands for the",
+        "start": 100.56,
+        "duration": 5.68
+    },
+    {
+        "text": "molecular transducers of physical",
+        "start": 103.759,
+        "duration": 4.081
+    },
+    {
+        "text": "activity",
+        "start": 106.24,
+        "duration": 3.199
+    },
+    {
+        "text": "and really what we're trying to do in",
+        "start": 107.84,
+        "duration": 3.919
+    },
+    {
+        "text": "motor pack is figure out at the",
+        "start": 109.439,
+        "duration": 5.521
+    },
+    {
+        "text": "molecular level cellular level",
+        "start": 111.759,
+        "duration": 6.32
+    },
+    {
+        "text": "how the human body responds to exercise",
+        "start": 114.96,
+        "duration": 5.119
+    },
+    {
+        "text": "whether that exercise be aerobic whether",
+        "start": 118.079,
+        "duration": 3.601
+    },
+    {
+        "text": "it be anaerobic",
+        "start": 120.079,
+        "duration": 3.04
+    },
+    {
+        "text": "and",
+        "start": 121.68,
+        "duration": 4.079
+    },
+    {
+        "text": "this is a multi-species study",
+        "start": 123.119,
+        "duration": 4.401
+    },
+    {
+        "text": "we're working with humans we're working",
+        "start": 125.759,
+        "duration": 3.12
+    },
+    {
+        "text": "with rats",
+        "start": 127.52,
+        "duration": 3.84
+    },
+    {
+        "text": "and the rats help us they give us",
+        "start": 128.879,
+        "duration": 5.841
+    },
+    {
+        "text": "tissues that of course",
+        "start": 131.36,
+        "duration": 3.36
+    },
+    {
+        "text": "and this is also a multi-tissue study",
+        "start": 135.04,
+        "duration": 5.199
+    },
+    {
+        "text": "as well",
+        "start": 138.64,
+        "duration": 2.8
+    },
+    {
+        "text": "so let's",
+        "start": 140.239,
+        "duration": 3.761
+    },
+    {
+        "text": "jump into one of our first",
+        "start": 141.44,
+        "duration": 5.04
+    },
+    {
+        "text": "studies one of our first data sets this",
+        "start": 144.0,
+        "duration": 4.879
+    },
+    {
+        "text": "is actually called the",
+        "start": 146.48,
+        "duration": 4.32
+    },
+    {
+        "text": "past phase 1a or really we're just going",
+        "start": 148.879,
+        "duration": 5.44
+    },
+    {
+        "text": "to call it the past 1a",
+        "start": 150.8,
+        "duration": 3.519
+    },
+    {
+        "text": "study and it aims to study the acute",
+        "start": 154.879,
+        "duration": 4.321
+    },
+    {
+        "text": "exercise",
+        "start": 157.68,
+        "duration": 4.08
+    },
+    {
+        "text": "response over time so what we did here",
+        "start": 159.2,
+        "duration": 3.36
+    },
+    {
+        "text": "is",
+        "start": 161.76,
+        "duration": 2.24
+    },
+    {
+        "text": "we took",
+        "start": 162.56,
+        "duration": 4.959
+    },
+    {
+        "text": "seven cohorts of rats to undergo acute",
+        "start": 164.0,
+        "duration": 5.68
+    },
+    {
+        "text": "exercise response",
+        "start": 167.519,
+        "duration": 4.161
+    },
+    {
+        "text": "so they went through an acute exercise",
+        "start": 169.68,
+        "duration": 5.04
+    },
+    {
+        "text": "bout where they had to run 15 meters per",
+        "start": 171.68,
+        "duration": 4.0
+    },
+    {
+        "text": "minute",
+        "start": 174.72,
+        "duration": 4.239
+    },
+    {
+        "text": "at an incline so it's a 5 degree incline",
+        "start": 175.68,
+        "duration": 6.8
+    },
+    {
+        "text": "for about 30 minutes",
+        "start": 178.959,
+        "duration": 3.521
+    },
+    {
+        "text": "and that's what this",
+        "start": 182.959,
+        "duration": 4.0
+    },
+    {
+        "text": "red represents right here this is that",
+        "start": 184.72,
+        "duration": 3.92
+    },
+    {
+        "text": "exercise time",
+        "start": 186.959,
+        "duration": 3.601
+    },
+    {
+        "text": "and then afterward there are seven time",
+        "start": 188.64,
+        "duration": 4.959
+    },
+    {
+        "text": "points immediately post exercise one",
+        "start": 190.56,
+        "duration": 6.24
+    },
+    {
+        "text": "half one hour four hours seven hour 24",
+        "start": 193.599,
+        "duration": 6.72
+    },
+    {
+        "text": "hour up to 48 hour where these rats were",
+        "start": 196.8,
+        "duration": 6.96
+    },
+    {
+        "text": "sacrificed and their tissues harvested",
+        "start": 200.319,
+        "duration": 5.121
+    },
+    {
+        "text": "we compared those",
+        "start": 203.76,
+        "duration": 5.92
+    },
+    {
+        "text": "to sedentary rats at zero hour and seven",
+        "start": 205.44,
+        "duration": 5.84
+    },
+    {
+        "text": "hours so these sedimentary rounds of",
+        "start": 209.68,
+        "duration": 3.839
+    },
+    {
+        "text": "course for sedentary they didn't undergo",
+        "start": 211.28,
+        "duration": 3.84
+    },
+    {
+        "text": "any exercise",
+        "start": 213.519,
+        "duration": 4.241
+    },
+    {
+        "text": "response",
+        "start": 215.12,
+        "duration": 4.16
+    },
+    {
+        "text": "in total if you were to add all these",
+        "start": 217.76,
+        "duration": 4.399
+    },
+    {
+        "text": "dots up we have 78 rats",
+        "start": 219.28,
+        "duration": 4.64
+    },
+    {
+        "text": "15 tissues",
+        "start": 222.159,
+        "duration": 3.681
+    },
+    {
+        "text": "and this is a multi-omic study we're",
+        "start": 223.92,
+        "duration": 4.08
+    },
+    {
+        "text": "dealing with rnac this is bulk rna",
+        "start": 225.84,
+        "duration": 4.399
+    },
+    {
+        "text": "sequence it's not single cell or nac",
+        "start": 228.0,
+        "duration": 5.92
+    },
+    {
+        "text": "um we also have proteomics metabolomics",
+        "start": 230.239,
+        "duration": 5.521
+    },
+    {
+        "text": "and",
+        "start": 233.92,
+        "duration": 4.399
+    },
+    {
+        "text": "bisulfite sequencing",
+        "start": 235.76,
+        "duration": 5.44
+    },
+    {
+        "text": "so let's jump into the data inventory",
+        "start": 238.319,
+        "duration": 6.321
+    },
+    {
+        "text": "real quick here are those 15 tissues",
+        "start": 241.2,
+        "duration": 4.8
+    },
+    {
+        "text": "lined up",
+        "start": 244.64,
+        "duration": 3.599
+    },
+    {
+        "text": "and they're lined up by their sequencing",
+        "start": 246.0,
+        "duration": 4.56
+    },
+    {
+        "text": "batches you can see there are five",
+        "start": 248.239,
+        "duration": 5.481
+    },
+    {
+        "text": "sequencing batches from two locations",
+        "start": 250.56,
+        "duration": 6.239
+    },
+    {
+        "text": "mssm stands for mount sinai so there are",
+        "start": 253.72,
+        "duration": 5.239
+    },
+    {
+        "text": "three batch sequencing batches out of",
+        "start": 256.799,
+        "duration": 4.16
+    },
+    {
+        "text": "mount sinai and then there are two out",
+        "start": 258.959,
+        "duration": 3.841
+    },
+    {
+        "text": "of stanford",
+        "start": 260.959,
+        "duration": 4.001
+    },
+    {
+        "text": "and in each of these",
+        "start": 262.8,
+        "duration": 3.44
+    },
+    {
+        "text": "these tissues",
+        "start": 264.96,
+        "duration": 4.56
+    },
+    {
+        "text": "and batch specific cohorts what we can",
+        "start": 266.24,
+        "duration": 4.08
+    },
+    {
+        "text": "see",
+        "start": 269.52,
+        "duration": 3.28
+    },
+    {
+        "text": "is that 78 samples",
+        "start": 270.32,
+        "duration": 3.76
+    },
+    {
+        "text": "were",
+        "start": 272.8,
+        "duration": 3.92
+    },
+    {
+        "text": "sequenced and processed",
+        "start": 274.08,
+        "duration": 3.76
+    },
+    {
+        "text": "at a time",
+        "start": 276.72,
+        "duration": 4.24
+    },
+    {
+        "text": "with the exception of ovaries and testes",
+        "start": 277.84,
+        "duration": 5.359
+    },
+    {
+        "text": "and that's because ovaries and testes",
+        "start": 280.96,
+        "duration": 5.36
+    },
+    {
+        "text": "are set specific",
+        "start": 283.199,
+        "duration": 3.121
+    },
+    {
+        "text": "so although we have 78 rads given that",
+        "start": 287.919,
+        "duration": 6.241
+    },
+    {
+        "text": "we have 15 tissues in the rna suit we",
+        "start": 291.36,
+        "duration": 5.52
+    },
+    {
+        "text": "end up with just shy of",
+        "start": 294.16,
+        "duration": 5.84
+    },
+    {
+        "text": "1100 samples",
+        "start": 296.88,
+        "duration": 4.879
+    },
+    {
+        "text": "now let's just jump into one of these",
+        "start": 300.0,
+        "duration": 4.479
+    },
+    {
+        "text": "tissues and look at the distribution of",
+        "start": 301.759,
+        "duration": 4.961
+    },
+    {
+        "text": "sex and",
+        "start": 304.479,
+        "duration": 5.241
+    },
+    {
+        "text": "exercise",
+        "start": 306.72,
+        "duration": 3.0
+    },
+    {
+        "text": "so here we have our 78",
+        "start": 310.479,
+        "duration": 5.201
+    },
+    {
+        "text": "tissues and we want to know how is first",
+        "start": 313.039,
+        "duration": 5.041
+    },
+    {
+        "text": "how is sex divided we see it's divided",
+        "start": 315.68,
+        "duration": 3.6
+    },
+    {
+        "text": "perfectly",
+        "start": 318.08,
+        "duration": 3.28
+    },
+    {
+        "text": "it's totally orthogonal",
+        "start": 319.28,
+        "duration": 3.359
+    },
+    {
+        "text": "we can look at our",
+        "start": 321.36,
+        "duration": 2.96
+    },
+    {
+        "text": "control and exercise groups and they're",
+        "start": 322.639,
+        "duration": 3.84
+    },
+    {
+        "text": "divided really quite well as well",
+        "start": 324.32,
+        "duration": 4.8
+    },
+    {
+        "text": "they're not totally orthogonal",
+        "start": 326.479,
+        "duration": 6.081
+    },
+    {
+        "text": "but the later exercise groups 7 24 and",
+        "start": 329.12,
+        "duration": 4.88
+    },
+    {
+        "text": "48",
+        "start": 332.56,
+        "duration": 4.8
+    },
+    {
+        "text": "have a lesser degree of rats in them so",
+        "start": 334.0,
+        "duration": 4.4
+    },
+    {
+        "text": "39",
+        "start": 337.36,
+        "duration": 3.36
+    },
+    {
+        "text": "are females 39 males",
+        "start": 338.4,
+        "duration": 5.2
+    },
+    {
+        "text": "and anywhere from 10 to 6",
+        "start": 340.72,
+        "duration": 4.479
+    },
+    {
+        "text": "grads per",
+        "start": 343.6,
+        "duration": 4.159
+    },
+    {
+        "text": "experimental group",
+        "start": 345.199,
+        "duration": 6.401
+    },
+    {
+        "text": "so let's look at an example of what were",
+        "start": 347.759,
+        "duration": 5.681
+    },
+    {
+        "text": "what this study was originally trying to",
+        "start": 351.6,
+        "duration": 4.64
+    },
+    {
+        "text": "do measure the acute exercise response",
+        "start": 353.44,
+        "duration": 4.64
+    },
+    {
+        "text": "this is a gene and kidney",
+        "start": 356.24,
+        "duration": 4.72
+    },
+    {
+        "text": "called aren't l",
+        "start": 358.08,
+        "duration": 3.76
+    },
+    {
+        "text": "now",
+        "start": 360.96,
+        "duration": 3.04
+    },
+    {
+        "text": "if your cop if you",
+        "start": 361.84,
+        "duration": 4.32
+    },
+    {
+        "text": "are familiar with aren't l you'll know",
+        "start": 364.0,
+        "duration": 4.88
+    },
+    {
+        "text": "that this gene is",
+        "start": 366.16,
+        "duration": 6.4
+    },
+    {
+        "text": "associated with circadian rhythm",
+        "start": 368.88,
+        "duration": 5.28
+    },
+    {
+        "text": "and so",
+        "start": 372.56,
+        "duration": 3.84
+    },
+    {
+        "text": "what we'd like to do in motor pack is",
+        "start": 374.16,
+        "duration": 4.64
+    },
+    {
+        "text": "model the acute exercise response with",
+        "start": 376.4,
+        "duration": 4.48
+    },
+    {
+        "text": "something let's say this is a",
+        "start": 378.8,
+        "duration": 3.92
+    },
+    {
+        "text": "hypothetical model but something like",
+        "start": 380.88,
+        "duration": 2.72
+    },
+    {
+        "text": "this",
+        "start": 382.72,
+        "duration": 2.479
+    },
+    {
+        "text": "usually what we see",
+        "start": 383.6,
+        "duration": 4.4
+    },
+    {
+        "text": "is sort of the vast majority of the time",
+        "start": 385.199,
+        "duration": 4.321
+    },
+    {
+        "text": "we see genes that are up or down",
+        "start": 388.0,
+        "duration": 3.199
+    },
+    {
+        "text": "regulated with an immediate response to",
+        "start": 389.52,
+        "duration": 3.36
+    },
+    {
+        "text": "exercise and then they certainly",
+        "start": 391.199,
+        "duration": 4.801
+    },
+    {
+        "text": "they sort of taper off",
+        "start": 392.88,
+        "duration": 5.12
+    },
+    {
+        "text": "the color scheme here is important too",
+        "start": 396.0,
+        "duration": 3.199
+    },
+    {
+        "text": "it'll sort of",
+        "start": 398.0,
+        "duration": 3.52
+    },
+    {
+        "text": "help you to",
+        "start": 399.199,
+        "duration": 3.921
+    },
+    {
+        "text": "trace",
+        "start": 401.52,
+        "duration": 4.08
+    },
+    {
+        "text": "the experimental time points",
+        "start": 403.12,
+        "duration": 5.28
+    },
+    {
+        "text": "so at zero hour we have",
+        "start": 405.6,
+        "duration": 5.2
+    },
+    {
+        "text": "yellow dots all the way to 48 where it",
+        "start": 408.4,
+        "duration": 4.639
+    },
+    {
+        "text": "gets brown and we have a increasing",
+        "start": 410.8,
+        "duration": 4.399
+    },
+    {
+        "text": "gradient of darkness and the same is",
+        "start": 413.039,
+        "duration": 3.681
+    },
+    {
+        "text": "true for the blues",
+        "start": 415.199,
+        "duration": 3.28
+    },
+    {
+        "text": "and as time goes on",
+        "start": 416.72,
+        "duration": 4.16
+    },
+    {
+        "text": "for the",
+        "start": 418.479,
+        "duration": 4.881
+    },
+    {
+        "text": "control groups now there's a red flag",
+        "start": 420.88,
+        "duration": 4.24
+    },
+    {
+        "text": "here",
+        "start": 423.36,
+        "duration": 3.76
+    },
+    {
+        "text": "i want you to look at",
+        "start": 425.12,
+        "duration": 2.96
+    },
+    {
+        "text": "where",
+        "start": 427.12,
+        "duration": 4.0
+    },
+    {
+        "text": "the normalized counts over time",
+        "start": 428.08,
+        "duration": 5.839
+    },
+    {
+        "text": "plot for",
+        "start": 431.12,
+        "duration": 5.04
+    },
+    {
+        "text": "the two control loops these two control",
+        "start": 433.919,
+        "duration": 4.801
+    },
+    {
+        "text": "groups really haven't had much done to",
+        "start": 436.16,
+        "duration": 4.96
+    },
+    {
+        "text": "them they've just been",
+        "start": 438.72,
+        "duration": 3.599
+    },
+    {
+        "text": "um",
+        "start": 441.12,
+        "duration": 5.04
+    },
+    {
+        "text": "sacrificed at different times of the day",
+        "start": 442.319,
+        "duration": 5.6
+    },
+    {
+        "text": "and so what you can see is the",
+        "start": 446.16,
+        "duration": 4.879
+    },
+    {
+        "text": "difference in their normalized genius",
+        "start": 447.919,
+        "duration": 7.521
+    },
+    {
+        "text": "gene counts is really quite considerable",
+        "start": 451.039,
+        "duration": 4.401
+    },
+    {
+        "text": "and so",
+        "start": 455.68,
+        "duration": 2.48
+    },
+    {
+        "text": "a red there's a red flag here",
+        "start": 456.639,
+        "duration": 3.521
+    },
+    {
+        "text": "immediately on our radar we're worried",
+        "start": 458.16,
+        "duration": 2.879
+    },
+    {
+        "text": "about",
+        "start": 460.16,
+        "duration": 3.759
+    },
+    {
+        "text": "uh circadian rhythm the effect of day",
+        "start": 461.039,
+        "duration": 4.88
+    },
+    {
+        "text": "when these samples were processed",
+        "start": 463.919,
+        "duration": 4.321
+    },
+    {
+        "text": "so we're not just looking at one time",
+        "start": 465.919,
+        "duration": 5.521
+    },
+    {
+        "text": "scale here not just this time scale of 0",
+        "start": 468.24,
+        "duration": 4.72
+    },
+    {
+        "text": "to 48 hours",
+        "start": 471.44,
+        "duration": 4.56
+    },
+    {
+        "text": "instead we have two time skills",
+        "start": 472.96,
+        "duration": 6.079
+    },
+    {
+        "text": "it turns out that these samples were not",
+        "start": 476.0,
+        "duration": 4.319
+    },
+    {
+        "text": "processed",
+        "start": 479.039,
+        "duration": 3.201
+    },
+    {
+        "text": "all in the same order they did not",
+        "start": 480.319,
+        "duration": 5.6
+    },
+    {
+        "text": "undergo exercise at the same time",
+        "start": 482.24,
+        "duration": 6.799
+    },
+    {
+        "text": "and so our other time scale is the time",
+        "start": 485.919,
+        "duration": 4.241
+    },
+    {
+        "text": "of day",
+        "start": 489.039,
+        "duration": 3.201
+    },
+    {
+        "text": "this is a busy slide bear with me we're",
+        "start": 490.16,
+        "duration": 3.68
+    },
+    {
+        "text": "going to walk through it",
+        "start": 492.24,
+        "duration": 3.519
+    },
+    {
+        "text": "in red we have our samples that",
+        "start": 493.84,
+        "duration": 3.919
+    },
+    {
+        "text": "underwent exercise they're in decreasing",
+        "start": 495.759,
+        "duration": 5.041
+    },
+    {
+        "text": "order from 48 to 24 all the way to zero",
+        "start": 497.759,
+        "duration": 5.201
+    },
+    {
+        "text": "hours post exercise",
+        "start": 500.8,
+        "duration": 4.959
+    },
+    {
+        "text": "in blue we have our control samples",
+        "start": 502.96,
+        "duration": 4.88
+    },
+    {
+        "text": "again in decreasing order seven",
+        "start": 505.759,
+        "duration": 3.921
+    },
+    {
+        "text": "to zero hour",
+        "start": 507.84,
+        "duration": 4.319
+    },
+    {
+        "text": "we'll see two columns start and end",
+        "start": 509.68,
+        "duration": 4.239
+    },
+    {
+        "text": "start represents",
+        "start": 512.159,
+        "duration": 2.641
+    },
+    {
+        "text": "the",
+        "start": 513.919,
+        "duration": 3.92
+    },
+    {
+        "text": "start of the end of the",
+        "start": 514.8,
+        "duration": 5.919
+    },
+    {
+        "text": "exercise valve and n represents that",
+        "start": 517.839,
+        "duration": 6.881
+    },
+    {
+        "text": "time between exercise and sacrifice",
+        "start": 520.719,
+        "duration": 5.921
+    },
+    {
+        "text": "this is visualized here",
+        "start": 524.72,
+        "duration": 4.64
+    },
+    {
+        "text": "these red",
+        "start": 526.64,
+        "duration": 2.72
+    },
+    {
+        "text": "stars here represent the end of the",
+        "start": 530.08,
+        "duration": 5.68
+    },
+    {
+        "text": "exercise response and the lines",
+        "start": 532.399,
+        "duration": 5.681
+    },
+    {
+        "text": "uh attached to those stars and very end",
+        "start": 535.76,
+        "duration": 3.519
+    },
+    {
+        "text": "of those lines",
+        "start": 538.08,
+        "duration": 4.879
+    },
+    {
+        "text": "represent the time between um exercise",
+        "start": 539.279,
+        "duration": 6.24
+    },
+    {
+        "text": "problem and sacrifice sacrifice of",
+        "start": 542.959,
+        "duration": 5.201
+    },
+    {
+        "text": "course being at the end of these lines",
+        "start": 545.519,
+        "duration": 4.721
+    },
+    {
+        "text": "now in the control groups they didn't",
+        "start": 548.16,
+        "duration": 3.76
+    },
+    {
+        "text": "undergo exercise but these are just",
+        "start": 550.24,
+        "duration": 4.24
+    },
+    {
+        "text": "let's just call those control events",
+        "start": 551.92,
+        "duration": 5.12
+    },
+    {
+        "text": "a few things to notice here first those",
+        "start": 554.48,
+        "duration": 4.24
+    },
+    {
+        "text": "controls that we were comparing before",
+        "start": 557.04,
+        "duration": 4.239
+    },
+    {
+        "text": "they're opposite sides of the day",
+        "start": 558.72,
+        "duration": 6.16
+    },
+    {
+        "text": "and this day is between 10 a.m and about",
+        "start": 561.279,
+        "duration": 7.841
+    },
+    {
+        "text": "6 p.m so this is a normal working day",
+        "start": 564.88,
+        "duration": 5.44
+    },
+    {
+        "text": "in addition",
+        "start": 569.12,
+        "duration": 3.839
+    },
+    {
+        "text": "most of the time points associated with",
+        "start": 570.32,
+        "duration": 6.24
+    },
+    {
+        "text": "the acute exercise really fall in this",
+        "start": 572.959,
+        "duration": 7.44
+    },
+    {
+        "text": "three-hour period between 11 12 13 and",
+        "start": 576.56,
+        "duration": 5.839
+    },
+    {
+        "text": "14.",
+        "start": 580.399,
+        "duration": 4.161
+    },
+    {
+        "text": "there's two specialties here you'll see",
+        "start": 582.399,
+        "duration": 4.56
+    },
+    {
+        "text": "dotted lines here those dotted lines",
+        "start": 584.56,
+        "duration": 4.32
+    },
+    {
+        "text": "mean that",
+        "start": 586.959,
+        "duration": 5.201
+    },
+    {
+        "text": "this time actually represents um",
+        "start": 588.88,
+        "duration": 6.0
+    },
+    {
+        "text": "over 20 uh over 24 hour period so it's",
+        "start": 592.16,
+        "duration": 4.48
+    },
+    {
+        "text": "gone all the way around the clock and",
+        "start": 594.88,
+        "duration": 4.079
+    },
+    {
+        "text": "it's come back um in one case or it's",
+        "start": 596.64,
+        "duration": 4.48
+    },
+    {
+        "text": "gone all the way up around the clock",
+        "start": 598.959,
+        "duration": 6.361
+    },
+    {
+        "text": "twice for the 48 hour",
+        "start": 601.12,
+        "duration": 4.2
+    },
+    {
+        "text": "okay so we want to measure",
+        "start": 605.839,
+        "duration": 4.321
+    },
+    {
+        "text": "exercise and",
+        "start": 608.72,
+        "duration": 3.52
+    },
+    {
+        "text": "circadian effects and now we're going to",
+        "start": 610.16,
+        "duration": 3.84
+    },
+    {
+        "text": "plot these",
+        "start": 612.24,
+        "duration": 4.24
+    },
+    {
+        "text": "both on hours post exercise as we've",
+        "start": 614.0,
+        "duration": 6.32
+    },
+    {
+        "text": "seen but also by the time of day",
+        "start": 616.48,
+        "duration": 6.88
+    },
+    {
+        "text": "so the same data is used to disentangle",
+        "start": 620.32,
+        "duration": 4.639
+    },
+    {
+        "text": "these two effects",
+        "start": 623.36,
+        "duration": 4.0
+    },
+    {
+        "text": "and it's it's modeled best",
+        "start": 624.959,
+        "duration": 4.32
+    },
+    {
+        "text": "on two different time frames so we're",
+        "start": 627.36,
+        "duration": 5.76
+    },
+    {
+        "text": "shuffling and we're rescaling the x-axis",
+        "start": 629.279,
+        "duration": 6.56
+    },
+    {
+        "text": "so again if we look at these control",
+        "start": 633.12,
+        "duration": 5.2
+    },
+    {
+        "text": "groups that differ considerably what we",
+        "start": 635.839,
+        "duration": 4.801
+    },
+    {
+        "text": "can see is that well they differ but",
+        "start": 638.32,
+        "duration": 5.519
+    },
+    {
+        "text": "they differ on different ends of this",
+        "start": 640.64,
+        "duration": 5.439
+    },
+    {
+        "text": "work day so is it the time of day is",
+        "start": 643.839,
+        "duration": 4.161
+    },
+    {
+        "text": "there a circadian effect that's building",
+        "start": 646.079,
+        "duration": 4.241
+    },
+    {
+        "text": "up and changing the gene expression of",
+        "start": 648.0,
+        "duration": 4.32
+    },
+    {
+        "text": "these control groups",
+        "start": 650.32,
+        "duration": 4.0
+    },
+    {
+        "text": "that may be for the control group but",
+        "start": 652.32,
+        "duration": 4.56
+    },
+    {
+        "text": "what's really sort of troubling is to",
+        "start": 654.32,
+        "duration": 5.759
+    },
+    {
+        "text": "look at exercise group seven we see that",
+        "start": 656.88,
+        "duration": 4.399
+    },
+    {
+        "text": "right here",
+        "start": 660.079,
+        "duration": 3.681
+    },
+    {
+        "text": "is the expression from exercise group",
+        "start": 661.279,
+        "duration": 4.0
+    },
+    {
+        "text": "seven",
+        "start": 663.76,
+        "duration": 4.48
+    },
+    {
+        "text": "also influenced by when it was collected",
+        "start": 665.279,
+        "duration": 4.881
+    },
+    {
+        "text": "in the time of day or",
+        "start": 668.24,
+        "duration": 4.24
+    },
+    {
+        "text": "does it truly respond",
+        "start": 670.16,
+        "duration": 3.359
+    },
+    {
+        "text": "um",
+        "start": 672.48,
+        "duration": 3.359
+    },
+    {
+        "text": "to the acute exercise",
+        "start": 673.519,
+        "duration": 4.641
+    },
+    {
+        "text": "out",
+        "start": 675.839,
+        "duration": 2.321
+    },
+    {
+        "text": "so in measuring these two effects",
+        "start": 679.6,
+        "duration": 4.96
+    },
+    {
+        "text": "we're suspicious we think circadian",
+        "start": 682.399,
+        "duration": 3.921
+    },
+    {
+        "text": "patterns may interfere with our",
+        "start": 684.56,
+        "duration": 2.8
+    },
+    {
+        "text": "detection",
+        "start": 686.32,
+        "duration": 2.8
+    },
+    {
+        "text": "of the",
+        "start": 687.36,
+        "duration": 4.0
+    },
+    {
+        "text": "exercise response we know it's going to",
+        "start": 689.12,
+        "duration": 4.48
+    },
+    {
+        "text": "be difficult to disentangle these two",
+        "start": 691.36,
+        "duration": 4.64
+    },
+    {
+        "text": "effects one of the big reasons is our",
+        "start": 693.6,
+        "duration": 4.88
+    },
+    {
+        "text": "lack of samples",
+        "start": 696.0,
+        "duration": 4.48
+    },
+    {
+        "text": "the lack of parameters we can use in our",
+        "start": 698.48,
+        "duration": 3.84
+    },
+    {
+        "text": "models we're really limited we sort of",
+        "start": 700.48,
+        "duration": 3.68
+    },
+    {
+        "text": "have to get savage here",
+        "start": 702.32,
+        "duration": 4.24
+    },
+    {
+        "text": "we've only got seven sampling points for",
+        "start": 704.16,
+        "duration": 4.64
+    },
+    {
+        "text": "the exercise groups we've got two for",
+        "start": 706.56,
+        "duration": 3.92
+    },
+    {
+        "text": "the control groups",
+        "start": 708.8,
+        "duration": 4.719
+    },
+    {
+        "text": "we want to know which effect is dominant",
+        "start": 710.48,
+        "duration": 4.96
+    },
+    {
+        "text": "one thing we want to avoid here is the",
+        "start": 713.519,
+        "duration": 3.041
+    },
+    {
+        "text": "binary",
+        "start": 715.44,
+        "duration": 3.519
+    },
+    {
+        "text": "yes or no answer",
+        "start": 716.56,
+        "duration": 5.279
+    },
+    {
+        "text": "is this data set contaminated by",
+        "start": 718.959,
+        "duration": 4.641
+    },
+    {
+        "text": "circadian rhythm yes or no we want to",
+        "start": 721.839,
+        "duration": 4.421
+    },
+    {
+        "text": "avoid that are certain tissues",
+        "start": 723.6,
+        "duration": 4.32
+    },
+    {
+        "text": "[Music]",
+        "start": 726.26,
+        "duration": 3.42
+    },
+    {
+        "text": "contaminated by",
+        "start": 727.92,
+        "duration": 4.479
+    },
+    {
+        "text": "effects from circadian rhythm",
+        "start": 729.68,
+        "duration": 5.839
+    },
+    {
+        "text": "instead what we want to look at is every",
+        "start": 732.399,
+        "duration": 5.201
+    },
+    {
+        "text": "gene in every tissue",
+        "start": 735.519,
+        "duration": 4.241
+    },
+    {
+        "text": "not in a binary response but we want to",
+        "start": 737.6,
+        "duration": 4.239
+    },
+    {
+        "text": "quantify that response",
+        "start": 739.76,
+        "duration": 3.28
+    },
+    {
+        "text": "how much",
+        "start": 741.839,
+        "duration": 3.601
+    },
+    {
+        "text": "of that gene is influenced or modeled",
+        "start": 743.04,
+        "duration": 4.479
+    },
+    {
+        "text": "better to the circadian model",
+        "start": 745.44,
+        "duration": 3.44
+    },
+    {
+        "text": "versus the",
+        "start": 747.519,
+        "duration": 3.921
+    },
+    {
+        "text": "exercise",
+        "start": 748.88,
+        "duration": 2.56
+    },
+    {
+        "text": "so we're going to model the contribution",
+        "start": 753.12,
+        "duration": 4.56
+    },
+    {
+        "text": "of circadian exercise effect we're going",
+        "start": 754.959,
+        "duration": 5.201
+    },
+    {
+        "text": "um to do to quantify the difference",
+        "start": 757.68,
+        "duration": 4.959
+    },
+    {
+        "text": "we're gonna compare the percent variance",
+        "start": 760.16,
+        "duration": 4.479
+    },
+    {
+        "text": "explained from these two effects and",
+        "start": 762.639,
+        "duration": 4.241
+    },
+    {
+        "text": "therefore what we're actually doing is",
+        "start": 764.639,
+        "duration": 4.32
+    },
+    {
+        "text": "we're taking this um sort of",
+        "start": 766.88,
+        "duration": 4.0
+    },
+    {
+        "text": "observational data and we're performing",
+        "start": 768.959,
+        "duration": 4.481
+    },
+    {
+        "text": "experiments",
+        "start": 770.88,
+        "duration": 4.48
+    },
+    {
+        "text": "we're going to summarize those results",
+        "start": 773.44,
+        "duration": 4.399
+    },
+    {
+        "text": "in every gene across 15 tissues and then",
+        "start": 775.36,
+        "duration": 4.4
+    },
+    {
+        "text": "we'll sort of come back",
+        "start": 777.839,
+        "duration": 4.081
+    },
+    {
+        "text": "and we'll take a bird's eye view",
+        "start": 779.76,
+        "duration": 4.16
+    },
+    {
+        "text": "and hopefully we're going to be able to",
+        "start": 781.92,
+        "duration": 4.56
+    },
+    {
+        "text": "differentiate circadian rhythm",
+        "start": 783.92,
+        "duration": 5.28
+    },
+    {
+        "text": "and response to exercise",
+        "start": 786.48,
+        "duration": 4.4
+    },
+    {
+        "text": "we're going to take two strategies this",
+        "start": 789.2,
+        "duration": 4.639
+    },
+    {
+        "text": "is our first strategy",
+        "start": 790.88,
+        "duration": 2.959
+    },
+    {
+        "text": "we're working with rna-seq data so we're",
+        "start": 794.0,
+        "duration": 4.56
+    },
+    {
+        "text": "going to very briefly",
+        "start": 796.32,
+        "duration": 4.24
+    },
+    {
+        "text": "run through the rnc",
+        "start": 798.56,
+        "duration": 4.24
+    },
+    {
+        "text": "qc and i apologize for that i know that",
+        "start": 800.56,
+        "duration": 4.079
+    },
+    {
+        "text": "we could we could spend a",
+        "start": 802.8,
+        "duration": 4.719
+    },
+    {
+        "text": "uh a full uh session just talking about",
+        "start": 804.639,
+        "duration": 4.961
+    },
+    {
+        "text": "qc and it is really important it lays",
+        "start": 807.519,
+        "duration": 4.721
+    },
+    {
+        "text": "the foundation but i want that we want",
+        "start": 809.6,
+        "duration": 4.4
+    },
+    {
+        "text": "this talk really to focus on the",
+        "start": 812.24,
+        "duration": 3.44
+    },
+    {
+        "text": "modeling itself so we're going to jump",
+        "start": 814.0,
+        "duration": 4.399
+    },
+    {
+        "text": "into modeling after qc and then we're",
+        "start": 815.68,
+        "duration": 4.0
+    },
+    {
+        "text": "going to look at the",
+        "start": 818.399,
+        "duration": 3.68
+    },
+    {
+        "text": "percent variance explained from each of",
+        "start": 819.68,
+        "duration": 4.24
+    },
+    {
+        "text": "these models and at this point these",
+        "start": 822.079,
+        "duration": 3.921
+    },
+    {
+        "text": "models are separate",
+        "start": 823.92,
+        "duration": 5.84
+    },
+    {
+        "text": "so let's jump into that qc",
+        "start": 826.0,
+        "duration": 6.399
+    },
+    {
+        "text": "so we decided to perform um variant",
+        "start": 829.76,
+        "duration": 4.879
+    },
+    {
+        "text": "stabilizing transformation we looked at",
+        "start": 832.399,
+        "duration": 3.601
+    },
+    {
+        "text": "a few different transformation",
+        "start": 834.639,
+        "duration": 4.401
+    },
+    {
+        "text": "techniques i gotta admit um",
+        "start": 836.0,
+        "duration": 6.0
+    },
+    {
+        "text": "this was my first project when i joined",
+        "start": 839.04,
+        "duration": 5.44
+    },
+    {
+        "text": "as a postdoc what i know now",
+        "start": 842.0,
+        "duration": 4.639
+    },
+    {
+        "text": "i'm not sure i would choose variant",
+        "start": 844.48,
+        "duration": 4.88
+    },
+    {
+        "text": "stabilizing transformation i would look",
+        "start": 846.639,
+        "duration": 4.64
+    },
+    {
+        "text": "at other transformation techniques with",
+        "start": 849.36,
+        "duration": 3.36
+    },
+    {
+        "text": "much more rigor you see variance",
+        "start": 851.279,
+        "duration": 2.961
+    },
+    {
+        "text": "stabilizing transformation when you",
+        "start": 852.72,
+        "duration": 2.559
+    },
+    {
+        "text": "think of",
+        "start": 854.24,
+        "duration": 2.48
+    },
+    {
+        "text": "dec2",
+        "start": 855.279,
+        "duration": 3.041
+    },
+    {
+        "text": "we're not even doing a differential gene",
+        "start": 856.72,
+        "duration": 3.76
+    },
+    {
+        "text": "expression analysis now we looked at",
+        "start": 858.32,
+        "duration": 4.0
+    },
+    {
+        "text": "other transformation techniques and we",
+        "start": 860.48,
+        "duration": 3.76
+    },
+    {
+        "text": "think",
+        "start": 862.32,
+        "duration": 4.079
+    },
+    {
+        "text": "we thought this was our best choice",
+        "start": 864.24,
+        "duration": 3.52
+    },
+    {
+        "text": "but um",
+        "start": 866.399,
+        "duration": 3.201
+    },
+    {
+        "text": "i do want to point out that this could",
+        "start": 867.76,
+        "duration": 3.84
+    },
+    {
+        "text": "be done with more rigor and so when we",
+        "start": 869.6,
+        "duration": 4.32
+    },
+    {
+        "text": "come back to it we will we'll look at",
+        "start": 871.6,
+        "duration": 4.239
+    },
+    {
+        "text": "different transformation techniques and",
+        "start": 873.92,
+        "duration": 3.279
+    },
+    {
+        "text": "we'll look at them not only at the",
+        "start": 875.839,
+        "duration": 3.601
+    },
+    {
+        "text": "finish line but all those little steps",
+        "start": 877.199,
+        "duration": 4.161
+    },
+    {
+        "text": "along the way with many",
+        "start": 879.44,
+        "duration": 5.12
+    },
+    {
+        "text": "qc plots to really understand how the",
+        "start": 881.36,
+        "duration": 6.24
+    },
+    {
+        "text": "data responds to transformation with",
+        "start": 884.56,
+        "duration": 6.079
+    },
+    {
+        "text": "that said i think we're okay with bst",
+        "start": 887.6,
+        "duration": 4.96
+    },
+    {
+        "text": "transformation",
+        "start": 890.639,
+        "duration": 4.161
+    },
+    {
+        "text": "for the big picture of this talk",
+        "start": 892.56,
+        "duration": 4.0
+    },
+    {
+        "text": "what we have here",
+        "start": 894.8,
+        "duration": 4.96
+    },
+    {
+        "text": "is a box plot of our",
+        "start": 896.56,
+        "duration": 5.839
+    },
+    {
+        "text": "of 78 samples",
+        "start": 899.76,
+        "duration": 4.72
+    },
+    {
+        "text": "and we can see that at least their",
+        "start": 902.399,
+        "duration": 4.081
+    },
+    {
+        "text": "medians are really quite",
+        "start": 904.48,
+        "duration": 4.4
+    },
+    {
+        "text": "comparable these are normalized counts",
+        "start": 906.48,
+        "duration": 4.88
+    },
+    {
+        "text": "on our y-axis and if we just take two",
+        "start": 908.88,
+        "duration": 4.959
+    },
+    {
+        "text": "samples let's say we take sample one we",
+        "start": 911.36,
+        "duration": 4.88
+    },
+    {
+        "text": "take sample two",
+        "start": 913.839,
+        "duration": 3.601
+    },
+    {
+        "text": "what we see",
+        "start": 916.24,
+        "duration": 3.279
+    },
+    {
+        "text": "is that um they're really quite",
+        "start": 917.44,
+        "duration": 4.079
+    },
+    {
+        "text": "comparable by comparable i mean if we",
+        "start": 919.519,
+        "duration": 4.56
+    },
+    {
+        "text": "had a line going through here that line",
+        "start": 921.519,
+        "duration": 5.12
+    },
+    {
+        "text": "would be at zero and zero",
+        "start": 924.079,
+        "duration": 4.801
+    },
+    {
+        "text": "and have a slope of one so many of these",
+        "start": 926.639,
+        "duration": 4.801
+    },
+    {
+        "text": "percent variance explained",
+        "start": 928.88,
+        "duration": 5.199
+    },
+    {
+        "text": "might equal each other or are really",
+        "start": 931.44,
+        "duration": 4.959
+    },
+    {
+        "text": "quite heavily correlated",
+        "start": 934.079,
+        "duration": 4.801
+    },
+    {
+        "text": "now some genes have expression of zero",
+        "start": 936.399,
+        "duration": 3.601
+    },
+    {
+        "text": "one thing",
+        "start": 938.88,
+        "duration": 2.319
+    },
+    {
+        "text": "bst",
+        "start": 940.0,
+        "duration": 3.44
+    },
+    {
+        "text": "quite a majority of them do",
+        "start": 941.199,
+        "duration": 4.64
+    },
+    {
+        "text": "and they all line up here what vst does",
+        "start": 943.44,
+        "duration": 6.8
+    },
+    {
+        "text": "is it actually shoots them up to five",
+        "start": 945.839,
+        "duration": 4.401
+    },
+    {
+        "text": "let's talk about sample processing for",
+        "start": 951.12,
+        "duration": 5.519
+    },
+    {
+        "text": "all 15 tissues this is a bird's eye view",
+        "start": 954.079,
+        "duration": 5.361
+    },
+    {
+        "text": "we started for the most part with 78",
+        "start": 956.639,
+        "duration": 4.721
+    },
+    {
+        "text": "tissues and we have three major",
+        "start": 959.44,
+        "duration": 4.56
+    },
+    {
+        "text": "decisions that we had to consider",
+        "start": 961.36,
+        "duration": 4.56
+    },
+    {
+        "text": "sex verification",
+        "start": 964.0,
+        "duration": 3.36
+    },
+    {
+        "text": "batch adjustment of poor variant",
+        "start": 965.92,
+        "duration": 2.56
+    },
+    {
+        "text": "adjustment",
+        "start": 967.36,
+        "duration": 1.919
+    },
+    {
+        "text": "and",
+        "start": 968.48,
+        "duration": 3.279
+    },
+    {
+        "text": "outliers",
+        "start": 969.279,
+        "duration": 2.48
+    },
+    {
+        "text": "sex verification um there was one",
+        "start": 972.0,
+        "duration": 5.519
+    },
+    {
+        "text": "reciprocal pair in hypothalamus",
+        "start": 974.399,
+        "duration": 4.8
+    },
+    {
+        "text": "they were mislabeled by their sex we",
+        "start": 977.519,
+        "duration": 3.361
+    },
+    {
+        "text": "could tell if we could",
+        "start": 979.199,
+        "duration": 3.44
+    },
+    {
+        "text": "see this from their sex genes and so we",
+        "start": 980.88,
+        "duration": 4.0
+    },
+    {
+        "text": "just switched their labels",
+        "start": 982.639,
+        "duration": 4.241
+    },
+    {
+        "text": "with batch adjustment for about half the",
+        "start": 984.88,
+        "duration": 4.24
+    },
+    {
+        "text": "tissues we saw that sex was really",
+        "start": 986.88,
+        "duration": 4.24
+    },
+    {
+        "text": "driving",
+        "start": 989.12,
+        "duration": 4.8
+    },
+    {
+        "text": "the variants especially on let's say a",
+        "start": 991.12,
+        "duration": 6.639
+    },
+    {
+        "text": "pca and so we just centered those",
+        "start": 993.92,
+        "duration": 5.76
+    },
+    {
+        "text": "samples by sex",
+        "start": 997.759,
+        "duration": 4.0
+    },
+    {
+        "text": "and brought them together because what",
+        "start": 999.68,
+        "duration": 5.04
+    },
+    {
+        "text": "we're really concerned with is the",
+        "start": 1001.759,
+        "duration": 4.64
+    },
+    {
+        "text": "experimental groups",
+        "start": 1004.72,
+        "duration": 2.88
+    },
+    {
+        "text": "and",
+        "start": 1006.399,
+        "duration": 3.041
+    },
+    {
+        "text": "circadian rhythm",
+        "start": 1007.6,
+        "duration": 4.56
+    },
+    {
+        "text": "then we performed outlier removal across",
+        "start": 1009.44,
+        "duration": 5.44
+    },
+    {
+        "text": "these tissues we removed 18 samples and",
+        "start": 1012.16,
+        "duration": 5.2
+    },
+    {
+        "text": "that left us with 1074",
+        "start": 1014.88,
+        "duration": 5.199
+    },
+    {
+        "text": "samples in total",
+        "start": 1017.36,
+        "duration": 5.919
+    },
+    {
+        "text": "so here's a pca after all of that",
+        "start": 1020.079,
+        "duration": 5.041
+    },
+    {
+        "text": "and i just want to sort of take you on a",
+        "start": 1023.279,
+        "duration": 3.28
+    },
+    {
+        "text": "grand tour",
+        "start": 1025.12,
+        "duration": 3.439
+    },
+    {
+        "text": "we're going to start up here",
+        "start": 1026.559,
+        "duration": 5.201
+    },
+    {
+        "text": "with control zero hour or control ipv",
+        "start": 1028.559,
+        "duration": 5.441
+    },
+    {
+        "text": "immediately post exercise",
+        "start": 1031.76,
+        "duration": 4.72
+    },
+    {
+        "text": "we're going to move over to exercise 0",
+        "start": 1034.0,
+        "duration": 6.199
+    },
+    {
+        "text": "our 0.5147",
+        "start": 1036.48,
+        "duration": 3.719
+    },
+    {
+        "text": "by the time we get to exercise 7",
+        "start": 1040.64,
+        "duration": 5.919
+    },
+    {
+        "text": "it pairs up with control 7.",
+        "start": 1043.52,
+        "duration": 6.0
+    },
+    {
+        "text": "when we go back to that 0 hour",
+        "start": 1046.559,
+        "duration": 4.161
+    },
+    {
+        "text": "what we see",
+        "start": 1049.52,
+        "duration": 3.68
+    },
+    {
+        "text": "is that it pairs up with the 20 foot and",
+        "start": 1050.72,
+        "duration": 4.079
+    },
+    {
+        "text": "48 hour",
+        "start": 1053.2,
+        "duration": 3.68
+    },
+    {
+        "text": "exercise response and so we get this",
+        "start": 1054.799,
+        "duration": 5.441
+    },
+    {
+        "text": "sort of grand tour if you will",
+        "start": 1056.88,
+        "duration": 5.919
+    },
+    {
+        "text": "visualized with this ellipse",
+        "start": 1060.24,
+        "duration": 4.799
+    },
+    {
+        "text": "one thing i'd like you to focus on we're",
+        "start": 1062.799,
+        "duration": 3.601
+    },
+    {
+        "text": "going to look at all these tissues in a",
+        "start": 1065.039,
+        "duration": 2.88
+    },
+    {
+        "text": "second",
+        "start": 1066.4,
+        "duration": 3.36
+    },
+    {
+        "text": "is the difference between our controls",
+        "start": 1067.919,
+        "duration": 3.361
+    },
+    {
+        "text": "those are going to be in blue",
+        "start": 1069.76,
+        "duration": 3.919
+    },
+    {
+        "text": "and i've i've highlighted that excuse me",
+        "start": 1071.28,
+        "duration": 3.6
+    },
+    {
+        "text": "i've",
+        "start": 1073.679,
+        "duration": 7.481
+    },
+    {
+        "text": "i've connected them with a dark blue dot",
+        "start": 1074.88,
+        "duration": 6.28
+    },
+    {
+        "text": "so",
+        "start": 1081.76,
+        "duration": 4.32
+    },
+    {
+        "text": "when we look at",
+        "start": 1083.84,
+        "duration": 4.48
+    },
+    {
+        "text": "can we see this already",
+        "start": 1086.08,
+        "duration": 3.28
+    },
+    {
+        "text": "yeah",
+        "start": 1088.32,
+        "duration": 2.32
+    },
+    {
+        "text": "um",
+        "start": 1089.36,
+        "duration": 3.04
+    },
+    {
+        "text": "when we look at all these different",
+        "start": 1090.64,
+        "duration": 2.72
+    },
+    {
+        "text": "tissues",
+        "start": 1092.4,
+        "duration": 3.2
+    },
+    {
+        "text": "some of them show these circular",
+        "start": 1093.36,
+        "duration": 4.8
+    },
+    {
+        "text": "patterns really quite nicely and these",
+        "start": 1095.6,
+        "duration": 4.88
+    },
+    {
+        "text": "tissues are the ones you would expect to",
+        "start": 1098.16,
+        "duration": 4.399
+    },
+    {
+        "text": "have a response to",
+        "start": 1100.48,
+        "duration": 5.04
+    },
+    {
+        "text": "acute exercise adrenal gastro",
+        "start": 1102.559,
+        "duration": 3.841
+    },
+    {
+        "text": "heart",
+        "start": 1105.52,
+        "duration": 3.92
+    },
+    {
+        "text": "lung liver kitten kidney's also blown up",
+        "start": 1106.4,
+        "duration": 4.08
+    },
+    {
+        "text": "here",
+        "start": 1109.44,
+        "duration": 3.52
+    },
+    {
+        "text": "and some of them not but we force the",
+        "start": 1110.48,
+        "duration": 4.88
+    },
+    {
+        "text": "ellipticals ellipses in there our",
+        "start": 1112.96,
+        "duration": 4.959
+    },
+    {
+        "text": "electricals in there and then",
+        "start": 1115.36,
+        "duration": 4.0
+    },
+    {
+        "text": "we",
+        "start": 1117.919,
+        "duration": 4.481
+    },
+    {
+        "text": "show this distance between",
+        "start": 1119.36,
+        "duration": 5.12
+    },
+    {
+        "text": "our different control groups",
+        "start": 1122.4,
+        "duration": 4.639
+    },
+    {
+        "text": "and this can sort of give us an idea",
+        "start": 1124.48,
+        "duration": 3.84
+    },
+    {
+        "text": "of",
+        "start": 1127.039,
+        "duration": 4.88
+    },
+    {
+        "text": "with how far how well they fit the",
+        "start": 1128.32,
+        "duration": 5.2
+    },
+    {
+        "text": "ellipse",
+        "start": 1131.919,
+        "duration": 3.12
+    },
+    {
+        "text": "if they are",
+        "start": 1133.52,
+        "duration": 4.159
+    },
+    {
+        "text": "really responding well to",
+        "start": 1135.039,
+        "duration": 5.281
+    },
+    {
+        "text": "acute exercise and then with regard to",
+        "start": 1137.679,
+        "duration": 4.0
+    },
+    {
+        "text": "the length",
+        "start": 1140.32,
+        "duration": 4.08
+    },
+    {
+        "text": "of the um",
+        "start": 1141.679,
+        "duration": 4.88
+    },
+    {
+        "text": "dark blue line here",
+        "start": 1144.4,
+        "duration": 2.96
+    },
+    {
+        "text": "if",
+        "start": 1146.559,
+        "duration": 4.641
+    },
+    {
+        "text": "circadian rhythm is having an effect",
+        "start": 1147.36,
+        "duration": 7.04
+    },
+    {
+        "text": "this is really just a superficial view",
+        "start": 1151.2,
+        "duration": 4.719
+    },
+    {
+        "text": "of it",
+        "start": 1154.4,
+        "duration": 3.2
+    },
+    {
+        "text": "it's just to put it on our radar for",
+        "start": 1155.919,
+        "duration": 3.441
+    },
+    {
+        "text": "certain tissues",
+        "start": 1157.6,
+        "duration": 3.6
+    },
+    {
+        "text": "so let's jump into the modeling we're",
+        "start": 1159.36,
+        "duration": 3.679
+    },
+    {
+        "text": "going to try two separate models one for",
+        "start": 1161.2,
+        "duration": 4.56
+    },
+    {
+        "text": "circadian rhythm and one for",
+        "start": 1163.039,
+        "duration": 5.601
+    },
+    {
+        "text": "the acute exercise response",
+        "start": 1165.76,
+        "duration": 4.88
+    },
+    {
+        "text": "so let's jump into model one this is our",
+        "start": 1168.64,
+        "duration": 5.919
+    },
+    {
+        "text": "model for a heat exercise response",
+        "start": 1170.64,
+        "duration": 3.919
+    },
+    {
+        "text": "believe it or not we're using a",
+        "start": 1175.039,
+        "duration": 3.841
+    },
+    {
+        "text": "polynomial model",
+        "start": 1176.4,
+        "duration": 4.639
+    },
+    {
+        "text": "this has five parameters it's reportedly",
+        "start": 1178.88,
+        "duration": 5.44
+    },
+    {
+        "text": "a polynomial model",
+        "start": 1181.039,
+        "duration": 3.281
+    },
+    {
+        "text": "we're modeling normalized gene",
+        "start": 1184.72,
+        "duration": 2.56
+    },
+    {
+        "text": "expression",
+        "start": 1186.24,
+        "duration": 4.16
+    },
+    {
+        "text": "and we are using hours post exercise but",
+        "start": 1187.28,
+        "duration": 3.92
+    },
+    {
+        "text": "we",
+        "start": 1190.4,
+        "duration": 3.44
+    },
+    {
+        "text": "for our x but we've square rooted those",
+        "start": 1191.2,
+        "duration": 4.96
+    },
+    {
+        "text": "uh one of the reasons we square root of",
+        "start": 1193.84,
+        "duration": 4.56
+    },
+    {
+        "text": "is because it's a four degree polynomial",
+        "start": 1196.16,
+        "duration": 4.08
+    },
+    {
+        "text": "um and we have",
+        "start": 1198.4,
+        "duration": 3.759
+    },
+    {
+        "text": "hours post exercise that go all the way",
+        "start": 1200.24,
+        "duration": 4.24
+    },
+    {
+        "text": "up to 48 hours",
+        "start": 1202.159,
+        "duration": 3.441
+    },
+    {
+        "text": "one of the",
+        "start": 1204.48,
+        "duration": 3.36
+    },
+    {
+        "text": "downsides to such a model",
+        "start": 1205.6,
+        "duration": 3.68
+    },
+    {
+        "text": "is that",
+        "start": 1207.84,
+        "duration": 4.16
+    },
+    {
+        "text": "these led later terms",
+        "start": 1209.28,
+        "duration": 4.96
+    },
+    {
+        "text": "48 to the fourth degree",
+        "start": 1212.0,
+        "duration": 5.36
+    },
+    {
+        "text": "is really going to steal",
+        "start": 1214.24,
+        "duration": 4.319
+    },
+    {
+        "text": "a lot of",
+        "start": 1217.36,
+        "duration": 3.28
+    },
+    {
+        "text": "the model dictate the model's behavior",
+        "start": 1218.559,
+        "duration": 4.48
+    },
+    {
+        "text": "it might overfit on some of these ladder",
+        "start": 1220.64,
+        "duration": 4.56
+    },
+    {
+        "text": "points",
+        "start": 1223.039,
+        "duration": 3.281
+    },
+    {
+        "text": "um",
+        "start": 1225.2,
+        "duration": 4.479
+    },
+    {
+        "text": "on our x-axis well one of the i should",
+        "start": 1226.32,
+        "duration": 4.88
+    },
+    {
+        "text": "say one of the perks of the model one of",
+        "start": 1229.679,
+        "duration": 2.961
+    },
+    {
+        "text": "the perks of the model is it's",
+        "start": 1231.2,
+        "duration": 3.359
+    },
+    {
+        "text": "incredibly",
+        "start": 1232.64,
+        "duration": 3.12
+    },
+    {
+        "text": "flexible",
+        "start": 1234.559,
+        "duration": 2.881
+    },
+    {
+        "text": "now you can't draw an elephant with this",
+        "start": 1235.76,
+        "duration": 2.96
+    },
+    {
+        "text": "model but",
+        "start": 1237.44,
+        "duration": 2.4
+    },
+    {
+        "text": "it does",
+        "start": 1238.72,
+        "duration": 5.36
+    },
+    {
+        "text": "allow us the flexibility to capture the",
+        "start": 1239.84,
+        "duration": 6.719
+    },
+    {
+        "text": "very diverse responses we're seeing in",
+        "start": 1244.08,
+        "duration": 5.599
+    },
+    {
+        "text": "these exercise students",
+        "start": 1246.559,
+        "duration": 5.36
+    },
+    {
+        "text": "so on our x-axis we have hours",
+        "start": 1249.679,
+        "duration": 4.24
+    },
+    {
+        "text": "post-exercise",
+        "start": 1251.919,
+        "duration": 5.201
+    },
+    {
+        "text": "we're using our exercise cohorts",
+        "start": 1253.919,
+        "duration": 5.681
+    },
+    {
+        "text": "but only one of those control groups",
+        "start": 1257.12,
+        "duration": 5.52
+    },
+    {
+        "text": "we're leaving one out almost as a a test",
+        "start": 1259.6,
+        "duration": 4.319
+    },
+    {
+        "text": "sample",
+        "start": 1262.64,
+        "duration": 3.279
+    },
+    {
+        "text": "it doesn't really serve",
+        "start": 1263.919,
+        "duration": 3.601
+    },
+    {
+        "text": "as far as i can see",
+        "start": 1265.919,
+        "duration": 4.0
+    },
+    {
+        "text": "any use in measure in",
+        "start": 1267.52,
+        "duration": 4.639
+    },
+    {
+        "text": "performing the",
+        "start": 1269.919,
+        "duration": 4.161
+    },
+    {
+        "text": "exercise model",
+        "start": 1272.159,
+        "duration": 3.921
+    },
+    {
+        "text": "you'll notice the same seven time points",
+        "start": 1274.08,
+        "duration": 4.959
+    },
+    {
+        "text": "but this control zero hour actually we",
+        "start": 1276.08,
+        "duration": 4.4
+    },
+    {
+        "text": "moved it back",
+        "start": 1279.039,
+        "duration": 3.76
+    },
+    {
+        "text": "to negative one and that's because it",
+        "start": 1280.48,
+        "duration": 4.88
+    },
+    {
+        "text": "was sacrificed just before the exercise",
+        "start": 1282.799,
+        "duration": 4.961
+    },
+    {
+        "text": "event that exercise event was a 30-30",
+        "start": 1285.36,
+        "duration": 4.88
+    },
+    {
+        "text": "minute period and that really helps",
+        "start": 1287.76,
+        "duration": 4.72
+    },
+    {
+        "text": "anchor the model when we visualize this",
+        "start": 1290.24,
+        "duration": 4.64
+    },
+    {
+        "text": "model again",
+        "start": 1292.48,
+        "duration": 4.16
+    },
+    {
+        "text": "you'll see why we made this modeling",
+        "start": 1294.88,
+        "duration": 3.52
+    },
+    {
+        "text": "decision",
+        "start": 1296.64,
+        "duration": 3.2
+    },
+    {
+        "text": "the model 2",
+        "start": 1298.4,
+        "duration": 3.68
+    },
+    {
+        "text": "is a model for circadian rhythm this is",
+        "start": 1299.84,
+        "duration": 4.4
+    },
+    {
+        "text": "a",
+        "start": 1302.08,
+        "duration": 4.32
+    },
+    {
+        "text": "a model with three parameters baseline",
+        "start": 1304.24,
+        "duration": 4.08
+    },
+    {
+        "text": "magnitude and phase",
+        "start": 1306.4,
+        "duration": 6.88
+    },
+    {
+        "text": "it is assumed to have a 24-hour period",
+        "start": 1308.32,
+        "duration": 6.8
+    },
+    {
+        "text": "and an equivalent function",
+        "start": 1313.28,
+        "duration": 4.16
+    },
+    {
+        "text": "is right here where we are",
+        "start": 1315.12,
+        "duration": 5.76
+    },
+    {
+        "text": "modeling the normalized gene expression",
+        "start": 1317.44,
+        "duration": 6.16
+    },
+    {
+        "text": "and we have our sine and our cosine",
+        "start": 1320.88,
+        "duration": 4.48
+    },
+    {
+        "text": "terms",
+        "start": 1323.6,
+        "duration": 5.68
+    },
+    {
+        "text": "in x x c right here we've got two pi",
+        "start": 1325.36,
+        "duration": 6.4
+    },
+    {
+        "text": "times the time of day time of day is on",
+        "start": 1329.28,
+        "duration": 6.879
+    },
+    {
+        "text": "a scale of 24 hours divided by 24 hours",
+        "start": 1331.76,
+        "duration": 7.52
+    },
+    {
+        "text": "our x-axis is time of day",
+        "start": 1336.159,
+        "duration": 4.88
+    },
+    {
+        "text": "we're using of course we're going to use",
+        "start": 1339.28,
+        "duration": 5.36
+    },
+    {
+        "text": "the exact same models control 0 hour and",
+        "start": 1341.039,
+        "duration": 6.081
+    },
+    {
+        "text": "the exercise cohorts",
+        "start": 1344.64,
+        "duration": 4.88
+    },
+    {
+        "text": "but our x-axis changes and so our order",
+        "start": 1347.12,
+        "duration": 3.679
+    },
+    {
+        "text": "is that",
+        "start": 1349.52,
+        "duration": 3.519
+    },
+    {
+        "text": "the order of the hours in the workplace",
+        "start": 1350.799,
+        "duration": 5.041
+    },
+    {
+        "text": "10 am to",
+        "start": 1353.039,
+        "duration": 4.081
+    },
+    {
+        "text": "1800",
+        "start": 1355.84,
+        "duration": 3.0
+    },
+    {
+        "text": "or",
+        "start": 1357.12,
+        "duration": 4.48
+    },
+    {
+        "text": "6pm all right so let's jump into this",
+        "start": 1358.84,
+        "duration": 5.48
+    },
+    {
+        "text": "let's look at an example of the gene",
+        "start": 1361.6,
+        "duration": 5.76
+    },
+    {
+        "text": "that was modeled um",
+        "start": 1364.32,
+        "duration": 5.2
+    },
+    {
+        "text": "fairly well by the acute exercise",
+        "start": 1367.36,
+        "duration": 5.12
+    },
+    {
+        "text": "responsible so this is pdk4 and hidden",
+        "start": 1369.52,
+        "duration": 5.07
+    },
+    {
+        "text": "this is a gene known to",
+        "start": 1372.48,
+        "duration": 4.4
+    },
+    {
+        "text": "[Music]",
+        "start": 1374.59,
+        "duration": 5.65
+    },
+    {
+        "text": "play a role in acute exercise response",
+        "start": 1376.88,
+        "duration": 5.44
+    },
+    {
+        "text": "so here we have our two models on the",
+        "start": 1380.24,
+        "duration": 4.559
+    },
+    {
+        "text": "left we have our teeth exercise response",
+        "start": 1382.32,
+        "duration": 4.8
+    },
+    {
+        "text": "model on the right we have our circadian",
+        "start": 1384.799,
+        "duration": 4.88
+    },
+    {
+        "text": "model here you can see the annotation of",
+        "start": 1387.12,
+        "duration": 3.919
+    },
+    {
+        "text": "our gene groups",
+        "start": 1389.679,
+        "duration": 3.12
+    },
+    {
+        "text": "you'll see um",
+        "start": 1391.039,
+        "duration": 3.921
+    },
+    {
+        "text": "that control zero hour that we've pushed",
+        "start": 1392.799,
+        "duration": 4.88
+    },
+    {
+        "text": "back sort of an anchor as an anchor",
+        "start": 1394.96,
+        "duration": 5.36
+    },
+    {
+        "text": "underneath you'll see statistics pve",
+        "start": 1397.679,
+        "duration": 5.521
+    },
+    {
+        "text": "stands for percent variance explained",
+        "start": 1400.32,
+        "duration": 6.239
+    },
+    {
+        "text": "r squared and p value",
+        "start": 1403.2,
+        "duration": 5.28
+    },
+    {
+        "text": "we can see that",
+        "start": 1406.559,
+        "duration": 6.721
+    },
+    {
+        "text": "pdk4 actually fits both models",
+        "start": 1408.48,
+        "duration": 9.28
+    },
+    {
+        "text": "well enough but it fits the um",
+        "start": 1413.28,
+        "duration": 4.48
+    },
+    {
+        "text": "acute exercise",
+        "start": 1418.0,
+        "duration": 4.64
+    },
+    {
+        "text": "better but still we have a problem here",
+        "start": 1419.679,
+        "duration": 5.12
+    },
+    {
+        "text": "because it fits both models it's",
+        "start": 1422.64,
+        "duration": 5.519
+    },
+    {
+        "text": "certainly not mutually exclusive",
+        "start": 1424.799,
+        "duration": 3.36
+    },
+    {
+        "text": "and then we didn't use ctrl 7",
+        "start": 1428.64,
+        "duration": 5.519
+    },
+    {
+        "text": "in our model and that's right here but",
+        "start": 1431.76,
+        "duration": 5.519
+    },
+    {
+        "text": "we sort of throw it in there just as a",
+        "start": 1434.159,
+        "duration": 5.361
+    },
+    {
+        "text": "check and balance as a test sample does",
+        "start": 1437.279,
+        "duration": 4.88
+    },
+    {
+        "text": "it really jump in and fit our model here",
+        "start": 1439.52,
+        "duration": 4.399
+    },
+    {
+        "text": "it sort of fits on the line but one",
+        "start": 1442.159,
+        "duration": 5.52
+    },
+    {
+        "text": "might argue it fits on that line as well",
+        "start": 1443.919,
+        "duration": 5.601
+    },
+    {
+        "text": "so let's look at a gene on the other",
+        "start": 1447.679,
+        "duration": 3.761
+    },
+    {
+        "text": "side of the spectrum this is a master",
+        "start": 1449.52,
+        "duration": 3.36
+    },
+    {
+        "text": "regulator of",
+        "start": 1451.44,
+        "duration": 4.64
+    },
+    {
+        "text": "circadian rhythm and kidney",
+        "start": 1452.88,
+        "duration": 6.08
+    },
+    {
+        "text": "and very much the same in our",
+        "start": 1456.08,
+        "duration": 5.04
+    },
+    {
+        "text": "exercise model and our circadian model",
+        "start": 1458.96,
+        "duration": 4.8
+    },
+    {
+        "text": "we see that this gene fits really quite",
+        "start": 1461.12,
+        "duration": 3.36
+    },
+    {
+        "text": "well",
+        "start": 1463.76,
+        "duration": 3.039
+    },
+    {
+        "text": "and it fits really quite well because we",
+        "start": 1464.48,
+        "duration": 3.84
+    },
+    {
+        "text": "have this profile we have this",
+        "start": 1466.799,
+        "duration": 4.48
+    },
+    {
+        "text": "confounding between the time of day",
+        "start": 1468.32,
+        "duration": 5.92
+    },
+    {
+        "text": "and the hours post exercise it's really",
+        "start": 1471.279,
+        "duration": 5.361
+    },
+    {
+        "text": "the strange little coincidence",
+        "start": 1474.24,
+        "duration": 4.08
+    },
+    {
+        "text": "so we have",
+        "start": 1476.64,
+        "duration": 4.159
+    },
+    {
+        "text": "let's just focus on the pbe here we have",
+        "start": 1478.32,
+        "duration": 3.359
+    },
+    {
+        "text": "high",
+        "start": 1480.799,
+        "duration": 3.601
+    },
+    {
+        "text": "percent variance explained by both",
+        "start": 1481.679,
+        "duration": 4.321
+    },
+    {
+        "text": "models so we need a way of",
+        "start": 1484.4,
+        "duration": 3.279
+    },
+    {
+        "text": "differentiating it",
+        "start": 1486.0,
+        "duration": 3.52
+    },
+    {
+        "text": "and then of course if we add the seven",
+        "start": 1487.679,
+        "duration": 4.0
+    },
+    {
+        "text": "hour control group it could fit",
+        "start": 1489.52,
+        "duration": 6.159
+    },
+    {
+        "text": "conceivably to our model",
+        "start": 1491.679,
+        "duration": 6.961
+    },
+    {
+        "text": "so let's look at the variance explained",
+        "start": 1495.679,
+        "duration": 6.641
+    },
+    {
+        "text": "by these two separate models",
+        "start": 1498.64,
+        "duration": 3.68
+    },
+    {
+        "text": "not surprisingly",
+        "start": 1503.919,
+        "duration": 4.081
+    },
+    {
+        "text": "they correlate really well here we've",
+        "start": 1505.76,
+        "duration": 4.24
+    },
+    {
+        "text": "got a line from",
+        "start": 1508.0,
+        "duration": 3.2
+    },
+    {
+        "text": "zero zero",
+        "start": 1510.0,
+        "duration": 3.36
+    },
+    {
+        "text": "with a slope of one and so a lot of",
+        "start": 1511.2,
+        "duration": 4.4
+    },
+    {
+        "text": "these pves from these two separate",
+        "start": 1513.36,
+        "duration": 4.16
+    },
+    {
+        "text": "models might actually believe or not",
+        "start": 1515.6,
+        "duration": 3.12
+    },
+    {
+        "text": "equal each other",
+        "start": 1517.52,
+        "duration": 4.639
+    },
+    {
+        "text": "if they don't they're dying or close",
+        "start": 1518.72,
+        "duration": 6.64
+    },
+    {
+        "text": "and so we just have a hairball",
+        "start": 1522.159,
+        "duration": 4.801
+    },
+    {
+        "text": "so we have a problem",
+        "start": 1525.36,
+        "duration": 5.199
+    },
+    {
+        "text": "um a lot of these genes fit both models",
+        "start": 1526.96,
+        "duration": 5.28
+    },
+    {
+        "text": "and we need to differentiate them we",
+        "start": 1530.559,
+        "duration": 4.081
+    },
+    {
+        "text": "want to differentiate their effects",
+        "start": 1532.24,
+        "duration": 4.799
+    },
+    {
+        "text": "so one thing we can do",
+        "start": 1534.64,
+        "duration": 4.159
+    },
+    {
+        "text": "is model jointly",
+        "start": 1537.039,
+        "duration": 3.601
+    },
+    {
+        "text": "do the same thing",
+        "start": 1538.799,
+        "duration": 3.841
+    },
+    {
+        "text": "and ask what's the distribution of",
+        "start": 1540.64,
+        "duration": 4.08
+    },
+    {
+        "text": "percent variance explained",
+        "start": 1542.64,
+        "duration": 4.0
+    },
+    {
+        "text": "except the only difference is",
+        "start": 1544.72,
+        "duration": 3.839
+    },
+    {
+        "text": "now we're going to combine them",
+        "start": 1546.64,
+        "duration": 4.56
+    },
+    {
+        "text": "we're going to put the exercise",
+        "start": 1548.559,
+        "duration": 4.72
+    },
+    {
+        "text": "model in the first part of this combined",
+        "start": 1551.2,
+        "duration": 3.04
+    },
+    {
+        "text": "model",
+        "start": 1553.279,
+        "duration": 2.081
+    },
+    {
+        "text": "and the",
+        "start": 1554.24,
+        "duration": 3.36
+    },
+    {
+        "text": "circadian aspect of the model in the",
+        "start": 1555.36,
+        "duration": 4.0
+    },
+    {
+        "text": "second part of the model",
+        "start": 1557.6,
+        "duration": 3.6
+    },
+    {
+        "text": "and we're going to take those two parts",
+        "start": 1559.36,
+        "duration": 3.679
+    },
+    {
+        "text": "in red and blue and we're going to make",
+        "start": 1561.2,
+        "duration": 3.44
+    },
+    {
+        "text": "them compete",
+        "start": 1563.039,
+        "duration": 6.601
+    },
+    {
+        "text": "for the percent variance explained",
+        "start": 1564.64,
+        "duration": 5.0
+    },
+    {
+        "text": "all right so let's look at those genes",
+        "start": 1570.32,
+        "duration": 2.56
+    },
+    {
+        "text": "again",
+        "start": 1571.679,
+        "duration": 3.041
+    },
+    {
+        "text": "you've seen these before this is nothing",
+        "start": 1572.88,
+        "duration": 3.679
+    },
+    {
+        "text": "new these are those independent models",
+        "start": 1574.72,
+        "duration": 3.36
+    },
+    {
+        "text": "they're simply up here for reference",
+        "start": 1576.559,
+        "duration": 3.921
+    },
+    {
+        "text": "we're going to fill in this area below",
+        "start": 1578.08,
+        "duration": 4.64
+    },
+    {
+        "text": "just to show you that they fit both",
+        "start": 1580.48,
+        "duration": 4.88
+    },
+    {
+        "text": "models for aren't l or aren't l fits",
+        "start": 1582.72,
+        "duration": 4.8
+    },
+    {
+        "text": "both models but here's where it gets",
+        "start": 1585.36,
+        "duration": 4.559
+    },
+    {
+        "text": "interesting",
+        "start": 1587.52,
+        "duration": 2.399
+    },
+    {
+        "text": "when we",
+        "start": 1592.24,
+        "duration": 2.96
+    },
+    {
+        "text": "compare",
+        "start": 1593.52,
+        "duration": 4.96
+    },
+    {
+        "text": "the acute exercise model right here it",
+        "start": 1595.2,
+        "duration": 4.88
+    },
+    {
+        "text": "hugs the residual",
+        "start": 1598.48,
+        "duration": 4.16
+    },
+    {
+        "text": "this is the residual this dotted line",
+        "start": 1600.08,
+        "duration": 3.92
+    },
+    {
+        "text": "right here",
+        "start": 1602.64,
+        "duration": 4.24
+    },
+    {
+        "text": "we've got two different time scales here",
+        "start": 1604.0,
+        "duration": 5.919
+    },
+    {
+        "text": "so we can't put both curves",
+        "start": 1606.88,
+        "duration": 5.76
+    },
+    {
+        "text": "on both graphs",
+        "start": 1609.919,
+        "duration": 3.521
+    },
+    {
+        "text": "but",
+        "start": 1612.64,
+        "duration": 3.519
+    },
+    {
+        "text": "what we can do is examine",
+        "start": 1613.44,
+        "duration": 5.119
+    },
+    {
+        "text": "each respective curve on its respective",
+        "start": 1616.159,
+        "duration": 5.681
+    },
+    {
+        "text": "graph and we can see immediately",
+        "start": 1618.559,
+        "duration": 5.841
+    },
+    {
+        "text": "that the exercise model really is not",
+        "start": 1621.84,
+        "duration": 5.04
+    },
+    {
+        "text": "modern well it's hugging the residual",
+        "start": 1624.4,
+        "duration": 3.44
+    },
+    {
+        "text": "now",
+        "start": 1626.88,
+        "duration": 2.96
+    },
+    {
+        "text": "that's not the case for the circadian",
+        "start": 1627.84,
+        "duration": 4.0
+    },
+    {
+        "text": "model it's modeling really well it's",
+        "start": 1629.84,
+        "duration": 3.439
+    },
+    {
+        "text": "stealing that",
+        "start": 1631.84,
+        "duration": 4.24
+    },
+    {
+        "text": "it's explaining much more",
+        "start": 1633.279,
+        "duration": 5.361
+    },
+    {
+        "text": "of that",
+        "start": 1636.08,
+        "duration": 2.56
+    },
+    {
+        "text": "barriers",
+        "start": 1638.84,
+        "duration": 3.48
+    },
+    {
+        "text": "in addition",
+        "start": 1640.48,
+        "duration": 2.799
+    },
+    {
+        "text": "let's",
+        "start": 1642.32,
+        "duration": 1.92
+    },
+    {
+        "text": "take",
+        "start": 1643.279,
+        "duration": 3.52
+    },
+    {
+        "text": "part of this combined model",
+        "start": 1644.24,
+        "duration": 3.36
+    },
+    {
+        "text": "from",
+        "start": 1646.799,
+        "duration": 1.681
+    },
+    {
+        "text": "the",
+        "start": 1647.6,
+        "duration": 3.679
+    },
+    {
+        "text": "exercise part of the model",
+        "start": 1648.48,
+        "duration": 5.679
+    },
+    {
+        "text": "and let's calculate the y or in this",
+        "start": 1651.279,
+        "duration": 4.0
+    },
+    {
+        "text": "case",
+        "start": 1654.159,
+        "duration": 3.601
+    },
+    {
+        "text": "the normalized gene counts",
+        "start": 1655.279,
+        "duration": 4.161
+    },
+    {
+        "text": "let's plot them",
+        "start": 1657.76,
+        "duration": 3.6
+    },
+    {
+        "text": "and that's what we've done here what we",
+        "start": 1659.44,
+        "duration": 3.359
+    },
+    {
+        "text": "would like to see",
+        "start": 1661.36,
+        "duration": 3.36
+    },
+    {
+        "text": "with these red dots",
+        "start": 1662.799,
+        "duration": 4.48
+    },
+    {
+        "text": "is that they actually fit in",
+        "start": 1664.72,
+        "duration": 4.24
+    },
+    {
+        "text": "to our groups",
+        "start": 1667.279,
+        "duration": 3.601
+    },
+    {
+        "text": "they don't there's one exception but",
+        "start": 1668.96,
+        "duration": 3.839
+    },
+    {
+        "text": "that exception is on the residual",
+        "start": 1670.88,
+        "duration": 4.48
+    },
+    {
+        "text": "instead they just hug the residual much",
+        "start": 1672.799,
+        "duration": 5.681
+    },
+    {
+        "text": "like you see here",
+        "start": 1675.36,
+        "duration": 3.12
+    },
+    {
+        "text": "they're not capturing much of the wear",
+        "start": 1678.799,
+        "duration": 4.641
+    },
+    {
+        "text": "now on the contrary",
+        "start": 1681.039,
+        "duration": 5.12
+    },
+    {
+        "text": "we can do the same exercise taking this",
+        "start": 1683.44,
+        "duration": 4.959
+    },
+    {
+        "text": "circadian model which we believe fits",
+        "start": 1686.159,
+        "duration": 3.361
+    },
+    {
+        "text": "better",
+        "start": 1688.399,
+        "duration": 3.201
+    },
+    {
+        "text": "and we can plot",
+        "start": 1689.52,
+        "duration": 4.48
+    },
+    {
+        "text": "those y values",
+        "start": 1691.6,
+        "duration": 4.24
+    },
+    {
+        "text": "just with that",
+        "start": 1694.0,
+        "duration": 4.88
+    },
+    {
+        "text": "with the end part of our model the model",
+        "start": 1695.84,
+        "duration": 5.839
+    },
+    {
+        "text": "associated with",
+        "start": 1698.88,
+        "duration": 4.48
+    },
+    {
+        "text": "circadian rhythm",
+        "start": 1701.679,
+        "duration": 3.6
+    },
+    {
+        "text": "and what we see is that those points in",
+        "start": 1703.36,
+        "duration": 3.439
+    },
+    {
+        "text": "blue here",
+        "start": 1705.279,
+        "duration": 4.561
+    },
+    {
+        "text": "really jump into our experimental groups",
+        "start": 1706.799,
+        "duration": 5.681
+    },
+    {
+        "text": "quite nicely",
+        "start": 1709.84,
+        "duration": 2.64
+    },
+    {
+        "text": "we can do",
+        "start": 1713.12,
+        "duration": 3.679
+    },
+    {
+        "text": "the same thing for pdk4 remember this",
+        "start": 1714.48,
+        "duration": 3.439
+    },
+    {
+        "text": "was a",
+        "start": 1716.799,
+        "duration": 3.441
+    },
+    {
+        "text": "really well known exercise team again",
+        "start": 1717.919,
+        "duration": 4.081
+    },
+    {
+        "text": "this is for reference here are separate",
+        "start": 1720.24,
+        "duration": 5.12
+    },
+    {
+        "text": "models they both fit relatively well",
+        "start": 1722.0,
+        "duration": 5.279
+    },
+    {
+        "text": "our exercise model and our circadian",
+        "start": 1725.36,
+        "duration": 3.36
+    },
+    {
+        "text": "model",
+        "start": 1727.279,
+        "duration": 3.52
+    },
+    {
+        "text": "and then when we combine them the story",
+        "start": 1728.72,
+        "duration": 4.16
+    },
+    {
+        "text": "is not so clear but you can still see",
+        "start": 1730.799,
+        "duration": 4.641
+    },
+    {
+        "text": "the themes",
+        "start": 1732.88,
+        "duration": 2.56
+    },
+    {
+        "text": "you still see that the exercise effect",
+        "start": 1735.679,
+        "duration": 7.441
+    },
+    {
+        "text": "model is following our major groups",
+        "start": 1738.399,
+        "duration": 7.52
+    },
+    {
+        "text": "and modeling much more accurately than",
+        "start": 1743.12,
+        "duration": 4.159
+    },
+    {
+        "text": "our",
+        "start": 1745.919,
+        "duration": 3.681
+    },
+    {
+        "text": "circadian rhythm model",
+        "start": 1747.279,
+        "duration": 3.841
+    },
+    {
+        "text": "and then if we go through the same",
+        "start": 1749.6,
+        "duration": 2.88
+    },
+    {
+        "text": "exercise",
+        "start": 1751.12,
+        "duration": 3.76
+    },
+    {
+        "text": "and plot the points",
+        "start": 1752.48,
+        "duration": 6.48
+    },
+    {
+        "text": "we can see that the circadian models",
+        "start": 1754.88,
+        "duration": 6.72
+    },
+    {
+        "text": "y values really don't fall into the",
+        "start": 1758.96,
+        "duration": 3.839
+    },
+    {
+        "text": "groups",
+        "start": 1761.6,
+        "duration": 2.4
+    },
+    {
+        "text": "where",
+        "start": 1762.799,
+        "duration": 3.441
+    },
+    {
+        "text": "if we were to do the same thing for the",
+        "start": 1764.0,
+        "duration": 4.24
+    },
+    {
+        "text": "exercise model they fall",
+        "start": 1766.24,
+        "duration": 4.559
+    },
+    {
+        "text": "uh much more closer to the groups this",
+        "start": 1768.24,
+        "duration": 5.039
+    },
+    {
+        "text": "one's not as clear-cut",
+        "start": 1770.799,
+        "duration": 6.24
+    },
+    {
+        "text": "and so we need a way to visualize",
+        "start": 1773.279,
+        "duration": 5.841
+    },
+    {
+        "text": "the percent variance explained",
+        "start": 1777.039,
+        "duration": 3.681
+    },
+    {
+        "text": "in every tissue",
+        "start": 1779.12,
+        "duration": 3.76
+    },
+    {
+        "text": "for every gene",
+        "start": 1780.72,
+        "duration": 4.16
+    },
+    {
+        "text": "this is what we had before",
+        "start": 1782.88,
+        "duration": 3.36
+    },
+    {
+        "text": "this was",
+        "start": 1784.88,
+        "duration": 3.36
+    },
+    {
+        "text": "using these separate models but really",
+        "start": 1786.24,
+        "duration": 4.0
+    },
+    {
+        "text": "when we combine moles",
+        "start": 1788.24,
+        "duration": 4.08
+    },
+    {
+        "text": "we create a",
+        "start": 1790.24,
+        "duration": 6.24
+    },
+    {
+        "text": "was this a 2d density map",
+        "start": 1792.32,
+        "duration": 5.76
+    },
+    {
+        "text": "where we have the",
+        "start": 1796.48,
+        "duration": 4.079
+    },
+    {
+        "text": "log of the gene counts right here",
+        "start": 1798.08,
+        "duration": 5.199
+    },
+    {
+        "text": "what we can see is first the majority of",
+        "start": 1800.559,
+        "duration": 5.521
+    },
+    {
+        "text": "genes aren't modeling to term fitting",
+        "start": 1803.279,
+        "duration": 4.561
+    },
+    {
+        "text": "either model",
+        "start": 1806.08,
+        "duration": 3.599
+    },
+    {
+        "text": "well at all",
+        "start": 1807.84,
+        "duration": 3.6
+    },
+    {
+        "text": "but",
+        "start": 1809.679,
+        "duration": 4.48
+    },
+    {
+        "text": "a minority of the genes",
+        "start": 1811.44,
+        "duration": 4.8
+    },
+    {
+        "text": "are",
+        "start": 1814.159,
+        "duration": 5.921
+    },
+    {
+        "text": "modeling better to the circadian model",
+        "start": 1816.24,
+        "duration": 4.64
+    },
+    {
+        "text": "where",
+        "start": 1820.08,
+        "duration": 3.76
+    },
+    {
+        "text": "the majority are really modeling better",
+        "start": 1820.88,
+        "duration": 4.799
+    },
+    {
+        "text": "to",
+        "start": 1823.84,
+        "duration": 2.719
+    },
+    {
+        "text": "the",
+        "start": 1825.679,
+        "duration": 4.081
+    },
+    {
+        "text": "percent variance explained from the um",
+        "start": 1826.559,
+        "duration": 7.12
+    },
+    {
+        "text": "acute exercise part of that model",
+        "start": 1829.76,
+        "duration": 6.72
+    },
+    {
+        "text": "so we need a systematic way to sort of",
+        "start": 1833.679,
+        "duration": 4.24
+    },
+    {
+        "text": "categorize",
+        "start": 1836.48,
+        "duration": 3.36
+    },
+    {
+        "text": "these different",
+        "start": 1837.919,
+        "duration": 3.12
+    },
+    {
+        "text": "let's say",
+        "start": 1839.84,
+        "duration": 3.68
+    },
+    {
+        "text": "plots of real estate",
+        "start": 1841.039,
+        "duration": 4.0
+    },
+    {
+        "text": "and so we've done that",
+        "start": 1843.52,
+        "duration": 3.12
+    },
+    {
+        "text": "we've taken these plots",
+        "start": 1845.039,
+        "duration": 3.52
+    },
+    {
+        "text": "and we've labeled them",
+        "start": 1846.64,
+        "duration": 4.88
+    },
+    {
+        "text": "five different plots from zero one two",
+        "start": 1848.559,
+        "duration": 4.801
+    },
+    {
+        "text": "three and four",
+        "start": 1851.52,
+        "duration": 4.0
+    },
+    {
+        "text": "so one would represent those genes that",
+        "start": 1853.36,
+        "duration": 4.4
+    },
+    {
+        "text": "modeled better with the",
+        "start": 1855.52,
+        "duration": 4.639
+    },
+    {
+        "text": "circadian rhythm uh aspect of our",
+        "start": 1857.76,
+        "duration": 6.72
+    },
+    {
+        "text": "combined model for with those um of the",
+        "start": 1860.159,
+        "duration": 6.721
+    },
+    {
+        "text": "few exercise aspects of the model and",
+        "start": 1864.48,
+        "duration": 3.919
+    },
+    {
+        "text": "two and three there's somewhere in",
+        "start": 1866.88,
+        "duration": 2.56
+    },
+    {
+        "text": "between",
+        "start": 1868.399,
+        "duration": 3.52
+    },
+    {
+        "text": "notice there's much more and four notice",
+        "start": 1869.44,
+        "duration": 6.079
+    },
+    {
+        "text": "a sort of um more pronouncement over to",
+        "start": 1871.919,
+        "duration": 5.681
+    },
+    {
+        "text": "four they come out a little bit further",
+        "start": 1875.519,
+        "duration": 4.64
+    },
+    {
+        "text": "than one",
+        "start": 1877.6,
+        "duration": 2.559
+    },
+    {
+        "text": "and then",
+        "start": 1880.88,
+        "duration": 4.08
+    },
+    {
+        "text": "the cardinal sin of",
+        "start": 1882.24,
+        "duration": 4.319
+    },
+    {
+        "text": "going over",
+        "start": 1884.96,
+        "duration": 3.199
+    },
+    {
+        "text": "um",
+        "start": 1886.559,
+        "duration": 4.96
+    },
+    {
+        "text": "100 variants explained does not occur in",
+        "start": 1888.159,
+        "duration": 6.88
+    },
+    {
+        "text": "any of these genes",
+        "start": 1891.519,
+        "duration": 6.4
+    },
+    {
+        "text": "so let's look at every tissue",
+        "start": 1895.039,
+        "duration": 5.841
+    },
+    {
+        "text": "on every gene in every tissue",
+        "start": 1897.919,
+        "duration": 5.041
+    },
+    {
+        "text": "so we've still got our four groups zero",
+        "start": 1900.88,
+        "duration": 5.279
+    },
+    {
+        "text": "one two three and four and i've outlined",
+        "start": 1902.96,
+        "duration": 6.4
+    },
+    {
+        "text": "three tissues here these three tissues",
+        "start": 1906.159,
+        "duration": 5.76
+    },
+    {
+        "text": "really seem to respond to",
+        "start": 1909.36,
+        "duration": 6.24
+    },
+    {
+        "text": "um the achieved exercise response",
+        "start": 1911.919,
+        "duration": 5.36
+    },
+    {
+        "text": "and you can see them over in this heat",
+        "start": 1915.6,
+        "duration": 4.64
+    },
+    {
+        "text": "map here it's got all of our tissues",
+        "start": 1917.279,
+        "duration": 5.041
+    },
+    {
+        "text": "here and it's got our different gene",
+        "start": 1920.24,
+        "duration": 5.36
+    },
+    {
+        "text": "groups zero two three and four and we've",
+        "start": 1922.32,
+        "duration": 5.44
+    },
+    {
+        "text": "annotated them as a heat map we've not",
+        "start": 1925.6,
+        "duration": 4.24
+    },
+    {
+        "text": "annotated group zero just because the",
+        "start": 1927.76,
+        "duration": 4.24
+    },
+    {
+        "text": "vast mobility genes are actually in",
+        "start": 1929.84,
+        "duration": 3.0
+    },
+    {
+        "text": "group",
+        "start": 1932.0,
+        "duration": 4.24
+    },
+    {
+        "text": "zero and you can see that it's uh",
+        "start": 1932.84,
+        "duration": 4.76
+    },
+    {
+        "text": "adrenal",
+        "start": 1936.24,
+        "duration": 3.2
+    },
+    {
+        "text": "gastroc",
+        "start": 1937.6,
+        "duration": 4.079
+    },
+    {
+        "text": "in ovaries that have",
+        "start": 1939.44,
+        "duration": 4.959
+    },
+    {
+        "text": "the highest frequency of genes that fit",
+        "start": 1941.679,
+        "duration": 3.84
+    },
+    {
+        "text": "in this group",
+        "start": 1944.399,
+        "duration": 1.921
+    },
+    {
+        "text": "four",
+        "start": 1945.519,
+        "duration": 2.721
+    },
+    {
+        "text": "in addition you see a sort of behavior",
+        "start": 1946.32,
+        "duration": 2.88
+    },
+    {
+        "text": "you see a",
+        "start": 1948.24,
+        "duration": 2.88
+    },
+    {
+        "text": "soul waning over",
+        "start": 1949.2,
+        "duration": 3.359
+    },
+    {
+        "text": "of um",
+        "start": 1951.12,
+        "duration": 4.88
+    },
+    {
+        "text": "these genes into group four",
+        "start": 1952.559,
+        "duration": 5.521
+    },
+    {
+        "text": "and so this is a really powerful",
+        "start": 1956.0,
+        "duration": 5.76
+    },
+    {
+        "text": "visualization it's it helps you see",
+        "start": 1958.08,
+        "duration": 5.68
+    },
+    {
+        "text": "what",
+        "start": 1961.76,
+        "duration": 3.68
+    },
+    {
+        "text": "tissues are really responding to the",
+        "start": 1963.76,
+        "duration": 4.88
+    },
+    {
+        "text": "acute exercise response and then also",
+        "start": 1965.44,
+        "duration": 7.28
+    },
+    {
+        "text": "sort of the degree of which circadian",
+        "start": 1968.64,
+        "duration": 6.2
+    },
+    {
+        "text": "genes that model well with circadian",
+        "start": 1972.72,
+        "duration": 3.679
+    },
+    {
+        "text": "rhythm",
+        "start": 1974.84,
+        "duration": 4.12
+    },
+    {
+        "text": "might be adulterating it or pulling over",
+        "start": 1976.399,
+        "duration": 4.721
+    },
+    {
+        "text": "to the left-hand side",
+        "start": 1978.96,
+        "duration": 3.04
+    },
+    {
+        "text": "so",
+        "start": 1981.12,
+        "duration": 3.2
+    },
+    {
+        "text": "we can see the frequency of those genes",
+        "start": 1982.0,
+        "duration": 3.36
+    },
+    {
+        "text": "here",
+        "start": 1984.32,
+        "duration": 3.44
+    },
+    {
+        "text": "and then here in all of our different",
+        "start": 1985.36,
+        "duration": 3.679
+    },
+    {
+        "text": "groups",
+        "start": 1987.76,
+        "duration": 4.32
+    },
+    {
+        "text": "this is a 3d bar plot it represents the",
+        "start": 1989.039,
+        "duration": 6.801
+    },
+    {
+        "text": "exact same data here as well so before",
+        "start": 1992.08,
+        "duration": 5.36
+    },
+    {
+        "text": "where you see these pronounced groups",
+        "start": 1995.84,
+        "duration": 5.52
+    },
+    {
+        "text": "right here you can also see them",
+        "start": 1997.44,
+        "duration": 3.92
+    },
+    {
+        "text": "with these",
+        "start": 2001.679,
+        "duration": 5.681
+    },
+    {
+        "text": "yellow little buildings or bars",
+        "start": 2002.84,
+        "duration": 4.52
+    },
+    {
+        "text": "but notice how",
+        "start": 2007.919,
+        "duration": 4.161
+    },
+    {
+        "text": "the genes in group one are just",
+        "start": 2009.84,
+        "duration": 4.959
+    },
+    {
+        "text": "incredibly small and then two was",
+        "start": 2012.08,
+        "duration": 4.0
+    },
+    {
+        "text": "they're a little bit bigger three",
+        "start": 2014.799,
+        "duration": 4.161
+    },
+    {
+        "text": "they're bigger or",
+        "start": 2016.08,
+        "duration": 5.36
+    },
+    {
+        "text": "considerably bigger remember our primary",
+        "start": 2018.96,
+        "duration": 4.4
+    },
+    {
+        "text": "variable of interest is measuring the",
+        "start": 2021.44,
+        "duration": 4.719
+    },
+    {
+        "text": "acute exercise response",
+        "start": 2023.36,
+        "duration": 5.12
+    },
+    {
+        "text": "so now i'm going to jump into really",
+        "start": 2026.159,
+        "duration": 3.52
+    },
+    {
+        "text": "just a",
+        "start": 2028.48,
+        "duration": 5.679
+    },
+    {
+        "text": "quick and dirty um catholic analysis",
+        "start": 2029.679,
+        "duration": 5.84
+    },
+    {
+        "text": "um",
+        "start": 2034.159,
+        "duration": 2.561
+    },
+    {
+        "text": "what we're going to do is we're going to",
+        "start": 2035.519,
+        "duration": 2.4
+    },
+    {
+        "text": "take",
+        "start": 2036.72,
+        "duration": 5.04
+    },
+    {
+        "text": "keg milestones from 2019",
+        "start": 2037.919,
+        "duration": 7.6
+    },
+    {
+        "text": "and just run them through enricher",
+        "start": 2041.76,
+        "duration": 6.399
+    },
+    {
+        "text": "and ask what pathways",
+        "start": 2045.519,
+        "duration": 5.681
+    },
+    {
+        "text": "show up for enrichment",
+        "start": 2048.159,
+        "duration": 5.44
+    },
+    {
+        "text": "um again we're using mouse in the",
+        "start": 2051.2,
+        "duration": 4.719
+    },
+    {
+        "text": "annotation but really we're working with",
+        "start": 2053.599,
+        "duration": 4.161
+    },
+    {
+        "text": "we're working with graph",
+        "start": 2055.919,
+        "duration": 3.521
+    },
+    {
+        "text": "i'm going to divide that up by their",
+        "start": 2057.76,
+        "duration": 3.2
+    },
+    {
+        "text": "gene groups",
+        "start": 2059.44,
+        "duration": 3.679
+    },
+    {
+        "text": "one two three and four except i'm going",
+        "start": 2060.96,
+        "duration": 4.56
+    },
+    {
+        "text": "to pull them across tissues so that",
+        "start": 2063.119,
+        "duration": 5.601
+    },
+    {
+        "text": "again this is really",
+        "start": 2065.52,
+        "duration": 3.2
+    },
+    {
+        "text": "quick and dirty",
+        "start": 2069.04,
+        "duration": 2.639
+    },
+    {
+        "text": "so here are results here we have our",
+        "start": 2071.919,
+        "duration": 4.401
+    },
+    {
+        "text": "negative log fdr",
+        "start": 2074.159,
+        "duration": 4.321
+    },
+    {
+        "text": "our odds ratio is represented by the",
+        "start": 2076.32,
+        "duration": 4.88
+    },
+    {
+        "text": "size of the circle we have those in",
+        "start": 2078.48,
+        "duration": 4.8
+    },
+    {
+        "text": "which pathways we filtered out some of",
+        "start": 2081.2,
+        "duration": 4.719
+    },
+    {
+        "text": "those pathways that we thought were not",
+        "start": 2083.28,
+        "duration": 4.72
+    },
+    {
+        "text": "very important and we have our different",
+        "start": 2085.919,
+        "duration": 4.72
+    },
+    {
+        "text": "genie groups annotated by their color",
+        "start": 2088.0,
+        "duration": 4.96
+    },
+    {
+        "text": "remember group one was that group that",
+        "start": 2090.639,
+        "duration": 4.561
+    },
+    {
+        "text": "modeled better with the circadian",
+        "start": 2092.96,
+        "duration": 5.04
+    },
+    {
+        "text": "aspect of the combined model and four on",
+        "start": 2095.2,
+        "duration": 5.44
+    },
+    {
+        "text": "the other side of the spectrum",
+        "start": 2098.0,
+        "duration": 4.4
+    },
+    {
+        "text": "not surprisingly",
+        "start": 2100.64,
+        "duration": 4.56
+    },
+    {
+        "text": "one is enriched for a circadian rhythm",
+        "start": 2102.4,
+        "duration": 4.8
+    },
+    {
+        "text": "what's really important is two three and",
+        "start": 2105.2,
+        "duration": 4.48
+    },
+    {
+        "text": "four are not engrossed for circadian",
+        "start": 2107.2,
+        "duration": 4.24
+    },
+    {
+        "text": "rhythm however that doesn't mean that",
+        "start": 2109.68,
+        "duration": 4.0
+    },
+    {
+        "text": "circadian rhythm genes aren't flying",
+        "start": 2111.44,
+        "duration": 3.12
+    },
+    {
+        "text": "away",
+        "start": 2113.68,
+        "duration": 3.439
+    },
+    {
+        "text": "into two three and four",
+        "start": 2114.56,
+        "duration": 4.16
+    },
+    {
+        "text": "it's just that",
+        "start": 2117.119,
+        "duration": 2.881
+    },
+    {
+        "text": "they don't make",
+        "start": 2118.72,
+        "duration": 2.72
+    },
+    {
+        "text": "there's not enough of them",
+        "start": 2120.0,
+        "duration": 3.52
+    },
+    {
+        "text": "to garner an enrichment",
+        "start": 2121.44,
+        "duration": 4.72
+    },
+    {
+        "text": "two we don't see much but three and four",
+        "start": 2123.52,
+        "duration": 5.839
+    },
+    {
+        "text": "we see as expected a lot of the pathways",
+        "start": 2126.16,
+        "duration": 6.56
+    },
+    {
+        "text": "m2 x3 a2 now k",
+        "start": 2129.359,
+        "duration": 5.921
+    },
+    {
+        "text": "that are really associated with",
+        "start": 2132.72,
+        "duration": 4.48
+    },
+    {
+        "text": "exercise response",
+        "start": 2135.28,
+        "duration": 3.36
+    },
+    {
+        "text": "so then we sort of wanted to flip this",
+        "start": 2137.2,
+        "duration": 3.52
+    },
+    {
+        "text": "on its head now we want to take the keg",
+        "start": 2138.64,
+        "duration": 3.04
+    },
+    {
+        "text": "genes",
+        "start": 2140.72,
+        "duration": 5.52
+    },
+    {
+        "text": "the mouse that are specific to",
+        "start": 2141.68,
+        "duration": 4.56
+    },
+    {
+        "text": "circadian rhythm there were about 30 of",
+        "start": 2146.56,
+        "duration": 4.559
+    },
+    {
+        "text": "them and we wanted to ask",
+        "start": 2148.96,
+        "duration": 4.32
+    },
+    {
+        "text": "okay where they fit in these different",
+        "start": 2151.119,
+        "duration": 3.281
+    },
+    {
+        "text": "groups",
+        "start": 2153.28,
+        "duration": 3.76
+    },
+    {
+        "text": "remember one is the group that models",
+        "start": 2154.4,
+        "duration": 4.64
+    },
+    {
+        "text": "best with circadian rhythm floor of",
+        "start": 2157.04,
+        "duration": 2.88
+    },
+    {
+        "text": "course",
+        "start": 2159.04,
+        "duration": 3.92
+    },
+    {
+        "text": "with um acute exercise response we see",
+        "start": 2159.92,
+        "duration": 4.56
+    },
+    {
+        "text": "the majority",
+        "start": 2162.96,
+        "duration": 2.399
+    },
+    {
+        "text": "fit",
+        "start": 2164.48,
+        "duration": 2.4
+    },
+    {
+        "text": "as expected",
+        "start": 2165.359,
+        "duration": 3.76
+    },
+    {
+        "text": "you can see that in these blue bars in",
+        "start": 2166.88,
+        "duration": 5.28
+    },
+    {
+        "text": "group one they modeled best to circadian",
+        "start": 2169.119,
+        "duration": 4.401
+    },
+    {
+        "text": "rhythm",
+        "start": 2172.16,
+        "duration": 3.36
+    },
+    {
+        "text": "now here's something that's interesting",
+        "start": 2173.52,
+        "duration": 4.0
+    },
+    {
+        "text": "some of these genes",
+        "start": 2175.52,
+        "duration": 4.96
+    },
+    {
+        "text": "show up in groups three and four so it",
+        "start": 2177.52,
+        "duration": 4.8
+    },
+    {
+        "text": "could be that there's some",
+        "start": 2180.48,
+        "duration": 3.76
+    },
+    {
+        "text": "circadian rhythm genes",
+        "start": 2182.32,
+        "duration": 2.96
+    },
+    {
+        "text": "that",
+        "start": 2184.24,
+        "duration": 2.8
+    },
+    {
+        "text": "are responding",
+        "start": 2185.28,
+        "duration": 4.0
+    },
+    {
+        "text": "to acute exercise and that's really",
+        "start": 2187.04,
+        "duration": 3.92
+    },
+    {
+        "text": "interesting that actually might they",
+        "start": 2189.28,
+        "duration": 3.52
+    },
+    {
+        "text": "have um",
+        "start": 2190.96,
+        "duration": 4.32
+    },
+    {
+        "text": "depending on which gnc's are if these",
+        "start": 2192.8,
+        "duration": 5.279
+    },
+    {
+        "text": "are master regulators um",
+        "start": 2195.28,
+        "duration": 5.04
+    },
+    {
+        "text": "circadian rhythm and it's a pipe dream",
+        "start": 2198.079,
+        "duration": 3.441
+    },
+    {
+        "text": "here",
+        "start": 2200.32,
+        "duration": 3.12
+    },
+    {
+        "text": "but let's say these are the ones that",
+        "start": 2201.52,
+        "duration": 3.52
+    },
+    {
+        "text": "are going to make you really tired we",
+        "start": 2203.44,
+        "duration": 3.44
+    },
+    {
+        "text": "haven't investigated these but you go on",
+        "start": 2205.04,
+        "duration": 4.559
+    },
+    {
+        "text": "a run you do some sort of exercise and",
+        "start": 2206.88,
+        "duration": 4.64
+    },
+    {
+        "text": "you adjust your circadian rhythms and",
+        "start": 2209.599,
+        "duration": 3.52
+    },
+    {
+        "text": "maybe you're not so tired later in the",
+        "start": 2211.52,
+        "duration": 5.68
+    },
+    {
+        "text": "day that's totally a a wild hypothesis",
+        "start": 2213.119,
+        "duration": 5.921
+    },
+    {
+        "text": "and a pipe dream would happen at this",
+        "start": 2217.2,
+        "duration": 4.24
+    },
+    {
+        "text": "point but it would be cool",
+        "start": 2219.04,
+        "duration": 3.2
+    },
+    {
+        "text": "so",
+        "start": 2221.44,
+        "duration": 2.32
+    },
+    {
+        "text": "anyway we're coming to the end of this",
+        "start": 2222.24,
+        "duration": 2.48
+    },
+    {
+        "text": "talk",
+        "start": 2223.76,
+        "duration": 3.04
+    },
+    {
+        "text": "what we've shown is",
+        "start": 2224.72,
+        "duration": 4.48
+    },
+    {
+        "text": "joint modeling of",
+        "start": 2226.8,
+        "duration": 5.039
+    },
+    {
+        "text": "circadian rhythm and exercise response",
+        "start": 2229.2,
+        "duration": 4.879
+    },
+    {
+        "text": "we did this to address the deficiency in",
+        "start": 2231.839,
+        "duration": 3.52
+    },
+    {
+        "text": "the exercise",
+        "start": 2234.079,
+        "duration": 3.601
+    },
+    {
+        "text": "design we showed a global summary of",
+        "start": 2235.359,
+        "duration": 4.72
+    },
+    {
+        "text": "relative effects",
+        "start": 2237.68,
+        "duration": 4.8
+    },
+    {
+        "text": "the exercise effect was really stronger",
+        "start": 2240.079,
+        "duration": 5.361
+    },
+    {
+        "text": "for most genes in those tissues from our",
+        "start": 2242.48,
+        "duration": 4.639
+    },
+    {
+        "text": "experiments in the data",
+        "start": 2245.44,
+        "duration": 5.2
+    },
+    {
+        "text": "but this varied of course by tissue",
+        "start": 2247.119,
+        "duration": 5.601
+    },
+    {
+        "text": "most of those hallmarks circadian genes",
+        "start": 2250.64,
+        "duration": 4.16
+    },
+    {
+        "text": "were found in groups one and two",
+        "start": 2252.72,
+        "duration": 4.48
+    },
+    {
+        "text": "however interesting enough a handful of",
+        "start": 2254.8,
+        "duration": 4.72
+    },
+    {
+        "text": "them are found in three and four and",
+        "start": 2257.2,
+        "duration": 4.08
+    },
+    {
+        "text": "actually modeled better to achieve",
+        "start": 2259.52,
+        "duration": 3.839
+    },
+    {
+        "text": "exercise response",
+        "start": 2261.28,
+        "duration": 3.839
+    },
+    {
+        "text": "so are these circadian genes that",
+        "start": 2263.359,
+        "duration": 4.0
+    },
+    {
+        "text": "respond to exercise",
+        "start": 2265.119,
+        "duration": 5.24
+    },
+    {
+        "text": "um",
+        "start": 2267.359,
+        "duration": 3.0
+    },
+    {
+        "text": "and we'd like to um",
+        "start": 2270.96,
+        "duration": 7.04
+    },
+    {
+        "text": "continue this analysis on different ones",
+        "start": 2274.24,
+        "duration": 5.599
+    },
+    {
+        "text": "we mentioned we have metabolomics we",
+        "start": 2278.0,
+        "duration": 3.68
+    },
+    {
+        "text": "have proteomics",
+        "start": 2279.839,
+        "duration": 3.681
+    },
+    {
+        "text": "we're going to be we are transitioning",
+        "start": 2281.68,
+        "duration": 4.0
+    },
+    {
+        "text": "over into the metabolomics and we're",
+        "start": 2283.52,
+        "duration": 3.52
+    },
+    {
+        "text": "really really intrigued with the",
+        "start": 2285.68,
+        "duration": 3.12
+    },
+    {
+        "text": "patterns we see",
+        "start": 2287.04,
+        "duration": 3.84
+    },
+    {
+        "text": "maybe they'll be similar but different i",
+        "start": 2288.8,
+        "duration": 3.44
+    },
+    {
+        "text": "don't know",
+        "start": 2290.88,
+        "duration": 3.52
+    },
+    {
+        "text": "um and of course we need to improve our",
+        "start": 2292.24,
+        "duration": 3.839
+    },
+    {
+        "text": "modeling approach we have a polynomial",
+        "start": 2294.4,
+        "duration": 2.56
+    },
+    {
+        "text": "model",
+        "start": 2296.079,
+        "duration": 2.321
+    },
+    {
+        "text": "um",
+        "start": 2296.96,
+        "duration": 2.399
+    },
+    {
+        "text": "and",
+        "start": 2298.4,
+        "duration": 3.679
+    },
+    {
+        "text": "that should be investigated more we",
+        "start": 2299.359,
+        "duration": 4.72
+    },
+    {
+        "text": "should run simulations on that model and",
+        "start": 2302.079,
+        "duration": 3.601
+    },
+    {
+        "text": "see as it will",
+        "start": 2304.079,
+        "duration": 4.081
+    },
+    {
+        "text": "model well in the space that we're",
+        "start": 2305.68,
+        "duration": 4.48
+    },
+    {
+        "text": "trying to model it in so more rigorous",
+        "start": 2308.16,
+        "duration": 5.12
+    },
+    {
+        "text": "needed with this analysis",
+        "start": 2310.16,
+        "duration": 4.88
+    },
+    {
+        "text": "with that said i just want to thank the",
+        "start": 2313.28,
+        "duration": 5.6
+    },
+    {
+        "text": "people who helped in this endeavors iu",
+        "start": 2315.04,
+        "duration": 6.64
+    },
+    {
+        "text": "june we oh really this analysis the",
+        "start": 2318.88,
+        "duration": 5.36
+    },
+    {
+        "text": "ideas the concepts were really driven by",
+        "start": 2321.68,
+        "duration": 4.72
+    },
+    {
+        "text": "june i'm just the analyst i joined this",
+        "start": 2324.24,
+        "duration": 3.76
+    },
+    {
+        "text": "lab to learn",
+        "start": 2326.4,
+        "duration": 4.08
+    },
+    {
+        "text": "and check the lands as well so thank you",
+        "start": 2328.0,
+        "duration": 4.4
+    },
+    {
+        "text": "very much for your time and i'm happy to",
+        "start": 2330.48,
+        "duration": 4.8
+    },
+    {
+        "text": "answer any questions",
+        "start": 2332.4,
+        "duration": 2.88
+    },
+    {
+        "text": "they anyone has questions in the room of",
+        "start": 2338.72,
+        "duration": 4.96
+    },
+    {
+        "text": "course if you speak up and online you",
+        "start": 2340.96,
+        "duration": 4.96
+    },
+    {
+        "text": "can put the questions into the chat box",
+        "start": 2343.68,
+        "duration": 6.679
+    },
+    {
+        "text": "or you can answer yourself and ask",
+        "start": 2345.92,
+        "duration": 4.439
+    },
+    {
+        "text": "i'll go ahead ask the question",
+        "start": 2354.88,
+        "duration": 3.52
+    },
+    {
+        "text": "so you're talking about some of the",
+        "start": 2357.28,
+        "duration": 3.2
+    },
+    {
+        "text": "circadian rhythms did you mention was",
+        "start": 2358.4,
+        "duration": 4.4
+    },
+    {
+        "text": "the one example pdk4 which is a",
+        "start": 2360.48,
+        "duration": 4.16
+    },
+    {
+        "text": "circadian rhythm gene but it did seem",
+        "start": 2362.8,
+        "duration": 4.16
+    },
+    {
+        "text": "like it was modeled better by",
+        "start": 2364.64,
+        "duration": 4.479
+    },
+    {
+        "text": "acute exercise so that might have been",
+        "start": 2366.96,
+        "duration": 4.0
+    },
+    {
+        "text": "one of your",
+        "start": 2369.119,
+        "duration": 3.681
+    },
+    {
+        "text": "circadian rhythm genes that were jumping",
+        "start": 2370.96,
+        "duration": 4.32
+    },
+    {
+        "text": "in for four potentially",
+        "start": 2372.8,
+        "duration": 5.68
+    },
+    {
+        "text": "um so if i said that i misspoke",
+        "start": 2375.28,
+        "duration": 5.44
+    },
+    {
+        "text": "um pdk4",
+        "start": 2378.48,
+        "duration": 5.28
+    },
+    {
+        "text": "is a gene that's known to",
+        "start": 2380.72,
+        "duration": 5.119
+    },
+    {
+        "text": "model well with",
+        "start": 2383.76,
+        "duration": 4.48
+    },
+    {
+        "text": "the acute exercise response okay",
+        "start": 2385.839,
+        "duration": 4.081
+    },
+    {
+        "text": "and um",
+        "start": 2388.24,
+        "duration": 3.44
+    },
+    {
+        "text": "in our separate models",
+        "start": 2389.92,
+        "duration": 4.4
+    },
+    {
+        "text": "it does actually model quite well",
+        "start": 2391.68,
+        "duration": 4.24
+    },
+    {
+        "text": "with the",
+        "start": 2394.32,
+        "duration": 3.2
+    },
+    {
+        "text": "circadian rhythm",
+        "start": 2395.92,
+        "duration": 2.96
+    },
+    {
+        "text": "model",
+        "start": 2397.52,
+        "duration": 2.75
+    },
+    {
+        "text": "but then when we combine",
+        "start": 2398.88,
+        "duration": 2.719
+    },
+    {
+        "text": "[Music]",
+        "start": 2400.27,
+        "duration": 3.809
+    },
+    {
+        "text": "models",
+        "start": 2401.599,
+        "duration": 2.48
+    },
+    {
+        "text": "what we see is that",
+        "start": 2407.04,
+        "duration": 5.6
+    },
+    {
+        "text": "really the acute exercise response takes",
+        "start": 2408.8,
+        "duration": 4.88
+    },
+    {
+        "text": "over",
+        "start": 2412.64,
+        "duration": 3.76
+    },
+    {
+        "text": "um that said",
+        "start": 2413.68,
+        "duration": 4.8
+    },
+    {
+        "text": "uh there was it",
+        "start": 2416.4,
+        "duration": 4.88
+    },
+    {
+        "text": "it seems to have a minor influence from",
+        "start": 2418.48,
+        "duration": 5.68
+    },
+    {
+        "text": "circadian rhythm so this could be an",
+        "start": 2421.28,
+        "duration": 5.52
+    },
+    {
+        "text": "exercise gene that is being influenced",
+        "start": 2424.16,
+        "duration": 4.0
+    },
+    {
+        "text": "by",
+        "start": 2426.8,
+        "duration": 3.519
+    },
+    {
+        "text": "circadian rhythms whether this gene is",
+        "start": 2428.16,
+        "duration": 4.48
+    },
+    {
+        "text": "known as a certain rhythm gene i don't",
+        "start": 2430.319,
+        "duration": 3.841
+    },
+    {
+        "text": "think it is",
+        "start": 2432.64,
+        "duration": 3.439
+    },
+    {
+        "text": "i could be wrong and if i am please",
+        "start": 2434.16,
+        "duration": 4.8
+    },
+    {
+        "text": "simply speak up and",
+        "start": 2436.079,
+        "duration": 2.881
+    },
+    {
+        "text": "but it is known as",
+        "start": 2439.359,
+        "duration": 4.24
+    },
+    {
+        "text": "a strong",
+        "start": 2441.599,
+        "duration": 5.681
+    },
+    {
+        "text": "responder to acute exercise",
+        "start": 2443.599,
+        "duration": 3.681
+    },
+    {
+        "text": "at the moment there are no questions in",
+        "start": 2450.48,
+        "duration": 4.56
+    },
+    {
+        "text": "the chat but again if you're online and",
+        "start": 2452.88,
+        "duration": 3.84
+    },
+    {
+        "text": "you have a question feel free to enter",
+        "start": 2455.04,
+        "duration": 4.16
+    },
+    {
+        "text": "it in the chat box or send yourself an",
+        "start": 2456.72,
+        "duration": 4.0
+    },
+    {
+        "text": "ass",
+        "start": 2459.2,
+        "duration": 3.119
+    },
+    {
+        "text": "we'll give it a couple minutes there are",
+        "start": 2460.72,
+        "duration": 3.52
+    },
+    {
+        "text": "no more questions",
+        "start": 2462.319,
+        "duration": 3.201
+    },
+    {
+        "text": "just in case anyone wants to type",
+        "start": 2464.24,
+        "duration": 4.64
+    },
+    {
+        "text": "something in the chat sure sure",
+        "start": 2465.52,
+        "duration": 3.36
+    },
+    {
+        "text": "if there are more questions",
+        "start": 2471.28,
+        "duration": 3.559
+    },
+    {
+        "text": "explain everything so clearly",
+        "start": 2498.56,
+        "duration": 3.84
+    },
+    {
+        "text": "all right so i'm not seeing anything in",
+        "start": 2504.56,
+        "duration": 3.519
+    },
+    {
+        "text": "the chat box i'm not hearing any more",
+        "start": 2506.319,
+        "duration": 3.681
+    },
+    {
+        "text": "questions in the room or i'm here in",
+        "start": 2508.079,
+        "duration": 4.24
+    },
+    {
+        "text": "microphones so i think that we can give",
+        "start": 2510.0,
+        "duration": 6.24
+    },
+    {
+        "text": "a speaker another round of applause",
+        "start": 2512.319,
+        "duration": 3.921
+    },
+    {
+        "text": "for everyone",
+        "start": 2518.4,
+        "duration": 5.439
+    },
+    {
+        "text": "today all right thanks everybody",
+        "start": 2519.68,
+        "duration": 4.159
+    }
+]

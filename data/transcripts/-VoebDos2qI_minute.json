@@ -1,0 +1,150 @@
+[
+    {
+        "start": 0.0,
+        "text": "so with that I am pleased to introduce our speaker so today we have Kendrick Lee who is a postdoc in biostatistics for the introduction um and thank you for inviting me to give this presentation the title of the presentation today is addressing selection company bias intense negative study design for full length of a 19 monetary um I guess I'll skip the self introduction um I'm just currently a postdoc at Department of biostatistics and hope I kind of hope to see you around if I ever come to conference um yeah never mind um so I think Vitara agreed that understanding how effective a vaccine is has become more and more um relevant these days um to understand vaccine efficacy a random sorry a golden standard is randomized clinical trial design which "
+    },
+    {
+        "start": 60.78,
+        "text": "try to answer the question of how effective a vaccine is in the Target population although often give an unbiased answer on randomized clinical trials often restrict in a a population with fairly restrictive exclusion criteria and randomized canonical child the trials are often conducted in ideal conditions and pretty hard to generalize on the other hand if vaccine Effectiveness often refer to the measure of how well a vaccine performs in The Wider population and may often be of more interest yeah for flu covid-19 and some other infectious diseases test negative design has become a more and more adopted study design to study vaccine effectiveness um in a test and active design patients "
+    },
+    {
+        "start": 122.939,
+        "text": "with for example for covid-19 patients with cover-like symptoms are selected in the study sample some of them may truly have the disease but some of them may have may have some other diseases from manifest cover like illness which defines the test positive cases and has negative potentials the vaccine rates are then compared between the between the test positive cases and has an active controls to give a measure of vaccine Effectiveness which here we write as the VB very often it is simply one minus the risk ratio of risking vaccinated divided by risking or vaccinated recent examples of test magnetic designs include um inferring the vaccine factors of "
+    },
+    {
+        "start": 183.36,
+        "text": "carbon 19 vaccines and comparing the effectiveness of three doses versus two doses vaccines as a motivating example throughout the talk we'll use the data set from University of Michigan Health System data we select the electronic health records of patients who interacted with the system last year when covid-19 vaccine became widely available here is a table of Baseline covariates of the patients we see that there is a a imbalance in terms of the Baseline characteristics between the vaccinated and unvaccinated such as age gender and comoropidity score a standard estimation methods intersective design is logistic regression using a standard logistic "
+    },
+    {
+        "start": 244.62,
+        "text": "regression we see that the three um bugs that the vaccine Effectiveness for three predominant vaccines Pfizer moderna and Chelsea and Johnson ranges from 56 percent to 75 percent if you're familiar with the covid-19 literature you can see that these numbers are relatively small and for the rest of the talk we'll highlight that these numbers are likely to underestimate the vaccine Effectiveness in the Target population and show that how we can detect and correct such biases to proceed we first need to understand why and when a test negative design works here we use a directed acyclic graph or doc to illustrate the relationship between variables we let a b vaccination YB infection and SB "
+    },
+    {
+        "start": 305.82,
+        "text": "a binary indicator of being tested and selected into the study sample a major concern in post-market vaccine studies is confounding by Healthcare seeking Behavior this is because vaccinated patients are more likely those who adopt a more healthful lifestyle so they might be more willing to lower the infection Risk by wearing a mask or avoid the crowd and when they actually feel ill they might be more likely to go to the clinics and see clear or get tested therefore such latent Healthcare pay seeking behavior is likely to cause substantial bias if not appropriately accounted for a major Assumption of personal active design is that because others study subjects are those who get tested they have "
+    },
+    {
+        "start": 366.06,
+        "text": "an identical level of healthcare seeking Behavior therefore every arrow coming out of healthcare CK behavior in the dark can be removed and the cause of heart for confounding interaction bias can be blocked however such justification is likely to be overly simplified first um Healthcare seeking behavior is more likely to be spectrum and unlikely to be binary therefore it is not likely to be entirely captured by a binary indicator of getting tested and selected second there may be other unmeasured confounding confounders like occupation as a healthcare worker in Residence of care facilities Etc so I'm more likely a more probable duck may look like this as shown in the slides where we have the map unmeasured "
+    },
+    {
+        "start": 427.819,
+        "text": "confounder U that may cause us r a y and S it may cause confounding bias due to the path a to u2y and because the stud the analysis conditions on S equals one and may also cause collider stratification bias through the path a to u to s t y finally um because the analysis is restricted to the tested subjects and my luck generalizability to the Target population the main issue of this type of drug where the latent factor also causes selection bias is that many measures of causal effects cannot be identified there are other challenges in constructive designs they are equally "
+    },
+    {
+        "start": 489.3,
+        "text": "important but um will focus on the selection and compounding bias in this presentation and um these issues for future research so now the question is how can we detect the unmeasured confounding bias the approach we'll use is an active control approach which is increasingly popular in epidemiology research um this approach relies on two types of measured covariants one is negative control exposure we denote has Z this is a variable a priority noun to not cause the outcome of Interest here as the Covenant infection another variable is the negative control outcome or NCO which we denote has W with sorry here which is a primary null not to be caused by the not to be "
+    },
+    {
+        "start": 551.04,
+        "text": "affected by the exposure of Interest here at here um it's the vaccination comma 19 vaccination so in the study sample um if there is no unmeasured confounder and X is properly adjusted for C should be conditionally independent of Y and a should be conditionally independent of w in other words in the study sample if we detect and if we observe an association between z y and aw then this may indicate the presence of our measured confounder in the University of Michigan Health Data we select immunization visits before December 2020 as the as nce because covid-19 vaccines were not available at that time and prior immunization is likely to associate with "
+    },
+    {
+        "start": 612.0,
+        "text": "Healthcare seeking Behavior which is our major confounder foreign model we see that combinating infection is significantly associated with dnce which indicates confounding are measured Consulting we select ncotp the presence of the following conditions including armor relaxed subliders ior disorder Etc these conditions are not likely to be caused by by the Covenant vaccination foreign again using a standard logistic regression we see that um the the NCO is significantly associated with the covid-19 vaccination which also indicates a measured confounding "
+    },
+    {
+        "start": 675.899,
+        "text": "so now that we have detect the the confounding bias the problem is we still don't know um how much the buyers how much bias that that the unmeasured concunders cost for our ve estimates so for the rest of the talk I'll introduce how can we adjust for the unmeasured confounding bias using the negative control variables so let's review the challenges and available variables we have this latents back through you and we condition our s equals one um which results in a measured confounding bias and collider stratification volumes and we have the nce and NCO that can help us to address these biases so for Simplicity we'll assume a common respiration model here is what the model "
+    },
+    {
+        "start": 737.16,
+        "text": "looks like and so it looks a little bit complicated but the main idea is the risk ratio in every stratum defined by U and X are identical and it is the exponential of beta so under this common conditional risk ratio model you can you can show that the marginal causal risk ratio is identical to the conditional risk ratio which is exponential of theta and it's also very straightforward to incorporate effect modification by measured covaluate sets um if we so let's forget about selection bias and focus on confounding bias if we can observe all the variables including the latent factor U there are common methods to estimate the the causal effect as inverse probability of treated "
+    },
+    {
+        "start": 799.019,
+        "text": "waiting methods which estimates potential outcome simply by weighting the Alchemy each treatment or um by the inverse probability of receiving the treatment in every strata so then the cause of risk ratio can just be identified as as the ratio of these two this would result in the average inverse if um if we don't have this latent factor U this formula which just results in the iptw estimator in Schnitzer 2022 which is proposed to estimate the VE for combinating vaccines foreign of course we cannot estimate this propensity score in the iptw estimator because U.S are observed "
+    },
+    {
+        "start": 859.279,
+        "text": "the the strategy that we use is to use a surrogate function which is connected to the propensity score by a conditional expectation operator connection on the latent factor U so we can show that in the iptw estimator um if we replace this inverse probability with the surrogate function then we can recover the mean potential outcome we call the surrogate function a treatment confounding Bridge function the problem now the question is how can we estimate the treatment confounding Bridge function we propose to leverage the negative control outcome this is because we can show the the um the the treatment confronting Bridge function satisfies this integral "
+    },
+    {
+        "start": 919.56,
+        "text": "equation the good thing about this integral equation is that if we have data from the target population then this integral equation doesn't contain any unmeasured factors all the variables here are observed now of course up to you now we have um overlooked selection bias um for example in the integral equation that we use to estimate the treatment confounding Bridge function and the mean potential outcome the the expectation is taken with respect to the Target population however in a tnd we only have data from the tested sample which conditions on S equals 1. so unfortunately in a tnd because of selection bias we cannot identify the "
+    },
+    {
+        "start": 981.48,
+        "text": "mean potential outcome but you can show that under the assumption that the treatment does not directly cause the selection the the cost the causal risk ratio can still be identified using pretty much the same iptw formula as before in a tnb also because of selection bias we cannot estimate the treatment Bridge function using the previous integral equation but if the disease is relatively rare in the Target population you can show that the integral equation approximately holds in the control group of the target population so so therefore we can solve this integral equation to estimate the treatment confounding Bridge function in practice I'm estimating the "
+    },
+    {
+        "start": 1043.52,
+        "text": "propensity score on the right hand side can be complicated but you can show that if this integral equation holds then the integral equation then the estimating equation here on the bottom is unbiased here and as a user specified arbitrary function overall this results in a relatively simple algorithm for ID biased causal respirational estimate the first step is to identify suitable ncees and ncos depending on based on domain knowledge the second step is to estimate the treatment corresponding Bridge function using the estimating equation here then we can estimate the log causal risk ratio using a plugin estimator finally be the estimated ve is just 1 "
+    },
+    {
+        "start": 1106.4,
+        "text": "minus the exponential of beta are there any questions for now okay awesome thank you um so the above algorithm can also be summarized into solving solving and estimating equation the good thing about this representation is that we can then get a standard error of our ve estimate using standard estimating equation Theory so here we conduct a simulation study to evaluate the the performance of our method we consider two scenarios in the first scenario all variables are binary including the negative control variables and the latent factor "
+    },
+    {
+        "start": 1166.64,
+        "text": "in the second scenario all the variables are continuous we consider four methods the first is the negative control method that we propose the second is the negative control Oracle methods NCR recommets method here instead of using an estimated treatment confounding Bridge function we use the true value of the treatment co-founding Bridge function such thoughts we can Envision how how much the variation of the estimation of treatment confounding Bridge function is and as comparison we also include logistic regression estimator and iptw estimator these two don't approperly account for the latent factor so here we look at the biases and coverage rates of 95 confidence "
+    },
+    {
+        "start": 1228.44,
+        "text": "intervals of the four methods both and C and C Oracle methods are essentially unbiased while logistic question and iptw estimator have severe bias also the confidence intervals for NC and NC articles are well collaborated while the the ones for logistic regression iptw suffered from severe undercoverage the same is for the continuous cases we have mentioned that our method mainly works when the disease is relatively rare so what happened so here we show the simulation study under the scenarios where the disease is more frequent in the Target population um we consider the case where the vaccine actually has no effect or the "
+    },
+    {
+        "start": 1290.059,
+        "text": "vaccine has um the vaccine reduces the infection risk we see that when the vaccine has no effect the NC estimator Still Remains unbiased even if the disease is frequent but if the disease has a has a positive effect then the NC estimator is biased when the disease become more frequent foreign rates of the 95 confidence intervals if the if the vaccine has no effect then the confidence intervals for the NCS committers remain calibrated but if it is that the vaccine has a positive effect then the confidence interval for the NC estimator has under coverage when the disease becomes more frequent foreign "
+    },
+    {
+        "start": 1352.48,
+        "text": "can be biased when disease become more frequent it still provides a valid hypothesis testing method for no vaccine effect so let's go back to our University of Michigan data example using the NC method the the estimated ve ranges from 66 percent to 87 percent closer to the Contemporary observational studies foreign work to argue about the confounding and selection bias in the TNT study um we also um we also introduced a method to the bias the ve estimate from pnd studies "
+    },
+    {
+        "start": 1413.059,
+        "text": "as shown in our manuscript our methods can Although our method is motivated by a Hindi study it can also be used for other outcomes outcome dependence on observational studies all right there are several other extensions which I'll not go into details these are the collaborators on these projects um yeah so this concludes my presentation are there any other questions yeah thank you for the nice talk it's a really important area and it seems like your method could be really useful um I'm curious about the part of um trying to come up with what these and "
+    },
+    {
+        "start": 1474.38,
+        "text": "um uh these control uh variables that you identified in the in that medical records it says it's sort of domain knowledge but I'm curious if your simulation studies give you intuition about um um how to identify uh good controls in terms of like coverage or like good um correlation with the outcomes or like what what should we be looking for in order to identify these in practice yeah thank you that is a pretty important question that I've asked a lot um so I think a good analogy will be instrumental variable methods um so for example in EM Mandarian randomization study the instrumental variable methods the instrumental variables um there there are also mainly selected by domain knowledge although they're a data data driven methods those "
+    },
+    {
+        "start": 1534.44,
+        "text": "data-driven methods cannot be um they they cannot always be adequately Justified this is the same for an active control variables the best approach so far is still based on domain knowledge of course in a study sometimes you have multiple candidates and active potential variables then in such scenario you might you might use some hand wavy methods such as looking at the Ops association with the the treatment and the outcome to select probably the best and active control variables for that particular analysis does that answer the question yeah I think so I mean I guess one option is just to not be able to do the study right so rather than pick up from among a set of bad ones to say I don't have a good control set to work with here uh so you know you could not do it right yeah so yeah so here our method is "
+    },
+    {
+        "start": 1596.779,
+        "text": "to address I'll measure the confounding bias of course if you don't have appropriate um ancillary variables for our approach you can all you can always use sensitivity analysis and there are other methods to address or measured confounding that can be used we just provide an alternative and potentially a method for sensitivity analysis thank you yeah so so one common is uh have you touched some more like a bigger data like n3c data hence we see it as the millions of record yeah it's the largest covenanting study [Music] "
+    },
+    {
+        "start": 1657.64,
+        "text": "we can use your data for your message it's probably I don't know I haven't used the Michigan data I assume it's my bigger submission Michigan data actually has been uploaded to NCC oh yeah thank you um yeah we haven't we haven't used a very big data sets but I have some follow-up methods which is essentially the same but provide more robust and efficient estimators um I I will be I will be very happy for any collaboration especially in terms of data access because you know this is a statistical method gaining data access to illustrator method is always very difficult so so we can talk further and I can give you my email after we talk yeah yeah thank you "
+    },
+    {
+        "start": 1721.059,
+        "text": "it seems like the computation is relatively straightforward but I'm curious if you have um like a case study or arm or um framework in which you've implemented this and and I if somebody wanted to reproduce the work or apply it to a new situation is there a um a tool or a framework or sort of a case study analysis that that would be a good starting place for somebody else to do it uh sorry can you can probably give me a question did you implement this in R and is there like a notebook that that goes through and uses um packages within our specifically to do this or is it um yeah what what tooling did you use to make this work yeah I used R to implement the methods but I think it it's probably not that well documented um the method is on my GitHub so you can you can look up the code "
+    },
+    {
+        "start": 1782.12,
+        "text": "um yeah but I I probably didn't did didn't do a good job to go through one analysis that's a good point though I I will probably add a markdown document to to illustrate the analysis fantastic thank you the reminder if you're online you have questions you can feel free to put them in the chat box or use the zoom reactions at the bottom right of your screen to raise your hands others in the room have questions feel free to ask them yeah I have another question so in terms of the variable I got how many variables you you can like you can consider simultaneously yeah sorry can you say again what was the question we may have a lot of variables right right consider right so let's say if you "
+    },
+    {
+        "start": 1845.059,
+        "text": "have 10 or 20 different uh variables you don't know you want to you want to count you want to consider the effects of these different Miracles I'm kind of thinking like what's the procedure how you do it yeah yeah thank you that's a very good question um for now for now there are there are no common conclusions so what happened in such scenarios this is this is very much the same as instrument in the instrumental variable area when there are many instrumental variables there are methods to use for example um lasso type penalty to select instrumental values but but you know those areas are under active research the same as for Network control variables um if you look up there are "
+    },
+    {
+        "start": 1905.12,
+        "text": "there are like they're they're a paper called many many proxies or many magnitude control variables but I don't know they're not good enough that's for that for now so so so the scenario that you mentioned is definitely a challenging scenario what I would suggest is for now you can just use some hand wavy methods like select something that you think might be the most relevant to the to the unmeasured confounders or use like logistic regression or some other regression models to look look into how how Associated they are with the with the treatment and the outcome thank you thank you so no questions online has anyone else in the room "
+    },
+    {
+        "start": 1967.6,
+        "text": "give it another minute in case anyone's typing anything online so there's a question uh that just came in online from Dana so she said thank you for a great talk sorry if I missed this but can you speak a bit more about why causal inference is useful here and the advantages and disadvantages to other approaches like regression oh thank you this is a good question so causal inference um I think the reason that causal influence might be more useful here is that there is a formal free framework in causal inference to argue about causal vaccine Effectiveness that that account for the unmeasured confounders in regression models you can you can always include there's some method confounder in your regression model "
+    },
+    {
+        "start": 2029.019,
+        "text": "um in fact our our framework our framework is based on this type of semi-parametric model where um we can argue that this beta has a causal interpretation but you can see this you can see our work as based on both or either causal inference or this type of regression model as I said causal inference um the idea of causal inference is more agnostic towards the model um but but our model may give you more straightforward ideas of how how the a measured come from there goes into goes into your vaccine effect so both have your advantages does that answer the question if my answer was a little vague "
+    },
+    {
+        "start": 2095.02,
+        "text": "Dana said that yes that mostly answered her questions we'll continue to wait another moment in case anyone else is typing anything online and again it was so uh you have the um right why it's all come why is the variable right so how do you treat them differently uh let me let me find find the tag for you so here we have an active control exposure and active control outcome okay are you are you asking about the "
+    },
+    {
+        "start": 2156.339,
+        "text": "difference or yeah the difference for like a tree yeah right so simply speaking the nce does not cause the outcome and the NCO is not caused by the treatment that's their difference basically yeah yeah so here I have dashed arrows um they indicate the color effects that can that may dummy either or that may either exist or not exist it doesn't matter if we if we remove all these dashed arrows then you can see that there are variables um that may either be considered snce "
+    },
+    {
+        "start": 2217.9,
+        "text": "SEO you know yeah thank you there any other questions all right let me give our speaker one more round thank you so much thank you everyone for attending today "
+    }
+]

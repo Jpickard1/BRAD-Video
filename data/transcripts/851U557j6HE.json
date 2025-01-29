@@ -1,0 +1,1487 @@
+[
+    {
+        "text": "Sometimes it feels like the universe is just messing with you.",
+        "start": 0.0,
+        "duration": 2.98
+    },
+    {
+        "text": "I have up on screen here a sequence of computations, and don't worry, ",
+        "start": 3.34,
+        "duration": 3.375
+    },
+    {
+        "text": "in a moment we're gonna unpack and visualize what each one is really saying.",
+        "start": 6.715,
+        "duration": 3.665
+    },
+    {
+        "text": "What I want you to notice is how the sequence follows a very predictable, ",
+        "start": 10.92,
+        "duration": 3.835
+    },
+    {
+        "text": "if random, seeming pattern, and how each computation happens to equal pi.",
+        "start": 14.755,
+        "duration": 3.785
+    },
+    {
+        "text": "And if you were just messing around evaluating these on a computer for some reason, ",
+        "start": 19.08,
+        "duration": 3.833
+    },
+    {
+        "text": "you might think that this was a pattern that would go on forever.",
+        "start": 22.913,
+        "duration": 2.967
+    },
+    {
+        "text": "But it doesn't.",
+        "start": 25.88,
+        "duration": 1.22
+    },
+    {
+        "text": "At some point it stops, and instead of equaling pi, ",
+        "start": 27.4,
+        "duration": 3.28
+    },
+    {
+        "text": "you get a value which is just barely, barely less than pi.",
+        "start": 30.68,
+        "duration": 3.66
+    },
+    {
+        "text": "All right, let's dig into what's going on here.",
+        "start": 38.78,
+        "duration": 2.16
+    },
+    {
+        "text": "The main character in the story today is the function sine of x divided by x.",
+        "start": 41.3,
+        "duration": 3.78
+    },
+    {
+        "text": "This actually comes up commonly enough in math and engineering that it gets its own name, ",
+        "start": 45.46,
+        "duration": 4.266
+    },
+    {
+        "text": "sinc, and the way you might think about it is by starting with a normal ",
+        "start": 49.726,
+        "duration": 3.413
+    },
+    {
+        "text": "oscillating sine curve, and then sort of squishing it down as you get ",
+        "start": 53.139,
+        "duration": 3.318
+    },
+    {
+        "text": "far away from zero by multiplying it by 1 over x.",
+        "start": 56.457,
+        "duration": 2.323
+    },
+    {
+        "text": "And the astute among you might ask about what happens at x equals 0, ",
+        "start": 59.3,
+        "duration": 3.498
+    },
+    {
+        "text": "since when you plug that in it looks like dividing 0 by 0.",
+        "start": 62.798,
+        "duration": 2.942
+    },
+    {
+        "text": "And then the even more astute among you, maybe fresh out of a calculus class, ",
+        "start": 66.4,
+        "duration": 3.735
+    },
+    {
+        "text": "could point out that for values closer and closer to 0, ",
+        "start": 70.135,
+        "duration": 2.681
+    },
+    {
+        "text": "the function gets closer and closer to 1.",
+        "start": 72.816,
+        "duration": 1.964
+    },
+    {
+        "text": "So if we simply redefine the sinc function at 0 to equal 1, ",
+        "start": 75.26,
+        "duration": 3.3
+    },
+    {
+        "text": "you get a nice continuous curve.",
+        "start": 78.56,
+        "duration": 1.76
+    },
+    {
+        "text": "All of that is a little by the by because the thing we actually care about is the ",
+        "start": 80.32,
+        "duration": 4.23
+    },
+    {
+        "text": "integral of this curve from negative infinity to infinity, ",
+        "start": 84.55,
+        "duration": 3.045
+    },
+    {
+        "text": "which you'd think of as meaning the area between the curve and the x-axis, ",
+        "start": 87.595,
+        "duration": 3.869
+    },
+    {
+        "text": "or more precisely the signed area, meaning you add all the area bound by the positive ",
+        "start": 91.464,
+        "duration": 4.438
+    },
+    {
+        "text": "parts of the graph in the x-axis, and you subtract all of the parts bound by the ",
+        "start": 95.902,
+        "duration": 4.179
+    },
+    {
+        "text": "negative parts of the graph and the x-axis.",
+        "start": 100.081,
+        "duration": 2.219
+    },
+    {
+        "text": "Like we saw at the start, it happens to be the case that this evaluates to be exactly pi, ",
+        "start": 102.74,
+        "duration": 4.392
+    },
+    {
+        "text": "which is nice and also a little weird, and it's not entirely clear how ",
+        "start": 107.132,
+        "duration": 3.465
+    },
+    {
+        "text": "you would approach this with the usual tools of calculus.",
+        "start": 110.597,
+        "duration": 2.783
+    },
+    {
+        "text": "Towards the end of the video, I'll share the trick for how you would do this.",
+        "start": 113.98,
+        "duration": 2.58
+    },
+    {
+        "text": "Progressing on with the sequence I opened with, ",
+        "start": 116.84,
+        "duration": 2.372
+    },
+    {
+        "text": "the next step is to take a copy of the sinc function, where you plug in x divided by 3, ",
+        "start": 119.212,
+        "duration": 4.351
+    },
+    {
+        "text": "which will basically look like the same graph, ",
+        "start": 123.563,
+        "duration": 2.324
+    },
+    {
+        "text": "but stretched out horizontally by a factor of 3.",
+        "start": 125.887,
+        "duration": 2.372
+    },
+    {
+        "text": "When we multiply these two functions together, ",
+        "start": 128.9,
+        "duration": 2.339
+    },
+    {
+        "text": "we get a much more complicated wave whose mass seems to be more concentrated ",
+        "start": 131.239,
+        "duration": 3.833
+    },
+    {
+        "text": "towards the middle, and with any usual functions you would expect this ",
+        "start": 135.072,
+        "duration": 3.534
+    },
+    {
+        "text": "completely changes the area.",
+        "start": 138.606,
+        "duration": 1.394
+    },
+    {
+        "text": "You can't just randomly modify an integral like this and expect nothing to change.",
+        "start": 140.38,
+        "duration": 3.3
+    },
+    {
+        "text": "So already it's a little bit weird that this result also equals pi, ",
+        "start": 144.26,
+        "duration": 3.304
+    },
+    {
+        "text": "that nothing has changed.",
+        "start": 147.564,
+        "duration": 1.216
+    },
+    {
+        "text": "That's another mystery you should add to your list.",
+        "start": 149.08,
+        "duration": 2.1
+    },
+    {
+        "text": "And the next step in the sequence was to take an even more stretched out version ",
+        "start": 151.66,
+        "duration": 4.113
+    },
+    {
+        "text": "of the sinc function by a factor of 5, multiply that by what we already have, ",
+        "start": 155.773,
+        "duration": 3.961
+    },
+    {
+        "text": "and again look at the signed area underneath the whole curve, which again equals pi.",
+        "start": 159.734,
+        "duration": 4.266
+    },
+    {
+        "text": "And it continues on like this.",
+        "start": 164.86,
+        "duration": 1.62
+    },
+    {
+        "text": "With each iteration, we stretch out by a new odd ",
+        "start": 166.58,
+        "duration": 2.322
+    },
+    {
+        "text": "number and multiply that into what we have.",
+        "start": 168.902,
+        "duration": 2.038
+    },
+    {
+        "text": "One thing you might notice is how except at the input x equals 0, ",
+        "start": 171.64,
+        "duration": 3.1
+    },
+    {
+        "text": "every single part of this function is progressively getting multiplied by something ",
+        "start": 174.74,
+        "duration": 3.946
+    },
+    {
+        "text": "that's smaller than 1.",
+        "start": 178.686,
+        "duration": 1.034
+    },
+    {
+        "text": "So you would expect, as the sequence progresses, ",
+        "start": 180.34,
+        "duration": 2.174
+    },
+    {
+        "text": "for things to get squished down more and more, ",
+        "start": 182.514,
+        "duration": 2.086
+    },
+    {
+        "text": "and if anything you would expect the area to be getting smaller.",
+        "start": 184.6,
+        "duration": 2.84
+    },
+    {
+        "text": "Eventually that is exactly what happens, but what's bizarre is that it ",
+        "start": 188.36,
+        "duration": 4.118
+    },
+    {
+        "text": "stays so stable for so long, and of course more pertinently, ",
+        "start": 192.478,
+        "duration": 3.539
+    },
+    {
+        "text": "that when it does break at the value 15, it does so by the tiniest tiny amount.",
+        "start": 196.017,
+        "duration": 4.583
+    },
+    {
+        "text": "And before you go thinking this is the result of some numerical error, ",
+        "start": 201.18,
+        "duration": 3.379
+    },
+    {
+        "text": "maybe because we're doing something with floating-point arithmetic, ",
+        "start": 204.559,
+        "duration": 3.237
+    },
+    {
+        "text": "if you work this out more precisely, here is the exact value of that last integral, ",
+        "start": 207.796,
+        "duration": 3.998
+    },
+    {
+        "text": "which is a certain fraction of pi where the numerator and the denominator are absurd.",
+        "start": 211.794,
+        "duration": 4.046
+    },
+    {
+        "text": "They're both around 400 billion billion billion.",
+        "start": 215.98,
+        "duration": 2.72
+    },
+    {
+        "text": "So this pattern was described in a paper by a father-son pair, ",
+        "start": 220.46,
+        "duration": 3.058
+    },
+    {
+        "text": "Jonathan and David Borwein, which is very fun, ",
+        "start": 223.518,
+        "duration": 2.282
+    },
+    {
+        "text": "and they mentioned how when a fellow researcher was computing these integrals using a ",
+        "start": 225.8,
+        "duration": 4.175
+    },
+    {
+        "text": "computer algebra system, he assumed that this had to be some kind of bug.",
+        "start": 229.975,
+        "duration": 3.545
+    },
+    {
+        "text": "But it's not a bug, it is a real phenomenon.",
+        "start": 233.86,
+        "duration": 2.4
+    },
+    {
+        "text": "And it gets weirder than that actually.",
+        "start": 236.68,
+        "duration": 1.44
+    },
+    {
+        "text": "If we take all these integrals and include yet another factor, 2 cosine of x, ",
+        "start": 238.44,
+        "duration": 4.097
+    },
+    {
+        "text": "which again you would think changes their values entirely, ",
+        "start": 242.537,
+        "duration": 3.099
+    },
+    {
+        "text": "you can't just randomly multiply new things into an integral like this, ",
+        "start": 245.636,
+        "duration": 3.783
+    },
+    {
+        "text": "it continues to equal pi for much much longer, ",
+        "start": 249.419,
+        "duration": 2.469
+    },
+    {
+        "text": "and it's not until you get to the number 113 that it breaks.",
+        "start": 251.888,
+        "duration": 3.152
+    },
+    {
+        "text": "And when it breaks, it's by the most puny, absolutely ",
+        "start": 255.2,
+        "duration": 2.658
+    },
+    {
+        "text": "subtle amount that you could imagine.",
+        "start": 257.858,
+        "duration": 1.822
+    },
+    {
+        "text": "So the natural question is what on earth is going on here?",
+        "start": 260.44,
+        "duration": 3.64
+    },
+    {
+        "text": "And luckily there actually is a really satisfying explanation for all this.",
+        "start": 264.38,
+        "duration": 3.3
+    },
+    {
+        "text": "The way I think I'll go about this is to show you a phenomenon that ",
+        "start": 268.18,
+        "duration": 2.979
+    },
+    {
+        "text": "first looks completely unrelated, but it shows a similar pattern, ",
+        "start": 271.159,
+        "duration": 2.892
+    },
+    {
+        "text": "where you have a value that stays really stable until you get to the number 113. ",
+        "start": 274.051,
+        "duration": 3.549
+    },
+    {
+        "text": "You get to the number 15, and then it falters by just a tiny amount.",
+        "start": 277.6,
+        "duration": 2.98
+    },
+    {
+        "text": "And then after that I'll show why this seemingly unrelated phenomenon ",
+        "start": 281.3,
+        "duration": 3.52
+    },
+    {
+        "text": "is secretly the same as all our integral expressions, but in disguise.",
+        "start": 284.82,
+        "duration": 3.52
+    },
+    {
+        "text": "So, turning our attention to what seems completely different, ",
+        "start": 289.12,
+        "duration": 3.436
+    },
+    {
+        "text": "consider a function that I'm going to be calling rect of x, ",
+        "start": 292.556,
+        "duration": 3.326
+    },
+    {
+        "text": "which is defined to equal 1 if the input is between negative 1 half and 1 half, ",
+        "start": 295.882,
+        "duration": 4.435
+    },
+    {
+        "text": "and otherwise it's equal to 0.",
+        "start": 300.317,
+        "duration": 1.663
+    },
+    {
+        "text": "So the function is this boring step, basically.",
+        "start": 302.22,
+        "duration": 2.3
+    },
+    {
+        "text": "This will be the first in a sequence of functions that we define, ",
+        "start": 304.52,
+        "duration": 3.442
+    },
+    {
+        "text": "so I'll call it f1 of x, and each new function in our sequence ",
+        "start": 307.962,
+        "duration": 3.287
+    },
+    {
+        "text": "is going to be a kind of moving average of the previous function.",
+        "start": 311.249,
+        "duration": 3.391
+    },
+    {
+        "text": "So for example, the way the second iteration will be defined is to take this ",
+        "start": 315.8,
+        "duration": 4.3
+    },
+    {
+        "text": "sliding window whose width is 1 third, and for a particular input x, ",
+        "start": 320.1,
+        "duration": 3.854
+    },
+    {
+        "text": "when the window is centered at that input x, the value in my new function drawn ",
+        "start": 323.954,
+        "duration": 4.468
+    },
+    {
+        "text": "below is defined to be equal to the average value of the first function above ",
+        "start": 328.422,
+        "duration": 4.356
+    },
+    {
+        "text": "inside that window.",
+        "start": 332.778,
+        "duration": 1.062
+    },
+    {
+        "text": "So for example, when the window is far enough to the left, ",
+        "start": 333.84,
+        "duration": 2.778
+    },
+    {
+        "text": "every value inside it is 0, so the graph on the bottom is showing 0.",
+        "start": 336.618,
+        "duration": 3.202
+    },
+    {
+        "text": "As soon as that window starts to go over the plateau a little bit, ",
+        "start": 340.28,
+        "duration": 3.019
+    },
+    {
+        "text": "the average value is a little more than 0, and you see that in the graph below.",
+        "start": 343.299,
+        "duration": 3.561
+    },
+    {
+        "text": "And notice that when exactly half the window is over that plateau at 1 and half of it ",
+        "start": 347.28,
+        "duration": 4.41
+    },
+    {
+        "text": "is at 0, the corresponding value in the bottom graph is 1 half, and you get the point.",
+        "start": 351.69,
+        "duration": 4.41
+    },
+    {
+        "text": "The important thing I want you to focus on is how when that window is ",
+        "start": 356.66,
+        "duration": 3.577
+    },
+    {
+        "text": "entirely in the plateau above, where all the values are 1, ",
+        "start": 360.237,
+        "duration": 3.016
+    },
+    {
+        "text": "then the average value is also 1, so we get this plateau on our function at the bottom.",
+        "start": 363.253,
+        "duration": 4.447
+    },
+    {
+        "text": "Let's call this bottom function f2 of x, and what I want you to ",
+        "start": 368.3,
+        "duration": 3.446
+    },
+    {
+        "text": "think about is the length of the plateau for that second function.",
+        "start": 371.746,
+        "duration": 3.554
+    },
+    {
+        "text": "How wide should it be?",
+        "start": 375.48,
+        "duration": 0.96
+    },
+    {
+        "text": "If you think about it for a moment, the distance between the left ",
+        "start": 377.02,
+        "duration": 3.413
+    },
+    {
+        "text": "edge of the top plateau and the left edge of the bottom plateau ",
+        "start": 380.433,
+        "duration": 3.31
+    },
+    {
+        "text": "will be exactly half of the width of the window, so half of 1 third.",
+        "start": 383.743,
+        "duration": 3.517
+    },
+    {
+        "text": "And similarly on the right side, the distance between ",
+        "start": 387.64,
+        "duration": 2.59
+    },
+    {
+        "text": "the edges of the plateaus is half of the window width.",
+        "start": 390.23,
+        "duration": 2.59
+    },
+    {
+        "text": "So overall it's 1 minus that window width, which is 1 minus 1 third.",
+        "start": 393.2,
+        "duration": 3.46
+    },
+    {
+        "text": "The value we're going to be computing, the thing that will look stable for ",
+        "start": 397.38,
+        "duration": 3.723
+    },
+    {
+        "text": "a while before it breaks, is the value of this function at the input 0, ",
+        "start": 401.103,
+        "duration": 3.575
+    },
+    {
+        "text": "which in both of these iterations is equal to 1 because it's inside that plateau.",
+        "start": 404.678,
+        "duration": 4.022
+    },
+    {
+        "text": "For the next iteration, we're going to take a moving average of that last function, ",
+        "start": 409.2,
+        "duration": 3.752
+    },
+    {
+        "text": "but this time with the window whose width is 1 fifth.",
+        "start": 412.952,
+        "duration": 2.368
+    },
+    {
+        "text": "It's kind of fun to think about why as you slide around this window you get a ",
+        "start": 415.32,
+        "duration": 3.921
+    },
+    {
+        "text": "smoothed out version of the previous function, and again, ",
+        "start": 419.241,
+        "duration": 2.917
+    },
+    {
+        "text": "the significant thing I want you to focus on is how when that window is entirely ",
+        "start": 422.158,
+        "duration": 4.072
+    },
+    {
+        "text": "inside the plateau of the previous function, then by definition the bottom function ",
+        "start": 426.23,
+        "duration": 4.224
+    },
+    {
+        "text": "is going to equal 1.",
+        "start": 430.454,
+        "duration": 1.006
+    },
+    {
+        "text": "This time the length of that plateau on the bottom will be the length ",
+        "start": 431.98,
+        "duration": 3.63
+    },
+    {
+        "text": "of the previous one, 1 minus 1 third, minus the window width, 1 fifth.",
+        "start": 435.61,
+        "duration": 3.63
+    },
+    {
+        "text": "The reasoning is the same as before in order to go from the point where the middle of ",
+        "start": 439.6,
+        "duration": 4.391
+    },
+    {
+        "text": "the window is on that top plateau to where the entirety of the window is inside that ",
+        "start": 443.991,
+        "duration": 4.341
+    },
+    {
+        "text": "plateau is half the window width and likewise on the right side, ",
+        "start": 448.332,
+        "duration": 3.319
+    },
+    {
+        "text": "and once more the value to record is the output of this function when the input is 0, ",
+        "start": 451.651,
+        "duration": 4.392
+    },
+    {
+        "text": "which again is exactly 1.",
+        "start": 456.043,
+        "duration": 1.277
+    },
+    {
+        "text": "The next iteration is a moving average with a window width of 1 seventh.",
+        "start": 458.58,
+        "duration": 3.3
+    },
+    {
+        "text": "The plateau gets smaller by that 1 over 7.",
+        "start": 462.1,
+        "duration": 1.94
+    },
+    {
+        "text": "Doing one more iteration with 1 over 9, the plateau gets smaller by that amount.",
+        "start": 464.5,
+        "duration": 3.56
+    },
+    {
+        "text": "And as we keep going the plateau gets thinner and thinner.",
+        "start": 468.6,
+        "duration": 2.18
+    },
+    {
+        "text": "And also notice how just outside of the plateau the function is really really ",
+        "start": 471.82,
+        "duration": 3.719
+    },
+    {
+        "text": "close to 1 because it's always been the result of an average between the ",
+        "start": 475.539,
+        "duration": 3.481
+    },
+    {
+        "text": "plateau at 1 and the neighbors, which themselves are really really close to 1.",
+        "start": 479.02,
+        "duration": 3.72
+    },
+    {
+        "text": "The point at which all of this breaks is once we get to the iteration ",
+        "start": 483.44,
+        "duration": 3.46
+    },
+    {
+        "text": "where we're sliding a window with width 1 15th across the whole thing.",
+        "start": 486.9,
+        "duration": 3.46
+    },
+    {
+        "text": "At that point the previous plateau is actually thinner than the window itself.",
+        "start": 490.76,
+        "duration": 3.9
+    },
+    {
+        "text": "So even at the input x equals 0, this moving average ",
+        "start": 494.82,
+        "duration": 3.022
+    },
+    {
+        "text": "will have to be ever so slightly smaller than 1.",
+        "start": 497.842,
+        "duration": 2.738
+    },
+    {
+        "text": "And the only thing that's special about the number 15 here is that as we keep adding ",
+        "start": 500.78,
+        "duration": 4.179
+    },
+    {
+        "text": "the reciprocals of these odd fractions, one third plus one fifth plus one seventh, ",
+        "start": 504.959,
+        "duration": 4.081
+    },
+    {
+        "text": "on and on, it's once we get to one fifteenth that that sum grows to be bigger than 1.",
+        "start": 509.04,
+        "duration": 4.18
+    },
+    {
+        "text": "And in the context of our shrinking plateaus, having started with a plateau of width 1, ",
+        "start": 513.58,
+        "duration": 4.525
+    },
+    {
+        "text": "it's now shrunk down so much that it'll disappear entirely.",
+        "start": 518.105,
+        "duration": 3.035
+    },
+    {
+        "text": "The point is with this as a sequence of functions that we've defined by a ",
+        "start": 521.799,
+        "duration": 3.655
+    },
+    {
+        "text": "seemingly random procedure, if I ask you to compute the values of all of ",
+        "start": 525.454,
+        "duration": 3.604
+    },
+    {
+        "text": "these functions at the input 0, you get a pattern which initially looks stable.",
+        "start": 529.058,
+        "duration": 3.902
+    },
+    {
+        "text": "It's 1 1 1 1 1 1 1, but by the time we get to the eighth ",
+        "start": 533.12,
+        "duration": 3.521
+    },
+    {
+        "text": "iteration it falls short ever so slightly, just barely.",
+        "start": 536.641,
+        "duration": 3.399
+    },
+    {
+        "text": "This is analogous, and I claim more than just analogous, to the integrals we saw earlier, ",
+        "start": 540.68,
+        "duration": 4.796
+    },
+    {
+        "text": "where we have a stable value at pi pi pi pi pi until it falls short just barely.",
+        "start": 545.476,
+        "duration": 4.264
+    },
+    {
+        "text": "And as it happens, this constant from our moving average process that's ever so slightly ",
+        "start": 550.18,
+        "duration": 4.889
+    },
+    {
+        "text": "smaller than 1 is exactly the factor that sits in front of pi in our series of integrals.",
+        "start": 555.069,
+        "duration": 4.891
+    },
+    {
+        "text": "So the two situations aren't just qualitatively similar, ",
+        "start": 560.34,
+        "duration": 2.644
+    },
+    {
+        "text": "they're quantitatively the same as well.",
+        "start": 562.984,
+        "duration": 1.856
+    },
+    {
+        "text": "And when it comes to the case where we add the 2 cosine of x term inside the integral, ",
+        "start": 565.54,
+        "duration": 4.29
+    },
+    {
+        "text": "which caused the pattern to last a lot longer before it broke down, ",
+        "start": 569.83,
+        "duration": 3.354
+    },
+    {
+        "text": "in the analogy what that will correspond to is the same setup, ",
+        "start": 573.184,
+        "duration": 3.107
+    },
+    {
+        "text": "but where the function we start with has an even longer plateau, ",
+        "start": 576.291,
+        "duration": 3.206
+    },
+    {
+        "text": "stretching from x equals negative 1 up to 1, meaning its length is 2.",
+        "start": 579.497,
+        "duration": 3.403
+    },
+    {
+        "text": "So as you do this repeated moving average process, ",
+        "start": 582.9,
+        "duration": 2.467
+    },
+    {
+        "text": "eating into it with these smaller and smaller windows, ",
+        "start": 585.367,
+        "duration": 2.661
+    },
+    {
+        "text": "it takes a lot longer for them to eat into the whole plateau.",
+        "start": 588.028,
+        "duration": 2.952
+    },
+    {
+        "text": "More specifically, the relevant computation is to ask how long do you have ",
+        "start": 591.7,
+        "duration": 3.749
+    },
+    {
+        "text": "to add these reciprocals of odd numbers until that sum becomes bigger than 2?",
+        "start": 595.449,
+        "duration": 3.851
+    },
+    {
+        "text": "And it turns out that you have to go until you hit the number 113, ",
+        "start": 599.72,
+        "duration": 3.587
+    },
+    {
+        "text": "which will correspond to the fact that the integral pattern there continues until ",
+        "start": 603.307,
+        "duration": 4.39
+    },
+    {
+        "text": "you hit 113.",
+        "start": 607.697,
+        "duration": 0.643
+    },
+    {
+        "text": "And by the way, I should emphasize that there is nothing special ",
+        "start": 609.1,
+        "duration": 3.421
+    },
+    {
+        "text": "about these reciprocals of odd numbers, 1 3rd, 1 5th, 1 7th.",
+        "start": 612.521,
+        "duration": 3.159
+    },
+    {
+        "text": "That just happens to be the sequence of values highlighted by the Borweins ",
+        "start": 615.68,
+        "duration": 3.272
+    },
+    {
+        "text": "in their paper that made the sequence mildly famous in nerd circles.",
+        "start": 618.952,
+        "duration": 2.968
+    },
+    {
+        "text": "More generally, we could be inserting any sequence of positive ",
+        "start": 622.44,
+        "duration": 3.057
+    },
+    {
+        "text": "numbers into those sinc functions, and as long as the sum of ",
+        "start": 625.497,
+        "duration": 2.96
+    },
+    {
+        "text": "those numbers is less than 1, our expression will equal pi.",
+        "start": 628.457,
+        "duration": 2.863
+    },
+    {
+        "text": "But as soon as they become bigger than 1, our expression drops a little below pi.",
+        "start": 631.7,
+        "duration": 3.48
+    },
+    {
+        "text": "And if you believe me that there's an analogy with these moving averages, ",
+        "start": 635.18,
+        "duration": 3.581
+    },
+    {
+        "text": "you can hopefully see why.",
+        "start": 638.761,
+        "duration": 1.259
+    },
+    {
+        "text": "But of course, the burning question is why on earth should ",
+        "start": 641.84,
+        "duration": 3.031
+    },
+    {
+        "text": "these two situations have anything to do with each other?",
+        "start": 644.871,
+        "duration": 2.929
+    },
+    {
+        "text": "From here, the argument does bring in two mildly heavy bits of machinery, ",
+        "start": 648.24,
+        "duration": 4.427
+    },
+    {
+        "text": "namely Fourier transforms and convolutions.",
+        "start": 652.667,
+        "duration": 2.573
+    },
+    {
+        "text": "And the way I'd like to go about this is to spend the remainder of this video ",
+        "start": 655.86,
+        "duration": 3.782
+    },
+    {
+        "text": "giving you a high-level sense of how the argument will go, ",
+        "start": 659.642,
+        "duration": 2.862
+    },
+    {
+        "text": "without necessarily assuming you're familiar with either of those two topics, ",
+        "start": 662.504,
+        "duration": 3.782
+    },
+    {
+        "text": "and then to explain why the details are true in a video that's dedicated to convolutions, ",
+        "start": 666.286,
+        "duration": 4.365
+    },
+    {
+        "text": "in particular something called the convolution theorem, ",
+        "start": 670.651,
+        "duration": 2.716
+    },
+    {
+        "text": "since it's incredibly beautiful and it's useful well beyond this specific, ",
+        "start": 673.367,
+        "duration": 3.637
+    },
+    {
+        "text": "very esoteric question.",
+        "start": 677.004,
+        "duration": 1.116
+    },
+    {
+        "text": "To start, instead of focusing on this function sine of x divided by x, ",
+        "start": 681.08,
+        "duration": 3.829
+    },
+    {
+        "text": "where we want to show why the signed area underneath its curve is equal to pi, ",
+        "start": 684.909,
+        "duration": 4.261
+    },
+    {
+        "text": "we'll make a simple substitution where we replace the input x with pi times x, ",
+        "start": 689.17,
+        "duration": 4.261
+    },
+    {
+        "text": "which has the effect of squishing the graph horizontally by a factor of pi, ",
+        "start": 693.431,
+        "duration": 4.099
+    },
+    {
+        "text": "and so the area gets scaled down by a factor of pi, ",
+        "start": 697.53,
+        "duration": 2.805
+    },
+    {
+        "text": "meaning our new goal is to show why this integral on the right is equal to exactly 1.",
+        "start": 700.335,
+        "duration": 4.585
+    },
+    {
+        "text": "By the way, in some engineering contexts, people use the name sinc to ",
+        "start": 705.5,
+        "duration": 3.422
+    },
+    {
+        "text": "refer to this function with the pi on the inside, ",
+        "start": 708.922,
+        "duration": 2.445
+    },
+    {
+        "text": "since it's often very nice to have a normalized function, ",
+        "start": 711.367,
+        "duration": 2.837
+    },
+    {
+        "text": "meaning the area under it is equal to 1.",
+        "start": 714.204,
+        "duration": 1.956
+    },
+    {
+        "text": "The point is, showing this integral on the right is exactly the same ",
+        "start": 716.16,
+        "duration": 2.75
+    },
+    {
+        "text": "thing as showing the integral on the left, it's just a change of variables.",
+        "start": 718.91,
+        "duration": 2.99
+    },
+    {
+        "text": "And likewise for all of the other ones in our sequence, go through each of them, ",
+        "start": 722.58,
+        "duration": 4.109
+    },
+    {
+        "text": "replace the x with a pi times x, and from here the claim is that all these ",
+        "start": 726.689,
+        "duration": 3.804
+    },
+    {
+        "text": "integrals are not just analogous to the moving average examples, ",
+        "start": 730.493,
+        "duration": 3.297
+    },
+    {
+        "text": "but that both of these are two distinct ways of computing exactly the same thing.",
+        "start": 733.79,
+        "duration": 4.11
+    },
+    {
+        "text": "And the connection comes down to the fact that this sinc function, ",
+        "start": 738.5,
+        "duration": 3.086
+    },
+    {
+        "text": "or the engineer sinc function with the pi on the inside, ",
+        "start": 741.586,
+        "duration": 2.625
+    },
+    {
+        "text": "is related to the rect function using what's known as a Fourier transform.",
+        "start": 744.211,
+        "duration": 3.409
+    },
+    {
+        "text": "Now, if you've never heard of a Fourier transform, ",
+        "start": 748.26,
+        "duration": 2.011
+    },
+    {
+        "text": "there are a few other videos on this channel all about it.",
+        "start": 750.271,
+        "duration": 2.289
+    },
+    {
+        "text": "The way it's often described is that if you want to break down a function as ",
+        "start": 752.74,
+        "duration": 3.511
+    },
+    {
+        "text": "the sum of a bunch of pure frequencies, or in the case of an infinite function, ",
+        "start": 756.251,
+        "duration": 3.648
+    },
+    {
+        "text": "a continuous integral of a bunch of pure frequencies, ",
+        "start": 759.899,
+        "duration": 2.463
+    },
+    {
+        "text": "the Fourier transform will tell you all the strength and phases for all those ",
+        "start": 762.362,
+        "duration": 3.557
+    },
+    {
+        "text": "constituent parts.",
+        "start": 765.919,
+        "duration": 0.821
+    },
+    {
+        "text": "But all you really need to know here is that it is something which ",
+        "start": 767.12,
+        "duration": 3.172
+    },
+    {
+        "text": "takes in one function and spits out a new function, ",
+        "start": 770.292,
+        "duration": 2.462
+    },
+    {
+        "text": "and you often think of it as kind of rephrasing the information of your ",
+        "start": 772.754,
+        "duration": 3.409
+    },
+    {
+        "text": "original function in a different language, like you're looking at it ",
+        "start": 776.163,
+        "duration": 3.267
+    },
+    {
+        "text": "from a new perspective.",
+        "start": 779.43,
+        "duration": 1.09
+    },
+    {
+        "text": "For example, like I said, this sinc function written in this new language ",
+        "start": 781.32,
+        "duration": 3.649
+    },
+    {
+        "text": "where you take a Fourier transform looks like our top hat rect function.",
+        "start": 784.969,
+        "duration": 3.551
+    },
+    {
+        "text": "And vice versa, by the way.",
+        "start": 789.1,
+        "duration": 1.1
+    },
+    {
+        "text": "This is a nice thing about Fourier transforms for functions that are symmetric ",
+        "start": 790.26,
+        "duration": 3.648
+    },
+    {
+        "text": "about the y-axis, it is its own inverse, and actually the slightly more general ",
+        "start": 793.908,
+        "duration": 3.694
+    },
+    {
+        "text": "fact that we'll need to show is how when you transform the stretched out ",
+        "start": 797.602,
+        "duration": 3.372
+    },
+    {
+        "text": "version of our sinc function, where you stretch it horizontally by a factor of k, ",
+        "start": 800.974,
+        "duration": 3.787
+    },
+    {
+        "text": "what you get is a stretched and squished version of this rect function.",
+        "start": 804.761,
+        "duration": 3.279
+    },
+    {
+        "text": "But of course, all of these are just meaningless words and terminology, ",
+        "start": 808.6,
+        "duration": 3.078
+    },
+    {
+        "text": "unless you can actually do something upon making this translation.",
+        "start": 811.678,
+        "duration": 2.822
+    },
+    {
+        "text": "And the real idea behind why Fourier transforms are such a useful thing for math ",
+        "start": 815.1,
+        "duration": 3.985
+    },
+    {
+        "text": "is that when you take statements and questions about a particular function, ",
+        "start": 819.085,
+        "duration": 3.74
+    },
+    {
+        "text": "and then you look at what they correspond to with respect to the transformed ",
+        "start": 822.825,
+        "duration": 3.789
+    },
+    {
+        "text": "version of that function, those statements and questions often look very very ",
+        "start": 826.614,
+        "duration": 3.838
+    },
+    {
+        "text": "different in this new language, and sometimes it makes the questions a lot easier ",
+        "start": 830.452,
+        "duration": 4.035
+    },
+    {
+        "text": "to answer.",
+        "start": 834.487,
+        "duration": 0.493
+    },
+    {
+        "text": "For example, one very nice little fact, another thing on our list of things to show, ",
+        "start": 835.66,
+        "duration": 4.425
+    },
+    {
+        "text": "is that if you want to compute the integral of some function from negative infinity ",
+        "start": 840.085,
+        "duration": 4.372
+    },
+    {
+        "text": "to infinity, this signed area under the entirety of its curve, ",
+        "start": 844.457,
+        "duration": 3.28
+    },
+    {
+        "text": "it's the same thing as simply evaluating the Fourier transformed version of that ",
+        "start": 847.737,
+        "duration": 4.217
+    },
+    {
+        "text": "function at the input zero.",
+        "start": 851.954,
+        "duration": 1.406
+    },
+    {
+        "text": "This is a fact that will actually just pop right out of the definition, ",
+        "start": 853.82,
+        "duration": 3.681
+    },
+    {
+        "text": "and it's representative of a more general vibe that every individual ",
+        "start": 857.501,
+        "duration": 3.529
+    },
+    {
+        "text": "output of the Fourier transform function on the right corresponds to ",
+        "start": 861.03,
+        "duration": 3.528
+    },
+    {
+        "text": "some kind of global information about the original function on the left.",
+        "start": 864.558,
+        "duration": 3.682
+    },
+    {
+        "text": "In our specific case, it means if you believe me that this sync function and the ",
+        "start": 868.72,
+        "duration": 4.067
+    },
+    {
+        "text": "rect function are related with a Fourier transform like this, it explains the integral, ",
+        "start": 872.787,
+        "duration": 4.419
+    },
+    {
+        "text": "which is otherwise a very tricky thing to compute, ",
+        "start": 877.206,
+        "duration": 2.561
+    },
+    {
+        "text": "because it's saying all that signed area is the same thing as evaluating rect at zero, ",
+        "start": 879.767,
+        "duration": 4.369
+    },
+    {
+        "text": "which is just one.",
+        "start": 884.136,
+        "duration": 0.904
+    },
+    {
+        "text": "Now, you could complain, surely this just moves the bump under the rug.",
+        "start": 886.14,
+        "duration": 3.2
+    },
+    {
+        "text": "Surely computing this Fourier transform, whatever that looks like, ",
+        "start": 889.7,
+        "duration": 2.803
+    },
+    {
+        "text": "would be as hard as computing the original integral.",
+        "start": 892.503,
+        "duration": 2.177
+    },
+    {
+        "text": "But the idea is that there's lots of tips and tricks for ",
+        "start": 895.04,
+        "duration": 2.674
+    },
+    {
+        "text": "computing these Fourier transforms, and moreover, that when you do, ",
+        "start": 897.714,
+        "duration": 3.19
+    },
+    {
+        "text": "it tells you a lot more information than just that integral.",
+        "start": 900.904,
+        "duration": 2.816
+    },
+    {
+        "text": "You get a lot of bang for your buck out of doing the computation.",
+        "start": 903.88,
+        "duration": 2.5
+    },
+    {
+        "text": "Now, the other key fact that will explain the connection we're hunting for is that if ",
+        "start": 907.2,
+        "duration": 4.039
+    },
+    {
+        "text": "you have two different functions and you take their product, ",
+        "start": 911.239,
+        "duration": 2.865
+    },
+    {
+        "text": "and then you take the sum of the Fourier transform of that product, ",
+        "start": 914.104,
+        "duration": 3.194
+    },
+    {
+        "text": "it will be the same thing as if you individually took the Fourier transforms of your ",
+        "start": 917.298,
+        "duration": 3.993
+    },
+    {
+        "text": "original function and then combined them using a new kind of operation that we'll talk ",
+        "start": 921.291,
+        "duration": 4.086
+    },
+    {
+        "text": "all about in the next video, known as a convolution.",
+        "start": 925.377,
+        "duration": 2.443
+    },
+    {
+        "text": "Now, even though there's a lot to be explained with convolutions, ",
+        "start": 928.5,
+        "duration": 3.302
+    },
+    {
+        "text": "the upshot will be that in our specific case with these rectangular functions, ",
+        "start": 931.802,
+        "duration": 3.952
+    },
+    {
+        "text": "taking a convolution looks just like one of the moving averages that we've been ",
+        "start": 935.754,
+        "duration": 4.003
+    },
+    {
+        "text": "talking about this whole time, combined with our previous fact that integrating in ",
+        "start": 939.757,
+        "duration": 4.153
+    },
+    {
+        "text": "one context looks like evaluating at zero in another context, ",
+        "start": 943.91,
+        "duration": 3.102
+    },
+    {
+        "text": "if you believe me that multiplying in one context corresponds to this new operation, ",
+        "start": 947.012,
+        "duration": 4.252
+    },
+    {
+        "text": "convolutions, which for our example you should just think of as moving averages, ",
+        "start": 951.264,
+        "duration": 4.053
+    },
+    {
+        "text": "that will explain why multiplying more and more of these sinc functions together ",
+        "start": 955.317,
+        "duration": 4.053
+    },
+    {
+        "text": "can be thought about in terms of these progressive moving averages and always ",
+        "start": 959.37,
+        "duration": 3.902
+    },
+    {
+        "text": "evaluating at zero, which in turn gives a really lovely intuition for why you would ",
+        "start": 963.272,
+        "duration": 4.203
+    },
+    {
+        "text": "expect such a stable value before eventually something breaks down as the edges of ",
+        "start": 967.475,
+        "duration": 4.153
+    },
+    {
+        "text": "the plateau inch closer and closer to the center.",
+        "start": 971.628,
+        "duration": 2.452
+    },
+    {
+        "text": "This last key fact, by the way, has a special name.",
+        "start": 975.54,
+        "duration": 2.26
+    },
+    {
+        "text": "It's called the convolution theorem, and again, ",
+        "start": 977.9,
+        "duration": 1.89
+    },
+    {
+        "text": "it's something that we'll go into much more deeply.",
+        "start": 979.79,
+        "duration": 2.01
+    },
+    {
+        "text": "I recognize that it's maybe a little unsatisfying to end things here ",
+        "start": 982.96,
+        "duration": 3.552
+    },
+    {
+        "text": "by laying down three magical facts and saying everything follows from those, ",
+        "start": 986.512,
+        "duration": 3.965
+    },
+    {
+        "text": "but hopefully this gives you a little glimpse of why powerful tools ",
+        "start": 990.477,
+        "duration": 3.502
+    },
+    {
+        "text": "like Fourier transforms can be so useful for tricky problems.",
+        "start": 993.979,
+        "duration": 3.141
+    },
+    {
+        "text": "It's a systematic way to provide a shift in perspective ",
+        "start": 997.6,
+        "duration": 3.283
+    },
+    {
+        "text": "where hard problems can sometimes look easier.",
+        "start": 1000.883,
+        "duration": 2.697
+    },
+    {
+        "text": "If nothing else, it hopefully provides some motivation to ",
+        "start": 1004.04,
+        "duration": 2.253
+    },
+    {
+        "text": "learn about these beautiful things like the convolution theorem.",
+        "start": 1006.293,
+        "duration": 2.487
+    },
+    {
+        "text": "As one more tiny teaser, another fun consequence of this convolution theorem will ",
+        "start": 1009.42,
+        "duration": 4.113
+    },
+    {
+        "text": "be that it opens the doors for an algorithm that lets you compute the product of ",
+        "start": 1013.533,
+        "duration": 4.063
+    },
+    {
+        "text": "two large numbers very quickly, like way faster than you think should be even possible.",
+        "start": 1017.596,
+        "duration": 4.364
+    },
+    {
+        "text": "So with that, I'll see you in the next video.",
+        "start": 1023.0,
+        "duration": 1.599
+    }
+]

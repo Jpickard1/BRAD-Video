@@ -1,0 +1,162 @@
+[
+    {
+        "start": 0.0,
+        "text": "let's get started thank you for joining us here today everyone and um yeah i'm ryan crawford i am a phd student in evans nickens lab and in the snicken lab we use bioinformatics approaches to study the evolution and epidemiology of bacteria and with specific interests into bacteria that affect human health so a little bit of a background on bacterial genomes for those of you who are less familiar bacterial bacteria typically have a single circular haploid chromosome although additional extra chromosomal dna can be present in the form of plasmids they differ really substantially in comparison to eukaryotic genomes and that they're much smaller the organisms that we're going to be discussing today have a genome "
+    },
+    {
+        "start": 61.12,
+        "text": "of about five megabases and the proportion of coding sequences uh is is much higher and in contrast to eukaryotic genomes there's really high correlation between the number of genes and genome size and importantly even within a species of bacteria gene content can vary really substantially which brings us to some important definitions that we're going to be covering throughout the talk um when you think about bacteria there's this idea of a core genome in contrast with an accessory genome so if you look at this venn diagram where each of these ovals represents a genome of a species the intersection of all of these genomes is referred to as the core genome and this typically encodes essential gene families that are "
+    },
+    {
+        "start": 122.799,
+        "text": "used for vital metabolic functions for example dna replication machinery and genes involved in protein synthesis however this is just a fraction of the total number of genes that is present in each genome and these variably present genes within a species are referred to as the accessory genome and these are largely dispensable and may be gained and lost in response to various selective pressures that um an orgasm may be experiencing in its enviro environment and the portion of the genome dedicated to the accessory genome uh can actually be much larger than that of the core genome for many species although this phenomena is variable depending on what species you're talking about and the dominant source of how genes are gained into the accessory "
+    },
+    {
+        "start": 184.56,
+        "text": "genome is called horizontal gene transfer and this involves direct movement of genetic material between two between two cells and so this phenomenon enables really rapid phenotypic evolution because organisms don't need to evolve these functions on their own they can just inherit them from a donor into a recipient and then start expressing those genes and gaining the phenotype and a very clinically important example of this is antibiotic resistance where genes that metabolize antibiotics can be really rapidly spread within microbial communities and so in the snicken lab we think we view these patterns of evolution from a phylogenetic perspective so "
+    },
+    {
+        "start": 246.959,
+        "text": "a phylogenetic tree is how we visualize the uh the evolutionary relationship between organisms so the branch lengths shown on the tree are directly proportional to how related the isolates are through a common ancestor so we use phytogenetic trees to study important phenotypes like i mentioned antibiotic resistance or transmission of bacteria and healthcare settings as an example and for projects i was working on in the lab i really wanted to generate phylogenetic trees for really large numbers of genomes in the range of tens of thousands so existing methods for this um didn't really accommodate all the things we "
+    },
+    {
+        "start": 307.84,
+        "text": "required with respect to reasonable memory usage and runtime additionally i wanted to avoid downloading terabytes upon terabytes of vascu files so using genome assemblies is ideal additionally this enables us to expand our sample size using genomes that are sequenced on different platforms back bio alumina or nanopore for example and additionally i wanted to ex use as many phylogenetic markers as possible in order to build the alignment and tree and for a lot of the organisms that we deal with they are not very well studied so shared marker genes for typical bacterial typing schema which focuses on you know seven a handful of housekeeping genes might not exist "
+    },
+    {
+        "start": 368.72,
+        "text": "for all the species that um we are dealing with and uh traditional methods of this like selecting you know the 16s ribosomal rrna is a commonly used tool for these kind of comparisons but it really has limitations with respect to how many variants you can observe between genomes which is a major limitation because a lot of the genomes that we study are very closely related so commonly used methods for generating alignments which can then be used to build phylogenetic trees as in human genetics involve aligning reeds to a reference genome but selecting an appropriate reference genome for bacteria is a bit of a challenge because as i said earlier there can be so much "
+    },
+    {
+        "start": 430.0,
+        "text": "genetic diversity within a species picking the reference genome for your isolates is not an easy task and additionally even within a species when there are very diverse genomes this can perform really poorly because the scale of the genetic diversity amplifies the probability of mismatched reads there have been previous methods which use k-mer and the minhash algorithm in order to calculate genetic distances between isolates and these are computationally efficient but they can suffer from confounding to the accessory genome so isolates could share a plasmid which is a few hundred kilobases and that which might be nearly identical between two isolates and that would make isolates look more closely related than they actually are "
+    },
+    {
+        "start": 491.599,
+        "text": "and so we wanted to kind of get the best of both worlds and getting an estimation of the genetic distance between organism but additionally we want to produce an alignment which can be leveraged in the future to get insights into molecular evolution and downstream analysis so to this aim we developed cognac which stands for core gene alignment concatenation which we recently published in bmc bioinformatics and to give an overview of how our algorithm works we start with the input assembly and the annotations in the form of gff files so we use the coordinates within the gff files to extract the coding sequences and then we translate the coding sequences so "
+    },
+    {
+        "start": 552.64,
+        "text": "this effectively reduces the size of the sequences which need to be aligned by one third which is important because length is a major contributor to complexity and multiple sequence alignment and additionally we can leverage the redundancy in the codon code and more accurately identify orthogonous genes so when you're looking over very large phylogenetic distances especially the nucleotide sequence isn't very well maintained but the coding sequence itself is well conserved so it's easier to identify the orthologs when using the amino acid sequence and so we use a program called cd-hit to identify our orthogonous genes and what this does is uses a an algorithm to cluster "
+    },
+    {
+        "start": 616.399,
+        "text": "the amino acid sequences by the identity and we provide a link threshold so that we have approximately the same amount of aligned sequence and make sure that you know at least to a certain degree a given gene is still has the same functional capacity and then we parse the cd hit results and identify the core genes from that and by default our algorithm defines core genes as present in 99 of genomes this is important because it allows for some degree of errors that can occur when building an assembly or errors in gene annotation and we also ensure that it's present as a single copy in 99 of genomes so there can be "
+    },
+    {
+        "start": 677.2,
+        "text": "paralogs evolving independently of each other amplifying uh genetic variation and additionally um we make sure that there's at least one variant it wouldn't be a phylogenetic marker if the gene had no variation in it so we then align each gene individually and so for this we um also want to minimize the number of sequences which are included in the alignment because the number of sequences is grows exponentially with each sequence included so [Music] first we identify the unique alleles which we defined as exact string matches so the idea here is that finding identical sequences is computationally "
+    },
+    {
+        "start": 737.2,
+        "text": "efficient but multiple sequence alignment is very complex so if you if the red sequence and the purple sequence are identical then we would only align the red sequence and then um and then we do the alignment with mapped and parse the alignment so that we duplicate the uh replic duplicate the align sequence for any uh alleles which were duplicated uh so generating the alignment for the full set of genomes and then we do this in parallel enabled multi-threading so this can be performed on as many cores as are available and so next the original excuse me the individual gene alignments are concatenated "
+    },
+    {
+        "start": 798.8,
+        "text": "and we also enabled several optional output files um including the ability to reverse translate the amino acid alignment back to dna so the idea here is that you get all of the computational benefits with respect to efficiency that are involved in generating the amino acid alignment but you can amplify the amount of variation produced by redundancy in the codon code to distinguish closely related isolates producing an amino or a codon-aware nucleotide alignment additionally um in our r package we included functions for generating distance matrix matrices and from those distance matrices you can create neighbor joining trees with the eight package and all of that is included as well "
+    },
+    {
+        "start": 863.36,
+        "text": "so to benchmark we selected eight unique genre of clinically relevant bacteria these represent human pathogens which are commonly associated with antibiotic resistance and there were various numbers of genomes available we use the patrick database in order to collect publicly available publicly available genomes which are of good quality or complete and they curate this database so the genomes which are included have reasonable degrees of contiguity as well as presence of essential gene families and there were various or there's a high degree of variability between the number of genomes that are available eshratia for example which includes e coli which includes human commensal bacteria "
+    },
+    {
+        "start": 924.079,
+        "text": "as well as pathogenic variants there were nearly 12 000 genomes available and then for genomes which are or genre that are less studied corrally back there for example there are only 24 genomes available so first we look at runtime shown here in minutes on the y-axis and then the number of genomes is on the x-axis we were very happy that our algorithm finished in less than a day even for these really large data sets with greater than 10 000 genomes and runtime scaled linearly as the number of genomes increased we then wanted to look at runtime as a function of each step so in the spar plots shows the run time for each genus "
+    },
+    {
+        "start": 986.24,
+        "text": "klebsiella again took the longest has a fraction of the total run time aligning genes was the longest step for every um run that we did with the exception of pseudomonas where finding the arthrologous genes had the higher fraction of time devoted to it this is because pseudomonas has a larger genome size and a greater accessory juno variation within the individual genomes next we wanted to look at how much how much effort was saved by only aligning the unique alleles for each gene so in these bar plots each each position along the x-axis is an individual gene and the y-axis is the number of "
+    },
+    {
+        "start": 1049.52,
+        "text": "unique alleles as a fraction of the number of genomes so if every genome had a unique allele for that gene it would be one if there was if there were no unique alleles it's zero so sorry there's a dog barking in the background um so if so for um at the high end pluralebacter had a single gene which had 80 unique alleles but when you take the median value so the so the middle of each of these curves and then plot plotted against a number of genomes you can observe this really stark inverse relationship where e coli and klebsiella each only have about one percent of the alleles being unique um relative to the number of genomes "
+    },
+    {
+        "start": 1109.76,
+        "text": "so uh you're really saving yourself a lot of effort by not aligning all of those redundant sequences and it just shows that because bacteria are related clonally adding an additional genome really doesn't increase the amount of sequence space to to a high degree at all so i next want to illustrate a couple of uh projects that we've used this for in the lab so the first project we applied our algorithm to was to analyze the distribution of capsule genes and the bacterialitis phylum so bacteria can have a capsule made of complex carbi complex carbohydrates surrounding the outside of the cell and these can vary depending on "
+    },
+    {
+        "start": 1173.28,
+        "text": "the specific bacteria and individual bacteria can produce a number of different carbohydrates so we worked with the martin's lab to show the distribution and the number of loci which encode these capsular polysaccharides throughout the phylum bacterias so even over this incredibly large phylogenetic distance of phylum we were able to find conserved core genes and then make this maximum likelihood tree additionally we have scaled up a bit since then and um we can now have where we now have assembled a data set of over or nearly 16 000 genomes and even at this really high level our our run finishes in less than 24 hours so now in future projects we are "
+    },
+    {
+        "start": 1236.32,
+        "text": "using this data set to integrate how antibiotic resistance genes spread across geographically regions and have evolved over time and so as i mentioned earlier we not only wanted to get an idea of genetic distances but we also wanted to produce an alignment that can be used further to study molecular evolution so our first case study of this was another collaboration with eric martin's lab and they were interested in how human gut bacteria can diversify their phenotypes in response to chaining changing environments and the various kinds of metabolites which they can use as a food source so if you are unfamiliar with "
+    },
+    {
+        "start": 1299.2,
+        "text": "the microbiome for whole there are symbiotic bacteria that live in your gut and these are actually responsible for a majority of the digestion of metabolites generally but specifically complex carbohydrates are are of interest here and they had measured the ability of a data set of over 350 bacteria to grow on 45 different metabolites and they notice that very closely related bacteria can have really different metabolic profiles with respect to their metabolism so they came to us to see if we could identify specific genomic events that may have helped shape their metabolism and how these these events were happening so "
+    },
+    {
+        "start": 1361.919,
+        "text": "one major way that horizontal gene transfer happens in bacteria is recombination of donor sequences into loci in a recipient genome so if we see this donor sequence in yellow and the recipient sequence shown in red they can share common genes which facilitate recombination into that locus and additionally there might be other genes involved in this horizontal gene transfer event which then expand the pan genome so new metabolic functions may arise due to events such as this and so we wanted to look at a data set of genomes and see if we could identify any loci which exhibited this pattern of variation so a brief overview of our pipeline "
+    },
+    {
+        "start": 1423.6,
+        "text": "we first identified core genes with cognac and created the concatenated gene alignment we then partitioned that alignment and built the individual gene trees and then we wanted to identify specific bean trees that did that exhibit patterns of horizontal gene transfer and then see if there were any loci where there had been pan genome duplication events at a locust that exhibited patterns of hdt so to do this we collected a data set of bacteroides xylene solvent and obatis and this is a maximum likelihood trees shown here and you can see that the two species exhibit clear clustering on the tree with xylene or sullivan shown in red and "
+    },
+    {
+        "start": 1485.36,
+        "text": "obatis shown in blue and if individual genes were all evolving independently of each other the individual gene trees would share the same pattern of variation and respect and reflect the species tree but there are many instances where this is not the case so we identified these uh a simple approach for each individual allele of a gene we would calculate the distance to all of the members of the same species and then take the median value there and then do the same for all the members of the opposite species take the median value and then we can plot these out in two dimensions to show any instances where um the distance uh to the same species is higher than "
+    },
+    {
+        "start": 1547.84,
+        "text": "expected and the distance of the opposite species is lower than expected so each point in this figure represents an allele of a gene and the distance or the median distance to the ovaris alleles they're shown on the y-axis and xylenosultanes on the x-axis and as you can see the lower and upper half of the plots are mostly blue and red respectively showing that typically genes have a closer identity to the same species relative to the opposite however there are many cases where this is not the case so we kind of picked up the genes that are obviously exhibiting patterns which may indicate horizontal gene transfer as above a threshold of a distance threshold of 0.1 "
+    },
+    {
+        "start": 1610.159,
+        "text": "and then we um looked at the specific coordinates that these uh genes occur um on the chromosome to find cases where the the locus shared the same composition with the genes in the exact same order so perfectly synthetic and collinear between genomes of the opposite species and then once we identified these gloci we could find genes that do not occur in absence of evidence of hgt so one such locus was of particular interest this figure is a little bit complicated so let me walk you through it step by step each column in this heat map represents a genome and the genomes are sorted by the tip labels of the phylogenetic tree i showed earlier "
+    },
+    {
+        "start": 1670.559,
+        "text": "again clear clustering with the thylani solvents on the left-hand side and obadis on the right and then each row in this heat map represented gene and the colors indicate various types of genes core genes are shown in shades of red to blue um the alleles that in core jeans which are more similar to xylana sullivan's are shown in brighter shades red and more like biobodis are shown in darker shades of blue genes which are absent in a given genome are in light gray and genes which are present are shown in dark gray and hdt genes which only occur in species with evidence of hbt and the core genes are shown in light blue and the order of the rose here is reflective of the order "
+    },
+    {
+        "start": 1733.2,
+        "text": "of the genes on the chromosome in which the hdt event occurred however genes can be present at different loci so in every genome this order is not maintained however genes can still be present at a different locus so what we observed here is um a horizontal gene transfer which we hypothesize came from the ancestor of the xylene xylenosolvins into obadis so not only the was there one gene which we identified as being likely transferred between these two species but several of them which all line up all across the chromosome and additionally these accessory genes here which are um able to which is a locus which degrades "
+    },
+    {
+        "start": 1794.0,
+        "text": "a complex polysaccharide called mannins which is present in the cell wall of grapes for example appears to have been donated along with these hdt genes however it seems to have been lost in some of these uh opotus strains and our collaborator eric was really happy to see this because they had actually done genetics on um man in degradation in uh ovatis previously and um we're really interested to see that we could actually identify horizontal gene transfer between these two species as a source of that of that phenotype so conclusions we have developed pontiac which "
+    },
+    {
+        "start": 1854.96,
+        "text": "is a robust and rapid method for generating concatenated gene alignments and we're able to build it in a way which enables it to scale to extremely large data sets and still maintain reasonable memory usage and runtime and additionally developed a data-driven approach for finding phylogenetic markers that are common to a given data set and we were able to use several algorithmic tricks which enable us to minimize um or in order to which enable us to maintain efficiency and um we were using this in the lab for many different applications and yeah hopefully useful in the in the future "
+    },
+    {
+        "start": 1914.96,
+        "text": "and additionally we can use these alignments to study molecular evolution and use the sequence variation in the concatenated gene alignment to identify hgt-loci and applied close to a data set of xylenosulfins in a lot of genomes so for future directions i want to package up the functions that i wrote for the http project as an r package and um a weakness of the uh the setup as it currently exists at is that it's really just built to compare two distance matrices with uh the distance for each allele um in each genome and just do those two species comparison however this is really an underrepresentation they're you know "
+    },
+    {
+        "start": 1977.76,
+        "text": "multitude of sequence species of bacteria so it would uh be ideal to set this up or you could do multiple species comparisons and find minimum so you could set it up similarly to a tensor where you have genes genomes and species and then you can imagine looking through the tensor and seeing areas where there are minimums which might correspond to horizontal transfer between two species or two different pilot groups even sequence types within the same species and ultimately i'd like to apply this to study uh the natural evolution or the natural history of epidemic lineages of bacteria specifically we're interested in klebsiella pneumoniae st-258 which was first identified "
+    },
+    {
+        "start": 2038.96,
+        "text": "in the 90s and and has since spread acro across the globe and is strongly associated with antibiotic resistance and morbidity and mortality globally and i ideally would like to use this to look at the genomes how they've evolved over time and identify loci which have high rates of genome transfer and or potentially are maintained as the organism is spread globally and are there any patterns of variation you know are there specific species which uh share genes more often or appear to have an origin from a second species and have been maintained over time so i'd like to thank the snicken lab "
+    },
+    {
+        "start": 2099.62,
+        "text": "[Music] everyone is great and it's a great place to work also the martins lab my collaborators on the hgt project eric and nick as well as my committee i'd like to thank the nih and the national institute of allergy and infectious disease for funding as well as the university of michigan bioinformatics training grant and with that i can take any questions if anyone has any questions you can feel free to either unmute yourself and ask or put them in the chat box and we can answer them from there "
+    },
+    {
+        "start": 2167.76,
+        "text": "all right looks like a question just came in uh so ryan i will read this to you so um your benchmarking included human-related species any predictions if looking more or any predictions of looking more at environmental species um yeah we haven't we haven't applied um these to any kind of environmental isolates but um i would i would imagine that it would work um just as well there are um you know obviously fundamental genes which are found across these human species as well as a pseudomonas so that's incredibly large phylogenetic distances we can still find uh shared core genes there so yeah i would imagine gene annotation algorithms would perform well on these at least in "
+    },
+    {
+        "start": 2227.92,
+        "text": "finding core genes there might be additional functions there which are not as well annotated but um yeah it should uh it should perform uh on those kind of data sets as well great ryan there's another question that came in chat so i'll read that one too it says hi ryan excellent talk wondering if you have predictions about using this tool set on actinomycities i know them to have very complex genomes and interesting hgt events um i'm not familiar with those isolates actually um so yeah i really apparently sorry they're apparently soil bacteria soil bacteria okay um yeah i mean i like i said i would i would imagine it to be generalizable to those kind of bacteria and yeah would be very interesting to see "
+    },
+    {
+        "start": 2289.52,
+        "text": "what kind of functions are horizontally transferred in that environment as well does anyone else have any other questions [Music] hi ryan uh so you showed the runtime slide right where you show a linear scaling with genome sizes yep that's right so um so apart from cd hit what all softwares did you use to get those graphs uh so the yeah the only dependencies there are uh cd hit and then maft performs the uh alignments okay so yeah just those two dependencies okay and what "
+    },
+    {
+        "start": 2350.8,
+        "text": "sequencing technology did you use on your input dataset velocity illumina nanopore um so it's a mixture of all of them okay um yeah okay and one one last question um so did you face any not worthy uh system memory issues like depending on the compute machines that you worked on um so yeah i've i've run this on um my computer which runs ubuntu as well as great lakes which is centos and uh nope haven't had any problems yet um but yeah i haven't tested it on a limit or on a mac environment or anything like that so all i can say is there have been no problems on uh on linux so far okay and and your linux was a laptop right yeah okay okay thank you so much "
+    },
+    {
+        "start": 2419.28,
+        "text": "so maybe we'll just give it another minute or two in case anyone else has questions again please feel free to either unmute yourself and ask your question or put it in the chat box and i can read it to brian all right well i don't uh see or hear any other questions so i would like to thank ryan for um giving such a great presentation today and taking the time and i'd like to thank everyone who uh attended for joining us today and hopefully i will see everyone here next week when we will learn about fseq 2 improving the feature density based peak color with dynamic statistics so thanks everyone "
+    }
+]

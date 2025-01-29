@@ -1,0 +1,732 @@
+[
+    {
+        "text": "Hello, hello again.",
+        "start": 11.98,
+        "duration": 1.02
+    },
+    {
+        "text": "So moving forward, I'll be assuming that you have a visual understanding ",
+        "start": 13.52,
+        "duration": 3.006
+    },
+    {
+        "text": "of linear transformations and how they're represented with matrices, ",
+        "start": 16.526,
+        "duration": 2.842
+    },
+    {
+        "text": "the way that I've been talking about in the last few videos.",
+        "start": 19.368,
+        "duration": 2.472
+    },
+    {
+        "text": "If you think about a couple of these linear transformations, ",
+        "start": 22.66,
+        "duration": 3.134
+    },
+    {
+        "text": "you might notice how some of them seem to stretch space out, while others squish it on in.",
+        "start": 25.794,
+        "duration": 4.626
+    },
+    {
+        "text": "One thing that turns out to be pretty useful for understanding one of these ",
+        "start": 31.14,
+        "duration": 3.814
+    },
+    {
+        "text": "transformations is to measure exactly how much it stretches or squishes things.",
+        "start": 34.954,
+        "duration": 3.966
+    },
+    {
+        "text": "More specifically, to measure the factor by which ",
+        "start": 39.52,
+        "duration": 3.15
+    },
+    {
+        "text": "the area of a given region increases or decreases.",
+        "start": 42.67,
+        "duration": 3.15
+    },
+    {
+        "text": "For example, look at the matrix with columns 3, 0 and 0, 2.",
+        "start": 47.18,
+        "duration": 3.7
+    },
+    {
+        "text": "It scales i-hat by a factor of 3 and scales j-hat by a factor of 2.",
+        "start": 51.32,
+        "duration": 4.86
+    },
+    {
+        "text": "Now, if we focus our attention on the 1 by 1 square whose bottom sits on i-hat and whose ",
+        "start": 56.7,
+        "duration": 5.502
+    },
+    {
+        "text": "left side sits on j-hat, after the transformation, this turns into a 2 by 3 rectangle.",
+        "start": 62.202,
+        "duration": 5.318
+    },
+    {
+        "text": "Since this region started out with area 1 and ended up with area 6, ",
+        "start": 68.38,
+        "duration": 4.261
+    },
+    {
+        "text": "we can say the linear transformation has scaled its area by a factor of 6.",
+        "start": 72.641,
+        "duration": 4.639
+    },
+    {
+        "text": "Compare that to a shear, whose matrix has columns 1, 0 and 1, ",
+        "start": 78.18,
+        "duration": 3.992
+    },
+    {
+        "text": "1, meaning i-hat stays in place and j-hat moves over to 1, 1.",
+        "start": 82.172,
+        "duration": 3.928
+    },
+    {
+        "text": "That same unit square determined by i-hat and j-hat gets slanted ",
+        "start": 87.0,
+        "duration": 3.661
+    },
+    {
+        "text": "and turned into a parallelogram, but the area of that parallelogram is still 1, ",
+        "start": 90.661,
+        "duration": 4.507
+    },
+    {
+        "text": "since its base and height each continue to have length 1.",
+        "start": 95.168,
+        "duration": 3.212
+    },
+    {
+        "text": "So even though this transformation smushes things about, ",
+        "start": 99.18,
+        "duration": 2.719
+    },
+    {
+        "text": "it seems to leave areas unchanged, at least in the case of that 1 unit square.",
+        "start": 101.899,
+        "duration": 3.721
+    },
+    {
+        "text": "Actually though, if you know how much the area of that one single unit square changes, ",
+        "start": 106.82,
+        "duration": 4.851
+    },
+    {
+        "text": "it can tell you how the area of any possible region in space changes.",
+        "start": 111.671,
+        "duration": 3.849
+    },
+    {
+        "text": "For starters, notice that whatever happens to one square in the grid ",
+        "start": 116.3,
+        "duration": 3.72
+    },
+    {
+        "text": "has to happen to any other square in the grid, no matter the size.",
+        "start": 120.02,
+        "duration": 3.56
+    },
+    {
+        "text": "This follows from the fact that grid lines remain parallel and evenly spaced.",
+        "start": 124.34,
+        "duration": 3.699
+    },
+    {
+        "text": "Then, any shape that's not a grid square can be approximated by grid squares pretty well, ",
+        "start": 128.759,
+        "duration": 4.808
+    },
+    {
+        "text": "with arbitrarily good approximations if you use small enough grid squares.",
+        "start": 133.567,
+        "duration": 3.953
+    },
+    {
+        "text": "So, since the areas of all those tiny grid squares are being scaled by some single ",
+        "start": 137.52,
+        "duration": 5.028
+    },
+    {
+        "text": "amount, the area of the blob as a whole will also be scaled by that same single amount.",
+        "start": 142.548,
+        "duration": 5.272
+    },
+    {
+        "text": "This very special scaling factor, the factor by which a linear transformation ",
+        "start": 148.9,
+        "duration": 4.421
+    },
+    {
+        "text": "changes any area, is called the determinant of that transformation.",
+        "start": 153.321,
+        "duration": 3.799
+    },
+    {
+        "text": "I'll show how to compute the determinant of a transformation ",
+        "start": 159.12,
+        "duration": 2.924
+    },
+    {
+        "text": "using its matrix later on in this video, but understanding what it represents is, ",
+        "start": 162.044,
+        "duration": 3.931
+    },
+    {
+        "text": "trust me, much more important than the computation.",
+        "start": 165.975,
+        "duration": 2.445
+    },
+    {
+        "text": "For example, the determinant of a transformation would be 3 if ",
+        "start": 169.58,
+        "duration": 3.587
+    },
+    {
+        "text": "that transformation increases the area of a region by a factor of 3.\n40\n00:02:57,610 --> 00:02:57,040\nThe determinant of a transformation would be \u00bd \n41\n00:02:58,180 --> 00:02:57,610\nif it squishes down all areas by a factor of \u00bd.",
+        "start": 173.167,
+        "duration": 3.873
+    },
+    {
+        "text": "The determinant of a transformation would be 1 half if it squishes down ",
+        "start": 178.18,
+        "duration": 4.968
+    },
+    {
+        "text": "all areas by a factor of 1 half. And the determinant of a 2D transformation ",
+        "start": 183.148,
+        "duration": 5.245
+    },
+    {
+        "text": "is 0 if it squishes all of space onto a line, or even onto a single point.",
+        "start": 188.393,
+        "duration": 5.107
+    },
+    {
+        "text": "Since then, the area of any region would become zero.",
+        "start": 194.0,
+        "duration": 2.76
+    },
+    {
+        "text": "That last example will prove to be pretty important.",
+        "start": 197.62,
+        "duration": 1.98
+    },
+    {
+        "text": "It means that checking if the determinant of a given matrix is zero ",
+        "start": 200.02,
+        "duration": 3.24
+    },
+    {
+        "text": "will give a way of computing whether or not the transformation ",
+        "start": 203.26,
+        "duration": 3.001
+    },
+    {
+        "text": "associated with that matrix squishes everything into a smaller dimension.",
+        "start": 206.261,
+        "duration": 3.479
+    },
+    {
+        "text": "You'll see in the next few videos why this is even a useful thing to think about, ",
+        "start": 210.52,
+        "duration": 3.758
+    },
+    {
+        "text": "but for now, I just want to lay down all of the visual intuition, ",
+        "start": 214.278,
+        "duration": 3.025
+    },
+    {
+        "text": "which, in and of itself, is a beautiful thing to think about.",
+        "start": 217.303,
+        "duration": 2.797
+    },
+    {
+        "text": "Okay, I need to confess that what I've said so far is not quite right.",
+        "start": 222.12,
+        "duration": 3.44
+    },
+    {
+        "text": "The full concept of the determinant allows for negative values.",
+        "start": 225.88,
+        "duration": 3.4
+    },
+    {
+        "text": "But what would the idea of scaling an area by a negative amount even mean?",
+        "start": 229.72,
+        "duration": 3.76
+    },
+    {
+        "text": "This has to do with the idea of orientation.",
+        "start": 234.94,
+        "duration": 2.02
+    },
+    {
+        "text": "For example, notice how this transformation gives the sensation of flipping space over.",
+        "start": 237.8,
+        "duration": 4.88
+    },
+    {
+        "text": "If you were thinking of 2D space as a sheet of paper, ",
+        "start": 243.24,
+        "duration": 2.648
+    },
+    {
+        "text": "a transformation like that one seems to turn over that sheet onto the other side.",
+        "start": 245.888,
+        "duration": 3.972
+    },
+    {
+        "text": "Any transformations that do this are said to invert the orientation of space.",
+        "start": 250.64,
+        "duration": 4.4
+    },
+    {
+        "text": "Another way to think about it is in terms of i-hat and j-hat.",
+        "start": 255.84,
+        "duration": 2.76
+    },
+    {
+        "text": "Notice that in their starting positions, j-hat is to the left of i-hat.",
+        "start": 259.16,
+        "duration": 3.9
+    },
+    {
+        "text": "If, after a transformation, j-hat is now on the right of i-hat, ",
+        "start": 263.62,
+        "duration": 3.935
+    },
+    {
+        "text": "the orientation of space has been inverted.",
+        "start": 267.555,
+        "duration": 2.645
+    },
+    {
+        "text": "Whenever this happens, whenever the orientation of space is inverted, ",
+        "start": 272.12,
+        "duration": 3.031
+    },
+    {
+        "text": "the determinant will be negative.",
+        "start": 275.151,
+        "duration": 1.429
+    },
+    {
+        "text": "The absolute value of the determinant, though, ",
+        "start": 277.46,
+        "duration": 2.19
+    },
+    {
+        "text": "still tells you the factor by which areas have been scaled.",
+        "start": 279.65,
+        "duration": 2.75
+    },
+    {
+        "text": "For example, the matrix with columns 1, 1 and 2, ",
+        "start": 283.02,
+        "duration": 2.719
+    },
+    {
+        "text": "negative 1 encodes a transformation that has determinant, I'll just tell you, negative 3.",
+        "start": 285.739,
+        "duration": 4.941
+    },
+    {
+        "text": "And what this means is that space gets flipped over and areas are scaled by a factor of 3.",
+        "start": 291.46,
+        "duration": 4.82
+    },
+    {
+        "text": "So why would this idea of a negative area scaling ",
+        "start": 297.78,
+        "duration": 2.766
+    },
+    {
+        "text": "factor be a natural way to describe orientation flipping?",
+        "start": 300.546,
+        "duration": 3.154
+    },
+    {
+        "text": "Think about the series of transformations you get by ",
+        "start": 304.26,
+        "duration": 2.967
+    },
+    {
+        "text": "slowly letting i-hat get closer and closer to j-hat.",
+        "start": 307.227,
+        "duration": 2.913
+    },
+    {
+        "text": "As i-hat gets closer, all of the areas in space are getting squished more and more, ",
+        "start": 310.72,
+        "duration": 4.429
+    },
+    {
+        "text": "meaning the determinant approaches 0.",
+        "start": 315.149,
+        "duration": 1.951
+    },
+    {
+        "text": "Once i-hat lines up perfectly with j-hat, the determinant is 0.",
+        "start": 317.82,
+        "duration": 3.82
+    },
+    {
+        "text": "Then, if i-hat continues the way that it was going, ",
+        "start": 322.44,
+        "duration": 2.387
+    },
+    {
+        "text": "doesn't it kind of feel natural for the determinant to keep decreasing into ",
+        "start": 324.827,
+        "duration": 3.488
+    },
+    {
+        "text": "the negative numbers?",
+        "start": 328.315,
+        "duration": 0.965
+    },
+    {
+        "text": "So that's the understanding of determinants in two dimensions.",
+        "start": 330.68,
+        "duration": 2.88
+    },
+    {
+        "text": "What do you think it should mean for three dimensions?",
+        "start": 333.56,
+        "duration": 2.38
+    },
+    {
+        "text": "It also tells you how much a transformation scales things, ",
+        "start": 336.92,
+        "duration": 3.242
+    },
+    {
+        "text": "but this time, it tells you how much volumes get scaled.",
+        "start": 340.162,
+        "duration": 3.078
+    },
+    {
+        "text": "Just as in two dimensions, where this is easiest to think about by focusing ",
+        "start": 345.34,
+        "duration": 4.437
+    },
+    {
+        "text": "on one particular square with an area 1 and watching only what happens to it, ",
+        "start": 349.777,
+        "duration": 4.554
+    },
+    {
+        "text": "in three dimensions, it helps to focus your attention on the specific 1 by 1 ",
+        "start": 354.331,
+        "duration": 4.496
+    },
+    {
+        "text": "by 1 cube whose edges are resting on the basis vectors, i-hat, j-hat and k-hat.",
+        "start": 358.827,
+        "duration": 4.613
+    },
+    {
+        "text": "After the transformation, that cube might get warped into some kind of slanty slanty cube.",
+        "start": 364.32,
+        "duration": 4.98
+    },
+    {
+        "text": "This shape, by the way, has the best name ever, parallelipiped, ",
+        "start": 370.34,
+        "duration": 2.912
+    },
+    {
+        "text": "a name that's made even more delightful when your professor has a nice thick ",
+        "start": 373.252,
+        "duration": 3.505
+    },
+    {
+        "text": "Russian accent.",
+        "start": 376.757,
+        "duration": 0.683
+    },
+    {
+        "text": "Since this cube starts out with a volume of 1, ",
+        "start": 378.52,
+        "duration": 2.554
+    },
+    {
+        "text": "and the determinant gives the factor by which any volume is scaled, ",
+        "start": 381.074,
+        "duration": 3.696
+    },
+    {
+        "text": "you can think of the determinant simply as being the volume of that ",
+        "start": 384.77,
+        "duration": 3.696
+    },
+    {
+        "text": "parallelipiped that the cube turns into.",
+        "start": 388.466,
+        "duration": 2.174
+    },
+    {
+        "text": "A determinant of 0 would mean that all of space is squished onto something with 0 volume, ",
+        "start": 392.38,
+        "duration": 5.145
+    },
+    {
+        "text": "meaning either a flat plane, a line, or, in the most extreme case, onto a single point.",
+        "start": 397.525,
+        "duration": 4.975
+    },
+    {
+        "text": "Those of you who watched chapter 2 will recognize this as ",
+        "start": 403.76,
+        "duration": 2.648
+    },
+    {
+        "text": "meaning that the columns of the matrix are linearly dependent.",
+        "start": 406.408,
+        "duration": 2.832
+    },
+    {
+        "text": "Can you see why?",
+        "start": 409.76,
+        "duration": 0.66
+    },
+    {
+        "text": "What about negative determinants?",
+        "start": 414.92,
+        "duration": 1.72
+    },
+    {
+        "text": "What should that mean for three dimensions?",
+        "start": 416.78,
+        "duration": 1.32
+    },
+    {
+        "text": "One way to describe orientation in 3D is with the right hand rule.",
+        "start": 418.78,
+        "duration": 3.9
+    },
+    {
+        "text": "Point the forefinger of your right hand in the direction of i-hat, ",
+        "start": 423.3,
+        "duration": 3.185
+    },
+    {
+        "text": "stick out your middle finger in the direction of j-hat, ",
+        "start": 426.485,
+        "duration": 2.662
+    },
+    {
+        "text": "and notice how when you point your thumb up, it's in the direction of k-hat.",
+        "start": 429.147,
+        "duration": 3.613
+    },
+    {
+        "text": "If you can still do that after the transformation, ",
+        "start": 434.88,
+        "duration": 2.741
+    },
+    {
+        "text": "orientation has not changed, and the determinant is positive.",
+        "start": 437.621,
+        "duration": 3.279
+    },
+    {
+        "text": "Otherwise, if after the transformation it only makes sense to do that with ",
+        "start": 441.54,
+        "duration": 3.843
+    },
+    {
+        "text": "your left hand, orientation has been flipped, and the determinant is negative.",
+        "start": 445.383,
+        "duration": 3.997
+    },
+    {
+        "text": "So, if you haven't seen it before, you're probably wondering by now, ",
+        "start": 451.9,
+        "duration": 3.138
+    },
+    {
+        "text": "how do you actually compute the determinant?",
+        "start": 455.038,
+        "duration": 2.002
+    },
+    {
+        "text": "For a 2x2 matrix with entries a, b, c, d, the formula is a times d minus b times c.",
+        "start": 457.56,
+        "duration": 6.86
+    },
+    {
+        "text": "Here's part of an intuition for where this formula comes from.",
+        "start": 465.74,
+        "duration": 2.76
+    },
+    {
+        "text": "Let's say that the terms b and c both happened to be 0.",
+        "start": 468.88,
+        "duration": 2.9
+    },
+    {
+        "text": "Then, the term a tells you how much i-hat is stretched in the x direction, ",
+        "start": 471.78,
+        "duration": 4.785
+    },
+    {
+        "text": "and the term d tells you how much j-hat is stretched in the y direction.",
+        "start": 476.565,
+        "duration": 4.595
+    },
+    {
+        "text": "So, since those other terms are 0, it should make sense that a ",
+        "start": 482.76,
+        "duration": 3.442
+    },
+    {
+        "text": "times d gives the area of the rectangle that our favorite unit square turns into, ",
+        "start": 486.202,
+        "duration": 4.48
+    },
+    {
+        "text": "kind of like the 3, 0, 0, 2 example from earlier.",
+        "start": 490.682,
+        "duration": 2.678
+    },
+    {
+        "text": "Even if only one of b or c are 0, you'll have ",
+        "start": 495.36,
+        "duration": 3.235
+    },
+    {
+        "text": "a parallelogram with a base a and a height d.",
+        "start": 498.595,
+        "duration": 3.165
+    },
+    {
+        "text": "So, the area should still be a times d.",
+        "start": 501.78,
+        "duration": 2.72
+    },
+    {
+        "text": "Loosely speaking, if both b and c are non-zero, ",
+        "start": 505.46,
+        "duration": 2.962
+    },
+    {
+        "text": "then that b times c term tells you how much this parallelogram is stretched or ",
+        "start": 508.422,
+        "duration": 4.877
+    },
+    {
+        "text": "squished in the diagonal direction.",
+        "start": 513.299,
+        "duration": 2.161
+    },
+    {
+        "text": "For those of you hungry for a more precise description of this b times c term, ",
+        "start": 516.659,
+        "duration": 3.561
+    },
+    {
+        "text": "here's a helpful diagram if you'd like to pause and ponder.",
+        "start": 520.22,
+        "duration": 2.66
+    },
+    {
+        "text": "Now, if you feel like computing determinants by hand is something that you need to know, ",
+        "start": 523.98,
+        "duration": 4.255
+    },
+    {
+        "text": "the only way to get it down is to just practice it with a few.",
+        "start": 528.235,
+        "duration": 2.965
+    },
+    {
+        "text": "There's really not that much I can say or animate ",
+        "start": 531.2,
+        "duration": 2.186
+    },
+    {
+        "text": "that's going to drill in the computation.",
+        "start": 533.386,
+        "duration": 1.794
+    },
+    {
+        "text": "This is all triply true for three-dimensional determinants.",
+        "start": 536.12,
+        "duration": 2.52
+    },
+    {
+        "text": "There is a formula, and if you feel like that's something you need to know, ",
+        "start": 539.04,
+        "duration": 3.302
+    },
+    {
+        "text": "you should practice with a few matrices, or, you know, ",
+        "start": 542.342,
+        "duration": 2.39
+    },
+    {
+        "text": "go watch Sal Khan work through a few.",
+        "start": 544.732,
+        "duration": 1.608
+    },
+    {
+        "text": "Honestly, though, I don't think that those computations fall within ",
+        "start": 547.24,
+        "duration": 3.15
+    },
+    {
+        "text": "the essence of linear algebra, but I definitely think that ",
+        "start": 550.39,
+        "duration": 2.734
+    },
+    {
+        "text": "understanding what the determinant represents falls within that essence.",
+        "start": 553.124,
+        "duration": 3.336
+    },
+    {
+        "text": "Here's kind of a fun question to think about before the next video.",
+        "start": 558.06,
+        "duration": 2.58
+    },
+    {
+        "text": "If you multiply two matrices together, the determinant of the resulting matrix ",
+        "start": 560.64,
+        "duration": 4.811
+    },
+    {
+        "text": "is the same as the product of the determinants of the original two matrices.",
+        "start": 565.451,
+        "duration": 4.629
+    },
+    {
+        "text": "If you tried to justify this with numbers, it would take a really long time, ",
+        "start": 571.1,
+        "duration": 3.575
+    },
+    {
+        "text": "but see if you can explain why this makes sense in just one sentence.",
+        "start": 574.675,
+        "duration": 3.205
+    },
+    {
+        "text": "Next up, I'll be relating the idea of linear transformations covered so far to one of ",
+        "start": 582.0,
+        "duration": 4.717
+    },
+    {
+        "text": "the areas where linear algebra is most useful, linear systems of equations. See you then!",
+        "start": 586.717,
+        "duration": 4.883
+    }
+]

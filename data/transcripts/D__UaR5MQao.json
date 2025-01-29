@@ -1,0 +1,367 @@
+[
+    {
+        "text": "Not infected yet, infected and contagious but with no symptoms, ",
+        "start": 3.757,
+        "duration": 3.758
+    },
+    {
+        "text": "and infected, contagious and showing symptoms.",
+        "start": 7.515,
+        "duration": 2.702
+    },
+    {
+        "text": "If you have widespread testing, you can get people ",
+        "start": 10.877,
+        "duration": 2.576
+    },
+    {
+        "text": "to self-isolate as soon as they show symptoms.",
+        "start": 13.453,
+        "duration": 2.324
+    },
+    {
+        "text": "The problem is that the virus still spreads because of all the ",
+        "start": 16.257,
+        "duration": 2.972
+    },
+    {
+        "text": "contacts that happened while people are contagious but asymptomatic.",
+        "start": 19.229,
+        "duration": 3.208
+    },
+    {
+        "text": "However, if when someone shows symptoms and tests positive, you isolate not only them, ",
+        "start": 23.177,
+        "duration": 4.576
+    },
+    {
+        "text": "but everyone they've been in contact with, you're staying one step ahead of the virus.",
+        "start": 27.753,
+        "duration": 4.524
+    },
+    {
+        "text": "The old-school way to do this is with interviews, but that's slow, ",
+        "start": 33.097,
+        "duration": 3.585
+    },
+    {
+        "text": "it's inefficient, and frankly it's quite the intrusion on people's privacy.",
+        "start": 36.682,
+        "duration": 4.015
+    },
+    {
+        "text": "Another approach in the modern world would be to ask people who've ",
+        "start": 41.517,
+        "duration": 3.149
+    },
+    {
+        "text": "tested positive to forfeit all the geolocation information from their phones, ",
+        "start": 44.666,
+        "duration": 3.668
+    },
+    {
+        "text": "and then to track down the people who've been in those same spots.",
+        "start": 48.334,
+        "duration": 3.103
+    },
+    {
+        "text": "But now we're well into big brother territory, ",
+        "start": 51.997,
+        "duration": 2.567
+    },
+    {
+        "text": "so do we have to sacrifice privacy for health?",
+        "start": 54.564,
+        "duration": 2.513
+    },
+    {
+        "text": "Well, I'll just let Nicky's illustration speak for itself here.",
+        "start": 57.777,
+        "duration": 2.82
+    },
+    {
+        "text": "There are several clever algorithms that let you alert everybody ",
+        "start": 61.297,
+        "duration": 3.416
+    },
+    {
+        "text": "who's recently been in contact with someone who tests positive for COVID-19, ",
+        "start": 64.713,
+        "duration": 4.047
+    },
+    {
+        "text": "but without compromising the privacy of anybody involved.",
+        "start": 68.76,
+        "duration": 2.997
+    },
+    {
+        "text": "Side note here, I found this very surprising.",
+        "start": 72.557,
+        "duration": 2.34
+    },
+    {
+        "text": "I know it shouldn't have been, since I've gone through this dance many times ",
+        "start": 75.357,
+        "duration": 3.772
+    },
+    {
+        "text": "of thinking something's impossible only to see that cryptography makes it ",
+        "start": 79.129,
+        "duration": 3.625
+    },
+    {
+        "text": "actually possible, but I would not blame anybody at all for assuming that ",
+        "start": 82.754,
+        "duration": 3.625
+    },
+    {
+        "text": "downloading an app that can alert everybody you've been in contact with must ",
+        "start": 86.379,
+        "duration": 3.772
+    },
+    {
+        "text": "necessarily be tracking and revealing your location and a lot of other information.",
+        "start": 90.151,
+        "duration": 4.065
+    },
+    {
+        "text": "The code for these apps is entirely open, so you don't have to trust me or whoever ",
+        "start": 95.097,
+        "duration": 4.569
+    },
+    {
+        "text": "wrote the app or Nicky or anyone to believe it's doing what it really claims to be doing.",
+        "start": 99.666,
+        "duration": 4.901
+    },
+    {
+        "text": "Anyway, back to the post.",
+        "start": 105.227,
+        "duration": 1.36
+    },
+    {
+        "text": "Let's see how this works with the help of Alice and Bob.",
+        "start": 107.687,
+        "duration": 2.82
+    },
+    {
+        "text": "Alice gets a tracing app.",
+        "start": 111.127,
+        "duration": 1.4
+    },
+    {
+        "text": "Every five minutes her phone sends out some uniquely ",
+        "start": 112.947,
+        "duration": 2.841
+    },
+    {
+        "text": "pseudo-random gibberish to all the nearby devices using Bluetooth.",
+        "start": 115.788,
+        "duration": 3.539
+    },
+    {
+        "text": "Because these messages are pseudo-random, they don't use GPS and contain ",
+        "start": 120.487,
+        "duration": 4.124
+    },
+    {
+        "text": "no information about Alice's identity, not her location, not anything.",
+        "start": 124.611,
+        "duration": 3.956
+    },
+    {
+        "text": "It really is gibberish, but the key point is that this gibberish is unique.",
+        "start": 128.927,
+        "duration": 4.1
+    },
+    {
+        "text": "Now, while her phone sends out messages, it also listens for messages from nearby phones.",
+        "start": 134.087,
+        "duration": 4.44
+    },
+    {
+        "text": "For example, Bob's.",
+        "start": 139.127,
+        "duration": 1.6
+    },
+    {
+        "text": "Bob also has a privacy-first tracing app that's compatible with, or the same, as Alice's.",
+        "start": 140.907,
+        "duration": 5.86
+    },
+    {
+        "text": "If Alice and Bob stay close to each other for more than five minutes, ",
+        "start": 147.247,
+        "duration": 3.541
+    },
+    {
+        "text": "their phones will exchange respective strings of unique gibberish.",
+        "start": 150.788,
+        "duration": 3.339
+    },
+    {
+        "text": "Both of these phones remember all of the messages ",
+        "start": 154.707,
+        "duration": 2.742
+    },
+    {
+        "text": "that they said and heard over the last 14 days.",
+        "start": 157.449,
+        "duration": 2.578
+    },
+    {
+        "text": "Again, because the random messages contain no information, ",
+        "start": 160.967,
+        "duration": 3.54
+    },
+    {
+        "text": "Alice's privacy is protected from Bob and vice versa.",
+        "start": 164.507,
+        "duration": 3.18
+    },
+    {
+        "text": "The next day, Alice develops a dry cough and a fever.",
+        "start": 169.167,
+        "duration": 3.56
+    },
+    {
+        "text": "Alice gets tested.",
+        "start": 173.327,
+        "duration": 0.88
+    },
+    {
+        "text": "Alice has COVID-19.",
+        "start": 174.727,
+        "duration": 1.16
+    },
+    {
+        "text": "This is not a good day for Alice.",
+        "start": 176.547,
+        "duration": 1.28
+    },
+    {
+        "text": "But she won't suffer in vain.",
+        "start": 178.427,
+        "duration": 1.36
+    },
+    {
+        "text": "Alice tells her app to upload all of the random gibberish ",
+        "start": 180.287,
+        "duration": 3.212
+    },
+    {
+        "text": "messages that it's been sending out to a hospital database.",
+        "start": 183.499,
+        "duration": 3.268
+    },
+    {
+        "text": "And to do this, she uses a one-time passcode given to her by her doctor.",
+        "start": 187.607,
+        "duration": 3.26
+    },
+    {
+        "text": "This code is to prevent spam.",
+        "start": 191.287,
+        "duration": 1.34
+    },
+    {
+        "text": "The database then stores Alice's gibberish, and again, ",
+        "start": 193.467,
+        "duration": 3.142
+    },
+    {
+        "text": "the random messages give no information about Alice, where she was, ",
+        "start": 196.609,
+        "duration": 3.884
+    },
+    {
+        "text": "who she was with, what she was doing, or even how many people Alice met.",
+        "start": 200.493,
+        "duration": 4.114
+    },
+    {
+        "text": "It really is meaningless to the hospital.",
+        "start": 204.967,
+        "duration": 1.92
+    },
+    {
+        "text": "But it's not meaningless to Bob's phone.",
+        "start": 207.187,
+        "duration": 2.14
+    },
+    {
+        "text": "Bob's phone often checks this hospital list of random ",
+        "start": 209.887,
+        "duration": 2.886
+    },
+    {
+        "text": "messages that have come in from COVID-19 positive cases.",
+        "start": 212.773,
+        "duration": 2.994
+    },
+    {
+        "text": "Essentially, the hospital's database is saying to all the phones out there, ",
+        "start": 216.387,
+        "duration": 3.78
+    },
+    {
+        "text": "hey, we just got this new random gibberish.",
+        "start": 220.167,
+        "duration": 2.14
+    },
+    {
+        "text": "If you've seen that same random gibberish sometime in the last 14 days, ",
+        "start": 222.627,
+        "duration": 3.985
+    },
+    {
+        "text": "it means you've been in contact with someone who just tested positive for COVID-19.",
+        "start": 226.612,
+        "duration": 4.595
+    },
+    {
+        "text": "Once Bob's phone recognizes some of these numbers that are the gibberish snippets now ",
+        "start": 232.367,
+        "duration": 4.441
+    },
+    {
+        "text": "known to be associated with positive test cases, it can warn Bob to self quarantine.",
+        "start": 236.808,
+        "duration": 4.339
+    },
+    {
+        "text": "And so Bob cuts off the chain of transmissions.",
+        "start": 241.987,
+        "duration": 2.24
+    },
+    {
+        "text": "We're staying one step ahead of the virus.",
+        "start": 244.727,
+        "duration": 1.54
+    },
+    {
+        "text": "And that's it.",
+        "start": 246.987,
+        "duration": 0.52
+    },
+    {
+        "text": "That's how digital contact tracing apps can proactively ",
+        "start": 247.687,
+        "duration": 3.238
+    },
+    {
+        "text": "prevent the spread of COVID-19 while also protecting our rights.",
+        "start": 250.925,
+        "duration": 3.702
+    },
+    {
+        "text": "Thanks, Alice and Bob.",
+        "start": 255.307,
+        "duration": 0.78
+    },
+    {
+        "text": "Stay safe.",
+        "start": 256.627,
+        "duration": 0.66
+    }
+]

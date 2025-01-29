@@ -1,0 +1,912 @@
+[
+    {
+        "text": "In a previous video I've talked about linear systems of equations, ",
+        "start": 11.2,
+        "duration": 3.345
+    },
+    {
+        "text": "and I sort of brushed aside the discussion of actually computing solutions to ",
+        "start": 14.545,
+        "duration": 3.895
+    },
+    {
+        "text": "these systems.",
+        "start": 18.44,
+        "duration": 0.7
+    },
+    {
+        "text": "And while it's true that number crunching is typically something we ",
+        "start": 19.7,
+        "duration": 2.922
+    },
+    {
+        "text": "leave to the computers, digging into some of these computational ",
+        "start": 22.622,
+        "duration": 2.794
+    },
+    {
+        "text": "methods is a good litmus test for whether or not you actually understand what's going on, ",
+        "start": 25.416,
+        "duration": 3.868
+    },
+    {
+        "text": "since that's really where the rubber meets the road.",
+        "start": 29.284,
+        "duration": 2.236
+    },
+    {
+        "text": "Here I want to describe the geometry behind a certain method ",
+        "start": 32.119,
+        "duration": 3.273
+    },
+    {
+        "text": "for computing solutions to these systems, known as Cramer's rule.",
+        "start": 35.392,
+        "duration": 3.488
+    },
+    {
+        "text": "The relevant background here is understanding determinants, ",
+        "start": 39.68,
+        "duration": 2.942
+    },
+    {
+        "text": "a little bit of dot products, and of course linear systems of equations, ",
+        "start": 42.622,
+        "duration": 3.58
+    },
+    {
+        "text": "so be sure to watch the relevant videos on those topics if you're unfamiliar or rusty.",
+        "start": 46.202,
+        "duration": 4.218
+    },
+    {
+        "text": "But first I should say up front that this Cramer's rule is not ",
+        "start": 51.02,
+        "duration": 3.291
+    },
+    {
+        "text": "actually the best way for computing solutions to linear systems of equations, ",
+        "start": 54.311,
+        "duration": 4.075
+    },
+    {
+        "text": "Gaussian elimination for example will always be faster.",
+        "start": 58.386,
+        "duration": 2.874
+    },
+    {
+        "text": "So why learn it?",
+        "start": 61.98,
+        "duration": 1.54
+    },
+    {
+        "text": "Well think of it as a sort of cultural excursion.",
+        "start": 63.78,
+        "duration": 2.06
+    },
+    {
+        "text": "It's a helpful exercise in deepening your knowledge of the theory behind these systems.",
+        "start": 66.42,
+        "duration": 4.04
+    },
+    {
+        "text": "Wrapping your mind around this concept is going to help consolidate ideas from linear ",
+        "start": 71.04,
+        "duration": 4.192
+    },
+    {
+        "text": "algebra, like the determinant and linear systems, by seeing how they relate to each other.",
+        "start": 75.232,
+        "duration": 4.388
+    },
+    {
+        "text": "Also from a purely artistic standpoint the ultimate result here is just ",
+        "start": 80.1,
+        "duration": 3.486
+    },
+    {
+        "text": "really pretty to think about, way more so than Gaussian elimination.",
+        "start": 83.586,
+        "duration": 3.294
+    },
+    {
+        "text": "Alright so the setup here will be some linear system of equations, ",
+        "start": 88.68,
+        "duration": 4.043
+    },
+    {
+        "text": "say with two unknowns x and y and two equations.",
+        "start": 92.723,
+        "duration": 2.897
+    },
+    {
+        "text": "In principle everything we're talking about will also work for systems ",
+        "start": 96.3,
+        "duration": 3.167
+    },
+    {
+        "text": "with larger number of unknowns and the same number of equations, ",
+        "start": 99.467,
+        "duration": 2.9
+    },
+    {
+        "text": "but for simplicity a smaller example is just nicer to hold in our heads.",
+        "start": 102.367,
+        "duration": 3.213
+    },
+    {
+        "text": "So as I talked about in a previous video you can think of this setup ",
+        "start": 106.32,
+        "duration": 4.188
+    },
+    {
+        "text": "geometrically as a certain known matrix transforming an unknown vector x y ",
+        "start": 110.508,
+        "duration": 4.553
+    },
+    {
+        "text": "where you know what the output is going to be, in this case negative 4 negative 2.",
+        "start": 115.061,
+        "duration": 4.979
+    },
+    {
+        "text": "Remember the columns of this matrix are telling you how that matrix acts as a transform, ",
+        "start": 120.8,
+        "duration": 5.227
+    },
+    {
+        "text": "each one telling you where the basis vectors of the input space land.",
+        "start": 126.027,
+        "duration": 4.053
+    },
+    {
+        "text": "So what we have is a sort of puzzle, which input vector ",
+        "start": 130.86,
+        "duration": 3.802
+    },
+    {
+        "text": "x y is going to land on this output negative 4 negative 2.",
+        "start": 134.662,
+        "duration": 3.938
+    },
+    {
+        "text": "One way to think about our little puzzle here is that we know the given ",
+        "start": 139.7,
+        "duration": 3.925
+    },
+    {
+        "text": "output vector is some linear combination of the columns of the matrix x ",
+        "start": 143.625,
+        "duration": 3.926
+    },
+    {
+        "text": "times the vector where i hat lands plus y times the vector where j hat lands, ",
+        "start": 147.551,
+        "duration": 4.252
+    },
+    {
+        "text": "but what we want is to figure out what exactly that linear combination should be.",
+        "start": 151.803,
+        "duration": 4.417
+    },
+    {
+        "text": "Remember the type of answer you get here can depend on whether or not the transformation ",
+        "start": 157.24,
+        "duration": 4.584
+    },
+    {
+        "text": "squishes all of space into a lower dimension, that is if it has a zero determinant.",
+        "start": 161.824,
+        "duration": 4.276
+    },
+    {
+        "text": "In that case either none of the inputs land on our given output, ",
+        "start": 166.1,
+        "duration": 4.121
+    },
+    {
+        "text": "or there's a whole bunch of inputs landing on that output.",
+        "start": 170.221,
+        "duration": 3.679
+    },
+    {
+        "text": "But for this video we'll limit our view to the case of a non-zero determinant, ",
+        "start": 177.06,
+        "duration": 4.375
+    },
+    {
+        "text": "meaning the outputs of this transformation still span the ",
+        "start": 181.435,
+        "duration": 3.212
+    },
+    {
+        "text": "full in-dimensional space that it started in.",
+        "start": 184.647,
+        "duration": 2.493
+    },
+    {
+        "text": "Every input lands on one and only one output, and every output has one and only one input.",
+        "start": 187.5,
+        "duration": 5.2
+    },
+    {
+        "text": "As a first pass let me show you an idea that's wrong but in the right direction.",
+        "start": 194.18,
+        "duration": 3.98
+    },
+    {
+        "text": "The x coordinate of this mystery input vector is what you ",
+        "start": 198.8,
+        "duration": 3.209
+    },
+    {
+        "text": "get by taking its dot product with the first basis vector 1 0.",
+        "start": 202.009,
+        "duration": 3.431
+    },
+    {
+        "text": "Likewise the y coordinate is what you get by dotting it with the second basis vector 0 1.",
+        "start": 206.16,
+        "duration": 5.24
+    },
+    {
+        "text": "So maybe you hope that after the transformation the dot products with ",
+        "start": 211.9,
+        "duration": 3.872
+    },
+    {
+        "text": "the transformed version of the mystery vector with the transformed ",
+        "start": 215.772,
+        "duration": 3.706
+    },
+    {
+        "text": "version of the basis vectors will also be these coordinates x and y.",
+        "start": 219.478,
+        "duration": 3.762
+    },
+    {
+        "text": "That'd be fantastic because we know what the transformed ",
+        "start": 223.94,
+        "duration": 2.91
+    },
+    {
+        "text": "version of each of those vectors are.",
+        "start": 226.85,
+        "duration": 1.89
+    },
+    {
+        "text": "There's just one problem with it, it's not at all true.",
+        "start": 231.18,
+        "duration": 3.02
+    },
+    {
+        "text": "For most linear transformations the dot product before ",
+        "start": 234.64,
+        "duration": 2.825
+    },
+    {
+        "text": "and after the transformation will look very different.",
+        "start": 237.465,
+        "duration": 2.775
+    },
+    {
+        "text": "For example, you could have two vectors generally pointing in the same direction ",
+        "start": 240.8,
+        "duration": 3.679
+    },
+    {
+        "text": "with a positive dot product, which get pulled apart from each other during the ",
+        "start": 244.479,
+        "duration": 3.588
+    },
+    {
+        "text": "transformation in such a way that they end up having a negative dot product.",
+        "start": 248.067,
+        "duration": 3.453
+    },
+    {
+        "text": "Likewise things that start off perpendicular with dot product 0, ",
+        "start": 252.22,
+        "duration": 3.372
+    },
+    {
+        "text": "like the two basis vectors, quite often don't stay perpendicular to each ",
+        "start": 255.592,
+        "duration": 3.788
+    },
+    {
+        "text": "other after the transformation, that is they don't preserve that 0 dot product.",
+        "start": 259.38,
+        "duration": 4.1
+    },
+    {
+        "text": "And looking at the example I just showed dot products certainly aren't preserved, ",
+        "start": 264.1,
+        "duration": 3.366
+    },
+    {
+        "text": "they tend to get bigger since most vectors are getting stretched out.",
+        "start": 267.466,
+        "duration": 2.834
+    },
+    {
+        "text": "In fact, worthwhile side note here, transformations which do preserve dot ",
+        "start": 271.04,
+        "duration": 3.872
+    },
+    {
+        "text": "products are special enough to have their own name, orthonormal transformations.",
+        "start": 274.912,
+        "duration": 4.188
+    },
+    {
+        "text": "These are the ones that leave all of the basis vectors ",
+        "start": 279.72,
+        "duration": 2.447
+    },
+    {
+        "text": "perpendicular to each other and still with unit lengths.",
+        "start": 282.167,
+        "duration": 2.493
+    },
+    {
+        "text": "You often think of these as the rotation matrices, ",
+        "start": 285.74,
+        "duration": 2.594
+    },
+    {
+        "text": "they correspond to rigid motion with no stretching or squishing or morphing.",
+        "start": 288.334,
+        "duration": 3.866
+    },
+    {
+        "text": "Solving a linear system with an orthonormal matrix is actually super easy.",
+        "start": 293.0,
+        "duration": 3.78
+    },
+    {
+        "text": "Because dot products are preserved, taking the dot product between the ",
+        "start": 297.26,
+        "duration": 3.745
+    },
+    {
+        "text": "output vector and all the columns of your matrix will be the same as taking ",
+        "start": 301.005,
+        "duration": 4.009
+    },
+    {
+        "text": "the dot product between the mystery input vector and all of the basis vectors, ",
+        "start": 305.014,
+        "duration": 4.167
+    },
+    {
+        "text": "which is the same as just finding the coordinates of that mystery input.",
+        "start": 309.181,
+        "duration": 3.799
+    },
+    {
+        "text": "So in that very special case, x would be the dot product of the first column with the ",
+        "start": 313.68,
+        "duration": 4.925
+    },
+    {
+        "text": "output vector, and y would be the dot product of the second column with the output vector.",
+        "start": 318.605,
+        "duration": 5.155
+    },
+    {
+        "text": "Why am I bringing this up when this idea breaks down for almost all linear systems?",
+        "start": 326.82,
+        "duration": 4.04
+    },
+    {
+        "text": "Well, it points us in a direction of something to look for.",
+        "start": 331.42,
+        "duration": 2.66
+    },
+    {
+        "text": "Is there an alternate geometric understanding for the coordinates ",
+        "start": 334.32,
+        "duration": 3.615
+    },
+    {
+        "text": "of our input vector that remains unchanged after the transformation?",
+        "start": 337.935,
+        "duration": 3.725
+    },
+    {
+        "text": "If your mind has been mulling over determinants, ",
+        "start": 342.36,
+        "duration": 2.314
+    },
+    {
+        "text": "you might think of the following clever idea.",
+        "start": 344.674,
+        "duration": 2.126
+    },
+    {
+        "text": "Take the parallelogram defined by the first basis ",
+        "start": 347.36,
+        "duration": 3.368
+    },
+    {
+        "text": "vector i-hat and the mystery input vector xy.",
+        "start": 350.728,
+        "duration": 3.032
+    },
+    {
+        "text": "The area of this parallelogram is the base, 1, ",
+        "start": 354.44,
+        "duration": 2.88
+    },
+    {
+        "text": "times the height perpendicular to that base, which is the y-coordinate ",
+        "start": 357.32,
+        "duration": 4.352
+    },
+    {
+        "text": "of that input vector.",
+        "start": 361.672,
+        "duration": 1.288
+    },
+    {
+        "text": "So the area of that parallelogram is a sort of screwy ",
+        "start": 363.68,
+        "duration": 3.169
+    },
+    {
+        "text": "roundabout way to describe the vector's y-coordinate.",
+        "start": 366.849,
+        "duration": 3.111
+    },
+    {
+        "text": "It's a wacky way to talk about coordinates, but run with me.",
+        "start": 370.42,
+        "duration": 2.72
+    },
+    {
+        "text": "And actually, to be a little more accurate, you should think of this as the ",
+        "start": 373.7,
+        "duration": 3.795
+    },
+    {
+        "text": "signed area of that parallelogram, in the sense described in the determinant video.",
+        "start": 377.495,
+        "duration": 4.145
+    },
+    {
+        "text": "That way, a vector with a negative y-coordinate would correspond to a ",
+        "start": 382.2,
+        "duration": 3.843
+    },
+    {
+        "text": "negative area for this parallelogram, at least if you think of i-hat as in ",
+        "start": 386.043,
+        "duration": 4.119
+    },
+    {
+        "text": "some sense being the first out of these two vectors defining the parallelogram.",
+        "start": 390.162,
+        "duration": 4.338
+    },
+    {
+        "text": "And symmetrically, if you look at the parallelogram spanned ",
+        "start": 395.16,
+        "duration": 3.328
+    },
+    {
+        "text": "by our mystery input vector and the second basis, j-hat, ",
+        "start": 398.488,
+        "duration": 3.161
+    },
+    {
+        "text": "its area is going to be the x-coordinate of that mystery vector.",
+        "start": 401.649,
+        "duration": 3.551
+    },
+    {
+        "text": "Again, it's a strange way to represent the x-coordinate, ",
+        "start": 405.78,
+        "duration": 2.635
+    },
+    {
+        "text": "but see what it buys us in a moment.",
+        "start": 408.415,
+        "duration": 1.665
+    },
+    {
+        "text": "And just to make sure it's clear how this might generalize, ",
+        "start": 410.68,
+        "duration": 2.03
+    },
+    {
+        "text": "let's look in three dimensions.",
+        "start": 412.71,
+        "duration": 1.05
+    },
+    {
+        "text": "Ordinarily, the way you might think about one of a vector's coordinates, ",
+        "start": 414.3,
+        "duration": 3.653
+    },
+    {
+        "text": "say its z-coordinate, would be to take its dot product with ",
+        "start": 417.953,
+        "duration": 3.004
+    },
+    {
+        "text": "the third standard basis vector, often called k-hat.",
+        "start": 420.957,
+        "duration": 2.603
+    },
+    {
+        "text": "But an alternate geometric interpretation would be to consider the ",
+        "start": 424.28,
+        "duration": 3.893
+    },
+    {
+        "text": "parallelepiped that it creates with the other two basis vectors, i-hat and j-hat.",
+        "start": 428.173,
+        "duration": 4.707
+    },
+    {
+        "text": "If you think of the square with area 1 spanned by i-hat and ",
+        "start": 433.42,
+        "duration": 3.277
+    },
+    {
+        "text": "j-hat as the base of this whole shape, then its volume is the same as its height, ",
+        "start": 436.697,
+        "duration": 4.479
+    },
+    {
+        "text": "which is the third coordinate of our vector.",
+        "start": 441.176,
+        "duration": 2.404
+    },
+    {
+        "text": "And likewise, the wacky way to think about the other coordinates of the vector ",
+        "start": 444.34,
+        "duration": 3.763
+    },
+    {
+        "text": "would be to form a parallelepiped using the vector and then all of the basis ",
+        "start": 448.103,
+        "duration": 3.668
+    },
+    {
+        "text": "vectors other than the one corresponding to the direction you're looking for.",
+        "start": 451.771,
+        "duration": 3.669
+    },
+    {
+        "text": "Then the volume of this gives you the coordinate.",
+        "start": 455.9,
+        "duration": 2.0
+    },
+    {
+        "text": "Or rather, we should be talking about the signed volume of parallelepiped ",
+        "start": 458.44,
+        "duration": 3.28
+    },
+    {
+        "text": "in the sense described in the determinant video using the right-hand rule.",
+        "start": 461.72,
+        "duration": 3.28
+    },
+    {
+        "text": "So the order in which you list these three vectors matters.",
+        "start": 465.56,
+        "duration": 2.58
+    },
+    {
+        "text": "That way, negative coordinates still make sense.",
+        "start": 468.8,
+        "duration": 2.3
+    },
+    {
+        "text": "Okay, so why think of coordinates as areas and volumes like this?",
+        "start": 472.04,
+        "duration": 3.2
+    },
+    {
+        "text": "Well, as you apply some sort of matrix transformation, the areas of these parallelograms, ",
+        "start": 475.72,
+        "duration": 4.68
+    },
+    {
+        "text": "well, they don't stay the same, they might get scaled up or down.",
+        "start": 480.4,
+        "duration": 3.38
+    },
+    {
+        "text": "But, and this is the key idea of determinants, ",
+        "start": 484.16,
+        "duration": 2.711
+    },
+    {
+        "text": "all of the areas get scaled by the same amount, ",
+        "start": 486.871,
+        "duration": 2.769
+    },
+    {
+        "text": "namely the determinant of our transformation matrix.",
+        "start": 489.64,
+        "duration": 3.0
+    },
+    {
+        "text": "For example, if you look at the parallelogram spanned by the vector ",
+        "start": 493.52,
+        "duration": 3.798
+    },
+    {
+        "text": "where your first basis vector lands, which is the first column of the matrix, ",
+        "start": 497.318,
+        "duration": 4.357
+    },
+    {
+        "text": "and the transformed version of xy, what is its area?",
+        "start": 501.675,
+        "duration": 2.905
+    },
+    {
+        "text": "Well, this is the transformed version of the parallelogram we were looking at earlier, ",
+        "start": 505.58,
+        "duration": 4.378
+    },
+    {
+        "text": "the one whose area was the y-coordinate of the mystery input vector.",
+        "start": 509.958,
+        "duration": 3.422
+    },
+    {
+        "text": "So its area is just going to be the determinant of ",
+        "start": 513.7,
+        "duration": 2.79
+    },
+    {
+        "text": "the transformation multiplied by that y-coordinate.",
+        "start": 516.49,
+        "duration": 2.79
+    },
+    {
+        "text": "So that means we can solve for y by taking the area of this new parallelogram ",
+        "start": 520.179,
+        "duration": 4.978
+    },
+    {
+        "text": "in the output space divided by the determinant of the full transformation.",
+        "start": 525.157,
+        "duration": 4.723
+    },
+    {
+        "text": "And how do you get that area?",
+        "start": 530.9,
+        "duration": 1.52
+    },
+    {
+        "text": "Well, we know the coordinates for where the mystery input vector lands, ",
+        "start": 533.24,
+        "duration": 3.356
+    },
+    {
+        "text": "that's the whole point of a linear system of equations.",
+        "start": 536.596,
+        "duration": 2.564
+    },
+    {
+        "text": "So what you might do is create a new matrix whose first column is the same as that of our ",
+        "start": 539.72,
+        "duration": 5.359
+    },
+    {
+        "text": "matrix, but whose second column is the output vector, and then you take its determinant.",
+        "start": 545.079,
+        "duration": 5.241
+    },
+    {
+        "text": "So look at that, just using data from the output of the transformation, ",
+        "start": 551.26,
+        "duration": 3.83
+    },
+    {
+        "text": "namely the columns of the matrix and the coordinates of our output vector, ",
+        "start": 555.09,
+        "duration": 3.99
+    },
+    {
+        "text": "we can recover the y-coordinate of the mystery input vector, ",
+        "start": 559.08,
+        "duration": 3.245
+    },
+    {
+        "text": "which is halfway to solving the system.",
+        "start": 562.325,
+        "duration": 2.075
+    },
+    {
+        "text": "Likewise, the same idea can give us the x-coordinate.",
+        "start": 565.12,
+        "duration": 2.42
+    },
+    {
+        "text": "Look at the parallelogram we defined earlier, which encodes the ",
+        "start": 568.0,
+        "duration": 3.589
+    },
+    {
+        "text": "x-coordinate of the mystery input vector spanned by that vector and j-hat.",
+        "start": 571.589,
+        "duration": 4.151
+    },
+    {
+        "text": "The transformed version of this guy is spanned by the output vector and the second column ",
+        "start": 576.4,
+        "duration": 5.319
+    },
+    {
+        "text": "of the matrix, and its area will have been multiplied by the determinant of that matrix.",
+        "start": 581.719,
+        "duration": 5.201
+    },
+    {
+        "text": "So to solve for x, you can take this new area ",
+        "start": 587.7,
+        "duration": 2.41
+    },
+    {
+        "text": "divided by the determinant of the full transformation.",
+        "start": 590.11,
+        "duration": 2.83
+    },
+    {
+        "text": "And similar to what we did before, you can compute the area of that ",
+        "start": 593.86,
+        "duration": 3.767
+    },
+    {
+        "text": "output parallelogram by creating a new matrix whose first column is the ",
+        "start": 597.627,
+        "duration": 3.988
+    },
+    {
+        "text": "output vector and whose second column is the same as the original matrix.",
+        "start": 601.615,
+        "duration": 4.045
+    },
+    {
+        "text": "So again, just using data from the output space, ",
+        "start": 606.24,
+        "duration": 2.476
+    },
+    {
+        "text": "the numbers we see in our original linear system, we can solve for what x must be.",
+        "start": 608.716,
+        "duration": 4.144
+    },
+    {
+        "text": "This formula for finding the solutions to a linear ",
+        "start": 613.42,
+        "duration": 2.628
+    },
+    {
+        "text": "system of equations is known as Cramer's rule.",
+        "start": 616.048,
+        "duration": 2.372
+    },
+    {
+        "text": "Here, just to sanity check ourselves, plug in some numbers here.",
+        "start": 619.12,
+        "duration": 2.78
+    },
+    {
+        "text": "The determinant of that top altered matrix is 4 plus 2, which is 6, ",
+        "start": 622.26,
+        "duration": 4.376
+    },
+    {
+        "text": "and the bottom determinant is 2, so the x-coordinate should be 3.",
+        "start": 626.636,
+        "duration": 4.184
+    },
+    {
+        "text": "And indeed, looking back at the input vector we started with, the x-coordinate is 3.",
+        "start": 631.44,
+        "duration": 4.02
+    },
+    {
+        "text": "Likewise, Cramer's rule suggests that the y-coordinate should be 4 divided by 2, ",
+        "start": 636.32,
+        "duration": 4.967
+    },
+    {
+        "text": "or 2, and that is in fact the y-coordinate of the input vector we were starting with.",
+        "start": 641.287,
+        "duration": 5.213
+    },
+    {
+        "text": "The case with three dimensions or more is similar, ",
+        "start": 647.38,
+        "duration": 2.374
+    },
+    {
+        "text": "and I highly recommend you take a moment to pause and think through it yourself.",
+        "start": 649.754,
+        "duration": 3.726
+    },
+    {
+        "text": "Here, I'll give you a little bit of momentum.",
+        "start": 654.18,
+        "duration": 1.72
+    },
+    {
+        "text": "What we have is a known transformation given by some 3x3 matrix ",
+        "start": 656.34,
+        "duration": 4.051
+    },
+    {
+        "text": "and a known output vector given by the right side of our linear system, ",
+        "start": 660.391,
+        "duration": 4.557
+    },
+    {
+        "text": "and we want to know what input lands on that output.",
+        "start": 664.948,
+        "duration": 3.292
+    },
+    {
+        "text": "And if you think of, say, the z-coordinate of that input vector as the volume of ",
+        "start": 669.1,
+        "duration": 4.853
+    },
+    {
+        "text": "that special parallelepiped we were looking at earlier, spanned by i-hat, j-hat, ",
+        "start": 673.953,
+        "duration": 4.853
+    },
+    {
+        "text": "and the mystery input vector, what happens to that volume after the transformation?",
+        "start": 678.806,
+        "duration": 4.974
+    },
+    {
+        "text": "And what are the various ways you can compute that volume?",
+        "start": 684.8,
+        "duration": 2.68
+    },
+    {
+        "text": "Really, pause and take a moment to think through the details ",
+        "start": 688.34,
+        "duration": 2.946
+    },
+    {
+        "text": "of generalizing this to higher dimensions, finding an expression ",
+        "start": 691.286,
+        "duration": 3.139
+    },
+    {
+        "text": "for each coordinate of the solution to a larger linear system.",
+        "start": 694.425,
+        "duration": 2.995
+    },
+    {
+        "text": "Thinking through more general cases like this and convincing yourself that it ",
+        "start": 698.06,
+        "duration": 3.435
+    },
+    {
+        "text": "works and why it works is where all the learning really happens, ",
+        "start": 701.495,
+        "duration": 2.864
+    },
+    {
+        "text": "much more so than listening to some dude on YouTube walk you through the same ",
+        "start": 704.359,
+        "duration": 3.436
+    },
+    {
+        "text": "reasoning again.",
+        "start": 707.795,
+        "duration": 0.705
+    }
+]

@@ -1,0 +1,752 @@
+[
+    {
+        "text": "Imagine you have a weighted coin, so the probability ",
+        "start": 2.799,
+        "duration": 3.18
+    },
+    {
+        "text": "of flipping heads might not be 50-50 exactly.",
+        "start": 5.979,
+        "duration": 2.701
+    },
+    {
+        "text": "It could be 20%, or maybe 90%, or 0%, or 31.41592%.",
+        "start": 9.14,
+        "duration": 9.34
+    },
+    {
+        "text": "The point is that you just don't know.",
+        "start": 18.48,
+        "duration": 1.72
+    },
+    {
+        "text": "But imagine that you flip this coin 10 different times, ",
+        "start": 20.78,
+        "duration": 2.829
+    },
+    {
+        "text": "and 7 of those times it comes up heads.",
+        "start": 23.609,
+        "duration": 1.971
+    },
+    {
+        "text": "Do you think that the underlying weight of this coin is ",
+        "start": 25.58,
+        "duration": 3.22
+    },
+    {
+        "text": "such that each flip has a 70% chance of coming up heads?",
+        "start": 28.8,
+        "duration": 3.22
+    },
+    {
+        "text": "If I were to ask you, hey, what's the probability that the ",
+        "start": 32.759,
+        "duration": 3.345
+    },
+    {
+        "text": "true probability of flipping heads is 0.7, what would you say?",
+        "start": 36.104,
+        "duration": 3.516
+    },
+    {
+        "text": "This is a pretty weird question, and for two reasons.",
+        "start": 41.54,
+        "duration": 2.68
+    },
+    {
+        "text": "First of all, it's asking about a probability of a probability, ",
+        "start": 44.7,
+        "duration": 3.654
+    },
+    {
+        "text": "as in the value we don't know is itself some kind of long-run ",
+        "start": 48.354,
+        "duration": 3.54
+    },
+    {
+        "text": "frequency for a random event, which frankly is hard to think about.",
+        "start": 51.894,
+        "duration": 3.826
+    },
+    {
+        "text": "But the more pressing weirdness comes from asking ",
+        "start": 56.28,
+        "duration": 2.358
+    },
+    {
+        "text": "about probabilities in the setting of continuous values.",
+        "start": 58.638,
+        "duration": 2.642
+    },
+    {
+        "text": "Let's give this unknown probability of flipping heads some kind of name, like h.",
+        "start": 62.54,
+        "duration": 4.24
+    },
+    {
+        "text": "Keep in mind that h could be any real number from 0 up to 1, ",
+        "start": 67.54,
+        "duration": 3.615
+    },
+    {
+        "text": "ranging from a coin that always flips tails up to one that always flips heads and ",
+        "start": 71.155,
+        "duration": 4.86
+    },
+    {
+        "text": "everything in between.",
+        "start": 76.015,
+        "duration": 1.305
+    },
+    {
+        "text": "So if I ask, hey, what's the probability that h is precisely 0.7, ",
+        "start": 78.72,
+        "duration": 4.995
+    },
+    {
+        "text": "as opposed to, say, 0.7000001, or any other nearby value, well, ",
+        "start": 83.715,
+        "duration": 4.844
+    },
+    {
+        "text": "there's going to be a strong possibility for paradox if we're not careful.",
+        "start": 88.559,
+        "duration": 5.601
+    },
+    {
+        "text": "It feels like no matter how small the answer to this question, ",
+        "start": 94.86,
+        "duration": 2.821
+    },
+    {
+        "text": "it just wouldn't be small enough.",
+        "start": 97.681,
+        "duration": 1.479
+    },
+    {
+        "text": "If every specific value within some range, all uncountably infinitely many of them, ",
+        "start": 99.94,
+        "duration": 4.662
+    },
+    {
+        "text": "has a non-zero probability, well, even if that probability was minuscule, ",
+        "start": 104.602,
+        "duration": 4.107
+    },
+    {
+        "text": "adding them all up to get the total probability of any one of these values will blow ",
+        "start": 108.709,
+        "duration": 4.718
+    },
+    {
+        "text": "up to infinity.",
+        "start": 113.427,
+        "duration": 0.833
+    },
+    {
+        "text": "On the other hand though, if all of these probabilities are 0, ",
+        "start": 115.86,
+        "duration": 3.473
+    },
+    {
+        "text": "aside from the fact that that now gives you no useful information about the coin, ",
+        "start": 119.333,
+        "duration": 4.522
+    },
+    {
+        "text": "the total sum of those probabilities would be 0, when it should be 1.",
+        "start": 123.855,
+        "duration": 3.805
+    },
+    {
+        "text": "After all, this weight of the coin h is something, ",
+        "start": 128.539,
+        "duration": 3.224
+    },
+    {
+        "text": "so the probability of it being any one of these values should add up to 1.",
+        "start": 131.763,
+        "duration": 4.677
+    },
+    {
+        "text": "So if these values can't all be non-zero, and they can't all be 0, what do you do?",
+        "start": 137.32,
+        "duration": 4.9
+    },
+    {
+        "text": "Where we're going with this, by the way, is that I'd like to talk ",
+        "start": 144.8,
+        "duration": 3.201
+    },
+    {
+        "text": "about the very practical question of using data to create meaningful ",
+        "start": 148.001,
+        "duration": 3.348
+    },
+    {
+        "text": "answers to these sorts of probabilities of probabilities questions.",
+        "start": 151.349,
+        "duration": 3.251
+    },
+    {
+        "text": "But for this video, let's take a moment to appreciate how to work with ",
+        "start": 155.68,
+        "duration": 3.525
+    },
+    {
+        "text": "probabilities over continuous values, and resolve this apparent paradox.",
+        "start": 159.205,
+        "duration": 3.575
+    },
+    {
+        "text": "The key is not to focus on individual values, but ranges of values.",
+        "start": 169.32,
+        "duration": 4.64
+    },
+    {
+        "text": "For example, we might make these buckets to represent the probability that h is between, ",
+        "start": 174.62,
+        "duration": 6.271
+    },
+    {
+        "text": "say, 0.8 and 0.85.",
+        "start": 180.891,
+        "duration": 1.269
+    },
+    {
+        "text": "Also, and this is more important than it might seem, ",
+        "start": 183.16,
+        "duration": 2.541
+    },
+    {
+        "text": "rather than thinking of the height of each of these bars as representing the probability, ",
+        "start": 185.701,
+        "duration": 4.317
+    },
+    {
+        "text": "think of the area of each one as representing that probability.",
+        "start": 190.018,
+        "duration": 3.022
+    },
+    {
+        "text": "Where exactly those areas come from is something that we'll answer later.",
+        "start": 193.96,
+        "duration": 3.52
+    },
+    {
+        "text": "For right now, just know that in principle, there's some answer ",
+        "start": 197.96,
+        "duration": 3.215
+    },
+    {
+        "text": "to the probability of h sitting inside one of these ranges.",
+        "start": 201.175,
+        "duration": 2.965
+    },
+    {
+        "text": "Our task right now is to take the answers to these very coarse-grained questions, ",
+        "start": 204.96,
+        "duration": 4.422
+    },
+    {
+        "text": "and to get a more exact understanding of the distribution at the level of each individual ",
+        "start": 209.382,
+        "duration": 4.854
+    },
+    {
+        "text": "input.",
+        "start": 214.236,
+        "duration": 0.324
+    },
+    {
+        "text": "The natural thing to do would be consider finer and finer buckets.",
+        "start": 215.46,
+        "duration": 3.52
+    },
+    {
+        "text": "And when you do, the smaller probability of falling into any ",
+        "start": 219.5,
+        "duration": 3.072
+    },
+    {
+        "text": "one of them is accounted for in the thinner width of each of these bars, ",
+        "start": 222.572,
+        "duration": 3.678
+    },
+    {
+        "text": "while the heights are going to stay roughly the same.",
+        "start": 226.25,
+        "duration": 2.67
+    },
+    {
+        "text": "That's important, because it means that as you take this process to the limit, ",
+        "start": 229.66,
+        "duration": 3.722
+    },
+    {
+        "text": "you approach some kind of smooth curve.",
+        "start": 233.382,
+        "duration": 1.838
+    },
+    {
+        "text": "So even though all of the individual probabilities of falling into ",
+        "start": 235.9,
+        "duration": 3.869
+    },
+    {
+        "text": "any one particular bucket will approach zero, the overall shape ",
+        "start": 239.769,
+        "duration": 3.696
+    },
+    {
+        "text": "of the distribution is preserved, and even refined in this limit.",
+        "start": 243.465,
+        "duration": 3.755
+    },
+    {
+        "text": "If, on the other hand, we had let the heights of the bars represent probabilities, ",
+        "start": 248.7,
+        "duration": 4.361
+    },
+    {
+        "text": "everything would have gone to zero.",
+        "start": 253.061,
+        "duration": 1.839
+    },
+    {
+        "text": "So in the limit, we would have just had a flat line giving ",
+        "start": 260.04,
+        "duration": 2.8
+    },
+    {
+        "text": "no information about the overall shape of the distribution.",
+        "start": 262.84,
+        "duration": 2.8
+    },
+    {
+        "text": "So, wonderful.",
+        "start": 267.42,
+        "duration": 0.72
+    },
+    {
+        "text": "Letting area represent probability helps solve this problem.",
+        "start": 268.44,
+        "duration": 2.82
+    },
+    {
+        "text": "But let me ask you, if the y-axis no longer represents probability, ",
+        "start": 271.9,
+        "duration": 3.563
+    },
+    {
+        "text": "what exactly are the units here?",
+        "start": 275.463,
+        "duration": 1.677
+    },
+    {
+        "text": "Since probability sits in the area of these bars, or width times height, ",
+        "start": 277.8,
+        "duration": 4.321
+    },
+    {
+        "text": "the height represents a kind of probability per unit in the x-direction, ",
+        "start": 282.121,
+        "duration": 4.322
+    },
+    {
+        "text": "what's known in the business as a probability density.",
+        "start": 286.443,
+        "duration": 3.197
+    },
+    {
+        "text": "The other thing to keep in mind is that the total area of ",
+        "start": 290.58,
+        "duration": 2.88
+    },
+    {
+        "text": "all these bars has to equal one at every level of the process.",
+        "start": 293.46,
+        "duration": 3.08
+    },
+    {
+        "text": "That's something that has to be true for any valid probability distribution.",
+        "start": 297.06,
+        "duration": 3.44
+    },
+    {
+        "text": "The idea of probability density is actually really ",
+        "start": 301.98,
+        "duration": 2.319
+    },
+    {
+        "text": "clever when you step back to think about it.",
+        "start": 304.299,
+        "duration": 2.001
+    },
+    {
+        "text": "As you take things to the limit, even if there's all sorts of paradoxes associated ",
+        "start": 306.3,
+        "duration": 4.777
+    },
+    {
+        "text": "with assigning a probability to each of these uncountably infinitely many values of ",
+        "start": 311.077,
+        "duration": 4.835
+    },
+    {
+        "text": "h between 0 and 1, there's no problem if we associate a probability density to each ",
+        "start": 315.912,
+        "duration": 4.835
+    },
+    {
+        "text": "one of them, giving what's known as a probability density function, or PDF for short.",
+        "start": 320.747,
+        "duration": 4.893
+    },
+    {
+        "text": "Anytime you see a PDF in the wild, the way to interpret it is ",
+        "start": 326.42,
+        "duration": 3.7
+    },
+    {
+        "text": "that the probability of your random variable lying between two ",
+        "start": 330.12,
+        "duration": 3.759
+    },
+    {
+        "text": "values equals the area under this curve between those values.",
+        "start": 333.879,
+        "duration": 3.641
+    },
+    {
+        "text": "So, for example, what's the probability of getting any one very specific number, like 0.7?",
+        "start": 338.22,
+        "duration": 5.24
+    },
+    {
+        "text": "Well, the area of an infinitely thin slice is 0, so it's 0.",
+        "start": 344.22,
+        "duration": 4.12
+    },
+    {
+        "text": "What's the probability of all of them put together?",
+        "start": 348.9,
+        "duration": 2.24
+    },
+    {
+        "text": "Well, the area under the full curve is 1.",
+        "start": 351.78,
+        "duration": 2.18
+    },
+    {
+        "text": "You see?",
+        "start": 354.62,
+        "duration": 0.3
+    },
+    {
+        "text": "Paradox sidestepped.",
+        "start": 355.72,
+        "duration": 0.68
+    },
+    {
+        "text": "And the way that it's been sidestepped is a bit subtle.",
+        "start": 357.5,
+        "duration": 2.72
+    },
+    {
+        "text": "In normal, finite settings, like rolling a die or drawing a card, ",
+        "start": 360.22,
+        "duration": 3.947
+    },
+    {
+        "text": "the probability that a random value falls into a given collection of ",
+        "start": 364.167,
+        "duration": 4.127
+    },
+    {
+        "text": "possibilities is simply the sum of the probabilities of being any one of them.",
+        "start": 368.294,
+        "duration": 4.666
+    },
+    {
+        "text": "This feels very intuitive.",
+        "start": 373.84,
+        "duration": 1.18
+    },
+    {
+        "text": "It's even true in a countably infinite context.",
+        "start": 375.24,
+        "duration": 2.36
+    },
+    {
+        "text": "But to deal with the continuum, the rules themselves have shifted.",
+        "start": 378.12,
+        "duration": 3.42
+    },
+    {
+        "text": "The probability of falling into a range of values is no ",
+        "start": 382.1,
+        "duration": 3.139
+    },
+    {
+        "text": "longer the sum of the probabilities of each individual value.",
+        "start": 385.239,
+        "duration": 3.421
+    },
+    {
+        "text": "Instead, probabilities associated with ranges are the fundamental primitive objects, ",
+        "start": 389.18,
+        "duration": 4.92
+    },
+    {
+        "text": "and the only sense in which it's meaningful to talk about an individual ",
+        "start": 394.1,
+        "duration": 4.167
+    },
+    {
+        "text": "value here is to think of it as a range of width 0.",
+        "start": 398.267,
+        "duration": 2.953
+    },
+    {
+        "text": "If the idea of the rules changing between a finite setting and a continuous one feels ",
+        "start": 402.18,
+        "duration": 4.182
+    },
+    {
+        "text": "unsettling, well, you'll be happy to know that mathematicians are way ahead of you.",
+        "start": 406.362,
+        "duration": 4.038
+    },
+    {
+        "text": "There's a field of math called measure theory, ",
+        "start": 410.82,
+        "duration": 2.392
+    },
+    {
+        "text": "which helps to unite these two settings and make rigorous the idea of associating ",
+        "start": 413.212,
+        "duration": 4.175
+    },
+    {
+        "text": "numbers like probabilities to various subsets of all possibilities in a way that ",
+        "start": 417.387,
+        "duration": 4.123
+    },
+    {
+        "text": "combines and distributes nicely.",
+        "start": 421.51,
+        "duration": 1.63
+    },
+    {
+        "text": "For example, let's say you're in a setting where you have a random number ",
+        "start": 424.04,
+        "duration": 3.876
+    },
+    {
+        "text": "that equals 0 with 50% probability, and the rest of the time it's some ",
+        "start": 427.916,
+        "duration": 3.72
+    },
+    {
+        "text": "positive number according to a distribution that looks like half of a bell curve.",
+        "start": 431.636,
+        "duration": 4.244
+    },
+    {
+        "text": "This is an awkward middle ground between a finite context, ",
+        "start": 436.48,
+        "duration": 3.613
+    },
+    {
+        "text": "where a single value has a non-zero probability, and a continuous one.",
+        "start": 440.093,
+        "duration": 4.287
+    },
+    {
+        "text": "where probabilities are found according to areas under the appropriate density function.",
+        "start": 444.64,
+        "duration": 4.04
+    },
+    {
+        "text": "This is the sort of thing that measure theory handles very smoothly.",
+        "start": 449.46,
+        "duration": 3.14
+    },
+    {
+        "text": "I mention this mainly for the especially curious viewer, ",
+        "start": 453.04,
+        "duration": 2.517
+    },
+    {
+        "text": "and you can find more reading material in the description.",
+        "start": 455.557,
+        "duration": 2.563
+    },
+    {
+        "text": "It's a pretty common rule of thumb that if you find yourself using a ",
+        "start": 460.62,
+        "duration": 3.587
+    },
+    {
+        "text": "sum in a discrete context, then use an integral in the continuous context, ",
+        "start": 464.207,
+        "duration": 3.901
+    },
+    {
+        "text": "which is the tool from calculus that we use to find areas under curves.",
+        "start": 468.108,
+        "duration": 3.692
+    },
+    {
+        "text": "In fact, you could argue this video would be way shorter ",
+        "start": 471.8,
+        "duration": 2.74
+    },
+    {
+        "text": "if I just said that at the front and called it good.",
+        "start": 474.54,
+        "duration": 2.5
+    },
+    {
+        "text": "For my part though, I always found it a little unsatisfying to ",
+        "start": 477.76,
+        "duration": 2.782
+    },
+    {
+        "text": "do this blindly without thinking through what it really means.",
+        "start": 480.542,
+        "duration": 2.738
+    },
+    {
+        "text": "And in fact, if you really dig into the theoretical underpinnings of integrals, ",
+        "start": 484.08,
+        "duration": 4.051
+    },
+    {
+        "text": "what you'd find is that in addition to the way that it's defined in a ",
+        "start": 488.131,
+        "duration": 3.545
+    },
+    {
+        "text": "typical intro calculus class, there is a separate more powerful definition ",
+        "start": 491.676,
+        "duration": 3.798
+    },
+    {
+        "text": "that's based on measure theory, this formal foundation of probability.",
+        "start": 495.474,
+        "duration": 3.546
+    },
+    {
+        "text": "If I look back to when I first learned probability, ",
+        "start": 500.28,
+        "duration": 2.792
+    },
+    {
+        "text": "I definitely remember grappling with this weird idea that in continuous settings, ",
+        "start": 503.072,
+        "duration": 4.404
+    },
+    {
+        "text": "like random variables that are real numbers or throwing a dart at a dartboard, ",
+        "start": 507.476,
+        "duration": 4.243
+    },
+    {
+        "text": "you have a bunch of outcomes that are possible, ",
+        "start": 511.719,
+        "duration": 2.577
+    },
+    {
+        "text": "and yet each one has a probability of zero, and somehow altogether they have a ",
+        "start": 514.296,
+        "duration": 4.243
+    },
+    {
+        "text": "probability of one.",
+        "start": 518.539,
+        "duration": 1.02
+    },
+    {
+        "text": "Now one step of coming to terms with this is to realize that possibility is ",
+        "start": 520.82,
+        "duration": 3.982
+    },
+    {
+        "text": "better tied to probability density than probability, ",
+        "start": 524.802,
+        "duration": 2.777
+    },
+    {
+        "text": "but just swapping out sums of one for integrals of the others never quite ",
+        "start": 527.579,
+        "duration": 3.878
+    },
+    {
+        "text": "scratched the itch for me.",
+        "start": 531.457,
+        "duration": 1.363
+    },
+    {
+        "text": "I remember that it only really clicked when I realized that the rules for ",
+        "start": 533.28,
+        "duration": 3.335
+    },
+    {
+        "text": "combining probabilities of different sets were not quite what I thought they were, ",
+        "start": 536.615,
+        "duration": 3.74
+    },
+    {
+        "text": "and there was simply a different axiom system underlying it all.",
+        "start": 540.355,
+        "duration": 2.885
+    },
+    {
+        "text": "But anyway, steering away from the theory somewhere back in the loose direction of ",
+        "start": 544.58,
+        "duration": 3.86
+    },
+    {
+        "text": "application, look back to our original question about the coin with an unknown weight.",
+        "start": 548.44,
+        "duration": 4.0
+    },
+    {
+        "text": "What we've learned here is that the right question to ask is, ",
+        "start": 552.96,
+        "duration": 3.604
+    },
+    {
+        "text": "what's the probability density function that describes this value h after seeing the ",
+        "start": 556.564,
+        "duration": 4.942
+    },
+    {
+        "text": "outcomes of a few tosses?",
+        "start": 561.506,
+        "duration": 1.454
+    },
+    {
+        "text": "If you can find that PDF, you can use it to answer questions like, ",
+        "start": 563.46,
+        "duration": 3.911
+    },
+    {
+        "text": "what's the probability that the true probability of flipping heads falls between ",
+        "start": 567.371,
+        "duration": 4.728
+    },
+    {
+        "text": "0.6 and 0.8?",
+        "start": 572.099,
+        "duration": 0.701
+    },
+    {
+        "text": "To find that PDF, join me in the next part.",
+        "start": 573.68,
+        "duration": 2.38
+    }
+]

@@ -1,0 +1,1297 @@
+[
+    {
+        "text": "The last several videos have been about the idea of a derivative, ",
+        "start": 14.32,
+        "duration": 2.992
+    },
+    {
+        "text": "and before moving on to integrals I want to take some time to talk about limits.",
+        "start": 17.312,
+        "duration": 3.628
+    },
+    {
+        "text": "To be honest, the idea of a limit is not really anything new.",
+        "start": 21.66,
+        "duration": 3.16
+    },
+    {
+        "text": "If you know what the word approach means you pretty much already know what a limit is.",
+        "start": 25.16,
+        "duration": 3.54
+    },
+    {
+        "text": "You could say it's a matter of assigning fancy notation to ",
+        "start": 29.04,
+        "duration": 3.262
+    },
+    {
+        "text": "the intuitive idea of one value that gets closer to another.",
+        "start": 32.302,
+        "duration": 3.318
+    },
+    {
+        "text": "But there are a few reasons to devote a full video to this topic.",
+        "start": 36.44,
+        "duration": 3.22
+    },
+    {
+        "text": "For one thing, it's worth showing how the way I've been describing ",
+        "start": 40.28,
+        "duration": 3.404
+    },
+    {
+        "text": "derivatives so far lines up with the formal definition of a ",
+        "start": 43.684,
+        "duration": 3.049
+    },
+    {
+        "text": "derivative as it's typically presented in most courses and textbooks.",
+        "start": 46.733,
+        "duration": 3.507
+    },
+    {
+        "text": "I want to give you a little confidence that thinking in terms of dx and df ",
+        "start": 50.92,
+        "duration": 4.183
+    },
+    {
+        "text": "as concrete non-zero nudges is not just some trick for building intuition, ",
+        "start": 55.103,
+        "duration": 4.184
+    },
+    {
+        "text": "it's backed up by the formal definition of a derivative in all its rigor.",
+        "start": 59.287,
+        "duration": 4.073
+    },
+    {
+        "text": "I also want to shed light on what exactly mathematicians mean when ",
+        "start": 64.26,
+        "duration": 3.773
+    },
+    {
+        "text": "they say approach in terms of the epsilon-delta definition of limits.",
+        "start": 68.033,
+        "duration": 3.887
+    },
+    {
+        "text": "Then we'll finish off with a clever trick for computing limits called L'Hopital's rule.",
+        "start": 72.52,
+        "duration": 4.06
+    },
+    {
+        "text": "So, first things first, let's take a look at the formal definition of the derivative.",
+        "start": 77.8,
+        "duration": 3.9
+    },
+    {
+        "text": "As a reminder, when you have some function f of x, ",
+        "start": 82.32,
+        "duration": 3.111
+    },
+    {
+        "text": "to think about its derivative at a particular input, maybe x equals 2, ",
+        "start": 85.431,
+        "duration": 4.331
+    },
+    {
+        "text": "you start by imagining nudging that input some little dx away, ",
+        "start": 89.762,
+        "duration": 3.843
+    },
+    {
+        "text": "and looking at the resulting change to the output, df.",
+        "start": 93.605,
+        "duration": 3.295
+    },
+    {
+        "text": "The ratio df divided by dx, which can be nicely thought of ",
+        "start": 97.96,
+        "duration": 3.507
+    },
+    {
+        "text": "as the rise over run slope between the starting point on the graph and the nudged point, ",
+        "start": 101.467,
+        "duration": 5.291
+    },
+    {
+        "text": "is almost what the derivative is.",
+        "start": 106.758,
+        "duration": 1.962
+    },
+    {
+        "text": "The actual derivative is whatever this ratio approaches as dx approaches 0.",
+        "start": 109.1,
+        "duration": 4.86
+    },
+    {
+        "text": "Just to spell out what's meant there, that nudge to the output ",
+        "start": 115.0,
+        "duration": 4.123
+    },
+    {
+        "text": "df is the difference between f at the starting input plus dx and f at the starting input, ",
+        "start": 119.123,
+        "duration": 5.89
+    },
+    {
+        "text": "the change to the output caused by dx.",
+        "start": 125.013,
+        "duration": 2.487
+    },
+    {
+        "text": "To express that you want to find what this ratio approaches as dx approaches 0, ",
+        "start": 128.68,
+        "duration": 5.661
+    },
+    {
+        "text": "you write lim for limit, with dx arrow 0 below it.",
+        "start": 134.341,
+        "duration": 3.539
+    },
+    {
+        "text": "You'll almost never see terms with a lowercase ",
+        "start": 138.96,
+        "duration": 2.931
+    },
+    {
+        "text": "d like dx inside a limit expression like this.",
+        "start": 141.891,
+        "duration": 2.869
+    },
+    {
+        "text": "Instead, the standard is to use a different variable, ",
+        "start": 145.32,
+        "duration": 2.757
+    },
+    {
+        "text": "something like delta x, or commonly h for whatever reason.",
+        "start": 148.077,
+        "duration": 2.963
+    },
+    {
+        "text": "The way I like to think of it is that terms with this lowercase ",
+        "start": 151.86,
+        "duration": 3.645
+    },
+    {
+        "text": "d in the typical derivative expression have built into them this idea of a limit, ",
+        "start": 155.505,
+        "duration": 4.67
+    },
+    {
+        "text": "the idea that dx is supposed to eventually go to 0.",
+        "start": 160.175,
+        "duration": 2.905
+    },
+    {
+        "text": "In a sense, this left hand side here, df over dx, ",
+        "start": 164.66,
+        "duration": 2.949
+    },
+    {
+        "text": "the ratio we've been thinking about for the past few videos, ",
+        "start": 167.609,
+        "duration": 3.598
+    },
+    {
+        "text": "is just shorthand for what the right hand side here spells out in more detail, ",
+        "start": 171.207,
+        "duration": 4.66
+    },
+    {
+        "text": "writing out exactly what we mean by df, and writing out this limit process explicitly.",
+        "start": 175.867,
+        "duration": 5.073
+    },
+    {
+        "text": "This right hand side here is the formal definition of a derivative, ",
+        "start": 181.62,
+        "duration": 3.645
+    },
+    {
+        "text": "as you would commonly see it in any calculus textbook.",
+        "start": 185.265,
+        "duration": 2.895
+    },
+    {
+        "text": "And if you'll pardon me for a small rant here, ",
+        "start": 188.76,
+        "duration": 2.469
+    },
+    {
+        "text": "I want to emphasize that nothing about this right hand side references the paradoxical ",
+        "start": 191.229,
+        "duration": 4.571
+    },
+    {
+        "text": "idea of an infinitely small change.",
+        "start": 195.8,
+        "duration": 1.84
+    },
+    {
+        "text": "The point of limits is to avoid that.",
+        "start": 198.26,
+        "duration": 1.7
+    },
+    {
+        "text": "This value h is the exact same thing as the dx ",
+        "start": 200.62,
+        "duration": 2.406
+    },
+    {
+        "text": "I've been referencing throughout the series.",
+        "start": 203.026,
+        "duration": 2.254
+    },
+    {
+        "text": "It's a nudge to the input of f with some non-zero, finitely small size, like 0.001.",
+        "start": 205.9,
+        "duration": 6.38
+    },
+    {
+        "text": "It's just that we're analyzing what happens for arbitrarily small choices of h.",
+        "start": 213.1,
+        "duration": 4.6
+    },
+    {
+        "text": "In fact, the only reason people introduce a new variable name into this formal ",
+        "start": 218.58,
+        "duration": 4.858
+    },
+    {
+        "text": "definition, rather than just using dx, is to be extra clear that these changes ",
+        "start": 223.438,
+        "duration": 4.858
+    },
+    {
+        "text": "to the input are just ordinary numbers that have nothing to do with infinitesimals.",
+        "start": 228.296,
+        "duration": 5.104
+    },
+    {
+        "text": "There are others who like to interpret this dx as an infinitely small change, ",
+        "start": 234.38,
+        "duration": 4.68
+    },
+    {
+        "text": "whatever Or to just say that dx and df are nothing more than ",
+        "start": 239.06,
+        "duration": 3.66
+    },
+    {
+        "text": "symbols that we shouldn't take too seriously.",
+        "start": 242.72,
+        "duration": 2.7
+    },
+    {
+        "text": "But by now in the series, you know I'm not really a fan of either of those views.",
+        "start": 246.22,
+        "duration": 3.26
+    },
+    {
+        "text": "I think you can and should interpret dx as a concrete, finitely small nudge, ",
+        "start": 250.02,
+        "duration": 4.212
+    },
+    {
+        "text": "just so long as you remember to ask what happens when that thing approaches 0.",
+        "start": 254.232,
+        "duration": 4.268
+    },
+    {
+        "text": "For one thing, and I hope the past few videos have helped convince you of this, ",
+        "start": 259.42,
+        "duration": 3.651
+    },
+    {
+        "text": "that helps to build stronger intuition for where the rules of calculus actually come from.",
+        "start": 263.071,
+        "duration": 4.109
+    },
+    {
+        "text": "But it's not just some trick for building intuitions.",
+        "start": 267.18,
+        "duration": 2.72
+    },
+    {
+        "text": "Everything I've been saying about derivatives with this concrete, ",
+        "start": 270.46,
+        "duration": 3.67
+    },
+    {
+        "text": "finitely small nudge philosophy is just a translation of this formal definition we're ",
+        "start": 274.13,
+        "duration": 4.782
+    },
+    {
+        "text": "staring at right now.",
+        "start": 278.912,
+        "duration": 1.168
+    },
+    {
+        "text": "Long story short, the big fuss about limits is that they let us ",
+        "start": 281.04,
+        "duration": 3.637
+    },
+    {
+        "text": "avoid talking about infinitely small changes by instead asking what ",
+        "start": 284.677,
+        "duration": 3.864
+    },
+    {
+        "text": "happens as the size of some small change to our variable approaches 0.",
+        "start": 288.541,
+        "duration": 3.979
+    },
+    {
+        "text": "And this brings us to goal number 2, understanding ",
+        "start": 293.28,
+        "duration": 2.85
+    },
+    {
+        "text": "exactly what it means for one value to approach another.",
+        "start": 296.13,
+        "duration": 3.13
+    },
+    {
+        "text": "For example, consider the function 2 plus h cubed minus 2 cubed all divided by h.",
+        "start": 300.44,
+        "duration": 6.7
+    },
+    {
+        "text": "This happens to be the expression that pops out when you unravel ",
+        "start": 308.48,
+        "duration": 3.793
+    },
+    {
+        "text": "the definition of a derivative of x cubed evaluated at x equals 2, ",
+        "start": 312.273,
+        "duration": 3.91
+    },
+    {
+        "text": "but let's just think of it as any old function with an input h.",
+        "start": 316.183,
+        "duration": 3.677
+    },
+    {
+        "text": "Its graph is this nice continuous looking parabola, ",
+        "start": 320.44,
+        "duration": 2.864
+    },
+    {
+        "text": "which would make sense because it's a cubic term divided by a linear term.",
+        "start": 323.304,
+        "duration": 4.076
+    },
+    {
+        "text": "But actually, if you think about what's going on at h equals 0, ",
+        "start": 328.2,
+        "duration": 4.004
+    },
+    {
+        "text": "plugging that in you would get 0 divided by 0, which is not defined.",
+        "start": 332.204,
+        "duration": 4.256
+    },
+    {
+        "text": "So really, this graph has a hole at that point, ",
+        "start": 337.42,
+        "duration": 2.828
+    },
+    {
+        "text": "and you have to exaggerate to draw that hole, often with an empty circle like this.",
+        "start": 340.248,
+        "duration": 4.892
+    },
+    {
+        "text": "But keep in mind, the function is perfectly well ",
+        "start": 345.14,
+        "duration": 2.7
+    },
+    {
+        "text": "defined for inputs as close to 0 as you want.",
+        "start": 347.84,
+        "duration": 2.48
+    },
+    {
+        "text": "Wouldn't you agree that as h approaches 0, the corresponding output, ",
+        "start": 351.26,
+        "duration": 4.443
+    },
+    {
+        "text": "the height of this graph, approaches 12?",
+        "start": 355.703,
+        "duration": 2.577
+    },
+    {
+        "text": "It doesn't matter which side you come at it from.",
+        "start": 359.16,
+        "duration": 2.42
+    },
+    {
+        "text": "That limit of this ratio as h approaches 0 is equal to 12.",
+        "start": 363.74,
+        "duration": 4.46
+    },
+    {
+        "text": "But imagine you're a mathematician inventing calculus, ",
+        "start": 369.36,
+        "duration": 3.383
+    },
+    {
+        "text": "and someone skeptically asks you, well, what exactly do you mean by approach?",
+        "start": 372.743,
+        "duration": 4.737
+    },
+    {
+        "text": "That would be kind of an annoying question, I mean, come on, ",
+        "start": 378.44,
+        "duration": 2.778
+    },
+    {
+        "text": "we all know what it means for one value to get closer to another.",
+        "start": 381.218,
+        "duration": 2.962
+    },
+    {
+        "text": "But let's start thinking about ways you might be able to answer that person, ",
+        "start": 384.94,
+        "duration": 3.593
+    },
+    {
+        "text": "completely unambiguously.",
+        "start": 388.533,
+        "duration": 1.167
+    },
+    {
+        "text": "For a given range of inputs within some distance of 0, ",
+        "start": 390.94,
+        "duration": 3.247
+    },
+    {
+        "text": "excluding the forbidden point 0 itself, look at all of the corresponding outputs, ",
+        "start": 394.187,
+        "duration": 4.841
+    },
+    {
+        "text": "all possible heights of the graph above that range.",
+        "start": 399.028,
+        "duration": 3.012
+    },
+    {
+        "text": "As the range of input values closes in more and more tightly around 0, ",
+        "start": 402.86,
+        "duration": 4.421
+    },
+    {
+        "text": "that range of output values closes in more and more closely around 12.",
+        "start": 407.281,
+        "duration": 4.359
+    },
+    {
+        "text": "And importantly, the size of that range of output values can be made as small as you want.",
+        "start": 412.42,
+        "duration": 4.86
+    },
+    {
+        "text": "As a counter example, consider a function that looks like this, ",
+        "start": 419.02,
+        "duration": 3.507
+    },
+    {
+        "text": "which is also not defined at 0, but kind of jumps up at that point.",
+        "start": 422.527,
+        "duration": 3.673
+    },
+    {
+        "text": "When you approach h equals 0 from the right, the function approaches the value 2, ",
+        "start": 426.96,
+        "duration": 4.64
+    },
+    {
+        "text": "but as you come at it from the left, it approaches 1.",
+        "start": 431.6,
+        "duration": 3.0
+    },
+    {
+        "text": "Since there's not a single clear, unambiguous value that this function ",
+        "start": 435.54,
+        "duration": 4.503
+    },
+    {
+        "text": "approaches as h approaches 0, the limit is not defined at that point.",
+        "start": 440.043,
+        "duration": 4.377
+    },
+    {
+        "text": "One way to think of this is that when you look at any range of inputs around 0, ",
+        "start": 445.16,
+        "duration": 4.906
+    },
+    {
+        "text": "and consider the corresponding range of outputs, as you shrink that input range, ",
+        "start": 450.066,
+        "duration": 4.968
+    },
+    {
+        "text": "the corresponding outputs don't narrow in on any specific value.",
+        "start": 455.034,
+        "duration": 3.926
+    },
+    {
+        "text": "Instead, those outputs straddle a range that never shrinks smaller than 1, ",
+        "start": 459.78,
+        "duration": 4.13
+    },
+    {
+        "text": "even as you make that input range as tiny as you could imagine.",
+        "start": 463.91,
+        "duration": 3.47
+    },
+    {
+        "text": "This perspective of shrinking an input range around the limiting point, ",
+        "start": 468.52,
+        "duration": 3.779
+    },
+    {
+        "text": "and seeing whether or not you're restricted in how much that shrinks the output range, ",
+        "start": 472.299,
+        "duration": 4.568
+    },
+    {
+        "text": "leads to something called the epsilon-delta definition of limits.",
+        "start": 476.867,
+        "duration": 3.413
+    },
+    {
+        "text": "Now I should tell you, you could argue that this is ",
+        "start": 481.22,
+        "duration": 2.099
+    },
+    {
+        "text": "needlessly heavy duty for an introduction to calculus.",
+        "start": 483.319,
+        "duration": 2.181
+    },
+    {
+        "text": "Like I said, if you know what the word approach means, ",
+        "start": 486.06,
+        "duration": 2.293
+    },
+    {
+        "text": "you already know what a limit means, there's nothing new on the conceptual level here.",
+        "start": 488.353,
+        "duration": 3.587
+    },
+    {
+        "text": "But this is an interesting glimpse into the field of real analysis, ",
+        "start": 492.32,
+        "duration": 3.964
+    },
+    {
+        "text": "and gives you a taste for how mathematicians make the intuitive ideas of calculus more ",
+        "start": 496.284,
+        "duration": 5.073
+    },
+    {
+        "text": "airtight and rigorous.",
+        "start": 501.357,
+        "duration": 1.283
+    },
+    {
+        "text": "You've already seen the main idea here.",
+        "start": 503.7,
+        "duration": 1.64
+    },
+    {
+        "text": "When a limit exists, you can make this output range as small as you want, ",
+        "start": 505.66,
+        "duration": 3.962
+    },
+    {
+        "text": "but when the limit doesn't exist, that output range cannot get smaller than some ",
+        "start": 509.622,
+        "duration": 4.338
+    },
+    {
+        "text": "particular value, no matter how much you shrink the input range around the limiting input.",
+        "start": 513.96,
+        "duration": 4.82
+    },
+    {
+        "text": "Let's freeze that same idea a little more precisely, ",
+        "start": 519.679,
+        "duration": 2.694
+    },
+    {
+        "text": "maybe in the context of this example where the limiting value was 12.",
+        "start": 522.373,
+        "duration": 3.507
+    },
+    {
+        "text": "Think about any distance away from 12, where for some reason it's ",
+        "start": 526.78,
+        "duration": 3.253
+    },
+    {
+        "text": "common to use the Greek letter epsilon to denote that distance.",
+        "start": 530.033,
+        "duration": 3.107
+    },
+    {
+        "text": "The intent here is that this distance epsilon is as small as you want.",
+        "start": 533.82,
+        "duration": 4.22
+    },
+    {
+        "text": "What it means for the limit to exist is that you will always be able to find a ",
+        "start": 538.82,
+        "duration": 5.881
+    },
+    {
+        "text": "range of inputs around our limiting point, some distance delta around 0, ",
+        "start": 544.701,
+        "duration": 5.435
+    },
+    {
+        "text": "so that any input within delta of 0 corresponds to an output within a distance ",
+        "start": 550.136,
+        "duration": 5.881
+    },
+    {
+        "text": "epsilon of 12.",
+        "start": 556.017,
+        "duration": 1.043
+    },
+    {
+        "text": "The key point here is that that's true for any epsilon, ",
+        "start": 558.42,
+        "duration": 2.735
+    },
+    {
+        "text": "no matter how small, you'll always be able to find the corresponding delta.",
+        "start": 561.155,
+        "duration": 3.665
+    },
+    {
+        "text": "In contrast, when a limit does not exist, as in this example here, ",
+        "start": 565.58,
+        "duration": 4.419
+    },
+    {
+        "text": "you can find a sufficiently small epsilon, like 0.4, ",
+        "start": 569.999,
+        "duration": 3.496
+    },
+    {
+        "text": "so that no matter how small you make your range around 0, no matter how tiny delta is, ",
+        "start": 573.495,
+        "duration": 5.739
+    },
+    {
+        "text": "the corresponding range of outputs is just always too big.",
+        "start": 579.234,
+        "duration": 3.826
+    },
+    {
+        "text": "There is no limiting output where everything is within a distance epsilon of that output.",
+        "start": 583.7,
+        "duration": 4.94
+    },
+    {
+        "text": "So far, this is all pretty theory-heavy, don't you think?",
+        "start": 594.1,
+        "duration": 3.06
+    },
+    {
+        "text": "Limits being used to formally define the derivative, ",
+        "start": 597.68,
+        "duration": 2.708
+    },
+    {
+        "text": "and epsilons and deltas being used to rigorously define the limit itself.",
+        "start": 600.388,
+        "duration": 3.732
+    },
+    {
+        "text": "So let's finish things off here with a trick for actually computing limits.",
+        "start": 604.9,
+        "duration": 3.36
+    },
+    {
+        "text": "For instance, let's say for some reason you were studying ",
+        "start": 609.1,
+        "duration": 3.263
+    },
+    {
+        "text": "the function sin of pi times x divided by x squared minus 1.",
+        "start": 612.363,
+        "duration": 3.377
+    },
+    {
+        "text": "Maybe this was modeling some kind of dampened oscillation.",
+        "start": 616.22,
+        "duration": 3.02
+    },
+    {
+        "text": "When you plot a bunch of points to graph this, it looks pretty continuous.",
+        "start": 620.24,
+        "duration": 3.22
+    },
+    {
+        "text": "But there's a problematic value at x equals 1.",
+        "start": 627.28,
+        "duration": 2.2
+    },
+    {
+        "text": "When you plug that in, sin of pi is 0, and the denominator also comes out to 0, ",
+        "start": 630.0,
+        "duration": 5.342
+    },
+    {
+        "text": "so the function is actually not defined at that input, ",
+        "start": 635.342,
+        "duration": 3.673
+    },
+    {
+        "text": "and the graph should have a hole there.",
+        "start": 639.015,
+        "duration": 2.605
+    },
+    {
+        "text": "This also happens at x equals negative 1, but let's just ",
+        "start": 642.2,
+        "duration": 3.311
+    },
+    {
+        "text": "focus our attention on a single one of these holes for now.",
+        "start": 645.511,
+        "duration": 3.429
+    },
+    {
+        "text": "The graph certainly does seem to approach a distinct value at that point, ",
+        "start": 650.02,
+        "duration": 3.756
+    },
+    {
+        "text": "wouldn't you say?",
+        "start": 653.776,
+        "duration": 0.864
+    },
+    {
+        "text": "So you might ask, how exactly do you find what output this approaches as x approaches 1, ",
+        "start": 657.28,
+        "duration": 5.725
+    },
+    {
+        "text": "since you can't just plug in 1?",
+        "start": 663.005,
+        "duration": 1.995
+    },
+    {
+        "text": "Well, one way to approximate it would be to plug in ",
+        "start": 667.96,
+        "duration": 3.664
+    },
+    {
+        "text": "a number that's just really close to 1, like 1.00001.",
+        "start": 671.624,
+        "duration": 3.736
+    },
+    {
+        "text": "Doing that, you'd find that this should be a number around negative 1.57.",
+        "start": 676.12,
+        "duration": 3.96
+    },
+    {
+        "text": "But is there a way to know precisely what it is?",
+        "start": 681.16,
+        "duration": 2.44
+    },
+    {
+        "text": "Some systematic process to take an expression like this one, ",
+        "start": 683.96,
+        "duration": 3.637
+    },
+    {
+        "text": "that looks like 0 divided by 0 at some input, and ask what is its limit as x ",
+        "start": 687.597,
+        "duration": 4.591
+    },
+    {
+        "text": "approaches that input?",
+        "start": 692.188,
+        "duration": 1.312
+    },
+    {
+        "text": "After limits, so helpfully let us write the definition for derivatives, ",
+        "start": 696.44,
+        "duration": 3.717
+    },
+    {
+        "text": "derivatives can actually come back here and return the favor to help us evaluate limits.",
+        "start": 700.157,
+        "duration": 4.543
+    },
+    {
+        "text": "Let me show you what I mean.",
+        "start": 705.2,
+        "duration": 0.82
+    },
+    {
+        "text": "Here's what the graph of sin of pi times x looks like, ",
+        "start": 707.02,
+        "duration": 3.348
+    },
+    {
+        "text": "and here's what the graph of x squared minus 1 looks like.",
+        "start": 710.368,
+        "duration": 3.532
+    },
+    {
+        "text": "That's a lot to have up on the screen, but just ",
+        "start": 713.9,
+        "duration": 2.88
+    },
+    {
+        "text": "focus on what's happening around x equals 1.",
+        "start": 716.78,
+        "duration": 2.64
+    },
+    {
+        "text": "The point here is that sin of pi times x and x squared minus 1 are both 0 at that point, ",
+        "start": 720.18,
+        "duration": 6.122
+    },
+    {
+        "text": "they both cross the x axis.",
+        "start": 726.302,
+        "duration": 1.858
+    },
+    {
+        "text": "In the same spirit as plugging in a specific value near 1, like 1.00001, ",
+        "start": 729.0,
+        "duration": 5.277
+    },
+    {
+        "text": "let's zoom in on that point and consider what happens just a tiny nudge dx away from it.",
+        "start": 734.277,
+        "duration": 6.363
+    },
+    {
+        "text": "The value sin of pi times x is bumped down, and the value of that nudge, ",
+        "start": 741.3,
+        "duration": 5.081
+    },
+    {
+        "text": "which was caused by the nudge dx to the input, is what we might call d sin of pi x.",
+        "start": 746.381,
+        "duration": 5.779
+    },
+    {
+        "text": "And from our knowledge of derivatives, using the chain rule, ",
+        "start": 753.04,
+        "duration": 4.22
+    },
+    {
+        "text": "that should be around cosine of pi times x times pi times dx.",
+        "start": 757.26,
+        "duration": 4.22
+    },
+    {
+        "text": "Since the starting value was x equals 1, we plug in x equals 1 to that expression.",
+        "start": 762.7,
+        "duration": 5.0
+    },
+    {
+        "text": "In other words, the amount that this sin of pi times x graph changes is roughly ",
+        "start": 771.26,
+        "duration": 5.447
+    },
+    {
+        "text": "proportional to dx, with a proportionality constant equal to cosine of pi times pi.",
+        "start": 776.707,
+        "duration": 5.653
+    },
+    {
+        "text": "And cosine of pi, if we think back to our trig knowledge, ",
+        "start": 783.36,
+        "duration": 3.286
+    },
+    {
+        "text": "is exactly negative 1, so we can write this whole thing as negative pi times dx.",
+        "start": 786.646,
+        "duration": 4.534
+    },
+    {
+        "text": "Similarly, the value of the x squared minus 1 graph changes by some dx squared minus 1, ",
+        "start": 792.22,
+        "duration": 6.225
+    },
+    {
+        "text": "and taking the derivative, the size of that nudge should be 2x times dx.",
+        "start": 798.445,
+        "duration": 5.095
+    },
+    {
+        "text": "Again, we were starting at x equals 1, so we plug in x equals 1 to that expression, ",
+        "start": 804.48,
+        "duration": 4.927
+    },
+    {
+        "text": "meaning the size of that output nudge is about 2 times 1 times dx.",
+        "start": 809.407,
+        "duration": 3.873
+    },
+    {
+        "text": "What this means is that for values of x which are just a tiny nudge dx away from 1, ",
+        "start": 814.92,
+        "duration": 6.358
+    },
+    {
+        "text": "the ratio sin of pi x divided by x squared minus 1 is approximately ",
+        "start": 821.278,
+        "duration": 5.147
+    },
+    {
+        "text": "negative pi times dx divided by 2 times dx.",
+        "start": 826.425,
+        "duration": 3.255
+    },
+    {
+        "text": "The dx's cancel out, so what's left is negative pi over 2.",
+        "start": 830.9,
+        "duration": 3.84
+    },
+    {
+        "text": "And importantly, those approximations get more and more ",
+        "start": 835.72,
+        "duration": 2.871
+    },
+    {
+        "text": "accurate for smaller and smaller choices of dx, right?",
+        "start": 838.591,
+        "duration": 2.769
+    },
+    {
+        "text": "This ratio, negative pi over 2, actually tells ",
+        "start": 842.31,
+        "duration": 3.309
+    },
+    {
+        "text": "us the precise limiting value as x approaches 1.",
+        "start": 845.619,
+        "duration": 3.381
+    },
+    {
+        "text": "Remember, what that means is that the limiting height on ",
+        "start": 849.54,
+        "duration": 3.567
+    },
+    {
+        "text": "our original graph is evidently exactly negative pi over 2.",
+        "start": 853.107,
+        "duration": 3.693
+    },
+    {
+        "text": "What happened there is a little subtle, so I want to go through it again, ",
+        "start": 858.22,
+        "duration": 3.382
+    },
+    {
+        "text": "but this time a little more generally.",
+        "start": 861.602,
+        "duration": 1.738
+    },
+    {
+        "text": "Instead of these two specific functions, which are both equal to 0 at x equals 1, ",
+        "start": 864.12,
+        "duration": 5.268
+    },
+    {
+        "text": "think of any two functions, f of x and g of x, which are both 0 at some common value, ",
+        "start": 869.388,
+        "duration": 5.525
+    },
+    {
+        "text": "x equals a.",
+        "start": 874.913,
+        "duration": 0.707
+    },
+    {
+        "text": "The only constraint is that these have to be functions where you're ",
+        "start": 876.28,
+        "duration": 3.283
+    },
+    {
+        "text": "able to take a derivative of them at x equals a, ",
+        "start": 879.563,
+        "duration": 2.366
+    },
+    {
+        "text": "which means they each basically look like a line when you zoom in close ",
+        "start": 881.929,
+        "duration": 3.477
+    },
+    {
+        "text": "enough to that value.",
+        "start": 885.406,
+        "duration": 1.014
+    },
+    {
+        "text": "Even though you can't compute f divided by g at this trouble point, ",
+        "start": 887.8,
+        "duration": 4.593
+    },
+    {
+        "text": "since both of them equal 0, you can ask about this ratio for ",
+        "start": 892.393,
+        "duration": 4.121
+    },
+    {
+        "text": "values of x really close to a, the limit as x approaches a.",
+        "start": 896.514,
+        "duration": 3.986
+    },
+    {
+        "text": "It's helpful to think of those nearby inputs as just a tiny nudge, dx, away from a.",
+        "start": 901.22,
+        "duration": 4.98
+    },
+    {
+        "text": "The value of f at that nudged point is approximately its derivative, ",
+        "start": 906.76,
+        "duration": 5.401
+    },
+    {
+        "text": "df over dx, evaluated at a times dx.",
+        "start": 912.161,
+        "duration": 2.819
+    },
+    {
+        "text": "Likewise, the value of g at that nudged point is approximately the derivative of g, ",
+        "start": 915.98,
+        "duration": 6.144
+    },
+    {
+        "text": "evaluated at a times dx.",
+        "start": 922.124,
+        "duration": 1.756
+    },
+    {
+        "text": "Near that trouble point, the ratio between the outputs of f and g is actually about the ",
+        "start": 925.06,
+        "duration": 6.0
+    },
+    {
+        "text": "same as the derivative of f at a times dx, divided by the derivative of g at a times dx.",
+        "start": 931.06,
+        "duration": 6.0
+    },
+    {
+        "text": "Those dx's cancel out, so the ratio of f and g near a ",
+        "start": 937.88,
+        "duration": 3.239
+    },
+    {
+        "text": "is about the same as the ratio between their derivatives.",
+        "start": 941.119,
+        "duration": 3.421
+    },
+    {
+        "text": "Because each of those approximations gets more and more accurate for smaller and ",
+        "start": 945.86,
+        "duration": 4.447
+    },
+    {
+        "text": "smaller nudges, this ratio of derivatives gives the precise value for the limit.",
+        "start": 950.307,
+        "duration": 4.393
+    },
+    {
+        "text": "This is a really handy trick for computing a lot of limits.",
+        "start": 955.54,
+        "duration": 2.96
+    },
+    {
+        "text": "Whenever you come across some expression that seems to equal 0 divided by ",
+        "start": 958.92,
+        "duration": 4.018
+    },
+    {
+        "text": "0 when you plug in some particular input, just try taking the derivative ",
+        "start": 962.938,
+        "duration": 3.963
+    },
+    {
+        "text": "of the top and bottom expressions and plugging in that same trouble input.",
+        "start": 966.901,
+        "duration": 4.019
+    },
+    {
+        "text": "This clever trick is called L'Hopital's Rule.",
+        "start": 973.98,
+        "duration": 2.32
+    },
+    {
+        "text": "Interestingly, it was actually discovered by Johann Bernoulli, ",
+        "start": 977.24,
+        "duration": 2.942
+    },
+    {
+        "text": "but L'Hopital was this wealthy dude who essentially paid ",
+        "start": 980.182,
+        "duration": 2.662
+    },
+    {
+        "text": "Bernoulli for the rights to some of his mathematical discoveries.",
+        "start": 982.844,
+        "duration": 3.036
+    },
+    {
+        "text": "Academia is weird back then, but in a very literal way, ",
+        "start": 986.74,
+        "duration": 3.336
+    },
+    {
+        "text": "it pays to understand these tiny nudges.",
+        "start": 990.076,
+        "duration": 2.384
+    },
+    {
+        "text": "Right now, you might be remembering that the definition of a derivative ",
+        "start": 994.96,
+        "duration": 3.757
+    },
+    {
+        "text": "for a given function comes down to computing the limit of a certain ",
+        "start": 998.717,
+        "duration": 3.548
+    },
+    {
+        "text": "fraction that looks like 0 divided by 0, so you might think that ",
+        "start": 1002.265,
+        "duration": 3.392
+    },
+    {
+        "text": "L'Hopital's Rule could give us a handy way to discover new derivative formulas.",
+        "start": 1005.657,
+        "duration": 4.123
+    },
+    {
+        "text": "But that would actually be cheating, since presumably ",
+        "start": 1010.68,
+        "duration": 2.794
+    },
+    {
+        "text": "you don't know what the derivative of the numerator is.",
+        "start": 1013.474,
+        "duration": 2.846
+    },
+    {
+        "text": "When it comes to discovering derivative formulas, ",
+        "start": 1017.02,
+        "duration": 2.574
+    },
+    {
+        "text": "something we've been doing a fair amount this series, ",
+        "start": 1019.594,
+        "duration": 2.78
+    },
+    {
+        "text": "there is no systematic plug-and-chug method.",
+        "start": 1022.374,
+        "duration": 2.266
+    },
+    {
+        "text": "But that's a good thing!",
+        "start": 1025.119,
+        "duration": 0.841
+    },
+    {
+        "text": "Whenever creativity is needed to solve problems like these, ",
+        "start": 1026.4,
+        "duration": 2.973
+    },
+    {
+        "text": "it's a good sign that you're doing something real, ",
+        "start": 1029.373,
+        "duration": 2.528
+    },
+    {
+        "text": "something that might give you a powerful tool to solve future problems.",
+        "start": 1031.901,
+        "duration": 3.519
+    },
+    {
+        "text": "And speaking of powerful tools, up next I'm going to be talking about what an integral ",
+        "start": 1038.26,
+        "duration": 4.648
+    },
+    {
+        "text": "is, as well as the fundamental theorem of calculus, ",
+        "start": 1042.908,
+        "duration": 2.779
+    },
+    {
+        "text": "another example of where limits can be used to give a clear meaning to a pretty delicate ",
+        "start": 1045.687,
+        "duration": 4.756
+    },
+    {
+        "text": "idea that flirts with infinity.",
+        "start": 1050.443,
+        "duration": 1.657
+    },
+    {
+        "text": "As you know, most support for this channel comes through Patreon, ",
+        "start": 1053.58,
+        "duration": 3.239
+    },
+    {
+        "text": "and the primary perk for patrons is early access to future series like this one, ",
+        "start": 1056.819,
+        "duration": 3.976
+    },
+    {
+        "text": "where the next one is going to be on probability.",
+        "start": 1060.795,
+        "duration": 2.405
+    },
+    {
+        "text": "But for those of you who want a more tangible way to flag that ",
+        "start": 1064.26,
+        "duration": 3.495
+    },
+    {
+        "text": "you're part of the community, there is also a small 3blue1brown store.",
+        "start": 1067.755,
+        "duration": 3.885
+    },
+    {
+        "text": "Links on the screen and in the description.",
+        "start": 1072.3,
+        "duration": 1.66
+    },
+    {
+        "text": "I'm still debating whether or not to make a preliminary batch of plushie pie creatures, ",
+        "start": 1074.68,
+        "duration": 10.401
+    },
+    {
+        "text": "it depends on how many viewers seem interested in the store more generally, ",
+        "start": 1085.081,
+        "duration": 8.984
+    },
+    {
+        "text": "but let me know in comments what other kinds of things you'd like to see in there. ",
+        "start": 1094.065,
+        "duration": 9.81
+    },
+    {
+        "text": "Thanks for watching!",
+        "start": 1103.875,
+        "duration": 2.365
+    }
+]

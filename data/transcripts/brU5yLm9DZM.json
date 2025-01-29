@@ -1,0 +1,1112 @@
+[
+    {
+        "text": "You know that feeling you get when you have two mirrors facing each other, ",
+        "start": 0.0,
+        "duration": 3.302
+    },
+    {
+        "text": "and it gives the illusion of there being an infinite tunnel of rooms.",
+        "start": 3.302,
+        "duration": 3.038
+    },
+    {
+        "text": "Or, if they're at an angle with each other, it makes you feel ",
+        "start": 6.84,
+        "duration": 3.174
+    },
+    {
+        "text": "like you're a part of a strange kaleidoscopic world with many copies of yourself, ",
+        "start": 10.014,
+        "duration": 4.198
+    },
+    {
+        "text": "all separated by angled pieces of glass.",
+        "start": 14.212,
+        "duration": 2.048
+    },
+    {
+        "text": "What many people may not realize is that the idea underlying these ",
+        "start": 17.12,
+        "duration": 3.746
+    },
+    {
+        "text": "illusions can be surprisingly helpful for solving serious problems in math.",
+        "start": 20.866,
+        "duration": 4.194
+    },
+    {
+        "text": "We've already seen two videos describing the block-collision puzzle, ",
+        "start": 30.18,
+        "duration": 3.475
+    },
+    {
+        "text": "with its wonderfully surprising answer.",
+        "start": 33.655,
+        "duration": 1.965
+    },
+    {
+        "text": "Big block comes in from the bright, lots of clacks, ",
+        "start": 36.16,
+        "duration": 2.555
+    },
+    {
+        "text": "the total number of clacks looks like pi, and we want to know why.",
+        "start": 38.715,
+        "duration": 3.245
+    },
+    {
+        "text": "Here, we see one more perspective explaining what's going on, ",
+        "start": 42.64,
+        "duration": 3.234
+    },
+    {
+        "text": "where if the connection to pi wasn't surprising enough, ",
+        "start": 45.874,
+        "duration": 2.921
+    },
+    {
+        "text": "we add one more unexpected connection to optics.",
+        "start": 48.795,
+        "duration": 2.505
+    },
+    {
+        "text": "But we're doing more than just answering the same question twice.",
+        "start": 51.6,
+        "duration": 2.74
+    },
+    {
+        "text": "This alternate solution gives a much richer understanding of the whole setup, ",
+        "start": 54.5,
+        "duration": 3.414
+    },
+    {
+        "text": "and it makes it easier to answer other questions.",
+        "start": 57.914,
+        "duration": 2.146
+    },
+    {
+        "text": "And fun side note, it happens to be core to how I coded the accurate simulations of ",
+        "start": 60.74,
+        "duration": 3.923
+    },
+    {
+        "text": "these blocks without requiring absurdly small time steps and huge computation time.",
+        "start": 64.663,
+        "duration": 3.877
+    },
+    {
+        "text": "The solution from the last video involved a coordinate plane, ",
+        "start": 69.3,
+        "duration": 3.168
+    },
+    {
+        "text": "where each point encodes a pair of velocities.",
+        "start": 72.468,
+        "duration": 2.352
+    },
+    {
+        "text": "Here, we'll do something similar, but the points of our ",
+        "start": 76.06,
+        "duration": 2.418
+    },
+    {
+        "text": "plane are going to encode the pair of positions of both blocks.",
+        "start": 78.478,
+        "duration": 2.722
+    },
+    {
+        "text": "Again, the idea is that by representing the state of a changing ",
+        "start": 81.78,
+        "duration": 3.604
+    },
+    {
+        "text": "system with individual points in some space, problems in dynamics ",
+        "start": 85.384,
+        "duration": 3.718
+    },
+    {
+        "text": "turn into problems in geometry, which hopefully are more solvable.",
+        "start": 89.102,
+        "duration": 3.718
+    },
+    {
+        "text": "Specifically, let the x-coordinate of a 2D plane represent the distance from the wall ",
+        "start": 94.3,
+        "duration": 4.877
+    },
+    {
+        "text": "to the left edge of the first block, what I'll call d1, ",
+        "start": 99.177,
+        "duration": 3.176
+    },
+    {
+        "text": "and let the y-coordinate represent the distance from the wall to the right edge of the ",
+        "start": 102.353,
+        "duration": 4.935
+    },
+    {
+        "text": "second block, what we'll call d2.",
+        "start": 107.288,
+        "duration": 1.872
+    },
+    {
+        "text": "That way, the line y equals x shows us where the two blocks clack into each other, ",
+        "start": 111.6,
+        "duration": 6.009
+    },
+    {
+        "text": "since this happens whenever d1 is equal to d2.",
+        "start": 117.609,
+        "duration": 3.331
+    },
+    {
+        "text": "Here's what it looks like for our scenario to play out.",
+        "start": 122.54,
+        "duration": 2.78
+    },
+    {
+        "text": "As the two distances of our blocks change, the two dimensional ",
+        "start": 125.78,
+        "duration": 3.326
+    },
+    {
+        "text": "points of our configuration space move around, ",
+        "start": 129.106,
+        "duration": 2.482
+    },
+    {
+        "text": "with positions that always fully encode the information of those two distances.",
+        "start": 131.588,
+        "duration": 4.172
+    },
+    {
+        "text": "You may notice that at the bottom there, it's bounded by a line, ",
+        "start": 136.24,
+        "duration": 3.352
+    },
+    {
+        "text": "where d2 is the same as the small block's width, which, ",
+        "start": 139.592,
+        "duration": 2.888
+    },
+    {
+        "text": "if you think about it, is what it means for the small block to hit the wall.",
+        "start": 142.48,
+        "duration": 3.92
+    },
+    {
+        "text": "You may be able to guess where we're going with this.",
+        "start": 147.56,
+        "duration": 1.88
+    },
+    {
+        "text": "The way this point bounces between the two bounding lines ",
+        "start": 149.96,
+        "duration": 3.073
+    },
+    {
+        "text": "is a bit like a beam of light bouncing between two mirrors.",
+        "start": 153.033,
+        "duration": 3.127
+    },
+    {
+        "text": "The analogy doesn't quite work, though.",
+        "start": 159.48,
+        "duration": 2.48
+    },
+    {
+        "text": "In the lingo of optics, the angle of incidence doesn't equal the angle of reflection.",
+        "start": 162.2,
+        "duration": 4.6
+    },
+    {
+        "text": "Just think of the first collision.",
+        "start": 167.6,
+        "duration": 0.94
+    },
+    {
+        "text": "A beam of light coming in from the right would bounce off a 45 degree angled mirror, ",
+        "start": 169.02,
+        "duration": 4.562
+    },
+    {
+        "text": "this x equals y line, in such a way that it ends up going straight down, ",
+        "start": 173.582,
+        "duration": 3.919
+    },
+    {
+        "text": "which would mean that only the second block is moving.",
+        "start": 177.501,
+        "duration": 2.899
+    },
+    {
+        "text": "This does happen in the simplest case, where the second block has the same ",
+        "start": 181.18,
+        "duration": 3.785
+    },
+    {
+        "text": "mass as the first, and picks up all of its momentum like a croquet ball.",
+        "start": 184.965,
+        "duration": 3.635
+    },
+    {
+        "text": "But in the general case, for other mass ratios, ",
+        "start": 189.12,
+        "duration": 2.461
+    },
+    {
+        "text": "that first block keeps much of its momentum, so the trajectory of our ",
+        "start": 191.581,
+        "duration": 3.589
+    },
+    {
+        "text": "point in this configuration space won't be pointed straight down, ",
+        "start": 195.17,
+        "duration": 3.384
+    },
+    {
+        "text": "it'll be down and to the left a bit.",
+        "start": 198.554,
+        "duration": 1.846
+    },
+    {
+        "text": "And even if it's not immediately clear why this analogy with light ",
+        "start": 201.14,
+        "duration": 3.252
+    },
+    {
+        "text": "would actually be helpful, and trust me, it will be helpful in many ways, ",
+        "start": 204.392,
+        "duration": 3.592
+    },
+    {
+        "text": "run with me here and see if we can fix this for the general case.",
+        "start": 207.984,
+        "duration": 3.156
+    },
+    {
+        "text": "Seeking analogies in math is very often a good idea.",
+        "start": 211.66,
+        "duration": 3.04
+    },
+    {
+        "text": "As with the last video, it's helpful to rescale the coordinates.",
+        "start": 215.82,
+        "duration": 3.32
+    },
+    {
+        "text": "In fact, motivated by precisely what we did then, ",
+        "start": 219.8,
+        "duration": 2.989
+    },
+    {
+        "text": "you might think to rescale the coordinates so that x is not equal to d1, ",
+        "start": 222.789,
+        "duration": 4.364
+    },
+    {
+        "text": "but is equal to the square root of the first mass, m1, times d1.",
+        "start": 227.153,
+        "duration": 3.827
+    },
+    {
+        "text": "This has the effect of stretching our space horizontally, ",
+        "start": 231.64,
+        "duration": 3.032
+    },
+    {
+        "text": "so changes in our big block's position now result in larger changes to the ",
+        "start": 234.672,
+        "duration": 3.922
+    },
+    {
+        "text": "x-coordinate itself.",
+        "start": 238.594,
+        "duration": 1.046
+    },
+    {
+        "text": "And likewise, let's write the y-coordinate as square root of m2 times d2, ",
+        "start": 240.34,
+        "duration": 3.478
+    },
+    {
+        "text": "even though in this particular case the second mass is 1, ",
+        "start": 243.818,
+        "duration": 2.726
+    },
+    {
+        "text": "so it doesn't make a difference, but let's keep things symmetric.",
+        "start": 246.544,
+        "duration": 3.056
+    },
+    {
+        "text": "Maybe this strikes you as making things uglier, and kind of a random thing to do, ",
+        "start": 250.48,
+        "duration": 4.46
+    },
+    {
+        "text": "but as with last time, when we include square roots of masses like this, ",
+        "start": 254.94,
+        "duration": 3.971
+    },
+    {
+        "text": "everything plays more nicely with the laws of conserving energy and momentum.",
+        "start": 258.911,
+        "duration": 4.189
+    },
+    {
+        "text": "Specifically, the conservation of energy will translate into the fact that our ",
+        "start": 263.9,
+        "duration": 4.095
+    },
+    {
+        "text": "little point in the space is always moving at the same speed, ",
+        "start": 267.995,
+        "duration": 3.214
+    },
+    {
+        "text": "which in our analogy you might think of meaning there's a constant speed of light, ",
+        "start": 271.209,
+        "duration": 4.303
+    },
+    {
+        "text": "and the conservation of momentum will translate to the fact that as our point ",
+        "start": 275.512,
+        "duration": 4.044
+    },
+    {
+        "text": "bounces off the mirrors of our setup, so to speak, ",
+        "start": 279.556,
+        "duration": 2.644
+    },
+    {
+        "text": "the angle of incidence equals the angle of reflection.",
+        "start": 282.2,
+        "duration": 2.8
+    },
+    {
+        "text": "Doesn't that seem bizarre in kind of a delightful way, ",
+        "start": 286.82,
+        "duration": 2.775
+    },
+    {
+        "text": "that the laws of kinematics should translate to laws of optics like this?",
+        "start": 289.595,
+        "duration": 3.685
+    },
+    {
+        "text": "To see why it's true, let's roll up our sleeves and work out the actual math.",
+        "start": 294.02,
+        "duration": 3.42
+    },
+    {
+        "text": "Focus on the velocity vector of our point in the diagram.",
+        "start": 299.02,
+        "duration": 2.94
+    },
+    {
+        "text": "It shows which direction it's moving and how quickly.",
+        "start": 302.46,
+        "duration": 2.18
+    },
+    {
+        "text": "Now keep in mind, this is not a physical velocity, ",
+        "start": 305.2,
+        "duration": 2.516
+    },
+    {
+        "text": "like the velocities of the moving blocks.",
+        "start": 307.716,
+        "duration": 2.024
+    },
+    {
+        "text": "Instead, it's a more abstract rate of change in the context of this configuration space, ",
+        "start": 310.2,
+        "duration": 5.451
+    },
+    {
+        "text": "whose two dimensions worth of possible directions encode both velocities of the block.",
+        "start": 315.651,
+        "duration": 5.269
+    },
+    {
+        "text": "The x component of this little vector is the rate of change of x, ",
+        "start": 325.96,
+        "duration": 4.317
+    },
+    {
+        "text": "and likewise its y component is the rate of change of y.",
+        "start": 330.277,
+        "duration": 3.663
+    },
+    {
+        "text": "What is the rate of change for the x-coordinate?",
+        "start": 334.64,
+        "duration": 2.56
+    },
+    {
+        "text": "x is the square root of m1 times d1, and the mass doesn't change, ",
+        "start": 339.3,
+        "duration": 4.19
+    },
+    {
+        "text": "so it depends only on how d1 changes.",
+        "start": 343.49,
+        "duration": 2.35
+    },
+    {
+        "text": "What's the rate at which d1 changes?",
+        "start": 346.7,
+        "duration": 1.72
+    },
+    {
+        "text": "Well, that's the velocity of the big block.",
+        "start": 349.08,
+        "duration": 1.8
+    },
+    {
+        "text": "Let's call that v1.",
+        "start": 351.18,
+        "duration": 1.52
+    },
+    {
+        "text": "Likewise, the rate of change for y is going to be the square root of m2 times v2.",
+        "start": 353.68,
+        "duration": 5.9
+    },
+    {
+        "text": "Now, notice what the magnitude of our little configuration space changing vector is.",
+        "start": 360.14,
+        "duration": 5.1
+    },
+    {
+        "text": "Using the Pythagorean theorem, it's the square root of the ",
+        "start": 365.78,
+        "duration": 3.809
+    },
+    {
+        "text": "sum of each of these component rates of change squared, ",
+        "start": 369.589,
+        "duration": 3.616
+    },
+    {
+        "text": "which is square root of m1 times v1 squared plus m2 times v2 squared.",
+        "start": 373.205,
+        "duration": 4.455
+    },
+    {
+        "text": "This inner expression should look awfully familiar, ",
+        "start": 378.36,
+        "duration": 2.53
+    },
+    {
+        "text": "it's exactly twice the kinetic energy of our system.",
+        "start": 380.89,
+        "duration": 2.53
+    },
+    {
+        "text": "So the speed of our point in the configuration space is some function of ",
+        "start": 383.9,
+        "duration": 3.72
+    },
+    {
+        "text": "the total energy, and that stays constant throughout the whole process.",
+        "start": 387.62,
+        "duration": 3.62
+    },
+    {
+        "text": "Remember, a core over-idealizing assumption to this is that ",
+        "start": 391.92,
+        "duration": 3.014
+    },
+    {
+        "text": "there's no energy lost to friction or to any of the collisions.",
+        "start": 394.934,
+        "duration": 3.166
+    },
+    {
+        "text": "All right, so that's pretty cool.",
+        "start": 400.16,
+        "duration": 1.36
+    },
+    {
+        "text": "With these rescaled coordinates, our little point is always moving with a constant speed.",
+        "start": 401.78,
+        "duration": 4.2
+    },
+    {
+        "text": "And I know it's not obvious why you would care, but among other things, ",
+        "start": 406.6,
+        "duration": 3.364
+    },
+    {
+        "text": "it's important for the next step, where the conservation of momentum ",
+        "start": 409.964,
+        "duration": 3.225
+    },
+    {
+        "text": "implies that these two bounding lines act like mirrors.",
+        "start": 413.189,
+        "duration": 2.571
+    },
+    {
+        "text": "First, let's understand this line d1 equals d2 a little bit better.",
+        "start": 419.86,
+        "duration": 3.94
+    },
+    {
+        "text": "In our new coordinates, it's no longer that nice 45 degree x equals y line.",
+        "start": 424.24,
+        "duration": 3.88
+    },
+    {
+        "text": "Instead, if we do a little algebraic manipulation here, ",
+        "start": 428.78,
+        "duration": 3.771
+    },
+    {
+        "text": "we can see that that line is x over square root m1 equals y over square root m2.",
+        "start": 432.551,
+        "duration": 5.389
+    },
+    {
+        "text": "Rearranging a little bit more, we see that's a ",
+        "start": 438.56,
+        "duration": 2.541
+    },
+    {
+        "text": "line with a slope of square root m2 over m1.",
+        "start": 441.101,
+        "duration": 2.379
+    },
+    {
+        "text": "That's a nice expression to tuck away in the back of your mind.",
+        "start": 443.78,
+        "duration": 2.76
+    },
+    {
+        "text": "After the blocks collide, meaning our point hits this line, ",
+        "start": 449.98,
+        "duration": 3.675
+    },
+    {
+        "text": "the way to figure out how they move is to use the conservation of momentum, ",
+        "start": 453.655,
+        "duration": 4.655
+    },
+    {
+        "text": "which says that the value m1 times v1 plus m2 times v2 is the same both before ",
+        "start": 458.31,
+        "duration": 4.839
+    },
+    {
+        "text": "and after the collision.",
+        "start": 463.149,
+        "duration": 1.471
+    },
+    {
+        "text": "Now notice, this looks like a dot product between two column vectors, m1m2 and v1v2.",
+        "start": 465.52,
+        "duration": 6.58
+    },
+    {
+        "text": "Rewriting it slightly for our rescaled coordinates, ",
+        "start": 472.54,
+        "duration": 2.682
+    },
+    {
+        "text": "the same thing could be written as a dot product between a column ",
+        "start": 475.222,
+        "duration": 3.406
+    },
+    {
+        "text": "vector with the square roots of the masses, and one with the rates of change for x and y.",
+        "start": 478.628,
+        "duration": 4.592
+    },
+    {
+        "text": "I know this probably seems like a complicated way to talk about a ",
+        "start": 484.18,
+        "duration": 3.161
+    },
+    {
+        "text": "comparatively simple momentum equation, but there is a good reason ",
+        "start": 487.341,
+        "duration": 3.21
+    },
+    {
+        "text": "for shifting the language to one of dot products in our new coordinates.",
+        "start": 490.551,
+        "duration": 3.449
+    },
+    {
+        "text": "Notice that second vector is simply the rate of change vector ",
+        "start": 495.56,
+        "duration": 2.921
+    },
+    {
+        "text": "for the point in our diagram that we've been looking at.",
+        "start": 498.481,
+        "duration": 2.639
+    },
+    {
+        "text": "The key now is that this square root of the masses vector points in the same direction ",
+        "start": 501.12,
+        "duration": 5.528
+    },
+    {
+        "text": "as our collision line, since the rise over run is square root m2 over square root of m1.",
+        "start": 506.648,
+        "duration": 5.592
+    },
+    {
+        "text": "Now if you're unfamiliar with the dot product, ",
+        "start": 513.299,
+        "duration": 2.005
+    },
+    {
+        "text": "there is another video on this channel describing it, ",
+        "start": 515.304,
+        "duration": 2.304
+    },
+    {
+        "text": "but real quick let's go over what it means geometrically.",
+        "start": 517.608,
+        "duration": 2.431
+    },
+    {
+        "text": "The dot product of two vectors equals the length of the first one ",
+        "start": 520.7,
+        "duration": 3.779
+    },
+    {
+        "text": "multiplied by the length of the projection of the second one onto that first, ",
+        "start": 524.479,
+        "duration": 4.467
+    },
+    {
+        "text": "where it's considered negative if they point in opposite directions.",
+        "start": 528.946,
+        "duration": 3.894
+    },
+    {
+        "text": "You often see this written as the product of the lengths of the two vectors, ",
+        "start": 533.5,
+        "duration": 4.163
+    },
+    {
+        "text": "and the cosine of the angle between them.",
+        "start": 537.663,
+        "duration": 2.217
+    },
+    {
+        "text": "So look back at this conservation of momentum expression, ",
+        "start": 544.34,
+        "duration": 3.18
+    },
+    {
+        "text": "telling us that the dot product between this square root of the masses ",
+        "start": 547.52,
+        "duration": 3.894
+    },
+    {
+        "text": "vector and our little change vector has to be the same, ",
+        "start": 551.414,
+        "duration": 3.071
+    },
+    {
+        "text": "both before and after the collision.",
+        "start": 554.485,
+        "duration": 1.975
+    },
+    {
+        "text": "Since we just saw that this change vector has a constant magnitude, ",
+        "start": 557.08,
+        "duration": 3.768
+    },
+    {
+        "text": "the only way for this dot product to stay the same is if the ",
+        "start": 560.848,
+        "duration": 3.381
+    },
+    {
+        "text": "angle that it makes with the collision line stays the same.",
+        "start": 564.229,
+        "duration": 3.271
+    },
+    {
+        "text": "In other words, again using the lingo of optics, ",
+        "start": 568.26,
+        "duration": 2.556
+    },
+    {
+        "text": "the angle of incidence and the angle of reflection off this collision line must be equal.",
+        "start": 570.816,
+        "duration": 4.644
+    },
+    {
+        "text": "Similarly, when the small block bounces off the wall, ",
+        "start": 576.14,
+        "duration": 2.788
+    },
+    {
+        "text": "our little vector gets reflected about the x direction, ",
+        "start": 578.928,
+        "duration": 2.892
+    },
+    {
+        "text": "since only its y coordinate changes.",
+        "start": 581.82,
+        "duration": 1.86
+    },
+    {
+        "text": "So our configuration point is bouncing off that horizontal line as if it was a mirror.",
+        "start": 584.26,
+        "duration": 4.5
+    },
+    {
+        "text": "So step back a moment and think about what this means for our original question of ",
+        "start": 590.1,
+        "duration": 3.836
+    },
+    {
+        "text": "counting block collisions and trying to understand why on earth pi would show up.",
+        "start": 593.936,
+        "duration": 3.744
+    },
+    {
+        "text": "We can translate it to a completely different question.",
+        "start": 598.08,
+        "duration": 2.4
+    },
+    {
+        "text": "If you shine a beam of light at a pair of mirrors, ",
+        "start": 601.34,
+        "duration": 2.832
+    },
+    {
+        "text": "meeting each other at some angle, let's say theta, ",
+        "start": 604.172,
+        "duration": 2.832
+    },
+    {
+        "text": "how many times would that light bounce off of the mirrors as a function of that angle?",
+        "start": 607.004,
+        "duration": 4.776
+    },
+    {
+        "text": "Remember, the mass ratio of our blocks completely ",
+        "start": 612.92,
+        "duration": 2.72
+    },
+    {
+        "text": "determines this angle theta in the analogy.",
+        "start": 615.64,
+        "duration": 2.34
+    },
+    {
+        "text": "Now I can hear some of you complaining, haven't ",
+        "start": 619.38,
+        "duration": 2.253
+    },
+    {
+        "text": "we just replaced one tricky setup with another?",
+        "start": 621.633,
+        "duration": 2.207
+    },
+    {
+        "text": "This might make for a cute analogy, but how is it progress?",
+        "start": 624.28,
+        "duration": 2.64
+    },
+    {
+        "text": "It's true that counting the number of light bounces is hard, ",
+        "start": 627.64,
+        "duration": 3.66
+    },
+    {
+        "text": "but now we have a helpful trick.",
+        "start": 631.3,
+        "duration": 1.92
+    },
+    {
+        "text": "When the beam of light hits the mirror, instead of thinking of ",
+        "start": 633.74,
+        "duration": 3.075
+    },
+    {
+        "text": "that beam as reflected about the mirror, think of the beam as going straight, ",
+        "start": 636.815,
+        "duration": 3.808
+    },
+    {
+        "text": "while the whole world gets flipped through the mirror.",
+        "start": 640.623,
+        "duration": 2.637
+    },
+    {
+        "text": "It's as if the beam is passing through a piece ",
+        "start": 643.92,
+        "duration": 2.301
+    },
+    {
+        "text": "of glass into an illusory looking glass universe.",
+        "start": 646.221,
+        "duration": 2.399
+    },
+    {
+        "text": "Think of actual mirrors here.",
+        "start": 649.54,
+        "duration": 1.52
+    },
+    {
+        "text": "This wire on the left will represent a laser beam coming into the mirror, ",
+        "start": 651.5,
+        "duration": 3.453
+    },
+    {
+        "text": "and the one on the right will represent its reflection.",
+        "start": 654.953,
+        "duration": 2.567
+    },
+    {
+        "text": "The illusion is that the beam goes straight through the mirror, ",
+        "start": 658.32,
+        "duration": 3.386
+    },
+    {
+        "text": "as if passing through a window separating us from another room.",
+        "start": 661.706,
+        "duration": 3.334
+    },
+    {
+        "text": "But notice, crucially, for this illusion to work, ",
+        "start": 665.72,
+        "duration": 3.072
+    },
+    {
+        "text": "the angle of incidence has to equal the angle of reflection.",
+        "start": 668.792,
+        "duration": 3.688
+    },
+    {
+        "text": "Otherwise, the flipped copy of the reflected beam won't line up with the first part.",
+        "start": 673.08,
+        "duration": 5.16
+    },
+    {
+        "text": "So all of that work we did, rescaling coordinates and futzing ",
+        "start": 679.0,
+        "duration": 2.9
+    },
+    {
+        "text": "through the momentum equations, was certainly necessary.",
+        "start": 681.9,
+        "duration": 2.62
+    },
+    {
+        "text": "But now we get to enjoy the fruits of our labor.",
+        "start": 685.0,
+        "duration": 2.52
+    },
+    {
+        "text": "Watch how this helps us elegantly solve the question of how many mirror bounces ",
+        "start": 688.14,
+        "duration": 3.704
+    },
+    {
+        "text": "there will be, which is also the question of how many block collisions there will be.",
+        "start": 691.844,
+        "duration": 3.936
+    },
+    {
+        "text": "Every time the beam hits a mirror, don't think of the beam as getting reflected, ",
+        "start": 699.0,
+        "duration": 4.304
+    },
+    {
+        "text": "let it continue straight while the world gets reflected.",
+        "start": 703.304,
+        "duration": 2.976
+    },
+    {
+        "text": "As this goes on, the illusion to the beam of light is that instead of ",
+        "start": 707.0,
+        "duration": 3.861
+    },
+    {
+        "text": "getting bounced around between two angled mirrors many times, ",
+        "start": 710.861,
+        "duration": 3.42
+    },
+    {
+        "text": "it's passing through a sequence of angled pieces of glass all the same angle apart.",
+        "start": 714.281,
+        "duration": 4.579
+    },
+    {
+        "text": "Right now I'm showing you all of the reflected copies of the bouncing trajectory, ",
+        "start": 720.0,
+        "duration": 4.538
+    },
+    {
+        "text": "which I think has a very striking beauty to it.",
+        "start": 724.538,
+        "duration": 2.602
+    },
+    {
+        "text": "But for a clearer view, let's just focus on the ",
+        "start": 731.06,
+        "duration": 2.794
+    },
+    {
+        "text": "original bouncing beam and the illusory straight one.",
+        "start": 733.854,
+        "duration": 3.086
+    },
+    {
+        "text": "The question of counting bounces turns into a question ",
+        "start": 737.64,
+        "duration": 3.04
+    },
+    {
+        "text": "of how many pieces of glass this illusory beam crosses.",
+        "start": 740.68,
+        "duration": 3.04
+    },
+    {
+        "text": "How many reflected copies of the world does it pass into?",
+        "start": 744.28,
+        "duration": 2.7
+    },
+    {
+        "text": "Well, calling the angle between the mirrors theta, ",
+        "start": 754.98,
+        "duration": 3.179
+    },
+    {
+        "text": "the answer here is however many times you can add theta to itself before you ",
+        "start": 758.159,
+        "duration": 4.8
+    },
+    {
+        "text": "get more than halfway around a circle, which is to say before you add up to ",
+        "start": 762.959,
+        "duration": 4.737
+    },
+    {
+        "text": "more than pi total radians.",
+        "start": 767.696,
+        "duration": 1.684
+    },
+    {
+        "text": "Written as a formula, the answer to this question is the floor of pi divided by theta.",
+        "start": 771.78,
+        "duration": 4.84
+    },
+    {
+        "text": "So let's review.",
+        "start": 777.44,
+        "duration": 1.24
+    },
+    {
+        "text": "We started by drawing a configuration space for our colliding blocks where ",
+        "start": 779.08,
+        "duration": 3.857
+    },
+    {
+        "text": "the x and the y coordinates represented the two distances from the wall.",
+        "start": 782.937,
+        "duration": 3.703
+    },
+    {
+        "text": "This kind of looked like light bouncing between two mirrors, ",
+        "start": 787.78,
+        "duration": 2.971
+    },
+    {
+        "text": "but to make the analogy work properly we needed to rescale the coordinates by the ",
+        "start": 790.751,
+        "duration": 3.993
+    },
+    {
+        "text": "square roots of the masses.",
+        "start": 794.744,
+        "duration": 1.316
+    },
+    {
+        "text": "This made it so that the slope of one of our lines was square ",
+        "start": 796.82,
+        "duration": 3.62
+    },
+    {
+        "text": "root of m2 divided by square root of m1, so the angle between ",
+        "start": 800.44,
+        "duration": 3.621
+    },
+    {
+        "text": "those bounding lines will be the inverse tangent of that slope.",
+        "start": 804.061,
+        "duration": 3.679
+    },
+    {
+        "text": "To figure out how many bounces there are between two mirrors like this, ",
+        "start": 808.74,
+        "duration": 3.48
+    },
+    {
+        "text": "think of the illusion of the beam going straight through a sequence of ",
+        "start": 812.22,
+        "duration": 3.432
+    },
+    {
+        "text": "looking glass universes separated by a semi-circular fan of windows.",
+        "start": 815.652,
+        "duration": 3.288
+    },
+    {
+        "text": "The answer then comes down to how many times the value ",
+        "start": 819.54,
+        "duration": 3.27
+    },
+    {
+        "text": "of this angle fits into 180 degrees, which is pi radians.",
+        "start": 822.81,
+        "duration": 3.39
+    },
+    {
+        "text": "From here, to understand why exactly the digits of pi show up when the mass ratio is ",
+        "start": 827.1,
+        "duration": 4.716
+    },
+    {
+        "text": "a power of 100, is exactly what we did in the last video, so I won't repeat myself here.",
+        "start": 831.816,
+        "duration": 4.884
+    },
+    {
+        "text": "And finally, as we reflect now on how absurd the initial appearance of pi seemed, ",
+        "start": 837.5,
+        "duration": 4.694
+    },
+    {
+        "text": "and on the two solutions we've now seen, and on how unexpectedly helpful it can be to ",
+        "start": 842.194,
+        "duration": 4.924
+    },
+    {
+        "text": "represent the state of your system with points in some space, ",
+        "start": 847.118,
+        "duration": 3.549
+    },
+    {
+        "text": "I leave you with this quote from the computer scientist Alan Kay, ",
+        "start": 850.667,
+        "duration": 3.779
+    },
+    {
+        "text": "A change in perspective is worth 80 IQ points.",
+        "start": 854.446,
+        "duration": 2.634
+    }
+]

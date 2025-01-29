@@ -1,0 +1,1947 @@
+[
+    {
+        "text": "Suppose I give you two different lists of numbers, or maybe two different functions, ",
+        "start": 0.0,
+        "duration": 4.025
+    },
+    {
+        "text": "and I ask you to think of all the ways you might combine those two lists to get ",
+        "start": 4.025,
+        "duration": 3.79
+    },
+    {
+        "text": "a new list of numbers, or combine the two functions to get a new function.",
+        "start": 7.815,
+        "duration": 3.505
+    },
+    {
+        "text": "Maybe one simple way that comes to mind is to simply add them together term by term.",
+        "start": 12.12,
+        "duration": 4.64
+    },
+    {
+        "text": "Likewise with the functions, you can add all the corresponding outputs.",
+        "start": 17.16,
+        "duration": 2.76
+    },
+    {
+        "text": "In a similar vein, you could also multiply the two lists ",
+        "start": 20.54,
+        "duration": 2.639
+    },
+    {
+        "text": "term by term and do the same thing with the functions.",
+        "start": 23.179,
+        "duration": 2.501
+    },
+    {
+        "text": "But there's another kind of combination just as fundamental as both of those, ",
+        "start": 26.36,
+        "duration": 4.095
+    },
+    {
+        "text": "but a lot less commonly discussed, known as a convolution.",
+        "start": 30.455,
+        "duration": 3.045
+    },
+    {
+        "text": "But unlike the previous two cases, it's not something that's ",
+        "start": 34.08,
+        "duration": 2.967
+    },
+    {
+        "text": "merely inherited from an operation you can do to numbers.",
+        "start": 37.047,
+        "duration": 2.773
+    },
+    {
+        "text": "It's something genuinely new for the context of lists of numbers or combining functions.",
+        "start": 39.98,
+        "duration": 4.72
+    },
+    {
+        "text": "They show up all over the place, they are ubiquitous in image processing, ",
+        "start": 45.32,
+        "duration": 3.73
+    },
+    {
+        "text": "it's a core construct in the theory of probability, ",
+        "start": 49.05,
+        "duration": 2.621
+    },
+    {
+        "text": "they're used a lot in solving differential equations, ",
+        "start": 51.671,
+        "duration": 2.721
+    },
+    {
+        "text": "and one context where you've almost certainly seen it, if not by this name, ",
+        "start": 54.392,
+        "duration": 3.831
+    },
+    {
+        "text": "is multiplying two polynomials together.",
+        "start": 58.223,
+        "duration": 2.017
+    },
+    {
+        "text": "As someone in the business of visual explanations, this is an especially great topic, ",
+        "start": 60.74,
+        "duration": 4.258
+    },
+    {
+        "text": "because the formulaic definition in isolation and without context can look kind of ",
+        "start": 64.998,
+        "duration": 4.111
+    },
+    {
+        "text": "intimidating, but if we take the time to really unpack what it's saying, ",
+        "start": 69.109,
+        "duration": 3.615
+    },
+    {
+        "text": "and before that actually motivate why you would want something like this, ",
+        "start": 72.724,
+        "duration": 3.664
+    },
+    {
+        "text": "it's an incredibly beautiful operation.",
+        "start": 76.388,
+        "duration": 1.932
+    },
+    {
+        "text": "And I have to admit, I actually learned a little something ",
+        "start": 78.96,
+        "duration": 2.434
+    },
+    {
+        "text": "while putting together the visuals for this project.",
+        "start": 81.394,
+        "duration": 2.146
+    },
+    {
+        "text": "In the case of convolving two different functions, ",
+        "start": 83.54,
+        "duration": 2.417
+    },
+    {
+        "text": "I was trying to think of different ways you might picture what that could mean, ",
+        "start": 85.957,
+        "duration": 3.793
+    },
+    {
+        "text": "and with one of them I had a little bit of an aha moment for why it is that ",
+        "start": 89.75,
+        "duration": 3.602
+    },
+    {
+        "text": "normal distributions play the role that they do in probability, ",
+        "start": 93.352,
+        "duration": 3.034
+    },
+    {
+        "text": "why it's such a natural shape for a function.",
+        "start": 96.386,
+        "duration": 2.134
+    },
+    {
+        "text": "But I'm getting ahead of myself, there's a lot of setup for that one.",
+        "start": 99.02,
+        "duration": 2.5
+    },
+    {
+        "text": "In this video, our primary focus is just going to be on the discrete case, ",
+        "start": 101.84,
+        "duration": 3.671
+    },
+    {
+        "text": "and in particular building up to a very unexpected but very clever algorithm for ",
+        "start": 105.511,
+        "duration": 3.965
+    },
+    {
+        "text": "computing these.",
+        "start": 109.476,
+        "duration": 0.784
+    },
+    {
+        "text": "And I'll pull out the discussion for the continuous case into a second part.",
+        "start": 110.26,
+        "duration": 4.22
+    },
+    {
+        "text": "It's very tempting to open up with the image processing examples, ",
+        "start": 118.58,
+        "duration": 3.019
+    },
+    {
+        "text": "since they're visually the most intriguing, but there are a couple bits of finickiness ",
+        "start": 121.599,
+        "duration": 3.98
+    },
+    {
+        "text": "that make the image processing case less representative of convolutions overall, ",
+        "start": 125.579,
+        "duration": 3.706
+    },
+    {
+        "text": "so instead let's kick things off with probability, ",
+        "start": 129.285,
+        "duration": 2.333
+    },
+    {
+        "text": "and in particular one of the simplest examples that I'm sure everyone here has ",
+        "start": 131.618,
+        "duration": 3.614
+    },
+    {
+        "text": "thought about at some point in their life, which is rolling a pair of dice and ",
+        "start": 135.232,
+        "duration": 3.614
+    },
+    {
+        "text": "figuring out the chances of seeing various different sums.",
+        "start": 138.846,
+        "duration": 2.654
+    },
+    {
+        "text": "And you might say, not a problem, not a problem.",
+        "start": 142.46,
+        "duration": 2.0
+    },
+    {
+        "text": "Each of your two dice has six different possible outcomes, ",
+        "start": 144.68,
+        "duration": 3.141
+    },
+    {
+        "text": "which gives us a total of 36 distinct possible pairs of outcomes, ",
+        "start": 147.821,
+        "duration": 3.513
+    },
+    {
+        "text": "and if we just look through them all we can count up how many pairs have a given sum.",
+        "start": 151.334,
+        "duration": 4.526
+    },
+    {
+        "text": "And arranging all the pairs in a grid like this, ",
+        "start": 156.6,
+        "duration": 2.518
+    },
+    {
+        "text": "one pretty nice thing is that all of the pairs that have a constant sum are visible ",
+        "start": 159.118,
+        "duration": 4.317
+    },
+    {
+        "text": "along one of these different diagonals.",
+        "start": 163.435,
+        "duration": 2.005
+    },
+    {
+        "text": "So simply counting how many exist on each of those diagonals ",
+        "start": 165.44,
+        "duration": 3.453
+    },
+    {
+        "text": "will tell you how likely you are to see a particular sum.",
+        "start": 168.893,
+        "duration": 3.227
+    },
+    {
+        "text": "And I'd say, very good, very good, but can you think of ",
+        "start": 173.22,
+        "duration": 2.672
+    },
+    {
+        "text": "any other ways that you might visualize the same question?",
+        "start": 175.892,
+        "duration": 2.768
+    },
+    {
+        "text": "Other images that can come to mind to think of ",
+        "start": 179.3,
+        "duration": 2.431
+    },
+    {
+        "text": "all the distinct pairs that have a given sum?",
+        "start": 181.731,
+        "duration": 2.329
+    },
+    {
+        "text": "And maybe one of you raises your hand and says, yeah, I've got one.",
+        "start": 184.86,
+        "duration": 3.12
+    },
+    {
+        "text": "Let's say you picture these two different sets of possibilities each in a row, ",
+        "start": 188.28,
+        "duration": 3.764
+    },
+    {
+        "text": "but you flip around that second row.",
+        "start": 192.044,
+        "duration": 1.716
+    },
+    {
+        "text": "That way all of the different pairs which add up to seven line up vertically like this.",
+        "start": 193.76,
+        "duration": 5.0
+    },
+    {
+        "text": "And if we slide that bottom row all the way to the right, ",
+        "start": 199.36,
+        "duration": 2.763
+    },
+    {
+        "text": "then the unique pair that adds up to two, the snake eyes, are the only ones that align, ",
+        "start": 202.123,
+        "duration": 4.192
+    },
+    {
+        "text": "and if I schlunk that over one unit to the right, ",
+        "start": 206.315,
+        "duration": 2.382
+    },
+    {
+        "text": "the pairs which align are the two different pairs that add up to three.",
+        "start": 208.697,
+        "duration": 3.383
+    },
+    {
+        "text": "And in general, different offset values of this lower array, ",
+        "start": 212.88,
+        "duration": 3.355
+    },
+    {
+        "text": "which remember I had to flip around first, reveal all the distinct pairs that ",
+        "start": 216.235,
+        "duration": 4.29
+    },
+    {
+        "text": "have a given sum.",
+        "start": 220.525,
+        "duration": 0.935
+    },
+    {
+        "text": "As far as probability questions go, this still isn't especially interesting because ",
+        "start": 224.82,
+        "duration": 3.91
+    },
+    {
+        "text": "all we're doing is counting how many outcomes there are in each of these categories.",
+        "start": 228.73,
+        "duration": 3.91
+    },
+    {
+        "text": "But that is with the implicit assumption that there's ",
+        "start": 232.98,
+        "duration": 2.643
+    },
+    {
+        "text": "an equal chance for each of these faces to come up.",
+        "start": 235.623,
+        "duration": 2.497
+    },
+    {
+        "text": "But what if I told you I have a special set of dice that's not uniform?",
+        "start": 238.36,
+        "duration": 3.26
+    },
+    {
+        "text": "Maybe the blue die has its own set of numbers describing the probabilities for ",
+        "start": 242.06,
+        "duration": 3.825
+    },
+    {
+        "text": "each face coming up, and the red die has its own unique distinct set of numbers.",
+        "start": 245.885,
+        "duration": 3.875
+    },
+    {
+        "text": "In that case, if you wanted to figure out, say, ",
+        "start": 250.3,
+        "duration": 2.48
+    },
+    {
+        "text": "the probability of seeing a 2, you would multiply the probability ",
+        "start": 252.78,
+        "duration": 3.411
+    },
+    {
+        "text": "that the blue die is a 1 times the probability that the red die is a 1.",
+        "start": 256.191,
+        "duration": 3.669
+    },
+    {
+        "text": "And for the chances of seeing a 3, you look at the two distinct ",
+        "start": 260.279,
+        "duration": 3.252
+    },
+    {
+        "text": "pairs where that's possible, and again multiply the corresponding ",
+        "start": 263.531,
+        "duration": 3.354
+    },
+    {
+        "text": "probabilities and then add those two products together.",
+        "start": 266.885,
+        "duration": 2.795
+    },
+    {
+        "text": "Similarly, the chances of seeing a 4 involves multiplying together ",
+        "start": 270.1,
+        "duration": 3.335
+    },
+    {
+        "text": "three different pairs of possibilities and adding them all together.",
+        "start": 273.435,
+        "duration": 3.385
+    },
+    {
+        "text": "And in the spirit of setting up some formulas, let's name these top probabilities a 1, ",
+        "start": 276.82,
+        "duration": 5.032
+    },
+    {
+        "text": "a 2, a 3, and so on, and name the bottom ones b 1, b 2, b 3, and so on.",
+        "start": 281.852,
+        "duration": 4.108
+    },
+    {
+        "text": "And in general, this process where we're taking two different arrays of numbers, ",
+        "start": 286.4,
+        "duration": 4.095
+    },
+    {
+        "text": "flipping the second one around, and then lining them up at various different ",
+        "start": 290.495,
+        "duration": 3.894
+    },
+    {
+        "text": "offset values, taking a bunch of pairwise products and adding them up, ",
+        "start": 294.389,
+        "duration": 3.59
+    },
+    {
+        "text": "that's one of the fundamental ways to think about what a convolution is.",
+        "start": 297.979,
+        "duration": 3.641
+    },
+    {
+        "text": "So just to spell it out a little more exactly, through this process, ",
+        "start": 304.86,
+        "duration": 3.651
+    },
+    {
+        "text": "we just generated probabilities for seeing 2, 3, 4, on and on up to 12, ",
+        "start": 308.511,
+        "duration": 3.811
+    },
+    {
+        "text": "and we got them by mixing together one list of values, a, and another list of values, b.",
+        "start": 312.322,
+        "duration": 4.658
+    },
+    {
+        "text": "In the lingo, we'd say the convolution of those two sequences gives us this new sequence, ",
+        "start": 317.44,
+        "duration": 5.062
+    },
+    {
+        "text": "the new sequence of 11 values, each of which looks like some sum of pairwise products.",
+        "start": 322.502,
+        "duration": 4.838
+    },
+    {
+        "text": "If you prefer, another way you could think about the same operation is to first ",
+        "start": 327.34,
+        "duration": 4.617
+    },
+    {
+        "text": "create a table of all the pairwise products, and then add up along all these diagonals.",
+        "start": 331.957,
+        "duration": 5.023
+    },
+    {
+        "text": "Again, that's a way of mixing together these two ",
+        "start": 337.46,
+        "duration": 2.382
+    },
+    {
+        "text": "sequences of numbers to get us a new sequence of 11 numbers.",
+        "start": 339.842,
+        "duration": 2.918
+    },
+    {
+        "text": "It's the same operation as the sliding windows thought, just another perspective.",
+        "start": 343.24,
+        "duration": 3.22
+    },
+    {
+        "text": "Putting a little notation to it, here's how you might see it written down.",
+        "start": 347.14,
+        "duration": 2.66
+    },
+    {
+        "text": "The convolution of a and b, denoted with this little asterisk, is a new list, ",
+        "start": 350.22,
+        "duration": 4.758
+    },
+    {
+        "text": "and the nth element of that list looks like a sum, ",
+        "start": 354.978,
+        "duration": 3.111
+    },
+    {
+        "text": "and that sum goes over all different pairs of indices, i and j, ",
+        "start": 358.089,
+        "duration": 3.904
+    },
+    {
+        "text": "so that the sum of those indices is equal to n.",
+        "start": 361.993,
+        "duration": 2.867
+    },
+    {
+        "text": "It's kind of a mouthful, but for example, if n was 6, ",
+        "start": 365.28,
+        "duration": 3.322
+    },
+    {
+        "text": "the pairs we're going over are 1 and 5, 2 and 4, 3 and 3, 4 and 2, 5 and 1, ",
+        "start": 368.602,
+        "duration": 4.675
+    },
+    {
+        "text": "all the different pairs that add up to 6.",
+        "start": 373.277,
+        "duration": 2.523
+    },
+    {
+        "text": "But honestly, however you write it down, the notation is secondary in ",
+        "start": 376.62,
+        "duration": 2.88
+    },
+    {
+        "text": "importance to the visual you might hold in your head for the process.",
+        "start": 379.5,
+        "duration": 2.84
+    },
+    {
+        "text": "Here, maybe it helps to do a super simple example, ",
+        "start": 383.28,
+        "duration": 2.771
+    },
+    {
+        "text": "where I might ask you what's the convolution of the list 1, 2, 3 with the list 4, 5, 6.",
+        "start": 386.051,
+        "duration": 4.729
+    },
+    {
+        "text": "You might picture taking both of these lists, flipping around that second one, ",
+        "start": 391.48,
+        "duration": 3.523
+    },
+    {
+        "text": "and then starting with its lid all the way over to the left.",
+        "start": 395.003,
+        "duration": 2.677
+    },
+    {
+        "text": "Then the pair of values which align are 1 and 4, ",
+        "start": 398.18,
+        "duration": 2.188
+    },
+    {
+        "text": "multiply them together, and that gives us our first term of our output.",
+        "start": 400.368,
+        "duration": 3.172
+    },
+    {
+        "text": "Slide that bottom array one unit to the right, ",
+        "start": 403.96,
+        "duration": 2.696
+    },
+    {
+        "text": "the pairs which align are 1, 5 and 2 and 4, multiply those pairs, ",
+        "start": 406.656,
+        "duration": 3.787
+    },
+    {
+        "text": "add them together, and that gives us 13, the next entry in our output.",
+        "start": 410.443,
+        "duration": 4.017
+    },
+    {
+        "text": "Slide things over once more, and we'll take 1 times 6 plus 2 times 5 plus 3 times 4, ",
+        "start": 414.96,
+        "duration": 5.194
+    },
+    {
+        "text": "which happens to be 28.",
+        "start": 420.154,
+        "duration": 1.406
+    },
+    {
+        "text": "One more slide and we get 2 times 6 plus 3 times 5, and that gives us 27.",
+        "start": 422.02,
+        "duration": 5.0
+    },
+    {
+        "text": "And finally the last term will look like 3 times 6.",
+        "start": 427.5,
+        "duration": 2.62
+    },
+    {
+        "text": "If you'd like, you can pull up whatever your favorite programming ",
+        "start": 430.66,
+        "duration": 2.905
+    },
+    {
+        "text": "language is and your favorite library that includes various numerical operations, ",
+        "start": 433.565,
+        "duration": 3.61
+    },
+    {
+        "text": "and you can confirm I'm not lying to you.",
+        "start": 437.175,
+        "duration": 1.805
+    },
+    {
+        "text": "If you take the convolution of 1, 2, 3 against 4, ",
+        "start": 438.98,
+        "duration": 2.806
+    },
+    {
+        "text": "5, 6, this is indeed the result that you'll get.",
+        "start": 441.786,
+        "duration": 2.694
+    },
+    {
+        "text": "We've seen one case where this is a natural and desirable operation, ",
+        "start": 445.92,
+        "duration": 3.296
+    },
+    {
+        "text": "adding up to probability distributions, and another common example would be a ",
+        "start": 449.216,
+        "duration": 3.727
+    },
+    {
+        "text": "moving average.",
+        "start": 452.943,
+        "duration": 0.717
+    },
+    {
+        "text": "Imagine you have some long list of numbers, and you take ",
+        "start": 454.08,
+        "duration": 2.943
+    },
+    {
+        "text": "another smaller list of numbers that all add up to 1.",
+        "start": 457.023,
+        "duration": 2.737
+    },
+    {
+        "text": "In this case, I just have a little list of 5 values and they're all equal to 1 5th.",
+        "start": 460.1,
+        "duration": 3.96
+    },
+    {
+        "text": "Then if we do this sliding window convolution process, ",
+        "start": 464.06,
+        "duration": 2.886
+    },
+    {
+        "text": "and kind of close our eyes and sweep under the rug what happens at ",
+        "start": 466.946,
+        "duration": 3.515
+    },
+    {
+        "text": "the very beginning of it, once our smaller list of values entirely ",
+        "start": 470.461,
+        "duration": 3.516
+    },
+    {
+        "text": "overlaps with the bigger one, think about what each term in this convolution really means.",
+        "start": 473.977,
+        "duration": 4.723
+    },
+    {
+        "text": "At each iteration, what you're doing is multiplying each of the values ",
+        "start": 479.4,
+        "duration": 3.851
+    },
+    {
+        "text": "from your data by 1 5th and adding them all together, ",
+        "start": 483.251,
+        "duration": 2.929
+    },
+    {
+        "text": "which is to say you're taking an average of your data inside this little window.",
+        "start": 486.18,
+        "duration": 4.34
+    },
+    {
+        "text": "Overall, the process gives you a smoothed out version of the original data, ",
+        "start": 491.1,
+        "duration": 3.546
+    },
+    {
+        "text": "and you could modify this starting with a different little list of numbers, ",
+        "start": 494.646,
+        "duration": 3.547
+    },
+    {
+        "text": "and as long as that little list all adds up to 1, ",
+        "start": 498.193,
+        "duration": 2.333
+    },
+    {
+        "text": "you can still interpret it as a moving average.",
+        "start": 500.526,
+        "duration": 2.194
+    },
+    {
+        "text": "In the example shown here, that moving average ",
+        "start": 503.4,
+        "duration": 2.028
+    },
+    {
+        "text": "would be giving more weight towards the central value.",
+        "start": 505.428,
+        "duration": 2.332
+    },
+    {
+        "text": "This also results in a smoothed out version of the data.",
+        "start": 508.42,
+        "duration": 2.38
+    },
+    {
+        "text": "If you do kind of a two-dimensional analog of this, ",
+        "start": 513.14,
+        "duration": 2.686
+    },
+    {
+        "text": "it gives you a fun algorithm for blurring a given image.",
+        "start": 515.826,
+        "duration": 2.894
+    },
+    {
+        "text": "And I should say the animations I'm about to show are modified from something ",
+        "start": 518.72,
+        "duration": 4.137
+    },
+    {
+        "text": "I originally made for part of a set of lectures I did with the Julia lab at ",
+        "start": 522.857,
+        "duration": 4.032
+    },
+    {
+        "text": "MIT for a certain open courseware class that included an image processing unit.",
+        "start": 526.889,
+        "duration": 4.191
+    },
+    {
+        "text": "There we did a little bit more to dive into the code behind all of this, ",
+        "start": 531.56,
+        "duration": 2.847
+    },
+    {
+        "text": "so if you're curious, I'll leave you some links.",
+        "start": 534.407,
+        "duration": 1.873
+    },
+    {
+        "text": "But focusing back on this blurring example, what's going on is I've got this ",
+        "start": 536.62,
+        "duration": 4.065
+    },
+    {
+        "text": "little 3x3 grid of values that's marching along our original image, and if we zoom in, ",
+        "start": 540.685,
+        "duration": 4.593
+    },
+    {
+        "text": "each one of those values is 1 9th, and what I'm doing at each iteration is ",
+        "start": 545.278,
+        "duration": 3.96
+    },
+    {
+        "text": "multiplying each of those values by the corresponding pixel that it sits on top of.",
+        "start": 549.238,
+        "duration": 4.382
+    },
+    {
+        "text": "And of course in computer science, we think of colors as little vectors of three values, ",
+        "start": 553.9,
+        "duration": 4.063
+    },
+    {
+        "text": "representing the red, green, and blue components.",
+        "start": 557.963,
+        "duration": 2.237
+    },
+    {
+        "text": "When I multiply all these little values by 1 9th and I add them together, ",
+        "start": 560.56,
+        "duration": 3.859
+    },
+    {
+        "text": "it gives us an average along each color channel, ",
+        "start": 564.419,
+        "duration": 2.556
+    },
+    {
+        "text": "and the corresponding pixel for the image on the right is defined to be that sum.",
+        "start": 566.975,
+        "duration": 4.225
+    },
+    {
+        "text": "The overall effect, as we do this for every single pixel on the image, ",
+        "start": 571.94,
+        "duration": 3.479
+    },
+    {
+        "text": "is that each one kind of bleeds into all of its neighbors, ",
+        "start": 575.419,
+        "duration": 2.892
+    },
+    {
+        "text": "which gives us a blurrier version than the original.",
+        "start": 578.311,
+        "duration": 2.549
+    },
+    {
+        "text": "In the lingo, we'd say that the image on the right is a ",
+        "start": 581.72,
+        "duration": 2.832
+    },
+    {
+        "text": "convolution of our original image with a little grid of values.",
+        "start": 584.552,
+        "duration": 3.188
+    },
+    {
+        "text": "Or more technically, maybe I should say that it's the convolution ",
+        "start": 588.14,
+        "duration": 3.178
+    },
+    {
+        "text": "with a 180 degree rotated version of that little grid of values.",
+        "start": 591.318,
+        "duration": 3.082
+    },
+    {
+        "text": "Not that it matters when the grid is symmetric, ",
+        "start": 594.62,
+        "duration": 2.15
+    },
+    {
+        "text": "but it's just worth keeping in mind that the definition of a convolution, ",
+        "start": 596.77,
+        "duration": 3.316
+    },
+    {
+        "text": "as inherited from the pure math context, should always invite you to think about ",
+        "start": 600.086,
+        "duration": 3.63
+    },
+    {
+        "text": "flipping around that second array.",
+        "start": 603.716,
+        "duration": 1.524
+    },
+    {
+        "text": "If we modify this slightly, we can get a much more elegant ",
+        "start": 605.96,
+        "duration": 2.66
+    },
+    {
+        "text": "blurring effect by choosing a different grid of values.",
+        "start": 608.62,
+        "duration": 2.48
+    },
+    {
+        "text": "In this case, I have a little 5x5 grid, but the distinction is not so much its size.",
+        "start": 611.44,
+        "duration": 4.34
+    },
+    {
+        "text": "If we zoom in, we notice that the value in the middle ",
+        "start": 615.98,
+        "duration": 2.39
+    },
+    {
+        "text": "is a lot bigger than the value towards the edges.",
+        "start": 618.37,
+        "duration": 2.17
+    },
+    {
+        "text": "And where this is coming from is they're all sampled from a bell curve, ",
+        "start": 621.18,
+        "duration": 3.264
+    },
+    {
+        "text": "known as a Gaussian distribution.",
+        "start": 624.444,
+        "duration": 1.496
+    },
+    {
+        "text": "That way, when we multiply all of these values by the corresponding ",
+        "start": 626.8,
+        "duration": 3.147
+    },
+    {
+        "text": "pixel that they're sitting on top of, we're giving a lot more weight ",
+        "start": 629.947,
+        "duration": 3.193
+    },
+    {
+        "text": "to that central pixel, and much less towards the ones out at the edge.",
+        "start": 633.14,
+        "duration": 3.24
+    },
+    {
+        "text": "And just as before, the corresponding pixel on the right is defined to be this sum.",
+        "start": 636.8,
+        "duration": 3.76
+    },
+    {
+        "text": "As we do this process for every single pixel, it gives a blurring effect, ",
+        "start": 641.32,
+        "duration": 3.396
+    },
+    {
+        "text": "which much more authentically simulates the notion of putting your lens out of focus, ",
+        "start": 644.716,
+        "duration": 3.948
+    },
+    {
+        "text": "or something like that.",
+        "start": 648.664,
+        "duration": 1.056
+    },
+    {
+        "text": "But blurring is far from the only thing that you can do with this idea.",
+        "start": 649.9,
+        "duration": 3.46
+    },
+    {
+        "text": "For instance, take a look at this little grid of values, ",
+        "start": 653.8,
+        "duration": 2.659
+    },
+    {
+        "text": "which involves some positive numbers on the left, ",
+        "start": 656.459,
+        "duration": 2.334
+    },
+    {
+        "text": "and some negative numbers on the right, which I'll color with blue and red respectively.",
+        "start": 658.793,
+        "duration": 4.107
+    },
+    {
+        "text": "Take a moment to see if you can predict and understand ",
+        "start": 663.64,
+        "duration": 2.635
+    },
+    {
+        "text": "what effect this will have on the final image.",
+        "start": 666.275,
+        "duration": 2.205
+    },
+    {
+        "text": "So in this case, I'll just be thinking of the image as grayscale instead of colored, ",
+        "start": 670.72,
+        "duration": 3.981
+    },
+    {
+        "text": "so each of the pixels is just represented by one number instead of three.",
+        "start": 674.701,
+        "duration": 3.419
+    },
+    {
+        "text": "And one thing worth noticing is that as we do this convolution, ",
+        "start": 678.44,
+        "duration": 2.927
+    },
+    {
+        "text": "it's possible to get negative values.",
+        "start": 681.367,
+        "duration": 1.693
+    },
+    {
+        "text": "For example, at this point here, if we zoom in, ",
+        "start": 683.06,
+        "duration": 2.334
+    },
+    {
+        "text": "the left half of our little grid sits entirely on top of black pixels, ",
+        "start": 685.394,
+        "duration": 3.452
+    },
+    {
+        "text": "which would have a value of zero, but the right half of negative values all sit on ",
+        "start": 688.846,
+        "duration": 4.036
+    },
+    {
+        "text": "top of white pixels, which would have a value of one.",
+        "start": 692.882,
+        "duration": 2.578
+    },
+    {
+        "text": "So when we multiply corresponding terms and add them together, ",
+        "start": 696.18,
+        "duration": 3.013
+    },
+    {
+        "text": "the results will be very negative.",
+        "start": 699.193,
+        "duration": 1.627
+    },
+    {
+        "text": "And the way I'm displaying this with the image on the right ",
+        "start": 701.16,
+        "duration": 2.666
+    },
+    {
+        "text": "is to color negative values red and positive values blue.",
+        "start": 703.826,
+        "duration": 2.534
+    },
+    {
+        "text": "Another thing to notice is that when you're on a patch that's all the same color, ",
+        "start": 706.88,
+        "duration": 3.644
+    },
+    {
+        "text": "everything goes to zero, since the sum of the values in our little grid is zero.",
+        "start": 710.524,
+        "duration": 3.556
+    },
+    {
+        "text": "This is very different from the previous two examples where the sum of our little ",
+        "start": 715.18,
+        "duration": 3.61
+    },
+    {
+        "text": "grid was one, which let us interpret it as a moving average and hence a blur.",
+        "start": 718.79,
+        "duration": 3.39
+    },
+    {
+        "text": "All in all, this little process basically detects wherever there's ",
+        "start": 723.64,
+        "duration": 3.203
+    },
+    {
+        "text": "variation in the pixel value as you move from left to right, ",
+        "start": 726.843,
+        "duration": 2.917
+    },
+    {
+        "text": "and so it gives you a kind of way to pick up on all the vertical edges from your image.",
+        "start": 729.76,
+        "duration": 4.16
+    },
+    {
+        "text": "And similarly, if we rotated that grid around so that it varies as you move from ",
+        "start": 736.5,
+        "duration": 4.193
+    },
+    {
+        "text": "the top to the bottom, this will be picking up on all the horizontal edges, ",
+        "start": 740.693,
+        "duration": 3.935
+    },
+    {
+        "text": "which in the case of our little pie creature image does result in some pretty ",
+        "start": 744.628,
+        "duration": 4.038
+    },
+    {
+        "text": "demonic eyes.",
+        "start": 748.666,
+        "duration": 0.674
+    },
+    {
+        "text": "This smaller grid, by the way, is often called a kernel, ",
+        "start": 750.4,
+        "duration": 2.479
+    },
+    {
+        "text": "and the beauty here is how just by choosing a different kernel, ",
+        "start": 752.879,
+        "duration": 2.784
+    },
+    {
+        "text": "you can get different image processing effects, not just blurring your edge detection, ",
+        "start": 755.663,
+        "duration": 3.785
+    },
+    {
+        "text": "but also things like sharpening.",
+        "start": 759.448,
+        "duration": 1.392
+    },
+    {
+        "text": "For those of you who have heard of a convolutional neural network, ",
+        "start": 760.84,
+        "duration": 3.255
+    },
+    {
+        "text": "the idea there is to use data to figure out what the kernels should be in ",
+        "start": 764.095,
+        "duration": 3.595
+    },
+    {
+        "text": "the first place, as determined by whatever the neural network wants to detect.",
+        "start": 767.69,
+        "duration": 3.79
+    },
+    {
+        "text": "Another thing I should maybe bring up is the length of the output.",
+        "start": 772.76,
+        "duration": 2.76
+    },
+    {
+        "text": "For something like the moving average example, ",
+        "start": 775.82,
+        "duration": 1.97
+    },
+    {
+        "text": "you might only want to think about the terms when both of the windows ",
+        "start": 777.79,
+        "duration": 2.935
+    },
+    {
+        "text": "fully align with each other.",
+        "start": 780.725,
+        "duration": 1.175
+    },
+    {
+        "text": "Or in the image processing example, maybe you want ",
+        "start": 782.12,
+        "duration": 2.482
+    },
+    {
+        "text": "the final output to have the same size as the original.",
+        "start": 784.602,
+        "duration": 2.678
+    },
+    {
+        "text": "Now, convolutions as a pure math operation always produce an ",
+        "start": 787.28,
+        "duration": 2.966
+    },
+    {
+        "text": "array that's bigger than the two arrays that you started with, ",
+        "start": 790.246,
+        "duration": 3.064
+    },
+    {
+        "text": "at least assuming one of them doesn't have a length of one.",
+        "start": 793.31,
+        "duration": 2.87
+    },
+    {
+        "text": "Just know that in certain computer science contexts, ",
+        "start": 796.72,
+        "duration": 2.422
+    },
+    {
+        "text": "you often want to deliberately truncate that output.",
+        "start": 799.142,
+        "duration": 2.378
+    },
+    {
+        "text": "Another thing worth highlighting is that in the computer science context, ",
+        "start": 804.72,
+        "duration": 3.612
+    },
+    {
+        "text": "this notion of flipping around that kernel before you let it march across ",
+        "start": 808.332,
+        "duration": 3.612
+    },
+    {
+        "text": "the original often feels really weird and just uncalled for, but again, ",
+        "start": 811.944,
+        "duration": 3.515
+    },
+    {
+        "text": "note that that's what's inherited from the pure math context, ",
+        "start": 815.459,
+        "duration": 3.026
+    },
+    {
+        "text": "where like we saw with the probabilities, it's an incredibly natural thing to do.",
+        "start": 818.485,
+        "duration": 3.955
+    },
+    {
+        "text": "And actually, I can show you one more pure math example where ",
+        "start": 823.02,
+        "duration": 2.936
+    },
+    {
+        "text": "even the programmers should care about this one, ",
+        "start": 825.956,
+        "duration": 2.321
+    },
+    {
+        "text": "because it opens the doors for a much faster algorithm to compute all of these.",
+        "start": 828.277,
+        "duration": 3.743
+    },
+    {
+        "text": "To set up what I mean by faster here, let me go back and pull up some Python again, ",
+        "start": 832.62,
+        "duration": 4.176
+    },
+    {
+        "text": "and I'm going to create two different relatively big arrays.",
+        "start": 836.796,
+        "duration": 2.984
+    },
+    {
+        "text": "Each one will have a hundred thousand random elements in it, ",
+        "start": 839.94,
+        "duration": 3.175
+    },
+    {
+        "text": "and I'm going to assess the runtime, of the convolve function from the NumPy library.",
+        "start": 843.115,
+        "duration": 4.425
+    },
+    {
+        "text": "And in this case, it runs it for multiple different iterations, tries to find an average, ",
+        "start": 848.18,
+        "duration": 4.576
+    },
+    {
+        "text": "and it looks like, on this computer at least, it averages at 4.87 seconds.",
+        "start": 852.756,
+        "duration": 3.764
+    },
+    {
+        "text": "By contrast, if I use a different function from the SciPy library called fftConvolve, ",
+        "start": 856.96,
+        "duration": 5.023
+    },
+    {
+        "text": "which is the same thing just implemented differently, ",
+        "start": 861.983,
+        "duration": 3.153
+    },
+    {
+        "text": "that only takes 4.3 milliseconds on average, so three orders of magnitude improvement.",
+        "start": 865.136,
+        "duration": 5.024
+    },
+    {
+        "text": "And again, even though it flies under a different name, ",
+        "start": 870.16,
+        "duration": 2.756
+    },
+    {
+        "text": "it's giving the same output that the other convolve function does, ",
+        "start": 872.916,
+        "duration": 3.299
+    },
+    {
+        "text": "it's just doing something to go about it in a cleverer way.",
+        "start": 876.215,
+        "duration": 2.905
+    },
+    {
+        "text": "Remember how with the probability example, I said another way you could ",
+        "start": 882.2,
+        "duration": 3.509
+    },
+    {
+        "text": "think about the convolution was to create this table of all the pairwise products, ",
+        "start": 885.709,
+        "duration": 4.046
+    },
+    {
+        "text": "and then add up those pairwise products along the diagonals.",
+        "start": 889.755,
+        "duration": 2.925
+    },
+    {
+        "text": "There's of course nothing specific to probability.",
+        "start": 893.66,
+        "duration": 1.84
+    },
+    {
+        "text": "Any time you're convolving two different lists of numbers, ",
+        "start": 895.66,
+        "duration": 2.191
+    },
+    {
+        "text": "you can think about it this way.",
+        "start": 897.851,
+        "duration": 1.189
+    },
+    {
+        "text": "Create this kind of multiplication table with all pairwise products, ",
+        "start": 899.04,
+        "duration": 3.482
+    },
+    {
+        "text": "and then each sum along the diagonal corresponds to one of your final outputs.",
+        "start": 902.522,
+        "duration": 3.938
+    },
+    {
+        "text": "One context where this view is especially natural ",
+        "start": 907.6,
+        "duration": 2.708
+    },
+    {
+        "text": "is when you multiply together two polynomials.",
+        "start": 910.308,
+        "duration": 2.492
+    },
+    {
+        "text": "For example, let me take the little grid we already have and replace the top terms ",
+        "start": 913.3,
+        "duration": 5.15
+    },
+    {
+        "text": "with 1, 2x, and 3x squared, and replace the other terms with 4, 5x, and 6x squared.",
+        "start": 918.45,
+        "duration": 5.15
+    },
+    {
+        "text": "Now, think about what it means when we're creating all of ",
+        "start": 924.0,
+        "duration": 2.462
+    },
+    {
+        "text": "these different pairwise products between the two lists.",
+        "start": 926.462,
+        "duration": 2.378
+    },
+    {
+        "text": "What you're doing is essentially expanding out the full product of ",
+        "start": 929.04,
+        "duration": 3.656
+    },
+    {
+        "text": "the two polynomials I have written down, and then when you add up along the diagonal, ",
+        "start": 932.696,
+        "duration": 4.693
+    },
+    {
+        "text": "that corresponds to collecting all like terms.",
+        "start": 937.389,
+        "duration": 2.511
+    },
+    {
+        "text": "Which is pretty neat.",
+        "start": 940.6,
+        "duration": 0.9
+    },
+    {
+        "text": "Expanding a polynomial and collecting like terms ",
+        "start": 941.74,
+        "duration": 2.45
+    },
+    {
+        "text": "is exactly the same process as a convolution.",
+        "start": 944.19,
+        "duration": 2.25
+    },
+    {
+        "text": "But this allows us to do something that's pretty cool, ",
+        "start": 947.74,
+        "duration": 2.581
+    },
+    {
+        "text": "because think about what we're saying here.",
+        "start": 950.321,
+        "duration": 2.019
+    },
+    {
+        "text": "We're saying if you take two different functions and you multiply them together, ",
+        "start": 952.34,
+        "duration": 4.353
+    },
+    {
+        "text": "which is a simple pointwise operation, that's the same thing as if you had ",
+        "start": 956.693,
+        "duration": 4.031
+    },
+    {
+        "text": "first extracted the coefficients from each one of those, assuming they're polynomials, ",
+        "start": 960.724,
+        "duration": 4.676
+    },
+    {
+        "text": "and then taken a convolution of those two lists of coefficients.",
+        "start": 965.4,
+        "duration": 3.44
+    },
+    {
+        "text": "What makes that so interesting is that convolutions feel, ",
+        "start": 969.62,
+        "duration": 2.728
+    },
+    {
+        "text": "in principle, a lot more complicated than simple multiplication.",
+        "start": 972.348,
+        "duration": 3.012
+    },
+    {
+        "text": "And I don't just mean conceptually they're harder to think about.",
+        "start": 975.82,
+        "duration": 2.64
+    },
+    {
+        "text": "I mean, computationally, it requires more steps to perform a convolution ",
+        "start": 978.84,
+        "duration": 3.608
+    },
+    {
+        "text": "than it does to perform a pointwise product of two different lists.",
+        "start": 982.448,
+        "duration": 3.312
+    },
+    {
+        "text": "For example, let's say I gave you two really big polynomials, ",
+        "start": 986.32,
+        "duration": 3.061
+    },
+    {
+        "text": "say each one with a hundred different coefficients.",
+        "start": 989.381,
+        "duration": 2.519
+    },
+    {
+        "text": "Then if the way you multiply them was to expand out this product, ",
+        "start": 992.74,
+        "duration": 3.517
+    },
+    {
+        "text": "you know, filling in this entire 100 by 100 grid of pairwise products, ",
+        "start": 996.257,
+        "duration": 3.785
+    },
+    {
+        "text": "that would require you to perform 10,000 different products.",
+        "start": 1000.042,
+        "duration": 3.198
+    },
+    {
+        "text": "And then, when you're collecting all the like terms along the diagonals, ",
+        "start": 1003.74,
+        "duration": 3.723
+    },
+    {
+        "text": "that's another set of around 10,000 operations.",
+        "start": 1007.463,
+        "duration": 2.397
+    },
+    {
+        "text": "More generally, in the lingo, we'd say the algorithm is O of n squared, ",
+        "start": 1010.7,
+        "duration": 4.041
+    },
+    {
+        "text": "meaning for two lists of size n, the way that the number of ",
+        "start": 1014.741,
+        "duration": 3.368
+    },
+    {
+        "text": "operations scales is in proportion to the square of n.",
+        "start": 1018.109,
+        "duration": 3.031
+    },
+    {
+        "text": "On the other hand, if I think of two polynomials in terms of their outputs, for example, ",
+        "start": 1021.82,
+        "duration": 4.742
+    },
+    {
+        "text": "sampling their values at some handful of inputs, ",
+        "start": 1026.562,
+        "duration": 2.61
+    },
+    {
+        "text": "then multiplying them only requires as many operations as the number of samples, ",
+        "start": 1029.172,
+        "duration": 4.316
+    },
+    {
+        "text": "since again, it's a pointwise operation.",
+        "start": 1033.488,
+        "duration": 2.131
+    },
+    {
+        "text": "And with polynomials, you only need finitely many ",
+        "start": 1036.18,
+        "duration": 2.247
+    },
+    {
+        "text": "samples to be able to recover the coefficients.",
+        "start": 1038.427,
+        "duration": 2.113
+    },
+    {
+        "text": "For example, two outputs are enough to uniquely specify a linear polynomial, ",
+        "start": 1040.54,
+        "duration": 4.454
+    },
+    {
+        "text": "three outputs would be enough to uniquely specify a quadratic polynomial, ",
+        "start": 1044.994,
+        "duration": 4.282
+    },
+    {
+        "text": "and in general, if you know n distinct outputs, ",
+        "start": 1049.276,
+        "duration": 2.777
+    },
+    {
+        "text": "that's enough to uniquely specify a polynomial that has n different coefficients.",
+        "start": 1052.053,
+        "duration": 4.687
+    },
+    {
+        "text": "Or, if you prefer, we could phrase this in the language of systems of equations.",
+        "start": 1057.44,
+        "duration": 3.28
+    },
+    {
+        "text": "Imagine I tell you I have some polynomial, but I don't tell you what the coefficients are.",
+        "start": 1061.2,
+        "duration": 4.0
+    },
+    {
+        "text": "Those are a mystery to you.",
+        "start": 1065.26,
+        "duration": 1.26
+    },
+    {
+        "text": "In our example, you might think of this as the product that we're trying to figure out.",
+        "start": 1066.7,
+        "duration": 3.48
+    },
+    {
+        "text": "And then, suppose I say, I'll just tell you what the outputs of this polynomial ",
+        "start": 1070.18,
+        "duration": 4.482
+    },
+    {
+        "text": "would be if you inputted various different inputs, like 0, 1, 2, 3, on and on, ",
+        "start": 1074.662,
+        "duration": 4.427
+    },
+    {
+        "text": "and I give you enough so that you have as many equations as you have unknowns.",
+        "start": 1079.089,
+        "duration": 4.371
+    },
+    {
+        "text": "It even happens to be a linear system of equations, so that's nice, ",
+        "start": 1084.14,
+        "duration": 3.148
+    },
+    {
+        "text": "and in principle, at least, this should be enough to recover the coefficients.",
+        "start": 1087.288,
+        "duration": 3.612
+    },
+    {
+        "text": "So the rough algorithm outline then would be, whenever you want to convolve two lists ",
+        "start": 1091.74,
+        "duration": 4.677
+    },
+    {
+        "text": "of numbers, you treat them like they're coefficients of two polynomials, ",
+        "start": 1096.417,
+        "duration": 3.971
+    },
+    {
+        "text": "you sample those polynomials at enough outputs, multiply those samples point-wise, ",
+        "start": 1100.388,
+        "duration": 4.515
+    },
+    {
+        "text": "and then solve this system to recover the coefficients as a sneaky backdoor way to find ",
+        "start": 1104.903,
+        "duration": 4.786
+    },
+    {
+        "text": "the convolution.",
+        "start": 1109.689,
+        "duration": 0.871
+    },
+    {
+        "text": "And, as I've stated it so far, at least, some of you could rightfully complain, grant, ",
+        "start": 1111.42,
+        "duration": 4.637
+    },
+    {
+        "text": "that is an idiotic plan, because, for one thing, ",
+        "start": 1116.057,
+        "duration": 2.612
+    },
+    {
+        "text": "just calculating all these samples for one of the polynomials we know already takes ",
+        "start": 1118.669,
+        "duration": 4.478
+    },
+    {
+        "text": "on the order of n-squared operations.",
+        "start": 1123.147,
+        "duration": 1.973
+    },
+    {
+        "text": "Not to mention, solving that system is certainly going to be ",
+        "start": 1125.6,
+        "duration": 2.852
+    },
+    {
+        "text": "computationally as difficult as just doing the convolution in the first place.",
+        "start": 1128.452,
+        "duration": 3.648
+    },
+    {
+        "text": "So, like, sure, we have this connection between multiplication and convolutions, ",
+        "start": 1132.6,
+        "duration": 3.94
+    },
+    {
+        "text": "but all of the complexity happens in translating from one viewpoint to the other.",
+        "start": 1136.54,
+        "duration": 3.94
+    },
+    {
+        "text": "But there is a trick, and those of you who know about Fourier ",
+        "start": 1141.6,
+        "duration": 3.045
+    },
+    {
+        "text": "transforms and the FFT algorithm might see where this is going.",
+        "start": 1144.645,
+        "duration": 3.095
+    },
+    {
+        "text": "If you're unfamiliar with those topics, what I'm ",
+        "start": 1147.74,
+        "duration": 2.175
+    },
+    {
+        "text": "about to say might seem completely out of the blue.",
+        "start": 1149.915,
+        "duration": 2.265
+    },
+    {
+        "text": "Just know that there are certain paths you could have ",
+        "start": 1152.26,
+        "duration": 2.278
+    },
+    {
+        "text": "walked in math that make this more of an expected step.",
+        "start": 1154.538,
+        "duration": 2.322
+    },
+    {
+        "text": "Basically, the idea is that we have a freedom of choice here.",
+        "start": 1157.72,
+        "duration": 2.64
+    },
+    {
+        "text": "If instead of evaluating at some arbitrary set of inputs, like 0, 1, 2, 3, ",
+        "start": 1160.54,
+        "duration": 4.098
+    },
+    {
+        "text": "on and on, you choose to evaluate on a very specially selected set of complex numbers, ",
+        "start": 1164.638,
+        "duration": 4.755
+    },
+    {
+        "text": "specifically the ones that sit evenly spaced on the unit circle, ",
+        "start": 1169.393,
+        "duration": 3.552
+    },
+    {
+        "text": "what are known as the roots of unity, this gives us a friendlier system.",
+        "start": 1172.945,
+        "duration": 3.935
+    },
+    {
+        "text": "The basic idea is that by finding a number where taking its powers falls into ",
+        "start": 1178.36,
+        "duration": 3.949
+    },
+    {
+        "text": "this cycling pattern, it means that the system we generate is going to have a ",
+        "start": 1182.309,
+        "duration": 3.949
+    },
+    {
+        "text": "lot of redundancy in the different terms that you're calculating, ",
+        "start": 1186.258,
+        "duration": 3.341
+    },
+    {
+        "text": "and by being clever about how you leverage that redundancy, ",
+        "start": 1189.599,
+        "duration": 3.038
+    },
+    {
+        "text": "you can save yourself a lot of work.",
+        "start": 1192.637,
+        "duration": 1.823
+    },
+    {
+        "text": "This set of outputs that I've written has a special name.",
+        "start": 1196.02,
+        "duration": 2.54
+    },
+    {
+        "text": "It's called the discrete Fourier transform of the coefficients, ",
+        "start": 1198.9,
+        "duration": 3.248
+    },
+    {
+        "text": "and if you want to learn more, I actually did another lecture for that same Julia MIT ",
+        "start": 1202.148,
+        "duration": 4.364
+    },
+    {
+        "text": "class all about discrete Fourier transforms, and there's also a really excellent video on ",
+        "start": 1206.512,
+        "duration": 4.568
+    },
+    {
+        "text": "the channel Reducible talking about the fast Fourier transform, ",
+        "start": 1211.08,
+        "duration": 3.248
+    },
+    {
+        "text": "which is an algorithm for computing these more quickly.",
+        "start": 1214.328,
+        "duration": 2.792
+    },
+    {
+        "text": "Also Veritasium recently did a really good video on FFTs, so you've got lots of options.",
+        "start": 1217.48,
+        "duration": 4.28
+    },
+    {
+        "text": "And that fast algorithm really is the point for us.",
+        "start": 1222.26,
+        "duration": 2.4
+    },
+    {
+        "text": "Again, because of all this redundancy, there exists a method to go from ",
+        "start": 1225.12,
+        "duration": 3.582
+    },
+    {
+        "text": "the coefficients to all of these outputs, where instead of doing on ",
+        "start": 1228.702,
+        "duration": 3.383
+    },
+    {
+        "text": "the order of n squared operations, you do on the order of n times the ",
+        "start": 1232.085,
+        "duration": 3.483
+    },
+    {
+        "text": "log of n operations, which is much much better as you scale to big lists.",
+        "start": 1235.568,
+        "duration": 3.632
+    },
+    {
+        "text": "And, importantly, this FFT algorithm goes both ways.",
+        "start": 1239.66,
+        "duration": 2.88
+    },
+    {
+        "text": "It also lets you go from the outputs to the coefficients.",
+        "start": 1242.7,
+        "duration": 2.78
+    },
+    {
+        "text": "So, bringing it all together, let's look back at our algorithm outline.",
+        "start": 1246.22,
+        "duration": 2.84
+    },
+    {
+        "text": "Now we can say, whenever you're given two long lists of numbers, ",
+        "start": 1249.42,
+        "duration": 3.176
+    },
+    {
+        "text": "and you want to take their convolution, first compute the fast Fourier transform of ",
+        "start": 1252.596,
+        "duration": 4.106
+    },
+    {
+        "text": "each one of them, which, in the back of your mind, ",
+        "start": 1256.702,
+        "duration": 2.493
+    },
+    {
+        "text": "you can just think of as treating them like they're the coefficients of a polynomial, ",
+        "start": 1259.195,
+        "duration": 4.203
+    },
+    {
+        "text": "and evaluating it at a very specially selected set of points.",
+        "start": 1263.398,
+        "duration": 2.982
+    },
+    {
+        "text": "Then, multiply together the two results that you just got, point-wise, ",
+        "start": 1266.9,
+        "duration": 3.477
+    },
+    {
+        "text": "which is nice and fast, and then do an inverse fast Fourier transform, ",
+        "start": 1270.377,
+        "duration": 3.478
+    },
+    {
+        "text": "and what that gives you is the sneaky backdoor way to compute the convolution that ",
+        "start": 1273.855,
+        "duration": 4.065
+    },
+    {
+        "text": "we were looking for.",
+        "start": 1277.92,
+        "duration": 0.98
+    },
+    {
+        "text": "But this time, it only involves O of n log n operations.",
+        "start": 1279.04,
+        "duration": 3.2
+    },
+    {
+        "text": "That's really cool to me.",
+        "start": 1283.14,
+        "duration": 1.6
+    },
+    {
+        "text": "This very specific context where convolutions show up, ",
+        "start": 1285.12,
+        "duration": 2.713
+    },
+    {
+        "text": "multiplying two polynomials, opens the doors for an algorithm ",
+        "start": 1287.833,
+        "duration": 3.059
+    },
+    {
+        "text": "that's relevant everywhere else where convolutions might come up.",
+        "start": 1290.892,
+        "duration": 3.208
+    },
+    {
+        "text": "If you want to add probability distributions, do some large image processing, ",
+        "start": 1294.18,
+        "duration": 3.9
+    },
+    {
+        "text": "whatever it might be, and I just think that's such a good example of why you should be ",
+        "start": 1298.08,
+        "duration": 4.35
+    },
+    {
+        "text": "excited when you see some operation or concept in math show up in a lot of seemingly ",
+        "start": 1302.43,
+        "duration": 4.25
+    },
+    {
+        "text": "unrelated areas.",
+        "start": 1306.68,
+        "duration": 0.8
+    },
+    {
+        "text": "If you want a little homework, here's something that's fun to think about.",
+        "start": 1308.48,
+        "duration": 3.02
+    },
+    {
+        "text": "Explain why when you multiply two different numbers, ",
+        "start": 1311.72,
+        "duration": 2.639
+    },
+    {
+        "text": "just ordinary multiplication the way we all learn in elementary school, ",
+        "start": 1314.359,
+        "duration": 3.586
+    },
+    {
+        "text": "what you're doing is basically a convolution between the digits of those numbers.",
+        "start": 1317.945,
+        "duration": 4.035
+    },
+    {
+        "text": "There's some added steps with carries and the like, but the core step is a convolution.",
+        "start": 1322.5,
+        "duration": 3.96
+    },
+    {
+        "text": "In light of the existence of a fast algorithm, ",
+        "start": 1327.28,
+        "duration": 2.424
+    },
+    {
+        "text": "what that means is if you have two very large integers, ",
+        "start": 1329.704,
+        "duration": 2.888
+    },
+    {
+        "text": "then there exists a way to find their product that's faster than the method we learn ",
+        "start": 1332.592,
+        "duration": 4.384
+    },
+    {
+        "text": "in elementary school, that instead of requiring O of n squared operations, ",
+        "start": 1336.976,
+        "duration": 3.869
+    },
+    {
+        "text": "only requires O of n log n, which doesn't even feel like it should be possible.",
+        "start": 1340.845,
+        "duration": 4.075
+    },
+    {
+        "text": "The catch is that before this is actually useful in practice, ",
+        "start": 1345.38,
+        "duration": 2.995
+    },
+    {
+        "text": "your numbers would have to be absolutely monstrous.",
+        "start": 1348.375,
+        "duration": 2.465
+    },
+    {
+        "text": "But still, it's cool that such an algorithm exists.",
+        "start": 1351.22,
+        "duration": 2.64
+    },
+    {
+        "text": "And next up, we'll turn our attention to the continuous ",
+        "start": 1355.16,
+        "duration": 2.26
+    },
+    {
+        "text": "case with a special focus on probability distributions.",
+        "start": 1357.42,
+        "duration": 2.22
+    }
+]

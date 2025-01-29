@@ -1,0 +1,226 @@
+[
+    {
+        "start": 0.08,
+        "text": "thanks Josh thanks for this very nice introduction I'm very pleased to come here for this seminar this is actually my first time being in uh Mexican but so far it's great so um today I'm gonna mostly tell you two stories that moves toward developing differentiable and also predictive models of single celles our hand and space so the first uh story is about D for predictive modeling of single cell genomics and then I will tell you a little bit on spal for advanced special temporal model so for many many years I always interested in moving toward a quantitive mod of biology so I want to start with a re theoretical view to motivate how I think about the biology and home label we'll be thinking about the biology 400 years ago um in order to understand how "
+    },
+    {
+        "start": 60.44,
+        "text": "the planet moves T made the first comprehensive observation of the planet movement and and generate the big the for the big data for astronomer and then his student cul derived Three imperal Laws from this big data which eventually lead to the uh deviation of the UN UNIF theory of gravitation by Newton so the key question now is that with a Bigg data generated with a single cell and other Technologies can we also upturn predictive models and theories for the biology specifically as a biologist similar to astronomer who is interested in understanding how the planet moves in the scale of 10 as a biologist we are also interested in how to understand how that the single fot the cell give R to ENT organism with trons of cells in a precisely and also "
+    },
+    {
+        "start": 121.799,
+        "text": "special temporary controlled manner this really uh days back when I was a master student and I was fated by this AIG landscape proposed by con Wasington we describe how the progenity cell can give R to all kinds of tal cell types so at time I made really extensive efforts trying to theoretic efforts trying to U quantify the gen landscape so I started with writing down the differential equation of the of a set of self activating and mut inting netw motive and then I can mathematically map out eptic landscape and even um quantify the optimal Developmental dation and trans devation path at that 10 I'll just work theoretical so I always wanted to kind actually integrate my mathematical models with the genomics data that just start emerg 10 years ago and this is "
+    },
+    {
+        "start": 184.319,
+        "text": "exactly what I did my PhD and post dog so in my PhD as just mentioned I develop Mole 2 Mo 3 to uh accurate in the development trajectory and I also develop scrap for learning the c regat network from a post and developed D that I going to talk about extensive on the other hand my computational expert also helped in report money break through Technologies including the SK SK IR SK the metabolic laboring enable sing and recently the stereo so going back to this problem of amb Genesis now things to advances in single cell genomics we are able to uh really capture the Pressed transition from orans of terminal cell orans of pro cells to money terminal cell TS in a unprecedented resolution however the existing uh "
+    },
+    {
+        "start": 248.159,
+        "text": "single cell analysis method are rather descriptive instead of predictive so for example most of the Single Cell analysis approach will stop R identif cell classes and also and anal the C classes with Market gen so although uh this Big Data position us to be able to generate productive models uh the existing approach are not there yet in the past few years there are a few attempts that TR to achieve this goal for example we have sh 10 and iron velocity so for sh 10 we can sh tempor order the sales and on a graph manua to reveal the Gen SP and now this graph Manu fold uh and with iron velocity people Al uh figured out how can model the IR kic to define the 10 derivative of SP so that we can "
+    },
+    {
+        "start": 309.16,
+        "text": "predict the local phase of each individual cell so allu tools of course are very popular and give us a lot of biological insights but they still discriptive instead of predictive so for example for sh 10 it only tells you the central trend of the self transition well velocity because it to make a lot of undesirable assumption so the um uh the velocity flow often is problematic almost four years actually five years ago when I started my post in jonison lab I wanted how I can go beyond this discreet uh and discrep descriptive analysis to more predictive modeling so what I figured out is that on the one hand we will need more um uh more U Advanced machine learning approaches and for this I figured out we will need to go beyond the discret as "
+    },
+    {
+        "start": 370.36,
+        "text": "velocity vectors of for money sales to a continuous and also differentiable equation uh and know it's clear to me that once we have such a equation then we can use it to make money it will open doors to many non many noral analyses that not possible previously for example we can use this work field to predict how the sales evolves our 10 we can also use it to resolve the under gen regulatory Network we can even make many non true predictions like we can predict the optimal reprogramming PA and the optimal set of transform factors that enable the reprogramming even make in cical probation predictions on the other hand we I also realize that in to P up this predictive models we will need better Technologies better managements so for this I worked with Jo and chain to implement the metab labeling enable the single this is a new technology that they uh explicitly tag "
+    },
+    {
+        "start": 433.879,
+        "text": "the N with irona nucle analog foru so then you can explicitly identify what's new and what old iron from the data we apply this technology to the human H PES and uh we when we we take the uh splicing information from this experiment I performed I velocity with s Val uh interesting we find that the velocity flow is problematic and quite low easy you can see the cells uh the terminal cell like Mees Eros and Bas of actually moving backward from the SP the base D velocity analysis on the other on the other hand if we use use the labeling data covered with Damo we are able to automatically learn a smooth and hierarchical transition from the HSC forly into the CMP and then and M cells which is then R "
+    },
+    {
+        "start": 495.84,
+        "text": "into a neutr monoset Bas erosion and Mees so this nly recap the known biology of human Hopes And they also indicated the uh this kind of data we all provided the necessary uh information to uh for building these predictive models we also demonstrate this uh demonstrate the generality of this approach on a different system we uh studied the neuronal activation after the KCl treatment uh with the metabolic labeling data we can RW a very nice transition of the sales from 10.0 to the 10 15 minutes 30 and 60 and 120 Minutes well if we use labeling based information you can see the velocity flow is quite Noy and and most of the time doesn't make sense so uh in order to base the model "
+    },
+    {
+        "start": 559.16,
+        "text": "analyze this kind of data and build the predictive models yes please just want know say a little bit more about yeah the noise from the velocity canes from a few uh places on the one hand the SP based iron velocity relays on in R but the Inon are actually CED by in by exent so the majority of the technology doesn't actually try to remove just in R but which we because of M premium during the uh in the uh in uh region we got this inance so that's way uh in general the SP iron velocity can be really Noy especially for CH that lowly expressed but there are also other technical issues like we need to have assume transcri transation "
+    },
+    {
+        "start": 619.2,
+        "text": "degradation rate to be constant uh yeah thank you yeah okay so going back to this right we we you to analyze this kind of data and build the predictive model we then come up uh uh we build this framework the denimal denimal over all has a four major Innovations so firstly uh denimal is a general way to model both the conventional single SEC data and also metabol labeling enable the single SEC dat and for the labeling data it can be used to estimate the absolute canic parment but Absol the can parment I mean the transcription de R has actual physical units like we know how much mole is produced or theate sped over unit of time this is because with M labeling data you actually control the T you label the C so that's where you get "
+    },
+    {
+        "start": 680.48,
+        "text": "the absolute uh k params then with the par you can oburn IR velocity and then we can take the discrete and also low velocity vectors from each individual cell to impute a continuous wied field uh and we once we have a analytical form of the wied field then we can do hey all the differentials like we can do not only velocity but also acceleration cage Divergence Jacobin cor ping and and as I will tell you later Al T we actually have deep biological meanings lastly we can use this analytical equation to make non-trivial predictions like Optimal path and inal probation predictions the uh the D framework U models say SP and um labeling IR with three different models for the first model we is explicitly used for modeling "
+    },
+    {
+        "start": 742.36,
+        "text": "the conventional sing data so we are uh uh model the transcription spling and dation for model two and model three they will all be used for modeling the labeling data but the differen is is that in model two we don't consider the spacing well in model three we actually consider both the labeling and also spacing and the core of D is its ability to take the P the Gen expression and also uh the corresponding velocity uh basically the A and the DX always D for many many sales and then we can take just discrete measurements for different for a lot of sales to learn uh continuous function f so you can input the uh gen expression output the velocity for any Sal St and this function uh actually corresponds corresponds to the under gen regulative Network and once we have this kind of "
+    },
+    {
+        "start": 804.68,
+        "text": "mathematical description of the S State transition you can then give some initial state of this of this system and then predict how each individual cell evolves over time in the Gen exper space and um in more detail this weight field is represented as a weight summation of a series of Kernel so we can reduce this kernel into like a ging kernel and each col we associate with n mark x the and uh you can see see if your St is away from this n Mark the velocity will gradually Decay and in general we actually only need about 50 kers to be able to represent a we complicated W field so here n is equal to about 50 so the uh once we have this uh this wed field the leg is how can we make use of it and to gain biological insights so "
+    },
+    {
+        "start": 867.32,
+        "text": "what I going to tell you next as some mathematical terms you all learned about in your mod variable calculus but probably never thought about we actually connect with the biological processes the first turn is iron joban which is defined as the partial derives of the wicked field respected this St variable and for Jacobian if you see you increase the expression of one Gene and velocity of another Gene it's increased then this indicates activation or on this ver for the Divergence it correspond it corresponds to this the trace the summation of the diagonal of the job Matrix so it can be used to Ral the syn and the source of the cell state for acceleration it tells you see like the rate of the Velocity so it can be used to R the early driver and for cure uh which can be used to defend the self "
+    },
+    {
+        "start": 929.519,
+        "text": "fade switch uh which is we commonly appeared during the EM during the development EMB Genesis uh lastly for call it may related to the cell cycle process so in the next few slides I'm going to uh take uh uh some uh simulation and also real date uh to demonstrate how we can use uh the differential geometry to gain biological Insight so here I I use this to switch model between X1 X2 so they just two mutual inhibit each other and self activates and because this is a synthetic system so we can actually uh map out enti Wicked field uh for the X1 X2 and you we can see on this wed field we will have three fix points like A1 A2 and A3 the A1 has balance the Gen expression between X1 X2 this Co to a pro cell we A1 A2 and A3 have "
+    },
+    {
+        "start": 994.199,
+        "text": "respectively he expression for X2 and expression for X3 and you can also find that for each of the Fon is like electrical Basin coresponding to B1 B2 B B3 and all the velocity flow will actually converge into this terminal uh this fixed points the boundary between theal Basin is the separa so here let's look specifically this Dash the name where X1 gradually increase and the X2 is fixed to be around five we can then plot the velocity of X1 or F1 it's a function of X1 and get get this kind of C we can then calculate the partial derivatives of FX1 respected to X1 and then just get the jopan from X1 to uh itself and you can immediately appre appreciate that there is a strong positive uh Peak this "
+    },
+    {
+        "start": 1056.44,
+        "text": "indicates a self of activation uh it's shown on the on the on the on the motive in the left because we do know the uh mathematical equation of the system so we can actually make out the uh to coping for any point in this space and use a heat map to visualize it so again you can see the ACT activation from X X1 to itself uh you we can also do the similar analysis to calculate the the the joban from X1 to X2 you can see here there is like very deep Val that indicates a repression from X1 to X2 and again if you plot this in the hidden map you can also see the um repression from X1 to x2 in and T data space what is the time scale uh velocity for velocity is instant and "
+    },
+    {
+        "start": 1120.0,
+        "text": "and this is a simulation system here uh so I think everything is instant yeah uh so for uh for U I mean uh we are talking about the simulation here so everything it's uh I think is arbitrary right but in biological system like here we are talking about on the 10 scale for a few days maybe one week yeah so for so that's way when people talking about using iron velocity to study tumor progression that's generally not a good use case because tumor progression involves months right it's it's much longer T scale than velocity can handle so for Divergence uh if it's it's if the the Divergence if is negative "
+    },
+    {
+        "start": 1180.88,
+        "text": "indicate the lock of flow is like converging uh so this indicates the sync or biologically this is a terminal cell type because the the cell will differentiate into just terminal State and if it's positive indicat the lockal flow is the it means the cell is going out so it means we become other cell type so this is correspond to a pro cells in indeed if we perform the wed field analysis and other calculated Divergence for the pigment for the deeper fish pigmentation you can see interestingly in the middle sh on the bottom you can see the Divergence is positive where the surrounding cell have a negative Divergence so what this means is that um we can mean if you look care you can see this cells in the middle indeed corresponding to like a Shan cell precursor and the blood reflecting proes and the surrounding cell corresponding to cell types Shan cell Ro for cells so "
+    },
+    {
+        "start": 1242.72,
+        "text": "this indicates that all m is able to automatically uh predict the uh proen State and Terminal C stat another very interesting feature is the acceleration so because acceleration can turn down much ahead of the chin turn down so this can be used to Ral as the early dver here I'm going to show you how we can like to visualize the uh acceleration velocity and O speci for this two M regulator sp1 and G one and just like key M Regulators for the hopis so you can see interestingly and the path from HS to Monet uh the acceleration for the uh sp1 picks at 21 hour but the velocity PS at 47 hour and the expiration on the PE until 70 hours "
+    },
+    {
+        "start": 1303.32,
+        "text": "so again this that means that if you see a train that show say acceleration at early temp this can be used to predict the um he gen expression u in the m later 10o the real transformative innovation of denim LS in the fact that we are able to uh gain magn magnesium predictive inser so for the sake of 10 I just G quickly show you that using irob we able to identify minimum Network between fle one and the K of one that can be used to explain the early appearance of mega cases we can also use the most probable path me predict uh the optimal path as well as the optimal set of trans factors can conver in this case meares back to the HSC and even predict the genetic pation effects here we lock out the P1 "
+    },
+    {
+        "start": 1364.44,
+        "text": "and you can see the neurop and the monoc cells actually moving away is current state and move towards become m m state so in the leg few SL I'm going to go through um the uh the dection path and also in probation predictions so ever since the discovery of cellular reprogramming it has been has become a very fundamental question in predicting uh what what we have be optimal pass and the optimum set of trans practice that g r to self transitions previously uh on this simulation system I used uh a concept in uh in incases the distraction path to predict the uh uh the optimal Developmental dation and the uh trans divis path so in this formula which defends the action basically the V VT corresponding to the "
+    },
+    {
+        "start": 1425.919,
+        "text": "velocity and non the predicted path and FX that corresponding the W field so since now we do learn the we the field directly from the uh data I wonder whether we can actually use the same formation on all data driven uh the field to do the similar SC so what showing on the bottom left is the predict that this action path from HSC to each of the terminal cell tpe and one interesting feature you can you can identify is that this pass is actually not the shortest pass and you can see the pass actually the cage defend by the vector field this is because if we go if we check the action on the top re uh if the velocity VT exactly equal to fxt that's Bally the W field then the the action will be zero and this will be the least "
+    },
+    {
+        "start": 1486.44,
+        "text": "action path uh the D did mention but D generally is the defusion constant and in this case we we said the D to be one and uh although this this path is visualized in 2D we can actually go back to the original gen speci space and we can uh plot as a heat map to uh reveal the trans gomic kics and not the pass or lab so what I showing here is the lab from the HSC to Bas of Lage and you can see some gen turn earlier some gen other gen are more transient and where other P we end so we can then uh calculate a Bas integral that uh describes the accumulative change of the Gen speci and non lab and then we "
+    },
+    {
+        "start": 1546.88,
+        "text": "can Define the priority scope and using this priority scope we can identify GA two R run one just are two known trans fact that uh previously shown to be related to base of an image uh and those genes are uh ranked pretty high in my maod so this indicates that using this kind of letion path and also also PR prioritization approach we are able to identify key transform faes that they may relate to the self transition so uh next I'm going to use this uh P1 G one net work motive to demonstrate how we can use it to perform inal probation prediction so as we know this two CH they have like a self activation and mut inhibition so it behaves like a system model right and if you suppress the expression of G one then the balance will broken and sp1 "
+    },
+    {
+        "start": 1606.96,
+        "text": "will win and then uh the the balance will probably move towards the GMP Lage uh we can then use the formula sh in the basically multiply the Jacobian uh with the data X so here jacoban corresponding to as I mentioned before correspond to the gene regulatory Network and where dat X corresponding to the portation vector so if you like lock out one gen then the corresponding Gene will will be set to be negative value and if you active one gene the corresponding Gene will set to be positive um and the choping it's defend for each cell so we can this kind of calculation for all the cells in the Gen experence State and we can then basically connect each uh uh pation vectors dat across the cells to predict how the cell uh change their cell f up the genetic probation so we then apply this method to perform the "
+    },
+    {
+        "start": 1669.399,
+        "text": "inal probation of Gala one on the hopis system uh you can see initially the cells at Oso or in Engish after the probation of G one we are leave its current state and move towards to become like neutral field monite C and this of course consist is consistent with previous experiment reports we also did this kind of uh inal probation for M money jeans and all of them actually matches with the experiments we real is also wor mentioning that this kind of inal probation it's very St forward you can basically P at any time point for any kind of genes and you can even do comor gen pation predictions so this will provide a really cost effective way to just gen efforts that was done in the W man my current po so I'm gonna I hope my previous SL "
+    },
+    {
+        "start": 1732.72,
+        "text": "show you that my original dream that tries to uh connect my uh my mathematic model with genomics data it's really realized uh after 10 years in this D framework uh so and I also show you that we can use the uh M labeling to P up the predictive modeling and we use this k Master to learn the we field and importantly we can also not only predict the self and reveal the regulatory network with this W field but we can even make non-trivial predictions they thetion pass ination prediction so the D framework I just tell you enable us to perform temporal modeling of the self transition using the M labeling data however uh as as I mentioned at the very beginning the amb Genesis is not only temporally related but also specially controlled similar to "
+    },
+    {
+        "start": 1794.96,
+        "text": "D we in order to perform the base Bas modeling on this special AIS we will also need to identify the based technology that they can p up predictive modeling for the special AIS so for this and figured out we can like use the stereo for special transomics modeling uh comparing to existing technology Tech Vis which doesn't have single cell resolution because the beads they're using are very huge and also the cables between be big as well um so this prohibit us to overturn uh single cell resolution well s actually use the sequence and Chip so like in principle cure up to 400 BS within individual cell so just give us a sub special resolution more importantly uh St has a large field of view so we can easily cage and most "
+    },
+    {
+        "start": 1858.08,
+        "text": "em with a single chip and it can even extend into 13 cm CM fi of view so now with this Advanced special transom technology uh we we want how we can achieve single cell resolution and 3D special trans so for this I also developed a new tool of the spal uh and the SP has a lot of functionalities we can use it to perform single cell segmentation we can use it to uh identify special domain and also perform digitization basically we can automatically defend like the special layers on conents on a special domain like we can automatically defend the layer one to legac in the neuron in the brain uh we can also use we can also of course perform re interaction which is the topic G for studing the special FR atomics and more importantly we are able "
+    },
+    {
+        "start": 1918.279,
+        "text": "to reconstruct 3D and perform morphometrical analysis basically to predict how the cell meat in the 3D space so for the sake of the time I'm going to clly uh mostly focus on the Single Cell segmentation and also 3D reconstruction and morphometrical W field part uh as I mentioned using this stero we can impin capture up to 400 D BS within each individual cell and the in the original uh report we show that if you overlay the RNA the nuclear acid standing I mean the the segmentation from the nuclear acid standing with detect the DNA N B basally Just the detect irna accounts you can see very interestingly the irna signal is it's enriched Inu segmentations from the nuclear acid this then motivate us to develop "
+    },
+    {
+        "start": 1978.72,
+        "text": "algorithm that can directly use IR signal to perform single Serv segementation and this is actually very beneficial because sometimes uh doing the nuclear acid staining or other staining we are complement your sequen quality and this is also a like a 10 consuming St so it would be great if we can directly use the IR signal to perform the segmentation so for this we then develop a new tool called the St that the performance segmentation purely based on uh IR signal so the with the ru matric of gen on the physical space um we first perform uh domain uh identification basically we can uh separate the domain with high I Den sorry High cell density and low cell density and uh uh we we then uh on each "
+    },
+    {
+        "start": 2040.679,
+        "text": "domain we can then use three uh complementary Master uh pre pre-processing for the Single Cell segmentation um all this we start with like generating a scatter PL where each point corresponding to the um uh to the DNA n b and color corresponding to the aggregate RNA count uh that was detected by that D and the the first method we will we developed is the EM algorithm based meod and the the other two alternative meod including like most doing a g go Blu to smooth the data which followed by otsu to perform U to select the front signal or we can use a local Mor based approach uh to identify the hot spot in the space to reveal the uh enriched I signal so the first "
+    },
+    {
+        "start": 2102.96,
+        "text": "method is based on uh a principle the approach that models the uh front signal and also background signal using a mixed negative volum distribution model um we can then use a em algorithm to basically separate the from the signal from the background the signal and we can then remove the background the signal and uh overturn the figures uh in the in the middle and then uh you can see um the in some regions we will have the well and vales basically are the points that has a low of G IR expression but surround by the be that has high IR content so we then uh needed to fit in just just points basically we take in uh we we build like a special graph and then using brief propagation "
+    },
+    {
+        "start": 2165.88,
+        "text": "based approach to filling in just wallets just missing points uh once we have this process the data we can then use three again three different alternative approach like the density Peak Bas or data P based method or we can if we do have the the staining image we can use the seed of coming from the uh understanding or cell mem understanding um to perform the segmentation and in the end you will return uh a uh single cell data where the special location of each cell as well as the morphometrical uh morphology feature of that cell will also be recorded so here I'm going to show you how we can use this method to perform single cell segmentation on an most um sles and especially focusing on the heart region uh so we first PL the Gen "
+    },
+    {
+        "start": 2227.2,
+        "text": "expression of M L7 which is a mark gen unique to the heart you can see very specific expression uh in this hard region and we can zoom in um and for this region then we can perform this styo single cell segmentation uh you can see indeed this meod is able to identify each able to uh identify individual cells and each of them show different morphologies I think the the real cool thing about the SP is really this ability to perform 3D reconstruction and then also nor downen volumetric morphometric analysis so a men uh we want to be able to reconstruct a 3D uh model from uh seral sections and we do have this kind of data not S one collaborate and basically in this case "
+    },
+    {
+        "start": 2288.839,
+        "text": "we use the uh we use stereo we to to profit a continuously select um so we select the dra EMP for about 30 SES and then we can measure with stereo so uh when you do the sing actually you lost the relative coordinates uh of the cell between different SES we we are then needed to develop a master that en name the cell back to the original XYZ coordinate so this we are resulting in 3D Point Cloud where each point cell and the col corresponding to the Gen expression uh uh by then we can also do more interesting down screen analysis once we have this 3D Point CL we can firstly create like a 3D M basically cover the point clock uh and then we can also divide this 3D Mo into U different "
+    },
+    {
+        "start": 2351.44,
+        "text": "work cells where each work cell has at least at the most one single cell we can because when you do the S you actually have the missing uh data uh between different SES so we we then use a deep learning method that map the special coordinates to the Gen expression and once you have this kind of continuous uh model uh in the 3D you can then perform continuous s previously there s was done from the top to the bottom but now we can actually select the Ember from the left to the right and so you can observe the special gradient across different angles from this uh from this continuous model uh another thing we can do is that we can also reconstruct tissue level M for each individual organs and we can start to ask how each individual tisue will talk "
+    },
+    {
+        "start": 2411.8,
+        "text": "to each other to do cell communication on the level of tissue and even organs we can of course also calculate many morphometrical features like we can calculate the names surface area volume cell density and also the um cell distribution in the 3D space those kind of analysis are not feasible with just 2D regular single special transforms uh in order to facilitate just kind of 3D uh reconstruction and also data exploration we also developed a uh online web application that allow the user to like upload their special trans toping data and you can uh you can using the browser to actually interactively explore the data so now with the 3D data that uh was reconstructed we can start to ask some "
+    },
+    {
+        "start": 2472.079,
+        "text": "interesting questions uh that are not again not the possible previously for example we can try to understand how the organ will expand our 10 the organ expansion probably is because of the cell growth and we can also figure out how the organ will shrink over 10 this probably because of the cell days and we of course mod of the cell migrations which is very common during the organogenesis and lastly we can even figure out the whole different small pieces of a premature immature organ converge into a uh materal one and indeed if when we use the spal uh we uh analyze the data from the sofware we are able to rec identify all ju patterns for example the central nervous system actually M and the uh mid guard start with two pieces that actually converge into a in into a "
+    },
+    {
+        "start": 2534.079,
+        "text": "mature one the next nature question is can we actually predict how each individual sales M rates duing kind for organ process and importantly can we actually identify the gene that enable such kind of migration of course you can do level image you can try try to use level image to track how the cells m in the 3D space um but this kind of method cannot give you the uh transcri in real T so you will be recal if we able to actually not only track track the Gen the the migration of cell but at the same time the Gen expression changes so here I'm going to use this me gu as a example to demonstrate how we can achieve this goal so uh you can see uh initially just read cells just uh me "
+    },
+    {
+        "start": 2594.599,
+        "text": "cells at 7 to name and you can see the initially have two piece as I mentioned previously and uh that ising our 10 uh the cells uh become a uniform connected U structure so we can take the Gen expression change gen expression similarity and also the special proximity to connect the cells across two temp point in the physical space and in analogy you will realize that the uh xyd coordinates uh from the red cells actually correspond corresponding to the Gen expression in the iron velocity uh framework where the this enement actually corresponding to the velocity vat so we can then take this basically the coordinates of the red cells and the corresponding en names to perform V the field learning and then we can predict a we can learn a momal w "
+    },
+    {
+        "start": 2656.599,
+        "text": "field so here the W field is actually in the physical xyg space not in the Gen space so the errors showing here are the actual migration predicted migration path of each individual cell you can even animate this process so you can see where the bottom cells move up top cells move down and if we look very carefully you will realize that on this boundary region the the cells actually have with strong twistes and this twistes can be used to be can be Quantified by the Thousand uh we so we can calculate the the Thousand for each individual Cale and then we can try to connect to we can try to uh identify genes that show ha correlation to the toin across the cells and in this case we show the OTP which is a known um regulator of the mogen is indeed have "
+    },
+    {
+        "start": 2718.4,
+        "text": "very high correlation to the to we actually doing Cris experiments to uh local U actually just a few other gen and indeed we see if we lock all gen the organ Genesis the migration of the cell is stopped so I have told you that using D we able to reveal the um Iron velocity W the field we are using this uh this uh SP we able to learn the M field so one it's actually in the Gen expans space where the other is in the physical space so at this moment this these two are actually separate they're not in they are not unified in a single framework so it would be great if we able to actually predict both gen change and also cell migration at the same time here I'm going to use a a simulation to "
+    },
+    {
+        "start": 2780.68,
+        "text": "demonstrate it to to demonstrate this concept and I tell you how we can act how we are a in this problem hopefully once we establish Su in simulation system we can apply this strategy to the uh special temporary resolved data so the the the simulation system um showing here is a dig formation so we know during the mum dig formation the the the the umbr started with no digit but gradually over 10 and over space one digit will become to five digits so if we mod this process uh uh using a ond system and the plot the Gen expression of three key transform factors that related to the dises so here is so name BMP went so basically we can create this kind of Animation right initially XX is Gen expression Y is Gen sorry XX is "
+    },
+    {
+        "start": 2842.4,
+        "text": "space Y is YX Is the Gen expression and the color is the three gen so you can see initially uh the expression is put R them but all 10 uh the five digit is form so uh if we want to be able to uh if we we have this kind of data the goal for us is to take uh this data to be able to re reverse engineer and under equations that describe this kind of system this is exactly what we did previously for the velocity right we have the Gen expression and the velocity with the Le function if that M gen expression to the velocity so here if we have the special temper data we want to be able to take this data and learn the other equation but mathematically this is much much more difficult because in the original denimal framework we are basically learning uh a ordinary "
+    },
+    {
+        "start": 2904.96,
+        "text": "differential equation it doesn't involve the temp special uh component but here because we do involve like the special gradient uh the special diffusion for in this case BMP and wind so instead of learning OD to model the special temporal kics we will need partial differential equations so uh then I deep into the deps of literature and identify this method uh this is actually very mathematically complet approach but here going I'm not going to go to all the technal details just but just show you the bigger picture ideas so uh this master the fees in full free new operate approach start with the measurement of genp uh I mean this a gen General General framework but he this "
+    },
+    {
+        "start": 2965.839,
+        "text": "case we can assume the input is genp we or the Space X and then you can first go through like a f uh you can perform F transformation to generate different wbes and then we can take on the top modes uh and then go through like inwards the fre transformation and then we can add this B to the uh the original data after n transformation similar to the uh similar to the the regate and then next go through the activation function and this is basically the key key model behind this approach and uh this method comparing to like othero which basically just solve the solve instant of P PD this MTH actually try to make a function map between function "
+    },
+    {
+        "start": 3027.0,
+        "text": "space so basically you can give like initial State you can map to the leg State and so essentially this master is able to allow us to learn uh uh the PD function itself so uh we here then generated a uh a series of training data to try to demonstrate the uh The Benchmark method and we start with money run initialization St and then we follow this PD uh to generate as uh animation basically uh for this for this s gen over 10 and always space we generate in total 1,000 simulations and you can see on the panel d uh if you PL the velocity and Laing basically the last turn um you can see the uh that is a really int intrigu uh part for the BMP uh and we can then take 80% of the "
+    },
+    {
+        "start": 3090.44,
+        "text": "data for training and the rest 20 for testing so what are going to show you next are the result on the testing so we interesting you can see on the left of con we we achieve any per result the first R that's the gr CH the second row that's the prediction the last row is the regual and for each heat map uh the X AIS is the space y AIS that's the Gen expression and the color corresponding to the expression of a particular G so you can see for the from the second row in the first colon the the special temper for the is in indistinguishable from the for and emphasis this actually we challenge this really really difficult test what we are asking for the neonet is that let me give you the Gen Experience day 10 zeros so basically "
+    },
+    {
+        "start": 3154.799,
+        "text": "gave you uh this name as we beginning and they ask the new to predict over 10 how this um how this pattern will appear over 10 so more intuitive turns it means that if you know uh the weather at this moment for the Earth can we predict the res for the Earth for the next one week or one month but as you see here we are able to doing a pretty good job the uh the the the figure showing on the r uh is different meod that was using the graph neonite the the purpose I didn't mention here but the purpose is that uh in the single cell data right we we are not talking about continuous space actually each cell is is it's discret we so that's why we need you the we use the graph neet to represent uh this uh to model the "
+    },
+    {
+        "start": 3215.72,
+        "text": "special kics so uh so that's basically I have I want to end my talk with this analogy between like astronom and biology for searching UNIF Theory and uh I hope with a bigger data more advanced machine learning we are able to really gain predictive models uh for the biological system so with that I would like to give a big thanks to Jonathan uh and also my previous day Mentor collaborat call and money money collaborates for their support over the years for me to work on all this refun projects lastly I want to take prob the last minute to share with you that since I'm study my lab pretty soon so if you happen to looking for uh po positions please come to contact me yeah we would love to work with you "
+    },
+    {
+        "start": 3282.96,
+        "text": "thanks all right that was great thank you any questions for shiai you know I I just I was really trying hard at the end to get follow the physics based 48 operator you know neur 4ier operator you know and uh part of it I think is when you said it was not a continuous function but a discreet so I could definitely see the digital for transform but I wonder what the physics was that was informing the forier transform I saw space and time I get that part and you know that sounds like physics to me the the F yeah the f l itself it doesn't involve the which constraint so the constraint comes from the boundary condition like uh when you model this right you need to fix the boundary in solving a PD right you need "
+    },
+    {
+        "start": 3343.68,
+        "text": "to define the boundary right part gu yeah so here we basically that f is informed is defending the boundary condition in the uh in the operate all right that's fair yeah yeah thank you sorry I couldn't follow it question um I was curious about the the morphometric vector field you showed from the the the fly data um when you were showing those alignments across time points are you just um like registering the spatial coordinates or did you use the gene expression as well I see because we need to assume sales um uh similar yeah the Sal name should have similar gen but at the same time nearby cells should move to nearby cells as next stand point so basically you can use like a few join learn the Min distance between "
+    },
+    {
+        "start": 3407.16,
+        "text": "the speci and distance between the uh distance for the ne cells yeah I see so it's great any other questions all right thanks again thank you thanks a lot "
+    }
+]

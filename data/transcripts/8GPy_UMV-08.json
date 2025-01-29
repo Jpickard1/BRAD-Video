@@ -1,0 +1,1892 @@
+[
+    {
+        "text": "Alright, I think you're going to like this.",
+        "start": 3.98,
+        "duration": 1.56
+    },
+    {
+        "text": "I want to show you a beautiful result that reveals a surprising connection ",
+        "start": 5.84,
+        "duration": 3.567
+    },
+    {
+        "text": "between a simple series of fractions and the geometry of circles.",
+        "start": 9.407,
+        "duration": 3.093
+    },
+    {
+        "text": "But unlike some other results like this that you may have seen before, ",
+        "start": 12.9,
+        "duration": 4.62
+    },
+    {
+        "text": "this one involves multiplying things instead of adding them up.",
+        "start": 17.52,
+        "duration": 4.1
+    },
+    {
+        "text": "Now, the video you're about to watch is particularly exciting for us at 3Blue1Brown, ",
+        "start": 22.18,
+        "duration": 3.794
+    },
+    {
+        "text": "because it came about a little differently from most of the videos that we've done.",
+        "start": 25.974,
+        "duration": 3.706
+    },
+    {
+        "text": "If you step back and think about it, the value of any kind of ",
+        "start": 30.24,
+        "duration": 3.453
+    },
+    {
+        "text": "math presentation comes from a combination of the underlying ",
+        "start": 33.693,
+        "duration": 3.397
+    },
+    {
+        "text": "math and all of the choices that go into how to communicate it.",
+        "start": 37.09,
+        "duration": 3.51
+    },
+    {
+        "text": "And for almost all of the content on this channel, ",
+        "start": 40.7,
+        "duration": 2.448
+    },
+    {
+        "text": "the underlying math is something that's well known in the field, ",
+        "start": 43.148,
+        "duration": 3.12
+    },
+    {
+        "text": "it\u2019s either based on general theory or some particular paper, ",
+        "start": 46.268,
+        "duration": 2.976
+    },
+    {
+        "text": "and my hope is for the novelty to come from the communication half.",
+        "start": 49.244,
+        "duration": 3.216
+    },
+    {
+        "text": "And with this video, the result we're discussing, a very famous infinite product for pi, ",
+        "start": 53.14,
+        "duration": 4.456
+    },
+    {
+        "text": "known as the Wallace product, is indeed well known math.",
+        "start": 57.596,
+        "duration": 2.804
+    },
+    {
+        "text": "However, what we'll be presenting is, to our knowledge, ",
+        "start": 60.8,
+        "duration": 3.143
+    },
+    {
+        "text": "a more original proof of this result.",
+        "start": 63.943,
+        "duration": 2.077
+    },
+    {
+        "text": "For context, after watching our video on the Basel problem, Sweeter, ",
+        "start": 66.86,
+        "duration": 3.405
+    },
+    {
+        "text": "the new 3b1b member who some of you may remember from the video about color and ",
+        "start": 70.265,
+        "duration": 3.949
+    },
+    {
+        "text": "winding numbers, well, he spent some time thinking about the approach taken in that ",
+        "start": 74.214,
+        "duration": 4.146
+    },
+    {
+        "text": "video, as well as thinking about the connection between the Basel problem and the ",
+        "start": 78.36,
+        "duration": 4.047
+    },
+    {
+        "text": "Wallace product, and he's tumbled into a new proof of the relationship between the ",
+        "start": 82.407,
+        "duration": 4.097
+    },
+    {
+        "text": "Wallace product and pi.",
+        "start": 86.504,
+        "duration": 1.136
+    },
+    {
+        "text": "I mean, I'll leave open the possibility that an argument of this style is ",
+        "start": 88.58,
+        "duration": 3.454
+    },
+    {
+        "text": "hidden somewhere in the literature beyond what our searching pulled up, ",
+        "start": 92.034,
+        "duration": 3.362
+    },
+    {
+        "text": "but I can at least say that it was found independently, ",
+        "start": 95.396,
+        "duration": 2.615
+    },
+    {
+        "text": "and that if it does exist out there, it has done a fantastic job hiding ",
+        "start": 98.011,
+        "duration": 3.361
+    },
+    {
+        "text": "itself from the public view.",
+        "start": 101.372,
+        "duration": 1.308
+    },
+    {
+        "text": "So, without further ado, let's dive into the math.",
+        "start": 103.58,
+        "duration": 2.52
+    },
+    {
+        "text": "Consider the product 2 over 1 times 4 over 3 times 6 over 5 on and on and on, ",
+        "start": 108.98,
+        "duration": 4.605
+    },
+    {
+        "text": "where what we're doing is including all the even numbers as the ",
+        "start": 113.585,
+        "duration": 3.779
+    },
+    {
+        "text": "numerators and odd numbers as the denominators.",
+        "start": 117.364,
+        "duration": 2.776
+    },
+    {
+        "text": "Of course, all the factors here are bigger than 1, so as you go through the series, ",
+        "start": 120.84,
+        "duration": 4.279
+    },
+    {
+        "text": "multiplying each new factor in one by one, the result keeps getting bigger and bigger.",
+        "start": 125.119,
+        "duration": 4.381
+    },
+    {
+        "text": "In fact, it turns out that it eventually gets bigger than any finite limit, ",
+        "start": 130.28,
+        "duration": 3.83
+    },
+    {
+        "text": "so in that sense it's not super interesting, it just blows up to infinity.",
+        "start": 134.11,
+        "duration": 3.73
+    },
+    {
+        "text": "And on the other hand, if you shift things over slightly, ",
+        "start": 138.68,
+        "duration": 3.166
+    },
+    {
+        "text": "looking at 2 divided by 3 times 4 divided by 5 times 6 divided by 7, ",
+        "start": 141.846,
+        "duration": 3.768
+    },
+    {
+        "text": "on and on, all of those factors are less than 1, ",
+        "start": 145.614,
+        "duration": 2.675
+    },
+    {
+        "text": "so the result keeps getting smaller and smaller, ",
+        "start": 148.289,
+        "duration": 2.675
+    },
+    {
+        "text": "and this time the series turns out to approach 0.",
+        "start": 150.964,
+        "duration": 2.676
+    },
+    {
+        "text": "But, what if we mixed the two?",
+        "start": 154.54,
+        "duration": 1.58
+    },
+    {
+        "text": "If you looked at 2 over 1 times 2 over 3 times 4 over 3 times 4 over 5, ",
+        "start": 157.04,
+        "duration": 4.1
+    },
+    {
+        "text": "on and on like this, where now the partial products along the way keep going ",
+        "start": 161.14,
+        "duration": 4.385
+    },
+    {
+        "text": "up and then down, and then up and then down, then up a little bit, ",
+        "start": 165.525,
+        "duration": 3.816
+    },
+    {
+        "text": "and then down a little bit less, until all of these jumps and falls are of ",
+        "start": 169.341,
+        "duration": 4.272
+    },
+    {
+        "text": "almost no change at all.",
+        "start": 173.613,
+        "duration": 1.367
+    },
+    {
+        "text": "So now it must be converging to some kind of positive finite value, ",
+        "start": 175.64,
+        "duration": 4.154
+    },
+    {
+        "text": "but what is that value?",
+        "start": 179.794,
+        "duration": 1.406
+    },
+    {
+        "text": "Believe it or not, we'll discover that this equals pi divided by 2.",
+        "start": 182.24,
+        "duration": 3.74
+    },
+    {
+        "text": "And to understand the connection between this product, apparently unrelated to circles, ",
+        "start": 186.76,
+        "duration": 4.015
+    },
+    {
+        "text": "and pi, we're going to need to take a slight digression through a few geometric tools.",
+        "start": 190.775,
+        "duration": 3.925
+    },
+    {
+        "text": "It's a productive digression though, since these are some useful ideas ",
+        "start": 195.2,
+        "duration": 3.081
+    },
+    {
+        "text": "to have in your problem-solving tool belt for all kinds of other math.",
+        "start": 198.281,
+        "duration": 3.039
+    },
+    {
+        "text": "The setup here involves a circle with many different points evenly spaced around it, ",
+        "start": 205.92,
+        "duration": 4.795
+    },
+    {
+        "text": "and then one additional special point.",
+        "start": 210.715,
+        "duration": 2.145
+    },
+    {
+        "text": "This is similar to what we had in the video on the Basel problem, ",
+        "start": 213.18,
+        "duration": 3.03
+    },
+    {
+        "text": "where we pictured these evenly spaced points as lighthouses, ",
+        "start": 216.21,
+        "duration": 2.8
+    },
+    {
+        "text": "and thought of that special point as an observer.",
+        "start": 219.01,
+        "duration": 2.25
+    },
+    {
+        "text": "Back then, the quantity we cared about involved looking at the ",
+        "start": 222.16,
+        "duration": 3.463
+    },
+    {
+        "text": "distance between the observer and each lighthouse, ",
+        "start": 225.623,
+        "duration": 2.804
+    },
+    {
+        "text": "then taking the inverse square of each of those distances and adding them all up.",
+        "start": 228.427,
+        "duration": 4.453
+    },
+    {
+        "text": "This is why we had the whole narrative with lighthouses in the first place, ",
+        "start": 233.2,
+        "duration": 3.911
+    },
+    {
+        "text": "since the inverse square law gave a really nice physical interpretation to this quantity, ",
+        "start": 237.111,
+        "duration": 4.632
+    },
+    {
+        "text": "it was the total amount of light received by that observer.",
+        "start": 241.743,
+        "duration": 3.037
+    },
+    {
+        "text": "But despite that nice physical interpretation, ",
+        "start": 245.58,
+        "duration": 2.357
+    },
+    {
+        "text": "there's nothing magical about adding inverse square distances, ",
+        "start": 247.937,
+        "duration": 3.161
+    },
+    {
+        "text": "that just happened to be what was useful for that particular problem.",
+        "start": 251.098,
+        "duration": 3.462
+    },
+    {
+        "text": "Now to tackle our new problem, of 2 over 1 times 2 over 3 times 4 over 3 times 4 ",
+        "start": 255.28,
+        "duration": 4.415
+    },
+    {
+        "text": "over 5 and so on, we're going to do something similar but different in the details.",
+        "start": 259.695,
+        "duration": 4.525
+    },
+    {
+        "text": "Instead of using the inverse square distances, ",
+        "start": 264.84,
+        "duration": 2.428
+    },
+    {
+        "text": "just look at the distances themselves directly, and instead of adding them up, ",
+        "start": 267.268,
+        "duration": 4.082
+    },
+    {
+        "text": "we'll be multiplying them, giving a quantity I'll be referring to as the distance ",
+        "start": 271.35,
+        "duration": 4.238
+    },
+    {
+        "text": "product for the observer, that will be important.",
+        "start": 275.588,
+        "duration": 2.532
+    },
+    {
+        "text": "And even though this distance product no longer has a nice physical analogy, ",
+        "start": 279.26,
+        "duration": 4.06
+    },
+    {
+        "text": "I still kinda want to illustrate it with lighthouses and an observer, because, well, ",
+        "start": 283.32,
+        "duration": 4.481
+    },
+    {
+        "text": "I don't know, it's pretty, and also it\u2019s just more fun than just abstract geometric ",
+        "start": 287.801,
+        "duration": 4.429
+    },
+    {
+        "text": "points.",
+        "start": 292.23,
+        "duration": 0.37
+    },
+    {
+        "text": "Now, for this proof of the Wallace product, we're going to need ",
+        "start": 293.56,
+        "duration": 2.754
+    },
+    {
+        "text": "two key facts about this distance product, two little lemmas.",
+        "start": 296.314,
+        "duration": 2.626
+    },
+    {
+        "text": "First, if the observer is positioned halfway between two lighthouses on the circle, ",
+        "start": 299.52,
+        "duration": 5.43
+    },
+    {
+        "text": "this distance product, the thing that you get by multiplying together the lengths of ",
+        "start": 304.95,
+        "duration": 5.495
+    },
+    {
+        "text": "all these lines, works out to be exactly 2, no matter how many lighthouses there are.",
+        "start": 310.445,
+        "duration": 5.495
+    },
+    {
+        "text": "And second, if you remove one of those lighthouses and put the observer in its place, ",
+        "start": 320.28,
+        "duration": 5.329
+    },
+    {
+        "text": "this distance product from all the remaining lighthouses happens to ",
+        "start": 325.609,
+        "duration": 4.214
+    },
+    {
+        "text": "equal the number of lighthouses you started with.",
+        "start": 329.823,
+        "duration": 3.037
+    },
+    {
+        "text": "Again, no matter how many lighthouses there are.",
+        "start": 334.56,
+        "duration": 3.04
+    },
+    {
+        "text": "And if those two facts seem crazy, I agree!",
+        "start": 343.22,
+        "duration": 2.66
+    },
+    {
+        "text": "I mean, it's not even obvious that the distance product ",
+        "start": 346.36,
+        "duration": 2.486
+    },
+    {
+        "text": "here should work out to be an integer in either case.",
+        "start": 348.846,
+        "duration": 2.354
+    },
+    {
+        "text": "And also, it seems super tricky to actually compute all ",
+        "start": 351.58,
+        "duration": 3.136
+    },
+    {
+        "text": "of the distances and then multiply them together like this.",
+        "start": 354.716,
+        "duration": 3.304
+    },
+    {
+        "text": "But it turns out there is a, well, a trick to ",
+        "start": 358.72,
+        "duration": 2.447
+    },
+    {
+        "text": "this tricky calculation that makes it quite simple.",
+        "start": 361.167,
+        "duration": 2.713
+    },
+    {
+        "text": "The main idea is that the geometric property of these points being ",
+        "start": 364.42,
+        "duration": 3.641
+    },
+    {
+        "text": "evenly spaced around a circle corresponds to a really nice algebraic ",
+        "start": 368.061,
+        "duration": 3.75
+    },
+    {
+        "text": "property if we imagine this to be the unit circle in the complex plane, ",
+        "start": 371.811,
+        "duration": 3.913
+    },
+    {
+        "text": "with each of those lighthouses now sitting on some specific complex number.",
+        "start": 375.724,
+        "duration": 4.076
+    },
+    {
+        "text": "Some of you might recognize these as the roots of unity, ",
+        "start": 380.38,
+        "duration": 2.751
+    },
+    {
+        "text": "but let me quickly walk through this idea in case any of you are unfamiliar.",
+        "start": 383.131,
+        "duration": 3.669
+    },
+    {
+        "text": "Think about squaring one of these numbers.",
+        "start": 387.64,
+        "duration": 2.0
+    },
+    {
+        "text": "It has a magnitude of one, so that's going to stay the same, ",
+        "start": 390.1,
+        "duration": 3.383
+    },
+    {
+        "text": "but the angle it makes with the horizontal will double, ",
+        "start": 393.483,
+        "duration": 3.107
+    },
+    {
+        "text": "that's how squaring complex numbers works.",
+        "start": 396.59,
+        "duration": 2.33
+    },
+    {
+        "text": "Similarly, cubing this number is going to triple the angle it makes with the horizontal, ",
+        "start": 399.56,
+        "duration": 5.216
+    },
+    {
+        "text": "and in general, raising it to the nth power multiplies the angle by n.",
+        "start": 404.776,
+        "duration": 4.104
+    },
+    {
+        "text": "So, for example, on screen right now there are seven evenly spaced points ",
+        "start": 409.55,
+        "duration": 4.578
+    },
+    {
+        "text": "around the unit circle, which I'll call l0, l1, l2, and so on, ",
+        "start": 414.128,
+        "duration": 3.898
+    },
+    {
+        "text": "and they're rotated in such a way that l0 is sitting at the number 1 on that ",
+        "start": 418.026,
+        "duration": 4.764
+    },
+    {
+        "text": "right hand side.",
+        "start": 422.79,
+        "duration": 0.99
+    },
+    {
+        "text": "So because the angle that each one of these makes with the horizontal ",
+        "start": 424.58,
+        "duration": 4.14
+    },
+    {
+        "text": "is an integer multiple of 1 seventh of a turn, ",
+        "start": 428.72,
+        "duration": 2.781
+    },
+    {
+        "text": "raising any one of these numbers to the 7th power rotates you around to ",
+        "start": 431.501,
+        "duration": 4.259
+    },
+    {
+        "text": "landing on the number 1.",
+        "start": 435.76,
+        "duration": 1.42
+    },
+    {
+        "text": "In other words, these are all solutions to the ",
+        "start": 438.88,
+        "duration": 3.411
+    },
+    {
+        "text": "polynomial equation x to the 7th minus 1 equals 0.",
+        "start": 442.291,
+        "duration": 3.629
+    },
+    {
+        "text": "But on the other hand, we could construct a polynomial that has these numbers as roots a ",
+        "start": 449.26,
+        "duration": 5.452
+    },
+    {
+        "text": "totally different way, by taking x minus l0 times x minus l1, on and on and on, ",
+        "start": 454.712,
+        "duration": 4.901
+    },
+    {
+        "text": "up to x minus l6, I mean you plug in any one of these numbers and that product will have ",
+        "start": 459.613,
+        "duration": 5.453
+    },
+    {
+        "text": "to equal 0.",
+        "start": 465.066,
+        "duration": 0.674
+    },
+    {
+        "text": "And because these two degree-7 polynomials have the same seven distinct roots and the ",
+        "start": 466.3,
+        "duration": 5.684
+    },
+    {
+        "text": "same leading term, it's just x to the 7th in both cases, ",
+        "start": 471.984,
+        "duration": 3.768
+    },
+    {
+        "text": "they are in fact one and the same.",
+        "start": 475.752,
+        "duration": 2.248
+    },
+    {
+        "text": "Now take a moment to appreciate just what a marvelous fact that is.",
+        "start": 478.84,
+        "duration": 2.88
+    },
+    {
+        "text": "This right hand side looks like it would be an absolute nightmare to expand.",
+        "start": 482.14,
+        "duration": 3.68
+    },
+    {
+        "text": "Not only are there a lot of terms, but writing down what exactly each of those ",
+        "start": 486.4,
+        "duration": 4.301
+    },
+    {
+        "text": "complex numbers is is going to land us in a whole mess of sines and cosines.",
+        "start": 490.701,
+        "duration": 4.139
+    },
+    {
+        "text": "But because of the symmetry of the setup, we know that when all of the algebraic ",
+        "start": 495.28,
+        "duration": 4.572
+    },
+    {
+        "text": "dust settles, it's going to simplify down to just being x to the 7th minus 1.",
+        "start": 499.852,
+        "duration": 4.348
+    },
+    {
+        "text": "All of the other terms will cancel out.",
+        "start": 504.66,
+        "duration": 1.72
+    },
+    {
+        "text": "And of course there's nothing special about 7 here.",
+        "start": 507.14,
+        "duration": 2.18
+    },
+    {
+        "text": "If you have n points evenly spaced around a circle like this, ",
+        "start": 509.6,
+        "duration": 3.875
+    },
+    {
+        "text": "they are the roots of x to the n minus 1 equals 0.",
+        "start": 513.475,
+        "duration": 3.125
+    },
+    {
+        "text": "And now you might see why this would give a nice simplifying trick ",
+        "start": 517.7,
+        "duration": 3.191
+    },
+    {
+        "text": "for computing the distance product that we defined a moment ago.",
+        "start": 520.891,
+        "duration": 3.049
+    },
+    {
+        "text": "If you consider the observer to be any other complex number, ",
+        "start": 524.53,
+        "duration": 3.751
+    },
+    {
+        "text": "not necessarily on the circle, and then you plug in that number for x, ",
+        "start": 528.281,
+        "duration": 4.367
+    },
+    {
+        "text": "that right hand side there is giving you some new complex number whose ",
+        "start": 532.648,
+        "duration": 4.367
+    },
+    {
+        "text": "magnitude is the product of the distances between the observer and each lighthouse.",
+        "start": 537.015,
+        "duration": 5.105
+    },
+    {
+        "text": "But look at that left hand side, it is a dramatically simpler way to ",
+        "start": 543.1,
+        "duration": 3.59
+    },
+    {
+        "text": "understand what that product is ultimately going to simplify down to.",
+        "start": 546.69,
+        "duration": 3.59
+    },
+    {
+        "text": "Surprisingly, this means that if our observer sits on the same circle as the lighthouses, ",
+        "start": 550.8,
+        "duration": 5.374
+    },
+    {
+        "text": "the actual number of lighthouses won't be important.",
+        "start": 556.174,
+        "duration": 3.106
+    },
+    {
+        "text": "It's only the fraction of the way between adjacent lighthouses ",
+        "start": 559.76,
+        "duration": 3.112
+    },
+    {
+        "text": "that describes our observer which will come into play.",
+        "start": 562.872,
+        "duration": 2.668
+    },
+    {
+        "text": "If this fraction is f, then observer to the power n lands f of the way around a ",
+        "start": 568.22,
+        "duration": 5.866
+    },
+    {
+        "text": "full circle, so the magnitude of the complex number observer to the n minus 1 is ",
+        "start": 574.086,
+        "duration": 5.94
+    },
+    {
+        "text": "the distance between the number 1 and a point f of the way around a full unit circle.",
+        "start": 580.026,
+        "duration": 6.234
+    },
+    {
+        "text": "For example, on screen right now we have 7 lighthouses, ",
+        "start": 587.16,
+        "duration": 3.22
+    },
+    {
+        "text": "and the observer is sitting 1 third of the way between the first and the second.",
+        "start": 590.38,
+        "duration": 4.6
+    },
+    {
+        "text": "So when you raise the complex number associated with that observer to the 7th power, ",
+        "start": 595.76,
+        "duration": 5.136
+    },
+    {
+        "text": "they end up 1 third of the way around the full circle.",
+        "start": 600.896,
+        "duration": 3.264
+    },
+    {
+        "text": "So the magnitude of observer to the 7 minus 1 would be the length of this cord ",
+        "start": 604.69,
+        "duration": 4.793
+    },
+    {
+        "text": "right here, which for 1 third of the way around the circle happens to be about 1.73.",
+        "start": 609.483,
+        "duration": 5.097
+    },
+    {
+        "text": "And remember, this value is, quite remarkably, ",
+        "start": 615.38,
+        "duration": 2.865
+    },
+    {
+        "text": "the same as the full distance product that we care about.",
+        "start": 618.245,
+        "duration": 3.475
+    },
+    {
+        "text": "We could increase or decrease the number of lighthouses, and no matter what, ",
+        "start": 622.32,
+        "duration": 4.358
+    },
+    {
+        "text": "so long as that observer is 1 third of the way between lighthouses, ",
+        "start": 626.678,
+        "duration": 3.849
+    },
+    {
+        "text": "we would always get the length of this same cord as our distance product.",
+        "start": 630.527,
+        "duration": 4.133
+    },
+    {
+        "text": "In general, let's define a special function for ourselves, cord of f, ",
+        "start": 636.84,
+        "duration": 4.328
+    },
+    {
+        "text": "which will mean for any fraction f, the length of a cord corresponding to that fraction ",
+        "start": 641.168,
+        "duration": 5.44
+    },
+    {
+        "text": "of a unit circle.",
+        "start": 646.608,
+        "duration": 1.052
+    },
+    {
+        "text": "So for example, what we just saw was cord of 1 third.",
+        "start": 648.34,
+        "duration": 3.48
+    },
+    {
+        "text": "Actually, it's not so hard to see that cord of f amounts to the same ",
+        "start": 652.66,
+        "duration": 4.995
+    },
+    {
+        "text": "thing as 2 times the sine of f halves times 2 pi, which is 2 times the sine of f pi, ",
+        "start": 657.655,
+        "duration": 6.153
+    },
+    {
+        "text": "but sometimes it's easier to just think of it as cord of f.",
+        "start": 663.808,
+        "duration": 4.272
+    },
+    {
+        "text": "So the result we've just shown is that for an observer, ",
+        "start": 669.26,
+        "duration": 3.254
+    },
+    {
+        "text": "f of the way between two lighthouses, the total distance product, ",
+        "start": 672.514,
+        "duration": 3.835
+    },
+    {
+        "text": "as complicated as that might seem, works out to be exactly cord of f, ",
+        "start": 676.349,
+        "duration": 4.068
+    },
+    {
+        "text": "no matter how many lighthouses there are.",
+        "start": 680.417,
+        "duration": 2.383
+    },
+    {
+        "text": "So in particular, think about cord of 1 half.",
+        "start": 683.28,
+        "duration": 2.78
+    },
+    {
+        "text": "This is the distance between two points on the opposite ends of a unit circle, which is 2.",
+        "start": 686.68,
+        "duration": 4.54
+    },
+    {
+        "text": "So we see that no matter how many lighthouses there are, ",
+        "start": 691.94,
+        "duration": 3.041
+    },
+    {
+        "text": "equally spread around the unit circle, putting an observer exactly ",
+        "start": 694.981,
+        "duration": 3.576
+    },
+    {
+        "text": "halfway along the circle between two of them results in a distance product of precisely 2.",
+        "start": 698.557,
+        "duration": 4.803
+    },
+    {
+        "text": "And that's our first key fact, so just tuck that away.",
+        "start": 704.58,
+        "duration": 1.92
+    },
+    {
+        "text": "For the next key fact, imagine putting the observer right on one of the lighthouses.",
+        "start": 707.12,
+        "duration": 4.34
+    },
+    {
+        "text": "Well, then of course the distance product is 0.",
+        "start": 712.08,
+        "duration": 2.84
+    },
+    {
+        "text": "The distance 0 lighthouses ends up annihilating all other factors.",
+        "start": 715.42,
+        "duration": 3.26
+    },
+    {
+        "text": "But suppose we just got rid of that one troublesome lighthouse, ",
+        "start": 719.4,
+        "duration": 2.895
+    },
+    {
+        "text": "and considered only the contributions from all the other ones.",
+        "start": 722.295,
+        "duration": 2.805
+    },
+    {
+        "text": "What would that distance product work out to be?",
+        "start": 725.64,
+        "duration": 2.24
+    },
+    {
+        "text": "Well, now instead of considering the polynomial observer to the n-1, ",
+        "start": 728.94,
+        "duration": 4.383
+    },
+    {
+        "text": "which has a root at all of these n roots of unity, ",
+        "start": 733.323,
+        "duration": 3.24
+    },
+    {
+        "text": "we're looking at the polynomial observer to the n-1 divided by observer-1, ",
+        "start": 736.563,
+        "duration": 4.765
+    },
+    {
+        "text": "which has a root at all of the roots of unity except for the number 1 itself.",
+        "start": 741.328,
+        "duration": 4.892
+    },
+    {
+        "text": "And a little algebra shows that this fraction is the same thing as 1 plus ",
+        "start": 746.88,
+        "duration": 4.755
+    },
+    {
+        "text": "observer plus observer squared, on and on and on, up to observer to the n-1.",
+        "start": 751.635,
+        "duration": 4.885
+    },
+    {
+        "text": "And so if you plug in observer equals 1, since that's the number he's sitting on, ",
+        "start": 757.48,
+        "duration": 4.468
+    },
+    {
+        "text": "what do you get?",
+        "start": 761.948,
+        "duration": 0.872
+    },
+    {
+        "text": "All of the terms here become 1, so it works out to be n, ",
+        "start": 763.88,
+        "duration": 3.688
+    },
+    {
+        "text": "which means the total distance product for this setup equals the number of ",
+        "start": 767.568,
+        "duration": 4.853
+    },
+    {
+        "text": "original lighthouses.",
+        "start": 772.421,
+        "duration": 1.359
+    },
+    {
+        "text": "Now this does depend on the total number of lighthouses, but only in a very simple way.",
+        "start": 774.58,
+        "duration": 4.14
+    },
+    {
+        "text": "Think about this, this is incredible, the total distance product that an observer ",
+        "start": 779.24,
+        "duration": 4.12
+    },
+    {
+        "text": "sitting at one of the lighthouses receives from all other lighthouses is precisely n, ",
+        "start": 783.36,
+        "duration": 4.322
+    },
+    {
+        "text": "where n is the total number of lighthouses, including the ignored one.",
+        "start": 787.682,
+        "duration": 3.518
+    },
+    {
+        "text": "That is our second key fact.",
+        "start": 792.0,
+        "duration": 1.56
+    },
+    {
+        "text": "And by the way, proving geometric facts with complex polynomials like this is ",
+        "start": 794.52,
+        "duration": 3.948
+    },
+    {
+        "text": "pretty standard in math, and if you went up to your local mathematician and showed ",
+        "start": 798.468,
+        "duration": 4.202
+    },
+    {
+        "text": "him or her these two facts, or other facts like these, ",
+        "start": 802.67,
+        "duration": 2.785
+    },
+    {
+        "text": "they'd recognize both that these facts are true, ",
+        "start": 805.455,
+        "duration": 2.48
+    },
+    {
+        "text": "and how to prove them using the methods we just showed.",
+        "start": 807.935,
+        "duration": 2.785
+    },
+    {
+        "text": "And now, so can you!",
+        "start": 811.26,
+        "duration": 1.1
+    },
+    {
+        "text": "So next, with both these facts in our back pocket, ",
+        "start": 812.88,
+        "duration": 2.526
+    },
+    {
+        "text": "let's see how to use them to understand the product we're interested in, ",
+        "start": 815.406,
+        "duration": 3.615
+    },
+    {
+        "text": "and how it relates to pi.",
+        "start": 819.021,
+        "duration": 1.239
+    },
+    {
+        "text": "Take this setup, with n lighthouses evenly spaced around a unit circle, ",
+        "start": 825.34,
+        "duration": 4.31
+    },
+    {
+        "text": "and imagine two separate observers, what I'll call the keeper and the sailor.",
+        "start": 829.65,
+        "duration": 4.61
+    },
+    {
+        "text": "Put the keeper directly on one of the lighthouses, ",
+        "start": 834.72,
+        "duration": 2.571
+    },
+    {
+        "text": "and put the sailor halfway between that point and the next lighthouse.",
+        "start": 837.291,
+        "duration": 3.529
+    },
+    {
+        "text": "The idea here will be to look at the distance product for ",
+        "start": 841.48,
+        "duration": 2.957
+    },
+    {
+        "text": "the keeper divided by the distance product for the sailor, ",
+        "start": 844.437,
+        "duration": 3.008
+    },
+    {
+        "text": "and then we are going to compute this ratio in two separate ways.",
+        "start": 847.445,
+        "duration": 3.315
+    },
+    {
+        "text": "From the first key fact, we know that the total distance product for the sailor is 2.",
+        "start": 851.58,
+        "duration": 4.74
+    },
+    {
+        "text": "And the distance product for the keeper?",
+        "start": 857.98,
+        "duration": 1.26
+    },
+    {
+        "text": "Well, it's 0, since he's standing right on top of 1.",
+        "start": 860.04,
+        "duration": 2.78
+    },
+    {
+        "text": "But if we got rid of that lighthouse, then by our second key fact, ",
+        "start": 863.16,
+        "duration": 3.513
+    },
+    {
+        "text": "the remaining distance product for that keeper is n.",
+        "start": 866.673,
+        "duration": 2.727
+    },
+    {
+        "text": "And of course, by getting rid of that lighthouse, ",
+        "start": 871.12,
+        "duration": 2.352
+    },
+    {
+        "text": "we've also gotten rid of its contribution to the sailor's distance product, ",
+        "start": 873.472,
+        "duration": 3.576
+    },
+    {
+        "text": "so that denominator now has to be divided by the distance between the two observers.",
+        "start": 877.048,
+        "duration": 3.952
+    },
+    {
+        "text": "And simplifying this just a little bit, it means that the ratio ",
+        "start": 882.1,
+        "duration": 3.559
+    },
+    {
+        "text": "between the keeper's distance product and the sailor's is n ",
+        "start": 885.659,
+        "duration": 3.337
+    },
+    {
+        "text": "times the distance between the two observers, all divided by 2.",
+        "start": 888.996,
+        "duration": 3.504
+    },
+    {
+        "text": "But, we could also compute this ratio in a different way: ",
+        "start": 893.36,
+        "duration": 3.389
+    },
+    {
+        "text": "by considering each lighthouse individually.",
+        "start": 896.749,
+        "duration": 2.571
+    },
+    {
+        "text": "For each lighthouse, think about its contribution to the keeper's distance product, ",
+        "start": 900.04,
+        "duration": 4.553
+    },
+    {
+        "text": "meaning just its distance to the keeper, divided by its contribution to ",
+        "start": 904.593,
+        "duration": 3.903
+    },
+    {
+        "text": "the sailor's distance product, its distance to the sailor.",
+        "start": 908.496,
+        "duration": 3.144
+    },
+    {
+        "text": "And when we multiply all of these factors up over each lighthouse, ",
+        "start": 912.48,
+        "duration": 3.594
+    },
+    {
+        "text": "we have to get the same ratio in the end, n times the distance between the observers, ",
+        "start": 916.074,
+        "duration": 4.614
+    },
+    {
+        "text": "all divided by 2.",
+        "start": 920.688,
+        "duration": 0.912
+    },
+    {
+        "text": "Now that might seem like a super messy calculation, but as n gets larger, ",
+        "start": 922.46,
+        "duration": 4.101
+    },
+    {
+        "text": "this actually gets simpler for any particular lighthouse.",
+        "start": 926.561,
+        "duration": 3.159
+    },
+    {
+        "text": "For example, think about the first lighthouse after the keeper, ",
+        "start": 930.3,
+        "duration": 3.361
+    },
+    {
+        "text": "in the sense of counter-clockwise from him.",
+        "start": 933.661,
+        "duration": 2.259
+    },
+    {
+        "text": "This is a bit closer to the sailor than it is to the keeper, ",
+        "start": 936.6,
+        "duration": 3.242
+    },
+    {
+        "text": "specifically the angle from this lighthouse to the keeper is ",
+        "start": 939.842,
+        "duration": 3.242
+    },
+    {
+        "text": "exactly twice the angle from this lighthouse to the sailor.",
+        "start": 943.084,
+        "duration": 3.136
+    },
+    {
+        "text": "And those angles aren't exactly proportional to the straight line distances, ",
+        "start": 947.1,
+        "duration": 4.062
+    },
+    {
+        "text": "but as n gets larger and larger, the correspondence gets better and better.",
+        "start": 951.162,
+        "duration": 3.958
+    },
+    {
+        "text": "And for a very large n, the distance from the lighthouse to the keeper ",
+        "start": 955.48,
+        "duration": 3.864
+    },
+    {
+        "text": "is very nearly twice the distance from that lighthouse to the sailor.",
+        "start": 959.344,
+        "duration": 3.756
+    },
+    {
+        "text": "And in the same way, looking at the second lighthouse after the keeper, ",
+        "start": 964.9,
+        "duration": 4.331
+    },
+    {
+        "text": "it has an angle to keeper divided by angle to sailor ratio of exactly 4 thirds, ",
+        "start": 969.231,
+        "duration": 4.812
+    },
+    {
+        "text": "which is very nearly the same as the distance to keeper divided by distance to sailor ",
+        "start": 974.043,
+        "duration": 5.173
+    },
+    {
+        "text": "ratio as n gets large.",
+        "start": 979.216,
+        "duration": 1.324
+    },
+    {
+        "text": "And that third lighthouse, L3, is going to contribute a fraction ",
+        "start": 981.14,
+        "duration": 3.793
+    },
+    {
+        "text": "that gets closer and closer to 6 fifths as n is approaching infinity.",
+        "start": 984.933,
+        "duration": 4.027
+    },
+    {
+        "text": "Now for this proof, we're going to want to consider all the lighthouses ",
+        "start": 991.88,
+        "duration": 3.215
+    },
+    {
+        "text": "on the bottom of the circle a little bit differently, ",
+        "start": 995.095,
+        "duration": 2.412
+    },
+    {
+        "text": "which is why I've enumerated them negative 1, negative 2, negative 3, and so on.",
+        "start": 997.507,
+        "duration": 3.573
+    },
+    {
+        "text": "If you look at that first lighthouse before the keeper, ",
+        "start": 1001.58,
+        "duration": 3.319
+    },
+    {
+        "text": "it has a distance to keeper over distance to sailor ratio that approaches 2 thirds ",
+        "start": 1004.899,
+        "duration": 4.919
+    },
+    {
+        "text": "as n approaches infinity.",
+        "start": 1009.818,
+        "duration": 1.482
+    },
+    {
+        "text": "And then the second lighthouse before it, L-2 here, ",
+        "start": 1012.1,
+        "duration": 3.516
+    },
+    {
+        "text": "contributes a ratio that gets closer and closer to 4 fifths, ",
+        "start": 1015.616,
+        "duration": 4.124
+    },
+    {
+        "text": "and the third lighthouse, L-3, contributes a fraction closer and closer to 6 sevenths, ",
+        "start": 1019.74,
+        "duration": 5.883
+    },
+    {
+        "text": "and so on.",
+        "start": 1025.623,
+        "duration": 0.677
+    },
+    {
+        "text": "Combining this over all of the lighthouses, we get the product 2 over 1 times 2 ",
+        "start": 1027.54,
+        "duration": 5.983
+    },
+    {
+        "text": "over 3 times 4 over 3 times 4 over 5 times 6 over 5 times 6 over 7, on and on and on.",
+        "start": 1033.523,
+        "duration": 6.357
+    },
+    {
+        "text": "This is the product that we're interested in studying, ",
+        "start": 1040.26,
+        "duration": 3.035
+    },
+    {
+        "text": "and in this context, each one of those terms reflects what the ",
+        "start": 1043.295,
+        "duration": 3.477
+    },
+    {
+        "text": "contribution for a particular lighthouse is as n approaches infinity.",
+        "start": 1046.772,
+        "duration": 3.808
+    },
+    {
+        "text": "And when I say contribution, I mean the contribution to this ratio of the ",
+        "start": 1051.88,
+        "duration": 3.767
+    },
+    {
+        "text": "keeper's distance product to the sailor's distance product, ",
+        "start": 1055.647,
+        "duration": 3.054
+    },
+    {
+        "text": "which we know at every step has to equal n times the distance between the ",
+        "start": 1058.701,
+        "duration": 3.768
+    },
+    {
+        "text": "observers divided by 2.",
+        "start": 1062.469,
+        "duration": 1.171
+    },
+    {
+        "text": "So what does that value approach as n approaches infinity?",
+        "start": 1064.5,
+        "duration": 3.28
+    },
+    {
+        "text": "Well, the distance between the observers is half of 1 over n of a full turn ",
+        "start": 1068.74,
+        "duration": 5.367
+    },
+    {
+        "text": "around the circle, and since this is a unit circle, its total circumference is 2 pi, ",
+        "start": 1074.107,
+        "duration": 6.003
+    },
+    {
+        "text": "so the distance between the observers approaches pi divided by n, ",
+        "start": 1080.11,
+        "duration": 4.662
+    },
+    {
+        "text": "and therefore n times this distance divided by 2 approaches pi divided by 2.",
+        "start": 1084.772,
+        "duration": 5.368
+    },
+    {
+        "text": "So there you have it!",
+        "start": 1090.66,
+        "duration": 1.56
+    },
+    {
+        "text": "Our product, 2 over 1 times 2 over 3 times 4 over 3 times 4 over 5, ",
+        "start": 1092.52,
+        "duration": 4.373
+    },
+    {
+        "text": "on and on and on, must approach pi divided by 2.",
+        "start": 1096.893,
+        "duration": 3.087
+    },
+    {
+        "text": "This is a truly marvelous result, and it's known as the Wallace product, ",
+        "start": 1101.04,
+        "duration": 3.799
+    },
+    {
+        "text": "named after 17th century mathematician John Wallace, ",
+        "start": 1104.839,
+        "duration": 2.758
+    },
+    {
+        "text": "who first discovered this fact in a way more convoluted way.",
+        "start": 1107.597,
+        "duration": 3.123
+    },
+    {
+        "text": "And also, a little bit of trivia, this is the same guy who discovered, ",
+        "start": 1111.32,
+        "duration": 4.105
+    },
+    {
+        "text": "or well, invented, the infinity symbol.",
+        "start": 1115.425,
+        "duration": 2.255
+    },
+    {
+        "text": "And, actually, if you look back at this argument, ",
+        "start": 1123.06,
+        "duration": 2.38
+    },
+    {
+        "text": "we've pulled a little bit of sleight of hand in the informality here, ",
+        "start": 1125.44,
+        "duration": 3.332
+    },
+    {
+        "text": "which the particularly mathematically sophisticated among you might have caught.",
+        "start": 1128.772,
+        "duration": 3.808
+    },
+    {
+        "text": "What we have here is a whole bunch of factors which we knew multiplied together ",
+        "start": 1133.46,
+        "duration": 4.281
+    },
+    {
+        "text": "to get n times the distance between the observers divided by 2, ",
+        "start": 1137.741,
+        "duration": 3.426
+    },
+    {
+        "text": "and then we looked at the limit of each factor individually as n went to infinity, ",
+        "start": 1141.167,
+        "duration": 4.443
+    },
+    {
+        "text": "and concluded that the product of all of those limiting terms had to equal ",
+        "start": 1145.61,
+        "duration": 4.014
+    },
+    {
+        "text": "whatever the limit of n times the distance between the observers divided by 2 is.",
+        "start": 1149.624,
+        "duration": 4.336
+    },
+    {
+        "text": "But what that assumes is that the product of limits is equal to the limit of products, ",
+        "start": 1154.68,
+        "duration": 4.572
+    },
+    {
+        "text": "even when there's infinitely many factors.",
+        "start": 1159.252,
+        "duration": 2.208
+    },
+    {
+        "text": "And this kind of commuting of limits in infinitary arithmetic, well, it's not always true.",
+        "start": 1162.34,
+        "duration": 5.78
+    },
+    {
+        "text": "It often holds, but it sometimes fails.",
+        "start": 1168.5,
+        "duration": 2.28
+    },
+    {
+        "text": "Here, let me show you a simple example of a case where ",
+        "start": 1171.66,
+        "duration": 2.45
+    },
+    {
+        "text": "this kind of commuting of limits doesn't actually work out.",
+        "start": 1174.11,
+        "duration": 2.63
+    },
+    {
+        "text": "So we've got a grid here where every row has a single 7 and then a whole bunch of ones.",
+        "start": 1177.08,
+        "duration": 5.16
+    },
+    {
+        "text": "So if you were to take the infinite product of each row, ",
+        "start": 1182.42,
+        "duration": 2.77
+    },
+    {
+        "text": "you just get 7 for each one of them.",
+        "start": 1185.19,
+        "duration": 1.75
+    },
+    {
+        "text": "So since every one of these products is 7, the limit of the products is also 7.",
+        "start": 1187.42,
+        "duration": 5.14
+    },
+    {
+        "text": "But look at what happens if you take the limits first.",
+        "start": 1193.1,
+        "duration": 1.94
+    },
+    {
+        "text": "If you look at each column, the limit of a given column is going to be 1, ",
+        "start": 1195.32,
+        "duration": 4.414
+    },
+    {
+        "text": "since at some point it's nothing but 1s.",
+        "start": 1199.734,
+        "duration": 2.386
+    },
+    {
+        "text": "But then, if you're taking the product of those limits, ",
+        "start": 1202.12,
+        "duration": 2.918
+    },
+    {
+        "text": "you're just taking the product of a bunch of ones, so you get a different answer, ",
+        "start": 1205.038,
+        "duration": 4.273
+    },
+    {
+        "text": "namely 1.",
+        "start": 1209.311,
+        "duration": 0.469
+    },
+    {
+        "text": "Luckily, mathematicians have spent a lot of time thinking about this phenomenon, ",
+        "start": 1213.24,
+        "duration": 3.732
+    },
+    {
+        "text": "and they've developed tools for quickly seeing certain conditions ",
+        "start": 1216.972,
+        "duration": 3.041
+    },
+    {
+        "text": "under which this exchanging of the limits actually works.",
+        "start": 1220.013,
+        "duration": 2.627
+    },
+    {
+        "text": "In this case, a particular standard result known as dominated convergence ",
+        "start": 1223.32,
+        "duration": 3.975
+    },
+    {
+        "text": "quickly assures us that the argument we just showed will go through in full rigor.",
+        "start": 1227.295,
+        "duration": 4.405
+    },
+    {
+        "text": "For those of you who are interested, Sridhar has written up a supplemental ",
+        "start": 1232.26,
+        "duration": 3.696
+    },
+    {
+        "text": "blog post to this video which covers those details, along with many more things.",
+        "start": 1235.956,
+        "duration": 3.944
+    },
+    {
+        "text": "And I should also say, we need to be a little ",
+        "start": 1240.74,
+        "duration": 1.982
+    },
+    {
+        "text": "careful about how to interpret a product like this.",
+        "start": 1242.722,
+        "duration": 2.198
+    },
+    {
+        "text": "Remember, we have contributions from lighthouses counterclockwise from the keeper, ",
+        "start": 1245.4,
+        "duration": 4.309
+    },
+    {
+        "text": "as well as lighthouses clockwise from the keeper, ",
+        "start": 1249.709,
+        "duration": 2.596
+    },
+    {
+        "text": "and what we did was interleave these in order to get our product.",
+        "start": 1252.305,
+        "duration": 3.375
+    },
+    {
+        "text": "The lighthouses counterclockwise from the keeper contribute 2 over 1, 4 over 3, 6 over 5, ",
+        "start": 1255.68,
+        "duration": 6.39
+    },
+    {
+        "text": "on and on, and the ones clockwise from the keeper contribute 2 over 3, 4 over 5, 6 over 7.",
+        "start": 1262.07,
+        "duration": 6.39
+    },
+    {
+        "text": "And like I said before, if you play around with those individual series, ",
+        "start": 1269.08,
+        "duration": 3.728
+    },
+    {
+        "text": "you'll find that the first one gets larger and larger and blows up to infinity, ",
+        "start": 1272.808,
+        "duration": 4.085
+    },
+    {
+        "text": "and the second one gets smaller and smaller, approaching zero.",
+        "start": 1276.893,
+        "duration": 3.167
+    },
+    {
+        "text": "So it's actually pretty delicate to make sense out of this overall product ",
+        "start": 1280.66,
+        "duration": 4.091
+    },
+    {
+        "text": "in terms of computing the two halves separately and then combining them.",
+        "start": 1284.751,
+        "duration": 3.929
+    },
+    {
+        "text": "And indeed, we'll find that if you intermix these two halves differently, ",
+        "start": 1289.24,
+        "duration": 3.743
+    },
+    {
+        "text": "for example taking twice as many factors from one of them for each factor from the other, ",
+        "start": 1292.983,
+        "duration": 4.553
+    },
+    {
+        "text": "you could get a different result for the overall product.",
+        "start": 1297.536,
+        "duration": 2.884
+    },
+    {
+        "text": "It's only when you specifically combine them in this one-for-one ",
+        "start": 1300.74,
+        "duration": 3.286
+    },
+    {
+        "text": "manner that you get a product that converges to pi halves.",
+        "start": 1304.026,
+        "duration": 2.934
+    },
+    {
+        "text": "This is something that falls out of the way that dominated convergence justifies us in ",
+        "start": 1307.62,
+        "duration": 4.265
+    },
+    {
+        "text": "commuting limits the way we did, and again, for more details, see the supplemental post.",
+        "start": 1311.885,
+        "duration": 4.315
+    },
+    {
+        "text": "Still, those are just technicalities.",
+        "start": 1317.14,
+        "duration": 1.66
+    },
+    {
+        "text": "The conceptual gist for what's going on here is exactly what we just showed.",
+        "start": 1319.14,
+        "duration": 3.7
+    },
+    {
+        "text": "And in fact, after doing all that work, it would be a shame not to take a ",
+        "start": 1327.66,
+        "duration": 3.478
+    },
+    {
+        "text": "quick moment to talk about one more neat result that falls out of this argument.",
+        "start": 1331.138,
+        "duration": 3.762
+    },
+    {
+        "text": "Arguably, this is the coolest part of the whole proof.",
+        "start": 1334.9,
+        "duration": 2.78
+    },
+    {
+        "text": "You see, we can generalize this whole discussion.",
+        "start": 1338.24,
+        "duration": 2.18
+    },
+    {
+        "text": "Think back to when we discovered our first key fact, ",
+        "start": 1341.1,
+        "duration": 2.902
+    },
+    {
+        "text": "where we saw that you could not only consider placing the sailor precisely ",
+        "start": 1344.002,
+        "duration": 4.108
+    },
+    {
+        "text": "halfway between lighthouses, but any fraction, f, of the way between adjacent lighthouses.",
+        "start": 1348.11,
+        "duration": 4.93
+    },
+    {
+        "text": "In that more general setting, the distance product for the sailor wasn't necessarily 2, ",
+        "start": 1353.72,
+        "duration": 5.153
+    },
+    {
+        "text": "but it was chord of f, where f is that fraction of the way between lighthouses.",
+        "start": 1358.873,
+        "duration": 4.627
+    },
+    {
+        "text": "And if we go through the same reasoning that we just did with the sailor at this location ",
+        "start": 1364.2,
+        "duration": 5.48
+    },
+    {
+        "text": "instead and change nothing else, what we'll find is that the ratio of the keeper's ",
+        "start": 1369.68,
+        "duration": 5.055
+    },
+    {
+        "text": "distance product to the sailor's distance product is now n times the distance between ",
+        "start": 1374.735,
+        "duration": 5.237
+    },
+    {
+        "text": "them divided by chord of f, which approaches f times 2 pi divided by chord of f as n gets ",
+        "start": 1379.972,
+        "duration": 5.481
+    },
+    {
+        "text": "larger.",
+        "start": 1385.453,
+        "duration": 0.427
+    },
+    {
+        "text": "And in the same way as before, you could alternatively calculate ",
+        "start": 1388.8,
+        "duration": 3.206
+    },
+    {
+        "text": "this by considering the contributions from each individual lighthouse.",
+        "start": 1392.006,
+        "duration": 3.454
+    },
+    {
+        "text": "If you take the time to work this out, the kth lighthouse after the ",
+        "start": 1396.34,
+        "duration": 4.648
+    },
+    {
+        "text": "keeper will contribute a factor of k divided by k-f to this ratio.",
+        "start": 1400.988,
+        "duration": 4.512
+    },
+    {
+        "text": "And all the lighthouses before the keeper, they contribute the same thing, ",
+        "start": 1406.24,
+        "duration": 3.384
+    },
+    {
+        "text": "but you're just plugging in negative values for k.",
+        "start": 1409.624,
+        "duration": 2.256
+    },
+    {
+        "text": "If you combine all those contributions over all non-zero integers k, ",
+        "start": 1412.72,
+        "duration": 4.262
+    },
+    {
+        "text": "where in the same way as before you have to be careful about how you bundle the ",
+        "start": 1416.982,
+        "duration": 4.942
+    },
+    {
+        "text": "positive and negative k terms together, what you'll get is that the product of k ",
+        "start": 1421.924,
+        "duration": 5.003
+    },
+    {
+        "text": "divided by k-f over all non-zero integers k is going to equal f times 2 pi divided ",
+        "start": 1426.927,
+        "duration": 5.128
+    },
+    {
+        "text": "by chord of f.",
+        "start": 1432.055,
+        "duration": 0.865
+    },
+    {
+        "text": "Put another way, since chord of f is 2 times the sine of f pi, ",
+        "start": 1433.58,
+        "duration": 5.942
+    },
+    {
+        "text": "this product is the same as f times 2 pi divided by 2 times sine of f pi, ",
+        "start": 1439.522,
+        "duration": 6.979
+    },
+    {
+        "text": "which is f pi over sine of f pi.",
+        "start": 1446.501,
+        "duration": 3.019
+    },
+    {
+        "text": "Now rewriting this a little bit more, what you get is a pretty interesting fact.",
+        "start": 1450.32,
+        "duration": 4.48
+    },
+    {
+        "text": "Sine of f times pi is equal to f pi times this really big product, ",
+        "start": 1455.42,
+        "duration": 5.098
+    },
+    {
+        "text": "the product of 1 minus f over k over all non-zero integers k.",
+        "start": 1460.518,
+        "duration": 4.642
+    },
+    {
+        "text": "So what we found is a way to express sine of x as an infinite product, ",
+        "start": 1465.92,
+        "duration": 4.957
+    },
+    {
+        "text": "which is really cool if you think about it.",
+        "start": 1470.877,
+        "duration": 3.003
+    },
+    {
+        "text": "So not only does this proof give us the Wallace product, ",
+        "start": 1474.3,
+        "duration": 3.025
+    },
+    {
+        "text": "which is incredible in its own right? It also generalizes to give us the product ",
+        "start": 1477.325,
+        "duration": 4.3
+    },
+    {
+        "text": "formula for the sine.",
+        "start": 1481.625,
+        "duration": 1.115
+    },
+    {
+        "text": "And what's neat about that is that it connects to how Euler originally ",
+        "start": 1483.26,
+        "duration": 3.361
+    },
+    {
+        "text": "solved the Basel problem, the sum that we saw in the previous video.",
+        "start": 1486.621,
+        "duration": 3.219
+    },
+    {
+        "text": "He was looking at this very infinite product for sine.",
+        "start": 1490.16,
+        "duration": 2.72
+    },
+    {
+        "text": "I mean, connecting these formulas for pi to circles is one thing, ",
+        "start": 1493.6,
+        "duration": 3.258
+    },
+    {
+        "text": "but connecting them to each other is another thing entirely.",
+        "start": 1496.858,
+        "duration": 2.962
+    },
+    {
+        "text": "And once again, if you want more details on all of this, ",
+        "start": 1500.52,
+        "duration": 2.436
+    },
+    {
+        "text": "check out the supplementary blog post.",
+        "start": 1502.956,
+        "duration": 1.624
+    }
+]

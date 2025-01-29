@@ -1,0 +1,1012 @@
+[
+    {
+        "text": "This is a video for anyone who already knows what eigenvalues and eigenvectors are, ",
+        "start": 0.0,
+        "duration": 3.969
+    },
+    {
+        "text": "and who might enjoy a quick way to compute them in the case of 2x2 matrices.",
+        "start": 3.969,
+        "duration": 3.591
+    },
+    {
+        "text": "If you're unfamiliar with eigenvalues, go ahead and take a look at this video here, ",
+        "start": 8.58,
+        "duration": 3.413
+    },
+    {
+        "text": "which is actually meant to introduce them.",
+        "start": 11.993,
+        "duration": 1.707
+    },
+    {
+        "text": "You can skip ahead if all you want to do is see the trick, ",
+        "start": 14.68,
+        "duration": 2.71
+    },
+    {
+        "text": "but if possible I'd like you to rediscover it for yourself.",
+        "start": 17.39,
+        "duration": 2.71
+    },
+    {
+        "text": "So for that, let's lay out a little background.",
+        "start": 20.58,
+        "duration": 1.8
+    },
+    {
+        "text": "As a quick reminder, if the effect of a linear transformation on a ",
+        "start": 23.26,
+        "duration": 3.697
+    },
+    {
+        "text": "given vector is to scale that vector by some constant, ",
+        "start": 26.957,
+        "duration": 3.034
+    },
+    {
+        "text": "we call it an eigenvector of the transformation, ",
+        "start": 29.991,
+        "duration": 2.704
+    },
+    {
+        "text": "and we call the relevant scaling factor the corresponding eigenvalue, ",
+        "start": 32.695,
+        "duration": 3.863
+    },
+    {
+        "text": "often denoted with the letter lambda.",
+        "start": 36.558,
+        "duration": 2.042
+    },
+    {
+        "text": "When you write this as an equation, and you rearrange a little bit, ",
+        "start": 39.84,
+        "duration": 4.673
+    },
+    {
+        "text": "what you see is that if the number lambda is an eigenvalue of a matrix A, ",
+        "start": 44.513,
+        "duration": 5.085
+    },
+    {
+        "text": "then the matrix A minus lambda times the identity must send some non-zero vector, ",
+        "start": 49.598,
+        "duration": 5.635
+    },
+    {
+        "text": "namely the corresponding eigenvector, to the zero vector, ",
+        "start": 55.233,
+        "duration": 3.986
+    },
+    {
+        "text": "which in turn means that the determinant of this modified matrix must be zero.",
+        "start": 59.219,
+        "duration": 5.361
+    },
+    {
+        "text": "Okay, that's all a little bit of a mouthful to say, but again, ",
+        "start": 66.12,
+        "duration": 2.688
+    },
+    {
+        "text": "I'm assuming that all of this is review for any of you watching.",
+        "start": 68.808,
+        "duration": 2.732
+    },
+    {
+        "text": "So, the usual way to compute eigenvalues, how I used to do it and how I believe ",
+        "start": 72.82,
+        "duration": 4.477
+    },
+    {
+        "text": "most students are taught to carry it out, is to subtract the unknown value ",
+        "start": 77.297,
+        "duration": 4.197
+    },
+    {
+        "text": "lambda off the diagonals, and then solve for the determinant is equal to zero.",
+        "start": 81.494,
+        "duration": 4.366
+    },
+    {
+        "text": "Doing this always involves a few extra steps to expand out and simplify to get a ",
+        "start": 87.76,
+        "duration": 4.169
+    },
+    {
+        "text": "clean quadratic polynomial, what's known as the characteristic polynomial of the matrix.",
+        "start": 91.929,
+        "duration": 4.531
+    },
+    {
+        "text": "The eigenvalues are the roots of this polynomial, ",
+        "start": 97.36,
+        "duration": 2.564
+    },
+    {
+        "text": "so to find them you have to apply the quadratic formula, ",
+        "start": 99.924,
+        "duration": 2.923
+    },
+    {
+        "text": "which itself typically requires one or two more steps of simplification.",
+        "start": 102.847,
+        "duration": 3.693
+    },
+    {
+        "text": "Honestly, the process isn't terrible, but at least for two by two matrices, ",
+        "start": 107.76,
+        "duration": 3.924
+    },
+    {
+        "text": "there is a much more direct way you can get at the answer.",
+        "start": 111.684,
+        "duration": 2.996
+    },
+    {
+        "text": "And if you want to rediscover this trick, there's only three ",
+        "start": 115.4,
+        "duration": 2.459
+    },
+    {
+        "text": "relevant facts you need to know, each of which is worth knowing ",
+        "start": 117.859,
+        "duration": 2.581
+    },
+    {
+        "text": "in its own right and can help you with other problem solving.",
+        "start": 120.44,
+        "duration": 2.46
+    },
+    {
+        "text": "Number one, the trace of a matrix, which is the sum of these two diagonal entries, ",
+        "start": 123.82,
+        "duration": 4.83
+    },
+    {
+        "text": "is equal to the sum of the eigenvalues.",
+        "start": 128.65,
+        "duration": 2.269
+    },
+    {
+        "text": "Or, another way to phrase it, more useful for our purposes, ",
+        "start": 131.7,
+        "duration": 3.023
+    },
+    {
+        "text": "is that the mean of the two eigenvalues is the same as the mean of these two ",
+        "start": 134.723,
+        "duration": 3.88
+    },
+    {
+        "text": "diagonal entries.",
+        "start": 138.603,
+        "duration": 0.857
+    },
+    {
+        "text": "Number two, the determinant of a matrix, our usual ad-bc formula, ",
+        "start": 141.0,
+        "duration": 4.649
+    },
+    {
+        "text": "is equal to the product of the two eigenvalues.",
+        "start": 145.649,
+        "duration": 3.311
+    },
+    {
+        "text": "And this should kind of make sense if you understand that eigenvalues describe ",
+        "start": 150.06,
+        "duration": 3.916
+    },
+    {
+        "text": "how much an operator stretches space in a particular direction, ",
+        "start": 153.976,
+        "duration": 3.173
+    },
+    {
+        "text": "and that the determinant describes how much an operator scales areas, or volumes, ",
+        "start": 157.149,
+        "duration": 4.065
+    },
+    {
+        "text": "as a whole.",
+        "start": 161.214,
+        "duration": 0.546
+    },
+    {
+        "text": "Now before getting to the third fact, notice how you can essentially read ",
+        "start": 162.8,
+        "duration": 3.18
+    },
+    {
+        "text": "these first two values out of the matrix without really writing much down.",
+        "start": 165.98,
+        "duration": 3.18
+    },
+    {
+        "text": "Take this matrix here as an example.",
+        "start": 169.76,
+        "duration": 1.56
+    },
+    {
+        "text": "Straight away, you can know that the mean of the ",
+        "start": 171.82,
+        "duration": 2.722
+    },
+    {
+        "text": "eigenvalues is the same as the mean of 8 and 6, which is 7.",
+        "start": 174.542,
+        "duration": 3.278
+    },
+    {
+        "text": "Likewise, most linear algebra students are pretty well practiced at ",
+        "start": 179.58,
+        "duration": 3.669
+    },
+    {
+        "text": "finding the determinant, which in this case works out to be 48 minus 8.",
+        "start": 183.249,
+        "duration": 3.831
+    },
+    {
+        "text": "So right away, you know that the product of the two eigenvalues is 40.",
+        "start": 188.24,
+        "duration": 3.46
+    },
+    {
+        "text": "Now take a moment to see if you can derive what will be our third relevant fact, ",
+        "start": 192.78,
+        "duration": 3.907
+    },
+    {
+        "text": "which is how you can quickly recover two numbers when you ",
+        "start": 196.687,
+        "duration": 2.798
+    },
+    {
+        "text": "know their mean and you know their product.",
+        "start": 199.485,
+        "duration": 2.075
+    },
+    {
+        "text": "Here, let's focus on this example.",
+        "start": 202.46,
+        "duration": 1.26
+    },
+    {
+        "text": "You know that the two values are evenly spaced around the number 7, ",
+        "start": 204.2,
+        "duration": 3.788
+    },
+    {
+        "text": "so they look like 7 plus or minus something, let's call that something d for distance.",
+        "start": 207.988,
+        "duration": 4.792
+    },
+    {
+        "text": "You also know that the product of these two numbers is 40.",
+        "start": 213.56,
+        "duration": 2.82
+    },
+    {
+        "text": "Now to find d, notice that this product expands really nicely, ",
+        "start": 218.6,
+        "duration": 3.119
+    },
+    {
+        "text": "it works out as a difference of squares.",
+        "start": 221.719,
+        "duration": 1.981
+    },
+    {
+        "text": "So from there, you can find d.",
+        "start": 224.56,
+        "duration": 2.3
+    },
+    {
+        "text": "d squared is 7 squared minus 40, or 9, which means that d itself is 3.",
+        "start": 228.2,
+        "duration": 5.2
+    },
+    {
+        "text": "In other words, the two values for this very specific example work out to be 4 and 10.",
+        "start": 236.38,
+        "duration": 4.72
+    },
+    {
+        "text": "But our goal is a quick trick, and you wouldn't want to think through this each time, ",
+        "start": 241.68,
+        "duration": 3.927
+    },
+    {
+        "text": "so let's wrap up what we just did in a general formula.",
+        "start": 245.607,
+        "duration": 2.513
+    },
+    {
+        "text": "For any mean m and product p, the distance squared ",
+        "start": 248.64,
+        "duration": 3.945
+    },
+    {
+        "text": "is always going to be m squared minus p.",
+        "start": 252.585,
+        "duration": 3.095
+    },
+    {
+        "text": "This gives the third key fact, which is that when two numbers ",
+        "start": 257.56,
+        "duration": 3.733
+    },
+    {
+        "text": "have a mean m and a product p, you can write those two numbers ",
+        "start": 261.293,
+        "duration": 3.794
+    },
+    {
+        "text": "as m plus or minus the square root of m squared minus p.",
+        "start": 265.087,
+        "duration": 3.373
+    },
+    {
+        "text": "This is decently fast to re-derive on the fly if you ever forget it, ",
+        "start": 270.1,
+        "duration": 3.321
+    },
+    {
+        "text": "and it's essentially just a rephrasing of the difference of squares formula.",
+        "start": 273.421,
+        "duration": 3.659
+    },
+    {
+        "text": "But even still, it's a fact that's worth memorizing so it's at the tip of your fingers.",
+        "start": 277.86,
+        "duration": 3.36
+    },
+    {
+        "text": "In fact, my friend Tim from the channel A Capella Science wrote ",
+        "start": 281.22,
+        "duration": 3.017
+    },
+    {
+        "text": "us a nice quick jingle to make it a little bit more memorable.",
+        "start": 284.237,
+        "duration": 2.923
+    },
+    {
+        "text": "Let me show you how this works, say for the matrix 3 1 4 1.",
+        "start": 291.9,
+        "duration": 5.72
+    },
+    {
+        "text": "You start by bringing to mind the formula, maybe stating it all in your head.",
+        "start": 298.1,
+        "duration": 3.72
+    },
+    {
+        "text": "But when you write it down, you fill in the appropriate values for m and p as you go.",
+        "start": 306.2,
+        "duration": 5.42
+    },
+    {
+        "text": "So in this example, the mean of the eigenvalues is the same as the mean of 3 and 1, ",
+        "start": 312.34,
+        "duration": 4.807
+    },
+    {
+        "text": "which is 2, so the thing you start writing is 2 plus or minus ",
+        "start": 317.147,
+        "duration": 3.549
+    },
+    {
+        "text": "the square root of 2 squared minus.",
+        "start": 320.696,
+        "duration": 2.004
+    },
+    {
+        "text": "Then the product of the eigenvalues is the determinant, ",
+        "start": 323.54,
+        "duration": 3.689
+    },
+    {
+        "text": "which in this example is 3 times 1 minus 1 times 4, or negative 1, ",
+        "start": 327.229,
+        "duration": 4.415
+    },
+    {
+        "text": "so that's the final thing you fill in, which means the eigenvalues are 2 plus ",
+        "start": 331.644,
+        "duration": 5.139
+    },
+    {
+        "text": "or minus the square root of 5.",
+        "start": 336.783,
+        "duration": 1.977
+    },
+    {
+        "text": "You might recognize that this is the same matrix I was using at the beginning, ",
+        "start": 340.3,
+        "duration": 3.549
+    },
+    {
+        "text": "but notice how much more directly we can get at the answer.",
+        "start": 343.849,
+        "duration": 2.651
+    },
+    {
+        "text": "Here, try another one.",
+        "start": 348.14,
+        "duration": 1.04
+    },
+    {
+        "text": "This time, the mean of the eigenvalues is the same as the mean of 2 and 8, which is 5.",
+        "start": 349.44,
+        "duration": 5.04
+    },
+    {
+        "text": "So again, you start writing out the formula, but this time writing 5 in place of m.",
+        "start": 355.1,
+        "duration": 4.12
+    },
+    {
+        "text": "And then the determinant is 2 times 8 minus 7 times 1, or 9.",
+        "start": 362.98,
+        "duration": 5.32
+    },
+    {
+        "text": "So in this example, the eigenvalues look like 5 plus or minus the square root of 16, ",
+        "start": 369.52,
+        "duration": 5.882
+    },
+    {
+        "text": "which simplifies even further as 9 and 1.",
+        "start": 375.402,
+        "duration": 2.838
+    },
+    {
+        "text": "You see what I mean about how you can basically just start ",
+        "start": 379.42,
+        "duration": 2.494
+    },
+    {
+        "text": "writing down the eigenvalues while you're staring at the matrix?",
+        "start": 381.914,
+        "duration": 2.706
+    },
+    {
+        "text": "It's typically just the tiniest bit of simplification at the end.",
+        "start": 385.28,
+        "duration": 2.88
+    },
+    {
+        "text": "Honestly, I've found myself using this trick a lot when I'm sketching quick ",
+        "start": 389.06,
+        "duration": 3.352
+    },
+    {
+        "text": "notes related to linear algebra and want to use small matrices as examples.",
+        "start": 392.412,
+        "duration": 3.308
+    },
+    {
+        "text": "I've been working on a video about matrix exponents, ",
+        "start": 396.18,
+        "duration": 2.432
+    },
+    {
+        "text": "where eigenvalues pop up a lot, and I realize it's just very handy ",
+        "start": 398.612,
+        "duration": 3.076
+    },
+    {
+        "text": "if students can read out the eigenvalues from small examples without ",
+        "start": 401.688,
+        "duration": 3.167
+    },
+    {
+        "text": "losing the main line of thought by getting bogged down in a different calculation.",
+        "start": 404.855,
+        "duration": 3.765
+    },
+    {
+        "text": "As another fun example, take a look at this set of three different matrices, ",
+        "start": 409.74,
+        "duration": 3.701
+    },
+    {
+        "text": "which comes up a lot in quantum mechanics.",
+        "start": 413.441,
+        "duration": 2.019
+    },
+    {
+        "text": "They're known as the Pauli spin matrices.",
+        "start": 415.76,
+        "duration": 1.76
+    },
+    {
+        "text": "If you know quantum mechanics, you'll know that the eigenvalues ",
+        "start": 418.6,
+        "duration": 2.865
+    },
+    {
+        "text": "of matrices are highly relevant to the physics that they describe.",
+        "start": 421.465,
+        "duration": 2.955
+    },
+    {
+        "text": "And if you don't know quantum mechanics, let this just be a little glimpse ",
+        "start": 425.22,
+        "duration": 3.02
+    },
+    {
+        "text": "of how these computations are actually very relevant to real applications.",
+        "start": 428.24,
+        "duration": 2.98
+    },
+    {
+        "text": "The mean of the diagonal entries in all three cases is zero.",
+        "start": 432.54,
+        "duration": 3.34
+    },
+    {
+        "text": "So the mean of the eigenvalues in all of these cases is zero, ",
+        "start": 437.56,
+        "duration": 3.128
+    },
+    {
+        "text": "which makes our formula look especially simple.",
+        "start": 440.688,
+        "duration": 2.372
+    },
+    {
+        "text": "What about the products of the eigenvalues, the determinants of these matrices?",
+        "start": 445.38,
+        "duration": 3.42
+    },
+    {
+        "text": "For the first one, it's 0, minus 1, or negative 1.",
+        "start": 449.7,
+        "duration": 2.86
+    },
+    {
+        "text": "The second one also looks like 0, minus 1, but it takes ",
+        "start": 453.2,
+        "duration": 2.592
+    },
+    {
+        "text": "a moment more to see because of the complex numbers.",
+        "start": 455.792,
+        "duration": 2.408
+    },
+    {
+        "text": "And the final one looks like negative 1, minus 0.",
+        "start": 458.84,
+        "duration": 2.52
+    },
+    {
+        "text": "So in all cases, the eigenvalues simplify to be plus and minus 1.",
+        "start": 462.06,
+        "duration": 3.86
+    },
+    {
+        "text": "Although in this case, you really don't need a formula to find two values if ",
+        "start": 466.72,
+        "duration": 3.28
+    },
+    {
+        "text": "you know that they're evenly spaced around 0 and their product is negative 1.",
+        "start": 470.0,
+        "duration": 3.28
+    },
+    {
+        "text": "If you're curious, in the context of quantum mechanics, ",
+        "start": 474.64,
+        "duration": 2.968
+    },
+    {
+        "text": "these matrices describe observations you might make about a particle's spin in the x, ",
+        "start": 477.608,
+        "duration": 4.558
+    },
+    {
+        "text": "y, or z direction.",
+        "start": 482.166,
+        "duration": 0.954
+    },
+    {
+        "text": "And the fact that their eigenvalues are plus and minus 1 corresponds with the idea ",
+        "start": 483.56,
+        "duration": 4.347
+    },
+    {
+        "text": "that the values for the spin that you would observe would be either entirely in one ",
+        "start": 487.907,
+        "duration": 4.399
+    },
+    {
+        "text": "direction or entirely in another, as opposed to something continuously ranging in between.",
+        "start": 492.306,
+        "duration": 4.714
+    },
+    {
+        "text": "Maybe you'd wonder how exactly this works, or why you would use 2x2 ",
+        "start": 498.32,
+        "duration": 3.497
+    },
+    {
+        "text": "matrices that have complex numbers to describe spin in three dimensions.",
+        "start": 501.817,
+        "duration": 3.703
+    },
+    {
+        "text": "Those would be fair questions, just outside the scope of what I want to talk about here.",
+        "start": 506.1,
+        "duration": 3.66
+    },
+    {
+        "text": "You know, it's funny, I wrote this section because I wanted some case where ",
+        "start": 510.48,
+        "duration": 3.613
+    },
+    {
+        "text": "you have 2x2 matrices that aren't just toy examples or homework problems, ",
+        "start": 514.093,
+        "duration": 3.518
+    },
+    {
+        "text": "ones where they actually come up in practice, and quantum mechanics is great for that.",
+        "start": 517.611,
+        "duration": 4.089
+    },
+    {
+        "text": "The thing is, after I made it, I realized that the whole ",
+        "start": 521.7,
+        "duration": 3.186
+    },
+    {
+        "text": "example kind of undercuts the point that I'm trying to make.",
+        "start": 524.886,
+        "duration": 3.354
+    },
+    {
+        "text": "For these specific matrices, when you use the traditional method, ",
+        "start": 528.74,
+        "duration": 3.545
+    },
+    {
+        "text": "the one with characteristic polynomials, it's essentially just as fast.",
+        "start": 532.285,
+        "duration": 3.815
+    },
+    {
+        "text": "It might actually be faster.",
+        "start": 536.22,
+        "duration": 1.42
+    },
+    {
+        "text": "I mean, take a look at the first one.",
+        "start": 538.24,
+        "duration": 1.16
+    },
+    {
+        "text": "The relevant determinant directly gives you a characteristic polynomial ",
+        "start": 539.68,
+        "duration": 4.201
+    },
+    {
+        "text": "of lambda squared minus 1, and clearly that has roots of plus and minus 1.",
+        "start": 543.881,
+        "duration": 4.319
+    },
+    {
+        "text": "Same answer when you do the second matrix, lambda squared minus 1.",
+        "start": 548.84,
+        "duration": 2.92
+    },
+    {
+        "text": "And as for the last matrix, forget about doing any computations, ",
+        "start": 553.88,
+        "duration": 3.407
+    },
+    {
+        "text": "traditional or otherwise, it's already a diagonal matrix, ",
+        "start": 557.287,
+        "duration": 3.041
+    },
+    {
+        "text": "so those diagonal entries are the eigenvalues.",
+        "start": 560.328,
+        "duration": 2.412
+    },
+    {
+        "text": "However, the example is not totally lost to our cause.",
+        "start": 564.3,
+        "duration": 2.62
+    },
+    {
+        "text": "Where you will actually feel the speedup is in the more general case, ",
+        "start": 567.38,
+        "duration": 3.574
+    },
+    {
+        "text": "where you take a linear combination of these three matrices and then try to compute ",
+        "start": 570.954,
+        "duration": 4.289
+    },
+    {
+        "text": "the eigenvalues.",
+        "start": 575.243,
+        "duration": 0.817
+    },
+    {
+        "text": "You might write this as a times the first one, ",
+        "start": 576.82,
+        "duration": 2.77
+    },
+    {
+        "text": "plus b times the second, plus c times the third.",
+        "start": 579.59,
+        "duration": 2.83
+    },
+    {
+        "text": "In quantum mechanics, this would describe spin observations ",
+        "start": 583.02,
+        "duration": 3.13
+    },
+    {
+        "text": "in a general direction of a vector with coordinates a, b, c.",
+        "start": 586.15,
+        "duration": 3.13
+    },
+    {
+        "text": "More specifically, you should assume that this vector is normalized, ",
+        "start": 590.9,
+        "duration": 3.581
+    },
+    {
+        "text": "meaning a squared plus b squared plus c squared is equal to 1.",
+        "start": 594.481,
+        "duration": 3.219
+    },
+    {
+        "text": "When you look at this new matrix, it's immediate ",
+        "start": 598.6,
+        "duration": 2.695
+    },
+    {
+        "text": "to see that the mean of the eigenvalues is still 0.",
+        "start": 601.295,
+        "duration": 2.805
+    },
+    {
+        "text": "And you might also enjoy pausing for a brief moment to confirm ",
+        "start": 604.6,
+        "duration": 3.28
+    },
+    {
+        "text": "that the product of those eigenvalues is still negative 1.",
+        "start": 607.88,
+        "duration": 3.02
+    },
+    {
+        "text": "And then from there, concluding what the eigenvalues must be.",
+        "start": 613.26,
+        "duration": 2.66
+    },
+    {
+        "text": "And this time, the characteristic polynomial approach would be by ",
+        "start": 617.22,
+        "duration": 3.063
+    },
+    {
+        "text": "comparison a lot more cumbersome, definitely harder to do in your head.",
+        "start": 620.283,
+        "duration": 3.297
+    },
+    {
+        "text": "To be clear, using the mean product formula is not fundamentally ",
+        "start": 625.08,
+        "duration": 3.009
+    },
+    {
+        "text": "different from finding roots of the characteristic polynomial.",
+        "start": 628.089,
+        "duration": 2.871
+    },
+    {
+        "text": "I mean, it can't be, they're solving the same problem.",
+        "start": 631.34,
+        "duration": 2.1
+    },
+    {
+        "text": "One way to think about this actually is that the mean ",
+        "start": 634.16,
+        "duration": 2.282
+    },
+    {
+        "text": "product formula is a nice way to solve quadratics in general.",
+        "start": 636.442,
+        "duration": 2.578
+    },
+    {
+        "text": "And some viewers of the channel may recognize this.",
+        "start": 639.6,
+        "duration": 2.06
+    },
+    {
+        "text": "Think about it, when you're trying to find the roots of a quadratic, ",
+        "start": 642.54,
+        "duration": 3.296
+    },
+    {
+        "text": "given the coefficients, that's another situation where you know the sum of two values, ",
+        "start": 645.836,
+        "duration": 4.155
+    },
+    {
+        "text": "and you also know their product, but you're trying to recover the original two values.",
+        "start": 649.991,
+        "duration": 4.109
+    },
+    {
+        "text": "Specifically, if the polynomial is normalized, so that this leading coefficient is 1, ",
+        "start": 655.56,
+        "duration": 4.486
+    },
+    {
+        "text": "then the mean of the roots will be negative 1 half times this linear coefficient, ",
+        "start": 660.046,
+        "duration": 4.277
+    },
+    {
+        "text": "which is negative 1 times the sum of those roots.",
+        "start": 664.323,
+        "duration": 2.557
+    },
+    {
+        "text": "With the example on the screen, that makes the mean 5.",
+        "start": 668.02,
+        "duration": 2.16
+    },
+    {
+        "text": "And the product of the roots is even easier, it's just the constant term, ",
+        "start": 671.98,
+        "duration": 3.499
+    },
+    {
+        "text": "no adjustments needed.",
+        "start": 675.479,
+        "duration": 1.041
+    },
+    {
+        "text": "So from there, you would apply the mean product formula, and that gives you the roots.",
+        "start": 677.34,
+        "duration": 3.56
+    },
+    {
+        "text": "And on the one hand, you could think of this as a lighter ",
+        "start": 685.14,
+        "duration": 2.678
+    },
+    {
+        "text": "weight version of the traditional quadratic formula.",
+        "start": 687.818,
+        "duration": 2.402
+    },
+    {
+        "text": "But the real advantage is not just that it's fewer symbols to memorize, ",
+        "start": 690.96,
+        "duration": 3.082
+    },
+    {
+        "text": "it's that each one of them carries more meaning with it.",
+        "start": 694.042,
+        "duration": 2.398
+    },
+    {
+        "text": "I mean, the whole point of this eigenvalue trick is that because you can read ",
+        "start": 696.94,
+        "duration": 3.67
+    },
+    {
+        "text": "out the mean and product directly from looking at the matrix, ",
+        "start": 700.61,
+        "duration": 2.918
+    },
+    {
+        "text": "you don't need to go through the intermediate step of setting up the characteristic ",
+        "start": 703.528,
+        "duration": 3.954
+    },
+    {
+        "text": "polynomial.",
+        "start": 707.482,
+        "duration": 0.518
+    },
+    {
+        "text": "You can jump straight to writing down the roots without ever ",
+        "start": 708.42,
+        "duration": 2.698
+    },
+    {
+        "text": "explicitly thinking about what the polynomial looks like.",
+        "start": 711.118,
+        "duration": 2.522
+    },
+    {
+        "text": "But to do that, we need a version of the quadratic ",
+        "start": 713.84,
+        "duration": 2.49
+    },
+    {
+        "text": "formula where the terms carry some kind of meaning.",
+        "start": 716.33,
+        "duration": 2.49
+    },
+    {
+        "text": "I realize this is a very specific trick for a very specific audience, ",
+        "start": 720.38,
+        "duration": 3.077
+    },
+    {
+        "text": "but it's something I wish I knew in college, so if you happen to know ",
+        "start": 723.457,
+        "duration": 3.077
+    },
+    {
+        "text": "any students who might benefit from this, consider sharing it with them.",
+        "start": 726.534,
+        "duration": 3.166
+    },
+    {
+        "text": "The hope is that it's not just one more thing that you memorize, ",
+        "start": 730.28,
+        "duration": 2.966
+    },
+    {
+        "text": "but that the framing reinforces some other nice facts that are worth knowing, ",
+        "start": 733.246,
+        "duration": 3.561
+    },
+    {
+        "text": "like how the trace and the determinant are related to eigenvalues.",
+        "start": 736.807,
+        "duration": 3.013
+    },
+    {
+        "text": "If you want to prove those facts, by the way, take a moment to ",
+        "start": 740.56,
+        "duration": 2.942
+    },
+    {
+        "text": "expand out the characteristic polynomial for a general matrix, ",
+        "start": 743.502,
+        "duration": 2.942
+    },
+    {
+        "text": "and then think hard about the meaning of each of these coefficients.",
+        "start": 746.444,
+        "duration": 3.176
+    },
+    {
+        "text": "Many thanks to Tim for ensuring that this mean product formula ",
+        "start": 752.4,
+        "duration": 2.792
+    },
+    {
+        "text": "will stay stuck in all of our heads for at least a few months.",
+        "start": 755.192,
+        "duration": 2.748
+    },
+    {
+        "text": "If you don't know about alcappella science, please do check it out.",
+        "start": 761.7,
+        "duration": 4.3
+    },
+    {
+        "text": "The molecular shape of you in particular is one of the greatest things on the internet.",
+        "start": 766.28,
+        "duration": 3.3
+    }
+]

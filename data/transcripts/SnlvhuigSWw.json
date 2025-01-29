@@ -1,0 +1,5792 @@
+[
+    {
+        "text": "welcome everyone thanks for joining us",
+        "start": 0.08,
+        "duration": 3.599
+    },
+    {
+        "text": "for today's tools and Technology seminar",
+        "start": 1.599,
+        "duration": 4.2
+    },
+    {
+        "text": "series as always there is an online",
+        "start": 3.679,
+        "duration": 4.84
+    },
+    {
+        "text": "audience so um if you're online and you",
+        "start": 5.799,
+        "duration": 4.401
+    },
+    {
+        "text": "have questions feel free to put those in",
+        "start": 8.519,
+        "duration": 3.881
+    },
+    {
+        "text": "the Q&A pod as you think of them they",
+        "start": 10.2,
+        "duration": 3.92
+    },
+    {
+        "text": "come up and we will pass them up to our",
+        "start": 12.4,
+        "duration": 3.76
+    },
+    {
+        "text": "speaker of course if you're in the room",
+        "start": 14.12,
+        "duration": 3.4
+    },
+    {
+        "text": "and you have questions just raise your",
+        "start": 16.16,
+        "duration": 3.199
+    },
+    {
+        "text": "hand as normal um we encourage you to",
+        "start": 17.52,
+        "duration": 3.839
+    },
+    {
+        "text": "ask them during the presentation you",
+        "start": 19.359,
+        "duration": 3.961
+    },
+    {
+        "text": "don't have to hold them all till the end",
+        "start": 21.359,
+        "duration": 3.321
+    },
+    {
+        "text": "um and if you do ask questions if you",
+        "start": 23.32,
+        "duration": 2.959
+    },
+    {
+        "text": "can just try to speak up a little bit",
+        "start": 24.68,
+        "duration": 3.32
+    },
+    {
+        "text": "that'll help the online audience hear",
+        "start": 26.279,
+        "duration": 4.881
+    },
+    {
+        "text": "the question in addition to the answer",
+        "start": 28.0,
+        "duration": 4.719
+    },
+    {
+        "text": "um yeah I think that's actually all I",
+        "start": 31.16,
+        "duration": 3.399
+    },
+    {
+        "text": "have to say right now so I'm pleased to",
+        "start": 32.719,
+        "duration": 3.881
+    },
+    {
+        "text": "introduce our speaker today we have Anna",
+        "start": 34.559,
+        "duration": 5.801
+    },
+    {
+        "text": "K who's an MD PhD student in computer",
+        "start": 36.6,
+        "duration": 7.84
+    },
+    {
+        "text": "science and engineering in Stella us",
+        "start": 40.36,
+        "duration": 6.08
+    },
+    {
+        "text": "lab thank",
+        "start": 44.44,
+        "duration": 5.56
+    },
+    {
+        "text": "you so today I wanted to give a brief",
+        "start": 46.44,
+        "duration": 6.08
+    },
+    {
+        "text": "talk about feature learning this is",
+        "start": 50.0,
+        "duration": 4.239
+    },
+    {
+        "text": "mainly just about the research in",
+        "start": 52.52,
+        "duration": 3.32
+    },
+    {
+        "text": "general and if there's two minutes left",
+        "start": 54.239,
+        "duration": 3.32
+    },
+    {
+        "text": "I'll talk about my research at the",
+        "start": 55.84,
+        "duration": 5.08
+    },
+    {
+        "text": "end so just a structure of what's going",
+        "start": 57.559,
+        "duration": 5.52
+    },
+    {
+        "text": "to happen first is Introduction of the",
+        "start": 60.92,
+        "duration": 3.4
+    },
+    {
+        "text": "problem why we care about feature",
+        "start": 63.079,
+        "duration": 3.441
+    },
+    {
+        "text": "learning what makes a good feature then",
+        "start": 64.32,
+        "duration": 3.24
+    },
+    {
+        "text": "we'll talk about what makes feature",
+        "start": 66.52,
+        "duration": 2.84
+    },
+    {
+        "text": "learning hard and specifically focus on",
+        "start": 67.56,
+        "duration": 3.76
+    },
+    {
+        "text": "model bias and one strategy to deal with",
+        "start": 69.36,
+        "duration": 4.799
+    },
+    {
+        "text": "it then I'll do a brief aside on visual",
+        "start": 71.32,
+        "duration": 4.839
+    },
+    {
+        "text": "explainability so how do we understand",
+        "start": 74.159,
+        "duration": 4.121
+    },
+    {
+        "text": "what a network is paying attention to",
+        "start": 76.159,
+        "duration": 3.441
+    },
+    {
+        "text": "and finally talk about some",
+        "start": 78.28,
+        "duration": 3.0
+    },
+    {
+        "text": "self-supervised training so",
+        "start": 79.6,
+        "duration": 3.24
+    },
+    {
+        "text": "representation learning how are we going",
+        "start": 81.28,
+        "duration": 3.24
+    },
+    {
+        "text": "to get features when we don't really",
+        "start": 82.84,
+        "duration": 3.239
+    },
+    {
+        "text": "have a lot of",
+        "start": 84.52,
+        "duration": 4.4
+    },
+    {
+        "text": "annotations so in general here is a",
+        "start": 86.079,
+        "duration": 5.641
+    },
+    {
+        "text": "model um you take some input X it goes",
+        "start": 88.92,
+        "duration": 4.159
+    },
+    {
+        "text": "through the model and outputs some",
+        "start": 91.72,
+        "duration": 3.96
+    },
+    {
+        "text": "output y inside the model any really",
+        "start": 93.079,
+        "duration": 3.961
+    },
+    {
+        "text": "there's many representations you can",
+        "start": 95.68,
+        "duration": 3.439
+    },
+    {
+        "text": "pick just any intermediate form of the",
+        "start": 97.04,
+        "duration": 4.399
+    },
+    {
+        "text": "data can be counted as a representation",
+        "start": 99.119,
+        "duration": 3.721
+    },
+    {
+        "text": "but often times we're focusing on the",
+        "start": 101.439,
+        "duration": 4.241
+    },
+    {
+        "text": "very last representations kind of in the",
+        "start": 102.84,
+        "duration": 5.8
+    },
+    {
+        "text": "end here so why do we want",
+        "start": 105.68,
+        "duration": 4.84
+    },
+    {
+        "text": "representations well oftentimes we want",
+        "start": 108.64,
+        "duration": 4.0
+    },
+    {
+        "text": "the models that give representations to",
+        "start": 110.52,
+        "duration": 4.8
+    },
+    {
+        "text": "be reusable and so we can adjust them",
+        "start": 112.64,
+        "duration": 5.04
+    },
+    {
+        "text": "for new data types fine-tune them Etc so",
+        "start": 115.32,
+        "duration": 4.24
+    },
+    {
+        "text": "this is really Foundation models we hope",
+        "start": 117.68,
+        "duration": 3.88
+    },
+    {
+        "text": "that develop good representations of",
+        "start": 119.56,
+        "duration": 4.76
+    },
+    {
+        "text": "data some properties of representations",
+        "start": 121.56,
+        "duration": 4.4
+    },
+    {
+        "text": "that you might hear about that could be",
+        "start": 124.32,
+        "duration": 4.559
+    },
+    {
+        "text": "useful to maintain is invariance so it",
+        "start": 125.96,
+        "duration": 5.04
+    },
+    {
+        "text": "just happens after you have some input",
+        "start": 128.879,
+        "duration": 3.72
+    },
+    {
+        "text": "and it changed in some way but the",
+        "start": 131.0,
+        "duration": 4.2
+    },
+    {
+        "text": "actual model feature or representation",
+        "start": 132.599,
+        "duration": 4.441
+    },
+    {
+        "text": "hasn't changed and that's because you",
+        "start": 135.2,
+        "duration": 3.92
+    },
+    {
+        "text": "hope that it recognizes these two cats",
+        "start": 137.04,
+        "duration": 3.919
+    },
+    {
+        "text": "for example that are symmetric as the",
+        "start": 139.12,
+        "duration": 3.119
+    },
+    {
+        "text": "same thing so maybe you don't want the",
+        "start": 140.959,
+        "duration": 3.681
+    },
+    {
+        "text": "feature to change or you want it to",
+        "start": 142.239,
+        "duration": 4.041
+    },
+    {
+        "text": "change but in a predictable way so if",
+        "start": 144.64,
+        "duration": 4.08
+    },
+    {
+        "text": "you predictably slid the cap to the side",
+        "start": 146.28,
+        "duration": 4.12
+    },
+    {
+        "text": "you want equivariant so you want the",
+        "start": 148.72,
+        "duration": 3.92
+    },
+    {
+        "text": "feature to predictably change and like",
+        "start": 150.4,
+        "duration": 4.32
+    },
+    {
+        "text": "shift along the",
+        "start": 152.64,
+        "duration": 5.64
+    },
+    {
+        "text": "axis so again reminder we just want good",
+        "start": 154.72,
+        "duration": 5.32
+    },
+    {
+        "text": "models that are good feature extractors",
+        "start": 158.28,
+        "duration": 3.28
+    },
+    {
+        "text": "and we want them to be adaptable to new",
+        "start": 160.04,
+        "duration": 4.16
+    },
+    {
+        "text": "tasks or unseen inputs here's just some",
+        "start": 161.56,
+        "duration": 4.24
+    },
+    {
+        "text": "examples of foundation models that exist",
+        "start": 164.2,
+        "duration": 3.48
+    },
+    {
+        "text": "in biology that all focus and use",
+        "start": 165.8,
+        "duration": 3.68
+    },
+    {
+        "text": "feature learning in some way so we have",
+        "start": 167.68,
+        "duration": 3.839
+    },
+    {
+        "text": "Alpha fold Transformer base but now in",
+        "start": 169.48,
+        "duration": 3.24
+    },
+    {
+        "text": "version three I believe they added",
+        "start": 171.519,
+        "duration": 4.521
+    },
+    {
+        "text": "diffusion we also have esm2 and esm full",
+        "start": 172.72,
+        "duration": 5.04
+    },
+    {
+        "text": "Transformer based and then there's this",
+        "start": 176.04,
+        "duration": 4.24
+    },
+    {
+        "text": "new model called bio clip which",
+        "start": 177.76,
+        "duration": 5.0
+    },
+    {
+        "text": "concatenates or or which Associates",
+        "start": 180.28,
+        "duration": 5.319
+    },
+    {
+        "text": "images of different species with their",
+        "start": 182.76,
+        "duration": 5.479
+    },
+    {
+        "text": "class or their with their",
+        "start": 185.599,
+        "duration": 5.0
+    },
+    {
+        "text": "tonomy so now let's talk about model",
+        "start": 188.239,
+        "duration": 4.72
+    },
+    {
+        "text": "bias so model bias is what makes feature",
+        "start": 190.599,
+        "duration": 4.761
+    },
+    {
+        "text": "learning hard and because it happens",
+        "start": 192.959,
+        "duration": 3.801
+    },
+    {
+        "text": "because models aren't perfect so if you",
+        "start": 195.36,
+        "duration": 3.48
+    },
+    {
+        "text": "give a model an input with data points",
+        "start": 196.76,
+        "duration": 3.72
+    },
+    {
+        "text": "that are kind of skewed so you have some",
+        "start": 198.84,
+        "duration": 3.16
+    },
+    {
+        "text": "classes or some types of data that are",
+        "start": 200.48,
+        "duration": 3.92
+    },
+    {
+        "text": "more prevalent than others well then the",
+        "start": 202.0,
+        "duration": 3.799
+    },
+    {
+        "text": "model is most likely going to neglect",
+        "start": 204.4,
+        "duration": 2.8
+    },
+    {
+        "text": "everything in this tail and really just",
+        "start": 205.799,
+        "duration": 3.961
+    },
+    {
+        "text": "focus on representing well the more",
+        "start": 207.2,
+        "duration": 6.84
+    },
+    {
+        "text": "frequent dat was so we however believe",
+        "start": 209.76,
+        "duration": 6.0
+    },
+    {
+        "text": "that performance on rare classes is as",
+        "start": 214.04,
+        "duration": 3.08
+    },
+    {
+        "text": "important as performance on frequent",
+        "start": 215.76,
+        "duration": 4.119
+    },
+    {
+        "text": "classes and so we want to have",
+        "start": 217.12,
+        "duration": 5.08
+    },
+    {
+        "text": "a we want to have a technique that",
+        "start": 219.879,
+        "duration": 3.761
+    },
+    {
+        "text": "improves performance on rare classes",
+        "start": 222.2,
+        "duration": 2.759
+    },
+    {
+        "text": "without significantly hurting",
+        "start": 223.64,
+        "duration": 4.159
+    },
+    {
+        "text": "performance on frequent classes just as",
+        "start": 224.959,
+        "duration": 6.081
+    },
+    {
+        "text": "an example of bias let's look at clip so",
+        "start": 227.799,
+        "duration": 5.481
+    },
+    {
+        "text": "clip is a model that has learned to",
+        "start": 231.04,
+        "duration": 3.88
+    },
+    {
+        "text": "associate just by scraping off the",
+        "start": 233.28,
+        "duration": 3.319
+    },
+    {
+        "text": "internet a bunch of images and text it",
+        "start": 234.92,
+        "duration": 3.959
+    },
+    {
+        "text": "has learned to associate an image with a",
+        "start": 236.599,
+        "duration": 4.761
+    },
+    {
+        "text": "text and if want to use clip to predict",
+        "start": 238.879,
+        "duration": 4.161
+    },
+    {
+        "text": "something new about a new data set like",
+        "start": 241.36,
+        "duration": 3.92
+    },
+    {
+        "text": "have it act as a classifier uh we can do",
+        "start": 243.04,
+        "duration": 3.88
+    },
+    {
+        "text": "as follows so this is an example from",
+        "start": 245.28,
+        "duration": 4.84
+    },
+    {
+        "text": "imag net 1000 or IM at 1K that's a data",
+        "start": 246.92,
+        "duration": 5.76
+    },
+    {
+        "text": "set that has a number of images for",
+        "start": 250.12,
+        "duration": 4.6
+    },
+    {
+        "text": "10,00 different classes each its balance",
+        "start": 252.68,
+        "duration": 3.88
+    },
+    {
+        "text": "so the same different classes have the",
+        "start": 254.72,
+        "duration": 4.44
+    },
+    {
+        "text": "same number of images and so what we do",
+        "start": 256.56,
+        "duration": 6.8
+    },
+    {
+        "text": "is we have the name of the class um oh",
+        "start": 259.16,
+        "duration": 5.44
+    },
+    {
+        "text": "we have we have the name of the class",
+        "start": 263.36,
+        "duration": 3.96
+    },
+    {
+        "text": "here we uh we created into into a",
+        "start": 264.6,
+        "duration": 5.24
+    },
+    {
+        "text": "sentence a photo of a blank we pass pass",
+        "start": 267.32,
+        "duration": 4.0
+    },
+    {
+        "text": "it through the text and we have some",
+        "start": 269.84,
+        "duration": 3.4
+    },
+    {
+        "text": "representation or some feature for the",
+        "start": 271.32,
+        "duration": 4.28
+    },
+    {
+        "text": "text we also have the same thing similar",
+        "start": 273.24,
+        "duration": 3.92
+    },
+    {
+        "text": "thing for image and we pass the image",
+        "start": 275.6,
+        "duration": 4.4
+    },
+    {
+        "text": "through a network that creates an emcod",
+        "start": 277.16,
+        "duration": 5.319
+    },
+    {
+        "text": "an embedding or a feature for the image",
+        "start": 280.0,
+        "duration": 3.72
+    },
+    {
+        "text": "and then we look at the similarity",
+        "start": 282.479,
+        "duration": 2.521
+    },
+    {
+        "text": "between the text and the image and",
+        "start": 283.72,
+        "duration": 3.479
+    },
+    {
+        "text": "whichever similarity is bigger that's",
+        "start": 285.0,
+        "duration": 4.4
+    },
+    {
+        "text": "the class that we want to assign this",
+        "start": 287.199,
+        "duration": 3.44
+    },
+    {
+        "text": "image",
+        "start": 289.4,
+        "duration": 3.799
+    },
+    {
+        "text": "to but if we try this on imagenet and",
+        "start": 290.639,
+        "duration": 3.721
+    },
+    {
+        "text": "remember we have the same number of",
+        "start": 293.199,
+        "duration": 3.0
+    },
+    {
+        "text": "images per class we actually see that",
+        "start": 294.36,
+        "duration": 3.36
+    },
+    {
+        "text": "the number of predictions that we get",
+        "start": 296.199,
+        "duration": 3.84
+    },
+    {
+        "text": "per class is really variable so some",
+        "start": 297.72,
+        "duration": 3.919
+    },
+    {
+        "text": "classes we barely predict any images",
+        "start": 300.039,
+        "duration": 3.16
+    },
+    {
+        "text": "existing them at all in other classes we",
+        "start": 301.639,
+        "duration": 3.641
+    },
+    {
+        "text": "have like thousands of them so there's",
+        "start": 303.199,
+        "duration": 4.84
+    },
+    {
+        "text": "this really big model bias and why does",
+        "start": 305.28,
+        "duration": 4.759
+    },
+    {
+        "text": "this happen well because the training",
+        "start": 308.039,
+        "duration": 4.561
+    },
+    {
+        "text": "data for clip just hasn't learned some",
+        "start": 310.039,
+        "duration": 5.041
+    },
+    {
+        "text": "Niche words or it's not as used to",
+        "start": 312.6,
+        "duration": 4.64
+    },
+    {
+        "text": "associate some Niche class words with",
+        "start": 315.08,
+        "duration": 3.44
+    },
+    {
+        "text": "images it's more likely going to",
+        "start": 317.24,
+        "duration": 2.799
+    },
+    {
+        "text": "associate some other words with those",
+        "start": 318.52,
+        "duration": 4.119
+    },
+    {
+        "text": "images and then you can see how the",
+        "start": 320.039,
+        "duration": 4.961
+    },
+    {
+        "text": "Precision and the recall also track with",
+        "start": 322.639,
+        "duration": 5.4
+    },
+    {
+        "text": "us so what do we do about how do we",
+        "start": 325.0,
+        "duration": 5.319
+    },
+    {
+        "text": "solve model bu so so there's some",
+        "start": 328.039,
+        "duration": 4.28
+    },
+    {
+        "text": "techniques such as data balancing which",
+        "start": 330.319,
+        "duration": 4.241
+    },
+    {
+        "text": "can happen just you resample your less",
+        "start": 332.319,
+        "duration": 4.521
+    },
+    {
+        "text": "frequent classes you can augment them",
+        "start": 334.56,
+        "duration": 3.6
+    },
+    {
+        "text": "when you resample so either maybe",
+        "start": 336.84,
+        "duration": 3.479
+    },
+    {
+        "text": "changing the color or changing them",
+        "start": 338.16,
+        "duration": 4.0
+    },
+    {
+        "text": "slightly or kind of Shifting away in a",
+        "start": 340.319,
+        "duration": 3.281
+    },
+    {
+        "text": "small radius you could also do",
+        "start": 342.16,
+        "duration": 3.039
+    },
+    {
+        "text": "augmentations in the feature space so",
+        "start": 343.6,
+        "duration": 3.24
+    },
+    {
+        "text": "take a representation in the middle of",
+        "start": 345.199,
+        "duration": 4.601
+    },
+    {
+        "text": "the model and then sample from",
+        "start": 346.84,
+        "duration": 4.68
+    },
+    {
+        "text": "representations that are similar to it",
+        "start": 349.8,
+        "duration": 4.0
+    },
+    {
+        "text": "as your new data points you can also",
+        "start": 351.52,
+        "duration": 4.239
+    },
+    {
+        "text": "synthesize some data if you want you can",
+        "start": 353.8,
+        "duration": 3.64
+    },
+    {
+        "text": "use Ensemble models and that's where you",
+        "start": 355.759,
+        "duration": 3.401
+    },
+    {
+        "text": "have models that are dedicated to for",
+        "start": 357.44,
+        "duration": 3.4
+    },
+    {
+        "text": "example solving problems and",
+        "start": 359.16,
+        "duration": 2.64
+    },
+    {
+        "text": "understanding what's happening at the",
+        "start": 360.84,
+        "duration": 3.32
+    },
+    {
+        "text": "tail versus models that are dedicated to",
+        "start": 361.8,
+        "duration": 3.64
+    },
+    {
+        "text": "understanding what's happening in other",
+        "start": 364.16,
+        "duration": 2.8
+    },
+    {
+        "text": "places and you have a voting between",
+        "start": 365.44,
+        "duration": 3.72
+    },
+    {
+        "text": "these models you can also have early",
+        "start": 366.96,
+        "duration": 4.04
+    },
+    {
+        "text": "exit and that's more of a strategy to",
+        "start": 369.16,
+        "duration": 4.0
+    },
+    {
+        "text": "have more of the model useful for rare",
+        "start": 371.0,
+        "duration": 4.319
+    },
+    {
+        "text": "classes or for hard cases so this",
+        "start": 373.16,
+        "duration": 4.0
+    },
+    {
+        "text": "happens when in the middle of the model",
+        "start": 375.319,
+        "duration": 3.201
+    },
+    {
+        "text": "you decide oh I'm already pretty",
+        "start": 377.16,
+        "duration": 2.84
+    },
+    {
+        "text": "confident about the class of this",
+        "start": 378.52,
+        "duration": 2.959
+    },
+    {
+        "text": "particular image or about what I want to",
+        "start": 380.0,
+        "duration": 3.68
+    },
+    {
+        "text": "do with this particular input and so I'm",
+        "start": 381.479,
+        "duration": 4.44
+    },
+    {
+        "text": "going to stop processing it and then the",
+        "start": 383.68,
+        "duration": 3.959
+    },
+    {
+        "text": "later part of the model is where harder",
+        "start": 385.919,
+        "duration": 4.361
+    },
+    {
+        "text": "inputs will go and then finally you can",
+        "start": 387.639,
+        "duration": 4.161
+    },
+    {
+        "text": "directly increase the contribution of",
+        "start": 390.28,
+        "duration": 2.96
+    },
+    {
+        "text": "less frequent data to your loss so if",
+        "start": 391.8,
+        "duration": 3.2
+    },
+    {
+        "text": "you make a mistake on something in the",
+        "start": 393.24,
+        "duration": 3.28
+    },
+    {
+        "text": "class that you know is infrequent you",
+        "start": 395.0,
+        "duration": 2.96
+    },
+    {
+        "text": "want to penalize that mistake more and",
+        "start": 396.52,
+        "duration": 3.239
+    },
+    {
+        "text": "hopefully the model learns that it",
+        "start": 397.96,
+        "duration": 4.4
+    },
+    {
+        "text": "should really try hard to predict those",
+        "start": 399.759,
+        "duration": 5.16
+    },
+    {
+        "text": "classes another strategy is locked",
+        "start": 402.36,
+        "duration": 4.48
+    },
+    {
+        "text": "alignment so log alignment kind of",
+        "start": 404.919,
+        "duration": 5.041
+    },
+    {
+        "text": "straddles some of these categories but",
+        "start": 406.84,
+        "duration": 4.96
+    },
+    {
+        "text": "the the log alignment is based in the",
+        "start": 409.96,
+        "duration": 3.76
+    },
+    {
+        "text": "theory that you really want to create a",
+        "start": 411.8,
+        "duration": 4.679
+    },
+    {
+        "text": "base optimal classifier so log line is",
+        "start": 413.72,
+        "duration": 4.159
+    },
+    {
+        "text": "just for classifiers in the way that",
+        "start": 416.479,
+        "duration": 3.56
+    },
+    {
+        "text": "it's presented here and the goal is to",
+        "start": 417.879,
+        "duration": 4.081
+    },
+    {
+        "text": "have the lowest average per class error",
+        "start": 420.039,
+        "duration": 3.6
+    },
+    {
+        "text": "where the average per class error each",
+        "start": 421.96,
+        "duration": 3.56
+    },
+    {
+        "text": "of the classes have been equally",
+        "start": 423.639,
+        "duration": 4.041
+    },
+    {
+        "text": "weighted in this average and if you can",
+        "start": 425.52,
+        "duration": 3.679
+    },
+    {
+        "text": "show mathematically just with a simple",
+        "start": 427.68,
+        "duration": 2.799
+    },
+    {
+        "text": "integration you can check out these",
+        "start": 429.199,
+        "duration": 3.68
+    },
+    {
+        "text": "people here that showed it that if you",
+        "start": 430.479,
+        "duration": 4.12
+    },
+    {
+        "text": "really want to get a base optimal",
+        "start": 432.879,
+        "duration": 3.201
+    },
+    {
+        "text": "classifier and you already know the",
+        "start": 434.599,
+        "duration": 3.361
+    },
+    {
+        "text": "conditional probability so you know that",
+        "start": 436.08,
+        "duration": 4.0
+    },
+    {
+        "text": "the model is going to predict why given",
+        "start": 437.96,
+        "duration": 5.16
+    },
+    {
+        "text": "this image you can create a p balance",
+        "start": 440.08,
+        "duration": 4.559
+    },
+    {
+        "text": "just by dividing by the prior",
+        "start": 443.12,
+        "duration": 3.479
+    },
+    {
+        "text": "probability that you have assigned to",
+        "start": 444.639,
+        "duration": 4.521
+    },
+    {
+        "text": "this class and if instead of using the",
+        "start": 446.599,
+        "duration": 4.28
+    },
+    {
+        "text": "conditional probability to assign your",
+        "start": 449.16,
+        "duration": 3.36
+    },
+    {
+        "text": "prediction you use this P balance to",
+        "start": 450.879,
+        "duration": 3.16
+    },
+    {
+        "text": "assign your prediction well then you",
+        "start": 452.52,
+        "duration": 4.119
+    },
+    {
+        "text": "will be getting a base optimal",
+        "start": 454.039,
+        "duration": 5.321
+    },
+    {
+        "text": "classifier so this is now how it's going",
+        "start": 456.639,
+        "duration": 4.761
+    },
+    {
+        "text": "to be import like used in a model so",
+        "start": 459.36,
+        "duration": 4.76
+    },
+    {
+        "text": "usually in classifier models at the end",
+        "start": 461.4,
+        "duration": 4.72
+    },
+    {
+        "text": "we have something called logins so we",
+        "start": 464.12,
+        "duration": 5.039
+    },
+    {
+        "text": "have a vector or just a list of integers",
+        "start": 466.12,
+        "duration": 5.199
+    },
+    {
+        "text": "or numbers that is the same length as",
+        "start": 469.159,
+        "duration": 4.121
+    },
+    {
+        "text": "the number of classes we predict and",
+        "start": 471.319,
+        "duration": 4.201
+    },
+    {
+        "text": "afterwards these numbers go through a",
+        "start": 473.28,
+        "duration": 5.0
+    },
+    {
+        "text": "softmax which is an exponential form",
+        "start": 475.52,
+        "duration": 5.079
+    },
+    {
+        "text": "function that's going to transform them",
+        "start": 478.28,
+        "duration": 4.24
+    },
+    {
+        "text": "into other numbers that all Su up to one",
+        "start": 480.599,
+        "duration": 3.28
+    },
+    {
+        "text": "and hopefully these represent",
+        "start": 482.52,
+        "duration": 4.399
+    },
+    {
+        "text": "probabilities in some way so what we do",
+        "start": 483.879,
+        "duration": 5.88
+    },
+    {
+        "text": "is if we want to apply this P balance we",
+        "start": 486.919,
+        "duration": 4.72
+    },
+    {
+        "text": "want to transform these logits into",
+        "start": 489.759,
+        "duration": 3.56
+    },
+    {
+        "text": "something that is balanced and we can do",
+        "start": 491.639,
+        "duration": 3.361
+    },
+    {
+        "text": "that just by simply subtracting the log",
+        "start": 493.319,
+        "duration": 3.401
+    },
+    {
+        "text": "the division becomes a",
+        "start": 495.0,
+        "duration": 3.919
+    },
+    {
+        "text": "substraction and so this is useful after",
+        "start": 496.72,
+        "duration": 3.599
+    },
+    {
+        "text": "the model has been trained we already",
+        "start": 498.919,
+        "duration": 3.041
+    },
+    {
+        "text": "have the unbalanced logits and we want",
+        "start": 500.319,
+        "duration": 4.081
+    },
+    {
+        "text": "to convert them into something balanced",
+        "start": 501.96,
+        "duration": 4.679
+    },
+    {
+        "text": "for prediction however we could also",
+        "start": 504.4,
+        "duration": 4.44
+    },
+    {
+        "text": "have the model learn balance logins",
+        "start": 506.639,
+        "duration": 4.0
+    },
+    {
+        "text": "itself and that's by rearranging the",
+        "start": 508.84,
+        "duration": 5.04
+    },
+    {
+        "text": "formula so you want the loss to see the",
+        "start": 510.639,
+        "duration": 6.161
+    },
+    {
+        "text": "imbalance logits so just have the logits",
+        "start": 513.88,
+        "duration": 5.0
+    },
+    {
+        "text": "whatever logits the model outputs add",
+        "start": 516.8,
+        "duration": 4.56
+    },
+    {
+        "text": "log P to it and then the model or the",
+        "start": 518.88,
+        "duration": 5.279
+    },
+    {
+        "text": "loss will see the the imbalance logits",
+        "start": 521.36,
+        "duration": 4.32
+    },
+    {
+        "text": "while the model will be developing",
+        "start": 524.159,
+        "duration": 3.081
+    },
+    {
+        "text": "balance",
+        "start": 525.68,
+        "duration": 6.04
+    },
+    {
+        "text": "logins so why does this work I guess why",
+        "start": 527.24,
+        "duration": 6.84
+    },
+    {
+        "text": "why do we why are we able to get this",
+        "start": 531.72,
+        "duration": 5.72
+    },
+    {
+        "text": "that's because the loss uh cross entropy",
+        "start": 534.08,
+        "duration": 6.28
+    },
+    {
+        "text": "loss is base consistent and again maybe",
+        "start": 537.44,
+        "duration": 4.519
+    },
+    {
+        "text": "not because there's a caveat here that",
+        "start": 540.36,
+        "duration": 3.68
+    },
+    {
+        "text": "I'll get to in a minute but so cross",
+        "start": 541.959,
+        "duration": 4.241
+    },
+    {
+        "text": "entropy loss is the traditional loss",
+        "start": 544.04,
+        "duration": 3.64
+    },
+    {
+        "text": "that we use to train",
+        "start": 546.2,
+        "duration": 3.16
+    },
+    {
+        "text": "classifier that we use to train",
+        "start": 547.68,
+        "duration": 3.92
+    },
+    {
+        "text": "classifier our models it looks like this",
+        "start": 549.36,
+        "duration": 4.12
+    },
+    {
+        "text": "and it has been shown that an optimal",
+        "start": 551.6,
+        "duration": 4.12
+    },
+    {
+        "text": "minimizer so a function that minimizes",
+        "start": 553.48,
+        "duration": 4.12
+    },
+    {
+        "text": "the cross entropy loss so a model that",
+        "start": 555.72,
+        "duration": 5.0
+    },
+    {
+        "text": "minimizes the cross entropy loss is um",
+        "start": 557.6,
+        "duration": 6.359
+    },
+    {
+        "text": "nearly the optimal minimizer of the uh",
+        "start": 560.72,
+        "duration": 5.559
+    },
+    {
+        "text": "loss of like a classifier so you can",
+        "start": 563.959,
+        "duration": 3.601
+    },
+    {
+        "text": "minimize this and you're actually",
+        "start": 566.279,
+        "duration": 3.761
+    },
+    {
+        "text": "minimizing the a or you're maximizing",
+        "start": 567.56,
+        "duration": 3.8
+    },
+    {
+        "text": "the",
+        "start": 570.04,
+        "duration": 3.88
+    },
+    {
+        "text": "accuracy however in reality we have a",
+        "start": 571.36,
+        "duration": 5.8
+    },
+    {
+        "text": "restricted set of functions so this all",
+        "start": 573.92,
+        "duration": 5.56
+    },
+    {
+        "text": "works so this this transformation here",
+        "start": 577.16,
+        "duration": 4.88
+    },
+    {
+        "text": "only works if you're confident that your",
+        "start": 579.48,
+        "duration": 5.32
+    },
+    {
+        "text": "logits are actually the kind of inverse",
+        "start": 582.04,
+        "duration": 5.479
+    },
+    {
+        "text": "of the conditional probabilities but if",
+        "start": 584.8,
+        "duration": 3.96
+    },
+    {
+        "text": "you're not getting the conditional",
+        "start": 587.519,
+        "duration": 3.201
+    },
+    {
+        "text": "probabilities then all bets are off you",
+        "start": 588.76,
+        "duration": 3.759
+    },
+    {
+        "text": "don't really know why subtracting P will",
+        "start": 590.72,
+        "duration": 4.32
+    },
+    {
+        "text": "help you and because models are a",
+        "start": 592.519,
+        "duration": 3.841
+    },
+    {
+        "text": "restricted set of functions you never",
+        "start": 595.04,
+        "duration": 2.84
+    },
+    {
+        "text": "get to this condition of a nearly",
+        "start": 596.36,
+        "duration": 3.52
+    },
+    {
+        "text": "optimal minimizer of CE",
+        "start": 597.88,
+        "duration": 3.68
+    },
+    {
+        "text": "and in fact if you look at testing and",
+        "start": 599.88,
+        "duration": 2.88
+    },
+    {
+        "text": "you have a model that was trained with",
+        "start": 601.56,
+        "duration": 2.719
+    },
+    {
+        "text": "crossentropy and you now look at it",
+        "start": 602.76,
+        "duration": 3.84
+    },
+    {
+        "text": "during testing it's most likely going to",
+        "start": 604.279,
+        "duration": 4.281
+    },
+    {
+        "text": "be overconfident and that's because well",
+        "start": 606.6,
+        "duration": 4.72
+    },
+    {
+        "text": "during training it's going to learn to",
+        "start": 608.56,
+        "duration": 4.8
+    },
+    {
+        "text": "predict with it's going to learn the",
+        "start": 611.32,
+        "duration": 3.519
+    },
+    {
+        "text": "train in a while so it's going to try to",
+        "start": 613.36,
+        "duration": 4.039
+    },
+    {
+        "text": "be very confident in the predictions and",
+        "start": 614.839,
+        "duration": 4.481
+    },
+    {
+        "text": "the loggs that it's going to make",
+        "start": 617.399,
+        "duration": 3.68
+    },
+    {
+        "text": "however the model now has constrained",
+        "start": 619.32,
+        "duration": 3.36
+    },
+    {
+        "text": "itself and it's really only able to",
+        "start": 621.079,
+        "duration": 3.401
+    },
+    {
+        "text": "predict very high or very low values for",
+        "start": 622.68,
+        "duration": 3.92
+    },
+    {
+        "text": "the logas so you shift to testing it may",
+        "start": 624.48,
+        "duration": 3.68
+    },
+    {
+        "text": "not be confident or making mistakes but",
+        "start": 626.6,
+        "duration": 3.08
+    },
+    {
+        "text": "it's very confident in the mistakes that",
+        "start": 628.16,
+        "duration": 3.88
+    },
+    {
+        "text": "it makes just because of its structure",
+        "start": 629.68,
+        "duration": 4.32
+    },
+    {
+        "text": "and so if you consider like this",
+        "start": 632.04,
+        "duration": 3.96
+    },
+    {
+        "text": "happening then you try log at Al line",
+        "start": 634.0,
+        "duration": 4.12
+    },
+    {
+        "text": "mauring versus after testing log of",
+        "start": 636.0,
+        "duration": 4.32
+    },
+    {
+        "text": "alignment dur or sorry during training",
+        "start": 638.12,
+        "duration": 4.68
+    },
+    {
+        "text": "performs better than during testing and",
+        "start": 640.32,
+        "duration": 4.48
+    },
+    {
+        "text": "this is also just to say that elements",
+        "start": 642.8,
+        "duration": 3.479
+    },
+    {
+        "text": "that are important for differentiating R",
+        "start": 644.8,
+        "duration": 3.12
+    },
+    {
+        "text": "rare classes can still help you",
+        "start": 646.279,
+        "duration": 3.36
+    },
+    {
+        "text": "understand common classes and that's why",
+        "start": 647.92,
+        "duration": 4.0
+    },
+    {
+        "text": "it's possible to improve accuracy on",
+        "start": 649.639,
+        "duration": 3.801
+    },
+    {
+        "text": "less frequent classes without",
+        "start": 651.92,
+        "duration": 3.68
+    },
+    {
+        "text": "significantly hurting or hurting at all",
+        "start": 653.44,
+        "duration": 3.839
+    },
+    {
+        "text": "the mower frequence",
+        "start": 655.6,
+        "duration": 4.919
+    },
+    {
+        "text": "classes all right section two visual",
+        "start": 657.279,
+        "duration": 6.0
+    },
+    {
+        "text": "explainability so I'll talk about",
+        "start": 660.519,
+        "duration": 4.56
+    },
+    {
+        "text": "convolutional and Transformer models",
+        "start": 663.279,
+        "duration": 3.161
+    },
+    {
+        "text": "specifically in Vision because I work in",
+        "start": 665.079,
+        "duration": 3.401
+    },
+    {
+        "text": "a computer vision lab however these",
+        "start": 666.44,
+        "duration": 3.959
+    },
+    {
+        "text": "techniques can be applied to other",
+        "start": 668.48,
+        "duration": 3.96
+    },
+    {
+        "text": "models they're just maybe people don't",
+        "start": 670.399,
+        "duration": 3.56
+    },
+    {
+        "text": "really care to visualize where we're",
+        "start": 672.44,
+        "duration": 3.76
+    },
+    {
+        "text": "looking at in the image that much or in",
+        "start": 673.959,
+        "duration": 5.0
+    },
+    {
+        "text": "a text block so what's going on here so",
+        "start": 676.2,
+        "duration": 5.079
+    },
+    {
+        "text": "imagine we have a convolutional network",
+        "start": 678.959,
+        "duration": 4.161
+    },
+    {
+        "text": "we start with an image it passes through",
+        "start": 681.279,
+        "duration": 3.641
+    },
+    {
+        "text": "a series of convolutions at the end it",
+        "start": 683.12,
+        "duration": 3.68
+    },
+    {
+        "text": "gets some feature Maps so in a",
+        "start": 684.92,
+        "duration": 3.919
+    },
+    {
+        "text": "convolutional network the model is the",
+        "start": 686.8,
+        "duration": 4.44
+    },
+    {
+        "text": "image is transformed into a number of",
+        "start": 688.839,
+        "duration": 4.321
+    },
+    {
+        "text": "different smaller like images or squares",
+        "start": 691.24,
+        "duration": 4.08
+    },
+    {
+        "text": "or patries you can say these feature",
+        "start": 693.16,
+        "duration": 4.4
+    },
+    {
+        "text": "maps go get flattened out and they pass",
+        "start": 695.32,
+        "duration": 3.56
+    },
+    {
+        "text": "through a number of fully connected",
+        "start": 697.56,
+        "duration": 3.959
+    },
+    {
+        "text": "layers until we get to these Loggins and",
+        "start": 698.88,
+        "duration": 5.36
+    },
+    {
+        "text": "then soft Macs Etc imagine now we have a",
+        "start": 701.519,
+        "duration": 4.12
+    },
+    {
+        "text": "class and we know that we like care",
+        "start": 704.24,
+        "duration": 2.839
+    },
+    {
+        "text": "about for example the class of the cat",
+        "start": 705.639,
+        "duration": 3.601
+    },
+    {
+        "text": "here we're going to go here uh we can",
+        "start": 707.079,
+        "duration": 4.961
+    },
+    {
+        "text": "calculate the gradient and back",
+        "start": 709.24,
+        "duration": 5.44
+    },
+    {
+        "text": "propagate and figure out how important",
+        "start": 712.04,
+        "duration": 4.72
+    },
+    {
+        "text": "all of the points on these feature maps",
+        "start": 714.68,
+        "duration": 4.719
+    },
+    {
+        "text": "are for the final class then we can",
+        "start": 716.76,
+        "duration": 4.639
+    },
+    {
+        "text": "average them so take the just the",
+        "start": 719.399,
+        "duration": 3.921
+    },
+    {
+        "text": "general average for each of the feature",
+        "start": 721.399,
+        "duration": 5.361
+    },
+    {
+        "text": "maps of the gradient and use that as a",
+        "start": 723.32,
+        "duration": 6.4
+    },
+    {
+        "text": "scaling factor to say how important the",
+        "start": 726.76,
+        "duration": 5.36
+    },
+    {
+        "text": "elements of that feature map are for the",
+        "start": 729.72,
+        "duration": 5.32
+    },
+    {
+        "text": "prediction so we just multiply this in",
+        "start": 732.12,
+        "duration": 4.8
+    },
+    {
+        "text": "and then we cut off whatever negative",
+        "start": 735.04,
+        "duration": 3.96
+    },
+    {
+        "text": "values we have in the feature Maps",
+        "start": 736.92,
+        "duration": 3.479
+    },
+    {
+        "text": "because we really want to care only",
+        "start": 739.0,
+        "duration": 5.12
+    },
+    {
+        "text": "about the positive prediction or what",
+        "start": 740.399,
+        "duration": 5.601
+    },
+    {
+        "text": "which classes positively which elements",
+        "start": 744.12,
+        "duration": 3.64
+    },
+    {
+        "text": "of the matrices positively contribute to",
+        "start": 746.0,
+        "duration": 3.48
+    },
+    {
+        "text": "predicting the class we don't care about",
+        "start": 747.76,
+        "duration": 3.079
+    },
+    {
+        "text": "something that decreases the probability",
+        "start": 749.48,
+        "duration": 3.64
+    },
+    {
+        "text": "of tiger C",
+        "start": 750.839,
+        "duration": 4.721
+    },
+    {
+        "text": "so another thing to say here is that",
+        "start": 753.12,
+        "duration": 4.159
+    },
+    {
+        "text": "kind of this seems a little bit a like",
+        "start": 755.56,
+        "duration": 3.44
+    },
+    {
+        "text": "random right like we back propagated",
+        "start": 757.279,
+        "duration": 3.321
+    },
+    {
+        "text": "here why did we take global average",
+        "start": 759.0,
+        "duration": 3.12
+    },
+    {
+        "text": "pooling why didn't we just multiply",
+        "start": 760.6,
+        "duration": 4.0
+    },
+    {
+        "text": "element wise in the importance of all of",
+        "start": 762.12,
+        "duration": 3.92
+    },
+    {
+        "text": "these pixels that's because",
+        "start": 764.6,
+        "duration": 3.96
+    },
+    {
+        "text": "mathematically there's a way that you",
+        "start": 766.04,
+        "duration": 5.0
+    },
+    {
+        "text": "can show that assuming the constraints",
+        "start": 768.56,
+        "duration": 4.0
+    },
+    {
+        "text": "that you're only able to multiply one",
+        "start": 771.04,
+        "duration": 3.72
+    },
+    {
+        "text": "thing in multiplying the global average",
+        "start": 772.56,
+        "duration": 4.2
+    },
+    {
+        "text": "is the most important thing there's",
+        "start": 774.76,
+        "duration": 4.16
+    },
+    {
+        "text": "another thing called gr cam Plus+ that's",
+        "start": 776.76,
+        "duration": 4.759
+    },
+    {
+        "text": "going to make an improvement shortly so",
+        "start": 778.92,
+        "duration": 4.64
+    },
+    {
+        "text": "graad cam is great but it's not very",
+        "start": 781.519,
+        "duration": 4.76
+    },
+    {
+        "text": "good at localizing objects why because",
+        "start": 783.56,
+        "duration": 5.279
+    },
+    {
+        "text": "well we have just this one thing that's",
+        "start": 786.279,
+        "duration": 4.601
+    },
+    {
+        "text": "being multiplied to the average of the",
+        "start": 788.839,
+        "duration": 3.281
+    },
+    {
+        "text": "importance being multiplied to the",
+        "start": 790.88,
+        "duration": 3.6
+    },
+    {
+        "text": "entire feature map so there's a small",
+        "start": 792.12,
+        "duration": 3.76
+    },
+    {
+        "text": "part of so if there's a feature map",
+        "start": 794.48,
+        "duration": 3.44
+    },
+    {
+        "text": "focused on just the tail for example the",
+        "start": 795.88,
+        "duration": 4.319
+    },
+    {
+        "text": "part of the object in that feature map",
+        "start": 797.92,
+        "duration": 4.479
+    },
+    {
+        "text": "is really small so overall the feature",
+        "start": 800.199,
+        "duration": 3.521
+    },
+    {
+        "text": "map might not contribute a lot to the",
+        "start": 802.399,
+        "duration": 3.481
+    },
+    {
+        "text": "class but we really still want to get",
+        "start": 803.72,
+        "duration": 4.119
+    },
+    {
+        "text": "the tail that was part in that part of",
+        "start": 805.88,
+        "duration": 4.319
+    },
+    {
+        "text": "that feature map and it actually it does",
+        "start": 807.839,
+        "duration": 4.44
+    },
+    {
+        "text": "contribute to the object",
+        "start": 810.199,
+        "duration": 4.841
+    },
+    {
+        "text": "so in gr cam yes so if particular",
+        "start": 812.279,
+        "duration": 4.521
+    },
+    {
+        "text": "feature is small in the map or like",
+        "start": 815.04,
+        "duration": 4.0
+    },
+    {
+        "text": "particular element of the image is small",
+        "start": 816.8,
+        "duration": 3.76
+    },
+    {
+        "text": "in the map that map has low weight but",
+        "start": 819.04,
+        "duration": 3.56
+    },
+    {
+        "text": "the object area is still important so we",
+        "start": 820.56,
+        "duration": 3.76
+    },
+    {
+        "text": "do want to weight things",
+        "start": 822.6,
+        "duration": 4.88
+    },
+    {
+        "text": "separately so this is what happens in gr",
+        "start": 824.32,
+        "duration": 5.639
+    },
+    {
+        "text": "cam Plus+ they say that we're going to",
+        "start": 827.48,
+        "duration": 4.44
+    },
+    {
+        "text": "wait so the W is the weight that we're",
+        "start": 829.959,
+        "duration": 3.841
+    },
+    {
+        "text": "going to be assigning to every point on",
+        "start": 831.92,
+        "duration": 3.0
+    },
+    {
+        "text": "the feature",
+        "start": 833.8,
+        "duration": 4.44
+    },
+    {
+        "text": "map if we give it the weight the weight",
+        "start": 834.92,
+        "duration": 4.919
+    },
+    {
+        "text": "is going to be dependent on the",
+        "start": 838.24,
+        "duration": 5.0
+    },
+    {
+        "text": "particular pixel and you can get what",
+        "start": 839.839,
+        "duration": 5.24
+    },
+    {
+        "text": "this dependence should be instead of",
+        "start": 843.24,
+        "duration": 4.44
+    },
+    {
+        "text": "just naively multiplying this derivative",
+        "start": 845.079,
+        "duration": 5.401
+    },
+    {
+        "text": "by saying that you want the optimal so",
+        "start": 847.68,
+        "duration": 4.159
+    },
+    {
+        "text": "you want whatever the weight is",
+        "start": 850.48,
+        "duration": 3.56
+    },
+    {
+        "text": "multiplied by the feature uh by the",
+        "start": 851.839,
+        "duration": 4.161
+    },
+    {
+        "text": "feature map to recover for you your",
+        "start": 854.04,
+        "duration": 3.52
+    },
+    {
+        "text": "class and so if you solve this equation",
+        "start": 856.0,
+        "duration": 4.12
+    },
+    {
+        "text": "you can figure out what your AI J is",
+        "start": 857.56,
+        "duration": 4.839
+    },
+    {
+        "text": "supposed to be and so grad cam was a",
+        "start": 860.12,
+        "duration": 4.399
+    },
+    {
+        "text": "similar thing except for you wanted you",
+        "start": 862.399,
+        "duration": 7.24
+    },
+    {
+        "text": "had double UK um happening before or at",
+        "start": 864.519,
+        "duration": 7.601
+    },
+    {
+        "text": "after the summation",
+        "start": 869.639,
+        "duration": 4.841
+    },
+    {
+        "text": "happened so this is the difference in",
+        "start": 872.12,
+        "duration": 4.48
+    },
+    {
+        "text": "explainability between grad camp and",
+        "start": 874.48,
+        "duration": 4.08
+    },
+    {
+        "text": "grad Camp Plus+ so you can see how",
+        "start": 876.6,
+        "duration": 3.679
+    },
+    {
+        "text": "smaller features like the neck here and",
+        "start": 878.56,
+        "duration": 3.48
+    },
+    {
+        "text": "the legs here which may have existed in",
+        "start": 880.279,
+        "duration": 4.201
+    },
+    {
+        "text": "separate feature maps from the main body",
+        "start": 882.04,
+        "duration": 5.599
+    },
+    {
+        "text": "of the animal are still",
+        "start": 884.48,
+        "duration": 3.159
+    },
+    {
+        "text": "visualized okay so next part is visual",
+        "start": 888.56,
+        "duration": 5.519
+    },
+    {
+        "text": "trans uh explainability of Transformers",
+        "start": 891.8,
+        "duration": 4.479
+    },
+    {
+        "text": "now unlike grad cam so grad cam had some",
+        "start": 894.079,
+        "duration": 3.601
+    },
+    {
+        "text": "Theory motivations and they kind of",
+        "start": 896.279,
+        "duration": 3.041
+    },
+    {
+        "text": "showed that whatever they were",
+        "start": 897.68,
+        "duration": 3.56
+    },
+    {
+        "text": "visualizing was going to reflect the",
+        "start": 899.32,
+        "duration": 4.959
+    },
+    {
+        "text": "true class Transformers has a theory",
+        "start": 901.24,
+        "duration": 4.76
+    },
+    {
+        "text": "backing the Transformer visualization",
+        "start": 904.279,
+        "duration": 3.12
+    },
+    {
+        "text": "that that I'm going to talk about it has",
+        "start": 906.0,
+        "duration": 3.519
+    },
+    {
+        "text": "a theory backing however they also have",
+        "start": 907.399,
+        "duration": 4.641
+    },
+    {
+        "text": "made just some decisions about how",
+        "start": 909.519,
+        "duration": 6.281
+    },
+    {
+        "text": "they're going to propagate gradiant Etc",
+        "start": 912.04,
+        "duration": 5.96
+    },
+    {
+        "text": "because otherwise it's too complicated",
+        "start": 915.8,
+        "duration": 3.959
+    },
+    {
+        "text": "so review of Transformer structure if",
+        "start": 918.0,
+        "duration": 3.279
+    },
+    {
+        "text": "you haven't seen this before and I'll",
+        "start": 919.759,
+        "duration": 3.0
+    },
+    {
+        "text": "I'm giving this in the context of images",
+        "start": 921.279,
+        "duration": 4.641
+    },
+    {
+        "text": "but again you could just have words and",
+        "start": 922.759,
+        "duration": 5.681
+    },
+    {
+        "text": "every word is it's like has some",
+        "start": 925.92,
+        "duration": 5.24
+    },
+    {
+        "text": "embedding it so what happens in an image",
+        "start": 928.44,
+        "duration": 6.6
+    },
+    {
+        "text": "is we create little patches in the image",
+        "start": 931.16,
+        "duration": 5.4
+    },
+    {
+        "text": "and so each of these patches is",
+        "start": 935.04,
+        "duration": 4.44
+    },
+    {
+        "text": "transformed into a patch embedding and",
+        "start": 936.56,
+        "duration": 4.6
+    },
+    {
+        "text": "then the patch embedding passes through",
+        "start": 939.48,
+        "duration": 3.799
+    },
+    {
+        "text": "a series of attention and fully",
+        "start": 941.16,
+        "duration": 4.08
+    },
+    {
+        "text": "connected layers with or Fe forward",
+        "start": 943.279,
+        "duration": 3.601
+    },
+    {
+        "text": "networks and feet forward networks are",
+        "start": 945.24,
+        "duration": 3.519
+    },
+    {
+        "text": "just fully connected",
+        "start": 946.88,
+        "duration": 6.079
+    },
+    {
+        "text": "MLPs so what happens in the attention",
+        "start": 948.759,
+        "duration": 5.961
+    },
+    {
+        "text": "Network that's the most important part",
+        "start": 952.959,
+        "duration": 4.201
+    },
+    {
+        "text": "so you have a part of the image that",
+        "start": 954.72,
+        "duration": 4.039
+    },
+    {
+        "text": "part of the image has become a vector in",
+        "start": 957.16,
+        "duration": 4.0
+    },
+    {
+        "text": "the the patch and bedding that Vector is",
+        "start": 958.759,
+        "duration": 4.241
+    },
+    {
+        "text": "now going to be transformed into three",
+        "start": 961.16,
+        "duration": 4.32
+    },
+    {
+        "text": "new vectors the Q K and V and together",
+        "start": 963.0,
+        "duration": 3.959
+    },
+    {
+        "text": "all of the patch and beddings form the",
+        "start": 965.48,
+        "duration": 3.88
+    },
+    {
+        "text": "qkd matrices then ultimately the",
+        "start": 966.959,
+        "duration": 5.081
+    },
+    {
+        "text": "Transformer is a matrix product in",
+        "start": 969.36,
+        "duration": 5.24
+    },
+    {
+        "text": "series first between the Q and the K the",
+        "start": 972.04,
+        "duration": 4.84
+    },
+    {
+        "text": "queries and the key matrices and then",
+        "start": 974.6,
+        "duration": 4.28
+    },
+    {
+        "text": "it's a matrix product between the result",
+        "start": 976.88,
+        "duration": 3.72
+    },
+    {
+        "text": "of this soft Max divided by",
+        "start": 978.88,
+        "duration": 4.16
+    },
+    {
+        "text": "normalization scaling factor and then",
+        "start": 980.6,
+        "duration": 5.0
+    },
+    {
+        "text": "multiplied by the V the value Matrix and",
+        "start": 983.04,
+        "duration": 6.239
+    },
+    {
+        "text": "so this is going to give you the output",
+        "start": 985.6,
+        "duration": 6.32
+    },
+    {
+        "text": "so if you have multiple Transformer",
+        "start": 989.279,
+        "duration": 4.281
+    },
+    {
+        "text": "heads so sometimes people say that a",
+        "start": 991.92,
+        "duration": 4.159
+    },
+    {
+        "text": "Transformer has multiple heads so each",
+        "start": 993.56,
+        "duration": 4.68
+    },
+    {
+        "text": "of these attention Fe forward noww",
+        "start": 996.079,
+        "duration": 4.721
+    },
+    {
+        "text": "blocks is a layer with within each",
+        "start": 998.24,
+        "duration": 4.839
+    },
+    {
+        "text": "attention we can repeat this process",
+        "start": 1000.8,
+        "duration": 4.159
+    },
+    {
+        "text": "multiple times so we have multiple",
+        "start": 1003.079,
+        "duration": 3.32
+    },
+    {
+        "text": "different q's and multiple different KS",
+        "start": 1004.959,
+        "duration": 4.44
+    },
+    {
+        "text": "and B's and we then concatenate the",
+        "start": 1006.399,
+        "duration": 6.161
+    },
+    {
+        "text": "results in some way that is multi-ad",
+        "start": 1009.399,
+        "duration": 5.36
+    },
+    {
+        "text": "attention so we've attended to ourselves",
+        "start": 1012.56,
+        "duration": 3.639
+    },
+    {
+        "text": "multiple",
+        "start": 1014.759,
+        "duration": 3.44
+    },
+    {
+        "text": "times so how do we do visual",
+        "start": 1016.199,
+        "duration": 4.361
+    },
+    {
+        "text": "explainability of Transformers so the",
+        "start": 1018.199,
+        "duration": 3.88
+    },
+    {
+        "text": "visual stability of Transformers focuses",
+        "start": 1020.56,
+        "duration": 3.759
+    },
+    {
+        "text": "on the attention map so the product of",
+        "start": 1022.079,
+        "duration": 5.641
+    },
+    {
+        "text": "the q's uh q and K we kind of ignore the",
+        "start": 1024.319,
+        "duration": 6.48
+    },
+    {
+        "text": "values here so if we have an output we",
+        "start": 1027.72,
+        "duration": 5.719
+    },
+    {
+        "text": "can calculate the gradient of just like",
+        "start": 1030.799,
+        "duration": 4.64
+    },
+    {
+        "text": "how we did in grad cam we calculate the",
+        "start": 1033.439,
+        "duration": 4.6
+    },
+    {
+        "text": "gradient with respect to the output for",
+        "start": 1035.439,
+        "duration": 5.64
+    },
+    {
+        "text": "the attention maps and so now that we",
+        "start": 1038.039,
+        "duration": 5.081
+    },
+    {
+        "text": "have the attention Maps we we have the",
+        "start": 1041.079,
+        "duration": 3.681
+    },
+    {
+        "text": "grade and we can say oh maybe this is",
+        "start": 1043.12,
+        "duration": 3.799
+    },
+    {
+        "text": "how important a particular patch is for",
+        "start": 1044.76,
+        "duration": 3.919
+    },
+    {
+        "text": "the output but that's not exactly the",
+        "start": 1046.919,
+        "duration": 3.681
+    },
+    {
+        "text": "case because as we move along the",
+        "start": 1048.679,
+        "duration": 5.721
+    },
+    {
+        "text": "Transformer the tokens or the small like",
+        "start": 1050.6,
+        "duration": 5.48
+    },
+    {
+        "text": "little boxes in the intention map they",
+        "start": 1054.4,
+        "duration": 3.24
+    },
+    {
+        "text": "all start representing things that are",
+        "start": 1056.08,
+        "duration": 3.36
+    },
+    {
+        "text": "far away from the initial positions they",
+        "start": 1057.64,
+        "duration": 4.039
+    },
+    {
+        "text": "were assigned to so before you could",
+        "start": 1059.44,
+        "duration": 4.239
+    },
+    {
+        "text": "confidently say that oh this little box",
+        "start": 1061.679,
+        "duration": 4.041
+    },
+    {
+        "text": "in the attention map that represents",
+        "start": 1063.679,
+        "duration": 4.521
+    },
+    {
+        "text": "this part of the image but now after",
+        "start": 1065.72,
+        "duration": 4.4
+    },
+    {
+        "text": "you've moved some layers down that box",
+        "start": 1068.2,
+        "duration": 4.16
+    },
+    {
+        "text": "can now represent a combination of",
+        "start": 1070.12,
+        "duration": 4.04
+    },
+    {
+        "text": "elements from all different areas in the",
+        "start": 1072.36,
+        "duration": 3.52
+    },
+    {
+        "text": "image because it's just been multiplied",
+        "start": 1074.16,
+        "duration": 4.48
+    },
+    {
+        "text": "Matrix multiplied multiple times but you",
+        "start": 1075.88,
+        "duration": 5.0
+    },
+    {
+        "text": "can unravel this and that's just simply",
+        "start": 1078.64,
+        "duration": 4.2
+    },
+    {
+        "text": "by doing another matrix multiplication",
+        "start": 1080.88,
+        "duration": 3.64
+    },
+    {
+        "text": "of the attention matrices you can get",
+        "start": 1082.84,
+        "duration": 3.959
+    },
+    {
+        "text": "back uh structurally to have every",
+        "start": 1084.52,
+        "duration": 4.56
+    },
+    {
+        "text": "little box in this output represent a",
+        "start": 1086.799,
+        "duration": 4.081
+    },
+    {
+        "text": "particular position on the starting",
+        "start": 1089.08,
+        "duration": 5.04
+    },
+    {
+        "text": "image so but you don't want to just",
+        "start": 1090.88,
+        "duration": 5.76
+    },
+    {
+        "text": "Matrix multiply naively because what if",
+        "start": 1094.12,
+        "duration": 4.36
+    },
+    {
+        "text": "some at some point the gradient is zero",
+        "start": 1096.64,
+        "duration": 3.56
+    },
+    {
+        "text": "by accident you don't want to just zero",
+        "start": 1098.48,
+        "duration": 3.8
+    },
+    {
+        "text": "out your entire result so what you're",
+        "start": 1100.2,
+        "duration": 3.479
+    },
+    {
+        "text": "going to do is you're going to add the",
+        "start": 1102.28,
+        "duration": 3.44
+    },
+    {
+        "text": "identity Matrix here and this is again",
+        "start": 1103.679,
+        "duration": 3.681
+    },
+    {
+        "text": "this this is like a choice that the",
+        "start": 1105.72,
+        "duration": 3.88
+    },
+    {
+        "text": "author has made in this paper so if you",
+        "start": 1107.36,
+        "duration": 4.64
+    },
+    {
+        "text": "add the identity Matrix then even if the",
+        "start": 1109.6,
+        "duration": 4.959
+    },
+    {
+        "text": "gradient at some point is zero well it's",
+        "start": 1112.0,
+        "duration": 4.28
+    },
+    {
+        "text": "okay because the product is still going",
+        "start": 1114.559,
+        "duration": 4.201
+    },
+    {
+        "text": "to just ignore that attention map and",
+        "start": 1116.28,
+        "duration": 4.92
+    },
+    {
+        "text": "continue on as normal there's also this",
+        "start": 1118.76,
+        "duration": 4.52
+    },
+    {
+        "text": "relevance term that gets multiplied into",
+        "start": 1121.2,
+        "duration": 3.599
+    },
+    {
+        "text": "each attention map and that says how",
+        "start": 1123.28,
+        "duration": 3.32
+    },
+    {
+        "text": "important that attention map is for the",
+        "start": 1124.799,
+        "duration": 3.481
+    },
+    {
+        "text": "final output and in fact how important",
+        "start": 1126.6,
+        "duration": 3.28
+    },
+    {
+        "text": "every element of that attention map is",
+        "start": 1128.28,
+        "duration": 3.6
+    },
+    {
+        "text": "for the final output that's a little bit",
+        "start": 1129.88,
+        "duration": 4.279
+    },
+    {
+        "text": "like the scaling that happened in grad",
+        "start": 1131.88,
+        "duration": 4.88
+    },
+    {
+        "text": "Camp so here you can see the results of",
+        "start": 1134.159,
+        "duration": 4.161
+    },
+    {
+        "text": "their visual explainability model for",
+        "start": 1136.76,
+        "duration": 2.72
+    },
+    {
+        "text": "transform",
+        "start": 1138.32,
+        "duration": 3.96
+    },
+    {
+        "text": "so here is just on single class images",
+        "start": 1139.48,
+        "duration": 4.679
+    },
+    {
+        "text": "you can see it highlighting the fish",
+        "start": 1142.28,
+        "duration": 4.16
+    },
+    {
+        "text": "here and then on multiclass images you",
+        "start": 1144.159,
+        "duration": 4.64
+    },
+    {
+        "text": "can see it more clearly highlights",
+        "start": 1146.44,
+        "duration": 3.68
+    },
+    {
+        "text": "different regions of the cat and you",
+        "start": 1148.799,
+        "duration": 4.12
+    },
+    {
+        "text": "have a little bit more of a great here",
+        "start": 1150.12,
+        "duration": 4.559
+    },
+    {
+        "text": "or a little bit more specificity in",
+        "start": 1152.919,
+        "duration": 3.88
+    },
+    {
+        "text": "terms of what is being",
+        "start": 1154.679,
+        "duration": 6.041
+    },
+    {
+        "text": "highlighted so now moving on to the last",
+        "start": 1156.799,
+        "duration": 6.24
+    },
+    {
+        "text": "and largest section of self supervised",
+        "start": 1160.72,
+        "duration": 5.24
+    },
+    {
+        "text": "training so imagine that we have a bunch",
+        "start": 1163.039,
+        "duration": 5.281
+    },
+    {
+        "text": "of unannotated data and we want to",
+        "start": 1165.96,
+        "duration": 4.04
+    },
+    {
+        "text": "create a model that's good at getting",
+        "start": 1168.32,
+        "duration": 3.359
+    },
+    {
+        "text": "representations from data that we can",
+        "start": 1170.0,
+        "duration": 6.28
+    },
+    {
+        "text": "then F tune for a downstream task so how",
+        "start": 1171.679,
+        "duration": 6.24
+    },
+    {
+        "text": "can we do this so I'll talk about two",
+        "start": 1176.28,
+        "duration": 3.68
+    },
+    {
+        "text": "approaches the first approach is we're",
+        "start": 1177.919,
+        "duration": 3.88
+    },
+    {
+        "text": "just going to take all of the data that",
+        "start": 1179.96,
+        "duration": 3.32
+    },
+    {
+        "text": "we have we're for each data point going",
+        "start": 1181.799,
+        "duration": 3.601
+    },
+    {
+        "text": "to cut out a small chunk of it and then",
+        "start": 1183.28,
+        "duration": 4.32
+    },
+    {
+        "text": "we're going to ask the model to predict",
+        "start": 1185.4,
+        "duration": 4.44
+    },
+    {
+        "text": "what was cut out and hopefully in that",
+        "start": 1187.6,
+        "duration": 3.64
+    },
+    {
+        "text": "way it's going to learn to fill in the",
+        "start": 1189.84,
+        "duration": 3.04
+    },
+    {
+        "text": "blanks of the data and learn what",
+        "start": 1191.24,
+        "duration": 4.16
+    },
+    {
+        "text": "structures exist in the data another",
+        "start": 1192.88,
+        "duration": 4.679
+    },
+    {
+        "text": "approach is to say we have a lot of",
+        "start": 1195.4,
+        "duration": 5.279
+    },
+    {
+        "text": "different elements in our data and we",
+        "start": 1197.559,
+        "duration": 6.521
+    },
+    {
+        "text": "want to just have a model be able to",
+        "start": 1200.679,
+        "duration": 4.921
+    },
+    {
+        "text": "understand identity so understand that",
+        "start": 1204.08,
+        "duration": 3.52
+    },
+    {
+        "text": "this data point is itself it's not",
+        "start": 1205.6,
+        "duration": 3.48
+    },
+    {
+        "text": "similar to all of the other data points",
+        "start": 1207.6,
+        "duration": 4.0
+    },
+    {
+        "text": "so we're going to try to spread out the",
+        "start": 1209.08,
+        "duration": 5.0
+    },
+    {
+        "text": "different elements so this is okay so",
+        "start": 1211.6,
+        "duration": 3.68
+    },
+    {
+        "text": "this is the first approach where we're",
+        "start": 1214.08,
+        "duration": 3.64
+    },
+    {
+        "text": "going to cut out some parts of the data",
+        "start": 1215.28,
+        "duration": 4.72
+    },
+    {
+        "text": "and try to have the model fill it in how",
+        "start": 1217.72,
+        "duration": 4.52
+    },
+    {
+        "text": "does it work so this is uh this was",
+        "start": 1220.0,
+        "duration": 5.52
+    },
+    {
+        "text": "built for Transformers and the reason",
+        "start": 1222.24,
+        "duration": 4.799
+    },
+    {
+        "text": "for that is because we're going to be",
+        "start": 1225.52,
+        "duration": 3.84
+    },
+    {
+        "text": "removing like 80% of the data so we're",
+        "start": 1227.039,
+        "duration": 5.041
+    },
+    {
+        "text": "just going to cover up and remove 80% of",
+        "start": 1229.36,
+        "duration": 4.36
+    },
+    {
+        "text": "the patches that we generate for an",
+        "start": 1232.08,
+        "duration": 3.68
+    },
+    {
+        "text": "image we take whatever is left of the",
+        "start": 1233.72,
+        "duration": 3.16
+    },
+    {
+        "text": "patches we're going to pass them through",
+        "start": 1235.76,
+        "duration": 2.88
+    },
+    {
+        "text": "an encoder which is just our big",
+        "start": 1236.88,
+        "duration": 4.52
+    },
+    {
+        "text": "Transformer Network and then we're going",
+        "start": 1238.64,
+        "duration": 5.2
+    },
+    {
+        "text": "to place back all of the empty patches",
+        "start": 1241.4,
+        "duration": 3.72
+    },
+    {
+        "text": "that we kind of ignored in the",
+        "start": 1243.84,
+        "duration": 2.92
+    },
+    {
+        "text": "Transformer and we're going to have a",
+        "start": 1245.12,
+        "duration": 3.48
+    },
+    {
+        "text": "smaller decoder but it's not too small",
+        "start": 1246.76,
+        "duration": 3.36
+    },
+    {
+        "text": "it's not like one layer it does have a",
+        "start": 1248.6,
+        "duration": 3.24
+    },
+    {
+        "text": "few Transformer layers in it and we're",
+        "start": 1250.12,
+        "duration": 4.16
+    },
+    {
+        "text": "going to ask the model to fill in the",
+        "start": 1251.84,
+        "duration": 5.4
+    },
+    {
+        "text": "blanks here and predict the image filled",
+        "start": 1254.28,
+        "duration": 4.92
+    },
+    {
+        "text": "in so",
+        "start": 1257.24,
+        "duration": 3.0
+    },
+    {
+        "text": "the reason that we do this in",
+        "start": 1259.2,
+        "duration": 2.8
+    },
+    {
+        "text": "Transformers and that this doesn't work",
+        "start": 1260.24,
+        "duration": 3.36
+    },
+    {
+        "text": "as well if you try in convolutional",
+        "start": 1262.0,
+        "duration": 3.36
+    },
+    {
+        "text": "networks is because convolutional",
+        "start": 1263.6,
+        "duration": 4.12
+    },
+    {
+        "text": "networks you can't just ignore that you",
+        "start": 1265.36,
+        "duration": 4.4
+    },
+    {
+        "text": "masked out some patches if you put a",
+        "start": 1267.72,
+        "duration": 3.68
+    },
+    {
+        "text": "image that has a bunch of zeros in it in",
+        "start": 1269.76,
+        "duration": 2.96
+    },
+    {
+        "text": "convolution those zeros are actually",
+        "start": 1271.4,
+        "duration": 3.56
+    },
+    {
+        "text": "going to just mess up and like interact",
+        "start": 1272.72,
+        "duration": 3.959
+    },
+    {
+        "text": "with all of the neighbors versus in a",
+        "start": 1274.96,
+        "duration": 4.319
+    },
+    {
+        "text": "Transformer you assign every patch a",
+        "start": 1276.679,
+        "duration": 4.841
+    },
+    {
+        "text": "position embedding and so in that case",
+        "start": 1279.279,
+        "duration": 3.76
+    },
+    {
+        "text": "the Transformer doesn't really care how",
+        "start": 1281.52,
+        "duration": 2.96
+    },
+    {
+        "text": "many patches you give it you can just",
+        "start": 1283.039,
+        "duration": 3.161
+    },
+    {
+        "text": "give it a list of all the patches you",
+        "start": 1284.48,
+        "duration": 3.0
+    },
+    {
+        "text": "have and the other patches you just",
+        "start": 1286.2,
+        "duration": 4.0
+    },
+    {
+        "text": "don't feed into the transform",
+        "start": 1287.48,
+        "duration": 5.92
+    },
+    {
+        "text": "so how did they choose to remove 80% of",
+        "start": 1290.2,
+        "duration": 4.88
+    },
+    {
+        "text": "the image like that seems kind of hard",
+        "start": 1293.4,
+        "duration": 3.08
+    },
+    {
+        "text": "like visually I don't think that I would",
+        "start": 1295.08,
+        "duration": 4.56
+    },
+    {
+        "text": "be able to reconstruct this animal here",
+        "start": 1296.48,
+        "duration": 4.84
+    },
+    {
+        "text": "but it turns out that they just did a",
+        "start": 1299.64,
+        "duration": 3.039
+    },
+    {
+        "text": "lot of experiments and they figured out",
+        "start": 1301.32,
+        "duration": 4.12
+    },
+    {
+        "text": "that 80 was pretty important to have so",
+        "start": 1302.679,
+        "duration": 4.041
+    },
+    {
+        "text": "these are their two experiments and this",
+        "start": 1305.44,
+        "duration": 2.96
+    },
+    {
+        "text": "is basically depending on what they're",
+        "start": 1306.72,
+        "duration": 3.48
+    },
+    {
+        "text": "going to be using the downstream model",
+        "start": 1308.4,
+        "duration": 4.04
+    },
+    {
+        "text": "for so the first is they're just going",
+        "start": 1310.2,
+        "duration": 4.8
+    },
+    {
+        "text": "to then keep only the encoder so the",
+        "start": 1312.44,
+        "duration": 4.119
+    },
+    {
+        "text": "decoder gets thrown away after all of",
+        "start": 1315.0,
+        "duration": 2.799
+    },
+    {
+        "text": "this is happening we only care about",
+        "start": 1316.559,
+        "duration": 2.961
+    },
+    {
+        "text": "getting good features from the image so",
+        "start": 1317.799,
+        "duration": 3.201
+    },
+    {
+        "text": "they're going to keep the encoder and",
+        "start": 1319.52,
+        "duration": 2.84
+    },
+    {
+        "text": "then they're going to fine-tune the",
+        "start": 1321.0,
+        "duration": 3.0
+    },
+    {
+        "text": "encoder maybe add some linear layer",
+        "start": 1322.36,
+        "duration": 3.799
+    },
+    {
+        "text": "whatever fine-tune that encoder for",
+        "start": 1324.0,
+        "duration": 4.0
+    },
+    {
+        "text": "classification and here they see that",
+        "start": 1326.159,
+        "duration": 4.321
+    },
+    {
+        "text": "depending on the masking ratio they used",
+        "start": 1328.0,
+        "duration": 5.08
+    },
+    {
+        "text": "how good fine-tuning how how did fine",
+        "start": 1330.48,
+        "duration": 4.199
+    },
+    {
+        "text": "tuning finally allow us to get the final",
+        "start": 1333.08,
+        "duration": 2.92
+    },
+    {
+        "text": "output and so we got really good",
+        "start": 1334.679,
+        "duration": 3.521
+    },
+    {
+        "text": "accuracy if we pre-train with a very",
+        "start": 1336.0,
+        "duration": 4.96
+    },
+    {
+        "text": "high with a higher masking ratio linear",
+        "start": 1338.2,
+        "duration": 4.92
+    },
+    {
+        "text": "probing is very similar we're again",
+        "start": 1340.96,
+        "duration": 3.76
+    },
+    {
+        "text": "throwing out the decoder leaving just",
+        "start": 1343.12,
+        "duration": 3.96
+    },
+    {
+        "text": "the encoder but instead of allowing the",
+        "start": 1344.72,
+        "duration": 4.68
+    },
+    {
+        "text": "model to then update the en enre model",
+        "start": 1347.08,
+        "duration": 4.199
+    },
+    {
+        "text": "and try to get the correct class we're",
+        "start": 1349.4,
+        "duration": 3.8
+    },
+    {
+        "text": "just going to update the very final",
+        "start": 1351.279,
+        "duration": 3.921
+    },
+    {
+        "text": "layer of the model we're going to add",
+        "start": 1353.2,
+        "duration": 3.92
+    },
+    {
+        "text": "like a single linear layer at the end",
+        "start": 1355.2,
+        "duration": 3.56
+    },
+    {
+        "text": "and only change it the rest of the model",
+        "start": 1357.12,
+        "duration": 4.48
+    },
+    {
+        "text": "is frozen and so this kind of you can",
+        "start": 1358.76,
+        "duration": 5.96
+    },
+    {
+        "text": "see that it also cares more about having",
+        "start": 1361.6,
+        "duration": 5.48
+    },
+    {
+        "text": "a higher masking ratio and it doesn't",
+        "start": 1364.72,
+        "duration": 4.079
+    },
+    {
+        "text": "rescue itself as much as over here",
+        "start": 1367.08,
+        "duration": 3.52
+    },
+    {
+        "text": "because here you have the ability to",
+        "start": 1368.799,
+        "duration": 3.401
+    },
+    {
+        "text": "change the entire model structure so",
+        "start": 1370.6,
+        "duration": 3.8
+    },
+    {
+        "text": "perhaps during the supervised training",
+        "start": 1372.2,
+        "duration": 4.28
+    },
+    {
+        "text": "part it's able to rescue and kind of",
+        "start": 1374.4,
+        "duration": 4.68
+    },
+    {
+        "text": "fill in like learn more things versus",
+        "start": 1376.48,
+        "duration": 4.72
+    },
+    {
+        "text": "here the modeled base is really fixed so",
+        "start": 1379.08,
+        "duration": 4.0
+    },
+    {
+        "text": "what it learned it learned from",
+        "start": 1381.2,
+        "duration": 3.719
+    },
+    {
+        "text": "self-supervised and so here you can see",
+        "start": 1383.08,
+        "duration": 3.839
+    },
+    {
+        "text": "the actual real results of what the",
+        "start": 1384.919,
+        "duration": 3.681
+    },
+    {
+        "text": "Fillin the blanks looks like and it",
+        "start": 1386.919,
+        "duration": 3.521
+    },
+    {
+        "text": "looks pretty good so a little bit blurry",
+        "start": 1388.6,
+        "duration": 3.76
+    },
+    {
+        "text": "but generally really",
+        "start": 1390.44,
+        "duration": 6.28
+    },
+    {
+        "text": "good so the other strategy so the other",
+        "start": 1392.36,
+        "duration": 6.84
+    },
+    {
+        "text": "strategy is contrastive learning so this",
+        "start": 1396.72,
+        "duration": 4.64
+    },
+    {
+        "text": "is where we have different images image",
+        "start": 1399.2,
+        "duration": 5.32
+    },
+    {
+        "text": "X1 image X2 or data X1 data X2 they're",
+        "start": 1401.36,
+        "duration": 6.319
+    },
+    {
+        "text": "going to produce some features Z1 Z2 and",
+        "start": 1404.52,
+        "duration": 5.639
+    },
+    {
+        "text": "we want IM features from one image to be",
+        "start": 1407.679,
+        "duration": 4.401
+    },
+    {
+        "text": "similar to each other and features from",
+        "start": 1410.159,
+        "duration": 3.681
+    },
+    {
+        "text": "different images or different elements",
+        "start": 1412.08,
+        "duration": 4.079
+    },
+    {
+        "text": "inputs to be different from each",
+        "start": 1413.84,
+        "duration": 6.719
+    },
+    {
+        "text": "other so how do we do this there's two",
+        "start": 1416.159,
+        "duration": 6.12
+    },
+    {
+        "text": "methods here that I'll talk about well",
+        "start": 1420.559,
+        "duration": 4.801
+    },
+    {
+        "text": "maybe three so the first one is Sim",
+        "start": 1422.279,
+        "duration": 5.481
+    },
+    {
+        "text": "clear and this is a little bit like the",
+        "start": 1425.36,
+        "duration": 5.12
+    },
+    {
+        "text": "generic based met model method that you",
+        "start": 1427.76,
+        "duration": 5.2
+    },
+    {
+        "text": "would think to do so you start with your",
+        "start": 1430.48,
+        "duration": 4.559
+    },
+    {
+        "text": "input image here you're going to augment",
+        "start": 1432.96,
+        "duration": 3.68
+    },
+    {
+        "text": "it and that's saying that you're going",
+        "start": 1435.039,
+        "duration": 3.961
+    },
+    {
+        "text": "to change it in some way that's",
+        "start": 1436.64,
+        "duration": 5.0
+    },
+    {
+        "text": "improving or that not improving changing",
+        "start": 1439.0,
+        "duration": 4.159
+    },
+    {
+        "text": "it in some way that still keeps the",
+        "start": 1441.64,
+        "duration": 4.12
+    },
+    {
+        "text": "identity of the image still trying to",
+        "start": 1443.159,
+        "duration": 4.88
+    },
+    {
+        "text": "have invariance between whatever",
+        "start": 1445.76,
+        "duration": 3.84
+    },
+    {
+        "text": "happened in the transformation so you",
+        "start": 1448.039,
+        "duration": 2.961
+    },
+    {
+        "text": "want these representations to be",
+        "start": 1449.6,
+        "duration": 3.8
+    },
+    {
+        "text": "invariant of that transformation and so",
+        "start": 1451.0,
+        "duration": 4.64
+    },
+    {
+        "text": "some Transformations that this these",
+        "start": 1453.4,
+        "duration": 5.72
+    },
+    {
+        "text": "authors chose was to prop and resize uh",
+        "start": 1455.64,
+        "duration": 6.32
+    },
+    {
+        "text": "flip the dog do add some noise add some",
+        "start": 1459.12,
+        "duration": 5.72
+    },
+    {
+        "text": "color Etc so we've transformed the image",
+        "start": 1461.96,
+        "duration": 4.68
+    },
+    {
+        "text": "in two different ways now we have two",
+        "start": 1464.84,
+        "duration": 3.24
+    },
+    {
+        "text": "slightly different versions of the image",
+        "start": 1466.64,
+        "duration": 2.24
+    },
+    {
+        "text": "but we",
+        "start": 1468.08,
+        "duration": 2.599
+    },
+    {
+        "text": "ask the model that it predicts them to",
+        "start": 1468.88,
+        "duration": 4.12
+    },
+    {
+        "text": "be the same so we have the model here",
+        "start": 1470.679,
+        "duration": 3.801
+    },
+    {
+        "text": "we're going to get the representation",
+        "start": 1473.0,
+        "duration": 4.0
+    },
+    {
+        "text": "out of the model and then we're going to",
+        "start": 1474.48,
+        "duration": 4.36
+    },
+    {
+        "text": "add a little bit like a small Network",
+        "start": 1477.0,
+        "duration": 4.48
+    },
+    {
+        "text": "just a three layer MLP one hidden layer",
+        "start": 1478.84,
+        "duration": 4.559
+    },
+    {
+        "text": "to because we might not want to use the",
+        "start": 1481.48,
+        "duration": 3.439
+    },
+    {
+        "text": "very final representation that we're",
+        "start": 1483.399,
+        "duration": 3.4
+    },
+    {
+        "text": "trying to make identical we might want",
+        "start": 1484.919,
+        "duration": 3.401
+    },
+    {
+        "text": "to use something a little bit earlier",
+        "start": 1486.799,
+        "duration": 3.6
+    },
+    {
+        "text": "because there may be actually a small",
+        "start": 1488.32,
+        "duration": 4.44
+    },
+    {
+        "text": "difference between this dog and this dog",
+        "start": 1490.399,
+        "duration": 3.961
+    },
+    {
+        "text": "and we don't necessarily want to just",
+        "start": 1492.76,
+        "duration": 4.919
+    },
+    {
+        "text": "use the very final output so we're going",
+        "start": 1494.36,
+        "duration": 5.52
+    },
+    {
+        "text": "to get the",
+        "start": 1497.679,
+        "duration": 3.441
+    },
+    {
+        "text": "represent here but we're going to",
+        "start": 1499.88,
+        "duration": 2.64
+    },
+    {
+        "text": "maximize the agreement a little bit",
+        "start": 1501.12,
+        "duration": 2.96
+    },
+    {
+        "text": "further down in the network between",
+        "start": 1502.52,
+        "duration": 3.6
+    },
+    {
+        "text": "these z i and",
+        "start": 1504.08,
+        "duration": 6.479
+    },
+    {
+        "text": "zjs so how do we maximize agreement so",
+        "start": 1506.12,
+        "duration": 6.64
+    },
+    {
+        "text": "if we want two vectors so we have an",
+        "start": 1510.559,
+        "duration": 3.72
+    },
+    {
+        "text": "image we",
+        "start": 1512.76,
+        "duration": 4.44
+    },
+    {
+        "text": "had like X we had the transformed image",
+        "start": 1514.279,
+        "duration": 5.28
+    },
+    {
+        "text": "XI the transformed image XJ we also had",
+        "start": 1517.2,
+        "duration": 4.44
+    },
+    {
+        "text": "a batch of images so usually when we're",
+        "start": 1519.559,
+        "duration": 3.72
+    },
+    {
+        "text": "training a network we take a lot of",
+        "start": 1521.64,
+        "duration": 3.399
+    },
+    {
+        "text": "images together and we try to optimize",
+        "start": 1523.279,
+        "duration": 3.88
+    },
+    {
+        "text": "network based on how of the average",
+        "start": 1525.039,
+        "duration": 4.281
+    },
+    {
+        "text": "result for all of these images",
+        "start": 1527.159,
+        "duration": 4.201
+    },
+    {
+        "text": "so let's say we have a batch size of n",
+        "start": 1529.32,
+        "duration": 4.92
+    },
+    {
+        "text": "images and each image was augmented and",
+        "start": 1531.36,
+        "duration": 5.199
+    },
+    {
+        "text": "doubled up in this way with two",
+        "start": 1534.24,
+        "duration": 4.159
+    },
+    {
+        "text": "different Transformations well then you",
+        "start": 1536.559,
+        "duration": 3.641
+    },
+    {
+        "text": "can say that you want the similarity",
+        "start": 1538.399,
+        "duration": 3.88
+    },
+    {
+        "text": "between the vector or between the",
+        "start": 1540.2,
+        "duration": 5.0
+    },
+    {
+        "text": "representations of one of the images or",
+        "start": 1542.279,
+        "duration": 4.921
+    },
+    {
+        "text": "the image image in two different",
+        "start": 1545.2,
+        "duration": 4.88
+    },
+    {
+        "text": "transformations to be similar and you",
+        "start": 1547.2,
+        "duration": 6.12
+    },
+    {
+        "text": "want it to be different from the you",
+        "start": 1550.08,
+        "duration": 5.76
+    },
+    {
+        "text": "want the similarity between the image",
+        "start": 1553.32,
+        "duration": 5.599
+    },
+    {
+        "text": "and all of the other possible image or",
+        "start": 1555.84,
+        "duration": 5.24
+    },
+    {
+        "text": "the basically all all of the other",
+        "start": 1558.919,
+        "duration": 3.401
+    },
+    {
+        "text": "elements in the batch even if they're",
+        "start": 1561.08,
+        "duration": 2.16
+    },
+    {
+        "text": "from the same class they're just",
+        "start": 1562.32,
+        "duration": 2.0
+    },
+    {
+        "text": "different images so you want these",
+        "start": 1563.24,
+        "duration": 2.799
+    },
+    {
+        "text": "representations to be different and so",
+        "start": 1564.32,
+        "duration": 2.56
+    },
+    {
+        "text": "you're going to put them in the",
+        "start": 1566.039,
+        "duration": 2.921
+    },
+    {
+        "text": "denominator of your loss so this is the",
+        "start": 1566.88,
+        "duration": 4.919
+    },
+    {
+        "text": "Sim clear loss function and so you have",
+        "start": 1568.96,
+        "duration": 4.319
+    },
+    {
+        "text": "the positive example up top you have the",
+        "start": 1571.799,
+        "duration": 3.161
+    },
+    {
+        "text": "negative examples down here you're going",
+        "start": 1573.279,
+        "duration": 3.201
+    },
+    {
+        "text": "to divide everything by temperature and",
+        "start": 1574.96,
+        "duration": 4.48
+    },
+    {
+        "text": "that's a scaling factor to say how much",
+        "start": 1576.48,
+        "duration": 4.36
+    },
+    {
+        "text": "variability you want to keep in the",
+        "start": 1579.44,
+        "duration": 3.359
+    },
+    {
+        "text": "distribution so if temperature is really",
+        "start": 1580.84,
+        "duration": 4.12
+    },
+    {
+        "text": "high you're going to become more flat",
+        "start": 1582.799,
+        "duration": 3.76
+    },
+    {
+        "text": "and so you're going to see less of a",
+        "start": 1584.96,
+        "duration": 4.12
+    },
+    {
+        "text": "difference between the",
+        "start": 1586.559,
+        "duration": 3.401
+    },
+    {
+        "text": "uh you're going to you're going to",
+        "start": 1589.08,
+        "duration": 2.64
+    },
+    {
+        "text": "emphasize less The Importance of Being",
+        "start": 1589.96,
+        "duration": 4.839
+    },
+    {
+        "text": "different between the numer",
+        "start": 1591.72,
+        "duration": 5.959
+    },
+    {
+        "text": "denominator so once you have this loss",
+        "start": 1594.799,
+        "duration": 4.76
+    },
+    {
+        "text": "function you're going to try to optimize",
+        "start": 1597.679,
+        "duration": 2.72
+    },
+    {
+        "text": "for",
+        "start": 1599.559,
+        "duration": 4.881
+    },
+    {
+        "text": "it and so the authors do that and this",
+        "start": 1600.399,
+        "duration": 5.921
+    },
+    {
+        "text": "is what they find and they find that you",
+        "start": 1604.44,
+        "duration": 4.239
+    },
+    {
+        "text": "need to have a really large batch size",
+        "start": 1606.32,
+        "duration": 5.359
+    },
+    {
+        "text": "to be able to perform well so batch size",
+        "start": 1608.679,
+        "duration": 5.24
+    },
+    {
+        "text": "really only starts from 256 you can't go",
+        "start": 1611.679,
+        "duration": 4.281
+    },
+    {
+        "text": "much lower than that and the more you",
+        "start": 1613.919,
+        "duration": 3.961
+    },
+    {
+        "text": "train the better it is so they train",
+        "start": 1615.96,
+        "duration": 3.28
+    },
+    {
+        "text": "much longer longer than any traditional",
+        "start": 1617.88,
+        "duration": 2.96
+    },
+    {
+        "text": "networks usually do usually you stop at",
+        "start": 1619.24,
+        "duration": 3.319
+    },
+    {
+        "text": "like a several hundred EPO here they",
+        "start": 1620.84,
+        "duration": 3.36
+    },
+    {
+        "text": "went up to a th they still kept seeing",
+        "start": 1622.559,
+        "duration": 3.201
+    },
+    {
+        "text": "improvements kind of pretty close to the",
+        "start": 1624.2,
+        "duration": 3.92
+    },
+    {
+        "text": "end and larger batch sizes were",
+        "start": 1625.76,
+        "duration": 3.6
+    },
+    {
+        "text": "important so you needed a lot of",
+        "start": 1628.12,
+        "duration": 2.72
+    },
+    {
+        "text": "examples in this denominator to get",
+        "start": 1629.36,
+        "duration": 2.4
+    },
+    {
+        "text": "things to",
+        "start": 1630.84,
+        "duration": 3.559
+    },
+    {
+        "text": "work but what if you don't have a large",
+        "start": 1631.76,
+        "duration": 6.919
+    },
+    {
+        "text": "batch size so like 9,000 close to 9,000",
+        "start": 1634.399,
+        "duration": 6.961
+    },
+    {
+        "text": "images is pretty excessive and nowadays",
+        "start": 1638.679,
+        "duration": 4.48
+    },
+    {
+        "text": "maybe you can do it if you have the GPU",
+        "start": 1641.36,
+        "duration": 3.24
+    },
+    {
+        "text": "but back then this was a couple years",
+        "start": 1643.159,
+        "duration": 4.321
+    },
+    {
+        "text": "ago 2020 2021 that was actually really",
+        "start": 1644.6,
+        "duration": 4.079
+    },
+    {
+        "text": "hard to do",
+        "start": 1647.48,
+        "duration": 3.4
+    },
+    {
+        "text": "so if you have a limitation of your",
+        "start": 1648.679,
+        "duration": 3.561
+    },
+    {
+        "text": "memory you have a limitation on the",
+        "start": 1650.88,
+        "duration": 3.2
+    },
+    {
+        "text": "batch size that you can give and maybe",
+        "start": 1652.24,
+        "duration": 3.679
+    },
+    {
+        "text": "you can give like small batches to",
+        "start": 1654.08,
+        "duration": 3.599
+    },
+    {
+        "text": "different parts of you can separate and",
+        "start": 1655.919,
+        "duration": 4.161
+    },
+    {
+        "text": "do multi-gpu training give pieces of",
+        "start": 1657.679,
+        "duration": 5.0
+    },
+    {
+        "text": "batches of the batch to multiple GPU",
+        "start": 1660.08,
+        "duration": 4.479
+    },
+    {
+        "text": "machines and then try to combine things",
+        "start": 1662.679,
+        "duration": 5.88
+    },
+    {
+        "text": "but also very hard so let's say you have",
+        "start": 1664.559,
+        "duration": 6.281
+    },
+    {
+        "text": "this limitation so what can you do well",
+        "start": 1668.559,
+        "duration": 4.161
+    },
+    {
+        "text": "you can get more negative examples from",
+        "start": 1670.84,
+        "duration": 3.16
+    },
+    {
+        "text": "the previous batches because you're",
+        "start": 1672.72,
+        "duration": 3.16
+    },
+    {
+        "text": "going to assume that even if you have",
+        "start": 1674.0,
+        "duration": 4.24
+    },
+    {
+        "text": "some Randomness your like your image",
+        "start": 1675.88,
+        "duration": 3.84
+    },
+    {
+        "text": "that happened in one batch it didn't",
+        "start": 1678.24,
+        "duration": 2.799
+    },
+    {
+        "text": "happen before because it happened in",
+        "start": 1679.72,
+        "duration": 4.16
+    },
+    {
+        "text": "this batch but you can just naively take",
+        "start": 1681.039,
+        "duration": 4.841
+    },
+    {
+        "text": "the features that you got from previous",
+        "start": 1683.88,
+        "duration": 3.399
+    },
+    {
+        "text": "batches and use them as negative",
+        "start": 1685.88,
+        "duration": 3.84
+    },
+    {
+        "text": "examples because you already looked at",
+        "start": 1687.279,
+        "duration": 4.161
+    },
+    {
+        "text": "the P previous batch and updated the",
+        "start": 1689.72,
+        "duration": 2.839
+    },
+    {
+        "text": "network based on that so whatever",
+        "start": 1691.44,
+        "duration": 3.719
+    },
+    {
+        "text": "features happened are belong belong or",
+        "start": 1692.559,
+        "duration": 4.6
+    },
+    {
+        "text": "were made with a network that is one",
+        "start": 1695.159,
+        "duration": 3.481
+    },
+    {
+        "text": "step behind your network that you're now",
+        "start": 1697.159,
+        "duration": 3.921
+    },
+    {
+        "text": "comparing through",
+        "start": 1698.64,
+        "duration": 5.919
+    },
+    {
+        "text": "so if you are worried about your batch",
+        "start": 1701.08,
+        "duration": 5.479
+    },
+    {
+        "text": "batches coming from different images",
+        "start": 1704.559,
+        "duration": 5.761
+    },
+    {
+        "text": "then you can do what moo did so mochu is",
+        "start": 1706.559,
+        "duration": 5.801
+    },
+    {
+        "text": "momentum contrast method and they",
+        "start": 1710.32,
+        "duration": 4.32
+    },
+    {
+        "text": "proposed that instead of having the",
+        "start": 1712.36,
+        "duration": 4.96
+    },
+    {
+        "text": "images like here all of these images",
+        "start": 1714.64,
+        "duration": 5.36
+    },
+    {
+        "text": "were processed in the same way and with",
+        "start": 1717.32,
+        "duration": 5.4
+    },
+    {
+        "text": "the same model we're going to have the",
+        "start": 1720.0,
+        "duration": 5.88
+    },
+    {
+        "text": "image that we're comparing to be like",
+        "start": 1722.72,
+        "duration": 4.76
+    },
+    {
+        "text": "the the positive example image to be",
+        "start": 1725.88,
+        "duration": 4.159
+    },
+    {
+        "text": "processed by one encoder or one model",
+        "start": 1727.48,
+        "duration": 4.319
+    },
+    {
+        "text": "and then all of the other images that",
+        "start": 1730.039,
+        "duration": 3.281
+    },
+    {
+        "text": "are going to be our negative examples",
+        "start": 1731.799,
+        "duration": 2.6
+    },
+    {
+        "text": "they're going to be processed by",
+        "start": 1733.32,
+        "duration": 2.839
+    },
+    {
+        "text": "something else a different model called",
+        "start": 1734.399,
+        "duration": 4.561
+    },
+    {
+        "text": "momentum encoder it has the structure as",
+        "start": 1736.159,
+        "duration": 5.041
+    },
+    {
+        "text": "the encoder but it updates its weights",
+        "start": 1738.96,
+        "duration": 6.439
+    },
+    {
+        "text": "much slower and so as so basically its",
+        "start": 1741.2,
+        "duration": 5.839
+    },
+    {
+        "text": "weights at every step you're going to",
+        "start": 1745.399,
+        "duration": 3.081
+    },
+    {
+        "text": "get some loss you're going to update the",
+        "start": 1747.039,
+        "duration": 3.12
+    },
+    {
+        "text": "model weights but while you're going to",
+        "start": 1748.48,
+        "duration": 3.679
+    },
+    {
+        "text": "update the encoder weights normally the",
+        "start": 1750.159,
+        "duration": 3.4
+    },
+    {
+        "text": "momentum encoder weights are going to be",
+        "start": 1752.159,
+        "duration": 3.12
+    },
+    {
+        "text": "updated by the new parameters of the",
+        "start": 1753.559,
+        "duration": 3.681
+    },
+    {
+        "text": "encoder so after the encoder was updated",
+        "start": 1755.279,
+        "duration": 4.481
+    },
+    {
+        "text": "times a very small constant plus its old",
+        "start": 1757.24,
+        "duration": 4.559
+    },
+    {
+        "text": "weight so it's really just much slow",
+        "start": 1759.76,
+        "duration": 3.919
+    },
+    {
+        "text": "it's moving along the gradient but it's",
+        "start": 1761.799,
+        "duration": 3.48
+    },
+    {
+        "text": "moving much slower than the encoder",
+        "start": 1763.679,
+        "duration": 3.641
+    },
+    {
+        "text": "model and that means that between",
+        "start": 1765.279,
+        "duration": 3.921
+    },
+    {
+        "text": "batches the momentum encoder hasn't",
+        "start": 1767.32,
+        "duration": 3.92
+    },
+    {
+        "text": "changed that much and so now it's",
+        "start": 1769.2,
+        "duration": 3.92
+    },
+    {
+        "text": "actually okay to keep information from",
+        "start": 1771.24,
+        "duration": 3.88
+    },
+    {
+        "text": "previous batches here and from The New",
+        "start": 1773.12,
+        "duration": 3.72
+    },
+    {
+        "text": "Batch here and there hopefully they're",
+        "start": 1775.12,
+        "duration": 4.36
+    },
+    {
+        "text": "not that much different and so now you",
+        "start": 1776.84,
+        "duration": 5.959
+    },
+    {
+        "text": "use all of these images together as your",
+        "start": 1779.48,
+        "duration": 7.28
+    },
+    {
+        "text": "negative examples and you can uh store",
+        "start": 1782.799,
+        "duration": 5.641
+    },
+    {
+        "text": "in The Next Step you're going to store",
+        "start": 1786.76,
+        "duration": 4.039
+    },
+    {
+        "text": "these new negative examples from the",
+        "start": 1788.44,
+        "duration": 4.4
+    },
+    {
+        "text": "preceding batch and you're going to",
+        "start": 1790.799,
+        "duration": 3.88
+    },
+    {
+        "text": "maybe kick off because you have a you",
+        "start": 1792.84,
+        "duration": 3.6
+    },
+    {
+        "text": "have a limited number of elements that",
+        "start": 1794.679,
+        "duration": 2.921
+    },
+    {
+        "text": "you're storing you're going to kick off",
+        "start": 1796.44,
+        "duration": 2.599
+    },
+    {
+        "text": "some of the",
+        "start": 1797.6,
+        "duration": 4.16
+    },
+    {
+        "text": "older uh some of the older elements that",
+        "start": 1799.039,
+        "duration": 5.041
+    },
+    {
+        "text": "you had some of the older negative",
+        "start": 1801.76,
+        "duration": 4.08
+    },
+    {
+        "text": "examples from the storage",
+        "start": 1804.08,
+        "duration": 4.0
+    },
+    {
+        "text": "que",
+        "start": 1805.84,
+        "duration": 5.64
+    },
+    {
+        "text": "so okay we have time presumably so then",
+        "start": 1808.08,
+        "duration": 4.76
+    },
+    {
+        "text": "I'll mention the slide I was thinking",
+        "start": 1811.48,
+        "duration": 4.0
+    },
+    {
+        "text": "skipping it versus not skipping it",
+        "start": 1812.84,
+        "duration": 6.079
+    },
+    {
+        "text": "so um this is a thing that happens if",
+        "start": 1815.48,
+        "duration": 5.559
+    },
+    {
+        "text": "you separate this is a multiple GPU",
+        "start": 1818.919,
+        "duration": 4.6
+    },
+    {
+        "text": "problem so one of the contributions the",
+        "start": 1821.039,
+        "duration": 4.801
+    },
+    {
+        "text": "authors notice is that if they just",
+        "start": 1823.519,
+        "duration": 5.841
+    },
+    {
+        "text": "tried this method as it was and they ran",
+        "start": 1825.84,
+        "duration": 4.76
+    },
+    {
+        "text": "it they actually found pretty poor",
+        "start": 1829.36,
+        "duration": 2.72
+    },
+    {
+        "text": "performance with traditional batch",
+        "start": 1830.6,
+        "duration": 4.04
+    },
+    {
+        "text": "normalization and that happened because",
+        "start": 1832.08,
+        "duration": 4.719
+    },
+    {
+        "text": "they had multiple GPU machine so they",
+        "start": 1834.64,
+        "duration": 3.919
+    },
+    {
+        "text": "were training the model so what happens",
+        "start": 1836.799,
+        "duration": 3.24
+    },
+    {
+        "text": "in multiple GPU training is you have a",
+        "start": 1838.559,
+        "duration": 3.401
+    },
+    {
+        "text": "copy of the model on each of the gpus",
+        "start": 1840.039,
+        "duration": 3.52
+    },
+    {
+        "text": "you're training it on and then you're",
+        "start": 1841.96,
+        "duration": 3.439
+    },
+    {
+        "text": "going to update you're going to run part",
+        "start": 1843.559,
+        "duration": 4.12
+    },
+    {
+        "text": "of a batch on each GPU and then you're",
+        "start": 1845.399,
+        "duration": 5.921
+    },
+    {
+        "text": "going to update the like sum up the",
+        "start": 1847.679,
+        "duration": 5.88
+    },
+    {
+        "text": "results and then do the gradient for all",
+        "start": 1851.32,
+        "duration": 5.359
+    },
+    {
+        "text": "of these um s get the gradient for all",
+        "start": 1853.559,
+        "duration": 4.96
+    },
+    {
+        "text": "of these models and kind of average them",
+        "start": 1856.679,
+        "duration": 3.201
+    },
+    {
+        "text": "afterwards but you're processing each",
+        "start": 1858.519,
+        "duration": 3.921
+    },
+    {
+        "text": "batch separately on each GPU and when",
+        "start": 1859.88,
+        "duration": 4.159
+    },
+    {
+        "text": "you process each batch separately the",
+        "start": 1862.44,
+        "duration": 4.079
+    },
+    {
+        "text": "batch normalization that happens inside",
+        "start": 1864.039,
+        "duration": 5.161
+    },
+    {
+        "text": "the model is actually batch dependent so",
+        "start": 1866.519,
+        "duration": 4.64
+    },
+    {
+        "text": "on one GPU the batch normalization could",
+        "start": 1869.2,
+        "duration": 4.04
+    },
+    {
+        "text": "be one thing on another GPU the batch",
+        "start": 1871.159,
+        "duration": 4.161
+    },
+    {
+        "text": "normalization could be something else",
+        "start": 1873.24,
+        "duration": 3.48
+    },
+    {
+        "text": "and it turned out that the authors were",
+        "start": 1875.32,
+        "duration": 4.52
+    },
+    {
+        "text": "putting the images both positive",
+        "start": 1876.72,
+        "duration": 7.079
+    },
+    {
+        "text": "examples on the same GPU always and when",
+        "start": 1879.84,
+        "duration": 5.6
+    },
+    {
+        "text": "they did that the batch normalization",
+        "start": 1883.799,
+        "duration": 3.6
+    },
+    {
+        "text": "because it has some trainable parameters",
+        "start": 1885.44,
+        "duration": 5.04
+    },
+    {
+        "text": "bat normaliz learned to just separate",
+        "start": 1887.399,
+        "duration": 6.481
+    },
+    {
+        "text": "out the or to help improve the IM make",
+        "start": 1890.48,
+        "duration": 4.84
+    },
+    {
+        "text": "the image representations of the same",
+        "start": 1893.88,
+        "duration": 3.72
+    },
+    {
+        "text": "image similar and without actually",
+        "start": 1895.32,
+        "duration": 4.12
+    },
+    {
+        "text": "making them truly better and so what",
+        "start": 1897.6,
+        "duration": 4.76
+    },
+    {
+        "text": "they did to solve this the author solved",
+        "start": 1899.44,
+        "duration": 5.599
+    },
+    {
+        "text": "this by just shuffling where they put",
+        "start": 1902.36,
+        "duration": 4.84
+    },
+    {
+        "text": "the positive examples and then also",
+        "start": 1905.039,
+        "duration": 3.401
+    },
+    {
+        "text": "having",
+        "start": 1907.2,
+        "duration": 3.52
+    },
+    {
+        "text": "the batch that they used for the",
+        "start": 1908.44,
+        "duration": 3.76
+    },
+    {
+        "text": "momentum encoder be different from the",
+        "start": 1910.72,
+        "duration": 3.439
+    },
+    {
+        "text": "batch they used from for the traditional",
+        "start": 1912.2,
+        "duration": 4.319
+    },
+    {
+        "text": "encoder on every GPU and that way the",
+        "start": 1914.159,
+        "duration": 4.201
+    },
+    {
+        "text": "batch normalization couldn't necessarily",
+        "start": 1916.519,
+        "duration": 4.841
+    },
+    {
+        "text": "learned to always help align the results",
+        "start": 1918.36,
+        "duration": 5.919
+    },
+    {
+        "text": "of MIM encoder and encoder because batch",
+        "start": 1921.36,
+        "duration": 4.84
+    },
+    {
+        "text": "batches were different between this and",
+        "start": 1924.279,
+        "duration": 4.841
+    },
+    {
+        "text": "this model on a particular GPU and then",
+        "start": 1926.2,
+        "duration": 4.92
+    },
+    {
+        "text": "an alternative solution that later so",
+        "start": 1929.12,
+        "duration": 4.36
+    },
+    {
+        "text": "that Sim clear did and Moco V3 because",
+        "start": 1931.12,
+        "duration": 3.919
+    },
+    {
+        "text": "they would also face a similar problem",
+        "start": 1933.48,
+        "duration": 3.64
+    },
+    {
+        "text": "had they been using that is they just",
+        "start": 1935.039,
+        "duration": 3.88
+    },
+    {
+        "text": "aggregated the Bator parameters across",
+        "start": 1937.12,
+        "duration": 5.159
+    },
+    {
+        "text": "all of the gpus and so this way all of",
+        "start": 1938.919,
+        "duration": 5.921
+    },
+    {
+        "text": "the gpus were having the same B there",
+        "start": 1942.279,
+        "duration": 5.721
+    },
+    {
+        "text": "was little learning to be had",
+        "start": 1944.84,
+        "duration": 5.799
+    },
+    {
+        "text": "so Moco went through a series of updates",
+        "start": 1948.0,
+        "duration": 5.76
+    },
+    {
+        "text": "it went to Moko V2 which just had a",
+        "start": 1950.639,
+        "duration": 5.801
+    },
+    {
+        "text": "similar structure just added some of the",
+        "start": 1953.76,
+        "duration": 5.68
+    },
+    {
+        "text": "same augmentations that Sim clear had",
+        "start": 1956.44,
+        "duration": 6.959
+    },
+    {
+        "text": "and essentially that was that uh Moco V3",
+        "start": 1959.44,
+        "duration": 6.079
+    },
+    {
+        "text": "is a papered by some different authors",
+        "start": 1963.399,
+        "duration": 5.801
+    },
+    {
+        "text": "and this was less about proposing a v Mo",
+        "start": 1965.519,
+        "duration": 6.64
+    },
+    {
+        "text": "V3 but more about studying how",
+        "start": 1969.2,
+        "duration": 6.68
+    },
+    {
+        "text": "Transformer training behaves and so but",
+        "start": 1972.159,
+        "duration": 5.041
+    },
+    {
+        "text": "let's talk about the modifications they",
+        "start": 1975.88,
+        "duration": 3.44
+    },
+    {
+        "text": "made to MCO so the first thing they did",
+        "start": 1977.2,
+        "duration": 3.839
+    },
+    {
+        "text": "was they modified the loss a little bit",
+        "start": 1979.32,
+        "duration": 5.079
+    },
+    {
+        "text": "so instead of using the loss they had",
+        "start": 1981.039,
+        "duration": 5.281
+    },
+    {
+        "text": "here or similar to sim clear they used",
+        "start": 1984.399,
+        "duration": 5.041
+    },
+    {
+        "text": "an info MCE loss and that's essentially",
+        "start": 1986.32,
+        "duration": 6.76
+    },
+    {
+        "text": "the probability of predicting the match",
+        "start": 1989.44,
+        "duration": 7.28
+    },
+    {
+        "text": "so you have the this part from the term",
+        "start": 1993.08,
+        "duration": 5.439
+    },
+    {
+        "text": "from the numerator also exists in the",
+        "start": 1996.72,
+        "duration": 3.319
+    },
+    {
+        "text": "denominator and that's the only",
+        "start": 1998.519,
+        "duration": 4.321
+    },
+    {
+        "text": "difference for NC loss they also",
+        "start": 2000.039,
+        "duration": 5.201
+    },
+    {
+        "text": "symmetrized the loss and so they had",
+        "start": 2002.84,
+        "duration": 5.48
+    },
+    {
+        "text": "they only used the loss of",
+        "start": 2005.24,
+        "duration": 6.36
+    },
+    {
+        "text": "of augmentation against the second type",
+        "start": 2008.32,
+        "duration": 4.599
+    },
+    {
+        "text": "of so",
+        "start": 2011.6,
+        "duration": 3.88
+    },
+    {
+        "text": "they okay so what they did was they had",
+        "start": 2012.919,
+        "duration": 3.76
+    },
+    {
+        "text": "one",
+        "start": 2015.48,
+        "duration": 4.199
+    },
+    {
+        "text": "image",
+        "start": 2016.679,
+        "duration": 3.0
+    },
+    {
+        "text": "they took the image against one half of",
+        "start": 2019.88,
+        "duration": 5.639
+    },
+    {
+        "text": "the negative examples and then took",
+        "start": 2023.679,
+        "duration": 3.88
+    },
+    {
+        "text": "another transform of the image and",
+        "start": 2025.519,
+        "duration": 4.201
+    },
+    {
+        "text": "looked it against the second half of the",
+        "start": 2027.559,
+        "duration": 4.48
+    },
+    {
+        "text": "negative examples so they split the loss",
+        "start": 2029.72,
+        "duration": 5.199
+    },
+    {
+        "text": "into two parts and then they also unlike",
+        "start": 2032.039,
+        "duration": 4.921
+    },
+    {
+        "text": "Moco completely forgot about the Q so",
+        "start": 2034.919,
+        "duration": 5.201
+    },
+    {
+        "text": "they completely forgot about having a",
+        "start": 2036.96,
+        "duration": 5.24
+    },
+    {
+        "text": "Trying to minimize the amount of memory",
+        "start": 2040.12,
+        "duration": 4.24
+    },
+    {
+        "text": "or the amount of samples we have in a",
+        "start": 2042.2,
+        "duration": 3.68
+    },
+    {
+        "text": "particular batch and that's just because",
+        "start": 2044.36,
+        "duration": 3.36
+    },
+    {
+        "text": "technology had Advanced by this",
+        "start": 2045.88,
+        "duration": 3.999
+    },
+    {
+        "text": "point but they still kept the slowly",
+        "start": 2047.72,
+        "duration": 4.08
+    },
+    {
+        "text": "updating momentum",
+        "start": 2049.879,
+        "duration": 5.081
+    },
+    {
+        "text": "encoder so that gave a few percent",
+        "start": 2051.8,
+        "duration": 5.119
+    },
+    {
+        "text": "performance improvements but the most",
+        "start": 2054.96,
+        "duration": 4.879
+    },
+    {
+        "text": "important thing that these authors noted",
+        "start": 2056.919,
+        "duration": 4.641
+    },
+    {
+        "text": "was that instability when training with",
+        "start": 2059.839,
+        "duration": 3.961
+    },
+    {
+        "text": "a large batch size so if you have a",
+        "start": 2061.56,
+        "duration": 4.039
+    },
+    {
+        "text": "Transformer and you start training it",
+        "start": 2063.8,
+        "duration": 4.119
+    },
+    {
+        "text": "with a very large batch size you can see",
+        "start": 2065.599,
+        "duration": 3.961
+    },
+    {
+        "text": "in this graph that at some point during",
+        "start": 2067.919,
+        "duration": 3.401
+    },
+    {
+        "text": "training its performance just completely",
+        "start": 2069.56,
+        "duration": 3.839
+    },
+    {
+        "text": "tanks and then it kind of recovers and",
+        "start": 2071.32,
+        "duration": 3.72
+    },
+    {
+        "text": "then it tanks again and recovers tanks",
+        "start": 2073.399,
+        "duration": 3.561
+    },
+    {
+        "text": "again and ultimately the final",
+        "start": 2075.04,
+        "duration": 3.44
+    },
+    {
+        "text": "performance is not as good as training",
+        "start": 2076.96,
+        "duration": 4.679
+    },
+    {
+        "text": "with a smaller badge and the question is",
+        "start": 2078.48,
+        "duration": 5.96
+    },
+    {
+        "text": "why did this happen so the authors try",
+        "start": 2081.639,
+        "duration": 5.561
+    },
+    {
+        "text": "to analyze this by looking at the",
+        "start": 2084.44,
+        "duration": 4.36
+    },
+    {
+        "text": "gradient and so how does the gradient",
+        "start": 2087.2,
+        "duration": 3.24
+    },
+    {
+        "text": "change over training time and they",
+        "start": 2088.8,
+        "duration": 3.799
+    },
+    {
+        "text": "noticed that there was a spike a large",
+        "start": 2090.44,
+        "duration": 4.199
+    },
+    {
+        "text": "increase in the gradient that was back",
+        "start": 2092.599,
+        "duration": 3.161
+    },
+    {
+        "text": "propagated",
+        "start": 2094.639,
+        "duration": 4.161
+    },
+    {
+        "text": "against at the moment that like a little",
+        "start": 2095.76,
+        "duration": 6.72
+    },
+    {
+        "text": "bit before all of these descents or um",
+        "start": 2098.8,
+        "duration": 4.84
+    },
+    {
+        "text": "Falls",
+        "start": 2102.48,
+        "duration": 4.04
+    },
+    {
+        "text": "happened and so what they hes siize was",
+        "start": 2103.64,
+        "duration": 5.439
+    },
+    {
+        "text": "that it just when we have a large batch",
+        "start": 2106.52,
+        "duration": 4.2
+    },
+    {
+        "text": "size it can accidentally in the earlier",
+        "start": 2109.079,
+        "duration": 5.441
+    },
+    {
+        "text": "layers there's an origination of this",
+        "start": 2110.72,
+        "duration": 5.76
+    },
+    {
+        "text": "descent or this uh there's a small",
+        "start": 2114.52,
+        "duration": 3.48
+    },
+    {
+        "text": "there's a big change or a relatively big",
+        "start": 2116.48,
+        "duration": 3.16
+    },
+    {
+        "text": "change in some of the earliest layers",
+        "start": 2118.0,
+        "duration": 3.079
+    },
+    {
+        "text": "and as this propagates to the later",
+        "start": 2119.64,
+        "duration": 3.04
+    },
+    {
+        "text": "layers this creates this dip and",
+        "start": 2121.079,
+        "duration": 3.841
+    },
+    {
+        "text": "accuracy and the solution they found and",
+        "start": 2122.68,
+        "duration": 3.64
+    },
+    {
+        "text": "this is they tested this out empirically",
+        "start": 2124.92,
+        "duration": 3.679
+    },
+    {
+        "text": "and it helped is that they simply froze",
+        "start": 2126.32,
+        "duration": 4.92
+    },
+    {
+        "text": "the earlier layers of the model and so",
+        "start": 2128.599,
+        "duration": 4.0
+    },
+    {
+        "text": "this is a little bit like they just",
+        "start": 2131.24,
+        "duration": 2.96
+    },
+    {
+        "text": "decreased the model size and they don't",
+        "start": 2132.599,
+        "duration": 3.201
+    },
+    {
+        "text": "allow some of the initial",
+        "start": 2134.2,
+        "duration": 3.879
+    },
+    {
+        "text": "transformations to ever change and this",
+        "start": 2135.8,
+        "duration": 3.84
+    },
+    {
+        "text": "improved accuracy but what this really",
+        "start": 2138.079,
+        "duration": 5.121
+    },
+    {
+        "text": "did was it forced the model to be like",
+        "start": 2139.64,
+        "duration": 4.88
+    },
+    {
+        "text": "more narrow and constrainted what",
+        "start": 2143.2,
+        "duration": 4.24
+    },
+    {
+        "text": "representations it can represent so it",
+        "start": 2144.52,
+        "duration": 5.319
+    },
+    {
+        "text": "wasn't able to jump to particular to",
+        "start": 2147.44,
+        "duration": 5.8
+    },
+    {
+        "text": "potentially new loss minimizing places",
+        "start": 2149.839,
+        "duration": 5.561
+    },
+    {
+        "text": "uh and so it was also more sensitive to",
+        "start": 2153.24,
+        "duration": 5.16
+    },
+    {
+        "text": "initialization",
+        "start": 2155.4,
+        "duration": 3.0
+    },
+    {
+        "text": "so wow we have time I'm kind of",
+        "start": 2158.599,
+        "duration": 5.561
+    },
+    {
+        "text": "surprised but so this is I can talk",
+        "start": 2161.72,
+        "duration": 4.04
+    },
+    {
+        "text": "briefly a little bit about my research I",
+        "start": 2164.16,
+        "duration": 4.0
+    },
+    {
+        "text": "only have two slides on this so I have",
+        "start": 2165.76,
+        "duration": 4.72
+    },
+    {
+        "text": "two projects that I'm working on so the",
+        "start": 2168.16,
+        "duration": 4.88
+    },
+    {
+        "text": "first project is asking the question of",
+        "start": 2170.48,
+        "duration": 4.76
+    },
+    {
+        "text": "how do we represent data well and so",
+        "start": 2173.04,
+        "duration": 4.079
+    },
+    {
+        "text": "there were these theoretical results",
+        "start": 2175.24,
+        "duration": 3.4
+    },
+    {
+        "text": "that showed that if you have a",
+        "start": 2177.119,
+        "duration": 3.281
+    },
+    {
+        "text": "particular optimization criteria so a",
+        "start": 2178.64,
+        "duration": 4.4
+    },
+    {
+        "text": "new loss then the features that you're",
+        "start": 2180.4,
+        "duration": 4.64
+    },
+    {
+        "text": "going to learn are going to be most",
+        "start": 2183.04,
+        "duration": 3.92
+    },
+    {
+        "text": "optimally with the lowest number of",
+        "start": 2185.04,
+        "duration": 3.76
+    },
+    {
+        "text": "parameters bble to represent your data",
+        "start": 2186.96,
+        "duration": 3.8
+    },
+    {
+        "text": "so if you truncate the features you're",
+        "start": 2188.8,
+        "duration": 3.319
+    },
+    {
+        "text": "going to get the best representation you",
+        "start": 2190.76,
+        "duration": 3.559
+    },
+    {
+        "text": "can get of the data for a particular",
+        "start": 2192.119,
+        "duration": 5.361
+    },
+    {
+        "text": "feature size and so our goal is to adapt",
+        "start": 2194.319,
+        "duration": 7.401
+    },
+    {
+        "text": "this model Training Method to reality",
+        "start": 2197.48,
+        "duration": 5.839
+    },
+    {
+        "text": "and in reality of course there's a",
+        "start": 2201.72,
+        "duration": 3.8
+    },
+    {
+        "text": "challenge of how do we actually achieve",
+        "start": 2203.319,
+        "duration": 4.52
+    },
+    {
+        "text": "and follow this optimization Criterion",
+        "start": 2205.52,
+        "duration": 4.68
+    },
+    {
+        "text": "effectively and reach its true",
+        "start": 2207.839,
+        "duration": 4.52
+    },
+    {
+        "text": "minimum and my second project is",
+        "start": 2210.2,
+        "duration": 4.24
+    },
+    {
+        "text": "medically related and in this case we're",
+        "start": 2212.359,
+        "duration": 4.401
+    },
+    {
+        "text": "trying to understand the patterns of age",
+        "start": 2214.44,
+        "duration": 4.56
+    },
+    {
+        "text": "related Mac generation so right now",
+        "start": 2216.76,
+        "duration": 6.079
+    },
+    {
+        "text": "people know about the disease General",
+        "start": 2219.0,
+        "duration": 5.56
+    },
+    {
+        "text": "associations between for example if you",
+        "start": 2222.839,
+        "duration": 4.24
+    },
+    {
+        "text": "have some lesion starting in one area",
+        "start": 2224.56,
+        "duration": 4.48
+    },
+    {
+        "text": "maybe they'll progress to a different",
+        "start": 2227.079,
+        "duration": 3.721
+    },
+    {
+        "text": "area next and you kind of we have this",
+        "start": 2229.04,
+        "duration": 3.12
+    },
+    {
+        "text": "vague understanding of the disease",
+        "start": 2230.8,
+        "duration": 3.039
+    },
+    {
+        "text": "process but we don't know when the",
+        "start": 2232.16,
+        "duration": 3.52
+    },
+    {
+        "text": "disease will progress to a new area and",
+        "start": 2233.839,
+        "duration": 3.881
+    },
+    {
+        "text": "we also don't really know for most of",
+        "start": 2235.68,
+        "duration": 3.72
+    },
+    {
+        "text": "the disease features how they will",
+        "start": 2237.72,
+        "duration": 3.24
+    },
+    {
+        "text": "evolve over time and if there's any",
+        "start": 2239.4,
+        "duration": 3.88
+    },
+    {
+        "text": "particular populations or patient groups",
+        "start": 2240.96,
+        "duration": 4.72
+    },
+    {
+        "text": "that evolve differently so our goal is",
+        "start": 2243.28,
+        "duration": 4.44
+    },
+    {
+        "text": "to uncover that but that's a very Broad",
+        "start": 2245.68,
+        "duration": 4.72
+    },
+    {
+        "text": "goal so our sub aim is we're Beginning",
+        "start": 2247.72,
+        "duration": 5.0
+    },
+    {
+        "text": "by segmenting the pseudodrusen which are",
+        "start": 2250.4,
+        "duration": 4.439
+    },
+    {
+        "text": "a finding that exists in the eye and you",
+        "start": 2252.72,
+        "duration": 4.359
+    },
+    {
+        "text": "can see all of these little spikes here",
+        "start": 2254.839,
+        "duration": 4.361
+    },
+    {
+        "text": "above this membrane here the or the",
+        "start": 2257.079,
+        "duration": 4.561
+    },
+    {
+        "text": "retinal pigment epithelium and so we're",
+        "start": 2259.2,
+        "duration": 4.879
+    },
+    {
+        "text": "trying to get a density mapping of all",
+        "start": 2261.64,
+        "duration": 3.76
+    },
+    {
+        "text": "of these points and you can see them",
+        "start": 2264.079,
+        "duration": 4.481
+    },
+    {
+        "text": "here on the on Fast scan as well and so",
+        "start": 2265.4,
+        "duration": 5.04
+    },
+    {
+        "text": "if we get this D density map of these",
+        "start": 2268.56,
+        "duration": 4.12
+    },
+    {
+        "text": "points then we're trying to so we have",
+        "start": 2270.44,
+        "duration": 4.32
+    },
+    {
+        "text": "already s close enough to density map at",
+        "start": 2272.68,
+        "duration": 3.679
+    },
+    {
+        "text": "this point but now we're looking at",
+        "start": 2274.76,
+        "duration": 3.16
+    },
+    {
+        "text": "patients and trying to see if there's",
+        "start": 2276.359,
+        "duration": 3.401
+    },
+    {
+        "text": "clusters and different populations of",
+        "start": 2277.92,
+        "duration": 4.199
+    },
+    {
+        "text": "patients that behave in different",
+        "start": 2279.76,
+        "duration": 5.76
+    },
+    {
+        "text": "ways and evolve in different ways and so",
+        "start": 2282.119,
+        "duration": 5.401
+    },
+    {
+        "text": "one of the benefits to our of our",
+        "start": 2285.52,
+        "duration": 3.36
+    },
+    {
+        "text": "approach compared to previous approach",
+        "start": 2287.52,
+        "duration": 4.0
+    },
+    {
+        "text": "is that we are combining the images from",
+        "start": 2288.88,
+        "duration": 4.959
+    },
+    {
+        "text": "cross-sectional and on fast Imaging we",
+        "start": 2291.52,
+        "duration": 5.24
+    },
+    {
+        "text": "also have some better LW functions and",
+        "start": 2293.839,
+        "duration": 4.721
+    },
+    {
+        "text": "model architectures that we're",
+        "start": 2296.76,
+        "duration": 5.28
+    },
+    {
+        "text": "attempting and that's all I have so",
+        "start": 2298.56,
+        "duration": 7.0
+    },
+    {
+        "text": "please ask questions",
+        "start": 2302.04,
+        "duration": 3.52
+    },
+    {
+        "text": "question thank you for your great talk",
+        "start": 2319.079,
+        "duration": 5.161
+    },
+    {
+        "text": "and you introduce two types of self",
+        "start": 2321.44,
+        "duration": 5.96
+    },
+    {
+        "text": "provided learning approaches first one",
+        "start": 2324.24,
+        "duration": 6.24
+    },
+    {
+        "text": "is masking and the other one is um",
+        "start": 2327.4,
+        "duration": 5.84
+    },
+    {
+        "text": "Contra learning so when it comes to",
+        "start": 2330.48,
+        "duration": 5.68
+    },
+    {
+        "text": "Bringing about outputs in speciic",
+        "start": 2333.24,
+        "duration": 6.44
+    },
+    {
+        "text": "research do you have any um suggestion",
+        "start": 2336.16,
+        "duration": 6.159
+    },
+    {
+        "text": "of what to tr",
+        "start": 2339.68,
+        "duration": 4.72
+    },
+    {
+        "text": "for yeah that's that's a good question I",
+        "start": 2342.319,
+        "duration": 3.321
+    },
+    {
+        "text": "think it depends on what you're trying",
+        "start": 2344.4,
+        "duration": 5.439
+    },
+    {
+        "text": "to achieve so um if you're trying to",
+        "start": 2345.64,
+        "duration": 6.04
+    },
+    {
+        "text": "achieve",
+        "start": 2349.839,
+        "duration": 5.0
+    },
+    {
+        "text": "good so let's say your data is not",
+        "start": 2351.68,
+        "duration": 5.52
+    },
+    {
+        "text": "repetitive and you want to have the",
+        "start": 2354.839,
+        "duration": 6.28
+    },
+    {
+        "text": "model really learn to understand like",
+        "start": 2357.2,
+        "duration": 5.96
+    },
+    {
+        "text": "objects as they are so for example if it",
+        "start": 2361.119,
+        "duration": 4.121
+    },
+    {
+        "text": "sees a part of a cat it should infer",
+        "start": 2363.16,
+        "duration": 3.32
+    },
+    {
+        "text": "that this is the rest of the cat and you",
+        "start": 2365.24,
+        "duration": 2.839
+    },
+    {
+        "text": "really care about getting Global",
+        "start": 2366.48,
+        "duration": 3.0
+    },
+    {
+        "text": "understanding in that case I would",
+        "start": 2368.079,
+        "duration": 3.321
+    },
+    {
+        "text": "recommend approach one so I would",
+        "start": 2369.48,
+        "duration": 4.08
+    },
+    {
+        "text": "recommend approach ma because your what",
+        "start": 2371.4,
+        "duration": 3.52
+    },
+    {
+        "text": "the model has learned to do is has",
+        "start": 2373.56,
+        "duration": 3.12
+    },
+    {
+        "text": "learned to look at a small piece and",
+        "start": 2374.92,
+        "duration": 4.56
+    },
+    {
+        "text": "infer what the whole is if you have data",
+        "start": 2376.68,
+        "duration": 5.24
+    },
+    {
+        "text": "that's repetitive and maybe like even",
+        "start": 2379.48,
+        "duration": 4.599
+    },
+    {
+        "text": "like my project here in the this project",
+        "start": 2381.92,
+        "duration": 4.56
+    },
+    {
+        "text": "here this one uses contrasted learning",
+        "start": 2384.079,
+        "duration": 4.801
+    },
+    {
+        "text": "because the goal is less to be able to",
+        "start": 2386.48,
+        "duration": 5.32
+    },
+    {
+        "text": "predict what a new position is because I",
+        "start": 2388.88,
+        "duration": 4.64
+    },
+    {
+        "text": "don't like I don't want to have any bias",
+        "start": 2391.8,
+        "duration": 3.88
+    },
+    {
+        "text": "about where a new Legion will happen",
+        "start": 2393.52,
+        "duration": 4.16
+    },
+    {
+        "text": "depending on if a legion is here want to",
+        "start": 2395.68,
+        "duration": 3.399
+    },
+    {
+        "text": "be biased that alion will happen over",
+        "start": 2397.68,
+        "duration": 3.28
+    },
+    {
+        "text": "here necessarily but I do want the model",
+        "start": 2399.079,
+        "duration": 3.921
+    },
+    {
+        "text": "to distinguish between different images",
+        "start": 2400.96,
+        "duration": 4.879
+    },
+    {
+        "text": "and say oh well this image is not like",
+        "start": 2403.0,
+        "duration": 4.319
+    },
+    {
+        "text": "its neighbor which has lesions in a",
+        "start": 2405.839,
+        "duration": 3.24
+    },
+    {
+        "text": "different pattern so I think it just",
+        "start": 2407.319,
+        "duration": 5.841
+    },
+    {
+        "text": "depends on what you're trying to",
+        "start": 2409.079,
+        "duration": 4.081
+    },
+    {
+        "text": "achieve thank you for talking and I I",
+        "start": 2415.359,
+        "duration": 5.881
+    },
+    {
+        "text": "think uh this is two approaches do you",
+        "start": 2418.44,
+        "duration": 5.399
+    },
+    {
+        "text": "have any idea to combine these two",
+        "start": 2421.24,
+        "duration": 7.04
+    },
+    {
+        "text": "approaches one is the m Mas uh masus",
+        "start": 2423.839,
+        "duration": 6.081
+    },
+    {
+        "text": "provis learning and the other one is a",
+        "start": 2428.28,
+        "duration": 3.48
+    },
+    {
+        "text": "constructive learning so do you have the",
+        "start": 2429.92,
+        "duration": 4.64
+    },
+    {
+        "text": "idea to combine these two",
+        "start": 2431.76,
+        "duration": 5.52
+    },
+    {
+        "text": "strategy I mean I'm sure you could I",
+        "start": 2434.56,
+        "duration": 5.6
+    },
+    {
+        "text": "will say I haven't I haven't seen any",
+        "start": 2437.28,
+        "duration": 6.4
+    },
+    {
+        "text": "papers that granted I'm not this is not",
+        "start": 2440.16,
+        "duration": 5.52
+    },
+    {
+        "text": "necessarily my area this more like I",
+        "start": 2443.68,
+        "duration": 4.36
+    },
+    {
+        "text": "research I haven't seen any Cutting Edge",
+        "start": 2445.68,
+        "duration": 6.76
+    },
+    {
+        "text": "research that combine them but it's so",
+        "start": 2448.04,
+        "duration": 6.0
+    },
+    {
+        "text": "it is a little bit hard because it's",
+        "start": 2452.44,
+        "duration": 3.44
+    },
+    {
+        "text": "it's a challenging both of them are",
+        "start": 2454.04,
+        "duration": 4.2
+    },
+    {
+        "text": "pretty challenging tasks so and they're",
+        "start": 2455.88,
+        "duration": 3.76
+    },
+    {
+        "text": "doing different things",
+        "start": 2458.24,
+        "duration": 5.8
+    },
+    {
+        "text": "so you could ask the representations",
+        "start": 2459.64,
+        "duration": 7.439
+    },
+    {
+        "text": "from this image to also be different",
+        "start": 2464.04,
+        "duration": 5.039
+    },
+    {
+        "text": "from the representations of another",
+        "start": 2467.079,
+        "duration": 3.801
+    },
+    {
+        "text": "image that's going through me like",
+        "start": 2469.079,
+        "duration": 3.201
+    },
+    {
+        "text": "nobody's stopping you from adding a",
+        "start": 2470.88,
+        "duration": 4.52
+    },
+    {
+        "text": "contrastive loss at any point in this",
+        "start": 2472.28,
+        "duration": 5.4
+    },
+    {
+        "text": "process um and in fact people have done",
+        "start": 2475.4,
+        "duration": 4.52
+    },
+    {
+        "text": "like contrastive loss not before before",
+        "start": 2477.68,
+        "duration": 4.28
+    },
+    {
+        "text": "Sim clear people did contrast of loss on",
+        "start": 2479.92,
+        "duration": 3.6
+    },
+    {
+        "text": "patches of images and so they try to",
+        "start": 2481.96,
+        "duration": 3.8
+    },
+    {
+        "text": "contrast and say this patch of the image",
+        "start": 2483.52,
+        "duration": 4.68
+    },
+    {
+        "text": "is closer to this other patch of image",
+        "start": 2485.76,
+        "duration": 5.0
+    },
+    {
+        "text": "than it is to any patch in another image",
+        "start": 2488.2,
+        "duration": 4.6
+    },
+    {
+        "text": "and so that's been done but it was less",
+        "start": 2490.76,
+        "duration": 4.48
+    },
+    {
+        "text": "successful than I think either of these",
+        "start": 2492.8,
+        "duration": 5.92
+    },
+    {
+        "text": "approaches but theoretically perhaps and",
+        "start": 2495.24,
+        "duration": 4.92
+    },
+    {
+        "text": "maybe depending on your application",
+        "start": 2498.72,
+        "duration": 4.24
+    },
+    {
+        "text": "because even like TR like it really like",
+        "start": 2500.16,
+        "duration": 4.28
+    },
+    {
+        "text": "for example Alpha fold and things like",
+        "start": 2502.96,
+        "duration": 3.399
+    },
+    {
+        "text": "that like they develop new Transformer",
+        "start": 2504.44,
+        "duration": 4.0
+    },
+    {
+        "text": "architectures and new approaches because",
+        "start": 2506.359,
+        "duration": 3.801
+    },
+    {
+        "text": "they were dealing with a particular data",
+        "start": 2508.44,
+        "duration": 4.56
+    },
+    {
+        "text": "format and so it may be reasonable in",
+        "start": 2510.16,
+        "duration": 4.36
+    },
+    {
+        "text": "some data format that you would want to",
+        "start": 2513.0,
+        "duration": 2.56
+    },
+    {
+        "text": "do this",
+        "start": 2514.52,
+        "duration": 4.72
+    },
+    {
+        "text": "but yeah",
+        "start": 2515.56,
+        "duration": 3.68
+    },
+    {
+        "text": "other",
+        "start": 2527.68,
+        "duration": 2.32
+    },
+    {
+        "text": "questions another minute anyone has a",
+        "start": 2531.119,
+        "duration": 4.921
+    },
+    {
+        "text": "question online you can type it into the",
+        "start": 2534.16,
+        "duration": 5.52
+    },
+    {
+        "text": "Q&A box",
+        "start": 2536.04,
+        "duration": 3.64
+    },
+    {
+        "text": "hearing or seeing anything",
+        "start": 2547.599,
+        "duration": 4.201
+    }
+]

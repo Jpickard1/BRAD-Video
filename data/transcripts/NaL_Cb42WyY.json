@@ -1,0 +1,2117 @@
+[
+    {
+        "text": "This is a video I've been excited to make for a while now.",
+        "start": 4.059,
+        "duration": 3.021
+    },
+    {
+        "text": "The story here braids together prime numbers, complex numbers, ",
+        "start": 7.42,
+        "duration": 3.981
+    },
+    {
+        "text": "and pi in a very pleasing trio.",
+        "start": 11.401,
+        "duration": 1.959
+    },
+    {
+        "text": "Quite often in modern math, especially that which flirts with the Riemann zeta function, ",
+        "start": 14.1,
+        "duration": 4.492
+    },
+    {
+        "text": "these three seemingly unrelated objects show up in unison, ",
+        "start": 18.592,
+        "duration": 2.979
+    },
+    {
+        "text": "and I want to give you a little peek at one instance where this happens, ",
+        "start": 21.571,
+        "duration": 3.685
+    },
+    {
+        "text": "one of the few that doesn't require too heavy a technical background.",
+        "start": 25.256,
+        "duration": 3.484
+    },
+    {
+        "text": "That's not to say this is easy, in fact this is probably one of the ",
+        "start": 29.26,
+        "duration": 3.725
+    },
+    {
+        "text": "most intricate videos I've ever done, but the culmination is worth it.",
+        "start": 32.985,
+        "duration": 3.835
+    },
+    {
+        "text": "What we'll end up with is a formula for pi, a certain alternating infinite sum.",
+        "start": 36.98,
+        "duration": 4.74
+    },
+    {
+        "text": "This formula is actually written on the mug I'm drinking coffee from right now as ",
+        "start": 42.52,
+        "duration": 4.495
+    },
+    {
+        "text": "I write this, and a fun but almost certainly apocryphal story is that the beauty of ",
+        "start": 47.015,
+        "duration": 4.605
+    },
+    {
+        "text": "this formula is what inspired Leibniz to quit being a lawyer and instead pursue math.",
+        "start": 51.62,
+        "duration": 4.66
+    },
+    {
+        "text": "Whenever you see pi show up in math, there's always going ",
+        "start": 57.16,
+        "duration": 3.469
+    },
+    {
+        "text": "to be a circle hiding somewhere, sometimes very sneakily.",
+        "start": 60.629,
+        "duration": 3.411
+    },
+    {
+        "text": "So the goal here is not just to discover this sum, ",
+        "start": 64.459,
+        "duration": 2.943
+    },
+    {
+        "text": "but to really understand the circle hiding behind it.",
+        "start": 67.402,
+        "duration": 3.058
+    },
+    {
+        "text": "You see, there is another way you can prove the same result that you and I are going ",
+        "start": 71.32,
+        "duration": 3.812
+    },
+    {
+        "text": "to spend some meaningful time building up to, but with just a few lines of calculus.",
+        "start": 75.132,
+        "duration": 3.768
+    },
+    {
+        "text": "And this is one of those proofs that leaves you thinking, okay, I suppose that's true, ",
+        "start": 79.82,
+        "duration": 5.231
+    },
+    {
+        "text": "but not really getting a sense for why, or where the hidden circle is.",
+        "start": 85.051,
+        "duration": 4.209
+    },
+    {
+        "text": "On the path you and I will take, though, what you'll see is that the fundamental ",
+        "start": 89.8,
+        "duration": 4.505
+    },
+    {
+        "text": "truth behind this sum and the circle it hides is a certain regularity in the ",
+        "start": 94.305,
+        "duration": 4.283
+    },
+    {
+        "text": "way that prime numbers behave when you put them inside the complex numbers.",
+        "start": 98.588,
+        "duration": 4.172
+    },
+    {
+        "text": "To start the story, imagine yourself with nothing more than a pencil, ",
+        "start": 103.72,
+        "duration": 3.683
+    },
+    {
+        "text": "some paper, and a desire to find a formula for computing pi.",
+        "start": 107.403,
+        "duration": 3.157
+    },
+    {
+        "text": "There are countless ways you could approach this, ",
+        "start": 111.6,
+        "duration": 2.668
+    },
+    {
+        "text": "but as a broad outline for the plotline, you'll start by asking how many lattice points ",
+        "start": 114.268,
+        "duration": 4.697
+    },
+    {
+        "text": "of the plane sit inside a big circle.",
+        "start": 118.965,
+        "duration": 1.975
+    },
+    {
+        "text": "That will lead to asking about how to express numbers as the sum of two squares, ",
+        "start": 121.82,
+        "duration": 5.089
+    },
+    {
+        "text": "which in turn will lead us to factoring integers inside the complex plane.",
+        "start": 126.909,
+        "duration": 4.651
+    },
+    {
+        "text": "From there we'll bring in a special function called chi, ",
+        "start": 132.24,
+        "duration": 3.416
+    },
+    {
+        "text": "which will give us a formula for pi that at first seems to involve a crazy ",
+        "start": 135.656,
+        "duration": 4.494
+    },
+    {
+        "text": "complicated pattern dependent on the distribution of primes, ",
+        "start": 140.15,
+        "duration": 3.656
+    },
+    {
+        "text": "but a slight shift in perspective will simplify it dramatically and expose ",
+        "start": 143.806,
+        "duration": 4.495
+    },
+    {
+        "text": "the ultimate gold nugget.",
+        "start": 148.301,
+        "duration": 1.499
+    },
+    {
+        "text": "It's a lot, but good math takes time, and we'll take it step by step.",
+        "start": 150.28,
+        "duration": 4.14
+    },
+    {
+        "text": "When I say lattice point, what I mean is a point AB on the plane ",
+        "start": 155.42,
+        "duration": 4.165
+    },
+    {
+        "text": "where A and B are both integers, a spot where the grid lines cross.",
+        "start": 159.585,
+        "duration": 4.295
+    },
+    {
+        "text": "If you draw a circle centered at the origin, let's say with radius 10, ",
+        "start": 163.88,
+        "duration": 4.408
+    },
+    {
+        "text": "how many lattice points would you guess are inside that circle?",
+        "start": 168.288,
+        "duration": 3.912
+    },
+    {
+        "text": "Well, there's one lattice point for each unit of area, ",
+        "start": 173.52,
+        "duration": 3.39
+    },
+    {
+        "text": "so the answer should be approximately equal to the area of the circle, ",
+        "start": 176.91,
+        "duration": 4.377
+    },
+    {
+        "text": "pi r squared, which in this case is pi times 10 squared.",
+        "start": 181.287,
+        "duration": 3.453
+    },
+    {
+        "text": "And if it was a really big circle, like radius 1 million, ",
+        "start": 185.54,
+        "duration": 3.006
+    },
+    {
+        "text": "you would expect this to be a much more accurate estimate, ",
+        "start": 188.546,
+        "duration": 3.058
+    },
+    {
+        "text": "in the sense that the percent error between the estimate pi r squared and the ",
+        "start": 191.604,
+        "duration": 4.044
+    },
+    {
+        "text": "actual count of lattice points should get smaller.",
+        "start": 195.648,
+        "duration": 2.592
+    },
+    {
+        "text": "What we're going to try to do is find a second way to answer this same question, ",
+        "start": 199.2,
+        "duration": 4.347
+    },
+    {
+        "text": "how many lattice points are inside the circle, ",
+        "start": 203.547,
+        "duration": 2.523
+    },
+    {
+        "text": "because that can lead to another way to express the area of a circle, ",
+        "start": 206.07,
+        "duration": 3.757
+    },
+    {
+        "text": "and hence another way to express pi.",
+        "start": 209.827,
+        "duration": 1.933
+    },
+    {
+        "text": "And so you play, and you wonder, and maybe, especially if you ",
+        "start": 213.16,
+        "duration": 3.532
+    },
+    {
+        "text": "just watched a certain calculus video, you might try looking ",
+        "start": 216.692,
+        "duration": 3.475
+    },
+    {
+        "text": "through every possible ring that a lattice point could sit on.",
+        "start": 220.167,
+        "duration": 3.533
+    },
+    {
+        "text": "If you think about it, for each one of these lattice points AB, ",
+        "start": 224.82,
+        "duration": 3.273
+    },
+    {
+        "text": "its distance from the origin is the square root of a squared plus b squared.",
+        "start": 228.093,
+        "duration": 3.887
+    },
+    {
+        "text": "And since a and b are both integers, a squared plus b squared is also some integer, ",
+        "start": 232.7,
+        "duration": 5.127
+    },
+    {
+        "text": "so you only have to consider rings whose radii are the square roots of some whole number.",
+        "start": 237.827,
+        "duration": 5.433
+    },
+    {
+        "text": "A radius of 0 just gives you that single origin point.",
+        "start": 244.16,
+        "duration": 3.2
+    },
+    {
+        "text": "If you look at the radius 1, that hits 4 different lattice points.",
+        "start": 248.22,
+        "duration": 3.42
+    },
+    {
+        "text": "Radius square root of 2, well that also hits 4 lattice points. ",
+        "start": 252.44,
+        "duration": 1.368
+    },
+    {
+        "text": "Radius square root of 3 doesn't actually hit anything. ",
+        "start": 253.808,
+        "duration": 1.194
+    },
+    {
+        "text": "Square root of 4 again hits 4 lattice points.",
+        "start": 255.002,
+        "duration": 0.978
+    },
+    {
+        "text": "A radius square root of 3 doesn't actually hit anything.",
+        "start": 256.92,
+        "duration": 2.26
+    },
+    {
+        "text": "Square root of 4 again hits 4 lattice points.",
+        "start": 259.899,
+        "duration": 2.281
+    },
+    {
+        "text": "A radius square root of 5 actually hits 8 lattice points.",
+        "start": 262.84,
+        "duration": 3.3
+    },
+    {
+        "text": "And what we want is a systematic way to count how many lattice points are on a ",
+        "start": 267.26,
+        "duration": 4.759
+    },
+    {
+        "text": "given one of these rings, a given distance from the origin, and tally them all up.",
+        "start": 272.019,
+        "duration": 4.941
+    },
+    {
+        "text": "And if you pause and try this for a moment, what you'll find is that ",
+        "start": 277.72,
+        "duration": 3.618
+    },
+    {
+        "text": "the pattern seems really chaotic, just very hard to find order under here.",
+        "start": 281.338,
+        "duration": 3.882
+    },
+    {
+        "text": "And that's a good sign that some very interesting math is about to come into play.",
+        "start": 285.68,
+        "duration": 3.58
+    },
+    {
+        "text": "In fact, as you'll see, this pattern is rooted in the distribution of primes.",
+        "start": 290.14,
+        "duration": 4.84
+    },
+    {
+        "text": "As an example, let's look at the ring with radius square root of 25.",
+        "start": 296.46,
+        "duration": 3.42
+    },
+    {
+        "text": "It hits the point 5,0, since 5 squared plus 0 squared is 25.",
+        "start": 300.7,
+        "duration": 4.48
+    },
+    {
+        "text": "It also hits 4,3, since 4 squared plus 3 squared gives 25.",
+        "start": 306.1,
+        "duration": 4.64
+    },
+    {
+        "text": "And likewise it hits 3,4, and also 0,5.",
+        "start": 312.78,
+        "duration": 4.8
+    },
+    {
+        "text": "And what's really happening here is that you're counting how many pairs of integers, ",
+        "start": 318.66,
+        "duration": 5.065
+    },
+    {
+        "text": "a,b, have the property that a squared plus b squared equals 25.",
+        "start": 323.725,
+        "duration": 3.755
+    },
+    {
+        "text": "And looking at this circle, it looks like there's a total of 12 of them.",
+        "start": 328.12,
+        "duration": 3.88
+    },
+    {
+        "text": "As another example, take a look at the ring with radius square root of 11.",
+        "start": 332.7,
+        "duration": 3.28
+    },
+    {
+        "text": "It doesn't hit any lattice points.",
+        "start": 336.6,
+        "duration": 1.6
+    },
+    {
+        "text": "And that corresponds to the fact that you cannot ",
+        "start": 338.7,
+        "duration": 3.054
+    },
+    {
+        "text": "find two integers whose squares add up to 11.",
+        "start": 341.754,
+        "duration": 2.806
+    },
+    {
+        "text": "Try it.",
+        "start": 345.14,
+        "duration": 0.68
+    },
+    {
+        "text": "Now, many times in math, when you see a question that has to do with the 2D plane, ",
+        "start": 348.24,
+        "duration": 4.408
+    },
+    {
+        "text": "it can be surprisingly fruitful to just ask what it looks like when ",
+        "start": 352.648,
+        "duration": 3.611
+    },
+    {
+        "text": "you think of this plane as the set of all complex numbers.",
+        "start": 356.259,
+        "duration": 3.081
+    },
+    {
+        "text": "So instead of thinking of this lattice point here as the pair of integer coordinates, ",
+        "start": 360.4,
+        "duration": 5.114
+    },
+    {
+        "text": "3,4, instead think of it as the single complex number, 3 plus 4i.",
+        "start": 365.514,
+        "duration": 3.866
+    },
+    {
+        "text": "That way, another way to think about the sum of the squares of its coordinates, ",
+        "start": 370.62,
+        "duration": 5.104
+    },
+    {
+        "text": "3 squared plus 4 squared, is to multiply this number by 3 minus 4i.",
+        "start": 375.724,
+        "duration": 4.276
+    },
+    {
+        "text": "This is called its complex conjugate.",
+        "start": 380.76,
+        "duration": 1.72
+    },
+    {
+        "text": "It's what you get by reflecting over the real axis, replacing i with negative i.",
+        "start": 382.48,
+        "duration": 4.82
+    },
+    {
+        "text": "And this might seem like a strange step if you ",
+        "start": 388.34,
+        "duration": 2.025
+    },
+    {
+        "text": "don't have much of a history with complex numbers.",
+        "start": 390.365,
+        "duration": 2.155
+    },
+    {
+        "text": "But describing this distance as a product can be unexpectedly useful.",
+        "start": 393.22,
+        "duration": 3.84
+    },
+    {
+        "text": "It turns our question into a factoring problem, ",
+        "start": 397.78,
+        "duration": 2.254
+    },
+    {
+        "text": "which is ultimately why patterns among prime numbers are going to come into play.",
+        "start": 400.034,
+        "duration": 3.806
+    },
+    {
+        "text": "Algebraically, this relation is straightforward enough to verify.",
+        "start": 405.06,
+        "duration": 3.22
+    },
+    {
+        "text": "You get a 3 squared, and then the 3 times minus 4i cancels out with the 4i times 3.",
+        "start": 408.56,
+        "duration": 6.62
+    },
+    {
+        "text": "And then you have negative 4i squared, which, because i squared is negative 1, ",
+        "start": 415.92,
+        "duration": 5.359
+    },
+    {
+        "text": "becomes plus 4 squared.",
+        "start": 421.279,
+        "duration": 1.561
+    },
+    {
+        "text": "This is also quite nice to see geometrically.",
+        "start": 424.16,
+        "duration": 1.92
+    },
+    {
+        "text": "And if you're a little rusty with how complex multiplication works, ",
+        "start": 426.58,
+        "duration": 3.32
+    },
+    {
+        "text": "I do have another video that goes more into detail about why complex multiplication looks ",
+        "start": 429.9,
+        "duration": 4.394
+    },
+    {
+        "text": "the way that it does.",
+        "start": 434.294,
+        "duration": 1.026
+    },
+    {
+        "text": "The way you might think about a case like this is that the number ",
+        "start": 435.78,
+        "duration": 3.851
+    },
+    {
+        "text": "3 plus 4i has a magnitude of 5 and some angle off of the horizontal.",
+        "start": 439.631,
+        "duration": 3.969
+    },
+    {
+        "text": "And what it means to multiply it by 3 minus 4i is to rotate by that same angle in the ",
+        "start": 444.58,
+        "duration": 5.146
+    },
+    {
+        "text": "opposite direction, putting it on the positive real axis, ",
+        "start": 449.726,
+        "duration": 3.471
+    },
+    {
+        "text": "and then to stretch out by a factor of 5, which in this case lands you on the output 25, ",
+        "start": 453.197,
+        "duration": 5.327
+    },
+    {
+        "text": "the square of the magnitude.",
+        "start": 458.524,
+        "duration": 1.676
+    },
+    {
+        "text": "The collection of all of these lattice points, ",
+        "start": 463.1,
+        "duration": 3.025
+    },
+    {
+        "text": "a plus bi, where a and b are integers, has a special name.",
+        "start": 466.125,
+        "duration": 3.735
+    },
+    {
+        "text": "They're called the Gaussian integers, named after Martin Sheen.",
+        "start": 470.24,
+        "duration": 3.48
+    },
+    {
+        "text": "Geometrically, you'll still be asking the same question.",
+        "start": 474.5,
+        "duration": 2.32
+    },
+    {
+        "text": "How many of these lattice points, Gaussian integers, ",
+        "start": 477.42,
+        "duration": 2.921
+    },
+    {
+        "text": "are a given distance away from the origin, like square root of 25?",
+        "start": 480.341,
+        "duration": 3.639
+    },
+    {
+        "text": "But we'll be phrasing it in a slightly more algebraic way.",
+        "start": 484.88,
+        "duration": 2.88
+    },
+    {
+        "text": "How many Gaussian integers have the property that ",
+        "start": 487.76,
+        "duration": 3.45
+    },
+    {
+        "text": "multiplying by their complex conjugate gives you 25?",
+        "start": 491.21,
+        "duration": 3.59
+    },
+    {
+        "text": "This might seem needlessly complex, but it's the key to understanding the seemingly ",
+        "start": 496.54,
+        "duration": 4.513
+    },
+    {
+        "text": "random pattern for how many lattice points are a given distance away from the origin.",
+        "start": 501.053,
+        "duration": 4.567
+    },
+    {
+        "text": "To see why, we first need to understand how numbers factor inside the Gaussian integers.",
+        "start": 506.58,
+        "duration": 5.64
+    },
+    {
+        "text": "As a refresher, among ordinary integers, every number ",
+        "start": 513.22,
+        "duration": 3.564
+    },
+    {
+        "text": "can be factored as some unique collection of prime numbers.",
+        "start": 516.784,
+        "duration": 3.895
+    },
+    {
+        "text": "For example, 2250 can be factored as 2 times 3 squared times 5 cubed.",
+        "start": 521.559,
+        "duration": 6.761
+    },
+    {
+        "text": "And there is no other collection of prime numbers that also multiplies to make 2250.",
+        "start": 528.58,
+        "duration": 6.02
+    },
+    {
+        "text": "Unless you let negative numbers into the picture, ",
+        "start": 535.76,
+        "duration": 2.552
+    },
+    {
+        "text": "in which case you could just make some of the primes in this factorization negative.",
+        "start": 538.312,
+        "duration": 4.288
+    },
+    {
+        "text": "So really, within the integers, factorization is not perfectly unique.",
+        "start": 543.64,
+        "duration": 5.18
+    },
+    {
+        "text": "It's almost unique, with the exception that you can get a different ",
+        "start": 549.06,
+        "duration": 3.241
+    },
+    {
+        "text": "looking product by multiplying some of the factors by negative 1.",
+        "start": 552.301,
+        "duration": 3.099
+    },
+    {
+        "text": "The reason I bring that up is that factoring works ",
+        "start": 557.96,
+        "duration": 2.619
+    },
+    {
+        "text": "very similarly inside the Gaussian integers.",
+        "start": 560.579,
+        "duration": 2.261
+    },
+    {
+        "text": "Some numbers, like 5, can be factored into smaller Gaussian integers, ",
+        "start": 563.54,
+        "duration": 4.989
+    },
+    {
+        "text": "which in this case is 2 plus i times 2 minus i.",
+        "start": 568.529,
+        "duration": 3.351
+    },
+    {
+        "text": "This Gaussian integer here, 2 plus i, cannot be factored into anything smaller, ",
+        "start": 572.88,
+        "duration": 5.145
+    },
+    {
+        "text": "so we call it a Gaussian prime.",
+        "start": 578.025,
+        "duration": 1.995
+    },
+    {
+        "text": "Again, this factorization is almost unique, but this time not only ",
+        "start": 581.08,
+        "duration": 4.866
+    },
+    {
+        "text": "can you multiply each one of those factors by negative 1 to get a ",
+        "start": 585.946,
+        "duration": 4.793
+    },
+    {
+        "text": "factorization that looks different, you can also be extra sneaky and ",
+        "start": 590.739,
+        "duration": 5.011
+    },
+    {
+        "text": "multiply one of these factors by i and then the other one by negative i.",
+        "start": 595.75,
+        "duration": 5.23
+    },
+    {
+        "text": "This will give you a different way to factor 5 into two distinct Gaussian primes.",
+        "start": 602.18,
+        "duration": 5.26
+    },
+    {
+        "text": "But other than the things that you can get by multiplying some of these factors by ",
+        "start": 608.42,
+        "duration": 4.921
+    },
+    {
+        "text": "negative 1, or i, or negative i, factorization within the Gaussian integers is unique.",
+        "start": 613.341,
+        "duration": 5.099
+    },
+    {
+        "text": "And if you can figure out how ordinary prime numbers factor inside the Gaussian integers, ",
+        "start": 620.12,
+        "duration": 4.947
+    },
+    {
+        "text": "that'll be enough to tell us how any other natural number ",
+        "start": 625.067,
+        "duration": 3.189
+    },
+    {
+        "text": "factors inside these Gaussian integers.",
+        "start": 628.256,
+        "duration": 2.144
+    },
+    {
+        "text": "And so here, we pull in a crucial and pretty surprising fact.",
+        "start": 631.24,
+        "duration": 3.8
+    },
+    {
+        "text": "Prime numbers that are 1 above a multiple of 4, like 5, or 13, or 17, ",
+        "start": 635.96,
+        "duration": 5.561
+    },
+    {
+        "text": "these guys can always be factored into exactly two distinct Gaussian primes.",
+        "start": 641.521,
+        "duration": 6.039
+    },
+    {
+        "text": "This corresponds with the fact that rings with a radius equal to the ",
+        "start": 648.86,
+        "duration": 3.45
+    },
+    {
+        "text": "square root of one of these prime numbers always hit some lattice points.",
+        "start": 652.31,
+        "duration": 3.65
+    },
+    {
+        "text": "In fact, they always hit exactly 8 lattice points, as you'll see in just a moment.",
+        "start": 656.62,
+        "duration": 3.82
+    },
+    {
+        "text": "On the other hand, prime numbers that are 3 above a multiple of 4, like 3, ",
+        "start": 663.44,
+        "duration": 4.954
+    },
+    {
+        "text": "or 7, or 11, these guys cannot be factored further inside the Gaussian integers.",
+        "start": 668.394,
+        "duration": 5.286
+    },
+    {
+        "text": "Not only are they primes in the normal numbers, ",
+        "start": 674.6,
+        "duration": 2.58
+    },
+    {
+        "text": "but they're also Gaussian primes, unsplittable even when i is in the picture.",
+        "start": 677.18,
+        "duration": 4.14
+    },
+    {
+        "text": "And this corresponds with the fact that a ring whose radius is the ",
+        "start": 682.2,
+        "duration": 3.34
+    },
+    {
+        "text": "square root of one of those primes will never hit any lattice points.",
+        "start": 685.54,
+        "duration": 3.44
+    },
+    {
+        "text": "And this pattern right here is the regularity within ",
+        "start": 693.18,
+        "duration": 2.85
+    },
+    {
+        "text": "prime numbers that we're going to ultimately exploit.",
+        "start": 696.03,
+        "duration": 2.85
+    },
+    {
+        "text": "And in a later video, I might explain why on earth this is true, ",
+        "start": 699.66,
+        "duration": 3.613
+    },
+    {
+        "text": "why a prime number's remainder when divided by 4 has anything to do ",
+        "start": 703.273,
+        "duration": 3.781
+    },
+    {
+        "text": "with whether or not it factors inside the Gaussian integers, or, ",
+        "start": 707.054,
+        "duration": 3.613
+    },
+    {
+        "text": "said differently, whether or not it can be expressed as the sum of two squares.",
+        "start": 710.667,
+        "duration": 4.393
+    },
+    {
+        "text": "But here, and now, we'll just have to take it as a given.",
+        "start": 715.98,
+        "duration": 2.6
+    },
+    {
+        "text": "The prime number 2, by the way, is a little special, because it does factor, ",
+        "start": 719.68,
+        "duration": 4.862
+    },
+    {
+        "text": "you can write it as 1 plus i times 1 minus i, but these two Gaussian primes are a 90 ",
+        "start": 724.542,
+        "duration": 5.368
+    },
+    {
+        "text": "degree rotation away from each other, so you can multiply one of them by i to get ",
+        "start": 729.91,
+        "duration": 5.178
+    },
+    {
+        "text": "the other.",
+        "start": 735.088,
+        "duration": 0.632
+    },
+    {
+        "text": "And that fact is going to make us want to treat the prime number 2 a little bit ",
+        "start": 736.56,
+        "duration": 3.634
+    },
+    {
+        "text": "differently for where all of this stuff is going, ",
+        "start": 740.194,
+        "duration": 2.272
+    },
+    {
+        "text": "so just keep that in the back of your mind.",
+        "start": 742.466,
+        "duration": 1.954
+    },
+    {
+        "text": "Remember, our goal here is to count how many lattice points are a ",
+        "start": 746.86,
+        "duration": 3.616
+    },
+    {
+        "text": "given distance away from the origin, and doing this systematically ",
+        "start": 750.476,
+        "duration": 3.672
+    },
+    {
+        "text": "for all distances square root of n can lead us to a formula for pi.",
+        "start": 754.148,
+        "duration": 3.672
+    },
+    {
+        "text": "And counting the number of lattice points with a given magnitude, ",
+        "start": 758.92,
+        "duration": 3.994
+    },
+    {
+        "text": "like square root of 25, is the same as asking how many Gaussian integers ",
+        "start": 762.914,
+        "duration": 4.419
+    },
+    {
+        "text": "have the special property that multiplying them by their complex conjugate gives you 25.",
+        "start": 767.333,
+        "duration": 5.327
+    },
+    {
+        "text": "So here's the recipe for finding all Gaussian integers that have this property.",
+        "start": 774.0,
+        "duration": 4.0
+    },
+    {
+        "text": "Step 1, factor 25, which inside the ordinary integers looks like 5 squared, ",
+        "start": 778.0,
+        "duration": 6.03
+    },
+    {
+        "text": "but since 5 factors even further, as 2 plus i times 2 minus i, ",
+        "start": 784.03,
+        "duration": 4.999
+    },
+    {
+        "text": "25 breaks down as these four Gaussian primes.",
+        "start": 789.029,
+        "duration": 3.571
+    },
+    {
+        "text": "Step 2, organize these into two different columns, ",
+        "start": 793.5,
+        "duration": 2.914
+    },
+    {
+        "text": "with conjugate pairs sitting right next to each other.",
+        "start": 796.414,
+        "duration": 3.086
+    },
+    {
+        "text": "And once you do that, multiply what's in each column, ",
+        "start": 800.26,
+        "duration": 2.669
+    },
+    {
+        "text": "and you'll come out with two different Gaussian integers on the bottom.",
+        "start": 802.929,
+        "duration": 3.511
+    },
+    {
+        "text": "And because everything on the right is a conjugate with everything on the left, ",
+        "start": 806.44,
+        "duration": 5.113
+    },
+    {
+        "text": "what comes out is going to be a complex conjugate pair which multiplies to 25.",
+        "start": 811.553,
+        "duration": 4.987
+    },
+    {
+        "text": "Picking an arbitrary standard, let's say that the ",
+        "start": 817.98,
+        "duration": 2.388
+    },
+    {
+        "text": "product from that left column is the output of our recipe.",
+        "start": 820.368,
+        "duration": 2.772
+    },
+    {
+        "text": "Now notice, there are three choices for how you ",
+        "start": 824.68,
+        "duration": 2.735
+    },
+    {
+        "text": "can divvy up the primes that can affect this output.",
+        "start": 827.415,
+        "duration": 2.965
+    },
+    {
+        "text": "Pictured right here, both copies of 2 plus i are in the left column, ",
+        "start": 831.3,
+        "duration": 3.924
+    },
+    {
+        "text": "and that gives us the product 3 plus 4i.",
+        "start": 835.224,
+        "duration": 2.276
+    },
+    {
+        "text": "You could also have chosen to have only one copy of 2 plus i in this left column, ",
+        "start": 838.46,
+        "duration": 4.465
+    },
+    {
+        "text": "in which case the product would be 5.",
+        "start": 842.925,
+        "duration": 2.015
+    },
+    {
+        "text": "Or you could have both copies of 2 plus i in that right column, ",
+        "start": 845.72,
+        "duration": 3.702
+    },
+    {
+        "text": "in which case the output of our recipe would have been 3 minus 4i.",
+        "start": 849.422,
+        "duration": 3.818
+    },
+    {
+        "text": "And those three possible outputs are all different ",
+        "start": 855.92,
+        "duration": 3.003
+    },
+    {
+        "text": "lattice points on a circle with radius square root of 25.",
+        "start": 858.923,
+        "duration": 3.357
+    },
+    {
+        "text": "But why does this recipe not yet capture all 12 of the lattice points?",
+        "start": 864.34,
+        "duration": 4.78
+    },
+    {
+        "text": "Remember how I mentioned that a factorization into Gaussian primes can ",
+        "start": 870.18,
+        "duration": 3.832
+    },
+    {
+        "text": "look different if you multiply some of them by i or negative 1, negative i?",
+        "start": 874.012,
+        "duration": 4.048
+    },
+    {
+        "text": "In this case, you could write the factorization of 25 differently, ",
+        "start": 878.88,
+        "duration": 4.098
+    },
+    {
+        "text": "maybe splitting up one of those fives as negative 1 plus 2i times negative 1 minus 2i.",
+        "start": 882.978,
+        "duration": 5.262
+    },
+    {
+        "text": "And if you do that, running through the same recipe, it can affect the result.",
+        "start": 888.24,
+        "duration": 4.26
+    },
+    {
+        "text": "You'll get a different product out of that left column.",
+        "start": 892.76,
+        "duration": 2.22
+    },
+    {
+        "text": "But the only effect that this is going to have is to multiply that total output by i, ",
+        "start": 896.0,
+        "duration": 5.369
+    },
+    {
+        "text": "or negative 1, or negative i.",
+        "start": 901.369,
+        "duration": 1.811
+    },
+    {
+        "text": "So as a final step for our recipe, let's say that you have to make one of four choices.",
+        "start": 903.9,
+        "duration": 4.24
+    },
+    {
+        "text": "Take that product from the left column and choose to multiply it by 1, i, negative 1, ",
+        "start": 908.8,
+        "duration": 5.504
+    },
+    {
+        "text": "or negative i, corresponding to rotations that are some multiple of 90 degrees.",
+        "start": 914.304,
+        "duration": 5.056
+    },
+    {
+        "text": "That will account for all 12 different ways of constructing ",
+        "start": 921.54,
+        "duration": 3.531
+    },
+    {
+        "text": "a Gaussian integer whose product with its own conjugate is 25.",
+        "start": 925.071,
+        "duration": 3.649
+    },
+    {
+        "text": "This process is a little complicated, so I think the best way ",
+        "start": 930.52,
+        "duration": 2.72
+    },
+    {
+        "text": "to get a feel for it is to just try it out with more examples.",
+        "start": 933.24,
+        "duration": 2.72
+    },
+    {
+        "text": "Let's say instead we were looking at 125, which is 5 cubed.",
+        "start": 936.76,
+        "duration": 4.0
+    },
+    {
+        "text": "In that case, we would have four different choices for how ",
+        "start": 940.76,
+        "duration": 3.49
+    },
+    {
+        "text": "to divvy up the prime conjugate pairs into these two columns.",
+        "start": 944.25,
+        "duration": 3.61
+    },
+    {
+        "text": "You can either have zero copies of 2 plus i in the left column, ",
+        "start": 948.52,
+        "duration": 4.59
+    },
+    {
+        "text": "one copy in there, two copies in there, or all three of them in that left column.",
+        "start": 953.11,
+        "duration": 5.81
+    },
+    {
+        "text": "Those four choices multiplied by the final four choices of multiplying the product from ",
+        "start": 959.66,
+        "duration": 5.9
+    },
+    {
+        "text": "the left column by 1, or by i, or negative 1, or negative i, ",
+        "start": 965.56,
+        "duration": 4.091
+    },
+    {
+        "text": "would suggest that there are a total of 16 lattice points a distance square root of ",
+        "start": 969.651,
+        "duration": 5.632
+    },
+    {
+        "text": "125 away from the origin.",
+        "start": 975.283,
+        "duration": 1.677
+    },
+    {
+        "text": "And indeed, if you draw that circle out and count, ",
+        "start": 979.0,
+        "duration": 2.874
+    },
+    {
+        "text": "what you'll find is that it hits exactly 16 lattice points.",
+        "start": 981.874,
+        "duration": 3.326
+    },
+    {
+        "text": "But what if you introduce a factor like 3, which doesn't ",
+        "start": 986.68,
+        "duration": 3.361
+    },
+    {
+        "text": "break down as the product of two conjugate Gaussian primes?",
+        "start": 990.041,
+        "duration": 3.479
+    },
+    {
+        "text": "Well that really mucks up the whole system.",
+        "start": 994.42,
+        "duration": 2.02
+    },
+    {
+        "text": "When you're divvying up the primes between the two columns, ",
+        "start": 996.94,
+        "duration": 2.988
+    },
+    {
+        "text": "there's no way that you can split up this 3.",
+        "start": 999.928,
+        "duration": 2.192
+    },
+    {
+        "text": "No matter where you put it, it leaves the columns imbalanced.",
+        "start": 1002.52,
+        "duration": 3.1
+    },
+    {
+        "text": "And what that means is that when you take the product of all of the ",
+        "start": 1006.26,
+        "duration": 3.298
+    },
+    {
+        "text": "numbers in each column, you're not going to end up with a conjugate pair.",
+        "start": 1009.558,
+        "duration": 3.542
+    },
+    {
+        "text": "So for a number like this, 3 times 5 cubed, which is 375, ",
+        "start": 1013.66,
+        "duration": 4.092
+    },
+    {
+        "text": "there's actually no lattice point that you'll hit.",
+        "start": 1017.752,
+        "duration": 3.528
+    },
+    {
+        "text": "No Gaussian integer whose product with its own conjugate gives you 375.",
+        "start": 1021.88,
+        "duration": 4.8
+    },
+    {
+        "text": "However, if you introduce a second factor of 3, then you have an option.",
+        "start": 1028.119,
+        "duration": 4.301
+    },
+    {
+        "text": "You can throw one 3 in the left column, and the other 3 in the right column.",
+        "start": 1032.92,
+        "duration": 4.28
+    },
+    {
+        "text": "Since 3 is its own complex conjugate, this leaves things balanced, ",
+        "start": 1037.2,
+        "duration": 4.188
+    },
+    {
+        "text": "in the sense that the product of the left and right columns will indeed be a complex ",
+        "start": 1041.388,
+        "duration": 5.314
+    },
+    {
+        "text": "conjugate pair.",
+        "start": 1046.702,
+        "duration": 0.938
+    },
+    {
+        "text": "But it doesn't add any new options.",
+        "start": 1049.38,
+        "duration": 2.14
+    },
+    {
+        "text": "There's still going to be a total of 4 choices for how to divvy up those factors of 5, ",
+        "start": 1051.94,
+        "duration": 4.812
+    },
+    {
+        "text": "multiplied by the final 4 choices of multiplying by 1, i, negative 1, or negative i.",
+        "start": 1056.752,
+        "duration": 4.648
+    },
+    {
+        "text": "So just like the square root of 125 circle, this guy is ",
+        "start": 1062.0,
+        "duration": 3.894
+    },
+    {
+        "text": "also going to end up hitting exactly 16 lattice points.",
+        "start": 1065.894,
+        "duration": 3.826
+    },
+    {
+        "text": "Let's just sum up where we are.",
+        "start": 1071.24,
+        "duration": 1.38
+    },
+    {
+        "text": "When you're counting up how many lattice points lie on a circle ",
+        "start": 1073.02,
+        "duration": 3.362
+    },
+    {
+        "text": "with a radius square root of n, the first step is to factor n.",
+        "start": 1076.382,
+        "duration": 3.258
+    },
+    {
+        "text": "And for prime numbers like 5, or 13, or 17, which factor further into a ",
+        "start": 1081.0,
+        "duration": 4.435
+    },
+    {
+        "text": "complex conjugate pair of Gaussian primes, the number of choices they give ",
+        "start": 1085.435,
+        "duration": 4.621
+    },
+    {
+        "text": "you will always be one more than the exponent that shows up with that factor.",
+        "start": 1090.056,
+        "duration": 4.744
+    },
+    {
+        "text": "On the other hand, for prime factors like 3, or 7, or 11, ",
+        "start": 1097.2,
+        "duration": 3.262
+    },
+    {
+        "text": "which are already Gaussian primes and cannot be split, ",
+        "start": 1100.462,
+        "duration": 3.094
+    },
+    {
+        "text": "if they show up with an even power, you have one and only one choice ",
+        "start": 1103.556,
+        "duration": 3.881
+    },
+    {
+        "text": "with what to do with them.",
+        "start": 1107.437,
+        "duration": 1.463
+    },
+    {
+        "text": "But if it's an odd exponent, you're screwed, and you just have zero choices.",
+        "start": 1109.44,
+        "duration": 3.8
+    },
+    {
+        "text": "And always, no matter what, you have those final 4 choices at the end.",
+        "start": 1114.2,
+        "duration": 3.44
+    },
+    {
+        "text": "By the way, I do think that this process right ",
+        "start": 1119.86,
+        "duration": 2.42
+    },
+    {
+        "text": "here is the most complicated part of the video.",
+        "start": 1122.28,
+        "duration": 2.42
+    },
+    {
+        "text": "It took me a couple times to think through that, yes, ",
+        "start": 1125.38,
+        "duration": 2.616
+    },
+    {
+        "text": "this is a valid way to count lattice points, so don't be shy ",
+        "start": 1127.996,
+        "duration": 2.957
+    },
+    {
+        "text": "if you want to pause and scribble things down to get a feel for it.",
+        "start": 1130.953,
+        "duration": 3.247
+    },
+    {
+        "text": "The one last thing to mention about this recipe is how factors of 2 affect the count.",
+        "start": 1134.92,
+        "duration": 5.16
+    },
+    {
+        "text": "If your number is even, then that factor of 2 breaks down as 1 plus i times 1 minus i.",
+        "start": 1141.02,
+        "duration": 6.66
+    },
+    {
+        "text": "So you can divvy up that complex conjugate pair between the two columns.",
+        "start": 1147.68,
+        "duration": 4.14
+    },
+    {
+        "text": "And at first, it might look like this doubles your options, ",
+        "start": 1152.78,
+        "duration": 3.272
+    },
+    {
+        "text": "depending on how you choose to place those two Gaussian primes between the columns.",
+        "start": 1156.052,
+        "duration": 4.528
+    },
+    {
+        "text": "However, since multiplying one of these guys by i gives you the other one, ",
+        "start": 1161.46,
+        "duration": 4.696
+    },
+    {
+        "text": "when you swap them between the columns, the effect that that has on the ",
+        "start": 1166.156,
+        "duration": 4.509
+    },
+    {
+        "text": "output from the left column is to just multiply it by i, or by negative i.",
+        "start": 1170.665,
+        "duration": 4.635
+    },
+    {
+        "text": "So that's actually redundant with the final step, ",
+        "start": 1175.3,
+        "duration": 3.164
+    },
+    {
+        "text": "where we take the product of this left column and choose to multiply it by either 1, ",
+        "start": 1178.464,
+        "duration": 5.38
+    },
+    {
+        "text": "i, negative 1, or negative i.",
+        "start": 1183.844,
+        "duration": 1.836
+    },
+    {
+        "text": "What this means is that a factor of 2, or any power of 2, ",
+        "start": 1186.64,
+        "duration": 3.866
+    },
+    {
+        "text": "doesn't actually change the count at all.",
+        "start": 1190.506,
+        "duration": 2.734
+    },
+    {
+        "text": "It doesn't hurt, but it doesn't help.",
+        "start": 1193.72,
+        "duration": 1.9
+    },
+    {
+        "text": "For example, a circle with radius square root of 5 hits 8 lattice points.",
+        "start": 1196.42,
+        "duration": 4.44
+    },
+    {
+        "text": "And if you grow that radius to square root of 10, then you also hit 8 lattice points.",
+        "start": 1200.86,
+        "duration": 4.76
+    },
+    {
+        "text": "And square root of 20 also hits 8 lattice points, as does square root of 40.",
+        "start": 1206.22,
+        "duration": 3.94
+    },
+    {
+        "text": "Factors of 2 just don't make a difference.",
+        "start": 1211.02,
+        "duration": 2.06
+    },
+    {
+        "text": "Now what's about to happen is number theory at its best.",
+        "start": 1215.58,
+        "duration": 2.74
+    },
+    {
+        "text": "We have this complicated recipe telling us how many lattice points sit on a circle ",
+        "start": 1218.98,
+        "duration": 4.533
+    },
+    {
+        "text": "with radius square root of n, and it depends on the prime factorization of n.",
+        "start": 1223.513,
+        "duration": 4.207
+    },
+    {
+        "text": "To turn this into something simpler, something we can actually deal with, ",
+        "start": 1227.72,
+        "duration": 4.293
+    },
+    {
+        "text": "we're going to exploit the regularity of primes that those which are ",
+        "start": 1232.013,
+        "duration": 4.003
+    },
+    {
+        "text": "1 above a multiple of 4 split into distinct Gaussian prime factors, ",
+        "start": 1236.016,
+        "duration": 3.945
+    },
+    {
+        "text": "while those that are 3 above a multiple of 4 cannot be split.",
+        "start": 1239.961,
+        "duration": 3.539
+    },
+    {
+        "text": "To do this, let's introduce a simple function, ",
+        "start": 1244.3,
+        "duration": 2.23
+    },
+    {
+        "text": "one which I'll label with the Greek letter chi.",
+        "start": 1246.53,
+        "duration": 2.23
+    },
+    {
+        "text": "For inputs that are 1 above a multiple of 4, the output of chi is just 1.",
+        "start": 1249.68,
+        "duration": 5.14
+    },
+    {
+        "text": "If it takes in an input 3 above a multiple of 4, then the output of chi is negative 1.",
+        "start": 1255.38,
+        "duration": 5.52
+    },
+    {
+        "text": "And then on all even numbers, it gives 0.",
+        "start": 1261.88,
+        "duration": 3.36
+    },
+    {
+        "text": "So if you evaluate chi on the natural numbers, it gives this very nice cyclic pattern, ",
+        "start": 1269.68,
+        "duration": 6.147
+    },
+    {
+        "text": "1, 0, negative 1, 0, and then repeat indefinitely.",
+        "start": 1275.827,
+        "duration": 3.533
+    },
+    {
+        "text": "And this cyclic function chi has a very special property.",
+        "start": 1280.86,
+        "duration": 3.3
+    },
+    {
+        "text": "It's what's called a multiplicative function.",
+        "start": 1284.16,
+        "duration": 2.5
+    },
+    {
+        "text": "If you evaluate it on two different numbers and multiply the results, ",
+        "start": 1287.62,
+        "duration": 4.32
+    },
+    {
+        "text": "like chi of 3 times chi of 5, it's the same as if you evaluate ",
+        "start": 1291.94,
+        "duration": 3.889
+    },
+    {
+        "text": "chi on the product of those two numbers, in this case chi of 15.",
+        "start": 1295.829,
+        "duration": 3.951
+    },
+    {
+        "text": "Likewise, chi of 5 times chi of 5 is equal to chi of 25, ",
+        "start": 1300.88,
+        "duration": 3.833
+    },
+    {
+        "text": "and no matter what two natural numbers you put in there, this property will hold.",
+        "start": 1304.713,
+        "duration": 5.447
+    },
+    {
+        "text": "Go ahead, try it if you want.",
+        "start": 1310.7,
+        "duration": 1.18
+    },
+    {
+        "text": "So for our central question of counting lattice points in this way that ",
+        "start": 1312.82,
+        "duration": 4.017
+    },
+    {
+        "text": "involves factoring a number, what I'm going to do is write down the number ",
+        "start": 1316.837,
+        "duration": 4.185
+    },
+    {
+        "text": "of choices we have but using chi in what at first seems like a much more complicated way, ",
+        "start": 1321.022,
+        "duration": 5.022
+    },
+    {
+        "text": "but this has the benefit of treating all prime factors equally.",
+        "start": 1326.044,
+        "duration": 3.516
+    },
+    {
+        "text": "For each prime power, like 5 cubed, what you write down is chi ",
+        "start": 1330.66,
+        "duration": 4.369
+    },
+    {
+        "text": "of 1 plus chi of 5 plus chi of 5 squared plus chi of 5 cubed.",
+        "start": 1335.029,
+        "duration": 4.231
+    },
+    {
+        "text": "You add up the value of chi on all the powers of this ",
+        "start": 1339.26,
+        "duration": 3.326
+    },
+    {
+        "text": "prime up to the one that shows up inside the factorization.",
+        "start": 1342.586,
+        "duration": 3.634
+    },
+    {
+        "text": "In this case, since 5 is 1 above a multiple of 4, all of these are just 1, ",
+        "start": 1347.34,
+        "duration": 4.987
+    },
+    {
+        "text": "so this sum comes out to be 4, which reflects the fact that a factor of 5 cubed ",
+        "start": 1352.327,
+        "duration": 5.321
+    },
+    {
+        "text": "gives you 4 options for how to divvy up the two Gaussian prime factors between the ",
+        "start": 1357.648,
+        "duration": 5.519
+    },
+    {
+        "text": "columns.",
+        "start": 1363.167,
+        "duration": 0.533
+    },
+    {
+        "text": "For a factor like 3 to the 4th, what you write down looks totally similar, ",
+        "start": 1366.34,
+        "duration": 4.824
+    },
+    {
+        "text": "chi of 1 plus chi of 3 on and on up to chi of 3 to the 4th.",
+        "start": 1371.164,
+        "duration": 3.796
+    },
+    {
+        "text": "But in this case, since chi of 3 is negative 1, ",
+        "start": 1375.04,
+        "duration": 3.822
+    },
+    {
+        "text": "this sum oscillates, it goes 1 minus 1 plus 1 minus 1 plus 1.",
+        "start": 1378.862,
+        "duration": 4.858
+    },
+    {
+        "text": "And if it's an even power, like 4 in this case, ",
+        "start": 1384.42,
+        "duration": 2.98
+    },
+    {
+        "text": "the total sum comes out to be 1, which encapsulates the fact ",
+        "start": 1387.4,
+        "duration": 3.787
+    },
+    {
+        "text": "that there is only one choice for what to do with those unsplittable 3's.",
+        "start": 1391.187,
+        "duration": 4.533
+    },
+    {
+        "text": "But if it's an odd power, that sum comes out to 0, ",
+        "start": 1396.2,
+        "duration": 2.837
+    },
+    {
+        "text": "indicating that you're screwed, you can't place that unsplittable 3.",
+        "start": 1399.037,
+        "duration": 3.783
+    },
+    {
+        "text": "When you do this for a power of 2, what it looks like is 1 plus ",
+        "start": 1404.58,
+        "duration": 4.365
+    },
+    {
+        "text": "0 plus 0 plus 0 on and on, since chi is always 0 on even numbers.",
+        "start": 1408.945,
+        "duration": 4.435
+    },
+    {
+        "text": "And this reflects the fact that a factor of 2 doesn't help and it doesn't hurt, ",
+        "start": 1413.92,
+        "duration": 4.231
+    },
+    {
+        "text": "you always have just one option for what to do with it.",
+        "start": 1418.151,
+        "duration": 2.909
+    },
+    {
+        "text": "And as always, we keep a 4 in front to indicate that final choice of multiplying by 1, ",
+        "start": 1421.94,
+        "duration": 4.47
+    },
+    {
+        "text": "i, negative 1, or negative i.",
+        "start": 1426.41,
+        "duration": 1.49
+    },
+    {
+        "text": "We're getting close to the culmination now.",
+        "start": 1429.08,
+        "duration": 1.62
+    },
+    {
+        "text": "Things are starting to look organized, so take a moment, ",
+        "start": 1431.04,
+        "duration": 2.482
+    },
+    {
+        "text": "pause and ponder, make sure everything feels good up to this point.",
+        "start": 1433.522,
+        "duration": 2.918
+    },
+    {
+        "text": "Take the number 45 as an example.",
+        "start": 1437.14,
+        "duration": 2.32
+    },
+    {
+        "text": "This guy factors as 3 squared times 5, so the expression for ",
+        "start": 1440.14,
+        "duration": 4.145
+    },
+    {
+        "text": "the total number of lattice points is 4 times chi of 1 plus ",
+        "start": 1444.285,
+        "duration": 4.077
+    },
+    {
+        "text": "chi of 3 plus chi of 3 squared times chi of 1 plus chi of 5.",
+        "start": 1448.362,
+        "duration": 4.078
+    },
+    {
+        "text": "You can think about this as 4 times the one choice for what to do with the ",
+        "start": 1453.16,
+        "duration": 4.077
+    },
+    {
+        "text": "3's times two choices for how to divvy up the Gaussian prime factors of 5.",
+        "start": 1457.237,
+        "duration": 4.023
+    },
+    {
+        "text": "It might seem like expanding out this sum is really complicated, ",
+        "start": 1462.02,
+        "duration": 3.802
+    },
+    {
+        "text": "because it involves all possible combinations of these prime factors.",
+        "start": 1465.822,
+        "duration": 4.038
+    },
+    {
+        "text": "And it kind of is.",
+        "start": 1470.64,
+        "duration": 0.74
+    },
+    {
+        "text": "However, because chi is multiplicative, each one of ",
+        "start": 1472.02,
+        "duration": 3.527
+    },
+    {
+        "text": "those combinations corresponds to a divisor of 45.",
+        "start": 1475.547,
+        "duration": 3.393
+    },
+    {
+        "text": "In this case, we get 4 times chi of 1 plus chi of 3 plus ",
+        "start": 1478.94,
+        "duration": 5.928
+    },
+    {
+        "text": "chi of 5 plus chi of 9 plus chi of 15 plus chi of 45.",
+        "start": 1484.868,
+        "duration": 5.512
+    },
+    {
+        "text": "What you'll notice is that this covers every number that divides evenly into 45, ",
+        "start": 1491.36,
+        "duration": 5.508
+    },
+    {
+        "text": "once and only once.",
+        "start": 1496.868,
+        "duration": 1.292
+    },
+    {
+        "text": "And it works like this for any number, there's nothing special about 45.",
+        "start": 1498.94,
+        "duration": 3.54
+    },
+    {
+        "text": "And that to me is pretty interesting, and I think wholly unexpected.",
+        "start": 1503.22,
+        "duration": 3.54
+    },
+    {
+        "text": "This question of counting the number of lattice points a distance ",
+        "start": 1507.38,
+        "duration": 3.737
+    },
+    {
+        "text": "square root of n away from the origin, involves adding up the ",
+        "start": 1511.117,
+        "duration": 3.511
+    },
+    {
+        "text": "value of this relatively simple function over all the divisors of n.",
+        "start": 1514.628,
+        "duration": 3.852
+    },
+    {
+        "text": "To bring it all together, remember why we're doing this.",
+        "start": 1520.1,
+        "duration": 2.62
+    },
+    {
+        "text": "The total number of lattice points inside a big circle ",
+        "start": 1523.1,
+        "duration": 3.141
+    },
+    {
+        "text": "with radius r should be about pi times r squared.",
+        "start": 1526.241,
+        "duration": 2.799
+    },
+    {
+        "text": "But on the other hand, we can count those same lattice points by looking ",
+        "start": 1529.04,
+        "duration": 3.87
+    },
+    {
+        "text": "through all of the numbers n between 0 and r squared, ",
+        "start": 1532.91,
+        "duration": 2.863
+    },
+    {
+        "text": "and counting how many lattice points are a distance square root of n from the origin.",
+        "start": 1535.773,
+        "duration": 4.507
+    },
+    {
+        "text": "Let's go ahead and just ignore that origin dot with radius 0, ",
+        "start": 1541.28,
+        "duration": 3.062
+    },
+    {
+        "text": "it doesn't really follow the pattern of the rest, ",
+        "start": 1544.342,
+        "duration": 2.47
+    },
+    {
+        "text": "and one little dot isn't going to make a difference as we let r grow towards infinity.",
+        "start": 1546.812,
+        "duration": 4.248
+    },
+    {
+        "text": "Now from all of this Gaussian integer and factoring and chi function ",
+        "start": 1552.2,
+        "duration": 4.646
+    },
+    {
+        "text": "stuff that we've been doing, the answer for each n looks like adding ",
+        "start": 1556.846,
+        "duration": 4.647
+    },
+    {
+        "text": "up the value of chi on every divisor of n, and then multiplying by 4.",
+        "start": 1561.493,
+        "duration": 4.647
+    },
+    {
+        "text": "And for now let's just take that 4 and put it in the corner, ",
+        "start": 1567.22,
+        "duration": 2.754
+    },
+    {
+        "text": "and remember to bring it back later.",
+        "start": 1569.974,
+        "duration": 1.626
+    },
+    {
+        "text": "At first, adding up the values for each one of these rows seems super random, right?",
+        "start": 1572.72,
+        "duration": 5.62
+    },
+    {
+        "text": "I mean, numbers with a lot of factors have a lot of divisors, ",
+        "start": 1578.84,
+        "duration": 3.667
+    },
+    {
+        "text": "whereas prime numbers will always only have two divisors.",
+        "start": 1582.507,
+        "duration": 3.373
+    },
+    {
+        "text": "So it initially seems like you would have to have perfect knowledge ",
+        "start": 1585.88,
+        "duration": 3.711
+    },
+    {
+        "text": "of the distribution of primes to get anything useful out of this.",
+        "start": 1589.591,
+        "duration": 3.549
+    },
+    {
+        "text": "But if instead you organize these into columns, the puzzle starts to fit together.",
+        "start": 1594.18,
+        "duration": 4.86
+    },
+    {
+        "text": "How many numbers between 1 and r2 have 1 as a divisor? All of them. ",
+        "start": 1600.1,
+        "duration": 1.731
+    },
+    {
+        "text": "So our sum should include r2 times chi of 1. How many of them have 2 as a divisor?",
+        "start": 1601.831,
+        "duration": 2.089
+    },
+    {
+        "text": "Well, all of them.",
+        "start": 1604.56,
+        "duration": 0.84
+    },
+    {
+        "text": "So our sum should include r squared times chi of 1.",
+        "start": 1605.9,
+        "duration": 3.3
+    },
+    {
+        "text": "How many of them have 2 as a divisor?",
+        "start": 1610.06,
+        "duration": 2.26
+    },
+    {
+        "text": "Well, about half of them.",
+        "start": 1612.82,
+        "duration": 1.5
+    },
+    {
+        "text": "So that would account for about r squared over 2 times chi of 2.",
+        "start": 1614.84,
+        "duration": 3.68
+    },
+    {
+        "text": "About a third of these rows have chi of 3, so we ",
+        "start": 1619.12,
+        "duration": 3.0
+    },
+    {
+        "text": "can put in r squared divided by 3 times chi of 3.",
+        "start": 1622.12,
+        "duration": 3.0
+    },
+    {
+        "text": "And keep in mind we're being approximate since r squared might not perfectly ",
+        "start": 1626.02,
+        "duration": 4.1
+    },
+    {
+        "text": "divide 2 or 3, but as r grows towards infinity, this approximation will get better.",
+        "start": 1630.12,
+        "duration": 4.42
+    },
+    {
+        "text": "And when you keep going like this, you get a pretty ",
+        "start": 1635.36,
+        "duration": 2.247
+    },
+    {
+        "text": "organized expression for the total number of lattice points.",
+        "start": 1637.607,
+        "duration": 2.593
+    },
+    {
+        "text": "And if you factor out that r squared and then bring back the 4 that needs ",
+        "start": 1642.98,
+        "duration": 4.939
+    },
+    {
+        "text": "to be multiplied in, what it means is that the total number of lattice points ",
+        "start": 1647.919,
+        "duration": 5.207
+    },
+    {
+        "text": "inside this big circle is approximately 4 times r squared times this sum.",
+        "start": 1653.126,
+        "duration": 4.874
+    },
+    {
+        "text": "And because chi is 0 on every even number, and it oscillates between 1 and negative 1 for ",
+        "start": 1658.66,
+        "duration": 7.048
+    },
+    {
+        "text": "odd numbers, this sum looks like 1 minus 1 third plus a fifth minus 1 seventh and so on.",
+        "start": 1665.708,
+        "duration": 6.892
+    },
+    {
+        "text": "And this is exactly what we wanted.",
+        "start": 1673.02,
+        "duration": 1.34
+    },
+    {
+        "text": "What we have here is an alternate expression for the total number of lattice ",
+        "start": 1674.76,
+        "duration": 4.123
+    },
+    {
+        "text": "points inside a big circle, which we know should be around pi times r squared.",
+        "start": 1678.883,
+        "duration": 4.177
+    },
+    {
+        "text": "And the bigger r is, the more accurate both of these estimates are, ",
+        "start": 1684.0,
+        "duration": 3.826
+    },
+    {
+        "text": "so the percent error between the left-hand side and the right-hand side can get ",
+        "start": 1687.826,
+        "duration": 4.501
+    },
+    {
+        "text": "arbitrarily small.",
+        "start": 1692.327,
+        "duration": 1.013
+    },
+    {
+        "text": "So divide out by that r squared, and this gives ",
+        "start": 1693.9,
+        "duration": 3.186
+    },
+    {
+        "text": "us an infinite sum that should converge to pi.",
+        "start": 1697.086,
+        "duration": 3.054
+    },
+    {
+        "text": "And keep in mind, I just think this is really cool.",
+        "start": 1701.3,
+        "duration": 1.86
+    },
+    {
+        "text": "The reason that this sum came out to be so simple, ",
+        "start": 1703.42,
+        "duration": 3.004
+    },
+    {
+        "text": "requiring relatively low information to describe, ",
+        "start": 1706.424,
+        "duration": 2.945
+    },
+    {
+        "text": "ultimately stems from the regular pattern and how prime numbers ",
+        "start": 1709.369,
+        "duration": 3.77
+    },
+    {
+        "text": "factor inside the Gaussian integers.",
+        "start": 1713.139,
+        "duration": 2.121
+    },
+    {
+        "text": "If you're curious, there are two main branches of number theory, ",
+        "start": 1716.54,
+        "duration": 3.956
+    },
+    {
+        "text": "algebraic number theory and analytic number theory.",
+        "start": 1720.496,
+        "duration": 3.104
+    },
+    {
+        "text": "Very loosely speaking, the former deals with new number systems, ",
+        "start": 1724.42,
+        "duration": 3.405
+    },
+    {
+        "text": "things like these Gaussian integers that you and I looked at, and a lot more.",
+        "start": 1727.825,
+        "duration": 4.035
+    },
+    {
+        "text": "And the latter deals with things like the Riemann zeta function, ",
+        "start": 1732.28,
+        "duration": 3.448
+    },
+    {
+        "text": "or its cousins, called L-functions, which involve multiplicative ",
+        "start": 1735.728,
+        "duration": 3.448
+    },
+    {
+        "text": "functions like this central character chi from our story.",
+        "start": 1739.176,
+        "duration": 3.024
+    },
+    {
+        "text": "And the path that we just walked is a little glimpse at where those two fields intersect.",
+        "start": 1742.78,
+        "duration": 4.52
+    },
+    {
+        "text": "And both of these are pretty heavy-duty fields ",
+        "start": 1747.92,
+        "duration": 2.126
+    },
+    {
+        "text": "with a lot of active research and unsolved problems.",
+        "start": 1750.046,
+        "duration": 2.354
+    },
+    {
+        "text": "So if all this feels like something that takes time to mentally digest, ",
+        "start": 1753.0,
+        "duration": 4.058
+    },
+    {
+        "text": "like there's more patterns to be uncovered and understood, it's because it is, ",
+        "start": 1757.058,
+        "duration": 4.452
+    },
+    {
+        "text": "and there are.",
+        "start": 1761.51,
+        "duration": 0.79
+    }
+]

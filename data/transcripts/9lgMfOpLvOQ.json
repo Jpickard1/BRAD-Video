@@ -1,0 +1,7827 @@
+[
+    {
+        "text": "everybody welcome",
+        "start": 64.159,
+        "duration": 3.761
+    },
+    {
+        "text": "uh today we're gonna have a seminar from",
+        "start": 65.92,
+        "duration": 5.04
+    },
+    {
+        "text": "xiang from the department of biostats",
+        "start": 67.92,
+        "duration": 4.8
+    },
+    {
+        "text": "uh he did his",
+        "start": 70.96,
+        "duration": 4.32
+    },
+    {
+        "text": "post doc at the university of chicago",
+        "start": 72.72,
+        "duration": 4.64
+    },
+    {
+        "text": "matthew stevens group",
+        "start": 75.28,
+        "duration": 4.72
+    },
+    {
+        "text": "he got his master's and phd at duke",
+        "start": 77.36,
+        "duration": 4.0
+    },
+    {
+        "text": "university",
+        "start": 80.0,
+        "duration": 3.28
+    },
+    {
+        "text": "and today's going to tell us about",
+        "start": 81.36,
+        "duration": 4.16
+    },
+    {
+        "text": "differential expression analysis for",
+        "start": 83.28,
+        "duration": 4.32
+    },
+    {
+        "text": "rna-seq data",
+        "start": 85.52,
+        "duration": 3.919
+    },
+    {
+        "text": "thank you thank you adam for the",
+        "start": 87.6,
+        "duration": 4.159
+    },
+    {
+        "text": "invitation thank you all for coming so",
+        "start": 89.439,
+        "duration": 3.761
+    },
+    {
+        "text": "today i'm going to talk about some",
+        "start": 91.759,
+        "duration": 3.921
+    },
+    {
+        "text": "differential expression analysis methods",
+        "start": 93.2,
+        "duration": 4.64
+    },
+    {
+        "text": "our group is developing and this main",
+        "start": 95.68,
+        "duration": 4.56
+    },
+    {
+        "text": "work is led by my talent to the students",
+        "start": 97.84,
+        "duration": 5.68
+    },
+    {
+        "text": "to transition and uh and and so",
+        "start": 100.24,
+        "duration": 5.12
+    },
+    {
+        "text": "as we all know that ange is very",
+        "start": 103.52,
+        "duration": 4.0
+    },
+    {
+        "text": "important right so ange is mediating the",
+        "start": 105.36,
+        "duration": 5.039
+    },
+    {
+        "text": "signal from this uh dna up to the",
+        "start": 107.52,
+        "duration": 5.04
+    },
+    {
+        "text": "protein so and it's essentially because",
+        "start": 110.399,
+        "duration": 3.841
+    },
+    {
+        "text": "it's a central role",
+        "start": 112.56,
+        "duration": 3.76
+    },
+    {
+        "text": "in this biological process it plays a",
+        "start": 114.24,
+        "duration": 4.0
+    },
+    {
+        "text": "very important role in say like disease",
+        "start": 116.32,
+        "duration": 4.32
+    },
+    {
+        "text": "etiology and plays an important role in",
+        "start": 118.24,
+        "duration": 4.239
+    },
+    {
+        "text": "development and so therefore it's",
+        "start": 120.64,
+        "duration": 4.159
+    },
+    {
+        "text": "important to understand the rna",
+        "start": 122.479,
+        "duration": 3.92
+    },
+    {
+        "text": "it's a law of angular different gene",
+        "start": 124.799,
+        "duration": 4.16
+    },
+    {
+        "text": "expressions and to do that a lot of",
+        "start": 126.399,
+        "duration": 4.801
+    },
+    {
+        "text": "people nowadays can uh you really do a",
+        "start": 128.959,
+        "duration": 4.0
+    },
+    {
+        "text": "lot of rna sequencing studies or",
+        "start": 131.2,
+        "duration": 4.399
+    },
+    {
+        "text": "microarray studies and once you get",
+        "start": 132.959,
+        "duration": 5.28
+    },
+    {
+        "text": "those results forget this data the first",
+        "start": 135.599,
+        "duration": 4.321
+    },
+    {
+        "text": "important step is actually try to",
+        "start": 138.239,
+        "duration": 3.681
+    },
+    {
+        "text": "identify those differentially expressed",
+        "start": 139.92,
+        "duration": 3.92
+    },
+    {
+        "text": "the genes that are influenced by",
+        "start": 141.92,
+        "duration": 3.76
+    },
+    {
+        "text": "predictor of interest and those",
+        "start": 143.84,
+        "duration": 3.52
+    },
+    {
+        "text": "predictive interests can be many",
+        "start": 145.68,
+        "duration": 3.199
+    },
+    {
+        "text": "different things so there could be",
+        "start": 147.36,
+        "duration": 4.239
+    },
+    {
+        "text": "disease status there could be risk",
+        "start": 148.879,
+        "duration": 4.64
+    },
+    {
+        "text": "factors there could be environmental",
+        "start": 151.599,
+        "duration": 3.841
+    },
+    {
+        "text": "covariance or you know that in the case",
+        "start": 153.519,
+        "duration": 4.561
+    },
+    {
+        "text": "of this g maping studies this could also",
+        "start": 155.44,
+        "duration": 5.28
+    },
+    {
+        "text": "be genotypes so you're identifying those",
+        "start": 158.08,
+        "duration": 4.239
+    },
+    {
+        "text": "differentially expressed genes with",
+        "start": 160.72,
+        "duration": 3.92
+    },
+    {
+        "text": "respect to the environmental or genetic",
+        "start": 162.319,
+        "duration": 4.401
+    },
+    {
+        "text": "covariance is a very important first",
+        "start": 164.64,
+        "duration": 4.48
+    },
+    {
+        "text": "step to understand the genetic basis of",
+        "start": 166.72,
+        "duration": 4.56
+    },
+    {
+        "text": "disease and susceptibility and also",
+        "start": 169.12,
+        "duration": 4.16
+    },
+    {
+        "text": "understand the genetic and environmental",
+        "start": 171.28,
+        "duration": 4.64
+    },
+    {
+        "text": "basis of phenotypic evaluation",
+        "start": 173.28,
+        "duration": 3.84
+    },
+    {
+        "text": "now to",
+        "start": 175.92,
+        "duration": 2.72
+    },
+    {
+        "text": "to identify these differentially",
+        "start": 177.12,
+        "duration": 3.52
+    },
+    {
+        "text": "expressed genes the first important step",
+        "start": 178.64,
+        "duration": 4.239
+    },
+    {
+        "text": "will try to is to do ion sequencing",
+        "start": 180.64,
+        "duration": 5.2
+    },
+    {
+        "text": "nowadays and the rna sequencing can be",
+        "start": 182.879,
+        "duration": 5.041
+    },
+    {
+        "text": "very easily summarized in this multiple",
+        "start": 185.84,
+        "duration": 3.039
+    },
+    {
+        "text": "steps",
+        "start": 187.92,
+        "duration": 1.84
+    },
+    {
+        "text": "so",
+        "start": 188.879,
+        "duration": 2.801
+    },
+    {
+        "text": "to do the ansi sequencing you first",
+        "start": 189.76,
+        "duration": 4.559
+    },
+    {
+        "text": "basically extract your rna from example",
+        "start": 191.68,
+        "duration": 4.08
+    },
+    {
+        "text": "right and then you do a reverse",
+        "start": 194.319,
+        "duration": 3.92
+    },
+    {
+        "text": "transcription to get your cdna so that",
+        "start": 195.76,
+        "duration": 4.64
+    },
+    {
+        "text": "it's more stabilized and then you can",
+        "start": 198.239,
+        "duration": 5.121
+    },
+    {
+        "text": "cut the bc dna into different fragments",
+        "start": 200.4,
+        "duration": 5.04
+    },
+    {
+        "text": "and the construct library so that you",
+        "start": 203.36,
+        "duration": 4.159
+    },
+    {
+        "text": "can sequence all those fragments and",
+        "start": 205.44,
+        "duration": 3.84
+    },
+    {
+        "text": "once you get a sequence of prevalence",
+        "start": 207.519,
+        "duration": 3.521
+    },
+    {
+        "text": "you can try to measure back to the whole",
+        "start": 209.28,
+        "duration": 5.2
+    },
+    {
+        "text": "genome so that the small short rates",
+        "start": 211.04,
+        "duration": 6.16
+    },
+    {
+        "text": "will be mapped into the axonic regions",
+        "start": 214.48,
+        "duration": 4.96
+    },
+    {
+        "text": "so if a gene is heavily expressed then",
+        "start": 217.2,
+        "duration": 4.0
+    },
+    {
+        "text": "you will see a lot of reads method to",
+        "start": 219.44,
+        "duration": 4.719
+    },
+    {
+        "text": "that particular gene and if g is slowly",
+        "start": 221.2,
+        "duration": 4.959
+    },
+    {
+        "text": "expressed then you tend to have a much",
+        "start": 224.159,
+        "duration": 4.961
+    },
+    {
+        "text": "less read map over there so as you can",
+        "start": 226.159,
+        "duration": 5.281
+    },
+    {
+        "text": "see that at the end of the day the angle",
+        "start": 229.12,
+        "duration": 5.199
+    },
+    {
+        "text": "sequencing data will give you a lot of",
+        "start": 231.44,
+        "duration": 5.04
+    },
+    {
+        "text": "read map read accounts data for every",
+        "start": 234.319,
+        "duration": 4.161
+    },
+    {
+        "text": "single gene so therefore the first",
+        "start": 236.48,
+        "duration": 4.399
+    },
+    {
+        "text": "important feature of rna sequencing data",
+        "start": 238.48,
+        "duration": 4.56
+    },
+    {
+        "text": "is that the data the law data is",
+        "start": 240.879,
+        "duration": 5.121
+    },
+    {
+        "text": "actually in the form of counts",
+        "start": 243.04,
+        "duration": 5.279
+    },
+    {
+        "text": "so because this angular sequencing data",
+        "start": 246.0,
+        "duration": 4.319
+    },
+    {
+        "text": "are conch based",
+        "start": 248.319,
+        "duration": 3.601
+    },
+    {
+        "text": "and and you can see that",
+        "start": 250.319,
+        "duration": 4.0
+    },
+    {
+        "text": "this gene expression variation across",
+        "start": 251.92,
+        "duration": 4.879
+    },
+    {
+        "text": "the technical replicates can be usually",
+        "start": 254.319,
+        "duration": 4.721
+    },
+    {
+        "text": "accurately described by a poisson",
+        "start": 256.799,
+        "duration": 4.0
+    },
+    {
+        "text": "distribution and",
+        "start": 259.04,
+        "duration": 3.2
+    },
+    {
+        "text": "in addition",
+        "start": 260.799,
+        "duration": 3.201
+    },
+    {
+        "text": "in some once you have biological",
+        "start": 262.24,
+        "duration": 4.08
+    },
+    {
+        "text": "replicates and they usually have other",
+        "start": 264.0,
+        "duration": 4.72
+    },
+    {
+        "text": "compounding factors or biological noise",
+        "start": 266.32,
+        "duration": 4.159
+    },
+    {
+        "text": "then in those cases gene expression",
+        "start": 268.72,
+        "duration": 4.08
+    },
+    {
+        "text": "variation of causes biological levels it",
+        "start": 270.479,
+        "duration": 4.401
+    },
+    {
+        "text": "often displays over dispersion so in",
+        "start": 272.8,
+        "duration": 3.92
+    },
+    {
+        "text": "order to model those angle sequencing",
+        "start": 274.88,
+        "duration": 3.92
+    },
+    {
+        "text": "data especially once you have biological",
+        "start": 276.72,
+        "duration": 4.24
+    },
+    {
+        "text": "replicates sometimes you will have to",
+        "start": 278.8,
+        "duration": 4.0
+    },
+    {
+        "text": "use more over disperse the poisson",
+        "start": 280.96,
+        "duration": 4.16
+    },
+    {
+        "text": "distribution to model that us",
+        "start": 282.8,
+        "duration": 3.92
+    },
+    {
+        "text": "which are also commonly known as",
+        "start": 285.12,
+        "duration": 4.0
+    },
+    {
+        "text": "negative binomial models so for example",
+        "start": 286.72,
+        "duration": 4.64
+    },
+    {
+        "text": "the most widely used methods as we know",
+        "start": 289.12,
+        "duration": 5.519
+    },
+    {
+        "text": "it are hr and the thick or the second",
+        "start": 291.36,
+        "duration": 5.68
+    },
+    {
+        "text": "version of d6 and those methods are",
+        "start": 294.639,
+        "duration": 4.721
+    },
+    {
+        "text": "widely used to analyze perform",
+        "start": 297.04,
+        "duration": 4.4
+    },
+    {
+        "text": "differential expression analysis and",
+        "start": 299.36,
+        "duration": 4.399
+    },
+    {
+        "text": "sequencing data and the backbone of",
+        "start": 301.44,
+        "duration": 4.0
+    },
+    {
+        "text": "those methods essentially a negative",
+        "start": 303.759,
+        "duration": 3.921
+    },
+    {
+        "text": "binomial model they try to model these",
+        "start": 305.44,
+        "duration": 5.68
+    },
+    {
+        "text": "low counts and directly so although",
+        "start": 307.68,
+        "duration": 6.079
+    },
+    {
+        "text": "there are also uh many non-counts based",
+        "start": 311.12,
+        "duration": 4.88
+    },
+    {
+        "text": "on the methods for example lima can also",
+        "start": 313.759,
+        "duration": 4.88
+    },
+    {
+        "text": "be used to analyze any sequencing data",
+        "start": 316.0,
+        "duration": 4.639
+    },
+    {
+        "text": "because the angle sequencing data itself",
+        "start": 318.639,
+        "duration": 4.241
+    },
+    {
+        "text": "is a low count and because of its over",
+        "start": 320.639,
+        "duration": 4.0
+    },
+    {
+        "text": "dispersion often observed in your",
+        "start": 322.88,
+        "duration": 3.84
+    },
+    {
+        "text": "slow-comb data it turns out that it's",
+        "start": 324.639,
+        "duration": 4.56
+    },
+    {
+        "text": "very useful to model this count directly",
+        "start": 326.72,
+        "duration": 4.479
+    },
+    {
+        "text": "using this type of negative binomial",
+        "start": 329.199,
+        "duration": 4.72
+    },
+    {
+        "text": "models in order to get more power under",
+        "start": 331.199,
+        "duration": 5.121
+    },
+    {
+        "text": "control for force discoveries in anger",
+        "start": 333.919,
+        "duration": 4.961
+    },
+    {
+        "text": "sequencing data so therefore over here",
+        "start": 336.32,
+        "duration": 4.48
+    },
+    {
+        "text": "you can see that the first important",
+        "start": 338.88,
+        "duration": 4.24
+    },
+    {
+        "text": "feature of angular sequencing data is",
+        "start": 340.8,
+        "duration": 5.04
+    },
+    {
+        "text": "it's in a counter-based form and then",
+        "start": 343.12,
+        "duration": 4.56
+    },
+    {
+        "text": "because it's in counter-basic form it's",
+        "start": 345.84,
+        "duration": 4.0
+    },
+    {
+        "text": "extremely important to account for this",
+        "start": 347.68,
+        "duration": 4.72
+    },
+    {
+        "text": "mean and variance dependence through my",
+        "start": 349.84,
+        "duration": 4.639
+    },
+    {
+        "text": "modeling either personal dispersive",
+        "start": 352.4,
+        "duration": 4.16
+    },
+    {
+        "text": "partial models so that's the first",
+        "start": 354.479,
+        "duration": 4.16
+    },
+    {
+        "text": "feature and the first features will",
+        "start": 356.56,
+        "duration": 4.079
+    },
+    {
+        "text": "recognize and they are used by many",
+        "start": 358.639,
+        "duration": 4.4
+    },
+    {
+        "text": "different studies but the second feature",
+        "start": 360.639,
+        "duration": 4.641
+    },
+    {
+        "text": "i will mention over here it actually has",
+        "start": 363.039,
+        "duration": 3.921
+    },
+    {
+        "text": "been largely ignored by all those",
+        "start": 365.28,
+        "duration": 3.12
+    },
+    {
+        "text": "differentially expressed angular",
+        "start": 366.96,
+        "duration": 3.6
+    },
+    {
+        "text": "sequencing methods and this second",
+        "start": 368.4,
+        "duration": 4.56
+    },
+    {
+        "text": "feature is that a gene expression are",
+        "start": 370.56,
+        "duration": 4.32
+    },
+    {
+        "text": "actually heritable",
+        "start": 372.96,
+        "duration": 4.079
+    },
+    {
+        "text": "so as we all know that",
+        "start": 374.88,
+        "duration": 4.56
+    },
+    {
+        "text": "we we all know that the gene expression",
+        "start": 377.039,
+        "duration": 4.561
+    },
+    {
+        "text": "levels across the human population",
+        "start": 379.44,
+        "duration": 4.08
+    },
+    {
+        "text": "across multiple individuals they always",
+        "start": 381.6,
+        "duration": 3.92
+    },
+    {
+        "text": "have a hierarchicality component they",
+        "start": 383.52,
+        "duration": 4.16
+    },
+    {
+        "text": "always have a genetic component and in",
+        "start": 385.52,
+        "duration": 4.399
+    },
+    {
+        "text": "fact if you perform a relatively large",
+        "start": 387.68,
+        "duration": 5.44
+    },
+    {
+        "text": "population study and try to see how much",
+        "start": 389.919,
+        "duration": 5.12
+    },
+    {
+        "text": "proportional variance in gene expression",
+        "start": 393.12,
+        "duration": 4.56
+    },
+    {
+        "text": "level can be estimated by a genetic",
+        "start": 395.039,
+        "duration": 5.121
+    },
+    {
+        "text": "basis or to estimate this so-called gene",
+        "start": 397.68,
+        "duration": 4.48
+    },
+    {
+        "text": "expression highlightability you can see",
+        "start": 400.16,
+        "duration": 3.84
+    },
+    {
+        "text": "that those gene habitability are",
+        "start": 402.16,
+        "duration": 4.319
+    },
+    {
+        "text": "relatively large so the average gene",
+        "start": 404.0,
+        "duration": 3.84
+    },
+    {
+        "text": "expression",
+        "start": 406.479,
+        "duration": 3.521
+    },
+    {
+        "text": "say in the peripheral blood is estimated",
+        "start": 407.84,
+        "duration": 5.44
+    },
+    {
+        "text": "to be 15 to 34 percent and depending on",
+        "start": 410.0,
+        "duration": 5.199
+    },
+    {
+        "text": "which data source you collect which",
+        "start": 413.28,
+        "duration": 4.479
+    },
+    {
+        "text": "sample size you collect and also in",
+        "start": 415.199,
+        "duration": 4.481
+    },
+    {
+        "text": "other tissues say adipose tissues the",
+        "start": 417.759,
+        "duration": 4.081
+    },
+    {
+        "text": "average heritability is also estimated",
+        "start": 419.68,
+        "duration": 3.68
+    },
+    {
+        "text": "to be relatively",
+        "start": 421.84,
+        "duration": 5.12
+    },
+    {
+        "text": "high so it's 23 percent and in fact",
+        "start": 423.36,
+        "duration": 5.839
+    },
+    {
+        "text": "and across all those genes you can see",
+        "start": 426.96,
+        "duration": 4.4
+    },
+    {
+        "text": "that the highest heritability estimates",
+        "start": 429.199,
+        "duration": 5.44
+    },
+    {
+        "text": "in all those tissues can be high as a 90",
+        "start": 431.36,
+        "duration": 4.88
+    },
+    {
+        "text": "so therefore there's a huge genetic",
+        "start": 434.639,
+        "duration": 3.68
+    },
+    {
+        "text": "components and there are many reasons",
+        "start": 436.24,
+        "duration": 4.399
+    },
+    {
+        "text": "the gene genetic mapping studies try to",
+        "start": 438.319,
+        "duration": 4.401
+    },
+    {
+        "text": "identify those genetic components and",
+        "start": 440.639,
+        "duration": 4.0
+    },
+    {
+        "text": "they have identified the thousands of",
+        "start": 442.72,
+        "duration": 4.4
+    },
+    {
+        "text": "assisted eqtls so those are the sniff",
+        "start": 444.639,
+        "duration": 4.321
+    },
+    {
+        "text": "the nearby the genes that influence in",
+        "start": 447.12,
+        "duration": 3.44
+    },
+    {
+        "text": "the gene expression level so the",
+        "start": 448.96,
+        "duration": 3.92
+    },
+    {
+        "text": "highlightability can be easily explained",
+        "start": 450.56,
+        "duration": 4.88
+    },
+    {
+        "text": "by the cis components and besides the",
+        "start": 452.88,
+        "duration": 4.8
+    },
+    {
+        "text": "cis components there's also a large",
+        "start": 455.44,
+        "duration": 4.4
+    },
+    {
+        "text": "remaining trans component that still",
+        "start": 457.68,
+        "duration": 4.799
+    },
+    {
+        "text": "remains unidentifiable so for typical",
+        "start": 459.84,
+        "duration": 5.12
+    },
+    {
+        "text": "gene heritability in fact ninety percent",
+        "start": 462.479,
+        "duration": 5.28
+    },
+    {
+        "text": "of them can be still uh",
+        "start": 464.96,
+        "duration": 4.48
+    },
+    {
+        "text": "only ten percent of them are expanded by",
+        "start": 467.759,
+        "duration": 3.921
+    },
+    {
+        "text": "cis snips well ninety percent of them",
+        "start": 469.44,
+        "duration": 4.0
+    },
+    {
+        "text": "are remain to be discovered and those",
+        "start": 471.68,
+        "duration": 4.079
+    },
+    {
+        "text": "are expanded by trans components so",
+        "start": 473.44,
+        "duration": 3.439
+    },
+    {
+        "text": "therefore",
+        "start": 475.759,
+        "duration": 3.28
+    },
+    {
+        "text": "this gene expression levels have very",
+        "start": 476.879,
+        "duration": 4.561
+    },
+    {
+        "text": "large genetic basis and because gene",
+        "start": 479.039,
+        "duration": 4.961
+    },
+    {
+        "text": "expression levels are heritable so you",
+        "start": 481.44,
+        "duration": 4.479
+    },
+    {
+        "text": "can see that a gene expression will",
+        "start": 484.0,
+        "duration": 4.72
+    },
+    {
+        "text": "typically covary with the kinship or",
+        "start": 485.919,
+        "duration": 5.041
+    },
+    {
+        "text": "population structure so if you collect",
+        "start": 488.72,
+        "duration": 4.24
+    },
+    {
+        "text": "the data set that contains related",
+        "start": 490.96,
+        "duration": 3.6
+    },
+    {
+        "text": "individuals and because these",
+        "start": 492.96,
+        "duration": 3.679
+    },
+    {
+        "text": "individuals are genetically related so",
+        "start": 494.56,
+        "duration": 4.479
+    },
+    {
+        "text": "that and because the gene expression",
+        "start": 496.639,
+        "duration": 4.081
+    },
+    {
+        "text": "levels are heritable so those",
+        "start": 499.039,
+        "duration": 3.521
+    },
+    {
+        "text": "genetically related individuals will",
+        "start": 500.72,
+        "duration": 3.599
+    },
+    {
+        "text": "also have a similar",
+        "start": 502.56,
+        "duration": 4.079
+    },
+    {
+        "text": "expression expression levels so the",
+        "start": 504.319,
+        "duration": 5.201
+    },
+    {
+        "text": "genetic relatedness will cause this uh",
+        "start": 506.639,
+        "duration": 5.52
+    },
+    {
+        "text": "similarity in g expression levels so",
+        "start": 509.52,
+        "duration": 4.959
+    },
+    {
+        "text": "therefore it's important to account for",
+        "start": 512.159,
+        "duration": 3.921
+    },
+    {
+        "text": "those individual relatedness of",
+        "start": 514.479,
+        "duration": 3.761
+    },
+    {
+        "text": "population structure we typically are",
+        "start": 516.08,
+        "duration": 4.8
+    },
+    {
+        "text": "counting this data and we all know that",
+        "start": 518.24,
+        "duration": 4.719
+    },
+    {
+        "text": "in genome-wide association studies it's",
+        "start": 520.88,
+        "duration": 3.92
+    },
+    {
+        "text": "important to account for those type of",
+        "start": 522.959,
+        "duration": 3.681
+    },
+    {
+        "text": "structure whether it be it's a family",
+        "start": 524.8,
+        "duration": 3.599
+    },
+    {
+        "text": "structure or whether it's a population",
+        "start": 526.64,
+        "duration": 3.759
+    },
+    {
+        "text": "structure and if you fail to do that",
+        "start": 528.399,
+        "duration": 4.321
+    },
+    {
+        "text": "then you are going to have a huge type 1",
+        "start": 530.399,
+        "duration": 4.0
+    },
+    {
+        "text": "error and you are going to",
+        "start": 532.72,
+        "duration": 3.2
+    },
+    {
+        "text": "going to have a lot of spurious",
+        "start": 534.399,
+        "duration": 4.161
+    },
+    {
+        "text": "associations or even reduce the power",
+        "start": 535.92,
+        "duration": 4.64
+    },
+    {
+        "text": "and certainly gene heritability is not",
+        "start": 538.56,
+        "duration": 4.16
+    },
+    {
+        "text": "the only reason that can cause gene",
+        "start": 540.56,
+        "duration": 5.36
+    },
+    {
+        "text": "covariance uh sample non-independence so",
+        "start": 542.72,
+        "duration": 5.679
+    },
+    {
+        "text": "in fact there are other forms of",
+        "start": 545.92,
+        "duration": 4.8
+    },
+    {
+        "text": "confounding effects for example batch",
+        "start": 548.399,
+        "duration": 5.201
+    },
+    {
+        "text": "effects then can also cause sample",
+        "start": 550.72,
+        "duration": 5.119
+    },
+    {
+        "text": "non-independence so for example if you",
+        "start": 553.6,
+        "duration": 4.0
+    },
+    {
+        "text": "process the data set those are",
+        "start": 555.839,
+        "duration": 3.761
+    },
+    {
+        "text": "completely uh consists of completely",
+        "start": 557.6,
+        "duration": 4.239
+    },
+    {
+        "text": "unrelated individuals so individuals are",
+        "start": 559.6,
+        "duration": 4.32
+    },
+    {
+        "text": "indeed unrelated but if you happen to",
+        "start": 561.839,
+        "duration": 3.841
+    },
+    {
+        "text": "process this data say there's two",
+        "start": 563.92,
+        "duration": 3.76
+    },
+    {
+        "text": "individuals in the same batch then",
+        "start": 565.68,
+        "duration": 3.68
+    },
+    {
+        "text": "because of the battery effects the",
+        "start": 567.68,
+        "duration": 3.839
+    },
+    {
+        "text": "expression level on many different genes",
+        "start": 569.36,
+        "duration": 4.0
+    },
+    {
+        "text": "between these two individuals are also",
+        "start": 571.519,
+        "duration": 3.121
+    },
+    {
+        "text": "going to",
+        "start": 573.36,
+        "duration": 3.36
+    },
+    {
+        "text": "have assured similarity between these",
+        "start": 574.64,
+        "duration": 4.16
+    },
+    {
+        "text": "two individuals so therefore you can see",
+        "start": 576.72,
+        "duration": 4.799
+    },
+    {
+        "text": "that a individual relatedness population",
+        "start": 578.8,
+        "duration": 4.719
+    },
+    {
+        "text": "structure and those hidden confounding",
+        "start": 581.519,
+        "duration": 4.561
+    },
+    {
+        "text": "and batch effects can of course simple",
+        "start": 583.519,
+        "duration": 5.041
+    },
+    {
+        "text": "and non-relatedness and it is actually",
+        "start": 586.08,
+        "duration": 4.56
+    },
+    {
+        "text": "extremely difficult to account for and",
+        "start": 588.56,
+        "duration": 4.64
+    },
+    {
+        "text": "some pronoun relatedness",
+        "start": 590.64,
+        "duration": 3.52
+    },
+    {
+        "text": "and",
+        "start": 593.2,
+        "duration": 4.24
+    },
+    {
+        "text": "and and so when you have a data",
+        "start": 594.16,
+        "duration": 5.52
+    },
+    {
+        "text": "and a sequencing data that has the first",
+        "start": 597.44,
+        "duration": 4.24
+    },
+    {
+        "text": "feature that is counter based and also",
+        "start": 599.68,
+        "duration": 3.599
+    },
+    {
+        "text": "has a second feature that gene",
+        "start": 601.68,
+        "duration": 3.52
+    },
+    {
+        "text": "expression are heritable and you have a",
+        "start": 603.279,
+        "duration": 4.0
+    },
+    {
+        "text": "sample non-independence then you",
+        "start": 605.2,
+        "duration": 4.0
+    },
+    {
+        "text": "definitely want to account for both two",
+        "start": 607.279,
+        "duration": 3.921
+    },
+    {
+        "text": "different features but those previous",
+        "start": 609.2,
+        "duration": 4.8
+    },
+    {
+        "text": "approaches have only been focused on one",
+        "start": 611.2,
+        "duration": 6.0
+    },
+    {
+        "text": "of those two features so for example one",
+        "start": 614.0,
+        "duration": 5.839
+    },
+    {
+        "text": "approach they try to normalize the count",
+        "start": 617.2,
+        "duration": 5.6
+    },
+    {
+        "text": "to continuous values and then once they",
+        "start": 619.839,
+        "duration": 5.041
+    },
+    {
+        "text": "can normalize account to continuous",
+        "start": 622.8,
+        "duration": 3.84
+    },
+    {
+        "text": "values then they can use the linear",
+        "start": 624.88,
+        "duration": 3.92
+    },
+    {
+        "text": "mixed effects model to account for",
+        "start": 626.64,
+        "duration": 4.0
+    },
+    {
+        "text": "population structure individual",
+        "start": 628.8,
+        "duration": 4.64
+    },
+    {
+        "text": "relatedness or population stratification",
+        "start": 630.64,
+        "duration": 5.439
+    },
+    {
+        "text": "and in this approach while they deal",
+        "start": 633.44,
+        "duration": 4.72
+    },
+    {
+        "text": "with this population structure issue",
+        "start": 636.079,
+        "duration": 3.681
+    },
+    {
+        "text": "they actually fail to",
+        "start": 638.16,
+        "duration": 3.359
+    },
+    {
+        "text": "account for the counterbase nature of",
+        "start": 639.76,
+        "duration": 4.56
+    },
+    {
+        "text": "aniasic so naturally you would expect",
+        "start": 641.519,
+        "duration": 4.88
+    },
+    {
+        "text": "that this type of approach may lose your",
+        "start": 644.32,
+        "duration": 2.959
+    },
+    {
+        "text": "power",
+        "start": 646.399,
+        "duration": 2.641
+    },
+    {
+        "text": "on the other hand there's a second",
+        "start": 647.279,
+        "duration": 3.521
+    },
+    {
+        "text": "alternative approach and the second",
+        "start": 649.04,
+        "duration": 3.6
+    },
+    {
+        "text": "alternative approach is essentially to",
+        "start": 650.8,
+        "duration": 4.24
+    },
+    {
+        "text": "use the negative binomial based models",
+        "start": 652.64,
+        "duration": 5.759
+    },
+    {
+        "text": "like a dc kind of hr to analyze your rna",
+        "start": 655.04,
+        "duration": 6.0
+    },
+    {
+        "text": "sequencing data but this approach fails",
+        "start": 658.399,
+        "duration": 4.161
+    },
+    {
+        "text": "to account for those individual",
+        "start": 661.04,
+        "duration": 3.84
+    },
+    {
+        "text": "relatedness and sample non-independence",
+        "start": 662.56,
+        "duration": 5.12
+    },
+    {
+        "text": "data so intuitively once you do have",
+        "start": 664.88,
+        "duration": 5.04
+    },
+    {
+        "text": "those related individuals or once you do",
+        "start": 667.68,
+        "duration": 4.32
+    },
+    {
+        "text": "have those hidden confounding effects",
+        "start": 669.92,
+        "duration": 3.68
+    },
+    {
+        "text": "which are actually quite common in the",
+        "start": 672.0,
+        "duration": 3.76
+    },
+    {
+        "text": "sequencing studies then you would expect",
+        "start": 673.6,
+        "duration": 4.0
+    },
+    {
+        "text": "that you are going to have a more",
+        "start": 675.76,
+        "duration": 4.8
+    },
+    {
+        "text": "spurious associations or loser power so",
+        "start": 677.6,
+        "duration": 4.479
+    },
+    {
+        "text": "therefore you can see that neither of",
+        "start": 680.56,
+        "duration": 2.719
+    },
+    {
+        "text": "those previous approaches are",
+        "start": 682.079,
+        "duration": 3.281
+    },
+    {
+        "text": "satisfactory in dealing with these two",
+        "start": 683.279,
+        "duration": 4.56
+    },
+    {
+        "text": "important features of rna",
+        "start": 685.36,
+        "duration": 5.44
+    },
+    {
+        "text": "so motivated by this observation then we",
+        "start": 687.839,
+        "duration": 5.921
+    },
+    {
+        "text": "decided to develop a new statistical",
+        "start": 690.8,
+        "duration": 5.2
+    },
+    {
+        "text": "methods called the positive mix effects",
+        "start": 693.76,
+        "duration": 5.12
+    },
+    {
+        "text": "model try to account for both features",
+        "start": 696.0,
+        "duration": 5.2
+    },
+    {
+        "text": "of this both this type of features",
+        "start": 698.88,
+        "duration": 4.48
+    },
+    {
+        "text": "observed in the data",
+        "start": 701.2,
+        "duration": 3.6
+    },
+    {
+        "text": "so",
+        "start": 703.36,
+        "duration": 2.719
+    },
+    {
+        "text": "basically",
+        "start": 704.8,
+        "duration": 4.64
+    },
+    {
+        "text": "well that looks ugly actually",
+        "start": 706.079,
+        "duration": 5.121
+    },
+    {
+        "text": "i don't know what's going on i probably",
+        "start": 709.44,
+        "duration": 3.68
+    },
+    {
+        "text": "made this slide in the mac and this is",
+        "start": 711.2,
+        "duration": 3.52
+    },
+    {
+        "text": "the windows tj",
+        "start": 713.12,
+        "duration": 2.56
+    },
+    {
+        "text": "so",
+        "start": 714.72,
+        "duration": 3.44
+    },
+    {
+        "text": "so basically the mixed model does",
+        "start": 715.68,
+        "duration": 4.399
+    },
+    {
+        "text": "essentially look at each gene at a time",
+        "start": 718.16,
+        "duration": 3.52
+    },
+    {
+        "text": "so we are going to do a differential",
+        "start": 720.079,
+        "duration": 3.44
+    },
+    {
+        "text": "expression analysis and to do that we",
+        "start": 721.68,
+        "duration": 3.68
+    },
+    {
+        "text": "basically look at each gene at a time",
+        "start": 723.519,
+        "duration": 4.0
+    },
+    {
+        "text": "and fit in this model and this model",
+        "start": 725.36,
+        "duration": 4.32
+    },
+    {
+        "text": "looks actually quite straightforward so",
+        "start": 727.519,
+        "duration": 4.56
+    },
+    {
+        "text": "we're going to model this comma data",
+        "start": 729.68,
+        "duration": 4.719
+    },
+    {
+        "text": "which is the y subscript i so this is",
+        "start": 732.079,
+        "duration": 5.041
+    },
+    {
+        "text": "the kind of data for ice individual and",
+        "start": 734.399,
+        "duration": 4.401
+    },
+    {
+        "text": "because it's count data we naturally",
+        "start": 737.12,
+        "duration": 4.08
+    },
+    {
+        "text": "model it as a poisson distributor and so",
+        "start": 738.8,
+        "duration": 3.92
+    },
+    {
+        "text": "with the person distributed with the",
+        "start": 741.2,
+        "duration": 3.6
+    },
+    {
+        "text": "later parameter that depends on these",
+        "start": 742.72,
+        "duration": 4.64
+    },
+    {
+        "text": "two factors one factor is the total rate",
+        "start": 744.8,
+        "duration": 5.279
+    },
+    {
+        "text": "depth so intuitively if you sequence and",
+        "start": 747.36,
+        "duration": 4.32
+    },
+    {
+        "text": "get a more high coverage for that",
+        "start": 750.079,
+        "duration": 3.121
+    },
+    {
+        "text": "individual then you are going to have a",
+        "start": 751.68,
+        "duration": 3.44
+    },
+    {
+        "text": "more real account with that particular g",
+        "start": 753.2,
+        "duration": 4.319
+    },
+    {
+        "text": "right so therefore it scaled with n sub",
+        "start": 755.12,
+        "duration": 5.2
+    },
+    {
+        "text": "i and then in addition to this n sub i",
+        "start": 757.519,
+        "duration": 4.801
+    },
+    {
+        "text": "we're also going to have this lambda sub",
+        "start": 760.32,
+        "duration": 4.639
+    },
+    {
+        "text": "i that's the unknown greater parameter",
+        "start": 762.32,
+        "duration": 4.959
+    },
+    {
+        "text": "and so therefore y i follows the poisson",
+        "start": 764.959,
+        "duration": 4.801
+    },
+    {
+        "text": "distribution with right parameter that's",
+        "start": 767.279,
+        "duration": 5.841
+    },
+    {
+        "text": "a product of n sub i this read depth and",
+        "start": 769.76,
+        "duration": 4.72
+    },
+    {
+        "text": "the",
+        "start": 773.12,
+        "duration": 3.92
+    },
+    {
+        "text": "another unknown parameter lambda sub i",
+        "start": 774.48,
+        "duration": 4.159
+    },
+    {
+        "text": "and then we are going to model this",
+        "start": 777.04,
+        "duration": 3.919
+    },
+    {
+        "text": "lambda sub i as a function of the",
+        "start": 778.639,
+        "duration": 5.121
+    },
+    {
+        "text": "predictor of interest so because this",
+        "start": 780.959,
+        "duration": 4.801
+    },
+    {
+        "text": "lambda i is the value between zero and",
+        "start": 783.76,
+        "duration": 3.68
+    },
+    {
+        "text": "infinity so we take the log",
+        "start": 785.76,
+        "duration": 3.759
+    },
+    {
+        "text": "transformation and we model it as a",
+        "start": 787.44,
+        "duration": 4.079
+    },
+    {
+        "text": "linear function of many covariate",
+        "start": 789.519,
+        "duration": 4.401
+    },
+    {
+        "text": "effects and a predictor of interest so",
+        "start": 791.519,
+        "duration": 5.361
+    },
+    {
+        "text": "over here we have our log lambda sub i",
+        "start": 793.92,
+        "duration": 6.24
+    },
+    {
+        "text": "and then we have a w sub i times our",
+        "start": 796.88,
+        "duration": 7.28
+    },
+    {
+        "text": "alpha so the w sub i is essentially",
+        "start": 800.16,
+        "duration": 6.08
+    },
+    {
+        "text": "all those covariance you want to include",
+        "start": 804.16,
+        "duration": 3.76
+    },
+    {
+        "text": "which also include the intercept you",
+        "start": 806.24,
+        "duration": 4.48
+    },
+    {
+        "text": "want to include what alpha is",
+        "start": 807.92,
+        "duration": 4.56
+    },
+    {
+        "text": "effective size",
+        "start": 810.72,
+        "duration": 3.6
+    },
+    {
+        "text": "and besides this standard covariates you",
+        "start": 812.48,
+        "duration": 3.599
+    },
+    {
+        "text": "want to fix that you want to control for",
+        "start": 814.32,
+        "duration": 3.6
+    },
+    {
+        "text": "example the coverage can include a g",
+        "start": 816.079,
+        "duration": 3.921
+    },
+    {
+        "text": "effect or sexy effect that you want to",
+        "start": 817.92,
+        "duration": 4.88
+    },
+    {
+        "text": "control for and besides this you also",
+        "start": 820.0,
+        "duration": 4.32
+    },
+    {
+        "text": "are going to have your predictor of",
+        "start": 822.8,
+        "duration": 3.92
+    },
+    {
+        "text": "interest so this x is our predictor of",
+        "start": 824.32,
+        "duration": 4.319
+    },
+    {
+        "text": "interest so this predictor of interest",
+        "start": 826.72,
+        "duration": 4.4
+    },
+    {
+        "text": "can be anything can be any continuous or",
+        "start": 828.639,
+        "duration": 4.561
+    },
+    {
+        "text": "discrete values so for example if you",
+        "start": 831.12,
+        "duration": 4.56
+    },
+    {
+        "text": "are interested in identifying and say",
+        "start": 833.2,
+        "duration": 5.199
+    },
+    {
+        "text": "this qtl then this x is essentially a",
+        "start": 835.68,
+        "duration": 4.24
+    },
+    {
+        "text": "genotype vector",
+        "start": 838.399,
+        "duration": 4.401
+    },
+    {
+        "text": "as coded as yellow zlo12 as copies of",
+        "start": 839.92,
+        "duration": 5.68
+    },
+    {
+        "text": "real reference allele alternatively if",
+        "start": 842.8,
+        "duration": 4.719
+    },
+    {
+        "text": "you are interested in say detecting",
+        "start": 845.6,
+        "duration": 4.799
+    },
+    {
+        "text": "those h associated or gender associated",
+        "start": 847.519,
+        "duration": 5.521
+    },
+    {
+        "text": "at g expression levels then x could be a",
+        "start": 850.399,
+        "duration": 5.761
+    },
+    {
+        "text": "h or x could be a gender level 0 or 1.",
+        "start": 853.04,
+        "duration": 5.68
+    },
+    {
+        "text": "so the x is our predictor of interest",
+        "start": 856.16,
+        "duration": 4.239
+    },
+    {
+        "text": "and the beta is the coefficient of",
+        "start": 858.72,
+        "duration": 4.0
+    },
+    {
+        "text": "interest so our goal is really to",
+        "start": 860.399,
+        "duration": 4.8
+    },
+    {
+        "text": "estimate the beta effect size and test",
+        "start": 862.72,
+        "duration": 4.559
+    },
+    {
+        "text": "it to see whether it's equal to zl or",
+        "start": 865.199,
+        "duration": 4.08
+    },
+    {
+        "text": "not in order to identify differential",
+        "start": 867.279,
+        "duration": 3.36
+    },
+    {
+        "text": "express",
+        "start": 869.279,
+        "duration": 3.841
+    },
+    {
+        "text": "so these two are very natural components",
+        "start": 870.639,
+        "duration": 4.721
+    },
+    {
+        "text": "and standard components in possibility",
+        "start": 873.12,
+        "duration": 4.64
+    },
+    {
+        "text": "effects model but in addition to these",
+        "start": 875.36,
+        "duration": 5.12
+    },
+    {
+        "text": "two we're going to have two extra terms",
+        "start": 877.76,
+        "duration": 5.92
+    },
+    {
+        "text": "so we have this g term g sub i term and",
+        "start": 880.48,
+        "duration": 5.919
+    },
+    {
+        "text": "i also have this e sub item so this g",
+        "start": 883.68,
+        "duration": 5.599
+    },
+    {
+        "text": "sub i is the genetic effect for ice",
+        "start": 886.399,
+        "duration": 5.201
+    },
+    {
+        "text": "individuals while the e sub i is an",
+        "start": 889.279,
+        "duration": 4.881
+    },
+    {
+        "text": "environmental effect for ic individuals",
+        "start": 891.6,
+        "duration": 4.64
+    },
+    {
+        "text": "and our normal part of this model",
+        "start": 894.16,
+        "duration": 4.56
+    },
+    {
+        "text": "essentially introducing both the g sub i",
+        "start": 896.24,
+        "duration": 4.88
+    },
+    {
+        "text": "and e sub i to account for those genetic",
+        "start": 898.72,
+        "duration": 4.4
+    },
+    {
+        "text": "and the environmental effects so",
+        "start": 901.12,
+        "duration": 4.079
+    },
+    {
+        "text": "intuitively and those are the fixed",
+        "start": 903.12,
+        "duration": 4.0
+    },
+    {
+        "text": "effects the blue times are for x times",
+        "start": 905.199,
+        "duration": 3.921
+    },
+    {
+        "text": "data those are fixed effects while we",
+        "start": 907.12,
+        "duration": 4.399
+    },
+    {
+        "text": "will model both g and e as running",
+        "start": 909.12,
+        "duration": 4.079
+    },
+    {
+        "text": "effects and because they are random they",
+        "start": 911.519,
+        "duration": 3.68
+    },
+    {
+        "text": "are going to introduce more variation",
+        "start": 913.199,
+        "duration": 3.76
+    },
+    {
+        "text": "than you would expect under the postal",
+        "start": 915.199,
+        "duration": 3.681
+    },
+    {
+        "text": "model so they both of those terms are",
+        "start": 916.959,
+        "duration": 4.081
+    },
+    {
+        "text": "going to deal with this over dispersion",
+        "start": 918.88,
+        "duration": 4.48
+    },
+    {
+        "text": "issue that's commonly observed in",
+        "start": 921.04,
+        "duration": 3.799
+    },
+    {
+        "text": "a sequence of",
+        "start": 923.36,
+        "duration": 4.0
+    },
+    {
+        "text": "studies so",
+        "start": 924.839,
+        "duration": 5.0
+    },
+    {
+        "text": "and the although both of gme their model",
+        "start": 927.36,
+        "duration": 5.039
+    },
+    {
+        "text": "over dispersion the other variants are",
+        "start": 929.839,
+        "duration": 4.24
+    },
+    {
+        "text": "not accounted for by the standard",
+        "start": 932.399,
+        "duration": 3.68
+    },
+    {
+        "text": "poisson distribution they actually model",
+        "start": 934.079,
+        "duration": 4.801
+    },
+    {
+        "text": "two different aspects of overdispersion",
+        "start": 936.079,
+        "duration": 5.12
+    },
+    {
+        "text": "so in particular the e models the",
+        "start": 938.88,
+        "duration": 4.399
+    },
+    {
+        "text": "variation that due to independent",
+        "start": 941.199,
+        "duration": 4.481
+    },
+    {
+        "text": "environmental noise so if you combine",
+        "start": 943.279,
+        "duration": 3.841
+    },
+    {
+        "text": "all those",
+        "start": 945.68,
+        "duration": 4.24
+    },
+    {
+        "text": "values of e together right so now the e",
+        "start": 947.12,
+        "duration": 5.519
+    },
+    {
+        "text": "the capitalized e is the one by one",
+        "start": 949.92,
+        "duration": 3.839
+    },
+    {
+        "text": "vector",
+        "start": 952.639,
+        "duration": 3.76
+    },
+    {
+        "text": "of environmental effects across any",
+        "start": 953.759,
+        "duration": 4.721
+    },
+    {
+        "text": "individuals now this will follow the",
+        "start": 956.399,
+        "duration": 4.721
+    },
+    {
+        "text": "multiverse normal distribution with the",
+        "start": 958.48,
+        "duration": 5.12
+    },
+    {
+        "text": "variance equals to sigma square times",
+        "start": 961.12,
+        "duration": 5.719
+    },
+    {
+        "text": "one minus h squared so basically the",
+        "start": 963.6,
+        "duration": 6.159
+    },
+    {
+        "text": "variance those h does these are assumed",
+        "start": 966.839,
+        "duration": 5.161
+    },
+    {
+        "text": "to be independently and identically",
+        "start": 969.759,
+        "duration": 4.08
+    },
+    {
+        "text": "distributed with the normal with the",
+        "start": 972.0,
+        "duration": 3.68
+    },
+    {
+        "text": "variance equal to sigma squared times",
+        "start": 973.839,
+        "duration": 4.641
+    },
+    {
+        "text": "one minus h squared so therefore the e",
+        "start": 975.68,
+        "duration": 4.8
+    },
+    {
+        "text": "that models a standard independent",
+        "start": 978.48,
+        "duration": 4.32
+    },
+    {
+        "text": "variation so intuitively if you only",
+        "start": 980.48,
+        "duration": 4.64
+    },
+    {
+        "text": "have this e term then this looks very",
+        "start": 982.8,
+        "duration": 4.399
+    },
+    {
+        "text": "much like a negative binomial model",
+        "start": 985.12,
+        "duration": 3.839
+    },
+    {
+        "text": "except the functional form is slightly",
+        "start": 987.199,
+        "duration": 4.08
+    },
+    {
+        "text": "different so you can think of our model",
+        "start": 988.959,
+        "duration": 4.88
+    },
+    {
+        "text": "with only this e term",
+        "start": 991.279,
+        "duration": 4.961
+    },
+    {
+        "text": "is equivalent to this negative binomial",
+        "start": 993.839,
+        "duration": 4.8
+    },
+    {
+        "text": "models as people are always used",
+        "start": 996.24,
+        "duration": 4.48
+    },
+    {
+        "text": "but in addition to this e term we also",
+        "start": 998.639,
+        "duration": 4.32
+    },
+    {
+        "text": "have our g term now the g term is the",
+        "start": 1000.72,
+        "duration": 4.4
+    },
+    {
+        "text": "key factor here try to model the sample",
+        "start": 1002.959,
+        "duration": 3.761
+    },
+    {
+        "text": "number independence due to either",
+        "start": 1005.12,
+        "duration": 3.6
+    },
+    {
+        "text": "individual relatedness population",
+        "start": 1006.72,
+        "duration": 5.2
+    },
+    {
+        "text": "structure or hidden compound effect",
+        "start": 1008.72,
+        "duration": 5.6
+    },
+    {
+        "text": "so this g term here is again the g is",
+        "start": 1011.92,
+        "duration": 5.039
+    },
+    {
+        "text": "the m by one vector and we model this m",
+        "start": 1014.32,
+        "duration": 4.72
+    },
+    {
+        "text": "by one vector as following multivariate",
+        "start": 1016.959,
+        "duration": 4.24
+    },
+    {
+        "text": "normal distribution but this time our",
+        "start": 1019.04,
+        "duration": 4.239
+    },
+    {
+        "text": "covariance structure is more complicated",
+        "start": 1021.199,
+        "duration": 4.88
+    },
+    {
+        "text": "so instead of assuming all those eis are",
+        "start": 1023.279,
+        "duration": 4.961
+    },
+    {
+        "text": "identically distributed now we have",
+        "start": 1026.079,
+        "duration": 4.48
+    },
+    {
+        "text": "those gi's they're actually correlated",
+        "start": 1028.24,
+        "duration": 4.959
+    },
+    {
+        "text": "depending on your structure of this case",
+        "start": 1030.559,
+        "duration": 4.88
+    },
+    {
+        "text": "so the k matrix essentially try to",
+        "start": 1033.199,
+        "duration": 4.64
+    },
+    {
+        "text": "capture the sample null independence so",
+        "start": 1035.439,
+        "duration": 5.681
+    },
+    {
+        "text": "intuitively if i and a js individual are",
+        "start": 1037.839,
+        "duration": 5.761
+    },
+    {
+        "text": "genetically related all i am just",
+        "start": 1041.12,
+        "duration": 4.64
+    },
+    {
+        "text": "individual that comes from then batch",
+        "start": 1043.6,
+        "duration": 4.64
+    },
+    {
+        "text": "then this case of ij is going to be",
+        "start": 1045.76,
+        "duration": 5.36
+    },
+    {
+        "text": "large and positive and when k sub ig is",
+        "start": 1048.24,
+        "duration": 4.72
+    },
+    {
+        "text": "large and positive then it will",
+        "start": 1051.12,
+        "duration": 5.12
+    },
+    {
+        "text": "introduce this similarity in this g sub",
+        "start": 1052.96,
+        "duration": 6.32
+    },
+    {
+        "text": "i and g sub j so that g sub i and g sub",
+        "start": 1056.24,
+        "duration": 5.04
+    },
+    {
+        "text": "j will be similar to each other and",
+        "start": 1059.28,
+        "duration": 3.84
+    },
+    {
+        "text": "therefore by modeling that by",
+        "start": 1061.28,
+        "duration": 3.84
+    },
+    {
+        "text": "controlling for the g essentially",
+        "start": 1063.12,
+        "duration": 4.16
+    },
+    {
+        "text": "controlling for their similarity between",
+        "start": 1065.12,
+        "duration": 4.32
+    },
+    {
+        "text": "i am just individual so therefore you",
+        "start": 1067.28,
+        "duration": 4.32
+    },
+    {
+        "text": "essentially can choose and controls for",
+        "start": 1069.44,
+        "duration": 4.479
+    },
+    {
+        "text": "the sample non-independent c commonly c",
+        "start": 1071.6,
+        "duration": 4.959
+    },
+    {
+        "text": "in rna sequencing studies",
+        "start": 1073.919,
+        "duration": 4.801
+    },
+    {
+        "text": "and so therefore this g is a unique",
+        "start": 1076.559,
+        "duration": 4.161
+    },
+    {
+        "text": "feature our model kind of models the",
+        "start": 1078.72,
+        "duration": 4.4
+    },
+    {
+        "text": "sample non-independence due to uh",
+        "start": 1080.72,
+        "duration": 4.319
+    },
+    {
+        "text": "individual relatedness of population",
+        "start": 1083.12,
+        "duration": 4.24
+    },
+    {
+        "text": "structure and over here we'll assume",
+        "start": 1085.039,
+        "duration": 5.281
+    },
+    {
+        "text": "that the k is a known f priori so if you",
+        "start": 1087.36,
+        "duration": 5.12
+    },
+    {
+        "text": "have genotype data it's quite easy to",
+        "start": 1090.32,
+        "duration": 4.4
+    },
+    {
+        "text": "compute a kinship matrix right or if you",
+        "start": 1092.48,
+        "duration": 4.319
+    },
+    {
+        "text": "have category data you can also compute",
+        "start": 1094.72,
+        "duration": 4.4
+    },
+    {
+        "text": "the pinch of matrix and alternatively if",
+        "start": 1096.799,
+        "duration": 4.24
+    },
+    {
+        "text": "you only have g expression data and if",
+        "start": 1099.12,
+        "duration": 3.36
+    },
+    {
+        "text": "you want to control for hidden",
+        "start": 1101.039,
+        "duration": 3.361
+    },
+    {
+        "text": "confounding effects and because the gene",
+        "start": 1102.48,
+        "duration": 3.76
+    },
+    {
+        "text": "expression data actually contains a lot",
+        "start": 1104.4,
+        "duration": 3.92
+    },
+    {
+        "text": "of information on where the compounding",
+        "start": 1106.24,
+        "duration": 4.16
+    },
+    {
+        "text": "effects are you can directly use the",
+        "start": 1108.32,
+        "duration": 4.16
+    },
+    {
+        "text": "gene expansion matches to compute the",
+        "start": 1110.4,
+        "duration": 4.159
+    },
+    {
+        "text": "gene expression covariance matrix as the",
+        "start": 1112.48,
+        "duration": 4.319
+    },
+    {
+        "text": "k matrix of calculus here so therefore",
+        "start": 1114.559,
+        "duration": 4.401
+    },
+    {
+        "text": "the k is essentially a pre-computed",
+        "start": 1116.799,
+        "duration": 4.401
+    },
+    {
+        "text": "matrix that's models in individual",
+        "start": 1118.96,
+        "duration": 3.92
+    },
+    {
+        "text": "non-dependents",
+        "start": 1121.2,
+        "duration": 3.52
+    },
+    {
+        "text": "and then finally over here we can see",
+        "start": 1122.88,
+        "duration": 4.56
+    },
+    {
+        "text": "that we have two factors the h one minus",
+        "start": 1124.72,
+        "duration": 5.6
+    },
+    {
+        "text": "h square and also h squared so if you",
+        "start": 1127.44,
+        "duration": 4.96
+    },
+    {
+        "text": "have do have genetic data then this h",
+        "start": 1130.32,
+        "duration": 4.32
+    },
+    {
+        "text": "squared is essentially your habitability",
+        "start": 1132.4,
+        "duration": 4.96
+    },
+    {
+        "text": "so in fact we can also use this model to",
+        "start": 1134.64,
+        "duration": 5.12
+    },
+    {
+        "text": "estimate the heritability for every",
+        "start": 1137.36,
+        "duration": 4.96
+    },
+    {
+        "text": "single gene so this is our model so you",
+        "start": 1139.76,
+        "duration": 4.56
+    },
+    {
+        "text": "can see that compared with other models",
+        "start": 1142.32,
+        "duration": 3.76
+    },
+    {
+        "text": "at the previous negative binomial model",
+        "start": 1144.32,
+        "duration": 4.4
+    },
+    {
+        "text": "like h and d sig our key feature is we",
+        "start": 1146.08,
+        "duration": 4.8
+    },
+    {
+        "text": "have this extra g term to account for",
+        "start": 1148.72,
+        "duration": 4.4
+    },
+    {
+        "text": "individual relatedness so intuitively",
+        "start": 1150.88,
+        "duration": 4.24
+    },
+    {
+        "text": "once you do have individual relatedness",
+        "start": 1153.12,
+        "duration": 4.08
+    },
+    {
+        "text": "sample non-independent in your data then",
+        "start": 1155.12,
+        "duration": 4.32
+    },
+    {
+        "text": "you would expect our model and to work",
+        "start": 1157.2,
+        "duration": 4.24
+    },
+    {
+        "text": "relatively well",
+        "start": 1159.44,
+        "duration": 4.4
+    },
+    {
+        "text": "so this model is straight forward and",
+        "start": 1161.44,
+        "duration": 4.32
+    },
+    {
+        "text": "intuitively makes sense but to fit the",
+        "start": 1163.84,
+        "duration": 4.48
+    },
+    {
+        "text": "model fitting this model is actually not",
+        "start": 1165.76,
+        "duration": 4.08
+    },
+    {
+        "text": "fitting this model is actually quite",
+        "start": 1168.32,
+        "duration": 3.76
+    },
+    {
+        "text": "difficult and that's because it turns",
+        "start": 1169.84,
+        "duration": 3.839
+    },
+    {
+        "text": "out the model we're looking at is",
+        "start": 1172.08,
+        "duration": 4.16
+    },
+    {
+        "text": "belongs to this um porcelain mixer it's",
+        "start": 1173.679,
+        "duration": 4.081
+    },
+    {
+        "text": "called the porcelain mix model that's",
+        "start": 1176.24,
+        "duration": 3.84
+    },
+    {
+        "text": "belongs to the generalized linear mixed",
+        "start": 1177.76,
+        "duration": 4.4
+    },
+    {
+        "text": "model family which is a",
+        "start": 1180.08,
+        "duration": 5.52
+    },
+    {
+        "text": "commonly referred to sglm an inference",
+        "start": 1182.16,
+        "duration": 6.399
+    },
+    {
+        "text": "in this grmm family is very difficult",
+        "start": 1185.6,
+        "duration": 5.199
+    },
+    {
+        "text": "because we have a n-dimensional",
+        "start": 1188.559,
+        "duration": 4.321
+    },
+    {
+        "text": "integration that cannot be solved",
+        "start": 1190.799,
+        "duration": 4.801
+    },
+    {
+        "text": "analytically and over here the integral",
+        "start": 1192.88,
+        "duration": 3.76
+    },
+    {
+        "text": "is actually",
+        "start": 1195.6,
+        "duration": 3.36
+    },
+    {
+        "text": "is un-dimensional so if the sample",
+        "start": 1196.64,
+        "duration": 4.48
+    },
+    {
+        "text": "depends on the sample size so even if",
+        "start": 1198.96,
+        "duration": 4.32
+    },
+    {
+        "text": "once you have an even larger sample size",
+        "start": 1201.12,
+        "duration": 4.0
+    },
+    {
+        "text": "it actually gets more difficult to do",
+        "start": 1203.28,
+        "duration": 3.84
+    },
+    {
+        "text": "the influence in contrast to other",
+        "start": 1205.12,
+        "duration": 3.84
+    },
+    {
+        "text": "methods once you have a larger sample",
+        "start": 1207.12,
+        "duration": 4.4
+    },
+    {
+        "text": "size you should make things easier",
+        "start": 1208.96,
+        "duration": 3.36
+    },
+    {
+        "text": "so",
+        "start": 1211.52,
+        "duration": 2.32
+    },
+    {
+        "text": "and and there are some standard",
+        "start": 1212.32,
+        "duration": 3.76
+    },
+    {
+        "text": "frequencies approaches we can use right",
+        "start": 1213.84,
+        "duration": 3.68
+    },
+    {
+        "text": "so let's include the numerical",
+        "start": 1216.08,
+        "duration": 3.52
+    },
+    {
+        "text": "integration that's based on gaussian by",
+        "start": 1217.52,
+        "duration": 3.92
+    },
+    {
+        "text": "the quadrature and all are placed",
+        "start": 1219.6,
+        "duration": 3.439
+    },
+    {
+        "text": "approximations but neither of those",
+        "start": 1221.44,
+        "duration": 3.68
+    },
+    {
+        "text": "approaches actually scales well with the",
+        "start": 1223.039,
+        "duration": 4.241
+    },
+    {
+        "text": "dimensionality of this integral because",
+        "start": 1225.12,
+        "duration": 4.16
+    },
+    {
+        "text": "once you have a huge dimension then",
+        "start": 1227.28,
+        "duration": 3.68
+    },
+    {
+        "text": "there's neither numerical integration",
+        "start": 1229.28,
+        "duration": 3.68
+    },
+    {
+        "text": "laplace approximation is going to give",
+        "start": 1230.96,
+        "duration": 4.88
+    },
+    {
+        "text": "you accurate answers so therefore it",
+        "start": 1232.96,
+        "duration": 4.64
+    },
+    {
+        "text": "turns out that those commonly used",
+        "start": 1235.84,
+        "duration": 4.16
+    },
+    {
+        "text": "methods such as the pql often fails to",
+        "start": 1237.6,
+        "duration": 4.559
+    },
+    {
+        "text": "account for model uncertainty and can",
+        "start": 1240.0,
+        "duration": 4.72
+    },
+    {
+        "text": "give you unbiased estimates so it gives",
+        "start": 1242.159,
+        "duration": 5.201
+    },
+    {
+        "text": "you by st not only by the beta estimates",
+        "start": 1244.72,
+        "duration": 5.6
+    },
+    {
+        "text": "but also buys a standard error of betas",
+        "start": 1247.36,
+        "duration": 5.12
+    },
+    {
+        "text": "so therefore we decide to took an",
+        "start": 1250.32,
+        "duration": 3.76
+    },
+    {
+        "text": "alternative approach and this",
+        "start": 1252.48,
+        "duration": 3.92
+    },
+    {
+        "text": "alternative approach is to do a markov",
+        "start": 1254.08,
+        "duration": 5.839
+    },
+    {
+        "text": "chain monocolo or mcmc based methods as",
+        "start": 1256.4,
+        "duration": 6.08
+    },
+    {
+        "text": "a nice feature of this mcnc best methods",
+        "start": 1259.919,
+        "duration": 5.441
+    },
+    {
+        "text": "is that it has naturally accounts for",
+        "start": 1262.48,
+        "duration": 4.96
+    },
+    {
+        "text": "this uncertainty in all those hyper",
+        "start": 1265.36,
+        "duration": 3.92
+    },
+    {
+        "text": "parameters because it's actually drawing",
+        "start": 1267.44,
+        "duration": 4.0
+    },
+    {
+        "text": "chain and in fact if you run this chair",
+        "start": 1269.28,
+        "duration": 4.48
+    },
+    {
+        "text": "over and over long enough then you are",
+        "start": 1271.44,
+        "duration": 4.56
+    },
+    {
+        "text": "guaranteed to get into the stationary",
+        "start": 1273.76,
+        "duration": 4.0
+    },
+    {
+        "text": "distribution so therefore that's",
+        "start": 1276.0,
+        "duration": 5.12
+    },
+    {
+        "text": "extremely beneficial of the obvious cmc",
+        "start": 1277.76,
+        "duration": 5.12
+    },
+    {
+        "text": "type approach",
+        "start": 1281.12,
+        "duration": 4.72
+    },
+    {
+        "text": "however the mcmc type approach also has",
+        "start": 1282.88,
+        "duration": 5.279
+    },
+    {
+        "text": "a common known issue and that's its",
+        "start": 1285.84,
+        "duration": 4.64
+    },
+    {
+        "text": "computational product so it's extremely",
+        "start": 1288.159,
+        "duration": 4.64
+    },
+    {
+        "text": "computational heavy so in fact every",
+        "start": 1290.48,
+        "duration": 5.439
+    },
+    {
+        "text": "iteration of this mcmc approach scales",
+        "start": 1292.799,
+        "duration": 5.841
+    },
+    {
+        "text": "cubically with the sample size so that",
+        "start": 1295.919,
+        "duration": 5.201
+    },
+    {
+        "text": "makes inference extremely difficult so",
+        "start": 1298.64,
+        "duration": 5.2
+    },
+    {
+        "text": "therefore we decide to use mcmc but we",
+        "start": 1301.12,
+        "duration": 6.32
+    },
+    {
+        "text": "make several novel algebra innovations",
+        "start": 1303.84,
+        "duration": 5.68
+    },
+    {
+        "text": "to reduce the computational burden we",
+        "start": 1307.44,
+        "duration": 4.719
+    },
+    {
+        "text": "have so in fact we decide to use",
+        "start": 1309.52,
+        "duration": 4.639
+    },
+    {
+        "text": "uh to take advantage of",
+        "start": 1312.159,
+        "duration": 2.961
+    },
+    {
+        "text": "two",
+        "start": 1314.159,
+        "duration": 3.281
+    },
+    {
+        "text": "algebra tricks one trick is based on",
+        "start": 1315.12,
+        "duration": 4.799
+    },
+    {
+        "text": "this recent auxiliary variable-based",
+        "start": 1317.44,
+        "duration": 5.04
+    },
+    {
+        "text": "mcmc algorithm so essentially develop an",
+        "start": 1319.919,
+        "duration": 4.801
+    },
+    {
+        "text": "auxiliary variable representation of",
+        "start": 1322.48,
+        "duration": 4.72
+    },
+    {
+        "text": "this partial model so that you no longer",
+        "start": 1324.72,
+        "duration": 4.319
+    },
+    {
+        "text": "need to sample the cost data but rather",
+        "start": 1327.2,
+        "duration": 3.68
+    },
+    {
+        "text": "sample the continuous data and this",
+        "start": 1329.039,
+        "duration": 3.841
+    },
+    {
+        "text": "makes things relatively easy and i'll",
+        "start": 1330.88,
+        "duration": 4.799
+    },
+    {
+        "text": "get to this point in more details better",
+        "start": 1332.88,
+        "duration": 4.159
+    },
+    {
+        "text": "shortly",
+        "start": 1335.679,
+        "duration": 3.041
+    },
+    {
+        "text": "and the second trick we use is the",
+        "start": 1337.039,
+        "duration": 3.841
+    },
+    {
+        "text": "recent mixed model innovations so",
+        "start": 1338.72,
+        "duration": 3.76
+    },
+    {
+        "text": "essentially this type of innovations",
+        "start": 1340.88,
+        "duration": 4.0
+    },
+    {
+        "text": "applies once you have a kinship matrix",
+        "start": 1342.48,
+        "duration": 4.24
+    },
+    {
+        "text": "and essentially this allows you to do",
+        "start": 1344.88,
+        "duration": 3.76
+    },
+    {
+        "text": "egg and decomposition at the beginning",
+        "start": 1346.72,
+        "duration": 4.48
+    },
+    {
+        "text": "and then at the later steps later mcmc",
+        "start": 1348.64,
+        "duration": 4.72
+    },
+    {
+        "text": "steps you no longer need to do those",
+        "start": 1351.2,
+        "duration": 4.4
+    },
+    {
+        "text": "cubic operations and so therefore",
+        "start": 1353.36,
+        "duration": 4.72
+    },
+    {
+        "text": "combining by both our methods can",
+        "start": 1355.6,
+        "duration": 4.8
+    },
+    {
+        "text": "actually reduce a per mcmc iteration",
+        "start": 1358.08,
+        "duration": 5.04
+    },
+    {
+        "text": "complexity from cubic down to quadratic",
+        "start": 1360.4,
+        "duration": 4.48
+    },
+    {
+        "text": "so essentially gives you an n times",
+        "start": 1363.12,
+        "duration": 4.0
+    },
+    {
+        "text": "faster algorithm and any of the sample",
+        "start": 1364.88,
+        "duration": 4.0
+    },
+    {
+        "text": "size so if you have a larger sample size",
+        "start": 1367.12,
+        "duration": 3.36
+    },
+    {
+        "text": "you can see that the speed then you are",
+        "start": 1368.88,
+        "duration": 3.52
+    },
+    {
+        "text": "going to have it's much more dramatic",
+        "start": 1370.48,
+        "duration": 4.0
+    },
+    {
+        "text": "than if you have a much smaller sample",
+        "start": 1372.4,
+        "duration": 3.279
+    },
+    {
+        "text": "size",
+        "start": 1374.48,
+        "duration": 2.24
+    },
+    {
+        "text": "and uh",
+        "start": 1375.679,
+        "duration": 3.521
+    },
+    {
+        "text": "and and we and and once we have this",
+        "start": 1376.72,
+        "duration": 5.839
+    },
+    {
+        "text": "efficient mcnc approach then we actually",
+        "start": 1379.2,
+        "duration": 6.479
+    },
+    {
+        "text": "goes back to our frequencies approach so",
+        "start": 1382.559,
+        "duration": 5.921
+    },
+    {
+        "text": "instead of doing a base in a inference",
+        "start": 1385.679,
+        "duration": 5.441
+    },
+    {
+        "text": "we actually based on asymptotics and use",
+        "start": 1388.48,
+        "duration": 4.48
+    },
+    {
+        "text": "the posterior samples to obtain",
+        "start": 1391.12,
+        "duration": 4.799
+    },
+    {
+        "text": "approximate maximum likelihood estimates",
+        "start": 1392.96,
+        "duration": 5.52
+    },
+    {
+        "text": "and also suspended errors and with that",
+        "start": 1395.919,
+        "duration": 4.88
+    },
+    {
+        "text": "we can convert them into a p-value and",
+        "start": 1398.48,
+        "duration": 4.16
+    },
+    {
+        "text": "we'll show you later that this project",
+        "start": 1400.799,
+        "duration": 4.081
+    },
+    {
+        "text": "will give you where we have the p values",
+        "start": 1402.64,
+        "duration": 5.2
+    },
+    {
+        "text": "so that's our main idea of doing",
+        "start": 1404.88,
+        "duration": 4.88
+    },
+    {
+        "text": "influence on this possible mix effect",
+        "start": 1407.84,
+        "duration": 4.4
+    },
+    {
+        "text": "model and we call our algorithm a core",
+        "start": 1409.76,
+        "duration": 4.48
+    },
+    {
+        "text": "algorithm which stands for the mixed",
+        "start": 1412.24,
+        "duration": 4.48
+    },
+    {
+        "text": "model association for counter data by",
+        "start": 1414.24,
+        "duration": 4.319
+    },
+    {
+        "text": "data augmentation because one key",
+        "start": 1416.72,
+        "duration": 4.16
+    },
+    {
+        "text": "feature is using this data augmentation",
+        "start": 1418.559,
+        "duration": 3.6
+    },
+    {
+        "text": "approach",
+        "start": 1420.88,
+        "duration": 3.76
+    },
+    {
+        "text": "so this data augmentation approach is",
+        "start": 1422.159,
+        "duration": 5.121
+    },
+    {
+        "text": "actually relatively strata forward so",
+        "start": 1424.64,
+        "duration": 5.039
+    },
+    {
+        "text": "basically right we have account data and",
+        "start": 1427.28,
+        "duration": 4.16
+    },
+    {
+        "text": "then we have a counter data we have",
+        "start": 1429.679,
+        "duration": 4.24
+    },
+    {
+        "text": "observed the y terms now observing white",
+        "start": 1431.44,
+        "duration": 4.88
+    },
+    {
+        "text": "counts in an eye sequencing data that's",
+        "start": 1433.919,
+        "duration": 5.361
+    },
+    {
+        "text": "also equivalent to imagine a portion",
+        "start": 1436.32,
+        "duration": 6.0
+    },
+    {
+        "text": "process on this linear line right so if",
+        "start": 1439.28,
+        "duration": 4.96
+    },
+    {
+        "text": "you imagine a portion process in this",
+        "start": 1442.32,
+        "duration": 5.68
+    },
+    {
+        "text": "line and this event will happen randomly",
+        "start": 1444.24,
+        "duration": 6.319
+    },
+    {
+        "text": "on this a particular line based on this",
+        "start": 1448.0,
+        "duration": 5.919
+    },
+    {
+        "text": "proton process and observing y counts",
+        "start": 1450.559,
+        "duration": 6.561
+    },
+    {
+        "text": "in a time interval between zero and one",
+        "start": 1453.919,
+        "duration": 5.841
+    },
+    {
+        "text": "right observing r why a count of angle",
+        "start": 1457.12,
+        "duration": 4.64
+    },
+    {
+        "text": "sequencing rates that's equivalent to",
+        "start": 1459.76,
+        "duration": 3.919
+    },
+    {
+        "text": "observing y current in this time",
+        "start": 1461.76,
+        "duration": 4.24
+    },
+    {
+        "text": "interval of zero and one of this poisson",
+        "start": 1463.679,
+        "duration": 4.641
+    },
+    {
+        "text": "process and that's equivalent to say",
+        "start": 1466.0,
+        "duration": 5.52
+    },
+    {
+        "text": "that your y is count happens before t",
+        "start": 1468.32,
+        "duration": 6.56
+    },
+    {
+        "text": "equals to one right and take plus your y",
+        "start": 1471.52,
+        "duration": 6.24
+    },
+    {
+        "text": "plus once count has to happen after g",
+        "start": 1474.88,
+        "duration": 5.039
+    },
+    {
+        "text": "equal to one so therefore all you need",
+        "start": 1477.76,
+        "duration": 3.84
+    },
+    {
+        "text": "to do is to",
+        "start": 1479.919,
+        "duration": 4.801
+    },
+    {
+        "text": "just record the time of wise counts and",
+        "start": 1481.6,
+        "duration": 5.52
+    },
+    {
+        "text": "record time of y plus once counts and",
+        "start": 1484.72,
+        "duration": 4.319
+    },
+    {
+        "text": "make sure that equals one happens",
+        "start": 1487.12,
+        "duration": 4.24
+    },
+    {
+        "text": "between these two and this will give you",
+        "start": 1489.039,
+        "duration": 5.52
+    },
+    {
+        "text": "equivalent uh measurements on the wise",
+        "start": 1491.36,
+        "duration": 5.6
+    },
+    {
+        "text": "counts in this interval so therefore in",
+        "start": 1494.559,
+        "duration": 5.281
+    },
+    {
+        "text": "fact instead of observing wise counts we",
+        "start": 1496.96,
+        "duration": 5.04
+    },
+    {
+        "text": "essentially can say that we observe our",
+        "start": 1499.84,
+        "duration": 5.6
+    },
+    {
+        "text": "wise counts uh in an interval at t sub",
+        "start": 1502.0,
+        "duration": 6.559
+    },
+    {
+        "text": "one that happens before t equals one and",
+        "start": 1505.44,
+        "duration": 5.839
+    },
+    {
+        "text": "also the inter in arrival time between",
+        "start": 1508.559,
+        "duration": 5.681
+    },
+    {
+        "text": "ys count and y plus once comes equals to",
+        "start": 1511.279,
+        "duration": 4.241
+    },
+    {
+        "text": "t uh",
+        "start": 1514.24,
+        "duration": 3.76
+    },
+    {
+        "text": "sub two and this t sub two includes the",
+        "start": 1515.52,
+        "duration": 4.72
+    },
+    {
+        "text": "t equals to one template right so",
+        "start": 1518.0,
+        "duration": 4.96
+    },
+    {
+        "text": "therefore instead of directly modeling",
+        "start": 1520.24,
+        "duration": 5.439
+    },
+    {
+        "text": "this wise count we can just model this",
+        "start": 1522.96,
+        "duration": 5.04
+    },
+    {
+        "text": "arrival time of course of 1 and the",
+        "start": 1525.679,
+        "duration": 4.721
+    },
+    {
+        "text": "inter arrival time of total 2. and both",
+        "start": 1528.0,
+        "duration": 4.24
+    },
+    {
+        "text": "tau sub 1 tells up 2i actually",
+        "start": 1530.4,
+        "duration": 4.24
+    },
+    {
+        "text": "continuous data so therefore instead of",
+        "start": 1532.24,
+        "duration": 4.96
+    },
+    {
+        "text": "dealing with very difficult poisson",
+        "start": 1534.64,
+        "duration": 4.32
+    },
+    {
+        "text": "likelihood dealing with this very",
+        "start": 1537.2,
+        "duration": 3.92
+    },
+    {
+        "text": "difficult account data now we can turn",
+        "start": 1538.96,
+        "duration": 4.64
+    },
+    {
+        "text": "this com data into a continuous data and",
+        "start": 1541.12,
+        "duration": 4.32
+    },
+    {
+        "text": "we can perform our sampling on this",
+        "start": 1543.6,
+        "duration": 3.92
+    },
+    {
+        "text": "continuous data which makes things much",
+        "start": 1545.44,
+        "duration": 4.4
+    },
+    {
+        "text": "much easier so that's the main trick of",
+        "start": 1547.52,
+        "duration": 4.88
+    },
+    {
+        "text": "this data augmentation approach and",
+        "start": 1549.84,
+        "duration": 4.24
+    },
+    {
+        "text": "because of this data augmentation",
+        "start": 1552.4,
+        "duration": 4.56
+    },
+    {
+        "text": "approach we use and also because of some",
+        "start": 1554.08,
+        "duration": 3.92
+    },
+    {
+        "text": "other",
+        "start": 1556.96,
+        "duration": 2.24
+    },
+    {
+        "text": "novel",
+        "start": 1558.0,
+        "duration": 3.36
+    },
+    {
+        "text": "algebra tricks we use for mixed effects",
+        "start": 1559.2,
+        "duration": 5.12
+    },
+    {
+        "text": "models we can see that our mtmp is",
+        "start": 1561.36,
+        "duration": 5.04
+    },
+    {
+        "text": "extremely fast so compared with the",
+        "start": 1564.32,
+        "duration": 4.88
+    },
+    {
+        "text": "standard mcmc method which is called the",
+        "start": 1566.4,
+        "duration": 5.84
+    },
+    {
+        "text": "mcmc glm method",
+        "start": 1569.2,
+        "duration": 5.68
+    },
+    {
+        "text": "which is this orange line if we record",
+        "start": 1572.24,
+        "duration": 4.319
+    },
+    {
+        "text": "the computation time",
+        "start": 1574.88,
+        "duration": 3.84
+    },
+    {
+        "text": "and also this uh",
+        "start": 1576.559,
+        "duration": 4.401
+    },
+    {
+        "text": "and also at the log scale you can see",
+        "start": 1578.72,
+        "duration": 4.88
+    },
+    {
+        "text": "that our method of called purple line",
+        "start": 1580.96,
+        "duration": 4.8
+    },
+    {
+        "text": "works much much faster and this",
+        "start": 1583.6,
+        "duration": 4.319
+    },
+    {
+        "text": "difference is much obvious once you have",
+        "start": 1585.76,
+        "duration": 4.32
+    },
+    {
+        "text": "an even larger data set so if you have a",
+        "start": 1587.919,
+        "duration": 4.161
+    },
+    {
+        "text": "thousand individuals then our message is",
+        "start": 1590.08,
+        "duration": 4.32
+    },
+    {
+        "text": "roughly about a thousand times faster",
+        "start": 1592.08,
+        "duration": 4.8
+    },
+    {
+        "text": "than this computing method",
+        "start": 1594.4,
+        "duration": 4.639
+    },
+    {
+        "text": "so therefore you can see that now this",
+        "start": 1596.88,
+        "duration": 4.72
+    },
+    {
+        "text": "new computational method allows us to",
+        "start": 1599.039,
+        "duration": 5.441
+    },
+    {
+        "text": "perform mcnc on this extremely difficult",
+        "start": 1601.6,
+        "duration": 5.04
+    },
+    {
+        "text": "position mixed model and because that",
+        "start": 1604.48,
+        "duration": 4.16
+    },
+    {
+        "text": "this allows us to actually apply this",
+        "start": 1606.64,
+        "duration": 4.48
+    },
+    {
+        "text": "positive mix effects model to relatively",
+        "start": 1608.64,
+        "duration": 5.039
+    },
+    {
+        "text": "large scale rna sequencing data is quite",
+        "start": 1611.12,
+        "duration": 3.679
+    },
+    {
+        "text": "easily",
+        "start": 1613.679,
+        "duration": 3.921
+    },
+    {
+        "text": "now after this mcmc computation what we",
+        "start": 1614.799,
+        "duration": 5.521
+    },
+    {
+        "text": "do next is to compute the p values so",
+        "start": 1617.6,
+        "duration": 4.4
+    },
+    {
+        "text": "again we're not interested in doing",
+        "start": 1620.32,
+        "duration": 4.0
+    },
+    {
+        "text": "basic influence but rather we want to",
+        "start": 1622.0,
+        "duration": 5.44
+    },
+    {
+        "text": "make use the mcnc as a machinery to get",
+        "start": 1624.32,
+        "duration": 6.08
+    },
+    {
+        "text": "the p-value selected and to do that we",
+        "start": 1627.44,
+        "duration": 5.119
+    },
+    {
+        "text": "essentially relies on this asymptotic",
+        "start": 1630.4,
+        "duration": 5.04
+    },
+    {
+        "text": "normality of both the likelihood and the",
+        "start": 1632.559,
+        "duration": 5.441
+    },
+    {
+        "text": "posterior so we all know that our",
+        "start": 1635.44,
+        "duration": 4.32
+    },
+    {
+        "text": "posterior",
+        "start": 1638.0,
+        "duration": 4.72
+    },
+    {
+        "text": "like record times the price right so if",
+        "start": 1639.76,
+        "duration": 4.64
+    },
+    {
+        "text": "we want to make influence on the like",
+        "start": 1642.72,
+        "duration": 3.839
+    },
+    {
+        "text": "clicker then we all we need to do is to",
+        "start": 1644.4,
+        "duration": 4.8
+    },
+    {
+        "text": "compute likelihood as a ratio between",
+        "start": 1646.559,
+        "duration": 5.521
+    },
+    {
+        "text": "your posterior and your class so because",
+        "start": 1649.2,
+        "duration": 4.959
+    },
+    {
+        "text": "you already know your price and you also",
+        "start": 1652.08,
+        "duration": 4.24
+    },
+    {
+        "text": "get your mcmp example and get your post",
+        "start": 1654.159,
+        "duration": 4.241
+    },
+    {
+        "text": "area so therefore simply take the ratio",
+        "start": 1656.32,
+        "duration": 4.32
+    },
+    {
+        "text": "between these two gives you a like",
+        "start": 1658.4,
+        "duration": 3.84
+    },
+    {
+        "text": "function",
+        "start": 1660.64,
+        "duration": 5.039
+    },
+    {
+        "text": "and so and so more more specifically we",
+        "start": 1662.24,
+        "duration": 5.28
+    },
+    {
+        "text": "essentially will assume that the prime",
+        "start": 1665.679,
+        "duration": 4.161
+    },
+    {
+        "text": "distribution beta follows the normal",
+        "start": 1667.52,
+        "duration": 4.48
+    },
+    {
+        "text": "distribution zero and the sigma square",
+        "start": 1669.84,
+        "duration": 4.24
+    },
+    {
+        "text": "zero one in fact it actually doesn't",
+        "start": 1672.0,
+        "duration": 3.76
+    },
+    {
+        "text": "matter because the price",
+        "start": 1674.08,
+        "duration": 3.28
+    },
+    {
+        "text": "influence will be cancelled out from",
+        "start": 1675.76,
+        "duration": 3.84
+    },
+    {
+        "text": "this call here to give you likelihood",
+        "start": 1677.36,
+        "duration": 4.96
+    },
+    {
+        "text": "and then we compute the post area and",
+        "start": 1679.6,
+        "duration": 4.799
+    },
+    {
+        "text": "then we use the method of moments try to",
+        "start": 1682.32,
+        "duration": 4.239
+    },
+    {
+        "text": "match the first and second moments and",
+        "start": 1684.399,
+        "duration": 4.561
+    },
+    {
+        "text": "eventually we get back to our beta head",
+        "start": 1686.559,
+        "duration": 5.521
+    },
+    {
+        "text": "aspects so this beta hat estimates is",
+        "start": 1688.96,
+        "duration": 5.52
+    },
+    {
+        "text": "based on our posterior estimate of beta",
+        "start": 1692.08,
+        "duration": 3.52
+    },
+    {
+        "text": "and apply",
+        "start": 1694.48,
+        "duration": 3.28
+    },
+    {
+        "text": "estimates of beta or this bit head of",
+        "start": 1695.6,
+        "duration": 3.76
+    },
+    {
+        "text": "estimate is actually a maximum",
+        "start": 1697.76,
+        "duration": 3.2
+    },
+    {
+        "text": "likelihood",
+        "start": 1699.36,
+        "duration": 3.6
+    },
+    {
+        "text": "and in addition to that we can also",
+        "start": 1700.96,
+        "duration": 4.079
+    },
+    {
+        "text": "easily compute the standard error for",
+        "start": 1702.96,
+        "duration": 4.4
+    },
+    {
+        "text": "those mlu estimates for data so",
+        "start": 1705.039,
+        "duration": 5.921
+    },
+    {
+        "text": "therefore from this mcnc algorithm we",
+        "start": 1707.36,
+        "duration": 5.679
+    },
+    {
+        "text": "eventually get our beta hat under",
+        "start": 1710.96,
+        "duration": 3.92
+    },
+    {
+        "text": "standard error by the head and that",
+        "start": 1713.039,
+        "duration": 4.561
+    },
+    {
+        "text": "gives you a similar direction so you can",
+        "start": 1714.88,
+        "duration": 4.48
+    },
+    {
+        "text": "take the ratio between the two that's",
+        "start": 1717.6,
+        "duration": 3.679
+    },
+    {
+        "text": "just t statistics and you can really",
+        "start": 1719.36,
+        "duration": 4.0
+    },
+    {
+        "text": "convert it to a value",
+        "start": 1721.279,
+        "duration": 4.241
+    },
+    {
+        "text": "now now you probably wonder that this is",
+        "start": 1723.36,
+        "duration": 3.84
+    },
+    {
+        "text": "an cmc better approach you probably",
+        "start": 1725.52,
+        "duration": 3.6
+    },
+    {
+        "text": "never heard of now never saw this type",
+        "start": 1727.2,
+        "duration": 3.76
+    },
+    {
+        "text": "of approach before someone naturally",
+        "start": 1729.12,
+        "duration": 3.52
+    },
+    {
+        "text": "wonder whether this works at all or",
+        "start": 1730.96,
+        "duration": 3.52
+    },
+    {
+        "text": "whether this is stable at all because we",
+        "start": 1732.64,
+        "duration": 4.8
+    },
+    {
+        "text": "all know that mcmc depends on largely on",
+        "start": 1734.48,
+        "duration": 4.4
+    },
+    {
+        "text": "the initial value",
+        "start": 1737.44,
+        "duration": 2.959
+    },
+    {
+        "text": "so it turns out that results are",
+        "start": 1738.88,
+        "duration": 3.84
+    },
+    {
+        "text": "actually quite stable across multiple",
+        "start": 1740.399,
+        "duration": 3.361
+    },
+    {
+        "text": "runs",
+        "start": 1742.72,
+        "duration": 2.559
+    },
+    {
+        "text": "so if we",
+        "start": 1743.76,
+        "duration": 4.56
+    },
+    {
+        "text": "we basically compute the uh",
+        "start": 1745.279,
+        "duration": 5.681
+    },
+    {
+        "text": "we basically do three simulation studies",
+        "start": 1748.32,
+        "duration": 4.479
+    },
+    {
+        "text": "with the heritability equals to either",
+        "start": 1750.96,
+        "duration": 4.8
+    },
+    {
+        "text": "zlo upon 3 0.6 which i'll get to that in",
+        "start": 1752.799,
+        "duration": 5.281
+    },
+    {
+        "text": "more details and shortly so in those",
+        "start": 1755.76,
+        "duration": 4.399
+    },
+    {
+        "text": "three set of simulations we run two",
+        "start": 1758.08,
+        "duration": 5.36
+    },
+    {
+        "text": "different runs of uh call so we starting",
+        "start": 1760.159,
+        "duration": 5.441
+    },
+    {
+        "text": "with a different set of initial value",
+        "start": 1763.44,
+        "duration": 3.76
+    },
+    {
+        "text": "for round one and the different set of",
+        "start": 1765.6,
+        "duration": 3.6
+    },
+    {
+        "text": "initial value for round two and you can",
+        "start": 1767.2,
+        "duration": 3.92
+    },
+    {
+        "text": "compute the they are minus log",
+        "start": 1769.2,
+        "duration": 4.32
+    },
+    {
+        "text": "temperature values and correspond to",
+        "start": 1771.12,
+        "duration": 4.32
+    },
+    {
+        "text": "each other so you can see that the p",
+        "start": 1773.52,
+        "duration": 5.039
+    },
+    {
+        "text": "values from this one set of mcmp chains",
+        "start": 1775.44,
+        "duration": 5.52
+    },
+    {
+        "text": "looks very similar to the second set of",
+        "start": 1778.559,
+        "duration": 4.321
+    },
+    {
+        "text": "empty chains suggesting that our",
+        "start": 1780.96,
+        "duration": 4.24
+    },
+    {
+        "text": "intensity better p value actually is",
+        "start": 1782.88,
+        "duration": 5.76
+    },
+    {
+        "text": "extremely stable and cause multiple rods",
+        "start": 1785.2,
+        "duration": 6.0
+    },
+    {
+        "text": "so now you can see that we now have this",
+        "start": 1788.64,
+        "duration": 4.88
+    },
+    {
+        "text": "very nice positive mix effects model and",
+        "start": 1791.2,
+        "duration": 4.079
+    },
+    {
+        "text": "if it's more normal part of this model",
+        "start": 1793.52,
+        "duration": 3.2
+    },
+    {
+        "text": "you try to account for is dump on",
+        "start": 1795.279,
+        "duration": 3.12
+    },
+    {
+        "text": "non-independence",
+        "start": 1796.72,
+        "duration": 3.679
+    },
+    {
+        "text": "and we also have this very efficient and",
+        "start": 1798.399,
+        "duration": 4.0
+    },
+    {
+        "text": "cnc-based p-value computational",
+        "start": 1800.399,
+        "duration": 3.921
+    },
+    {
+        "text": "algorithm that actually makes it",
+        "start": 1802.399,
+        "duration": 3.841
+    },
+    {
+        "text": "eventually scalable to large-scale",
+        "start": 1804.32,
+        "duration": 4.479
+    },
+    {
+        "text": "online sequencing sets so now we want to",
+        "start": 1806.24,
+        "duration": 4.24
+    },
+    {
+        "text": "see that our whether our approaches",
+        "start": 1808.799,
+        "duration": 4.401
+    },
+    {
+        "text": "indeed behave as we would expect so to",
+        "start": 1810.48,
+        "duration": 5.28
+    },
+    {
+        "text": "do that we first did a now simulation",
+        "start": 1813.2,
+        "duration": 6.479
+    },
+    {
+        "text": "and so we did we simulated 10 000 genes",
+        "start": 1815.76,
+        "duration": 4.72
+    },
+    {
+        "text": "and",
+        "start": 1819.679,
+        "duration": 4.081
+    },
+    {
+        "text": "we we also extract the kinship matrix",
+        "start": 1820.48,
+        "duration": 5.679
+    },
+    {
+        "text": "data which i described later on and so",
+        "start": 1823.76,
+        "duration": 5.039
+    },
+    {
+        "text": "this is essentially a 63 uh so this is",
+        "start": 1826.159,
+        "duration": 4.801
+    },
+    {
+        "text": "the angle secreting data done up by a",
+        "start": 1828.799,
+        "duration": 4.0
+    },
+    {
+        "text": "water bubble population and that",
+        "start": 1830.96,
+        "duration": 5.12
+    },
+    {
+        "text": "consists of 63 and",
+        "start": 1832.799,
+        "duration": 7.441
+    },
+    {
+        "text": "and so this kinship is 63 by 63 matches",
+        "start": 1836.08,
+        "duration": 6.56
+    },
+    {
+        "text": "and then we similar to the uh this bunch",
+        "start": 1840.24,
+        "duration": 4.64
+    },
+    {
+        "text": "of different settings and so that all",
+        "start": 1842.64,
+        "duration": 4.56
+    },
+    {
+        "text": "those settings they have relatively even",
+        "start": 1844.88,
+        "duration": 3.519
+    },
+    {
+        "text": "small",
+        "start": 1847.2,
+        "duration": 3.44
+    },
+    {
+        "text": "actually either zero or moderate or",
+        "start": 1848.399,
+        "duration": 4.561
+    },
+    {
+        "text": "large genetic effects so we fix the",
+        "start": 1850.64,
+        "duration": 5.84
+    },
+    {
+        "text": "heritability equals 2.3 or we also check",
+        "start": 1852.96,
+        "duration": 6.319
+    },
+    {
+        "text": "whether it changes to when h squared",
+        "start": 1856.48,
+        "duration": 6.079
+    },
+    {
+        "text": "equal to zero or 0.6 and besides that we",
+        "start": 1859.279,
+        "duration": 4.801
+    },
+    {
+        "text": "also make sure that the predicted",
+        "start": 1862.559,
+        "duration": 3.521
+    },
+    {
+        "text": "variable x is correlated with the pinch",
+        "start": 1864.08,
+        "duration": 4.88
+    },
+    {
+        "text": "of matrix and so that it also has the",
+        "start": 1866.08,
+        "duration": 6.0
+    },
+    {
+        "text": "heritability equals either zero upon 35",
+        "start": 1868.96,
+        "duration": 5.52
+    },
+    {
+        "text": "or 0.75 and then we'll compare a bunch",
+        "start": 1872.08,
+        "duration": 4.4
+    },
+    {
+        "text": "of different methods",
+        "start": 1874.48,
+        "duration": 4.4
+    },
+    {
+        "text": "so this method is included so the first",
+        "start": 1876.48,
+        "duration": 4.799
+    },
+    {
+        "text": "one is a linear regression so what we do",
+        "start": 1878.88,
+        "duration": 4.0
+    },
+    {
+        "text": "is essentially we just normalize the",
+        "start": 1881.279,
+        "duration": 4.161
+    },
+    {
+        "text": "angular sequencing data and fit a linear",
+        "start": 1882.88,
+        "duration": 5.84
+    },
+    {
+        "text": "model to that and the nsc",
+        "start": 1885.44,
+        "duration": 6.08
+    },
+    {
+        "text": "and to compute the p value a second",
+        "start": 1888.72,
+        "duration": 4.559
+    },
+    {
+        "text": "method we compare is the linear mix",
+        "start": 1891.52,
+        "duration": 3.68
+    },
+    {
+        "text": "model and that's implemented in the",
+        "start": 1893.279,
+        "duration": 4.24
+    },
+    {
+        "text": "geometric software package so linear mix",
+        "start": 1895.2,
+        "duration": 4.64
+    },
+    {
+        "text": "model also normalizes sequencing data",
+        "start": 1897.519,
+        "duration": 4.241
+    },
+    {
+        "text": "first but it contains this kinship",
+        "start": 1899.84,
+        "duration": 4.079
+    },
+    {
+        "text": "matrix it contains a running effect so",
+        "start": 1901.76,
+        "duration": 3.6
+    },
+    {
+        "text": "it can control for individual",
+        "start": 1903.919,
+        "duration": 3.521
+    },
+    {
+        "text": "relatedness and population structure",
+        "start": 1905.36,
+        "duration": 4.4
+    },
+    {
+        "text": "however it cannot account for this",
+        "start": 1907.44,
+        "duration": 4.88
+    },
+    {
+        "text": "combination of sequencing data",
+        "start": 1909.76,
+        "duration": 4.08
+    },
+    {
+        "text": "and certain method we'll look at the",
+        "start": 1912.32,
+        "duration": 3.839
+    },
+    {
+        "text": "poisson distribution so as i described",
+        "start": 1913.84,
+        "duration": 3.92
+    },
+    {
+        "text": "earlier if you only have technical",
+        "start": 1916.159,
+        "duration": 3.76
+    },
+    {
+        "text": "replicates person is a very good model",
+        "start": 1917.76,
+        "duration": 4.159
+    },
+    {
+        "text": "to describe the distribution but if you",
+        "start": 1919.919,
+        "duration": 4.0
+    },
+    {
+        "text": "have biological replicates then you want",
+        "start": 1921.919,
+        "duration": 4.0
+    },
+    {
+        "text": "to use this negative binomial model",
+        "start": 1923.919,
+        "duration": 4.321
+    },
+    {
+        "text": "which have over-dispersed the components",
+        "start": 1925.919,
+        "duration": 4.0
+    },
+    {
+        "text": "and similar to the negative binomial",
+        "start": 1928.24,
+        "duration": 3.76
+    },
+    {
+        "text": "model we also compare with the h-i and",
+        "start": 1929.919,
+        "duration": 4.401
+    },
+    {
+        "text": "do you think which essentially put more",
+        "start": 1932.0,
+        "duration": 4.559
+    },
+    {
+        "text": "constraints on this negative normal",
+        "start": 1934.32,
+        "duration": 3.92
+    },
+    {
+        "text": "model to make makes them more",
+        "start": 1936.559,
+        "duration": 3.921
+    },
+    {
+        "text": "specialized so intuitively if you have a",
+        "start": 1938.24,
+        "duration": 4.48
+    },
+    {
+        "text": "larger data set then you wouldn't",
+        "start": 1940.48,
+        "duration": 3.84
+    },
+    {
+        "text": "then you would expect this",
+        "start": 1942.72,
+        "duration": 4.079
+    },
+    {
+        "text": "hr to perform quite poorly and if you",
+        "start": 1944.32,
+        "duration": 4.239
+    },
+    {
+        "text": "have a smaller set maybe you would",
+        "start": 1946.799,
+        "duration": 4.161
+    },
+    {
+        "text": "expect easy to an agent from slightly",
+        "start": 1948.559,
+        "duration": 3.84
+    },
+    {
+        "text": "better than negative",
+        "start": 1950.96,
+        "duration": 2.959
+    },
+    {
+        "text": "models",
+        "start": 1952.399,
+        "duration": 3.601
+    },
+    {
+        "text": "and then besides all this we also have",
+        "start": 1953.919,
+        "duration": 4.081
+    },
+    {
+        "text": "our position mix effects model that's",
+        "start": 1956.0,
+        "duration": 4.0
+    },
+    {
+        "text": "implemented in the macro package so",
+        "start": 1958.0,
+        "duration": 3.76
+    },
+    {
+        "text": "those are the seven methods we compare",
+        "start": 1960.0,
+        "duration": 2.399
+    },
+    {
+        "text": "with",
+        "start": 1961.76,
+        "duration": 2.72
+    },
+    {
+        "text": "and we'll first compare them in this now",
+        "start": 1962.399,
+        "duration": 3.921
+    },
+    {
+        "text": "simulation so basically there's no",
+        "start": 1964.48,
+        "duration": 4.079
+    },
+    {
+        "text": "differentially expressed genes at all",
+        "start": 1966.32,
+        "duration": 3.92
+    },
+    {
+        "text": "and so in this now distribute because",
+        "start": 1968.559,
+        "duration": 4.321
+    },
+    {
+        "text": "this is a now simulation the p values",
+        "start": 1970.24,
+        "duration": 5.679
+    },
+    {
+        "text": "from the methods i expected to follow a",
+        "start": 1972.88,
+        "duration": 4.88
+    },
+    {
+        "text": "null distribution which is a uniform",
+        "start": 1975.919,
+        "duration": 3.841
+    },
+    {
+        "text": "distribution so therefore if you plot",
+        "start": 1977.76,
+        "duration": 5.12
+    },
+    {
+        "text": "the p values the minus log 10 p values",
+        "start": 1979.76,
+        "duration": 6.08
+    },
+    {
+        "text": "on the y axis and plot it against this",
+        "start": 1982.88,
+        "duration": 5.84
+    },
+    {
+        "text": "expected uniform distribution then if a",
+        "start": 1985.84,
+        "duration": 5.52
+    },
+    {
+        "text": "method that's controlled for in some",
+        "start": 1988.72,
+        "duration": 4.72
+    },
+    {
+        "text": "non-independence say individual related",
+        "start": 1991.36,
+        "duration": 3.919
+    },
+    {
+        "text": "and that's a population structure and",
+        "start": 1993.44,
+        "duration": 4.88
+    },
+    {
+        "text": "then you would expect this line uh on",
+        "start": 1995.279,
+        "duration": 4.88
+    },
+    {
+        "text": "this diagonal all those thoughts lie on",
+        "start": 1998.32,
+        "duration": 3.52
+    },
+    {
+        "text": "this diagonal line",
+        "start": 2000.159,
+        "duration": 3.441
+    },
+    {
+        "text": "so therefore you can see that among",
+        "start": 2001.84,
+        "duration": 4.0
+    },
+    {
+        "text": "these five different methods we look at",
+        "start": 2003.6,
+        "duration": 4.0
+    },
+    {
+        "text": "we first look at the five because we are",
+        "start": 2005.84,
+        "duration": 3.92
+    },
+    {
+        "text": "simulating x with the continuous and",
+        "start": 2007.6,
+        "duration": 4.64
+    },
+    {
+        "text": "theta two and the agr cannot handle",
+        "start": 2009.76,
+        "duration": 4.0
+    },
+    {
+        "text": "continuous data",
+        "start": 2012.24,
+        "duration": 3.12
+    },
+    {
+        "text": "and you can see that among these five",
+        "start": 2013.76,
+        "duration": 4.159
+    },
+    {
+        "text": "different methods there's uh two of them",
+        "start": 2015.36,
+        "duration": 5.199
+    },
+    {
+        "text": "give you inflated type one error so in",
+        "start": 2017.919,
+        "duration": 4.081
+    },
+    {
+        "text": "particular if you look at the porcelain",
+        "start": 2020.559,
+        "duration": 4.0
+    },
+    {
+        "text": "model right so it's you can see a huge",
+        "start": 2022.0,
+        "duration": 4.32
+    },
+    {
+        "text": "an inversion of p value suggesting",
+        "start": 2024.559,
+        "duration": 3.281
+    },
+    {
+        "text": "you're going to see a lot of spurious",
+        "start": 2026.32,
+        "duration": 3.599
+    },
+    {
+        "text": "association and the similar thing",
+        "start": 2027.84,
+        "duration": 4.0
+    },
+    {
+        "text": "happens for the negative binomial model",
+        "start": 2029.919,
+        "duration": 4.561
+    },
+    {
+        "text": "although to a much a smaller extent",
+        "start": 2031.84,
+        "duration": 4.959
+    },
+    {
+        "text": "and in contrast to this models you can",
+        "start": 2034.48,
+        "duration": 4.72
+    },
+    {
+        "text": "see our method and mccall and also the",
+        "start": 2036.799,
+        "duration": 4.961
+    },
+    {
+        "text": "lydia version the linear mix model",
+        "start": 2039.2,
+        "duration": 4.88
+    },
+    {
+        "text": "jammer all can choose for type one arrow",
+        "start": 2041.76,
+        "duration": 4.32
+    },
+    {
+        "text": "pretty well and you can look if you look",
+        "start": 2044.08,
+        "duration": 3.92
+    },
+    {
+        "text": "at this genomic control factor the",
+        "start": 2046.08,
+        "duration": 3.999
+    },
+    {
+        "text": "genomic control factors all looks close",
+        "start": 2048.0,
+        "duration": 3.359
+    },
+    {
+        "text": "to one",
+        "start": 2050.079,
+        "duration": 3.28
+    },
+    {
+        "text": "so these are the results for five is",
+        "start": 2051.359,
+        "duration": 4.72
+    },
+    {
+        "text": "five different methods and again dck and",
+        "start": 2053.359,
+        "duration": 5.441
+    },
+    {
+        "text": "hr cannot apply to continuous activators",
+        "start": 2056.079,
+        "duration": 4.56
+    },
+    {
+        "text": "so in order to see their behavior we",
+        "start": 2058.8,
+        "duration": 3.68
+    },
+    {
+        "text": "basically have to finalize those x",
+        "start": 2060.639,
+        "duration": 4.72
+    },
+    {
+        "text": "values and we and discretize the values",
+        "start": 2062.48,
+        "duration": 5.679
+    },
+    {
+        "text": "so that we compare 18 in this hr results",
+        "start": 2065.359,
+        "duration": 5.201
+    },
+    {
+        "text": "and these sequence and as you would",
+        "start": 2068.159,
+        "duration": 4.641
+    },
+    {
+        "text": "expect you can see that this h and you",
+        "start": 2070.56,
+        "duration": 4.079
+    },
+    {
+        "text": "think they all have inflated type 1",
+        "start": 2072.8,
+        "duration": 4.079
+    },
+    {
+        "text": "error and similar to this",
+        "start": 2074.639,
+        "duration": 4.641
+    },
+    {
+        "text": "negative binomial model that you see",
+        "start": 2076.879,
+        "duration": 4.641
+    },
+    {
+        "text": "earlier and this is consistent with the",
+        "start": 2079.28,
+        "duration": 4.559
+    },
+    {
+        "text": "fact that h and dc are indeed based on",
+        "start": 2081.52,
+        "duration": 5.319
+    },
+    {
+        "text": "negative binomial models",
+        "start": 2083.839,
+        "duration": 4.8
+    },
+    {
+        "text": "so",
+        "start": 2086.839,
+        "duration": 4.921
+    },
+    {
+        "text": "and this uh inversion of p values it",
+        "start": 2088.639,
+        "duration": 4.96
+    },
+    {
+        "text": "turns out that it actually depends on",
+        "start": 2091.76,
+        "duration": 4.0
+    },
+    {
+        "text": "the sample size so if you have a small",
+        "start": 2093.599,
+        "duration": 4.881
+    },
+    {
+        "text": "sample size it's usually harder to see",
+        "start": 2095.76,
+        "duration": 4.88
+    },
+    {
+        "text": "the impression of p values but if you",
+        "start": 2098.48,
+        "duration": 4.32
+    },
+    {
+        "text": "have a relatively large sample size then",
+        "start": 2100.64,
+        "duration": 3.68
+    },
+    {
+        "text": "you're going to see a much obvious",
+        "start": 2102.8,
+        "duration": 3.84
+    },
+    {
+        "text": "impression of p values so to see that we",
+        "start": 2104.32,
+        "duration": 4.88
+    },
+    {
+        "text": "basically did a uh now simulations again",
+        "start": 2106.64,
+        "duration": 4.56
+    },
+    {
+        "text": "but now varying the sample size on the",
+        "start": 2109.2,
+        "duration": 4.159
+    },
+    {
+        "text": "y-axis on the x-axis",
+        "start": 2111.2,
+        "duration": 4.0
+    },
+    {
+        "text": "so now we simulate it from a small",
+        "start": 2113.359,
+        "duration": 4.081
+    },
+    {
+        "text": "studies say 60 some individuals up to a",
+        "start": 2115.2,
+        "duration": 4.159
+    },
+    {
+        "text": "relatively large study with a thousand",
+        "start": 2117.44,
+        "duration": 3.919
+    },
+    {
+        "text": "individuals and they were basically",
+        "start": 2119.359,
+        "duration": 4.24
+    },
+    {
+        "text": "plotting their genomic control factor on",
+        "start": 2121.359,
+        "duration": 5.121
+    },
+    {
+        "text": "the y-axis so you can see that when",
+        "start": 2123.599,
+        "duration": 4.48
+    },
+    {
+        "text": "heritability",
+        "start": 2126.48,
+        "duration": 3.84
+    },
+    {
+        "text": "when hx squared equal to relatively",
+        "start": 2128.079,
+        "duration": 6.161
+    },
+    {
+        "text": "yellow then all of the uh only this uh",
+        "start": 2130.32,
+        "duration": 6.24
+    },
+    {
+        "text": "negative binomial model have a slight",
+        "start": 2134.24,
+        "duration": 4.48
+    },
+    {
+        "text": "infection of type one error while other",
+        "start": 2136.56,
+        "duration": 4.64
+    },
+    {
+        "text": "ones work very very well but once you",
+        "start": 2138.72,
+        "duration": 5.52
+    },
+    {
+        "text": "have a relatively large h square x then",
+        "start": 2141.2,
+        "duration": 4.24
+    },
+    {
+        "text": "you can see that",
+        "start": 2144.24,
+        "duration": 3.04
+    },
+    {
+        "text": "both negative binomial and a linear",
+        "start": 2145.44,
+        "duration": 4.0
+    },
+    {
+        "text": "model are going to show a severe",
+        "start": 2147.28,
+        "duration": 4.4
+    },
+    {
+        "text": "infection of type 1 error while our",
+        "start": 2149.44,
+        "duration": 4.72
+    },
+    {
+        "text": "method and also germa still remains the",
+        "start": 2151.68,
+        "duration": 3.52
+    },
+    {
+        "text": "same",
+        "start": 2154.16,
+        "duration": 2.24
+    },
+    {
+        "text": "remains",
+        "start": 2155.2,
+        "duration": 4.08
+    },
+    {
+        "text": "control for the genomic control factors",
+        "start": 2156.4,
+        "duration": 4.24
+    },
+    {
+        "text": "so you can see that now in the",
+        "start": 2159.28,
+        "duration": 3.52
+    },
+    {
+        "text": "simulation study we basically can see",
+        "start": 2160.64,
+        "duration": 4.32
+    },
+    {
+        "text": "that both our model and this linear",
+        "start": 2162.8,
+        "duration": 4.16
+    },
+    {
+        "text": "version the linear mix model implemented",
+        "start": 2164.96,
+        "duration": 4.0
+    },
+    {
+        "text": "germa can control for example a",
+        "start": 2166.96,
+        "duration": 4.0
+    },
+    {
+        "text": "non-independence",
+        "start": 2168.96,
+        "duration": 5.2
+    },
+    {
+        "text": "so how about power comparison stuff",
+        "start": 2170.96,
+        "duration": 5.68
+    },
+    {
+        "text": "so one advantage of our method compared",
+        "start": 2174.16,
+        "duration": 4.24
+    },
+    {
+        "text": "with the gema while both they can show",
+        "start": 2176.64,
+        "duration": 3.439
+    },
+    {
+        "text": "for type 1 error well once you have",
+        "start": 2178.4,
+        "duration": 4.0
+    },
+    {
+        "text": "related individual our method can",
+        "start": 2180.079,
+        "duration": 5.121
+    },
+    {
+        "text": "actually model this count data directly",
+        "start": 2182.4,
+        "duration": 4.88
+    },
+    {
+        "text": "and intuitively by modeling its comp",
+        "start": 2185.2,
+        "duration": 4.08
+    },
+    {
+        "text": "directly you would expect it to get more",
+        "start": 2187.28,
+        "duration": 5.04
+    },
+    {
+        "text": "power compared with the other approaches",
+        "start": 2189.28,
+        "duration": 5.36
+    },
+    {
+        "text": "so to show this we basically did this",
+        "start": 2192.32,
+        "duration": 5.36
+    },
+    {
+        "text": "power comparison and we simulated the",
+        "start": 2194.64,
+        "duration": 4.959
+    },
+    {
+        "text": "alternative set of data we simulate ten",
+        "start": 2197.68,
+        "duration": 4.08
+    },
+    {
+        "text": "thousand genes among which there's one",
+        "start": 2199.599,
+        "duration": 3.76
+    },
+    {
+        "text": "song of genes that are differentially",
+        "start": 2201.76,
+        "duration": 3.92
+    },
+    {
+        "text": "expressed and their 9000 genes are not",
+        "start": 2203.359,
+        "duration": 4.081
+    },
+    {
+        "text": "differentially expressed and we're",
+        "start": 2205.68,
+        "duration": 3.28
+    },
+    {
+        "text": "varying actually a lot of different",
+        "start": 2207.44,
+        "duration": 3.12
+    },
+    {
+        "text": "parameters to",
+        "start": 2208.96,
+        "duration": 4.639
+    },
+    {
+        "text": "we we compared our message on this",
+        "start": 2210.56,
+        "duration": 5.2
+    },
+    {
+        "text": "but on this set of parameters but then",
+        "start": 2213.599,
+        "duration": 4.24
+    },
+    {
+        "text": "we vary each parameter one at a time to",
+        "start": 2215.76,
+        "duration": 4.24
+    },
+    {
+        "text": "see which parameters more influential",
+        "start": 2217.839,
+        "duration": 4.161
+    },
+    {
+        "text": "underrated power comparatively among",
+        "start": 2220.0,
+        "duration": 3.76
+    },
+    {
+        "text": "different methods",
+        "start": 2222.0,
+        "duration": 4.079
+    },
+    {
+        "text": "and so we again apply for this 77",
+        "start": 2223.76,
+        "duration": 4.24
+    },
+    {
+        "text": "message over here and to see which one",
+        "start": 2226.079,
+        "duration": 4.881
+    },
+    {
+        "text": "works better so here it turns out that",
+        "start": 2228.0,
+        "duration": 4.48
+    },
+    {
+        "text": "once we vary in different separate",
+        "start": 2230.96,
+        "duration": 3.36
+    },
+    {
+        "text": "parameters that two parameters are",
+        "start": 2232.48,
+        "duration": 4.16
+    },
+    {
+        "text": "extremely important in determining the",
+        "start": 2234.32,
+        "duration": 4.64
+    },
+    {
+        "text": "radical power of different methods so",
+        "start": 2236.64,
+        "duration": 5.04
+    },
+    {
+        "text": "the first parameter is h squared",
+        "start": 2238.96,
+        "duration": 4.639
+    },
+    {
+        "text": "so h squared is a heritable g",
+        "start": 2241.68,
+        "duration": 3.679
+    },
+    {
+        "text": "heritability",
+        "start": 2243.599,
+        "duration": 4.48
+    },
+    {
+        "text": "so if the g is not heritable so if the",
+        "start": 2245.359,
+        "duration": 5.841
+    },
+    {
+        "text": "heritability is exactly yellow then we",
+        "start": 2248.079,
+        "duration": 5.601
+    },
+    {
+        "text": "would expect our model actually to",
+        "start": 2251.2,
+        "duration": 4.8
+    },
+    {
+        "text": "perform slightly worse than this an",
+        "start": 2253.68,
+        "duration": 4.32
+    },
+    {
+        "text": "active binomial model simply because we",
+        "start": 2256.0,
+        "duration": 4.48
+    },
+    {
+        "text": "have one more parameter to model and",
+        "start": 2258.0,
+        "duration": 4.48
+    },
+    {
+        "text": "simply because the data is actually",
+        "start": 2260.48,
+        "duration": 3.44
+    },
+    {
+        "text": "favorable in this negative binomial",
+        "start": 2262.48,
+        "duration": 3.28
+    },
+    {
+        "text": "model so indeed you can see the negative",
+        "start": 2263.92,
+        "duration": 3.6
+    },
+    {
+        "text": "monomial works slightly better although",
+        "start": 2265.76,
+        "duration": 3.839
+    },
+    {
+        "text": "difference is actually quite small",
+        "start": 2267.52,
+        "duration": 4.72
+    },
+    {
+        "text": "but now if you have a moderate heritable",
+        "start": 2269.599,
+        "duration": 5.201
+    },
+    {
+        "text": "gene say the heritability equals to 30",
+        "start": 2272.24,
+        "duration": 5.04
+    },
+    {
+        "text": "percent or highly heritable g says",
+        "start": 2274.8,
+        "duration": 4.88
+    },
+    {
+        "text": "heritability is equal to 60",
+        "start": 2277.28,
+        "duration": 4.72
+    },
+    {
+        "text": "now you can see that by accounting for",
+        "start": 2279.68,
+        "duration": 5.52
+    },
+    {
+        "text": "those gene heritability and sampling",
+        "start": 2282.0,
+        "duration": 5.68
+    },
+    {
+        "text": "dependence now our method can get more",
+        "start": 2285.2,
+        "duration": 4.0
+    },
+    {
+        "text": "power compatible all the other",
+        "start": 2287.68,
+        "duration": 2.56
+    },
+    {
+        "text": "approaches",
+        "start": 2289.2,
+        "duration": 2.399
+    },
+    {
+        "text": "and then in fact",
+        "start": 2290.24,
+        "duration": 3.359
+    },
+    {
+        "text": "similarly because germa also kind of for",
+        "start": 2291.599,
+        "duration": 4.161
+    },
+    {
+        "text": "example similarities german method also",
+        "start": 2293.599,
+        "duration": 4.161
+    },
+    {
+        "text": "performs well than others but if you",
+        "start": 2295.76,
+        "duration": 4.24
+    },
+    {
+        "text": "compare our message with gemma because",
+        "start": 2297.76,
+        "duration": 4.0
+    },
+    {
+        "text": "our method accounts for the combination",
+        "start": 2300.0,
+        "duration": 4.24
+    },
+    {
+        "text": "of data so we have a slightly better",
+        "start": 2301.76,
+        "duration": 4.64
+    },
+    {
+        "text": "power than the geometry",
+        "start": 2304.24,
+        "duration": 4.16
+    },
+    {
+        "text": "so the first so therefore the first",
+        "start": 2306.4,
+        "duration": 3.92
+    },
+    {
+        "text": "factor is the heritability of gene",
+        "start": 2308.4,
+        "duration": 4.24
+    },
+    {
+        "text": "expression on the other hand the second",
+        "start": 2310.32,
+        "duration": 4.0
+    },
+    {
+        "text": "important factor that affects the",
+        "start": 2312.64,
+        "duration": 4.08
+    },
+    {
+        "text": "relative power is this coefficient of",
+        "start": 2314.32,
+        "duration": 4.88
+    },
+    {
+        "text": "variation which essentially is a radio",
+        "start": 2316.72,
+        "duration": 4.879
+    },
+    {
+        "text": "depth variation across different samples",
+        "start": 2319.2,
+        "duration": 4.24
+    },
+    {
+        "text": "now we know that if you do angular",
+        "start": 2321.599,
+        "duration": 4.0
+    },
+    {
+        "text": "sequencing data say if you give eight",
+        "start": 2323.44,
+        "duration": 4.08
+    },
+    {
+        "text": "samples in a run",
+        "start": 2325.599,
+        "duration": 3.361
+    },
+    {
+        "text": "those eight samples are going to have a",
+        "start": 2327.52,
+        "duration": 3.44
+    },
+    {
+        "text": "different reader depth so although you",
+        "start": 2328.96,
+        "duration": 3.76
+    },
+    {
+        "text": "try to control it on average they ten",
+        "start": 2330.96,
+        "duration": 3.119
+    },
+    {
+        "text": "million they are going to have a",
+        "start": 2332.72,
+        "duration": 3.68
+    },
+    {
+        "text": "variation on this 10 millimeter and so",
+        "start": 2334.079,
+        "duration": 4.561
+    },
+    {
+        "text": "the cv is essentially try to quantify",
+        "start": 2336.4,
+        "duration": 5.36
+    },
+    {
+        "text": "this variation so intuitively if every",
+        "start": 2338.64,
+        "duration": 5.52
+    },
+    {
+        "text": "read every example have the same",
+        "start": 2341.76,
+        "duration": 5.12
+    },
+    {
+        "text": "identical read depth then modeling",
+        "start": 2344.16,
+        "duration": 4.08
+    },
+    {
+        "text": "accounts don't really have much",
+        "start": 2346.88,
+        "duration": 4.16
+    },
+    {
+        "text": "advantage but on the other hand if your",
+        "start": 2348.24,
+        "duration": 5.359
+    },
+    {
+        "text": "cv is relatively high so if you do have",
+        "start": 2351.04,
+        "duration": 4.48
+    },
+    {
+        "text": "some variation across different samples",
+        "start": 2353.599,
+        "duration": 4.321
+    },
+    {
+        "text": "which we do see in real data then we",
+        "start": 2355.52,
+        "duration": 4.24
+    },
+    {
+        "text": "would expect the modeling contract going",
+        "start": 2357.92,
+        "duration": 4.0
+    },
+    {
+        "text": "to get more power compared with not",
+        "start": 2359.76,
+        "duration": 4.319
+    },
+    {
+        "text": "modern accounts so this is essentially",
+        "start": 2361.92,
+        "duration": 4.56
+    },
+    {
+        "text": "what we said so if we increase the cv",
+        "start": 2364.079,
+        "duration": 4.721
+    },
+    {
+        "text": "although all the methods start perform",
+        "start": 2366.48,
+        "duration": 4.08
+    },
+    {
+        "text": "poorly because it makes them more",
+        "start": 2368.8,
+        "duration": 3.68
+    },
+    {
+        "text": "difficult you can see that the power",
+        "start": 2370.56,
+        "duration": 4.64
+    },
+    {
+        "text": "difference between our method versus",
+        "start": 2372.48,
+        "duration": 4.4
+    },
+    {
+        "text": "other non-counter-based methods",
+        "start": 2375.2,
+        "duration": 4.96
+    },
+    {
+        "text": "especially gemma gets becomes larger so",
+        "start": 2376.88,
+        "duration": 5.76
+    },
+    {
+        "text": "if you don't have much variation then",
+        "start": 2380.16,
+        "duration": 4.56
+    },
+    {
+        "text": "our messenger jammer looks relatively",
+        "start": 2382.64,
+        "duration": 3.92
+    },
+    {
+        "text": "similar with only a small slight",
+        "start": 2384.72,
+        "duration": 4.24
+    },
+    {
+        "text": "advantage but now with the cv equal to",
+        "start": 2386.56,
+        "duration": 4.799
+    },
+    {
+        "text": "0.9 the difference becomes larger and in",
+        "start": 2388.96,
+        "duration": 4.159
+    },
+    {
+        "text": "fact the performance of jammer drops",
+        "start": 2391.359,
+        "duration": 4.0
+    },
+    {
+        "text": "quickly once you have a large variation",
+        "start": 2393.119,
+        "duration": 4.401
+    },
+    {
+        "text": "with depth across different samples so",
+        "start": 2395.359,
+        "duration": 3.76
+    },
+    {
+        "text": "therefore you can see that the power",
+        "start": 2397.52,
+        "duration": 4.16
+    },
+    {
+        "text": "really affected by these two important",
+        "start": 2399.119,
+        "duration": 4.72
+    },
+    {
+        "text": "factors highlightability of genes and",
+        "start": 2401.68,
+        "duration": 3.84
+    },
+    {
+        "text": "the coefficient of variation of this",
+        "start": 2403.839,
+        "duration": 4.081
+    },
+    {
+        "text": "with depth variation",
+        "start": 2405.52,
+        "duration": 3.36
+    },
+    {
+        "text": "now",
+        "start": 2407.92,
+        "duration": 3.199
+    },
+    {
+        "text": "here again because we simulated x as a",
+        "start": 2408.88,
+        "duration": 4.32
+    },
+    {
+        "text": "continuous trade so we cannot apply this",
+        "start": 2411.119,
+        "duration": 4.881
+    },
+    {
+        "text": "easier hr so we have to discrete uh",
+        "start": 2413.2,
+        "duration": 5.04
+    },
+    {
+        "text": "discrete like this into a yellow one",
+        "start": 2416.0,
+        "duration": 4.96
+    },
+    {
+        "text": "trade and that you apply bc kind of hr",
+        "start": 2418.24,
+        "duration": 5.68
+    },
+    {
+        "text": "so as you would expect that h and dc",
+        "start": 2420.96,
+        "duration": 4.639
+    },
+    {
+        "text": "doesn't really perform well compare all",
+        "start": 2423.92,
+        "duration": 3.76
+    },
+    {
+        "text": "the other methods and qt rates simply",
+        "start": 2425.599,
+        "duration": 3.921
+    },
+    {
+        "text": "because we have a relatively large",
+        "start": 2427.68,
+        "duration": 4.08
+    },
+    {
+        "text": "sample so we have six some 60 some",
+        "start": 2429.52,
+        "duration": 4.4
+    },
+    {
+        "text": "individuals and for those relatively",
+        "start": 2431.76,
+        "duration": 4.4
+    },
+    {
+        "text": "large sample size these signal and will",
+        "start": 2433.92,
+        "duration": 3.36
+    },
+    {
+        "text": "perform well because they are",
+        "start": 2436.16,
+        "duration": 4.64
+    },
+    {
+        "text": "restricting this next binomial model",
+        "start": 2437.28,
+        "duration": 5.44
+    },
+    {
+        "text": "so now those are the simulations we",
+        "start": 2440.8,
+        "duration": 4.319
+    },
+    {
+        "text": "didn't now under the alternative so now",
+        "start": 2442.72,
+        "duration": 4.879
+    },
+    {
+        "text": "let's look at data effects so we applied",
+        "start": 2445.119,
+        "duration": 4.081
+    },
+    {
+        "text": "our method and compared it with other",
+        "start": 2447.599,
+        "duration": 3.921
+    },
+    {
+        "text": "methods in three different data sets and",
+        "start": 2449.2,
+        "duration": 3.6
+    },
+    {
+        "text": "there's three different datasets",
+        "start": 2451.52,
+        "duration": 2.559
+    },
+    {
+        "text": "actually represent that different",
+        "start": 2452.8,
+        "duration": 3.6
+    },
+    {
+        "text": "situations so the first data represents",
+        "start": 2454.079,
+        "duration": 4.481
+    },
+    {
+        "text": "a related individual the second data",
+        "start": 2456.4,
+        "duration": 4.32
+    },
+    {
+        "text": "represents the population structure",
+        "start": 2458.56,
+        "duration": 4.4
+    },
+    {
+        "text": "while set of data contains a hidden",
+        "start": 2460.72,
+        "duration": 4.48
+    },
+    {
+        "text": "compounding effect another batch",
+        "start": 2462.96,
+        "duration": 4.8
+    },
+    {
+        "text": "so we can see that and our method can be",
+        "start": 2465.2,
+        "duration": 5.44
+    },
+    {
+        "text": "applied to a wider variety of data types",
+        "start": 2467.76,
+        "duration": 5.52
+    },
+    {
+        "text": "so the first data is this baboon study",
+        "start": 2470.64,
+        "duration": 3.84
+    },
+    {
+        "text": "so it's a",
+        "start": 2473.28,
+        "duration": 3.839
+    },
+    {
+        "text": "it's a data set collected by uh",
+        "start": 2474.48,
+        "duration": 4.72
+    },
+    {
+        "text": "professor jenny talbon duke university",
+        "start": 2477.119,
+        "duration": 4.561
+    },
+    {
+        "text": "so basically she went so this data is",
+        "start": 2479.2,
+        "duration": 4.639
+    },
+    {
+        "text": "collected on this baboon population in",
+        "start": 2481.68,
+        "duration": 4.72
+    },
+    {
+        "text": "africa and she went there every summer",
+        "start": 2483.839,
+        "duration": 4.881
+    },
+    {
+        "text": "and studied this population at purified",
+        "start": 2486.4,
+        "duration": 3.679
+    },
+    {
+        "text": "for quite a while",
+        "start": 2488.72,
+        "duration": 4.56
+    },
+    {
+        "text": "and this uh babun population had been",
+        "start": 2490.079,
+        "duration": 6.561
+    },
+    {
+        "text": "established since the early 1970s and",
+        "start": 2493.28,
+        "duration": 4.96
+    },
+    {
+        "text": "the people have been tracing this bubble",
+        "start": 2496.64,
+        "duration": 2.959
+    },
+    {
+        "text": "population for many different",
+        "start": 2498.24,
+        "duration": 3.359
+    },
+    {
+        "text": "generations and so they collected their",
+        "start": 2499.599,
+        "duration": 4.24
+    },
+    {
+        "text": "behavioral data they collected their",
+        "start": 2501.599,
+        "duration": 4.561
+    },
+    {
+        "text": "blood types and they collected",
+        "start": 2503.839,
+        "duration": 4.321
+    },
+    {
+        "text": "all their under they draw their detailed",
+        "start": 2506.16,
+        "duration": 3.36
+    },
+    {
+        "text": "categories so there's a lot of",
+        "start": 2508.16,
+        "duration": 3.36
+    },
+    {
+        "text": "information available in this data but",
+        "start": 2509.52,
+        "duration": 4.16
+    },
+    {
+        "text": "the missing information this particular",
+        "start": 2511.52,
+        "duration": 5.04
+    },
+    {
+        "text": "data is a genotype so therefore for this",
+        "start": 2513.68,
+        "duration": 4.96
+    },
+    {
+        "text": "particular study they decide to do a",
+        "start": 2516.56,
+        "duration": 3.6
+    },
+    {
+        "text": "genotype",
+        "start": 2518.64,
+        "duration": 4.16
+    },
+    {
+        "text": "to perform a genetic study and by",
+        "start": 2520.16,
+        "duration": 5.6
+    },
+    {
+        "text": "analyzing 63 individuals and performing",
+        "start": 2522.8,
+        "duration": 5.12
+    },
+    {
+        "text": "anime sequencing among those",
+        "start": 2525.76,
+        "duration": 4.559
+    },
+    {
+        "text": "individuals so this data are collected",
+        "start": 2527.92,
+        "duration": 4.88
+    },
+    {
+        "text": "on whole blood from these bubbles and we",
+        "start": 2530.319,
+        "duration": 5.681
+    },
+    {
+        "text": "have 63 individuals and we have about 12",
+        "start": 2532.8,
+        "duration": 5.76
+    },
+    {
+        "text": "000 different genes and about those",
+        "start": 2536.0,
+        "duration": 4.24
+    },
+    {
+        "text": "problems although we have a lot of",
+        "start": 2538.56,
+        "duration": 3.36
+    },
+    {
+        "text": "different coverage we decided to focus",
+        "start": 2540.24,
+        "duration": 4.079
+    },
+    {
+        "text": "on the variable and sets simply because",
+        "start": 2541.92,
+        "duration": 5.6
+    },
+    {
+        "text": "it's easier to see whether the detected",
+        "start": 2544.319,
+        "duration": 5.201
+    },
+    {
+        "text": "sex associated genes are true or not",
+        "start": 2547.52,
+        "duration": 4.4
+    },
+    {
+        "text": "because intuitively sex-associated genes",
+        "start": 2549.52,
+        "duration": 4.319
+    },
+    {
+        "text": "that should be enriched on x and y",
+        "start": 2551.92,
+        "duration": 3.36
+    },
+    {
+        "text": "chromosomes right",
+        "start": 2553.839,
+        "duration": 3.361
+    },
+    {
+        "text": "and so in this particular data this",
+        "start": 2555.28,
+        "duration": 3.839
+    },
+    {
+        "text": "feature of this data is that they",
+        "start": 2557.2,
+        "duration": 3.919
+    },
+    {
+        "text": "contain this related individuals so in",
+        "start": 2559.119,
+        "duration": 4.72
+    },
+    {
+        "text": "fact the 63 individuals are collected",
+        "start": 2561.119,
+        "duration": 4.881
+    },
+    {
+        "text": "from relatively large categories so they",
+        "start": 2563.839,
+        "duration": 5.121
+    },
+    {
+        "text": "are more or less related to each other",
+        "start": 2566.0,
+        "duration": 5.04
+    },
+    {
+        "text": "and to estimate this relating to",
+        "start": 2568.96,
+        "duration": 4.24
+    },
+    {
+        "text": "estimated kinship metrics we use the",
+        "start": 2571.04,
+        "duration": 4.48
+    },
+    {
+        "text": "microsatellite data and collected on",
+        "start": 2573.2,
+        "duration": 4.639
+    },
+    {
+        "text": "this baboon population to estimate the k",
+        "start": 2575.52,
+        "duration": 4.72
+    },
+    {
+        "text": "so we can plug in the pay matrix and run",
+        "start": 2577.839,
+        "duration": 4.641
+    },
+    {
+        "text": "our core analysis",
+        "start": 2580.24,
+        "duration": 4.8
+    },
+    {
+        "text": "so you can see so here shows the results",
+        "start": 2582.48,
+        "duration": 4.56
+    },
+    {
+        "text": "so on the left side that basically shows",
+        "start": 2585.04,
+        "duration": 4.559
+    },
+    {
+        "text": "the power versus work discovery rate",
+        "start": 2587.04,
+        "duration": 4.64
+    },
+    {
+        "text": "across a bunch of different methods on",
+        "start": 2589.599,
+        "duration": 3.921
+    },
+    {
+        "text": "the right hand side i also show the",
+        "start": 2591.68,
+        "duration": 4.56
+    },
+    {
+        "text": "enrichment of x chromosome genes and so",
+        "start": 2593.52,
+        "duration": 4.64
+    },
+    {
+        "text": "that's at the indicator on whether",
+        "start": 2596.24,
+        "duration": 4.24
+    },
+    {
+        "text": "method works better than others so in",
+        "start": 2598.16,
+        "duration": 4.959
+    },
+    {
+        "text": "either case if a method works better",
+        "start": 2600.48,
+        "duration": 4.4
+    },
+    {
+        "text": "than others then the products then the",
+        "start": 2603.119,
+        "duration": 3.841
+    },
+    {
+        "text": "line should be higher than others so you",
+        "start": 2604.88,
+        "duration": 4.719
+    },
+    {
+        "text": "can see clearly our method a macro works",
+        "start": 2606.96,
+        "duration": 5.04
+    },
+    {
+        "text": "better than all the other methods and in",
+        "start": 2609.599,
+        "duration": 4.0
+    },
+    {
+        "text": "fact if we just focus on the fourth",
+        "start": 2612.0,
+        "duration": 4.24
+    },
+    {
+        "text": "discovery rate for example 10",
+        "start": 2613.599,
+        "duration": 5.681
+    },
+    {
+        "text": "yeah our method actually gives you 50",
+        "start": 2616.24,
+        "duration": 4.879
+    },
+    {
+        "text": "more power compared with the next best",
+        "start": 2619.28,
+        "duration": 4.48
+    },
+    {
+        "text": "approach that's uh uh that's a negative",
+        "start": 2621.119,
+        "duration": 4.641
+    },
+    {
+        "text": "binomial model and compared with the",
+        "start": 2623.76,
+        "duration": 5.52
+    },
+    {
+        "text": "standard approach say h r and d6 those",
+        "start": 2625.76,
+        "duration": 4.96
+    },
+    {
+        "text": "standard approaches are sitting over",
+        "start": 2629.28,
+        "duration": 3.68
+    },
+    {
+        "text": "here consistently with our simulations",
+        "start": 2630.72,
+        "duration": 3.92
+    },
+    {
+        "text": "right so it doesn't really give you much",
+        "start": 2632.96,
+        "duration": 4.32
+    },
+    {
+        "text": "power if you use the hr and dc to",
+        "start": 2634.64,
+        "duration": 4.88
+    },
+    {
+        "text": "analyze your data so this is a baboon",
+        "start": 2637.28,
+        "duration": 4.48
+    },
+    {
+        "text": "data the second data we'll look at is",
+        "start": 2639.52,
+        "duration": 4.96
+    },
+    {
+        "text": "the fusion data so this fusion data is",
+        "start": 2641.76,
+        "duration": 4.16
+    },
+    {
+        "text": "collected",
+        "start": 2644.48,
+        "duration": 3.839
+    },
+    {
+        "text": "so it's a study of finland and the",
+        "start": 2645.92,
+        "duration": 4.96
+    },
+    {
+        "text": "united states uh investigation of this",
+        "start": 2648.319,
+        "duration": 5.601
+    },
+    {
+        "text": "knight ddm uh genetics so they basically",
+        "start": 2650.88,
+        "duration": 5.04
+    },
+    {
+        "text": "collect a relatively large on a",
+        "start": 2653.92,
+        "duration": 5.04
+    },
+    {
+        "text": "sequencing study with skeletal muscles",
+        "start": 2655.92,
+        "duration": 5.679
+    },
+    {
+        "text": "and the data is collected on 267",
+        "start": 2658.96,
+        "duration": 5.52
+    },
+    {
+        "text": "individuals and they measure 21 000",
+        "start": 2661.599,
+        "duration": 3.841
+    },
+    {
+        "text": "genes",
+        "start": 2664.48,
+        "duration": 3.44
+    },
+    {
+        "text": "and among this data will primarily focus",
+        "start": 2665.44,
+        "duration": 4.24
+    },
+    {
+        "text": "on two variables are particular of",
+        "start": 2667.92,
+        "duration": 4.0
+    },
+    {
+        "text": "interest so the first one is the lgtt",
+        "start": 2669.68,
+        "duration": 4.88
+    },
+    {
+        "text": "test or oral glucose tolerance test so",
+        "start": 2671.92,
+        "duration": 4.64
+    },
+    {
+        "text": "this is essentially indicator on whether",
+        "start": 2674.56,
+        "duration": 4.72
+    },
+    {
+        "text": "individual is a type 2 diabetes or not",
+        "start": 2676.56,
+        "duration": 5.039
+    },
+    {
+        "text": "so this is a binary indicator",
+        "start": 2679.28,
+        "duration": 5.28
+    },
+    {
+        "text": "and besides this type 2 diabetes status",
+        "start": 2681.599,
+        "duration": 5.201
+    },
+    {
+        "text": "we also look at this glucose level which",
+        "start": 2684.56,
+        "duration": 4.64
+    },
+    {
+        "text": "is a continuous trait",
+        "start": 2686.8,
+        "duration": 4.48
+    },
+    {
+        "text": "and in this particular data we have this",
+        "start": 2689.2,
+        "duration": 3.76
+    },
+    {
+        "text": "population structure because we are",
+        "start": 2691.28,
+        "duration": 3.6
+    },
+    {
+        "text": "targeting data from finland and this",
+        "start": 2692.96,
+        "duration": 4.24
+    },
+    {
+        "text": "data is actually collected samples from",
+        "start": 2694.88,
+        "duration": 4.32
+    },
+    {
+        "text": "three different towns in finland so if",
+        "start": 2697.2,
+        "duration": 3.68
+    },
+    {
+        "text": "you simply do a principal component",
+        "start": 2699.2,
+        "duration": 4.639
+    },
+    {
+        "text": "analysis you will see that pc1 pc2",
+        "start": 2700.88,
+        "duration": 5.28
+    },
+    {
+        "text": "capture the three different tongue",
+        "start": 2703.839,
+        "duration": 4.881
+    },
+    {
+        "text": "structure in the stimulant",
+        "start": 2706.16,
+        "duration": 4.56
+    },
+    {
+        "text": "and in order to control for population",
+        "start": 2708.72,
+        "duration": 4.32
+    },
+    {
+        "text": "structure as usual we use the genotype",
+        "start": 2710.72,
+        "duration": 5.2
+    },
+    {
+        "text": "data to estimate relatedness matrix k",
+        "start": 2713.04,
+        "duration": 5.76
+    },
+    {
+        "text": "and we plug in so we can apply the macro",
+        "start": 2715.92,
+        "duration": 5.52
+    },
+    {
+        "text": "to and so we did a study compared with a",
+        "start": 2718.8,
+        "duration": 5.519
+    },
+    {
+        "text": "bunch of other methods under the top two",
+        "start": 2721.44,
+        "duration": 4.879
+    },
+    {
+        "text": "panels basically should the results will",
+        "start": 2724.319,
+        "duration": 4.401
+    },
+    {
+        "text": "have two diabetes status while the",
+        "start": 2726.319,
+        "duration": 5.04
+    },
+    {
+        "text": "bottom two panels choose the glucose",
+        "start": 2728.72,
+        "duration": 5.52
+    },
+    {
+        "text": "levels so the first column shows again",
+        "start": 2731.359,
+        "duration": 4.561
+    },
+    {
+        "text": "the power versus the first discovery",
+        "start": 2734.24,
+        "duration": 3.92
+    },
+    {
+        "text": "rate and while the second column is",
+        "start": 2735.92,
+        "duration": 4.56
+    },
+    {
+        "text": "different so in the first second column",
+        "start": 2738.16,
+        "duration": 4.959
+    },
+    {
+        "text": "essentially to look at whether the top",
+        "start": 2740.48,
+        "duration": 5.599
+    },
+    {
+        "text": "t2d identifier t2d associated genes",
+        "start": 2743.119,
+        "duration": 5.2
+    },
+    {
+        "text": "whether they have a high overlap or not",
+        "start": 2746.079,
+        "duration": 4.881
+    },
+    {
+        "text": "with this top gl associated genes so",
+        "start": 2748.319,
+        "duration": 4.721
+    },
+    {
+        "text": "intuitively there's glucose levels and",
+        "start": 2750.96,
+        "duration": 3.6
+    },
+    {
+        "text": "the type 2 diabetes they are really",
+        "start": 2753.04,
+        "duration": 4.64
+    },
+    {
+        "text": "biologically relevant traits so by by",
+        "start": 2754.56,
+        "duration": 5.44
+    },
+    {
+        "text": "looking at whether the method gives you",
+        "start": 2757.68,
+        "duration": 4.88
+    },
+    {
+        "text": "a similar answer on those two associated",
+        "start": 2760.0,
+        "duration": 4.56
+    },
+    {
+        "text": "genes then you would basically say that",
+        "start": 2762.56,
+        "duration": 3.759
+    },
+    {
+        "text": "which method works better so if the",
+        "start": 2764.56,
+        "duration": 3.44
+    },
+    {
+        "text": "method works better then you would",
+        "start": 2766.319,
+        "duration": 4.881
+    },
+    {
+        "text": "expect to uh gives you a higher overlap",
+        "start": 2768.0,
+        "duration": 4.96
+    },
+    {
+        "text": "so again among those different methods",
+        "start": 2771.2,
+        "duration": 3.84
+    },
+    {
+        "text": "you can see our message in my car works",
+        "start": 2772.96,
+        "duration": 5.04
+    },
+    {
+        "text": "better than all the other methods and",
+        "start": 2775.04,
+        "duration": 5.68
+    },
+    {
+        "text": "in fact if you look at this gl",
+        "start": 2778.0,
+        "duration": 5.599
+    },
+    {
+        "text": "associated genes right so at 10 fpi if",
+        "start": 2780.72,
+        "duration": 4.879
+    },
+    {
+        "text": "you use the other methods you simply",
+        "start": 2783.599,
+        "duration": 4.561
+    },
+    {
+        "text": "won't detect anything while you use our",
+        "start": 2785.599,
+        "duration": 4.48
+    },
+    {
+        "text": "commas that actually gives you 100",
+        "start": 2788.16,
+        "duration": 4.159
+    },
+    {
+        "text": "figures and if you look at the overlap",
+        "start": 2790.079,
+        "duration": 4.561
+    },
+    {
+        "text": "you can again see a very similar trend",
+        "start": 2792.319,
+        "duration": 5.52
+    },
+    {
+        "text": "that our method works better than others",
+        "start": 2794.64,
+        "duration": 5.92
+    },
+    {
+        "text": "now over here let's cheat well t2d this",
+        "start": 2797.839,
+        "duration": 5.28
+    },
+    {
+        "text": "is a binary trait this glucose levels is",
+        "start": 2800.56,
+        "duration": 5.039
+    },
+    {
+        "text": "actually not a binary trait so it's",
+        "start": 2803.119,
+        "duration": 5.2
+    },
+    {
+        "text": "and so in order to apply dc and hr to",
+        "start": 2805.599,
+        "duration": 4.961
+    },
+    {
+        "text": "this type of data we have to discretize",
+        "start": 2808.319,
+        "duration": 4.881
+    },
+    {
+        "text": "this glucose levels into their one based",
+        "start": 2810.56,
+        "duration": 4.799
+    },
+    {
+        "text": "on the media levels but discrete like",
+        "start": 2813.2,
+        "duration": 4.24
+    },
+    {
+        "text": "this glucose levels to the l01 actually",
+        "start": 2815.359,
+        "duration": 4.081
+    },
+    {
+        "text": "lose you a lot of power so in fact we no",
+        "start": 2817.44,
+        "duration": 5.2
+    },
+    {
+        "text": "longer detect any gel associated genes",
+        "start": 2819.44,
+        "duration": 6.24
+    },
+    {
+        "text": "at all and even at a relatively flexible",
+        "start": 2822.64,
+        "duration": 5.52
+    },
+    {
+        "text": "uh yeah cut off let's say 20 percent",
+        "start": 2825.68,
+        "duration": 4.8
+    },
+    {
+        "text": "however we can still do overlap between",
+        "start": 2828.16,
+        "duration": 4.88
+    },
+    {
+        "text": "this hub gl the l01 associated genes",
+        "start": 2830.48,
+        "duration": 5.2
+    },
+    {
+        "text": "with the top t2g associated genes always",
+        "start": 2833.04,
+        "duration": 4.559
+    },
+    {
+        "text": "the top t2d associated genes with the",
+        "start": 2835.68,
+        "duration": 4.56
+    },
+    {
+        "text": "gl01 associated genes so essentially",
+        "start": 2837.599,
+        "duration": 3.921
+    },
+    {
+        "text": "doing this to",
+        "start": 2840.24,
+        "duration": 4.24
+    },
+    {
+        "text": "a reciprocal enrichment analysis so you",
+        "start": 2841.52,
+        "duration": 4.799
+    },
+    {
+        "text": "can see again our method works better",
+        "start": 2844.48,
+        "duration": 4.08
+    },
+    {
+        "text": "than others and if you look at agent do",
+        "start": 2846.319,
+        "duration": 4.241
+    },
+    {
+        "text": "you think again they are the the worst",
+        "start": 2848.56,
+        "duration": 4.16
+    },
+    {
+        "text": "methods among all the seven methods and",
+        "start": 2850.56,
+        "duration": 5.2
+    },
+    {
+        "text": "this also intuitively makes sense",
+        "start": 2852.72,
+        "duration": 5.04
+    },
+    {
+        "text": "and finally oh there's two previous",
+        "start": 2855.76,
+        "duration": 4.4
+    },
+    {
+        "text": "examples i focus on relatively related",
+        "start": 2857.76,
+        "duration": 4.559
+    },
+    {
+        "text": "individuals and the relatively large",
+        "start": 2860.16,
+        "duration": 5.199
+    },
+    {
+        "text": "data so the final data final analysis we",
+        "start": 2862.319,
+        "duration": 5.121
+    },
+    {
+        "text": "decide to focus on are unrelated",
+        "start": 2865.359,
+        "duration": 4.72
+    },
+    {
+        "text": "individual and relatively small data so",
+        "start": 2867.44,
+        "duration": 5.2
+    },
+    {
+        "text": "to do that we look at this uluba and",
+        "start": 2870.079,
+        "duration": 4.641
+    },
+    {
+        "text": "ange sequencing data that's performed on",
+        "start": 2872.64,
+        "duration": 5.6
+    },
+    {
+        "text": "69 europa individuals who are a part of",
+        "start": 2874.72,
+        "duration": 5.92
+    },
+    {
+        "text": "this happening population",
+        "start": 2878.24,
+        "duration": 4.96
+    },
+    {
+        "text": "and we perform and we get this data",
+        "start": 2880.64,
+        "duration": 4.56
+    },
+    {
+        "text": "analytic data and the",
+        "start": 2883.2,
+        "duration": 4.399
+    },
+    {
+        "text": "and data measured on gene expression",
+        "start": 2885.2,
+        "duration": 5.04
+    },
+    {
+        "text": "levels on thirteen thousand genes",
+        "start": 2887.599,
+        "duration": 5.121
+    },
+    {
+        "text": "and and this is still relatively large",
+        "start": 2890.24,
+        "duration": 4.56
+    },
+    {
+        "text": "data so in order to see our performances",
+        "start": 2892.72,
+        "duration": 4.16
+    },
+    {
+        "text": "relatively small data we decided to do a",
+        "start": 2894.8,
+        "duration": 4.64
+    },
+    {
+        "text": "subsample so we basically created six",
+        "start": 2896.88,
+        "duration": 5.679
+    },
+    {
+        "text": "samples or 10 samples of 14 samples by",
+        "start": 2899.44,
+        "duration": 6.48
+    },
+    {
+        "text": "random sampling from this 69 individuals",
+        "start": 2902.559,
+        "duration": 5.681
+    },
+    {
+        "text": "and we repeated this many times so we",
+        "start": 2905.92,
+        "duration": 4.56
+    },
+    {
+        "text": "can average the power causes different",
+        "start": 2908.24,
+        "duration": 4.4
+    },
+    {
+        "text": "sub-sampling data sets so you can get a",
+        "start": 2910.48,
+        "duration": 4.24
+    },
+    {
+        "text": "more robust estimate of power difference",
+        "start": 2912.64,
+        "duration": 4.959
+    },
+    {
+        "text": "between various methods and in this data",
+        "start": 2914.72,
+        "duration": 5.04
+    },
+    {
+        "text": "we again look at this sex as the",
+        "start": 2917.599,
+        "duration": 4.0
+    },
+    {
+        "text": "predictor variable of interest and",
+        "start": 2919.76,
+        "duration": 4.24
+    },
+    {
+        "text": "simply because it's easier to see the uh",
+        "start": 2921.599,
+        "duration": 4.0
+    },
+    {
+        "text": "to compare the method we can use the",
+        "start": 2924.0,
+        "duration": 3.76
+    },
+    {
+        "text": "enrichment of x chromosomes as an",
+        "start": 2925.599,
+        "duration": 4.321
+    },
+    {
+        "text": "indicator to do that and in this",
+        "start": 2927.76,
+        "duration": 4.72
+    },
+    {
+        "text": "particular data as mentioned there are",
+        "start": 2929.92,
+        "duration": 4.96
+    },
+    {
+        "text": "all unrelated individuals there's not",
+        "start": 2932.48,
+        "duration": 4.24
+    },
+    {
+        "text": "really much population structure going",
+        "start": 2934.88,
+        "duration": 3.439
+    },
+    {
+        "text": "on but we do have some hidden",
+        "start": 2936.72,
+        "duration": 3.52
+    },
+    {
+        "text": "confounding effects and we all know that",
+        "start": 2938.319,
+        "duration": 4.24
+    },
+    {
+        "text": "a hidden company has a huge problem in",
+        "start": 2940.24,
+        "duration": 4.24
+    },
+    {
+        "text": "all sequencing studies whether that's",
+        "start": 2942.559,
+        "duration": 4.0
+    },
+    {
+        "text": "the angular sequencing or other parts of",
+        "start": 2944.48,
+        "duration": 3.92
+    },
+    {
+        "text": "the frequency for example studies",
+        "start": 2946.559,
+        "duration": 3.441
+    },
+    {
+        "text": "they're always going to see the skill in",
+        "start": 2948.4,
+        "duration": 3.439
+    },
+    {
+        "text": "compounding effect then it's always",
+        "start": 2950.0,
+        "duration": 3.44
+    },
+    {
+        "text": "important to control for that so",
+        "start": 2951.839,
+        "duration": 3.52
+    },
+    {
+        "text": "therefore we are using this data to show",
+        "start": 2953.44,
+        "duration": 3.84
+    },
+    {
+        "text": "how our method can also use to control",
+        "start": 2955.359,
+        "duration": 3.841
+    },
+    {
+        "text": "volcanic compounding effects so should",
+        "start": 2957.28,
+        "duration": 3.52
+    },
+    {
+        "text": "still get a better performance compared",
+        "start": 2959.2,
+        "duration": 3.04
+    },
+    {
+        "text": "with other methods",
+        "start": 2960.8,
+        "duration": 3.36
+    },
+    {
+        "text": "i think in order to control for the skin",
+        "start": 2962.24,
+        "duration": 3.839
+    },
+    {
+        "text": "and confounding effects we basically use",
+        "start": 2964.16,
+        "duration": 3.919
+    },
+    {
+        "text": "the gene expression data to construct",
+        "start": 2966.079,
+        "duration": 4.641
+    },
+    {
+        "text": "the covalent matrix so intuitively if",
+        "start": 2968.079,
+        "duration": 4.401
+    },
+    {
+        "text": "the two samples are",
+        "start": 2970.72,
+        "duration": 4.16
+    },
+    {
+        "text": "placed in the two the same batch then",
+        "start": 2972.48,
+        "duration": 4.0
+    },
+    {
+        "text": "many of the genes will have similar",
+        "start": 2974.88,
+        "duration": 3.76
+    },
+    {
+        "text": "expression levels so therefore by",
+        "start": 2976.48,
+        "duration": 4.16
+    },
+    {
+        "text": "computing these covariance matches then",
+        "start": 2978.64,
+        "duration": 3.84
+    },
+    {
+        "text": "the corresponding covalent matrix would",
+        "start": 2980.64,
+        "duration": 3.52
+    },
+    {
+        "text": "be able to capture those hidden",
+        "start": 2982.48,
+        "duration": 3.68
+    },
+    {
+        "text": "confounders",
+        "start": 2984.16,
+        "duration": 4.08
+    },
+    {
+        "text": "and so here are the results so i'm",
+        "start": 2986.16,
+        "duration": 4.159
+    },
+    {
+        "text": "listing the results for unequal to six",
+        "start": 2988.24,
+        "duration": 4.8
+    },
+    {
+        "text": "case i equal to ten case and also equal",
+        "start": 2990.319,
+        "duration": 4.881
+    },
+    {
+        "text": "to fourteen case three different very",
+        "start": 2993.04,
+        "duration": 4.48
+    },
+    {
+        "text": "small relatively small data sets and",
+        "start": 2995.2,
+        "duration": 4.159
+    },
+    {
+        "text": "they will use the enrichment of x",
+        "start": 2997.52,
+        "duration": 3.92
+    },
+    {
+        "text": "chromosome genes as an indicator to",
+        "start": 2999.359,
+        "duration": 4.401
+    },
+    {
+        "text": "evaluate your message performance and",
+        "start": 3001.44,
+        "duration": 4.08
+    },
+    {
+        "text": "this is simply because in this data",
+        "start": 3003.76,
+        "duration": 3.839
+    },
+    {
+        "text": "we're focusing on very small samples and",
+        "start": 3005.52,
+        "duration": 3.68
+    },
+    {
+        "text": "you actually don't have much power to",
+        "start": 3007.599,
+        "duration": 3.361
+    },
+    {
+        "text": "identify it if you look at the",
+        "start": 3009.2,
+        "duration": 4.399
+    },
+    {
+        "text": "traditional power versus fdr part",
+        "start": 3010.96,
+        "duration": 5.2
+    },
+    {
+        "text": "so in this enrichment again you can see",
+        "start": 3013.599,
+        "duration": 4.881
+    },
+    {
+        "text": "that our method works pretty well when",
+        "start": 3016.16,
+        "duration": 5.52
+    },
+    {
+        "text": "sample size equal to 10 also equal to 14",
+        "start": 3018.48,
+        "duration": 6.24
+    },
+    {
+        "text": "and works similarly either as a portion",
+        "start": 3021.68,
+        "duration": 5.36
+    },
+    {
+        "text": "model or negative binomial model depends",
+        "start": 3024.72,
+        "duration": 4.8
+    },
+    {
+        "text": "on which region you look at",
+        "start": 3027.04,
+        "duration": 4.4
+    },
+    {
+        "text": "when the sample size is very small equal",
+        "start": 3029.52,
+        "duration": 3.839
+    },
+    {
+        "text": "to six and the amount of those",
+        "start": 3031.44,
+        "duration": 3.76
+    },
+    {
+        "text": "comparisons if you look at standard",
+        "start": 3033.359,
+        "duration": 4.96
+    },
+    {
+        "text": "measures say dc and agi and you can see",
+        "start": 3035.2,
+        "duration": 5.76
+    },
+    {
+        "text": "that consider with all the previous data",
+        "start": 3038.319,
+        "duration": 4.321
+    },
+    {
+        "text": "this method's also done to perform",
+        "start": 3040.96,
+        "duration": 4.399
+    },
+    {
+        "text": "really very well using those relatively",
+        "start": 3042.64,
+        "duration": 4.8
+    },
+    {
+        "text": "small data effects so you can see that",
+        "start": 3045.359,
+        "duration": 3.841
+    },
+    {
+        "text": "in the set of data by controlling for",
+        "start": 3047.44,
+        "duration": 4.0
+    },
+    {
+        "text": "those confining factors our method also",
+        "start": 3049.2,
+        "duration": 4.56
+    },
+    {
+        "text": "performs better than others",
+        "start": 3051.44,
+        "duration": 4.0
+    },
+    {
+        "text": "so finally i'm just going to list the",
+        "start": 3053.76,
+        "duration": 4.319
+    },
+    {
+        "text": "computation term so one key downside of",
+        "start": 3055.44,
+        "duration": 5.119
+    },
+    {
+        "text": "our method is that it is computationally",
+        "start": 3058.079,
+        "duration": 5.28
+    },
+    {
+        "text": "slow so if you just look at using the",
+        "start": 3060.559,
+        "duration": 4.881
+    },
+    {
+        "text": "other methods they're using germa to fit",
+        "start": 3063.359,
+        "duration": 4.561
+    },
+    {
+        "text": "a linear mix model that only takes uh",
+        "start": 3065.44,
+        "duration": 5.2
+    },
+    {
+        "text": "actually less than a minute to analyze",
+        "start": 3067.92,
+        "duration": 4.8
+    },
+    {
+        "text": "the baboon data and about a minute to",
+        "start": 3070.64,
+        "duration": 4.4
+    },
+    {
+        "text": "analyze human data but if you decide to",
+        "start": 3072.72,
+        "duration": 4.639
+    },
+    {
+        "text": "use a markov method to do that then you",
+        "start": 3075.04,
+        "duration": 4.4
+    },
+    {
+        "text": "are going to use the hour for the baboon",
+        "start": 3077.359,
+        "duration": 4.401
+    },
+    {
+        "text": "data and almost a day for this human",
+        "start": 3079.44,
+        "duration": 4.159
+    },
+    {
+        "text": "data so you can see that a huge a",
+        "start": 3081.76,
+        "duration": 4.64
+    },
+    {
+        "text": "computational cost however even though",
+        "start": 3083.599,
+        "duration": 5.201
+    },
+    {
+        "text": "our computational cost high hour is much",
+        "start": 3086.4,
+        "duration": 5.04
+    },
+    {
+        "text": "faster than the uh comparative algorithm",
+        "start": 3088.8,
+        "duration": 5.519
+    },
+    {
+        "text": "that mgm egrm raises about 10 times",
+        "start": 3091.44,
+        "duration": 5.04
+    },
+    {
+        "text": "faster here and a hundred times faster",
+        "start": 3094.319,
+        "duration": 3.921
+    },
+    {
+        "text": "there and uh",
+        "start": 3096.48,
+        "duration": 3.359
+    },
+    {
+        "text": "and in fact",
+        "start": 3098.24,
+        "duration": 4.48
+    },
+    {
+        "text": "even an hour one day is a relatively",
+        "start": 3099.839,
+        "duration": 4.72
+    },
+    {
+        "text": "small cost comparing with the time we",
+        "start": 3102.72,
+        "duration": 4.08
+    },
+    {
+        "text": "have to spend on collecting the data on",
+        "start": 3104.559,
+        "duration": 3.921
+    },
+    {
+        "text": "generating our",
+        "start": 3106.8,
+        "duration": 2.88
+    },
+    {
+        "text": "examples",
+        "start": 3108.48,
+        "duration": 2.32
+    },
+    {
+        "text": "so",
+        "start": 3109.68,
+        "duration": 4.48
+    },
+    {
+        "text": "so uh finally as a quick summary so we",
+        "start": 3110.8,
+        "duration": 6.319
+    },
+    {
+        "text": "basically present you a method called a",
+        "start": 3114.16,
+        "duration": 5.12
+    },
+    {
+        "text": "portion mixed model and also presented a",
+        "start": 3117.119,
+        "duration": 4.641
+    },
+    {
+        "text": "very efficient macro algorithm to fit",
+        "start": 3119.28,
+        "duration": 5.12
+    },
+    {
+        "text": "these type of models under this macro",
+        "start": 3121.76,
+        "duration": 5.599
+    },
+    {
+        "text": "this methods are extremely important and",
+        "start": 3124.4,
+        "duration": 5.04
+    },
+    {
+        "text": "to dealing with rna sequencing data when",
+        "start": 3127.359,
+        "duration": 4.0
+    },
+    {
+        "text": "you have some pronouns",
+        "start": 3129.44,
+        "duration": 3.76
+    },
+    {
+        "text": "so the sample 9 independence can come",
+        "start": 3131.359,
+        "duration": 3.921
+    },
+    {
+        "text": "from many different ways so it can come",
+        "start": 3133.2,
+        "duration": 4.399
+    },
+    {
+        "text": "from individual relatedness can come",
+        "start": 3135.28,
+        "duration": 3.92
+    },
+    {
+        "text": "from population stratification or",
+        "start": 3137.599,
+        "duration": 3.681
+    },
+    {
+        "text": "structure or it can also come from when",
+        "start": 3139.2,
+        "duration": 4.0
+    },
+    {
+        "text": "you have hidden compounding effects in",
+        "start": 3141.28,
+        "duration": 4.319
+    },
+    {
+        "text": "your angular sequencing data and by",
+        "start": 3143.2,
+        "duration": 4.56
+    },
+    {
+        "text": "controlling for non independent sample",
+        "start": 3145.599,
+        "duration": 4.48
+    },
+    {
+        "text": "non-independence you can get more power",
+        "start": 3147.76,
+        "duration": 4.079
+    },
+    {
+        "text": "and you can also get a proper control",
+        "start": 3150.079,
+        "duration": 3.76
+    },
+    {
+        "text": "for type 1 error",
+        "start": 3151.839,
+        "duration": 4.161
+    },
+    {
+        "text": "so and under the manuscript now it's on",
+        "start": 3153.839,
+        "duration": 4.24
+    },
+    {
+        "text": "bio archive and then you can also",
+        "start": 3156.0,
+        "duration": 4.0
+    },
+    {
+        "text": "download the software macro from my",
+        "start": 3158.079,
+        "duration": 3.601
+    },
+    {
+        "text": "website and if you are interested in",
+        "start": 3160.0,
+        "duration": 3.52
+    },
+    {
+        "text": "using the app package just let me know",
+        "start": 3161.68,
+        "duration": 4.879
+    },
+    {
+        "text": "we also have our package to do that so",
+        "start": 3163.52,
+        "duration": 4.72
+    },
+    {
+        "text": "finally i would like to i thank",
+        "start": 3166.559,
+        "duration": 4.8
+    },
+    {
+        "text": "especially uh suchan and he uh he is",
+        "start": 3168.24,
+        "duration": 5.2
+    },
+    {
+        "text": "really talented student and he pioneered",
+        "start": 3171.359,
+        "duration": 5.121
+    },
+    {
+        "text": "all the work on this study and i also",
+        "start": 3173.44,
+        "duration": 6.0
+    },
+    {
+        "text": "want to thank michelle and",
+        "start": 3176.48,
+        "duration": 5.359
+    },
+    {
+        "text": "who are collaborators on the study over",
+        "start": 3179.44,
+        "duration": 4.96
+    },
+    {
+        "text": "here and also chinku",
+        "start": 3181.839,
+        "duration": 4.561
+    },
+    {
+        "text": "and jenny they are also a collaborators",
+        "start": 3184.4,
+        "duration": 4.24
+    },
+    {
+        "text": "on study and i especially want to thank",
+        "start": 3186.4,
+        "duration": 5.679
+    },
+    {
+        "text": "mike benke for providing this fusion",
+        "start": 3188.64,
+        "duration": 5.36
+    },
+    {
+        "text": "and finally thank you all and happy to",
+        "start": 3192.079,
+        "duration": 4.801
+    },
+    {
+        "text": "answer any question",
+        "start": 3194.0,
+        "duration": 2.88
+    },
+    {
+        "text": "[Applause]",
+        "start": 3197.5,
+        "duration": 3.32
+    },
+    {
+        "text": "questions",
+        "start": 3204.24,
+        "duration": 3.0
+    },
+    {
+        "text": "um so like you mentioned earlier in your",
+        "start": 3214.96,
+        "duration": 4.159
+    },
+    {
+        "text": "uh the simulation study with the boring",
+        "start": 3216.96,
+        "duration": 4.44
+    },
+    {
+        "text": "data so you choose a",
+        "start": 3219.119,
+        "duration": 4.641
+    },
+    {
+        "text": "heritability of like each little h",
+        "start": 3221.4,
+        "duration": 4.199
+    },
+    {
+        "text": "square is point three and then the",
+        "start": 3223.76,
+        "duration": 5.2
+    },
+    {
+        "text": "kinship uh matrix you use on zero uh",
+        "start": 3225.599,
+        "duration": 5.361
+    },
+    {
+        "text": "like point three five and point seven",
+        "start": 3228.96,
+        "duration": 3.599
+    },
+    {
+        "text": "five right right i'm wondering like in",
+        "start": 3230.96,
+        "duration": 3.599
+    },
+    {
+        "text": "real life data how do you determine",
+        "start": 3232.559,
+        "duration": 4.481
+    },
+    {
+        "text": "these values so that's a very good point",
+        "start": 3234.559,
+        "duration": 4.641
+    },
+    {
+        "text": "so over here in the simulation we",
+        "start": 3237.04,
+        "duration": 4.079
+    },
+    {
+        "text": "basically try to make a simulation as",
+        "start": 3239.2,
+        "duration": 3.68
+    },
+    {
+        "text": "real as possible and that's why we use",
+        "start": 3241.119,
+        "duration": 4.081
+    },
+    {
+        "text": "the baboon data to do that and so we",
+        "start": 3242.88,
+        "duration": 3.76
+    },
+    {
+        "text": "essentially use the same kinship",
+        "start": 3245.2,
+        "duration": 3.2
+    },
+    {
+        "text": "measures as in the bubble data so the k",
+        "start": 3246.64,
+        "duration": 3.52
+    },
+    {
+        "text": "matrix is identical",
+        "start": 3248.4,
+        "duration": 4.4
+    },
+    {
+        "text": "data and so that's realistic and the",
+        "start": 3250.16,
+        "duration": 4.08
+    },
+    {
+        "text": "second we also",
+        "start": 3252.8,
+        "duration": 3.36
+    },
+    {
+        "text": "use the h square so as you mentioned we",
+        "start": 3254.24,
+        "duration": 4.72
+    },
+    {
+        "text": "value three different values 0.3 and 0.6",
+        "start": 3256.16,
+        "duration": 4.24
+    },
+    {
+        "text": "and that's because the median",
+        "start": 3258.96,
+        "duration": 3.76
+    },
+    {
+        "text": "heritability of g expression is around",
+        "start": 3260.4,
+        "duration": 6.08
+    },
+    {
+        "text": "30 so that's why we use 0.3 and then 0.6",
+        "start": 3262.72,
+        "duration": 6.16
+    },
+    {
+        "text": "is roughly the 90s percentile and the",
+        "start": 3266.48,
+        "duration": 4.879
+    },
+    {
+        "text": "dialogue is the lowest value you can get",
+        "start": 3268.88,
+        "duration": 4.4
+    },
+    {
+        "text": "and in fact for all the other data say",
+        "start": 3271.359,
+        "duration": 3.601
+    },
+    {
+        "text": "the sigma squared over dispersion",
+        "start": 3273.28,
+        "duration": 3.76
+    },
+    {
+        "text": "variance we also try to estimate it from",
+        "start": 3274.96,
+        "duration": 4.399
+    },
+    {
+        "text": "the real data and do the simulation so",
+        "start": 3277.04,
+        "duration": 3.84
+    },
+    {
+        "text": "we actually try to estimate all the",
+        "start": 3279.359,
+        "duration": 3.76
+    },
+    {
+        "text": "parameters from the real data to make",
+        "start": 3280.88,
+        "duration": 6.239
+    },
+    {
+        "text": "the simulations as real as possible",
+        "start": 3283.119,
+        "duration": 4.0
+    },
+    {
+        "text": "uh yeah exactly so for the humans",
+        "start": 3288.72,
+        "duration": 4.0
+    },
+    {
+        "text": "actually it well",
+        "start": 3290.72,
+        "duration": 3.92
+    },
+    {
+        "text": "for the heritability for the you can",
+        "start": 3292.72,
+        "duration": 4.0
+    },
+    {
+        "text": "still apply for the humans because for",
+        "start": 3294.64,
+        "duration": 4.0
+    },
+    {
+        "text": "for most genes it depends on tissue the",
+        "start": 3296.72,
+        "duration": 3.76
+    },
+    {
+        "text": "media heritability could have ranging",
+        "start": 3298.64,
+        "duration": 3.919
+    },
+    {
+        "text": "from say fifteen percent to thirty some",
+        "start": 3300.48,
+        "duration": 3.839
+    },
+    {
+        "text": "percent so the immediate heritability",
+        "start": 3302.559,
+        "duration": 4.161
+    },
+    {
+        "text": "roughly",
+        "start": 3304.319,
+        "duration": 2.401
+    },
+    {
+        "text": "matrix actually depends on what data",
+        "start": 3307.92,
+        "duration": 3.84
+    },
+    {
+        "text": "structure you're collecting so if you're",
+        "start": 3310.16,
+        "duration": 4.159
+    },
+    {
+        "text": "collecting a family study and then and",
+        "start": 3311.76,
+        "duration": 4.48
+    },
+    {
+        "text": "if especially if you are doing a twin",
+        "start": 3314.319,
+        "duration": 3.361
+    },
+    {
+        "text": "study then the teacher measure is going",
+        "start": 3316.24,
+        "duration": 3.119
+    },
+    {
+        "text": "to be much much stronger than the baboon",
+        "start": 3317.68,
+        "duration": 4.48
+    },
+    {
+        "text": "we're using because the baboon are still",
+        "start": 3319.359,
+        "duration": 4.081
+    },
+    {
+        "text": "it's only",
+        "start": 3322.16,
+        "duration": 4.159
+    },
+    {
+        "text": "involving relatively remotely related",
+        "start": 3323.44,
+        "duration": 5.44
+    },
+    {
+        "text": "individuals but if you say collect the",
+        "start": 3326.319,
+        "duration": 4.481
+    },
+    {
+        "text": "human data that's really a population",
+        "start": 3328.88,
+        "duration": 3.76
+    },
+    {
+        "text": "scale study and all individuals are",
+        "start": 3330.8,
+        "duration": 4.48
+    },
+    {
+        "text": "supposed to be unrelated then just have",
+        "start": 3332.64,
+        "duration": 4.64
+    },
+    {
+        "text": "a much weaker right relatedness compared",
+        "start": 3335.28,
+        "duration": 3.839
+    },
+    {
+        "text": "with the key matrix standard problem so",
+        "start": 3337.28,
+        "duration": 3.6
+    },
+    {
+        "text": "the bubbling kind of intermediate",
+        "start": 3339.119,
+        "duration": 5.881
+    },
+    {
+        "text": "between all those various scenarios",
+        "start": 3340.88,
+        "duration": 4.12
+    },
+    {
+        "text": "hi i was wondering if you tried this",
+        "start": 3350.4,
+        "duration": 4.8
+    },
+    {
+        "text": "with any mouse experiments",
+        "start": 3352.4,
+        "duration": 4.159
+    },
+    {
+        "text": "um because you know investigators are",
+        "start": 3355.2,
+        "duration": 3.76
+    },
+    {
+        "text": "often very reluctant understandably to",
+        "start": 3356.559,
+        "duration": 5.121
+    },
+    {
+        "text": "use multiple mice from the same litter",
+        "start": 3358.96,
+        "duration": 4.8
+    },
+    {
+        "text": "because they want to avoid any kind of",
+        "start": 3361.68,
+        "duration": 3.679
+    },
+    {
+        "text": "you know confounding",
+        "start": 3363.76,
+        "duration": 4.72
+    },
+    {
+        "text": "with that um would you advise people now",
+        "start": 3365.359,
+        "duration": 5.041
+    },
+    {
+        "text": "with this method that it's okay to",
+        "start": 3368.48,
+        "duration": 4.4
+    },
+    {
+        "text": "include yeah that's a very good pun kind",
+        "start": 3370.4,
+        "duration": 5.52
+    },
+    {
+        "text": "of wasting a lot of mice you know by not",
+        "start": 3372.88,
+        "duration": 5.439
+    },
+    {
+        "text": "using exactly that from the same letter",
+        "start": 3375.92,
+        "duration": 4.159
+    },
+    {
+        "text": "and other other things if you did use it",
+        "start": 3378.319,
+        "duration": 3.52
+    },
+    {
+        "text": "for that other other things that you",
+        "start": 3380.079,
+        "duration": 3.28
+    },
+    {
+        "text": "need to take into account because they",
+        "start": 3381.839,
+        "duration": 2.881
+    },
+    {
+        "text": "also have a much more similar",
+        "start": 3383.359,
+        "duration": 2.801
+    },
+    {
+        "text": "environment",
+        "start": 3384.72,
+        "duration": 3.2
+    },
+    {
+        "text": "being raised in the same cage",
+        "start": 3386.16,
+        "duration": 3.919
+    },
+    {
+        "text": "yeah so that's a very good point so in",
+        "start": 3387.92,
+        "duration": 4.639
+    },
+    {
+        "text": "fact my earlier works was motivated by",
+        "start": 3390.079,
+        "duration": 5.04
+    },
+    {
+        "text": "some mouse studies so the early works on",
+        "start": 3392.559,
+        "duration": 4.401
+    },
+    {
+        "text": "linear mix effects model in particular",
+        "start": 3395.119,
+        "duration": 3.921
+    },
+    {
+        "text": "was motivated by the small study because",
+        "start": 3396.96,
+        "duration": 4.72
+    },
+    {
+        "text": "now you have those uh related mouse",
+        "start": 3399.04,
+        "duration": 4.799
+    },
+    {
+        "text": "inbreeding mouse inbreeding mouse and",
+        "start": 3401.68,
+        "duration": 4.0
+    },
+    {
+        "text": "mouse relatedness and you always want to",
+        "start": 3403.839,
+        "duration": 4.641
+    },
+    {
+        "text": "control for those weirdness so that's so",
+        "start": 3405.68,
+        "duration": 4.72
+    },
+    {
+        "text": "that's why early on in juwa especially",
+        "start": 3408.48,
+        "duration": 4.079
+    },
+    {
+        "text": "in juan studies in mouse population",
+        "start": 3410.4,
+        "duration": 3.679
+    },
+    {
+        "text": "people have to use the linear mix",
+        "start": 3412.559,
+        "duration": 3.201
+    },
+    {
+        "text": "effects model to control for those",
+        "start": 3414.079,
+        "duration": 3.681
+    },
+    {
+        "text": "individual relatedness and if we don't",
+        "start": 3415.76,
+        "duration": 3.28
+    },
+    {
+        "text": "control for that then you are going to",
+        "start": 3417.76,
+        "duration": 2.96
+    },
+    {
+        "text": "see a huge signal even in the early",
+        "start": 3419.04,
+        "duration": 3.92
+    },
+    {
+        "text": "linkage studies you see a huge signal if",
+        "start": 3420.72,
+        "duration": 4.48
+    },
+    {
+        "text": "you don't control for those muscles",
+        "start": 3422.96,
+        "duration": 4.159
+    },
+    {
+        "text": "so therefore this message i'm developing",
+        "start": 3425.2,
+        "duration": 4.48
+    },
+    {
+        "text": "here the mccall is particularly useful",
+        "start": 3427.119,
+        "duration": 4.96
+    },
+    {
+        "text": "for those mouse studies because there",
+        "start": 3429.68,
+        "duration": 4.32
+    },
+    {
+        "text": "for this anger sequence that is the most",
+        "start": 3432.079,
+        "duration": 3.76
+    },
+    {
+        "text": "population where you can both account",
+        "start": 3434.0,
+        "duration": 4.079
+    },
+    {
+        "text": "for companature and you can also account",
+        "start": 3435.839,
+        "duration": 5.041
+    },
+    {
+        "text": "for the most individual relatedness so",
+        "start": 3438.079,
+        "duration": 5.52
+    },
+    {
+        "text": "also therefore i believe this",
+        "start": 3440.88,
+        "duration": 4.64
+    },
+    {
+        "text": "model would be extremely useful and in",
+        "start": 3443.599,
+        "duration": 5.041
+    },
+    {
+        "text": "fact we were trying to uh looking for",
+        "start": 3445.52,
+        "duration": 4.64
+    },
+    {
+        "text": "some mouse data to demonstrate the",
+        "start": 3448.64,
+        "duration": 3.28
+    },
+    {
+        "text": "effect of our methods but we're going to",
+        "start": 3450.16,
+        "duration": 4.08
+    },
+    {
+        "text": "find some relatively large mouse data so",
+        "start": 3451.92,
+        "duration": 4.72
+    },
+    {
+        "text": "all we can find is like three mouse in",
+        "start": 3454.24,
+        "duration": 4.559
+    },
+    {
+        "text": "one place with two mouse in the other",
+        "start": 3456.64,
+        "duration": 4.08
+    },
+    {
+        "text": "condition so those are extremely small",
+        "start": 3458.799,
+        "duration": 3.52
+    },
+    {
+        "text": "data that then you know the power is",
+        "start": 3460.72,
+        "duration": 3.28
+    },
+    {
+        "text": "extremely low so it's harder to compare",
+        "start": 3462.319,
+        "duration": 3.121
+    },
+    {
+        "text": "it's different",
+        "start": 3464.0,
+        "duration": 3.359
+    },
+    {
+        "text": "so i think it's very easy",
+        "start": 3465.44,
+        "duration": 4.159
+    },
+    {
+        "text": "so if you know any good relatively large",
+        "start": 3467.359,
+        "duration": 4.0
+    },
+    {
+        "text": "mouse data that you could let me know",
+        "start": 3469.599,
+        "duration": 3.921
+    },
+    {
+        "text": "i'd be happy to apply to there and for a",
+        "start": 3471.359,
+        "duration": 3.921
+    },
+    {
+        "text": "second question so",
+        "start": 3473.52,
+        "duration": 3.599
+    },
+    {
+        "text": "that's a very good point so basically",
+        "start": 3475.28,
+        "duration": 4.4
+    },
+    {
+        "text": "the mouse they are not only uh have a",
+        "start": 3477.119,
+        "duration": 4.96
+    },
+    {
+        "text": "relatively large genetic relatedness but",
+        "start": 3479.68,
+        "duration": 4.08
+    },
+    {
+        "text": "many mouths are coming from the same",
+        "start": 3482.079,
+        "duration": 3.921
+    },
+    {
+        "text": "cage and there's a huge kg effect right",
+        "start": 3483.76,
+        "duration": 4.24
+    },
+    {
+        "text": "because in the cage his mouth they share",
+        "start": 3486.0,
+        "duration": 3.52
+    },
+    {
+        "text": "the same food they fight together they",
+        "start": 3488.0,
+        "duration": 3.52
+    },
+    {
+        "text": "eat it together answers share the same",
+        "start": 3489.52,
+        "duration": 3.76
+    },
+    {
+        "text": "environment so it's important that i",
+        "start": 3491.52,
+        "duration": 3.68
+    },
+    {
+        "text": "think to account for the cage effect so",
+        "start": 3493.28,
+        "duration": 4.4
+    },
+    {
+        "text": "in standard g1 studies we do see a huge",
+        "start": 3495.2,
+        "duration": 4.639
+    },
+    {
+        "text": "kg effect and if you don't account for",
+        "start": 3497.68,
+        "duration": 4.48
+    },
+    {
+        "text": "that you still can have invited type 1",
+        "start": 3499.839,
+        "duration": 5.441
+    },
+    {
+        "text": "errors so i believe i i i suspected the",
+        "start": 3502.16,
+        "duration": 4.8
+    },
+    {
+        "text": "same thing for those are frequency",
+        "start": 3505.28,
+        "duration": 3.2
+    },
+    {
+        "text": "studies and you want to control the",
+        "start": 3506.96,
+        "duration": 3.28
+    },
+    {
+        "text": "cache too and there are two different",
+        "start": 3508.48,
+        "duration": 4.0
+    },
+    {
+        "text": "ways you can control voltage for example",
+        "start": 3510.24,
+        "duration": 4.16
+    },
+    {
+        "text": "you can level cage as a fixed effect",
+        "start": 3512.48,
+        "duration": 5.68
+    },
+    {
+        "text": "right so kg2 kg3 laboratory can could",
+        "start": 3514.4,
+        "duration": 5.919
+    },
+    {
+        "text": "have fixed effects and let's say easily",
+        "start": 3518.16,
+        "duration": 3.76
+    },
+    {
+        "text": "done in the mccall you can directly do",
+        "start": 3520.319,
+        "duration": 3.921
+    },
+    {
+        "text": "that and alternatively you can model",
+        "start": 3521.92,
+        "duration": 4.879
+    },
+    {
+        "text": "that as a running effect so you can",
+        "start": 3524.24,
+        "duration": 4.48
+    },
+    {
+        "text": "model using the cage labels as the",
+        "start": 3526.799,
+        "duration": 3.841
+    },
+    {
+        "text": "covalent measures then provide another",
+        "start": 3528.72,
+        "duration": 3.92
+    },
+    {
+        "text": "covariance matrix there and i think it",
+        "start": 3530.64,
+        "duration": 4.32
+    },
+    {
+        "text": "can be done also the computationally you",
+        "start": 3532.64,
+        "duration": 4.959
+    },
+    {
+        "text": "probably may not be able to use the user",
+        "start": 3534.96,
+        "duration": 4.56
+    },
+    {
+        "text": "macro tricks uh over here so the",
+        "start": 3537.599,
+        "duration": 4.96
+    },
+    {
+        "text": "computation uh might might be uh slower",
+        "start": 3539.52,
+        "duration": 4.799
+    },
+    {
+        "text": "than the standard of algorithm but",
+        "start": 3542.559,
+        "duration": 3.601
+    },
+    {
+        "text": "that's a production we're also looking",
+        "start": 3544.319,
+        "duration": 3.361
+    },
+    {
+        "text": "at try to see if we're getting a full",
+        "start": 3546.16,
+        "duration": 4.08
+    },
+    {
+        "text": "computation",
+        "start": 3547.68,
+        "duration": 2.56
+    },
+    {
+        "text": "okay any other questions then we'll",
+        "start": 3554.079,
+        "duration": 4.401
+    },
+    {
+        "text": "thank you again",
+        "start": 3556.16,
+        "duration": 5.27
+    },
+    {
+        "text": "thanks for coming",
+        "start": 3558.48,
+        "duration": 6.06
+    },
+    {
+        "text": "[Applause]",
+        "start": 3561.43,
+        "duration": 3.11
+    },
+    {
+        "text": "yeah works with silicon",
+        "start": 3572.48,
+        "duration": 3.28
+    }
+]

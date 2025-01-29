@@ -1,0 +1,1247 @@
+[
+    {
+        "text": "The goal here is simple, explain what a derivative is.",
+        "start": 15.26,
+        "duration": 3.7
+    },
+    {
+        "text": "The thing is though, there's some subtlety to this topic, ",
+        "start": 19.16,
+        "duration": 2.498
+    },
+    {
+        "text": "and a lot of potential for paradoxes if you're not careful.",
+        "start": 21.658,
+        "duration": 2.542
+    },
+    {
+        "text": "So a secondary goal is that you have an appreciation ",
+        "start": 24.78,
+        "duration": 2.772
+    },
+    {
+        "text": "for what those paradoxes are and how to avoid them.",
+        "start": 27.552,
+        "duration": 2.668
+    },
+    {
+        "text": "You see, it's common for people to say that the derivative measures an instantaneous ",
+        "start": 31.22,
+        "duration": 4.372
+    },
+    {
+        "text": "rate of change, but when you think about it, that phrase is actually an oxymoron.",
+        "start": 35.592,
+        "duration": 4.168
+    },
+    {
+        "text": "Change is something that happens between separate points in time, ",
+        "start": 40.24,
+        "duration": 3.303
+    },
+    {
+        "text": "and when you blind yourself to all but just a single instant, ",
+        "start": 43.543,
+        "duration": 3.104
+    },
+    {
+        "text": "there's not really any room for change.",
+        "start": 46.647,
+        "duration": 1.953
+    },
+    {
+        "text": "You'll see what I mean more as we get into it, ",
+        "start": 49.5,
+        "duration": 2.34
+    },
+    {
+        "text": "but when you appreciate that a phrase like instantaneous rate of change is actually ",
+        "start": 51.84,
+        "duration": 4.182
+    },
+    {
+        "text": "nonsense, I think it makes you appreciate just how clever the fathers of calculus ",
+        "start": 56.022,
+        "duration": 4.082
+    },
+    {
+        "text": "were in capturing the idea that phrase is meant to evoke, ",
+        "start": 60.104,
+        "duration": 2.888
+    },
+    {
+        "text": "but with a perfectly sensible piece of math, the derivative.",
+        "start": 62.992,
+        "duration": 2.988
+    },
+    {
+        "text": "As our central example, I want you to imagine a car that starts at some point A, ",
+        "start": 67.54,
+        "duration": 4.337
+    },
+    {
+        "text": "speeds up, and then slows down to a stop at some point B 100 meters away, ",
+        "start": 71.877,
+        "duration": 3.963
+    },
+    {
+        "text": "and let's say it all happens over the course of 10 seconds.",
+        "start": 75.84,
+        "duration": 3.16
+    },
+    {
+        "text": "That's the setup to have in mind as we lay out what the derivative is.",
+        "start": 80.52,
+        "duration": 3.38
+    },
+    {
+        "text": "Well, we could graph this motion, letting the vertical axis represent the ",
+        "start": 83.9,
+        "duration": 5.199
+    },
+    {
+        "text": "distance traveled, and the horizontal axis represent time, so at each time t, ",
+        "start": 89.099,
+        "duration": 5.48
+    },
+    {
+        "text": "represented with a point somewhere on the horizontal axis, ",
+        "start": 94.579,
+        "duration": 4.145
+    },
+    {
+        "text": "the height of the graph tells us how far the car has traveled in total after ",
+        "start": 98.724,
+        "duration": 5.41
+    },
+    {
+        "text": "that amount of time.",
+        "start": 104.134,
+        "duration": 1.406
+    },
+    {
+        "text": "It's pretty common to name a distance function like this s of t.",
+        "start": 106.76,
+        "duration": 3.4
+    },
+    {
+        "text": "I would use the letter d for distance, but that ",
+        "start": 110.16,
+        "duration": 2.546
+    },
+    {
+        "text": "guy already has another full time job in calculus.",
+        "start": 112.706,
+        "duration": 2.654
+    },
+    {
+        "text": "Initially, the curve is quite shallow, since the car is slow to start.",
+        "start": 116.5,
+        "duration": 3.26
+    },
+    {
+        "text": "During that first second, the distance it travels doesn't change that much.",
+        "start": 120.28,
+        "duration": 4.06
+    },
+    {
+        "text": "For the next few seconds, as the car speeds up, ",
+        "start": 124.98,
+        "duration": 2.602
+    },
+    {
+        "text": "the distance traveled in a given second gets larger, ",
+        "start": 127.582,
+        "duration": 2.873
+    },
+    {
+        "text": "which corresponds to a steeper slope in this graph.",
+        "start": 130.455,
+        "duration": 2.765
+    },
+    {
+        "text": "Then towards the end, when it slows down, that curve shallows out again.",
+        "start": 133.8,
+        "duration": 3.72
+    },
+    {
+        "text": "If we were to plot the car's velocity in meters per second as a function of time, ",
+        "start": 140.76,
+        "duration": 4.757
+    },
+    {
+        "text": "it might look like this bump.",
+        "start": 145.517,
+        "duration": 1.683
+    },
+    {
+        "text": "At early times, the velocity is very small.",
+        "start": 147.86,
+        "duration": 2.14
+    },
+    {
+        "text": "Up to the middle of the journey, the car builds up to some maximum velocity, ",
+        "start": 150.46,
+        "duration": 3.764
+    },
+    {
+        "text": "covering a relatively large distance each second.",
+        "start": 154.224,
+        "duration": 2.396
+    },
+    {
+        "text": "Then it slows back down towards a speed of zero.",
+        "start": 157.66,
+        "duration": 2.26
+    },
+    {
+        "text": "These two curves are definitely related to each other.",
+        "start": 161.38,
+        "duration": 2.8
+    },
+    {
+        "text": "If you change the specific distance vs.",
+        "start": 164.84,
+        "duration": 2.32
+    },
+    {
+        "text": "time function, you'll have some different velocity vs.",
+        "start": 167.26,
+        "duration": 3.04
+    },
+    {
+        "text": "time function.",
+        "start": 170.42,
+        "duration": 0.66
+    },
+    {
+        "text": "What we want to understand is the specifics of that relationship.",
+        "start": 171.76,
+        "duration": 3.28
+    },
+    {
+        "text": "Exactly how does velocity depend on a distance vs.",
+        "start": 175.68,
+        "duration": 3.42
+    },
+    {
+        "text": "time function?",
+        "start": 179.4,
+        "duration": 0.42
+    },
+    {
+        "text": "To do that, it's worth taking a moment to think ",
+        "start": 181.94,
+        "duration": 2.742
+    },
+    {
+        "text": "critically about what exactly velocity means here.",
+        "start": 184.682,
+        "duration": 2.858
+    },
+    {
+        "text": "Intuitively, we all might know what velocity at a given moment means, ",
+        "start": 188.38,
+        "duration": 3.5
+    },
+    {
+        "text": "it's just whatever the car's speedometer shows in that moment.",
+        "start": 191.88,
+        "duration": 3.1
+    },
+    {
+        "text": "Intuitively, it might make sense that the car's velocity should be higher at times when ",
+        "start": 197.18,
+        "duration": 4.278
+    },
+    {
+        "text": "this distance function is steeper, when the car traverses more distance per unit time.",
+        "start": 201.458,
+        "duration": 4.182
+    },
+    {
+        "text": "But the funny thing is, velocity at a single moment makes no sense.",
+        "start": 206.7,
+        "duration": 4.02
+    },
+    {
+        "text": "If I show you a picture of a car, just a snapshot in an instant, ",
+        "start": 211.36,
+        "duration": 3.535
+    },
+    {
+        "text": "and I ask you how fast it's going, you'd have no way of telling me.",
+        "start": 214.895,
+        "duration": 3.645
+    },
+    {
+        "text": "What you'd need are two separate points in time to compare.",
+        "start": 219.62,
+        "duration": 2.76
+    },
+    {
+        "text": "That way you can compute whatever the change in distance across those times is, ",
+        "start": 223.18,
+        "duration": 4.13
+    },
+    {
+        "text": "divided by the change in time.",
+        "start": 227.31,
+        "duration": 1.55
+    },
+    {
+        "text": "Right?",
+        "start": 229.56,
+        "duration": 0.18
+    },
+    {
+        "text": "I mean, that's what velocity is, it's the distance traveled per unit time.",
+        "start": 229.82,
+        "duration": 4.34
+    },
+    {
+        "text": "So how is it that we're looking at a function for velocity that ",
+        "start": 235.62,
+        "duration": 3.45
+    },
+    {
+        "text": "only takes in a single value of t, a single snapshot in time?",
+        "start": 239.07,
+        "duration": 3.29
+    },
+    {
+        "text": "It's weird, isn't it?",
+        "start": 242.9,
+        "duration": 1.38
+    },
+    {
+        "text": "We want to associate individual points in time with a velocity, ",
+        "start": 244.28,
+        "duration": 3.589
+    },
+    {
+        "text": "but actually computing velocity requires comparing two separate points in time.",
+        "start": 247.869,
+        "duration": 4.431
+    },
+    {
+        "text": "If that feels strange and paradoxical, good!",
+        "start": 254.64,
+        "duration": 2.759
+    },
+    {
+        "text": "You're grappling with the same conflicts that the fathers of calculus did.",
+        "start": 257.92,
+        "duration": 3.039
+    },
+    {
+        "text": "And if you want a deep understanding for rates of change, not just for a moving car, ",
+        "start": 261.38,
+        "duration": 3.96
+    },
+    {
+        "text": "but for all sorts of things in science, you're going to need to resolve this apparent ",
+        "start": 265.34,
+        "duration": 4.007
+    },
+    {
+        "text": "paradox.",
+        "start": 269.347,
+        "duration": 0.373
+    },
+    {
+        "text": "First, I think it's best to talk about the real world, ",
+        "start": 272.2,
+        "duration": 2.506
+    },
+    {
+        "text": "and then we'll go into a purely mathematical one.",
+        "start": 274.706,
+        "duration": 2.234
+    },
+    {
+        "text": "Let's think about what the car's speedometer is probably doing.",
+        "start": 277.54,
+        "duration": 2.92
+    },
+    {
+        "text": "At some point, say 3 seconds into the journey, ",
+        "start": 281.2,
+        "duration": 2.732
+    },
+    {
+        "text": "the speedometer might measure how far the car goes in a very small amount of time, ",
+        "start": 283.932,
+        "duration": 4.825
+    },
+    {
+        "text": "maybe the distance traveled between 3 seconds and 3.01 seconds.",
+        "start": 288.757,
+        "duration": 3.663
+    },
+    {
+        "text": "Then it could compute the speed in meters per second as that tiny ",
+        "start": 293.36,
+        "duration": 4.155
+    },
+    {
+        "text": "distance traversed in meters divided by that tiny time, 0.01 seconds.",
+        "start": 297.515,
+        "duration": 4.345
+    },
+    {
+        "text": "That is, a physical car just side-steps the paradox and ",
+        "start": 302.9,
+        "duration": 2.656
+    },
+    {
+        "text": "doesn't actually compute speed at a single point in time.",
+        "start": 305.556,
+        "duration": 2.704
+    },
+    {
+        "text": "It computes speed during a very small amount of time.",
+        "start": 308.78,
+        "duration": 2.9
+    },
+    {
+        "text": "So let's call that difference in time dt, which you might think of as 0.01 seconds, ",
+        "start": 313.18,
+        "duration": 5.508
+    },
+    {
+        "text": "and let's call that resulting difference in distance ds.",
+        "start": 318.688,
+        "duration": 3.672
+    },
+    {
+        "text": "So the velocity at some point in time is ds divided by dt, ",
+        "start": 322.96,
+        "duration": 3.784
+    },
+    {
+        "text": "the tiny change in distance over the tiny change in time.",
+        "start": 326.744,
+        "duration": 3.656
+    },
+    {
+        "text": "Graphically, you can imagine zooming in on some point of this distance vs.",
+        "start": 331.58,
+        "duration": 3.76
+    },
+    {
+        "text": "time graph above t equals 3.",
+        "start": 335.5,
+        "duration": 2.18
+    },
+    {
+        "text": "That dt is a small step to the right, since time is on the horizontal axis, ",
+        "start": 338.56,
+        "duration": 4.583
+    },
+    {
+        "text": "and that ds is the resulting change in the height of the graph, ",
+        "start": 343.143,
+        "duration": 3.859
+    },
+    {
+        "text": "since the vertical axis represents the distance traveled.",
+        "start": 347.002,
+        "duration": 3.438
+    },
+    {
+        "text": "So ds divided by dt is something you can think of as the rise ",
+        "start": 351.22,
+        "duration": 4.252
+    },
+    {
+        "text": "over run slope between two very close points on this graph.",
+        "start": 355.472,
+        "duration": 4.048
+    },
+    {
+        "text": "Of course, there's nothing special about the value t equals 3.",
+        "start": 360.7,
+        "duration": 2.74
+    },
+    {
+        "text": "We could apply this to any other point in time, ",
+        "start": 363.94,
+        "duration": 2.857
+    },
+    {
+        "text": "so we consider this expression ds over dt to be a function of t, ",
+        "start": 366.797,
+        "duration": 3.868
+    },
+    {
+        "text": "something where I can give you a time t and you can give me back the value of this ",
+        "start": 370.665,
+        "duration": 4.941
+    },
+    {
+        "text": "ratio at that time, the velocity as a function of time.",
+        "start": 375.606,
+        "duration": 3.274
+    },
+    {
+        "text": "For example, when I had the computer draw this bump curve here, ",
+        "start": 379.6,
+        "duration": 3.238
+    },
+    {
+        "text": "the one representing the velocity function, here's what I had the computer actually do.",
+        "start": 382.838,
+        "duration": 4.402
+    },
+    {
+        "text": "First, I chose a small value for dt, I think in this case it was 0.01.",
+        "start": 387.94,
+        "duration": 4.68
+    },
+    {
+        "text": "Then I had the computer look at a whole bunch of times t between 0 and 10, ",
+        "start": 393.44,
+        "duration": 4.768
+    },
+    {
+        "text": "and compute the distance function s at t plus dt, ",
+        "start": 398.208,
+        "duration": 3.178
+    },
+    {
+        "text": "and then subtract off the value of that function at t.",
+        "start": 401.386,
+        "duration": 3.434
+    },
+    {
+        "text": "In other words, that's the difference in the distance traveled between the given time, ",
+        "start": 405.42,
+        "duration": 5.644
+    },
+    {
+        "text": "t, and the time 0.01 seconds after that.",
+        "start": 411.064,
+        "duration": 2.596
+    },
+    {
+        "text": "Then you can just divide that difference by the change in time, dt, ",
+        "start": 414.52,
+        "duration": 3.785
+    },
+    {
+        "text": "and that gives you velocity in meters per second around each point in time.",
+        "start": 418.305,
+        "duration": 4.175
+    },
+    {
+        "text": "So with a formula like this, you could give the computer any curve representing any ",
+        "start": 424.42,
+        "duration": 4.301
+    },
+    {
+        "text": "distance function s of t, and it could figure out the curve representing velocity.",
+        "start": 428.721,
+        "duration": 4.199
+    },
+    {
+        "text": "Now would be a good time to pause, reflect, and make sure this idea ",
+        "start": 433.54,
+        "duration": 3.897
+    },
+    {
+        "text": "of relating distance to velocity by looking at tiny changes makes sense, ",
+        "start": 437.437,
+        "duration": 4.185
+    },
+    {
+        "text": "because we're going to tackle the paradox of the derivative head on.",
+        "start": 441.622,
+        "duration": 3.898
+    },
+    {
+        "text": "This idea of ds over dt, a tiny change in the value of the function s divided by ",
+        "start": 447.48,
+        "duration": 5.292
+    },
+    {
+        "text": "the tiny change in the input that caused it, that's almost what a derivative is.",
+        "start": 452.772,
+        "duration": 5.228
+    },
+    {
+        "text": "And even though a car's speedometer will actually look at a concrete change in time, ",
+        "start": 458.7,
+        "duration": 5.208
+    },
+    {
+        "text": "like 0.01 seconds, and even though the drawing program here is looking at an actual ",
+        "start": 463.908,
+        "duration": 5.147
+    },
+    {
+        "text": "concrete change in time, in pure math the derivative is not this ratio ds over dt for a ",
+        "start": 469.055,
+        "duration": 5.393
+    },
+    {
+        "text": "specific choice of dt. Instead, it's whatever that ratio approaches as your choice for dt ",
+        "start": 474.448,
+        "duration": 5.515
+    },
+    {
+        "text": "approaches 0.",
+        "start": 479.963,
+        "duration": 0.797
+    },
+    {
+        "text": "Luckily there is a really nice visual understanding for what it means to ask what ",
+        "start": 482.54,
+        "duration": 4.793
+    },
+    {
+        "text": "this ratio approaches, Remember, for any specific choice of dt, ",
+        "start": 487.333,
+        "duration": 3.742
+    },
+    {
+        "text": "this ratio ds over dt is the slope of a line passing through two separate points ",
+        "start": 491.075,
+        "duration": 4.735
+    },
+    {
+        "text": "on the graph, right?",
+        "start": 495.81,
+        "duration": 1.17
+    },
+    {
+        "text": "Well as dt approaches 0, and as those two points approach each other, ",
+        "start": 497.74,
+        "duration": 4.617
+    },
+    {
+        "text": "the slope of the line approaches the slope of a line that's ",
+        "start": 502.357,
+        "duration": 3.957
+    },
+    {
+        "text": "tangent to the graph at whatever point t we're looking at.",
+        "start": 506.314,
+        "duration": 3.826
+    },
+    {
+        "text": "So the true honest-to-goodness pure math derivative is not the ",
+        "start": 510.58,
+        "duration": 3.349
+    },
+    {
+        "text": "rise over run slope between two nearby points on the graph, ",
+        "start": 513.929,
+        "duration": 3.19
+    },
+    {
+        "text": "it's equal to the slope of a line tangent to the graph at a single point.",
+        "start": 517.119,
+        "duration": 3.881
+    },
+    {
+        "text": "Now notice what I'm not saying, I'm not saying that the derivative is ",
+        "start": 522.36,
+        "duration": 3.504
+    },
+    {
+        "text": "whatever happens when dt is infinitely small, whatever that would mean.",
+        "start": 525.864,
+        "duration": 3.556
+    },
+    {
+        "text": "Nor am I saying that you plug in 0 for dt.",
+        "start": 530.0,
+        "duration": 2.34
+    },
+    {
+        "text": "This dt is always a finitely small non-zero value, it's just that it approaches 0 is all.",
+        "start": 533.04,
+        "duration": 5.86
+    },
+    {
+        "text": "I think that's really clever.",
+        "start": 543.62,
+        "duration": 1.34
+    },
+    {
+        "text": "Even though change in an instant makes no sense, ",
+        "start": 545.38,
+        "duration": 2.897
+    },
+    {
+        "text": "this idea of letting dt approach 0 is a really sneaky backdoor ",
+        "start": 548.277,
+        "duration": 3.726
+    },
+    {
+        "text": "way to talk reasonably about the rate of change at a single point in time.",
+        "start": 552.003,
+        "duration": 4.377
+    },
+    {
+        "text": "Isn't that neat?",
+        "start": 557.02,
+        "duration": 0.5
+    },
+    {
+        "text": "It's kind of flirting with the paradox of change in ",
+        "start": 558.06,
+        "duration": 2.436
+    },
+    {
+        "text": "an instant without ever needing to actually touch it.",
+        "start": 560.496,
+        "duration": 2.484
+    },
+    {
+        "text": "And it comes with such a nice visual intuition too, ",
+        "start": 563.3,
+        "duration": 2.444
+    },
+    {
+        "text": "as the slope of a tangent line to a single point on the graph.",
+        "start": 565.744,
+        "duration": 2.916
+    },
+    {
+        "text": "And because change in an instant still makes no sense, ",
+        "start": 570.16,
+        "duration": 2.939
+    },
+    {
+        "text": "I think it's healthiest for you to think of this slope not as some instantaneous ",
+        "start": 573.099,
+        "duration": 4.329
+    },
+    {
+        "text": "rate of change, but instead as the best constant approximation for a rate of ",
+        "start": 577.428,
+        "duration": 4.116
+    },
+    {
+        "text": "change around a point.",
+        "start": 581.544,
+        "duration": 1.176
+    },
+    {
+        "text": "By the way, it's worth saying a couple words on notation here.",
+        "start": 584.34,
+        "duration": 2.6
+    },
+    {
+        "text": "Throughout this video I've been using dt to refer to a tiny change in t with ",
+        "start": 587.34,
+        "duration": 4.403
+    },
+    {
+        "text": "some actual size, and ds to refer to the resulting change in s, ",
+        "start": 591.743,
+        "duration": 3.661
+    },
+    {
+        "text": "which again has an actual size, and this is because that's how I want you to ",
+        "start": 595.404,
+        "duration": 4.403
+    },
+    {
+        "text": "think about them.",
+        "start": 599.807,
+        "duration": 0.973
+    },
+    {
+        "text": "But the convention in calculus is that whenever you're using the letter d like this, ",
+        "start": 601.66,
+        "duration": 4.136
+    },
+    {
+        "text": "you're kind of announcing your intention that eventually you're ",
+        "start": 605.796,
+        "duration": 3.114
+    },
+    {
+        "text": "going to see what happens as dt approaches 0.",
+        "start": 608.91,
+        "duration": 2.19
+    },
+    {
+        "text": "For example, the honest-to-goodness pure math derivative is written as ds divided by dt, ",
+        "start": 611.92,
+        "duration": 4.909
+    },
+    {
+        "text": "even though it's technically not a fraction per se, ",
+        "start": 616.829,
+        "duration": 2.868
+    },
+    {
+        "text": "but whatever that fraction approaches for smaller and smaller nudges in t.",
+        "start": 619.697,
+        "duration": 4.083
+    },
+    {
+        "text": "I think a specific example should help here.",
+        "start": 625.78,
+        "duration": 1.9
+    },
+    {
+        "text": "You might think that asking about what this ratio approaches ",
+        "start": 628.26,
+        "duration": 3.114
+    },
+    {
+        "text": "for smaller and smaller values would make it much more difficult to compute, ",
+        "start": 631.374,
+        "duration": 3.93
+    },
+    {
+        "text": "but weirdly it kind of makes things easier.",
+        "start": 635.304,
+        "duration": 2.196
+    },
+    {
+        "text": "Let's say you have a given distance vs time function that happens to be exactly t cubed.",
+        "start": 638.2,
+        "duration": 4.96
+    },
+    {
+        "text": "So after 1 second the car has traveled 1 cubed equals 1 meters, ",
+        "start": 643.16,
+        "duration": 4.612
+    },
+    {
+        "text": "after 2 seconds it's traveled 2 cubed, or 8 meters, and so on.",
+        "start": 647.772,
+        "duration": 4.468
+    },
+    {
+        "text": "Now what I'm about to do might seem somewhat complicated, ",
+        "start": 653.02,
+        "duration": 2.616
+    },
+    {
+        "text": "but once the dust settles it really is simpler, ",
+        "start": 655.636,
+        "duration": 2.165
+    },
+    {
+        "text": "and more importantly it's the kind of thing you only ever have to do once in calculus.",
+        "start": 657.801,
+        "duration": 3.879
+    },
+    {
+        "text": "Let's say you wanted to compute the velocity, ds divided by dt, ",
+        "start": 663.1,
+        "duration": 3.852
+    },
+    {
+        "text": "at some specific time, like t equals 2.",
+        "start": 666.952,
+        "duration": 2.348
+    },
+    {
+        "text": "For right now let's think of dt as having an actual size, ",
+        "start": 669.94,
+        "duration": 3.317
+    },
+    {
+        "text": "some concrete nudge, we'll let it go to 0 in just a bit.",
+        "start": 673.257,
+        "duration": 3.203
+    },
+    {
+        "text": "The tiny change in distance between 2 seconds and 2 plus dt ",
+        "start": 677.14,
+        "duration": 5.184
+    },
+    {
+        "text": "seconds is s of 2 plus dt minus s of 2, and we divide that by dt.",
+        "start": 682.324,
+        "duration": 5.616
+    },
+    {
+        "text": "Since our function is t cubed, that numerator looks like 2 plus dt cubed minus 2 cubed.",
+        "start": 688.62,
+        "duration": 6.04
+    },
+    {
+        "text": "And this is something we can work out algebraically.",
+        "start": 695.26,
+        "duration": 2.84
+    },
+    {
+        "text": "Again, bear with me, there's a reason I'm showing you the details here.",
+        "start": 698.1,
+        "duration": 4.22
+    },
+    {
+        "text": "When you expand that top, what you get is 2 cubed plus 3 times 2 squared dt ",
+        "start": 702.8,
+        "duration": 7.044
+    },
+    {
+        "text": "plus 3 times 2 times dt squared plus dt cubed, and all of that is minus 2 cubed.",
+        "start": 709.844,
+        "duration": 7.416
+    },
+    {
+        "text": "Now there's a lot of terms, and I want you to remember that it looks like a mess, ",
+        "start": 718.38,
+        "duration": 3.582
+    },
+    {
+        "text": "but it does simplify.",
+        "start": 721.962,
+        "duration": 0.918
+    },
+    {
+        "text": "Those 2 cubed terms cancel out.",
+        "start": 723.78,
+        "duration": 2.12
+    },
+    {
+        "text": "Everything remaining here has a dt in it, and since there's a dt on the bottom there, ",
+        "start": 726.52,
+        "duration": 5.087
+    },
+    {
+        "text": "many of those cancel out as well.",
+        "start": 731.607,
+        "duration": 1.953
+    },
+    {
+        "text": "What this means is that the ratio ds divided by dt has boiled down into ",
+        "start": 734.28,
+        "duration": 5.402
+    },
+    {
+        "text": "3 times 2 squared plus 2 different terms that each have a dt in them.",
+        "start": 739.682,
+        "duration": 5.178
+    },
+    {
+        "text": "So if we ask what happens as dt approaches 0, representing the idea of looking at a ",
+        "start": 745.58,
+        "duration": 4.55
+    },
+    {
+        "text": "smaller and smaller change in time, we can just completely ignore those other terms.",
+        "start": 750.13,
+        "duration": 4.55
+    },
+    {
+        "text": "By eliminating the need to think about a specific dt, ",
+        "start": 756.1,
+        "duration": 3.15
+    },
+    {
+        "text": "we've eliminated a lot of the complication in the full expression.",
+        "start": 759.25,
+        "duration": 3.85
+    },
+    {
+        "text": "So what we're left with is this nice clean 3 times 2 squared.",
+        "start": 763.88,
+        "duration": 3.48
+    },
+    {
+        "text": "You can think of that as meaning that the slope of a line tangent to ",
+        "start": 768.36,
+        "duration": 4.13
+    },
+    {
+        "text": "the point at t equals 2 of this graph is exactly 3 times 2 squared, or 12.",
+        "start": 772.49,
+        "duration": 4.43
+    },
+    {
+        "text": "And of course, there's nothing special about the time t equals 2.",
+        "start": 777.82,
+        "duration": 3.24
+    },
+    {
+        "text": "We could more generally say that the derivative ",
+        "start": 781.56,
+        "duration": 3.161
+    },
+    {
+        "text": "of t cubed as a function of t is 3 times t squared.",
+        "start": 784.721,
+        "duration": 3.359
+    },
+    {
+        "text": "Now take a step back, because that's beautiful.",
+        "start": 790.74,
+        "duration": 2.48
+    },
+    {
+        "text": "The derivative is this crazy complicated idea.",
+        "start": 793.82,
+        "duration": 2.46
+    },
+    {
+        "text": "We've got tiny changes in distance over tiny changes in time, ",
+        "start": 796.6,
+        "duration": 3.023
+    },
+    {
+        "text": "but instead of looking at any specific one of those, ",
+        "start": 799.623,
+        "duration": 2.585
+    },
+    {
+        "text": "we're talking about what that thing approaches.",
+        "start": 802.208,
+        "duration": 2.292
+    },
+    {
+        "text": "I mean, that's a lot to think about.",
+        "start": 804.5,
+        "duration": 2.48
+    },
+    {
+        "text": "And yet what we've come out with is such a simple expression, 3 times t squared.",
+        "start": 807.64,
+        "duration": 3.92
+    },
+    {
+        "text": "And in practice, you wouldn't go through all this algebra each time.",
+        "start": 812.96,
+        "duration": 3.1
+    },
+    {
+        "text": "Knowing that the derivative of t cubed is 3t squared is one of those things that all ",
+        "start": 816.42,
+        "duration": 3.993
+    },
+    {
+        "text": "calculus students learn how to do immediately without having to re-derive it each time.",
+        "start": 820.413,
+        "duration": 4.087
+    },
+    {
+        "text": "And in the next video, I'm going to show you a nice way to think about ",
+        "start": 825.06,
+        "duration": 3.28
+    },
+    {
+        "text": "this and a couple other derivative formulas in really nice geometric ways.",
+        "start": 828.34,
+        "duration": 3.42
+    },
+    {
+        "text": "But the point I want to make by showing you all of the algebraic guts ",
+        "start": 832.5,
+        "duration": 3.885
+    },
+    {
+        "text": "here is that when you consider the tiny change in distance caused by a ",
+        "start": 836.385,
+        "duration": 3.941
+    },
+    {
+        "text": "tiny change in time for some specific value of dt, you'd have kind of a mess.",
+        "start": 840.326,
+        "duration": 4.274
+    },
+    {
+        "text": "But when you consider what that ratio approaches as dt approaches 0, ",
+        "start": 845.26,
+        "duration": 3.642
+    },
+    {
+        "text": "it lets you ignore much of that mess, and it really does simplify the problem.",
+        "start": 848.902,
+        "duration": 4.118
+    },
+    {
+        "text": "That right there is kind of the heart of why calculus becomes useful.",
+        "start": 853.78,
+        "duration": 2.94
+    },
+    {
+        "text": "Another reason to show you a concrete derivative like this is that it ",
+        "start": 858.02,
+        "duration": 3.509
+    },
+    {
+        "text": "sets the stage for an example of the kind of paradoxes that come about ",
+        "start": 861.529,
+        "duration": 3.56
+    },
+    {
+        "text": "if you believe too much in the illusion of instantaneous rate of change.",
+        "start": 865.089,
+        "duration": 3.611
+    },
+    {
+        "text": "So think about the actual car traveling according to this t cubed distance function, ",
+        "start": 870.0,
+        "duration": 4.812
+    },
+    {
+        "text": "and consider its motion at the moment t equals 0, right at the start.",
+        "start": 874.812,
+        "duration": 3.908
+    },
+    {
+        "text": "Now ask yourself whether or not the car is moving at that time.",
+        "start": 879.7,
+        "duration": 3.68
+    },
+    {
+        "text": "On the one hand, we can compute its speed at that point using the derivative, ",
+        "start": 885.56,
+        "duration": 4.738
+    },
+    {
+        "text": "3t squared, which for time t equals 0 works out to be 0.",
+        "start": 890.298,
+        "duration": 3.402
+    },
+    {
+        "text": "Visually, this means that the tangent line to the graph at that point is perfectly flat, ",
+        "start": 894.78,
+        "duration": 5.211
+    },
+    {
+        "text": "so the car's quote-unquote instantaneous velocity is 0, ",
+        "start": 899.991,
+        "duration": 3.279
+    },
+    {
+        "text": "and that suggests that obviously it's not moving.",
+        "start": 903.27,
+        "duration": 2.87
+    },
+    {
+        "text": "But on the other hand, if it doesn't start moving at time 0, when does it start moving?",
+        "start": 907.16,
+        "duration": 4.7
+    },
+    {
+        "text": "Really, pause and ponder that for a moment.",
+        "start": 912.58,
+        "duration": 1.96
+    },
+    {
+        "text": "Is the car moving at time t equals 0?",
+        "start": 915.1,
+        "duration": 2.68
+    },
+    {
+        "text": "Do you see the paradox?",
+        "start": 922.6,
+        "duration": 0.78
+    },
+    {
+        "text": "The issue is that the question makes no sense.",
+        "start": 924.26,
+        "duration": 1.74
+    },
+    {
+        "text": "It references the idea of change in a moment, but that doesn't actually exist.",
+        "start": 926.54,
+        "duration": 3.9
+    },
+    {
+        "text": "That's just not what the derivative measures.",
+        "start": 930.86,
+        "duration": 1.74
+    },
+    {
+        "text": "What it means for the derivative of a distance function to be 0 is that the best ",
+        "start": 933.48,
+        "duration": 4.889
+    },
+    {
+        "text": "constant approximation for the car's velocity around that point is 0 m per second.",
+        "start": 938.369,
+        "duration": 4.951
+    },
+    {
+        "text": "For example, if you look at an actual change in time, ",
+        "start": 944.08,
+        "duration": 3.5
+    },
+    {
+        "text": "say between time 0 and 0.1 seconds, the car does move.",
+        "start": 947.58,
+        "duration": 3.5
+    },
+    {
+        "text": "It moves 0.001 m.",
+        "start": 951.5,
+        "duration": 2.2
+    },
+    {
+        "text": "That's very small, and importantly, it's very small compared to the change in time, ",
+        "start": 954.6,
+        "duration": 5.253
+    },
+    {
+        "text": "giving an average speed of only 0.01 m per second.",
+        "start": 959.853,
+        "duration": 3.127
+    },
+    {
+        "text": "And remember, what it means for the derivative of this motion to be 0 is that ",
+        "start": 963.68,
+        "duration": 5.025
+    },
+    {
+        "text": "for smaller and smaller nudges in time, this ratio of m per second approaches 0.",
+        "start": 968.705,
+        "duration": 5.155
+    },
+    {
+        "text": "But that's not to say that the car is static.",
+        "start": 974.84,
+        "duration": 1.88
+    },
+    {
+        "text": "Approximating its movement with a constant velocity of 0 is, ",
+        "start": 977.54,
+        "duration": 3.426
+    },
+    {
+        "text": "after all, just an approximation.",
+        "start": 980.966,
+        "duration": 1.854
+    },
+    {
+        "text": "So whenever you hear people refer to the derivative as an instantaneous rate of change, ",
+        "start": 984.34,
+        "duration": 4.871
+    },
+    {
+        "text": "a phrase which is intrinsically oxymoronic, I want you to think of that as a ",
+        "start": 989.211,
+        "duration": 4.262
+    },
+    {
+        "text": "conceptual shorthand for the best constant approximation for rate of change.",
+        "start": 993.473,
+        "duration": 4.207
+    },
+    {
+        "text": "In the next couple videos, I'll be talking more about the derivative, ",
+        "start": 999.18,
+        "duration": 2.947
+    },
+    {
+        "text": "what it looks like in different contexts, how do you actually compute it, ",
+        "start": 1002.127,
+        "duration": 3.115
+    },
+    {
+        "text": "why is it useful, things like that, focusing on visual intuition as always.",
+        "start": 1005.242,
+        "duration": 3.158
+    }
+]

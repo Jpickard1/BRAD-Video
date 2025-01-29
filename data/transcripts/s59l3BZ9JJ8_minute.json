@@ -1,0 +1,194 @@
+[
+    {
+        "start": 0.23,
+        "text": "or use for researchers so um today we have Robert Krasny Department mathematics real quickly before starts talking if you haven't signed in please do so and so everyone knows seminar series is going to run through the month of May before breaking for the summer so that I'll take it away easy and good afternoon everyone thank you for coming and thank you for the opportunity to work here and so I'm going to tell you about this free code accelerated boundary integral plus on salt awesome bus and Boltzmann solver for electrostatics of salivated proteins how are you breaking down what that means my collaborators is a former postdocs here way what gang is the one who did the poison Boltzmann solver page and Lee Hans Johnston worked out the tree code and so let me tell you about the outline problem that I'm addressing "
+    },
+    {
+        "start": 60.629,
+        "text": "here is the electrostatics of salvation proteins but this work is concerned with the electrostatic potential around the salvation protein we're going to use the plus and Boltzmann implicit solvent model now there's a lot of debate about the proper solvent model and I'm not entering into that our goal here is to provide a more accurate and efficient cross unbolts insult that's and it's possible some of the techniques we use can be used in other contexts as well do a boundary integral formulation I'll explain about that and then to accelerate the mental solution use Treecko to algorithm to compute long-range interactions accurately and efficiently and I'll presenting "
+    },
+    {
+        "start": 122.759,
+        "text": "numerical results so let me begin with the physical model and how encourage questions physical model so imagine we have a protein so it consists of a sequence of atomic charges here's a schematic and each of these atoms has abandoned world's radiance that's going to exclude the solvent molecules you can imagine this is going on in 3d this is just a 2d schematic and then surrounding the protein are water molecules so those are indicated here three of course there any many all around okay but they're excluded from this region here by the van der Waals repulsion just imagine all of these spheres imagine this sphere rolling along the van der Waals surface "
+    },
+    {
+        "start": 183.59,
+        "text": "that's going to create a molecular surface that's this this dark line that you see here so that's the envelope of a rolling sphere in this molecular surface it's also called the solvent eluded surface so this separates the cavity protein cavity in here from the solvent domain outside and and then finally in the solvent we can assume that there are mobile ions dissolved salt so then these are the elements that go into the physical model and can say a few more words that in this model we assume that the so the protein domain has these atomic charges but it's also a dielectric continuum has a low dielectric constant you solve it "
+    },
+    {
+        "start": 245.11,
+        "text": "as no charges it's got these mobile charges I'll explain how those are accounted for but the the sovereign domain is a dielectric continuum continuum as well and the dielectric constant that's a jump in the dielectric constant it's a high dielectric constant representing the goal here is to compute the electrostatic potential of this system and in particular we're going to be computing it on this surface there's molecular service and as well as the electrostatic potential V of X we're going to be computing the electrostatic salvation energy of the system so that's that's what we want to compute as a function of the input atomic charges the dielectric constants and the the ionic concentration solvent and of course this is one particular model is a quite a bit "
+    },
+    {
+        "start": 309.85,
+        "text": "of I would say debate about what the proper model for this interface region should be but this is this is a implicit solvent model which has the advantages of efficiency in comparison with explicit fiction so the mathematical model here is as follows we've got the main let's call it Omega 1 that's the protein domain we've got the atomic charges and then the sovereign domain is Omega 2 and the boundary the molecular surface we'll call that gamma so in the protein cavity we've got this equation the plus equation the use electrostatic potential epsilon one is the dielectric constant inside here these the positions of the atomic charges and these are the partial charges concerns so this is a Poisson equation in the interior and then in the exterior that's the solvent domain we've "
+    },
+    {
+        "start": 370.3,
+        "text": "got this equation this is a linearized possum Boltzmann equation so the Prasant does that Boltzmann distribution of charge which depends on the electrostatic potential it's it's been linearized so we just have fee of x over here and the cap of Archaea represents that the ionic concentration no mobile ions this would be zero then you'd have a causal an equation outside as well with this term here it's a it's a possum Boltzmann equation and then we've got the on the molecular surface gamma over here the electrostatic potential should be continuous as you approach the surface from either side that's that's v1 equals v2 and then the electric displacement that's the dielectric constant times the normal derivative of the potential that quantity should be continuous linear well you can you solve "
+    },
+    {
+        "start": 430.63,
+        "text": "nonlinear problems by iterating linear problems so nonlinear salvo in principle can be built on linea solve it like this we haven't done nonlinear simulations ourselves yet that's one of the things different well we're using the molecular surface and if you prefer to use a different surface and I'm sure the method can handle it I mean I'll explain more about the molecular surface coming up real soon so this this is the mathematical description and we want to I want to say a few words about the molecular service so do this in the context of an example we took a protein one a 6-3 goose sorry "
+    },
+    {
+        "start": 491.12,
+        "text": "I press the wrong button no way a lot but anyway so this is the RNA binding domain of e.coli row factor and it has 130 residues and 2069 animals and so here's a picture of it I got from the web and it's got these three HeLa C's over here and it has another domain that they call this beta barrel and so they believe that the the binding takes place this carbonate binding is concentrated here so this gives you some kind of concept of this of its protein the molecular surface that we use in our in our in our numerical method we use a triangulation this is created by some software called ms/ms by Michael Santa and his collaborators and so that "
+    },
+    {
+        "start": 554.57,
+        "text": "software it takes the input atom positions and it produces a triangulation and you can specify the density of triangles per unit surface area and specifying density one for this protein you get 20,000 triangles and then if you specify density five you get 70,000 you get a smoother more precise definition of them so we take this as as input to our numerical method okay and and and so this separates the protein cavity from the solvent domain and again I'm certainly aware that they're different different there's not only different definitions of what the interface' can be that even different software implementations of how to compute that interface that's a separate question using this one which is widely "
+    },
+    {
+        "start": 616.489,
+        "text": "used F initial effects have not have not done a lot of that have not done a lot of that nice guy in Florida yes yes I know his name a couple of his papers yeah he talks about importance of your surface definitions you want to calculate forces yeah I believe as I would say that there are competing ways there are competing ways to define the surface and that's again one of the one of a long list of things that we should be looking into so but we invite collaborators to help us but let's let's continue with this example so I'm gonna show you some of the output before explaining how the method works so so this is an example of a computed surface "
+    },
+    {
+        "start": 677.509,
+        "text": "potential using our boundary integral solver and this is the plus and Boltzmann electrostatic potential goes to the cap it is not equal to zero and and so you what you get you get the ability to plot the potential at each at each triangle essentially on each triangle we have a value of the electrostatic potential those negative values the positive values and one of the things you can do you can turn off you can turn off the mobile ions so turn that back into the plus own equation and solve that you get you get this picture here at first glance they don't look very different but in fact the colors are a little brighter here so that's the screening of diminishes the electrostatic potential and you can accentuate accentuate that by taking the difference looking on a different scale you can see that at this region here is "
+    },
+    {
+        "start": 738.559,
+        "text": "it's much more positive as a result of the mobile lines being pressed hey so so these are the these are the kind of plots that the biochemists are interested in we became aware of this problem I should say over in the math department and and thought that we could contribute by trying to do it accurately and efficiently so biochemists want to obtain these pictures short amount of time to do the kind of parameter study to see if you vary the position of an atom marry the charge on the atom on a particular residue you want to see what effect that has on the electrostatic potential as one element in a process of understanding the structure the functional change so let me move on now to talking about numerical methods the us and Boltzmann powers so these are "
+    },
+    {
+        "start": 801.319,
+        "text": "grid base methods mostly finite difference but also finite element methods so an agree based method one takes a box puts it around the protein and discretize this in space the three-dimensional grid or Cartesian grid or in the case of finite elements could be a tetrahedral grid and then when disk retards is the derivatives lines up with the linear system which is typically sparse orphan the multi grid method is used to solve with sparse ellipses so these these are some of the well-known software tools the buzz and Boltzmann solvers that are out there which I heavily used the these these codes will provide good answers but there still is a need to improve the accuracy and efficiency always and "
+    },
+    {
+        "start": 862.149,
+        "text": "recently I would say some of the work that's appeared in the context of i interface conditions just hi former postdoc wait what gang he was a student at MSU with whoa wait wait they worked on that and then the also adapted grid as an alternative one can consider so there are still some disadvantages with using three dimensional grids so one has to truncate your domain instead of satisfying the condition at infinity also the definition of the molecular surface is difficult to achieve accurately finite with a three dimensional grid so simple as sampling rate very so you know the alternative of "
+    },
+    {
+        "start": 925.529,
+        "text": "these boundary integral methods and so in these methods one is able to reformulate the problem so you have an integral equation just on the molecular surface itself it has some advantages and has some disadvantages as well but I believe we've been able to make progress in overcoming the disadvantages so some of the prior work and I don't want to go into the full list of I would say though that the boundary integral methods are still not at the same level of development as these are in in wide use all the time these have not yet reached at that point of being adopted by many people we hope to change that so what what's needed first was to have a well-posed formulation of these integral equations and this this paper this paper achieved that but still formulation I'll "
+    },
+    {
+        "start": 985.559,
+        "text": "explain those difficulties as we go into the details a little bit more but there's been quite a bit of work using the fast multipole method to accelerate the solution some of the people working in the area of the fast multipole method we don't use the fat we use the tree code algorithm which is an alternative it's in the same general class of algorithms as a fast multiple method but it really is an alternative to the fast multipole method and I'll say a little bit more about get up to me so I'm going to go into more detail now about the boundary integral formulation and and so here here we go we've got these greens functions so this is the Coulomb potential X's of x and y appoints in 3d so this is the well-known Coulomb potential in charge this is the this is the potential at X to a point charge located at wall and this is now the "
+    },
+    {
+        "start": 1045.649,
+        "text": "screen color potential has this exponential decay Kappa is now defined this way here this is so from a technical point of view the G 0 is the greens function for the Laplace equation this G Kappa is the greens function for the linear Boltzmann equation at any point in the protein cavity remember it's a it's a quest own equation in there so any point that electrostatic potential can be written this way here so this is called greens formula and the potential is you've got a single layer over here and have a double layer you've got the source terms coming from the atomic charges and in the solvent domain you have another greens so this involves G 0 here this formula involves G Kappa there are no source terms the "
+    },
+    {
+        "start": 1105.88,
+        "text": "MobileIron effect of the mobile ions is captured in this G capital here again but it still it's a single layer plus a double layer now what's not known this is these are integrals over the molecular surface it's not known here is the value of the potential on the surface and the value of but when you impose the interface boundary conditions then you get a set of integers now there various ways to do that showing you the formulas that these people derive so this is not the first writes down the simplest digital equation turns out to be condition here so we've got now this parameter epsilon is the ratio now this X is on the "
+    },
+    {
+        "start": 1168.849,
+        "text": "molecular surface integral equations it is the electrostatic potential here's its normal derivative and that's four points on the surface we've got the same quantities here and here we've got these kernels k1 k2 k3 k4 the source terms I'll go through and explain these kernels and source terms a bit so the kernels are here now the k1 is just the difference between these G zero and G K over k2 and k3 involved first derivatives and k4 involved second now remember there's equals y okay this one has the same kind of singularities subtracting weakens and singularities so k1 has a weaker singularity neither G zero what you get now that's critical over here okay because if you're just if "
+    },
+    {
+        "start": 1230.349,
+        "text": "you do this naively you're gonna be dealing with either this term or this term by itself and then you've got what are called hyper singular integrals which is very tricky to deal with and in any case those those methods turn out to be ill-conditioned the discreet level I said by doing the subtraction here which was explained by by doing this if Charlie weakened the singularity so this kernel over here in fact is a principal value of integral just one degree less singular than a hyper singular more attractive American soon coupled equations means that the system is a little bigger than if you were just dealing with one equation but it turns out to be well conditioned when you discretize it has consequences for how efficient the the solution can be perform this source terms are here this is these are the common positions these "
+    },
+    {
+        "start": 1290.539,
+        "text": "are the charges G 0 here and the normal derivative of G 0 giving these sorters going to discretize these equations no questions this is kind of assuming that the surface yes these we're gonna be solving on triangulations like this right it comes comes from msms these are but add some kind of average ER i mean this is just you know this you know I was just wondering because the things changing you know in the epsilon would be changing I'll take the structure from the Protein Data Bank miss Eliza and Aman structure we assume that's given and we're simply solving the static problem this is one step "
+    },
+    {
+        "start": 1351.909,
+        "text": "dynamics is gonna come later they'll mean no dynamics in this talk right solve this problem and this is different than what Fred Richards did years ago I mean this has gone back this I think this is stems directly from yeah okay I remember yes let's get this right the questions they're way too slow to do dynamics with didn't do dynamics more efficiently that's not right it's not what you're talking about now so we come back to these these integral equations and so the oh here's here's the formula for the salvation engine if once once once "
+    },
+    {
+        "start": 1412.7,
+        "text": "you've solved for the en then then this this expression here is the boundary integral formula for the electrostatic salvation and so this this is what we're going to evaluate so the discretization now the the principle here is to start with the simplest method so we came across this principle Victor [Music] so the simplest method is called centroid collocation and that simply means that you have a discretization point at the center of each triangle and you assume that the quantity you're integrating either the potential or its normal derivative is constant in each trial it's like the midpoint the singular term we omit okay so X I these "
+    },
+    {
+        "start": 1475.009,
+        "text": "are the centroids of the triangles RI is the area of each triangle and here are the interval equations again you can see that but now this is evaluated at the centroid of the ID triangle and the integral is replaced by a sum J not equals I means we have permitted the singular term okay and so this truly is the the simplest disco ization we can think of and plus there's a lot of work on evaluating these integrals with high order accuracy those methods tend to be more complicated the final goal is to get the best performance so we don't mind using a lower order distillation method like this if we can recoup the efficiency with with the methods we use to solve this system so this is a linear system generically let's say schematically it looks like ax equals B the a the matrix elements here are these all these factors that you see "
+    },
+    {
+        "start": 1535.78,
+        "text": "here and the X the unknown vector here is the electrostatic potential and its normal derivatives the right-hand side comes from the source terms over here so the linear system has no special properties it's a dense linear system we solve it by this algorithm called GM raise and so GM raised algorithm requires a matrix vector product each step it's an iterative method you iterate until the solution now converges to some tolerance at each step you're taking this matrix whose elements you see here in multiplying by a potential normal derivative okay and that's expensive okay the expense of computing these sums was one of the drawbacks to to using boundary integral methods and so it requires some kind of faster summation algorithm that's what I'll tell you about the fastest summation is is just let's abstract this as an example of the kind of sum that needs to be evaluated "
+    },
+    {
+        "start": 1597.13,
+        "text": "if G Kabat is the screen Coulomb potential and an X is some some point this would be like an electrostatic potential at X I due to a set of charges so the options for evaluating these sums you can write a loop over I and a loop over J that's direct summation and that's like doing particle particle we think of these centroids as particles that particle particles sum here would be an order N squared operation and and that that's been a that's been any hindrance to using large values of n because of course you want to do to get the details of so as an alternative there's a tree code algorithm and what the what the tree code algorithm does it performs particle cluster interactions particle interacts with a whole cluster of other particles and this was first done by Barnes and Hutt in the context of gravitational simulations with interacting point "
+    },
+    {
+        "start": 1657.95,
+        "text": "masses that's the case when Kathy equals zero and it reduces the operation count to n log in so you're making an approximation but you're getting you're getting greater efficiency and with with some former postdocs we worked out a tree called algorithm for the case Kappa greater than zero is Colonel over here so we're gonna use that another alternative is the fast multipole method which goes a step further and it performs cluster cluster interactions and in principle it achieves an operation count of order n this was first done by green garden Rocklin for the Laplace equation for the for the screen column potential is done by Marsha Finley and her collaborators Leslie green Guardian Fenghuang also had a paper flying the first multiple method to to this kernel yeah but you pay a price because this algorithm is more complicated in the tree grow the tree code is more complicated than their "
+    },
+    {
+        "start": 1718.52,
+        "text": "exome a ssin so this is kind of a compromise over here we like this algorithm and with promoting this tree go trying to develop it push it as far as we can I'll tell you a little bit about how this tree code works but I won't dwell on too many details so the idea of the tree code is this suppose your particles because this is not a molecular surface just imagine a scattered set of articles you want to compute the electrostatic potential at each particle due to all the others so there's a hierarchy of clusters you see over here and and so this particle if it wants to interact with all of these by a particle cluster interaction really can't okay because there's no separation this product can interact with all the particles in this cluster because the particle is separated okay what about these well the particle can interact with these clusters at sake it can enter the particle here can interact with well separated clusters at this level you get to a point at which "
+    },
+    {
+        "start": 1779.97,
+        "text": "you've accounted for all the far field interactions and then you do direct summation local the formula looks like this if you needed to evaluate a sum j goes from 1 to n ok you break it up into a sum over clusters so there's a given X I for example this particle it's not going to interact one by one it's going to interact by choosing a set of clusters so this particle might choose this cluster then these two here and these two here etc come up with a sequence of clusters and then this is the interaction between a particle X I and all the clusters all the particles in a cluster see and the options for doing this particle cluster interaction you can do it by direct sum if there are very few particles here that's the right thing to do or you can use a far field approximation and so the brown field approximation is in essence of multipole approximation it's the same multiple approximation you would learn about in an E&M class although it can be expressed in different coordinates we "
+    },
+    {
+        "start": 1840.69,
+        "text": "use Cartesian coordinates listening if neither of these options is appealing you can descend to the children okay so for example I said you can evaluate the interaction between this particle and this cluster here but if this part if this cluster is not well separated sufficiently you might want to do the interaction with just these clusters out here so you see that there's a tremendous amount of let's say adaptivity available in this algorithm for evaluating these these somebody in a nutshell so I'm skipping a lot of the details if you wish to ask yes when you separate the particles or you can have a kind of yes I'll show you some kind of weighted way in a moment I'm gonna show you this picture "
+    },
+    {
+        "start": 1902.94,
+        "text": "here so remember this was a schematic of a molecular surface and so many algorithms including the fast multiple method use uniform clusters each level the uniformity gives you some advantage but at the same time you see that there's a lot of empty space in in these clusters so what we do is we use adapted use clusters that are adapted to the molecular surface so what we do is we shrink shrink these clusters around the particles they contain you get a more accurate representation of the molecular surface and this pays off when the the algorithm is run so whatever criteria you used to determine whether a particle and a cluster are well separated that criterion can be satisfied at high levels in the tree you gain efficiency in the algorithm without losing accuracy music do you think these kinds of adapted clusters so this is kind of a weighting but there's other ways to "
+    },
+    {
+        "start": 1963.48,
+        "text": "consider waiting when one considers parallelization that's a whole other issue they're not sure if I answer your question so we'll we'll move on to some results so it's I apologize for all the the dense numbers over here but I'll try to lead you through we did a comparison table e is our tree code accelerated boundary integral solve ax and a PBS is the adapted adaptive possum Boltzmann solver Nathan Baker Michael host others have developed as a we took this as one of the standard t v-- solvers that are used and i'm going to show you the top half of this table is the boundary integral results yes results so for the for the boundary integrals oats we took a sequence of density going down to 40,000 triangles and we "
+    },
+    {
+        "start": 2028.37,
+        "text": "computed the so we did the GM raise etc computed the electrostatic salvation energy now the D S stands for the discretization this is obtained using using direct sum there's no tree code used in obtaining these values so we did the O of N squared operation count to get these values these are the tree code values of the electrostatic salvation energy the era is in these two tables so this this table here is an estimate of the discretization error in the boundary element solution of the integral equation so we extrapolated these values to get our estimate of the exact electrostatic salvation energy that's this number over here and then we use that to get these estimates of the error so as you refine this triangulation the the error is going down so these values are converging to this value over here and these are the this is now the error "
+    },
+    {
+        "start": 2090.02,
+        "text": "that's induced by using the tree code instead of the direct summation so we wanted to have it such that the the tree code approximation error is less than the inherent descritization error in the boundary integral we've achieved that so I haven't told you about the parameters that go into the tree code there's a there's an order of the multipole expansion that's used there's also a criterion for determining whether particles and clusters of our severs so as in any algorithm one has to decide on some numerical parameters but it's not too hard to decide on those parameters and get these results now you want to see the CPU time so the the Oliv n squared direct sum was increases prohibitively the tree code CPU time is much less than the redirects here this is the number of iterations and GM res it's very modest in this case due to the well conditioned integral equations "
+    },
+    {
+        "start": 2151.819,
+        "text": "we're using this is the memory usage in megabytes for direct summon for the tree code now comparing with with a PBS we we put a box around the protein and we choose some grid size protein is longer in one direction by the two and this is the maximum grid spacing and these are now the computer electrostatic potentials these values are also converging we extrapolated these values to this value here and we use this now to estimate the errors in the a PBS salvation energy CPU times are over here memory usage is over here so I'm highlighting this line and the blue line here because in both cases the error is about 1.2 or 1.3 percent and you can see that the boundary "
+    },
+    {
+        "start": 2213.9,
+        "text": "integral simulation is faster than the grid based simulation and it uses a lot less memory I guess typically folks would use five on this one the error would be according to this five percent error which may or may not be may be okay in some cases that's true this was an accident that this happened to be social just that's this number is fortuitously close to the final this is outside the domain of convergence of this one again you wouldn't want to rely on on that using 1.63 extras there's no way of predicting this in advance when you get lucky one of the big advantages "
+    },
+    {
+        "start": 2276.44,
+        "text": "will show you some parallel results here so but I'm going to present this table pictorially here so here's is it same comparison in more details so in the boundary integral the density went from 1 to 40 this is the number of triangles these are the parameters in the tree code talk about that offline if you wish the apbs grid spacing went from from this to this I'm first um so here that this is now the CPU time versus the era for building memories and now this this has both the present Boltzmann as well as poss on results in it so it's the boundary integrals oats of these black lines you see the process on so so as the error decreases the CPU time goes up in all cases the plus we can the boundary integral meant that solves the Poisson equation faster than the possum Boltzmann equation the dashed line here is lower than solid line yet the "
+    },
+    {
+        "start": 2339.06,
+        "text": "grid-based apbs results are here okay so the crossover here is around about three percent error a PBS is faster if the error is greater than three percent the boundary integral method is faster if the error is less than three percent for this particular case for this particular implementation both algorithms are capable of improvements and there are even ways to improve a PBS the treatment of the boundary condition there can be improved using the tree code element which I hope will be at least tested for the for the Poisson equation the the crossover is around six percent the the memory usage memory as a function of error and and so you can see that the the boundary integral method is it's using more memory but the memory usage increases at a more moderate rate and then for the grid basement have an idea "
+    },
+    {
+        "start": 2399.359,
+        "text": "of sickness again so the kind of things that people beyond just looking at electrostatic potential and surfaces doing quantitative calculations you think where to say very practical designs is gonna tell me what what what era what era do you need well you'd be happy with it because that's as that's all you can get with would you be how much happy would you be with one percent so of course we it needs to be it needs to be studied how so that's what I'm asked that has to be done in collaboration with you guys because we're trying to learn now about the biological applications for example PKA computations which could be sensitive to small errors and if it if it matters there then you know want to pay the price so I am air low "
+    },
+    {
+        "start": 2466.34,
+        "text": "performance so it's algorithm so we chose a particular system here with it's the same protein but it's at a hundred thirty thousand triangles some tree code parameter values this is this is a case where the error and electrostatic potential and it's electrostatic salvation and he's one point three percent and because we're using so little memory relatively speaking we can use a replicated data algorithm so the entire discrete system is copied over on each processor but each processor is responsible for computing some segments of the triangles so it's the simplest it's the simplest parallel implementation that's possible and these are still pretty modest results because we only used up to eight processors and "
+    },
+    {
+        "start": 2526.87,
+        "text": "we did achieve good speed up we had parallel efficiency of 80% again it's a relatively small problem so we're getting ready to do larger problems and see what we achieve there this was for the possum Boltzmann equation remember the Poisson equation is solved efficiently we get it we get solved using a processors fifty seconds still 80% for our agency now that's not fast enough yet to do good dynamics but and within the system of this relatively small size one is eventually actually pretty quickly going to run into saturation and so we were able to implement as parallelization pretty quickly it's not terribly complicated and and again that's because we use this replicated data approach and that's because we're using small enough memory so that each processor can hold "
+    },
+    {
+        "start": 2587.83,
+        "text": "the entire system of course some kind of distributed memory is going to be required if you get to really much larger systems we can go quite a bit up in terms of the system sizes before we have to use a distributed memory approach so I'm ready to talk about the summary here this is the tree code accelerated bound your integral VB solver so the CPU time here this comes from the tree code water n squared is reduced to n log n do larger systems as a result the entities of this is relatively simple to implement in serial and parallel so relatively simple in particular in comparison to the fast multipole it has efficient memory usage it's geometrically adaptable so that's important I believe hoping to tie this out on things like membranes other structures DNA and so the code is is "
+    },
+    {
+        "start": 2650.62,
+        "text": "available at SourceForge and the the references for this work so the the tree code was developed in this paper this is the journal of computational physics and with whele we published these results I presented today here and the current and future work well there are numerous places in which the code can be improved we have to investigate those and see if it they really lead to better performance higher order quadrature schemes things like that the treatment of the molecular surface absolutely and and we have our eye on computing forces we're reading papers learning about how to do that in the context of a boundary integral formulation we're interested in biomolecular applications we're also learning about how to to PKA computations the importance of that for determining the the active sites of "
+    },
+    {
+        "start": 2711.49,
+        "text": "these proteins so we're interested in collaboration with people's biology if you'd like to talk to me about that I'd be happy to chat with you oh thank you very much so do you think it's the electrostatic there and component there we're really beginning to learn how to do those I I missed the opportunity to study enough chemistry I'm trying to make up baker and a PBS focus abundance "
+    },
+    {
+        "start": 2778.33,
+        "text": "you know I bring weight defect available a welcome to visit the Pacific Northwest lab last summer and the plan is to implement this hobby as an option in a PDF and I hope they're I think it's gonna come out it's supposed to come out in the next version of a PBS any other questions so if I fast into these English these simulations MD was how fast how fast we didn't so we would have to run amber installation and then "
+    },
+    {
+        "start": 2841.06,
+        "text": "see if we say say using a PBS there and then we haven't done it yet but with with I would say that we're still far from having a code that computes force in this sauce and it's still beginning to do and I don't know how long that's going to take us to do that that's that's that's one of the obvious next steps there's a chap called Roberts connect a and he's apprentice I PS another interface for you because I buy a short customer okay well thanks good day of "
+    },
+    {
+        "start": 2907.479,
+        "text": "year thanks Ari let's do yeah you know I just got back from Boston thanks for coming "
+    }
+]

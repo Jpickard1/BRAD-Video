@@ -1,0 +1,1187 @@
+[
+    {
+        "text": "Today, you and I are going to get into divergence and curl.",
+        "start": 0.0,
+        "duration": 3.4
+    },
+    {
+        "text": "To make sure we're all on the same page, let's begin by talking about vector fields.",
+        "start": 5.82,
+        "duration": 4.32
+    },
+    {
+        "text": "Essentially a vector field is what you get if you associate ",
+        "start": 10.76,
+        "duration": 3.251
+    },
+    {
+        "text": "each point in space with a vector, some magnitude and direction.",
+        "start": 14.011,
+        "duration": 3.469
+    },
+    {
+        "text": "Maybe those vectors represent the velocities of particles of fluid ",
+        "start": 18.06,
+        "duration": 3.811
+    },
+    {
+        "text": "at each point in space, or maybe they represent the force of gravity ",
+        "start": 21.871,
+        "duration": 3.926
+    },
+    {
+        "text": "at many different points in space, or maybe a magnetic field strength.",
+        "start": 25.797,
+        "duration": 3.983
+    },
+    {
+        "text": "Quick note on drawing these, often if you were to draw the vectors to scale, ",
+        "start": 30.68,
+        "duration": 3.99
+    },
+    {
+        "text": "the longer ones end up just cluttering up the whole thing, ",
+        "start": 34.67,
+        "duration": 3.058
+    },
+    {
+        "text": "so it's common to basically lie a little and artificially shorten ones that are too long, ",
+        "start": 37.728,
+        "duration": 4.665
+    },
+    {
+        "text": "maybe using color to give some vague sense of length.",
+        "start": 42.393,
+        "duration": 2.747
+    },
+    {
+        "text": "In principle, vector fields in physics might change over time.",
+        "start": 46.14,
+        "duration": 3.64
+    },
+    {
+        "text": "In almost all real-world fluid flow, the velocities of particles in a given ",
+        "start": 50.14,
+        "duration": 4.083
+    },
+    {
+        "text": "region of space will change over time in response to the surrounding context.",
+        "start": 54.223,
+        "duration": 4.137
+    },
+    {
+        "text": "Wind is not a constant, it comes in gusts.",
+        "start": 58.88,
+        "duration": 2.86
+    },
+    {
+        "text": "An electric field changes as the charged particles characterizing it move around.",
+        "start": 62.04,
+        "duration": 4.48
+    },
+    {
+        "text": "But here we'll just be looking at static vector fields, ",
+        "start": 67.54,
+        "duration": 2.642
+    },
+    {
+        "text": "which maybe you think of as describing a steady-state system.",
+        "start": 70.182,
+        "duration": 2.878
+    },
+    {
+        "text": "Also, while such vectors could in principle be three-dimensional, ",
+        "start": 73.96,
+        "duration": 3.093
+    },
+    {
+        "text": "or even higher, we're just going to be looking at two dimensions.",
+        "start": 77.053,
+        "duration": 3.047
+    },
+    {
+        "text": "An important idea which regularly goes unsaid is that you can often ",
+        "start": 80.92,
+        "duration": 3.788
+    },
+    {
+        "text": "understand a vector field which represents one physical phenomenon ",
+        "start": 84.708,
+        "duration": 3.733
+    },
+    {
+        "text": "better by imagining what if it represented a different physical phenomenon.",
+        "start": 88.441,
+        "duration": 4.179
+    },
+    {
+        "text": "What if these vectors describing gravitational force instead defined a fluid flow?",
+        "start": 93.36,
+        "duration": 4.44
+    },
+    {
+        "text": "What would that flow look like?",
+        "start": 98.24,
+        "duration": 1.42
+    },
+    {
+        "text": "And what can the properties of that flow tell us about the original gravitational force?",
+        "start": 100.04,
+        "duration": 4.38
+    },
+    {
+        "text": "And what if the vectors defining a fluid flow were thought ",
+        "start": 105.04,
+        "duration": 2.642
+    },
+    {
+        "text": "of as describing the downhill direction of a certain hill?",
+        "start": 107.682,
+        "duration": 2.598
+    },
+    {
+        "text": "Does such a hill even exist?",
+        "start": 111.0,
+        "duration": 1.36
+    },
+    {
+        "text": "And if so, what does it tell us about the original flow?",
+        "start": 112.72,
+        "duration": 3.06
+    },
+    {
+        "text": "These sorts of questions can be surprisingly helpful.",
+        "start": 116.52,
+        "duration": 2.32
+    },
+    {
+        "text": "For example, the ideas of divergence and curl are particularly viscerally understood ",
+        "start": 119.24,
+        "duration": 4.337
+    },
+    {
+        "text": "when the vector field is thought of as representing fluid flow, ",
+        "start": 123.577,
+        "duration": 3.266
+    },
+    {
+        "text": "even if the field you're looking at is really meant to describe something else, ",
+        "start": 126.843,
+        "duration": 4.083
+    },
+    {
+        "text": "like an electric field.",
+        "start": 130.926,
+        "duration": 1.174
+    },
+    {
+        "text": "Here, take a look at this vector field, and think of each ",
+        "start": 135.52,
+        "duration": 3.172
+    },
+    {
+        "text": "vector as describing the velocity of a fluid at that point.",
+        "start": 138.692,
+        "duration": 3.228
+    },
+    {
+        "text": "Notice that when you do this, that fluid behaves in a very strange, non-physical way.",
+        "start": 142.86,
+        "duration": 4.36
+    },
+    {
+        "text": "Around some points, like these ones, the fluid seems to just spring ",
+        "start": 147.96,
+        "duration": 3.472
+    },
+    {
+        "text": "into existence from nothingness, as if there's some kind of source there.",
+        "start": 151.432,
+        "duration": 3.728
+    },
+    {
+        "text": "Some other points act more like sinks, where the ",
+        "start": 155.78,
+        "duration": 2.487
+    },
+    {
+        "text": "fluid seems to disappear into nothingness.",
+        "start": 158.267,
+        "duration": 2.133
+    },
+    {
+        "text": "The divergence of a vector field at a particular point of the plane tells you ",
+        "start": 161.12,
+        "duration": 5.232
+    },
+    {
+        "text": "how much this imagined fluid tends to flow out of or into small regions near it.",
+        "start": 166.352,
+        "duration": 5.368
+    },
+    {
+        "text": "For example, the divergence of our vector field evaluated at all ",
+        "start": 172.26,
+        "duration": 3.641
+    },
+    {
+        "text": "of those points that act like sources will give a positive number.",
+        "start": 175.901,
+        "duration": 3.699
+    },
+    {
+        "text": "And it doesn't just have to be that all of the fluid is flowing away from that point.",
+        "start": 181.18,
+        "duration": 3.78
+    },
+    {
+        "text": "The divergence would also be positive if it was just that the fluid coming ",
+        "start": 185.36,
+        "duration": 3.898
+    },
+    {
+        "text": "into it from one direction was slower than the flow coming out of it in another ",
+        "start": 189.258,
+        "duration": 4.159
+    },
+    {
+        "text": "direction, since that would still insinuate a certain spontaneous generation.",
+        "start": 193.417,
+        "duration": 4.003
+    },
+    {
+        "text": "Now on the flip side, if in a small region around a point there seems to be more fluid ",
+        "start": 200.08,
+        "duration": 4.862
+    },
+    {
+        "text": "flowing into it than out of it, the divergence at that point would be a negative number.",
+        "start": 204.942,
+        "duration": 4.918
+    },
+    {
+        "text": "Remember, this vector field is really a function that takes ",
+        "start": 212.58,
+        "duration": 3.2
+    },
+    {
+        "text": "in 2-dimensional inputs and spits out 2-dimensional outputs.",
+        "start": 215.78,
+        "duration": 3.2
+    },
+    {
+        "text": "The divergence of that vector field gives you a new function, ",
+        "start": 224.1,
+        "duration": 3.744
+    },
+    {
+        "text": "one that takes in a single 2d point as its input, ",
+        "start": 227.844,
+        "duration": 3.019
+    },
+    {
+        "text": "but its output depends on the behavior of the field in a small ",
+        "start": 230.863,
+        "duration": 3.804
+    },
+    {
+        "text": "neighborhood around that point.",
+        "start": 234.667,
+        "duration": 1.873
+    },
+    {
+        "text": "In this way it's analogous to a derivative, and that output is just a single number, ",
+        "start": 237.2,
+        "duration": 4.441
+    },
+    {
+        "text": "measuring how much that point acts as a source or a sink.",
+        "start": 241.641,
+        "duration": 2.979
+    },
+    {
+        "text": "I'm purposely delaying discussion of computations here, ",
+        "start": 245.28,
+        "duration": 2.483
+    },
+    {
+        "text": "the understanding for what it represents is more important.",
+        "start": 247.763,
+        "duration": 2.617
+    },
+    {
+        "text": "Notice, this means that for an actual physical fluid, ",
+        "start": 251.34,
+        "duration": 3.104
+    },
+    {
+        "text": "like water rather than some imagined one used to illustrate an arbitrary vector field, ",
+        "start": 254.444,
+        "duration": 5.002
+    },
+    {
+        "text": "then if that fluid is incompressible, the velocity vector field must have a divergence ",
+        "start": 259.446,
+        "duration": 5.001
+    },
+    {
+        "text": "of zero everywhere.",
+        "start": 264.447,
+        "duration": 1.093
+    },
+    {
+        "text": "That's an important constraint on what kinds of vector ",
+        "start": 266.2,
+        "duration": 2.619
+    },
+    {
+        "text": "fields could solve real-world fluid flow problems.",
+        "start": 268.819,
+        "duration": 2.381
+    },
+    {
+        "text": "For the curl at a given point, you also think about the fluid flow around it, ",
+        "start": 272.38,
+        "duration": 4.465
+    },
+    {
+        "text": "but this time you ask how much that fluid tends to rotate around the point.",
+        "start": 276.845,
+        "duration": 4.295
+    },
+    {
+        "text": "As in, if you were to drop a twig in the fluid at that point, ",
+        "start": 281.86,
+        "duration": 3.495
+    },
+    {
+        "text": "somehow fixing its center in place, would it tend to spin around?",
+        "start": 285.355,
+        "duration": 3.665
+    },
+    {
+        "text": "Regions where that rotation is clockwise are said to have positive curl, ",
+        "start": 289.98,
+        "duration": 4.026
+    },
+    {
+        "text": "and regions where it's counterclockwise have negative curl.",
+        "start": 294.006,
+        "duration": 3.254
+    },
+    {
+        "text": "It doesn't have to be that all the vectors around the input are ",
+        "start": 297.74,
+        "duration": 2.798
+    },
+    {
+        "text": "pointing counterclockwise, or all of them are pointing clockwise.",
+        "start": 300.538,
+        "duration": 2.842
+    },
+    {
+        "text": "A point inside a region like this one, for example, would also have non-zero curl, ",
+        "start": 303.9,
+        "duration": 5.492
+    },
+    {
+        "text": "since the flow is slow at the bottom, but quick up top, ",
+        "start": 309.392,
+        "duration": 3.706
+    },
+    {
+        "text": "resulting in a net clockwise influence.",
+        "start": 313.098,
+        "duration": 2.582
+    },
+    {
+        "text": "And really, true proper curl is a three-dimensional idea, ",
+        "start": 319.26,
+        "duration": 3.094
+    },
+    {
+        "text": "one where you associate each point in 2d space with a new vector characterizing ",
+        "start": 322.354,
+        "duration": 4.267
+    },
+    {
+        "text": "the rotation around that point, according to a certain right-hand rule, ",
+        "start": 326.621,
+        "duration": 3.841
+    },
+    {
+        "text": "and I have plenty of content from my time at Khan Academy describing this in more ",
+        "start": 330.462,
+        "duration": 4.375
+    },
+    {
+        "text": "detail if you want, but for our main purpose, I'll just be referring to the ",
+        "start": 334.837,
+        "duration": 4.054
+    },
+    {
+        "text": "two-dimensional variant of curl, which associates each point in 2d space with a ",
+        "start": 338.891,
+        "duration": 4.268
+    },
+    {
+        "text": "single number rather than a new vector.",
+        "start": 343.159,
+        "duration": 2.081
+    },
+    {
+        "text": "As I said, even though these intuitions are given in the context of fluid flow, ",
+        "start": 347.9,
+        "duration": 4.016
+    },
+    {
+        "text": "both of these ideas are significant for other sorts of vector fields.",
+        "start": 351.916,
+        "duration": 3.464
+    },
+    {
+        "text": "One very important example is how electricity and ",
+        "start": 355.98,
+        "duration": 2.9
+    },
+    {
+        "text": "magnetism are described by four special equations.",
+        "start": 358.88,
+        "duration": 2.9
+    },
+    {
+        "text": "These are known as Maxwell's equations, and they're ",
+        "start": 362.32,
+        "duration": 2.615
+    },
+    {
+        "text": "written in the language of divergence and curl.",
+        "start": 364.935,
+        "duration": 2.365
+    },
+    {
+        "text": "This top one, for example, is Gauss's law, stating that the divergence of an ",
+        "start": 367.9,
+        "duration": 4.6
+    },
+    {
+        "text": "electric field at a given point is proportional to the charge density at that point.",
+        "start": 372.5,
+        "duration": 5.02
+    },
+    {
+        "text": "Unpacking the intuition for this, you might imagine positively charged regions ",
+        "start": 378.52,
+        "duration": 4.419
+    },
+    {
+        "text": "as acting like sources of some imagined fluid, ",
+        "start": 382.939,
+        "duration": 2.63
+    },
+    {
+        "text": "and negatively charged regions as being the sinks of that fluid, ",
+        "start": 385.569,
+        "duration": 3.637
+    },
+    {
+        "text": "and throughout parts of space where there is no charge, ",
+        "start": 389.206,
+        "duration": 3.133
+    },
+    {
+        "text": "the fluid would be flowing incompressibly, just like water.",
+        "start": 392.339,
+        "duration": 3.301
+    },
+    {
+        "text": "Of course, there's not some literal electric fluid, ",
+        "start": 396.48,
+        "duration": 2.851
+    },
+    {
+        "text": "but it's a very useful and pretty way to read an equation like this.",
+        "start": 399.331,
+        "duration": 3.729
+    },
+    {
+        "text": "Similarly, another important equation is that the divergence of the ",
+        "start": 403.74,
+        "duration": 4.025
+    },
+    {
+        "text": "magnetic field is zero everywhere, and you can understand that by ",
+        "start": 407.765,
+        "duration": 3.907
+    },
+    {
+        "text": "saying that if the field represents a fluid flow, ",
+        "start": 411.672,
+        "duration": 2.96
+    },
+    {
+        "text": "that fluid would be incompressible, with no sources and no sinks, it acts just like water.",
+        "start": 414.632,
+        "duration": 5.328
+    },
+    {
+        "text": "This also has the interpretation that magnetic monopoles, ",
+        "start": 420.74,
+        "duration": 2.961
+    },
+    {
+        "text": "something that acts just like a north or south end of a magnet in isolation, ",
+        "start": 423.701,
+        "duration": 3.931
+    },
+    {
+        "text": "don't exist, there's nothing analogous to positive and negative charges in ",
+        "start": 427.632,
+        "duration": 3.829
+    },
+    {
+        "text": "an electric field.",
+        "start": 431.461,
+        "duration": 0.919
+    },
+    {
+        "text": "Likewise, the last two equations tell us that the way one of ",
+        "start": 433.44,
+        "duration": 3.579
+    },
+    {
+        "text": "these fields changes depends on the curl of the other field.",
+        "start": 437.019,
+        "duration": 3.521
+    },
+    {
+        "text": "And really, this is a purely three-dimensional idea, ",
+        "start": 441.32,
+        "duration": 2.806
+    },
+    {
+        "text": "and a little outside of our main focus here, but the point is that ",
+        "start": 444.126,
+        "duration": 3.548
+    },
+    {
+        "text": "divergence and curl arise in contexts that are unrelated to flow, ",
+        "start": 447.674,
+        "duration": 3.496
+    },
+    {
+        "text": "and side note, the back and forth from these last two equations is what ",
+        "start": 451.17,
+        "duration": 3.813
+    },
+    {
+        "text": "gives rise to light waves.",
+        "start": 454.983,
+        "duration": 1.377
+    },
+    {
+        "text": "And quite often, these ideas are useful in contexts ",
+        "start": 457.52,
+        "duration": 2.914
+    },
+    {
+        "text": "which don't even seem spatial in nature at first.",
+        "start": 460.434,
+        "duration": 2.746
+    },
+    {
+        "text": "To take a classic example that students of differential equations often study, ",
+        "start": 464.0,
+        "duration": 3.934
+    },
+    {
+        "text": "let's say that you wanted to track the population sizes of two different species, ",
+        "start": 467.934,
+        "duration": 4.085
+    },
+    {
+        "text": "where maybe one of them is a predator of another.",
+        "start": 472.019,
+        "duration": 2.441
+    },
+    {
+        "text": "The state of this system at a given time, meaning the two population sizes, ",
+        "start": 475.22,
+        "duration": 4.543
+    },
+    {
+        "text": "could be thought of as a point in two-dimensional space, ",
+        "start": 479.763,
+        "duration": 3.408
+    },
+    {
+        "text": "what you would call the phase space of this system.",
+        "start": 483.171,
+        "duration": 3.049
+    },
+    {
+        "text": "For a given pair of population sizes, these populations may be ",
+        "start": 486.9,
+        "duration": 3.237
+    },
+    {
+        "text": "inclined to change based on things like how reproductive are the two species, ",
+        "start": 490.137,
+        "duration": 4.008
+    },
+    {
+        "text": "or just how much does one of them enjoy eating the other one.",
+        "start": 494.145,
+        "duration": 3.135
+    },
+    {
+        "text": "These rates of change would typically be written ",
+        "start": 499.2,
+        "duration": 2.485
+    },
+    {
+        "text": "analytically as a set of differential equations.",
+        "start": 501.685,
+        "duration": 2.435
+    },
+    {
+        "text": "It's okay if you don't understand these particular equations, ",
+        "start": 504.78,
+        "duration": 2.777
+    },
+    {
+        "text": "I'm just throwing them up for those of you who are curious, ",
+        "start": 507.557,
+        "duration": 2.688
+    },
+    {
+        "text": "and because replacing variables with pictures makes me laugh a little bit.",
+        "start": 510.245,
+        "duration": 3.314
+    },
+    {
+        "text": "But the relevance here is that a nice way to visualize what such a set of ",
+        "start": 514.299,
+        "duration": 4.204
+    },
+    {
+        "text": "equations is really saying is to associate each point on the plane, ",
+        "start": 518.503,
+        "duration": 3.863
+    },
+    {
+        "text": "each pair of population sizes, with a vector, indicating the rates of change ",
+        "start": 522.366,
+        "duration": 4.374
+    },
+    {
+        "text": "for both variables.",
+        "start": 526.74,
+        "duration": 1.08
+    },
+    {
+        "text": "For example, when there are lots of foxes, but relatively few rabbits, ",
+        "start": 528.66,
+        "duration": 3.355
+    },
+    {
+        "text": "the number of foxes might tend to go down because of the constrained food supply, ",
+        "start": 532.015,
+        "duration": 3.875
+    },
+    {
+        "text": "and the number of rabbits might also tend to go down because they're getting ",
+        "start": 535.89,
+        "duration": 3.638
+    },
+    {
+        "text": "eaten by all of the foxes, potentially at a rate that's faster than they can reproduce.",
+        "start": 539.528,
+        "duration": 4.112
+    },
+    {
+        "text": "So a given vector here is telling you how, and how quickly, ",
+        "start": 544.44,
+        "duration": 3.544
+    },
+    {
+        "text": "a given pair of population sizes tends to change.",
+        "start": 547.984,
+        "duration": 2.896
+    },
+    {
+        "text": "Notice, this is a case where the vector field is not about physical space, ",
+        "start": 551.78,
+        "duration": 4.123
+    },
+    {
+        "text": "but instead it's a representation of a certain dynamic system that has two variables, ",
+        "start": 555.903,
+        "duration": 4.727
+    },
+    {
+        "text": "and how that system evolves over time.",
+        "start": 560.63,
+        "duration": 2.09
+    },
+    {
+        "text": "This can maybe also give a sense for why mathematicians ",
+        "start": 563.46,
+        "duration": 2.565
+    },
+    {
+        "text": "care about studying the geometry of higher dimensions.",
+        "start": 566.025,
+        "duration": 2.475
+    },
+    {
+        "text": "What if our system was tracking more than just two or three numbers?",
+        "start": 568.5,
+        "duration": 2.82
+    },
+    {
+        "text": "The flow associated with this field is called the phase flow for ",
+        "start": 572.16,
+        "duration": 3.866
+    },
+    {
+        "text": "our differential equation, and it's a way to conceptualize, ",
+        "start": 576.026,
+        "duration": 3.569
+    },
+    {
+        "text": "at a glance, how many possible starting states would evolve over time.",
+        "start": 579.595,
+        "duration": 4.165
+    },
+    {
+        "text": "Operations like divergence and curl can help to inform you about the system.",
+        "start": 584.32,
+        "duration": 4.46
+    },
+    {
+        "text": "Do the population sizes converge towards a particular pair of numbers, ",
+        "start": 589.34,
+        "duration": 4.021
+    },
+    {
+        "text": "or are there some values they diverge away from?",
+        "start": 593.361,
+        "duration": 2.719
+    },
+    {
+        "text": "Are there cyclic patterns, and are those cycles stable or unstable?",
+        "start": 596.42,
+        "duration": 4.22
+    },
+    {
+        "text": "To be perfectly honest with you, for something like this you'd often want to bring ",
+        "start": 601.84,
+        "duration": 3.951
+    },
+    {
+        "text": "in related tools beyond just divergence and curl, those would give you the full story, ",
+        "start": 605.791,
+        "duration": 4.143
+    },
+    {
+        "text": "but the frame of mind that practice with these two ideas brings you carries over ",
+        "start": 609.934,
+        "duration": 3.856
+    },
+    {
+        "text": "well to studying setups like this with similar pieces of mathematical machinery.",
+        "start": 613.79,
+        "duration": 3.81
+    },
+    {
+        "text": "If you really want to get a handle on these ideas, ",
+        "start": 619.28,
+        "duration": 2.235
+    },
+    {
+        "text": "you'd want to learn how to compute them and practice those computations, ",
+        "start": 621.515,
+        "duration": 3.199
+    },
+    {
+        "text": "and I'll leave links to where you can learn about this and practice if you want.",
+        "start": 624.714,
+        "duration": 3.506
+    },
+    {
+        "text": "Again, I did some videos and articles and worked examples for Khan Academy on this ",
+        "start": 628.68,
+        "duration": 4.397
+    },
+    {
+        "text": "topic during my time there, so too much detail here will start to feel redundant for me.",
+        "start": 633.077,
+        "duration": 4.663
+    },
+    {
+        "text": "But there is one thing worth bringing up, regarding ",
+        "start": 637.98,
+        "duration": 2.672
+    },
+    {
+        "text": "the notation associated with these computations.",
+        "start": 640.652,
+        "duration": 2.468
+    },
+    {
+        "text": "Commonly, the divergence is written as a dot product between this upside-down triangle ",
+        "start": 643.84,
+        "duration": 4.735
+    },
+    {
+        "text": "thing and your vector field function, and the curl is written as a similar cross product.",
+        "start": 648.575,
+        "duration": 4.845
+    },
+    {
+        "text": "Sometimes students are told that this is just a notational trick, ",
+        "start": 654.22,
+        "duration": 3.655
+    },
+    {
+        "text": "each computation involves a certain sum of certain derivatives, ",
+        "start": 657.875,
+        "duration": 3.544
+    },
+    {
+        "text": "and treating this upside-down triangle as if it was a vector of derivative operators can ",
+        "start": 661.419,
+        "duration": 4.928
+    },
+    {
+        "text": "be a helpful way to keep everything straight.",
+        "start": 666.347,
+        "duration": 2.493
+    },
+    {
+        "text": "But it is actually more than just a mnemonic device, ",
+        "start": 669.62,
+        "duration": 2.52
+    },
+    {
+        "text": "there is a real connection between divergence and the dot product, ",
+        "start": 672.14,
+        "duration": 3.185
+    },
+    {
+        "text": "and between curl and the cross product.",
+        "start": 675.325,
+        "duration": 1.855
+    },
+    {
+        "text": "Even though we won't be doing practice computations here, ",
+        "start": 677.78,
+        "duration": 3.244
+    },
+    {
+        "text": "I would like to give you at least some vague sense for how these four ideas are connected.",
+        "start": 681.024,
+        "duration": 5.036
+    },
+    {
+        "text": "Imagine taking some small step from one point of your vector field to another.",
+        "start": 691.62,
+        "duration": 4.18
+    },
+    {
+        "text": "The vector at this new point will likely be a little different from the one ",
+        "start": 696.58,
+        "duration": 3.894
+    },
+    {
+        "text": "at the first point, there will be some change to the function after that step, ",
+        "start": 700.474,
+        "duration": 4.048
+    },
+    {
+        "text": "which you might see by subtracting off your original vector from that new one.",
+        "start": 704.522,
+        "duration": 3.998
+    },
+    {
+        "text": "And this kind of difference to your function over ",
+        "start": 709.0,
+        "duration": 2.619
+    },
+    {
+        "text": "small steps is what differential calculus is all about.",
+        "start": 711.619,
+        "duration": 2.881
+    },
+    {
+        "text": "The dot product gives you a measure of how aligned two vectors are, right?",
+        "start": 715.5,
+        "duration": 4.32
+    },
+    {
+        "text": "The dot product of your step vector with that difference vector it causes ",
+        "start": 722.8,
+        "duration": 4.525
+    },
+    {
+        "text": "tends to be positive in regions where the divergence is positive, and vice versa.",
+        "start": 727.325,
+        "duration": 4.955
+    },
+    {
+        "text": "In fact, in some sense, the divergence is a sort of average value for ",
+        "start": 732.94,
+        "duration": 4.071
+    },
+    {
+        "text": "this dot product of a step with a change to the output it causes over ",
+        "start": 737.011,
+        "duration": 4.072
+    },
+    {
+        "text": "all possible step directions, assuming that things are rescaled appropriately.",
+        "start": 741.083,
+        "duration": 4.537
+    },
+    {
+        "text": "I mean, think about it, if a step in some direction causes a change to that vector in ",
+        "start": 746.44,
+        "duration": 5.437
+    },
+    {
+        "text": "that same direction, this corresponds to a tendency for outward flow, ",
+        "start": 751.877,
+        "duration": 4.425
+    },
+    {
+        "text": "for positive divergence.",
+        "start": 756.302,
+        "duration": 1.518
+    },
+    {
+        "text": "And on the flip side, if those dot products tend to be negative, ",
+        "start": 758.56,
+        "duration": 3.356
+    },
+    {
+        "text": "meaning the difference vector is pointing in the opposite direction from the step vector, ",
+        "start": 761.916,
+        "duration": 4.648
+    },
+    {
+        "text": "that corresponds with a tendency for inward flow, negative divergence.",
+        "start": 766.564,
+        "duration": 3.616
+    },
+    {
+        "text": "Similarly, remember that the cross product is a sort of measure for how perpendicular ",
+        "start": 772.16,
+        "duration": 5.146
+    },
+    {
+        "text": "two vectors are, so the cross product of your step vector with the difference vector ",
+        "start": 777.306,
+        "duration": 5.087
+    },
+    {
+        "text": "it causes tends to be positive in regions where the curl is positive, and vice versa.",
+        "start": 782.393,
+        "duration": 5.087
+    },
+    {
+        "text": "You might think of the curl as a sort of average ",
+        "start": 788.1,
+        "duration": 2.668
+    },
+    {
+        "text": "of this step vector difference vector cross product.",
+        "start": 790.768,
+        "duration": 2.832
+    },
+    {
+        "text": "If a step in some direction corresponds to a change perpendicular to that step, ",
+        "start": 793.96,
+        "duration": 4.986
+    },
+    {
+        "text": "that corresponds to a tendency for flow rotation.",
+        "start": 798.946,
+        "duration": 3.054
+    },
+    {
+        "text": "So, typically this is the part where there might be some kind of sponsor message.",
+        "start": 808.619,
+        "duration": 4.441
+    },
+    {
+        "text": "But one thing I want to do with the channel moving ahead is to stop doing sponsored ",
+        "start": 813.62,
+        "duration": 3.913
+    },
+    {
+        "text": "content, and instead make things just about the direct relationship with the audience.",
+        "start": 817.533,
+        "duration": 4.007
+    },
+    {
+        "text": "I mean that not only in the sense of the funding model, ",
+        "start": 822.22,
+        "duration": 2.68
+    },
+    {
+        "text": "with direct support through Patreon, but also in the sense that I think these videos ",
+        "start": 824.9,
+        "duration": 4.067
+    },
+    {
+        "text": "can better accomplish their goal if each one of them feels like it's just about you ",
+        "start": 828.967,
+        "duration": 4.02
+    },
+    {
+        "text": "and me sharing in a love of math, with no other motive, ",
+        "start": 832.987,
+        "duration": 2.68
+    },
+    {
+        "text": "especially in the cases where the viewers are students.",
+        "start": 835.667,
+        "duration": 2.633
+    },
+    {
+        "text": "There are some other reasons, and I wrote up some of my full thoughts on this over on ",
+        "start": 839.02,
+        "duration": 3.44
+    },
+    {
+        "text": "Patreon, which you certainly don't have to be a supporter to read, ",
+        "start": 842.46,
+        "duration": 2.68
+    },
+    {
+        "text": "that's just where it lives.",
+        "start": 845.14,
+        "duration": 1.08
+    },
+    {
+        "text": "I think advertising on the internet occupies a super wide spectrum, ",
+        "start": 846.78,
+        "duration": 3.921
+    },
+    {
+        "text": "from truly degenerate clickbait up to genuinely well-aligned win-win-win partnerships.",
+        "start": 850.701,
+        "duration": 4.959
+    },
+    {
+        "text": "I've always taken care only to do promotions for ",
+        "start": 856.459,
+        "duration": 2.419
+    },
+    {
+        "text": "companies that I would genuinely recommend.",
+        "start": 858.878,
+        "duration": 2.122
+    },
+    {
+        "text": "To take one example, you may have noticed that I did a number of promos for Brilliant, ",
+        "start": 861.62,
+        "duration": 3.789
+    },
+    {
+        "text": "and it's really hard to imagine better alignment than that.",
+        "start": 865.409,
+        "duration": 2.571
+    },
+    {
+        "text": "I try to inspire people to be interested in math, ",
+        "start": 868.8,
+        "duration": 2.44
+    },
+    {
+        "text": "but I'm also a firm believer that videos aren't enough, ",
+        "start": 871.24,
+        "duration": 2.733
+    },
+    {
+        "text": "that you need to actively solve problems, and here's a platform that provides practice.",
+        "start": 873.973,
+        "duration": 4.247
+    },
+    {
+        "text": "And likewise for any others I've promoted too, I always make sure to feel good alignment.",
+        "start": 878.76,
+        "duration": 3.72
+    },
+    {
+        "text": "But even still, even if you seek out the best possible partnerships, ",
+        "start": 882.48,
+        "duration": 3.778
+    },
+    {
+        "text": "whenever advertising is in the equation, the incentives will ",
+        "start": 886.258,
+        "duration": 3.34
+    },
+    {
+        "text": "always be to try reaching as many people as possible.",
+        "start": 889.598,
+        "duration": 2.902
+    },
+    {
+        "text": "But when the model is more exclusively about a direct relationship with the audience, ",
+        "start": 893.1,
+        "duration": 3.973
+    },
+    {
+        "text": "the incentives are pointed towards maximizing how valuable ",
+        "start": 897.073,
+        "duration": 2.726
+    },
+    {
+        "text": "people find the experiences they're given.",
+        "start": 899.799,
+        "duration": 1.941
+    },
+    {
+        "text": "I think those two goals are correlated, but not always perfectly.",
+        "start": 902.44,
+        "duration": 3.4
+    },
+    {
+        "text": "I like to think that I'll always try to maximize the value of the ",
+        "start": 906.44,
+        "duration": 2.891
+    },
+    {
+        "text": "experience no matter what, but for that matter I also like to think ",
+        "start": 909.331,
+        "duration": 2.978
+    },
+    {
+        "text": "that I can consistently wake up early and resist eating too much sugar.",
+        "start": 912.309,
+        "duration": 3.111
+    },
+    {
+        "text": "What matters more than wanting something is to actually align incentives.",
+        "start": 916.0,
+        "duration": 2.96
+    },
+    {
+        "text": "Anyway, if you want to hear more of my thoughts, I'll link to the Patreon post.",
+        "start": 920.0,
+        "duration": 2.8
+    },
+    {
+        "text": "And thank you again to existing supporters for making this possible, ",
+        "start": 923.36,
+        "duration": 2.773
+    },
+    {
+        "text": "and I'll see you all next video.",
+        "start": 926.133,
+        "duration": 1.287
+    }
+]

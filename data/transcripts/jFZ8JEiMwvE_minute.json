@@ -1,0 +1,170 @@
+[
+    {
+        "start": 0.64,
+        "text": "uh what i'm going to be what we're going to be talking about today is joint modeling of exercise response and circadian rhythm and rna-seq data across 15 tissues this was really a team effort led by joon lee and chuck buran and myself jay you zang and ling dang really put all this together okay so here's today's talk in a nutshell we're going to talk about the purpose and the design of the study really the purpose of this study is to measure the achieved exercise response that was the original purpose but then we ran into a problem uh a problem with uh confounding specifically circadian rhythm and circadian effects seem to be influencing gene expression and so what we want to do is in today's talk we're going to model we're going to create two models we're going to model the acute exercise "
+    },
+    {
+        "start": 62.16,
+        "text": "response we're also going to model circadian rhythm and then the ultimate solution is really to combine those models into one where we have one part of that model measuring the acute exercise response and one measuring the circadian rhythm so we're simultaneously modeling both of these effects in a joint model and computing them for their percent variance explained now if that doesn't make sense right now don't worry we will walk through these steps one by one so in the lead lab we work in motor pack and motor pack stands for the molecular transducers of physical activity and really what we're trying to do in motor pack is figure out at the molecular level cellular level how the human body responds to exercise whether that exercise be aerobic whether it be anaerobic and "
+    },
+    {
+        "start": 123.119,
+        "text": "this is a multi-species study we're working with humans we're working with rats and the rats help us they give us tissues that of course and this is also a multi-tissue study as well so let's jump into one of our first studies one of our first data sets this is actually called the past phase 1a or really we're just going to call it the past 1a study and it aims to study the acute exercise response over time so what we did here is we took seven cohorts of rats to undergo acute exercise response so they went through an acute exercise bout where they had to run 15 meters per minute at an incline so it's a 5 degree incline for about 30 minutes and that's what this "
+    },
+    {
+        "start": 184.72,
+        "text": "red represents right here this is that exercise time and then afterward there are seven time points immediately post exercise one half one hour four hours seven hour 24 hour up to 48 hour where these rats were sacrificed and their tissues harvested we compared those to sedentary rats at zero hour and seven hours so these sedimentary rounds of course for sedentary they didn't undergo any exercise response in total if you were to add all these dots up we have 78 rats 15 tissues and this is a multi-omic study we're dealing with rnac this is bulk rna sequence it's not single cell or nac um we also have proteomics metabolomics and bisulfite sequencing so let's jump into the data inventory real quick here are those 15 tissues lined up "
+    },
+    {
+        "start": 246.0,
+        "text": "and they're lined up by their sequencing batches you can see there are five sequencing batches from two locations mssm stands for mount sinai so there are three batch sequencing batches out of mount sinai and then there are two out of stanford and in each of these these tissues and batch specific cohorts what we can see is that 78 samples were sequenced and processed at a time with the exception of ovaries and testes and that's because ovaries and testes are set specific so although we have 78 rads given that we have 15 tissues in the rna suit we end up with just shy of 1100 samples now let's just jump into one of these tissues and look at the distribution of sex and "
+    },
+    {
+        "start": 306.72,
+        "text": "exercise so here we have our 78 tissues and we want to know how is first how is sex divided we see it's divided perfectly it's totally orthogonal we can look at our control and exercise groups and they're divided really quite well as well they're not totally orthogonal but the later exercise groups 7 24 and 48 have a lesser degree of rats in them so 39 are females 39 males and anywhere from 10 to 6 grads per experimental group so let's look at an example of what were what this study was originally trying to do measure the acute exercise response this is a gene and kidney called aren't l now if your cop if you are familiar with aren't l you'll know that this gene is "
+    },
+    {
+        "start": 368.88,
+        "text": "associated with circadian rhythm and so what we'd like to do in motor pack is model the acute exercise response with something let's say this is a hypothetical model but something like this usually what we see is sort of the vast majority of the time we see genes that are up or down regulated with an immediate response to exercise and then they certainly they sort of taper off the color scheme here is important too it'll sort of help you to trace the experimental time points so at zero hour we have yellow dots all the way to 48 where it gets brown and we have a increasing gradient of darkness and the same is true for the blues and as time goes on for the control groups now there's a red flag here i want you to look at where the normalized counts over time "
+    },
+    {
+        "start": 431.12,
+        "text": "plot for the two control loops these two control groups really haven't had much done to them they've just been um sacrificed at different times of the day and so what you can see is the difference in their normalized genius gene counts is really quite considerable and so a red there's a red flag here immediately on our radar we're worried about uh circadian rhythm the effect of day when these samples were processed so we're not just looking at one time scale here not just this time scale of 0 to 48 hours instead we have two time skills it turns out that these samples were not processed all in the same order they did not undergo exercise at the same time and so our other time scale is the time of day this is a busy slide bear with me we're "
+    },
+    {
+        "start": 492.24,
+        "text": "going to walk through it in red we have our samples that underwent exercise they're in decreasing order from 48 to 24 all the way to zero hours post exercise in blue we have our control samples again in decreasing order seven to zero hour we'll see two columns start and end start represents the start of the end of the exercise valve and n represents that time between exercise and sacrifice this is visualized here these red stars here represent the end of the exercise response and the lines uh attached to those stars and very end of those lines represent the time between um exercise problem and sacrifice sacrifice of course being at the end of these lines now in the control groups they didn't undergo exercise but these are just let's just call those control events "
+    },
+    {
+        "start": 554.48,
+        "text": "a few things to notice here first those controls that we were comparing before they're opposite sides of the day and this day is between 10 a.m and about 6 p.m so this is a normal working day in addition most of the time points associated with the acute exercise really fall in this three-hour period between 11 12 13 and 14. there's two specialties here you'll see dotted lines here those dotted lines mean that this time actually represents um over 20 uh over 24 hour period so it's gone all the way around the clock and it's come back um in one case or it's gone all the way up around the clock twice for the 48 hour okay so we want to measure exercise and circadian effects and now we're going to plot these both on hours post exercise as we've "
+    },
+    {
+        "start": 616.48,
+        "text": "seen but also by the time of day so the same data is used to disentangle these two effects and it's it's modeled best on two different time frames so we're shuffling and we're rescaling the x-axis so again if we look at these control groups that differ considerably what we can see is that well they differ but they differ on different ends of this work day so is it the time of day is there a circadian effect that's building up and changing the gene expression of these control groups that may be for the control group but what's really sort of troubling is to look at exercise group seven we see that right here is the expression from exercise group seven also influenced by when it was collected in the time of day or does it truly respond um to the acute exercise out "
+    },
+    {
+        "start": 679.6,
+        "text": "so in measuring these two effects we're suspicious we think circadian patterns may interfere with our detection of the exercise response we know it's going to be difficult to disentangle these two effects one of the big reasons is our lack of samples the lack of parameters we can use in our models we're really limited we sort of have to get savage here we've only got seven sampling points for the exercise groups we've got two for the control groups we want to know which effect is dominant one thing we want to avoid here is the binary yes or no answer is this data set contaminated by circadian rhythm yes or no we want to avoid that are certain tissues [Music] contaminated by effects from circadian rhythm instead what we want to look at is every gene in every tissue not in a binary response but we want to "
+    },
+    {
+        "start": 739.76,
+        "text": "quantify that response how much of that gene is influenced or modeled better to the circadian model versus the exercise so we're going to model the contribution of circadian exercise effect we're going um to do to quantify the difference we're gonna compare the percent variance explained from these two effects and therefore what we're actually doing is we're taking this um sort of observational data and we're performing experiments we're going to summarize those results in every gene across 15 tissues and then we'll sort of come back and we'll take a bird's eye view and hopefully we're going to be able to differentiate circadian rhythm and response to exercise we're going to take two strategies this is our first strategy we're working with rna-seq data so we're going to very briefly run through the rnc "
+    },
+    {
+        "start": 800.56,
+        "text": "qc and i apologize for that i know that we could we could spend a uh a full uh session just talking about qc and it is really important it lays the foundation but i want that we want this talk really to focus on the modeling itself so we're going to jump into modeling after qc and then we're going to look at the percent variance explained from each of these models and at this point these models are separate so let's jump into that qc so we decided to perform um variant stabilizing transformation we looked at a few different transformation techniques i gotta admit um this was my first project when i joined as a postdoc what i know now i'm not sure i would choose variant stabilizing transformation i would look at other transformation techniques with much more rigor you see variance stabilizing transformation when you think of dec2 we're not even doing a differential gene expression analysis now we looked at other transformation techniques and we "
+    },
+    {
+        "start": 862.32,
+        "text": "think we thought this was our best choice but um i do want to point out that this could be done with more rigor and so when we come back to it we will we'll look at different transformation techniques and we'll look at them not only at the finish line but all those little steps along the way with many qc plots to really understand how the data responds to transformation with that said i think we're okay with bst transformation for the big picture of this talk what we have here is a box plot of our of 78 samples and we can see that at least their medians are really quite comparable these are normalized counts on our y-axis and if we just take two samples let's say we take sample one we take sample two what we see is that um they're really quite comparable by comparable i mean if we had a line going through here that line "
+    },
+    {
+        "start": 924.079,
+        "text": "would be at zero and zero and have a slope of one so many of these percent variance explained might equal each other or are really quite heavily correlated now some genes have expression of zero one thing bst quite a majority of them do and they all line up here what vst does is it actually shoots them up to five let's talk about sample processing for all 15 tissues this is a bird's eye view we started for the most part with 78 tissues and we have three major decisions that we had to consider sex verification batch adjustment of poor variant adjustment and outliers sex verification um there was one reciprocal pair in hypothalamus they were mislabeled by their sex we could tell if we could see this from their sex genes and so we just switched their labels "
+    },
+    {
+        "start": 984.88,
+        "text": "with batch adjustment for about half the tissues we saw that sex was really driving the variants especially on let's say a pca and so we just centered those samples by sex and brought them together because what we're really concerned with is the experimental groups and circadian rhythm then we performed outlier removal across these tissues we removed 18 samples and that left us with 1074 samples in total so here's a pca after all of that and i just want to sort of take you on a grand tour we're going to start up here with control zero hour or control ipv immediately post exercise we're going to move over to exercise 0 our 0.5147 by the time we get to exercise 7 it pairs up with control 7. "
+    },
+    {
+        "start": 1046.559,
+        "text": "when we go back to that 0 hour what we see is that it pairs up with the 20 foot and 48 hour exercise response and so we get this sort of grand tour if you will visualized with this ellipse one thing i'd like you to focus on we're going to look at all these tissues in a second is the difference between our controls those are going to be in blue and i've i've highlighted that excuse me i've i've connected them with a dark blue dot so when we look at can we see this already yeah um when we look at all these different tissues some of them show these circular patterns really quite nicely and these tissues are the ones you would expect to have a response to acute exercise adrenal gastro heart lung liver kitten kidney's also blown up "
+    },
+    {
+        "start": 1109.44,
+        "text": "here and some of them not but we force the ellipticals ellipses in there our electricals in there and then we show this distance between our different control groups and this can sort of give us an idea of with how far how well they fit the ellipse if they are really responding well to acute exercise and then with regard to the length of the um dark blue line here if circadian rhythm is having an effect this is really just a superficial view of it it's just to put it on our radar for certain tissues so let's jump into the modeling we're going to try two separate models one for circadian rhythm and one for the acute exercise response so let's jump into model one this is our "
+    },
+    {
+        "start": 1170.64,
+        "text": "model for a heat exercise response believe it or not we're using a polynomial model this has five parameters it's reportedly a polynomial model we're modeling normalized gene expression and we are using hours post exercise but we for our x but we've square rooted those uh one of the reasons we square root of is because it's a four degree polynomial um and we have hours post exercise that go all the way up to 48 hours one of the downsides to such a model is that these led later terms 48 to the fourth degree is really going to steal a lot of the model dictate the model's behavior it might overfit on some of these ladder points um on our x-axis well one of the i should say one of the perks of the model one of "
+    },
+    {
+        "start": 1231.2,
+        "text": "the perks of the model is it's incredibly flexible now you can't draw an elephant with this model but it does allow us the flexibility to capture the very diverse responses we're seeing in these exercise students so on our x-axis we have hours post-exercise we're using our exercise cohorts but only one of those control groups we're leaving one out almost as a a test sample it doesn't really serve as far as i can see any use in measure in performing the exercise model you'll notice the same seven time points but this control zero hour actually we moved it back to negative one and that's because it was sacrificed just before the exercise event that exercise event was a 30-30 minute period and that really helps anchor the model when we visualize this "
+    },
+    {
+        "start": 1292.48,
+        "text": "model again you'll see why we made this modeling decision the model 2 is a model for circadian rhythm this is a a model with three parameters baseline magnitude and phase it is assumed to have a 24-hour period and an equivalent function is right here where we are modeling the normalized gene expression and we have our sine and our cosine terms in x x c right here we've got two pi times the time of day time of day is on a scale of 24 hours divided by 24 hours our x-axis is time of day we're using of course we're going to use the exact same models control 0 hour and the exercise cohorts but our x-axis changes and so our order is that the order of the hours in the workplace "
+    },
+    {
+        "start": 1353.039,
+        "text": "10 am to 1800 or 6pm all right so let's jump into this let's look at an example of the gene that was modeled um fairly well by the acute exercise responsible so this is pdk4 and hidden this is a gene known to [Music] play a role in acute exercise response so here we have our two models on the left we have our teeth exercise response model on the right we have our circadian model here you can see the annotation of our gene groups you'll see um that control zero hour that we've pushed back sort of an anchor as an anchor underneath you'll see statistics pve stands for percent variance explained r squared and p value we can see that pdk4 actually fits both models "
+    },
+    {
+        "start": 1413.28,
+        "text": "well enough but it fits the um acute exercise better but still we have a problem here because it fits both models it's certainly not mutually exclusive and then we didn't use ctrl 7 in our model and that's right here but we sort of throw it in there just as a check and balance as a test sample does it really jump in and fit our model here it sort of fits on the line but one might argue it fits on that line as well so let's look at a gene on the other side of the spectrum this is a master regulator of circadian rhythm and kidney and very much the same in our exercise model and our circadian model we see that this gene fits really quite well and it fits really quite well because we have this profile we have this confounding between the time of day and the hours post exercise it's really "
+    },
+    {
+        "start": 1474.24,
+        "text": "the strange little coincidence so we have let's just focus on the pbe here we have high percent variance explained by both models so we need a way of differentiating it and then of course if we add the seven hour control group it could fit conceivably to our model so let's look at the variance explained by these two separate models not surprisingly they correlate really well here we've got a line from zero zero with a slope of one and so a lot of these pves from these two separate models might actually believe or not equal each other if they don't they're dying or close and so we just have a hairball so we have a problem um a lot of these genes fit both models and we need to differentiate them we want to differentiate their effects "
+    },
+    {
+        "start": 1534.64,
+        "text": "so one thing we can do is model jointly do the same thing and ask what's the distribution of percent variance explained except the only difference is now we're going to combine them we're going to put the exercise model in the first part of this combined model and the circadian aspect of the model in the second part of the model and we're going to take those two parts in red and blue and we're going to make them compete for the percent variance explained all right so let's look at those genes again you've seen these before this is nothing new these are those independent models they're simply up here for reference we're going to fill in this area below just to show you that they fit both models for aren't l or aren't l fits both models but here's where it gets interesting when we compare "
+    },
+    {
+        "start": 1595.2,
+        "text": "the acute exercise model right here it hugs the residual this is the residual this dotted line right here we've got two different time scales here so we can't put both curves on both graphs but what we can do is examine each respective curve on its respective graph and we can see immediately that the exercise model really is not modern well it's hugging the residual now that's not the case for the circadian model it's modeling really well it's stealing that it's explaining much more of that barriers in addition let's take part of this combined model from the exercise part of the model and let's calculate the y or in this case "
+    },
+    {
+        "start": 1655.279,
+        "text": "the normalized gene counts let's plot them and that's what we've done here what we would like to see with these red dots is that they actually fit in to our groups they don't there's one exception but that exception is on the residual instead they just hug the residual much like you see here they're not capturing much of the wear now on the contrary we can do the same exercise taking this circadian model which we believe fits better and we can plot those y values just with that with the end part of our model the model associated with circadian rhythm and what we see is that those points in blue here really jump into our experimental groups quite nicely we can do the same thing for pdk4 remember this "
+    },
+    {
+        "start": 1716.799,
+        "text": "was a really well known exercise team again this is for reference here are separate models they both fit relatively well our exercise model and our circadian model and then when we combine them the story is not so clear but you can still see the themes you still see that the exercise effect model is following our major groups and modeling much more accurately than our circadian rhythm model and then if we go through the same exercise and plot the points we can see that the circadian models y values really don't fall into the groups where if we were to do the same thing for the exercise model they fall uh much more closer to the groups this one's not as clear-cut and so we need a way to visualize "
+    },
+    {
+        "start": 1777.039,
+        "text": "the percent variance explained in every tissue for every gene this is what we had before this was using these separate models but really when we combine moles we create a was this a 2d density map where we have the log of the gene counts right here what we can see is first the majority of genes aren't modeling to term fitting either model well at all but a minority of the genes are modeling better to the circadian model where the majority are really modeling better to the percent variance explained from the um acute exercise part of that model so we need a systematic way to sort of categorize "
+    },
+    {
+        "start": 1837.919,
+        "text": "these different let's say plots of real estate and so we've done that we've taken these plots and we've labeled them five different plots from zero one two three and four so one would represent those genes that modeled better with the circadian rhythm uh aspect of our combined model for with those um of the few exercise aspects of the model and two and three there's somewhere in between notice there's much more and four notice a sort of um more pronouncement over to four they come out a little bit further than one and then the cardinal sin of going over um 100 variants explained does not occur in any of these genes so let's look at every tissue "
+    },
+    {
+        "start": 1897.919,
+        "text": "on every gene in every tissue so we've still got our four groups zero one two three and four and i've outlined three tissues here these three tissues really seem to respond to um the achieved exercise response and you can see them over in this heat map here it's got all of our tissues here and it's got our different gene groups zero two three and four and we've annotated them as a heat map we've not annotated group zero just because the vast mobility genes are actually in group zero and you can see that it's uh adrenal gastroc in ovaries that have the highest frequency of genes that fit in this group four in addition you see a sort of behavior you see a soul waning over of um these genes into group four and so this is a really powerful "
+    },
+    {
+        "start": 1958.08,
+        "text": "visualization it's it helps you see what tissues are really responding to the acute exercise response and then also sort of the degree of which circadian genes that model well with circadian rhythm might be adulterating it or pulling over to the left-hand side so we can see the frequency of those genes here and then here in all of our different groups this is a 3d bar plot it represents the exact same data here as well so before where you see these pronounced groups right here you can also see them with these yellow little buildings or bars but notice how the genes in group one are just incredibly small and then two was they're a little bit bigger three they're bigger or "
+    },
+    {
+        "start": 2018.96,
+        "text": "considerably bigger remember our primary variable of interest is measuring the acute exercise response so now i'm going to jump into really just a quick and dirty um catholic analysis um what we're going to do is we're going to take keg milestones from 2019 and just run them through enricher and ask what pathways show up for enrichment um again we're using mouse in the annotation but really we're working with we're working with graph i'm going to divide that up by their gene groups one two three and four except i'm going to pull them across tissues so that again this is really quick and dirty so here are results here we have our negative log fdr our odds ratio is represented by the size of the circle we have those in "
+    },
+    {
+        "start": 2081.2,
+        "text": "which pathways we filtered out some of those pathways that we thought were not very important and we have our different genie groups annotated by their color remember group one was that group that modeled better with the circadian aspect of the combined model and four on the other side of the spectrum not surprisingly one is enriched for a circadian rhythm what's really important is two three and four are not engrossed for circadian rhythm however that doesn't mean that circadian rhythm genes aren't flying away into two three and four it's just that they don't make there's not enough of them to garner an enrichment two we don't see much but three and four we see as expected a lot of the pathways m2 x3 a2 now k that are really associated with exercise response so then we sort of wanted to flip this on its head now we want to take the keg genes "
+    },
+    {
+        "start": 2141.68,
+        "text": "the mouse that are specific to circadian rhythm there were about 30 of them and we wanted to ask okay where they fit in these different groups remember one is the group that models best with circadian rhythm floor of course with um acute exercise response we see the majority fit as expected you can see that in these blue bars in group one they modeled best to circadian rhythm now here's something that's interesting some of these genes show up in groups three and four so it could be that there's some circadian rhythm genes that are responding to acute exercise and that's really interesting that actually might they have um depending on which gnc's are if these are master regulators um circadian rhythm and it's a pipe dream here but let's say these are the ones that "
+    },
+    {
+        "start": 2203.44,
+        "text": "are going to make you really tired we haven't investigated these but you go on a run you do some sort of exercise and you adjust your circadian rhythms and maybe you're not so tired later in the day that's totally a a wild hypothesis and a pipe dream would happen at this point but it would be cool so anyway we're coming to the end of this talk what we've shown is joint modeling of circadian rhythm and exercise response we did this to address the deficiency in the exercise design we showed a global summary of relative effects the exercise effect was really stronger for most genes in those tissues from our experiments in the data but this varied of course by tissue most of those hallmarks circadian genes were found in groups one and two however interesting enough a handful of them are found in three and four and actually modeled better to achieve exercise response so are these circadian genes that "
+    },
+    {
+        "start": 2265.119,
+        "text": "respond to exercise um and we'd like to um continue this analysis on different ones we mentioned we have metabolomics we have proteomics we're going to be we are transitioning over into the metabolomics and we're really really intrigued with the patterns we see maybe they'll be similar but different i don't know um and of course we need to improve our modeling approach we have a polynomial model um and that should be investigated more we should run simulations on that model and see as it will model well in the space that we're trying to model it in so more rigorous needed with this analysis with that said i just want to thank the people who helped in this endeavors iu june we oh really this analysis the ideas the concepts were really driven by june i'm just the analyst i joined this "
+    },
+    {
+        "start": 2326.4,
+        "text": "lab to learn and check the lands as well so thank you very much for your time and i'm happy to answer any questions they anyone has questions in the room of course if you speak up and online you can put the questions into the chat box or you can answer yourself and ask i'll go ahead ask the question so you're talking about some of the circadian rhythms did you mention was the one example pdk4 which is a circadian rhythm gene but it did seem like it was modeled better by acute exercise so that might have been one of your circadian rhythm genes that were jumping in for four potentially um so if i said that i misspoke um pdk4 is a gene that's known to model well with the acute exercise response okay "
+    },
+    {
+        "start": 2388.24,
+        "text": "and um in our separate models it does actually model quite well with the circadian rhythm model but then when we combine [Music] models what we see is that really the acute exercise response takes over um that said uh there was it it seems to have a minor influence from circadian rhythm so this could be an exercise gene that is being influenced by circadian rhythms whether this gene is known as a certain rhythm gene i don't think it is i could be wrong and if i am please simply speak up and but it is known as a strong responder to acute exercise "
+    },
+    {
+        "start": 2450.48,
+        "text": "at the moment there are no questions in the chat but again if you're online and you have a question feel free to enter it in the chat box or send yourself an ass we'll give it a couple minutes there are no more questions just in case anyone wants to type something in the chat sure sure if there are more questions explain everything so clearly all right so i'm not seeing anything in the chat box i'm not hearing any more questions in the room or i'm here in microphones so i think that we can give "
+    },
+    {
+        "start": 2512.319,
+        "text": "a speaker another round of applause for everyone today all right thanks everybody "
+    }
+]

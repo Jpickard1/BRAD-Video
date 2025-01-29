@@ -1,0 +1,154 @@
+[
+    {
+        "start": 0.0,
+        "text": "everyone thanks for joining us for today's tools and Technology seminar um I have a couple of announcements I wanted just a reminder that today is the last seminar for uh this semester we'll be taking a break for the summer and we'll be starting up again in the fall and September I am scheduling speakers for the fall so if anybody is interested in presenting or has a recommendation please let me know I'm Marcy Brandenburg you can send me an email or a chat uh right now during the zoom session and let me know uh the other announcement is that you will uh if you're on the tools and Tech email list you'll be receiving a survey uh later today proudly uh just to get your feedback on the semester's presentations promotion Etc if you can take just a minute to fill that out I'd really appreciate it I do make changes based on the feedback I receive so I I do really appreciate that um so for those who are online uh if you "
+    },
+    {
+        "start": 60.36,
+        "text": "have questions during today's presentation you can put them in the chat box I'll be monitoring that and can let our speaker know if any questions come in um similarly uh if you prefer to ask them verbally you can use the zoom reaction to the bottom right to raise your hand and then we can call on you to unmute I think that's all the announcements so with that I'll introduce today's speaker we have Olivia out who is a grad student in dcmmb all right hi everyone I'm Olivia Piper elge I'm part of the biomedical and clinical informatics lab here in dcmv my advisor is Dr kabanjarian and today we're going to be talking about an algorithm called taught strip so first before we get into the algorithm itself I'm going to give a very broad overview so pretty much if you remember anything from this talk this overview would be what I'd want you to take away "
+    },
+    {
+        "start": 122.1,
+        "text": "so first and foremost what is taught straight so taught string uh going forward I'm going to be abbreviating it as TS is a unique function that's performed on an input signal it has one parameter Epsilon that you set at the beginning of the algorithm and what it does is it creates the effect of denoising the input signal that you give it and then once you've created this denoise version of your input signal you can compute features related to that the noise version of this episode so you might ask why is this algorithm called thought straight so first we're going to be looking at a baseline signal this is just like a standard ECG signal this was taken from the publicly available PTP database BC is like it's a periodic signal of electrical activity in the heart if we wanted to perform a top string on "
+    },
+    {
+        "start": 184.56,
+        "text": "this signal we'd first take our Epsilon value and use it to shift that signal of interest from its Baseline so this top waveform here is our original signal plus Epsilon and this signal down here is our original signal minus Epsilon and so if we were to say perform top string on this starting from our origin point at zero we'd have a straight line however if we change this Epsilon value we can see that you can see that it starts to interact with the troughs and the peaks of our original input signal and so we can see as we move Epsilon smaller and smaller we get this piecewise estimation of the signal at different resolutions and we can see that as Epsilon continues to get smaller it gets more and more of "
+    },
+    {
+        "start": 246.9,
+        "text": "an approximation of the original signal foreign useful so first and foremost it's useful because you can use it to compute features from an input signal so one thing that's going to come up later is for example how bendy your signal of input is in addition to being able to use features you can also use it to remove noise from a signal in O event time and so if you're not familiar with Big O notation o of n time just means that it's very efficient and the amount of time it takes the amount of time it takes to produce this denoised signal is linear compared to your signal of input and then specifically why taught string is useful which I'm going to go over in the applications part of this talk is "
+    },
+    {
+        "start": 306.9,
+        "text": "that you can create tensors to create these piecewise estimations uh with these linear piecewise estimations at different uh levels and so you can generate features from the same input signal at different levels of denoising and then this information can be stored in a tensor format so now that I've given you a brief overview the rest of the talk is going to focus on first the top string algorithm itself and second how this top string is applicable in current research okay so first how it works but before we get into the nitty-gritty of the algorithm itself I just want to define a couple of functions uh first is this function called diff where it goes from the space of real numbers in N to n minus one and it's really simple pretty much if you take a "
+    },
+    {
+        "start": 368.4,
+        "text": "sequence of inputs diff is just taking the difference between each sequential set of input so if you have like say a signal W that is like n if would just be taking W2 minus W1 W3 minus W2 Etc until you reach WN and take difference of w and WN minus one uh diff star is related it's dual to diff and it moves from the space of our n minus one to R of N and what this does is it takes your input sequence and it takes the differences uh pretty much going the opposite direction so you start with zero minus W1 W1 minus W2 onward until you reach w n minus one and so in practice what we're going to look at with taut string is this function diff star diff w which is pretty much approximating the "
+    },
+    {
+        "start": 429.24,
+        "text": "second derivative of w and just because I like looking at visual representations I made this tiny graph here using a very small example sequence where W is this original black line diff of w is this big Gray Line and then div star diff W is this blue line here okay for Todd Street let's say that you're interested in using it for Signal processing and you have a discrete Signal app this could be something like heart rate variability or arterial line readings or ECG and we refer to this signal of F and it's of length n so every value in the signal is F1 up to F of n so they their heart like heart rate variability it would be an individual data element that would contribute to our understanding of heart rate variability yeah so like if you had "
+    },
+    {
+        "start": 490.68,
+        "text": "heart rate variability it would be like if you have your B2B intervals it would just be each duration in sequence yeah and it would be the same for the other ones yeah just just a way to measure to actually determine whether you had it how much all that kind of stuff right yep okay okay and so then you set your parameter Epsilon which is a number greater than zero and then we have this function X which ends up being our top string approximation and X is the unique function such that it's infinity or Chevy Chef Norm of f minus X is the max value of I for every F minus X of I and this max value is always going to be less than or equal to Epsilon what this does is that it forces this top string approximation X to never pass beyond that value Epsilon "
+    },
+    {
+        "start": 554.76,
+        "text": "and then the second part of taut string is that the euclidean distance or L2 Norm of the diff of X is equal to this computation and it's going to be minimal so what this means is that the the amount of movement that happens in X is going to be minimal so it's going to have as few local Maxima and local Minima as possible it's what makes the string in top string taut and so something else to keep in mind about X is that this dip star dip of X so B uh the L1 Norm of its second derivative is going to be minimized as well so that goes again with minimizing how much this function X will bend "
+    },
+    {
+        "start": 621.24,
+        "text": "okay so we know that X now is the taught string approximation of that but we can also consider it as a decomposition so if our input signals F we can consider it being decomposed into the top string approximation X plus some noise value y so X would be the phenoid signal and Y is the noise with its Infinity Norm less than or equal to Epsilon so you can interpret that as meaning that the smallest upper bound of Y is your noise level Epsilon so the amount of noise you have will never go beyond Epsilon and now diving deeper into the actual algorithm for computing taught string I'm going to go through this process with words first and then I'm going to "
+    },
+    {
+        "start": 681.72,
+        "text": "show an illustrated example to show one iteration of the algorithm in action so I know that these text Heavy slides can be a little overwhelming but it's just background before we actually see the algorithm in action okay so the most common uh version of top string was developed by babies and Kovac in 2001. what it does is it accepts a set of data points as input so that's formatted here is I comma y i where I is a set of values between 0 and N where n is the total length and then the integral integrated process y 0 is computed as such where K this value K is the number of knots or the number of times the top string changes Direction the upper bound of our integrated process of our input signal f is marked "
+    },
+    {
+        "start": 744.06,
+        "text": "by U and its lower bound is marked by L and when we're initializing the function the endpoints of the thought string are fixed so that's saying that the lower bound and upper bound are the same at the very beginning and the lower and upper bound are the same at the very end so when we start at our origin point of zero l0 or it could be uh U zeros pretty much starting at that origin point where the upper and lower bounds are the same for a given value of I we compute s x i which is the greatest con convex minor of the upper bound and SBI which is the least concave major of the lower bound and so Computing each of those is in O of I time where I is the number of values that you're Computing that's a subset of n "
+    },
+    {
+        "start": 805.139,
+        "text": "and so once you've computed those two uh variables you check if the right hand derivatives of each of you check the right hand derivatives of each of them if the right hand derivative of B uh great greatest convex major end of the upper bound is greater than the least concave major of the lower bound then that is considered of the condition being met and you continue Computing each of these values iteratively you keep you continue to do that until this condition no longer holds and once that condition is broken you create the first knot in your thought strip so one of all the knots you concluded you choose the leftmost in that sequence and you once that's done you move your origin point to that leftmost knot and then start repeating those calculations iteratively again "
+    },
+    {
+        "start": 866.279,
+        "text": "oh and so I'm going to show that Illustrated with this set of sample data points that Davies and Kovac created uh this set of triangles here is the upper bound or U and the set of orange triangles is the lower bound or l and so if we look at this graphically this Computing of the greatest convex minor and the smallest concave matrant is just looking for this path from point to point up until the two curves intersect and so as we continue to do that we find that at some point these two curves intersect and so that condition about the right hand derivatives no longer holds true and so from there we Mark our left most uh not and then reset the origin point to this point right here "
+    },
+    {
+        "start": 928.459,
+        "text": "okay and so as I mentioned before there are a lot of features that you can compute from taut string that end up you can use for any number of purposes in my lab specific uh approach what we do is we use these features extracted to give to machine learning models soaps from the testing approximation you can compute statistical measures like mean median standard deviation Etc but in addition to just looking at the thought string approximation you can also look at that noise estimation so again if we look at dot string as that X Plus y what we do is we compute these statistical measures again on y and in addition to that we can also look at the number of inflection points in within the top string estimate so again looking at how much movement there is in "
+    },
+    {
+        "start": 989.76,
+        "text": "x okay and you might be saying well I don't know if path string is that useful I like to use say Fourier analysis to look at my signals for Featured stretch and I would say that these two approaches are not mutually exclusive so free analysis is a very good way of looking at uh frequency domain features its time complexity Is Not Great compared to top strength so even if you use fast for your transform its uh time o of n log n but it is shift invariant which means that when something occurs in the input doesn't affect the output that fast for your would uh something else that's very useful is discrete wavelet transform which is also computed in O of n time but it's not shift and buried but there is a method of computing discrete wavelet transform called dual "
+    },
+    {
+        "start": 1051.5,
+        "text": "tree complex wavelet transform which is nearly each shift invariant but it does require more computation time in the application section that I'm going to be discussing next uh we'll see that top string can be used in series with these other transforms so you're not locked into using only cost strength clear analysis okay so next Real World applications for using pot string foreign of course yeah all right so just to give a brief overview of the types of signals that we're looking at electrocardiogram in our lab so ECG is I'm sure you've all seen these QRS complexes before but it's looking at electrical activity that occurs in the heart and it's measured using electrodes "
+    },
+    {
+        "start": 1113.299,
+        "text": "that are placed on the body of the relationship between these electrodes leads uh generates leads which we use for analysis so heart rate variability is computed from these ECG feedings so the way we obtain heart rate variability is by first identifying these R Peaks within the ECG signal and then Computing the difference in time between consecutive Peaks and so like part of everybody is very useful for looking at features like heart rate uh beat-to-beat data and other frequency domain features and then the exciting part for me at least is tensors first what is a tensor so we can see from this illustration here it kind of looks like a cube but it's not always like that "
+    },
+    {
+        "start": 1173.6,
+        "text": "a good way of looking at sensors is saying that a tensor is a way of storing information so tensors have different modes or different dimensions along which information can be stored something like a vector of data or sequence of numbers would be considered a first order tensor Matrix which has data along two Dimensions would be considered a second order tensor and then a tensor that has information in three or more dimensions would be considered a third or sorry a higher order tensor it's like we have in this illustration here a third order concern which you can use it's indices i j and k to select individual data points within it and so you might ask what what use is the fencer is a tensor in my machine learning lab and so if we look at traditional learning methods like say random forest or support Vector machine these learning methods expect that the data that you "
+    },
+    {
+        "start": 1235.52,
+        "text": "give to them will be in a vector format so in that first mode the disadvantage to this is that you can lose a lot of structural information if you break your data down into these information vectors so you might not be able to see interactions between variables uh in relation to time or see how variables correlate with each other so by storing information as a tensor we hope to preserve a lot of that structural information so the specific example I'm going to talk about today is predicting hemodynamic decompensation after cardiac surgery so the original setup was that a set of patients had it was a retrospective study where a group of patients had undergone some kind of cardiac surgery and they were monitored to see if they "
+    },
+    {
+        "start": 1296.0,
+        "text": "would have a decompensation event so this could be something like heart failure it could be like need of vasopressors it could be any kind of adverse effect after cardiac surgery uh the data we had available to our group was ECG data electronic health record data which would be information like age demographics in addition to medications administered and Labs provided in addition there was also arterial blood pressure and spo2 so the goal of this retrospective study was to see if hemodynamic decompensation could be predicted early and if so how are we so a big part of how the lab approached this problem was using signal processing so for example this is a breakdown of the processing of the input ECG signal "
+    },
+    {
+        "start": 1361.46,
+        "text": "first the EC P signal was pre-processed using a butterwork filter just to get rid of Baseline Monitor and some noise but then we use our taut string method so we use top string on the ECG to extract those statistical features like the mean median pertosis and skewness on that thought straight decomposed ECG signal but in addition to that we also use this dual tree complex uh wavelet packet transform to get more of those frequency domain features from the ECP signal we apply those to the tot string the noise dcg and then we extract features for that and then in addition to both of those processes that were done on the top string ECG we also detected Peaks the RPX in the signal to generate heart rate "
+    },
+    {
+        "start": 1421.88,
+        "text": "variability data foreign on that hrb data to get a the noise approximation and extract the features from that and so one of the ways that we can model this data as a tensor is varying the value of Epsilon so for each Epsilon we create this thought string approximation of our input signal and so we just note it as like x to the Epsilon and so I'm going to skip to the next slide because I think it's a bit more easy to see so if we have our input ECG signal what we do is we break it down into tumbling Windows of equal size we compute a feature Matrix where we compute a set of features from the thought string approximation for each time window so we end up "
+    },
+    {
+        "start": 1483.5,
+        "text": "generating this Matrix where it's a set of features computed for each time window and then we repeat that for each value of Epsilon so we end up with this feature tensor where we have a feature Matrix for each value of Epsilon oh wow yeah yeah this is one of the figures from the paper but it's breaking down for each patient uh how many tensors we created so for each patient we would create this taut string pot string for each patient we breed this taut string tensor for HRV data the ECG data and for this dual tree complex wavelet packet transport data and then in addition to that we also perform taut string on arterial blood pressure and on spo2 and this was repeated for each patient "
+    },
+    {
+        "start": 1544.039,
+        "text": "and so once we have those n by five tensors for every patient okay yes what we do is we stack all of those tensors along a fourth mode so we take all of the patient tensors and stack them together to create one tensor of each signal type for all the patients and so from there because these tensors you know there are a lot of features being computed and there are multiple patients we use something called higher order singular value decomposition to reduce the feature space of these of some of these tensors ho SVD is a little bit out of scope for this talk but I can answer questions on it if you'd like later pretty much the important thing to take from it is just that it's a way of reducing the feature space to make these tensors smaller and so once we have these groups tensors "
+    },
+    {
+        "start": 1604.88,
+        "text": "for all the patients we combine them all together to create a large tensor that is just the entire data set and so once we have that large set of tensors we can compute other decompositions like canonical parallel factors to be able to apply this same decomposite decomposition to any unknown data so like for example if we were to compute uh canonical parallel factors decomposition on our trade set we can use a decomposition to create this reduced feature space on any set of sensors like our test set so these are all physiological various physiological traces and the hypothesis I guess is if you bring these kind of complementary physiological measurements together you're going to get a better indication of I mean what's what's the advantage of "
+    },
+    {
+        "start": 1666.02,
+        "text": "this this integrative approach I mean it's a better predictability I mean what well the Hope Was That by using a multimodal approach we could use multiple different physiological signals to look at the status of the patient I see because the the alert really what you want is alert at the end of the day this patient's in trouble yeah and by um there's reasonable that if you bring these these measurements together you know some of the interplay might actually alert you earlier I mean that's the Hope right exactly so that's why we wanted to format the data's offensors to see these uh changes in the variables relative to one another that might otherwise be lost if we just modeled every single thing as a vector okay so this I think is a good comprehensive set of the results "
+    },
+    {
+        "start": 1726.86,
+        "text": "apologies it is a bit small and hard to read but what each of these graphs is doing is it's looking at the area under the receiver operating characteristic curve for different prediction windows for different learning models and so like for example if we look at a naive Bayes here we can see that the prediction window which is saying how far in advance of the decompensation event can we predict that there might be an onset of this event happening it's like this is in a number of hours for example even this the Y the y-axis is the area under the RFC curve so it's split up into different learning methods so this is Knight fades this is support Vector machine random Forest uh Luke which is a learning method developed by one of our "
+    },
+    {
+        "start": 1787.52,
+        "text": "collaborators Dr Hartford and at least and what each of the colored lines on the graphs represent is a different uh data set that was to train the model it's like the red and pink are just looking at all of these tensors put together but with no tensor reduction uh the blue is tensors of the signal data which has been reduced via hospd uh the green our tensor reduction plus electronic health record data and then the purple and magenta are non-reduced tensors so all the data plus electronic health record data okay so what we can see is the general trend from these graphs is that at least in naive Bayes random forest and Luke we consistently see higher area of the curve when using both tensor reduction and electronic health record data "
+    },
+    {
+        "start": 1850.039,
+        "text": "uh this uh at a boost and support Vector machine tend to do better when they're using non-reduced tensor data plus electronic helpbreaker data but generally we see that using the signal data plus electronic health record data is better than using just signal data by itself um the other information that we can glean from this is that generally when the prediction window is smaller so we'll be looking at about like what the two hours in advance it's the models tend to be more predictive than at spaces like 12 hours and that's not entirely unexpected because we would assume that physiological signals like ECG and blood pressure would be more predictive of short-term events than these longer term events like over the course of 12 hours and so the setup for this experiment "
+    },
+    {
+        "start": 1911.059,
+        "text": "predicting onset of chemodynamic decompensation is very similar to the setup that I'm using for my thesis work which is looking at uh septic decompensation but also using auton approximations of ECG and criterial blood pressure in addition to using electronic health rigger data right I was really wondering about how you were going to integrate some of these non-continuous variables maybe there's co-variance that you might find or something I mean I was just kind of curious because when you were integrating these different kinds of data you know this is pretty straightforward because in the end of the day they're physiological they're related you know cardiovascular stop or you know coded in time but you have these other kinds of variables that are really kind of different so I was too excited to bring all that together yeah so for electronic health record data things that are constant "
+    },
+    {
+        "start": 1973.58,
+        "text": "like demographics like age or like sex that's definitely something we can just easily encode as something like a binary variable but for things that are more time dependent like lab data yeah medications yeah medications that's something that we would at least in this setup I know that what was done was the labs and medications that were administered during that prediction time were the only ones included in model training so it didn't it didn't look into the future to see what labs were performed right but it's not looking into the past either in terms of like a total Stat or some kind of bats that you know usually they come in with several Acts yeah um I'd have to look into that to see how far it goes back that'd be good for you no it's you know some of the meds might be you know being "
+    },
+    {
+        "start": 2035.08,
+        "text": "administered to take care of some of these problems yeah you know blood thinners you know something for heart rate variability I mean it would be really good to know yeah no I know that stuff like uh face oppressors for sure recorded really indicative right well that is my thought for today these are my sources please let me know if you have any questions yeah that's really good were those online if you have any questions uh you can put them in the chat box or uh use these reactions in the bottom right to raise your hand and we can uh [Music] throw away RC to stick the pictures on the screen now we can't yes yeah "
+    },
+    {
+        "start": 2095.74,
+        "text": "it's different world isn't it I mean you know you've got three or four people here and you know a dozen or more in the zoo I mean it's just I I was just getting ready to log on to zoom and I said well I gotta go down there but maybe I should serve a pizza well at least you were here yeah any questions [Music] yeah all right okay uh no questions but great talk great job "
+    },
+    {
+        "start": 2156.82,
+        "text": "give it another minute or so do you think so where are you in your thesis progression uh I've got a pretty nice sized data set it's just a matter of fine-tuning the work that I'm have some tensor decomposition code but we're trying to implement this new pipeline to make things a lot smoother and more reproducible now I've got this really nice data set that uh Dr Van Epps and it's pretty much just a matter of getting reliable and reproducible results from that data set thanks but just I'm underselling how hard that is but well well yeah but at least I think most of us can appreciate that and also getting a data set was a very big part of that too how many participants do you have uh so "
+    },
+    {
+        "start": 2217.119,
+        "text": "minus Ultra also retrospective more than like 2 000 actual patients in it but once we start narrowing down for criteria of okay they experience some kind of a decompensation event okay they were probably septic it starts getting whittled down further further and then once you start looking for okay do they have usable signal data and that gets even smaller right yeah just trying to find usable signal data in and up it's yeah like electronic health record data we can get pretty easily it's just signal data so they were what what was the study that they were uh was there you know you mentioned retrospective so it was a this a clinical study that was uh so the data that I'm pulling from I think was from a biobank uh set up "
+    },
+    {
+        "start": 2280.0,
+        "text": "I see so it's not even really from here uh no it is from U of M I think it was under Dr Ward that it was set out um yeah I think there are a couple of data sets I've looked at and I know that they kind of get blurred a bit in my head together questions online so well you just you know I thought it was a great talk I'm really glad I had a chance to see it and uh you know it's a good approach and uh you know I'm sure that you're gonna find uh results that you could find that uh you know other less sophisticated ways or really anxious to hear about how that works out for you to like inform us about that thanks thank you "
+    }
+]

@@ -1,0 +1,657 @@
+[
+    {
+        "text": "Last video I talked about the dot product, showing both the standard introduction ",
+        "start": 9.02,
+        "duration": 4.095
+    },
+    {
+        "text": "to the topic, as well as a deeper view of how it relates to linear transformations.",
+        "start": 13.115,
+        "duration": 4.145
+    },
+    {
+        "text": "I'd like to do the same thing for cross products, ",
+        "start": 18.86,
+        "duration": 2.281
+    },
+    {
+        "text": "which also have a standard introduction, along with a deeper understanding ",
+        "start": 21.141,
+        "duration": 3.423
+    },
+    {
+        "text": "in the light of linear transformations, but this time I'm dividing it into ",
+        "start": 24.564,
+        "duration": 3.423
+    },
+    {
+        "text": "two separate videos.",
+        "start": 27.987,
+        "duration": 0.913
+    },
+    {
+        "text": "Here, I'll try to hit the main points that students are usually shown ",
+        "start": 29.52,
+        "duration": 3.609
+    },
+    {
+        "text": "about the cross product, and in the next video I'll be showing a view ",
+        "start": 33.129,
+        "duration": 3.609
+    },
+    {
+        "text": "which is less commonly taught, but really satisfying when you learn it.",
+        "start": 36.738,
+        "duration": 3.662
+    },
+    {
+        "text": "We'll start in two dimensions.",
+        "start": 40.82,
+        "duration": 1.04
+    },
+    {
+        "text": "If you have two vectors, v and w, think about the parallelogram that they span out.",
+        "start": 42.36,
+        "duration": 5.02
+    },
+    {
+        "text": "What I mean by that is that if you take a copy of v and move its tail to the tip of w, ",
+        "start": 47.94,
+        "duration": 5.138
+    },
+    {
+        "text": "and you take a copy of w and move its tail to the tip of v, ",
+        "start": 53.078,
+        "duration": 3.544
+    },
+    {
+        "text": "the four vectors now on the screen enclose a certain parallelogram.",
+        "start": 56.622,
+        "duration": 3.958
+    },
+    {
+        "text": "The cross product of v and w, written with the x-shaped multiplication symbol, ",
+        "start": 62.04,
+        "duration": 4.837
+    },
+    {
+        "text": "is the area of this parallelogram.",
+        "start": 66.877,
+        "duration": 2.083
+    },
+    {
+        "text": "Well, almost.",
+        "start": 70.9,
+        "duration": 0.78
+    },
+    {
+        "text": "We also need to consider orientation.",
+        "start": 71.84,
+        "duration": 1.56
+    },
+    {
+        "text": "Basically, if v is on the right of w, then v cross w ",
+        "start": 74.0,
+        "duration": 3.327
+    },
+    {
+        "text": "is positive and equal to the area of the parallelogram.",
+        "start": 77.327,
+        "duration": 3.453
+    },
+    {
+        "text": "But if v is on the left of w, then the cross product is negative, ",
+        "start": 81.52,
+        "duration": 3.726
+    },
+    {
+        "text": "namely the negative area of that parallelogram.",
+        "start": 85.246,
+        "duration": 2.654
+    },
+    {
+        "text": "Notice this means that order matters.",
+        "start": 88.66,
+        "duration": 1.96
+    },
+    {
+        "text": "If you swapped v and w, instead taking w cross v, ",
+        "start": 91.12,
+        "duration": 2.808
+    },
+    {
+        "text": "the cross product would become the negative of whatever it was before.",
+        "start": 93.928,
+        "duration": 3.932
+    },
+    {
+        "text": "The way I always remember the ordering here is that when you take the cross product ",
+        "start": 99.04,
+        "duration": 4.3
+    },
+    {
+        "text": "of the two basis vectors in order, i-hat cross j-hat, the result should be positive.",
+        "start": 103.34,
+        "duration": 4.3
+    },
+    {
+        "text": "In fact, the order of your basis vectors is what defines orientation.",
+        "start": 108.22,
+        "duration": 3.78
+    },
+    {
+        "text": "So since i-hat is on the right of j-hat, I remember that v ",
+        "start": 112.48,
+        "duration": 3.71
+    },
+    {
+        "text": "cross w has to be positive whenever v is on the right of w.",
+        "start": 116.19,
+        "duration": 3.71
+    },
+    {
+        "text": "So for example, with the vectors shown here, I'll just ",
+        "start": 121.74,
+        "duration": 2.674
+    },
+    {
+        "text": "tell you that the area of that parallelogram is seven.",
+        "start": 124.414,
+        "duration": 2.626
+    },
+    {
+        "text": "And since v is on the left of w, the cross product should be negative.",
+        "start": 127.76,
+        "duration": 3.58
+    },
+    {
+        "text": "So v cross w is negative seven.",
+        "start": 131.74,
+        "duration": 2.12
+    },
+    {
+        "text": "But of course, you want to be able to compute this without someone telling you the area.",
+        "start": 135.8,
+        "duration": 3.8
+    },
+    {
+        "text": "This is where the determinant comes in.",
+        "start": 140.38,
+        "duration": 2.2
+    },
+    {
+        "text": "So if you didn't see chapter five of this series, ",
+        "start": 143.08,
+        "duration": 2.242
+    },
+    {
+        "text": "where I talk about the determinant, now would be a really good time to go take a look.",
+        "start": 145.322,
+        "duration": 3.858
+    },
+    {
+        "text": "Even if you did see it, but it was a while ago, ",
+        "start": 149.58,
+        "duration": 1.969
+    },
+    {
+        "text": "I'd recommend taking another look just to make sure those ideas are fresh in your mind.",
+        "start": 151.549,
+        "duration": 3.571
+    },
+    {
+        "text": "For the 2D cross product, v cross w, what you do is you write the coordinates ",
+        "start": 157.14,
+        "duration": 4.256
+    },
+    {
+        "text": "of v as the first column of a matrix, and you take the coordinates of w ",
+        "start": 161.396,
+        "duration": 3.929
+    },
+    {
+        "text": "and make them the second column, then you just compute the determinant.",
+        "start": 165.325,
+        "duration": 3.875
+    },
+    {
+        "text": "This is because a matrix whose columns represent v and w corresponds with a ",
+        "start": 171.32,
+        "duration": 4.964
+    },
+    {
+        "text": "linear transformation that moves the basis vectors i-hat and j-hat to v and w.",
+        "start": 176.284,
+        "duration": 5.096
+    },
+    {
+        "text": "The determinant is all about measuring how areas change due to a transformation, ",
+        "start": 186.26,
+        "duration": 4.869
+    },
+    {
+        "text": "and the prototypical area that we look at is the unit square resting on i-hat and j-hat.",
+        "start": 191.129,
+        "duration": 5.291
+    },
+    {
+        "text": "After the transformation, that square gets turned ",
+        "start": 197.08,
+        "duration": 2.684
+    },
+    {
+        "text": "into the parallelogram that we care about.",
+        "start": 199.764,
+        "duration": 2.256
+    },
+    {
+        "text": "So the determinant, which generally measures the factor by which areas are changed, ",
+        "start": 202.44,
+        "duration": 4.452
+    },
+    {
+        "text": "gives the area of this parallelogram, since it evolved from a square that started with ",
+        "start": 206.892,
+        "duration": 4.611
+    },
+    {
+        "text": "area one.",
+        "start": 211.503,
+        "duration": 0.477
+    },
+    {
+        "text": "What's more, if v is on the left of w, it means that orientation was flipped during ",
+        "start": 212.84,
+        "duration": 4.442
+    },
+    {
+        "text": "that transformation, which is what it means for the determinant to be negative.",
+        "start": 217.282,
+        "duration": 4.178
+    },
+    {
+        "text": "As an example, let's say v has coordinates negative 3, 1, and w has coordinates 2, 1.",
+        "start": 223.8,
+        "duration": 6.5
+    },
+    {
+        "text": "The determinant of the matrix with those coordinates as columns ",
+        "start": 230.98,
+        "duration": 5.172
+    },
+    {
+        "text": "is negative 3 times 1 minus 2 times 1, which is negative 5.",
+        "start": 236.152,
+        "duration": 4.768
+    },
+    {
+        "text": "So evidently, the area of the parallelogram they define is 5, ",
+        "start": 241.58,
+        "duration": 3.513
+    },
+    {
+        "text": "and since v is on the left of w, it should make sense that this value is negative.",
+        "start": 245.093,
+        "duration": 4.647
+    },
+    {
+        "text": "As with any new operation you learn, I'd recommend playing ",
+        "start": 251.24,
+        "duration": 2.49
+    },
+    {
+        "text": "around with this notion a bit in your head, just to get kind ",
+        "start": 253.73,
+        "duration": 2.575
+    },
+    {
+        "text": "of an intuitive feel for what the cross product is all about.",
+        "start": 256.305,
+        "duration": 2.575
+    },
+    {
+        "text": "For example, you might notice that when two vectors are perpendicular, ",
+        "start": 259.74,
+        "duration": 3.6
+    },
+    {
+        "text": "or at least close to being perpendicular, their cross product is larger than ",
+        "start": 263.34,
+        "duration": 3.905
+    },
+    {
+        "text": "it would be if they were pointing in very similar directions, ",
+        "start": 267.245,
+        "duration": 3.145
+    },
+    {
+        "text": "because the area of that parallelogram is larger when the sides are closer to ",
+        "start": 270.39,
+        "duration": 3.955
+    },
+    {
+        "text": "being perpendicular.",
+        "start": 274.345,
+        "duration": 1.015
+    },
+    {
+        "text": "Something else you might notice is that if you were to scale up one of those vectors, ",
+        "start": 277.18,
+        "duration": 5.104
+    },
+    {
+        "text": "perhaps multiplying v by 3, then the area of that parallelogram ",
+        "start": 282.284,
+        "duration": 3.798
+    },
+    {
+        "text": "is also scaled up by a factor of 3.",
+        "start": 286.082,
+        "duration": 2.078
+    },
+    {
+        "text": "So what this means for the operation is that 3v ",
+        "start": 289.04,
+        "duration": 3.551
+    },
+    {
+        "text": "cross w will be exactly 3 times the value of v cross w.",
+        "start": 292.591,
+        "duration": 4.069
+    },
+    {
+        "text": "Now, even though all of this is a perfectly fine mathematical operation, ",
+        "start": 298.1,
+        "duration": 3.849
+    },
+    {
+        "text": "what I just described is technically not the cross product.",
+        "start": 301.949,
+        "duration": 3.111
+    },
+    {
+        "text": "The true cross product is something that combines ",
+        "start": 305.72,
+        "duration": 3.071
+    },
+    {
+        "text": "two different 3d vectors to get a new 3d vector.",
+        "start": 308.791,
+        "duration": 2.949
+    },
+    {
+        "text": "Just as before, we're still going to consider the parallelogram ",
+        "start": 312.66,
+        "duration": 3.152
+    },
+    {
+        "text": "defined by the two vectors that we're crossing together, ",
+        "start": 315.812,
+        "duration": 2.808
+    },
+    {
+        "text": "and the area of this parallelogram is still going to play a big role.",
+        "start": 318.62,
+        "duration": 3.4
+    },
+    {
+        "text": "To be concrete, let's say that the area is 2.5 for the vectors shown here.",
+        "start": 322.66,
+        "duration": 4.14
+    },
+    {
+        "text": "But as I said, the cross product is not a number, it's a vector.",
+        "start": 327.1,
+        "duration": 3.16
+    },
+    {
+        "text": "This new vector's length will be the area of that parallelogram, ",
+        "start": 330.78,
+        "duration": 4.023
+    },
+    {
+        "text": "which in this case is 2.5, and the direction of that new vector is going to be ",
+        "start": 334.803,
+        "duration": 4.89
+    },
+    {
+        "text": "perpendicular to the parallelogram.",
+        "start": 339.693,
+        "duration": 2.167
+    },
+    {
+        "text": "But which way, right?",
+        "start": 342.66,
+        "duration": 1.12
+    },
+    {
+        "text": "I mean, there are two possible vectors with length ",
+        "start": 344.08,
+        "duration": 2.727
+    },
+    {
+        "text": "2.5 that are perpendicular to a given plane.",
+        "start": 346.807,
+        "duration": 2.353
+    },
+    {
+        "text": "This is where the right hand rule comes in.",
+        "start": 350.6,
+        "duration": 1.92
+    },
+    {
+        "text": "Point the forefinger of your right hand in the direction of v, ",
+        "start": 353.02,
+        "duration": 3.134
+    },
+    {
+        "text": "then stick out your middle finger in the direction of w.",
+        "start": 356.154,
+        "duration": 2.786
+    },
+    {
+        "text": "Then, when you point up your thumb, that's the direction of the cross product.",
+        "start": 359.52,
+        "duration": 3.92
+    },
+    {
+        "text": "For example, let's say that v was a vector with length 2 pointing straight up in ",
+        "start": 368.36,
+        "duration": 4.353
+    },
+    {
+        "text": "the z direction, and w is a vector with length 2 pointing in the pure y direction.",
+        "start": 372.713,
+        "duration": 4.407
+    },
+    {
+        "text": "The parallelogram that they define in this simple example is actually a square, ",
+        "start": 377.96,
+        "duration": 3.851
+    },
+    {
+        "text": "since they're perpendicular and have the same length, and the area of that square is 4.",
+        "start": 381.811,
+        "duration": 4.189
+    },
+    {
+        "text": "So their cross product should be a vector with length 4.",
+        "start": 386.0,
+        "duration": 2.8
+    },
+    {
+        "text": "Using the right hand rule, their cross product should point in the negative x direction.",
+        "start": 389.92,
+        "duration": 3.9
+    },
+    {
+        "text": "So the cross product of these two vectors is negative 4 times i-hat.",
+        "start": 396.1,
+        "duration": 3.58
+    },
+    {
+        "text": "For more general computations, there is a formula that you could memorize if you wanted, ",
+        "start": 405.5,
+        "duration": 4.464
+    },
+    {
+        "text": "but it's common and easier to instead remember a certain ",
+        "start": 409.964,
+        "duration": 2.859
+    },
+    {
+        "text": "process involving the 3D determinant.",
+        "start": 412.823,
+        "duration": 1.857
+    },
+    {
+        "text": "Now, this process looks truly strange at first.",
+        "start": 415.34,
+        "duration": 3.18
+    },
+    {
+        "text": "You write down a 3D matrix where the second and ",
+        "start": 419.08,
+        "duration": 2.899
+    },
+    {
+        "text": "third columns contain the coordinates of v and w.",
+        "start": 421.979,
+        "duration": 2.961
+    },
+    {
+        "text": "But for that first column, you write the basis vectors i-hat, j-hat, and k-hat.",
+        "start": 425.56,
+        "duration": 4.92
+    },
+    {
+        "text": "Then you compute the determinant of this matrix.",
+        "start": 431.44,
+        "duration": 2.9
+    },
+    {
+        "text": "The silliness is probably clear here.",
+        "start": 435.3,
+        "duration": 1.64
+    },
+    {
+        "text": "What on earth does it mean to put in a vector as the entry of a matrix?",
+        "start": 437.24,
+        "duration": 3.54
+    },
+    {
+        "text": "Students are often told that this is just a notational trick.",
+        "start": 440.78,
+        "duration": 4.36
+    },
+    {
+        "text": "When you carry out the computations as if i-hat, j-hat, and k-hat were numbers, ",
+        "start": 445.54,
+        "duration": 4.251
+    },
+    {
+        "text": "then you get some linear combination of those basis vectors.",
+        "start": 449.791,
+        "duration": 3.189
+    },
+    {
+        "text": "And the vector defined by that linear combination, students are told to just believe, ",
+        "start": 455.94,
+        "duration": 4.717
+    },
+    {
+        "text": "is the unique vector perpendicular to v and w, ",
+        "start": 460.657,
+        "duration": 2.578
+    },
+    {
+        "text": "whose magnitude is the area of the appropriate parallelogram, ",
+        "start": 463.235,
+        "duration": 3.401
+    },
+    {
+        "text": "and whose direction obeys the right hand rule.",
+        "start": 466.636,
+        "duration": 2.524
+    },
+    {
+        "text": "And sure, in some sense this is just a notational trick, ",
+        "start": 471.4,
+        "duration": 3.333
+    },
+    {
+        "text": "but there is a reason for doing it.",
+        "start": 474.733,
+        "duration": 2.047
+    },
+    {
+        "text": "It's not just a coincidence that the determinant is once again important.",
+        "start": 478.04,
+        "duration": 3.12
+    },
+    {
+        "text": "And putting the basis vectors in those slots is not just a random thing to do.",
+        "start": 481.9,
+        "duration": 3.66
+    },
+    {
+        "text": "To understand where all of this comes from, it helps to ",
+        "start": 486.32,
+        "duration": 2.693
+    },
+    {
+        "text": "use the idea of duality that I introduced in the last video.",
+        "start": 489.013,
+        "duration": 2.887
+    },
+    {
+        "text": "This concept is a little bit heavy though, so I'm putting it in a ",
+        "start": 492.82,
+        "duration": 3.057
+    },
+    {
+        "text": "separate follow-on video for any of you who are curious to learn more.",
+        "start": 495.877,
+        "duration": 3.243
+    },
+    {
+        "text": "Arguably, it falls outside the essence of linear algebra.",
+        "start": 499.98,
+        "duration": 2.94
+    },
+    {
+        "text": "The important part here is to know what that cross ",
+        "start": 503.46,
+        "duration": 2.152
+    },
+    {
+        "text": "product vector geometrically represents.",
+        "start": 505.612,
+        "duration": 1.688
+    },
+    {
+        "text": "So if you want to skip that next video, feel free.",
+        "start": 508.14,
+        "duration": 1.9
+    },
+    {
+        "text": "But for those of you who are willing to go a bit deeper, ",
+        "start": 510.58,
+        "duration": 2.459
+    },
+    {
+        "text": "and who are curious about the connection between this computation and the underlying ",
+        "start": 513.039,
+        "duration": 3.668
+    },
+    {
+        "text": "geometry, the ideas that I'll talk about in the next video are just a really ",
+        "start": 516.707,
+        "duration": 3.323
+    },
+    {
+        "text": "elegant piece of math.",
+        "start": 520.03,
+        "duration": 0.95
+    }
+]

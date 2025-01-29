@@ -1,0 +1,2992 @@
+[
+    {
+        "text": "In a moment, I will ask you a puzzle, and it's a pretty hard puzzle, ",
+        "start": 0.0,
+        "duration": 3.418
+    },
+    {
+        "text": "actually, but before I do, I want to lead with a spoiler, ",
+        "start": 3.418,
+        "duration": 2.874
+    },
+    {
+        "text": "which is the fact that the way we're going to solve this involves the use ",
+        "start": 6.292,
+        "duration": 3.666
+    },
+    {
+        "text": "of complex numbers.",
+        "start": 9.958,
+        "duration": 0.942
+    },
+    {
+        "text": "And once you hear it, you will agree that that seems absurd, ",
+        "start": 11.56,
+        "duration": 2.888
+    },
+    {
+        "text": "given that the puzzle is going to be purely a discrete question.",
+        "start": 14.448,
+        "duration": 3.032
+    },
+    {
+        "text": "It only asks about whole numbers and their sums.",
+        "start": 17.8,
+        "duration": 2.46
+    },
+    {
+        "text": "There's not a whiff of the imaginary or even continuity anywhere on the horizon.",
+        "start": 20.66,
+        "duration": 3.9
+    },
+    {
+        "text": "It's certainly not the only time that complex numbers are ",
+        "start": 25.28,
+        "duration": 2.72
+    },
+    {
+        "text": "unreasonably useful for discrete math, to borrow a phrase.",
+        "start": 28.0,
+        "duration": 2.72
+    },
+    {
+        "text": "The more famous example that I could bring up would be how the modern way that ",
+        "start": 31.16,
+        "duration": 3.525
+    },
+    {
+        "text": "mathematicians understand prime numbers, you know, ",
+        "start": 34.685,
+        "duration": 2.276
+    },
+    {
+        "text": "questions about how they're distributed, their density at certain regions, ",
+        "start": 36.961,
+        "duration": 3.348
+    },
+    {
+        "text": "things like that, well, it involves studying specially designed functions whose ",
+        "start": 40.309,
+        "duration": 3.57
+    },
+    {
+        "text": "inputs and outputs are complex numbers.",
+        "start": 43.879,
+        "duration": 1.741
+    },
+    {
+        "text": "Some of you may know that this is what the famous Riemann hypothesis is all about.",
+        "start": 46.12,
+        "duration": 3.24
+    },
+    {
+        "text": "Basically, there's a specially designed function, and on the face of it, ",
+        "start": 49.68,
+        "duration": 3.108
+    },
+    {
+        "text": "it looks unrelated to the discrete world of primes.",
+        "start": 52.788,
+        "duration": 2.172
+    },
+    {
+        "text": "It's smooth, it's complex valued.",
+        "start": 55.06,
+        "duration": 1.94
+    },
+    {
+        "text": "But under the hood, it encodes all of the information that ",
+        "start": 57.0,
+        "duration": 2.68
+    },
+    {
+        "text": "you could ever want about those discrete prime numbers.",
+        "start": 59.68,
+        "duration": 2.5
+    },
+    {
+        "text": "And most importantly, certain questions about primes are easier to answer by ",
+        "start": 62.6,
+        "duration": 3.756
+    },
+    {
+        "text": "analyzing this function than they would be by directly analyzing the primes themselves.",
+        "start": 66.356,
+        "duration": 4.244
+    },
+    {
+        "text": "Of course, our puzzle, which I promise I'll share in just a moment, ",
+        "start": 71.26,
+        "duration": 2.742
+    },
+    {
+        "text": "is a lot more innocent than the Riemann hypothesis.",
+        "start": 74.002,
+        "duration": 2.058
+    },
+    {
+        "text": "It's a toy problem.",
+        "start": 76.26,
+        "duration": 1.16
+    },
+    {
+        "text": "But at the end of the video, I'll share how the techniques that we use to solve it, ",
+        "start": 77.88,
+        "duration": 3.663
+    },
+    {
+        "text": "the real reason that we're here, are actually pretty similar in spirit ",
+        "start": 81.543,
+        "duration": 3.096
+    },
+    {
+        "text": "to the setup that leads to the Riemann hypothesis.",
+        "start": 84.639,
+        "duration": 2.181
+    },
+    {
+        "text": "And the prime number theorem and that whole circle of thoughts around it.",
+        "start": 87.0,
+        "duration": 3.18
+    },
+    {
+        "text": "Our puzzle for today comes from this book here by T2 Andrescu and Zhu Mingfeng.",
+        "start": 94.9,
+        "duration": 4.48
+    },
+    {
+        "text": "It's basically a collection of problems used in training ",
+        "start": 99.48,
+        "duration": 2.602
+    },
+    {
+        "text": "the USA team for the International Math Olympiad.",
+        "start": 102.082,
+        "duration": 2.238
+    },
+    {
+        "text": "And if we turn to chapter 2, Advanced Problems, ",
+        "start": 104.94,
+        "duration": 2.446
+    },
+    {
+        "text": "problem number 10 asks this seemingly innocent question.",
+        "start": 107.386,
+        "duration": 2.854
+    },
+    {
+        "text": "Find the number of subsets of the set 1 up to 2000, ",
+        "start": 110.92,
+        "duration": 3.64
+    },
+    {
+        "text": "the sum of whose elements is divisible by 5.",
+        "start": 114.56,
+        "duration": 3.08
+    },
+    {
+        "text": "Okay, so that might take a little bit of a moment to parse.",
+        "start": 119.18,
+        "duration": 2.24
+    },
+    {
+        "text": "For example, something like the set 3, 1, 4, that would be a subset.",
+        "start": 121.64,
+        "duration": 3.68
+    },
+    {
+        "text": "All of its elements are also elements in the big set.",
+        "start": 125.66,
+        "duration": 2.4
+    },
+    {
+        "text": "And its sum, 3 plus 1 plus 4 is 8, so that wouldn't be considered.",
+        "start": 128.58,
+        "duration": 3.92
+    },
+    {
+        "text": "That's not in our count.",
+        "start": 132.6,
+        "duration": 0.94
+    },
+    {
+        "text": "Whereas something like the set 2, 3, 5, also a subset, has a sum of 10.",
+        "start": 133.84,
+        "duration": 4.28
+    },
+    {
+        "text": "That is divisible by 5, so it's one that we want to count.",
+        "start": 138.44,
+        "duration": 2.48
+    },
+    {
+        "text": "The preview animation that I had at the start is essentially ",
+        "start": 141.4,
+        "duration": 3.071
+    },
+    {
+        "text": "a brute force program trying to answer this question.",
+        "start": 144.471,
+        "duration": 2.669
+    },
+    {
+        "text": "It will iterate through all of the different possible subsets, ",
+        "start": 147.72,
+        "duration": 3.019
+    },
+    {
+        "text": "finding the sum of each one along the way, and it increments a counter each time that ",
+        "start": 150.739,
+        "duration": 4.122
+    },
+    {
+        "text": "it finds a multiple of 5.",
+        "start": 154.861,
+        "duration": 1.199
+    },
+    {
+        "text": "And you know what, a nice warm-up question here would be to ",
+        "start": 156.76,
+        "duration": 2.809
+    },
+    {
+        "text": "pause and think about how many total subsets are there overall?",
+        "start": 159.569,
+        "duration": 2.951
+    },
+    {
+        "text": "Forget this multiple of 5 stuff.",
+        "start": 162.82,
+        "duration": 1.34
+    },
+    {
+        "text": "How long will it take for this program to terminate?",
+        "start": 164.42,
+        "duration": 2.14
+    },
+    {
+        "text": "Many of you may know, the answer is 2 to the power 2,000.",
+        "start": 168.06,
+        "duration": 3.44
+    },
+    {
+        "text": "The basic idea there is that when you're constructing a subset, ",
+        "start": 172.12,
+        "duration": 3.096
+    },
+    {
+        "text": "you have 2,000 different binary choices you can make.",
+        "start": 175.216,
+        "duration": 2.564
+    },
+    {
+        "text": "Do you include an element or do you not?",
+        "start": 178.0,
+        "duration": 1.48
+    },
+    {
+        "text": "And all of those choices are independent of each other, ",
+        "start": 180.08,
+        "duration": 2.904
+    },
+    {
+        "text": "so the total number of choices you have in constructing a subset is 2 times 2 times 2 ",
+        "start": 182.984,
+        "duration": 4.46
+    },
+    {
+        "text": "times 2 on and on 2,000 times.",
+        "start": 187.444,
+        "duration": 1.556
+    },
+    {
+        "text": "And thinking about our program, that is a monstrously huge number.",
+        "start": 189.8,
+        "duration": 3.44
+    },
+    {
+        "text": "So even if we gave this brute forcing approach all the time in the universe, ",
+        "start": 193.62,
+        "duration": 3.241
+    },
+    {
+        "text": "with all the physical resources the universe could conceivably provide, ",
+        "start": 196.861,
+        "duration": 3.031
+    },
+    {
+        "text": "it wouldn't even come close, it wouldn't scratch the surface.",
+        "start": 199.892,
+        "duration": 2.568
+    },
+    {
+        "text": "Obviously we have to be a lot cleverer than that.",
+        "start": 203.06,
+        "duration": 2.12
+    },
+    {
+        "text": "And if you were to just guess what the answer should be, make a rough approximation, ",
+        "start": 205.56,
+        "duration": 3.39
+    },
+    {
+        "text": "you'd probably guess, you know, it should be around a fifth of all the total subsets.",
+        "start": 208.95,
+        "duration": 3.39
+    },
+    {
+        "text": "There's probably a roughly even distribution of all these sums mod 5.",
+        "start": 212.54,
+        "duration": 3.04
+    },
+    {
+        "text": "And yes, that is true, that's a decent approximation.",
+        "start": 216.0,
+        "duration": 2.08
+    },
+    {
+        "text": "But the heart of the question, the real challenge here, is to get a precise answer.",
+        "start": 218.5,
+        "duration": 3.72
+    },
+    {
+        "text": "This can't be the actual answer since it's not an integer, ",
+        "start": 222.72,
+        "duration": 2.672
+    },
+    {
+        "text": "but is the true answer a little bit more or a little bit less?",
+        "start": 225.392,
+        "duration": 2.808
+    },
+    {
+        "text": "Or maybe it's a lot more or a lot less.",
+        "start": 228.52,
+        "duration": 1.82
+    },
+    {
+        "text": "What tactics could you possibly use to figure out that error?",
+        "start": 230.6,
+        "duration": 2.94
+    },
+    {
+        "text": "To be clear, this lesson is definitely much more about the journey than the destination.",
+        "start": 235.68,
+        "duration": 3.86
+    },
+    {
+        "text": "Will you ever need to filter and count subsets in this way?",
+        "start": 240.26,
+        "duration": 2.56
+    },
+    {
+        "text": "Almost certainly not, I wouldn't expect so.",
+        "start": 243.3,
+        "duration": 1.86
+    },
+    {
+        "text": "But toy problem or not, it is a legitimately challenging question, ",
+        "start": 245.36,
+        "duration": 3.393
+    },
+    {
+        "text": "and navigating that challenge develops skills that are relevant to other sorts of ",
+        "start": 248.753,
+        "duration": 4.152
+    },
+    {
+        "text": "challenging questions.",
+        "start": 252.905,
+        "duration": 1.115
+    },
+    {
+        "text": "For you and me, there are at least two very surprising and very beautiful ",
+        "start": 254.02,
+        "duration": 3.543
+    },
+    {
+        "text": "twists and turns that the solution I'd like to share with you takes.",
+        "start": 257.563,
+        "duration": 3.257
+    },
+    {
+        "text": "I've already tipped my hand that complex numbers will make a surprise appearance, ",
+        "start": 261.3,
+        "duration": 3.81
+    },
+    {
+        "text": "but before we even get to that, there is another strange turn, ",
+        "start": 265.11,
+        "duration": 2.927
+    },
+    {
+        "text": "which is arguably even weirder and even more unexpected.",
+        "start": 268.037,
+        "duration": 2.603
+    },
+    {
+        "text": "To set the stage though, let's just get our bearings with the puzzle, ",
+        "start": 271.3,
+        "duration": 3.157
+    },
+    {
+        "text": "and do what all good problem solvers should do, and start with a simpler example, ",
+        "start": 274.457,
+        "duration": 3.698
+    },
+    {
+        "text": "maybe just trying it with the set 1, 2, 3, 4, 5.",
+        "start": 278.155,
+        "duration": 2.165
+    },
+    {
+        "text": "If you were solving this problem with pencil and paper, you know, ",
+        "start": 280.98,
+        "duration": 3.024
+    },
+    {
+        "text": "you're one of these kids training for the IMO, ",
+        "start": 284.004,
+        "duration": 2.154
+    },
+    {
+        "text": "it's not a bad idea to simply list out all 2 to the 5 subsets.",
+        "start": 286.158,
+        "duration": 2.842
+    },
+    {
+        "text": "It's only 32, it's not that many.",
+        "start": 289.34,
+        "duration": 1.9
+    },
+    {
+        "text": "There's different ways that you might want to organize all of these in your mind, ",
+        "start": 295.68,
+        "duration": 3.725
+    },
+    {
+        "text": "but since the thing that we care about is their sum, ",
+        "start": 299.405,
+        "duration": 2.409
+    },
+    {
+        "text": "the natural thing to do would be to go through all of them one by one and ",
+        "start": 301.814,
+        "duration": 3.362
+    },
+    {
+        "text": "compute those sums.",
+        "start": 305.176,
+        "duration": 0.864
+    },
+    {
+        "text": "Over here, just doing it on YouTube, I've got a computer, ",
+        "start": 306.52,
+        "duration": 2.299
+    },
+    {
+        "text": "so I'll cheat a little and show what all their sums are.",
+        "start": 308.819,
+        "duration": 2.221
+    },
+    {
+        "text": "I'll also cheat a little bit and rearrange all of these, ",
+        "start": 311.04,
+        "duration": 2.964
+    },
+    {
+        "text": "organizing them suggestively into collections that all have the same sum.",
+        "start": 314.004,
+        "duration": 3.796
+    },
+    {
+        "text": "For instance, there are 3 distinct subsets that add up to 6, ",
+        "start": 318.5,
+        "duration": 2.941
+    },
+    {
+        "text": "and they'll all sit in this little box, and the 3 subsets adding up to 10 will all ",
+        "start": 321.441,
+        "duration": 4.001
+    },
+    {
+        "text": "live in this little box.",
+        "start": 325.442,
+        "duration": 1.158
+    },
+    {
+        "text": "And all in all, the ones that we care about, the subsets with a sum divisible by 5, ",
+        "start": 327.26,
+        "duration": 3.99
+    },
+    {
+        "text": "have been put over here on the left, and it looks like there's a total of 8 of them.",
+        "start": 331.25,
+        "duration": 3.99
+    },
+    {
+        "text": "Oh, and by the way, I should say we are counting the empty set, ",
+        "start": 336.34,
+        "duration": 3.378
+    },
+    {
+        "text": "we consider its sum to be 0, and we consider that to be a multiple of 5.",
+        "start": 339.718,
+        "duration": 3.802
+    },
+    {
+        "text": "By the end, I hope you'll agree all of those are abundantly natural choices to make.",
+        "start": 343.94,
+        "duration": 3.4
+    },
+    {
+        "text": "Take a moment to compare this answer to what you might expect heuristically.",
+        "start": 348.14,
+        "duration": 3.12
+    },
+    {
+        "text": "Out of all 32 total subsets, a fifth of that would have been 6.4, ",
+        "start": 351.8,
+        "duration": 3.634
+    },
+    {
+        "text": "so at least in this small example, the true answer is a little bit bigger than that.",
+        "start": 355.434,
+        "duration": 4.626
+    },
+    {
+        "text": "That's maybe something you want to talk in the back of your mind.",
+        "start": 360.36,
+        "duration": 2.18
+    },
+    {
+        "text": "Okay, and this is the part of the video where, ",
+        "start": 363.72,
+        "duration": 2.296
+    },
+    {
+        "text": "I'll be honest with you, I have no idea how to motivate it.",
+        "start": 366.016,
+        "duration": 2.884
+    },
+    {
+        "text": "Personally, I like it when math feels like something you could have discovered yourself, ",
+        "start": 368.9,
+        "duration": 3.633
+    },
+    {
+        "text": "and if you and I were sitting down together solving this problem, ",
+        "start": 372.533,
+        "duration": 2.694
+    },
+    {
+        "text": "I think there's all sorts of natural steps that you might take.",
+        "start": 375.227,
+        "duration": 2.573
+    },
+    {
+        "text": "Maybe you try to understand if there's some sort of structure to the subsets, ",
+        "start": 378.24,
+        "duration": 3.555
+    },
+    {
+        "text": "or you play around with how these sums are distributed mod 5 at many different iterations ",
+        "start": 381.795,
+        "duration": 4.103
+    },
+    {
+        "text": "for other small examples, and from that maybe you try to eke out some kind of proof by ",
+        "start": 385.898,
+        "duration": 3.966
+    },
+    {
+        "text": "induction.",
+        "start": 389.864,
+        "duration": 0.456
+    },
+    {
+        "text": "When I shared an early version of this lesson with some patrons, ",
+        "start": 391.04,
+        "duration": 2.381
+    },
+    {
+        "text": "people brought up some nice linear algebra approaches.",
+        "start": 393.421,
+        "duration": 1.979
+    },
+    {
+        "text": "All those are well and good, nothing wrong with those.",
+        "start": 395.72,
+        "duration": 1.86
+    },
+    {
+        "text": "But instead, my goal here is to teach you about something called a generating function.",
+        "start": 397.58,
+        "duration": 4.08
+    },
+    {
+        "text": "And it's one of those tactics where after the fact you can think, okay, ",
+        "start": 402.12,
+        "duration": 3.401
+    },
+    {
+        "text": "yeah, I get that this works, but how on earth would you have thought of that?",
+        "start": 405.521,
+        "duration": 3.639
+    },
+    {
+        "text": "Honestly, I don't know.",
+        "start": 409.92,
+        "duration": 1.22
+    },
+    {
+        "text": "There's a time in your life before you understand generating functions, and a time after, ",
+        "start": 411.42,
+        "duration": 3.827
+    },
+    {
+        "text": "and I can't think of anything that connects them other than a leap of faith.",
+        "start": 415.247,
+        "duration": 3.233
+    },
+    {
+        "text": "I'm going to ask you to consider the polynomial 1 plus x times 1 plus x squared ",
+        "start": 419.38,
+        "duration": 4.658
+    },
+    {
+        "text": "times 1 plus x cubed times 1 plus x to the fourth times 1 plus x to the fifth.",
+        "start": 424.038,
+        "duration": 4.542
+    },
+    {
+        "text": "Now, I know you could rightfully ask, where does this come from?",
+        "start": 428.98,
+        "duration": 2.56
+    },
+    {
+        "text": "What do polynomials have to do with things?",
+        "start": 431.58,
+        "duration": 1.58
+    },
+    {
+        "text": "What is the variable x even supposed to represent right now?",
+        "start": 433.52,
+        "duration": 2.82
+    },
+    {
+        "text": "And essentially x is purely a symbol.",
+        "start": 437.16,
+        "duration": 1.96
+    },
+    {
+        "text": "The only reason that we've written a polynomial here is that the act of algebraically ",
+        "start": 439.44,
+        "duration": 4.732
+    },
+    {
+        "text": "expanding it is going to completely mirror the act of constructing subsets.",
+        "start": 444.172,
+        "duration": 4.128
+    },
+    {
+        "text": "And, importantly, this grouping that we want, where subsets with the same ",
+        "start": 448.3,
+        "duration": 4.253
+    },
+    {
+        "text": "sum are all bunched together, kind of happens automatically when you do this.",
+        "start": 452.553,
+        "duration": 4.427
+    },
+    {
+        "text": "And let me show you what I mean.",
+        "start": 457.4,
+        "duration": 1.04
+    },
+    {
+        "text": "When you expand out this expression, it basically ",
+        "start": 459.02,
+        "duration": 2.472
+    },
+    {
+        "text": "comes down to making five binary choices.",
+        "start": 461.492,
+        "duration": 2.028
+    },
+    {
+        "text": "Which term from each parenthetical do you choose?",
+        "start": 463.8,
+        "duration": 2.0
+    },
+    {
+        "text": "If you choose the 1 from each of those parentheticals, ",
+        "start": 466.6,
+        "duration": 2.713
+    },
+    {
+        "text": "that will correspond to the empty set where we don't choose any of the elements.",
+        "start": 469.313,
+        "duration": 3.947
+    },
+    {
+        "text": "Whereas if I choose the x to the 1 term and then ones from everything else, ",
+        "start": 473.98,
+        "duration": 3.83
+    },
+    {
+        "text": "that will correspond to the singleton set that just contains the number 1.",
+        "start": 477.81,
+        "duration": 3.73
+    },
+    {
+        "text": "Similarly, if I choose the x squared term but ones from everything else, ",
+        "start": 482.2,
+        "duration": 3.557
+    },
+    {
+        "text": "that corresponds to the set just containing 2.",
+        "start": 485.757,
+        "duration": 2.243
+    },
+    {
+        "text": "Just choosing the x cubed term corresponds to the set just containing the number 3.",
+        "start": 488.52,
+        "duration": 3.8
+    },
+    {
+        "text": "But, interestingly, notice what happens if I choose the x to the ",
+        "start": 493.1,
+        "duration": 3.35
+    },
+    {
+        "text": "1 term and the x squared term and then ones from everything else.",
+        "start": 496.45,
+        "duration": 3.35
+    },
+    {
+        "text": "This corresponds to the choice of the subset that ",
+        "start": 500.28,
+        "duration": 2.684
+    },
+    {
+        "text": "has 1 and 2 and nothing from everything else.",
+        "start": 502.964,
+        "duration": 2.416
+    },
+    {
+        "text": "But in the polynomial, the way it expands looks like x cubed.",
+        "start": 505.38,
+        "duration": 4.74
+    },
+    {
+        "text": "So we have two different x cubed terms, each of which came from a subset whose sum was 3.",
+        "start": 510.26,
+        "duration": 5.1
+    },
+    {
+        "text": "And honestly, the pattern that I'm going for here is one that's ",
+        "start": 516.08,
+        "duration": 2.66
+    },
+    {
+        "text": "probably easiest if you just take the time to pause and think ",
+        "start": 518.74,
+        "duration": 2.576
+    },
+    {
+        "text": "through for yourself what happens when you expand everything here.",
+        "start": 521.316,
+        "duration": 2.743
+    },
+    {
+        "text": "Essentially, every possible subset corresponds to one of the terms in this expansion.",
+        "start": 524.66,
+        "duration": 4.36
+    },
+    {
+        "text": "And then the critical point is that the exponent in the term that you ",
+        "start": 529.68,
+        "duration": 3.682
+    },
+    {
+        "text": "get from that expansion equals the sum of that corresponding subset.",
+        "start": 533.362,
+        "duration": 3.578
+    },
+    {
+        "text": "Kind of confusing when you say it out loud, but again if you just ",
+        "start": 537.6,
+        "duration": 2.34
+    },
+    {
+        "text": "kind of think it through yourself I think you can see what I mean.",
+        "start": 539.94,
+        "duration": 2.34
+    },
+    {
+        "text": "For example, when all of the dust settles and we collect all 32 terms here, ",
+        "start": 542.62,
+        "duration": 4.337
+    },
+    {
+        "text": "three of those terms are x to the 10th, and each of those came ",
+        "start": 546.957,
+        "duration": 3.595
+    },
+    {
+        "text": "from a choice of elements whose sum was equal to 10.",
+        "start": 550.552,
+        "duration": 2.968
+    },
+    {
+        "text": "Now normally when we write a polynomial, we collect together all like terms.",
+        "start": 554.54,
+        "duration": 3.86
+    },
+    {
+        "text": "Instead of having three copies of x to the 10th, ",
+        "start": 558.68,
+        "duration": 2.542
+    },
+    {
+        "text": "we would just see the coefficient 3 in front of x to the 10th.",
+        "start": 561.222,
+        "duration": 3.218
+    },
+    {
+        "text": "So each of these coefficients is a way of encoding ",
+        "start": 564.44,
+        "duration": 2.791
+    },
+    {
+        "text": "the number of subsets with a particular sum.",
+        "start": 567.231,
+        "duration": 2.409
+    },
+    {
+        "text": "So this, like I said at the start, is an example of something called a generating ",
+        "start": 570.46,
+        "duration": 4.064
+    },
+    {
+        "text": "function, where the idea is if you have some question with an answer associated with ",
+        "start": 574.524,
+        "duration": 4.212
+    },
+    {
+        "text": "each positive integer, so in our case how many subsets add up to a particular value.",
+        "start": 578.736,
+        "duration": 4.164
+    },
+    {
+        "text": "When you construct a polynomial whose coefficients correspond to the answers to ",
+        "start": 583.48,
+        "duration": 4.12
+    },
+    {
+        "text": "that question, you can get a surprising amount of insight from your original ",
+        "start": 587.6,
+        "duration": 3.967
+    },
+    {
+        "text": "question by mathematically manipulating and analyzing the properties of this polynomial.",
+        "start": 591.567,
+        "duration": 4.533
+    },
+    {
+        "text": "There are tons and tons of examples of generating functions, ",
+        "start": 596.66,
+        "duration": 2.888
+    },
+    {
+        "text": "but just to bring up one other one which is especially fun, ",
+        "start": 599.548,
+        "duration": 2.842
+    },
+    {
+        "text": "you can use the same idea to study Fibonacci numbers.",
+        "start": 602.39,
+        "duration": 2.51
+    },
+    {
+        "text": "So all the coefficients of this polynomial will be Fibonacci numbers, ",
+        "start": 605.34,
+        "duration": 3.192
+    },
+    {
+        "text": "and in this case it's an infinite polynomial, so I should really be calling it a ",
+        "start": 608.532,
+        "duration": 3.695
+    },
+    {
+        "text": "power series.",
+        "start": 612.227,
+        "duration": 0.593
+    },
+    {
+        "text": "I won't fully explain the details here, but I will ",
+        "start": 613.52,
+        "duration": 2.128
+    },
+    {
+        "text": "leave them up on the screen for anyone who's curious.",
+        "start": 615.648,
+        "duration": 2.212
+    },
+    {
+        "text": "Basic idea is that the rule that's used to define Fibonacci numbers, ",
+        "start": 618.22,
+        "duration": 3.47
+    },
+    {
+        "text": "each one being the sum of the previous two, can be expressed as an equation in terms ",
+        "start": 621.69,
+        "duration": 4.275
+    },
+    {
+        "text": "of this function.",
+        "start": 625.965,
+        "duration": 0.855
+    },
+    {
+        "text": "That equation in turn lets you write that function in an alternate form.",
+        "start": 627.58,
+        "duration": 3.62
+    },
+    {
+        "text": "And then, and here's most of the details I'm skipping over, if you manipulate that, ",
+        "start": 632.18,
+        "duration": 3.932
+    },
+    {
+        "text": "you know, throw in a little partial fraction decomposition here, ",
+        "start": 636.112,
+        "duration": 3.043
+    },
+    {
+        "text": "a little bit of geometric series power expansion there, ",
+        "start": 639.155,
+        "duration": 2.621
+    },
+    {
+        "text": "you can get yourself an exact closed form expression for each individual Fibonacci ",
+        "start": 641.776,
+        "duration": 3.886
+    },
+    {
+        "text": "number, which is really cool.",
+        "start": 645.662,
+        "duration": 1.358
+    },
+    {
+        "text": "I mentioned this really just to show the tip of the iceberg of the fact that ",
+        "start": 647.58,
+        "duration": 3.79
+    },
+    {
+        "text": "this idea of a generating function goes way, way beyond our particular example.",
+        "start": 651.37,
+        "duration": 3.89
+    },
+    {
+        "text": "Now, in our particular problem, if we extend from the simple example with ",
+        "start": 656.46,
+        "duration": 4.245
+    },
+    {
+        "text": "just 12345 to the big example with all the numbers up to 2000, ",
+        "start": 660.705,
+        "duration": 3.615
+    },
+    {
+        "text": "our corresponding generating function involves these 2000 different binomial terms, ",
+        "start": 664.32,
+        "duration": 4.819
+    },
+    {
+        "text": "you know, 1 plus x, 1 plus x squared, on and on, up to 1 plus x to the 2000.",
+        "start": 669.139,
+        "duration": 4.361
+    },
+    {
+        "text": "And the idea is that if you were to expand this, ",
+        "start": 673.5,
+        "duration": 2.911
+    },
+    {
+        "text": "the coefficients tell us all the information we want.",
+        "start": 676.411,
+        "duration": 3.149
+    },
+    {
+        "text": "Now, it would be insane to actually expand it, ",
+        "start": 680.06,
+        "duration": 2.143
+    },
+    {
+        "text": "but it is helpful to keep in the back of your mind, in principle, ",
+        "start": 682.203,
+        "duration": 3.011
+    },
+    {
+        "text": "what that would look like.",
+        "start": 685.214,
+        "duration": 1.186
+    },
+    {
+        "text": "For example, in principle, if you expanded it, ",
+        "start": 686.8,
+        "duration": 2.695
+    },
+    {
+        "text": "you would find that the coefficient in front of the x to the 25th term happens to be 142.",
+        "start": 689.495,
+        "duration": 5.105
+    },
+    {
+        "text": "And this corresponds to the fact that there are ",
+        "start": 695.52,
+        "duration": 3.228
+    },
+    {
+        "text": "142 distinct subsets that have a sum of 25.",
+        "start": 698.748,
+        "duration": 2.892
+    },
+    {
+        "text": "So the art of analyzing a generating function here will be to deduce ",
+        "start": 702.28,
+        "duration": 4.334
+    },
+    {
+        "text": "facts about these coefficients without actually expanding the expression.",
+        "start": 706.614,
+        "duration": 4.586
+    },
+    {
+        "text": "So moving forward, I'm just going to write this expansion more abstractly, ",
+        "start": 715.88,
+        "duration": 4.061
+    },
+    {
+        "text": "just a sum from n equals 0 up to capital N, where c sub n tells us the coefficients that ",
+        "start": 719.941,
+        "duration": 4.82
+    },
+    {
+        "text": "we don't know.",
+        "start": 724.761,
+        "duration": 0.759
+    },
+    {
+        "text": "All of that starts off as a black box to us.",
+        "start": 725.88,
+        "duration": 2.18
+    },
+    {
+        "text": "And moving forward, we're going to start treating this as an actual function, ",
+        "start": 728.36,
+        "duration": 3.183
+    },
+    {
+        "text": "something where we plug in x, we see what the output is, and then we ask, ",
+        "start": 731.543,
+        "duration": 3.019
+    },
+    {
+        "text": "what does that tell us about the coefficients?",
+        "start": 734.562,
+        "duration": 1.878
+    },
+    {
+        "text": "For example, a very easy input would be to plug in something like x equals 0.",
+        "start": 737.06,
+        "duration": 3.56
+    },
+    {
+        "text": "In that case, importantly, we know how to evaluate it using the factored form above.",
+        "start": 741.12,
+        "duration": 3.98
+    },
+    {
+        "text": "If you plug in x equals 0 for everything, all of the terms look like 1, ",
+        "start": 745.38,
+        "duration": 3.671
+    },
+    {
+        "text": "so the answer is 1.",
+        "start": 749.051,
+        "duration": 0.969
+    },
+    {
+        "text": "And in the expanded form, all of those terms involving an x will get killed, ",
+        "start": 750.36,
+        "duration": 3.77
+    },
+    {
+        "text": "they go to 0, leaving us just with the first term, c sub 0.",
+        "start": 754.13,
+        "duration": 2.89
+    },
+    {
+        "text": "Now, in this case, that doesn't really tell us anything all that exciting.",
+        "start": 757.8,
+        "duration": 2.8
+    },
+    {
+        "text": "It essentially translates to saying there is a single empty set, ",
+        "start": 760.6,
+        "duration": 3.217
+    },
+    {
+        "text": "but we're just getting our feet wet.",
+        "start": 763.817,
+        "duration": 1.783
+    },
+    {
+        "text": "As the next example, take a moment to think about evaluating f at 1.",
+        "start": 766.04,
+        "duration": 3.6
+    },
+    {
+        "text": "This is something we can do with the expression we know, ",
+        "start": 770.46,
+        "duration": 3.084
+    },
+    {
+        "text": "when you plug in 1 for all of these x's, every term looks like a 2, so in total, ",
+        "start": 773.544,
+        "duration": 4.383
+    },
+    {
+        "text": "we get 2 multiplied by itself 2,000 times.",
+        "start": 777.927,
+        "duration": 2.273
+    },
+    {
+        "text": "On the other hand, in the expanded expression, if you plug in x equals 1, ",
+        "start": 780.72,
+        "duration": 3.802
+    },
+    {
+        "text": "all of these powers of x go to 1, so we're essentially adding up all of the coefficients, ",
+        "start": 784.522,
+        "duration": 4.625
+    },
+    {
+        "text": "which is pretty cool when you think about it.",
+        "start": 789.147,
+        "duration": 2.313
+    },
+    {
+        "text": "Just by evaluating the function at a single number, ",
+        "start": 791.74,
+        "duration": 2.562
+    },
+    {
+        "text": "we can deduce what the sum of all of the coefficients are.",
+        "start": 794.302,
+        "duration": 2.858
+    },
+    {
+        "text": "Now, again, in our particular example, it's not all that exciting, ",
+        "start": 797.68,
+        "duration": 3.494
+    },
+    {
+        "text": "because we already know what the sum of these coefficients are.",
+        "start": 801.174,
+        "duration": 3.286
+    },
+    {
+        "text": "Remember, each coefficient counts how many subsets have a certain sum, ",
+        "start": 804.96,
+        "duration": 3.391
+    },
+    {
+        "text": "and so when you add them up, we're just counting all of the subsets, ",
+        "start": 808.351,
+        "duration": 3.297
+    },
+    {
+        "text": "which we know to be 2 to the 2,000.",
+        "start": 811.648,
+        "duration": 1.672
+    },
+    {
+        "text": "However, I can give you a genuinely new fact if ",
+        "start": 814.22,
+        "duration": 2.497
+    },
+    {
+        "text": "I ask you to evaluate this function at negative 1.",
+        "start": 816.717,
+        "duration": 2.603
+    },
+    {
+        "text": "Take a moment to think about what that means.",
+        "start": 819.72,
+        "duration": 1.5
+    },
+    {
+        "text": "If you plug in negative 1, again, we start with the thing we know, ",
+        "start": 823.34,
+        "duration": 2.999
+    },
+    {
+        "text": "the factored expression up top, and here, all you need is to look at the first term.",
+        "start": 826.339,
+        "duration": 3.761
+    },
+    {
+        "text": "When you plug in x, the first parenthetical goes to 0, ",
+        "start": 830.44,
+        "duration": 2.792
+    },
+    {
+        "text": "so the whole expression has to be 0.",
+        "start": 833.232,
+        "duration": 1.828
+    },
+    {
+        "text": "But what does that tell you when we apply it to the expanded expression, ",
+        "start": 835.64,
+        "duration": 3.246
+    },
+    {
+        "text": "using all of the coefficients?",
+        "start": 838.886,
+        "duration": 1.334
+    },
+    {
+        "text": "And in the spirit of being as suggestive as possible of the strange ",
+        "start": 840.72,
+        "duration": 3.383
+    },
+    {
+        "text": "turns that this solution takes, I want you to really visualize the ",
+        "start": 844.103,
+        "duration": 3.334
+    },
+    {
+        "text": "various powers of negative 1 in this expression in terms of rotations.",
+        "start": 847.437,
+        "duration": 3.483
+    },
+    {
+        "text": "The first term, negative 1 to the 0, is just 1, ",
+        "start": 851.46,
+        "duration": 2.368
+    },
+    {
+        "text": "which we'll picture as a vector from 0 to 1.",
+        "start": 853.828,
+        "duration": 2.172
+    },
+    {
+        "text": "Then negative 1 to the first power is just negative 1 itself, ",
+        "start": 856.58,
+        "duration": 3.496
+    },
+    {
+        "text": "which I want you to be thinking about as a 180-degree rotation away from that last term.",
+        "start": 860.076,
+        "duration": 4.964
+    },
+    {
+        "text": "Then when we take negative 1 squared, that's positive 1.",
+        "start": 865.54,
+        "duration": 2.76
+    },
+    {
+        "text": "Again, a 180-degree rotation.",
+        "start": 868.54,
+        "duration": 2.04
+    },
+    {
+        "text": "And in general, each successive term here looks like another rotation by 180 degrees.",
+        "start": 870.58,
+        "duration": 5.24
+    },
+    {
+        "text": "Algebraically, what this translates to is that we have an oscillating sum between the ",
+        "start": 876.18,
+        "duration": 3.774
+    },
+    {
+        "text": "even coefficients and the odd coefficients, but keep the visual in the back of your mind.",
+        "start": 879.954,
+        "duration": 3.906
+    },
+    {
+        "text": "This expression is true for any generating function, but again, ",
+        "start": 884.26,
+        "duration": 3.266
+    },
+    {
+        "text": "for our special generating function, we know that this value, this alternating sum, ",
+        "start": 887.526,
+        "duration": 4.288
+    },
+    {
+        "text": "should equal 0.",
+        "start": 891.814,
+        "duration": 0.766
+    },
+    {
+        "text": "And a way you can interpret that is that it's telling you there's an ",
+        "start": 893.04,
+        "duration": 2.93
+    },
+    {
+        "text": "equal balance between the even coefficients and the odd coefficients.",
+        "start": 895.97,
+        "duration": 2.93
+    },
+    {
+        "text": "And remember, maybe in the context of our smaller example, ",
+        "start": 899.46,
+        "duration": 3.53
+    },
+    {
+        "text": "these coefficients are encoding for us facts about subsets.",
+        "start": 902.99,
+        "duration": 3.53
+    },
+    {
+        "text": "So if there's an equal balance between all those even coefficients ",
+        "start": 906.76,
+        "duration": 3.314
+    },
+    {
+        "text": "and the odd coefficients, it's telling you that half of all the subsets have an even sum, ",
+        "start": 910.074,
+        "duration": 4.453
+    },
+    {
+        "text": "and half of them have an odd sum.",
+        "start": 914.527,
+        "duration": 1.633
+    },
+    {
+        "text": "That's probably what you would expect, but it's not obvious at first how you ",
+        "start": 916.66,
+        "duration": 3.283
+    },
+    {
+        "text": "would show that, and with the generating function, it just kind of pops right out.",
+        "start": 919.943,
+        "duration": 3.497
+    },
+    {
+        "text": "And again, to be suggestive of where we're going, ",
+        "start": 924.48,
+        "duration": 2.641
+    },
+    {
+        "text": "let me rewrite this a little bit by taking the last two things we evaluated, ",
+        "start": 927.121,
+        "duration": 4.068
+    },
+    {
+        "text": "add up those two, and then divide by one half.",
+        "start": 931.189,
+        "duration": 2.431
+    },
+    {
+        "text": "If you think about it, this is a way of filtering out all of ",
+        "start": 935.1,
+        "duration": 3.064
+    },
+    {
+        "text": "the even coefficients and killing all of the odd coefficients.",
+        "start": 938.164,
+        "duration": 3.116
+    },
+    {
+        "text": "So it becomes an especially clean way to write the fact that the sum of ",
+        "start": 941.9,
+        "duration": 3.291
+    },
+    {
+        "text": "all of the even coefficients, which again in the back of your mind means ",
+        "start": 945.191,
+        "duration": 3.337
+    },
+    {
+        "text": "the total number of subsets with an even sum, will look like half of the total.",
+        "start": 948.528,
+        "duration": 3.612
+    },
+    {
+        "text": "This is, needless to say, tantalizingly close to the actual question we want to answer.",
+        "start": 952.62,
+        "duration": 4.48
+    },
+    {
+        "text": "What we would like to do is find some clever thing that we can do to the function f, ",
+        "start": 957.1,
+        "duration": 4.47
+    },
+    {
+        "text": "some well-chosen numbers to evaluate it on, so that we get all ",
+        "start": 961.57,
+        "duration": 3.313
+    },
+    {
+        "text": "the coefficients corresponding to multiples of 5.",
+        "start": 964.883,
+        "duration": 2.577
+    },
+    {
+        "text": "Again, thinking back to what these coefficients encode for us, ",
+        "start": 968.0,
+        "duration": 2.772
+    },
+    {
+        "text": "that will be answering our final question.",
+        "start": 970.772,
+        "duration": 1.848
+    },
+    {
+        "text": "That will be counting the total number of subsets whose sum is divisible by 5.",
+        "start": 972.76,
+        "duration": 4.1
+    },
+    {
+        "text": "The trick to doing this is to generalize what we just did, ",
+        "start": 978.9,
+        "duration": 2.972
+    },
+    {
+        "text": "where the successive powers of the input were rotating back and forth.",
+        "start": 981.872,
+        "duration": 3.528
+    },
+    {
+        "text": "But this time we don't want them to rotate every other time, ",
+        "start": 985.9,
+        "duration": 2.936
+    },
+    {
+        "text": "we'd like them to somehow rotate with a period of 5.",
+        "start": 988.836,
+        "duration": 2.504
+    },
+    {
+        "text": "And to do that, we extend into the complex plane.",
+        "start": 991.74,
+        "duration": 2.48
+    },
+    {
+        "text": "You see, up there we can find a value so that as we take successive powers of it, ",
+        "start": 994.64,
+        "duration": 4.767
+    },
+    {
+        "text": "it will rotate by a fifth of a turn, giving us a process with a frequency of 5.",
+        "start": 999.407,
+        "duration": 4.593
+    },
+    {
+        "text": "And if you step back, I know that it's kind of absurd ",
+        "start": 1004.7,
+        "duration": 2.468
+    },
+    {
+        "text": "that I'm asking you to think about complex numbers.",
+        "start": 1007.168,
+        "duration": 2.332
+    },
+    {
+        "text": "I mean, we started with a counting question, it's discrete math, ",
+        "start": 1009.86,
+        "duration": 3.046
+    },
+    {
+        "text": "but hopefully it's not all that wild.",
+        "start": 1012.906,
+        "duration": 1.734
+    },
+    {
+        "text": "And again, the reason that I'm drawing things out to tee up the various strange turns in ",
+        "start": 1015.4,
+        "duration": 4.199
+    },
+    {
+        "text": "the solution is that they're actually not all that strange in the broader scheme of math.",
+        "start": 1019.599,
+        "duration": 4.201
+    },
+    {
+        "text": "The trick we're about to apply has a heavy resemblance to many other instances ",
+        "start": 1024.14,
+        "duration": 4.162
+    },
+    {
+        "text": "of using complex numbers to better understand discrete questions of integers.",
+        "start": 1028.302,
+        "duration": 4.057
+    },
+    {
+        "text": "So the more it feels like something that you could have discovered yourself, ",
+        "start": 1032.74,
+        "duration": 3.634
+    },
+    {
+        "text": "the more it might actually be the case that when you're working on some ",
+        "start": 1036.374,
+        "duration": 3.399
+    },
+    {
+        "text": "future problem in this circle of thoughts, you will discover it yourself.",
+        "start": 1039.773,
+        "duration": 3.447
+    },
+    {
+        "text": "The complex number To be specific, the complex number that I care about is one ",
+        "start": 1048.56,
+        "duration": 3.813
+    },
+    {
+        "text": "that I'm going to label zeta, and it sits a fifth of a turn around the unit circle.",
+        "start": 1052.373,
+        "duration": 4.007
+    },
+    {
+        "text": "So its angle is 2 pi fifths radians, and its magnitude is one.",
+        "start": 1056.78,
+        "duration": 4.56
+    },
+    {
+        "text": "This means with the standard Euler's formula notation, ",
+        "start": 1062.06,
+        "duration": 3.064
+    },
+    {
+        "text": "we would write that number explicitly as e to the power 2 pi i divided by 5.",
+        "start": 1065.124,
+        "duration": 4.236
+    },
+    {
+        "text": "If you're not as comfortable with that notation, ",
+        "start": 1069.64,
+        "duration": 2.768
+    },
+    {
+        "text": "you could think of it as something whose real part is the cosine of 72 degrees, ",
+        "start": 1072.408,
+        "duration": 4.519
+    },
+    {
+        "text": "72 being a fifth of a full turn, and the imaginary part is the sine of 72 degrees.",
+        "start": 1076.927,
+        "duration": 4.633
+    },
+    {
+        "text": "But to be honest, you don't actually need to think about the explicit value.",
+        "start": 1082.54,
+        "duration": 3.4
+    },
+    {
+        "text": "Instead, the important thing to focus on is the property that powers of this number have.",
+        "start": 1086.2,
+        "duration": 4.38
+    },
+    {
+        "text": "For example, when you square it, because its magnitude was one, ",
+        "start": 1091.1,
+        "duration": 3.146
+    },
+    {
+        "text": "the magnitude of its square is also one, but it rotates a fifth of ",
+        "start": 1094.246,
+        "duration": 3.295
+    },
+    {
+        "text": "a turn around the unit circle, so it now sits two fifths of a turn around.",
+        "start": 1097.541,
+        "duration": 3.639
+    },
+    {
+        "text": "Similarly, when you raise it to the third power, ",
+        "start": 1102.28,
+        "duration": 2.117
+    },
+    {
+        "text": "you end up three fifths of a turn around, raise it to the fourth power, ",
+        "start": 1104.397,
+        "duration": 3.111
+    },
+    {
+        "text": "you end up four fifths of a turn, and raise it to the fifth power, ",
+        "start": 1107.508,
+        "duration": 2.894
+    },
+    {
+        "text": "and you've gotten all the way back around to one.",
+        "start": 1110.402,
+        "duration": 2.118
+    },
+    {
+        "text": "It's the same thing as if you had raised it to the zeroth power.",
+        "start": 1112.86,
+        "duration": 2.74
+    },
+    {
+        "text": "We get this cycling every five terms.",
+        "start": 1115.8,
+        "duration": 1.8
+    },
+    {
+        "text": "That's the thing that we care about.",
+        "start": 1117.86,
+        "duration": 1.34
+    },
+    {
+        "text": "These numbers have a special name, they're called the fifth roots of unity, ",
+        "start": 1119.76,
+        "duration": 3.862
+    },
+    {
+        "text": "essentially because they solve the equation z to the fifth equals one.",
+        "start": 1123.622,
+        "duration": 3.558
+    },
+    {
+        "text": "They are fifth roots of the number one.",
+        "start": 1127.18,
+        "duration": 2.06
+    },
+    {
+        "text": "If you just presented someone with this equation, ",
+        "start": 1129.46,
+        "duration": 2.431
+    },
+    {
+        "text": "they would probably say the answer is clearly z equals one.",
+        "start": 1131.891,
+        "duration": 2.869
+    },
+    {
+        "text": "But the idea is that there are four other answers in the complex plane.",
+        "start": 1135.28,
+        "duration": 3.24
+    },
+    {
+        "text": "Four other numbers where when you raise them to the fifth, ",
+        "start": 1138.98,
+        "duration": 2.432
+    },
+    {
+        "text": "you get one, and considering them as a collective is often quite useful.",
+        "start": 1141.412,
+        "duration": 2.968
+    },
+    {
+        "text": "Remember that equation, it'll come back for us a little bit later.",
+        "start": 1144.88,
+        "duration": 2.56
+    },
+    {
+        "text": "So in analogy with what we did earlier, where we added together f of ",
+        "start": 1148.7,
+        "duration": 3.562
+    },
+    {
+        "text": "one and f of negative one to get this cancellation among the odd terms, ",
+        "start": 1152.262,
+        "duration": 3.718
+    },
+    {
+        "text": "what we're going to do is evaluate f at all five of these numbers, ",
+        "start": 1155.98,
+        "duration": 3.46
+    },
+    {
+        "text": "and then add them together, and hopefully we get some cancellation.",
+        "start": 1159.44,
+        "duration": 3.46
+    },
+    {
+        "text": "That might seem kind of complicated, but let's just take a super simple example, ",
+        "start": 1163.24,
+        "duration": 3.955
+    },
+    {
+        "text": "like the case where f of x is simply equal to x.",
+        "start": 1167.195,
+        "duration": 2.345
+    },
+    {
+        "text": "In that case, when we add up these five terms, ",
+        "start": 1170.0,
+        "duration": 1.995
+    },
+    {
+        "text": "we're just adding up the roots of unity themselves.",
+        "start": 1171.995,
+        "duration": 2.165
+    },
+    {
+        "text": "Zeta to the zero plus zeta to the one, on and on, up to zeta to the fourth.",
+        "start": 1174.52,
+        "duration": 3.16
+    },
+    {
+        "text": "When you add complex numbers, you can think of ",
+        "start": 1178.24,
+        "duration": 2.075
+    },
+    {
+        "text": "it like vector addition with the tip to the tail.",
+        "start": 1180.315,
+        "duration": 2.165
+    },
+    {
+        "text": "So zeta to the zero plus zeta will look like this, and then if I add on zeta squared, ",
+        "start": 1182.9,
+        "duration": 5.073
+    },
+    {
+        "text": "bringing the tail of that vector to the tip of the last one, we get this.",
+        "start": 1187.973,
+        "duration": 4.307
+    },
+    {
+        "text": "Then similarly, if I bring the tail of zeta cubed over to the tip of that one, ",
+        "start": 1192.98,
+        "duration": 4.179
+    },
+    {
+        "text": "and then do likewise for zeta to the fourth, you'll see how ",
+        "start": 1197.159,
+        "duration": 3.174
+    },
+    {
+        "text": "the overall sum actually loops back to be zero.",
+        "start": 1200.333,
+        "duration": 2.487
+    },
+    {
+        "text": "Another way to think about this is that all five of ",
+        "start": 1203.36,
+        "duration": 2.41
+    },
+    {
+        "text": "these terms are evenly balanced around the number zero.",
+        "start": 1205.77,
+        "duration": 2.55
+    },
+    {
+        "text": "Their center of mass is at the origin.",
+        "start": 1208.88,
+        "duration": 1.74
+    },
+    {
+        "text": "Now it's helpful to think about a slightly less trivial example, if f of x was x squared.",
+        "start": 1211.7,
+        "duration": 4.76
+    },
+    {
+        "text": "So when you square zeta to the zero, it stays zeta to the zero.",
+        "start": 1217.36,
+        "duration": 2.66
+    },
+    {
+        "text": "This is just a fancy way of saying the number one.",
+        "start": 1220.26,
+        "duration": 1.72
+    },
+    {
+        "text": "When you square zeta, you get zeta squared itself.",
+        "start": 1222.64,
+        "duration": 2.34
+    },
+    {
+        "text": "So you might imagine this dot up here moving over to the zeta squared dot when we do it.",
+        "start": 1225.44,
+        "duration": 4.8
+    },
+    {
+        "text": "Zeta squared moves to zeta to the fourth.",
+        "start": 1230.72,
+        "duration": 1.96
+    },
+    {
+        "text": "You might imagine this dot moving over to zeta to the fourth.",
+        "start": 1233.2,
+        "duration": 2.56
+    },
+    {
+        "text": "Zeta cubed moves to zeta to the sixth, which, because we loop around every five times, ",
+        "start": 1236.58,
+        "duration": 4.462
+    },
+    {
+        "text": "is the same thing as zeta to the one.",
+        "start": 1241.042,
+        "duration": 1.898
+    },
+    {
+        "text": "So this dot will move up here.",
+        "start": 1243.42,
+        "duration": 1.46
+    },
+    {
+        "text": "And finally, zeta to the fourth squares to give us zeta to the eighth, ",
+        "start": 1246.42,
+        "duration": 4.033
+    },
+    {
+        "text": "which reduces to be the same as zeta cubed, which I might draw like this.",
+        "start": 1250.453,
+        "duration": 4.147
+    },
+    {
+        "text": "That might seem a little confusing to think about, ",
+        "start": 1255.56,
+        "duration": 2.293
+    },
+    {
+        "text": "especially with all the arrows I have drawn here, ",
+        "start": 1257.853,
+        "duration": 2.249
+    },
+    {
+        "text": "but it's worth thinking through at least once in your life, ",
+        "start": 1260.102,
+        "duration": 2.698
+    },
+    {
+        "text": "because the idea here is that when we square this, ",
+        "start": 1262.8,
+        "duration": 2.294
+    },
+    {
+        "text": "like go to all of these different terms, and I program them to double the angle that they ",
+        "start": 1265.094,
+        "duration": 4.047
+    },
+    {
+        "text": "have, the overall effect is to just shuffle those terms.",
+        "start": 1269.141,
+        "duration": 2.519
+    },
+    {
+        "text": "We get the same numbers but written in a different order, ",
+        "start": 1272.0,
+        "duration": 2.511
+    },
+    {
+        "text": "so their sum is still going to be zero.",
+        "start": 1274.511,
+        "duration": 1.689
+    },
+    {
+        "text": "Similarly, if you go through this exercise with x cubed, which I encourage you to do, ",
+        "start": 1276.96,
+        "duration": 4.313
+    },
+    {
+        "text": "and you follow around where are each one of these dots going to end up, ",
+        "start": 1281.273,
+        "duration": 3.612
+    },
+    {
+        "text": "you'll be able to see that when we cube these terms, ",
+        "start": 1284.885,
+        "duration": 2.658
+    },
+    {
+        "text": "when we take each one and we multiply the angle that it has by three, ",
+        "start": 1287.543,
+        "duration": 3.511
+    },
+    {
+        "text": "again we just shuffle them around.",
+        "start": 1291.054,
+        "duration": 1.706
+    },
+    {
+        "text": "Same terms listed in a different order, unsurprisingly the same ",
+        "start": 1293.14,
+        "duration": 4.292
+    },
+    {
+        "text": "thing happens if our function was x to the fourth, but, critically, ",
+        "start": 1297.432,
+        "duration": 4.561
+    },
+    {
+        "text": "where things change is if we consider the function x to the fifth.",
+        "start": 1301.993,
+        "duration": 4.427
+    },
+    {
+        "text": "In that case, when you raise zeta to the fifth power, by definition it goes to one.",
+        "start": 1307.06,
+        "duration": 4.76
+    },
+    {
+        "text": "Similarly, zeta squared raised to the fifth power goes to one.",
+        "start": 1312.54,
+        "duration": 2.66
+    },
+    {
+        "text": "All of these go to one, they are the roots of unity, ",
+        "start": 1315.56,
+        "duration": 2.344
+    },
+    {
+        "text": "this is after all their whole purpose in life.",
+        "start": 1317.904,
+        "duration": 2.036
+    },
+    {
+        "text": "So in this case, when we apply the function and add them all up, ",
+        "start": 1320.44,
+        "duration": 3.245
+    },
+    {
+        "text": "instead of going to zero and getting cancellation, ",
+        "start": 1323.685,
+        "duration": 2.547
+    },
+    {
+        "text": "we get a kind of constructive interference.",
+        "start": 1326.232,
+        "duration": 2.148
+    },
+    {
+        "text": "All of them equal one, so their sum is equal to five.",
+        "start": 1328.78,
+        "duration": 2.66
+    },
+    {
+        "text": "So if you step back and think about what all those examples mean, ",
+        "start": 1332.06,
+        "duration": 3.473
+    },
+    {
+        "text": "essentially this expression is something that will go to zero for powers of x which ",
+        "start": 1335.533,
+        "duration": 4.421
+    },
+    {
+        "text": "are not divisible by five, but it goes to something non-zero for powers of x which ",
+        "start": 1339.954,
+        "duration": 4.368
+    },
+    {
+        "text": "are divisible by five.",
+        "start": 1344.322,
+        "duration": 1.158
+    },
+    {
+        "text": "And that's exactly the kind of filter that we're looking for.",
+        "start": 1345.9,
+        "duration": 2.48
+    },
+    {
+        "text": "If you're worried that our actual function is much more complicated than a simple ",
+        "start": 1349.02,
+        "duration": 3.941
+    },
+    {
+        "text": "power of x, essentially things play really nicely here because everything is linear.",
+        "start": 1352.961,
+        "duration": 4.039
+    },
+    {
+        "text": "If f is some massive polynomial and we want to evaluate this big sum, ",
+        "start": 1357.7,
+        "duration": 4.055
+    },
+    {
+        "text": "you could sort of think of going column by column, ",
+        "start": 1361.755,
+        "duration": 2.956
+    },
+    {
+        "text": "where each time you really are just adding up powers of zeta, ",
+        "start": 1364.711,
+        "duration": 3.592
+    },
+    {
+        "text": "and in most cases all those powers cancel out with each other and you get zero, ",
+        "start": 1368.303,
+        "duration": 4.635
+    },
+    {
+        "text": "but when all of those powers are multiples of five, ",
+        "start": 1372.938,
+        "duration": 3.013
+    },
+    {
+        "text": "they constructively interfere and instead you get five times whatever the corresponding ",
+        "start": 1375.951,
+        "duration": 5.099
+    },
+    {
+        "text": "coefficient is.",
+        "start": 1381.05,
+        "duration": 0.87
+    },
+    {
+        "text": "Deep in the weeds it's easy to forget why we're here in the first place, ",
+        "start": 1382.04,
+        "duration": 3.848
+    },
+    {
+        "text": "but remember each one of those coefficients tells us how many subsets add up ",
+        "start": 1385.888,
+        "duration": 4.059
+    },
+    {
+        "text": "to a certain value, and so what we want is to add up all of the coefficients ",
+        "start": 1389.947,
+        "duration": 4.059
+    },
+    {
+        "text": "that are multiples of five, and what we have right now is a way to explicitly do that.",
+        "start": 1394.006,
+        "duration": 4.534
+    },
+    {
+        "text": "If we evaluate this function on these five different roots of unity, ",
+        "start": 1398.8,
+        "duration": 3.331
+    },
+    {
+        "text": "which I know seems kind of weird, then all we have to do is ",
+        "start": 1402.131,
+        "duration": 2.898
+    },
+    {
+        "text": "divide by five and it gives us the sum that we want.",
+        "start": 1405.029,
+        "duration": 2.511
+    },
+    {
+        "text": "That's really cool if you ask me.",
+        "start": 1408.48,
+        "duration": 1.74
+    },
+    {
+        "text": "We have a question that's just about subsets, it's a discrete math problem, ",
+        "start": 1410.22,
+        "duration": 4.305
+    },
+    {
+        "text": "and yet the way that we can answer it is to evaluate a crazy ",
+        "start": 1414.525,
+        "duration": 3.455
+    },
+    {
+        "text": "polynomial on some judiciously chosen complex numbers.",
+        "start": 1417.98,
+        "duration": 3.06
+    },
+    {
+        "text": "The more math you do, the less crazy that seems, ",
+        "start": 1421.52,
+        "duration": 2.154
+    },
+    {
+        "text": "because complex numbers have this bizarre relationship with discrete math, ",
+        "start": 1423.674,
+        "duration": 3.299
+    },
+    {
+        "text": "but it really is wonderful, there's no two ways about it.",
+        "start": 1426.973,
+        "duration": 2.507
+    },
+    {
+        "text": "However, some of you might complain, the only way that this is useful ",
+        "start": 1430.34,
+        "duration": 3.879
+    },
+    {
+        "text": "is if we can actually evaluate this wild expression on our polynomial.",
+        "start": 1434.219,
+        "duration": 3.881
+    },
+    {
+        "text": "Remember, the form of the polynomial we know, the one we're comfortable with, ",
+        "start": 1438.62,
+        "duration": 3.642
+    },
+    {
+        "text": "is the factored form, where you have this one plus x, one plus x squared, ",
+        "start": 1442.262,
+        "duration": 3.456
+    },
+    {
+        "text": "on and on, all the way up to one plus x to the two thousand.",
+        "start": 1445.718,
+        "duration": 2.802
+    },
+    {
+        "text": "Everything up to this point is just meaningless symbolic play, ",
+        "start": 1449.22,
+        "duration": 3.082
+    },
+    {
+        "text": "pushing around one hard problem into another, unless we can ",
+        "start": 1452.302,
+        "duration": 2.937
+    },
+    {
+        "text": "actually roll up our sleeves and do some honest calculation here.",
+        "start": 1455.239,
+        "duration": 3.181
+    },
+    {
+        "text": "This is the final thrust in our argument, so step back, take a deep breath.",
+        "start": 1458.9,
+        "duration": 3.42
+    },
+    {
+        "text": "It's actually not as bad as you might think, but let's start just by thinking about ",
+        "start": 1462.7,
+        "duration": 3.992
+    },
+    {
+        "text": "how you might evaluate just one of the roots of unity that we need, maybe zeta itself.",
+        "start": 1466.692,
+        "duration": 4.088
+    },
+    {
+        "text": "So what that looks like is one plus zeta, times one plus zeta squared, ",
+        "start": 1471.78,
+        "duration": 3.313
+    },
+    {
+        "text": "times one plus zeta cubed, on and on.",
+        "start": 1475.093,
+        "duration": 1.727
+    },
+    {
+        "text": "Except, importantly, after those first five terms, ",
+        "start": 1477.06,
+        "duration": 2.614
+    },
+    {
+        "text": "everything starts repeating, because powers of zeta repeat.",
+        "start": 1479.674,
+        "duration": 3.026
+    },
+    {
+        "text": "The entire expression up to two thousand is basically just ",
+        "start": 1483.22,
+        "duration": 3.0
+    },
+    {
+        "text": "going to be a copy of this expression four hundred times.",
+        "start": 1486.22,
+        "duration": 2.9
+    },
+    {
+        "text": "It still might seem hard to evaluate this expression, ",
+        "start": 1489.6,
+        "duration": 2.473
+    },
+    {
+        "text": "but it's way easier than multiplying out two thousand different terms.",
+        "start": 1492.073,
+        "duration": 3.207
+    },
+    {
+        "text": "A way you might visualize this is that we're taking each one of those roots of unity, ",
+        "start": 1495.28,
+        "duration": 4.19
+    },
+    {
+        "text": "but basically adding one, we're shifting them all to the right.",
+        "start": 1499.47,
+        "duration": 3.07
+    },
+    {
+        "text": "This picture actually lends itself to a really nice geometric ",
+        "start": 1503.06,
+        "duration": 2.784
+    },
+    {
+        "text": "intuition for the numerical answer that we might expect.",
+        "start": 1505.844,
+        "duration": 2.516
+    },
+    {
+        "text": "The thing that we want is the product of these five different complex numbers, ",
+        "start": 1508.88,
+        "duration": 4.166
+    },
+    {
+        "text": "these five yellow dots.",
+        "start": 1513.046,
+        "duration": 1.214
+    },
+    {
+        "text": "And if you know a thing or two about complex numbers, ",
+        "start": 1514.82,
+        "duration": 2.7
+    },
+    {
+        "text": "since these come in conjugate pairs, all we really need is to multiply the lengths ",
+        "start": 1517.52,
+        "duration": 4.149
+    },
+    {
+        "text": "of these five yellow lines.",
+        "start": 1521.669,
+        "duration": 1.351
+    },
+    {
+        "text": "For example, that dot furthest to the right corresponds to one plus zeta to the fifth, ",
+        "start": 1523.68,
+        "duration": 4.953
+    },
+    {
+        "text": "which in the diagram I'm labeling as zeta to the zero plus one.",
+        "start": 1528.633,
+        "duration": 3.587
+    },
+    {
+        "text": "But it doesn't matter, in either case, they're ",
+        "start": 1532.72,
+        "duration": 1.86
+    },
+    {
+        "text": "both just fancy ways of writing the number two.",
+        "start": 1534.58,
+        "duration": 1.86
+    },
+    {
+        "text": "Next to that, we have the values one plus zeta and one plus zeta to the fourth, ",
+        "start": 1536.98,
+        "duration": 3.833
+    },
+    {
+        "text": "both of which have the same magnitude, the lengths of these lines are the same.",
+        "start": 1540.813,
+        "duration": 3.787
+    },
+    {
+        "text": "And let's just give that a name, L1.",
+        "start": 1544.94,
+        "duration": 1.74
+    },
+    {
+        "text": "So we need to multiply two different copies of that length, L1 squared.",
+        "start": 1547.08,
+        "duration": 3.2
+    },
+    {
+        "text": "Similarly, the remaining two values, zeta squared plus one and zeta cubed plus one, ",
+        "start": 1551.02,
+        "duration": 4.136
+    },
+    {
+        "text": "they also have the same length, and they're a conjugate pair.",
+        "start": 1555.156,
+        "duration": 3.004
+    },
+    {
+        "text": "So let's just call that length L2.",
+        "start": 1558.58,
+        "duration": 1.62
+    },
+    {
+        "text": "So our product needs to include two copies of that L2.",
+        "start": 1560.88,
+        "duration": 2.92
+    },
+    {
+        "text": "If we were just making a loose heuristic guess, ",
+        "start": 1564.34,
+        "duration": 2.463
+    },
+    {
+        "text": "you might notice that L1 is a length that's something a little bit longer than one, ",
+        "start": 1566.803,
+        "duration": 4.311
+    },
+    {
+        "text": "and L2 is something a little bit shorter than one.",
+        "start": 1571.114,
+        "duration": 2.566
+    },
+    {
+        "text": "So the final answer here probably comes to something around two-ish, ",
+        "start": 1573.96,
+        "duration": 3.3
+    },
+    {
+        "text": "we're not positive, but something in that ballpark.",
+        "start": 1577.26,
+        "duration": 2.44
+    },
+    {
+        "text": "To turn this into an exact answer, we could just expand out the full expression.",
+        "start": 1579.7,
+        "duration": 4.44
+    },
+    {
+        "text": "It's honestly not that bad, there's only 32 different terms.",
+        "start": 1584.52,
+        "duration": 2.9
+    },
+    {
+        "text": "Okay, you've hung with me for a long time now, and I know that it's getting to be a lot.",
+        "start": 1593.32,
+        "duration": 3.7
+    },
+    {
+        "text": "But there's one final trick in this whole argument that makes ",
+        "start": 1597.28,
+        "duration": 2.721
+    },
+    {
+        "text": "our last step much simpler than you might think it should be.",
+        "start": 1600.001,
+        "duration": 2.679
+    },
+    {
+        "text": "And let's just recap to remind ourselves of where we are.",
+        "start": 1603.26,
+        "duration": 2.36
+    },
+    {
+        "text": "So we started with this question asking us, count the number ",
+        "start": 1605.82,
+        "duration": 3.397
+    },
+    {
+        "text": "of subsets of 1 up to 2000 whose sum is divisible by 5.",
+        "start": 1609.217,
+        "duration": 3.063
+    },
+    {
+        "text": "We then constructed this polynomial whose coefficients tell ",
+        "start": 1612.74,
+        "duration": 3.176
+    },
+    {
+        "text": "us how many subsets have a particular sum for each value n.",
+        "start": 1615.916,
+        "duration": 3.124
+    },
+    {
+        "text": "So what we want is to add up every fifth coefficient of that polynomial.",
+        "start": 1619.96,
+        "duration": 3.66
+    },
+    {
+        "text": "Then we saw how evaluating this polynomial as a function on all of the fifth roots ",
+        "start": 1624.78,
+        "duration": 4.305
+    },
+    {
+        "text": "of unity, then adding them up, ends up giving us exactly this filter that we want.",
+        "start": 1629.085,
+        "duration": 4.255
+    },
+    {
+        "text": "And here we're evaluating just one of those terms, f of zeta, ",
+        "start": 1633.6,
+        "duration": 3.003
+    },
+    {
+        "text": "which essentially comes down to a product of five complex numbers.",
+        "start": 1636.603,
+        "duration": 3.197
+    },
+    {
+        "text": "As a super slick way to actually evaluate that product, here's the final trick.",
+        "start": 1640.54,
+        "duration": 4.1
+    },
+    {
+        "text": "Remember, I described these numbers as roots of unity.",
+        "start": 1645.32,
+        "duration": 2.5
+    },
+    {
+        "text": "They solve the equation z to the fifth equals one.",
+        "start": 1648.2,
+        "duration": 2.38
+    },
+    {
+        "text": "Another way to think about that is that they are ",
+        "start": 1651.06,
+        "duration": 2.56
+    },
+    {
+        "text": "roots of the polynomial z to the fifth minus one.",
+        "start": 1653.62,
+        "duration": 2.56
+    },
+    {
+        "text": "Now what that means is we can factor the polynomial z to the fifth minus one to ",
+        "start": 1656.92,
+        "duration": 4.19
+    },
+    {
+        "text": "look like this, where there's one factor corresponding to each one of the roots.",
+        "start": 1661.11,
+        "duration": 4.19
+    },
+    {
+        "text": "You take z minus each one of the roots.",
+        "start": 1665.3,
+        "duration": 1.86
+    },
+    {
+        "text": "This expression is kind of magical when you think about all of the crazy ",
+        "start": 1667.84,
+        "duration": 3.553
+    },
+    {
+        "text": "cancellation that has to happen when you expand it all out, ",
+        "start": 1671.393,
+        "duration": 2.92
+    },
+    {
+        "text": "but it is true and it's super useful for us right now, ",
+        "start": 1674.313,
+        "duration": 2.677
+    },
+    {
+        "text": "because the expression on the right hand side looks almost identical to the ",
+        "start": 1676.99,
+        "duration": 3.699
+    },
+    {
+        "text": "thing we need to evaluate up at the top here.",
+        "start": 1680.689,
+        "duration": 2.191
+    },
+    {
+        "text": "It basically just has minus signs where we wish there were plus signs.",
+        "start": 1683.3,
+        "duration": 3.06
+    },
+    {
+        "text": "The trick is to plug in z equals negative one.",
+        "start": 1687.68,
+        "duration": 2.56
+    },
+    {
+        "text": "If you do that, you essentially have the negative of what we want.",
+        "start": 1690.8,
+        "duration": 3.1
+    },
+    {
+        "text": "If you multiply it by negative one, notice how the left hand side here, ",
+        "start": 1693.9,
+        "duration": 4.004
+    },
+    {
+        "text": "which started out as negative one minus one or negative two, that just becomes two.",
+        "start": 1697.904,
+        "duration": 4.616
+    },
+    {
+        "text": "And then the right hand side turns into the thing that we want to evaluate.",
+        "start": 1703.24,
+        "duration": 3.08
+    },
+    {
+        "text": "So just as our geometric intuition earlier might have suggested, ",
+        "start": 1707.0,
+        "duration": 3.519
+    },
+    {
+        "text": "not only is the answer around two, the answer quite magically turns out to be ",
+        "start": 1710.519,
+        "duration": 4.223
+    },
+    {
+        "text": "precisely two.",
+        "start": 1714.742,
+        "duration": 0.758
+    },
+    {
+        "text": "That is actually super nice and very lovely, because it means this bigger ",
+        "start": 1716.38,
+        "duration": 3.679
+    },
+    {
+        "text": "expression that we want to evaluate, where we're adding up f on all of ",
+        "start": 1720.059,
+        "duration": 3.531
+    },
+    {
+        "text": "the different roots of unity, we know its value on the first root of unity.",
+        "start": 1723.59,
+        "duration": 3.73
+    },
+    {
+        "text": "It will be two to the power four hundred.",
+        "start": 1727.58,
+        "duration": 1.64
+    },
+    {
+        "text": "Essentially identical reasoning shows that its value on the next ",
+        "start": 1729.82,
+        "duration": 2.964
+    },
+    {
+        "text": "three roots of unity is also two to the power four hundred, ",
+        "start": 1732.784,
+        "duration": 2.737
+    },
+    {
+        "text": "because remember when you take powers of zeta squared or zeta cubed, ",
+        "start": 1735.521,
+        "duration": 3.147
+    },
+    {
+        "text": "you get the same list of numbers that are just shuffled in a different order.",
+        "start": 1738.668,
+        "duration": 3.512
+    },
+    {
+        "text": "The only one that's different is when we evaluate it as zeta to the zero.",
+        "start": 1742.88,
+        "duration": 3.24
+    },
+    {
+        "text": "But zeta to the zero is a fancy way of saying the number one, ",
+        "start": 1746.84,
+        "duration": 3.112
+    },
+    {
+        "text": "and we know how to evaluate this at one.",
+        "start": 1749.952,
+        "duration": 2.008
+    },
+    {
+        "text": "That's one of the easy things.",
+        "start": 1752.22,
+        "duration": 0.86
+    },
+    {
+        "text": "We did this earlier.",
+        "start": 1753.14,
+        "duration": 0.76
+    },
+    {
+        "text": "All of these parentheticals turn into two, so it looks ",
+        "start": 1754.2,
+        "duration": 2.814
+    },
+    {
+        "text": "like taking two multiplied by itself two thousand times.",
+        "start": 1757.014,
+        "duration": 2.866
+    },
+    {
+        "text": "And so finally with that, we have a highly explicit ",
+        "start": 1760.52,
+        "duration": 2.971
+    },
+    {
+        "text": "honest answer to our counting question.",
+        "start": 1763.491,
+        "duration": 2.229
+    },
+    {
+        "text": "To add up all of these coefficients which are divisible by five, ",
+        "start": 1766.16,
+        "duration": 3.724
+    },
+    {
+        "text": "which remember is a way of counting how many total subsets have a sum divisible by five, ",
+        "start": 1769.884,
+        "duration": 5.1
+    },
+    {
+        "text": "the answer is one fifth of this weird complex expression, ",
+        "start": 1774.984,
+        "duration": 3.324
+    },
+    {
+        "text": "which we just computed to be two to the two thousand plus four different copies ",
+        "start": 1778.308,
+        "duration": 4.584
+    },
+    {
+        "text": "of two to the four hundred.",
+        "start": 1782.892,
+        "duration": 1.548
+    },
+    {
+        "text": "And here you might want to do just a quick sanity ",
+        "start": 1785.52,
+        "duration": 2.109
+    },
+    {
+        "text": "check on does this answer make any sense.",
+        "start": 1787.629,
+        "duration": 1.731
+    },
+    {
+        "text": "For example, if you do it in the smaller case with the set one two three four five, ",
+        "start": 1790.04,
+        "duration": 4.525
+    },
+    {
+        "text": "and you walk through all the same reasoning that we just did, ",
+        "start": 1794.565,
+        "duration": 3.34
+    },
+    {
+        "text": "it tells you that the answer is one fifth of two to the fifth, ",
+        "start": 1797.905,
+        "duration": 3.394
+    },
+    {
+        "text": "the total number of subsets, plus four times two to the one in this case, ",
+        "start": 1801.299,
+        "duration": 3.987
+    },
+    {
+        "text": "which is a fifth of 32 plus eight, which is eight.",
+        "start": 1805.286,
+        "duration": 2.694
+    },
+    {
+        "text": "And if you'll remember when we explicitly looked at them all, that was in fact the answer.",
+        "start": 1808.44,
+        "duration": 3.98
+    },
+    {
+        "text": "Look, this is a hard puzzle, and when it's worth putting in the time to ",
+        "start": 1817.5,
+        "duration": 3.4
+    },
+    {
+        "text": "solve a hard problem, it's also worth taking some time to reflect on it.",
+        "start": 1820.9,
+        "duration": 3.4
+    },
+    {
+        "text": "What do you get out of this?",
+        "start": 1824.42,
+        "duration": 0.78
+    },
+    {
+        "text": "What's the takeaway? Now you could reflect on the answer itself, ",
+        "start": 1829.64,
+        "duration": 2.226
+    },
+    {
+        "text": "how the dominant part is indeed one fifth of all the total subsets like ",
+        "start": 1831.866,
+        "duration": 2.466
+    },
+    {
+        "text": "we might have guessed, and how this error term came about from the not ",
+        "start": 1834.332,
+        "duration": 2.433
+    },
+    {
+        "text": "quite destructive interference in a massive combination of roots of unity.",
+        "start": 1836.765,
+        "duration": 2.535
+    },
+    {
+        "text": "But again, what makes this question interesting is not the answer, ",
+        "start": 1840.12,
+        "duration": 3.831
+    },
+    {
+        "text": "it's the way that we solved it, namely taking a discrete sequence that we want to ",
+        "start": 1843.951,
+        "duration": 4.689
+    },
+    {
+        "text": "understand and treating it as the coefficients on a polynomial, ",
+        "start": 1848.64,
+        "duration": 3.66
+    },
+    {
+        "text": "then evaluating that polynomial on complex values.",
+        "start": 1852.3,
+        "duration": 2.86
+    },
+    {
+        "text": "Both of those steps are probably highly unexpected at the outset, ",
+        "start": 1855.74,
+        "duration": 3.191
+    },
+    {
+        "text": "but both of those steps relate to some very general and powerful techniques that you'll ",
+        "start": 1858.931,
+        "duration": 4.256
+    },
+    {
+        "text": "find elsewhere in math.",
+        "start": 1863.187,
+        "duration": 1.113
+    },
+    {
+        "text": "For example, at the top of the lesson, I promised that the technique that we ",
+        "start": 1864.9,
+        "duration": 3.723
+    },
+    {
+        "text": "would use would be similar in spirit to the way that primes are studied, ",
+        "start": 1868.623,
+        "duration": 3.531
+    },
+    {
+        "text": "and the set of ideas that leads up to the Riemann hypothesis and things like that.",
+        "start": 1872.154,
+        "duration": 3.966
+    },
+    {
+        "text": "Now this is a very beautiful topic, enough so that I think it seems a ",
+        "start": 1876.5,
+        "duration": 3.27
+    },
+    {
+        "text": "little criminal to cram some kind of rushed version into the end here.",
+        "start": 1879.77,
+        "duration": 3.27
+    },
+    {
+        "text": "The right thing to do, I think, is to just make that video I promised ",
+        "start": 1883.34,
+        "duration": 3.359
+    },
+    {
+        "text": "a while back about the zeta function, take the time, do it right.",
+        "start": 1886.699,
+        "duration": 3.121
+    },
+    {
+        "text": "But if you're curious, and if you'll allow me to throw some things up on the screen ",
+        "start": 1890.44,
+        "duration": 3.709
+    },
+    {
+        "text": "without explaining them, here's the two or three sentence version of how the two are ",
+        "start": 1894.149,
+        "duration": 3.753
+    },
+    {
+        "text": "parallel.",
+        "start": 1897.902,
+        "duration": 0.398
+    },
+    {
+        "text": "Just like our subsets puzzle, the way that Riemann studied primes involved a discrete ",
+        "start": 1899.02,
+        "duration": 4.538
+    },
+    {
+        "text": "sequence we want to understand, something carrying information about prime numbers, ",
+        "start": 1903.558,
+        "duration": 4.434
+    },
+    {
+        "text": "and then considering a function whose coefficients are the terms in that sequence.",
+        "start": 1907.992,
+        "duration": 4.328
+    },
+    {
+        "text": "In that case, it's not quite a polynomial, instead it's a ",
+        "start": 1913.12,
+        "duration": 2.723
+    },
+    {
+        "text": "related structure known as a Dirichlet series, ",
+        "start": 1915.843,
+        "duration": 2.207
+    },
+    {
+        "text": "or Dirichlet series depending on who you ask, but it's the same essential idea.",
+        "start": 1918.05,
+        "duration": 3.71
+    },
+    {
+        "text": "Then the way to suss out information about those coefficients comes from ",
+        "start": 1922.16,
+        "duration": 4.437
+    },
+    {
+        "text": "studying how this function behaves with, you guessed it, complex valued inputs.",
+        "start": 1926.597,
+        "duration": 4.803
+    },
+    {
+        "text": "The techniques in his case get a lot more sophisticated, ",
+        "start": 1932.36,
+        "duration": 3.117
+    },
+    {
+        "text": "after all Riemann was a pioneer in complex analysis, ",
+        "start": 1935.477,
+        "duration": 2.899
+    },
+    {
+        "text": "but the fact remains extending your domain beyond real numbers like this offers you, ",
+        "start": 1938.376,
+        "duration": 4.648
+    },
+    {
+        "text": "the mathematician, a lot more power in making deductions about the coefficients.",
+        "start": 1943.024,
+        "duration": 4.376
+    },
+    {
+        "text": "For some viewers this all might leave the lingering question of ",
+        "start": 1948.7,
+        "duration": 3.527
+    },
+    {
+        "text": "why exactly complex numbers are so unreasonably useful in this way.",
+        "start": 1952.227,
+        "duration": 3.693
+    },
+    {
+        "text": "It's a hard question to answer exactly, but if you think about our puzzle, ",
+        "start": 1956.66,
+        "duration": 3.684
+    },
+    {
+        "text": "everything we just did, as soon as we were in this situation where plugging ",
+        "start": 1960.344,
+        "duration": 3.733
+    },
+    {
+        "text": "in different inputs revealed hidden information about the coefficients, ",
+        "start": 1964.077,
+        "duration": 3.537
+    },
+    {
+        "text": "it's sort of like the more inputs you can work with the better, ",
+        "start": 1967.614,
+        "duration": 3.144
+    },
+    {
+        "text": "so you might as well open yourself up to a richer space of numbers like the complex plane.",
+        "start": 1970.758,
+        "duration": 4.422
+    },
+    {
+        "text": "But there is a more specific intuition that I want you to come away with here.",
+        "start": 1975.84,
+        "duration": 3.72
+    },
+    {
+        "text": "In our puzzle the relevant fact that we wanted, the sum of every fifth coefficient, ",
+        "start": 1980.06,
+        "duration": 4.577
+    },
+    {
+        "text": "was a kind of frequency question, and the real reason the complex numbers as ",
+        "start": 1984.637,
+        "duration": 4.196
+    },
+    {
+        "text": "opposed to some other structure proved to be useful for us is that we could ",
+        "start": 1988.833,
+        "duration": 4.141
+    },
+    {
+        "text": "find a value so that successive products have this cycling behavior.",
+        "start": 1992.974,
+        "duration": 3.706
+    },
+    {
+        "text": "This use of values on the unit circle and roots of unity in ",
+        "start": 1997.0,
+        "duration": 3.373
+    },
+    {
+        "text": "particular to suss out frequency information is extremely fruitful.",
+        "start": 2000.373,
+        "duration": 3.767
+    },
+    {
+        "text": "It is almost impossible to overstate how helpful that idea is.",
+        "start": 2004.4,
+        "duration": 3.9
+    },
+    {
+        "text": "Just to give one out of thousands of examples, ",
+        "start": 2008.58,
+        "duration": 2.64
+    },
+    {
+        "text": "in the 1990s Peter Shor found a way for quantum computers to factor large numbers way ",
+        "start": 2011.22,
+        "duration": 4.832
+    },
+    {
+        "text": "way faster than classical computers can.",
+        "start": 2016.052,
+        "duration": 2.248
+    },
+    {
+        "text": "And if you go in and you look at the details of how what we now ",
+        "start": 2018.62,
+        "duration": 3.411
+    },
+    {
+        "text": "call Shor's algorithm works, the idea is essentially this, ",
+        "start": 2022.031,
+        "duration": 3.144
+    },
+    {
+        "text": "the use of roots of unity to detect a kind of frequency information.",
+        "start": 2025.175,
+        "duration": 3.625
+    },
+    {
+        "text": "More generally this is the core idea that underlies Fourier transforms ",
+        "start": 2029.32,
+        "duration": 3.306
+    },
+    {
+        "text": "and Fourier series and the infinite swell of topics that follow from those.",
+        "start": 2032.626,
+        "duration": 3.494
+    },
+    {
+        "text": "As to the topic of generating functions themselves, ",
+        "start": 2036.98,
+        "duration": 2.547
+    },
+    {
+        "text": "we've really only just scratched the surface here, ",
+        "start": 2039.527,
+        "duration": 2.499
+    },
+    {
+        "text": "and if you want to learn more I highly recommend this kind of hilariously ",
+        "start": 2042.026,
+        "duration": 3.626
+    },
+    {
+        "text": "named book Generating Functionology by Herbert Wilf.",
+        "start": 2045.652,
+        "duration": 2.547
+    },
+    {
+        "text": "And I'll also leave up a few fun puzzles on the screen here ",
+        "start": 2048.54,
+        "duration": 2.234
+    },
+    {
+        "text": "for anyone who wants to flex their muscles a bit with the idea.",
+        "start": 2050.774,
+        "duration": 2.346
+    }
+]

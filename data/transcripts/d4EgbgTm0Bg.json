@@ -1,0 +1,2312 @@
+[
+    {
+        "text": "What you're looking at right now is something called quaternion multiplication, ",
+        "start": 0.0,
+        "duration": 4.67
+    },
+    {
+        "text": "or rather you're looking at a certain representation of a specific motion ",
+        "start": 4.67,
+        "duration": 4.32
+    },
+    {
+        "text": "happening on a four-dimensional sphere being represented in our three-dimensional space, ",
+        "start": 8.99,
+        "duration": 5.195
+    },
+    {
+        "text": "one which you'll understand by the end of this video.",
+        "start": 14.185,
+        "duration": 3.095
+    },
+    {
+        "text": "Quaternions are an absolutely fascinating and ",
+        "start": 21.56,
+        "duration": 2.512
+    },
+    {
+        "text": "often underappreciated number system from math.",
+        "start": 24.072,
+        "duration": 2.568
+    },
+    {
+        "text": "Just as complex numbers are a two-dimensional extension of the real numbers, ",
+        "start": 27.24,
+        "duration": 4.161
+    },
+    {
+        "text": "quaternions are a four-dimensional extension of complex numbers.",
+        "start": 31.401,
+        "duration": 3.459
+    },
+    {
+        "text": "But they're not just playful mathematical shenanigans, ",
+        "start": 35.3,
+        "duration": 2.737
+    },
+    {
+        "text": "they have a surprisingly pragmatic utility for describing rotation in three dimensions, ",
+        "start": 38.037,
+        "duration": 4.38
+    },
+    {
+        "text": "and even for quantum mechanics.",
+        "start": 42.417,
+        "duration": 1.543
+    },
+    {
+        "text": "The story of their discovery is also quite famous in math.",
+        "start": 45.02,
+        "duration": 2.76
+    },
+    {
+        "text": "The Irish mathematician William Rowan Hamilton spent much of his life ",
+        "start": 48.2,
+        "duration": 3.356
+    },
+    {
+        "text": "seeking a three-dimensional number system, analogous to the complex numbers.",
+        "start": 51.556,
+        "duration": 3.644
+    },
+    {
+        "text": "And as the story goes, his son would ask him every morning whether or not he ",
+        "start": 55.78,
+        "duration": 3.505
+    },
+    {
+        "text": "had figured out how to divide triples, and he would always say no, not yet.",
+        "start": 59.285,
+        "duration": 3.415
+    },
+    {
+        "text": "But on October 16, 1843, while crossing the Broom Bridge in Dublin, ",
+        "start": 63.34,
+        "duration": 3.758
+    },
+    {
+        "text": "he realized, with a supposed flash of insight, ",
+        "start": 67.098,
+        "duration": 2.598
+    },
+    {
+        "text": "that what he needed was not to add a single dimension to the complex numbers, ",
+        "start": 69.696,
+        "duration": 4.312
+    },
+    {
+        "text": "but to add two more imaginary dimensions, three imaginary dimensions ",
+        "start": 74.008,
+        "duration": 3.813
+    },
+    {
+        "text": "describing space and the real numbers, sitting perpendicular to that in ",
+        "start": 77.821,
+        "duration": 3.98
+    },
+    {
+        "text": "some kind of fourth dimension.",
+        "start": 81.801,
+        "duration": 1.659
+    },
+    {
+        "text": "He carved the crucial equation describing these three imaginary units into the bridge, ",
+        "start": 83.88,
+        "duration": 4.437
+    },
+    {
+        "text": "which today bears a plaque in his honor showing that equation.",
+        "start": 88.317,
+        "duration": 3.163
+    },
+    {
+        "text": "Now you have to understand, our modern notion of vectors with their ",
+        "start": 92.3,
+        "duration": 3.403
+    },
+    {
+        "text": "dot product and the cross product and things like that didn't really ",
+        "start": 95.703,
+        "duration": 3.453
+    },
+    {
+        "text": "exist in Hamilton's time, at least not in a standardized form.",
+        "start": 99.156,
+        "duration": 3.104
+    },
+    {
+        "text": "So after his discovery, he pushed hard for quaternions to be the primary ",
+        "start": 102.8,
+        "duration": 3.891
+    },
+    {
+        "text": "language with which we teach students to describe three-dimensional space, ",
+        "start": 106.691,
+        "duration": 3.997
+    },
+    {
+        "text": "even forming an official quaternion society to proselytize his discovery.",
+        "start": 110.688,
+        "duration": 3.892
+    },
+    {
+        "text": "Unfortunately, this was balanced with mathematicians on the other side of the fence, ",
+        "start": 115.58,
+        "duration": 4.255
+    },
+    {
+        "text": "who believed that the confusing notion of quaternion multiplication was ",
+        "start": 119.835,
+        "duration": 3.605
+    },
+    {
+        "text": "not necessary for describing three dimensions, ",
+        "start": 123.44,
+        "duration": 2.354
+    },
+    {
+        "text": "resulting in some truly hilarious old-timey trash talk legitimately calling them evil.",
+        "start": 125.794,
+        "duration": 4.306
+    },
+    {
+        "text": "It's even believed that the Mad Hatter scene from Alice in Wonderland, ",
+        "start": 130.84,
+        "duration": 3.393
+    },
+    {
+        "text": "whose author you may know was an Oxford mathematician, ",
+        "start": 134.233,
+        "duration": 2.629
+    },
+    {
+        "text": "was written in reference to quaternions, that the chaotic table placement ",
+        "start": 136.862,
+        "duration": 3.537
+    },
+    {
+        "text": "changes were mocking their multiplication, and that certain quotes were ",
+        "start": 140.399,
+        "duration": 3.441
+    },
+    {
+        "text": "referencing their non-commutative nature.",
+        "start": 143.84,
+        "duration": 1.96
+    },
+    {
+        "text": "Fast forward about a century, and the computing industry gave ",
+        "start": 146.88,
+        "duration": 3.139
+    },
+    {
+        "text": "quaternions a resurgence among programmers who work with graphics ",
+        "start": 150.019,
+        "duration": 3.342
+    },
+    {
+        "text": "and robotics and anything involving orientation in 3D space.",
+        "start": 153.361,
+        "duration": 3.039
+    },
+    {
+        "text": "And this is because they give an elegant way to describe and compute 3D rotations, ",
+        "start": 156.94,
+        "duration": 4.269
+    },
+    {
+        "text": "which is computationally more efficient than other methods, ",
+        "start": 161.209,
+        "duration": 3.087
+    },
+    {
+        "text": "and which also avoids a lot of the numerical errors that arise in these other methods.",
+        "start": 164.296,
+        "duration": 4.424
+    },
+    {
+        "text": "The 20th century also brought quaternions some more love ",
+        "start": 169.28,
+        "duration": 2.66
+    },
+    {
+        "text": "from a completely different direction, quantum mechanics.",
+        "start": 171.94,
+        "duration": 2.66
+    },
+    {
+        "text": "The special actions that quaternions describe in four dimensions are ",
+        "start": 175.26,
+        "duration": 3.479
+    },
+    {
+        "text": "actually quite relevant to the way that two-state systems like spin of ",
+        "start": 178.739,
+        "duration": 3.58
+    },
+    {
+        "text": "an electron or the polarization of a photon are described mathematically.",
+        "start": 182.319,
+        "duration": 3.681
+    },
+    {
+        "text": "What I'll show you here is a way to visualize ",
+        "start": 187.42,
+        "duration": 2.333
+    },
+    {
+        "text": "quaternions in their full four-dimensional glory.",
+        "start": 189.753,
+        "duration": 2.487
+    },
+    {
+        "text": "It would surprise me if this approach was fully original, ",
+        "start": 192.24,
+        "duration": 2.839
+    },
+    {
+        "text": "but I can say that it's certainly not the standard way to teach quaternions, ",
+        "start": 195.079,
+        "duration": 3.769
+    },
+    {
+        "text": "and that the specific four-dimensional right-hand rule image that I'd like to build up to ",
+        "start": 198.848,
+        "duration": 4.406
+    },
+    {
+        "text": "is something that I haven't seen elsewhere.",
+        "start": 203.254,
+        "duration": 2.106
+    },
+    {
+        "text": "Building up an understanding for this visual will take us meaningful time, ",
+        "start": 205.88,
+        "duration": 3.484
+    },
+    {
+        "text": "but once you have it, there is a very natural and satisfying ",
+        "start": 209.364,
+        "duration": 2.834
+    },
+    {
+        "text": "intuition for how to think about quaternion multiplication.",
+        "start": 212.198,
+        "duration": 2.742
+    },
+    {
+        "text": "It won't be until the next video that I show you how exactly quaternions ",
+        "start": 215.58,
+        "duration": 3.479
+    },
+    {
+        "text": "describe orientation in three dimensions, which is for some people the whole ",
+        "start": 219.059,
+        "duration": 3.67
+    },
+    {
+        "text": "reason we care about it, but once we're able to go at it armed with the image ",
+        "start": 222.729,
+        "duration": 3.718
+    },
+    {
+        "text": "of what they're doing to a 4D hypersphere, there's a pleasing understanding ",
+        "start": 226.447,
+        "duration": 3.622
+    },
+    {
+        "text": "to be had for the otherwise opaque formulas characterizing this relationship.",
+        "start": 230.069,
+        "duration": 3.671
+    },
+    {
+        "text": "The structure here will be to start by imagining teaching complex numbers to ",
+        "start": 235.3,
+        "duration": 4.124
+    },
+    {
+        "text": "someone who only understands one dimension, then describing 3D rotations to ",
+        "start": 239.424,
+        "duration": 4.071
+    },
+    {
+        "text": "someone who only understands two dimensions, and ultimately to represent what ",
+        "start": 243.495,
+        "duration": 4.178
+    },
+    {
+        "text": "quaternions are doing up in four dimensions within the constraints of our 3D space.",
+        "start": 247.673,
+        "duration": 4.447
+    },
+    {
+        "text": "Our first character is Linus the Linelander, whose mind can only grasp ",
+        "start": 257.04,
+        "duration": 3.887
+    },
+    {
+        "text": "the one-dimensional geometry of lines and the algebra of real numbers.",
+        "start": 260.927,
+        "duration": 3.833
+    },
+    {
+        "text": "We're going to try to describe complex numbers to Linus, ",
+        "start": 265.32,
+        "duration": 2.471
+    },
+    {
+        "text": "and it's really important for you to empathize with him as much as you can during this, ",
+        "start": 267.791,
+        "duration": 3.817
+    },
+    {
+        "text": "because in a few minutes you're going to be in his shoes.",
+        "start": 271.608,
+        "duration": 2.472
+    },
+    {
+        "text": "On the one hand, you could define complex numbers purely algebraically.",
+        "start": 274.8,
+        "duration": 3.38
+    },
+    {
+        "text": "You say each one is expressed as some real number plus some other real number times i, ",
+        "start": 278.64,
+        "duration": 4.78
+    },
+    {
+        "text": "where i is a newly invented constant whose defining property ",
+        "start": 283.42,
+        "duration": 3.352
+    },
+    {
+        "text": "is that i times i equals negative one.",
+        "start": 286.772,
+        "duration": 2.088
+    },
+    {
+        "text": "Then you say to Linus, to multiply two complex numbers, ",
+        "start": 289.34,
+        "duration": 3.516
+    },
+    {
+        "text": "you just use the distributive property, what many people learn in school as FOIL, ",
+        "start": 292.856,
+        "duration": 5.149
+    },
+    {
+        "text": "and you apply this rule that i times i equals negative one to simplify things ",
+        "start": 298.005,
+        "duration": 4.898
+    },
+    {
+        "text": "down further.",
+        "start": 302.903,
+        "duration": 0.817
+    },
+    {
+        "text": "And that's fine, that totally works, and the standard textbook way to introduce ",
+        "start": 304.38,
+        "duration": 3.654
+    },
+    {
+        "text": "quaternions is analogous to this, showing the algebraic rules and calling it done.",
+        "start": 308.034,
+        "duration": 3.746
+    },
+    {
+        "text": "But I think something is missing if we don't at least try to show Linus the geometry of ",
+        "start": 312.32,
+        "duration": 4.276
+    },
+    {
+        "text": "complex numbers, and what complex multiplication looks like, ",
+        "start": 316.596,
+        "duration": 2.964
+    },
+    {
+        "text": "since the problems in math and physics where complex numbers are shockingly useful often ",
+        "start": 319.56,
+        "duration": 4.325
+    },
+    {
+        "text": "leverage this spatial intuition.",
+        "start": 323.885,
+        "duration": 1.555
+    },
+    {
+        "text": "You and I, who understand two dimensions, might think of it like this.",
+        "start": 326.2,
+        "duration": 2.98
+    },
+    {
+        "text": "When you multiply two complex numbers, z times w, ",
+        "start": 329.18,
+        "duration": 3.188
+    },
+    {
+        "text": "you can think of z as a sort of function acting on w, ",
+        "start": 332.368,
+        "duration": 3.444
+    },
+    {
+        "text": "rotating and stretching it in some way.",
+        "start": 335.812,
+        "duration": 2.488
+    },
+    {
+        "text": "I like to think of this by broadening the view and asking, ",
+        "start": 340.04,
+        "duration": 2.535
+    },
+    {
+        "text": "what does z do to the entire plane?",
+        "start": 342.575,
+        "duration": 1.505
+    },
+    {
+        "text": "You can think of that bird's eye view action by imagining using one hand to ",
+        "start": 344.66,
+        "duration": 4.204
+    },
+    {
+        "text": "fix the number zero in place, and using another hand to drag the point at one up to z, ",
+        "start": 348.864,
+        "duration": 4.813
+    },
+    {
+        "text": "since anything times zero is zero, and anything times one is itself.",
+        "start": 353.677,
+        "duration": 3.763
+    },
+    {
+        "text": "In two dimensions, there is one and only one stretching ",
+        "start": 357.98,
+        "duration": 2.75
+    },
+    {
+        "text": "rotating action on the plane that'll do this.",
+        "start": 360.73,
+        "duration": 2.21
+    },
+    {
+        "text": "This is also how I'll have you thinking about quaternion multiplication later on, ",
+        "start": 363.6,
+        "duration": 4.23
+    },
+    {
+        "text": "where the number on the left acts as a kind of function to the one on the right, ",
+        "start": 367.83,
+        "duration": 4.178
+    },
+    {
+        "text": "and we'll understand this function by seeing how it acts by transforming space, ",
+        "start": 372.008,
+        "duration": 4.127
+    },
+    {
+        "text": "although instead of rotating 2d space, it does a sort of double rotation in 4d space.",
+        "start": 376.135,
+        "duration": 4.385
+    },
+    {
+        "text": "By the way, if you want to review thinking about complex numbers as a kind of action, ",
+        "start": 382.9,
+        "duration": 3.948
+    },
+    {
+        "text": "a good warmup for this video might be the one I did on e to the ",
+        "start": 386.848,
+        "duration": 2.939
+    },
+    {
+        "text": "pi i explained with introductory group theory.",
+        "start": 389.787,
+        "duration": 2.113
+    },
+    {
+        "text": "Now Linus the line lander is pretty comfortable with the idea of stretching, ",
+        "start": 392.86,
+        "duration": 3.232
+    },
+    {
+        "text": "that's what multiplication by real numbers looks like.",
+        "start": 396.092,
+        "duration": 2.268
+    },
+    {
+        "text": "Maybe it's a little weird for him to think about stretching in multiple dimensions, ",
+        "start": 398.9,
+        "duration": 3.484
+    },
+    {
+        "text": "but it's not fundamentally different.",
+        "start": 402.384,
+        "duration": 1.536
+    },
+    {
+        "text": "The difficult thing to communicate to Linus is rotation.",
+        "start": 404.48,
+        "duration": 3.02
+    },
+    {
+        "text": "Specifically, focus on the unit circle of the complex plane, ",
+        "start": 408.16,
+        "duration": 3.571
+    },
+    {
+        "text": "all the numbers a distance 1 from 0.",
+        "start": 411.731,
+        "duration": 2.109
+    },
+    {
+        "text": "Since multiplication by these numbers corresponds to pure rotation, ",
+        "start": 414.04,
+        "duration": 3.897
+    },
+    {
+        "text": "how would you explain to Linus the look and feel of multiplying by these numbers?",
+        "start": 417.937,
+        "duration": 4.643
+    },
+    {
+        "text": "At first, that might seem impossible, rotation is ",
+        "start": 424.74,
+        "duration": 2.877
+    },
+    {
+        "text": "just such an intrinsically two-dimensional idea.",
+        "start": 427.617,
+        "duration": 2.763
+    },
+    {
+        "text": "But, on the other hand, rotation involves only one degree of freedom, ",
+        "start": 431.2,
+        "duration": 4.314
+    },
+    {
+        "text": "a single number, the angle, specifies a given rotation uniquely.",
+        "start": 435.514,
+        "duration": 3.946
+    },
+    {
+        "text": "So in principle, it should be possible to associate the set of all ",
+        "start": 440.1,
+        "duration": 3.847
+    },
+    {
+        "text": "rotations to the one-dimensional continuum that is Linus's world.",
+        "start": 443.947,
+        "duration": 3.733
+    },
+    {
+        "text": "And there are many ways you could do this, but the one I'm going to show you ",
+        "start": 448.58,
+        "duration": 4.214
+    },
+    {
+        "text": "is called a stereographic projection, it's a special way to map a circle onto a line, ",
+        "start": 452.794,
+        "duration": 4.708
+    },
+    {
+        "text": "or a sphere into a plane, or even a 4D hypersphere into 3D space.",
+        "start": 457.502,
+        "duration": 3.558
+    },
+    {
+        "text": "For every point on the unit circle, draw a line from negative 1 through that point, ",
+        "start": 465.82,
+        "duration": 4.688
+    },
+    {
+        "text": "and wherever it intersects the vertical line through the circle's center, ",
+        "start": 470.508,
+        "duration": 4.129
+    },
+    {
+        "text": "that's where the point of the circle gets projected.",
+        "start": 474.637,
+        "duration": 2.903
+    },
+    {
+        "text": "So for example, the point at 1 gets projected into the center of the line, ",
+        "start": 479.46,
+        "duration": 4.642
+    },
+    {
+        "text": "the point i actually stays fixed in place, as does negative i.",
+        "start": 484.102,
+        "duration": 3.838
+    },
+    {
+        "text": "All of the points on that 90 degree arc between 1 and i will get projected ",
+        "start": 490.26,
+        "duration": 4.646
+    },
+    {
+        "text": "somewhere in the interval between where 1 landed and where i landed.",
+        "start": 494.906,
+        "duration": 4.214
+    },
+    {
+        "text": "As you continue farther around the circle on the arc between i and negative 1, ",
+        "start": 500.08,
+        "duration": 4.278
+    },
+    {
+        "text": "the projected points end up farther and farther away at an increasing rate.",
+        "start": 504.358,
+        "duration": 4.062
+    },
+    {
+        "text": "Similarly, if you come around the other way towards negative 1, ",
+        "start": 509.08,
+        "duration": 2.986
+    },
+    {
+        "text": "the projected points end up farther and farther on the other end of the line.",
+        "start": 512.066,
+        "duration": 3.593
+    },
+    {
+        "text": "This line of projected points is what we show to Linus, ",
+        "start": 516.299,
+        "duration": 3.404
+    },
+    {
+        "text": "labeling a few key points, like 1 and i and negative 1 all for reference.",
+        "start": 519.703,
+        "duration": 4.437
+    },
+    {
+        "text": "Technically, the point at negative 1 has no projection under this map, ",
+        "start": 524.94,
+        "duration": 3.365
+    },
+    {
+        "text": "since the tangent line to the circle at that point never crosses the vertical line.",
+        "start": 528.305,
+        "duration": 3.935
+    },
+    {
+        "text": "But what we say is that negative 1 ends up at the point at infinity, ",
+        "start": 532.88,
+        "duration": 3.57
+    },
+    {
+        "text": "a special point you imagine adding to the line where you would approach ",
+        "start": 536.45,
+        "duration": 3.726
+    },
+    {
+        "text": "it if you walk infinitely far along the line in either direction.",
+        "start": 540.176,
+        "duration": 3.364
+    },
+    {
+        "text": "It's important to remember, and remind Linus, that what he's seeing is only ",
+        "start": 544.54,
+        "duration": 4.046
+    },
+    {
+        "text": "the complex numbers that are a distance 1 from the origin, the unit circle.",
+        "start": 548.586,
+        "duration": 3.994
+    },
+    {
+        "text": "Linus doesn't see most numbers, like 0, or 1 plus i, or negative 2 minus i, ",
+        "start": 553.24,
+        "duration": 4.56
+    },
+    {
+        "text": "but that's okay, because right now we just want to describe complex numbers z where ",
+        "start": 557.8,
+        "duration": 5.039
+    },
+    {
+        "text": "multiplying by z has the effect of a pure rotation, ",
+        "start": 562.839,
+        "duration": 3.121
+    },
+    {
+        "text": "so he only needs to understand the unit circle.",
+        "start": 565.96,
+        "duration": 2.82
+    },
+    {
+        "text": "For example, when we take the number i and multiply it by any other complex number w, ",
+        "start": 570.8,
+        "duration": 5.069
+    },
+    {
+        "text": "the effect is to rotate by 90 degrees counterclockwise, ",
+        "start": 575.869,
+        "duration": 3.301
+    },
+    {
+        "text": "and when we apply this action to the circle being projected down to the line for Linus, ",
+        "start": 579.17,
+        "duration": 5.187
+    },
+    {
+        "text": "what does he see?",
+        "start": 584.357,
+        "duration": 1.003
+    },
+    {
+        "text": "Well, it's a bit of a strange morphing action on the line, ",
+        "start": 586.22,
+        "duration": 2.885
+    },
+    {
+        "text": "one which I want you to become familiar with for something we'll see later on.",
+        "start": 589.105,
+        "duration": 3.815
+    },
+    {
+        "text": "It's easiest to understand by following a few key reference points.",
+        "start": 592.92,
+        "duration": 3.56
+    },
+    {
+        "text": "i times 1 is i, so that means the number 1 should move up to i.",
+        "start": 597.46,
+        "duration": 4.32
+    },
+    {
+        "text": "i times i is negative 1, so the point at i slides off to infinity.",
+        "start": 603.62,
+        "duration": 5.52
+    },
+    {
+        "text": "i times negative 1 is equal to negative i, so that point at infinity kind ",
+        "start": 611.12,
+        "duration": 4.116
+    },
+    {
+        "text": "of comes back around from the bottom to the position 1 unit below the center.",
+        "start": 615.236,
+        "duration": 4.284
+    },
+    {
+        "text": "i times negative i is 1, so the point at negative i slides up to 1.",
+        "start": 620.12,
+        "duration": 5.34
+    },
+    {
+        "text": "Even though this is kind of a weird motion, it ",
+        "start": 626.3,
+        "duration": 2.054
+    },
+    {
+        "text": "lets us communicate some important ideas to Linus.",
+        "start": 628.354,
+        "duration": 2.186
+    },
+    {
+        "text": "For example, multiplying by i four times, which corresponds to rotating ",
+        "start": 631.1,
+        "duration": 3.754
+    },
+    {
+        "text": "by 90 degrees four times in a row, gets us back to where we started.",
+        "start": 634.854,
+        "duration": 3.546
+    },
+    {
+        "text": "i to the fourth equals 1.",
+        "start": 639.22,
+        "duration": 1.3
+    },
+    {
+        "text": "To get more of a feel for things, let me just show ",
+        "start": 641.4,
+        "duration": 2.279
+    },
+    {
+        "text": "the circle rotated at various different angles.",
+        "start": 643.679,
+        "duration": 2.101
+    },
+    {
+        "text": "On both the left and right half of the screen, ",
+        "start": 646.28,
+        "duration": 2.639
+    },
+    {
+        "text": "I'm putting a hand on the point that started at the number 1 to help us and help ",
+        "start": 648.919,
+        "duration": 4.55
+    },
+    {
+        "text": "Linus keep track of the overall motion.",
+        "start": 653.469,
+        "duration": 2.191
+    },
+    {
+        "text": "Next, let's introduce Felix the Flatlander, who only understands two-dimensional geometry.",
+        "start": 666.34,
+        "duration": 4.88
+    },
+    {
+        "text": "Imagine trying to explain rotations of a sphere to Felix.",
+        "start": 671.22,
+        "duration": 3.94
+    },
+    {
+        "text": "In the spirit of transitioning from complex numbers to quaternions, ",
+        "start": 678.22,
+        "duration": 3.61
+    },
+    {
+        "text": "let's extend the complex numbers with its horizontal axis of real numbers and ",
+        "start": 681.83,
+        "duration": 4.142
+    },
+    {
+        "text": "its vertical axis of imaginary numbers with a third axis, ",
+        "start": 685.972,
+        "duration": 3.08
+    },
+    {
+        "text": "defined by some newly invented constant, j, sitting one unit away from zero, ",
+        "start": 689.052,
+        "duration": 4.089
+    },
+    {
+        "text": "perpendicular to the complex plane.",
+        "start": 693.141,
+        "duration": 1.859
+    },
+    {
+        "text": "Instead of having this new axis in the z-direction, like you might expect, ",
+        "start": 695.76,
+        "duration": 4.33
+    },
+    {
+        "text": "for a better analogy with how we'll visualize quaternions, ",
+        "start": 700.09,
+        "duration": 3.406
+    },
+    {
+        "text": "we'll want to orient things so that the i and j axes sit in the x and y directions, ",
+        "start": 703.496,
+        "duration": 4.85
+    },
+    {
+        "text": "with the real number line aligned along the z-direction.",
+        "start": 708.346,
+        "duration": 3.234
+    },
+    {
+        "text": "Every point in 3D space is described as some real number ",
+        "start": 713.5,
+        "duration": 3.585
+    },
+    {
+        "text": "plus some real number times i plus some real number times j.",
+        "start": 717.085,
+        "duration": 3.775
+    },
+    {
+        "text": "As it happens, it's not possible to define a notion of multiplication ",
+        "start": 721.62,
+        "duration": 3.489
+    },
+    {
+        "text": "for a 3D number system like this that would satisfy the usual ",
+        "start": 725.109,
+        "duration": 3.09
+    },
+    {
+        "text": "algebraic properties that make multiplication a useful construct.",
+        "start": 728.199,
+        "duration": 3.241
+    },
+    {
+        "text": "Perhaps I'll outline why this is the case in a follow-on video, ",
+        "start": 731.86,
+        "duration": 3.39
+    },
+    {
+        "text": "but staying focused on our current goal, think about describing ",
+        "start": 735.25,
+        "duration": 3.391
+    },
+    {
+        "text": "3D rotations in this coordinate system to Felix the Flatlander.",
+        "start": 738.641,
+        "duration": 3.339
+    },
+    {
+        "text": "The unit sphere consists of all those numbers which are a distance 1 from ",
+        "start": 742.62,
+        "duration": 4.08
+    },
+    {
+        "text": "0 at the origin, meaning the sum of the squares of their coordinates is 1.",
+        "start": 746.7,
+        "duration": 4.08
+    },
+    {
+        "text": "We can't show all of 3D space to Felix, but what we can do is ",
+        "start": 754.78,
+        "duration": 3.55
+    },
+    {
+        "text": "project this 2D surface to him and give him a feel for what ",
+        "start": 758.33,
+        "duration": 3.436
+    },
+    {
+        "text": "reorientations of the sphere look like under that projection.",
+        "start": 761.766,
+        "duration": 3.494
+    },
+    {
+        "text": "Analogous to what we did before, stereographic projection will ",
+        "start": 766.2,
+        "duration": 3.544
+    },
+    {
+        "text": "associate almost every point on the unit sphere with a unique ",
+        "start": 769.744,
+        "duration": 3.488
+    },
+    {
+        "text": "point on the horizontal plane defined by the i and the j axes.",
+        "start": 773.232,
+        "duration": 3.488
+    },
+    {
+        "text": "For each point on the sphere, draw a line from negative 1 at the ",
+        "start": 777.38,
+        "duration": 4.036
+    },
+    {
+        "text": "south pole through that point and see where it intersects the plane.",
+        "start": 781.416,
+        "duration": 4.224
+    },
+    {
+        "text": "So the point 1 at the north pole ends up at the center of the plane.",
+        "start": 792.02,
+        "duration": 3.5
+    },
+    {
+        "text": "all of the points of the northern hemisphere get mapped somewhere ",
+        "start": 795.78,
+        "duration": 4.111
+    },
+    {
+        "text": "inside the unit circle of the i-j plane, and that unit circle which passes through i, ",
+        "start": 799.891,
+        "duration": 5.358
+    },
+    {
+        "text": "j, negative i, negative j, stays fixed in place.",
+        "start": 805.249,
+        "duration": 2.991
+    },
+    {
+        "text": "And that's an important point to make note of.",
+        "start": 808.82,
+        "duration": 2.12
+    },
+    {
+        "text": "Even though most points and lines and patches that Felix the Flatlander sees ",
+        "start": 811.1,
+        "duration": 4.404
+    },
+    {
+        "text": "are warped projections of the real sphere, this unit circle is the one thing ",
+        "start": 815.504,
+        "duration": 4.405
+    },
+    {
+        "text": "he has which is an honest part of our unit sphere, unaltered by projection.",
+        "start": 819.909,
+        "duration": 4.291
+    },
+    {
+        "text": "All of the points in the southern hemisphere get projected outside that unit circle, ",
+        "start": 826.7,
+        "duration": 4.533
+    },
+    {
+        "text": "each getting farther and farther away as you approach negative 1 at the south pole.",
+        "start": 831.233,
+        "duration": 4.427
+    },
+    {
+        "text": "And again, negative 1 has no projection under this mapping, ",
+        "start": 836.46,
+        "duration": 3.153
+    },
+    {
+        "text": "but what we say is that it ends up at some point at infinity.",
+        "start": 839.613,
+        "duration": 3.207
+    },
+    {
+        "text": "That point at infinity is something such that no matter which direction you walk ",
+        "start": 843.52,
+        "duration": 3.762
+    },
+    {
+        "text": "on the plane, as you go infinitely far out, you'll be approaching that point.",
+        "start": 847.282,
+        "duration": 3.578
+    },
+    {
+        "text": "It's analogous to how if you walk any direction away from the north pole, ",
+        "start": 851.43,
+        "duration": 3.473
+    },
+    {
+        "text": "you're approaching the south pole.",
+        "start": 854.903,
+        "duration": 1.597
+    },
+    {
+        "text": "Now let me just pull up a view of what Felix sees in two dimensions.",
+        "start": 858.82,
+        "duration": 3.38
+    },
+    {
+        "text": "As I rotate the sphere in various ways, the lines of latitude and longitude ",
+        "start": 862.92,
+        "duration": 4.55
+    },
+    {
+        "text": "drawn on that sphere get projected into various circles and lines in Felix's space.",
+        "start": 867.47,
+        "duration": 4.97
+    },
+    {
+        "text": "And the way I've done things up here, the checkerboard pattern on the surface of the ",
+        "start": 873.14,
+        "duration": 4.646
+    },
+    {
+        "text": "sphere is accurately reflected in the projected view you see with Felix, ",
+        "start": 877.786,
+        "duration": 3.991
+    },
+    {
+        "text": "and the pinker view represents where the point that started at the north pole ends up ",
+        "start": 881.777,
+        "duration": 4.701
+    },
+    {
+        "text": "after the rotation, and the yellow circle represents where the equator ended up after ",
+        "start": 886.478,
+        "duration": 4.702
+    },
+    {
+        "text": "the projection.",
+        "start": 891.18,
+        "duration": 0.82
+    },
+    {
+        "text": "The more you put yourself in Felix's shoes right now, ",
+        "start": 892.98,
+        "duration": 2.526
+    },
+    {
+        "text": "the easier quaternions will be in a moment, and as with Linus, ",
+        "start": 895.506,
+        "duration": 2.948
+    },
+    {
+        "text": "it helps to focus on a few key reference objects rather than trying ",
+        "start": 898.454,
+        "duration": 3.182
+    },
+    {
+        "text": "to see the whole sphere.",
+        "start": 901.636,
+        "duration": 1.124
+    },
+    {
+        "text": "This circle, passing through 1, i, negative 1, and negative i, ",
+        "start": 903.6,
+        "duration": 4.077
+    },
+    {
+        "text": "gets mapped onto a line which Felix sees as the horizontal axis.",
+        "start": 907.677,
+        "duration": 4.143
+    },
+    {
+        "text": "It's important to remind Felix that what he sees is not the same thing as the i-axis.",
+        "start": 912.56,
+        "duration": 3.92
+    },
+    {
+        "text": "Remember, we're only projecting the numbers that have a distance 1 from the origin, ",
+        "start": 917.12,
+        "duration": 5.106
+    },
+    {
+        "text": "so most points on the actual i-axis, like 0, 2i, 3i, etc., ",
+        "start": 922.226,
+        "duration": 3.587
+    },
+    {
+        "text": "are completely invisible to Felix.",
+        "start": 925.813,
+        "duration": 2.067
+    },
+    {
+        "text": "Similarly, the circle that passes through 1, j, negative 1, ",
+        "start": 930.58,
+        "duration": 3.439
+    },
+    {
+        "text": "and negative j gets projected onto what he sees as a vertical line.",
+        "start": 934.019,
+        "duration": 3.841
+    },
+    {
+        "text": "In general, any line Felix sees comes from some ",
+        "start": 938.4,
+        "duration": 3.216
+    },
+    {
+        "text": "circle on the sphere that passes through negative 1.",
+        "start": 941.616,
+        "duration": 3.484
+    },
+    {
+        "text": "In some sense, a line is just a circle that passes through the point at infinity.",
+        "start": 945.84,
+        "duration": 3.98
+    },
+    {
+        "text": "Now think about what Felix sees as we rotate the sphere.",
+        "start": 955.12,
+        "duration": 3.0
+    },
+    {
+        "text": "A 90 degree rotation about the j-axis brings 1 to i, ",
+        "start": 958.59,
+        "duration": 3.988
+    },
+    {
+        "text": "i to negative 1, negative 1 to negative i, and negative i to 1.",
+        "start": 962.578,
+        "duration": 4.742
+    },
+    {
+        "text": "So what Felix the Flatlander sees is an extension ",
+        "start": 968.06,
+        "duration": 2.912
+    },
+    {
+        "text": "of the rotation that Linus the Linelander was seeing.",
+        "start": 970.972,
+        "duration": 3.088
+    },
+    {
+        "text": "Notice also that this action rotates the i, j unit circle to the position where the 1, ",
+        "start": 974.72,
+        "duration": 5.763
+    },
+    {
+        "text": "j unit circle used to be.",
+        "start": 980.483,
+        "duration": 1.657
+    },
+    {
+        "text": "So what Felix sees is his yellow unit circle getting transformed into a vertical line, ",
+        "start": 982.42,
+        "duration": 5.026
+    },
+    {
+        "text": "while the red vertical line gets transformed into the unit circle.",
+        "start": 987.446,
+        "duration": 3.814
+    },
+    {
+        "text": "Of course, from our perspective, we know this is all just rigid motion, ",
+        "start": 992.16,
+        "duration": 3.439
+    },
+    {
+        "text": "no actual stretching or morphing is taking place.",
+        "start": 995.599,
+        "duration": 2.341
+    },
+    {
+        "text": "All of that is just an artifact of the projection.",
+        "start": 998.32,
+        "duration": 2.26
+    },
+    {
+        "text": "Similarly, a rotation about the i-axis involves moving 1 to j, ",
+        "start": 1002.32,
+        "duration": 4.25
+    },
+    {
+        "text": "j to negative 1, negative 1 to negative j, and negative j to 1.",
+        "start": 1006.57,
+        "duration": 4.25
+    },
+    {
+        "text": "This rotation turns the i, j unit circle into the 1, i unit circle, ",
+        "start": 1011.34,
+        "duration": 4.586
+    },
+    {
+        "text": "which to Felix looks like the unit circle getting transformed into a horizontal line.",
+        "start": 1015.926,
+        "duration": 5.734
+    },
+    {
+        "text": "A rotation about the real axis is actually quite easy for Felix to understand, ",
+        "start": 1029.02,
+        "duration": 4.259
+    },
+    {
+        "text": "since the whole projection simply gets rotated about the origin, ",
+        "start": 1033.279,
+        "duration": 3.505
+    },
+    {
+        "text": "where the only points staying fixed in place are 1 at the origin and negative 1 ",
+        "start": 1036.784,
+        "duration": 4.313
+    },
+    {
+        "text": "off at infinity.",
+        "start": 1041.097,
+        "duration": 0.863
+    },
+    {
+        "text": "In the same way that the complex numbers included the real numbers with a single ",
+        "start": 1049.03,
+        "duration": 4.702
+    },
+    {
+        "text": "extra quote unquote imaginary dimension, represented by the unit i, ",
+        "start": 1053.732,
+        "duration": 3.947
+    },
+    {
+        "text": "and that the not-actually-a-number system thing we had in three dimensions ",
+        "start": 1057.679,
+        "duration": 4.354
+    },
+    {
+        "text": "included a second imaginary direction, j, the quaternions include the real ",
+        "start": 1062.033,
+        "duration": 4.354
+    },
+    {
+        "text": "numbers together with three separate imaginary dimensions, represented by the units i, ",
+        "start": 1066.387,
+        "duration": 5.05
+    },
+    {
+        "text": "j, and k.",
+        "start": 1071.437,
+        "duration": 0.523
+    },
+    {
+        "text": "Each of these three imaginary dimensions is perpendicular to the real number line, ",
+        "start": 1072.62,
+        "duration": 4.598
+    },
+    {
+        "text": "and they're all perpendicular to each other somehow.",
+        "start": 1077.218,
+        "duration": 2.882
+    },
+    {
+        "text": "So in the same way that complex numbers are represented as a pair of real numbers, ",
+        "start": 1081.76,
+        "duration": 4.485
+    },
+    {
+        "text": "each quaternion can be written using four real numbers, ",
+        "start": 1086.245,
+        "duration": 3.027
+    },
+    {
+        "text": "and it lives in four-dimensional space.",
+        "start": 1089.272,
+        "duration": 2.108
+    },
+    {
+        "text": "You often think of this as being broken up into a real or scalar part, ",
+        "start": 1091.96,
+        "duration": 3.919
+    },
+    {
+        "text": "and then a 3D imaginary part.",
+        "start": 1095.879,
+        "duration": 1.601
+    },
+    {
+        "text": "And Hamilton used a special word for quaternions that had no real part and just i, ",
+        "start": 1098.02,
+        "duration": 4.373
+    },
+    {
+        "text": "j, k components, a word which was previously somewhat foreign ",
+        "start": 1102.393,
+        "duration": 3.266
+    },
+    {
+        "text": "in the lingo of math and physics, vector.",
+        "start": 1105.659,
+        "duration": 2.161
+    },
+    {
+        "text": "On the one hand, you could just define quaternion multiplication by giving the rules ",
+        "start": 1108.9,
+        "duration": 4.513
+    },
+    {
+        "text": "for how i, j, and k multiply together, and saying that everything must distribute nicely.",
+        "start": 1113.413,
+        "duration": 4.727
+    },
+    {
+        "text": "This is analogous to defining complex multiplication by saying that i ",
+        "start": 1118.59,
+        "duration": 3.555
+    },
+    {
+        "text": "times i is negative 1, and then distributing and simplifying products.",
+        "start": 1122.145,
+        "duration": 3.555
+    },
+    {
+        "text": "And indeed, this is how you would tell a computer to perform quaternion multiplication, ",
+        "start": 1126.24,
+        "duration": 4.448
+    },
+    {
+        "text": "and the relative compactness of this operation compared to say matrix multiplication ",
+        "start": 1130.688,
+        "duration": 4.296
+    },
+    {
+        "text": "is what's made quaternion so useful for graphics programming and many other things.",
+        "start": 1134.984,
+        "duration": 4.196
+    },
+    {
+        "text": "There's also a rather elegant form of this multiplication rule written in terms ",
+        "start": 1139.88,
+        "duration": 3.772
+    },
+    {
+        "text": "of the dot product and the cross product, and in some sense, ",
+        "start": 1143.652,
+        "duration": 2.877
+    },
+    {
+        "text": "quaternion multiplication subsumes both of these notions, ",
+        "start": 1146.529,
+        "duration": 2.735
+    },
+    {
+        "text": "at least as they appear in three dimensions.",
+        "start": 1149.264,
+        "duration": 2.076
+    },
+    {
+        "text": "But just as a deeper understanding for complex multiplication comes from understanding ",
+        "start": 1152.46,
+        "duration": 4.203
+    },
+    {
+        "text": "its geometry that multiplying by a complex number involves a combination of scaling and ",
+        "start": 1156.663,
+        "duration": 4.252
+    },
+    {
+        "text": "rotating, you and I are here for the four-dimensional geometry of quaternion ",
+        "start": 1160.915,
+        "duration": 3.72
+    },
+    {
+        "text": "multiplication.",
+        "start": 1164.635,
+        "duration": 0.725
+    },
+    {
+        "text": "And just as the magnitude of a complex number, its distance from zero, ",
+        "start": 1165.8,
+        "duration": 3.674
+    },
+    {
+        "text": "is the square root of the sum of the squares of its component, ",
+        "start": 1169.474,
+        "duration": 3.26
+    },
+    {
+        "text": "that same operation gives you the magnitude of a quaternion.",
+        "start": 1172.734,
+        "duration": 3.106
+    },
+    {
+        "text": "And multiplying one quaternion, q1, by another, q2, ",
+        "start": 1178.12,
+        "duration": 3.726
+    },
+    {
+        "text": "has the effect of scaling q2 by the magnitude of q1, ",
+        "start": 1181.846,
+        "duration": 3.799
+    },
+    {
+        "text": "followed by a very special type of rotation in four dimensions.",
+        "start": 1185.645,
+        "duration": 4.515
+    },
+    {
+        "text": "And those special 4D rotations, the heart of what we need to understand, ",
+        "start": 1190.98,
+        "duration": 4.029
+    },
+    {
+        "text": "correspond to the hypersphere of quaternions, a distance 1 from the origin, ",
+        "start": 1195.009,
+        "duration": 4.194
+    },
+    {
+        "text": "both in the sense that the quaternions whose multiplying action is a pure ",
+        "start": 1199.203,
+        "duration": 4.085
+    },
+    {
+        "text": "rotation live on that hypersphere, and in the sense that we can understand ",
+        "start": 1203.288,
+        "duration": 4.139
+    },
+    {
+        "text": "this weird 4D action just by following points on the hypersphere, ",
+        "start": 1207.427,
+        "duration": 3.643
+    },
+    {
+        "text": "rather than trying to look at all the points in the inconceivable stretches ",
+        "start": 1211.07,
+        "duration": 4.194
+    },
+    {
+        "text": "of four-dimensional space.",
+        "start": 1215.264,
+        "duration": 1.436
+    },
+    {
+        "text": "Analogous to what we did for Linus and Felix, we ",
+        "start": 1217.28,
+        "duration": 2.856
+    },
+    {
+        "text": "stereographically project this hypersphere into 3D space.",
+        "start": 1220.136,
+        "duration": 3.324
+    },
+    {
+        "text": "This label in the upper right is going to show a given unit quaternion, ",
+        "start": 1227.32,
+        "duration": 4.446
+    },
+    {
+        "text": "and this little pink dot will show where that particular quaternion gets projected in ",
+        "start": 1231.766,
+        "duration": 5.311
+    },
+    {
+        "text": "our 3D space.",
+        "start": 1237.077,
+        "duration": 0.803
+    },
+    {
+        "text": "Just as before, we're projecting from the number negative 1, ",
+        "start": 1238.58,
+        "duration": 3.14
+    },
+    {
+        "text": "which sits on the real number line that is somehow perpendicular to all of our 3D space, ",
+        "start": 1241.72,
+        "duration": 4.581
+    },
+    {
+        "text": "and beyond our perception.",
+        "start": 1246.301,
+        "duration": 1.339
+    },
+    {
+        "text": "Just as before, the number 1 ends up projected straight into the center of our space.",
+        "start": 1248.34,
+        "duration": 4.7
+    },
+    {
+        "text": "And in the same way that i and negative i were fixed in place for Linus, ",
+        "start": 1253.74,
+        "duration": 4.526
+    },
+    {
+        "text": "and that the ij unit circle was fixed in place for Felix, ",
+        "start": 1258.266,
+        "duration": 3.597
+    },
+    {
+        "text": "we get a whole sphere passing through i, j, and k on that unit hypersphere, ",
+        "start": 1261.863,
+        "duration": 4.712
+    },
+    {
+        "text": "which stays in place under the projection.",
+        "start": 1266.575,
+        "duration": 2.605
+    },
+    {
+        "text": "So what we see as a unit sphere in our 3D space represents the only unaltered ",
+        "start": 1269.66,
+        "duration": 4.701
+    },
+    {
+        "text": "part of the hypersphere of quaternions getting projected down onto us.",
+        "start": 1274.361,
+        "duration": 4.219
+    },
+    {
+        "text": "It's something analogous to the equator of a 3D sphere, ",
+        "start": 1278.88,
+        "duration": 3.146
+    },
+    {
+        "text": "and it represents all of the unit quaternions whose real part is zero, ",
+        "start": 1282.026,
+        "duration": 3.988
+    },
+    {
+        "text": "what Hamilton would have described as unit vectors.",
+        "start": 1286.014,
+        "duration": 2.866
+    },
+    {
+        "text": "The unit quaternions with positive real parts, between 0 and 1, ",
+        "start": 1291.76,
+        "duration": 3.562
+    },
+    {
+        "text": "end up somewhere inside this unit sphere, closer to the number 1 in our 3D space, ",
+        "start": 1295.322,
+        "duration": 4.564
+    },
+    {
+        "text": "which should feel analogous to how the northern hemisphere got mapped inside the ",
+        "start": 1299.886,
+        "duration": 4.509
+    },
+    {
+        "text": "unit circle for Felix.",
+        "start": 1304.395,
+        "duration": 1.225
+    },
+    {
+        "text": "On the other hand, all the unit quaternions with negative ",
+        "start": 1307.48,
+        "duration": 2.794
+    },
+    {
+        "text": "real part end up somewhere outside that unit sphere.",
+        "start": 1310.274,
+        "duration": 2.506
+    },
+    {
+        "text": "The number negative 1 is sitting off at the point at infinity, ",
+        "start": 1320.1,
+        "duration": 3.047
+    },
+    {
+        "text": "which you can easily find by walking in any direction.",
+        "start": 1323.147,
+        "duration": 2.613
+    },
+    {
+        "text": "Keep in mind, even though we see the projection of some of these quaternions ",
+        "start": 1326.98,
+        "duration": 3.857
+    },
+    {
+        "text": "as being closer or farther from the origin of our 3D space, ",
+        "start": 1330.837,
+        "duration": 3.006
+    },
+    {
+        "text": "everything you're looking at represents a unit quaternion, ",
+        "start": 1333.843,
+        "duration": 2.956
+    },
+    {
+        "text": "so everything you're looking at really has the same magnitude, ",
+        "start": 1336.799,
+        "duration": 3.157
+    },
+    {
+        "text": "the same distance from the number 0.",
+        "start": 1339.956,
+        "duration": 1.804
+    },
+    {
+        "text": "And that number 0 itself is nowhere to be found in this picture.",
+        "start": 1342.52,
+        "duration": 3.22
+    },
+    {
+        "text": "Like all other non-unit quaternions, it's invisible to us.",
+        "start": 1346.16,
+        "duration": 3.42
+    },
+    {
+        "text": "In the same way that for Felix, the circle passing through 1, i, negative 1, ",
+        "start": 1350.82,
+        "duration": 4.648
+    },
+    {
+        "text": "and negative i got projected into a line through the origin, ",
+        "start": 1355.468,
+        "duration": 3.683
+    },
+    {
+        "text": "when we see this line through the origin passing through i and negative i, ",
+        "start": 1359.151,
+        "duration": 4.528
+    },
+    {
+        "text": "we should understand that it really represents a circle.",
+        "start": 1363.679,
+        "duration": 3.381
+    },
+    {
+        "text": "Likewise, up on the hypersphere, invisible to us, ",
+        "start": 1367.58,
+        "duration": 3.136
+    },
+    {
+        "text": "there is a unit sphere passing through 1, i, j, negative 1, negative i, ",
+        "start": 1370.716,
+        "duration": 4.516
+    },
+    {
+        "text": "and negative j, and that whole sphere gets projected into the plane that we see ",
+        "start": 1375.232,
+        "duration": 5.018
+    },
+    {
+        "text": "passing through 1, i, negative i, j, negative j, and negative 1, off at infinity, ",
+        "start": 1380.25,
+        "duration": 5.143
+    },
+    {
+        "text": "what you and I might call the xy plane.",
+        "start": 1385.393,
+        "duration": 2.447
+    },
+    {
+        "text": "In general, any plane that you see here really represents the projection of a ",
+        "start": 1388.58,
+        "duration": 4.046
+    },
+    {
+        "text": "sphere somewhere up on the hypersphere which passes through the number negative 1.",
+        "start": 1392.626,
+        "duration": 4.254
+    },
+    {
+        "text": "The action of taking a unit quaternion and multiplying it by any other quaternion from ",
+        "start": 1399.18,
+        "duration": 5.006
+    },
+    {
+        "text": "the left can be thought of in terms of two separate 2D rotations, ",
+        "start": 1404.186,
+        "duration": 3.798
+    },
+    {
+        "text": "happening perpendicular to and in sync with each other in a way that could only ever be ",
+        "start": 1407.984,
+        "duration": 5.064
+    },
+    {
+        "text": "possible in four dimensions.",
+        "start": 1413.048,
+        "duration": 1.612
+    },
+    {
+        "text": "As a first example, let's look at multiplication by i.",
+        "start": 1415.48,
+        "duration": 2.56
+    },
+    {
+        "text": "We already know what this does to the circle that passes through 1 and i, ",
+        "start": 1418.72,
+        "duration": 4.012
+    },
+    {
+        "text": "which we see as a line.",
+        "start": 1422.732,
+        "duration": 1.248
+    },
+    {
+        "text": "1 goes to i, i goes to negative 1, off at infinity, ",
+        "start": 1425.84,
+        "duration": 4.366
+    },
+    {
+        "text": "negative 1 comes back around to negative i, and negative i goes to 1.",
+        "start": 1430.206,
+        "duration": 5.794
+    },
+    {
+        "text": "Remember, just like what Linus saw, all of this is ",
+        "start": 1436.7,
+        "duration": 2.726
+    },
+    {
+        "text": "the stereographic projection of a 90 degree rotation.",
+        "start": 1439.426,
+        "duration": 2.834
+    },
+    {
+        "text": "Now look at the circle passing through j and k, ",
+        "start": 1443.12,
+        "duration": 2.64
+    },
+    {
+        "text": "which is in a sense perpendicular to the circle passing through 1 and i.",
+        "start": 1445.76,
+        "duration": 3.96
+    },
+    {
+        "text": "It might feel weird to talk about two circles being perpendicular to each other, ",
+        "start": 1450.28,
+        "duration": 3.838
+    },
+    {
+        "text": "especially when they have the same center and radius and don't touch each other at all, ",
+        "start": 1454.118,
+        "duration": 4.17
+    },
+    {
+        "text": "but nothing could be more natural in four dimensions.",
+        "start": 1458.288,
+        "duration": 2.512
+    },
+    {
+        "text": "You can think of the action of i on this perpendicular circle as obeying ",
+        "start": 1461.64,
+        "duration": 3.893
+    },
+    {
+        "text": "a certain right-hand rule, if you'll excuse the intrusion of my ghostly ",
+        "start": 1465.533,
+        "duration": 3.84
+    },
+    {
+        "text": "green-screen hand into our otherwise pristine platonic mathematical stage.",
+        "start": 1469.373,
+        "duration": 3.947
+    },
+    {
+        "text": "You let that thumb of your right hand point from the number 1 to i, ",
+        "start": 1473.7,
+        "duration": 3.747
+    },
+    {
+        "text": "and you curl your fingers.",
+        "start": 1477.447,
+        "duration": 1.433
+    },
+    {
+        "text": "The j-k circle will rotate in the direction of that curl.",
+        "start": 1479.4,
+        "duration": 3.62
+    },
+    {
+        "text": "How much?",
+        "start": 1483.66,
+        "duration": 0.46
+    },
+    {
+        "text": "Well, by the same amount as the 1i circle rotates, which is 90 degrees in this case.",
+        "start": 1484.6,
+        "duration": 5.42
+    },
+    {
+        "text": "This is what I meant by two rotations perpendicular to and in sync with each other.",
+        "start": 1490.56,
+        "duration": 4.92
+    },
+    {
+        "text": "So j goes to k, k goes to negative j, negative j goes to negative k, ",
+        "start": 1495.48,
+        "duration": 9.704
+    },
+    {
+        "text": "and negative k goes to j.",
+        "start": 1505.184,
+        "duration": 3.516
+    },
+    {
+        "text": "This gives us a little table for what the number i does to the other quaternions, ",
+        "start": 1510.82,
+        "duration": 3.771
+    },
+    {
+        "text": "but I want this not to be something that you memorize, ",
+        "start": 1514.591,
+        "duration": 2.529
+    },
+    {
+        "text": "but something that you could close your eyes and you could really see.",
+        "start": 1517.12,
+        "duration": 3.22
+    },
+    {
+        "text": "Computationally, if you know what a quaternion does to the numbers 1, i, j, and k, ",
+        "start": 1521.34,
+        "duration": 4.932
+    },
+    {
+        "text": "you know what it does to any arbitrary quaternion, ",
+        "start": 1526.272,
+        "duration": 3.03
+    },
+    {
+        "text": "since multiplication distributes nicely.",
+        "start": 1529.302,
+        "duration": 2.378
+    },
+    {
+        "text": "In the language of linear algebra, 1, i, j, and k form a basis of ",
+        "start": 1532.24,
+        "duration": 3.882
+    },
+    {
+        "text": "our 4-dimensional space, so knowing what our transformation does to ",
+        "start": 1536.122,
+        "duration": 4.0
+    },
+    {
+        "text": "them gives us the full information about what it does to all of space.",
+        "start": 1540.122,
+        "duration": 4.118
+    },
+    {
+        "text": "Geometrically, a 4-dimensional creature would be able to look at ",
+        "start": 1545.22,
+        "duration": 3.445
+    },
+    {
+        "text": "those two perpendicular rotations I just described, ",
+        "start": 1548.665,
+        "duration": 2.757
+    },
+    {
+        "text": "and understand that they lock you into one and only one rigid motion for the hypersphere.",
+        "start": 1551.422,
+        "duration": 4.718
+    },
+    {
+        "text": "We might lack the intuitions of such a hypothetical creature, ",
+        "start": 1556.62,
+        "duration": 2.97
+    },
+    {
+        "text": "but we can maybe try to get close.",
+        "start": 1559.59,
+        "duration": 1.63
+    },
+    {
+        "text": "Here's what the action of repeatedly multiplying by i ",
+        "start": 1561.68,
+        "duration": 3.315
+    },
+    {
+        "text": "looks like on our stereographic projection of the ijk sphere.",
+        "start": 1564.995,
+        "duration": 3.745
+    },
+    {
+        "text": "It gets rotated into what we see as a plane, then gets rotated further back to where it ",
+        "start": 1569.56,
+        "duration": 4.76
+    },
+    {
+        "text": "used to be, though the orientation is reversed now, ",
+        "start": 1574.32,
+        "duration": 2.812
+    },
+    {
+        "text": "then gets rotated again into what we see as a plane, and after the fourth iteration, ",
+        "start": 1577.132,
+        "duration": 4.598
+    },
+    {
+        "text": "it ends up right back where it started.",
+        "start": 1581.73,
+        "duration": 2.11
+    },
+    {
+        "text": "As another example, think of a quaternion like q equals negative square root ",
+        "start": 1585.04,
+        "duration": 5.037
+    },
+    {
+        "text": "of 2 over 2 plus square root of 2 over 2 times i, ",
+        "start": 1590.077,
+        "duration": 3.271
+    },
+    {
+        "text": "which if we pull up a picture of a complex plane, ",
+        "start": 1593.348,
+        "duration": 3.272
+    },
+    {
+        "text": "is a 135 degree rotation away from 1 in the direction of i.",
+        "start": 1596.62,
+        "duration": 3.86
+    },
+    {
+        "text": "Under our projection, we see this along the line ",
+        "start": 1601.11,
+        "duration": 2.8
+    },
+    {
+        "text": "from 1 to i somewhere outside the unit sphere.",
+        "start": 1603.91,
+        "duration": 2.63
+    },
+    {
+        "text": "If that sounds weird, just remember how Linus would have seen this same number.",
+        "start": 1607.26,
+        "duration": 3.42
+    },
+    {
+        "text": "The action of multiplying this q by all other quaternions will look to us ",
+        "start": 1611.66,
+        "duration": 4.793
+    },
+    {
+        "text": "like dragging the point at 1 all the way to this projected version of q, ",
+        "start": 1616.453,
+        "duration": 4.729
+    },
+    {
+        "text": "while the jk circle gets rotated 135 degrees, according to our right-hand rule.",
+        "start": 1621.182,
+        "duration": 5.118
+    },
+    {
+        "text": "Multiplication by any other quaternion is completely similar.",
+        "start": 1629.98,
+        "duration": 3.24
+    },
+    {
+        "text": "For example, let's see what it looks like for j to act ",
+        "start": 1633.74,
+        "duration": 2.454
+    },
+    {
+        "text": "on other quaternions by multiplication from the left.",
+        "start": 1636.194,
+        "duration": 2.366
+    },
+    {
+        "text": "The circle through 1 and j, which we see projected as a line through the origin, ",
+        "start": 1639.36,
+        "duration": 5.952
+    },
+    {
+        "text": "gets rotated 90 degrees, dragging 1 up to j, so j times 1 is 1 and j times j is negative ",
+        "start": 1645.312,
+        "duration": 6.541
+    },
+    {
+        "text": "1.",
+        "start": 1651.853,
+        "duration": 0.147
+    },
+    {
+        "text": "The circle perpendicular to that one, passing through i and k, ",
+        "start": 1658.06,
+        "duration": 5.287
+    },
+    {
+        "text": "gets rotated 90 degrees according to this right-hand rule, ",
+        "start": 1663.347,
+        "duration": 4.951
+    },
+    {
+        "text": "where you point your thumb from 1 to j, so j times i is negative k, and j times k is i.",
+        "start": 1668.298,
+        "duration": 7.302
+    },
+    {
+        "text": "In general, for any other unit quaternion you see somewhere in space, ",
+        "start": 1681.74,
+        "duration": 4.102
+    },
+    {
+        "text": "start by drawing the unit circle passing through 1, q, and negative 1, ",
+        "start": 1685.842,
+        "duration": 4.161
+    },
+    {
+        "text": "which we see in our projection as a line through the origin.",
+        "start": 1690.003,
+        "duration": 3.517
+    },
+    {
+        "text": "Then draw the circle perpendicular to that 1 on what we see as the unit sphere.",
+        "start": 1694.22,
+        "duration": 3.88
+    },
+    {
+        "text": "You rotate the first circle so that 1 ends up where q was, ",
+        "start": 1698.9,
+        "duration": 3.515
+    },
+    {
+        "text": "and rotate the perpendicular circle by the same amount according to the right-hand rule.",
+        "start": 1702.415,
+        "duration": 5.245
+    },
+    {
+        "text": "One thing worth noticing here is that order of multiplication matters.",
+        "start": 1720.12,
+        "duration": 3.56
+    },
+    {
+        "text": "It's not, as mathematicians would say, commutative.",
+        "start": 1723.92,
+        "duration": 2.78
+    },
+    {
+        "text": "For example, i times j is k, which you might think of in terms ",
+        "start": 1727.28,
+        "duration": 4.393
+    },
+    {
+        "text": "of i acting on the quaternion j, rotating it up to k, ",
+        "start": 1731.673,
+        "duration": 3.766
+    },
+    {
+        "text": "but if you think of j as acting on i, j times i, it rotates i to negative k.",
+        "start": 1735.439,
+        "duration": 5.301
+    },
+    {
+        "text": "In fact, commutativity, this ability to swap the order of multiplication, ",
+        "start": 1741.74,
+        "duration": 3.7
+    },
+    {
+        "text": "is a way more special property than a lot of people realize.",
+        "start": 1745.44,
+        "duration": 3.0
+    },
+    {
+        "text": "And most groups of actions on some space don't have it.",
+        "start": 1749.08,
+        "duration": 3.28
+    },
+    {
+        "text": "It's like how in solving a Rubik's cube, order matters a lot, ",
+        "start": 1752.74,
+        "duration": 3.725
+    },
+    {
+        "text": "or how rotating a cube about the z-axis and then about the x-axis gives ",
+        "start": 1756.465,
+        "duration": 4.327
+    },
+    {
+        "text": "a different final state from rotating it about the x-axis, then about the z-axis.",
+        "start": 1760.792,
+        "duration": 4.868
+    },
+    {
+        "text": "And last, as one final but rather important point, ",
+        "start": 1769.3,
+        "duration": 2.662
+    },
+    {
+        "text": "so far I've shown you how to think about quaternions as acting by left multiplication, ",
+        "start": 1771.962,
+        "duration": 4.541
+    },
+    {
+        "text": "where when you read an expression like i times j, ",
+        "start": 1776.503,
+        "duration": 2.61
+    },
+    {
+        "text": "you think of i as a kind of function morphing all of space, ",
+        "start": 1779.113,
+        "duration": 3.132
+    },
+    {
+        "text": "and j is just one of the points that it's acting on.",
+        "start": 1782.245,
+        "duration": 2.715
+    },
+    {
+        "text": "But you can also think of them as a different sort of action, ",
+        "start": 1784.96,
+        "duration": 3.51
+    },
+    {
+        "text": "by multiplying from the right, where in this expression, j would be acting on i.",
+        "start": 1788.47,
+        "duration": 4.53
+    },
+    {
+        "text": "In that case, the rule for multiplication is very similar.",
+        "start": 1793.68,
+        "duration": 2.74
+    },
+    {
+        "text": "It's still the case that 1 goes to j, and j goes to negative 1, ",
+        "start": 1796.94,
+        "duration": 3.582
+    },
+    {
+        "text": "etc., but instead of applying the right-hand rule to the circle ",
+        "start": 1800.522,
+        "duration": 3.583
+    },
+    {
+        "text": "perpendicular to the 1j circle, you would use your left hand.",
+        "start": 1804.105,
+        "duration": 3.415
+    },
+    {
+        "text": "So either way, i times j is equal to k, but you can either think about this ",
+        "start": 1808.1,
+        "duration": 5.146
+    },
+    {
+        "text": "with your right hand curling the number j to the number k as your thumb points ",
+        "start": 1813.246,
+        "duration": 5.349
+    },
+    {
+        "text": "from 1 to i, or as your left hand curling i to k as its thumb points from 1 to j.",
+        "start": 1818.595,
+        "duration": 5.485
+    },
+    {
+        "text": "Understanding this left-hand rule for multiplication from the other side will be ",
+        "start": 1824.92,
+        "duration": 4.434
+    },
+    {
+        "text": "extremely useful for understanding how unit quaternions describe rotation in three ",
+        "start": 1829.354,
+        "duration": 4.543
+    },
+    {
+        "text": "dimensions.",
+        "start": 1833.897,
+        "duration": 0.603
+    },
+    {
+        "text": "And so far, it's probably not clear how exactly quaternions do describe 3D rotation.",
+        "start": 1835.64,
+        "duration": 5.06
+    },
+    {
+        "text": "I mean, if you consider one of these actions on the unit sphere, passing through i, ",
+        "start": 1841.1,
+        "duration": 4.085
+    },
+    {
+        "text": "j, and k, it doesn't leave that sphere in place, it morphs it out of position.",
+        "start": 1845.185,
+        "duration": 3.795
+    },
+    {
+        "text": "So the way that this works is slightly more complicated than a single quaternion product.",
+        "start": 1849.5,
+        "duration": 3.92
+    },
+    {
+        "text": "It involves a process called conjugation, and I'll make a full follow-on ",
+        "start": 1853.84,
+        "duration": 3.393
+    },
+    {
+        "text": "video all about it so that we have the time to go through some examples.",
+        "start": 1857.233,
+        "duration": 3.347
+    },
+    {
+        "text": "In the meantime, for more information on the story of quaternions and their relation ",
+        "start": 1862.02,
+        "duration": 4.117
+    },
+    {
+        "text": "to orientation in 3D space, Quanta, a mathematical publication I'm sure a lot of you ",
+        "start": 1866.137,
+        "duration": 4.117
+    },
+    {
+        "text": "are familiar with, just put out a post in a kind of loose conjunction with this video.",
+        "start": 1870.254,
+        "duration": 4.166
+    },
+    {
+        "text": "Link in the description.",
+        "start": 1874.76,
+        "duration": 0.78
+    },
+    {
+        "text": "If you enjoyed this, consider sharing it with some friends, ",
+        "start": 1876.86,
+        "duration": 2.909
+    },
+    {
+        "text": "and if you felt like the narrative structure here was actually helpful for understanding, ",
+        "start": 1879.769,
+        "duration": 4.365
+    },
+    {
+        "text": "maybe reassure those friends who would be turned off by a large timestamp that good math ",
+        "start": 1884.134,
+        "duration": 4.316
+    },
+    {
+        "text": "is actually worth the time.",
+        "start": 1888.45,
+        "duration": 1.31
+    },
+    {
+        "text": "And many thanks to the patrons among you.",
+        "start": 1890.42,
+        "duration": 2.06
+    },
+    {
+        "text": "I actually spent way longer than I care to admit on this project, ",
+        "start": 1892.48,
+        "duration": 3.185
+    },
+    {
+        "text": "so your patience and support is especially appreciated this time around.",
+        "start": 1895.665,
+        "duration": 3.475
+    }
+]

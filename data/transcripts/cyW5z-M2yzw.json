@@ -1,0 +1,912 @@
+[
+    {
+        "text": "I have two seemingly unrelated challenges for you.",
+        "start": 3.86,
+        "duration": 3.56
+    },
+    {
+        "text": "The first relates to music, and the second gives a foundational result in measure theory, ",
+        "start": 7.92,
+        "duration": 4.594
+    },
+    {
+        "text": "which is the formal underpinning for how mathematicians define ",
+        "start": 12.514,
+        "duration": 3.216
+    },
+    {
+        "text": "integration and probability.",
+        "start": 15.73,
+        "duration": 1.43
+    },
+    {
+        "text": "The second challenge, which I'll get to about halfway through the video, ",
+        "start": 18.06,
+        "duration": 3.494
+    },
+    {
+        "text": "has to do with covering numbers with open sets, and is very counterintuitive.",
+        "start": 21.554,
+        "duration": 3.686
+    },
+    {
+        "text": "Or at least, when I first saw it, I was confused for a while.",
+        "start": 25.86,
+        "duration": 2.68
+    },
+    {
+        "text": "Foremost, I'd like to explain what's going on, ",
+        "start": 29.28,
+        "duration": 2.322
+    },
+    {
+        "text": "but I also plan to share a surprising connection that it has with music.",
+        "start": 31.602,
+        "duration": 3.558
+    },
+    {
+        "text": "Here's the first challenge.",
+        "start": 38.14,
+        "duration": 1.16
+    },
+    {
+        "text": "I'm going to play a musical note with a given frequency, let's say 220 Hz.",
+        "start": 39.96,
+        "duration": 4.2
+    },
+    {
+        "text": "Then I'm going to choose some number between 1 and 2, which we'll call R, ",
+        "start": 44.88,
+        "duration": 4.361
+    },
+    {
+        "text": "and play a second musical note whose frequency is R times the frequency of the first ",
+        "start": 49.241,
+        "duration": 5.009
+    },
+    {
+        "text": "note, 220.",
+        "start": 54.25,
+        "duration": 0.59
+    },
+    {
+        "text": "For some values of R, like 1.5, the two notes will sound harmonious together, ",
+        "start": 55.78,
+        "duration": 4.766
+    },
+    {
+        "text": "but for others, like the square root of 2, they sound cacophonous.",
+        "start": 60.546,
+        "duration": 4.034
+    },
+    {
+        "text": "Your task is to determine whether a given ratio R will give a pleasant sound or ",
+        "start": 65.379,
+        "duration": 4.722
+    },
+    {
+        "text": "an unpleasant one just by analyzing the number, and without listening to the notes.",
+        "start": 70.101,
+        "duration": 4.899
+    },
+    {
+        "text": "One way to answer, especially if your name is Pythagoras, ",
+        "start": 76.84,
+        "duration": 3.095
+    },
+    {
+        "text": "might be to say that two notes sound good together when the ratio is a rational number, ",
+        "start": 79.935,
+        "duration": 4.697
+    },
+    {
+        "text": "and bad when it's irrational.",
+        "start": 84.632,
+        "duration": 1.548
+    },
+    {
+        "text": "For instance, a ratio of 3 halves gives a musical fifth.",
+        "start": 86.98,
+        "duration": 3.6
+    },
+    {
+        "text": "4 thirds gives a musical fourth.",
+        "start": 91.86,
+        "duration": 2.12
+    },
+    {
+        "text": "8 fifths gives a major sixth, so on.",
+        "start": 95.28,
+        "duration": 2.88
+    },
+    {
+        "text": "Here's my best guess for why this is the case.",
+        "start": 99.16,
+        "duration": 2.08
+    },
+    {
+        "text": "A musical note is made up of beats played in rapid succession, ",
+        "start": 102.02,
+        "duration": 3.637
+    },
+    {
+        "text": "for instance 220 beats per second.",
+        "start": 105.657,
+        "duration": 1.963
+    },
+    {
+        "text": "When the ratio of frequencies of two notes is rational, ",
+        "start": 108.72,
+        "duration": 3.243
+    },
+    {
+        "text": "there's a detectable pattern in those beats, which when we slow it down, ",
+        "start": 111.963,
+        "duration": 4.228
+    },
+    {
+        "text": "we hear as a rhythm instead of as a harmony.",
+        "start": 116.191,
+        "duration": 2.549
+    },
+    {
+        "text": "Evidently, when our brains pick up on this pattern, the two notes sound nice together.",
+        "start": 120.8,
+        "duration": 4.26
+    },
+    {
+        "text": "However, most rational numbers actually sound pretty bad, ",
+        "start": 127.04,
+        "duration": 5.475
+    },
+    {
+        "text": "like 211 over 198, or 1093 divided by 826.",
+        "start": 132.515,
+        "duration": 3.965
+    },
+    {
+        "text": "The issue, of course, is that these rational numbers ",
+        "start": 137.26,
+        "duration": 2.639
+    },
+    {
+        "text": "are somehow more complicated than the other ones.",
+        "start": 139.899,
+        "duration": 2.441
+    },
+    {
+        "text": "Our ears don't pick up on the pattern of the beats.",
+        "start": 142.9,
+        "duration": 2.34
+    },
+    {
+        "text": "One simple way to measure complexity of rational numbers is to ",
+        "start": 149.76,
+        "duration": 3.573
+    },
+    {
+        "text": "consider the size of the denominator when it's written in reduced form.",
+        "start": 153.333,
+        "duration": 4.027
+    },
+    {
+        "text": "So we might edit our original answer to only admit fractions with low denominators, ",
+        "start": 158.54,
+        "duration": 5.089
+    },
+    {
+        "text": "say less than 10.",
+        "start": 163.629,
+        "duration": 1.031
+    },
+    {
+        "text": "Even still, this doesn't quite capture harmoniousness, ",
+        "start": 167.68,
+        "duration": 3.023
+    },
+    {
+        "text": "since plenty of notes sound good together even when the ratio of their ",
+        "start": 170.703,
+        "duration": 3.903
+    },
+    {
+        "text": "frequencies is irrational, so long as it's close to a harmonious rational number.",
+        "start": 174.606,
+        "duration": 4.454
+    },
+    {
+        "text": "And it's a good thing, too, because many instruments, such as pianos, ",
+        "start": 180.68,
+        "duration": 4.302
+    },
+    {
+        "text": "are not tuned in terms of rational intervals, but are tuned such that each half-step ",
+        "start": 184.982,
+        "duration": 5.225
+    },
+    {
+        "text": "increase corresponds with multiplying the original frequency by the 12th root of 2, ",
+        "start": 190.207,
+        "duration": 5.163
+    },
+    {
+        "text": "which is irrational.",
+        "start": 195.37,
+        "duration": 1.23
+    },
+    {
+        "text": "If you're curious about why this is done, Henry at MinutePhysics ",
+        "start": 197.62,
+        "duration": 3.233
+    },
+    {
+        "text": "recently did a video that gives a very nice explanation.",
+        "start": 200.853,
+        "duration": 2.787
+    },
+    {
+        "text": "This means that if you take a harmonious interval, like a fifth, ",
+        "start": 205.2,
+        "duration": 4.121
+    },
+    {
+        "text": "the ratio of frequencies when played on a piano will not be a nice rational number ",
+        "start": 209.321,
+        "duration": 5.263
+    },
+    {
+        "text": "like you expect, in this case 3 halves, but will instead be some power of the ",
+        "start": 214.584,
+        "duration": 4.945
+    },
+    {
+        "text": "12th root of 2, in this case 2 to the 7 over 12, which is irrational, ",
+        "start": 219.529,
+        "duration": 4.439
+    },
+    {
+        "text": "but very close to 3 halves.",
+        "start": 223.968,
+        "duration": 1.712
+    },
+    {
+        "text": "Similarly, a musical fourth corresponds to 2 to the 5 twelfths, ",
+        "start": 229.12,
+        "duration": 3.893
+    },
+    {
+        "text": "which is very close to 4 thirds.",
+        "start": 233.013,
+        "duration": 1.947
+    },
+    {
+        "text": "In fact, the reason it works so well to have 12 notes in the chromatic ",
+        "start": 237.56,
+        "duration": 4.562
+    },
+    {
+        "text": "scale is that powers of the 12th root of 2 have this strange tendency ",
+        "start": 242.122,
+        "duration": 4.498
+    },
+    {
+        "text": "to be within a 1% margin of error of simple rational numbers.",
+        "start": 246.62,
+        "duration": 3.92
+    },
+    {
+        "text": "So now you might say that a ratio R will produce a harmonious pair of notes if it ",
+        "start": 254.3,
+        "duration": 4.437
+    },
+    {
+        "text": "is sufficiently close to a rational number with a sufficiently small denominator.",
+        "start": 258.737,
+        "duration": 4.383
+    },
+    {
+        "text": "How close depends on how discerning your ear is, ",
+        "start": 263.7,
+        "duration": 2.765
+    },
+    {
+        "text": "and how small a denominator depends on the intricacy of harmonic patterns your ",
+        "start": 266.465,
+        "duration": 4.459
+    },
+    {
+        "text": "ear has been trained to pick up on.",
+        "start": 270.924,
+        "duration": 1.976
+    },
+    {
+        "text": "After all, maybe someone with a particularly acute musical sense would be able to ",
+        "start": 273.3,
+        "duration": 5.245
+    },
+    {
+        "text": "hear and find pleasure in the pattern resulting from more complicated fractions, ",
+        "start": 278.545,
+        "duration": 5.181
+    },
+    {
+        "text": "like 23 over 21, or 35 over 43, as well as numbers closely approximating those fractions.",
+        "start": 283.726,
+        "duration": 5.694
+    },
+    {
+        "text": "This leads me to an interesting question.",
+        "start": 292.08,
+        "duration": 1.7
+    },
+    {
+        "text": "Suppose there is a musical savant who finds pleasure in all ",
+        "start": 294.52,
+        "duration": 3.408
+    },
+    {
+        "text": "pairs of notes whose frequencies have a rational ratio, ",
+        "start": 297.928,
+        "duration": 3.181
+    },
+    {
+        "text": "even the super complicated ratios that you and I would find cacophonous.",
+        "start": 301.109,
+        "duration": 4.091
+    },
+    {
+        "text": "Is it the case that she would find all ratios R between 1 and 2 harmonious, ",
+        "start": 307.54,
+        "duration": 4.153
+    },
+    {
+        "text": "even the irrational ones?",
+        "start": 311.693,
+        "duration": 1.367
+    },
+    {
+        "text": "After all, for any given real number, you can always find a rational number ",
+        "start": 313.54,
+        "duration": 4.483
+    },
+    {
+        "text": "arbitrarily close to it, just like 3 halves is really close to 2 to the 7 over 12.",
+        "start": 318.023,
+        "duration": 4.837
+    },
+    {
+        "text": "Well, this brings us to challenge number 2.",
+        "start": 325.38,
+        "duration": 3.16
+    },
+    {
+        "text": "Mathematicians like to ask riddles about covering various sets with open intervals, ",
+        "start": 330.84,
+        "duration": 4.29
+    },
+    {
+        "text": "and the answers to these riddles have a strange tendency to become famous lemmas of ",
+        "start": 335.13,
+        "duration": 4.29
+    },
+    {
+        "text": "theorems.",
+        "start": 339.42,
+        "duration": 0.46
+    },
+    {
+        "text": "By open interval, I just mean the continuous stretch of real ",
+        "start": 341.32,
+        "duration": 3.345
+    },
+    {
+        "text": "numbers strictly greater than some number a, but strictly less than some other number b, ",
+        "start": 344.665,
+        "duration": 4.88
+    },
+    {
+        "text": "where b is of course greater than a.",
+        "start": 349.545,
+        "duration": 1.975
+    },
+    {
+        "text": "My challenge to you involves covering all of the ",
+        "start": 352.3,
+        "duration": 2.824
+    },
+    {
+        "text": "rational numbers between 0 and 1 with open intervals.",
+        "start": 355.124,
+        "duration": 3.056
+    },
+    {
+        "text": "When I say cover, all this means is that each particular ",
+        "start": 358.96,
+        "duration": 3.193
+    },
+    {
+        "text": "rational number lies inside at least one of your intervals.",
+        "start": 362.153,
+        "duration": 3.307
+    },
+    {
+        "text": "The most obvious way to do this is to just use the entire interval ",
+        "start": 367.94,
+        "duration": 3.784
+    },
+    {
+        "text": "from 0 to 1 itself and call it done, but the challenge here is that ",
+        "start": 371.724,
+        "duration": 3.841
+    },
+    {
+        "text": "the sum of the lengths of your intervals must be strictly less than 1.",
+        "start": 375.565,
+        "duration": 3.955
+    },
+    {
+        "text": "To aid you in this seemingly impossible task, ",
+        "start": 383.36,
+        "duration": 2.906
+    },
+    {
+        "text": "you're allowed to use infinitely many intervals.",
+        "start": 386.266,
+        "duration": 3.034
+    },
+    {
+        "text": "Even still, the task might feel impossible, since the rational ",
+        "start": 391.92,
+        "duration": 3.78
+    },
+    {
+        "text": "numbers are dense in the real numbers, meaning any stretch, ",
+        "start": 395.7,
+        "duration": 3.599
+    },
+    {
+        "text": "no matter how small, contains infinitely many rational numbers.",
+        "start": 399.299,
+        "duration": 3.781
+    },
+    {
+        "text": "So how could you possibly cover all of the rational numbers without just covering ",
+        "start": 404.9,
+        "duration": 4.288
+    },
+    {
+        "text": "the entire interval from 0 to 1 itself, which would mean the total length of your ",
+        "start": 409.188,
+        "duration": 4.288
+    },
+    {
+        "text": "open intervals has to be at least the length of the entire interval from 0 to 1?",
+        "start": 413.476,
+        "duration": 4.184
+    },
+    {
+        "text": "Then again, I wouldn't be asking if there wasn't a way to do it.",
+        "start": 419.88,
+        "duration": 3.96
+    },
+    {
+        "text": "First, we enumerate the rational numbers between 0 and 1, ",
+        "start": 426.0,
+        "duration": 3.448
+    },
+    {
+        "text": "meaning we organize them into an infinitely long list.",
+        "start": 429.448,
+        "duration": 3.212
+    },
+    {
+        "text": "There are many ways to do this, but one natural way that I'll choose is to start with 1 ",
+        "start": 433.48,
+        "duration": 4.915
+    },
+    {
+        "text": "half, followed by 1 third and 2 thirds, then 1 fourth and 3 fourths, ",
+        "start": 438.395,
+        "duration": 3.853
+    },
+    {
+        "text": "we don't write down 2 fourths since it's already appeared as 1 half, ",
+        "start": 442.248,
+        "duration": 3.854
+    },
+    {
+        "text": "then all reduced fractions with denominator 5, all reduced fractions with denominator 6, ",
+        "start": 446.102,
+        "duration": 4.971
+    },
+    {
+        "text": "continuing on and on in this fashion.",
+        "start": 451.073,
+        "duration": 2.067
+    },
+    {
+        "text": "Every fraction will appear exactly once in this list in its reduced form, ",
+        "start": 454.44,
+        "duration": 4.034
+    },
+    {
+        "text": "and it gives us a meaningful way to talk about the first rational number, ",
+        "start": 458.474,
+        "duration": 4.035
+    },
+    {
+        "text": "the second rational number, the 42nd rational number, things like that.",
+        "start": 462.509,
+        "duration": 3.871
+    },
+    {
+        "text": "Next, to ensure that each rational is covered, ",
+        "start": 467.04,
+        "duration": 2.593
+    },
+    {
+        "text": "we're going to assign one specific interval to each rational.",
+        "start": 469.633,
+        "duration": 3.367
+    },
+    {
+        "text": "Once we remove the intervals from the geometry of our setup, ",
+        "start": 473.88,
+        "duration": 3.094
+    },
+    {
+        "text": "and just think of them in a list, each one responsible for one rational number, ",
+        "start": 476.974,
+        "duration": 4.059
+    },
+    {
+        "text": "it seems much clearer that the sum of their lengths can be less than 1, ",
+        "start": 481.033,
+        "duration": 3.653
+    },
+    {
+        "text": "since each particular interval can be as small as you want, ",
+        "start": 484.686,
+        "duration": 3.044
+    },
+    {
+        "text": "and still cover its designated rational.",
+        "start": 487.73,
+        "duration": 2.03
+    },
+    {
+        "text": "In fact, the sum can be any positive number.",
+        "start": 490.48,
+        "duration": 2.74
+    },
+    {
+        "text": "Just choose an infinite sum with positive terms that converges to 1, ",
+        "start": 494.24,
+        "duration": 4.013
+    },
+    {
+        "text": "like 1 half plus 1 fourth plus 1 eighth, on and on.",
+        "start": 498.253,
+        "duration": 2.967
+    },
+    {
+        "text": "Then choose any desired value of epsilon greater than 0, like 0.5, ",
+        "start": 502.9,
+        "duration": 4.389
+    },
+    {
+        "text": "and multiply all of the terms in the sum by epsilon so that you have an infinite sum ",
+        "start": 507.289,
+        "duration": 5.569
+    },
+    {
+        "text": "converging to epsilon.",
+        "start": 512.858,
+        "duration": 1.441
+    },
+    {
+        "text": "Now, scale the nth interval to have a length equal to the nth term in the sum.",
+        "start": 514.299,
+        "duration": 5.901
+    },
+    {
+        "text": "Notice, this means your intervals start getting really small really fast, ",
+        "start": 522.94,
+        "duration": 3.92
+    },
+    {
+        "text": "so small that you can't really see most of them in this animation, ",
+        "start": 526.86,
+        "duration": 3.549
+    },
+    {
+        "text": "but it doesn't matter, since each one is only responsible for covering one rational.",
+        "start": 530.409,
+        "duration": 4.451
+    },
+    {
+        "text": "I've said it already, but I'll say it again because it's so amazing.",
+        "start": 537.3,
+        "duration": 3.06
+    },
+    {
+        "text": "Epsilon can be whatever positive number we want, ",
+        "start": 540.96,
+        "duration": 3.166
+    },
+    {
+        "text": "so not only can our sum be less than 1, it can be arbitrarily small.",
+        "start": 544.126,
+        "duration": 4.394
+    },
+    {
+        "text": "This is one of those results where, even after seeing the proof, ",
+        "start": 551.08,
+        "duration": 3.285
+    },
+    {
+        "text": "it still defies intuition.",
+        "start": 554.365,
+        "duration": 1.315
+    },
+    {
+        "text": "The discord here is that the proof has us thinking analytically, ",
+        "start": 556.68,
+        "duration": 3.512
+    },
+    {
+        "text": "with the rational numbers in a list, but our intuition has us thinking geometrically, ",
+        "start": 560.192,
+        "duration": 4.646
+    },
+    {
+        "text": "with all the rational numbers as a dense set on the interval, ",
+        "start": 564.838,
+        "duration": 3.35
+    },
+    {
+        "text": "where you can't skip over any continuous stretch because that would contain ",
+        "start": 568.188,
+        "duration": 4.107
+    },
+    {
+        "text": "infinitely many rationals.",
+        "start": 572.295,
+        "duration": 1.405
+    },
+    {
+        "text": "So let's get a visual understanding for what's going on.",
+        "start": 575.64,
+        "duration": 2.42
+    },
+    {
+        "text": "Brief side note here, I had trouble deciding on how to illustrate small intervals, ",
+        "start": 580.0,
+        "duration": 4.174
+    },
+    {
+        "text": "since if I scale the parentheses with the interval, ",
+        "start": 584.174,
+        "duration": 2.615
+    },
+    {
+        "text": "you won't be able to see them at all, but if I just push the parentheses together, ",
+        "start": 586.789,
+        "duration": 4.175
+    },
+    {
+        "text": "they cross over in a way that's potentially confusing.",
+        "start": 590.964,
+        "duration": 2.716
+    },
+    {
+        "text": "Nevertheless, I decided to go with the ugly chromosomal cross, so keep in mind, ",
+        "start": 594.58,
+        "duration": 4.47
+    },
+    {
+        "text": "the interval this represents is that tiny stretch between the centers of each parentheses.",
+        "start": 599.05,
+        "duration": 5.03
+    },
+    {
+        "text": "Okay, back to the visual intuition.",
+        "start": 605.58,
+        "duration": 1.9
+    },
+    {
+        "text": "Consider when epsilon equals 0.3, meaning if I choose a number between 0 and 1 at random, ",
+        "start": 608.66,
+        "duration": 5.355
+    },
+    {
+        "text": "there's a 70% chance that it's outside those infinitely many intervals.",
+        "start": 614.015,
+        "duration": 4.225
+    },
+    {
+        "text": "What does it look like to be outside the intervals?",
+        "start": 618.8,
+        "duration": 2.52
+    },
+    {
+        "text": "The square root of 2 over 2 is among those 70%, and I'm going to zoom in on it.",
+        "start": 623.5,
+        "duration": 5.56
+    },
+    {
+        "text": "As I do so, I'll draw the first 10 intervals in our list within our scope of vision.",
+        "start": 629.38,
+        "duration": 4.8
+    },
+    {
+        "text": "As we get closer and closer to the square root of 2 over 2, ",
+        "start": 634.84,
+        "duration": 3.426
+    },
+    {
+        "text": "even though you will always find rationals within your field of view, ",
+        "start": 638.266,
+        "duration": 3.997
+    },
+    {
+        "text": "the intervals placed on top of those rationals get really small, really fast.",
+        "start": 642.263,
+        "duration": 4.397
+    },
+    {
+        "text": "One might say that for any sequence of rational numbers approaching ",
+        "start": 647.54,
+        "duration": 3.638
+    },
+    {
+        "text": "the square root of 2 over 2, the intervals containing the elements ",
+        "start": 651.178,
+        "duration": 3.585
+    },
+    {
+        "text": "of that sequence shrink faster than the sequence converges.",
+        "start": 654.763,
+        "duration": 3.157
+    },
+    {
+        "text": "Notice, intervals are really small if they show up late in the list, ",
+        "start": 660.12,
+        "duration": 3.78
+    },
+    {
+        "text": "and rationals show up late in the list when they have large denominators.",
+        "start": 663.9,
+        "duration": 4.0
+    },
+    {
+        "text": "So the fact that the square root of 2 over 2 is among the 70% not covered ",
+        "start": 668.58,
+        "duration": 4.845
+    },
+    {
+        "text": "by our intervals is, in a sense, a way to formalize the otherwise vague ",
+        "start": 673.425,
+        "duration": 4.715
+    },
+    {
+        "text": "idea that the only rational numbers close to it have a large denominator.",
+        "start": 678.14,
+        "duration": 4.78
+    },
+    {
+        "text": "That is to say, the square root of 2 over 2 is cacophonous.",
+        "start": 686.7,
+        "duration": 4.22
+    },
+    {
+        "text": "In fact, let's use a smaller epsilon, say 0.01, ",
+        "start": 695.42,
+        "duration": 3.464
+    },
+    {
+        "text": "and shift our setup to lie on top of the interval from 1 to 2 instead of from 0 to 1.",
+        "start": 698.884,
+        "duration": 6.136
+    },
+    {
+        "text": "Then which numbers fall among that elite 1% covered by our tiny intervals?",
+        "start": 705.74,
+        "duration": 4.26
+    },
+    {
+        "text": "Almost all of them are harmonious.",
+        "start": 712.06,
+        "duration": 1.6
+    },
+    {
+        "text": "For instance, the harmonious irrational number 2 to the 7 twelfths is very close ",
+        "start": 714.32,
+        "duration": 4.728
+    },
+    {
+        "text": "to 3 halves, which has a relatively fat interval sitting on top of it, ",
+        "start": 719.048,
+        "duration": 4.144
+    },
+    {
+        "text": "and the interval around 4 thirds is smaller but still fat enough to cover 2 to the ",
+        "start": 723.192,
+        "duration": 4.845
+    },
+    {
+        "text": "5 twelfths.",
+        "start": 728.037,
+        "duration": 0.643
+    },
+    {
+        "text": "Which members of the 1% are cacophonous?",
+        "start": 730.04,
+        "duration": 2.26
+    },
+    {
+        "text": "Well, the cacophonous rationals, meaning those with high denominators, ",
+        "start": 732.82,
+        "duration": 4.18
+    },
+    {
+        "text": "and irrationals that are very very very close to them.",
+        "start": 737.0,
+        "duration": 3.18
+    },
+    {
+        "text": "However, think of the savant who finds harmonic patterns in all rational numbers.",
+        "start": 742.34,
+        "duration": 4.58
+    },
+    {
+        "text": "You could imagine that for her, harmonious numbers are precisely ",
+        "start": 747.46,
+        "duration": 4.108
+    },
+    {
+        "text": "those 1% covered by the intervals, provided that her tolerance ",
+        "start": 751.568,
+        "duration": 3.983
+    },
+    {
+        "text": "for error goes down exponentially for more complicated rationals.",
+        "start": 755.551,
+        "duration": 4.109
+    },
+    {
+        "text": "In other words, the seemingly paradoxical fact that you can have a collection ",
+        "start": 761.22,
+        "duration": 4.531
+    },
+    {
+        "text": "of intervals densely populate a range while only covering 1% of its values ",
+        "start": 765.751,
+        "duration": 4.357
+    },
+    {
+        "text": "corresponds to the fact that harmonious numbers are rare, even for the savant.",
+        "start": 770.108,
+        "duration": 4.532
+    },
+    {
+        "text": "I'm not saying this makes the result more intuitive.",
+        "start": 775.44,
+        "duration": 2.12
+    },
+    {
+        "text": "In fact, I find it quite surprising that the savant ",
+        "start": 777.88,
+        "duration": 3.049
+    },
+    {
+        "text": "I defined could find 99% of all ratios cacophonous.",
+        "start": 780.929,
+        "duration": 2.991
+    },
+    {
+        "text": "But the fact that these two ideas are connected was simply too beautiful not to share.",
+        "start": 784.78,
+        "duration": 3.58
+    }
+]

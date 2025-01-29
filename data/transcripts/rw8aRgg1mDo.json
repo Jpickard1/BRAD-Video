@@ -1,0 +1,4827 @@
+[
+    {
+        "text": "today I'm going to",
+        "start": 0.0,
+        "duration": 5.58
+    },
+    {
+        "text": "be talking about a recently developed",
+        "start": 2.72,
+        "duration": 5.28
+    },
+    {
+        "text": "method um for integrating",
+        "start": 5.58,
+        "duration": 5.12
+    },
+    {
+        "text": "transcriptomite Association studies and",
+        "start": 8.0,
+        "duration": 5.2
+    },
+    {
+        "text": "co-localization Analysis",
+        "start": 10.7,
+        "duration": 4.84
+    },
+    {
+        "text": "so here's a little bit of a road map of",
+        "start": 13.2,
+        "duration": 3.6
+    },
+    {
+        "text": "today's talk",
+        "start": 15.54,
+        "duration": 3.239
+    },
+    {
+        "text": "um so first I'll start with some",
+        "start": 16.8,
+        "duration": 3.72
+    },
+    {
+        "text": "background just uh you know what is a",
+        "start": 18.779,
+        "duration": 3.681
+    },
+    {
+        "text": "cool opposition analysis what is a",
+        "start": 20.52,
+        "duration": 4.86
+    },
+    {
+        "text": "transcriptomite Association study that",
+        "start": 22.46,
+        "duration": 5.44
+    },
+    {
+        "text": "I'll go into our methodology which we're",
+        "start": 25.38,
+        "duration": 4.979
+    },
+    {
+        "text": "calling intact and intact GSC",
+        "start": 27.9,
+        "duration": 4.379
+    },
+    {
+        "text": "I'll show how it works in a simulation",
+        "start": 30.359,
+        "duration": 5.22
+    },
+    {
+        "text": "study scenario and a real data scenario",
+        "start": 32.279,
+        "duration": 5.481
+    },
+    {
+        "text": "and then finally I'll introduce",
+        "start": 35.579,
+        "duration": 5.221
+    },
+    {
+        "text": "the software package for this this",
+        "start": 37.76,
+        "duration": 4.74
+    },
+    {
+        "text": "methodology",
+        "start": 40.8,
+        "duration": 4.5
+    },
+    {
+        "text": "okay so getting into some background uh",
+        "start": 42.5,
+        "duration": 5.02
+    },
+    {
+        "text": "so by now we've had a lot of genome-wide",
+        "start": 45.3,
+        "duration": 3.779
+    },
+    {
+        "text": "Association studies and these have",
+        "start": 47.52,
+        "duration": 3.9
+    },
+    {
+        "text": "identified lots of different genetic",
+        "start": 49.079,
+        "duration": 4.741
+    },
+    {
+        "text": "genetic associations underlying complex",
+        "start": 51.42,
+        "duration": 3.479
+    },
+    {
+        "text": "traits",
+        "start": 53.82,
+        "duration": 4.259
+    },
+    {
+        "text": "um but one of the most uh or one one",
+        "start": 54.899,
+        "duration": 4.98
+    },
+    {
+        "text": "open problem that still stands in",
+        "start": 58.079,
+        "duration": 3.96
+    },
+    {
+        "text": "statistical genetics is linking these",
+        "start": 59.879,
+        "duration": 5.041
+    },
+    {
+        "text": "genetic associations to uh the genes",
+        "start": 62.039,
+        "duration": 4.44
+    },
+    {
+        "text": "that they target so we're applying these",
+        "start": 64.92,
+        "duration": 4.92
+    },
+    {
+        "text": "putative causal genes or PCGS",
+        "start": 66.479,
+        "duration": 5.401
+    },
+    {
+        "text": "um so traditionally this sort of cath",
+        "start": 69.84,
+        "duration": 4.92
+    },
+    {
+        "text": "relies on biological knowledge of genes",
+        "start": 71.88,
+        "duration": 4.559
+    },
+    {
+        "text": "that are that are close to the G boss",
+        "start": 74.76,
+        "duration": 4.14
+    },
+    {
+        "text": "loci so for example in this Manhattan",
+        "start": 76.439,
+        "duration": 5.401
+    },
+    {
+        "text": "plot here you can see that the top G was",
+        "start": 78.9,
+        "duration": 5.219
+    },
+    {
+        "text": "have all been annotated Baseline",
+        "start": 81.84,
+        "duration": 5.54
+    },
+    {
+        "text": "previous biological knowledge",
+        "start": 84.119,
+        "duration": 3.261
+    },
+    {
+        "text": "okay so recently a new class of method",
+        "start": 88.08,
+        "duration": 5.399
+    },
+    {
+        "text": "has begun to emerge that essentially",
+        "start": 91.02,
+        "duration": 4.739
+    },
+    {
+        "text": "integrates uh different types of omics",
+        "start": 93.479,
+        "duration": 6.361
+    },
+    {
+        "text": "data in order to identify PCGS so the",
+        "start": 95.759,
+        "duration": 6.18
+    },
+    {
+        "text": "advantage of this sort of approach is it",
+        "start": 99.84,
+        "duration": 3.54
+    },
+    {
+        "text": "gives a",
+        "start": 101.939,
+        "duration": 3.421
+    },
+    {
+        "text": "that paints a better picture of the",
+        "start": 103.38,
+        "duration": 4.68
+    },
+    {
+        "text": "underlying biological mechanism for",
+        "start": 105.36,
+        "duration": 4.74
+    },
+    {
+        "text": "complex traits the reclining these",
+        "start": 108.06,
+        "duration": 4.919
+    },
+    {
+        "text": "mechanism aware PCG implication methods",
+        "start": 110.1,
+        "duration": 5.879
+    },
+    {
+        "text": "and some examples of these types of",
+        "start": 112.979,
+        "duration": 5.581
+    },
+    {
+        "text": "methods article quotation analysis and",
+        "start": 115.979,
+        "duration": 4.381
+    },
+    {
+        "text": "transcript of my Association studies are",
+        "start": 118.56,
+        "duration": 5.699
+    },
+    {
+        "text": "key losses and one of the most common uh",
+        "start": 120.36,
+        "duration": 6.0
+    },
+    {
+        "text": "multi-omics data platforms that's used",
+        "start": 124.259,
+        "duration": 4.681
+    },
+    {
+        "text": "in these type of analyzes is is gene",
+        "start": 126.36,
+        "duration": 4.519
+    },
+    {
+        "text": "expression",
+        "start": 128.94,
+        "duration": 4.56
+    },
+    {
+        "text": "okay so what is a collaborization",
+        "start": 130.879,
+        "duration": 4.661
+    },
+    {
+        "text": "analysis uh the goal of this type of",
+        "start": 133.5,
+        "duration": 4.98
+    },
+    {
+        "text": "analysis is to determine whether genetic",
+        "start": 135.54,
+        "duration": 4.62
+    },
+    {
+        "text": "variants that are causal for molecular",
+        "start": 138.48,
+        "duration": 3.119
+    },
+    {
+        "text": "phenotype",
+        "start": 140.16,
+        "duration": 3.54
+    },
+    {
+        "text": "um overlap with variants that are called",
+        "start": 141.599,
+        "duration": 4.681
+    },
+    {
+        "text": "for a complex trait so here we have a",
+        "start": 143.7,
+        "duration": 5.16
+    },
+    {
+        "text": "little cartoon of a simple example",
+        "start": 146.28,
+        "duration": 4.679
+    },
+    {
+        "text": "um just to show what a crow look like",
+        "start": 148.86,
+        "duration": 4.14
+    },
+    {
+        "text": "variant might look like so you see it",
+        "start": 150.959,
+        "duration": 4.681
+    },
+    {
+        "text": "from the from a cartoon sniff X is not",
+        "start": 153.0,
+        "duration": 4.44
+    },
+    {
+        "text": "only possible for the expression of some",
+        "start": 155.64,
+        "duration": 4.98
+    },
+    {
+        "text": "Gene Gene a but also for your complex",
+        "start": 157.44,
+        "duration": 6.36
+    },
+    {
+        "text": "trait uh so we say sniff sniff X",
+        "start": 160.62,
+        "duration": 6.18
+    },
+    {
+        "text": "represents the code of by the variance",
+        "start": 163.8,
+        "duration": 4.62
+    },
+    {
+        "text": "um so there are there are challenges",
+        "start": 166.8,
+        "duration": 3.24
+    },
+    {
+        "text": "that go along with this type of analysis",
+        "start": 168.42,
+        "duration": 3.599
+    },
+    {
+        "text": "one of them being by the presence of",
+        "start": 170.04,
+        "duration": 4.44
+    },
+    {
+        "text": "leakage disequilibrium and also if",
+        "start": 172.019,
+        "duration": 3.901
+    },
+    {
+        "text": "there's multiple causal variants of the",
+        "start": 174.48,
+        "duration": 2.64
+    },
+    {
+        "text": "locus",
+        "start": 175.92,
+        "duration": 3.36
+    },
+    {
+        "text": "um so this could be a challenge because",
+        "start": 177.12,
+        "duration": 3.54
+    },
+    {
+        "text": "uh",
+        "start": 179.28,
+        "duration": 4.38
+    },
+    {
+        "text": "and identifying Snips like X you might",
+        "start": 180.66,
+        "duration": 5.4
+    },
+    {
+        "text": "not be mature and the snip is like snip",
+        "start": 183.66,
+        "duration": 5.4
+    },
+    {
+        "text": "X or if basically you have uh individual",
+        "start": 186.06,
+        "duration": 6.06
+    },
+    {
+        "text": "causal uh eqtl and an individual causal",
+        "start": 189.06,
+        "duration": 5.099
+    },
+    {
+        "text": "g-wocet that are just correlated with",
+        "start": 192.12,
+        "duration": 4.339
+    },
+    {
+        "text": "one another",
+        "start": 194.159,
+        "duration": 2.3
+    },
+    {
+        "text": "all right so here are some more",
+        "start": 197.04,
+        "duration": 3.72
+    },
+    {
+        "text": "specifics on what goes in and comes out",
+        "start": 198.959,
+        "duration": 4.321
+    },
+    {
+        "text": "of a co-loqualization analysis so for",
+        "start": 200.76,
+        "duration": 4.58
+    },
+    {
+        "text": "input you'll often have something like",
+        "start": 203.28,
+        "duration": 4.86
+    },
+    {
+        "text": "probabilistic qtl annotations from A",
+        "start": 205.34,
+        "duration": 5.02
+    },
+    {
+        "text": "Fine mapping method as well as posterior",
+        "start": 208.14,
+        "duration": 5.04
+    },
+    {
+        "text": "probabilities from through gwas",
+        "start": 210.36,
+        "duration": 4.68
+    },
+    {
+        "text": "and is out but you'll often have a g",
+        "start": 213.18,
+        "duration": 2.76
+    },
+    {
+        "text": "what's called a gene level",
+        "start": 215.04,
+        "duration": 3.479
+    },
+    {
+        "text": "co-localization probability and this is",
+        "start": 215.94,
+        "duration": 5.519
+    },
+    {
+        "text": "calculated as one minus the product over",
+        "start": 218.519,
+        "duration": 4.981
+    },
+    {
+        "text": "your signal clusters of one minus the",
+        "start": 221.459,
+        "duration": 4.86
+    },
+    {
+        "text": "RCT where the RCP is the probability",
+        "start": 223.5,
+        "duration": 4.98
+    },
+    {
+        "text": "that a genome grieving contains contains",
+        "start": 226.319,
+        "duration": 4.441
+    },
+    {
+        "text": "a single polarized variant",
+        "start": 228.48,
+        "duration": 4.5
+    },
+    {
+        "text": "okay so what does all that really look",
+        "start": 230.76,
+        "duration": 4.14
+    },
+    {
+        "text": "like again we have another cartoon",
+        "start": 232.98,
+        "duration": 3.96
+    },
+    {
+        "text": "another toy example just to illustrate",
+        "start": 234.9,
+        "duration": 4.38
+    },
+    {
+        "text": "how you calculate that Gene level",
+        "start": 236.94,
+        "duration": 4.799
+    },
+    {
+        "text": "collocalization probability so again",
+        "start": 239.28,
+        "duration": 4.8
+    },
+    {
+        "text": "we're returning to Gene a so here you",
+        "start": 241.739,
+        "duration": 4.681
+    },
+    {
+        "text": "have three different signal clusters R1",
+        "start": 244.08,
+        "duration": 5.939
+    },
+    {
+        "text": "through R3 each with a corresponding RCP",
+        "start": 246.42,
+        "duration": 5.519
+    },
+    {
+        "text": "and then when we apply our formula we",
+        "start": 250.019,
+        "duration": 4.5
+    },
+    {
+        "text": "get 0.995 which is essentially saying",
+        "start": 251.939,
+        "duration": 3.961
+    },
+    {
+        "text": "there's a high probability of at least",
+        "start": 254.519,
+        "duration": 5.06
+    },
+    {
+        "text": "one variant for this Gene",
+        "start": 255.9,
+        "duration": 3.679
+    },
+    {
+        "text": "okay so moving on from co-localization",
+        "start": 259.62,
+        "duration": 4.92
+    },
+    {
+        "text": "analysis so what what is a t loss",
+        "start": 261.84,
+        "duration": 5.88
+    },
+    {
+        "text": "um so similarly the goal here is to sort",
+        "start": 264.54,
+        "duration": 5.64
+    },
+    {
+        "text": "of Link uh our genes to our complex",
+        "start": 267.72,
+        "duration": 5.34
+    },
+    {
+        "text": "trait uh but this time we're essentially",
+        "start": 270.18,
+        "duration": 4.68
+    },
+    {
+        "text": "evaluating an association between the",
+        "start": 273.06,
+        "duration": 3.3
+    },
+    {
+        "text": "expression of a gene and the",
+        "start": 274.86,
+        "duration": 3.059
+    },
+    {
+        "text": "transcriptome and the complex treatment",
+        "start": 276.36,
+        "duration": 4.2
+    },
+    {
+        "text": "of Interest so often how these start out",
+        "start": 277.919,
+        "duration": 4.861
+    },
+    {
+        "text": "is you have a reference panel for",
+        "start": 280.56,
+        "duration": 4.139
+    },
+    {
+        "text": "example G text if you're looking at",
+        "start": 282.78,
+        "duration": 4.32
+    },
+    {
+        "text": "expression data that you use to train",
+        "start": 284.699,
+        "duration": 4.681
+    },
+    {
+        "text": "your expression weights in this cohort",
+        "start": 287.1,
+        "duration": 4.379
+    },
+    {
+        "text": "and you use those weights to predict",
+        "start": 289.38,
+        "duration": 4.86
+    },
+    {
+        "text": "expression in a separate g-was cohort",
+        "start": 291.479,
+        "duration": 7.021
+    },
+    {
+        "text": "and then you predict that or you predict",
+        "start": 294.24,
+        "duration": 7.14
+    },
+    {
+        "text": "expression and then associate that with",
+        "start": 298.5,
+        "duration": 5.46
+    },
+    {
+        "text": "your G wasp trade so what you end up",
+        "start": 301.38,
+        "duration": 4.2
+    },
+    {
+        "text": "with is essentially a transcript and",
+        "start": 303.96,
+        "duration": 3.72
+    },
+    {
+        "text": "wide set of z-scores",
+        "start": 305.58,
+        "duration": 5.339
+    },
+    {
+        "text": "um and why this uh this sort of analysis",
+        "start": 307.68,
+        "duration": 5.16
+    },
+    {
+        "text": "is particularly advantageous is because",
+        "start": 310.919,
+        "duration": 4.5
+    },
+    {
+        "text": "you often don't have data sets that",
+        "start": 312.84,
+        "duration": 5.639
+    },
+    {
+        "text": "contain both your molecular phenotype",
+        "start": 315.419,
+        "duration": 5.161
+    },
+    {
+        "text": "data as well as your geost street so",
+        "start": 318.479,
+        "duration": 3.66
+    },
+    {
+        "text": "this allows you to sort of reap the",
+        "start": 320.58,
+        "duration": 3.179
+    },
+    {
+        "text": "benefits of the large sample size that",
+        "start": 322.139,
+        "duration": 3.481
+    },
+    {
+        "text": "you usually have with itchy box",
+        "start": 323.759,
+        "duration": 4.101
+    },
+    {
+        "text": "foreign",
+        "start": 325.62,
+        "duration": 4.98
+    },
+    {
+        "text": "so just a little bit of a summary of",
+        "start": 327.86,
+        "duration": 4.059
+    },
+    {
+        "text": "what we've just gone over",
+        "start": 330.6,
+        "duration": 3.319
+    },
+    {
+        "text": "um so co-localization analysis were",
+        "start": 331.919,
+        "duration": 3.78
+    },
+    {
+        "text": "probabilistically quantifying the",
+        "start": 333.919,
+        "duration": 5.381
+    },
+    {
+        "text": "overlap between called qtls and geosets",
+        "start": 335.699,
+        "duration": 5.28
+    },
+    {
+        "text": "um the output is your Gene level",
+        "start": 339.3,
+        "duration": 3.78
+    },
+    {
+        "text": "co-localization probability",
+        "start": 340.979,
+        "duration": 4.081
+    },
+    {
+        "text": "meanwhile if you're tiwas we're testing",
+        "start": 343.08,
+        "duration": 3.78
+    },
+    {
+        "text": "association between predicted gene",
+        "start": 345.06,
+        "duration": 4.079
+    },
+    {
+        "text": "expression and a complex trait and we're",
+        "start": 346.86,
+        "duration": 5.16
+    },
+    {
+        "text": "getting a z-scores output",
+        "start": 349.139,
+        "duration": 6.0
+    },
+    {
+        "text": "so recent work uh by Haku at all has",
+        "start": 352.02,
+        "duration": 5.04
+    },
+    {
+        "text": "shown that when these two types of",
+        "start": 355.139,
+        "duration": 3.721
+    },
+    {
+        "text": "analysis are applied to the same data",
+        "start": 357.06,
+        "duration": 5.04
+    },
+    {
+        "text": "they can actually be complementary so it",
+        "start": 358.86,
+        "duration": 5.04
+    },
+    {
+        "text": "turns out that they actually don't",
+        "start": 362.1,
+        "duration": 3.659
+    },
+    {
+        "text": "always implicate the same set of genes",
+        "start": 363.9,
+        "duration": 5.1
+    },
+    {
+        "text": "and what this works showed uh they had a",
+        "start": 365.759,
+        "duration": 5.101
+    },
+    {
+        "text": "they're basically interesting finding",
+        "start": 369.0,
+        "duration": 3.9
+    },
+    {
+        "text": "was that this can actually Point uh to",
+        "start": 370.86,
+        "duration": 3.42
+    },
+    {
+        "text": "certain things going on in the",
+        "start": 372.9,
+        "duration": 4.44
+    },
+    {
+        "text": "underlying biology so for example if you",
+        "start": 374.28,
+        "duration": 4.139
+    },
+    {
+        "text": "have a gene that has a strong",
+        "start": 377.34,
+        "duration": 3.24
+    },
+    {
+        "text": "globalization signal about weak tiwa",
+        "start": 378.419,
+        "duration": 4.081
+    },
+    {
+        "text": "signal that can indicate the presence of",
+        "start": 380.58,
+        "duration": 4.32
+    },
+    {
+        "text": "horizontal plyotropy meanwhile they're",
+        "start": 382.5,
+        "duration": 5.039
+    },
+    {
+        "text": "sort of the sort of the opposite of is",
+        "start": 384.9,
+        "duration": 3.48
+    },
+    {
+        "text": "true",
+        "start": 387.539,
+        "duration": 2.94
+    },
+    {
+        "text": "that can indicate the presence of an LD",
+        "start": 388.38,
+        "duration": 3.539
+    },
+    {
+        "text": "hitchhiking effect",
+        "start": 390.479,
+        "duration": 3.421
+    },
+    {
+        "text": "so down here we have a cartoon to just",
+        "start": 391.919,
+        "duration": 3.361
+    },
+    {
+        "text": "show the difference between horizontal",
+        "start": 393.9,
+        "duration": 4.2
+    },
+    {
+        "text": "biotropy and vertical pliotropy so",
+        "start": 395.28,
+        "duration": 4.32
+    },
+    {
+        "text": "basically we want to filter out those",
+        "start": 398.1,
+        "duration": 3.78
+    },
+    {
+        "text": "cases that might indicate horizontal",
+        "start": 399.6,
+        "duration": 4.14
+    },
+    {
+        "text": "plyotrophy because we don't have any",
+        "start": 401.88,
+        "duration": 3.539
+    },
+    {
+        "text": "causality really going on between the",
+        "start": 403.74,
+        "duration": 4.32
+    },
+    {
+        "text": "gene the gene expression and the the",
+        "start": 405.419,
+        "duration": 4.741
+    },
+    {
+        "text": "complex trait",
+        "start": 408.06,
+        "duration": 4.199
+    },
+    {
+        "text": "um so sort of the punch line here is we",
+        "start": 410.16,
+        "duration": 3.36
+    },
+    {
+        "text": "want",
+        "start": 412.259,
+        "duration": 3.201
+    },
+    {
+        "text": "um we want genes to both have a strong",
+        "start": 413.52,
+        "duration": 5.88
+    },
+    {
+        "text": "co-localization signal and t-wall signal",
+        "start": 415.46,
+        "duration": 5.859
+    },
+    {
+        "text": "okay so what did I mean by LD",
+        "start": 419.4,
+        "duration": 3.54
+    },
+    {
+        "text": "hitchhiking effect",
+        "start": 421.319,
+        "duration": 3.121
+    },
+    {
+        "text": "um so that's sort of basically this",
+        "start": 422.94,
+        "duration": 3.36
+    },
+    {
+        "text": "figure tries to explain that this is",
+        "start": 424.44,
+        "duration": 4.92
+    },
+    {
+        "text": "from a different paper so here we have a",
+        "start": 426.3,
+        "duration": 4.98
+    },
+    {
+        "text": "Manhattan plot showing your g walk",
+        "start": 429.36,
+        "duration": 3.119
+    },
+    {
+        "text": "signals",
+        "start": 431.28,
+        "duration": 3.66
+    },
+    {
+        "text": "here we have an expression weight Matrix",
+        "start": 432.479,
+        "duration": 4.801
+    },
+    {
+        "text": "for six different genes genes one",
+        "start": 434.94,
+        "duration": 3.9
+    },
+    {
+        "text": "through G3",
+        "start": 437.28,
+        "duration": 3.539
+    },
+    {
+        "text": "sorry Gene six",
+        "start": 438.84,
+        "duration": 5.34
+    },
+    {
+        "text": "um and then we have a LV Matrix below",
+        "start": 440.819,
+        "duration": 5.1
+    },
+    {
+        "text": "um so basically what I want to highlight",
+        "start": 444.18,
+        "duration": 4.44
+    },
+    {
+        "text": "here is Gene 3 is the only causal Gene",
+        "start": 445.919,
+        "duration": 4.56
+    },
+    {
+        "text": "but you can see there's no overlap",
+        "start": 448.62,
+        "duration": 3.78
+    },
+    {
+        "text": "actually between the gene3 and the gene",
+        "start": 450.479,
+        "duration": 2.701
+    },
+    {
+        "text": "four",
+        "start": 452.4,
+        "duration": 2.76
+    },
+    {
+        "text": "expression weights",
+        "start": 453.18,
+        "duration": 5.04
+    },
+    {
+        "text": "um and despite this there is uh there is",
+        "start": 455.16,
+        "duration": 6.539
+    },
+    {
+        "text": "a correlation between these qtls which",
+        "start": 458.22,
+        "duration": 6.419
+    },
+    {
+        "text": "induce an associate a t-west Association",
+        "start": 461.699,
+        "duration": 5.461
+    },
+    {
+        "text": "for gene or even though Gene 4 is not",
+        "start": 464.639,
+        "duration": 3.78
+    },
+    {
+        "text": "causal",
+        "start": 467.16,
+        "duration": 2.52
+    },
+    {
+        "text": "um",
+        "start": 468.419,
+        "duration": 4.201
+    },
+    {
+        "text": "so how do we get rid of these spurious T",
+        "start": 469.68,
+        "duration": 6.06
+    },
+    {
+        "text": "loss results so previous work has tried",
+        "start": 472.62,
+        "duration": 5.28
+    },
+    {
+        "text": "to address this question uh the help you",
+        "start": 475.74,
+        "duration": 5.1
+    },
+    {
+        "text": "at all paper suggest post-hoc processing",
+        "start": 477.9,
+        "duration": 5.699
+    },
+    {
+        "text": "where the idea here is to directly built",
+        "start": 480.84,
+        "duration": 5.639
+    },
+    {
+        "text": "throughout your T wasps results using a",
+        "start": 483.599,
+        "duration": 6.181
+    },
+    {
+        "text": "co-localization probability of 0.5",
+        "start": 486.479,
+        "duration": 6.421
+    },
+    {
+        "text": "um so this is not a ideal approach",
+        "start": 489.78,
+        "duration": 4.68
+    },
+    {
+        "text": "because what ends up happening is you",
+        "start": 492.9,
+        "duration": 3.96
+    },
+    {
+        "text": "have sort of a binary decision is it a",
+        "start": 494.46,
+        "duration": 5.16
+    },
+    {
+        "text": "PCG is it not a PCG so you sort of end",
+        "start": 496.86,
+        "duration": 4.32
+    },
+    {
+        "text": "up with a loss of that quantitative",
+        "start": 499.62,
+        "duration": 4.139
+    },
+    {
+        "text": "information regarding the uncertainty of",
+        "start": 501.18,
+        "duration": 4.98
+    },
+    {
+        "text": "your classification",
+        "start": 503.759,
+        "duration": 4.081
+    },
+    {
+        "text": "um and there's also Focus which takes",
+        "start": 506.16,
+        "duration": 2.819
+    },
+    {
+        "text": "sort of a different approach here",
+        "start": 507.84,
+        "duration": 3.299
+    },
+    {
+        "text": "they're trying to model correlation",
+        "start": 508.979,
+        "duration": 4.5
+    },
+    {
+        "text": "among t-wop signals essentially trying",
+        "start": 511.139,
+        "duration": 4.741
+    },
+    {
+        "text": "to identify which Gene in a region",
+        "start": 513.479,
+        "duration": 5.461
+    },
+    {
+        "text": "explains the association signal but as",
+        "start": 515.88,
+        "duration": 4.68
+    },
+    {
+        "text": "we'll talk about a little bit later this",
+        "start": 518.94,
+        "duration": 3.0
+    },
+    {
+        "text": "sort of approach makes them understand",
+        "start": 520.56,
+        "duration": 3.539
+    },
+    {
+        "text": "make some strong assumptions about the",
+        "start": 521.94,
+        "duration": 4.82
+    },
+    {
+        "text": "underlying model",
+        "start": 524.099,
+        "duration": 2.661
+    },
+    {
+        "text": "okay so done with background uh now our",
+        "start": 526.8,
+        "duration": 5.7
+    },
+    {
+        "text": "methods",
+        "start": 530.519,
+        "duration": 4.621
+    },
+    {
+        "text": "um so our research question to just sort",
+        "start": 532.5,
+        "duration": 4.5
+    },
+    {
+        "text": "of motivate us here is how exactly can",
+        "start": 535.14,
+        "duration": 3.48
+    },
+    {
+        "text": "we integrate these two types of analysis",
+        "start": 537.0,
+        "duration": 4.98
+    },
+    {
+        "text": "kiwas and co-localization to implicate",
+        "start": 538.62,
+        "duration": 7.68
+    },
+    {
+        "text": "PCGS and biological pathways",
+        "start": 541.98,
+        "duration": 6.419
+    },
+    {
+        "text": "okay so we'll start with a structural",
+        "start": 546.3,
+        "duration": 6.12
+    },
+    {
+        "text": "equation model to sort of motivate us um",
+        "start": 548.399,
+        "duration": 7.321
+    },
+    {
+        "text": "so the top equation represents uh the",
+        "start": 552.42,
+        "duration": 5.76
+    },
+    {
+        "text": "gene expression for some sheet of",
+        "start": 555.72,
+        "duration": 3.48
+    },
+    {
+        "text": "interest",
+        "start": 558.18,
+        "duration": 3.12
+    },
+    {
+        "text": "um so that's e and then we have it as a",
+        "start": 559.2,
+        "duration": 4.86
+    },
+    {
+        "text": "function of your genotype Matrix G and",
+        "start": 561.3,
+        "duration": 5.7
+    },
+    {
+        "text": "your true eqtl effects beta e",
+        "start": 564.06,
+        "duration": 4.98
+    },
+    {
+        "text": "um and then the equation below it is for",
+        "start": 567.0,
+        "duration": 4.2
+    },
+    {
+        "text": "your complex trait y so you have that as",
+        "start": 569.04,
+        "duration": 4.739
+    },
+    {
+        "text": "a function of your gene expression but",
+        "start": 571.2,
+        "duration": 5.639
+    },
+    {
+        "text": "we also include this extra G beta y term",
+        "start": 573.779,
+        "duration": 4.56
+    },
+    {
+        "text": "which essentially allows for a",
+        "start": 576.839,
+        "duration": 5.06
+    },
+    {
+        "text": "horizontal pliotrophic effects",
+        "start": 578.339,
+        "duration": 3.56
+    },
+    {
+        "text": "okay so we're not the first uh group to",
+        "start": 583.44,
+        "duration": 4.8
+    },
+    {
+        "text": "essentially try to tackle this problem",
+        "start": 586.5,
+        "duration": 4.62
+    },
+    {
+        "text": "of implicating tcgs others have done",
+        "start": 588.24,
+        "duration": 5.159
+    },
+    {
+        "text": "this in the past but their methods often",
+        "start": 591.12,
+        "duration": 5.04
+    },
+    {
+        "text": "involve additional assumptions so for",
+        "start": 593.399,
+        "duration": 4.38
+    },
+    {
+        "text": "example if you're at all familiar with",
+        "start": 596.16,
+        "duration": 4.5
+    },
+    {
+        "text": "the mendelian randomization literature",
+        "start": 597.779,
+        "duration": 4.981
+    },
+    {
+        "text": "um so usually the goal of an MR analysis",
+        "start": 600.66,
+        "duration": 4.14
+    },
+    {
+        "text": "is to essentially",
+        "start": 602.76,
+        "duration": 4.56
+    },
+    {
+        "text": "estimate uh the effect of your your",
+        "start": 604.8,
+        "duration": 4.5
+    },
+    {
+        "text": "exposure in this case gene expression of",
+        "start": 607.32,
+        "duration": 5.699
+    },
+    {
+        "text": "why but some of these methods for",
+        "start": 609.3,
+        "duration": 6.84
+    },
+    {
+        "text": "example Mr eager regression uh imposes",
+        "start": 613.019,
+        "duration": 5.101
+    },
+    {
+        "text": "What's called the inside assumption and",
+        "start": 616.14,
+        "duration": 4.759
+    },
+    {
+        "text": "then Focus which we already talked about",
+        "start": 618.12,
+        "duration": 5.219
+    },
+    {
+        "text": "assumes that the plyotrophic effects are",
+        "start": 620.899,
+        "duration": 4.901
+    },
+    {
+        "text": "constant across variance so these are",
+        "start": 623.339,
+        "duration": 4.201
+    },
+    {
+        "text": "fairly strong assumptions in our opinion",
+        "start": 625.8,
+        "duration": 4.8
+    },
+    {
+        "text": "so we want to get around these and the",
+        "start": 627.54,
+        "duration": 4.979
+    },
+    {
+        "text": "way that we do that is focusing more on",
+        "start": 630.6,
+        "duration": 4.62
+    },
+    {
+        "text": "inferring whether your expression to why",
+        "start": 632.519,
+        "duration": 5.101
+    },
+    {
+        "text": "effect is zero rather than trying to",
+        "start": 635.22,
+        "duration": 3.48
+    },
+    {
+        "text": "estimate it",
+        "start": 637.62,
+        "duration": 4.08
+    },
+    {
+        "text": "so as sort of a springboard uh jumping",
+        "start": 638.7,
+        "duration": 5.639
+    },
+    {
+        "text": "off point for our uh our method we're",
+        "start": 641.7,
+        "duration": 4.5
+    },
+    {
+        "text": "going to first observe that the causal",
+        "start": 644.339,
+        "duration": 4.141
+    },
+    {
+        "text": "eqtls must be co-localized with the",
+        "start": 646.2,
+        "duration": 6.56
+    },
+    {
+        "text": "gussets based on our sem",
+        "start": 648.48,
+        "duration": 4.28
+    },
+    {
+        "text": "okay so it's sort of taking that",
+        "start": 652.98,
+        "duration": 3.72
+    },
+    {
+        "text": "observation and running with it we're",
+        "start": 654.6,
+        "duration": 4.2
+    },
+    {
+        "text": "going to try to implicate bcg's",
+        "start": 656.7,
+        "duration": 4.92
+    },
+    {
+        "text": "incorporating that observation",
+        "start": 658.8,
+        "duration": 3.42
+    },
+    {
+        "text": "um",
+        "start": 661.62,
+        "duration": 2.7
+    },
+    {
+        "text": "into a formal Bayesian framework where",
+        "start": 662.22,
+        "duration": 5.1
+    },
+    {
+        "text": "essentially we are forming a prior based",
+        "start": 664.32,
+        "duration": 5.579
+    },
+    {
+        "text": "on that co-localization evidence and",
+        "start": 667.32,
+        "duration": 4.86
+    },
+    {
+        "text": "we're calling our method integration of",
+        "start": 669.899,
+        "duration": 6.921
+    },
+    {
+        "text": "T loss and co-localization or intact",
+        "start": 672.18,
+        "duration": 4.64
+    },
+    {
+        "text": "okay so getting into some more details",
+        "start": 676.92,
+        "duration": 6.72
+    },
+    {
+        "text": "about uh what exactly our method does so",
+        "start": 679.62,
+        "duration": 6.06
+    },
+    {
+        "text": "first we're forming a base factor from",
+        "start": 683.64,
+        "duration": 4.74
+    },
+    {
+        "text": "our tyz score and this is representing a",
+        "start": 685.68,
+        "duration": 5.04
+    },
+    {
+        "text": "marginal likelihood of the sem",
+        "start": 688.38,
+        "duration": 4.74
+    },
+    {
+        "text": "then we're forming that prior based on",
+        "start": 690.72,
+        "duration": 4.859
+    },
+    {
+        "text": "the co-localization data so this is the",
+        "start": 693.12,
+        "duration": 5.58
+    },
+    {
+        "text": "actual form of the prior uh where the",
+        "start": 695.579,
+        "duration": 6.481
+    },
+    {
+        "text": "the pi is an unconstrained EOS prior uh",
+        "start": 698.7,
+        "duration": 6.06
+    },
+    {
+        "text": "where we're sort of adapting an",
+        "start": 702.06,
+        "duration": 4.5
+    },
+    {
+        "text": "estimator from the key Value method for",
+        "start": 704.76,
+        "duration": 3.24
+    },
+    {
+        "text": "this",
+        "start": 706.56,
+        "duration": 4.26
+    },
+    {
+        "text": "um and then we have ffp co-look where",
+        "start": 708.0,
+        "duration": 5.04
+    },
+    {
+        "text": "the F function satisfies two properties",
+        "start": 710.82,
+        "duration": 4.38
+    },
+    {
+        "text": "the first of which being that it's a",
+        "start": 713.04,
+        "duration": 4.08
+    },
+    {
+        "text": "monotonic function of the colloquization",
+        "start": 715.2,
+        "duration": 4.319
+    },
+    {
+        "text": "data and the second is that if the",
+        "start": 717.12,
+        "duration": 4.86
+    },
+    {
+        "text": "collocalization probability Falls below",
+        "start": 719.519,
+        "duration": 4.741
+    },
+    {
+        "text": "some threshold T then we set it to zero",
+        "start": 721.98,
+        "duration": 4.5
+    },
+    {
+        "text": "then the rationale behind this is",
+        "start": 724.26,
+        "duration": 4.019
+    },
+    {
+        "text": "essentially we want to filter out those",
+        "start": 726.48,
+        "duration": 4.44
+    },
+    {
+        "text": "uh spurious T was associations caused by",
+        "start": 728.279,
+        "duration": 4.8
+    },
+    {
+        "text": "LV contamination",
+        "start": 730.92,
+        "duration": 4.02
+    },
+    {
+        "text": "um so at the end of the day we can",
+        "start": 733.079,
+        "duration": 4.921
+    },
+    {
+        "text": "compute a putative probability of",
+        "start": 734.94,
+        "duration": 5.519
+    },
+    {
+        "text": "putative causality uh just using Bayes",
+        "start": 738.0,
+        "duration": 3.38
+    },
+    {
+        "text": "rule",
+        "start": 740.459,
+        "duration": 3.961
+    },
+    {
+        "text": "so one question you might have is you",
+        "start": 741.38,
+        "duration": 5.26
+    },
+    {
+        "text": "know what exactly do those F functions",
+        "start": 744.42,
+        "duration": 4.38
+    },
+    {
+        "text": "look like so these are a few examples",
+        "start": 746.64,
+        "duration": 4.259
+    },
+    {
+        "text": "that are incorporated into our software",
+        "start": 748.8,
+        "duration": 4.32
+    },
+    {
+        "text": "so on the left you have the step",
+        "start": 750.899,
+        "duration": 4.801
+    },
+    {
+        "text": "function which is sort of analogous to",
+        "start": 753.12,
+        "duration": 4.62
+    },
+    {
+        "text": "that that post processing that we talked",
+        "start": 755.7,
+        "duration": 5.22
+    },
+    {
+        "text": "about where you just filter out any T",
+        "start": 757.74,
+        "duration": 5.039
+    },
+    {
+        "text": "loss results that have uh",
+        "start": 760.92,
+        "duration": 3.84
+    },
+    {
+        "text": "co-localization probability of less than",
+        "start": 762.779,
+        "duration": 3.481
+    },
+    {
+        "text": "a half",
+        "start": 764.76,
+        "duration": 3.18
+    },
+    {
+        "text": "um right to the right of that you have",
+        "start": 766.26,
+        "duration": 3.36
+    },
+    {
+        "text": "the linear function which we sort of",
+        "start": 767.94,
+        "duration": 3.6
+    },
+    {
+        "text": "think is the most intuitive option so",
+        "start": 769.62,
+        "duration": 3.659
+    },
+    {
+        "text": "this is the default in our software this",
+        "start": 771.54,
+        "duration": 3.419
+    },
+    {
+        "text": "is just the identity mapping and trick",
+        "start": 773.279,
+        "duration": 5.341
+    },
+    {
+        "text": "heating a t value of 0.05 and then the",
+        "start": 774.959,
+        "duration": 5.401
+    },
+    {
+        "text": "two functions to the right X bit and",
+        "start": 778.62,
+        "duration": 3.6
+    },
+    {
+        "text": "hybrid linear X bit sort of the",
+        "start": 780.36,
+        "duration": 4.86
+    },
+    {
+        "text": "rationale Behind These is that um can",
+        "start": 782.22,
+        "duration": 5.34
+    },
+    {
+        "text": "you shrink uh your co-localization",
+        "start": 785.22,
+        "duration": 4.26
+    },
+    {
+        "text": "probability if it's less than 0.5 but",
+        "start": 787.56,
+        "duration": 3.779
+    },
+    {
+        "text": "don't set it to zero",
+        "start": 789.48,
+        "duration": 4.4
+    },
+    {
+        "text": "foreign",
+        "start": 791.339,
+        "duration": 2.541
+    },
+    {
+        "text": "okay so we just talked about intact in",
+        "start": 794.22,
+        "duration": 4.02
+    },
+    {
+        "text": "the context of",
+        "start": 796.56,
+        "duration": 3.899
+    },
+    {
+        "text": "a Bayesian framework but we've also",
+        "start": 798.24,
+        "duration": 4.44
+    },
+    {
+        "text": "interpreted it in the context of demster",
+        "start": 800.459,
+        "duration": 4.56
+    },
+    {
+        "text": "Shaffer Theory or DS theory for short",
+        "start": 802.68,
+        "duration": 4.08
+    },
+    {
+        "text": "so if you're not familiar with Ds theory",
+        "start": 805.019,
+        "duration": 3.721
+    },
+    {
+        "text": "is essentially a framework for decision",
+        "start": 806.76,
+        "duration": 3.84
+    },
+    {
+        "text": "making that generalizes phase and",
+        "start": 808.74,
+        "duration": 3.48
+    },
+    {
+        "text": "reasoning",
+        "start": 810.6,
+        "duration": 4.08
+    },
+    {
+        "text": "um basically our decision here is to",
+        "start": 812.22,
+        "duration": 4.98
+    },
+    {
+        "text": "decide whether a gene is a PCG or not",
+        "start": 814.68,
+        "duration": 4.74
+    },
+    {
+        "text": "and we're trying to implicate uh sorry",
+        "start": 817.2,
+        "duration": 4.86
+    },
+    {
+        "text": "integrate two sources of evidence uh T",
+        "start": 819.42,
+        "duration": 5.76
+    },
+    {
+        "text": "was and co-localization Analysis and",
+        "start": 822.06,
+        "duration": 5.279
+    },
+    {
+        "text": "then so what DS3 does is it allows us to",
+        "start": 825.18,
+        "duration": 4.44
+    },
+    {
+        "text": "quantify the belief for some decision",
+        "start": 827.339,
+        "duration": 4.321
+    },
+    {
+        "text": "based on each type of evidence as some",
+        "start": 829.62,
+        "duration": 4.86
+    },
+    {
+        "text": "Mass function we have two Mass functions",
+        "start": 831.66,
+        "duration": 5.76
+    },
+    {
+        "text": "here each ranging from zero to one",
+        "start": 834.48,
+        "duration": 5.039
+    },
+    {
+        "text": "so why we're really interested in",
+        "start": 837.42,
+        "duration": 4.14
+    },
+    {
+        "text": "interpreting intact in this context is",
+        "start": 839.519,
+        "duration": 3.901
+    },
+    {
+        "text": "for what's called Dempster's role",
+        "start": 841.56,
+        "duration": 4.38
+    },
+    {
+        "text": "combination which allows us to integrate",
+        "start": 843.42,
+        "duration": 4.8
+    },
+    {
+        "text": "es independent sources of evidence so",
+        "start": 845.94,
+        "duration": 4.8
+    },
+    {
+        "text": "what is DS independent mean so two",
+        "start": 848.22,
+        "duration": 4.919
+    },
+    {
+        "text": "sources of evidence or DS independent if",
+        "start": 850.74,
+        "duration": 4.2
+    },
+    {
+        "text": "they have independent reliability for",
+        "start": 853.139,
+        "duration": 3.421
+    },
+    {
+        "text": "reaching the same decision",
+        "start": 854.94,
+        "duration": 3.959
+    },
+    {
+        "text": "so sort of following our early our",
+        "start": 856.56,
+        "duration": 5.1
+    },
+    {
+        "text": "earlier conversation and the uh and the",
+        "start": 858.899,
+        "duration": 5.341
+    },
+    {
+        "text": "background about the different set of",
+        "start": 861.66,
+        "duration": 4.739
+    },
+    {
+        "text": "genes that can be implicated by T was",
+        "start": 864.24,
+        "duration": 4.38
+    },
+    {
+        "text": "versus co-localization we're going to",
+        "start": 866.399,
+        "duration": 4.141
+    },
+    {
+        "text": "argue that colloquialization and qls are",
+        "start": 868.62,
+        "duration": 3.899
+    },
+    {
+        "text": "approximately DS independent we can't",
+        "start": 870.54,
+        "duration": 3.419
+    },
+    {
+        "text": "say that they're statistically",
+        "start": 872.519,
+        "duration": 3.301
+    },
+    {
+        "text": "independent because they all can rely on",
+        "start": 873.959,
+        "duration": 5.521
+    },
+    {
+        "text": "the same uh GEOS and eqtl data sets",
+        "start": 875.82,
+        "duration": 5.459
+    },
+    {
+        "text": "but if we make this argument we can",
+        "start": 879.48,
+        "duration": 3.919
+    },
+    {
+        "text": "apply dumpster's role combination",
+        "start": 881.279,
+        "duration": 4.5
+    },
+    {
+        "text": "resulting in this statement here that",
+        "start": 883.399,
+        "duration": 4.541
+    },
+    {
+        "text": "the overall Mass the overall degree of",
+        "start": 885.779,
+        "duration": 5.941
+    },
+    {
+        "text": "belief that a Genus causal uh given the",
+        "start": 887.94,
+        "duration": 6.36
+    },
+    {
+        "text": "G Watson colloquialization data",
+        "start": 891.72,
+        "duration": 5.16
+    },
+    {
+        "text": "um is proportional to the product of the",
+        "start": 894.3,
+        "duration": 5.339
+    },
+    {
+        "text": "individual Mass functions",
+        "start": 896.88,
+        "duration": 4.68
+    },
+    {
+        "text": "okay so now we're going to sort of more",
+        "start": 899.639,
+        "duration": 4.5
+    },
+    {
+        "text": "explicitly tie that DS3 formulation to",
+        "start": 901.56,
+        "duration": 5.16
+    },
+    {
+        "text": "the Bayesian framework so just a little",
+        "start": 904.139,
+        "duration": 4.2
+    },
+    {
+        "text": "bit of notation here we're going to call",
+        "start": 906.72,
+        "duration": 4.5
+    },
+    {
+        "text": "it the T was posterior probability piece",
+        "start": 908.339,
+        "duration": 5.101
+    },
+    {
+        "text": "of T was so this is going to be",
+        "start": 911.22,
+        "duration": 4.44
+    },
+    {
+        "text": "proportional to our unconstrained prior",
+        "start": 913.44,
+        "duration": 4.68
+    },
+    {
+        "text": "times the base Factor so we're going to",
+        "start": 915.66,
+        "duration": 4.56
+    },
+    {
+        "text": "Define our marginal Mass functions as",
+        "start": 918.12,
+        "duration": 4.399
+    },
+    {
+        "text": "essentially being proportional to some",
+        "start": 920.22,
+        "duration": 5.64
+    },
+    {
+        "text": "monotonic function at or G of your",
+        "start": 922.519,
+        "duration": 6.82
+    },
+    {
+        "text": "posterior probability for colloquization",
+        "start": 925.86,
+        "duration": 5.279
+    },
+    {
+        "text": "or tiwas",
+        "start": 929.339,
+        "duration": 4.261
+    },
+    {
+        "text": "why denser's role combination we can",
+        "start": 931.139,
+        "duration": 4.861
+    },
+    {
+        "text": "arrive at this conclusion where",
+        "start": 933.6,
+        "duration": 4.08
+    },
+    {
+        "text": "essentially the punch line here is that",
+        "start": 936.0,
+        "duration": 3.779
+    },
+    {
+        "text": "if G is the identity mapping then we",
+        "start": 937.68,
+        "duration": 4.38
+    },
+    {
+        "text": "find that the overall Mass function is",
+        "start": 939.779,
+        "duration": 4.5
+    },
+    {
+        "text": "actually proportional to the um the",
+        "start": 942.06,
+        "duration": 4.019
+    },
+    {
+        "text": "posterior probability which essentially",
+        "start": 944.279,
+        "duration": 4.86
+    },
+    {
+        "text": "means that for a non-model based DS3",
+        "start": 946.079,
+        "duration": 5.581
+    },
+    {
+        "text": "framework and our Bayesian framework",
+        "start": 949.139,
+        "duration": 5.521
+    },
+    {
+        "text": "that was based on our sem the overall",
+        "start": 951.66,
+        "duration": 4.919
+    },
+    {
+        "text": "rankings of genes will be the same based",
+        "start": 954.66,
+        "duration": 4.44
+    },
+    {
+        "text": "on these two different approaches",
+        "start": 956.579,
+        "duration": 5.641
+    },
+    {
+        "text": "okay so sort of uh touching home base",
+        "start": 959.1,
+        "duration": 6.419
+    },
+    {
+        "text": "here so uh what did we just go over",
+        "start": 962.22,
+        "duration": 7.32
+    },
+    {
+        "text": "um so our goal was to uh estimate a",
+        "start": 965.519,
+        "duration": 5.401
+    },
+    {
+        "text": "posterior probability of fugitive",
+        "start": 969.54,
+        "duration": 3.96
+    },
+    {
+        "text": "causality for each gene in our data set",
+        "start": 970.92,
+        "duration": 4.859
+    },
+    {
+        "text": "we did this using a Bayesian framework",
+        "start": 973.5,
+        "duration": 5.339
+    },
+    {
+        "text": "where we basically converted a t y z",
+        "start": 975.779,
+        "duration": 5.641
+    },
+    {
+        "text": "squared or a base factor and then we",
+        "start": 978.839,
+        "duration": 3.961
+    },
+    {
+        "text": "designed it prior based on our",
+        "start": 981.42,
+        "duration": 2.94
+    },
+    {
+        "text": "co-localization evidence that was",
+        "start": 982.8,
+        "duration": 3.479
+    },
+    {
+        "text": "designed to filter out LD hitchhiking",
+        "start": 984.36,
+        "duration": 4.86
+    },
+    {
+        "text": "signals and then we finally interpreted",
+        "start": 986.279,
+        "duration": 5.701
+    },
+    {
+        "text": "in the context of vs Theory",
+        "start": 989.22,
+        "duration": 4.559
+    },
+    {
+        "text": "so by this point you could just think if",
+        "start": 991.98,
+        "duration": 3.68
+    },
+    {
+        "text": "you're doing the analysis you have",
+        "start": 993.779,
+        "duration": 4.261
+    },
+    {
+        "text": "essentially a transcriptome-wide set of",
+        "start": 995.66,
+        "duration": 4.119
+    },
+    {
+        "text": "posterior probabilities so the next",
+        "start": 998.04,
+        "duration": 3.599
+    },
+    {
+        "text": "question is sort of you know how do we",
+        "start": 999.779,
+        "duration": 3.42
+    },
+    {
+        "text": "interpret these more in a biological",
+        "start": 1001.639,
+        "duration": 3.421
+    },
+    {
+        "text": "context",
+        "start": 1003.199,
+        "duration": 3.301
+    },
+    {
+        "text": "so if we come back to our original",
+        "start": 1005.06,
+        "duration": 3.12
+    },
+    {
+        "text": "research question you might remember",
+        "start": 1006.5,
+        "duration": 3.66
+    },
+    {
+        "text": "that our goal is not only to implicate",
+        "start": 1008.18,
+        "duration": 5.219
+    },
+    {
+        "text": "PCGS but also to implicate biological",
+        "start": 1010.16,
+        "duration": 5.46
+    },
+    {
+        "text": "Pathways so again we're going to be",
+        "start": 1013.399,
+        "duration": 4.5
+    },
+    {
+        "text": "using that posterior setup posterior",
+        "start": 1015.62,
+        "duration": 4.56
+    },
+    {
+        "text": "probabilities uh basically to find out",
+        "start": 1017.899,
+        "duration": 6.5
+    },
+    {
+        "text": "which pathways are biologically relevant",
+        "start": 1020.18,
+        "duration": 4.219
+    },
+    {
+        "text": "okay so the uh the main way that",
+        "start": 1025.04,
+        "duration": 3.72
+    },
+    {
+        "text": "researchers have typically gone about",
+        "start": 1027.079,
+        "duration": 3.84
+    },
+    {
+        "text": "doing this is what's called the gene set",
+        "start": 1028.76,
+        "duration": 4.5
+    },
+    {
+        "text": "enrichment analysis so this aims to",
+        "start": 1030.919,
+        "duration": 3.841
+    },
+    {
+        "text": "identify groups of genes that are",
+        "start": 1033.26,
+        "duration": 4.02
+    },
+    {
+        "text": "enriched given Gene trait Association",
+        "start": 1034.76,
+        "duration": 5.159
+    },
+    {
+        "text": "evidence so typically this is in the",
+        "start": 1037.28,
+        "duration": 4.38
+    },
+    {
+        "text": "context of a differential expression",
+        "start": 1039.919,
+        "duration": 4.321
+    },
+    {
+        "text": "analysis so usually input you'll have",
+        "start": 1041.66,
+        "duration": 4.5
+    },
+    {
+        "text": "your summary statistics from the de",
+        "start": 1044.24,
+        "duration": 3.24
+    },
+    {
+        "text": "analysis",
+        "start": 1046.16,
+        "duration": 3.66
+    },
+    {
+        "text": "and then you also have a list of Gene",
+        "start": 1047.48,
+        "duration": 3.84
+    },
+    {
+        "text": "set annotations these basically just",
+        "start": 1049.82,
+        "duration": 4.56
+    },
+    {
+        "text": "denote whether whether or not a gene is",
+        "start": 1051.32,
+        "duration": 4.68
+    },
+    {
+        "text": "a member of whatever pathway you're",
+        "start": 1054.38,
+        "duration": 2.58
+    },
+    {
+        "text": "interested in",
+        "start": 1056.0,
+        "duration": 2.64
+    },
+    {
+        "text": "uh you can get these from a few",
+        "start": 1056.96,
+        "duration": 3.719
+    },
+    {
+        "text": "different resources one might be Gene",
+        "start": 1058.64,
+        "duration": 5.7
+    },
+    {
+        "text": "ontology or go and another might be keg",
+        "start": 1060.679,
+        "duration": 5.521
+    },
+    {
+        "text": "um and then for output you'll often have",
+        "start": 1064.34,
+        "duration": 4.02
+    },
+    {
+        "text": "this conversion estimates for whatever",
+        "start": 1066.2,
+        "duration": 4.38
+    },
+    {
+        "text": "genes that you're interested in",
+        "start": 1068.36,
+        "duration": 4.559
+    },
+    {
+        "text": "some examples of these types of methods",
+        "start": 1070.58,
+        "duration": 6.54
+    },
+    {
+        "text": "are bagsy and gsea so basically what",
+        "start": 1072.919,
+        "duration": 6.301
+    },
+    {
+        "text": "we're going to do is take the bagsy",
+        "start": 1077.12,
+        "duration": 5.34
+    },
+    {
+        "text": "framework and sort of adapt it from",
+        "start": 1079.22,
+        "duration": 4.86
+    },
+    {
+        "text": "working with differential expression",
+        "start": 1082.46,
+        "duration": 3.66
+    },
+    {
+        "text": "data to working with our posterior",
+        "start": 1084.08,
+        "duration": 3.719
+    },
+    {
+        "text": "probability output",
+        "start": 1086.12,
+        "duration": 4.32
+    },
+    {
+        "text": "so the idea of bagsy really is to treat",
+        "start": 1087.799,
+        "duration": 6.061
+    },
+    {
+        "text": "this gamma as latent and then use an em",
+        "start": 1090.44,
+        "duration": 4.979
+    },
+    {
+        "text": "algorithm to estimate the enrichment",
+        "start": 1093.86,
+        "duration": 3.12
+    },
+    {
+        "text": "parameters",
+        "start": 1095.419,
+        "duration": 3.781
+    },
+    {
+        "text": "um so just sort of a set up to that",
+        "start": 1096.98,
+        "duration": 4.92
+    },
+    {
+        "text": "we're going to Define some notation so d",
+        "start": 1099.2,
+        "duration": 5.4
+    },
+    {
+        "text": "i is going to be a indicator variable",
+        "start": 1101.9,
+        "duration": 5.639
+    },
+    {
+        "text": "for whether or not a Genus in a gene set",
+        "start": 1104.6,
+        "duration": 4.68
+    },
+    {
+        "text": "of Interest",
+        "start": 1107.539,
+        "duration": 4.5
+    },
+    {
+        "text": "ing prior here to connect the posterior",
+        "start": 1109.28,
+        "duration": 5.46
+    },
+    {
+        "text": "probabilities to those Gene set",
+        "start": 1112.039,
+        "duration": 5.0
+    },
+    {
+        "text": "annotations so the parameter that really",
+        "start": 1114.74,
+        "duration": 5.4
+    },
+    {
+        "text": "interested in here is this log odds",
+        "start": 1117.039,
+        "duration": 4.781
+    },
+    {
+        "text": "ratio output one",
+        "start": 1120.14,
+        "duration": 4.56
+    },
+    {
+        "text": "or essentially Alpha One if alpha 1 is",
+        "start": 1121.82,
+        "duration": 5.04
+    },
+    {
+        "text": "greater than zero then genes in the gene",
+        "start": 1124.7,
+        "duration": 5.88
+    },
+    {
+        "text": "set are more likely to be prioritized",
+        "start": 1126.86,
+        "duration": 6.059
+    },
+    {
+        "text": "okay so the more building up here we're",
+        "start": 1130.58,
+        "duration": 4.56
+    },
+    {
+        "text": "going to form a consistent exchangeable",
+        "start": 1132.919,
+        "duration": 4.441
+    },
+    {
+        "text": "prior using the strong law of large",
+        "start": 1135.14,
+        "duration": 4.98
+    },
+    {
+        "text": "numbers uh and a total expectation law",
+        "start": 1137.36,
+        "duration": 4.38
+    },
+    {
+        "text": "and then we're going to use that to",
+        "start": 1140.12,
+        "duration": 3.78
+    },
+    {
+        "text": "formulate a base factor for each gene is",
+        "start": 1141.74,
+        "duration": 3.84
+    },
+    {
+        "text": "the ratio of the posterior and prior",
+        "start": 1143.9,
+        "duration": 3.3
+    },
+    {
+        "text": "odds",
+        "start": 1145.58,
+        "duration": 3.839
+    },
+    {
+        "text": "um and then finally getting into our em",
+        "start": 1147.2,
+        "duration": 4.2
+    },
+    {
+        "text": "algorithm using those Gene level Bayes",
+        "start": 1149.419,
+        "duration": 4.081
+    },
+    {
+        "text": "factors after initializing our Alpha",
+        "start": 1151.4,
+        "duration": 4.74
+    },
+    {
+        "text": "Vector we're going to first update the",
+        "start": 1153.5,
+        "duration": 5.64
+    },
+    {
+        "text": "conditional expectation of gamma",
+        "start": 1156.14,
+        "duration": 5.279
+    },
+    {
+        "text": "in our e-step and then",
+        "start": 1159.14,
+        "duration": 4.14
+    },
+    {
+        "text": "um our m-step performs a two by two",
+        "start": 1161.419,
+        "duration": 3.901
+    },
+    {
+        "text": "contingency table maximization to update",
+        "start": 1163.28,
+        "duration": 4.5
+    },
+    {
+        "text": "the alpha Vector so we iterate between",
+        "start": 1165.32,
+        "duration": 5.34
+    },
+    {
+        "text": "those two steps until we get convergence",
+        "start": 1167.78,
+        "duration": 5.82
+    },
+    {
+        "text": "um so in practice what we'd find is that",
+        "start": 1170.66,
+        "duration": 5.46
+    },
+    {
+        "text": "uh when the underlying true contingency",
+        "start": 1173.6,
+        "duration": 4.62
+    },
+    {
+        "text": "table is highly unbalanced that being",
+        "start": 1176.12,
+        "duration": 4.559
+    },
+    {
+        "text": "that could be if basically one of your",
+        "start": 1178.22,
+        "duration": 5.699
+    },
+    {
+        "text": "cell counts is very close to zero",
+        "start": 1180.679,
+        "duration": 5.041
+    },
+    {
+        "text": "um basically we have problems with the",
+        "start": 1183.919,
+        "duration": 4.38
+    },
+    {
+        "text": "algorithm converging to in order to",
+        "start": 1185.72,
+        "duration": 4.98
+    },
+    {
+        "text": "account for that we shrink the Alpha One",
+        "start": 1188.299,
+        "duration": 4.201
+    },
+    {
+        "text": "estimate by imposing a standard normal",
+        "start": 1190.7,
+        "duration": 4.8
+    },
+    {
+        "text": "prior and then finally for uncertainty",
+        "start": 1192.5,
+        "duration": 4.919
+    },
+    {
+        "text": "computation we",
+        "start": 1195.5,
+        "duration": 3.72
+    },
+    {
+        "text": "use a numerical differentiation",
+        "start": 1197.419,
+        "duration": 3.781
+    },
+    {
+        "text": "algorithm the compute standard error of",
+        "start": 1199.22,
+        "duration": 4.079
+    },
+    {
+        "text": "Alpha One",
+        "start": 1201.2,
+        "duration": 4.2
+    },
+    {
+        "text": "okay so",
+        "start": 1203.299,
+        "duration": 2.76
+    },
+    {
+        "text": "um",
+        "start": 1205.4,
+        "duration": 3.36
+    },
+    {
+        "text": "just coming back to uh the sort of the",
+        "start": 1206.059,
+        "duration": 4.441
+    },
+    {
+        "text": "very high",
+        "start": 1208.76,
+        "duration": 5.58
+    },
+    {
+        "text": "very high level view of uh both intact",
+        "start": 1210.5,
+        "duration": 5.28
+    },
+    {
+        "text": "and intact GSE",
+        "start": 1214.34,
+        "duration": 4.199
+    },
+    {
+        "text": "you've already seen the sort of upper",
+        "start": 1215.78,
+        "duration": 6.0
+    },
+    {
+        "text": "left portion of of what's going on that",
+        "start": 1218.539,
+        "duration": 5.52
+    },
+    {
+        "text": "that represented the intact procedure",
+        "start": 1221.78,
+        "duration": 3.899
+    },
+    {
+        "text": "and then what we've just gone over was",
+        "start": 1224.059,
+        "duration": 3.961
+    },
+    {
+        "text": "essentially using uh the posterior",
+        "start": 1225.679,
+        "duration": 4.86
+    },
+    {
+        "text": "probabilities from that intact step and",
+        "start": 1228.02,
+        "duration": 5.159
+    },
+    {
+        "text": "uh in addition to",
+        "start": 1230.539,
+        "duration": 4.321
+    },
+    {
+        "text": "um the pathway annotations to perform",
+        "start": 1233.179,
+        "duration": 3.601
+    },
+    {
+        "text": "Gene set enrichment estimation using",
+        "start": 1234.86,
+        "duration": 4.699
+    },
+    {
+        "text": "intact GSE",
+        "start": 1236.78,
+        "duration": 2.779
+    },
+    {
+        "text": "okay so doc methods uh now we'll go on",
+        "start": 1239.9,
+        "duration": 5.1
+    },
+    {
+        "text": "to a simulation study to see how this",
+        "start": 1243.02,
+        "duration": 4.32
+    },
+    {
+        "text": "see how this works",
+        "start": 1245.0,
+        "duration": 3.059
+    },
+    {
+        "text": "um",
+        "start": 1247.34,
+        "duration": 3.42
+    },
+    {
+        "text": "so here's uh some of the details of the",
+        "start": 1248.059,
+        "duration": 4.98
+    },
+    {
+        "text": "simulation study design so we're using",
+        "start": 1250.76,
+        "duration": 4.86
+    },
+    {
+        "text": "genotype data from 500 individuals from",
+        "start": 1253.039,
+        "duration": 5.281
+    },
+    {
+        "text": "the GTX project we're randomly selecting",
+        "start": 1255.62,
+        "duration": 5.82
+    },
+    {
+        "text": "about 1200 genes each with about 1500",
+        "start": 1258.32,
+        "duration": 6.3
+    },
+    {
+        "text": "common assist Snips uh we're selecting",
+        "start": 1261.44,
+        "duration": 7.02
+    },
+    {
+        "text": "two uh true eqtls for Gene",
+        "start": 1264.62,
+        "duration": 6.54
+    },
+    {
+        "text": "um and we're annotating each gene",
+        "start": 1268.46,
+        "duration": 5.28
+    },
+    {
+        "text": "um as if we're not a member of a gene",
+        "start": 1271.16,
+        "duration": 5.519
+    },
+    {
+        "text": "set with essentially probability 0.4",
+        "start": 1273.74,
+        "duration": 5.04
+    },
+    {
+        "text": "then we're assigning a causality",
+        "start": 1276.679,
+        "duration": 4.921
+    },
+    {
+        "text": "indicator for each gene uh based on our",
+        "start": 1278.78,
+        "duration": 4.86
+    },
+    {
+        "text": "logistic prior and the gene set",
+        "start": 1281.6,
+        "duration": 4.5
+    },
+    {
+        "text": "annotation",
+        "start": 1283.64,
+        "duration": 4.62
+    },
+    {
+        "text": "um and finally we",
+        "start": 1286.1,
+        "duration": 4.14
+    },
+    {
+        "text": "simulate both gene expression and the",
+        "start": 1288.26,
+        "duration": 3.84
+    },
+    {
+        "text": "complex trait essentially based on our",
+        "start": 1290.24,
+        "duration": 3.36
+    },
+    {
+        "text": "structural equation model that I showed",
+        "start": 1292.1,
+        "duration": 4.02
+    },
+    {
+        "text": "before we're drawing the residual error",
+        "start": 1293.6,
+        "duration": 5.699
+    },
+    {
+        "text": "variances from a standard normal",
+        "start": 1296.12,
+        "duration": 5.58
+    },
+    {
+        "text": "each of the effect sizes are being drawn",
+        "start": 1299.299,
+        "duration": 5.221
+    },
+    {
+        "text": "from a zero five squared or in this case",
+        "start": 1301.7,
+        "duration": 4.979
+    },
+    {
+        "text": "Phi is 0.6 because that's essentially",
+        "start": 1304.52,
+        "duration": 4.5
+    },
+    {
+        "text": "the value that we found most accurately",
+        "start": 1306.679,
+        "duration": 4.141
+    },
+    {
+        "text": "reflects observed signals and noise",
+        "start": 1309.02,
+        "duration": 3.84
+    },
+    {
+        "text": "ratios",
+        "start": 1310.82,
+        "duration": 4.38
+    },
+    {
+        "text": "um and then we're simulating 100 data",
+        "start": 1312.86,
+        "duration": 4.5
+    },
+    {
+        "text": "sets for several different Alpha One",
+        "start": 1315.2,
+        "duration": 5.04
+    },
+    {
+        "text": "values for a total of 500 data sets of",
+        "start": 1317.36,
+        "duration": 6.059
+    },
+    {
+        "text": "total so after doing all this for each",
+        "start": 1320.24,
+        "duration": 5.16
+    },
+    {
+        "text": "data set we apply statistical file",
+        "start": 1323.419,
+        "duration": 4.321
+    },
+    {
+        "text": "mapping so we can do colloquization and",
+        "start": 1325.4,
+        "duration": 4.08
+    },
+    {
+        "text": "T was",
+        "start": 1327.74,
+        "duration": 2.28
+    },
+    {
+        "text": "um",
+        "start": 1329.48,
+        "duration": 3.179
+    },
+    {
+        "text": "so getting into those results uh so",
+        "start": 1330.02,
+        "duration": 4.68
+    },
+    {
+        "text": "essentially what we're doing here is",
+        "start": 1332.659,
+        "duration": 4.801
+    },
+    {
+        "text": "comparing the performance of tboss only",
+        "start": 1334.7,
+        "duration": 4.979
+    },
+    {
+        "text": "methods co-localization methods or",
+        "start": 1337.46,
+        "duration": 4.26
+    },
+    {
+        "text": "postpocket processing and then finally",
+        "start": 1339.679,
+        "duration": 3.541
+    },
+    {
+        "text": "intact",
+        "start": 1341.72,
+        "duration": 2.22
+    },
+    {
+        "text": "um",
+        "start": 1343.22,
+        "duration": 2.939
+    },
+    {
+        "text": "so the way this table is set up is you",
+        "start": 1343.94,
+        "duration": 4.44
+    },
+    {
+        "text": "have the realized false Discovery rate",
+        "start": 1346.159,
+        "duration": 5.041
+    },
+    {
+        "text": "at a Target control level of five",
+        "start": 1348.38,
+        "duration": 4.74
+    },
+    {
+        "text": "percent as the first row and then the",
+        "start": 1351.2,
+        "duration": 4.56
+    },
+    {
+        "text": "second row you'd have power and what I",
+        "start": 1353.12,
+        "duration": 4.2
+    },
+    {
+        "text": "want to draw your attention to is over",
+        "start": 1355.76,
+        "duration": 4.2
+    },
+    {
+        "text": "here for the T was only methods you see",
+        "start": 1357.32,
+        "duration": 4.56
+    },
+    {
+        "text": "that they have the highest power but",
+        "start": 1359.96,
+        "duration": 4.14
+    },
+    {
+        "text": "they have excessive false positives you",
+        "start": 1361.88,
+        "duration": 4.5
+    },
+    {
+        "text": "see the fgr is not is not actually",
+        "start": 1364.1,
+        "duration": 3.9
+    },
+    {
+        "text": "controlled",
+        "start": 1366.38,
+        "duration": 4.86
+    },
+    {
+        "text": "um the co-localization methods here in",
+        "start": 1368.0,
+        "duration": 4.62
+    },
+    {
+        "text": "the middle you can see that they're",
+        "start": 1371.24,
+        "duration": 5.1
+    },
+    {
+        "text": "generally uh relatively uh conservative",
+        "start": 1372.62,
+        "duration": 5.82
+    },
+    {
+        "text": "compared to the other methods and then",
+        "start": 1376.34,
+        "duration": 3.3
+    },
+    {
+        "text": "finally if you look all the way over",
+        "start": 1378.44,
+        "duration": 3.18
+    },
+    {
+        "text": "here on the right intact using the",
+        "start": 1379.64,
+        "duration": 4.08
+    },
+    {
+        "text": "linear prior you can see that this",
+        "start": 1381.62,
+        "duration": 4.86
+    },
+    {
+        "text": "actually has the highest power of all of",
+        "start": 1383.72,
+        "duration": 7.22
+    },
+    {
+        "text": "the properly FTR controlled methods",
+        "start": 1386.48,
+        "duration": 4.46
+    },
+    {
+        "text": "okay so that was intact now we're going",
+        "start": 1391.46,
+        "duration": 4.74
+    },
+    {
+        "text": "to look at how intag GSE performed so",
+        "start": 1393.26,
+        "duration": 5.039
+    },
+    {
+        "text": "the way that this uh this figure is set",
+        "start": 1396.2,
+        "duration": 4.32
+    },
+    {
+        "text": "up is you have the true enrichment",
+        "start": 1398.299,
+        "duration": 4.201
+    },
+    {
+        "text": "parameter Alpha One so there are five",
+        "start": 1400.52,
+        "duration": 3.96
+    },
+    {
+        "text": "different ones of these uh and a hundred",
+        "start": 1402.5,
+        "duration": 4.14
+    },
+    {
+        "text": "different data sets for each one and",
+        "start": 1404.48,
+        "duration": 4.14
+    },
+    {
+        "text": "then on the y-axis you have the",
+        "start": 1406.64,
+        "duration": 4.26
+    },
+    {
+        "text": "estimated enrichment parameter",
+        "start": 1408.62,
+        "duration": 4.32
+    },
+    {
+        "text": "um so the the dot in the middle of each",
+        "start": 1410.9,
+        "duration": 3.84
+    },
+    {
+        "text": "of each uh",
+        "start": 1412.94,
+        "duration": 3.66
+    },
+    {
+        "text": "of each of these is the the mean",
+        "start": 1414.74,
+        "duration": 3.6
+    },
+    {
+        "text": "enrichment estimate and then you have",
+        "start": 1416.6,
+        "duration": 5.459
+    },
+    {
+        "text": "the corresponding 95 confidence interval",
+        "start": 1418.34,
+        "duration": 6.6
+    },
+    {
+        "text": "um so the red is intact GSE and then",
+        "start": 1422.059,
+        "duration": 4.321
+    },
+    {
+        "text": "we're comparing it to a two-stage",
+        "start": 1424.94,
+        "duration": 4.26
+    },
+    {
+        "text": "approach which essentially only uses",
+        "start": 1426.38,
+        "duration": 6.12
+    },
+    {
+        "text": "um pwas data so the first stage of the",
+        "start": 1429.2,
+        "duration": 5.52
+    },
+    {
+        "text": "two-stage approach is to essentially",
+        "start": 1432.5,
+        "duration": 4.86
+    },
+    {
+        "text": "classify a Genus putatively causal or",
+        "start": 1434.72,
+        "duration": 4.439
+    },
+    {
+        "text": "not based on a five percent FDR",
+        "start": 1437.36,
+        "duration": 5.52
+    },
+    {
+        "text": "threshold and then using those binary",
+        "start": 1439.159,
+        "duration": 5.76
+    },
+    {
+        "text": "classifications the second stage",
+        "start": 1442.88,
+        "duration": 4.74
+    },
+    {
+        "text": "essentially uh performs a two by two",
+        "start": 1444.919,
+        "duration": 5.041
+    },
+    {
+        "text": "contingency table maximization you could",
+        "start": 1447.62,
+        "duration": 4.02
+    },
+    {
+        "text": "basically just think of it as a logistic",
+        "start": 1449.96,
+        "duration": 4.38
+    },
+    {
+        "text": "regression of the indicators on the uh",
+        "start": 1451.64,
+        "duration": 4.919
+    },
+    {
+        "text": "the the gene set annotation indicators",
+        "start": 1454.34,
+        "duration": 3.959
+    },
+    {
+        "text": "the dis",
+        "start": 1456.559,
+        "duration": 2.461
+    },
+    {
+        "text": "um",
+        "start": 1458.299,
+        "duration": 2.76
+    },
+    {
+        "text": "so there are a couple things I want to",
+        "start": 1459.02,
+        "duration": 3.6
+    },
+    {
+        "text": "point out here first of all you can see",
+        "start": 1461.059,
+        "duration": 4.321
+    },
+    {
+        "text": "the mean enrichment estimate for intact",
+        "start": 1462.62,
+        "duration": 5.88
+    },
+    {
+        "text": "GSE is less biased generally than the",
+        "start": 1465.38,
+        "duration": 4.98
+    },
+    {
+        "text": "two-stage approach and we think that's",
+        "start": 1468.5,
+        "duration": 3.9
+    },
+    {
+        "text": "because we're incorporating the",
+        "start": 1470.36,
+        "duration": 4.38
+    },
+    {
+        "text": "uncertainty from the intact output",
+        "start": 1472.4,
+        "duration": 4.86
+    },
+    {
+        "text": "whereas the two-stage does not",
+        "start": 1474.74,
+        "duration": 4.799
+    },
+    {
+        "text": "um and also you can see that both",
+        "start": 1477.26,
+        "duration": 5.52
+    },
+    {
+        "text": "approaches are downward biased and a",
+        "start": 1479.539,
+        "duration": 5.341
+    },
+    {
+        "text": "couple of reasons we think for that are",
+        "start": 1482.78,
+        "duration": 4.68
+    },
+    {
+        "text": "first of all that you have",
+        "start": 1484.88,
+        "duration": 4.4
+    },
+    {
+        "text": "classification error you saw the power",
+        "start": 1487.46,
+        "duration": 4.5
+    },
+    {
+        "text": "uh basically none of the methods have",
+        "start": 1489.28,
+        "duration": 4.24
+    },
+    {
+        "text": "perfect power",
+        "start": 1491.96,
+        "duration": 4.74
+    },
+    {
+        "text": "um and also uh the fact that the intact",
+        "start": 1493.52,
+        "duration": 5.1
+    },
+    {
+        "text": "GST algorithm involves the shrinkage",
+        "start": 1496.7,
+        "duration": 2.94
+    },
+    {
+        "text": "step",
+        "start": 1498.62,
+        "duration": 4.22
+    },
+    {
+        "text": "um so that might be another cause",
+        "start": 1499.64,
+        "duration": 3.2
+    },
+    {
+        "text": "okay so that was our simulation results",
+        "start": 1503.299,
+        "duration": 4.86
+    },
+    {
+        "text": "uh so now we'll move into some real data",
+        "start": 1505.34,
+        "duration": 5.88
+    },
+    {
+        "text": "application so uh for the real data",
+        "start": 1508.159,
+        "duration": 4.921
+    },
+    {
+        "text": "application we're going to plot apply",
+        "start": 1511.22,
+        "duration": 4.62
+    },
+    {
+        "text": "intact to four different UK biobank",
+        "start": 1513.08,
+        "duration": 5.219
+    },
+    {
+        "text": "molecular Retreat gwas as well as the",
+        "start": 1515.84,
+        "duration": 5.819
+    },
+    {
+        "text": "multi-tissue gtex eqtl data so we're",
+        "start": 1518.299,
+        "duration": 6.661
+    },
+    {
+        "text": "looking at CRM urate igf-1 and then",
+        "start": 1521.659,
+        "duration": 5.221
+    },
+    {
+        "text": "testosterone levels separately for males",
+        "start": 1524.96,
+        "duration": 2.94
+    },
+    {
+        "text": "and feet",
+        "start": 1526.88,
+        "duration": 3.0
+    },
+    {
+        "text": "females",
+        "start": 1527.9,
+        "duration": 4.08
+    },
+    {
+        "text": "um so why are these traits of particular",
+        "start": 1529.88,
+        "duration": 4.2
+    },
+    {
+        "text": "interest to us so these are actually",
+        "start": 1531.98,
+        "duration": 4.26
+    },
+    {
+        "text": "pretty well understood at the molecular",
+        "start": 1534.08,
+        "duration": 5.699
+    },
+    {
+        "text": "level so the sort of the rationale here",
+        "start": 1536.24,
+        "duration": 5.939
+    },
+    {
+        "text": "is we can use these to Benchmark you",
+        "start": 1539.779,
+        "duration": 4.981
+    },
+    {
+        "text": "know are are these methods implicating",
+        "start": 1542.179,
+        "duration": 5.521
+    },
+    {
+        "text": "the right genes or are they not",
+        "start": 1544.76,
+        "duration": 5.64
+    },
+    {
+        "text": "um okay so the way that this table is",
+        "start": 1547.7,
+        "duration": 4.8
+    },
+    {
+        "text": "set up is each of the entries correspond",
+        "start": 1550.4,
+        "duration": 5.399
+    },
+    {
+        "text": "to a method and uh and a trait and",
+        "start": 1552.5,
+        "duration": 5.52
+    },
+    {
+        "text": "essentially it represents the number of",
+        "start": 1555.799,
+        "duration": 5.76
+    },
+    {
+        "text": "Gene tissue pairs that are implicated by",
+        "start": 1558.02,
+        "duration": 5.399
+    },
+    {
+        "text": "the method and then the number and",
+        "start": 1561.559,
+        "duration": 4.681
+    },
+    {
+        "text": "parentheses by the side to the side of",
+        "start": 1563.419,
+        "duration": 4.801
+    },
+    {
+        "text": "it is uh the total number of unique",
+        "start": 1566.24,
+        "duration": 4.74
+    },
+    {
+        "text": "genes across tissues",
+        "start": 1568.22,
+        "duration": 4.5
+    },
+    {
+        "text": "um so very very a lot of numbers here",
+        "start": 1570.98,
+        "duration": 3.78
+    },
+    {
+        "text": "and basically the only thing I want to",
+        "start": 1572.72,
+        "duration": 4.02
+    },
+    {
+        "text": "draw your attention to for now is the",
+        "start": 1574.76,
+        "duration": 3.36
+    },
+    {
+        "text": "fact that you can sort of see the same",
+        "start": 1576.74,
+        "duration": 3.72
+    },
+    {
+        "text": "pattern as we saw for the simulation",
+        "start": 1578.12,
+        "duration": 4.26
+    },
+    {
+        "text": "um in which if you look at the total",
+        "start": 1580.46,
+        "duration": 4.079
+    },
+    {
+        "text": "number of Gene tissue pairs implicated",
+        "start": 1582.38,
+        "duration": 4.26
+    },
+    {
+        "text": "for the default linear prior that falls",
+        "start": 1584.539,
+        "duration": 3.421
+    },
+    {
+        "text": "between",
+        "start": 1586.64,
+        "duration": 1.98
+    },
+    {
+        "text": "um",
+        "start": 1587.96,
+        "duration": 3.0
+    },
+    {
+        "text": "the fast unlock uh co-localization",
+        "start": 1588.62,
+        "duration": 4.5
+    },
+    {
+        "text": "approach as well as the phosphere's",
+        "start": 1590.96,
+        "duration": 4.52
+    },
+    {
+        "text": "approach",
+        "start": 1593.12,
+        "duration": 2.36
+    },
+    {
+        "text": "okay so next we're going to basically uh",
+        "start": 1595.94,
+        "duration": 7.38
+    },
+    {
+        "text": "compare uh intact to that the method",
+        "start": 1599.059,
+        "duration": 6.901
+    },
+    {
+        "text": "that we sort of touched on in one of the",
+        "start": 1603.32,
+        "duration": 4.68
+    },
+    {
+        "text": "first slides uh the first Manhattan plot",
+        "start": 1605.96,
+        "duration": 5.339
+    },
+    {
+        "text": "that we looked at so if you remember",
+        "start": 1608.0,
+        "duration": 4.919
+    },
+    {
+        "text": "um I sort of talked about that proximity",
+        "start": 1611.299,
+        "duration": 3.36
+    },
+    {
+        "text": "plus knowledge based approach which",
+        "start": 1612.919,
+        "duration": 4.14
+    },
+    {
+        "text": "involves linking G was hits based on",
+        "start": 1614.659,
+        "duration": 4.861
+    },
+    {
+        "text": "previous biological knowledge and genic",
+        "start": 1617.059,
+        "duration": 3.781
+    },
+    {
+        "text": "distance",
+        "start": 1619.52,
+        "duration": 2.159
+    },
+    {
+        "text": "um",
+        "start": 1620.84,
+        "duration": 4.339
+    },
+    {
+        "text": "so uh here what we have are",
+        "start": 1621.679,
+        "duration": 6.781
+    },
+    {
+        "text": "the four different traits in the First",
+        "start": 1625.179,
+        "duration": 4.961
+    },
+    {
+        "text": "Column and the next column we have the",
+        "start": 1628.46,
+        "duration": 4.079
+    },
+    {
+        "text": "number of g-was loci uh based on this",
+        "start": 1630.14,
+        "duration": 4.919
+    },
+    {
+        "text": "paper the next column is the number of",
+        "start": 1632.539,
+        "duration": 4.861
+    },
+    {
+        "text": "PCGS that we're implicating with intact",
+        "start": 1635.059,
+        "duration": 4.321
+    },
+    {
+        "text": "and then to the right of that we have",
+        "start": 1637.4,
+        "duration": 3.3
+    },
+    {
+        "text": "the number of",
+        "start": 1639.38,
+        "duration": 4.08
+    },
+    {
+        "text": "uh core genes that are annotated so",
+        "start": 1640.7,
+        "duration": 4.5
+    },
+    {
+        "text": "these core genes this is terminology",
+        "start": 1643.46,
+        "duration": 3.54
+    },
+    {
+        "text": "from the omnigenic model but basically",
+        "start": 1645.2,
+        "duration": 4.56
+    },
+    {
+        "text": "you can just think of this as uh think",
+        "start": 1647.0,
+        "duration": 4.86
+    },
+    {
+        "text": "of these as genes that are key players",
+        "start": 1649.76,
+        "duration": 4.919
+    },
+    {
+        "text": "in the underlying biology of the trait",
+        "start": 1651.86,
+        "duration": 5.34
+    },
+    {
+        "text": "um so basically that the big takeaway",
+        "start": 1654.679,
+        "duration": 4.201
+    },
+    {
+        "text": "from this table as you can see that",
+        "start": 1657.2,
+        "duration": 4.62
+    },
+    {
+        "text": "since intact is not uh sort of limited",
+        "start": 1658.88,
+        "duration": 5.279
+    },
+    {
+        "text": "by the biological knowledge that sort of",
+        "start": 1661.82,
+        "duration": 5.16
+    },
+    {
+        "text": "predefined list of genes you can see it",
+        "start": 1664.159,
+        "duration": 5.221
+    },
+    {
+        "text": "implicates a lot more than",
+        "start": 1666.98,
+        "duration": 4.439
+    },
+    {
+        "text": "um than the proximity plus knowledge",
+        "start": 1669.38,
+        "duration": 4.76
+    },
+    {
+        "text": "based approach",
+        "start": 1671.419,
+        "duration": 2.721
+    },
+    {
+        "text": "uh okay so now we're going to look at",
+        "start": 1674.779,
+        "duration": 5.28
+    },
+    {
+        "text": "the performance of intact and",
+        "start": 1678.08,
+        "duration": 4.02
+    },
+    {
+        "text": "implicating what we call those those",
+        "start": 1680.059,
+        "duration": 4.081
+    },
+    {
+        "text": "core genes in comparison to the",
+        "start": 1682.1,
+        "duration": 4.079
+    },
+    {
+        "text": "proximity plus knowledge based approach",
+        "start": 1684.14,
+        "duration": 4.2
+    },
+    {
+        "text": "so now we're sort of further breaking",
+        "start": 1686.179,
+        "duration": 4.821
+    },
+    {
+        "text": "down each trait by",
+        "start": 1688.34,
+        "duration": 5.219
+    },
+    {
+        "text": "subpathways so you see the the pathway",
+        "start": 1691.0,
+        "duration": 4.299
+    },
+    {
+        "text": "column gets the name of the name of the",
+        "start": 1693.559,
+        "duration": 4.261
+    },
+    {
+        "text": "said pathway and beside each name you",
+        "start": 1695.299,
+        "duration": 5.221
+    },
+    {
+        "text": "can see that there is uh the total",
+        "start": 1697.82,
+        "duration": 5.339
+    },
+    {
+        "text": "number of core genes in parentheses for",
+        "start": 1700.52,
+        "duration": 5.639
+    },
+    {
+        "text": "that given subpathway so the column to",
+        "start": 1703.159,
+        "duration": 4.62
+    },
+    {
+        "text": "the right of this is the number of",
+        "start": 1706.159,
+        "duration": 3.9
+    },
+    {
+        "text": "proteins implicated by the",
+        "start": 1707.779,
+        "duration": 4.081
+    },
+    {
+        "text": "um proximity plus knowledge based",
+        "start": 1710.059,
+        "duration": 3.781
+    },
+    {
+        "text": "approach to the right of that is the",
+        "start": 1711.86,
+        "duration": 2.819
+    },
+    {
+        "text": "number",
+        "start": 1713.84,
+        "duration": 3.3
+    },
+    {
+        "text": "implicated by intact and then to the",
+        "start": 1714.679,
+        "duration": 4.801
+    },
+    {
+        "text": "right of that is uh the number",
+        "start": 1717.14,
+        "duration": 5.22
+    },
+    {
+        "text": "implicated by uh the overlap between the",
+        "start": 1719.48,
+        "duration": 5.28
+    },
+    {
+        "text": "two different approaches so if you sort",
+        "start": 1722.36,
+        "duration": 5.1
+    },
+    {
+        "text": "of scan this table at least in comparing",
+        "start": 1724.76,
+        "duration": 5.519
+    },
+    {
+        "text": "this column here to this column here you",
+        "start": 1727.46,
+        "duration": 4.68
+    },
+    {
+        "text": "can sort of note that the approximate",
+        "start": 1730.279,
+        "duration": 3.78
+    },
+    {
+        "text": "plus knowledge based approach appears to",
+        "start": 1732.14,
+        "duration": 4.56
+    },
+    {
+        "text": "be implicating more core genes than the",
+        "start": 1734.059,
+        "duration": 4.441
+    },
+    {
+        "text": "intact approach",
+        "start": 1736.7,
+        "duration": 2.54
+    },
+    {
+        "text": "um",
+        "start": 1738.5,
+        "duration": 3.48
+    },
+    {
+        "text": "but there are there are there are still",
+        "start": 1739.24,
+        "duration": 5.679
+    },
+    {
+        "text": "cases where uh intact is implicating",
+        "start": 1741.98,
+        "duration": 5.1
+    },
+    {
+        "text": "more important core genes that the",
+        "start": 1744.919,
+        "duration": 3.901
+    },
+    {
+        "text": "proximity plus knowledge based approach",
+        "start": 1747.08,
+        "duration": 3.839
+    },
+    {
+        "text": "is not so there's a few different",
+        "start": 1748.82,
+        "duration": 4.44
+    },
+    {
+        "text": "reasons that uh we've come up with to",
+        "start": 1750.919,
+        "duration": 4.801
+    },
+    {
+        "text": "try to explain this discrepancy",
+        "start": 1753.26,
+        "duration": 4.68
+    },
+    {
+        "text": "um the first",
+        "start": 1755.72,
+        "duration": 4.02
+    },
+    {
+        "text": "um it's possible that you know for the",
+        "start": 1757.94,
+        "duration": 3.3
+    },
+    {
+        "text": "core genes that we're looking at in a",
+        "start": 1759.74,
+        "duration": 3.419
+    },
+    {
+        "text": "particular pathway remember we're",
+        "start": 1761.24,
+        "duration": 4.799
+    },
+    {
+        "text": "implicating a transcriptome data using",
+        "start": 1763.159,
+        "duration": 5.101
+    },
+    {
+        "text": "intact and the transcriptome might not",
+        "start": 1766.039,
+        "duration": 5.221
+    },
+    {
+        "text": "necessarily most speed or be the most uh",
+        "start": 1768.26,
+        "duration": 6.48
+    },
+    {
+        "text": "relevant uh particular omics platform uh",
+        "start": 1771.26,
+        "duration": 6.299
+    },
+    {
+        "text": "for the for the given core Gene and in",
+        "start": 1774.74,
+        "duration": 4.319
+    },
+    {
+        "text": "addition",
+        "start": 1777.559,
+        "duration": 3.72
+    },
+    {
+        "text": "um the proximity plus knowledge based",
+        "start": 1779.059,
+        "duration": 4.801
+    },
+    {
+        "text": "approach does not uh incorporate an",
+        "start": 1781.279,
+        "duration": 5.041
+    },
+    {
+        "text": "explicit FDR control mechanism",
+        "start": 1783.86,
+        "duration": 4.76
+    },
+    {
+        "text": "um so that that could be another",
+        "start": 1786.32,
+        "duration": 6.0
+    },
+    {
+        "text": "discrepancy that we're seeing here",
+        "start": 1788.62,
+        "duration": 5.799
+    },
+    {
+        "text": "okay so finally we're going to look at",
+        "start": 1792.32,
+        "duration": 4.68
+    },
+    {
+        "text": "how intact GSE performs and implicating",
+        "start": 1794.419,
+        "duration": 4.62
+    },
+    {
+        "text": "these quarantine subpathways and",
+        "start": 1797.0,
+        "duration": 3.96
+    },
+    {
+        "text": "relevant tissues so we're basically",
+        "start": 1799.039,
+        "duration": 4.86
+    },
+    {
+        "text": "getting these relevant issues from",
+        "start": 1800.96,
+        "duration": 4.68
+    },
+    {
+        "text": "previous biological knowledge that's",
+        "start": 1803.899,
+        "duration": 3.961
+    },
+    {
+        "text": "reported in this paper",
+        "start": 1805.64,
+        "duration": 2.88
+    },
+    {
+        "text": "um",
+        "start": 1807.86,
+        "duration": 2.699
+    },
+    {
+        "text": "so the way this table is set up is we",
+        "start": 1808.52,
+        "duration": 3.36
+    },
+    {
+        "text": "have the trait all the way on the left",
+        "start": 1810.559,
+        "duration": 3.541
+    },
+    {
+        "text": "the subpathway again to the right of",
+        "start": 1811.88,
+        "duration": 4.799
+    },
+    {
+        "text": "that and then each entry corresponds to",
+        "start": 1814.1,
+        "duration": 5.819
+    },
+    {
+        "text": "a tissue-specific uh enrichment estimate",
+        "start": 1816.679,
+        "duration": 5.821
+    },
+    {
+        "text": "the Alpha One and the corresponding",
+        "start": 1819.919,
+        "duration": 6.061
+    },
+    {
+        "text": "standard error so the statistically",
+        "start": 1822.5,
+        "duration": 6.0
+    },
+    {
+        "text": "significant estimates are in italics",
+        "start": 1825.98,
+        "duration": 5.76
+    },
+    {
+        "text": "there's nine of them of the 39 tested",
+        "start": 1828.5,
+        "duration": 3.899
+    },
+    {
+        "text": "um",
+        "start": 1831.74,
+        "duration": 4.2
+    },
+    {
+        "text": "tested uh tissue pathway treat",
+        "start": 1832.399,
+        "duration": 5.28
+    },
+    {
+        "text": "combinations",
+        "start": 1835.94,
+        "duration": 3.959
+    },
+    {
+        "text": "um and then the ni entries mean that",
+        "start": 1837.679,
+        "duration": 3.661
+    },
+    {
+        "text": "essentially The observed data is",
+        "start": 1839.899,
+        "duration": 3.301
+    },
+    {
+        "text": "non-informative so you can just think of",
+        "start": 1841.34,
+        "duration": 4.8
+    },
+    {
+        "text": "this as cases where it'd be intact GSE",
+        "start": 1843.2,
+        "duration": 5.64
+    },
+    {
+        "text": "en algorithm did not converge",
+        "start": 1846.14,
+        "duration": 3.48
+    },
+    {
+        "text": "um",
+        "start": 1848.84,
+        "duration": 2.54
+    },
+    {
+        "text": "so there's a few different uh",
+        "start": 1849.62,
+        "duration": 3.84
+    },
+    {
+        "text": "explanations we've come up with with",
+        "start": 1851.38,
+        "duration": 4.6
+    },
+    {
+        "text": "this possible explanations we've come up",
+        "start": 1853.46,
+        "duration": 4.86
+    },
+    {
+        "text": "for this too uh one of them being that",
+        "start": 1855.98,
+        "duration": 5.16
+    },
+    {
+        "text": "again that gene expression could not be",
+        "start": 1858.32,
+        "duration": 5.64
+    },
+    {
+        "text": "the most uh relaxed uh relevant",
+        "start": 1861.14,
+        "duration": 6.36
+    },
+    {
+        "text": "molecular phenotype and also some of the",
+        "start": 1863.96,
+        "duration": 5.819
+    },
+    {
+        "text": "sample sizes for the tissue specific",
+        "start": 1867.5,
+        "duration": 4.32
+    },
+    {
+        "text": "Gtech samples were sort of on the small",
+        "start": 1869.779,
+        "duration": 4.62
+    },
+    {
+        "text": "side for example I think the kidney",
+        "start": 1871.82,
+        "duration": 7.82
+    },
+    {
+        "text": "cortex sample size was about 70 or so",
+        "start": 1874.399,
+        "duration": 5.241
+    },
+    {
+        "text": "all right so uh just a little bit of",
+        "start": 1880.039,
+        "duration": 4.801
+    },
+    {
+        "text": "wrapping up conclusion here so we saw",
+        "start": 1882.32,
+        "duration": 4.56
+    },
+    {
+        "text": "that intact identified genes with higher",
+        "start": 1884.84,
+        "duration": 4.68
+    },
+    {
+        "text": "power than collocalization analysis and",
+        "start": 1886.88,
+        "duration": 6.12
+    },
+    {
+        "text": "properly controlled FDR uh sorry",
+        "start": 1889.52,
+        "duration": 5.46
+    },
+    {
+        "text": "properly controlled the type 1 errors",
+        "start": 1893.0,
+        "duration": 3.96
+    },
+    {
+        "text": "that might have been produced by all the",
+        "start": 1894.98,
+        "duration": 3.059
+    },
+    {
+        "text": "hitchhiking",
+        "start": 1896.96,
+        "duration": 3.599
+    },
+    {
+        "text": "and then for intact GSE",
+        "start": 1898.039,
+        "duration": 4.921
+    },
+    {
+        "text": "we saw that this was relatively accurate",
+        "start": 1900.559,
+        "duration": 4.86
+    },
+    {
+        "text": "compared to that two-stage approach",
+        "start": 1902.96,
+        "duration": 4.439
+    },
+    {
+        "text": "um and that's probably because it",
+        "start": 1905.419,
+        "duration": 4.021
+    },
+    {
+        "text": "leveraged the intact output for the",
+        "start": 1907.399,
+        "duration": 3.801
+    },
+    {
+        "text": "uncertain quantification",
+        "start": 1909.44,
+        "duration": 4.5
+    },
+    {
+        "text": "so there are definitely limitations to",
+        "start": 1911.2,
+        "duration": 4.12
+    },
+    {
+        "text": "this approach some of which we've sort",
+        "start": 1913.94,
+        "duration": 5.4
+    },
+    {
+        "text": "of already seen uh first of all",
+        "start": 1915.32,
+        "duration": 5.64
+    },
+    {
+        "text": "um we're only considering one molecular",
+        "start": 1919.34,
+        "duration": 3.54
+    },
+    {
+        "text": "again type at a time just expression for",
+        "start": 1920.96,
+        "duration": 3.18
+    },
+    {
+        "text": "now",
+        "start": 1922.88,
+        "duration": 3.779
+    },
+    {
+        "text": "um we're actively working on an approach",
+        "start": 1924.14,
+        "duration": 4.139
+    },
+    {
+        "text": "that can incorporate multiple molecular",
+        "start": 1926.659,
+        "duration": 3.541
+    },
+    {
+        "text": "phenotypes",
+        "start": 1928.279,
+        "duration": 2.581
+    },
+    {
+        "text": "um",
+        "start": 1930.2,
+        "duration": 3.18
+    },
+    {
+        "text": "so we've seen in previous work that the",
+        "start": 1930.86,
+        "duration": 3.96
+    },
+    {
+        "text": "available data sets that we have for",
+        "start": 1933.38,
+        "duration": 3.6
+    },
+    {
+        "text": "politicalization analysis have uh",
+        "start": 1934.82,
+        "duration": 4.099
+    },
+    {
+        "text": "actually more power for uncovering",
+        "start": 1936.98,
+        "duration": 4.319
+    },
+    {
+        "text": "co-localization instances so you know",
+        "start": 1938.919,
+        "duration": 4.36
+    },
+    {
+        "text": "this is this is an issue right if you're",
+        "start": 1941.299,
+        "duration": 4.201
+    },
+    {
+        "text": "using your collocalization data as a",
+        "start": 1943.279,
+        "duration": 4.38
+    },
+    {
+        "text": "prior",
+        "start": 1945.5,
+        "duration": 5.399
+    },
+    {
+        "text": "next we can't identify uh treat relevant",
+        "start": 1947.659,
+        "duration": 4.801
+    },
+    {
+        "text": "tissues or cell types we needed",
+        "start": 1950.899,
+        "duration": 3.721
+    },
+    {
+        "text": "basically previous biological knowledge",
+        "start": 1952.46,
+        "duration": 4.8
+    },
+    {
+        "text": "to point us to those and we can't",
+        "start": 1954.62,
+        "duration": 4.86
+    },
+    {
+        "text": "estimate Gene the trade effects using",
+        "start": 1957.26,
+        "duration": 4.08
+    },
+    {
+        "text": "this method it's really just designed",
+        "start": 1959.48,
+        "duration": 5.22
+    },
+    {
+        "text": "for interference rather than estimation",
+        "start": 1961.34,
+        "duration": 5.1
+    },
+    {
+        "text": "okay so if you're interested in this",
+        "start": 1964.7,
+        "duration": 2.579
+    },
+    {
+        "text": "work",
+        "start": 1966.44,
+        "duration": 2.4
+    },
+    {
+        "text": "um this is the the corresponding",
+        "start": 1967.279,
+        "duration": 3.481
+    },
+    {
+        "text": "manuscript and we also have an art",
+        "start": 1968.84,
+        "duration": 4.319
+    },
+    {
+        "text": "package on my GitHub uh working on",
+        "start": 1970.76,
+        "duration": 5.96
+    },
+    {
+        "text": "getting it on to bioconductor",
+        "start": 1973.159,
+        "duration": 3.561
+    },
+    {
+        "text": "um and finally I'll give a little bit of",
+        "start": 1977.12,
+        "duration": 5.279
+    },
+    {
+        "text": "uh I'll talk a little about about a",
+        "start": 1979.159,
+        "duration": 6.12
+    },
+    {
+        "text": "little bit about the the art package",
+        "start": 1982.399,
+        "duration": 5.701
+    },
+    {
+        "text": "um so basically if you go on my GitHub",
+        "start": 1985.279,
+        "duration": 4.62
+    },
+    {
+        "text": "and just look at the readme file you'll",
+        "start": 1988.1,
+        "duration": 5.22
+    },
+    {
+        "text": "see this top bit here with examples so",
+        "start": 1989.899,
+        "duration": 5.461
+    },
+    {
+        "text": "there's basically two functions here",
+        "start": 1993.32,
+        "duration": 3.739
+    },
+    {
+        "text": "that you'll be interested in",
+        "start": 1995.36,
+        "duration": 4.799
+    },
+    {
+        "text": "intact and intact GSE",
+        "start": 1997.059,
+        "duration": 5.561
+    },
+    {
+        "text": "um so I've included some uh some sort of",
+        "start": 2000.159,
+        "duration": 4.321
+    },
+    {
+        "text": "toy data to play with just to show how",
+        "start": 2002.62,
+        "duration": 5.159
+    },
+    {
+        "text": "it works so there's the object simdat",
+        "start": 2004.48,
+        "duration": 5.88
+    },
+    {
+        "text": "which basically includes your genes and",
+        "start": 2007.779,
+        "duration": 4.681
+    },
+    {
+        "text": "then corresponding Pro localization",
+        "start": 2010.36,
+        "duration": 5.1
+    },
+    {
+        "text": "probabilities and t y z scores so if you",
+        "start": 2012.46,
+        "duration": 6.18
+    },
+    {
+        "text": "apply this intact function here this",
+        "start": 2015.46,
+        "duration": 5.579
+    },
+    {
+        "text": "will essentially spit out a vector of",
+        "start": 2018.64,
+        "duration": 7.019
+    },
+    {
+        "text": "the same length as the glcp and Z scores",
+        "start": 2021.039,
+        "duration": 5.88
+    },
+    {
+        "text": "um just with your posterior",
+        "start": 2025.659,
+        "duration": 3.12
+    },
+    {
+        "text": "probabilities",
+        "start": 2026.919,
+        "duration": 3.36
+    },
+    {
+        "text": "um and then there's all of this intact",
+        "start": 2028.779,
+        "duration": 4.201
+    },
+    {
+        "text": "GSE function where it basically if you",
+        "start": 2030.279,
+        "duration": 5.64
+    },
+    {
+        "text": "you plug in your your uh your data frame",
+        "start": 2032.98,
+        "duration": 5.1
+    },
+    {
+        "text": "and your Gene set list which is",
+        "start": 2035.919,
+        "duration": 4.14
+    },
+    {
+        "text": "formatted like this is just a list",
+        "start": 2038.08,
+        "duration": 3.839
+    },
+    {
+        "text": "object with",
+        "start": 2040.059,
+        "duration": 4.261
+    },
+    {
+        "text": "the vectors corresponded to genes that",
+        "start": 2041.919,
+        "duration": 4.321
+    },
+    {
+        "text": "are member genes",
+        "start": 2044.32,
+        "duration": 3.42
+    },
+    {
+        "text": "um basically it will spit out a data",
+        "start": 2046.24,
+        "duration": 3.899
+    },
+    {
+        "text": "frame where you have your Alpha One",
+        "start": 2047.74,
+        "duration": 4.139
+    },
+    {
+        "text": "estimate and standard error for each",
+        "start": 2050.139,
+        "duration": 4.26
+    },
+    {
+        "text": "gene set and you also have basically",
+        "start": 2051.879,
+        "duration": 5.76
+    },
+    {
+        "text": "whether or not it converges do not",
+        "start": 2054.399,
+        "duration": 5.881
+    },
+    {
+        "text": "so I'd like to thank my advisor William",
+        "start": 2057.639,
+        "duration": 5.581
+    },
+    {
+        "text": "Wen for uh help with this this work as",
+        "start": 2060.28,
+        "duration": 6.24
+    },
+    {
+        "text": "well as our co-authors and I'd be happy",
+        "start": 2063.22,
+        "duration": 6.139
+    },
+    {
+        "text": "to take any questions",
+        "start": 2066.52,
+        "duration": 2.839
+    },
+    {
+        "text": "thank you",
+        "start": 2069.96,
+        "duration": 3.24
+    },
+    {
+        "text": "if anyone online has a question again",
+        "start": 2073.359,
+        "duration": 4.32
+    },
+    {
+        "text": "you can either put that in the chat box",
+        "start": 2075.7,
+        "duration": 4.26
+    },
+    {
+        "text": "or raise your zoom in you give a",
+        "start": 2077.679,
+        "duration": 4.321
+    },
+    {
+        "text": "reactions on the bottom right then hang",
+        "start": 2079.96,
+        "duration": 4.02
+    },
+    {
+        "text": "on in the room as a person for freedom",
+        "start": 2082.0,
+        "duration": 4.22
+    },
+    {
+        "text": "is",
+        "start": 2083.98,
+        "duration": 2.24
+    },
+    {
+        "text": "yeah I guess what I'm doing is the",
+        "start": 2094.419,
+        "duration": 4.261
+    },
+    {
+        "text": "probability because I used to be like",
+        "start": 2096.58,
+        "duration": 5.7
+    },
+    {
+        "text": "what's like the grade of the eptl and",
+        "start": 2098.68,
+        "duration": 5.1
+    },
+    {
+        "text": "like versus like the variants that",
+        "start": 2102.28,
+        "duration": 3.48
+    },
+    {
+        "text": "you're testing you know that Rangers of",
+        "start": 2103.78,
+        "duration": 3.54
+    },
+    {
+        "text": "like a very precise variant at that",
+        "start": 2105.76,
+        "duration": 3.06
+    },
+    {
+        "text": "point",
+        "start": 2107.32,
+        "duration": 4.019
+    },
+    {
+        "text": "the range of this did you mean like how",
+        "start": 2108.82,
+        "duration": 4.74
+    },
+    {
+        "text": "close they're they have to be I think",
+        "start": 2111.339,
+        "duration": 4.801
+    },
+    {
+        "text": "generally they're so the signal clusters",
+        "start": 2113.56,
+        "duration": 4.559
+    },
+    {
+        "text": "are generally in cyst to the Gene and I",
+        "start": 2116.14,
+        "duration": 3.3
+    },
+    {
+        "text": "think generally there's threshold for",
+        "start": 2118.119,
+        "duration": 3.121
+    },
+    {
+        "text": "that is like one megabase on either side",
+        "start": 2119.44,
+        "duration": 6.56
+    },
+    {
+        "text": "of the TSS yeah good question",
+        "start": 2121.24,
+        "duration": 4.76
+    },
+    {
+        "text": "you may have mentioned this but uh why",
+        "start": 2134.7,
+        "duration": 5.02
+    },
+    {
+        "text": "did you change the magazine instead of",
+        "start": 2137.56,
+        "duration": 3.779
+    },
+    {
+        "text": "gsdn",
+        "start": 2139.72,
+        "duration": 4.859
+    },
+    {
+        "text": "so the way that bagsy was formulated is",
+        "start": 2141.339,
+        "duration": 6.0
+    },
+    {
+        "text": "it basically made it um sort of the only",
+        "start": 2144.579,
+        "duration": 5.28
+    },
+    {
+        "text": "difference was uh",
+        "start": 2147.339,
+        "duration": 4.081
+    },
+    {
+        "text": "the way in which we actually",
+        "start": 2149.859,
+        "duration": 3.48
+    },
+    {
+        "text": "Incorporated our posterior probabilities",
+        "start": 2151.42,
+        "duration": 3.98
+    },
+    {
+        "text": "versus the output of a typical",
+        "start": 2153.339,
+        "duration": 4.26
+    },
+    {
+        "text": "differential expression analysis and",
+        "start": 2155.4,
+        "duration": 4.3
+    },
+    {
+        "text": "it's sort of naturally set up as an",
+        "start": 2157.599,
+        "duration": 4.081
+    },
+    {
+        "text": "imperial empirical Bayesian framework",
+        "start": 2159.7,
+        "duration": 5.22
+    },
+    {
+        "text": "that just made it easier essentially to",
+        "start": 2161.68,
+        "duration": 6.3
+    },
+    {
+        "text": "to use vaccine than the gsca great",
+        "start": 2164.92,
+        "duration": 5.3
+    },
+    {
+        "text": "question",
+        "start": 2167.98,
+        "duration": 2.24
+    },
+    {
+        "text": "something online yet but you can give it",
+        "start": 2174.28,
+        "duration": 4.02
+    },
+    {
+        "text": "a couple minutes in case anyone's typing",
+        "start": 2176.619,
+        "duration": 3.24
+    },
+    {
+        "text": "and we've got everyone else in the",
+        "start": 2178.3,
+        "duration": 5.299
+    },
+    {
+        "text": "rumors questions feel free to ask",
+        "start": 2179.859,
+        "duration": 3.74
+    },
+    {
+        "text": "you do have a question online so uh",
+        "start": 2186.46,
+        "duration": 5.76
+    },
+    {
+        "text": "great talk and interesting method can",
+        "start": 2189.24,
+        "duration": 5.08
+    },
+    {
+        "text": "you give us a sense of the scale of data",
+        "start": 2192.22,
+        "duration": 4.68
+    },
+    {
+        "text": "available for T loss especially compared",
+        "start": 2194.32,
+        "duration": 5.519
+    },
+    {
+        "text": "to your available gwas data yeah so",
+        "start": 2196.9,
+        "duration": 5.28
+    },
+    {
+        "text": "there there are definitely a lot of",
+        "start": 2199.839,
+        "duration": 5.041
+    },
+    {
+        "text": "tiwas data sets out there",
+        "start": 2202.18,
+        "duration": 5.34
+    },
+    {
+        "text": "um I believe methods like you know S",
+        "start": 2204.88,
+        "duration": 5.219
+    },
+    {
+        "text": "Credit scan and and the tiwas method",
+        "start": 2207.52,
+        "duration": 6.3
+    },
+    {
+        "text": "itself are designed to work with",
+        "start": 2210.099,
+        "duration": 5.76
+    },
+    {
+        "text": "um with gloss summary statistics so it's",
+        "start": 2213.82,
+        "duration": 4.74
+    },
+    {
+        "text": "getting easier and easier to just do a t",
+        "start": 2215.859,
+        "duration": 5.821
+    },
+    {
+        "text": "loss using uh using gwas",
+        "start": 2218.56,
+        "duration": 5.12
+    },
+    {
+        "text": "um",
+        "start": 2221.68,
+        "duration": 2.0
+    },
+    {
+        "text": "yeah I don't know if that if that helps",
+        "start": 2223.839,
+        "duration": 4.861
+    },
+    {
+        "text": "uh and there are there are a lot of",
+        "start": 2227.02,
+        "duration": 4.079
+    },
+    {
+        "text": "there are a lot of I believe uh you know",
+        "start": 2228.7,
+        "duration": 4.86
+    },
+    {
+        "text": "a lot of authors post their their um",
+        "start": 2231.099,
+        "duration": 5.641
+    },
+    {
+        "text": "their summary statistics for tiwas",
+        "start": 2233.56,
+        "duration": 5.58
+    },
+    {
+        "text": "um in particular so I think that there",
+        "start": 2236.74,
+        "duration": 4.44
+    },
+    {
+        "text": "is a you know throughout it's definitely",
+        "start": 2239.14,
+        "duration": 4.26
+    },
+    {
+        "text": "not to the point that the the available",
+        "start": 2241.18,
+        "duration": 3.899
+    },
+    {
+        "text": "GEOS data sets are but there's",
+        "start": 2243.4,
+        "duration": 3.179
+    },
+    {
+        "text": "definitely a growing",
+        "start": 2245.079,
+        "duration": 4.5
+    },
+    {
+        "text": "a growing set of data out there to do",
+        "start": 2246.579,
+        "duration": 4.801
+    },
+    {
+        "text": "these types of analysis on",
+        "start": 2249.579,
+        "duration": 5.821
+    },
+    {
+        "text": "Dana said yes okay",
+        "start": 2251.38,
+        "duration": 4.02
+    },
+    {
+        "text": "again maybe just give it another minute",
+        "start": 2263.4,
+        "duration": 6.54
+    },
+    {
+        "text": "or two in case anyone online is typing",
+        "start": 2265.78,
+        "duration": 4.16
+    },
+    {
+        "text": "well not seeing or hearing any other",
+        "start": 2290.619,
+        "duration": 5.22
+    },
+    {
+        "text": "questions so let's thank Jeff one more",
+        "start": 2293.56,
+        "duration": 4.46
+    },
+    {
+        "text": "time",
+        "start": 2295.839,
+        "duration": 2.181
+    },
+    {
+        "text": "thank everyone for coming and hopefully",
+        "start": 2299.52,
+        "duration": 5.16
+    },
+    {
+        "text": "see you next week",
+        "start": 2302.079,
+        "duration": 2.601
+    },
+    {
+        "text": "foreign",
+        "start": 2305.02,
+        "duration": 3.0
+    }
+]

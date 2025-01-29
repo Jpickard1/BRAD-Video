@@ -1,0 +1,1632 @@
+[
+    {
+        "text": "I want to share with you a few simulations that model how an epidemic spreads.",
+        "start": 2.16,
+        "duration": 4.3
+    },
+    {
+        "text": "There have recently been a few wonderful interactive articles in this vein, ",
+        "start": 7.48,
+        "duration": 3.735
+    },
+    {
+        "text": "including one in the Washington Post by Harry Stevens, ",
+        "start": 11.215,
+        "duration": 2.703
+    },
+    {
+        "text": "and then another by Kevin Simler over at Melting Asphalt.",
+        "start": 13.918,
+        "duration": 2.802
+    },
+    {
+        "text": "They are great, you can play with them, they're very informative, ",
+        "start": 17.26,
+        "duration": 2.404
+    },
+    {
+        "text": "I'll of course leave links in the description.",
+        "start": 19.664,
+        "duration": 1.676
+    },
+    {
+        "text": "After seeing those, I had a few more questions.",
+        "start": 22.38,
+        "duration": 2.22
+    },
+    {
+        "text": "Like if people stay away from each other, I get that that's going to slow down the spread.",
+        "start": 25.14,
+        "duration": 3.72
+    },
+    {
+        "text": "But what if despite mostly staying away from each other, ",
+        "start": 29.14,
+        "duration": 2.882
+    },
+    {
+        "text": "people still occasionally go to a central location, like a grocery store or a school?",
+        "start": 32.022,
+        "duration": 4.298
+    },
+    {
+        "text": "Also, what if you're able to identify and isolate the cases?",
+        "start": 37.36,
+        "duration": 3.14
+    },
+    {
+        "text": "And if you can, what if a few slip through, say ",
+        "start": 40.74,
+        "duration": 2.441
+    },
+    {
+        "text": "because they don't show symptoms so they aren't tested?",
+        "start": 43.181,
+        "duration": 2.799
+    },
+    {
+        "text": "How does travel between separate communities affect things?",
+        "start": 47.24,
+        "duration": 2.98
+    },
+    {
+        "text": "And what if people avoid contact with each other for a while, ",
+        "start": 50.7,
+        "duration": 3.286
+    },
+    {
+        "text": "but then they kind of get tired and stop?",
+        "start": 53.986,
+        "duration": 2.174
+    },
+    {
+        "text": "We'll explore these questions and more, but first ",
+        "start": 66.82,
+        "duration": 2.509
+    },
+    {
+        "text": "let's walk through how exactly these models will work.",
+        "start": 69.329,
+        "duration": 2.711
+    },
+    {
+        "text": "Each simulation represents what's called an SIR model, ",
+        "start": 72.7,
+        "duration": 3.009
+    },
+    {
+        "text": "meaning the population is broken up into three categories, ",
+        "start": 75.709,
+        "duration": 3.229
+    },
+    {
+        "text": "those who are susceptible to getting the disease, those who are infectious, ",
+        "start": 78.938,
+        "duration": 4.159
+    },
+    {
+        "text": "and then those who have recovered from the infection, ",
+        "start": 83.097,
+        "duration": 2.955
+    },
+    {
+        "text": "so people who are immune don't play into it.",
+        "start": 86.052,
+        "duration": 2.408
+    },
+    {
+        "text": "The way I've written these, for every unit of time that a susceptible ",
+        "start": 89.28,
+        "duration": 3.779
+    },
+    {
+        "text": "person spends within a certain infection radius of someone with the disease, ",
+        "start": 93.059,
+        "duration": 4.157
+    },
+    {
+        "text": "they'll have some probability of contracting it themselves, ",
+        "start": 97.216,
+        "duration": 3.239
+    },
+    {
+        "text": "so we're using physical proximity as a stand-in for things like shaking hands, ",
+        "start": 100.455,
+        "duration": 4.265
+    },
+    {
+        "text": "touching the same surface, kissing, sneezing on each other, all that good stuff.",
+        "start": 104.72,
+        "duration": 4.32
+    },
+    {
+        "text": "Then for each infectious person, after some amount of time they'll recover and no longer ",
+        "start": 109.8,
+        "duration": 5.258
+    },
+    {
+        "text": "be able to spread the disease, or if they die they won't be able to spread it anymore, ",
+        "start": 115.058,
+        "duration": 5.141
+    },
+    {
+        "text": "so as a more generic term, sometimes people consider the R in SIR to stand for removed.",
+        "start": 120.199,
+        "duration": 5.141
+    },
+    {
+        "text": "This should go without saying, but let me emphasize it at the start anyway.",
+        "start": 126.82,
+        "duration": 3.7
+    },
+    {
+        "text": "These are toy models, with a tiny population, inevitably falling ",
+        "start": 130.9,
+        "duration": 3.489
+    },
+    {
+        "text": "far short of the complexities in real people and larger populations.",
+        "start": 134.389,
+        "duration": 3.651
+    },
+    {
+        "text": "I am not an epidemiologist, so I would be very hesitant to ",
+        "start": 138.64,
+        "duration": 3.175
+    },
+    {
+        "text": "generalize any of the lessons here without deeper consideration.",
+        "start": 141.815,
+        "duration": 3.445
+    },
+    {
+        "text": "That said, I think it can be healthy to engage the little scientist inside all of us ",
+        "start": 145.98,
+        "duration": 4.72
+    },
+    {
+        "text": "and take the chance to be experimental and quantitative, ",
+        "start": 150.7,
+        "duration": 3.166
+    },
+    {
+        "text": "even if it's in a necessarily limited fashion, ",
+        "start": 153.866,
+        "duration": 2.61
+    },
+    {
+        "text": "especially if the alternative is to dwell on headlines and uncertainty.",
+        "start": 156.476,
+        "duration": 3.944
+    },
+    {
+        "text": "We'll start things simple and layer on more complexity gradually.",
+        "start": 162.1,
+        "duration": 2.98
+    },
+    {
+        "text": "In these first few runs that you're looking at, ",
+        "start": 165.44,
+        "duration": 2.651
+    },
+    {
+        "text": "everybody is simply meandering around the city in a kind of random walk, ",
+        "start": 168.091,
+        "duration": 4.032
+    },
+    {
+        "text": "and the infection follows the rules we've laid out.",
+        "start": 172.123,
+        "duration": 2.817
+    },
+    {
+        "text": "So it doesn't look great, after not too long almost everybody gets infected.",
+        "start": 183.22,
+        "duration": 5.22
+    },
+    {
+        "text": "As a sanity check, what would you expect to happen if I double this radius of infection?",
+        "start": 189.24,
+        "duration": 4.4
+    },
+    {
+        "text": "You might think of this as representing more total interactions between people, ",
+        "start": 194.3,
+        "duration": 3.77
+    },
+    {
+        "text": "or a more socially engaged society.",
+        "start": 198.07,
+        "duration": 1.65
+    },
+    {
+        "text": "It'll spread more quickly, of course, but how much?",
+        "start": 200.8,
+        "duration": 2.54
+    },
+    {
+        "text": "It's actually very drastic.",
+        "start": 208.75,
+        "duration": 1.89
+    },
+    {
+        "text": "Within a short time span, the majority of our ",
+        "start": 211.1,
+        "duration": 2.507
+    },
+    {
+        "text": "little population is infected simultaneously.",
+        "start": 213.607,
+        "duration": 2.453
+    },
+    {
+        "text": "As another sanity check, what would you expect if we go back to the ",
+        "start": 217.12,
+        "duration": 3.601
+    },
+    {
+        "text": "original infection radius, and then cut the probability of infection in half?",
+        "start": 220.721,
+        "duration": 4.079
+    },
+    {
+        "text": "Remember, the way this is running, for each day that a susceptible person is within ",
+        "start": 225.48,
+        "duration": 4.095
+    },
+    {
+        "text": "that radius of an infectious person, they have some probability of becoming infected.",
+        "start": 229.575,
+        "duration": 4.145
+    },
+    {
+        "text": "By default I've set it to 20%, but this is the number we're now going to cut in half.",
+        "start": 234.32,
+        "duration": 4.1
+    },
+    {
+        "text": "You might think of this as better hand washing, ",
+        "start": 239.44,
+        "duration": 2.269
+    },
+    {
+        "text": "better cough protection, and less face touching.",
+        "start": 241.709,
+        "duration": 2.271
+    },
+    {
+        "text": "As you might expect, it spreads out the curve.",
+        "start": 256.42,
+        "duration": 2.68
+    },
+    {
+        "text": "In fact it does this by quite a lot, which really illustrates how ",
+        "start": 259.88,
+        "duration": 3.142
+    },
+    {
+        "text": "changes to hygiene have very large effects on the rate of spreading.",
+        "start": 263.022,
+        "duration": 3.238
+    },
+    {
+        "text": "The first of several key takeaways here that I'd like you to tuck away in your ",
+        "start": 270.08,
+        "duration": 3.89
+    },
+    {
+        "text": "mind is just how sensitive this growth can be to each parameter in our control.",
+        "start": 273.97,
+        "duration": 3.89
+    },
+    {
+        "text": "It's not that hard to imagine changing your daily habits in a way that multiplies ",
+        "start": 278.52,
+        "duration": 3.904
+    },
+    {
+        "text": "the number of people you interact with, or that cuts your probability of catching ",
+        "start": 282.424,
+        "duration": 3.904
+    },
+    {
+        "text": "an infection in half, but the implications for the pace of the spread are huge.",
+        "start": 286.328,
+        "duration": 3.762
+    },
+    {
+        "text": "The goal is probably to reduce the total number of people who die, ",
+        "start": 291.65,
+        "duration": 3.779
+    },
+    {
+        "text": "which is some proportion of this removed category in the end.",
+        "start": 295.429,
+        "duration": 3.441
+    },
+    {
+        "text": "That proportion is not a constant, though.",
+        "start": 299.47,
+        "duration": 2.28
+    },
+    {
+        "text": "If you get to a point where the peak of the infection curve is too high, ",
+        "start": 301.75,
+        "duration": 3.655
+    },
+    {
+        "text": "meaning there's a time when many people are all sick at once, ",
+        "start": 305.405,
+        "duration": 3.105
+    },
+    {
+        "text": "that's the point when available healthcare resources are overwhelmed, ",
+        "start": 308.51,
+        "duration": 3.505
+    },
+    {
+        "text": "which for a bad disease will increase the mortality rate.",
+        "start": 312.015,
+        "duration": 2.855
+    },
+    {
+        "text": "Now I don't know where you're from, but in most towns people don't ",
+        "start": 315.95,
+        "duration": 3.027
+    },
+    {
+        "text": "actually spend their days drunkenly wandering around the city like this.",
+        "start": 318.977,
+        "duration": 3.253
+    },
+    {
+        "text": "Often there's a common destination, like a central market or a school.",
+        "start": 322.65,
+        "duration": 3.12
+    },
+    {
+        "text": "In our model, if we introduce some central spot like this that ",
+        "start": 326.47,
+        "duration": 3.876
+    },
+    {
+        "text": "people regularly visit and then return from, it's\u2026 well, just look.",
+        "start": 330.346,
+        "duration": 4.124
+    },
+    {
+        "text": "One of the main things I was curious about is how to mitigate this effect, ",
+        "start": 337.95,
+        "duration": 3.979
+    },
+    {
+        "text": "and that's something we'll examine in just a bit.",
+        "start": 341.929,
+        "duration": 2.601
+    },
+    {
+        "text": "Another feature we could include is to have a ",
+        "start": 345.27,
+        "duration": 2.247
+    },
+    {
+        "text": "few separate communities with transit between them.",
+        "start": 347.517,
+        "duration": 2.493
+    },
+    {
+        "text": "Every day, each person will have some probability of traveling to the center ",
+        "start": 350.55,
+        "duration": 3.855
+    },
+    {
+        "text": "of another community, and then going about their usual routine from there.",
+        "start": 354.405,
+        "duration": 3.705
+    },
+    {
+        "text": "All of that is our basic setup, so now the question ",
+        "start": 359.67,
+        "duration": 3.108
+    },
+    {
+        "text": "is what actions help to stop this spread?",
+        "start": 362.778,
+        "duration": 2.452
+    },
+    {
+        "text": "What is by far most effective is to identify and isolate whoever is infectious, ",
+        "start": 368.51,
+        "duration": 4.361
+    },
+    {
+        "text": "for example with good testing and quick responsiveness.",
+        "start": 372.871,
+        "duration": 2.999
+    },
+    {
+        "text": "In our simulations, once we hit some critical threshold of cases, ",
+        "start": 376.81,
+        "duration": 3.287
+    },
+    {
+        "text": "we're going to start sending people to a separate location one day after they have ",
+        "start": 380.097,
+        "duration": 4.135
+    },
+    {
+        "text": "the infection.",
+        "start": 384.232,
+        "duration": 0.698
+    },
+    {
+        "text": "This is of course a stand-in for whatever isolation would look like in the real world, ",
+        "start": 384.93,
+        "duration": 4.55
+    },
+    {
+        "text": "it doesn't have to literally be transporting all the sick people into one sad box.",
+        "start": 389.48,
+        "duration": 4.29
+    },
+    {
+        "text": "Unsurprisingly, this totally halts the epidemic in its tracks.",
+        "start": 395.03,
+        "duration": 3.32
+    },
+    {
+        "text": "But what if when you're infected you have a 20% chance of not getting quarantined, ",
+        "start": 399.29,
+        "duration": 4.102
+    },
+    {
+        "text": "say because you show no symptoms so you don't get tested, ",
+        "start": 403.392,
+        "duration": 2.867
+    },
+    {
+        "text": "and you go about your day as usual?",
+        "start": 406.259,
+        "duration": 1.731
+    },
+    {
+        "text": "We're going to illustrate these people that have ",
+        "start": 408.81,
+        "duration": 2.212
+    },
+    {
+        "text": "no symptoms using yellow circles instead of red.",
+        "start": 411.022,
+        "duration": 2.168
+    },
+    {
+        "text": "Obviously this will have a result somewhere between a total quarantine and doing nothing, ",
+        "start": 413.81,
+        "duration": 4.518
+    },
+    {
+        "text": "but where on the spectrum would you predict it'll be?",
+        "start": 418.328,
+        "duration": 2.662
+    },
+    {
+        "text": "The peak number of simultaneous cases is only a little bit higher, ",
+        "start": 438.17,
+        "duration": 3.662
+    },
+    {
+        "text": "but there is a very low long tail as it takes a much longer time to stamp out, ",
+        "start": 441.832,
+        "duration": 4.318
+    },
+    {
+        "text": "resulting in about twice as many total cases.",
+        "start": 446.15,
+        "duration": 2.46
+    },
+    {
+        "text": "This gets more interesting when we do it in a ",
+        "start": 450.61,
+        "duration": 2.085
+    },
+    {
+        "text": "setting with many communities and transit between them.",
+        "start": 452.695,
+        "duration": 2.495
+    },
+    {
+        "text": "Again, totally effective tracking in isolation stops the epidemic very quickly, ",
+        "start": 455.71,
+        "duration": 4.491
+    },
+    {
+        "text": "but what would you predict is going to happen if now 20% of ",
+        "start": 460.201,
+        "duration": 3.369
+    },
+    {
+        "text": "the infectious cases slip through that process?",
+        "start": 463.57,
+        "duration": 2.64
+    },
+    {
+        "text": "Again, I've set things to wait until a certain critical threshold of ",
+        "start": 467.05,
+        "duration": 3.178
+    },
+    {
+        "text": "cases is hit before our little dot society kicks into gear and takes action.",
+        "start": 470.228,
+        "duration": 3.502
+    },
+    {
+        "text": "As a side note, it's a little interesting that even when all the parameters are the same, ",
+        "start": 474.21,
+        "duration": 3.796
+    },
+    {
+        "text": "some runs take three times longer to reach this point than others.",
+        "start": 478.006,
+        "duration": 2.784
+    },
+    {
+        "text": "Before the law of large numbers kicks in, that pace of growth can have as much to do ",
+        "start": 481.35,
+        "duration": 3.804
+    },
+    {
+        "text": "with the roll of the dice as it does with anything intrinsic to the disease itself.",
+        "start": 485.154,
+        "duration": 3.716
+    },
+    {
+        "text": "This leaky quarantining effort definitely flattens out the curve, ",
+        "start": 499.01,
+        "duration": 3.597
+    },
+    {
+        "text": "but it is a much thicker tail and takes a much longer time to track down all the cases, ",
+        "start": 502.607,
+        "duration": 4.796
+    },
+    {
+        "text": "with over half the population getting infected this time.",
+        "start": 507.403,
+        "duration": 3.107
+    },
+    {
+        "text": "Now, what would you predict if it was only 50% of ",
+        "start": 515.289,
+        "duration": 2.55
+    },
+    {
+        "text": "the infectious cases that were isolated like this?",
+        "start": 517.839,
+        "duration": 2.551
+    },
+    {
+        "text": "If half the infectious people are getting quarantined, ",
+        "start": 521.47,
+        "duration": 2.485
+    },
+    {
+        "text": "it doesn't mean that half the total population will end up with the disease.",
+        "start": 523.955,
+        "duration": 3.435
+    },
+    {
+        "text": "Because there are so many agents still out there spreading it, ",
+        "start": 527.99,
+        "duration": 3.294
+    },
+    {
+        "text": "we end up with a situation that's only barely better than if nothing had been done at all.",
+        "start": 531.284,
+        "duration": 4.706
+    },
+    {
+        "text": "A second key takeaway here is that changes in how many people slip through the tests ",
+        "start": 540.37,
+        "duration": 4.713
+    },
+    {
+        "text": "can cause disproportionately large changes to the total number of people infected.",
+        "start": 545.083,
+        "duration": 4.547
+    },
+    {
+        "text": "If we look back to the fact that quickly containing cases so early is so effective, ",
+        "start": 551.11,
+        "duration": 4.488
+    },
+    {
+        "text": "it actually has an interesting corollary, which is that the most lethal ",
+        "start": 555.598,
+        "duration": 3.847
+    },
+    {
+        "text": "diseases are in some sense less dangerous globally.",
+        "start": 559.445,
+        "duration": 2.725
+    },
+    {
+        "text": "Remember that the rule of this quarantine simulation is to send infectious people to ",
+        "start": 562.99,
+        "duration": 4.6
+    },
+    {
+        "text": "a separate spot one day after they've been infected, ",
+        "start": 567.59,
+        "duration": 2.868
+    },
+    {
+        "text": "but if the disease kills its host after one day, the model looks identical, ",
+        "start": 570.458,
+        "duration": 4.113
+    },
+    {
+        "text": "it just has a much darker interpretation.",
+        "start": 574.571,
+        "duration": 2.219
+    },
+    {
+        "text": "It is terrible for those who get it, but it doesn't spread.",
+        "start": 577.49,
+        "duration": 2.96
+    },
+    {
+        "text": "It also means that the most dangerous viruses are the ones that kill some part of ",
+        "start": 582.41,
+        "duration": 3.738
+    },
+    {
+        "text": "the population in the first place, while laying unnoticed and spreadable among others.",
+        "start": 586.148,
+        "duration": 3.922
+    },
+    {
+        "text": "Or worse yet, if they remain unnoticed and spreadable ",
+        "start": 590.51,
+        "duration": 2.872
+    },
+    {
+        "text": "in everyone before eventually becoming lethal.",
+        "start": 593.382,
+        "duration": 2.448
+    },
+    {
+        "text": "One of the reasons that the SARS outbreak in 2002 was so well ",
+        "start": 597.17,
+        "duration": 3.376
+    },
+    {
+        "text": "contained is that just about everybody in this infectious population ",
+        "start": 600.546,
+        "duration": 3.757
+    },
+    {
+        "text": "was showing symptoms, so they were much easier to identify and isolate.",
+        "start": 604.303,
+        "duration": 3.867
+    },
+    {
+        "text": "A more optimistic corollary of these quarantine ",
+        "start": 609.49,
+        "duration": 2.632
+    },
+    {
+        "text": "simulations is how useful early treatment can be.",
+        "start": 612.122,
+        "duration": 2.688
+    },
+    {
+        "text": "If there exists an antiviral therapeutic that can move people out of this infectious ",
+        "start": 615.13,
+        "duration": 4.726
+    },
+    {
+        "text": "category quickly, it has the same effect on the model as isolating those cases.",
+        "start": 619.856,
+        "duration": 4.394
+    },
+    {
+        "text": "But let's say you don't have widespread testing or antiviral therapeutics.",
+        "start": 628.69,
+        "duration": 4.26
+    },
+    {
+        "text": "Well, let's introduce a new parameter here, which ",
+        "start": 633.63,
+        "duration": 2.301
+    },
+    {
+        "text": "is how much people try to avoid each other.",
+        "start": 635.931,
+        "duration": 1.979
+    },
+    {
+        "text": "Let's call it the social distance factor.",
+        "start": 638.37,
+        "duration": 1.9
+    },
+    {
+        "text": "In these animations, I'll apply it as a repulsive force between people, ",
+        "start": 640.85,
+        "duration": 3.567
+    },
+    {
+        "text": "and have them glow yellow when they feel just a little too close to their neighbor.",
+        "start": 644.417,
+        "duration": 4.113
+    },
+    {
+        "text": "This has the sad but kind of cute effect that when our little agents are ",
+        "start": 649.79,
+        "duration": 3.535
+    },
+    {
+        "text": "social distancing, they often end up trembling near the edge of their box.",
+        "start": 653.325,
+        "duration": 3.585
+    },
+    {
+        "text": "No isolation is perfect, though, so every now and then even those ",
+        "start": 657.59,
+        "duration": 3.746
+    },
+    {
+        "text": "repulsed by each other will jiggle close enough to get infected.",
+        "start": 661.336,
+        "duration": 3.634
+    },
+    {
+        "text": "The point is that those interactions are much rarer.",
+        "start": 665.61,
+        "duration": 2.48
+    },
+    {
+        "text": "Let's take a look at four separate runs here.",
+        "start": 668.85,
+        "duration": 2.08
+    },
+    {
+        "text": "In each one of them, after we hit 50 cases, I'll turn on social distancing.",
+        "start": 671.37,
+        "duration": 3.76
+    },
+    {
+        "text": "But in the top left, we'll turn it on for everybody.",
+        "start": 675.67,
+        "duration": 2.54
+    },
+    {
+        "text": "In the top right, we'll turn it on for 90% of the population.",
+        "start": 678.75,
+        "duration": 3.46
+    },
+    {
+        "text": "In the bottom left, for 70% of the population, ",
+        "start": 682.69,
+        "duration": 2.671
+    },
+    {
+        "text": "and in the bottom right, for only half the population.",
+        "start": 685.361,
+        "duration": 3.069
+    },
+    {
+        "text": "What would you predict is going to happen?",
+        "start": 689.15,
+        "duration": 1.4
+    },
+    {
+        "text": "As you might expect, when 100% of people avoid each other, ",
+        "start": 698.09,
+        "duration": 3.48
+    },
+    {
+        "text": "the disease quickly goes away, entirely.",
+        "start": 701.57,
+        "duration": 2.36
+    },
+    {
+        "text": "And in all four cases, the presence of some kind of ",
+        "start": 704.69,
+        "duration": 2.595
+    },
+    {
+        "text": "widespread social distancing definitely flattens out the curve.",
+        "start": 707.285,
+        "duration": 3.145
+    },
+    {
+        "text": "However, in terms of the ultimate number of cases, ",
+        "start": 711.19,
+        "duration": 3.019
+    },
+    {
+        "text": "the run with 70% and even the one with 90% end up with a little less than ",
+        "start": 714.209,
+        "duration": 4.382
+    },
+    {
+        "text": "half the population ultimately getting infected, ",
+        "start": 718.591,
+        "duration": 2.901
+    },
+    {
+        "text": "which is only a tiny bit better than the one with 50%.",
+        "start": 721.492,
+        "duration": 3.198
+    },
+    {
+        "text": "That case with 90% of people repelling each other certainly takes longer to get there, ",
+        "start": 724.99,
+        "duration": 5.189
+    },
+    {
+        "text": "but evidently a mere 10% of the population cheating adds enough instability ",
+        "start": 730.179,
+        "duration": 4.533
+    },
+    {
+        "text": "to our system to keep the fire slowly burning for a long time.",
+        "start": 734.712,
+        "duration": 3.698
+    },
+    {
+        "text": "Again, I'll emphasize that these are toy models, ",
+        "start": 742.69,
+        "duration": 2.414
+    },
+    {
+        "text": "and I leave it to the intelligence of the viewer to judge if the behavior ",
+        "start": 745.104,
+        "duration": 3.646
+    },
+    {
+        "text": "of these little dots accurately reflects what social distancing would mean ",
+        "start": 748.75,
+        "duration": 3.696
+    },
+    {
+        "text": "for you and your life.",
+        "start": 752.446,
+        "duration": 1.084
+    },
+    {
+        "text": "Someone fully sequestered in their home is not necessarily ",
+        "start": 754.27,
+        "duration": 3.251
+    },
+    {
+        "text": "affected by the random jiggling of their neighbor, but then again, ",
+        "start": 757.521,
+        "duration": 3.692
+    },
+    {
+        "text": "few of us genuinely live independently from everyone else.",
+        "start": 761.213,
+        "duration": 3.197
+    },
+    {
+        "text": "Insofar as these models aren't outlandish, the third key takeaway ",
+        "start": 765.11,
+        "duration": 3.455
+    },
+    {
+        "text": "is that social distancing absolutely works to flatten the curve, ",
+        "start": 768.565,
+        "duration": 3.403
+    },
+    {
+        "text": "but even small imperfections prolong the spread for a while.",
+        "start": 771.968,
+        "duration": 3.142
+    },
+    {
+        "text": "Now let's look at that setup with 12 communities and travel between them.",
+        "start": 779.05,
+        "duration": 3.48
+    },
+    {
+        "text": "By default I have it set so that every day each agent has a ",
+        "start": 782.91,
+        "duration": 3.088
+    },
+    {
+        "text": "2% chance of traveling to the center of a different community.",
+        "start": 785.998,
+        "duration": 3.192
+    },
+    {
+        "text": "Now let's try a run where once we hit 100 cases, ",
+        "start": 791.81,
+        "duration": 2.849
+    },
+    {
+        "text": "we cut down that travel rate by a factor of 4, to only half a percent.",
+        "start": 794.659,
+        "duration": 4.071
+    },
+    {
+        "text": "What would you predict is going to happen?",
+        "start": 799.45,
+        "duration": 1.28
+    },
+    {
+        "text": "The honest answer is that it depends.",
+        "start": 816.03,
+        "duration": 2.64
+    },
+    {
+        "text": "In some runs it doesn't make any difference, and the majority of every community gets it.",
+        "start": 819.29,
+        "duration": 4.46
+    },
+    {
+        "text": "Other times there are a couple communities that end up unscathed.",
+        "start": 824.75,
+        "duration": 3.12
+    },
+    {
+        "text": "In general, the earlier you turn on this effect, the more effective it is, ",
+        "start": 831.63,
+        "duration": 4.158
+    },
+    {
+        "text": "but the takeaway here is that reducing contact between communities ",
+        "start": 835.788,
+        "duration": 3.714
+    },
+    {
+        "text": "really has only a limited effect once those communities already have it, ",
+        "start": 839.502,
+        "duration": 4.047
+    },
+    {
+        "text": "and as solutions go it's certainly not robust on its own.",
+        "start": 843.549,
+        "duration": 3.161
+    },
+    {
+        "text": "As a side note, when we run these simulations with larger cities, ",
+        "start": 849.77,
+        "duration": 3.589
+    },
+    {
+        "text": "which has the effect that city centers act like concentrated urban hubs, ",
+        "start": 853.359,
+        "duration": 3.971
+    },
+    {
+        "text": "you can see how as soon as the infection hits one of these urban centers, ",
+        "start": 857.33,
+        "duration": 4.025
+    },
+    {
+        "text": "it very quickly hits all of them.",
+        "start": 861.355,
+        "duration": 1.795
+    },
+    {
+        "text": "And after that, it slowly spreads to the edges of each community.",
+        "start": 865.65,
+        "duration": 3.02
+    },
+    {
+        "text": "Let's take a moment to talk about how to quantify this spread.",
+        "start": 874.81,
+        "duration": 3.14
+    },
+    {
+        "text": "Consider one person with the disease, and then ",
+        "start": 878.67,
+        "duration": 2.528
+    },
+    {
+        "text": "count how many people they infect while they have it.",
+        "start": 881.198,
+        "duration": 2.852
+    },
+    {
+        "text": "The average for this count across everybody who's been ",
+        "start": 885.79,
+        "duration": 3.349
+    },
+    {
+        "text": "sick is known as the effective reproductive number, or R.",
+        "start": 889.139,
+        "duration": 3.471
+    },
+    {
+        "text": "A more commonly discussed number is R-naught, which is the value ",
+        "start": 893.25,
+        "duration": 3.643
+    },
+    {
+        "text": "of R in a fully susceptible population, like at the very beginning.",
+        "start": 896.893,
+        "duration": 3.757
+    },
+    {
+        "text": "This is known as the basic reproductive number.",
+        "start": 900.65,
+        "duration": 3.16
+    },
+    {
+        "text": "You may have noticed I have this little label on our simulations, ",
+        "start": 906.79,
+        "duration": 3.33
+    },
+    {
+        "text": "and the way it's being calculated is to look at each individual who's currently ",
+        "start": 910.12,
+        "duration": 4.037
+    },
+    {
+        "text": "infectious, count how many people they've infected so far, ",
+        "start": 914.157,
+        "duration": 2.977
+    },
+    {
+        "text": "estimate how many they're going to infect in total based on the duration of the illness, ",
+        "start": 917.134,
+        "duration": 4.491
+    },
+    {
+        "text": "and then average those numbers.",
+        "start": 921.625,
+        "duration": 1.565
+    },
+    {
+        "text": "For example, in our first default simulation with no added spices, ",
+        "start": 925.61,
+        "duration": 3.625
+    },
+    {
+        "text": "R is around 2.2 at the highest part of the growth phase, ",
+        "start": 929.235,
+        "duration": 3.084
+    },
+    {
+        "text": "before falling down as the population becomes saturated.",
+        "start": 932.319,
+        "duration": 3.031
+    },
+    {
+        "text": "By contrast, when we doubled the infection radius, R was as high as 8!",
+        "start": 936.87,
+        "duration": 4.44
+    },
+    {
+        "text": "This factor has a huge effect on the growth rate.",
+        "start": 942.09,
+        "duration": 2.46
+    },
+    {
+        "text": "It should kind of make sense that it jumped up as high as 8, though.",
+        "start": 945.71,
+        "duration": 2.88
+    },
+    {
+        "text": "When you double that radius, there's about 4 times as many people inside it to infect.",
+        "start": 948.59,
+        "duration": 4.7
+    },
+    {
+        "text": "When we chopped the infection rate in half, it hovered around the 1.3 to 1.7 range.",
+        "start": 955.47,
+        "duration": 5.34
+    },
+    {
+        "text": "While R is greater than 1, the infection is growing exponentially, ",
+        "start": 962.01,
+        "duration": 3.466
+    },
+    {
+        "text": "and it's at that point that it's known as an epidemic.",
+        "start": 965.476,
+        "duration": 2.794
+    },
+    {
+        "text": "When it holds steady around 1, that's when a disease is called endemic, ",
+        "start": 968.93,
+        "duration": 4.105
+    },
+    {
+        "text": "and less than 1 means it's on the decline.",
+        "start": 973.035,
+        "duration": 2.395
+    },
+    {
+        "text": "For comparison, R-naught for COVID-19 is estimated to be a little above 2, ",
+        "start": 976.19,
+        "duration": 4.569
+    },
+    {
+        "text": "which is also around what the mean estimate for R-naught was during the 1918 Spanish ",
+        "start": 980.759,
+        "duration": 5.178
+    },
+    {
+        "text": "flu pandemic.",
+        "start": 985.937,
+        "duration": 0.793
+    },
+    {
+        "text": "The seasonal flu by comparison is much lower, around 1.3.",
+        "start": 987.35,
+        "duration": 3.68
+    },
+    {
+        "text": "In the travel case, as soon as we turn on social distancing and shut down travel, ",
+        "start": 992.45,
+        "duration": 4.526
+    },
+    {
+        "text": "you can see R quickly drop down from 2.",
+        "start": 996.976,
+        "duration": 2.154
+    },
+    {
+        "text": "There's a little bit of a lag between the change we make to the model and ",
+        "start": 999.73,
+        "duration": 3.294
+    },
+    {
+        "text": "the value of this number, since it's calculated based on current infectious cases, ",
+        "start": 1003.024,
+        "duration": 3.696
+    },
+    {
+        "text": "which might have existed prior to the method being put in place.",
+        "start": 1006.72,
+        "duration": 2.85
+    },
+    {
+        "text": "Like I said at the start, one of the things I was most curious about is the ",
+        "start": 1012.93,
+        "duration": 3.85
+    },
+    {
+        "text": "effect of some kind of shared central location, like a market or a school.",
+        "start": 1016.78,
+        "duration": 3.75
+    },
+    {
+        "text": "When I introduce such a destination for our little dots, R0 jumps as high as 5.8.",
+        "start": 1021.29,
+        "duration": 5.319
+    },
+    {
+        "text": "This might be a little unfair, since it puts everyone right in the same spot, ",
+        "start": 1028.51,
+        "duration": 3.932
+    },
+    {
+        "text": "and given that we're using physical proximity as a stand-in for things ",
+        "start": 1032.442,
+        "duration": 3.579
+    },
+    {
+        "text": "like shaking hands or kissing, we should maybe acknowledge that people ",
+        "start": 1036.021,
+        "duration": 3.58
+    },
+    {
+        "text": "going to the same school or grocery store are not as likely to spread an infection as, ",
+        "start": 1039.601,
+        "duration": 4.386
+    },
+    {
+        "text": "say, close friends or people living in the same house.",
+        "start": 1043.987,
+        "duration": 2.723
+    },
+    {
+        "text": "To account for this, let's conservatively cut ",
+        "start": 1047.569,
+        "duration": 2.295
+    },
+    {
+        "text": "the probability of infection per day in half.",
+        "start": 1049.864,
+        "duration": 2.246
+    },
+    {
+        "text": "This does indeed cut R0 in half, but the effect of a central market remains dramatic.",
+        "start": 1052.83,
+        "duration": 5.86
+    },
+    {
+        "text": "Now let's try a run where after some threshold is hit, we turn on social distancing, ",
+        "start": 1065.99,
+        "duration": 4.514
+    },
+    {
+        "text": "but people still go to that central location the way they did before.",
+        "start": 1070.504,
+        "duration": 3.666
+    },
+    {
+        "text": "You may notice that some of our little dots seem to have escaped their little cage, ",
+        "start": 1079.43,
+        "duration": 4.745
+    },
+    {
+        "text": "which was not supposed to happen, but I'm going to make the conscious choice not to fix ",
+        "start": 1084.175,
+        "duration": 4.972
+    },
+    {
+        "text": "that.",
+        "start": 1089.147,
+        "duration": 0.283
+    },
+    {
+        "text": "It's like they all looked at the chaos inside and just went, ",
+        "start": 1089.85,
+        "duration": 2.9
+    },
+    {
+        "text": "nope, I'm out, I don't want any part of that.",
+        "start": 1092.75,
+        "duration": 2.14
+    },
+    {
+        "text": "Living in the Bay Area during a shelter-in-place order, ",
+        "start": 1095.41,
+        "duration": 2.602
+    },
+    {
+        "text": "I can confirm that this is how some people react.",
+        "start": 1098.012,
+        "duration": 2.278
+    },
+    {
+        "text": "Wandering dots aside, let me show you how this graph compares to the control case ",
+        "start": 1100.99,
+        "duration": 4.28
+    },
+    {
+        "text": "where we did nothing, and how it compares to what would have happened if in addition ",
+        "start": 1105.27,
+        "duration": 4.438
+    },
+    {
+        "text": "to repelling from each other, all the dots also stopped going to that central location.",
+        "start": 1109.708,
+        "duration": 4.542
+    },
+    {
+        "text": "The peak of the infection curve is a little lower than the control, ",
+        "start": 1115.43,
+        "duration": 3.512
+    },
+    {
+        "text": "but in terms of the total number of cases, keeping that central ",
+        "start": 1118.942,
+        "duration": 3.305
+    },
+    {
+        "text": "location active really defeats the effects of otherwise social distancing.",
+        "start": 1122.247,
+        "duration": 3.823
+    },
+    {
+        "text": "Now let me ask you to make a prediction.",
+        "start": 1127.95,
+        "duration": 2.28
+    },
+    {
+        "text": "What do you think will be more effective?",
+        "start": 1130.67,
+        "duration": 1.44
+    },
+    {
+        "text": "If on top of that social distancing effect, we decrease the frequency with ",
+        "start": 1132.63,
+        "duration": 4.219
+    },
+    {
+        "text": "which people go to that central spot, maybe by a factor of 5, ",
+        "start": 1136.849,
+        "duration": 3.487
+    },
+    {
+        "text": "or if we chop the probability of infection down by another factor of 2, ",
+        "start": 1140.336,
+        "duration": 4.051
+    },
+    {
+        "text": "for example meaning people are super extra cautious about washing their hands ",
+        "start": 1144.387,
+        "duration": 4.387
+    },
+    {
+        "text": "and not touching their face.",
+        "start": 1148.774,
+        "duration": 1.576
+    },
+    {
+        "text": "The simulation on the left requires our dots to very heavily alter their daily routines, ",
+        "start": 1151.67,
+        "duration": 4.809
+    },
+    {
+        "text": "whereas on the right our dots can mostly continue their usual habits, ",
+        "start": 1156.479,
+        "duration": 3.783
+    },
+    {
+        "text": "but are much more conscious of hygiene.",
+        "start": 1160.262,
+        "duration": 2.108
+    },
+    {
+        "text": "They're actually nearly identical, which surprised me, ",
+        "start": 1164.75,
+        "duration": 2.994
+    },
+    {
+        "text": "given that one of them is a fivefold decrease and the other is twofold.",
+        "start": 1167.744,
+        "duration": 3.866
+    },
+    {
+        "text": "I guess it goes to show that the effect of hygiene, ",
+        "start": 1172.23,
+        "duration": 2.448
+    },
+    {
+        "text": "which is maybe easier said than done, really goes a long way.",
+        "start": 1174.678,
+        "duration": 2.872
+    },
+    {
+        "text": "Of course, it doesn't have to be an either-or.",
+        "start": 1179.39,
+        "duration": 2.7
+    },
+    {
+        "text": "Our goal with these experiments is to look at the effects of one change at a time.",
+        "start": 1182.65,
+        "duration": 3.6
+    },
+    {
+        "text": "If you're curious, here's what it looks like when we apply social distancing, ",
+        "start": 1186.93,
+        "duration": 3.675
+    },
+    {
+        "text": "we restrict the rate that people go to the central location, ",
+        "start": 1190.605,
+        "duration": 2.875
+    },
+    {
+        "text": "and we also lower the infection rate all at once.",
+        "start": 1193.48,
+        "duration": 2.31
+    },
+    {
+        "text": "This combination is, indeed, very effective.",
+        "start": 1199.49,
+        "duration": 3.04
+    },
+    {
+        "text": "But I want to emphasize again how the most desirable case ",
+        "start": 1202.53,
+        "duration": 3.551
+    },
+    {
+        "text": "is when you can consistently identify and isolate cases.",
+        "start": 1206.081,
+        "duration": 3.429
+    },
+    {
+        "text": "Even in this central market simulation, which left unchecked gives a huge conflagration, ",
+        "start": 1210.31,
+        "duration": 4.821
+    },
+    {
+        "text": "being able to do this effectively still halts the epidemic, ",
+        "start": 1215.131,
+        "duration": 3.25
+    },
+    {
+        "text": "and our little dots don't even have to be repelled by each other or stop their trips ",
+        "start": 1218.381,
+        "duration": 4.605
+    },
+    {
+        "text": "to the central spot.",
+        "start": 1222.986,
+        "duration": 1.084
+    },
+    {
+        "text": "In real epidemiology, by the way, it gets way more sophisticated than this, ",
+        "start": 1225.35,
+        "duration": 4.038
+    },
+    {
+        "text": "with tactics like contact tracing, where you not only identify and isolate known cases, ",
+        "start": 1229.388,
+        "duration": 4.676
+    },
+    {
+        "text": "but you do the same for everyone who's been in contact with those cases.",
+        "start": 1234.064,
+        "duration": 3.826
+    },
+    {
+        "text": "Given the time I'm posting this, I imagine there's some ",
+        "start": 1242.09,
+        "duration": 3.038
+    },
+    {
+        "text": "expectation for it to be a PSA on social distancing.",
+        "start": 1245.128,
+        "duration": 2.822
+    },
+    {
+        "text": "But to be honest, that's not really my own main takeaway.",
+        "start": 1248.57,
+        "duration": 2.6
+    },
+    {
+        "text": "To be clear, when it's needed, like it is now, social distancing absolutely saves lives, ",
+        "start": 1251.87,
+        "duration": 4.593
+    },
+    {
+        "text": "and as we saw earlier, when people cheat or when they continue to regularly meet at ",
+        "start": 1256.463,
+        "duration": 4.335
+    },
+    {
+        "text": "a central spot, it has a disproportionate effect on the long-term number of cases.",
+        "start": 1260.798,
+        "duration": 4.232
+    },
+    {
+        "text": "The uncomfortable truth, though, is that while the disease still exists, ",
+        "start": 1266.01,
+        "duration": 3.872
+    },
+    {
+        "text": "as soon as people let up and they go back to their normal lives, ",
+        "start": 1269.882,
+        "duration": 3.449
+    },
+    {
+        "text": "if nothing is in place to contain the cases, few though they might be, ",
+        "start": 1273.331,
+        "duration": 3.767
+    },
+    {
+        "text": "you'll just get a second wave.",
+        "start": 1277.098,
+        "duration": 1.592
+    },
+    {
+        "text": "After making all of these, what I came away with more than anything else was a deeper ",
+        "start": 1281.89,
+        "duration": 4.808
+    },
+    {
+        "text": "appreciation for disease control done right, for the inordinate value of early widespread ",
+        "start": 1286.698,
+        "duration": 5.032
+    },
+    {
+        "text": "testing and the ability to isolate cases, for therapeutics that treat these cases, ",
+        "start": 1291.73,
+        "duration": 4.64
+    },
+    {
+        "text": "and most importantly, for how easy it is to underestimate all that value when times are ",
+        "start": 1296.37,
+        "duration": 4.92
+    },
+    {
+        "text": "good.",
+        "start": 1301.29,
+        "duration": 0.28
+    },
+    {
+        "text": "I'm writing this during a pandemic, when some viewers may be able to identify ",
+        "start": 1302.09,
+        "duration": 3.73
+    },
+    {
+        "text": "a little too well with the trembling dots retreating to the edge of their box.",
+        "start": 1305.82,
+        "duration": 3.73
+    },
+    {
+        "text": "But in the future, many people will be watching this during a pandemic that never was, ",
+        "start": 1310.19,
+        "duration": 4.588
+    },
+    {
+        "text": "a time when a novel pathogen that could have spread widely if left ",
+        "start": 1314.778,
+        "duration": 3.534
+    },
+    {
+        "text": "unchecked was instead swiftly found and contained.",
+        "start": 1318.312,
+        "duration": 2.638
+    },
+    {
+        "text": "Those would-be pandemics never make it into the history books, ",
+        "start": 1321.93,
+        "duration": 3.086
+    },
+    {
+        "text": "which is maybe why we don't value the heroes behind them the way we should.",
+        "start": 1325.016,
+        "duration": 3.674
+    },
+    {
+        "text": "Living in a world with widespread travel and vibrant urban centers does make ",
+        "start": 1329.57,
+        "duration": 3.518
+    },
+    {
+        "text": "fighting the spread of a disease an uphill battle, that's absolutely true.",
+        "start": 1333.088,
+        "duration": 3.382
+    },
+    {
+        "text": "But that same level of connectedness means that ideas spread more quickly than ever, ",
+        "start": 1337.07,
+        "duration": 4.114
+    },
+    {
+        "text": "ideas that can lead to systems and technologies that nip these outbreaks in the bud.",
+        "start": 1341.184,
+        "duration": 4.066
+    },
+    {
+        "text": "It won't happen on its own, and it's clear that we sometimes make mistakes, ",
+        "start": 1345.99,
+        "duration": 3.556
+    },
+    {
+        "text": "but I'm fundamentally optimistic about our ability to learn from those mistakes.",
+        "start": 1349.546,
+        "duration": 3.744
+    },
+    {
+        "text": "As you might imagine, these videos require a lot of hours of effort.",
+        "start": 1358.27,
+        "duration": 3.54
+    },
+    {
+        "text": "I don't do any ad reads at the end, and YouTube content related to the current ",
+        "start": 1362.31,
+        "duration": 3.609
+    },
+    {
+        "text": "pandemic seems to be systematically demonetized, ",
+        "start": 1365.919,
+        "duration": 2.239
+    },
+    {
+        "text": "so I just want to take this chance to say a particularly warm thank you to those ",
+        "start": 1368.158,
+        "duration": 3.701
+    },
+    {
+        "text": "who support them directly on Patreon.",
+        "start": 1371.859,
+        "duration": 1.691
+    },
+    {
+        "text": "It really does make a difference.",
+        "start": 1374.11,
+        "duration": 0.88
+    }
+]

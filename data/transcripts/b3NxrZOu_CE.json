@@ -1,0 +1,1252 @@
+[
+    {
+        "text": "I'm assuming that everybody here is coming from part 1.",
+        "start": 0.0,
+        "duration": 2.56
+    },
+    {
+        "text": "We were talking about Hamming codes, a way to create a block of data ",
+        "start": 3.06,
+        "duration": 3.446
+    },
+    {
+        "text": "where most of the bits carry a meaningful message, ",
+        "start": 6.506,
+        "duration": 2.547
+    },
+    {
+        "text": "while a few others act as a kind of redundancy, ",
+        "start": 9.053,
+        "duration": 2.397
+    },
+    {
+        "text": "in such a way that if any bit gets flipped, either a message bit or a redundancy bit, ",
+        "start": 11.45,
+        "duration": 4.296
+    },
+    {
+        "text": "anything in this block, a receiver is going to be able to identify that ",
+        "start": 15.746,
+        "duration": 3.596
+    },
+    {
+        "text": "there was an error, and how to fix it.",
+        "start": 19.342,
+        "duration": 1.898
+    },
+    {
+        "text": "The basic idea presented there was how to use multiple ",
+        "start": 21.88,
+        "duration": 2.569
+    },
+    {
+        "text": "parity checks to binary search your way down to the error.",
+        "start": 24.449,
+        "duration": 2.711
+    },
+    {
+        "text": "In that video the goal was to make Hamming codes ",
+        "start": 28.98,
+        "duration": 2.838
+    },
+    {
+        "text": "feel as hands-on and rediscoverable as possible.",
+        "start": 31.818,
+        "duration": 2.782
+    },
+    {
+        "text": "But as you start to think about actually implementing this, ",
+        "start": 35.18,
+        "duration": 3.047
+    },
+    {
+        "text": "either in software or hardware, that framing may actually undersell how elegant ",
+        "start": 38.227,
+        "duration": 4.064
+    },
+    {
+        "text": "these codes really are.",
+        "start": 42.291,
+        "duration": 1.169
+    },
+    {
+        "text": "You might think that you need to write an algorithm that keeps ",
+        "start": 43.92,
+        "duration": 3.088
+    },
+    {
+        "text": "track of all the possible error locations and cuts that group in half with each check, ",
+        "start": 47.008,
+        "duration": 4.265
+    },
+    {
+        "text": "but it's actually way, way simpler than that.",
+        "start": 51.273,
+        "duration": 2.207
+    },
+    {
+        "text": "If you read out the answers to the four parity checks we did in the last video, ",
+        "start": 53.94,
+        "duration": 4.432
+    },
+    {
+        "text": "all as 1s and 0s instead of yeses and nos, it literally spells ",
+        "start": 58.372,
+        "duration": 3.491
+    },
+    {
+        "text": "out the position of the error in binary.",
+        "start": 61.863,
+        "duration": 2.217
+    },
+    {
+        "text": "For example, the number 7 in binary looks like 0111, ",
+        "start": 64.78,
+        "duration": 3.504
+    },
+    {
+        "text": "essentially saying that it's 4 plus 2 plus 1.",
+        "start": 68.284,
+        "duration": 2.976
+    },
+    {
+        "text": "And notice where the position 7 sits, it does affect the first of our parity groups, ",
+        "start": 72.54,
+        "duration": 5.879
+    },
+    {
+        "text": "and the second, and the third, but not the last.",
+        "start": 78.419,
+        "duration": 3.321
+    },
+    {
+        "text": "So reading the results of those four checks from bottom ",
+        "start": 82.22,
+        "duration": 2.683
+    },
+    {
+        "text": "to top indeed does spell out the position of the error.",
+        "start": 84.903,
+        "duration": 2.637
+    },
+    {
+        "text": "There's nothing special about the example 7, this works in general, ",
+        "start": 88.32,
+        "duration": 3.248
+    },
+    {
+        "text": "and this makes the logic for implementing the whole scheme in hardware shockingly simple.",
+        "start": 91.568,
+        "duration": 4.252
+    },
+    {
+        "text": "Now if you want to see why this magic happens, ",
+        "start": 97.24,
+        "duration": 3.062
+    },
+    {
+        "text": "take these 16 index labels for our positions, but instead of writing them in base 10, ",
+        "start": 100.302,
+        "duration": 5.603
+    },
+    {
+        "text": "let's write them all in binary, running from 0000 up to 1111.",
+        "start": 105.905,
+        "duration": 3.975
+    },
+    {
+        "text": "As we put these binary labels back into their boxes, ",
+        "start": 110.56,
+        "duration": 2.863
+    },
+    {
+        "text": "let me emphasize that they are distinct from the data that's actually being sent.",
+        "start": 113.423,
+        "duration": 4.377
+    },
+    {
+        "text": "They're nothing more than a conceptual label to help you ",
+        "start": 118.32,
+        "duration": 2.59
+    },
+    {
+        "text": "and me understand where the four parity groups came from.",
+        "start": 120.91,
+        "duration": 2.59
+    },
+    {
+        "text": "The elegance of having everything we're looking at be described in binary is maybe ",
+        "start": 124.14,
+        "duration": 3.943
+    },
+    {
+        "text": "undercut by the confusion of having everything we're looking at being described in binary.",
+        "start": 128.083,
+        "duration": 4.277
+    },
+    {
+        "text": "It's worth it, though.",
+        "start": 133.02,
+        "duration": 1.1
+    },
+    {
+        "text": "Focus your attention just on that last bit of all of these labels, ",
+        "start": 134.8,
+        "duration": 4.407
+    },
+    {
+        "text": "and then highlight the positions where that final bit is a 1.",
+        "start": 139.207,
+        "duration": 4.013
+    },
+    {
+        "text": "What we get is the first of our four parity groups, ",
+        "start": 144.24,
+        "duration": 3.197
+    },
+    {
+        "text": "which means you can interpret that first check as asking, hey, ",
+        "start": 147.437,
+        "duration": 3.875
+    },
+    {
+        "text": "if there's an error, is the final bit in the position of that error a 1?",
+        "start": 151.312,
+        "duration": 4.428
+    },
+    {
+        "text": "Similarly, if you focus on the second to last bit, ",
+        "start": 158.2,
+        "duration": 2.724
+    },
+    {
+        "text": "and highlight all the positions where that's a 1, ",
+        "start": 160.924,
+        "duration": 2.671
+    },
+    {
+        "text": "you get the second parity group from our scheme.",
+        "start": 163.595,
+        "duration": 2.565
+    },
+    {
+        "text": "In other words, that second check is asking, hey, me again, ",
+        "start": 166.74,
+        "duration": 3.637
+    },
+    {
+        "text": "if there's an error, is the second to last bit of that position a 1?",
+        "start": 170.377,
+        "duration": 4.123
+    },
+    {
+        "text": "And so on.",
+        "start": 175.76,
+        "duration": 1.14
+    },
+    {
+        "text": "The third parity check covers every position whose third to last bit is turned on, ",
+        "start": 177.22,
+        "duration": 5.463
+    },
+    {
+        "text": "and the last one covers the last eight positions, ",
+        "start": 182.683,
+        "duration": 3.292
+    },
+    {
+        "text": "those ones whose highest order bit is a 1.",
+        "start": 185.975,
+        "duration": 2.765
+    },
+    {
+        "text": "Everything we did earlier is the same as answering these four questions, ",
+        "start": 189.74,
+        "duration": 4.294
+    },
+    {
+        "text": "which in turn is the same as spelling out a position in binary.",
+        "start": 194.034,
+        "duration": 3.706
+    },
+    {
+        "text": "I hope this makes two things clearer.",
+        "start": 199.62,
+        "duration": 1.86
+    },
+    {
+        "text": "The first is how to systematically generalize ",
+        "start": 202.04,
+        "duration": 2.234
+    },
+    {
+        "text": "to block sizes that are bigger powers of two.",
+        "start": 204.274,
+        "duration": 2.186
+    },
+    {
+        "text": "If it takes more bits to describe each position, like six bits to describe 64 spots, ",
+        "start": 206.96,
+        "duration": 4.977
+    },
+    {
+        "text": "then each of those bits gives you one of the parity groups that we need to check.",
+        "start": 211.937,
+        "duration": 4.743
+    },
+    {
+        "text": "Those of you who watched the chessboard puzzle I did ",
+        "start": 218.4,
+        "duration": 2.282
+    },
+    {
+        "text": "with Matt Parker might find all this exceedingly familiar.",
+        "start": 220.682,
+        "duration": 2.498
+    },
+    {
+        "text": "It's the same core logic, but solving a different problem, ",
+        "start": 223.66,
+        "duration": 3.082
+    },
+    {
+        "text": "and applied to a 64-squared chessboard.",
+        "start": 226.742,
+        "duration": 2.038
+    },
+    {
+        "text": "The second thing I hope this makes clear is why our parity bits are ",
+        "start": 229.88,
+        "duration": 3.513
+    },
+    {
+        "text": "sitting in the positions that are powers of two, for example 1, 2, 4, and 8.",
+        "start": 233.393,
+        "duration": 3.927
+    },
+    {
+        "text": "These are the positions whose binary representation has just a single bit turned on.",
+        "start": 238.0,
+        "duration": 5.0
+    },
+    {
+        "text": "What that means is each of those parity bits sits ",
+        "start": 243.6,
+        "duration": 2.93
+    },
+    {
+        "text": "inside one and only one of the four parity groups.",
+        "start": 246.53,
+        "duration": 2.93
+    },
+    {
+        "text": "You can also see this in larger examples, where no matter how big you get, ",
+        "start": 252.04,
+        "duration": 4.055
+    },
+    {
+        "text": "each parity bit conveniently touches only one of the groups.",
+        "start": 256.095,
+        "duration": 3.244
+    },
+    {
+        "text": "Once you understand that these parity checks that we've focused so much of ",
+        "start": 265.6,
+        "duration": 3.556
+    },
+    {
+        "text": "our time on are nothing more than a clever way to spell out the position ",
+        "start": 269.156,
+        "duration": 3.462
+    },
+    {
+        "text": "of an error in binary, then we can draw a connection with a different way ",
+        "start": 272.618,
+        "duration": 3.509
+    },
+    {
+        "text": "to think about hamming codes, one that is arguably a lot simpler and more elegant, ",
+        "start": 276.127,
+        "duration": 3.935
+    },
+    {
+        "text": "and which can basically be written down with a single line of code.",
+        "start": 280.062,
+        "duration": 3.178
+    },
+    {
+        "text": "It's based on the XOR function.",
+        "start": 283.66,
+        "duration": 1.84
+    },
+    {
+        "text": "XOR, for those of you who don't know, stands for exclusive or.",
+        "start": 286.94,
+        "duration": 3.28
+    },
+    {
+        "text": "When you take the XOR of two bits, it's going to return a 1 if either ",
+        "start": 290.78,
+        "duration": 4.32
+    },
+    {
+        "text": "one of those bits is turned on, but not if both are turned on or off.",
+        "start": 295.1,
+        "duration": 4.26
+    },
+    {
+        "text": "Phrased differently, it's the parity of these two bits.",
+        "start": 300.1,
+        "duration": 2.88
+    },
+    {
+        "text": "As a math person, I prefer to think about it as addition mod 2.",
+        "start": 303.54,
+        "duration": 3.22
+    },
+    {
+        "text": "We also commonly talk about the XOR of two different bit strings, ",
+        "start": 307.36,
+        "duration": 3.489
+    },
+    {
+        "text": "which basically does this component by component.",
+        "start": 310.849,
+        "duration": 2.591
+    },
+    {
+        "text": "It's like addition, but where you never carry.",
+        "start": 313.68,
+        "duration": 2.04
+    },
+    {
+        "text": "Again, the more mathematically inclined might prefer to ",
+        "start": 316.5,
+        "duration": 3.016
+    },
+    {
+        "text": "think of this as adding two vectors and reducing mod 2.",
+        "start": 319.516,
+        "duration": 2.964
+    },
+    {
+        "text": "If you open up some Python right now and apply the caret operation between two integers, ",
+        "start": 323.5,
+        "duration": 4.773
+    },
+    {
+        "text": "this is what it's doing but to the bit representations of those numbers under the hood.",
+        "start": 328.273,
+        "duration": 4.667
+    },
+    {
+        "text": "The key point for you and me is that taking the XOR of many different ",
+        "start": 334.96,
+        "duration": 4.138
+    },
+    {
+        "text": "bit strings is effectively a way to compute the parodies of a bunch of separate groups, ",
+        "start": 339.098,
+        "duration": 5.203
+    },
+    {
+        "text": "like so with the columns, all in one fell swoop.",
+        "start": 344.301,
+        "duration": 2.839
+    },
+    {
+        "text": "This gives us a rather snazzy way to think about the multiple parity checks from ",
+        "start": 351.26,
+        "duration": 3.691
+    },
+    {
+        "text": "our Hamming code algorithm as all being packaged together into one single operation.",
+        "start": 354.951,
+        "duration": 3.829
+    },
+    {
+        "text": "Though at first glance it does look very different.",
+        "start": 359.48,
+        "duration": 2.7
+    },
+    {
+        "text": "Specifically write down the 16 positions in binary, like we had before, ",
+        "start": 362.82,
+        "duration": 4.738
+    },
+    {
+        "text": "and now highlight the positions where the message bit is turned on to a 1, ",
+        "start": 367.558,
+        "duration": 4.935
+    },
+    {
+        "text": "and then collect these positions into one big column and take the XOR.",
+        "start": 372.493,
+        "duration": 4.607
+    },
+    {
+        "text": "You can probably guess that the 4 bits sitting at the bottom as ",
+        "start": 379.26,
+        "duration": 3.313
+    },
+    {
+        "text": "a result are the same as the 4 parity checks we've come to know and love, ",
+        "start": 382.573,
+        "duration": 3.831
+    },
+    {
+        "text": "but take a moment to actually think about why exactly.",
+        "start": 386.404,
+        "duration": 2.796
+    },
+    {
+        "text": "This last column, for example, is counting all of the positions whose last bit is a 1, ",
+        "start": 392.22,
+        "duration": 4.887
+    },
+    {
+        "text": "but we're already limited only to the highlighted positions, ",
+        "start": 397.107,
+        "duration": 3.428
+    },
+    {
+        "text": "so it's effectively counting how many highlighted positions came from the first ",
+        "start": 400.535,
+        "duration": 4.494
+    },
+    {
+        "text": "parity group.",
+        "start": 405.029,
+        "duration": 0.731
+    },
+    {
+        "text": "Does that make sense?",
+        "start": 406.24,
+        "duration": 0.56
+    },
+    {
+        "text": "Likewise, the next column counts how many positions are in the second parity group, ",
+        "start": 409.08,
+        "duration": 5.302
+    },
+    {
+        "text": "the positions whose second to last bit is a 1, and which are also highlighted, and so on.",
+        "start": 414.382,
+        "duration": 5.618
+    },
+    {
+        "text": "It's really just a small shift in perspective on the same thing we've been doing.",
+        "start": 420.26,
+        "duration": 3.7
+    },
+    {
+        "text": "And so you know where it goes from here.",
+        "start": 427.76,
+        "duration": 1.84
+    },
+    {
+        "text": "The sender is responsible for toggling some of the special ",
+        "start": 430.0,
+        "duration": 3.425
+    },
+    {
+        "text": "parity bits to make sure the sum works out to be 0000.",
+        "start": 433.425,
+        "duration": 3.135
+    },
+    {
+        "text": "Now once we have it like this, this gives us a really nice way to think about why ",
+        "start": 439.04,
+        "duration": 4.218
+    },
+    {
+        "text": "these four resulting bits at the bottom directly spell out the position of an error.",
+        "start": 443.258,
+        "duration": 4.322
+    },
+    {
+        "text": "Let's say some bit in this block gets toggled from a 0 to a 1.",
+        "start": 448.46,
+        "duration": 3.4
+    },
+    {
+        "text": "What that means is that the position of that bit is now going to ",
+        "start": 452.6,
+        "duration": 3.646
+    },
+    {
+        "text": "be included in the total XOR, which changes the sum from being 0 ",
+        "start": 456.246,
+        "duration": 3.647
+    },
+    {
+        "text": "to instead being this newly included value, the position of the error.",
+        "start": 459.893,
+        "duration": 3.927
+    },
+    {
+        "text": "Slightly less obviously, the same is true if there's an error that changes a 1 to a 0.",
+        "start": 464.46,
+        "duration": 4.9
+    },
+    {
+        "text": "You see, if you add a bit string together twice, ",
+        "start": 470.18,
+        "duration": 2.64
+    },
+    {
+        "text": "it's the same as not having it there at all, basically because in this ",
+        "start": 472.82,
+        "duration": 3.826
+    },
+    {
+        "text": "world 1 plus 1 equals 0.",
+        "start": 476.646,
+        "duration": 1.294
+    },
+    {
+        "text": "So adding a copy of this position to the total sum has the same effect as we're moving it.",
+        "start": 478.92,
+        "duration": 5.38
+    },
+    {
+        "text": "And that effect, again, is that the total result at ",
+        "start": 485.16,
+        "duration": 2.743
+    },
+    {
+        "text": "the bottom here spells out the position of the error.",
+        "start": 487.903,
+        "duration": 2.797
+    },
+    {
+        "text": "To illustrate how elegant this is, let me show that one line of Python code I ",
+        "start": 493.04,
+        "duration": 4.044
+    },
+    {
+        "text": "referenced before, which will capture almost all of the logic on the receiver's end.",
+        "start": 497.084,
+        "duration": 4.356
+    },
+    {
+        "text": "We'll start by creating a random array of 16 1s and 0s to simulate the data block, ",
+        "start": 502.08,
+        "duration": 4.446
+    },
+    {
+        "text": "and I'll give it the name bits, but of course in practice this would be ",
+        "start": 506.526,
+        "duration": 3.856
+    },
+    {
+        "text": "something we're receiving from a sender, and instead of being random it ",
+        "start": 510.382,
+        "duration": 3.857
+    },
+    {
+        "text": "would be carrying 11 data bits together with 5 parity bits.",
+        "start": 514.239,
+        "duration": 3.161
+    },
+    {
+        "text": "If I call the function enumerateBits, what it does is pair together each of ",
+        "start": 518.12,
+        "duration": 4.439
+    },
+    {
+        "text": "those bits with a corresponding index, in this case running from 0 up to 15.",
+        "start": 522.559,
+        "duration": 4.441
+    },
+    {
+        "text": "So if we then create a list that loops over all of these pairs, ",
+        "start": 528.18,
+        "duration": 3.899
+    },
+    {
+        "text": "pairs that look like i, and then we pull out just the i value, just the index, ",
+        "start": 532.079,
+        "duration": 4.813
+    },
+    {
+        "text": "well it's not that exciting, we just get back those indices 0 through 15.",
+        "start": 536.892,
+        "duration": 4.448
+    },
+    {
+        "text": "But if we add on the condition to only do this if bit, ",
+        "start": 541.68,
+        "duration": 3.392
+    },
+    {
+        "text": "meaning if that bit is a 1 and not a 0, well then it pulls out only the positions where ",
+        "start": 545.072,
+        "duration": 5.429
+    },
+    {
+        "text": "the corresponding bit is turned on.",
+        "start": 550.501,
+        "duration": 2.159
+    },
+    {
+        "text": "In this case it looks like those positions are 0, 4, 6, 9, etc.",
+        "start": 553.38,
+        "duration": 4.58
+    },
+    {
+        "text": "What we want is to collect together all of those positions, ",
+        "start": 559.98,
+        "duration": 3.275
+    },
+    {
+        "text": "the positions of the bits that are turned on, and then XOR them together.",
+        "start": 563.255,
+        "duration": 3.985
+    },
+    {
+        "text": "To do this in Python, let me first import a couple helpful functions.",
+        "start": 569.18,
+        "duration": 4.04
+    },
+    {
+        "text": "That way we can call reduce() on this list, and use the XOR function to reduce it.",
+        "start": 573.9,
+        "duration": 4.8
+    },
+    {
+        "text": "This basically eats its way through the list, taking XORs along the way.",
+        "start": 579.1,
+        "duration": 3.58
+    },
+    {
+        "text": "If you prefer, you can explicitly write out that XOR ",
+        "start": 584.8,
+        "duration": 2.364
+    },
+    {
+        "text": "function without having to import it from anywhere.",
+        "start": 587.164,
+        "duration": 2.276
+    },
+    {
+        "text": "So at the moment it looks like if we do this on our random block of 16 bits, ",
+        "start": 591.94,
+        "duration": 5.448
+    },
+    {
+        "text": "it returns 9, which has the binary representation 1001.",
+        "start": 597.388,
+        "duration": 3.892
+    },
+    {
+        "text": "We won't do it here, but you could write a function where the sender uses that binary ",
+        "start": 601.98,
+        "duration": 4.637
+    },
+    {
+        "text": "representation to set the four parity bits as needed, ",
+        "start": 606.617,
+        "duration": 2.911
+    },
+    {
+        "text": "ultimately getting this block to a state where running this line of code on the full ",
+        "start": 609.528,
+        "duration": 4.584
+    },
+    {
+        "text": "list of bits returns a 0.",
+        "start": 614.112,
+        "duration": 1.348
+    },
+    {
+        "text": "This would be considered a well-prepared block.",
+        "start": 616.08,
+        "duration": 2.12
+    },
+    {
+        "text": "What's cool is that if we toggle any one of the bits in this list, ",
+        "start": 619.88,
+        "duration": 4.075
+    },
+    {
+        "text": "simulating a random error from noise, then if you run this same line of code, ",
+        "start": 623.955,
+        "duration": 4.744
+    },
+    {
+        "text": "it prints out that error.",
+        "start": 628.699,
+        "duration": 1.521
+    },
+    {
+        "text": "Isn't that neat?",
+        "start": 630.96,
+        "duration": 0.56
+    },
+    {
+        "text": "You could get this block from out of the blue, run this single line on it, ",
+        "start": 631.82,
+        "duration": 4.304
+    },
+    {
+        "text": "and it'll automatically spit out the position of an error, or a 0 if there wasn't any.",
+        "start": 636.124,
+        "duration": 4.936
+    },
+    {
+        "text": "And there's nothing special about the size 16 here.",
+        "start": 642.5,
+        "duration": 2.7
+    },
+    {
+        "text": "The same line of code would work if you had a list of, say, 256 bits.",
+        "start": 645.4,
+        "duration": 4.46
+    },
+    {
+        "text": "Needless to say, there is more code to write here, ",
+        "start": 651.88,
+        "duration": 2.871
+    },
+    {
+        "text": "like doing the meta parity check to detect 2-bit errors, ",
+        "start": 654.751,
+        "duration": 3.209
+    },
+    {
+        "text": "but the idea is that almost all of the core logic from our scheme comes ",
+        "start": 657.96,
+        "duration": 4.054
+    },
+    {
+        "text": "down to a single XOR reduction.",
+        "start": 662.014,
+        "duration": 1.746
+    },
+    {
+        "text": "Now, depending on your comfort with binary and XORs and software in general, ",
+        "start": 666.12,
+        "duration": 3.881
+    },
+    {
+        "text": "you may either find this perspective a little bit confusing, ",
+        "start": 670.001,
+        "duration": 3.075
+    },
+    {
+        "text": "or so much more elegant and simple that you're wondering why we didn't just start ",
+        "start": 673.076,
+        "duration": 4.134
+    },
+    {
+        "text": "with it from the get-go.",
+        "start": 677.21,
+        "duration": 1.21
+    },
+    {
+        "text": "Loosely speaking, the multiple parity check perspective is easier to think about ",
+        "start": 679.14,
+        "duration": 3.755
+    },
+    {
+        "text": "when implementing Hamming codes in hardware very directly, ",
+        "start": 682.895,
+        "duration": 2.736
+    },
+    {
+        "text": "and the XOR perspective is easiest to think about when doing it in software, ",
+        "start": 685.631,
+        "duration": 3.57
+    },
+    {
+        "text": "from kind of a higher level.",
+        "start": 689.201,
+        "duration": 1.299
+    },
+    {
+        "text": "The first one is easiest to actually do by hand, ",
+        "start": 691.36,
+        "duration": 2.854
+    },
+    {
+        "text": "and I think it does a better job instilling the core intuition underlying all of this, ",
+        "start": 694.214,
+        "duration": 5.067
+    },
+    {
+        "text": "which is that the information required to locate a single error is related to ",
+        "start": 699.281,
+        "duration": 4.544
+    },
+    {
+        "text": "the log of the size of the block, or in other words, ",
+        "start": 703.825,
+        "duration": 3.087
+    },
+    {
+        "text": "it grows one bit at a time as the block size doubles.",
+        "start": 706.912,
+        "duration": 3.088
+    },
+    {
+        "text": "The relevant fact here is that that information ",
+        "start": 711.02,
+        "duration": 2.419
+    },
+    {
+        "text": "directly corresponds to how much redundancy we need.",
+        "start": 713.439,
+        "duration": 2.621
+    },
+    {
+        "text": "That's really what runs against most people's knee-jerk reaction when ",
+        "start": 716.66,
+        "duration": 3.262
+    },
+    {
+        "text": "they first think about making a message resilient to errors, ",
+        "start": 719.922,
+        "duration": 2.843
+    },
+    {
+        "text": "where usually copying the whole message is the first instinct that comes to mind.",
+        "start": 722.765,
+        "duration": 3.775
+    },
+    {
+        "text": "And then, by the way, there is this whole other way that you sometimes see ",
+        "start": 727.5,
+        "duration": 3.271
+    },
+    {
+        "text": "Hamming codes presented, where you multiply the message by one big matrix.",
+        "start": 730.771,
+        "duration": 3.229
+    },
+    {
+        "text": "It's kind of nice because it relates it to the broader family of linear codes, ",
+        "start": 734.67,
+        "duration": 4.066
+    },
+    {
+        "text": "but I think that gives almost no intuition for where it comes from or how it scales.",
+        "start": 738.736,
+        "duration": 4.324
+    },
+    {
+        "text": "And speaking of scaling, you might notice that the efficiency ",
+        "start": 745.2,
+        "duration": 2.98
+    },
+    {
+        "text": "of this scheme only gets better as we increase the block size.",
+        "start": 748.18,
+        "duration": 2.98
+    },
+    {
+        "text": "For example, we saw that with 256 bits, you're using only 3% of that ",
+        "start": 755.0,
+        "duration": 3.915
+    },
+    {
+        "text": "space for redundancy, and it just keeps getting better from there.",
+        "start": 758.915,
+        "duration": 3.745
+    },
+    {
+        "text": "As the number of parity bits grows one by one, the block size keeps doubling.",
+        "start": 763.3,
+        "duration": 4.04
+    },
+    {
+        "text": "And if you take that to an extreme, you could have a block with, ",
+        "start": 769.0,
+        "duration": 3.599
+    },
+    {
+        "text": "say, a million bits, where you would quite literally be playing 20 ",
+        "start": 772.599,
+        "duration": 3.71
+    },
+    {
+        "text": "questions with your parity checks, and it uses only 21 parity bits.",
+        "start": 776.309,
+        "duration": 3.711
+    },
+    {
+        "text": "And if you step back to think about looking at a million ",
+        "start": 780.74,
+        "duration": 3.052
+    },
+    {
+        "text": "bits and locating a single error, that genuinely feels crazy.",
+        "start": 783.792,
+        "duration": 3.268
+    },
+    {
+        "text": "The problem, of course, is that with a larger block, ",
+        "start": 788.2,
+        "duration": 2.898
+    },
+    {
+        "text": "the probability of seeing more than one or two bit errors goes up, ",
+        "start": 791.098,
+        "duration": 3.663
+    },
+    {
+        "text": "and Hamming codes do not handle anything beyond that.",
+        "start": 794.761,
+        "duration": 2.899
+    },
+    {
+        "text": "So in practice, what you'd want is to find the right size ",
+        "start": 798.32,
+        "duration": 2.914
+    },
+    {
+        "text": "so that the probability of too many bit flips isn't too high.",
+        "start": 801.234,
+        "duration": 3.066
+    },
+    {
+        "text": "Also, in practice, errors tend to come in little bursts, ",
+        "start": 806.6,
+        "duration": 3.152
+    },
+    {
+        "text": "which would totally ruin a single block, so one common tactic to help spread out a ",
+        "start": 809.752,
+        "duration": 4.591
+    },
+    {
+        "text": "burst of errors across many different blocks is to interlace those blocks, like this, ",
+        "start": 814.343,
+        "duration": 4.756
+    },
+    {
+        "text": "before they're sent out or stored.",
+        "start": 819.099,
+        "duration": 1.881
+    },
+    {
+        "text": "Then again, a lot of this is rendered completely moot by more modern codes, ",
+        "start": 825.58,
+        "duration": 3.961
+    },
+    {
+        "text": "like the much more commonly used Reed-Solomon algorithm, ",
+        "start": 829.541,
+        "duration": 2.971
+    },
+    {
+        "text": "which handles burst errors particularly well, and it can be tuned to be resilient to ",
+        "start": 832.512,
+        "duration": 4.431
+    },
+    {
+        "text": "a larger number of errors per block.",
+        "start": 836.943,
+        "duration": 1.877
+    },
+    {
+        "text": "But that's a topic for another time.",
+        "start": 839.36,
+        "duration": 1.98
+    },
+    {
+        "text": "In his book The Art of Doing Science and Engineering, ",
+        "start": 842.5,
+        "duration": 2.849
+    },
+    {
+        "text": "Hamming is wonderfully candid about just how meandering his discovery of this code was.",
+        "start": 845.349,
+        "duration": 4.591
+    },
+    {
+        "text": "He first tried all sorts of different schemes involving organizing the bits ",
+        "start": 850.62,
+        "duration": 3.676
+    },
+    {
+        "text": "into parts of a higher dimensional lattice and strange things like this.",
+        "start": 854.296,
+        "duration": 3.484
+    },
+    {
+        "text": "The idea that it might be possible to get parity checks to conspire in a way that spells ",
+        "start": 858.3,
+        "duration": 4.357
+    },
+    {
+        "text": "out the position of an error only came to Hamming when he stepped back after a bunch of ",
+        "start": 862.657,
+        "duration": 4.309
+    },
+    {
+        "text": "other analysis and asked, okay, what is the most efficient I could conceivably be about ",
+        "start": 866.966,
+        "duration": 4.309
+    },
+    {
+        "text": "this?",
+        "start": 871.275,
+        "duration": 0.245
+    },
+    {
+        "text": "He was also candid about how important it was that parity checks were already on ",
+        "start": 872.62,
+        "duration": 4.247
+    },
+    {
+        "text": "his mind, which would have been way less common back in the 1940s than it is today.",
+        "start": 876.867,
+        "duration": 4.353
+    },
+    {
+        "text": "There are like half a dozen times throughout this book that he ",
+        "start": 881.92,
+        "duration": 3.125
+    },
+    {
+        "text": "references the Louis Pasteur quote, luck favors a prepared mind.",
+        "start": 885.045,
+        "duration": 3.175
+    },
+    {
+        "text": "Clever ideas often look deceptively simple in hindsight, ",
+        "start": 889.32,
+        "duration": 2.896
+    },
+    {
+        "text": "which makes them easy to underappreciate.",
+        "start": 892.216,
+        "duration": 2.084
+    },
+    {
+        "text": "Right now my honest hope is that Hamming codes, ",
+        "start": 894.96,
+        "duration": 2.557
+    },
+    {
+        "text": "or at least the possibility of such codes, feels almost obvious to you.",
+        "start": 897.517,
+        "duration": 3.783
+    },
+    {
+        "text": "But you shouldn't fool yourself into thinking that they actually are obvious, ",
+        "start": 901.66,
+        "duration": 3.692
+    },
+    {
+        "text": "because they definitely aren't.",
+        "start": 905.352,
+        "duration": 1.468
+    },
+    {
+        "text": "Part of the reason that clever ideas look deceptively easy is that we only ",
+        "start": 907.88,
+        "duration": 3.821
+    },
+    {
+        "text": "ever see the final result, cleaning up what was messy, ",
+        "start": 911.701,
+        "duration": 2.802
+    },
+    {
+        "text": "never mentioning all of the wrong turns, underselling just how vast the ",
+        "start": 914.503,
+        "duration": 3.669
+    },
+    {
+        "text": "space of explorable possibilities is at the start of a problem solving process, ",
+        "start": 918.172,
+        "duration": 4.076
+    },
+    {
+        "text": "all of that.",
+        "start": 922.248,
+        "duration": 0.612
+    },
+    {
+        "text": "But this is true in general.",
+        "start": 923.82,
+        "duration": 1.08
+    },
+    {
+        "text": "I think for some special inventions, there's a second, ",
+        "start": 924.9,
+        "duration": 2.884
+    },
+    {
+        "text": "deeper reason that we underappreciate them.",
+        "start": 927.784,
+        "duration": 2.256
+    },
+    {
+        "text": "Thinking of information in terms of bits had only really coalesced into a ",
+        "start": 930.84,
+        "duration": 3.772
+    },
+    {
+        "text": "full theory by 1948, with Claude Shannon's seminal paper on information theory.",
+        "start": 934.612,
+        "duration": 4.028
+    },
+    {
+        "text": "This was essentially concurrent with when Hamming developed his algorithm.",
+        "start": 939.28,
+        "duration": 3.26
+    },
+    {
+        "text": "This was the same foundational paper that showed, in a certain sense, ",
+        "start": 943.3,
+        "duration": 3.536
+    },
+    {
+        "text": "that efficient error correction is always possible, ",
+        "start": 946.836,
+        "duration": 2.628
+    },
+    {
+        "text": "no matter how high the probability of bit flips, at least in theory.",
+        "start": 949.464,
+        "duration": 3.436
+    },
+    {
+        "text": "Shannon and Hamming, by the way, shared an office in Bell Labs, ",
+        "start": 953.7,
+        "duration": 3.338
+    },
+    {
+        "text": "despite working on very different things, which hardly seems coincidental here.",
+        "start": 957.038,
+        "duration": 4.122
+    },
+    {
+        "text": "Fast forward several decades, and these days, many of us are ",
+        "start": 962.38,
+        "duration": 3.338
+    },
+    {
+        "text": "so immersed in thinking about bits and information that it's ",
+        "start": 965.718,
+        "duration": 3.338
+    },
+    {
+        "text": "easy to overlook just how distinct this way of thinking was.",
+        "start": 969.056,
+        "duration": 3.284
+    },
+    {
+        "text": "Ironically, the ideas that most profoundly shape the ways that a future generation ",
+        "start": 973.1,
+        "duration": 4.607
+    },
+    {
+        "text": "thinks will end up looking to that future generation simpler than they really are.",
+        "start": 977.707,
+        "duration": 4.553
+    }
+]

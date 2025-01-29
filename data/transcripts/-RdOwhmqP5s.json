@@ -1,0 +1,2137 @@
+[
+    {
+        "text": "You've seen the title, so you know this is leading to a certain fractal.",
+        "start": 2.46,
+        "duration": 3.12
+    },
+    {
+        "text": "And actually it's an infinite family of fractals.",
+        "start": 5.92,
+        "duration": 2.02
+    },
+    {
+        "text": "And yeah, it'll be one of those mind-bogglingly intricate ",
+        "start": 8.72,
+        "duration": 2.851
+    },
+    {
+        "text": "shapes that has infinite detail no matter how far you zoom in.",
+        "start": 11.571,
+        "duration": 3.049
+    },
+    {
+        "text": "But this is not really a video about generating some pretty picture for us to gawk at.",
+        "start": 14.76,
+        "duration": 4.18
+    },
+    {
+        "text": "Well, okay, maybe that's part of it, but the real story here has a much ",
+        "start": 19.06,
+        "duration": 3.181
+    },
+    {
+        "text": "more pragmatic starting point than the story behind a lot of other fractals.",
+        "start": 22.241,
+        "duration": 3.359
+    },
+    {
+        "text": "And more than that, the final images that we get to will become a lot more ",
+        "start": 26.18,
+        "duration": 3.784
+    },
+    {
+        "text": "meaningful if we make an effort to understand why, given what they represent, ",
+        "start": 29.964,
+        "duration": 3.936
+    },
+    {
+        "text": "they kind of have to look as complicated as they do, ",
+        "start": 33.9,
+        "duration": 2.674
+    },
+    {
+        "text": "and what this complexity reflects about an algorithm that is used all over ",
+        "start": 36.574,
+        "duration": 3.784
+    },
+    {
+        "text": "the place in engineering.",
+        "start": 40.358,
+        "duration": 1.262
+    },
+    {
+        "text": "The starting point here will be to assume that you have some kind of polynomial, ",
+        "start": 48.0,
+        "duration": 3.762
+    },
+    {
+        "text": "and that you want to know when it equals zero.",
+        "start": 51.762,
+        "duration": 2.138
+    },
+    {
+        "text": "For the one graphed here, you can visually see there's three different places ",
+        "start": 54.32,
+        "duration": 3.582
+    },
+    {
+        "text": "where it crosses the x-axis, and you can kind of eyeball what those values might be.",
+        "start": 57.902,
+        "duration": 3.858
+    },
+    {
+        "text": "We'd call those the roots of the polynomial.",
+        "start": 61.9,
+        "duration": 1.8
+    },
+    {
+        "text": "But how do you actually compute them exactly?",
+        "start": 64.26,
+        "duration": 2.04
+    },
+    {
+        "text": "Now this is the kind of question where if you're already bought into math, ",
+        "start": 67.44,
+        "duration": 2.793
+    },
+    {
+        "text": "maybe it's interesting enough in its own right to move forward.",
+        "start": 70.233,
+        "duration": 2.347
+    },
+    {
+        "text": "But if you just pull someone on the street aside and ask them this, ",
+        "start": 72.94,
+        "duration": 2.795
+    },
+    {
+        "text": "I mean, they're already falling asleep, because who cares?",
+        "start": 75.735,
+        "duration": 2.385
+    },
+    {
+        "text": "But the thing is, this kind of question comes up all the time in engineering, ",
+        "start": 78.82,
+        "duration": 3.676
+    },
+    {
+        "text": "where I'm personally most familiar with equations like this popping up is in the ",
+        "start": 82.496,
+        "duration": 3.817
+    },
+    {
+        "text": "setting of computer graphics, where polynomials are just littered all over the place.",
+        "start": 86.313,
+        "duration": 4.007
+    },
+    {
+        "text": "So it's not uncommon that when you're figuring out how a given pixel should be colored, ",
+        "start": 90.42,
+        "duration": 4.433
+    },
+    {
+        "text": "that somehow involves solving an equation that uses these polynomials.",
+        "start": 94.853,
+        "duration": 3.527
+    },
+    {
+        "text": "Here let me give you one fun example.",
+        "start": 99.48,
+        "duration": 1.4
+    },
+    {
+        "text": "When a computer renders text on the screen, those ",
+        "start": 101.16,
+        "duration": 2.91
+    },
+    {
+        "text": "fonts are typically not defined using pixel values.",
+        "start": 104.07,
+        "duration": 2.97
+    },
+    {
+        "text": "They're defined as a bunch of polynomial curves, ",
+        "start": 107.32,
+        "duration": 2.626
+    },
+    {
+        "text": "what are known in the business as Bezier curves.",
+        "start": 109.946,
+        "duration": 2.574
+    },
+    {
+        "text": "And any of you who've messed around with vector graphics, ",
+        "start": 113.4,
+        "duration": 2.628
+    },
+    {
+        "text": "maybe in some design software, would be well familiar with these kinds of curves.",
+        "start": 116.028,
+        "duration": 3.672
+    },
+    {
+        "text": "But to actually display one of them on the screen, ",
+        "start": 120.42,
+        "duration": 2.452
+    },
+    {
+        "text": "you need a way to tell each one of the pixels of your screen whether it ",
+        "start": 122.872,
+        "duration": 3.461
+    },
+    {
+        "text": "should be colored in or not.",
+        "start": 126.333,
+        "duration": 1.347
+    },
+    {
+        "text": "These curves can be displayed either with some kind of stroke width, ",
+        "start": 128.34,
+        "duration": 3.272
+    },
+    {
+        "text": "or if they enclose a region, some kind of fill for that region.",
+        "start": 131.612,
+        "duration": 2.988
+    },
+    {
+        "text": "But if you step back and you really think about it, ",
+        "start": 135.32,
+        "duration": 2.389
+    },
+    {
+        "text": "it's an interesting puzzle to figure out how each one of the pixels ",
+        "start": 137.709,
+        "duration": 3.126
+    },
+    {
+        "text": "knows whether it should be colored in or not, just based on the pure mathematical curve.",
+        "start": 140.835,
+        "duration": 4.045
+    },
+    {
+        "text": "I mean, take the case of stroke width.",
+        "start": 145.64,
+        "duration": 1.3
+    },
+    {
+        "text": "This comes down to understanding how far away a given pixel is from this pure ",
+        "start": 147.32,
+        "duration": 4.496
+    },
+    {
+        "text": "mathematical curve, which itself is some platonic ideal, it has zero width.",
+        "start": 151.816,
+        "duration": 4.324
+    },
+    {
+        "text": "You would think of it as a parametric curve that has some parameter t.",
+        "start": 156.7,
+        "duration": 3.22
+    },
+    {
+        "text": "Now one thing that you could do to figure out this distance ",
+        "start": 161.08,
+        "duration": 2.603
+    },
+    {
+        "text": "is to compute the distance between your pixel and a bunch of sample points on that curve, ",
+        "start": 163.683,
+        "duration": 3.905
+    },
+    {
+        "text": "and then figure out the smallest.",
+        "start": 167.588,
+        "duration": 1.432
+    },
+    {
+        "text": "But that's both inefficient and imprecise.",
+        "start": 169.82,
+        "duration": 2.16
+    },
+    {
+        "text": "Better is to get a little mathematical and acknowledge that this distance to the ",
+        "start": 172.46,
+        "duration": 4.1
+    },
+    {
+        "text": "curve at all the possible points is itself some smooth function of the parameter.",
+        "start": 176.56,
+        "duration": 4.1
+    },
+    {
+        "text": "And as it happens, the square of that distance will itself be a polynomial, ",
+        "start": 181.24,
+        "duration": 3.773
+    },
+    {
+        "text": "which makes it pretty nice to deal with.",
+        "start": 185.013,
+        "duration": 1.987
+    },
+    {
+        "text": "And if this were meant to be a full lesson on rendering vector graphics, ",
+        "start": 187.82,
+        "duration": 2.943
+    },
+    {
+        "text": "we could expand all that out and embrace the mess.",
+        "start": 190.763,
+        "duration": 2.017
+    },
+    {
+        "text": "But right now, the only salient point that I want to highlight is that in principle, ",
+        "start": 192.78,
+        "duration": 4.563
+    },
+    {
+        "text": "this function whose minimum you want to know is some polynomial.",
+        "start": 197.343,
+        "duration": 3.437
+    },
+    {
+        "text": "Finding this minimum, and hence determining how close the pixel is to the curve ",
+        "start": 201.58,
+        "duration": 3.651
+    },
+    {
+        "text": "and whether it should get filled in, is now just a classic calculus problem.",
+        "start": 205.231,
+        "duration": 3.469
+    },
+    {
+        "text": "What you do is figure out the slope of this function graph, ",
+        "start": 209.34,
+        "duration": 3.257
+    },
+    {
+        "text": "which is to say its derivative, again some polynomial, and you ask, ",
+        "start": 212.597,
+        "duration": 3.691
+    },
+    {
+        "text": "when does that equal zero?",
+        "start": 216.288,
+        "duration": 1.412
+    },
+    {
+        "text": "So, to actually carry out this seemingly simple task of just displaying a curve, ",
+        "start": 218.98,
+        "duration": 4.63
+    },
+    {
+        "text": "wouldn't it be nice if you had a systematic and general way to ",
+        "start": 223.61,
+        "duration": 3.602
+    },
+    {
+        "text": "figure out when a given polynomial equals zero?",
+        "start": 227.212,
+        "duration": 2.688
+    },
+    {
+        "text": "Of course, we could draw 100 other examples from 100 other disciplines, ",
+        "start": 230.96,
+        "duration": 3.574
+    },
+    {
+        "text": "I just want you to keep in mind that as we seek the roots of polynomials, ",
+        "start": 234.534,
+        "duration": 3.673
+    },
+    {
+        "text": "even though we always display it in a way that's cleanly abstracted away from ",
+        "start": 238.207,
+        "duration": 3.872
+    },
+    {
+        "text": "the messiness of any real-world problem, the task is hardly just an academic one.",
+        "start": 242.079,
+        "duration": 4.021
+    },
+    {
+        "text": "But again, ask yourself, how do you actually compute one of those roots?",
+        "start": 246.1,
+        "duration": 4.3
+    },
+    {
+        "text": "If whatever problem you're working on leads you to a quadratic function, ",
+        "start": 252.12,
+        "duration": 3.523
+    },
+    {
+        "text": "then happy days, you can use the quadratic formula that we all know and love.",
+        "start": 255.643,
+        "duration": 3.717
+    },
+    {
+        "text": "And as a fun side note, by the way, again relevant to root finding in computer graphics, ",
+        "start": 260.18,
+        "duration": 4.399
+    },
+    {
+        "text": "I once had a Pixar engineer give me the estimate that considering how many lights were ",
+        "start": 264.579,
+        "duration": 4.301
+    },
+    {
+        "text": "used in some of the scenes for the movie Coco, ",
+        "start": 268.88,
+        "duration": 2.323
+    },
+    {
+        "text": "and given the nature of some of these per-pixel calculations when polynomially defined ",
+        "start": 271.203,
+        "duration": 4.301
+    },
+    {
+        "text": "things like spheres are involved, the quadratic formula was easily used multiple ",
+        "start": 275.504,
+        "duration": 4.004
+    },
+    {
+        "text": "trillions of times in the production of that film.",
+        "start": 279.508,
+        "duration": 2.472
+    },
+    {
+        "text": "Now, when your problem leads you to a higher order polynomial, ",
+        "start": 283.42,
+        "duration": 2.862
+    },
+    {
+        "text": "things start to get trickier.",
+        "start": 286.282,
+        "duration": 1.318
+    },
+    {
+        "text": "For cubic polynomials, there is also a formula, ",
+        "start": 288.12,
+        "duration": 2.385
+    },
+    {
+        "text": "which Mathologer has done a wonderful video on, and there's even a quartic formula, ",
+        "start": 290.505,
+        "duration": 4.175
+    },
+    {
+        "text": "something that solves degree 4 polynomials, although honestly that one is ",
+        "start": 294.68,
+        "duration": 3.677
+    },
+    {
+        "text": "such a god-awful nightmare of a formula that essentially no one actually ",
+        "start": 298.357,
+        "duration": 3.629
+    },
+    {
+        "text": "uses it in practice.",
+        "start": 301.986,
+        "duration": 0.994
+    },
+    {
+        "text": "But after that, and I find this one of the most fascinating results in all of math, ",
+        "start": 304.06,
+        "duration": 4.499
+    },
+    {
+        "text": "you cannot have an analogous formula to solve polynomials that have a degree 5 or more.",
+        "start": 308.559,
+        "duration": 4.661
+    },
+    {
+        "text": "More specifically, for a pretty extensive set of standard functions, ",
+        "start": 314.02,
+        "duration": 3.403
+    },
+    {
+        "text": "you can prove that there is no possible way that you can combine those functions ",
+        "start": 317.423,
+        "duration": 3.996
+    },
+    {
+        "text": "together that allows you to plug in the coefficients of a quintic polynomial and ",
+        "start": 321.419,
+        "duration": 3.995
+    },
+    {
+        "text": "always get out a root.",
+        "start": 325.414,
+        "duration": 1.086
+    },
+    {
+        "text": "This is known as the unsolvability of the quintic, which is a whole other can of worms, ",
+        "start": 327.36,
+        "duration": 4.491
+    },
+    {
+        "text": "we can hopefully get into it some other time, but in practice it kind of doesn't matter, ",
+        "start": 331.851,
+        "duration": 4.542
+    },
+    {
+        "text": "because we have algorithms to approximate solutions to these kinds of ",
+        "start": 336.393,
+        "duration": 3.573
+    },
+    {
+        "text": "equations with whatever level of precision you want.",
+        "start": 339.966,
+        "duration": 2.654
+    },
+    {
+        "text": "A common one, and the main topic for you and me today, is Newton's method.",
+        "start": 343.24,
+        "duration": 3.86
+    },
+    {
+        "text": "And yes, this is what will lead us to the fractals, ",
+        "start": 347.62,
+        "duration": 2.376
+    },
+    {
+        "text": "but I want you to pay attention to just how innocent and benign the whole ",
+        "start": 349.996,
+        "duration": 3.381
+    },
+    {
+        "text": "procedure seems at first.",
+        "start": 353.377,
+        "duration": 1.143
+    },
+    {
+        "text": "The algorithm begins with a random guess, let's call it x0.",
+        "start": 355.24,
+        "duration": 3.62
+    },
+    {
+        "text": "Almost certainly, the output of your polynomial at x0 is not 0, ",
+        "start": 359.66,
+        "duration": 3.075
+    },
+    {
+        "text": "so you haven't found a solution, it's some other value visible as the height of this ",
+        "start": 362.735,
+        "duration": 4.084
+    },
+    {
+        "text": "graph at that point.",
+        "start": 366.819,
+        "duration": 0.961
+    },
+    {
+        "text": "So to improve the guess, the idea is to ask, when does a ",
+        "start": 368.38,
+        "duration": 3.296
+    },
+    {
+        "text": "linear approximation to the function around that value equal 0?",
+        "start": 371.676,
+        "duration": 3.644
+    },
+    {
+        "text": "In other words, if you were to draw a tangent line to the graph at this point, ",
+        "start": 376.02,
+        "duration": 3.695
+    },
+    {
+        "text": "when does that tangent line cross the x-axis?",
+        "start": 379.715,
+        "duration": 2.105
+    },
+    {
+        "text": "Now, assuming this tangent line is a decent approximation of the ",
+        "start": 383.1,
+        "duration": 3.172
+    },
+    {
+        "text": "function in the loose vicinity of some true root, ",
+        "start": 386.272,
+        "duration": 2.44
+    },
+    {
+        "text": "the place where this approximation equals 0 should take you closer to that true root.",
+        "start": 388.712,
+        "duration": 4.148
+    },
+    {
+        "text": "As long as you're able to take a derivative of this function, ",
+        "start": 393.9,
+        "duration": 2.68
+    },
+    {
+        "text": "and with polynomials you'll always be able to do that, ",
+        "start": 396.58,
+        "duration": 2.378
+    },
+    {
+        "text": "you can concretely compute the slope of this line.",
+        "start": 398.958,
+        "duration": 2.162
+    },
+    {
+        "text": "So here's where the active viewers among you might want to pause and ask, ",
+        "start": 402.1,
+        "duration": 2.867
+    },
+    {
+        "text": "how do you figure out the difference between the current guess and the improved guess?",
+        "start": 404.967,
+        "duration": 3.333
+    },
+    {
+        "text": "What is the size of this step?",
+        "start": 408.52,
+        "duration": 1.54
+    },
+    {
+        "text": "One way to think of it is to consider the fact that the slope of this tangent line, ",
+        "start": 410.9,
+        "duration": 4.277
+    },
+    {
+        "text": "its rise over run, looks like the height of this graph divided by the length of that step.",
+        "start": 415.177,
+        "duration": 4.583
+    },
+    {
+        "text": "But on the other hand, of course, the slope of the tangent ",
+        "start": 420.44,
+        "duration": 2.411
+    },
+    {
+        "text": "line is the derivative of the polynomial at that point.",
+        "start": 422.851,
+        "duration": 2.249
+    },
+    {
+        "text": "If we kind of rearrange this equation here, this gives you ",
+        "start": 425.84,
+        "duration": 2.827
+    },
+    {
+        "text": "a super concrete way that you can compute that step size.",
+        "start": 428.667,
+        "duration": 2.733
+    },
+    {
+        "text": "So the next guess, which we might call x1, is the previous guess, ",
+        "start": 432.14,
+        "duration": 3.988
+    },
+    {
+        "text": "adjusted by this step size.",
+        "start": 436.128,
+        "duration": 1.632
+    },
+    {
+        "text": "And after that, you can just repeat the process.",
+        "start": 438.4,
+        "duration": 2.58
+    },
+    {
+        "text": "You compute the value of this function, and the slope, at this new guess, ",
+        "start": 441.52,
+        "duration": 3.868
+    },
+    {
+        "text": "which gives you a new linear approximation, and then you make the next guess, ",
+        "start": 445.388,
+        "duration": 4.078
+    },
+    {
+        "text": "x2, wherever that tangent line crosses the x-axis.",
+        "start": 449.466,
+        "duration": 2.614
+    },
+    {
+        "text": "And then apply the same calculation to x2, and this gives you x3, ",
+        "start": 452.78,
+        "duration": 3.335
+    },
+    {
+        "text": "and before too long you find yourself extremely close to a true root, ",
+        "start": 456.115,
+        "duration": 3.538
+    },
+    {
+        "text": "pretty much as close as you could ever want to be.",
+        "start": 459.653,
+        "duration": 2.527
+    },
+    {
+        "text": "It's always worth gut checking that a formula actually makes sense, ",
+        "start": 464.76,
+        "duration": 3.099
+    },
+    {
+        "text": "and in this case, hopefully it does.",
+        "start": 467.859,
+        "duration": 1.641
+    },
+    {
+        "text": "If p of x is large, meaning the graph is really high, ",
+        "start": 469.84,
+        "duration": 2.785
+    },
+    {
+        "text": "you need to take a bigger step to get down to a root.",
+        "start": 472.625,
+        "duration": 2.735
+    },
+    {
+        "text": "But if p' of x is also large, meaning the graph is quite steep, ",
+        "start": 475.98,
+        "duration": 3.737
+    },
+    {
+        "text": "you should maybe ease off on just how big you make that step.",
+        "start": 479.717,
+        "duration": 3.563
+    },
+    {
+        "text": "Now as the name suggests, this was a method that Newton used to solve polynomial ",
+        "start": 484.52,
+        "duration": 3.954
+    },
+    {
+        "text": "expressions, but he sort of made it look a lot more complicated than it needed to be, ",
+        "start": 488.474,
+        "duration": 4.199
+    },
+    {
+        "text": "and a fellow named Joseph Rafson published a much simpler version, ",
+        "start": 492.673,
+        "duration": 3.272
+    },
+    {
+        "text": "more like what you and I are looking at now, so you also often hear this algorithm called ",
+        "start": 495.945,
+        "duration": 4.394
+    },
+    {
+        "text": "the Newton-Rafson method.",
+        "start": 500.339,
+        "duration": 1.221
+    },
+    {
+        "text": "These days it's a common topic in calculus classes.",
+        "start": 502.64,
+        "duration": 2.28
+    },
+    {
+        "text": "One nice little exercise to try to get a feel for it, by the way, ",
+        "start": 505.36,
+        "duration": 3.127
+    },
+    {
+        "text": "is to try using this method to approximate square roots by hand.",
+        "start": 508.487,
+        "duration": 3.033
+    },
+    {
+        "text": "But what most calculus students don't see, which is unfortunate, ",
+        "start": 513.179,
+        "duration": 3.362
+    },
+    {
+        "text": "is just how deep things can get when you let yourself play around with ",
+        "start": 516.541,
+        "duration": 3.673
+    },
+    {
+        "text": "this seemingly simple procedure and start kind of picking at some of its scabs.",
+        "start": 520.214,
+        "duration": 4.086
+    },
+    {
+        "text": "You see, while Newton's method works great if you start near a root, ",
+        "start": 525.38,
+        "duration": 3.382
+    },
+    {
+        "text": "where it converges really quickly, if your initial guess is far from a root, ",
+        "start": 528.762,
+        "duration": 3.776
+    },
+    {
+        "text": "it can have a couple foibles.",
+        "start": 532.538,
+        "duration": 1.422
+    },
+    {
+        "text": "For example, let's take the function we were just looking at, ",
+        "start": 534.92,
+        "duration": 2.813
+    },
+    {
+        "text": "but shift it upward, and play the same game with the same initial guess.",
+        "start": 537.733,
+        "duration": 3.267
+    },
+    {
+        "text": "Notice, how the sequence of new guesses we're getting kind of bounces ",
+        "start": 547.4,
+        "duration": 3.658
+    },
+    {
+        "text": "around the local minimum of this function sitting above the x-axis.",
+        "start": 551.058,
+        "duration": 3.502
+    },
+    {
+        "text": "This should kind of make sense, I mean, a linear approximation of the function ",
+        "start": 555.46,
+        "duration": 3.957
+    },
+    {
+        "text": "around these values all the way to the right is pretty much entirely unrelated ",
+        "start": 559.417,
+        "duration": 3.958
+    },
+    {
+        "text": "to the nature of the function around the one true root that it has off to the left, ",
+        "start": 563.375,
+        "duration": 4.208
+    },
+    {
+        "text": "so they're sort of giving you no useful information about that true root.",
+        "start": 567.583,
+        "duration": 3.657
+    },
+    {
+        "text": "It's only when this process just happens to throw the new guess ",
+        "start": 571.88,
+        "duration": 2.886
+    },
+    {
+        "text": "off far enough to the left, by chance, that the sequence of new ",
+        "start": 574.766,
+        "duration": 2.886
+    },
+    {
+        "text": "guesses does anything productive and actually approaches that true root.",
+        "start": 577.652,
+        "duration": 3.248
+    },
+    {
+        "text": "Where things get especially interesting is if ",
+        "start": 582.68,
+        "duration": 2.368
+    },
+    {
+        "text": "we ask about finding roots in the complex plane.",
+        "start": 585.048,
+        "duration": 2.472
+    },
+    {
+        "text": "Even if a polynomial like the one shown here has only a single real number root, ",
+        "start": 588.38,
+        "duration": 4.254
+    },
+    {
+        "text": "you'll always be able to factor this polynomial into five terms like ",
+        "start": 592.634,
+        "duration": 3.624
+    },
+    {
+        "text": "this if you allow these roots to potentially be complex numbers.",
+        "start": 596.258,
+        "duration": 3.362
+    },
+    {
+        "text": "This is the famous fundamental theorem of algebra.",
+        "start": 600.1,
+        "duration": 2.0
+    },
+    {
+        "text": "Now in the happy-go-lucky land of functions with real number inputs and real number ",
+        "start": 602.82,
+        "duration": 3.965
+    },
+    {
+        "text": "outputs, where you can picture the association between inputs and outputs as a graph, ",
+        "start": 606.785,
+        "duration": 4.061
+    },
+    {
+        "text": "Newton's method has this really nice visual meaning with tangent lines and intersecting ",
+        "start": 610.846,
+        "duration": 4.154
+    },
+    {
+        "text": "the x-axis.",
+        "start": 615.0,
+        "duration": 0.52
+    },
+    {
+        "text": "But if you want to allow these inputs to be any complex number, ",
+        "start": 616.1,
+        "duration": 3.156
+    },
+    {
+        "text": "which means our corresponding outputs might also be any complex number, ",
+        "start": 619.256,
+        "duration": 3.551
+    },
+    {
+        "text": "you can't think about tangent lines and graphs anymore.",
+        "start": 622.807,
+        "duration": 2.713
+    },
+    {
+        "text": "But the formula doesn't really care how you visualize it.",
+        "start": 626.2,
+        "duration": 2.9
+    },
+    {
+        "text": "You can still play the same game, starting with a random guess, ",
+        "start": 629.1,
+        "duration": 3.792
+    },
+    {
+        "text": "and evaluating the polynomial at this point, as well as its derivative, ",
+        "start": 632.892,
+        "duration": 4.268
+    },
+    {
+        "text": "then using this update rule to generate a new guess, ",
+        "start": 637.16,
+        "duration": 3.141
+    },
+    {
+        "text": "and hopefully that new guess is closer to the true root.",
+        "start": 640.301,
+        "duration": 3.319
+    },
+    {
+        "text": "But I do want to be clear, even if we can't visualize these steps with a tangent line, ",
+        "start": 645.46,
+        "duration": 4.327
+    },
+    {
+        "text": "it really is the same logic.",
+        "start": 649.787,
+        "duration": 1.393
+    },
+    {
+        "text": "We're figuring out where a linear approximation of the function around your guess would ",
+        "start": 651.18,
+        "duration": 5.057
+    },
+    {
+        "text": "equal zero, and then you use that zero of the linear approximation as your next guess.",
+        "start": 656.237,
+        "duration": 4.943
+    },
+    {
+        "text": "It's not like we're blindly applying the rule to ",
+        "start": 661.48,
+        "duration": 2.395
+    },
+    {
+        "text": "a new context with no reason to expect it to work.",
+        "start": 663.875,
+        "duration": 2.445
+    },
+    {
+        "text": "And indeed, with at least the one I'm showing here after a few iterations, ",
+        "start": 666.98,
+        "duration": 3.569
+    },
+    {
+        "text": "you can see that we land on a value whose corresponding output is essentially zero.",
+        "start": 670.549,
+        "duration": 3.951
+    },
+    {
+        "text": "Now here's the fun part.",
+        "start": 675.9,
+        "duration": 1.3
+    },
+    {
+        "text": "Let's apply this idea to many different possible initial guesses.",
+        "start": 677.2,
+        "duration": 3.66
+    },
+    {
+        "text": "For reference, I'll put up the five true roots of ",
+        "start": 681.78,
+        "duration": 2.428
+    },
+    {
+        "text": "this particular polynomial in the complex plane.",
+        "start": 684.208,
+        "duration": 2.332
+    },
+    {
+        "text": "With each iteration, each one of our little dots takes some step based on Newton's method.",
+        "start": 687.5,
+        "duration": 4.5
+    },
+    {
+        "text": "Most of the dots will quickly converge to one of the five true roots, ",
+        "start": 692.74,
+        "duration": 3.459
+    },
+    {
+        "text": "but there are some noticeable stragglers which seem to spend a while bouncing around.",
+        "start": 696.199,
+        "duration": 4.201
+    },
+    {
+        "text": "In particular, notice how the ones that are trapped on the positive real number line, ",
+        "start": 701.0,
+        "duration": 4.07
+    },
+    {
+        "text": "well, they look a little bit lost.",
+        "start": 705.07,
+        "duration": 1.61
+    },
+    {
+        "text": "And this is exactly what we already saw before for this same ",
+        "start": 707.2,
+        "duration": 2.744
+    },
+    {
+        "text": "polynomial when we were looking at the real number case with its graph.",
+        "start": 709.944,
+        "duration": 3.196
+    },
+    {
+        "text": "Now what I'm going to do is color each one of these dots based on ",
+        "start": 716.44,
+        "duration": 3.424
+    },
+    {
+        "text": "which of those five roots it ended up closest to, ",
+        "start": 719.864,
+        "duration": 2.594
+    },
+    {
+        "text": "and then we'll kind of roll back the clock so that every dot goes back ",
+        "start": 722.458,
+        "duration": 3.684
+    },
+    {
+        "text": "to where it started.",
+        "start": 726.142,
+        "duration": 1.038
+    },
+    {
+        "text": "Now as I've done it here, this isn't quite enough resolution to get the full story, ",
+        "start": 729.24,
+        "duration": 4.028
+    },
+    {
+        "text": "so let me show you what it would look like if we started with an even finer grid ",
+        "start": 733.268,
+        "duration": 3.885
+    },
+    {
+        "text": "of initial guesses and played the same game, applying Newton's method a whole ",
+        "start": 737.153,
+        "duration": 3.741
+    },
+    {
+        "text": "bunch of times, letting each root march forward, ",
+        "start": 740.894,
+        "duration": 2.35
+    },
+    {
+        "text": "coloring each dot based on what root it lands on, ",
+        "start": 743.244,
+        "duration": 2.398
+    },
+    {
+        "text": "then rolling back the clock to see where it originally came from.",
+        "start": 745.642,
+        "duration": 3.118
+    },
+    {
+        "text": "But even this isn't really a high enough resolution to appreciate the pattern.",
+        "start": 749.4,
+        "duration": 3.38
+    },
+    {
+        "text": "If we did this process for every single pixel on the plane, here's what you would get.",
+        "start": 753.18,
+        "duration": 5.2
+    },
+    {
+        "text": "And at this level of detail the color scheme is a little jarring to my eye at least, ",
+        "start": 760.16,
+        "duration": 3.879
+    },
+    {
+        "text": "so let me calm it down a little.",
+        "start": 764.039,
+        "duration": 1.461
+    },
+    {
+        "text": "Really whatever resolution I try to use to show this to you here could never possibly ",
+        "start": 766.32,
+        "duration": 4.762
+    },
+    {
+        "text": "be enough, because the finer details of the shape we get go on with endless complexity.",
+        "start": 771.082,
+        "duration": 4.818
+    },
+    {
+        "text": "But take a moment to think about what this is actually saying.",
+        "start": 781.76,
+        "duration": 2.82
+    },
+    {
+        "text": "It means that there are regions in the complex plane where if you slightly adjust that ",
+        "start": 784.58,
+        "duration": 4.383
+    },
+    {
+        "text": "seed value, you know, you just kind of bump it to the side by 1,1 millionth or 1,1 ",
+        "start": 788.963,
+        "duration": 4.182
+    },
+    {
+        "text": "trillionth, it can completely change which of the five true roots it ends up landing on.",
+        "start": 793.145,
+        "duration": 4.435
+    },
+    {
+        "text": "We saw some foreshadowing of this kind of chaos with the real graph and the problematic ",
+        "start": 798.4,
+        "duration": 4.432
+    },
+    {
+        "text": "guess shown earlier, but picturing all of this in the complex plane really shines a ",
+        "start": 802.832,
+        "duration": 4.232
+    },
+    {
+        "text": "light on just how unpredictable this kind of root finding algorithm can be, ",
+        "start": 807.064,
+        "duration": 3.828
+    },
+    {
+        "text": "and how there are whole swaths of initial values where this sort of unpredictability ",
+        "start": 810.892,
+        "duration": 4.282
+    },
+    {
+        "text": "will take place.",
+        "start": 815.174,
+        "duration": 0.806
+    },
+    {
+        "text": "Now if I grab one of these roots and change it around, ",
+        "start": 817.08,
+        "duration": 2.421
+    },
+    {
+        "text": "meaning that we're using a different polynomial for the process, ",
+        "start": 819.501,
+        "duration": 2.861
+    },
+    {
+        "text": "you can see how the resulting fractal pattern changes.",
+        "start": 822.362,
+        "duration": 2.378
+    },
+    {
+        "text": "And notice for example how the regions around a given root always have the same color, ",
+        "start": 825.54,
+        "duration": 4.375
+    },
+    {
+        "text": "since those are the points that are close enough to the root where this linear ",
+        "start": 829.915,
+        "duration": 3.973
+    },
+    {
+        "text": "approximation scheme works as a way of finding that root with no problem.",
+        "start": 833.888,
+        "duration": 3.672
+    },
+    {
+        "text": "All of the chaos seems to be happening at the boundaries between the regions.",
+        "start": 838.18,
+        "duration": 4.02
+    },
+    {
+        "text": "Remember that.",
+        "start": 842.72,
+        "duration": 0.6
+    },
+    {
+        "text": "And it seems like no matter where I place these roots, ",
+        "start": 844.18,
+        "duration": 2.438
+    },
+    {
+        "text": "those fractal boundaries are always there.",
+        "start": 846.618,
+        "duration": 1.862
+    },
+    {
+        "text": "It clearly wasn't just some one-off for the polynomial we happened to start with, ",
+        "start": 848.98,
+        "duration": 3.527
+    },
+    {
+        "text": "this seems to be a general fact for any given polynomial.",
+        "start": 852.507,
+        "duration": 2.453
+    },
+    {
+        "text": "Another facet we can tweak here just to better illustrate ",
+        "start": 856.8,
+        "duration": 2.584
+    },
+    {
+        "text": "what's going on is how many steps of Newton's method we're using.",
+        "start": 859.384,
+        "duration": 2.896
+    },
+    {
+        "text": "For example, if I had the computer just take zero steps, ",
+        "start": 862.98,
+        "duration": 2.718
+    },
+    {
+        "text": "meaning it just colors each point of the plane based on whatever root it's already ",
+        "start": 865.698,
+        "duration": 3.96
+    },
+    {
+        "text": "closest to, this is what we'd get.",
+        "start": 869.658,
+        "duration": 1.622
+    },
+    {
+        "text": "And this kind of diagram actually has a special name, it's called a Voronoi Diagram.",
+        "start": 871.66,
+        "duration": 3.4
+    },
+    {
+        "text": "And if we let each point of the plane take a single step of Newton's method, ",
+        "start": 876.06,
+        "duration": 3.953
+    },
+    {
+        "text": "and then color it based on what root that single step result is closest to, ",
+        "start": 880.013,
+        "duration": 3.903
+    },
+    {
+        "text": "here's what we would get.",
+        "start": 883.916,
+        "duration": 1.284
+    },
+    {
+        "text": "Similarly, if we allow for two steps, we get a slightly more intricate pattern, ",
+        "start": 890.18,
+        "duration": 4.184
+    },
+    {
+        "text": "and so on and so on, where the more steps you allow, ",
+        "start": 894.364,
+        "duration": 2.771
+    },
+    {
+        "text": "the more intricate an image you get, bringing us closer to the original fractal.",
+        "start": 897.135,
+        "duration": 4.185
+    },
+    {
+        "text": "And this is important, keep in mind that the true shape we're studying here is not any ",
+        "start": 901.86,
+        "duration": 4.13
+    },
+    {
+        "text": "one of these, it's the limit as we allow for an arbitrarily large number of iterations.",
+        "start": 905.99,
+        "duration": 4.13
+    },
+    {
+        "text": "At this point, there are so many questions we might ask.",
+        "start": 914.34,
+        "duration": 2.68
+    },
+    {
+        "text": "Maybe you want to try this out with some other polynomials, see how general it is, ",
+        "start": 917.46,
+        "duration": 3.854
+    },
+    {
+        "text": "or maybe you want to dig deeper into what dynamics are exactly possible with these ",
+        "start": 921.314,
+        "duration": 3.855
+    },
+    {
+        "text": "iterated points, or see if there's connections with some other pieces of math that have a ",
+        "start": 925.169,
+        "duration": 4.18
+    },
+    {
+        "text": "similar theme.",
+        "start": 929.349,
+        "duration": 0.651
+    },
+    {
+        "text": "But I think the most pertinent question should be something like, ",
+        "start": 930.9,
+        "duration": 3.388
+    },
+    {
+        "text": "what the **** is going on here?",
+        "start": 934.288,
+        "duration": 1.592
+    },
+    {
+        "text": "I mean, all we're doing here is repeatedly solving linear approximations.",
+        "start": 936.4,
+        "duration": 4.0
+    },
+    {
+        "text": "Why would that produce something that's so endlessly complicated?",
+        "start": 940.88,
+        "duration": 2.74
+    },
+    {
+        "text": "It almost feels like the underlying rule here just shouldn't ",
+        "start": 944.16,
+        "duration": 2.684
+    },
+    {
+        "text": "carry enough information to actually produce an image like this.",
+        "start": 946.844,
+        "duration": 2.816
+    },
+    {
+        "text": "And before seeing this, don't you think a reasonable initial guess might have ",
+        "start": 950.18,
+        "duration": 3.79
+    },
+    {
+        "text": "been that each seed value simply tends towards whichever root it's closest to?",
+        "start": 953.97,
+        "duration": 3.79
+    },
+    {
+        "text": "And in that case, you know, if you colored each point based on the root ",
+        "start": 958.32,
+        "duration": 3.235
+    },
+    {
+        "text": "it lands on and move it back to the original position, ",
+        "start": 961.555,
+        "duration": 2.471
+    },
+    {
+        "text": "the final image would look like one of these Voronoi diagrams with ",
+        "start": 964.026,
+        "duration": 3.01
+    },
+    {
+        "text": "straight-line boundaries.",
+        "start": 967.036,
+        "duration": 1.124
+    },
+    {
+        "text": "And since I referenced earlier the unsolvability of the quintic, ",
+        "start": 969.2,
+        "duration": 2.971
+    },
+    {
+        "text": "maybe you would wonder if the complexity here has anything to do with that.",
+        "start": 972.171,
+        "duration": 3.429
+    },
+    {
+        "text": "That would be cool, but they're essentially unrelated ideas.",
+        "start": 975.92,
+        "duration": 2.76
+    },
+    {
+        "text": "In fact, using only degree-5 polynomials so far might have been a little misleading.",
+        "start": 979.08,
+        "duration": 4.28
+    },
+    {
+        "text": "Watch what happens if we play the same game, but with a cubic polynomial, ",
+        "start": 984.0,
+        "duration": 3.542
+    },
+    {
+        "text": "with three roots somewhere in the complex plane.",
+        "start": 987.542,
+        "duration": 2.298
+    },
+    {
+        "text": "Notice how, again, while most points nestle into a root, ",
+        "start": 990.86,
+        "duration": 2.973
+    },
+    {
+        "text": "some of them are kind of flying all over the place more chaotically.",
+        "start": 993.833,
+        "duration": 3.547
+    },
+    {
+        "text": "In fact, those ones are the most noticeable ones in an animation like this, ",
+        "start": 998.04,
+        "duration": 3.049
+    },
+    {
+        "text": "with the ones going towards the roots just quietly nestled in in their ending points.",
+        "start": 1001.089,
+        "duration": 3.411
+    },
+    {
+        "text": "And again, if we stopped this at some number of iterations and we colored all the ",
+        "start": 1005.16,
+        "duration": 4.377
+    },
+    {
+        "text": "points based on what root they're closest to and roll back the clock, ",
+        "start": 1009.537,
+        "duration": 3.737
+    },
+    {
+        "text": "the relevant picture for all possible starting points forms this fractal pattern with ",
+        "start": 1013.274,
+        "duration": 4.591
+    },
+    {
+        "text": "infinite detail.",
+        "start": 1017.865,
+        "duration": 0.855
+    },
+    {
+        "text": "However, quadratic polynomials with only two roots are different.",
+        "start": 1025.839,
+        "duration": 3.541
+    },
+    {
+        "text": "In that case, each seed value does simply tend towards whichever root it's closest to, ",
+        "start": 1029.819,
+        "duration": 4.304
+    },
+    {
+        "text": "the way you might expect.",
+        "start": 1034.123,
+        "duration": 1.236
+    },
+    {
+        "text": "There is a little bit of meandering behavior from all the points that are an ",
+        "start": 1036.319,
+        "duration": 3.621
+    },
+    {
+        "text": "equal distance from each root, it's kind of like they're not able to decide ",
+        "start": 1039.94,
+        "duration": 3.573
+    },
+    {
+        "text": "which one to go to, but that's just a single line of points, ",
+        "start": 1043.513,
+        "duration": 2.868
+    },
+    {
+        "text": "and when we play the game of coloring, the diagram we end up with is decidedly ",
+        "start": 1046.381,
+        "duration": 3.714
+    },
+    {
+        "text": "more boring.",
+        "start": 1050.095,
+        "duration": 0.565
+    },
+    {
+        "text": "So something new seems to happen when you jump from 2 to 3, ",
+        "start": 1052.06,
+        "duration": 3.038
+    },
+    {
+        "text": "and the question is what, exactly?",
+        "start": 1055.098,
+        "duration": 1.722
+    },
+    {
+        "text": "And if you had asked me a month ago, I probably would have shrugged and just said, ",
+        "start": 1057.64,
+        "duration": 3.965
+    },
+    {
+        "text": "you know, math is what it is, sometimes the answers look simple, sometimes not, ",
+        "start": 1061.605,
+        "duration": 3.822
+    },
+    {
+        "text": "it's not always clear what it would mean to ask why in a setting like this, ",
+        "start": 1065.427,
+        "duration": 3.631
+    },
+    {
+        "text": "but I would have been wrong, there actually is a reason that we can give ",
+        "start": 1069.058,
+        "duration": 3.488
+    },
+    {
+        "text": "for why this image has to look as complicated as it does.",
+        "start": 1072.546,
+        "duration": 2.724
+    },
+    {
+        "text": "You see, there's a very peculiar property that we can prove this diagram must have.",
+        "start": 1075.93,
+        "duration": 4.26
+    },
+    {
+        "text": "Focus your attention on just one of the colored regions, ",
+        "start": 1080.85,
+        "duration": 2.794
+    },
+    {
+        "text": "say this blue one, in other words, the set of all points that ",
+        "start": 1083.644,
+        "duration": 3.04
+    },
+    {
+        "text": "eventually tend towards just one particular root of the polynomial.",
+        "start": 1086.684,
+        "duration": 3.286
+    },
+    {
+        "text": "Now consider the boundary of that region, which for the ",
+        "start": 1090.51,
+        "duration": 2.739
+    },
+    {
+        "text": "example shown on screen has this kind of nice threefold symmetry.",
+        "start": 1093.249,
+        "duration": 3.181
+    },
+    {
+        "text": "What's surprising is that if you look at any other color and consider its boundary, ",
+        "start": 1097.33,
+        "duration": 4.587
+    },
+    {
+        "text": "you get precisely the same set.",
+        "start": 1101.917,
+        "duration": 1.693
+    },
+    {
+        "text": "Now when I say the word boundary, you probably have an intuitive sense of what it means, ",
+        "start": 1105.45,
+        "duration": 3.884
+    },
+    {
+        "text": "but mathematicians have a pretty clever way to formalize it, ",
+        "start": 1109.334,
+        "duration": 2.663
+    },
+    {
+        "text": "and this makes it easier to reason about in the context of more wild sets like ",
+        "start": 1111.997,
+        "duration": 3.449
+    },
+    {
+        "text": "our fractal.",
+        "start": 1115.446,
+        "duration": 0.524
+    },
+    {
+        "text": "We say that a point is on the boundary of a set if when you draw ",
+        "start": 1116.43,
+        "duration": 3.517
+    },
+    {
+        "text": "a small circle centered at that point, no matter how small, ",
+        "start": 1119.947,
+        "duration": 3.246
+    },
+    {
+        "text": "it will always contain points that are both inside that set and outside.",
+        "start": 1123.193,
+        "duration": 3.897
+    },
+    {
+        "text": "So if you have a point that's on the interior, ",
+        "start": 1127.89,
+        "duration": 2.244
+    },
+    {
+        "text": "a small enough circle would eventually only contain points inside the set, ",
+        "start": 1130.134,
+        "duration": 3.582
+    },
+    {
+        "text": "and for a point on the exterior, a small enough circle contains no points ",
+        "start": 1133.716,
+        "duration": 3.534
+    },
+    {
+        "text": "of the set at all.",
+        "start": 1137.25,
+        "duration": 0.86
+    },
+    {
+        "text": "But when it's on the boundary, what it means to be on the ",
+        "start": 1138.61,
+        "duration": 2.8
+    },
+    {
+        "text": "boundary is that your tiny tiny circles will always contain both.",
+        "start": 1141.41,
+        "duration": 3.14
+    },
+    {
+        "text": "So looking back at our property, one way to read it is to say that if you draw a circle, ",
+        "start": 1145.41,
+        "duration": 4.976
+    },
+    {
+        "text": "no matter how small that circle, it either contains all of the colors, ",
+        "start": 1150.386,
+        "duration": 3.97
+    },
+    {
+        "text": "which happens when this shared boundary of the colors is inside that circle, ",
+        "start": 1154.356,
+        "duration": 4.306
+    },
+    {
+        "text": "or it contains just one color, and this happens when it's in the interior of one of ",
+        "start": 1158.662,
+        "duration": 4.697
+    },
+    {
+        "text": "the regions.",
+        "start": 1163.359,
+        "duration": 0.671
+    },
+    {
+        "text": "In particular, what this implies is you should never be able to find a ",
+        "start": 1167.05,
+        "duration": 3.481
+    },
+    {
+        "text": "circle that contains just two of the colors, since that would require that ",
+        "start": 1170.531,
+        "duration": 3.679
+    },
+    {
+        "text": "you have points on the boundary between two regions, but not all of them.",
+        "start": 1174.21,
+        "duration": 3.58
+    },
+    {
+        "text": "And before explaining where this fact actually comes from, ",
+        "start": 1178.95,
+        "duration": 2.727
+    },
+    {
+        "text": "it's fun to try just wrapping your mind around it a little bit.",
+        "start": 1181.677,
+        "duration": 2.913
+    },
+    {
+        "text": "You could imagine presenting this to someone as a kind of art puzzle, ",
+        "start": 1184.99,
+        "duration": 3.207
+    },
+    {
+        "text": "completely out of context, never mentioning Newton's method or anything like that, ",
+        "start": 1188.197,
+        "duration": 3.804
+    },
+    {
+        "text": "where you say that the challenge is to construct a picture with at least three colors, ",
+        "start": 1192.001,
+        "duration": 3.986
+    },
+    {
+        "text": "maybe we say red, green, and blue, so that the boundary of one color is the boundary ",
+        "start": 1195.987,
+        "duration": 3.895
+    },
+    {
+        "text": "of all of them.",
+        "start": 1199.882,
+        "duration": 0.688
+    },
+    {
+        "text": "So if you started with something simple like this, ",
+        "start": 1200.95,
+        "duration": 2.419
+    },
+    {
+        "text": "that clearly doesn't work because we have this whole line of points that are on the ",
+        "start": 1203.369,
+        "duration": 3.985
+    },
+    {
+        "text": "boundary of green and red, but not touching any blue, ",
+        "start": 1207.354,
+        "duration": 2.562
+    },
+    {
+        "text": "and likewise you have these other lines of disallowed points.",
+        "start": 1209.916,
+        "duration": 2.894
+    },
+    {
+        "text": "So to correct that, you might go and add some blue blobs along the boundary, ",
+        "start": 1213.63,
+        "duration": 3.897
+    },
+    {
+        "text": "and then likewise add some green blobs between the red and blue, ",
+        "start": 1217.527,
+        "duration": 3.291
+    },
+    {
+        "text": "and some red blobs between the green and blue, but of course, ",
+        "start": 1220.818,
+        "duration": 3.139
+    },
+    {
+        "text": "now the boundary of those blobs are a problem, for example, touching just blue and red, ",
+        "start": 1223.957,
+        "duration": 4.454
+    },
+    {
+        "text": "but no green.",
+        "start": 1228.411,
+        "duration": 0.659
+    },
+    {
+        "text": "So maybe you go and try to add even smaller blobs, ",
+        "start": 1229.63,
+        "duration": 2.527
+    },
+    {
+        "text": "with the relevant third color around those smaller boundaries to help try to correct.",
+        "start": 1232.157,
+        "duration": 4.213
+    },
+    {
+        "text": "And likewise you have to do this for every one of the blobs that you initially added.",
+        "start": 1237.31,
+        "duration": 3.86
+    },
+    {
+        "text": "But then all the boundaries of those tiny blobs are problems of their own, ",
+        "start": 1244.45,
+        "duration": 3.93
+    },
+    {
+        "text": "and you would have to somehow keep doing this process forever.",
+        "start": 1248.38,
+        "duration": 3.25
+    },
+    {
+        "text": "And if you look at Newton's fractal itself, this sort of blobs ",
+        "start": 1253.57,
+        "duration": 3.89
+    },
+    {
+        "text": "on blobs on blobs pattern seems to be exactly what it's doing.",
+        "start": 1257.46,
+        "duration": 3.83
+    },
+    {
+        "text": "The main thing I want you to notice is how this property implies you could ",
+        "start": 1266.55,
+        "duration": 3.916
+    },
+    {
+        "text": "never have a boundary which is smooth, or even partially smooth on some small segment, ",
+        "start": 1270.466,
+        "duration": 4.543
+    },
+    {
+        "text": "since any smooth segment would only be touching two colors.",
+        "start": 1275.009,
+        "duration": 3.081
+    },
+    {
+        "text": "Instead, the boundary has to consist entirely of sharp corners, so to speak.",
+        "start": 1278.79,
+        "duration": 4.36
+    },
+    {
+        "text": "So if you believe the property, it explains why the ",
+        "start": 1283.81,
+        "duration": 2.842
+    },
+    {
+        "text": "boundary remains rough no matter how far you zoom in.",
+        "start": 1286.652,
+        "duration": 2.898
+    },
+    {
+        "text": "And for those of you who are familiar with the concept of fractal dimension, ",
+        "start": 1290.17,
+        "duration": 3.46
+    },
+    {
+        "text": "you can measure the dimension of the particular boundary I'm showing you right now to be ",
+        "start": 1293.63,
+        "duration": 4.0
+    },
+    {
+        "text": "around 1.44.",
+        "start": 1297.63,
+        "duration": 0.54
+    },
+    {
+        "text": "Considering what our colors actually represent, ",
+        "start": 1299.89,
+        "duration": 2.225
+    },
+    {
+        "text": "remember this isn't just a picture for pictures' sake, ",
+        "start": 1302.115,
+        "duration": 2.55
+    },
+    {
+        "text": "think about what the property is really telling us.",
+        "start": 1304.665,
+        "duration": 2.365
+    },
+    {
+        "text": "It says that if you're near a sensitive point where some of the seed values go ",
+        "start": 1308.31,
+        "duration": 4.177
+    },
+    {
+        "text": "to one root but other seed values nearby would go to another root, ",
+        "start": 1312.487,
+        "duration": 3.543
+    },
+    {
+        "text": "then in fact every possible root has to be accessible from within that small neighborhood.",
+        "start": 1316.03,
+        "duration": 4.76
+    },
+    {
+        "text": "For any tiny little circle that you draw, either all of the points in that ",
+        "start": 1321.53,
+        "duration": 3.828
+    },
+    {
+        "text": "circle tend to just one root, or they tend to all of the roots, ",
+        "start": 1325.358,
+        "duration": 3.268
+    },
+    {
+        "text": "but there's never going to be anything in between, just tending to a subset of the roots.",
+        "start": 1328.626,
+        "duration": 4.544
+    },
+    {
+        "text": "For a little intuition, I found it enlightening to simply watch ",
+        "start": 1334.05,
+        "duration": 2.855
+    },
+    {
+        "text": "a cluster like the one I'm showing on screen undergo this process.",
+        "start": 1336.905,
+        "duration": 2.945
+    },
+    {
+        "text": "It starts off mostly sticking together, but at one iteration they all kind of explode ",
+        "start": 1340.43,
+        "duration": 4.978
+    },
+    {
+        "text": "outward, and after that it feels a lot more reasonable that any root is up for grabs.",
+        "start": 1345.408,
+        "duration": 4.922
+    },
+    {
+        "text": "And keep in mind I'm just showing you finitely many points, ",
+        "start": 1351.37,
+        "duration": 2.892
+    },
+    {
+        "text": "but in principle you would want to think about what happens ",
+        "start": 1354.262,
+        "duration": 2.893
+    },
+    {
+        "text": "to all uncountably infinitely many points inside some small disk.",
+        "start": 1357.155,
+        "duration": 3.135
+    },
+    {
+        "text": "This property also kind of explains why it's okay for things to look ",
+        "start": 1364.61,
+        "duration": 3.66
+    },
+    {
+        "text": "normal in the case of quadratic polynomials, with just two roots, ",
+        "start": 1368.27,
+        "duration": 3.502
+    },
+    {
+        "text": "because there a smooth boundary is fine, there's only two colors to touch anyway.",
+        "start": 1371.772,
+        "duration": 4.298
+    },
+    {
+        "text": "To be clear, it doesn't guarantee that the quadratic case would have a smooth boundary, ",
+        "start": 1376.83,
+        "duration": 4.38
+    },
+    {
+        "text": "it is perfectly possible to have a fractal boundary between two colors, ",
+        "start": 1381.21,
+        "duration": 3.584
+    },
+    {
+        "text": "it just looks like our Newton's method diagram is not doing anything more ",
+        "start": 1384.794,
+        "duration": 3.684
+    },
+    {
+        "text": "complicated than it needs to under the constraint of this strange boundary condition.",
+        "start": 1388.478,
+        "duration": 4.232
+    },
+    {
+        "text": "But of course all of this simply raises the question of why this bizarre boundary ",
+        "start": 1393.85,
+        "duration": 3.877
+    },
+    {
+        "text": "property would have to be true in the first place, where does it even come from?",
+        "start": 1397.727,
+        "duration": 3.783
+    },
+    {
+        "text": "For that I'd like to tell you about a field of math which studies this kind of question, ",
+        "start": 1402.45,
+        "duration": 3.778
+    },
+    {
+        "text": "it's called holomorphic dynamics.",
+        "start": 1406.228,
+        "duration": 1.402
+    },
+    {
+        "text": "And I think we've covered enough ground today, and there's certainly enough left to tell, ",
+        "start": 1408.41,
+        "duration": 3.686
+    },
+    {
+        "text": "so it makes sense to pull that out as a separate video.",
+        "start": 1412.096,
+        "duration": 2.254
+    },
+    {
+        "text": "To close things off here, there is something sort of funny to me about ",
+        "start": 1415.01,
+        "duration": 3.483
+    },
+    {
+        "text": "the fact that we call this Newton's fractal, despite the fact that ",
+        "start": 1418.493,
+        "duration": 3.287
+    },
+    {
+        "text": "Newton had no clue about any of this, and could never have possibly ",
+        "start": 1421.78,
+        "duration": 3.335
+    },
+    {
+        "text": "played with these images the way you and I can with modern technology.",
+        "start": 1425.115,
+        "duration": 3.435
+    },
+    {
+        "text": "And it happens a lot through math that people's names get ",
+        "start": 1429.05,
+        "duration": 2.55
+    },
+    {
+        "text": "attached to things well beyond what they could have dreamed of.",
+        "start": 1431.6,
+        "duration": 2.77
+    },
+    {
+        "text": "Hamiltonians are central to quantum mechanics, ",
+        "start": 1434.81,
+        "duration": 2.087
+    },
+    {
+        "text": "despite Hamilton knowing nothing about quantum mechanics.",
+        "start": 1436.897,
+        "duration": 2.533
+    },
+    {
+        "text": "Fourier himself never once computed a fast Fourier transform, the list goes on.",
+        "start": 1440.01,
+        "duration": 4.68
+    },
+    {
+        "text": "But this overextension of nomenclature carries with it what I think is an inspiring point.",
+        "start": 1444.69,
+        "duration": 5.26
+    },
+    {
+        "text": "It reflects how even the simple ideas, ones that could be discovered centuries ago, ",
+        "start": 1450.53,
+        "duration": 4.274
+    },
+    {
+        "text": "often hold within them some new angle or a new domain of relevance that ",
+        "start": 1454.804,
+        "duration": 3.665
+    },
+    {
+        "text": "can sit waiting to be discovered hundreds of years later.",
+        "start": 1458.469,
+        "duration": 2.901
+    },
+    {
+        "text": "It's not just that Newton had no idea about Newton's fractal.",
+        "start": 1461.91,
+        "duration": 3.24
+    },
+    {
+        "text": "There are probably many other facts about Newton's method, ",
+        "start": 1465.33,
+        "duration": 2.879
+    },
+    {
+        "text": "or about all sorts of math that may seem like old news, ",
+        "start": 1468.209,
+        "duration": 2.733
+    },
+    {
+        "text": "that come from questions that no one has thought to ask yet.",
+        "start": 1470.942,
+        "duration": 2.928
+    },
+    {
+        "text": "Questions that are just sitting there, waiting for someone, like you, to ask them.",
+        "start": 1474.29,
+        "duration": 4.18
+    },
+    {
+        "text": "For example, if you were to ask about whether this process we've been talking ",
+        "start": 1482.87,
+        "duration": 3.633
+    },
+    {
+        "text": "about today ever gets trapped in a cycle, it leads you to a surprising connection ",
+        "start": 1486.503,
+        "duration": 3.819
+    },
+    {
+        "text": "with the Mandelbrot set, and we'll talk a bit about that in the next part.",
+        "start": 1490.322,
+        "duration": 3.448
+    },
+    {
+        "text": "At the time that I'm posting this, that second part ",
+        "start": 1495.03,
+        "duration": 2.021
+    },
+    {
+        "text": "by the way is available as an early release to patrons.",
+        "start": 1497.051,
+        "duration": 2.139
+    },
+    {
+        "text": "I always like to give new content a little bit ",
+        "start": 1499.59,
+        "duration": 1.879
+    },
+    {
+        "text": "of time there to gather feedback and catch errors.",
+        "start": 1501.469,
+        "duration": 2.001
+    },
+    {
+        "text": "The finalized version should be out shortly.",
+        "start": 1503.95,
+        "duration": 1.66
+    },
+    {
+        "text": "On the topic of patrons, I do just want to say a ",
+        "start": 1506.47,
+        "duration": 1.854
+    },
+    {
+        "text": "quick thanks to everyone whose name is on the screen.",
+        "start": 1508.324,
+        "duration": 2.006
+    },
+    {
+        "text": "I know that in recent history new videos have been a little slow coming.",
+        "start": 1510.75,
+        "duration": 3.22
+    },
+    {
+        "text": "Part of this has to do with other projects that have been in the works.",
+        "start": 1514.41,
+        "duration": 2.34
+    },
+    {
+        "text": "Things I'm proud of, by the way, things like the Summer of Math Exposition, ",
+        "start": 1517.23,
+        "duration": 3.562
+    },
+    {
+        "text": "which was a surprising amount of work, to be honest, but so worth it given the outcome.",
+        "start": 1520.792,
+        "duration": 4.078
+    },
+    {
+        "text": "I will be talking all about that and announcing winners very shortly, so stay tuned.",
+        "start": 1525.11,
+        "duration": 3.92
+    },
+    {
+        "text": "I just want you to know that the plan for the foreseeable future is definitely to shift ",
+        "start": 1529.45,
+        "duration": 3.82
+    },
+    {
+        "text": "gears more wholeheartedly back to making new videos, ",
+        "start": 1533.27,
+        "duration": 2.3
+    },
+    {
+        "text": "and more than anything I want to say thanks for your continued support, ",
+        "start": 1535.57,
+        "duration": 3.126
+    },
+    {
+        "text": "even during times of trying a few new things.",
+        "start": 1538.696,
+        "duration": 1.954
+    },
+    {
+        "text": "It means a lot to me, it's what keeps the channel going, ",
+        "start": 1540.91,
+        "duration": 2.308
+    },
+    {
+        "text": "and I'll do my best to make the new lessons in the pipeline live up to your vote ",
+        "start": 1543.218,
+        "duration": 3.281
+    },
+    {
+        "text": "of confidence there.",
+        "start": 1546.499,
+        "duration": 0.811
+    }
+]

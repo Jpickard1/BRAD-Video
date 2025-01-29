@@ -1,0 +1,737 @@
+[
+    {
+        "text": "Hey everyone, where we last left off, I showed what linear ",
+        "start": 10.94,
+        "duration": 2.781
+    },
+    {
+        "text": "transformations look like and how to represent them using matrices.",
+        "start": 13.721,
+        "duration": 3.159
+    },
+    {
+        "text": "This is worth a quick recap because it's just really important, ",
+        "start": 18.32,
+        "duration": 2.834
+    },
+    {
+        "text": "but of course if this feels like more than just a recap, go back and watch the full video.",
+        "start": 21.154,
+        "duration": 3.986
+    },
+    {
+        "text": "Technically speaking, linear transformations are functions with vectors ",
+        "start": 25.78,
+        "duration": 3.797
+    },
+    {
+        "text": "as inputs and vectors as outputs, but I showed last time how we can think ",
+        "start": 29.577,
+        "duration": 3.903
+    },
+    {
+        "text": "about them visually as smooshing around space in such a way that grid ",
+        "start": 33.48,
+        "duration": 3.691
+    },
+    {
+        "text": "lines stay parallel and evenly spaced, and so that the origin remains fixed.",
+        "start": 37.171,
+        "duration": 4.009
+    },
+    {
+        "text": "The key takeaway was that a linear transformation is completely determined by where it ",
+        "start": 41.82,
+        "duration": 4.815
+    },
+    {
+        "text": "takes the basis vectors of the space, which for two dimensions means i-hat and j-hat.",
+        "start": 46.635,
+        "duration": 4.705
+    },
+    {
+        "text": "This is because any other vector could be described ",
+        "start": 51.34,
+        "duration": 3.151
+    },
+    {
+        "text": "as a linear combination of those basis vectors.",
+        "start": 54.491,
+        "duration": 2.849
+    },
+    {
+        "text": "A vector with coordinates x, y is x times i-hat plus y times j-hat.",
+        "start": 57.94,
+        "duration": 4.4
+    },
+    {
+        "text": "After going through the transformation, this property that grid ",
+        "start": 63.46,
+        "duration": 3.103
+    },
+    {
+        "text": "lines remain parallel and evenly spaced has a wonderful consequence.",
+        "start": 66.563,
+        "duration": 3.297
+    },
+    {
+        "text": "The place where your vector lands will be x times the transformed ",
+        "start": 70.5,
+        "duration": 3.612
+    },
+    {
+        "text": "version of i-hat plus y times the transformed version of j-hat.",
+        "start": 74.112,
+        "duration": 3.448
+    },
+    {
+        "text": "This means if you keep a record of the coordinates where i-hat lands and the ",
+        "start": 78.24,
+        "duration": 4.442
+    },
+    {
+        "text": "coordinates where j-hat lands, you can compute that a vector which starts at x, ",
+        "start": 82.682,
+        "duration": 4.615
+    },
+    {
+        "text": "y must land on x times the new coordinates of i-hat plus y times the new coordinates ",
+        "start": 87.297,
+        "duration": 4.903
+    },
+    {
+        "text": "of j-hat.",
+        "start": 92.2,
+        "duration": 0.52
+    },
+    {
+        "text": "The convention is to record the coordinates of where i-hat and j-hat ",
+        "start": 93.56,
+        "duration": 3.858
+    },
+    {
+        "text": "land as the columns of a matrix, and to define this sum of the scaled ",
+        "start": 97.418,
+        "duration": 3.915
+    },
+    {
+        "text": "versions of those columns by x and y to be matrix-vector multiplication.",
+        "start": 101.333,
+        "duration": 4.027
+    },
+    {
+        "text": "In this way, a matrix represents a specific linear transformation, ",
+        "start": 106.05,
+        "duration": 4.082
+    },
+    {
+        "text": "and multiplying a matrix by a vector is what it means ",
+        "start": 110.132,
+        "duration": 3.291
+    },
+    {
+        "text": "computationally to apply that transformation to that vector.",
+        "start": 113.423,
+        "duration": 3.657
+    },
+    {
+        "text": "Alright, recap over, on to the new stuff.",
+        "start": 118.8,
+        "duration": 2.08
+    },
+    {
+        "text": "Oftentimes, you find yourself wanting to describe the ",
+        "start": 121.6,
+        "duration": 2.65
+    },
+    {
+        "text": "effects of applying one transformation and then another.",
+        "start": 124.25,
+        "duration": 2.75
+    },
+    {
+        "text": "For example, maybe you want to describe what happens when you first ",
+        "start": 127.62,
+        "duration": 3.507
+    },
+    {
+        "text": "rotate the plane 90 degrees counterclockwise, then apply a shear.",
+        "start": 131.127,
+        "duration": 3.353
+    },
+    {
+        "text": "The overall effect here, from start to finish, ",
+        "start": 135.26,
+        "duration": 2.519
+    },
+    {
+        "text": "is another linear transformation, distinct from the rotation and the shear.",
+        "start": 137.779,
+        "duration": 4.021
+    },
+    {
+        "text": "This new linear transformation is commonly called the ",
+        "start": 142.28,
+        "duration": 2.838
+    },
+    {
+        "text": "composition of the two separate transformations we applied.",
+        "start": 145.118,
+        "duration": 3.102
+    },
+    {
+        "text": "And like any linear transformation, it can be described ",
+        "start": 148.92,
+        "duration": 3.202
+    },
+    {
+        "text": "with a matrix all of its own by following i-hat and j-hat.",
+        "start": 152.122,
+        "duration": 3.318
+    },
+    {
+        "text": "In this example, the ultimate landing spot for i-hat after both transformations is 1,1, ",
+        "start": 156.02,
+        "duration": 5.241
+    },
+    {
+        "text": "so let's make that the first column of a matrix.",
+        "start": 161.261,
+        "duration": 2.859
+    },
+    {
+        "text": "Likewise, j-hat ultimately ends up at the location negative 1,0, ",
+        "start": 164.96,
+        "duration": 3.969
+    },
+    {
+        "text": "so we make that the second column of the matrix.",
+        "start": 168.929,
+        "duration": 2.931
+    },
+    {
+        "text": "This new matrix captures the overall effect of applying a rotation then a shear, ",
+        "start": 172.68,
+        "duration": 5.046
+    },
+    {
+        "text": "but as one single action, rather than two successive ones.",
+        "start": 177.726,
+        "duration": 3.614
+    },
+    {
+        "text": "Here's one way to think about that new matrix.",
+        "start": 183.04,
+        "duration": 1.84
+    },
+    {
+        "text": "If you were to take some vector and pump it through the rotation, then the shear, ",
+        "start": 185.42,
+        "duration": 4.535
+    },
+    {
+        "text": "the long way to compute where it ends up is to first multiply it on the left by the ",
+        "start": 189.955,
+        "duration": 4.646
+    },
+    {
+        "text": "rotation matrix, then take whatever you get and multiply that on the left by the shear ",
+        "start": 194.601,
+        "duration": 4.811
+    },
+    {
+        "text": "matrix.",
+        "start": 199.412,
+        "duration": 0.388
+    },
+    {
+        "text": "This is, numerically speaking, what it means to ",
+        "start": 200.46,
+        "duration": 2.8
+    },
+    {
+        "text": "apply a rotation then a shear to a given vector.",
+        "start": 203.26,
+        "duration": 2.8
+    },
+    {
+        "text": "But whatever you get should be the same as just applying this new composition matrix ",
+        "start": 206.8,
+        "duration": 4.618
+    },
+    {
+        "text": "that we just found by that same vector, no matter what vector you chose, ",
+        "start": 211.418,
+        "duration": 3.966
+    },
+    {
+        "text": "since this new matrix is supposed to capture the same overall effect as the rotation ",
+        "start": 215.384,
+        "duration": 4.618
+    },
+    {
+        "text": "then shear action.",
+        "start": 220.002,
+        "duration": 0.978
+    },
+    {
+        "text": "Based on how things are written down here, I think it's reasonable to ",
+        "start": 222.48,
+        "duration": 3.377
+    },
+    {
+        "text": "call this new matrix the product of the original two matrices, don't you?",
+        "start": 225.857,
+        "duration": 3.523
+    },
+    {
+        "text": "We can think about how to compute that product more generally in just a moment, ",
+        "start": 230.42,
+        "duration": 3.556
+    },
+    {
+        "text": "but it's way too easy to get lost in the forest of numbers.",
+        "start": 233.976,
+        "duration": 2.624
+    },
+    {
+        "text": "Always remember that multiplying two matrices like this has the ",
+        "start": 236.6,
+        "duration": 3.9
+    },
+    {
+        "text": "geometric meaning of applying one transformation then another.",
+        "start": 240.5,
+        "duration": 3.78
+    },
+    {
+        "text": "One thing that's kind of weird here is that this has us reading from right to left.",
+        "start": 245.86,
+        "duration": 3.8
+    },
+    {
+        "text": "You first apply the transformation represented by the matrix on the right, ",
+        "start": 250.04,
+        "duration": 3.408
+    },
+    {
+        "text": "then you apply the transformation represented by the matrix on the left.",
+        "start": 253.448,
+        "duration": 3.272
+    },
+    {
+        "text": "This stems from function notation, since we write functions on the left of variables, ",
+        "start": 257.399,
+        "duration": 4.126
+    },
+    {
+        "text": "so every time you compose two functions, you always have to read it right to left.",
+        "start": 261.525,
+        "duration": 3.935
+    },
+    {
+        "text": "Good news for the Hebrew readers, bad news for the rest of us.",
+        "start": 265.92,
+        "duration": 3.06
+    },
+    {
+        "text": "Let's look at another example.",
+        "start": 269.88,
+        "duration": 1.22
+    },
+    {
+        "text": "Take the matrix with columns 1,1 and negative 2,0, whose transformation looks like this.",
+        "start": 271.76,
+        "duration": 5.1
+    },
+    {
+        "text": "And let's call it M1.",
+        "start": 277.98,
+        "duration": 1.08
+    },
+    {
+        "text": "Next, take the matrix with columns 0,1 and 2,0, whose transformation looks like this.",
+        "start": 280.1,
+        "duration": 5.6
+    },
+    {
+        "text": "And let's call that guy M2.",
+        "start": 287.52,
+        "duration": 1.72
+    },
+    {
+        "text": "The total effect of applying M1 then M2 gives us a new transformation, ",
+        "start": 289.92,
+        "duration": 4.26
+    },
+    {
+        "text": "so let's find its matrix.",
+        "start": 294.18,
+        "duration": 1.5
+    },
+    {
+        "text": "But this time, let's see if we can do it without watching the animations, ",
+        "start": 296.28,
+        "duration": 4.185
+    },
+    {
+        "text": "and instead just using the numerical entries in each matrix.",
+        "start": 300.465,
+        "duration": 3.395
+    },
+    {
+        "text": "First, we need to figure out where i-hat goes.",
+        "start": 304.74,
+        "duration": 2.4
+    },
+    {
+        "text": "After applying M1, the new coordinates of i-hat, ",
+        "start": 308.04,
+        "duration": 3.443
+    },
+    {
+        "text": "by definition, are given by that first column of M1, namely 1,1.",
+        "start": 311.483,
+        "duration": 4.497
+    },
+    {
+        "text": "To see what happens after applying M2, multiply the matrix for M2 by that vector 1,1.",
+        "start": 316.78,
+        "duration": 6.72
+    },
+    {
+        "text": "Working it out, the way I described last video, you'll get the vector 2,1.",
+        "start": 325.3,
+        "duration": 4.58
+    },
+    {
+        "text": "This will be the first column of the composition matrix.",
+        "start": 330.7,
+        "duration": 2.4
+    },
+    {
+        "text": "Likewise, to follow j-hat, the second column of ",
+        "start": 334.52,
+        "duration": 3.01
+    },
+    {
+        "text": "M1 tells us that it first lands on negative 2,0.",
+        "start": 337.53,
+        "duration": 3.01
+    },
+    {
+        "text": "Then, when we apply M2 to that vector, you can work out the matrix-vector product ",
+        "start": 342.7,
+        "duration": 6.327
+    },
+    {
+        "text": "to get 0, negative 2, which becomes the second column of our composition matrix.",
+        "start": 349.027,
+        "duration": 6.173
+    },
+    {
+        "text": "Let me talk through that same process again, but this time I'll show variable entries ",
+        "start": 356.64,
+        "duration": 4.188
+    },
+    {
+        "text": "in each matrix, just to show that the same line of reasoning works for any matrices.",
+        "start": 360.828,
+        "duration": 4.092
+    },
+    {
+        "text": "This is more symbol-heavy and will require some more room, ",
+        "start": 365.54,
+        "duration": 2.722
+    },
+    {
+        "text": "but it should be pretty satisfying for anyone who has previously been taught matrix ",
+        "start": 368.262,
+        "duration": 3.875
+    },
+    {
+        "text": "multiplication the more rote way.",
+        "start": 372.137,
+        "duration": 1.523
+    },
+    {
+        "text": "To follow where i-hat goes, start by looking at the first column of ",
+        "start": 374.46,
+        "duration": 3.324
+    },
+    {
+        "text": "the matrix on the right, since this is where i-hat initially lands.",
+        "start": 377.784,
+        "duration": 3.276
+    },
+    {
+        "text": "Multiplying that column by the matrix on the left is how you can tell where the ",
+        "start": 382.0,
+        "duration": 4.176
+    },
+    {
+        "text": "intermediate version of i-hat ends up after applying the second transformation.",
+        "start": 386.176,
+        "duration": 4.124
+    },
+    {
+        "text": "So the first column of the composition matrix will always ",
+        "start": 391.62,
+        "duration": 3.055
+    },
+    {
+        "text": "equal the left matrix times the first column of the right matrix.",
+        "start": 394.675,
+        "duration": 3.425
+    },
+    {
+        "text": "Likewise, j-hat will always initially land on the second column of the right matrix.",
+        "start": 402.16,
+        "duration": 4.98
+    },
+    {
+        "text": "So multiplying the left matrix by this second column will give its final location, ",
+        "start": 408.94,
+        "duration": 4.657
+    },
+    {
+        "text": "and hence that's the second column of the composition matrix.",
+        "start": 413.597,
+        "duration": 3.423
+    },
+    {
+        "text": "Notice there's a lot of symbols here, and it's common to be taught this formula as ",
+        "start": 420.62,
+        "duration": 4.184
+    },
+    {
+        "text": "something to memorize, along with a certain algorithmic process to help remember it.",
+        "start": 424.804,
+        "duration": 4.236
+    },
+    {
+        "text": "But I really do think that before memorizing that process, ",
+        "start": 429.16,
+        "duration": 2.977
+    },
+    {
+        "text": "you should get in the habit of thinking about what matrix ",
+        "start": 432.137,
+        "duration": 2.927
+    },
+    {
+        "text": "multiplication really represents, applying one transformation after another.",
+        "start": 435.064,
+        "duration": 3.836
+    },
+    {
+        "text": "Trust me, this will give you a much better conceptual framework that ",
+        "start": 439.62,
+        "duration": 3.268
+    },
+    {
+        "text": "makes the properties of matrix multiplication much easier to understand.",
+        "start": 442.888,
+        "duration": 3.412
+    },
+    {
+        "text": "For example, here's a question.",
+        "start": 447.06,
+        "duration": 1.3
+    },
+    {
+        "text": "Does it matter what order we put the two matrices in when we multiply them?",
+        "start": 448.88,
+        "duration": 3.96
+    },
+    {
+        "text": "Well, let's think through a simple example, like the one from earlier.",
+        "start": 453.62,
+        "duration": 3.38
+    },
+    {
+        "text": "Take a shear, which fixes i-hat and smooshes j-hat over to the right, ",
+        "start": 457.64,
+        "duration": 3.816
+    },
+    {
+        "text": "and a 90 degree rotation.",
+        "start": 461.456,
+        "duration": 1.364
+    },
+    {
+        "text": "If you first do the shear, then rotate, we can see that ",
+        "start": 463.6,
+        "duration": 3.713
+    },
+    {
+        "text": "i-hat ends up at 0,1 and j-hat ends up at negative 1,1.",
+        "start": 467.313,
+        "duration": 3.647
+    },
+    {
+        "text": "Both are generally pointing close together.",
+        "start": 471.32,
+        "duration": 1.74
+    },
+    {
+        "text": "If you first rotate, then do the shear, i-hat ends up over at 1,1, ",
+        "start": 473.86,
+        "duration": 4.541
+    },
+    {
+        "text": "and j-hat is off in a different direction at negative 1,0, and they're pointing, ",
+        "start": 478.401,
+        "duration": 5.492
+    },
+    {
+        "text": "you know, farther apart.",
+        "start": 483.893,
+        "duration": 1.627
+    },
+    {
+        "text": "The overall effect here is clearly different, so evidently, order totally does matter.",
+        "start": 486.38,
+        "duration": 4.28
+    },
+    {
+        "text": "Notice, by thinking in terms of transformations, ",
+        "start": 492.2,
+        "duration": 2.342
+    },
+    {
+        "text": "that's the kind of thing that you can do in your head by visualizing.",
+        "start": 494.542,
+        "duration": 3.298
+    },
+    {
+        "text": "No matrix multiplication necessary.",
+        "start": 498.22,
+        "duration": 1.68
+    },
+    {
+        "text": "I remember when I first took linear algebra, there was this one homework ",
+        "start": 501.48,
+        "duration": 3.82
+    },
+    {
+        "text": "problem that asked us to prove that matrix multiplication is associative.",
+        "start": 505.3,
+        "duration": 3.82
+    },
+    {
+        "text": "This means that if you have three matrices, A, B, and C, ",
+        "start": 509.56,
+        "duration": 3.308
+    },
+    {
+        "text": "and you multiply them all together, it shouldn't matter if you first compute A times B, ",
+        "start": 512.868,
+        "duration": 5.107
+    },
+    {
+        "text": "then multiply the result by C, or if you first multiply B times C, ",
+        "start": 517.975,
+        "duration": 3.889
+    },
+    {
+        "text": "then multiply that result by A on the left.",
+        "start": 521.864,
+        "duration": 2.496
+    },
+    {
+        "text": "In other words, it doesn't matter where you put the parentheses.",
+        "start": 524.94,
+        "duration": 2.46
+    },
+    {
+        "text": "Now, if you try to work through this numerically, like I did back then, ",
+        "start": 528.38,
+        "duration": 3.878
+    },
+    {
+        "text": "it's horrible, just horrible, and unenlightening for that matter.",
+        "start": 532.258,
+        "duration": 3.502
+    },
+    {
+        "text": "But when you think about matrix multiplication as applying ",
+        "start": 535.76,
+        "duration": 3.367
+    },
+    {
+        "text": "one transformation after another, this property is just trivial.",
+        "start": 539.127,
+        "duration": 3.653
+    },
+    {
+        "text": "Can you see why?",
+        "start": 543.3,
+        "duration": 0.7
+    },
+    {
+        "text": "What it's saying is that if you first apply C, then B, ",
+        "start": 544.86,
+        "duration": 3.865
+    },
+    {
+        "text": "then A, it's the same as applying C, then B, then A.",
+        "start": 548.725,
+        "duration": 3.655
+    },
+    {
+        "text": "I mean, there's nothing to prove.",
+        "start": 552.82,
+        "duration": 1.56
+    },
+    {
+        "text": "You're just applying the same three things one after the other, all in the same order.",
+        "start": 554.54,
+        "duration": 4.12
+    },
+    {
+        "text": "This might feel like cheating, but it's not.",
+        "start": 559.46,
+        "duration": 2.08
+    },
+    {
+        "text": "This is an honest-to-goodness proof that matrix multiplication is associative, ",
+        "start": 561.54,
+        "duration": 4.323
+    },
+    {
+        "text": "and even better than that, it's a good explanation for why that property should be true.",
+        "start": 565.863,
+        "duration": 4.817
+    },
+    {
+        "text": "I really do encourage you to play around more with this idea, ",
+        "start": 571.56,
+        "duration": 2.995
+    },
+    {
+        "text": "imagining two different transformations, thinking about what happens when ",
+        "start": 574.555,
+        "duration": 3.575
+    },
+    {
+        "text": "you apply one after the other, and then working out the matrix product numerically.",
+        "start": 578.13,
+        "duration": 4.01
+    },
+    {
+        "text": "Trust me, this is the kind of playtime that really makes the idea sink in.",
+        "start": 582.6,
+        "duration": 3.84
+    },
+    {
+        "text": "In the next video, I'll start talking about extending ",
+        "start": 587.2,
+        "duration": 2.513
+    },
+    {
+        "text": "these ideas beyond just two dimensions. See you then!",
+        "start": 589.713,
+        "duration": 2.467
+    }
+]

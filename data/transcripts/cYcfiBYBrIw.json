@@ -1,0 +1,7102 @@
+[
+    {
+        "text": "happy that he is here today and talking",
+        "start": 0.0,
+        "duration": 4.71
+    },
+    {
+        "text": "to us about genomic networks epistatic",
+        "start": 2.76,
+        "duration": 4.65
+    },
+    {
+        "text": "sun cancer thank you thank thank you and",
+        "start": 4.71,
+        "duration": 5.24
+    },
+    {
+        "text": "thanks for the invitation to come and",
+        "start": 7.41,
+        "duration": 7.38
+    },
+    {
+        "text": "talk to you guys I appreciate everybody",
+        "start": 9.95,
+        "duration": 7.839
+    },
+    {
+        "text": "coming out for the talk and especially",
+        "start": 14.79,
+        "duration": 4.71
+    },
+    {
+        "text": "people that braved the cold to come",
+        "start": 17.789,
+        "duration": 6.691
+    },
+    {
+        "text": "across campus if you did that so my talk",
+        "start": 19.5,
+        "duration": 7.199
+    },
+    {
+        "text": "today I guess is gonna be kind of",
+        "start": 24.48,
+        "duration": 4.32
+    },
+    {
+        "text": "applied bioinformatics in the sense that",
+        "start": 26.699,
+        "duration": 3.451
+    },
+    {
+        "text": "there's not gonna be a whole lot of",
+        "start": 28.8,
+        "duration": 5.009
+    },
+    {
+        "text": "bioinformatics per se in my talk instead",
+        "start": 30.15,
+        "duration": 8.069
+    },
+    {
+        "text": "I'm going to talk about some this",
+        "start": 33.809,
+        "duration": 8.151
+    },
+    {
+        "text": "concept of epistasis and how we can",
+        "start": 38.219,
+        "duration": 8.011
+    },
+    {
+        "text": "apply it how we can compute across large",
+        "start": 41.96,
+        "duration": 9.64
+    },
+    {
+        "text": "datasets identify potential interactions",
+        "start": 46.23,
+        "duration": 7.32
+    },
+    {
+        "text": "between genes and I'll define up a",
+        "start": 51.6,
+        "duration": 4.41
+    },
+    {
+        "text": "stasis a little bit more formally in a",
+        "start": 53.55,
+        "duration": 7.189
+    },
+    {
+        "text": "moment and how we can use it to identify",
+        "start": 56.01,
+        "duration": 8.07
+    },
+    {
+        "text": "new interactions in among genes in",
+        "start": 60.739,
+        "duration": 6.071
+    },
+    {
+        "text": "cancer and how that relates to cancer",
+        "start": 64.08,
+        "duration": 4.039
+    },
+    {
+        "text": "progression and",
+        "start": 66.81,
+        "duration": 5.22
+    },
+    {
+        "text": "even potential clinical consequences I",
+        "start": 68.119,
+        "duration": 7.331
+    },
+    {
+        "text": "wish I could remember the talk from the",
+        "start": 72.03,
+        "duration": 5.76
+    },
+    {
+        "text": "conte Center because that was the",
+        "start": 75.45,
+        "duration": 6.33
+    },
+    {
+        "text": "interesting one but but this is the one",
+        "start": 77.79,
+        "duration": 8.52
+    },
+    {
+        "text": "you're getting today so the first part",
+        "start": 81.78,
+        "duration": 7.74
+    },
+    {
+        "text": "of this presentation I just want to",
+        "start": 86.31,
+        "duration": 4.919
+    },
+    {
+        "text": "acknowledge up front some of the people",
+        "start": 89.52,
+        "duration": 5.3
+    },
+    {
+        "text": "that have been involved Audrey is a",
+        "start": 91.229,
+        "duration": 6.811
+    },
+    {
+        "text": "statistician in my laboratory as shall",
+        "start": 94.82,
+        "duration": 6.49
+    },
+    {
+        "text": "way is a wet lab person and she started",
+        "start": 98.04,
+        "duration": 6.3
+    },
+    {
+        "text": "her own lab now in Beijing Jason is a",
+        "start": 101.31,
+        "duration": 7.08
+    },
+    {
+        "text": "computational biology student and Megan",
+        "start": 104.34,
+        "duration": 7.559
+    },
+    {
+        "text": "is a doctor and these four people have",
+        "start": 108.39,
+        "duration": 7.11
+    },
+    {
+        "text": "worked together to do this work to do",
+        "start": 111.899,
+        "duration": 5.04
+    },
+    {
+        "text": "quantitative mapping and genetic",
+        "start": 115.5,
+        "duration": 3.99
+    },
+    {
+        "text": "interactions in cancer we've had a lot",
+        "start": 116.939,
+        "duration": 4.731
+    },
+    {
+        "text": "of help from our screening center staff",
+        "start": 119.49,
+        "duration": 5.37
+    },
+    {
+        "text": "and I'm going to talk about the",
+        "start": 121.67,
+        "duration": 5.25
+    },
+    {
+        "text": "computational platform and some of the",
+        "start": 124.86,
+        "duration": 5.519
+    },
+    {
+        "text": "the pipeline that we've developed in",
+        "start": 126.92,
+        "duration": 6.21
+    },
+    {
+        "text": "order to be able to do this work",
+        "start": 130.379,
+        "duration": 6.951
+    },
+    {
+        "text": "so those of you who have gone to a few",
+        "start": 133.13,
+        "duration": 6.39
+    },
+    {
+        "text": "cancer talks have probably seen this",
+        "start": 137.33,
+        "duration": 5.69
+    },
+    {
+        "text": "kind of diagram put up before this is a",
+        "start": 139.52,
+        "duration": 6.81
+    },
+    {
+        "text": "Hanahan and Weinberg most recent update",
+        "start": 143.02,
+        "duration": 5.98
+    },
+    {
+        "text": "on this idea that there are hallmarks of",
+        "start": 146.33,
+        "duration": 4.89
+    },
+    {
+        "text": "cancer there are a variety of different",
+        "start": 149.0,
+        "duration": 5.55
+    },
+    {
+        "text": "phenotypes that are important during the",
+        "start": 151.22,
+        "duration": 5.4
+    },
+    {
+        "text": "onset and progression of cancer that",
+        "start": 154.55,
+        "duration": 4.14
+    },
+    {
+        "text": "ranged from dino-man stability and",
+        "start": 156.62,
+        "duration": 5.37
+    },
+    {
+        "text": "mutation to avoiding the immune system",
+        "start": 158.69,
+        "duration": 7.29
+    },
+    {
+        "text": "to sustaining proliferate signaling etc",
+        "start": 161.99,
+        "duration": 7.71
+    },
+    {
+        "text": "etc and all these things work together",
+        "start": 165.98,
+        "duration": 7.71
+    },
+    {
+        "text": "in concert to go from the development of",
+        "start": 169.7,
+        "duration": 7.62
+    },
+    {
+        "text": "a cancer to the progression ultimately",
+        "start": 173.69,
+        "duration": 6.36
+    },
+    {
+        "text": "to the metastatic disease that kills the",
+        "start": 177.32,
+        "duration": 8.67
+    },
+    {
+        "text": "patient and one can think in terms of",
+        "start": 180.05,
+        "duration": 10.1
+    },
+    {
+        "text": "each of these different hallmarks",
+        "start": 185.99,
+        "duration": 7.23
+    },
+    {
+        "text": "potentially incrementally adding to one",
+        "start": 190.15,
+        "duration": 4.99
+    },
+    {
+        "text": "another and a simple additive model",
+        "start": 193.22,
+        "duration": 6.11
+    },
+    {
+        "text": "where you have a set of genes that is",
+        "start": 195.14,
+        "duration": 8.79
+    },
+    {
+        "text": "important for cell proliferation and the",
+        "start": 199.33,
+        "duration": 7.3
+    },
+    {
+        "text": "that set of genes is different than",
+        "start": 203.93,
+        "duration": 5.28
+    },
+    {
+        "text": "another set of genes it's important for",
+        "start": 206.63,
+        "duration": 5.58
+    },
+    {
+        "text": "evading the immune system and you sort",
+        "start": 209.21,
+        "duration": 5.91
+    },
+    {
+        "text": "of just add up all the effects but we",
+        "start": 212.21,
+        "duration": 4.83
+    },
+    {
+        "text": "know that that's not true we know that",
+        "start": 215.12,
+        "duration": 4.71
+    },
+    {
+        "text": "there's all sorts of interactions",
+        "start": 217.04,
+        "duration": 6.21
+    },
+    {
+        "text": "between and among genes between and",
+        "start": 219.83,
+        "duration": 6.96
+    },
+    {
+        "text": "among pathways and that a multitude of",
+        "start": 223.25,
+        "duration": 5.52
+    },
+    {
+        "text": "pathways in each one of these hallmarks",
+        "start": 226.79,
+        "duration": 3.6
+    },
+    {
+        "text": "are responsible ultimately for the",
+        "start": 228.77,
+        "duration": 5.63
+    },
+    {
+        "text": "phenotypes that are associated with that",
+        "start": 230.39,
+        "duration": 7.35
+    },
+    {
+        "text": "particular aspect of cancer biology and",
+        "start": 234.4,
+        "duration": 5.83
+    },
+    {
+        "text": "that there are probably many",
+        "start": 237.74,
+        "duration": 4.91
+    },
+    {
+        "text": "interactions among the different",
+        "start": 240.23,
+        "duration": 4.8
+    },
+    {
+        "text": "biological processes that are going on",
+        "start": 242.65,
+        "duration": 6.64
+    },
+    {
+        "text": "during cancer progression and so in",
+        "start": 245.03,
+        "duration": 10.16
+    },
+    {
+        "text": "classical terms we can think about this",
+        "start": 249.29,
+        "duration": 9.75
+    },
+    {
+        "text": "non-additive 'ti as epistasis as fisher",
+        "start": 255.19,
+        "duration": 7.81
+    },
+    {
+        "text": "defined it and of course epistasis these",
+        "start": 259.04,
+        "duration": 8.38
+    },
+    {
+        "text": "are some old guys so",
+        "start": 263.0,
+        "duration": 8.65
+    },
+    {
+        "text": "Bateson initially described stasis is a",
+        "start": 267.42,
+        "duration": 6.78
+    },
+    {
+        "text": "variant or allele one locus to prevents",
+        "start": 271.65,
+        "duration": 4.2
+    },
+    {
+        "text": "a variant at another look it's for",
+        "start": 274.2,
+        "duration": 3.78
+    },
+    {
+        "text": "manifesting its effects or masks its",
+        "start": 275.85,
+        "duration": 5.07
+    },
+    {
+        "text": "effects that is if I for example mutate",
+        "start": 277.98,
+        "duration": 8.37
+    },
+    {
+        "text": "gene a or in this case he has gene B for",
+        "start": 280.92,
+        "duration": 9.63
+    },
+    {
+        "text": "for black and G&G for gray if I mutate",
+        "start": 286.35,
+        "duration": 8.85
+    },
+    {
+        "text": "one gene then I get one phenotype if I",
+        "start": 290.55,
+        "duration": 6.63
+    },
+    {
+        "text": "mutate the other gene then I get a",
+        "start": 295.2,
+        "duration": 5.31
+    },
+    {
+        "text": "different phenotype so masking our",
+        "start": 297.18,
+        "duration": 6.96
+    },
+    {
+        "text": "epistasis and Bayesian terms is when you",
+        "start": 300.51,
+        "duration": 5.79
+    },
+    {
+        "text": "mutate both genes and you only get one",
+        "start": 304.14,
+        "duration": 4.77
+    },
+    {
+        "text": "of the two phenotypes whatever phenotype",
+        "start": 306.3,
+        "duration": 4.77
+    },
+    {
+        "text": "you get the Dean that that corresponds",
+        "start": 308.91,
+        "duration": 4.05
+    },
+    {
+        "text": "to and the single gene mutant is is",
+        "start": 311.07,
+        "duration": 3.54
+    },
+    {
+        "text": "thought of as being genetically",
+        "start": 312.96,
+        "duration": 5.64
+    },
+    {
+        "text": "epistatic to the second team okay so",
+        "start": 314.61,
+        "duration": 6.18
+    },
+    {
+        "text": "this is how developmental biologists",
+        "start": 318.6,
+        "duration": 4.62
+    },
+    {
+        "text": "think about ordering pathways and and",
+        "start": 320.79,
+        "duration": 4.53
+    },
+    {
+        "text": "people who are converted biochemists",
+        "start": 323.22,
+        "duration": 4.83
+    },
+    {
+        "text": "think about ordering pathways in terms",
+        "start": 325.32,
+        "duration": 7.65
+    },
+    {
+        "text": "of genetics and and so this is this is",
+        "start": 328.05,
+        "duration": 7.2
+    },
+    {
+        "text": "one way to think about it Fischer on the",
+        "start": 332.97,
+        "duration": 4.56
+    },
+    {
+        "text": "other hand was much more mathematical in",
+        "start": 335.25,
+        "duration": 6.0
+    },
+    {
+        "text": "his thinking about well about everything",
+        "start": 337.53,
+        "duration": 9.36
+    },
+    {
+        "text": "and so he defined epistasis as a",
+        "start": 341.25,
+        "duration": 7.62
+    },
+    {
+        "text": "deviation from additive 'ti of the",
+        "start": 346.89,
+        "duration": 3.57
+    },
+    {
+        "text": "effect of these alleles at different low",
+        "start": 348.87,
+        "duration": 8.09
+    },
+    {
+        "text": "side so simply put a phenotype such as",
+        "start": 350.46,
+        "duration": 9.21
+    },
+    {
+        "text": "cancer progression can be thought of as",
+        "start": 356.96,
+        "duration": 5.37
+    },
+    {
+        "text": "genes plus environment plus genes and",
+        "start": 359.67,
+        "duration": 5.07
+    },
+    {
+        "text": "environmental interaction so that's sort",
+        "start": 362.33,
+        "duration": 8.23
+    },
+    {
+        "text": "of basic and to Fisher the genotype",
+        "start": 364.74,
+        "duration": 8.25
+    },
+    {
+        "text": "effect on the phenotype then would be",
+        "start": 370.56,
+        "duration": 5.52
+    },
+    {
+        "text": "say gene 1 plus G 2 + an interaction",
+        "start": 372.99,
+        "duration": 5.82
+    },
+    {
+        "text": "term between gene 1 and G 2 and if gene",
+        "start": 376.08,
+        "duration": 4.77
+    },
+    {
+        "text": "if that interaction term doesn't equal",
+        "start": 378.81,
+        "duration": 5.76
+    },
+    {
+        "text": "zero then you have epistasis or genetic",
+        "start": 380.85,
+        "duration": 5.97
+    },
+    {
+        "text": "interaction between the two genes and so",
+        "start": 384.57,
+        "duration": 5.84
+    },
+    {
+        "text": "in order to sort of the rest of today",
+        "start": 386.82,
+        "duration": 6.48
+    },
+    {
+        "text": "the rest of this part of talk I'm going",
+        "start": 390.41,
+        "duration": 6.37
+    },
+    {
+        "text": "to focus on this fish Irian a model but",
+        "start": 393.3,
+        "duration": 5.47
+    },
+    {
+        "text": "we're going to come back to Bateson",
+        "start": 396.78,
+        "duration": 5.689
+    },
+    {
+        "text": "okay so therefore you can imagine that",
+        "start": 398.77,
+        "duration": 5.44
+    },
+    {
+        "text": "you might have a genetic interaction",
+        "start": 402.469,
+        "duration": 5.1
+    },
+    {
+        "text": "term that's positive or negative that's",
+        "start": 404.21,
+        "duration": 5.31
+    },
+    {
+        "text": "happening among the network of genes and",
+        "start": 407.569,
+        "duration": 5.28
+    },
+    {
+        "text": "it's this cumulative effect - - a",
+        "start": 409.52,
+        "duration": 6.389
+    },
+    {
+        "text": "statistical geneticists that that is a",
+        "start": 412.849,
+        "duration": 6.81
+    },
+    {
+        "text": "black box - everybody else that then",
+        "start": 415.909,
+        "duration": 7.56
+    },
+    {
+        "text": "leads to the tumorigenesis phenotype and",
+        "start": 419.659,
+        "duration": 5.13
+    },
+    {
+        "text": "of course cancer is even more",
+        "start": 423.469,
+        "duration": 3.51
+    },
+    {
+        "text": "complicated because it can be thought of",
+        "start": 424.789,
+        "duration": 6.0
+    },
+    {
+        "text": "genes environment plus mutation plus",
+        "start": 426.979,
+        "duration": 6.3
+    },
+    {
+        "text": "interaction terms and so this this",
+        "start": 430.789,
+        "duration": 6.481
+    },
+    {
+        "text": "creates a huge matrix of interactions we",
+        "start": 433.279,
+        "duration": 6.12
+    },
+    {
+        "text": "could possible interactions so when I",
+        "start": 437.27,
+        "duration": 4.41
+    },
+    {
+        "text": "say mutation you know that cancers are",
+        "start": 439.399,
+        "duration": 6.24
+    },
+    {
+        "text": "the result of somatic mutations and and",
+        "start": 441.68,
+        "duration": 7.56
+    },
+    {
+        "text": "therefore that's an important role but",
+        "start": 445.639,
+        "duration": 5.61
+    },
+    {
+        "text": "of course those somatic mutations can",
+        "start": 449.24,
+        "duration": 6.989
+    },
+    {
+        "text": "interact with the germline as well okay",
+        "start": 451.249,
+        "duration": 10.77
+    },
+    {
+        "text": "so before I go further with the",
+        "start": 456.229,
+        "duration": 9.75
+    },
+    {
+        "text": "epistasis I want to tell you how we and",
+        "start": 462.019,
+        "duration": 6.65
+    },
+    {
+        "text": "and why we decided that we're going to",
+        "start": 465.979,
+        "duration": 6.21
+    },
+    {
+        "text": "get into this so there's this challenge",
+        "start": 468.669,
+        "duration": 6.22
+    },
+    {
+        "text": "right now where there's a huge amount of",
+        "start": 472.189,
+        "duration": 4.921
+    },
+    {
+        "text": "data that's being produced on a whole",
+        "start": 474.889,
+        "duration": 4.2
+    },
+    {
+        "text": "variety of diseases particularly in the",
+        "start": 477.11,
+        "duration": 5.82
+    },
+    {
+        "text": "cancer field we have set up a cloud",
+        "start": 479.089,
+        "duration": 5.19
+    },
+    {
+        "text": "computing infrastructure at the",
+        "start": 482.93,
+        "duration": 3.029
+    },
+    {
+        "text": "University of Chicago into open science",
+        "start": 484.279,
+        "duration": 3.151
+    },
+    {
+        "text": "data cloud with Bob Grossman where",
+        "start": 485.959,
+        "duration": 3.57
+    },
+    {
+        "text": "there's over a petabyte",
+        "start": 487.43,
+        "duration": 5.039
+    },
+    {
+        "text": "of cancer data from the Cancer Genome",
+        "start": 489.529,
+        "duration": 7.8
+    },
+    {
+        "text": "Atlas and in other sources and and so",
+        "start": 492.469,
+        "duration": 7.53
+    },
+    {
+        "text": "you know we need to be able to analyze",
+        "start": 497.329,
+        "duration": 6.24
+    },
+    {
+        "text": "that we have one solution it's going to",
+        "start": 499.999,
+        "duration": 6.0
+    },
+    {
+        "text": "be one of probably a network of",
+        "start": 503.569,
+        "duration": 7.83
+    },
+    {
+        "text": "solutions we we hope and and we've been",
+        "start": 505.999,
+        "duration": 9.09
+    },
+    {
+        "text": "able to use this as bio Nimbus protect",
+        "start": 511.399,
+        "duration": 6.481
+    },
+    {
+        "text": "the data cloud which is a trusted",
+        "start": 515.089,
+        "duration": 4.08
+    },
+    {
+        "text": "partner with the National Cancer",
+        "start": 517.88,
+        "duration": 3.269
+    },
+    {
+        "text": "Institute holds all their data downloads",
+        "start": 519.169,
+        "duration": 4.141
+    },
+    {
+        "text": "people's DB gap credentials twice a day",
+        "start": 521.149,
+        "duration": 4.62
+    },
+    {
+        "text": "and so forth it's a nice resource for",
+        "start": 523.31,
+        "duration": 4.079
+    },
+    {
+        "text": "the community and I encourage people to",
+        "start": 525.769,
+        "duration": 3.69
+    },
+    {
+        "text": "check it out but we've been using it to",
+        "start": 527.389,
+        "duration": 4.801
+    },
+    {
+        "text": "do some of our own comp",
+        "start": 529.459,
+        "duration": 6.571
+    },
+    {
+        "text": "patience and one of the things well let",
+        "start": 532.19,
+        "duration": 5.55
+    },
+    {
+        "text": "me just you guys know about clouds",
+        "start": 536.03,
+        "duration": 5.25
+    },
+    {
+        "text": "probably and you want me to go through",
+        "start": 537.74,
+        "duration": 8.94
+    },
+    {
+        "text": "it okay yeah so so Brian and you guys",
+        "start": 541.28,
+        "duration": 9.9
+    },
+    {
+        "text": "are part of this so so the idea is you",
+        "start": 546.68,
+        "duration": 5.7
+    },
+    {
+        "text": "know you might have different medical",
+        "start": 551.18,
+        "duration": 2.63
+    },
+    {
+        "text": "research centers you might have",
+        "start": 552.38,
+        "duration": 4.35
+    },
+    {
+        "text": "companies individuals out there academic",
+        "start": 553.81,
+        "duration": 5.11
+    },
+    {
+        "text": "centers we have a cloud for public data",
+        "start": 556.73,
+        "duration": 4.71
+    },
+    {
+        "text": "cloud for controlled genomic data so",
+        "start": 558.92,
+        "duration": 4.38
+    },
+    {
+        "text": "this would be like the the protected",
+        "start": 561.44,
+        "duration": 3.3
+    },
+    {
+        "text": "data cloud with the Cancer Genome Atlas",
+        "start": 563.3,
+        "duration": 4.23
+    },
+    {
+        "text": "data where the NCI and the NIH control",
+        "start": 564.74,
+        "duration": 4.95
+    },
+    {
+        "text": "access to see the data and you have to",
+        "start": 567.53,
+        "duration": 4.05
+    },
+    {
+        "text": "have credentials you have to have an IRB",
+        "start": 569.69,
+        "duration": 3.78
+    },
+    {
+        "text": "approval or whatever that would be the",
+        "start": 571.58,
+        "duration": 3.6
+    },
+    {
+        "text": "control data public data would be like a",
+        "start": 573.47,
+        "duration": 4.35
+    },
+    {
+        "text": "thousand genomes or encode data my lab",
+        "start": 575.18,
+        "duration": 5.28
+    },
+    {
+        "text": "is part of the encode a consortium group",
+        "start": 577.82,
+        "duration": 4.5
+    },
+    {
+        "text": "we do a lot of chip seek mapping am I",
+        "start": 580.46,
+        "duration": 3.18
+    },
+    {
+        "text": "going to talk about a lot of it today",
+        "start": 582.32,
+        "duration": 4.98
+    },
+    {
+        "text": "but we do a lot of it and and then we",
+        "start": 583.64,
+        "duration": 5.31
+    },
+    {
+        "text": "have a separate cloud that's like",
+        "start": 587.3,
+        "duration": 3.63
+    },
+    {
+        "text": "connected up to the medical record",
+        "start": 588.95,
+        "duration": 5.49
+    },
+    {
+        "text": "system and so the the key is to get all",
+        "start": 590.93,
+        "duration": 5.1
+    },
+    {
+        "text": "these things to in a secure and",
+        "start": 594.44,
+        "duration": 3.99
+    },
+    {
+        "text": "compliant way interoperate and talk to",
+        "start": 596.03,
+        "duration": 4.77
+    },
+    {
+        "text": "one another and in a secure and",
+        "start": 598.43,
+        "duration": 4.17
+    },
+    {
+        "text": "compliant way to get the data out to the",
+        "start": 600.8,
+        "duration": 6.57
+    },
+    {
+        "text": "medical research community and you know",
+        "start": 602.6,
+        "duration": 7.17
+    },
+    {
+        "text": "the vision or the dream is that then you",
+        "start": 607.37,
+        "duration": 5.01
+    },
+    {
+        "text": "can for example if you're a biologist",
+        "start": 609.77,
+        "duration": 5.82
+    },
+    {
+        "text": "working on a project send your sample to",
+        "start": 612.38,
+        "duration": 5.52
+    },
+    {
+        "text": "whatever sequencing core or what have",
+        "start": 615.59,
+        "duration": 5.51
+    },
+    {
+        "text": "you or omics core get some data back",
+        "start": 617.9,
+        "duration": 5.25
+    },
+    {
+        "text": "uploaded into the cloud into the",
+        "start": 621.1,
+        "duration": 4.09
+    },
+    {
+        "text": "appropriate place and then leverage off",
+        "start": 623.15,
+        "duration": 3.84
+    },
+    {
+        "text": "all of the data because you're not going",
+        "start": 625.19,
+        "duration": 3.54
+    },
+    {
+        "text": "to want to I mean most of you probably",
+        "start": 626.99,
+        "duration": 3.33
+    },
+    {
+        "text": "don't want to download a petabyte a",
+        "start": 628.73,
+        "duration": 4.35
+    },
+    {
+        "text": "Cancer Genome Atlas data if you were to",
+        "start": 630.32,
+        "duration": 6.75
+    },
+    {
+        "text": "do a comparison of your ten genomes to -",
+        "start": 633.08,
+        "duration": 5.7
+    },
+    {
+        "text": "all that data and so you want to have a",
+        "start": 637.07,
+        "duration": 3.87
+    },
+    {
+        "text": "system where all of this is sitting and",
+        "start": 638.78,
+        "duration": 4.35
+    },
+    {
+        "text": "you can and you can basically just get",
+        "start": 640.94,
+        "duration": 4.47
+    },
+    {
+        "text": "some cycles to analyze your data in the",
+        "start": 643.13,
+        "duration": 6.27
+    },
+    {
+        "text": "context of all that other data and so so",
+        "start": 645.41,
+        "duration": 5.7
+    },
+    {
+        "text": "we've got thousand genomes we've got",
+        "start": 649.4,
+        "duration": 4.92
+    },
+    {
+        "text": "some NHLBI exome sequencing",
+        "start": 651.11,
+        "duration": 8.28
+    },
+    {
+        "text": "we've got his clinvar I don't think he",
+        "start": 654.32,
+        "duration": 6.78
+    },
+    {
+        "text": "has target yet but this is Piett",
+        "start": 659.39,
+        "duration": 5.43
+    },
+    {
+        "text": "pediatric sequencing and I'm going to",
+        "start": 661.1,
+        "duration": 5.08
+    },
+    {
+        "text": "tell you briefly about",
+        "start": 664.82,
+        "duration": 4.66
+    },
+    {
+        "text": "ten million EMRs that we've mined",
+        "start": 666.18,
+        "duration": 7.95
+    },
+    {
+        "text": "recently on this cloud so one of the",
+        "start": 669.48,
+        "duration": 7.5
+    },
+    {
+        "text": "things that we've deployed on this and",
+        "start": 674.13,
+        "duration": 6.209
+    },
+    {
+        "text": "we've also deployed on our local Cray",
+        "start": 676.98,
+        "duration": 7.53
+    },
+    {
+        "text": "supercomputer is something we call Swiss",
+        "start": 680.339,
+        "duration": 8.731
+    },
+    {
+        "text": "seek this is a pipeline that uses its",
+        "start": 684.51,
+        "duration": 8.25
+    },
+    {
+        "text": "modular it uses the best gatk practices",
+        "start": 689.07,
+        "duration": 6.51
+    },
+    {
+        "text": "for calling variants for aligning",
+        "start": 692.76,
+        "duration": 5.519
+    },
+    {
+        "text": "sequences and so forth and so when one",
+        "start": 695.58,
+        "duration": 5.43
+    },
+    {
+        "text": "does these kind of analyses it's nice to",
+        "start": 698.279,
+        "duration": 6.451
+    },
+    {
+        "text": "have a unified set of calls of what the",
+        "start": 701.01,
+        "duration": 6.51
+    },
+    {
+        "text": "mutations are or where the rare variants",
+        "start": 704.73,
+        "duration": 4.46
+    },
+    {
+        "text": "in the genome are and so forth and so",
+        "start": 707.52,
+        "duration": 3.6
+    },
+    {
+        "text": "we've worked with people in the",
+        "start": 709.19,
+        "duration": 5.43
+    },
+    {
+        "text": "computation Institute Ian Foster and",
+        "start": 711.12,
+        "duration": 8.76
+    },
+    {
+        "text": "Lorenzo pesquet to to set up this thing",
+        "start": 714.62,
+        "duration": 7.0
+    },
+    {
+        "text": "we call Swift seek which basically",
+        "start": 719.88,
+        "duration": 3.93
+    },
+    {
+        "text": "optimizes so this is like what you get",
+        "start": 721.62,
+        "duration": 5.06
+    },
+    {
+        "text": "out of the box with the broad and etc",
+        "start": 723.81,
+        "duration": 5.49
+    },
+    {
+        "text": "software Suites and we've sort of",
+        "start": 726.68,
+        "duration": 5.59
+    },
+    {
+        "text": "optimized this to make the best use of",
+        "start": 729.3,
+        "duration": 7.289
+    },
+    {
+        "text": "ramen and and CPU in order to reduce",
+        "start": 732.27,
+        "duration": 8.939
+    },
+    {
+        "text": "wall time and and and reduce our costs",
+        "start": 736.589,
+        "duration": 7.291
+    },
+    {
+        "text": "of operations as we're running hundreds",
+        "start": 741.209,
+        "duration": 4.561
+    },
+    {
+        "text": "of thousands of no dollars on on these",
+        "start": 743.88,
+        "duration": 7.02
+    },
+    {
+        "text": "machines ok so now I'm going to bring us",
+        "start": 745.77,
+        "duration": 7.92
+    },
+    {
+        "text": "back into you know how we're using this",
+        "start": 750.9,
+        "duration": 4.83
+    },
+    {
+        "text": "this resource to study genetic",
+        "start": 753.69,
+        "duration": 7.2
+    },
+    {
+        "text": "interactions so we wanted to see what",
+        "start": 755.73,
+        "duration": 6.87
+    },
+    {
+        "text": "kind of computes we could do over these",
+        "start": 760.89,
+        "duration": 3.66
+    },
+    {
+        "text": "kind of data to make new discoveries and",
+        "start": 762.6,
+        "duration": 3.72
+    },
+    {
+        "text": "one of the things that occurred to us is",
+        "start": 764.55,
+        "duration": 5.31
+    },
+    {
+        "text": "that because you've got all of these",
+        "start": 766.32,
+        "duration": 7.139
+    },
+    {
+        "text": "different complex pathways complex",
+        "start": 769.86,
+        "duration": 6.03
+    },
+    {
+        "text": "interactions among genes happening",
+        "start": 773.459,
+        "duration": 4.5
+    },
+    {
+        "text": "during cancer progression and we know",
+        "start": 775.89,
+        "duration": 4.439
+    },
+    {
+        "text": "that but we don't really know what the",
+        "start": 777.959,
+        "duration": 4.32
+    },
+    {
+        "text": "matrix of those complex interactions",
+        "start": 780.329,
+        "duration": 3.721
+    },
+    {
+        "text": "might look like we thought one way we",
+        "start": 782.279,
+        "duration": 4.261
+    },
+    {
+        "text": "might be able to use all this data is to",
+        "start": 784.05,
+        "duration": 7.26
+    },
+    {
+        "text": "ask the question what mutations what",
+        "start": 786.54,
+        "duration": 8.239
+    },
+    {
+        "text": "genetic alterations are happening",
+        "start": 791.31,
+        "duration": 7.62
+    },
+    {
+        "text": "together in the same patient more in",
+        "start": 794.779,
+        "duration": 5.261
+    },
+    {
+        "text": "enough patients",
+        "start": 798.93,
+        "duration": 3.9
+    },
+    {
+        "text": "so that you're able to get statistical",
+        "start": 800.04,
+        "duration": 4.65
+    },
+    {
+        "text": "significance of this happening more than",
+        "start": 802.83,
+        "duration": 3.42
+    },
+    {
+        "text": "by chance so if you have gene a and gene",
+        "start": 804.69,
+        "duration": 3.27
+    },
+    {
+        "text": "B that they're co-occurring in the in",
+        "start": 806.25,
+        "duration": 4.11
+    },
+    {
+        "text": "the same patient and multiple times and",
+        "start": 807.96,
+        "duration": 5.7
+    },
+    {
+        "text": "multiple patients okay and so we started",
+        "start": 810.36,
+        "duration": 6.81
+    },
+    {
+        "text": "with just a set of 536 tumor normal",
+        "start": 813.66,
+        "duration": 6.99
+    },
+    {
+        "text": "pairs and we looked at the copy number",
+        "start": 817.17,
+        "duration": 6.48
+    },
+    {
+        "text": "variants and we screened by gene",
+        "start": 820.65,
+        "duration": 5.28
+    },
+    {
+        "text": "expression data as well so we so if you",
+        "start": 823.65,
+        "duration": 5.55
+    },
+    {
+        "text": "have a loss of copy we'd also look for",
+        "start": 825.93,
+        "duration": 5.46
+    },
+    {
+        "text": "those gene expression levels went down",
+        "start": 829.2,
+        "duration": 6.05
+    },
+    {
+        "text": "we also looked at somatic mutations and",
+        "start": 831.39,
+        "duration": 7.23
+    },
+    {
+        "text": "we looked for significantly co-occurring",
+        "start": 835.25,
+        "duration": 6.37
+    },
+    {
+        "text": "among the top 10 percent of mutated",
+        "start": 838.62,
+        "duration": 6.09
+    },
+    {
+        "text": "genes this identified 122 candidate",
+        "start": 841.62,
+        "duration": 6.75
+    },
+    {
+        "text": "genes we pre-screened si RNAs because",
+        "start": 844.71,
+        "duration": 5.16
+    },
+    {
+        "text": "when you do si RNAi screening there's",
+        "start": 848.37,
+        "duration": 3.84
+    },
+    {
+        "text": "this so-called off-target effect where",
+        "start": 849.87,
+        "duration": 5.58
+    },
+    {
+        "text": "it's difficult sometimes to to get the",
+        "start": 852.21,
+        "duration": 5.31
+    },
+    {
+        "text": "same phenotype with two different",
+        "start": 855.45,
+        "duration": 4.02
+    },
+    {
+        "text": "reagents or three different reagents",
+        "start": 857.52,
+        "duration": 3.57
+    },
+    {
+        "text": "against the same gene and so we wanted",
+        "start": 859.47,
+        "duration": 3.54
+    },
+    {
+        "text": "to only use those genes where we have",
+        "start": 861.09,
+        "duration": 4.26
+    },
+    {
+        "text": "multiple si RNA reagents that we're",
+        "start": 863.01,
+        "duration": 4.08
+    },
+    {
+        "text": "giving the ceiling the same phenotype",
+        "start": 865.35,
+        "duration": 4.2
+    },
+    {
+        "text": "and consistent consistent quantitative",
+        "start": 867.09,
+        "duration": 5.04
+    },
+    {
+        "text": "phenotypes and from that we got 66 genes",
+        "start": 869.55,
+        "duration": 6.71
+    },
+    {
+        "text": "for interaction mapping we used a",
+        "start": 872.13,
+        "duration": 8.85
+    },
+    {
+        "text": "robotic system that is directed by Sam",
+        "start": 876.26,
+        "duration": 7.99
+    },
+    {
+        "text": "Bettis and who runs our our core it's",
+        "start": 880.98,
+        "duration": 5.03
+    },
+    {
+        "text": "one of the first course that I set up",
+        "start": 884.25,
+        "duration": 5.91
+    },
+    {
+        "text": "when we started the Institute and we do",
+        "start": 886.01,
+        "duration": 6.63
+    },
+    {
+        "text": "basically automated high content imaging",
+        "start": 890.16,
+        "duration": 5.67
+    },
+    {
+        "text": "where we incubate the different si RNAs",
+        "start": 892.64,
+        "duration": 6.13
+    },
+    {
+        "text": "we do individual and then we do pairwise",
+        "start": 895.83,
+        "duration": 5.7
+    },
+    {
+        "text": "so we'll do each gene a will knock it",
+        "start": 898.77,
+        "duration": 4.02
+    },
+    {
+        "text": "down and then we'll take a bunch of",
+        "start": 901.53,
+        "duration": 4.29
+    },
+    {
+        "text": "phenotypic data and then we knock down",
+        "start": 902.79,
+        "duration": 5.46
+    },
+    {
+        "text": "GB and do the same and we do that in",
+        "start": 905.82,
+        "duration": 5.49
+    },
+    {
+        "text": "replicate at least four independent",
+        "start": 908.25,
+        "duration": 6.18
+    },
+    {
+        "text": "knockdowns for each si RNA and we look",
+        "start": 911.31,
+        "duration": 6.81
+    },
+    {
+        "text": "at ten different phenotypes and then we",
+        "start": 914.43,
+        "duration": 6.21
+    },
+    {
+        "text": "do the double knockdown and we do that",
+        "start": 918.12,
+        "duration": 6.18
+    },
+    {
+        "text": "and in each combination as well we do",
+        "start": 920.64,
+        "duration": 5.28
+    },
+    {
+        "text": "this high content imaging and we do",
+        "start": 924.3,
+        "duration": 4.2
+    },
+    {
+        "text": "automated image analysis where the",
+        "start": 925.92,
+        "duration": 6.99
+    },
+    {
+        "text": "software draws boundaries around the",
+        "start": 928.5,
+        "duration": 4.95
+    },
+    {
+        "text": "cells",
+        "start": 932.91,
+        "duration": 2.49
+    },
+    {
+        "text": "the nuclei and we can look for",
+        "start": 933.45,
+        "duration": 3.84
+    },
+    {
+        "text": "deviations in cell size and cell",
+        "start": 935.4,
+        "duration": 4.46
+    },
+    {
+        "text": "proliferation and nuclear shape and cell",
+        "start": 937.29,
+        "duration": 6.24
+    },
+    {
+        "text": "shape and so on there's some examples",
+        "start": 939.86,
+        "duration": 19.45
+    },
+    {
+        "text": "yes yeah so here we're using an MC F 10",
+        "start": 943.53,
+        "duration": 18.92
+    },
+    {
+        "text": "a diploid cell model it's a epithelial",
+        "start": 959.31,
+        "duration": 8.64
+    },
+    {
+        "text": "breast cell and and so so what we're",
+        "start": 962.45,
+        "duration": 8.11
+    },
+    {
+        "text": "then looking at our certain phenotypes",
+        "start": 967.95,
+        "duration": 7.08
+    },
+    {
+        "text": "that are so it's a it's it's not cancer",
+        "start": 970.56,
+        "duration": 8.82
+    },
+    {
+        "text": "but it's phenotypes that are maybe",
+        "start": 975.03,
+        "duration": 5.79
+    },
+    {
+        "text": "relevant to cancer like cell",
+        "start": 979.38,
+        "duration": 3.15
+    },
+    {
+        "text": "proliferation so there we count how many",
+        "start": 980.82,
+        "duration": 4.83
+    },
+    {
+        "text": "cells so we knock something down you",
+        "start": 982.53,
+        "duration": 4.56
+    },
+    {
+        "text": "don't think cell proliferation is",
+        "start": 985.65,
+        "duration": 7.05
+    },
+    {
+        "text": "relevant to cancer okay well most of the",
+        "start": 987.09,
+        "duration": 7.08
+    },
+    {
+        "text": "cancers that we're treating at the",
+        "start": 992.7,
+        "duration": 3.96
+    },
+    {
+        "text": "University of Chicago have out of",
+        "start": 994.17,
+        "duration": 4.68
+    },
+    {
+        "text": "control cell proliferation and so that",
+        "start": 996.66,
+        "duration": 3.54
+    },
+    {
+        "text": "this is something we thought was",
+        "start": 998.85,
+        "duration": 19.11
+    },
+    {
+        "text": "relevant okay that's true",
+        "start": 1000.2,
+        "duration": 20.07
+    },
+    {
+        "text": "and if you add Mik like they'll even go",
+        "start": 1017.96,
+        "duration": 6.48
+    },
+    {
+        "text": "faster and then you can use them in Xena",
+        "start": 1020.27,
+        "duration": 7.88
+    },
+    {
+        "text": "graphs and but that's a different talk",
+        "start": 1024.44,
+        "duration": 3.71
+    },
+    {
+        "text": "yeah well just development and",
+        "start": 1029.32,
+        "duration": 21.25
+    },
+    {
+        "text": "progression I mean what we're looking at",
+        "start": 1043.61,
+        "duration": 11.19
+    },
+    {
+        "text": "right now is going to be whether genes",
+        "start": 1050.57,
+        "duration": 7.68
+    },
+    {
+        "text": "that we predict to be interacting okay",
+        "start": 1054.8,
+        "duration": 5.52
+    },
+    {
+        "text": "using the statistical map that I just",
+        "start": 1058.25,
+        "duration": 5.85
+    },
+    {
+        "text": "outlined to be significantly identified",
+        "start": 1060.32,
+        "duration": 5.58
+    },
+    {
+        "text": "in the Cancer Genome Atlas data as",
+        "start": 1064.1,
+        "duration": 2.67
+    },
+    {
+        "text": "co-occurring",
+        "start": 1065.9,
+        "duration": 2.58
+    },
+    {
+        "text": "whether those that we predict might be",
+        "start": 1066.77,
+        "duration": 4.02
+    },
+    {
+        "text": "interacting are actually in fact",
+        "start": 1068.48,
+        "duration": 4.68
+    },
+    {
+        "text": "interacting when we use a cell model so",
+        "start": 1070.79,
+        "duration": 3.99
+    },
+    {
+        "text": "we actually could have used the neuronal",
+        "start": 1073.16,
+        "duration": 4.56
+    },
+    {
+        "text": "stem cell as our model and still test",
+        "start": 1074.78,
+        "duration": 4.71
+    },
+    {
+        "text": "the basic premise of whether they",
+        "start": 1077.72,
+        "duration": 5.55
+    },
+    {
+        "text": "genetically interact what we chose to do",
+        "start": 1079.49,
+        "duration": 6.99
+    },
+    {
+        "text": "was to use a breast epithelial cell that",
+        "start": 1083.27,
+        "duration": 6.05
+    },
+    {
+        "text": "was that was diploid or largely diploid",
+        "start": 1086.48,
+        "duration": 6.0
+    },
+    {
+        "text": "and to assay a handful of",
+        "start": 1089.32,
+        "duration": 6.19
+    },
+    {
+        "text": "characteristics that are we think are",
+        "start": 1092.48,
+        "duration": 6.9
+    },
+    {
+        "text": "related to irrelevant to cancer",
+        "start": 1095.51,
+        "duration": 6.799
+    },
+    {
+        "text": "phenotypes like cell proliferation or",
+        "start": 1099.38,
+        "duration": 8.07
+    },
+    {
+        "text": "failure to apoptosis upon cues or you",
+        "start": 1102.309,
+        "duration": 7.601
+    },
+    {
+        "text": "know may be cell shapes certainly cell",
+        "start": 1107.45,
+        "duration": 7.05
+    },
+    {
+        "text": "size you know is can be attributes are",
+        "start": 1109.91,
+        "duration": 9.36
+    },
+    {
+        "text": "also observed in primary tumors are we",
+        "start": 1114.5,
+        "duration": 6.87
+    },
+    {
+        "text": "going to claim that this is a great",
+        "start": 1119.27,
+        "duration": 6.57
+    },
+    {
+        "text": "model to understand the tumor",
+        "start": 1121.37,
+        "duration": 7.11
+    },
+    {
+        "text": "progression no that's not my point this",
+        "start": 1125.84,
+        "duration": 5.52
+    },
+    {
+        "text": "is a talk about the genetics of gene",
+        "start": 1128.48,
+        "duration": 8.78
+    },
+    {
+        "text": "interactions and how one can go from",
+        "start": 1131.36,
+        "duration": 5.9
+    },
+    {
+        "text": "looking at statistical patterns in in",
+        "start": 1137.559,
+        "duration": 5.891
+    },
+    {
+        "text": "data using bioinformatics approaches to",
+        "start": 1140.9,
+        "duration": 6.029
+    },
+    {
+        "text": "actually showing that those statistical",
+        "start": 1143.45,
+        "duration": 6.78
+    },
+    {
+        "text": "patterns are relevant biologically so",
+        "start": 1146.929,
+        "duration": 5.011
+    },
+    {
+        "text": "that's what I'll try to convince you of",
+        "start": 1150.23,
+        "duration": 4.38
+    },
+    {
+        "text": "here so we have lots of different",
+        "start": 1151.94,
+        "duration": 6.45
+    },
+    {
+        "text": "phenotypes and it and these are just",
+        "start": 1154.61,
+        "duration": 6.99
+    },
+    {
+        "text": "correlations among them and so this is",
+        "start": 1158.39,
+        "duration": 5.58
+    },
+    {
+        "text": "more or less the kind of model that",
+        "start": 1161.6,
+        "duration": 3.84
+    },
+    {
+        "text": "we're employing it's sort of a",
+        "start": 1163.97,
+        "duration": 5.04
+    },
+    {
+        "text": "simplified version where you can imagine",
+        "start": 1165.44,
+        "duration": 5.9
+    },
+    {
+        "text": "that if you have a mutation in gene B",
+        "start": 1169.01,
+        "duration": 5.49
+    },
+    {
+        "text": "you might get 80% of the wild-type",
+        "start": 1171.34,
+        "duration": 5.65
+    },
+    {
+        "text": "phenotype if you have a mutation in gene",
+        "start": 1174.5,
+        "duration": 5.07
+    },
+    {
+        "text": "a you might get 60% in a multiplicative",
+        "start": 1176.99,
+        "duration": 5.3
+    },
+    {
+        "text": "model like this and you know simply put",
+        "start": 1179.57,
+        "duration": 7.05
+    },
+    {
+        "text": "point 6 times 0.8 is 0.48 and so if you",
+        "start": 1182.29,
+        "duration": 6.58
+    },
+    {
+        "text": "have a deviation from this point for a",
+        "start": 1186.62,
+        "duration": 3.93
+    },
+    {
+        "text": "this that's significant",
+        "start": 1188.87,
+        "duration": 3.21
+    },
+    {
+        "text": "then we're calling that a genetic",
+        "start": 1190.55,
+        "duration": 4.56
+    },
+    {
+        "text": "interaction and then within a confidence",
+        "start": 1192.08,
+        "duration": 5.37
+    },
+    {
+        "text": "interval that one can measure since",
+        "start": 1195.11,
+        "duration": 4.949
+    },
+    {
+        "text": "we've done lots of replicates were able",
+        "start": 1197.45,
+        "duration": 3.24
+    },
+    {
+        "text": "to",
+        "start": 1200.059,
+        "duration": 2.581
+    },
+    {
+        "text": "to give a quantitative estimate of what",
+        "start": 1200.69,
+        "duration": 4.23
+    },
+    {
+        "text": "that interaction term is so that's the",
+        "start": 1202.64,
+        "duration": 5.99
+    },
+    {
+        "text": "sort of thing we did and surprisingly",
+        "start": 1204.92,
+        "duration": 5.85
+    },
+    {
+        "text": "actually are a little bit surprisingly",
+        "start": 1208.63,
+        "duration": 6.94
+    },
+    {
+        "text": "of the 1457 gene pairs that we tested in",
+        "start": 1210.77,
+        "duration": 8.64
+    },
+    {
+        "text": "this matrix of which we did about 20,000",
+        "start": 1215.57,
+        "duration": 5.7
+    },
+    {
+        "text": "different independent experiments and to",
+        "start": 1219.41,
+        "duration": 4.97
+    },
+    {
+        "text": "generate this data set we found that",
+        "start": 1221.27,
+        "duration": 6.42
+    },
+    {
+        "text": "there are about 850 significant",
+        "start": 1224.38,
+        "duration": 7.78
+    },
+    {
+        "text": "interactions and we distilled these down",
+        "start": 1227.69,
+        "duration": 7.64
+    },
+    {
+        "text": "we collapse these into three major",
+        "start": 1232.16,
+        "duration": 6.42
+    },
+    {
+        "text": "phenotypes that were not correlated with",
+        "start": 1235.33,
+        "duration": 5.44
+    },
+    {
+        "text": "other Phoenix so of the 10 phenotypes",
+        "start": 1238.58,
+        "duration": 5.28
+    },
+    {
+        "text": "that we looked at these are the three",
+        "start": 1240.77,
+        "duration": 5.12
+    },
+    {
+        "text": "phenotypes that you know we're",
+        "start": 1243.86,
+        "duration": 4.29
+    },
+    {
+        "text": "representative of the three main classes",
+        "start": 1245.89,
+        "duration": 5.56
+    },
+    {
+        "text": "that were not correlated with one",
+        "start": 1248.15,
+        "duration": 6.33
+    },
+    {
+        "text": "another heavily and you can see you know",
+        "start": 1251.45,
+        "duration": 4.86
+    },
+    {
+        "text": "cell cell number or cell proliferation",
+        "start": 1254.48,
+        "duration": 6.21
+    },
+    {
+        "text": "is is probably the biggest one there's",
+        "start": 1256.31,
+        "duration": 6.03
+    },
+    {
+        "text": "structure in this data when we actually",
+        "start": 1260.69,
+        "duration": 4.02
+    },
+    {
+        "text": "cluster the genetic interaction terms",
+        "start": 1262.34,
+        "duration": 6.27
+    },
+    {
+        "text": "that we quantify in that structure at",
+        "start": 1264.71,
+        "duration": 6.56
+    },
+    {
+        "text": "least to some extent may reflect",
+        "start": 1268.61,
+        "duration": 5.07
+    },
+    {
+        "text": "interactions that at the molecular level",
+        "start": 1271.27,
+        "duration": 5.5
+    },
+    {
+        "text": "may be happening like here's several",
+        "start": 1273.68,
+        "duration": 4.92
+    },
+    {
+        "text": "these genes are involved in DNA damage",
+        "start": 1276.77,
+        "duration": 6.48
+    },
+    {
+        "text": "checkpoints here's you know TSC pi3",
+        "start": 1278.6,
+        "duration": 8.25
+    },
+    {
+        "text": "kinase signaling are also related",
+        "start": 1283.25,
+        "duration": 7.44
+    },
+    {
+        "text": "pathways so one of the things that",
+        "start": 1286.85,
+        "duration": 6.21
+    },
+    {
+        "text": "really struck me about this and I",
+        "start": 1290.69,
+        "duration": 5.45
+    },
+    {
+        "text": "thought was unexpected was back to the",
+        "start": 1293.06,
+        "duration": 7.35
+    },
+    {
+        "text": "Bayesian view of epistasis where you",
+        "start": 1296.14,
+        "duration": 6.19
+    },
+    {
+        "text": "have complete masking or you could call",
+        "start": 1300.41,
+        "duration": 4.86
+    },
+    {
+        "text": "it complete dominance or masking the",
+        "start": 1302.33,
+        "duration": 5.46
+    },
+    {
+        "text": "majority of these genetic interactions",
+        "start": 1305.27,
+        "duration": 7.08
+    },
+    {
+        "text": "are in fact showing this masking this",
+        "start": 1307.79,
+        "duration": 6.87
+    },
+    {
+        "text": "sort of Bateson style epistasis and I",
+        "start": 1312.35,
+        "duration": 4.05
+    },
+    {
+        "text": "thought this was surprising simply",
+        "start": 1314.66,
+        "duration": 4.53
+    },
+    {
+        "text": "because we're looking at simulated hype",
+        "start": 1316.4,
+        "duration": 5.1
+    },
+    {
+        "text": "amorous we're knocking these genes down",
+        "start": 1319.19,
+        "duration": 5.82
+    },
+    {
+        "text": "and we're only you know we make we were",
+        "start": 1321.5,
+        "duration": 7.19
+    },
+    {
+        "text": "not get having nulls here and and so",
+        "start": 1325.01,
+        "duration": 6.03
+    },
+    {
+        "text": "yeah this is what the data is showing us",
+        "start": 1328.69,
+        "duration": 4.24
+    },
+    {
+        "text": "we also saw consider a lot of synthetic",
+        "start": 1331.04,
+        "duration": 3.21
+    },
+    {
+        "text": "enhancement or since",
+        "start": 1332.93,
+        "duration": 4.08
+    },
+    {
+        "text": "suppression when we start to dig into",
+        "start": 1334.25,
+        "duration": 5.76
+    },
+    {
+        "text": "what are the genetic interactions what",
+        "start": 1337.01,
+        "duration": 4.38
+    },
+    {
+        "text": "genes are they between what are they",
+        "start": 1340.01,
+        "duration": 3.39
+    },
+    {
+        "text": "encode we see all sorts of examples like",
+        "start": 1341.39,
+        "duration": 4.77
+    },
+    {
+        "text": "protein protein interactions kinase",
+        "start": 1343.4,
+        "duration": 5.07
+    },
+    {
+        "text": "signaling competitive binding at",
+        "start": 1346.16,
+        "duration": 4.89
+    },
+    {
+        "text": "substrates and transcription factor",
+        "start": 1348.47,
+        "duration": 5.25
+    },
+    {
+        "text": "targets will I'll show you an example or",
+        "start": 1351.05,
+        "duration": 4.83
+    },
+    {
+        "text": "two of little networks that we can build",
+        "start": 1353.72,
+        "duration": 3.75
+    },
+    {
+        "text": "of transcription factors and their",
+        "start": 1355.88,
+        "duration": 3.33
+    },
+    {
+        "text": "targets that are genetically interacting",
+        "start": 1357.47,
+        "duration": 4.68
+    },
+    {
+        "text": "this is one of them where got a three we",
+        "start": 1359.21,
+        "duration": 5.04
+    },
+    {
+        "text": "had previously published a paper where",
+        "start": 1362.15,
+        "duration": 4.89
+    },
+    {
+        "text": "we showed the targets have got a three",
+        "start": 1364.25,
+        "duration": 4.77
+    },
+    {
+        "text": "among other targets throughout the",
+        "start": 1367.04,
+        "duration": 5.58
+    },
+    {
+        "text": "genome and we see that got a three as an",
+        "start": 1369.02,
+        "duration": 6.03
+    },
+    {
+        "text": "interaction network with these three",
+        "start": 1372.62,
+        "duration": 4.08
+    },
+    {
+        "text": "genes PPR alpha",
+        "start": 1375.05,
+        "duration": 9.03
+    },
+    {
+        "text": "patch and nf1 B and so they're both",
+        "start": 1376.7,
+        "duration": 9.36
+    },
+    {
+        "text": "interacting at the level if you looked",
+        "start": 1384.08,
+        "duration": 4.74
+    },
+    {
+        "text": "at gene expression correlations and it's",
+        "start": 1386.06,
+        "duration": 6.09
+    },
+    {
+        "text": "a genetic interaction and they're direct",
+        "start": 1388.82,
+        "duration": 5.7
+    },
+    {
+        "text": "targets of gata3 here we have an example",
+        "start": 1392.15,
+        "duration": 6.69
+    },
+    {
+        "text": "of two different members of two",
+        "start": 1394.52,
+        "duration": 5.79
+    },
+    {
+        "text": "different pathways of map kinase",
+        "start": 1398.84,
+        "duration": 3.78
+    },
+    {
+        "text": "signaling pathway and DNA damage and",
+        "start": 1400.31,
+        "duration": 4.2
+    },
+    {
+        "text": "repair pathway we hypothesize that",
+        "start": 1402.62,
+        "duration": 3.63
+    },
+    {
+        "text": "perhaps these are all in it so they're",
+        "start": 1404.51,
+        "duration": 3.36
+    },
+    {
+        "text": "all interacting within and they're",
+        "start": 1406.25,
+        "duration": 4.89
+    },
+    {
+        "text": "interacting between the two pathways and",
+        "start": 1407.87,
+        "duration": 5.39
+    },
+    {
+        "text": "we hypothesize these may be due to",
+        "start": 1411.14,
+        "duration": 5.67
+    },
+    {
+        "text": "commonality at both are known to target",
+        "start": 1413.26,
+        "duration": 8.02
+    },
+    {
+        "text": "gene kinase signaling so however when we",
+        "start": 1416.81,
+        "duration": 6.51
+    },
+    {
+        "text": "sort of try to add everything up and we",
+        "start": 1421.28,
+        "duration": 3.78
+    },
+    {
+        "text": "look at all the annotated interactions",
+        "start": 1423.32,
+        "duration": 4.5
+    },
+    {
+        "text": "is all the inner pathway interactions",
+        "start": 1425.06,
+        "duration": 4.53
+    },
+    {
+        "text": "supported by the literature I just",
+        "start": 1427.82,
+        "duration": 3.96
+    },
+    {
+        "text": "mentioned even ones where we sort of",
+        "start": 1429.59,
+        "duration": 3.81
+    },
+    {
+        "text": "expanded out a little bit more when we",
+        "start": 1431.78,
+        "duration": 3.84
+    },
+    {
+        "text": "say are you in a network that's it's",
+        "start": 1433.4,
+        "duration": 4.17
+    },
+    {
+        "text": "interacting with someone else you know",
+        "start": 1435.62,
+        "duration": 4.56
+    },
+    {
+        "text": "with with something that's interacting",
+        "start": 1437.57,
+        "duration": 4.74
+    },
+    {
+        "text": "with another network the vast majority",
+        "start": 1440.18,
+        "duration": 3.99
+    },
+    {
+        "text": "of the genetic interactions that we're",
+        "start": 1442.31,
+        "duration": 5.81
+    },
+    {
+        "text": "seeing in these among these predicted",
+        "start": 1444.17,
+        "duration": 7.35
+    },
+    {
+        "text": "tumour genes is unknown they were",
+        "start": 1448.12,
+        "duration": 5.98
+    },
+    {
+        "text": "previously undescribed so I think that",
+        "start": 1451.52,
+        "duration": 5.58
+    },
+    {
+        "text": "gives us a sense of the the complexity",
+        "start": 1454.1,
+        "duration": 5.94
+    },
+    {
+        "text": "that is still yet to discover out there",
+        "start": 1457.1,
+        "duration": 5.82
+    },
+    {
+        "text": "the biological complexity that we have",
+        "start": 1460.04,
+        "duration": 5.4
+    },
+    {
+        "text": "to unravel on this is really the first",
+        "start": 1462.92,
+        "duration": 4.44
+    },
+    {
+        "text": "view I know of there",
+        "start": 1465.44,
+        "duration": 3.869
+    },
+    {
+        "text": "people have got anyone's gone in and",
+        "start": 1467.36,
+        "duration": 5.58
+    },
+    {
+        "text": "quantified the genetic interaction",
+        "start": 1469.309,
+        "duration": 6.571
+    },
+    {
+        "text": "matrix like this and in a cancer are",
+        "start": 1472.94,
+        "duration": 7.8
+    },
+    {
+        "text": "based on cancer data so and probably the",
+        "start": 1475.88,
+        "duration": 8.97
+    },
+    {
+        "text": "most to me potentially impactful and",
+        "start": 1480.74,
+        "duration": 7.62
+    },
+    {
+        "text": "surprising thing was that we see that",
+        "start": 1484.85,
+        "duration": 6.17
+    },
+    {
+        "text": "this data is also associated with",
+        "start": 1488.36,
+        "duration": 6.63
+    },
+    {
+        "text": "predicting patient survival and so in",
+        "start": 1491.02,
+        "duration": 6.159
+    },
+    {
+        "text": "this case one can have any of these",
+        "start": 1494.99,
+        "duration": 4.71
+    },
+    {
+        "text": "three factors that are interacting with",
+        "start": 1497.179,
+        "duration": 6.961
+    },
+    {
+        "text": "one another and you get a you get a",
+        "start": 1499.7,
+        "duration": 8.19
+    },
+    {
+        "text": "worse outcome in this case we have two",
+        "start": 1504.14,
+        "duration": 6.87
+    },
+    {
+        "text": "different genes you can mutate one and",
+        "start": 1507.89,
+        "duration": 5.52
+    },
+    {
+        "text": "you don't see a significant deviation in",
+        "start": 1511.01,
+        "duration": 4.919
+    },
+    {
+        "text": "survival from if you have neither",
+        "start": 1513.41,
+        "duration": 4.8
+    },
+    {
+        "text": "mutation you can mutate the other and",
+        "start": 1515.929,
+        "duration": 3.481
+    },
+    {
+        "text": "you see the same effect but when you",
+        "start": 1518.21,
+        "duration": 3.12
+    },
+    {
+        "text": "mutate them both together then you have",
+        "start": 1519.41,
+        "duration": 4.83
+    },
+    {
+        "text": "a precipitous drop in in survival of",
+        "start": 1521.33,
+        "duration": 5.969
+    },
+    {
+        "text": "these patients most of many of these are",
+        "start": 1524.24,
+        "duration": 7.26
+    },
+    {
+        "text": "also potentially druggable targets and",
+        "start": 1527.299,
+        "duration": 7.921
+    },
+    {
+        "text": "so to me what this is saying and what I",
+        "start": 1531.5,
+        "duration": 6.03
+    },
+    {
+        "text": "hope we can do in the future with these",
+        "start": 1535.22,
+        "duration": 6.12
+    },
+    {
+        "text": "data are help to guide us both in and in",
+        "start": 1537.53,
+        "duration": 7.399
+    },
+    {
+        "text": "looking at how genetic interactions",
+        "start": 1541.34,
+        "duration": 6.839
+    },
+    {
+        "text": "might lead us to making sensible choices",
+        "start": 1544.929,
+        "duration": 5.321
+    },
+    {
+        "text": "about what kind of therapeutics to",
+        "start": 1548.179,
+        "duration": 3.931
+    },
+    {
+        "text": "either try and preclinical or even",
+        "start": 1550.25,
+        "duration": 6.33
+    },
+    {
+        "text": "clinical settings and also by",
+        "start": 1552.11,
+        "duration": 7.35
+    },
+    {
+        "text": "understanding the architecture of what",
+        "start": 1556.58,
+        "duration": 4.65
+    },
+    {
+        "text": "interacts with WHO and if you inhibit",
+        "start": 1559.46,
+        "duration": 5.219
+    },
+    {
+        "text": "one you know should you need to inhibit",
+        "start": 1561.23,
+        "duration": 6.65
+    },
+    {
+        "text": "something else in a parallel pathway or",
+        "start": 1564.679,
+        "duration": 6.361
+    },
+    {
+        "text": "or are you wasting your time because you",
+        "start": 1567.88,
+        "duration": 5.35
+    },
+    {
+        "text": "know in this case maybe you can do",
+        "start": 1571.04,
+        "duration": 5.43
+    },
+    {
+        "text": "either one and sort of just thinking",
+        "start": 1573.23,
+        "duration": 5.22
+    },
+    {
+        "text": "generally about the therapeutic",
+        "start": 1576.47,
+        "duration": 4.77
+    },
+    {
+        "text": "implications is something that is",
+        "start": 1578.45,
+        "duration": 5.55
+    },
+    {
+        "text": "starting to emerge in our minds because",
+        "start": 1581.24,
+        "duration": 6.21
+    },
+    {
+        "text": "of this surprising finding that in fact",
+        "start": 1584.0,
+        "duration": 5.25
+    },
+    {
+        "text": "these appear to be clinically relevant",
+        "start": 1587.45,
+        "duration": 3.5
+    },
+    {
+        "text": "I'm not just pulling these out as",
+        "start": 1589.25,
+        "duration": 5.16
+    },
+    {
+        "text": "anecdotes when we look at all the this",
+        "start": 1590.95,
+        "duration": 5.95
+    },
+    {
+        "text": "entire set of interactions we have gene",
+        "start": 1594.41,
+        "duration": 4.47
+    },
+    {
+        "text": "pairs with different outcome and Co",
+        "start": 1596.9,
+        "duration": 4.24
+    },
+    {
+        "text": "altered versus gene pairs with genetic",
+        "start": 1598.88,
+        "duration": 4.68
+    },
+    {
+        "text": "actions and what we see is there is a",
+        "start": 1601.14,
+        "duration": 6.21
+    },
+    {
+        "text": "significant you know it's it's it's",
+        "start": 1603.56,
+        "duration": 6.88
+    },
+    {
+        "text": "still a small sample size and we need to",
+        "start": 1607.35,
+        "duration": 6.78
+    },
+    {
+        "text": "expand to the entire TCGA atlas and we",
+        "start": 1610.44,
+        "duration": 5.43
+    },
+    {
+        "text": "want to do more of this kind of thing",
+        "start": 1614.13,
+        "duration": 4.8
+    },
+    {
+        "text": "but it's looking like it it may be",
+        "start": 1615.87,
+        "duration": 5.37
+    },
+    {
+        "text": "significant when we look across all the",
+        "start": 1618.93,
+        "duration": 5.61
+    },
+    {
+        "text": "data that if so just to recap if we see",
+        "start": 1621.24,
+        "duration": 7.26
+    },
+    {
+        "text": "in the in the primary tumor genome",
+        "start": 1624.54,
+        "duration": 6.75
+    },
+    {
+        "text": "sequence data significant co-occurrences",
+        "start": 1628.5,
+        "duration": 5.01
+    },
+    {
+        "text": "and then we we're able to validate those",
+        "start": 1631.29,
+        "duration": 4.56
+    },
+    {
+        "text": "co-occurrences in a cell based model and",
+        "start": 1633.51,
+        "duration": 5.06
+    },
+    {
+        "text": "then we go and we look at the",
+        "start": 1635.85,
+        "duration": 5.61
+    },
+    {
+        "text": "consequences in terms of does that",
+        "start": 1638.57,
+        "duration": 5.23
+    },
+    {
+        "text": "correlate with patient outcome we're",
+        "start": 1641.46,
+        "duration": 5.7
+    },
+    {
+        "text": "seeing an enrichment in our ability to",
+        "start": 1643.8,
+        "duration": 5.37
+    },
+    {
+        "text": "predict patient outcome by taking this",
+        "start": 1647.16,
+        "duration": 7.59
+    },
+    {
+        "text": "kind of approach okay so I'm going to",
+        "start": 1649.17,
+        "duration": 12.44
+    },
+    {
+        "text": "tell you one more story about epistasis",
+        "start": 1654.75,
+        "duration": 9.66
+    },
+    {
+        "text": "and in a little bit of roundabout way",
+        "start": 1661.61,
+        "duration": 5.95
+    },
+    {
+        "text": "and then i have i'm going to end with",
+        "start": 1664.41,
+        "duration": 5.7
+    },
+    {
+        "text": "some work that we actually have done to",
+        "start": 1667.56,
+        "duration": 5.76
+    },
+    {
+        "text": "to do combinatoric mapping originally",
+        "start": 1670.11,
+        "duration": 5.76
+    },
+    {
+        "text": "and fruit flies and ultimately has led",
+        "start": 1673.32,
+        "duration": 4.32
+    },
+    {
+        "text": "us to understand something we think more",
+        "start": 1675.87,
+        "duration": 5.31
+    },
+    {
+        "text": "about kidney cancer so let me start with",
+        "start": 1677.64,
+        "duration": 8.19
+    },
+    {
+        "text": "this little vignette here or this detour",
+        "start": 1681.18,
+        "duration": 7.02
+    },
+    {
+        "text": "so one of the other things we've done",
+        "start": 1685.83,
+        "duration": 4.89
+    },
+    {
+        "text": "with this cloud-based system is we've",
+        "start": 1688.2,
+        "duration": 5.04
+    },
+    {
+        "text": "been trying to pull in medical records",
+        "start": 1690.72,
+        "duration": 6.3
+    },
+    {
+        "text": "Adri Radetzky happens to have a set of",
+        "start": 1693.24,
+        "duration": 5.88
+    },
+    {
+        "text": "110 million different patient records",
+        "start": 1697.02,
+        "duration": 5.49
+    },
+    {
+        "text": "where he is icd-9 and 10 codes it's it's",
+        "start": 1699.12,
+        "duration": 5.34
+    },
+    {
+        "text": "most of those are coming from the United",
+        "start": 1702.51,
+        "duration": 4.32
+    },
+    {
+        "text": "States we also have entire country",
+        "start": 1704.46,
+        "duration": 4.08
+    },
+    {
+        "text": "Denmark we have a number of different",
+        "start": 1706.83,
+        "duration": 4.67
+    },
+    {
+        "text": "systems that he's buying the data from",
+        "start": 1708.54,
+        "duration": 5.73
+    },
+    {
+        "text": "Texas San Francisco University of",
+        "start": 1711.5,
+        "duration": 6.01
+    },
+    {
+        "text": "Chicago and so forth and what this is",
+        "start": 1714.27,
+        "duration": 7.05
+    },
+    {
+        "text": "showing is what Andre did is he asked",
+        "start": 1717.51,
+        "duration": 6.51
+    },
+    {
+        "text": "what are the comorbidities between",
+        "start": 1721.32,
+        "duration": 6.3
+    },
+    {
+        "text": "different icd-9 code diagnoses for both",
+        "start": 1724.02,
+        "duration": 6.77
+    },
+    {
+        "text": "complex traits and Mendelian traits so",
+        "start": 1727.62,
+        "duration": 6.69
+    },
+    {
+        "text": "that is if we look at 110 million people",
+        "start": 1730.79,
+        "duration": 4.21
+    },
+    {
+        "text": "how",
+        "start": 1734.31,
+        "duration": 4.14
+    },
+    {
+        "text": "when do we see so much like I just told",
+        "start": 1735.0,
+        "duration": 5.789
+    },
+    {
+        "text": "you about the the co-occurrences",
+        "start": 1738.45,
+        "duration": 6.54
+    },
+    {
+        "text": "significant co-occurrences of genetic",
+        "start": 1740.789,
+        "duration": 6.061
+    },
+    {
+        "text": "mutations in cancer here we're looking",
+        "start": 1744.99,
+        "duration": 5.429
+    },
+    {
+        "text": "at significant Co occurrences of traits",
+        "start": 1746.85,
+        "duration": 5.43
+    },
+    {
+        "text": "that are happening in people that have",
+        "start": 1750.419,
+        "duration": 3.39
+    },
+    {
+        "text": "been diagnosed with different diseases",
+        "start": 1752.28,
+        "duration": 5.42
+    },
+    {
+        "text": "so um we can look at correlation between",
+        "start": 1753.809,
+        "duration": 7.831
+    },
+    {
+        "text": "actually Mendelian diseases and there's",
+        "start": 1757.7,
+        "duration": 5.859
+    },
+    {
+        "text": "a surprising amount of signal in there",
+        "start": 1761.64,
+        "duration": 3.75
+    },
+    {
+        "text": "when you look at 110 million patients",
+        "start": 1763.559,
+        "duration": 4.801
+    },
+    {
+        "text": "and we can look at Mendelian by complex",
+        "start": 1765.39,
+        "duration": 4.74
+    },
+    {
+        "text": "so you can look at complex by complex",
+        "start": 1768.36,
+        "duration": 4.98
+    },
+    {
+        "text": "and what this is just showing is it the",
+        "start": 1770.13,
+        "duration": 6.419
+    },
+    {
+        "text": "LA god ratios are are the distributions",
+        "start": 1773.34,
+        "duration": 5.61
+    },
+    {
+        "text": "are highly correlated among all of these",
+        "start": 1776.549,
+        "duration": 4.651
+    },
+    {
+        "text": "pairwise combinations so it's not",
+        "start": 1778.95,
+        "duration": 4.349
+    },
+    {
+        "text": "geographically constrained it's like",
+        "start": 1781.2,
+        "duration": 4.53
+    },
+    {
+        "text": "these are different hospital systems in",
+        "start": 1783.299,
+        "duration": 4.231
+    },
+    {
+        "text": "some time in some cases even different",
+        "start": 1785.73,
+        "duration": 3.929
+    },
+    {
+        "text": "billing code systems that have been",
+        "start": 1787.53,
+        "duration": 4.649
+    },
+    {
+        "text": "normalized and you can compare them to",
+        "start": 1789.659,
+        "duration": 5.821
+    },
+    {
+        "text": "one another and they're they're even",
+        "start": 1792.179,
+        "duration": 5.521
+    },
+    {
+        "text": "different countries as I said and so the",
+        "start": 1795.48,
+        "duration": 4.29
+    },
+    {
+        "text": "data are very consistent from site to",
+        "start": 1797.7,
+        "duration": 39.589
+    },
+    {
+        "text": "site yeah Oh disambiguation of yeah yeah",
+        "start": 1799.77,
+        "duration": 37.519
+    },
+    {
+        "text": "we're not",
+        "start": 1861.35,
+        "duration": 3.18
+    },
+    {
+        "text": "[Music]",
+        "start": 1865.9,
+        "duration": 6.06
+    },
+    {
+        "text": "some of them are yeah",
+        "start": 1868.62,
+        "duration": 5.98
+    },
+    {
+        "text": "and in fact those are that you know",
+        "start": 1871.96,
+        "duration": 5.52
+    },
+    {
+        "text": "those are things that are clearly in the",
+        "start": 1874.6,
+        "duration": 6.54
+    },
+    {
+        "text": "data and you know we're looking at such",
+        "start": 1877.48,
+        "duration": 5.73
+    },
+    {
+        "text": "a large number of diseases in large",
+        "start": 1881.14,
+        "duration": 4.08
+    },
+    {
+        "text": "number so what we're looking for is sort",
+        "start": 1883.21,
+        "duration": 6.209
+    },
+    {
+        "text": "of the surprising things but yeah we so",
+        "start": 1885.22,
+        "duration": 6.87
+    },
+    {
+        "text": "that that particular issue we've",
+        "start": 1889.419,
+        "duration": 5.88
+    },
+    {
+        "text": "discussed a lot as well as a lot of",
+        "start": 1892.09,
+        "duration": 6.51
+    },
+    {
+        "text": "other issues disambiguating different",
+        "start": 1895.299,
+        "duration": 6.541
+    },
+    {
+        "text": "aspects of this data but that is",
+        "start": 1898.6,
+        "duration": 5.789
+    },
+    {
+        "text": "something that we're not making an",
+        "start": 1901.84,
+        "duration": 4.679
+    },
+    {
+        "text": "attempt to I mean to actually do that",
+        "start": 1904.389,
+        "duration": 4.26
+    },
+    {
+        "text": "right we really have to dig in and",
+        "start": 1906.519,
+        "duration": 6.211
+    },
+    {
+        "text": "manually go through with a team of you",
+        "start": 1908.649,
+        "duration": 9.721
+    },
+    {
+        "text": "know thousand physicians all the data to",
+        "start": 1912.73,
+        "duration": 7.89
+    },
+    {
+        "text": "try to find the things that may be and",
+        "start": 1918.37,
+        "duration": 3.72
+    },
+    {
+        "text": "we still wouldn't be successful because",
+        "start": 1920.62,
+        "duration": 6.48
+    },
+    {
+        "text": "the the mechanistic connections among",
+        "start": 1922.09,
+        "duration": 7.11
+    },
+    {
+        "text": "all these things are not known but some",
+        "start": 1927.1,
+        "duration": 4.5
+    },
+    {
+        "text": "are and those are in a sense positive",
+        "start": 1929.2,
+        "duration": 9.99
+    },
+    {
+        "text": "controls in this case in this yet they",
+        "start": 1931.6,
+        "duration": 14.66
+    },
+    {
+        "text": "are their diseases correct or sorry just",
+        "start": 1939.19,
+        "duration": 10.26
+    },
+    {
+        "text": "let me correct that they are the log",
+        "start": 1946.26,
+        "duration": 6.37
+    },
+    {
+        "text": "odds ratio of the probability that these",
+        "start": 1949.45,
+        "duration": 6.03
+    },
+    {
+        "text": "two are significantly associated to two",
+        "start": 1952.63,
+        "duration": 3.33
+    },
+    {
+        "text": "diseases",
+        "start": 1955.48,
+        "duration": 4.98
+    },
+    {
+        "text": "yeah right",
+        "start": 1955.96,
+        "duration": 10.8
+    },
+    {
+        "text": "okay sorry you had a yeah yeah so some",
+        "start": 1960.46,
+        "duration": 8.189
+    },
+    {
+        "text": "people will have multiple diagnoses and",
+        "start": 1966.76,
+        "duration": 3.18
+    },
+    {
+        "text": "that's actually what gives us the power",
+        "start": 1968.649,
+        "duration": 3.421
+    },
+    {
+        "text": "to do this analysis because it's it's",
+        "start": 1969.94,
+        "duration": 6.619
+    },
+    {
+        "text": "multiple diagnoses in one person yeah",
+        "start": 1972.07,
+        "duration": 7.91
+    },
+    {
+        "text": "I'm sorry",
+        "start": 1976.559,
+        "duration": 3.421
+    },
+    {
+        "text": "with it yeah with it so so that",
+        "start": 1982.889,
+        "duration": 5.351
+    },
+    {
+        "text": "individual Oetzi you have we had an",
+        "start": 1985.75,
+        "duration": 4.5
+    },
+    {
+        "text": "individual with three then they would",
+        "start": 1988.24,
+        "duration": 5.809
+    },
+    {
+        "text": "have a and B and a and C and B and C",
+        "start": 1990.25,
+        "duration": 6.24
+    },
+    {
+        "text": "would all those all those will all be a",
+        "start": 1994.049,
+        "duration": 3.911
+    },
+    {
+        "text": "Co kind",
+        "start": 1996.49,
+        "duration": 7.679
+    },
+    {
+        "text": "so um okay so you know this is just",
+        "start": 1997.96,
+        "duration": 9.709
+    },
+    {
+        "text": "showing that been dealing diseases coker",
+        "start": 2004.169,
+        "duration": 6.901
+    },
+    {
+        "text": "significantly you know you can see",
+        "start": 2007.669,
+        "duration": 6.401
+    },
+    {
+        "text": "here's an example of urea cycle",
+        "start": 2011.07,
+        "duration": 7.069
+    },
+    {
+        "text": "metabolism and thrombocytopenic purpura",
+        "start": 2014.07,
+        "duration": 7.079
+    },
+    {
+        "text": "being having a high significance so we",
+        "start": 2018.139,
+        "duration": 5.561
+    },
+    {
+        "text": "see a lot of this kind of structure one",
+        "start": 2021.149,
+        "duration": 7.441
+    },
+    {
+        "text": "can one can cluster that and and one can",
+        "start": 2023.7,
+        "duration": 9.15
+    },
+    {
+        "text": "find in both cases of non surprising and",
+        "start": 2028.59,
+        "duration": 6.659
+    },
+    {
+        "text": "also surprising interactions but what I",
+        "start": 2032.85,
+        "duration": 4.23
+    },
+    {
+        "text": "actually wanted to focus on this is",
+        "start": 2035.249,
+        "duration": 3.961
+    },
+    {
+        "text": "published recently in cell by the way so",
+        "start": 2037.08,
+        "duration": 4.919
+    },
+    {
+        "text": "you can go if you're interested in going",
+        "start": 2039.21,
+        "duration": 6.329
+    },
+    {
+        "text": "in to the depth into this paper you can",
+        "start": 2041.999,
+        "duration": 5.221
+    },
+    {
+        "text": "what I want to just cover from this",
+        "start": 2045.539,
+        "duration": 3.181
+    },
+    {
+        "text": "paper is actually these associations",
+        "start": 2047.22,
+        "duration": 4.439
+    },
+    {
+        "text": "between Mendelian phenotypes and non",
+        "start": 2048.72,
+        "duration": 5.609
+    },
+    {
+        "text": "Mendelian phenotypes and the concept",
+        "start": 2051.659,
+        "duration": 4.141
+    },
+    {
+        "text": "here and I think Andre just had a",
+        "start": 2054.329,
+        "duration": 5.04
+    },
+    {
+        "text": "brilliant idea here it's very simple is",
+        "start": 2055.8,
+        "duration": 6.48
+    },
+    {
+        "text": "that then for the Mendelian phenotypes",
+        "start": 2059.369,
+        "duration": 6.8
+    },
+    {
+        "text": "we we often know the underlying genetic",
+        "start": 2062.28,
+        "duration": 6.539
+    },
+    {
+        "text": "mutation and so basically by the",
+        "start": 2066.169,
+        "duration": 5.94
+    },
+    {
+        "text": "transitive property if you have a",
+        "start": 2068.819,
+        "duration": 5.82
+    },
+    {
+        "text": "correlation if you have a comorbidity",
+        "start": 2072.109,
+        "duration": 6.611
+    },
+    {
+        "text": "between a complex disease and a",
+        "start": 2074.639,
+        "duration": 7.68
+    },
+    {
+        "text": "Mendelian disease then perhaps that gene",
+        "start": 2078.72,
+        "duration": 7.649
+    },
+    {
+        "text": "is also involved somehow in the complex",
+        "start": 2082.319,
+        "duration": 8.941
+    },
+    {
+        "text": "disease right so and so by applying that",
+        "start": 2086.369,
+        "duration": 8.161
+    },
+    {
+        "text": "concept we were able to put together",
+        "start": 2091.26,
+        "duration": 6.0
+    },
+    {
+        "text": "what we've been calling Mendelian code",
+        "start": 2094.53,
+        "duration": 4.799
+    },
+    {
+        "text": "for complex disease that is each and",
+        "start": 2097.26,
+        "duration": 5.51
+    },
+    {
+        "text": "every complex disease has a series of",
+        "start": 2099.329,
+        "duration": 6.181
+    },
+    {
+        "text": "Mendelian diseases that are comorbid",
+        "start": 2102.77,
+        "duration": 5.5
+    },
+    {
+        "text": "with it to a significant level so if",
+        "start": 2105.51,
+        "duration": 4.589
+    },
+    {
+        "text": "someone is diagnosed with a Mendelian",
+        "start": 2108.27,
+        "duration": 4.44
+    },
+    {
+        "text": "disease than they're all they're more",
+        "start": 2110.099,
+        "duration": 5.7
+    },
+    {
+        "text": "likely to be diagnosed with some",
+        "start": 2112.71,
+        "duration": 9.33
+    },
+    {
+        "text": "corresponding complex disease and so one",
+        "start": 2115.799,
+        "duration": 10.231
+    },
+    {
+        "text": "can cluster that one can find again some",
+        "start": 2122.04,
+        "duration": 6.69
+    },
+    {
+        "text": "I don't know you some people may or may",
+        "start": 2126.03,
+        "duration": 4.44
+    },
+    {
+        "text": "not find this surprising but look you",
+        "start": 2128.73,
+        "duration": 3.01
+    },
+    {
+        "text": "got a very high boost drop value",
+        "start": 2130.47,
+        "duration": 5.47
+    },
+    {
+        "text": "between bipolar disorder and Goma for",
+        "start": 2131.74,
+        "duration": 11.52
+    },
+    {
+        "text": "example so high so I I thought that was",
+        "start": 2135.94,
+        "duration": 12.54
+    },
+    {
+        "text": "surprising so and and so on so how do we",
+        "start": 2143.26,
+        "duration": 7.02
+    },
+    {
+        "text": "test this so we sort of thought about",
+        "start": 2148.48,
+        "duration": 4.49
+    },
+    {
+        "text": "this for a while and I eventually",
+        "start": 2150.28,
+        "duration": 5.58
+    },
+    {
+        "text": "decided that probably the biggest",
+        "start": 2152.97,
+        "duration": 5.23
+    },
+    {
+        "text": "dataset we could look at by looking at",
+        "start": 2155.86,
+        "duration": 3.6
+    },
+    {
+        "text": "all these jiwa studies that have been",
+        "start": 2158.2,
+        "duration": 3.81
+    },
+    {
+        "text": "done for all these complex diseases and",
+        "start": 2159.46,
+        "duration": 5.55
+    },
+    {
+        "text": "then ask do mendelian code genes are",
+        "start": 2162.01,
+        "duration": 4.8
+    },
+    {
+        "text": "they enriched in their representation as",
+        "start": 2165.01,
+        "duration": 3.81
+    },
+    {
+        "text": "G was--it's and the answer is yes",
+        "start": 2166.81,
+        "duration": 5.13
+    },
+    {
+        "text": "they're highly significantly enriched",
+        "start": 2168.82,
+        "duration": 7.35
+    },
+    {
+        "text": "and then then I asked Dave Blair who's",
+        "start": 2171.94,
+        "duration": 6.36
+    },
+    {
+        "text": "is a graduate student he did all these",
+        "start": 2176.17,
+        "duration": 4.11
+    },
+    {
+        "text": "computations with us",
+        "start": 2178.3,
+        "duration": 4.14
+    },
+    {
+        "text": "if the these are more likely to",
+        "start": 2180.28,
+        "duration": 4.32
+    },
+    {
+        "text": "replicate us that is if you have two",
+        "start": 2182.44,
+        "duration": 4.35
+    },
+    {
+        "text": "independent G wise populations have been",
+        "start": 2184.6,
+        "duration": 3.6
+    },
+    {
+        "text": "measured for the same trait it's a",
+        "start": 2186.79,
+        "duration": 5.6
+    },
+    {
+        "text": "breast cancer or something then the the",
+        "start": 2188.2,
+        "duration": 7.86
+    },
+    {
+        "text": "sights the snips that are are associated",
+        "start": 2192.39,
+        "duration": 7.99
+    },
+    {
+        "text": "with with genes that that are are",
+        "start": 2196.06,
+        "duration": 6.39
+    },
+    {
+        "text": "replicating between the studies are",
+        "start": 2200.38,
+        "duration": 3.96
+    },
+    {
+        "text": "thought to be the ones with the best",
+        "start": 2202.45,
+        "duration": 4.61
+    },
+    {
+        "text": "signal the most reliability in fact",
+        "start": 2204.34,
+        "duration": 5.4
+    },
+    {
+        "text": "that's when it really gets strong these",
+        "start": 2207.06,
+        "duration": 4.42
+    },
+    {
+        "text": "men deal encodings are much more likely",
+        "start": 2209.74,
+        "duration": 5.85
+    },
+    {
+        "text": "to replicate this study so what we want",
+        "start": 2211.48,
+        "duration": 8.09
+    },
+    {
+        "text": "to do next is actually take these data",
+        "start": 2215.59,
+        "duration": 9.59
+    },
+    {
+        "text": "and predict genetic interactions the",
+        "start": 2219.57,
+        "duration": 7.87
+    },
+    {
+        "text": "considering these as genetic interaction",
+        "start": 2225.18,
+        "duration": 4.21
+    },
+    {
+        "text": "predictions and then try to find cell",
+        "start": 2227.44,
+        "duration": 3.21
+    },
+    {
+        "text": "models like we did in the earlier",
+        "start": 2229.39,
+        "duration": 3.87
+    },
+    {
+        "text": "example to sort of knock down one and",
+        "start": 2230.65,
+        "duration": 3.959
+    },
+    {
+        "text": "another and then both and see if we",
+        "start": 2233.26,
+        "duration": 3.06
+    },
+    {
+        "text": "actually see genetic interactions we",
+        "start": 2234.609,
+        "duration": 3.601
+    },
+    {
+        "text": "haven't started that yet but what andre",
+        "start": 2236.32,
+        "duration": 5.88
+    },
+    {
+        "text": "has done he took he compared an additive",
+        "start": 2238.21,
+        "duration": 6.57
+    },
+    {
+        "text": "model ala Neil rish that people are",
+        "start": 2242.2,
+        "duration": 5.13
+    },
+    {
+        "text": "typically using for the last you know 20",
+        "start": 2244.78,
+        "duration": 7.29
+    },
+    {
+        "text": "years or so and he modified this to with",
+        "start": 2247.33,
+        "duration": 8.279
+    },
+    {
+        "text": "the concept of communities to define",
+        "start": 2252.07,
+        "duration": 7.61
+    },
+    {
+        "text": "epistasis as interactions between genes",
+        "start": 2255.609,
+        "duration": 6.901
+    },
+    {
+        "text": "that are in different communities or",
+        "start": 2259.68,
+        "duration": 5.92
+    },
+    {
+        "text": "modules or pathways the idea here being",
+        "start": 2262.51,
+        "duration": 9.27
+    },
+    {
+        "text": "you need a hit in at least one gene in",
+        "start": 2265.6,
+        "duration": 9.17
+    },
+    {
+        "text": "it in a in a module or in a community",
+        "start": 2271.78,
+        "duration": 6.21
+    },
+    {
+        "text": "and we I can talk later about how we",
+        "start": 2274.77,
+        "duration": 4.93
+    },
+    {
+        "text": "might define communities or how you",
+        "start": 2277.99,
+        "duration": 4.98
+    },
+    {
+        "text": "define communities here but um and and",
+        "start": 2279.7,
+        "duration": 5.46
+    },
+    {
+        "text": "and then also in another community and",
+        "start": 2282.97,
+        "duration": 4.32
+    },
+    {
+        "text": "if you have both of those in that",
+        "start": 2285.16,
+        "duration": 5.4
+    },
+    {
+        "text": "interaction term between those two is in",
+        "start": 2287.29,
+        "duration": 5.55
+    },
+    {
+        "text": "this alternative model here and then we",
+        "start": 2290.56,
+        "duration": 3.99
+    },
+    {
+        "text": "asked do the data better fit the",
+        "start": 2292.84,
+        "duration": 5.15
+    },
+    {
+        "text": "original additive model or this modified",
+        "start": 2294.55,
+        "duration": 6.03
+    },
+    {
+        "text": "model that has this interaction in fact",
+        "start": 2297.99,
+        "duration": 5.17
+    },
+    {
+        "text": "the data better fit the epistatic model",
+        "start": 2300.58,
+        "duration": 5.58
+    },
+    {
+        "text": "and so just you know keeping with the",
+        "start": 2303.16,
+        "duration": 6.93
+    },
+    {
+        "text": "theme here of the talk it epistasis this",
+        "start": 2306.16,
+        "duration": 5.99
+    },
+    {
+        "text": "is another line of evidence that",
+        "start": 2310.09,
+        "duration": 6.54
+    },
+    {
+        "text": "epistasis may be very much widespread in",
+        "start": 2312.15,
+        "duration": 9.52
+    },
+    {
+        "text": "in in human disease and so only",
+        "start": 2316.63,
+        "duration": 7.23
+    },
+    {
+        "text": "available because we're you the the and",
+        "start": 2321.67,
+        "duration": 4.8
+    },
+    {
+        "text": "the number of individuals so we looked",
+        "start": 2323.86,
+        "duration": 6.03
+    },
+    {
+        "text": "at in this case okay how much time do I",
+        "start": 2326.47,
+        "duration": 6.48
+    },
+    {
+        "text": "have Timmons",
+        "start": 2329.89,
+        "duration": 5.61
+    },
+    {
+        "text": "okay I'm gonna go really quickly through",
+        "start": 2332.95,
+        "duration": 10.44
+    },
+    {
+        "text": "the last part and and here's it also you",
+        "start": 2335.5,
+        "duration": 10.68
+    },
+    {
+        "text": "know oh not overtly has anything to do",
+        "start": 2343.39,
+        "duration": 5.55
+    },
+    {
+        "text": "with epistasis but certainly genetic",
+        "start": 2346.18,
+        "duration": 5.07
+    },
+    {
+        "text": "interactions and network networks of",
+        "start": 2348.94,
+        "duration": 4.29
+    },
+    {
+        "text": "interactions among genes and proteins",
+        "start": 2351.25,
+        "duration": 4.02
+    },
+    {
+        "text": "it's a major part of what I'm going to",
+        "start": 2353.23,
+        "duration": 5.04
+    },
+    {
+        "text": "talk about here and I'm actually going",
+        "start": 2355.27,
+        "duration": 4.85
+    },
+    {
+        "text": "to start with the drosophila genome",
+        "start": 2358.27,
+        "duration": 4.8
+    },
+    {
+        "text": "we've been mapping the regulatory",
+        "start": 2360.12,
+        "duration": 4.9
+    },
+    {
+        "text": "elements in both the human genome and",
+        "start": 2363.07,
+        "duration": 3.72
+    },
+    {
+        "text": "the drosophila genome for the last five",
+        "start": 2365.02,
+        "duration": 3.54
+    },
+    {
+        "text": "years or so as part of the encode and",
+        "start": 2366.79,
+        "duration": 4.68
+    },
+    {
+        "text": "modencode projects you guys probably all",
+        "start": 2368.56,
+        "duration": 4.95
+    },
+    {
+        "text": "know about chip seek and half of you",
+        "start": 2371.47,
+        "duration": 4.86
+    },
+    {
+        "text": "probably have done analysis on chip seek",
+        "start": 2373.51,
+        "duration": 4.98
+    },
+    {
+        "text": "and we've mapped all sorts of chromatin",
+        "start": 2376.33,
+        "duration": 4.53
+    },
+    {
+        "text": "marks and we've mapped through",
+        "start": 2378.49,
+        "duration": 4.08
+    },
+    {
+        "text": "throughout time and we've mapped all",
+        "start": 2380.86,
+        "duration": 5.22
+    },
+    {
+        "text": "sorts of insulator proteins these are",
+        "start": 2382.57,
+        "duration": 6.26
+    },
+    {
+        "text": "insulator proteins or proteins that",
+        "start": 2386.08,
+        "duration": 5.31
+    },
+    {
+        "text": "create boundaries between genes so that",
+        "start": 2388.83,
+        "duration": 4.5
+    },
+    {
+        "text": "regulatory element of one gene doesn't",
+        "start": 2391.39,
+        "duration": 5.22
+    },
+    {
+        "text": "activate or or control the expression of",
+        "start": 2393.33,
+        "duration": 5.08
+    },
+    {
+        "text": "a regulatory element and next gene over",
+        "start": 2396.61,
+        "duration": 3.32
+    },
+    {
+        "text": "we've",
+        "start": 2398.41,
+        "duration": 3.78
+    },
+    {
+        "text": "more than a hundred site specific",
+        "start": 2399.93,
+        "duration": 3.85
+    },
+    {
+        "text": "transcription factors and were slated to",
+        "start": 2402.19,
+        "duration": 3.48
+    },
+    {
+        "text": "map several hundred more and up to a",
+        "start": 2403.78,
+        "duration": 3.6
+    },
+    {
+        "text": "thousand in a project that we're doing",
+        "start": 2405.67,
+        "duration": 5.18
+    },
+    {
+        "text": "with Mike Schneider at Stanford for Anka",
+        "start": 2407.38,
+        "duration": 7.14
+    },
+    {
+        "text": "okay so we've done all this mapping we",
+        "start": 2410.85,
+        "duration": 5.53
+    },
+    {
+        "text": "can cluster these binding sites and we",
+        "start": 2414.52,
+        "duration": 7.2
+    },
+    {
+        "text": "see lots of interactions we can build",
+        "start": 2416.38,
+        "duration": 8.46
+    },
+    {
+        "text": "networks also seeing regulatory",
+        "start": 2421.72,
+        "duration": 5.7
+    },
+    {
+        "text": "interactions among many factors and we",
+        "start": 2424.84,
+        "duration": 4.8
+    },
+    {
+        "text": "can start to use this data to make",
+        "start": 2427.42,
+        "duration": 4.5
+    },
+    {
+        "text": "predictions about how sets of genes",
+        "start": 2429.64,
+        "duration": 5.1
+    },
+    {
+        "text": "which sets of genes might be regulated",
+        "start": 2431.92,
+        "duration": 6.2
+    },
+    {
+        "text": "by which sets of factors in the genome",
+        "start": 2434.74,
+        "duration": 6.81
+    },
+    {
+        "text": "we've gotten fairly good in this model",
+        "start": 2438.12,
+        "duration": 6.31
+    },
+    {
+        "text": "system of actually you know figure out",
+        "start": 2441.55,
+        "duration": 5.45
+    },
+    {
+        "text": "precisely which transcription factors",
+        "start": 2444.43,
+        "duration": 5.52
+    },
+    {
+        "text": "over development might be explaining the",
+        "start": 2447.0,
+        "duration": 4.99
+    },
+    {
+        "text": "regulation of specific genes so like the",
+        "start": 2449.95,
+        "duration": 4.29
+    },
+    {
+        "text": "the theoretical Wregget predicted is in",
+        "start": 2451.99,
+        "duration": 4.5
+    },
+    {
+        "text": "dotted here dotted line and the actual",
+        "start": 2454.24,
+        "duration": 4.92
+    },
+    {
+        "text": "observed is the straight line or the",
+        "start": 2456.49,
+        "duration": 5.76
+    },
+    {
+        "text": "solid line and so for many genes we're",
+        "start": 2459.16,
+        "duration": 6.72
+    },
+    {
+        "text": "actually able to do a really good job of",
+        "start": 2462.25,
+        "duration": 5.46
+    },
+    {
+        "text": "predicting using sort of standard",
+        "start": 2465.88,
+        "duration": 4.07
+    },
+    {
+        "text": "regression and machine learning",
+        "start": 2467.71,
+        "duration": 6.32
+    },
+    {
+        "text": "approaches with these kind of data so",
+        "start": 2469.95,
+        "duration": 8.02
+    },
+    {
+        "text": "what we'd like to do is take these data",
+        "start": 2474.03,
+        "duration": 7.57
+    },
+    {
+        "text": "and also make predictions about networks",
+        "start": 2477.97,
+        "duration": 7.38
+    },
+    {
+        "text": "and how factors in in complex networks",
+        "start": 2481.6,
+        "duration": 6.08
+    },
+    {
+        "text": "are contributing to complex phenotypes",
+        "start": 2485.35,
+        "duration": 13.5
+    },
+    {
+        "text": "and so so about 70% of the the genes in",
+        "start": 2487.68,
+        "duration": 12.31
+    },
+    {
+        "text": "the drosophila genome are actually",
+        "start": 2498.85,
+        "duration": 4.56
+    },
+    {
+        "text": "conserved in human and many of the genes",
+        "start": 2499.99,
+        "duration": 5.25
+    },
+    {
+        "text": "that are involved in early embryogenesis",
+        "start": 2503.41,
+        "duration": 5.37
+    },
+    {
+        "text": "are actually important in human cancers",
+        "start": 2505.24,
+        "duration": 8.22
+    },
+    {
+        "text": "and so what we decided to do is study",
+        "start": 2508.78,
+        "duration": 6.15
+    },
+    {
+        "text": "some genes in the segmentation",
+        "start": 2513.46,
+        "duration": 4.23
+    },
+    {
+        "text": "regulatory network which is the heavily",
+        "start": 2514.93,
+        "duration": 6.39
+    },
+    {
+        "text": "studied Eric Bischoff's and new simple",
+        "start": 2517.69,
+        "duration": 7.17
+    },
+    {
+        "text": "har got the Nobel Prize for the amazing",
+        "start": 2521.32,
+        "duration": 6.68
+    },
+    {
+        "text": "early work in identifying these genes",
+        "start": 2524.86,
+        "duration": 5.67
+    },
+    {
+        "text": "precisely because it turned out that",
+        "start": 2528.0,
+        "duration": 4.81
+    },
+    {
+        "text": "these genes have or",
+        "start": 2530.53,
+        "duration": 4.02
+    },
+    {
+        "text": "in humans and those orthologs are are",
+        "start": 2532.81,
+        "duration": 4.47
+    },
+    {
+        "text": "involved in a wide range of human",
+        "start": 2534.55,
+        "duration": 5.82
+    },
+    {
+        "text": "diseases and many of them such as these",
+        "start": 2537.28,
+        "duration": 5.07
+    },
+    {
+        "text": "segment polarity genes are involved in",
+        "start": 2540.37,
+        "duration": 4.17
+    },
+    {
+        "text": "cancers these are all transcription",
+        "start": 2542.35,
+        "duration": 4.26
+    },
+    {
+        "text": "factors all these maternal genes gap",
+        "start": 2544.54,
+        "duration": 4.68
+    },
+    {
+        "text": "genes pair-rule genes they're called gap",
+        "start": 2546.61,
+        "duration": 5.46
+    },
+    {
+        "text": "genes because when they're mutated you",
+        "start": 2549.22,
+        "duration": 4.65
+    },
+    {
+        "text": "lose gaps in the embryo they're called",
+        "start": 2552.07,
+        "duration": 3.63
+    },
+    {
+        "text": "pair-rule genes because you lose every",
+        "start": 2553.87,
+        "duration": 5.58
+    },
+    {
+        "text": "other para segment in embryo and these",
+        "start": 2555.7,
+        "duration": 5.91
+    },
+    {
+        "text": "the targets of these genes as I just",
+        "start": 2559.45,
+        "duration": 4.41
+    },
+    {
+        "text": "said are often pathways that are",
+        "start": 2561.61,
+        "duration": 4.26
+    },
+    {
+        "text": "important in cancer such as a wind",
+        "start": 2563.86,
+        "duration": 4.16
+    },
+    {
+        "text": "pathway the hedgehog pathway the",
+        "start": 2565.87,
+        "duration": 5.13
+    },
+    {
+        "text": "tgf-beta signaling pathway and so forth",
+        "start": 2568.02,
+        "duration": 7.09
+    },
+    {
+        "text": "so just looking at a network around a",
+        "start": 2571.0,
+        "duration": 6.06
+    },
+    {
+        "text": "subset of this data is where we decided",
+        "start": 2575.11,
+        "duration": 4.14
+    },
+    {
+        "text": "to start and we decided to look at the",
+        "start": 2577.06,
+        "duration": 6.27
+    },
+    {
+        "text": "futz and Eve homeo domain proteins these",
+        "start": 2579.25,
+        "duration": 6.36
+    },
+    {
+        "text": "are transcriptional factors that are",
+        "start": 2583.33,
+        "duration": 4.53
+    },
+    {
+        "text": "expressed in in in this beautiful",
+        "start": 2585.61,
+        "duration": 4.74
+    },
+    {
+        "text": "pattern the strike pattern that are",
+        "start": 2587.86,
+        "duration": 5.31
+    },
+    {
+        "text": "responsible for setting up the segmental",
+        "start": 2590.35,
+        "duration": 5.76
+    },
+    {
+        "text": "on lodge the animal we can map the",
+        "start": 2593.17,
+        "duration": 9.36
+    },
+    {
+        "text": "direct targets by by doing chip as well",
+        "start": 2596.11,
+        "duration": 8.28
+    },
+    {
+        "text": "as gene expression profiling in the",
+        "start": 2602.53,
+        "duration": 3.99
+    },
+    {
+        "text": "mutants and see which of the chip",
+        "start": 2604.39,
+        "duration": 5.01
+    },
+    {
+        "text": "targets are affected in the mutants and",
+        "start": 2606.52,
+        "duration": 5.25
+    },
+    {
+        "text": "that gives us a putative direct targets",
+        "start": 2609.4,
+        "duration": 5.01
+    },
+    {
+        "text": "of futz and Eve and we can build",
+        "start": 2611.77,
+        "duration": 5.16
+    },
+    {
+        "text": "networks by using these kind of data and",
+        "start": 2614.41,
+        "duration": 4.98
+    },
+    {
+        "text": "combining these kind of data together",
+        "start": 2616.93,
+        "duration": 4.8
+    },
+    {
+        "text": "and combining these kind of data with",
+        "start": 2619.39,
+        "duration": 4.38
+    },
+    {
+        "text": "things like protein protein interaction",
+        "start": 2621.73,
+        "duration": 5.67
+    },
+    {
+        "text": "data and this is an old paper that Andre",
+        "start": 2623.77,
+        "duration": 7.38
+    },
+    {
+        "text": "and I had with Yvonne Yossef where we",
+        "start": 2627.4,
+        "duration": 8.31
+    },
+    {
+        "text": "look at combining noisy data from",
+        "start": 2631.15,
+        "duration": 6.87
+    },
+    {
+        "text": "heterogeneous data sources and so this",
+        "start": 2635.71,
+        "duration": 4.8
+    },
+    {
+        "text": "is sort of roughly the kind of approach",
+        "start": 2638.02,
+        "duration": 4.38
+    },
+    {
+        "text": "we used to build our networks where you",
+        "start": 2640.51,
+        "duration": 5.04
+    },
+    {
+        "text": "can build joint probabilities and then",
+        "start": 2642.4,
+        "duration": 7.38
+    },
+    {
+        "text": "you can lay down a network at random and",
+        "start": 2645.55,
+        "duration": 7.35
+    },
+    {
+        "text": "then you can compute across these joint",
+        "start": 2649.78,
+        "duration": 5.46
+    },
+    {
+        "text": "probabilities each of which has each of",
+        "start": 2652.9,
+        "duration": 3.81
+    },
+    {
+        "text": "these probabilities would be like the",
+        "start": 2655.24,
+        "duration": 3.3
+    },
+    {
+        "text": "probability of two proteins interacting",
+        "start": 2656.71,
+        "duration": 5.49
+    },
+    {
+        "text": "or the which has its own model or that a",
+        "start": 2658.54,
+        "duration": 5.46
+    },
+    {
+        "text": "gene is differentially expressed which",
+        "start": 2662.2,
+        "duration": 3.86
+    },
+    {
+        "text": "has its own model we",
+        "start": 2664.0,
+        "duration": 3.77
+    },
+    {
+        "text": "gene being a target of a transcription",
+        "start": 2666.06,
+        "duration": 3.63
+    },
+    {
+        "text": "factor which in turn as its own model so",
+        "start": 2667.77,
+        "duration": 5.91
+    },
+    {
+        "text": "it's all sort of layered in and then",
+        "start": 2669.69,
+        "duration": 6.42
+    },
+    {
+        "text": "what you do is you you change the the",
+        "start": 2673.68,
+        "duration": 5.07
+    },
+    {
+        "text": "network after computing this joint",
+        "start": 2676.11,
+        "duration": 5.22
+    },
+    {
+        "text": "probability and you remove an edge or",
+        "start": 2678.75,
+        "duration": 5.16
+    },
+    {
+        "text": "you you move an edge or you remove a",
+        "start": 2681.33,
+        "duration": 4.35
+    },
+    {
+        "text": "node and then you recompute it and you",
+        "start": 2683.91,
+        "duration": 3.6
+    },
+    {
+        "text": "you do this millions and millions and",
+        "start": 2685.68,
+        "duration": 4.95
+    },
+    {
+        "text": "millions of times and you through Monte",
+        "start": 2687.51,
+        "duration": 6.3
+    },
+    {
+        "text": "Carlo sampling method and you then try",
+        "start": 2690.63,
+        "duration": 6.99
+    },
+    {
+        "text": "to calculate or you in fact do calculate",
+        "start": 2693.81,
+        "duration": 7.26
+    },
+    {
+        "text": "a probability for each type of",
+        "start": 2697.62,
+        "duration": 5.07
+    },
+    {
+        "text": "interaction in the network and you get a",
+        "start": 2701.07,
+        "duration": 2.85
+    },
+    {
+        "text": "big hairball",
+        "start": 2702.69,
+        "duration": 4.83
+    },
+    {
+        "text": "but the hairball has each edge has a",
+        "start": 2703.92,
+        "duration": 6.87
+    },
+    {
+        "text": "probability associated with it that is",
+        "start": 2707.52,
+        "duration": 5.34
+    },
+    {
+        "text": "weighted based on these type of input",
+        "start": 2710.79,
+        "duration": 4.86
+    },
+    {
+        "text": "information and so what we want to do is",
+        "start": 2712.86,
+        "duration": 4.68
+    },
+    {
+        "text": "explore the snare to see if we can find",
+        "start": 2715.65,
+        "duration": 4.38
+    },
+    {
+        "text": "anything new about this this these",
+        "start": 2717.54,
+        "duration": 5.07
+    },
+    {
+        "text": "pathways that were aforementioned and",
+        "start": 2720.03,
+        "duration": 3.9
+    },
+    {
+        "text": "one of the things that struck us was",
+        "start": 2722.61,
+        "duration": 4.86
+    },
+    {
+        "text": "this particular gene cg9 924 and the",
+        "start": 2723.93,
+        "duration": 5.7
+    },
+    {
+        "text": "reason it was really interesting to us",
+        "start": 2727.47,
+        "duration": 6.59
+    },
+    {
+        "text": "was twofold threefold really first it",
+        "start": 2729.63,
+        "duration": 7.2
+    },
+    {
+        "text": "it's it has the highest between the",
+        "start": 2734.06,
+        "duration": 5.98
+    },
+    {
+        "text": "centrality in the network so to get from",
+        "start": 2736.83,
+        "duration": 5.28
+    },
+    {
+        "text": "any one point to any other point in the",
+        "start": 2740.04,
+        "duration": 3.54
+    },
+    {
+        "text": "network you have to pass through this",
+        "start": 2742.11,
+        "duration": 4.26
+    },
+    {
+        "text": "gene the most frequently the second",
+        "start": 2743.58,
+        "duration": 6.39
+    },
+    {
+        "text": "thing is that it interacted with some",
+        "start": 2746.37,
+        "duration": 7.17
+    },
+    {
+        "text": "interesting factors in fact this gene",
+        "start": 2749.97,
+        "duration": 6.33
+    },
+    {
+        "text": "kinase signaling pathway the gene kinase",
+        "start": 2753.54,
+        "duration": 4.59
+    },
+    {
+        "text": "phosphatase puckered interacts with it",
+        "start": 2756.3,
+        "duration": 4.74
+    },
+    {
+        "text": "and we thought that was interesting",
+        "start": 2758.13,
+        "duration": 5.03
+    },
+    {
+        "text": "because",
+        "start": 2761.04,
+        "duration": 4.579
+    },
+    {
+        "text": "this pathway is important for cell",
+        "start": 2763.16,
+        "duration": 5.3
+    },
+    {
+        "text": "morphogenesis and in these animals and",
+        "start": 2765.619,
+        "duration": 5.011
+    },
+    {
+        "text": "that's an important part that there's",
+        "start": 2768.46,
+        "duration": 4.809
+    },
+    {
+        "text": "little understood in terms of how the",
+        "start": 2770.63,
+        "duration": 6.78
+    },
+    {
+        "text": "segments actually form biophysically and",
+        "start": 2773.269,
+        "duration": 5.611
+    },
+    {
+        "text": "so we thought maybe this was targeting",
+        "start": 2777.41,
+        "duration": 4.649
+    },
+    {
+        "text": "some interesting things it's a direct",
+        "start": 2778.88,
+        "duration": 5.129
+    },
+    {
+        "text": "target of futz direct targeted heed and",
+        "start": 2782.059,
+        "duration": 4.47
+    },
+    {
+        "text": "the third thing is that it's highly",
+        "start": 2784.009,
+        "duration": 5.431
+    },
+    {
+        "text": "conserved between drosophila and human",
+        "start": 2786.529,
+        "duration": 6.24
+    },
+    {
+        "text": "it has math BTB domains and is predicted",
+        "start": 2789.44,
+        "duration": 6.359
+    },
+    {
+        "text": "to be a member of a cult rely case",
+        "start": 2792.769,
+        "duration": 8.401
+    },
+    {
+        "text": "complex and at the time we there was",
+        "start": 2795.799,
+        "duration": 7.921
+    },
+    {
+        "text": "just a couple of papers so this is",
+        "start": 2801.17,
+        "duration": 4.169
+    },
+    {
+        "text": "almost a decade ago when we first found",
+        "start": 2803.72,
+        "duration": 4.2
+    },
+    {
+        "text": "this thing it's called s pop and it",
+        "start": 2805.339,
+        "duration": 5.16
+    },
+    {
+        "text": "turns out as pop fast forward today has",
+        "start": 2807.92,
+        "duration": 4.889
+    },
+    {
+        "text": "gotten really hot because it's a it's",
+        "start": 2810.499,
+        "duration": 5.25
+    },
+    {
+        "text": "mutated in prostate cancers it's mutated",
+        "start": 2812.809,
+        "duration": 4.2
+    },
+    {
+        "text": "in other kind of cancers now I'm going",
+        "start": 2815.749,
+        "duration": 4.5
+    },
+    {
+        "text": "to tell you what we've found in any",
+        "start": 2817.009,
+        "duration": 4.921
+    },
+    {
+        "text": "cancer it's not mutated in but it's",
+        "start": 2820.249,
+        "duration": 3.661
+    },
+    {
+        "text": "doing something quite different",
+        "start": 2821.93,
+        "duration": 4.649
+    },
+    {
+        "text": "you know it's expressed in stripes in",
+        "start": 2823.91,
+        "duration": 5.579
+    },
+    {
+        "text": "the embryo and the stripes go missing in",
+        "start": 2826.579,
+        "duration": 5.46
+    },
+    {
+        "text": "the mutants it localizes to the",
+        "start": 2829.489,
+        "duration": 5.1
+    },
+    {
+        "text": "segmental grooves where these this is",
+        "start": 2832.039,
+        "duration": 5.57
+    },
+    {
+        "text": "more for genetic movements are happening",
+        "start": 2834.589,
+        "duration": 6.38
+    },
+    {
+        "text": "and another group calls it roadkill",
+        "start": 2837.609,
+        "duration": 5.95
+    },
+    {
+        "text": "because it has this phenotype as amber",
+        "start": 2840.969,
+        "duration": 4.27
+    },
+    {
+        "text": "and during embryogenesis it does have",
+        "start": 2843.559,
+        "duration": 3.51
+    },
+    {
+        "text": "lawns identicals and some of the classic",
+        "start": 2845.239,
+        "duration": 3.421
+    },
+    {
+        "text": "phenotypes from the no sign both hard",
+        "start": 2847.069,
+        "duration": 4.141
+    },
+    {
+        "text": "screen they probably missed it for tooth",
+        "start": 2848.66,
+        "duration": 5.309
+    },
+    {
+        "text": "that two reasons one it's it's it's just",
+        "start": 2851.21,
+        "duration": 4.5
+    },
+    {
+        "text": "messed up and it doesn't give a clean",
+        "start": 2853.969,
+        "duration": 6.54
+    },
+    {
+        "text": "phenotype and to the it has a strong",
+        "start": 2855.71,
+        "duration": 9.539
+    },
+    {
+        "text": "maternal component and so i can get in",
+        "start": 2860.509,
+        "duration": 6.451
+    },
+    {
+        "text": "that later why that's important but the",
+        "start": 2865.249,
+        "duration": 3.27
+    },
+    {
+        "text": "point is that this is not a very good",
+        "start": 2866.96,
+        "duration": 3.149
+    },
+    {
+        "text": "for you to type to look at so we turn to",
+        "start": 2868.519,
+        "duration": 5.46
+    },
+    {
+        "text": "the fly eye where we activate the TNF",
+        "start": 2870.109,
+        "duration": 5.791
+    },
+    {
+        "text": "signaling pathway through genkan kinase",
+        "start": 2873.979,
+        "duration": 3.691
+    },
+    {
+        "text": "so we can either activate it weekly or",
+        "start": 2875.9,
+        "duration": 3.51
+    },
+    {
+        "text": "we can activate it with a strong allele",
+        "start": 2877.67,
+        "duration": 3.299
+    },
+    {
+        "text": "if we activate it with a strong allele",
+        "start": 2879.41,
+        "duration": 3.809
+    },
+    {
+        "text": "that causes cell death here it's just on",
+        "start": 2880.969,
+        "duration": 4.29
+    },
+    {
+        "text": "the edge and so what we want to do is we",
+        "start": 2883.219,
+        "duration": 4.201
+    },
+    {
+        "text": "want to put it in a take this sensitized",
+        "start": 2885.259,
+        "duration": 4.35
+    },
+    {
+        "text": "background and we want to ask what",
+        "start": 2887.42,
+        "duration": 4.649
+    },
+    {
+        "text": "effect does putting an S population have",
+        "start": 2889.609,
+        "duration": 6.301
+    },
+    {
+        "text": "on this if the effect is",
+        "start": 2892.069,
+        "duration": 7.47
+    },
+    {
+        "text": "to activate puckered then it would have",
+        "start": 2895.91,
+        "duration": 6.0
+    },
+    {
+        "text": "a negative effect on gene kinase and you",
+        "start": 2899.539,
+        "duration": 5.461
+    },
+    {
+        "text": "would lose some some of the I here if",
+        "start": 2901.91,
+        "duration": 5.669
+    },
+    {
+        "text": "it's inhibiting puckered then I should",
+        "start": 2905.0,
+        "duration": 5.789
+    },
+    {
+        "text": "come back I comes back and this makes",
+        "start": 2907.579,
+        "duration": 6.841
+    },
+    {
+        "text": "sense in in in in the context of this",
+        "start": 2910.789,
+        "duration": 5.52
+    },
+    {
+        "text": "being a potential pucker being a",
+        "start": 2914.42,
+        "duration": 4.5
+    },
+    {
+        "text": "potential target of s pop as as part of",
+        "start": 2916.309,
+        "duration": 5.7
+    },
+    {
+        "text": "the III ligase complex and so we tested",
+        "start": 2918.92,
+        "duration": 8.04
+    },
+    {
+        "text": "that hmm we show that puckered is is",
+        "start": 2922.009,
+        "duration": 7.08
+    },
+    {
+        "text": "indeed reduced when you add as pop into",
+        "start": 2926.96,
+        "duration": 3.659
+    },
+    {
+        "text": "the protein level it comes in these two",
+        "start": 2929.089,
+        "duration": 5.28
+    },
+    {
+        "text": "ice forms and when we block degradation",
+        "start": 2930.619,
+        "duration": 6.531
+    },
+    {
+        "text": "we get hyper you polarization of",
+        "start": 2934.369,
+        "duration": 6.9
+    },
+    {
+        "text": "puckered and we show that I'm not going",
+        "start": 2937.15,
+        "duration": 5.409
+    },
+    {
+        "text": "to go into the details what we show",
+        "start": 2941.269,
+        "duration": 4.471
+    },
+    {
+        "text": "that's true in human as well but the",
+        "start": 2942.559,
+        "duration": 5.01
+    },
+    {
+        "text": "sort of how does this relate to cancer",
+        "start": 2945.74,
+        "duration": 4.379
+    },
+    {
+        "text": "well many of the genes that are",
+        "start": 2947.569,
+        "duration": 4.77
+    },
+    {
+        "text": "identified in this pathway I'll say once",
+        "start": 2950.119,
+        "duration": 5.16
+    },
+    {
+        "text": "again have been implicated in human",
+        "start": 2952.339,
+        "duration": 4.95
+    },
+    {
+        "text": "cancers and so what we did is we thought",
+        "start": 2955.279,
+        "duration": 3.48
+    },
+    {
+        "text": "well here's this highly conserved thing",
+        "start": 2957.289,
+        "duration": 4.171
+    },
+    {
+        "text": "it's it's it's conserved in gene kinase",
+        "start": 2958.759,
+        "duration": 5.641
+    },
+    {
+        "text": "signaling it could have other targets",
+        "start": 2961.46,
+        "duration": 5.849
+    },
+    {
+        "text": "too and I'll show you that it does but",
+        "start": 2964.4,
+        "duration": 5.369
+    },
+    {
+        "text": "is it involved is its ortholog involved",
+        "start": 2967.309,
+        "duration": 4.5
+    },
+    {
+        "text": "in human cancer so what we did is we",
+        "start": 2969.769,
+        "duration": 4.171
+    },
+    {
+        "text": "just asked is its expression level",
+        "start": 2971.809,
+        "duration": 4.441
+    },
+    {
+        "text": "altered in human cancers so we looked at",
+        "start": 2973.94,
+        "duration": 4.139
+    },
+    {
+        "text": "20 different tumor types and what we",
+        "start": 2976.25,
+        "duration": 3.99
+    },
+    {
+        "text": "discovered was an inker Salina cell",
+        "start": 2978.079,
+        "duration": 3.331
+    },
+    {
+        "text": "carcinoma",
+        "start": 2980.24,
+        "duration": 3.9
+    },
+    {
+        "text": "almost a hundred percent basically a",
+        "start": 2981.41,
+        "duration": 4.139
+    },
+    {
+        "text": "hundred percent of the clear cell renal",
+        "start": 2984.14,
+        "duration": 3.84
+    },
+    {
+        "text": "cell carcinomas are showing high levels",
+        "start": 2985.549,
+        "duration": 5.881
+    },
+    {
+        "text": "of staining and in normal tissue they're",
+        "start": 2987.98,
+        "duration": 5.76
+    },
+    {
+        "text": "almost always negative the other thing",
+        "start": 2991.43,
+        "duration": 5.52
+    },
+    {
+        "text": "that is notable about this is that it's",
+        "start": 2993.74,
+        "duration": 4.769
+    },
+    {
+        "text": "miss localized in the clear cell renal",
+        "start": 2996.95,
+        "duration": 4.23
+    },
+    {
+        "text": "cell carcinoma so this is a khaki 2 cell",
+        "start": 2998.509,
+        "duration": 5.25
+    },
+    {
+        "text": "line which is derived from a clear cell",
+        "start": 3001.18,
+        "duration": 4.5
+    },
+    {
+        "text": "renal cell carcinoma you can see it's in",
+        "start": 3003.759,
+        "duration": 4.231
+    },
+    {
+        "text": "the cytoplasm whereas in a heck 293 cell",
+        "start": 3005.68,
+        "duration": 4.649
+    },
+    {
+        "text": "it's in the nucleus and other cell types",
+        "start": 3007.99,
+        "duration": 4.98
+    },
+    {
+        "text": "it's in the nucleus so we're only seeing",
+        "start": 3010.329,
+        "duration": 4.74
+    },
+    {
+        "text": "it in the cytoplasm and these cancer",
+        "start": 3012.97,
+        "duration": 4.079
+    },
+    {
+        "text": "cells and in the primary tumors that",
+        "start": 3015.069,
+        "duration": 4.22
+    },
+    {
+        "text": "there's cytoplasmic localization as well",
+        "start": 3017.049,
+        "duration": 4.621
+    },
+    {
+        "text": "so we wondered if that was important so",
+        "start": 3019.289,
+        "duration": 3.97
+    },
+    {
+        "text": "what we did is we took the nuclear",
+        "start": 3021.67,
+        "duration": 4.379
+    },
+    {
+        "text": "localization signal off of it it does",
+        "start": 3023.259,
+        "duration": 4.59
+    },
+    {
+        "text": "have a nuclear localization signal at 6",
+        "start": 3026.049,
+        "duration": 3.631
+    },
+    {
+        "text": "amino acids at the c-terminus we",
+        "start": 3027.849,
+        "duration": 3.331
+    },
+    {
+        "text": "that off and then we put that back into",
+        "start": 3029.68,
+        "duration": 4.17
+    },
+    {
+        "text": "heck 293 cells and we show that that",
+        "start": 3031.18,
+        "duration": 4.83
+    },
+    {
+        "text": "causes hyper proliferation of these",
+        "start": 3033.85,
+        "duration": 5.19
+    },
+    {
+        "text": "cells whereas we had shown before that a",
+        "start": 3036.01,
+        "duration": 4.68
+    },
+    {
+        "text": "spot and this is actually now accepted",
+        "start": 3039.04,
+        "duration": 8.48
+    },
+    {
+        "text": "to cancer cell this will activate the",
+        "start": 3040.69,
+        "duration": 10.08
+    },
+    {
+        "text": "the a pathetic pathway with the full",
+        "start": 3047.52,
+        "duration": 5.08
+    },
+    {
+        "text": "length so the full length is going to",
+        "start": 3050.77,
+        "duration": 6.3
+    },
+    {
+        "text": "the nucleus the this is this version is",
+        "start": 3052.6,
+        "duration": 6.54
+    },
+    {
+        "text": "going through the cytoplasm when we",
+        "start": 3057.07,
+        "duration": 4.35
+    },
+    {
+        "text": "knock down as pop in HeLa cells we don't",
+        "start": 3059.14,
+        "duration": 4.47
+    },
+    {
+        "text": "see additional salt but we knock it down",
+        "start": 3061.42,
+        "duration": 3.51
+    },
+    {
+        "text": "in the clear cell renal cell carcinoma",
+        "start": 3063.61,
+        "duration": 3.6
+    },
+    {
+        "text": "cell line we see increased cell death so",
+        "start": 3064.93,
+        "duration": 4.86
+    },
+    {
+        "text": "at least in in cell lines it looks like",
+        "start": 3067.21,
+        "duration": 6.71
+    },
+    {
+        "text": "it's both sufficient and necessary for",
+        "start": 3069.79,
+        "duration": 6.6
+    },
+    {
+        "text": "proliferation proliferative phenotypes",
+        "start": 3073.92,
+        "duration": 5.02
+    },
+    {
+        "text": "so then what we have done is established",
+        "start": 3076.39,
+        "duration": 4.62
+    },
+    {
+        "text": "both subcutaneous and sub capsular where",
+        "start": 3078.94,
+        "duration": 4.08
+    },
+    {
+        "text": "we do operations on these mice and we",
+        "start": 3081.01,
+        "duration": 4.59
+    },
+    {
+        "text": "inject it in the sub Capital Region of",
+        "start": 3083.02,
+        "duration": 6.84
+    },
+    {
+        "text": "the of the kidney and you get these very",
+        "start": 3085.6,
+        "duration": 11.4
+    },
+    {
+        "text": "big and heavily vascularized tumors when",
+        "start": 3089.86,
+        "duration": 9.96
+    },
+    {
+        "text": "we when we do this we don't get it with",
+        "start": 3097.0,
+        "duration": 4.59
+    },
+    {
+        "text": "s pop of course we also don't get it",
+        "start": 3099.82,
+        "duration": 4.71
+    },
+    {
+        "text": "with the control so it's only when s pop",
+        "start": 3101.59,
+        "duration": 5.01
+    },
+    {
+        "text": "is in the cytoplasm that we drive these",
+        "start": 3104.53,
+        "duration": 6.48
+    },
+    {
+        "text": "tumors so what's going on in kidney",
+        "start": 3106.6,
+        "duration": 6.66
+    },
+    {
+        "text": "cancer we know that if is involved",
+        "start": 3111.01,
+        "duration": 5.87
+    },
+    {
+        "text": "hypoxia-inducible factor v HL is",
+        "start": 3113.26,
+        "duration": 5.91
+    },
+    {
+        "text": "frequently mutated the most frequently",
+        "start": 3116.88,
+        "duration": 6.28
+    },
+    {
+        "text": "mutated it's at least 70 80 percent of",
+        "start": 3119.17,
+        "duration": 10.05
+    },
+    {
+        "text": "kidney cancers have VHL mutated in it",
+        "start": 3123.16,
+        "duration": 9.51
+    },
+    {
+        "text": "and v HL actually targets hip for u",
+        "start": 3129.22,
+        "duration": 5.4
+    },
+    {
+        "text": "Bikila nation and that happens in the",
+        "start": 3132.67,
+        "duration": 5.67
+    },
+    {
+        "text": "cytoplasm so here v HL goes to the",
+        "start": 3134.62,
+        "duration": 5.49
+    },
+    {
+        "text": "nucleus it targets things and that",
+        "start": 3138.34,
+        "duration": 3.96
+    },
+    {
+        "text": "causes cancer our hip goes to the",
+        "start": 3140.11,
+        "duration": 3.93
+    },
+    {
+        "text": "nucleus targets things and that causes",
+        "start": 3142.3,
+        "duration": 5.13
+    },
+    {
+        "text": "cancer we show here the s pop actually",
+        "start": 3144.04,
+        "duration": 5.01
+    },
+    {
+        "text": "accumulates in the cytoplasm owner",
+        "start": 3147.43,
+        "duration": 3.51
+    },
+    {
+        "text": "hypoxia these are different cytoplasmic",
+        "start": 3149.05,
+        "duration": 5.43
+    },
+    {
+        "text": "or neurotic fractions and then you also",
+        "start": 3150.94,
+        "duration": 5.37
+    },
+    {
+        "text": "see this in cell lines although have to",
+        "start": 3154.48,
+        "duration": 3.09
+    },
+    {
+        "text": "turn the lights down a little more to",
+        "start": 3156.31,
+        "duration": 3.78
+    },
+    {
+        "text": "see that s pop is directly regulated by",
+        "start": 3157.57,
+        "duration": 4.25
+    },
+    {
+        "text": "hips so we've mapped hips genome-wide",
+        "start": 3160.09,
+        "duration": 3.779
+    },
+    {
+        "text": "just to find combined",
+        "start": 3161.82,
+        "duration": 5.199
+    },
+    {
+        "text": "sites in a nest pop we took this binding",
+        "start": 3163.869,
+        "duration": 4.801
+    },
+    {
+        "text": "site cloned it out show that it's",
+        "start": 3167.019,
+        "duration": 3.51
+    },
+    {
+        "text": "actually as if responsive elements when",
+        "start": 3168.67,
+        "duration": 3.689
+    },
+    {
+        "text": "you take those elements and it's no",
+        "start": 3170.529,
+        "duration": 3.81
+    },
+    {
+        "text": "longer if responsive we can over express",
+        "start": 3172.359,
+        "duration": 5.16
+    },
+    {
+        "text": "hip and it over expresses that from that",
+        "start": 3174.339,
+        "duration": 5.75
+    },
+    {
+        "text": "element we can knock down hip and under",
+        "start": 3177.519,
+        "duration": 4.651
+    },
+    {
+        "text": "expresses we got the crystal structure",
+        "start": 3180.089,
+        "duration": 3.43
+    },
+    {
+        "text": "with puckered and we've got crystal",
+        "start": 3182.17,
+        "duration": 2.329
+    },
+    {
+        "text": "structures with some of the other",
+        "start": 3183.519,
+        "duration": 4.35
+    },
+    {
+        "text": "targets is now as well and we identify",
+        "start": 3184.499,
+        "duration": 6.431
+    },
+    {
+        "text": "this domain here that seems to be",
+        "start": 3187.869,
+        "duration": 5.521
+    },
+    {
+        "text": "binding all of its substrates and we",
+        "start": 3190.93,
+        "duration": 4.139
+    },
+    {
+        "text": "wanted to know you know does it have",
+        "start": 3193.39,
+        "duration": 3.54
+    },
+    {
+        "text": "some new substrates in the cytoplasm",
+        "start": 3195.069,
+        "duration": 3.96
+    },
+    {
+        "text": "when it goes goes off to the cytoplasm",
+        "start": 3196.93,
+        "duration": 4.859
+    },
+    {
+        "text": "and so what we did is we took this what",
+        "start": 3199.029,
+        "duration": 5.79
+    },
+    {
+        "text": "we call the substrate binding consensus",
+        "start": 3201.789,
+        "duration": 7.591
+    },
+    {
+        "text": "and and we looked and we asked whether",
+        "start": 3204.819,
+        "duration": 7.2
+    },
+    {
+        "text": "this degenerate sequence is found in",
+        "start": 3209.38,
+        "duration": 4.459
+    },
+    {
+        "text": "proteins in the genome were particularly",
+        "start": 3212.019,
+        "duration": 5.3
+    },
+    {
+        "text": "interested in phosphatases because",
+        "start": 3213.839,
+        "duration": 6.851
+    },
+    {
+        "text": "puckered is a phosphatase and so we",
+        "start": 3217.319,
+        "duration": 5.68
+    },
+    {
+        "text": "found a USP six and seven which are",
+        "start": 3220.69,
+        "duration": 4.589
+    },
+    {
+        "text": "earth kinase pathway members as well as",
+        "start": 3222.999,
+        "duration": 6.901
+    },
+    {
+        "text": "p10 and this the crystallography was",
+        "start": 3225.279,
+        "duration": 7.05
+    },
+    {
+        "text": "done with Brenda humans group who was",
+        "start": 3229.9,
+        "duration": 3.689
+    },
+    {
+        "text": "very interested in this because it was a",
+        "start": 3232.329,
+        "duration": 2.94
+    },
+    {
+        "text": "first in class when we first found it",
+        "start": 3233.589,
+        "duration": 6.99
+    },
+    {
+        "text": "and this is just a bunch of figures that",
+        "start": 3235.269,
+        "duration": 7.411
+    },
+    {
+        "text": "are showing you in because time is short",
+        "start": 3240.579,
+        "duration": 3.54
+    },
+    {
+        "text": "I'm not going to go through them all but",
+        "start": 3242.68,
+        "duration": 3.869
+    },
+    {
+        "text": "it's showing you that p10 in fact is a",
+        "start": 3244.119,
+        "duration": 4.081
+    },
+    {
+        "text": "direct target it gets you've accumulated",
+        "start": 3246.549,
+        "duration": 5.28
+    },
+    {
+        "text": "as a result of interacting with s pop",
+        "start": 3248.2,
+        "duration": 5.369
+    },
+    {
+        "text": "and we can do pulse chase experiments",
+        "start": 3251.829,
+        "duration": 3.42
+    },
+    {
+        "text": "and all those sorts of things to show",
+        "start": 3253.569,
+        "duration": 6.331
+    },
+    {
+        "text": "that both in vitro and in in primary",
+        "start": 3255.249,
+        "duration": 9.24
+    },
+    {
+        "text": "tumors you can see when p10 is down s",
+        "start": 3259.9,
+        "duration": 9.719
+    },
+    {
+        "text": "pop is up in normal kidney p10 is up",
+        "start": 3264.489,
+        "duration": 8.941
+    },
+    {
+        "text": "when s pop is down that USP is also",
+        "start": 3269.619,
+        "duration": 5.97
+    },
+    {
+        "text": "similarly regulated and we can knock",
+        "start": 3273.43,
+        "duration": 5.579
+    },
+    {
+        "text": "down a USP six and seven together and we",
+        "start": 3275.589,
+        "duration": 5.311
+    },
+    {
+        "text": "get hyper proliferation in these cells",
+        "start": 3279.009,
+        "duration": 3.931
+    },
+    {
+        "text": "we show the same thing for Glee too",
+        "start": 3280.9,
+        "duration": 4.77
+    },
+    {
+        "text": "which is a pathway another target in the",
+        "start": 3282.94,
+        "duration": 4.26
+    },
+    {
+        "text": "hedgehog pathway it's a transcription",
+        "start": 3285.67,
+        "duration": 3.24
+    },
+    {
+        "text": "factor in the pathway the hedgehog",
+        "start": 3287.2,
+        "duration": 5.19
+    },
+    {
+        "text": "pathway index which is a pro apoptotic",
+        "start": 3288.91,
+        "duration": 5.849
+    },
+    {
+        "text": "molecule so all these things are targets",
+        "start": 3292.39,
+        "duration": 4.199
+    },
+    {
+        "text": "of s pop it's acting as a hub just like",
+        "start": 3294.759,
+        "duration": 2.821
+    },
+    {
+        "text": "it was",
+        "start": 3296.589,
+        "duration": 4.861
+    },
+    {
+        "text": "the hobbyist most central factor from",
+        "start": 3297.58,
+        "duration": 5.79
+    },
+    {
+        "text": "that Drosophila Network it's also acting",
+        "start": 3301.45,
+        "duration": 3.54
+    },
+    {
+        "text": "as a hobby and kidney cancer and it's",
+        "start": 3303.37,
+        "duration": 3.63
+    },
+    {
+        "text": "doing it in an artificial way when it",
+        "start": 3304.99,
+        "duration": 4.94
+    },
+    {
+        "text": "gets miss localized to the cytoplasm",
+        "start": 3307.0,
+        "duration": 7.89
+    },
+    {
+        "text": "now artificial in since that normal you",
+        "start": 3309.93,
+        "duration": 6.73
+    },
+    {
+        "text": "know it's causing cancer now it means",
+        "start": 3314.89,
+        "duration": 3.8
+    },
+    {
+        "text": "some other cell types or some other time",
+        "start": 3316.66,
+        "duration": 5.67
+    },
+    {
+        "text": "get localized to the cytoplasm in humans",
+        "start": 3318.69,
+        "duration": 8.98
+    },
+    {
+        "text": "for a good reason but we okay so just to",
+        "start": 3322.33,
+        "duration": 9.75
+    },
+    {
+        "text": "finish we identified through this",
+        "start": 3327.67,
+        "duration": 8.64
+    },
+    {
+        "text": "process that in normal cells as pop is",
+        "start": 3332.08,
+        "duration": 6.09
+    },
+    {
+        "text": "is in the nucleus expressed at low",
+        "start": 3336.31,
+        "duration": 4.83
+    },
+    {
+        "text": "levels but when VHL is mutated half goes",
+        "start": 3338.17,
+        "duration": 5.31
+    },
+    {
+        "text": "to the cytoplasm it targets us pop it",
+        "start": 3341.14,
+        "duration": 6.59
+    },
+    {
+        "text": "also targets veg F and veg F leads to a",
+        "start": 3343.48,
+        "duration": 6.72
+    },
+    {
+        "text": "additional vascular ization and",
+        "start": 3347.73,
+        "duration": 5.11
+    },
+    {
+        "text": "angiogenesis and so you get you supply",
+        "start": 3350.2,
+        "duration": 5.07
+    },
+    {
+        "text": "the tumor with more blood it grows as",
+        "start": 3352.84,
+        "duration": 5.46
+    },
+    {
+        "text": "pop is making it proliferate by this",
+        "start": 3355.27,
+        "duration": 5.91
+    },
+    {
+        "text": "novel mechanism of down-regulating p10",
+        "start": 3358.3,
+        "duration": 5.16
+    },
+    {
+        "text": "as well as several other substrates and",
+        "start": 3361.18,
+        "duration": 5.75
+    },
+    {
+        "text": "other important pathways for cancer",
+        "start": 3363.46,
+        "duration": 7.19
+    },
+    {
+        "text": "proliferation or blocking apoptosis and",
+        "start": 3366.93,
+        "duration": 7.69
+    },
+    {
+        "text": "and and so you can imagine this is sort",
+        "start": 3370.65,
+        "duration": 6.64
+    },
+    {
+        "text": "of like a really nasty loop so then the",
+        "start": 3374.62,
+        "duration": 5.25
+    },
+    {
+        "text": "tumor grows you get more hypoxia more",
+        "start": 3377.29,
+        "duration": 5.61
+    },
+    {
+        "text": "hip more hip more ass pop more veg F",
+        "start": 3379.87,
+        "duration": 6.63
+    },
+    {
+        "text": "more tumor and and so this is and",
+        "start": 3382.9,
+        "duration": 5.58
+    },
+    {
+        "text": "because in what we're working on right",
+        "start": 3386.5,
+        "duration": 4.76
+    },
+    {
+        "text": "now is we're trying to see if we can't",
+        "start": 3388.48,
+        "duration": 6.0
+    },
+    {
+        "text": "develop small molecules and humanise",
+        "start": 3391.26,
+        "duration": 6.94
+    },
+    {
+        "text": "antibodies against this domain the",
+        "start": 3394.48,
+        "duration": 5.52
+    },
+    {
+        "text": "substrate binding consensus domain to",
+        "start": 3398.2,
+        "duration": 3.87
+    },
+    {
+        "text": "see if we could specifically inhibit s",
+        "start": 3400.0,
+        "duration": 5.84
+    },
+    {
+        "text": "pops ability to interact to targets so",
+        "start": 3402.07,
+        "duration": 5.91
+    },
+    {
+        "text": "so that's it",
+        "start": 3405.84,
+        "duration": 6.22
+    },
+    {
+        "text": "and I hope I convince you that there's a",
+        "start": 3407.98,
+        "duration": 6.81
+    },
+    {
+        "text": "heck of a lot of genetic epistasis",
+        "start": 3412.06,
+        "duration": 6.84
+    },
+    {
+        "text": "happening in the human genome in human",
+        "start": 3414.79,
+        "duration": 6.5
+    },
+    {
+        "text": "cells during complex disease like cancer",
+        "start": 3418.9,
+        "duration": 5.84
+    },
+    {
+        "text": "that we can use these kind of",
+        "start": 3421.29,
+        "duration": 5.92
+    },
+    {
+        "text": "methodologies to identify new",
+        "start": 3424.74,
+        "duration": 6.46
+    },
+    {
+        "text": "interactions that are are predictive for",
+        "start": 3427.21,
+        "duration": 6.92
+    },
+    {
+        "text": "an outcome we can also use these kind of",
+        "start": 3431.2,
+        "duration": 5.879
+    },
+    {
+        "text": "genetic Network interactions and other",
+        "start": 3434.13,
+        "duration": 6.31
+    },
+    {
+        "text": "kinds of data to build up networks that",
+        "start": 3437.079,
+        "duration": 4.98
+    },
+    {
+        "text": "are predictive of which molecules might",
+        "start": 3440.44,
+        "duration": 5.46
+    },
+    {
+        "text": "be important as substrates or as drivers",
+        "start": 3442.059,
+        "duration": 7.321
+    },
+    {
+        "text": "of of complex of biological processes",
+        "start": 3445.9,
+        "duration": 5.82
+    },
+    {
+        "text": "and then we can dig in and you know",
+        "start": 3449.38,
+        "duration": 4.169
+    },
+    {
+        "text": "determine whether or not indeed that",
+        "start": 3451.72,
+        "duration": 5.43
+    },
+    {
+        "text": "they are important and so the people in",
+        "start": 3453.549,
+        "duration": 9.181
+    },
+    {
+        "text": "in green actually present sakai they're",
+        "start": 3457.15,
+        "duration": 7.56
+    },
+    {
+        "text": "there on the encode project than on all",
+        "start": 3462.73,
+        "duration": 3.27
+    },
+    {
+        "text": "of our nuclear receptor stuff so I",
+        "start": 3464.71,
+        "duration": 5.07
+    },
+    {
+        "text": "didn't talk about that but sub deep Jeon",
+        "start": 3466.0,
+        "duration": 8.76
+    },
+    {
+        "text": "they really led this this work on a spot",
+        "start": 3469.78,
+        "duration": 7.769
+    },
+    {
+        "text": "story I showed you pictures of everybody",
+        "start": 3474.76,
+        "duration": 57.539
+    },
+    {
+        "text": "else so thank you there's a lot of",
+        "start": 3477.549,
+        "duration": 57.03
+    },
+    {
+        "text": "directions you can you can go with that",
+        "start": 3532.299,
+        "duration": 7.621
+    },
+    {
+        "text": "data I have a very question relating to",
+        "start": 3534.579,
+        "duration": 7.5
+    },
+    {
+        "text": "the comparison of the Mendelian diseases",
+        "start": 3539.92,
+        "duration": 5.939
+    },
+    {
+        "text": "and common complex diseases when you",
+        "start": 3542.079,
+        "duration": 5.371
+    },
+    {
+        "text": "look for the snips that actually are",
+        "start": 3545.859,
+        "duration": 3.48
+    },
+    {
+        "text": "deleterious and if they replicate energy",
+        "start": 3547.45,
+        "duration": 3.99
+    },
+    {
+        "text": "was said because for most Mendelian",
+        "start": 3549.339,
+        "duration": 4.71
+    },
+    {
+        "text": "disease yet snips are encoding regions",
+        "start": 3551.44,
+        "duration": 5.04
+    },
+    {
+        "text": "and the majority of the G was in",
+        "start": 3554.049,
+        "duration": 5.461
+    },
+    {
+        "text": "non-coding regions so you probably lose",
+        "start": 3556.48,
+        "duration": 5.04
+    },
+    {
+        "text": "a lot of information right yeah that's a",
+        "start": 3559.51,
+        "duration": 4.65
+    },
+    {
+        "text": "great question and we've been having",
+        "start": 3561.52,
+        "duration": 3.71
+    },
+    {
+        "text": "this internal the",
+        "start": 3564.16,
+        "duration": 6.84
+    },
+    {
+        "text": "with Andre and Nancy and Cox Nancy Cox",
+        "start": 3565.23,
+        "duration": 8.83
+    },
+    {
+        "text": "and myself you know should we what",
+        "start": 3571.0,
+        "duration": 5.85
+    },
+    {
+        "text": "should we do should we go and look for",
+        "start": 3574.06,
+        "duration": 5.22
+    },
+    {
+        "text": "rare variants associated with these gene",
+        "start": 3576.85,
+        "duration": 6.6
+    },
+    {
+        "text": "lists and do a bunch of sequencing case",
+        "start": 3579.28,
+        "duration": 6.69
+    },
+    {
+        "text": "controls should we take this genetic",
+        "start": 3583.45,
+        "duration": 6.87
+    },
+    {
+        "text": "interaction approach what should we do",
+        "start": 3585.97,
+        "duration": 7.17
+    },
+    {
+        "text": "to try to further validate and figure",
+        "start": 3590.32,
+        "duration": 6.14
+    },
+    {
+        "text": "out you know what are the important",
+        "start": 3593.14,
+        "duration": 8.94
+    },
+    {
+        "text": "constituents from those lists so so far",
+        "start": 3596.46,
+        "duration": 9.1
+    },
+    {
+        "text": "what we've done is we've looked at exome",
+        "start": 3602.08,
+        "duration": 7.41
+    },
+    {
+        "text": "data that's available from a couple of",
+        "start": 3605.56,
+        "duration": 6.0
+    },
+    {
+        "text": "complex traits in and we can do burden",
+        "start": 3609.49,
+        "duration": 3.57
+    },
+    {
+        "text": "tests and that sort of thing and we get",
+        "start": 3611.56,
+        "duration": 5.28
+    },
+    {
+        "text": "nothing so consistent with the rest of",
+        "start": 3613.06,
+        "duration": 10.17
+    },
+    {
+        "text": "the field and so so so that's where we",
+        "start": 3616.84,
+        "duration": 8.43
+    },
+    {
+        "text": "are with that and we're about to",
+        "start": 3623.23,
+        "duration": 5.19
+    },
+    {
+        "text": "actually get I think 10,000 they're",
+        "start": 3625.27,
+        "duration": 6.69
+    },
+    {
+        "text": "either schizophrenia or bipolar that",
+        "start": 3628.42,
+        "duration": 6.18
+    },
+    {
+        "text": "have been done and maybe that'll give us",
+        "start": 3631.96,
+        "duration": 4.08
+    },
+    {
+        "text": "more power and we'll deal because we",
+        "start": 3634.6,
+        "duration": 2.7
+    },
+    {
+        "text": "haven't we haven't looked at that big a",
+        "start": 3636.04,
+        "duration": 3.39
+    },
+    {
+        "text": "number yet but you know that your",
+        "start": 3637.3,
+        "duration": 5.46
+    },
+    {
+        "text": "question is about the non-coding and so",
+        "start": 3639.43,
+        "duration": 8.55
+    },
+    {
+        "text": "I think that's a that's a great idea and",
+        "start": 3642.76,
+        "duration": 7.22
+    },
+    {
+        "text": "we've actually got this assay lined up",
+        "start": 3647.98,
+        "duration": 4.55
+    },
+    {
+        "text": "where we can do high throughput",
+        "start": 3649.98,
+        "duration": 5.25
+    },
+    {
+        "text": "functional functionalisation of",
+        "start": 3652.53,
+        "duration": 5.05
+    },
+    {
+        "text": "enhancers where we where we're capturing",
+        "start": 3655.23,
+        "duration": 4.87
+    },
+    {
+        "text": "these putative enhancers we're putting",
+        "start": 3657.58,
+        "duration": 4.2
+    },
+    {
+        "text": "them calling them downstream of a",
+        "start": 3660.1,
+        "duration": 4.17
+    },
+    {
+        "text": "minimal promoter and then we transfect",
+        "start": 3661.78,
+        "duration": 4.26
+    },
+    {
+        "text": "all that back in at once and then we can",
+        "start": 3664.27,
+        "duration": 4.94
+    },
+    {
+        "text": "just it causes its own transcription and",
+        "start": 3666.04,
+        "duration": 6.6
+    },
+    {
+        "text": "another talk on that I can give you and",
+        "start": 3669.21,
+        "duration": 5.14
+    },
+    {
+        "text": "then we just do RNA seek and we can",
+        "start": 3672.64,
+        "duration": 5.73
+    },
+    {
+        "text": "quantify it comes off and and so alex",
+        "start": 3674.35,
+        "duration": 6.32
+    },
+    {
+        "text": "target in",
+        "start": 3678.37,
+        "duration": 3.9
+    },
+    {
+        "text": "[Music]",
+        "start": 3680.67,
+        "duration": 4.63
+    },
+    {
+        "text": "Austria has published something similar",
+        "start": 3682.27,
+        "duration": 7.16
+    },
+    {
+        "text": "and so in flies and fruit flies and so",
+        "start": 3685.3,
+        "duration": 6.63
+    },
+    {
+        "text": "so everything that's other message I",
+        "start": 3689.43,
+        "duration": 4.36
+    },
+    {
+        "text": "want to get across to all the students",
+        "start": 3691.93,
+        "duration": 4.2
+    },
+    {
+        "text": "here everything you know model organism",
+        "start": 3693.79,
+        "duration": 4.14
+    },
+    {
+        "text": "research is really important because",
+        "start": 3696.13,
+        "duration": 4.62
+    },
+    {
+        "text": "it's because almost everything that we",
+        "start": 3697.93,
+        "duration": 6.36
+    },
+    {
+        "text": "learn in biology has started with model",
+        "start": 3700.75,
+        "duration": 6.36
+    },
+    {
+        "text": "organism research and so often people",
+        "start": 3704.29,
+        "duration": 4.32
+    },
+    {
+        "text": "you know develop these techniques and",
+        "start": 3707.11,
+        "duration": 2.97
+    },
+    {
+        "text": "then I could give you a talk on the",
+        "start": 3708.61,
+        "duration": 2.76
+    },
+    {
+        "text": "human stuff and I just talk about the",
+        "start": 3710.08,
+        "duration": 4.23
+    },
+    {
+        "text": "humans oh yeah I do this in humans but",
+        "start": 3711.37,
+        "duration": 7.38
+    },
+    {
+        "text": "it's the fly guys figure out so or the",
+        "start": 3714.31,
+        "duration": 6.99
+    },
+    {
+        "text": "yeast guys and so just keep that in mind",
+        "start": 3718.75,
+        "duration": 7.62
+    },
+    {
+        "text": "um so I think that combined with deep",
+        "start": 3721.3,
+        "duration": 8.01
+    },
+    {
+        "text": "sequencing to see because it may not it",
+        "start": 3726.37,
+        "duration": 4.68
+    },
+    {
+        "text": "could be common pot and it could be more",
+        "start": 3729.31,
+        "duration": 3.72
+    },
+    {
+        "text": "common pilots have necessarily be rare",
+        "start": 3731.05,
+        "duration": 4.08
+    },
+    {
+        "text": "alleles so give me common polymorphisms",
+        "start": 3733.03,
+        "duration": 3.51
+    },
+    {
+        "text": "in these regulatory regions are",
+        "start": 3735.13,
+        "duration": 3.06
+    },
+    {
+        "text": "contributing so I think that's a great",
+        "start": 3736.54,
+        "duration": 2.91
+    },
+    {
+        "text": "idea that's definitely one in the",
+        "start": 3738.19,
+        "duration": 4.79
+    },
+    {
+        "text": "direction where we want to go with it",
+        "start": 3739.45,
+        "duration": 3.53
+    },
+    {
+        "text": "yeah yeah well we can use that monogenic",
+        "start": 3748.8,
+        "duration": 7.48
+    },
+    {
+        "text": "gene list to find it along with the GUI",
+        "start": 3752.65,
+        "duration": 5.73
+    },
+    {
+        "text": "studies to find where those snips are",
+        "start": 3756.28,
+        "duration": 3.81
+    },
+    {
+        "text": "then we can overlap that with all the",
+        "start": 3758.38,
+        "duration": 4.05
+    },
+    {
+        "text": "encode data we've been producing and in",
+        "start": 3760.09,
+        "duration": 4.8
+    },
+    {
+        "text": "that project and ask where are the",
+        "start": 3762.43,
+        "duration": 5.01
+    },
+    {
+        "text": "potential enhancers and that's exactly",
+        "start": 3764.89,
+        "duration": 4.29
+    },
+    {
+        "text": "we have a project to exactly do that",
+        "start": 3767.44,
+        "duration": 3.3
+    },
+    {
+        "text": "right now that we're starting to use",
+        "start": 3769.18,
+        "duration": 4.38
+    },
+    {
+        "text": "this methodology to pull it out whether",
+        "start": 3770.74,
+        "duration": 4.44
+    },
+    {
+        "text": "we want to do deep sequencing or not I",
+        "start": 3773.56,
+        "duration": 3.57
+    },
+    {
+        "text": "don't know I think we can just well",
+        "start": 3775.18,
+        "duration": 3.86
+    },
+    {
+        "text": "right now we can start with the common",
+        "start": 3777.13,
+        "duration": 4.5
+    },
+    {
+        "text": "variation and see what can we learn from",
+        "start": 3779.04,
+        "duration": 5.8
+    },
+    {
+        "text": "the common variation how much how much",
+        "start": 3781.63,
+        "duration": 5.31
+    },
+    {
+        "text": "is that actually affecting the",
+        "start": 3784.84,
+        "duration": 4.83
+    },
+    {
+        "text": "phenotypes but it's fit and you can add",
+        "start": 3786.94,
+        "duration": 4.26
+    },
+    {
+        "text": "more layers with the rare variation you",
+        "start": 3789.67,
+        "duration": 3.27
+    },
+    {
+        "text": "say well do you find rare variations in",
+        "start": 3791.2,
+        "duration": 3.9
+    },
+    {
+        "text": "write and you know in binding sites",
+        "start": 3792.94,
+        "duration": 3.78
+    },
+    {
+        "text": "where we have position weight matrices",
+        "start": 3795.1,
+        "duration": 2.85
+    },
+    {
+        "text": "where we can predict that it might",
+        "start": 3796.72,
+        "duration": 3.21
+    },
+    {
+        "text": "change the energetics of the interaction",
+        "start": 3797.95,
+        "duration": 3.57
+    },
+    {
+        "text": "between a transcription factor and the",
+        "start": 3799.93,
+        "duration": 3.09
+    },
+    {
+        "text": "piece of DNA and all that sort of thing",
+        "start": 3801.52,
+        "duration": 4.11
+    },
+    {
+        "text": "so the cool stuff you can do with that",
+        "start": 3803.02,
+        "duration": 6.74
+    },
+    {
+        "text": "idea yeah so",
+        "start": 3805.63,
+        "duration": 4.13
+    },
+    {
+        "text": "Thomas um do mcf pencils count as a",
+        "start": 3811.02,
+        "duration": 7.26
+    },
+    {
+        "text": "model organism or as over sapiens as a",
+        "start": 3814.41,
+        "duration": 6.6
+    },
+    {
+        "text": "statistician I'm interested in your",
+        "start": 3818.28,
+        "duration": 5.42
+    },
+    {
+        "text": "comparison of Bates and then Fisher and",
+        "start": 3821.01,
+        "duration": 6.33
+    },
+    {
+        "text": "you came back to it but but much to",
+        "start": 3823.7,
+        "duration": 7.33
+    },
+    {
+        "text": "rieflin the middle of the talk for the",
+        "start": 3827.34,
+        "duration": 9.57
+    },
+    {
+        "text": "for the if I'm right 1547 gene pairs",
+        "start": 3831.03,
+        "duration": 10.82
+    },
+    {
+        "text": "yeah we're short hairpin knockdown",
+        "start": 3836.91,
+        "duration": 8.04
+    },
+    {
+        "text": "produces an apparent interaction can you",
+        "start": 3841.85,
+        "duration": 7.12
+    },
+    {
+        "text": "say a little more what the range of",
+        "start": 3844.95,
+        "duration": 9.15
+    },
+    {
+        "text": "phenotypes for single knockdowns and and",
+        "start": 3848.97,
+        "duration": 10.77
+    },
+    {
+        "text": "the pair knockdown are and in what sense",
+        "start": 3854.1,
+        "duration": 10.65
+    },
+    {
+        "text": "is it that you find complete suppression",
+        "start": 3859.74,
+        "duration": 11.34
+    },
+    {
+        "text": "of the phenotype rather than harsh a",
+        "start": 3864.75,
+        "duration": 9.54
+    },
+    {
+        "text": "fishy Arian quantitative epistatic",
+        "start": 3871.08,
+        "duration": 6.96
+    },
+    {
+        "text": "interaction right well yeah so I I think",
+        "start": 3874.29,
+        "duration": 10.26
+    },
+    {
+        "text": "maybe part of your point here is is you",
+        "start": 3878.04,
+        "duration": 10.62
+    },
+    {
+        "text": "might hit a threshold where you know a",
+        "start": 3884.55,
+        "duration": 8.73
+    },
+    {
+        "text": "cell has become only so oblong right and",
+        "start": 3888.66,
+        "duration": 9.24
+    },
+    {
+        "text": "and so if you know you have a little bit",
+        "start": 3893.28,
+        "duration": 7.71
+    },
+    {
+        "text": "oblong and maximum oblong a little bit",
+        "start": 3897.9,
+        "duration": 7.29
+    },
+    {
+        "text": "plus maximum is still maximum in which",
+        "start": 3900.99,
+        "duration": 7.83
+    },
+    {
+        "text": "case you would show masking or classic",
+        "start": 3905.19,
+        "duration": 7.05
+    },
+    {
+        "text": "basing so so I'm pointing out the caveat",
+        "start": 3908.82,
+        "duration": 6.74
+    },
+    {
+        "text": "to this but we see a whole range of",
+        "start": 3912.24,
+        "duration": 6.3
+    },
+    {
+        "text": "phenotypes speak and and you know it's",
+        "start": 3915.56,
+        "duration": 5.11
+    },
+    {
+        "text": "its quantitative in the sense that we're",
+        "start": 3918.54,
+        "duration": 7.44
+    },
+    {
+        "text": "measuring you know certain parameters",
+        "start": 3920.67,
+        "duration": 9.63
+    },
+    {
+        "text": "such as a total volume in the cell or",
+        "start": 3925.98,
+        "duration": 6.24
+    },
+    {
+        "text": "not volume but you know two in two",
+        "start": 3930.3,
+        "duration": 6.87
+    },
+    {
+        "text": "dimensions but and and so or we're",
+        "start": 3932.22,
+        "duration": 8.58
+    },
+    {
+        "text": "measuring you know how many cells are in",
+        "start": 3937.17,
+        "duration": 7.35
+    },
+    {
+        "text": "a given area so how much",
+        "start": 3940.8,
+        "duration": 6.39
+    },
+    {
+        "text": "a sort just counting and so we're saying",
+        "start": 3944.52,
+        "duration": 5.07
+    },
+    {
+        "text": "okay well we've got 300 plus or minus",
+        "start": 3947.19,
+        "duration": 7.46
+    },
+    {
+        "text": "six and so you know it really is a it",
+        "start": 3949.59,
+        "duration": 8.46
+    },
+    {
+        "text": "really is a you know something that is a",
+        "start": 3954.65,
+        "duration": 7.6
+    },
+    {
+        "text": "range of phenotypes that that can you",
+        "start": 3958.05,
+        "duration": 9.27
+    },
+    {
+        "text": "know can be quite broad and so so it's",
+        "start": 3962.25,
+        "duration": 6.87
+    },
+    {
+        "text": "both the phenotypes are broad and the",
+        "start": 3967.32,
+        "duration": 4.98
+    },
+    {
+        "text": "measurements that we're making our you",
+        "start": 3969.12,
+        "duration": 5.7
+    },
+    {
+        "text": "know fairly precise and you can you know",
+        "start": 3972.3,
+        "duration": 4.37
+    },
+    {
+        "text": "you can have something that's very",
+        "start": 3974.82,
+        "duration": 3.87
+    },
+    {
+        "text": "misshapen you have something slightly",
+        "start": 3976.67,
+        "duration": 3.54
+    },
+    {
+        "text": "misshapen you know something that's",
+        "start": 3978.69,
+        "duration": 3.81
+    },
+    {
+        "text": "proliferating very strongly you can have",
+        "start": 3980.21,
+        "duration": 4.69
+    },
+    {
+        "text": "something that's you know just barely",
+        "start": 3982.5,
+        "duration": 6.21
+    },
+    {
+        "text": "detectable so it's quite a quite a",
+        "start": 3984.9,
+        "duration": 7.35
+    },
+    {
+        "text": "dynamic range I think and I what you job",
+        "start": 3988.71,
+        "duration": 5.79
+    },
+    {
+        "text": "we prefer as if I actually could show",
+        "start": 3992.25,
+        "duration": 3.93
+    },
+    {
+        "text": "you a chart of the dynamic range I tell",
+        "start": 3994.5,
+        "duration": 3.03
+    },
+    {
+        "text": "you it's over but I would say it's sort",
+        "start": 3996.18,
+        "duration": 3.09
+    },
+    {
+        "text": "of like maybe over an order of magnitude",
+        "start": 3997.53,
+        "duration": 5.04
+    },
+    {
+        "text": "err but what you're suggesting is that",
+        "start": 3999.27,
+        "duration": 8.13
+    },
+    {
+        "text": "the appearance of masking is due to",
+        "start": 4002.57,
+        "duration": 8.07
+    },
+    {
+        "text": "limitations on the phenotype no no I'm",
+        "start": 4007.4,
+        "duration": 5.64
+    },
+    {
+        "text": "saying that that's a caveat thank you",
+        "start": 4010.64,
+        "duration": 5.76
+    },
+    {
+        "text": "yeah but but that and so you do see",
+        "start": 4013.04,
+        "duration": 6.54
+    },
+    {
+        "text": "apparent masking even when when it's not",
+        "start": 4016.4,
+        "duration": 5.33
+    },
+    {
+        "text": "when there's not a technical limitation",
+        "start": 4019.58,
+        "duration": 4.92
+    },
+    {
+        "text": "correct yeah yeah no I said I would say",
+        "start": 4021.73,
+        "duration": 5.02
+    },
+    {
+        "text": "that's the majority of what we see yeah",
+        "start": 4024.5,
+        "duration": 5.22
+    },
+    {
+        "text": "I I don't think we're at those maximum",
+        "start": 4026.75,
+        "duration": 6.63
+    },
+    {
+        "text": "thresholds very often of yeah at the",
+        "start": 4029.72,
+        "duration": 5.85
+    },
+    {
+        "text": "very beginning you mentioned an",
+        "start": 4033.38,
+        "duration": 4.29
+    },
+    {
+        "text": "interaction that I'm very interested in",
+        "start": 4035.57,
+        "duration": 3.69
+    },
+    {
+        "text": "but that didn't come up again which is",
+        "start": 4037.67,
+        "duration": 5.07
+    },
+    {
+        "text": "the gene environment interaction and if",
+        "start": 4039.26,
+        "duration": 8.58
+    },
+    {
+        "text": "you have co-occurrence between Mendelian",
+        "start": 4042.74,
+        "duration": 9.02
+    },
+    {
+        "text": "diseases and complex diseases that have",
+        "start": 4047.84,
+        "duration": 6.21
+    },
+    {
+        "text": "apparently nothing to do with each other",
+        "start": 4051.76,
+        "duration": 5.47
+    },
+    {
+        "text": "and nobody thought about one possible",
+        "start": 4054.05,
+        "duration": 5.37
+    },
+    {
+        "text": "explanation could be a common",
+        "start": 4057.23,
+        "duration": 5.79
+    },
+    {
+        "text": "environmental toxin or an environmental",
+        "start": 4059.42,
+        "duration": 6.0
+    },
+    {
+        "text": "factor that influences both your",
+        "start": 4063.02,
+        "duration": 4.41
+    },
+    {
+        "text": "glaucoma and your bipolar disease or",
+        "start": 4065.42,
+        "duration": 4.32
+    },
+    {
+        "text": "whatever Christ anyway you can",
+        "start": 4067.43,
+        "duration": 4.38
+    },
+    {
+        "text": "distinguish between gene gene",
+        "start": 4069.74,
+        "duration": 3.92
+    },
+    {
+        "text": "interaction and gene environment",
+        "start": 4071.81,
+        "duration": 4.68
+    },
+    {
+        "text": "interaction that actually triggers this",
+        "start": 4073.66,
+        "duration": 4.21
+    },
+    {
+        "text": "co-occurrence and the",
+        "start": 4076.49,
+        "duration": 4.08
+    },
+    {
+        "text": "of course in the translational thinking",
+        "start": 4077.87,
+        "duration": 5.25
+    },
+    {
+        "text": "that is maybe even more interesting",
+        "start": 4080.57,
+        "duration": 4.8
+    },
+    {
+        "text": "because we can't change our genes but we",
+        "start": 4083.12,
+        "duration": 5.13
+    },
+    {
+        "text": "can change our environment there is a",
+        "start": 4085.37,
+        "duration": 5.33
+    },
+    {
+        "text": "way to do that and it's with deeper",
+        "start": 4088.25,
+        "duration": 7.29
+    },
+    {
+        "text": "deeper data and and so I you know it's",
+        "start": 4090.7,
+        "duration": 7.87
+    },
+    {
+        "text": "hard to to capture whether someone's a",
+        "start": 4095.54,
+        "duration": 20.1
+    },
+    {
+        "text": "smoker from their billing code ok ok",
+        "start": 4098.57,
+        "duration": 19.68
+    },
+    {
+        "text": "well alright so that was a wrong example",
+        "start": 4115.64,
+        "duration": 6.36
+    },
+    {
+        "text": "I think whether you're vegetarian or not",
+        "start": 4118.25,
+        "duration": 5.79
+    },
+    {
+        "text": "I mean the BMI will probably be in there",
+        "start": 4122.0,
+        "duration": 3.87
+    },
+    {
+        "text": "smoking but you know whether you're",
+        "start": 4124.04,
+        "duration": 3.6
+    },
+    {
+        "text": "vegetarian or not or whether you're",
+        "start": 4125.87,
+        "duration": 3.62
+    },
+    {
+        "text": "eating a lot of there's all sorts of",
+        "start": 4127.64,
+        "duration": 5.07
+    },
+    {
+        "text": "especially not in the blankets so you",
+        "start": 4129.49,
+        "duration": 6.51
+    },
+    {
+        "text": "know having deeper deeper data and maybe",
+        "start": 4132.71,
+        "duration": 5.25
+    },
+    {
+        "text": "you know it's gonna be hard with the",
+        "start": 4136.0,
+        "duration": 3.73
+    },
+    {
+        "text": "Mendelian associations I think it would",
+        "start": 4137.96,
+        "duration": 3.66
+    },
+    {
+        "text": "be less hard with the complex",
+        "start": 4139.73,
+        "duration": 4.23
+    },
+    {
+        "text": "associations so that's probably where",
+        "start": 4141.62,
+        "duration": 4.26
+    },
+    {
+        "text": "you would start do you look for complex",
+        "start": 4143.96,
+        "duration": 4.17
+    },
+    {
+        "text": "by complex and then try to factor the",
+        "start": 4145.88,
+        "duration": 5.49
+    },
+    {
+        "text": "environment in to it one of the so we've",
+        "start": 4148.13,
+        "duration": 5.1
+    },
+    {
+        "text": "been thinking about various things like",
+        "start": 4151.37,
+        "duration": 4.56
+    },
+    {
+        "text": "can we overlay is there any way we can",
+        "start": 4153.23,
+        "duration": 7.17
+    },
+    {
+        "text": "get we're probably not allowed to do",
+        "start": 4155.93,
+        "duration": 6.87
+    },
+    {
+        "text": "this but deconvolute the patient's",
+        "start": 4160.4,
+        "duration": 5.13
+    },
+    {
+        "text": "geography where they're from from their",
+        "start": 4162.8,
+        "duration": 18.9
+    },
+    {
+        "text": "records yeah so yeah yes yes yeah so",
+        "start": 4165.53,
+        "duration": 20.04
+    },
+    {
+        "text": "there but what but one can you know one",
+        "start": 4181.7,
+        "duration": 5.76
+    },
+    {
+        "text": "can imagine that you could use that kind",
+        "start": 4185.57,
+        "duration": 5.07
+    },
+    {
+        "text": "of data as a proxy for environment and",
+        "start": 4187.46,
+        "duration": 5.58
+    },
+    {
+        "text": "Andres actually been doing a bit a bit",
+        "start": 4190.64,
+        "duration": 14.85
+    },
+    {
+        "text": "of that yeah yeah yeah and then we're",
+        "start": 4193.04,
+        "duration": 15.03
+    },
+    {
+        "text": "even getting crazier sometimes and what",
+        "start": 4205.49,
+        "duration": 3.48
+    },
+    {
+        "text": "how we're thinking about this because",
+        "start": 4208.07,
+        "duration": 2.88
+    },
+    {
+        "text": "like Grossmann has his own satellite",
+        "start": 4208.97,
+        "duration": 2.669
+    },
+    {
+        "text": "with NASA",
+        "start": 4210.95,
+        "duration": 3.93
+    },
+    {
+        "text": "and he's taking like real data you know",
+        "start": 4211.639,
+        "duration": 8.73
+    },
+    {
+        "text": "real-time data it's true and it's called",
+        "start": 4214.88,
+        "duration": 7.56
+    },
+    {
+        "text": "the mat-su project and and they and they",
+        "start": 4220.369,
+        "duration": 4.231
+    },
+    {
+        "text": "they're like taking Earth",
+        "start": 4222.44,
+        "duration": 4.71
+    },
+    {
+        "text": "you know longitudinal you know spectra",
+        "start": 4224.6,
+        "duration": 3.96
+    },
+    {
+        "text": "of the earth over time and they're",
+        "start": 4227.15,
+        "duration": 3.21
+    },
+    {
+        "text": "generating terabytes of data all the",
+        "start": 4228.56,
+        "duration": 2.24
+    },
+    {
+        "text": "time",
+        "start": 4230.36,
+        "duration": 4.64
+    },
+    {
+        "text": "they yeah it's danger",
+        "start": 4230.8,
+        "duration": 20.649
+    },
+    {
+        "text": "you can zap you from outer space all",
+        "start": 4235.0,
+        "duration": 19.23
+    },
+    {
+        "text": "right thank you guys",
+        "start": 4251.449,
+        "duration": 2.781
+    }
+]

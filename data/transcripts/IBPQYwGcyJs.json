@@ -1,0 +1,6827 @@
+[
+    {
+        "text": "hello everyone so uh today I'm going to",
+        "start": 0.12,
+        "duration": 6.48
+    },
+    {
+        "text": "talk about open SRH which is our paper",
+        "start": 2.879,
+        "duration": 5.881
+    },
+    {
+        "text": "um that was in New York data sets and",
+        "start": 6.6,
+        "duration": 5.76
+    },
+    {
+        "text": "Benchmark track in 2022 right so in one",
+        "start": 8.76,
+        "duration": 5.459
+    },
+    {
+        "text": "sentence summary of what I'm talking",
+        "start": 12.36,
+        "duration": 4.32
+    },
+    {
+        "text": "about open SRH is the first and only",
+        "start": 14.219,
+        "duration": 5.521
+    },
+    {
+        "text": "publicly available SRH data set",
+        "start": 16.68,
+        "duration": 5.58
+    },
+    {
+        "text": "um that's out there right but before I",
+        "start": 19.74,
+        "duration": 4.799
+    },
+    {
+        "text": "get into the data set itself",
+        "start": 22.26,
+        "duration": 3.779
+    },
+    {
+        "text": "um I think it's a good idea to first",
+        "start": 24.539,
+        "duration": 2.82
+    },
+    {
+        "text": "introduce some background about",
+        "start": 26.039,
+        "duration": 3.781
+    },
+    {
+        "text": "stimulate Roman histology I'm talking",
+        "start": 27.359,
+        "duration": 3.66
+    },
+    {
+        "text": "about the AI methods that we have",
+        "start": 29.82,
+        "duration": 4.02
+    },
+    {
+        "text": "developed developed with um that the",
+        "start": 31.019,
+        "duration": 4.981
+    },
+    {
+        "text": "Imaging method and then I'll go into the",
+        "start": 33.84,
+        "duration": 3.66
+    },
+    {
+        "text": "details about the data section of",
+        "start": 36.0,
+        "duration": 2.76
+    },
+    {
+        "text": "benchmarks",
+        "start": 37.5,
+        "duration": 4.32
+    },
+    {
+        "text": "right so let's Dive Right In so the",
+        "start": 38.76,
+        "duration": 5.58
+    },
+    {
+        "text": "problem that we're dealing with is in",
+        "start": 41.82,
+        "duration": 5.46
+    },
+    {
+        "text": "the field of Neurosurgical oncology and",
+        "start": 44.34,
+        "duration": 4.5
+    },
+    {
+        "text": "this is one of the most important",
+        "start": 47.28,
+        "duration": 2.939
+    },
+    {
+        "text": "problem",
+        "start": 48.84,
+        "duration": 3.84
+    },
+    {
+        "text": "um in the field and is brain tumor",
+        "start": 50.219,
+        "duration": 5.16
+    },
+    {
+        "text": "diagnosis so what happens is that a lot",
+        "start": 52.68,
+        "duration": 5.039
+    },
+    {
+        "text": "of these brain tumor patients will come",
+        "start": 55.379,
+        "duration": 5.16
+    },
+    {
+        "text": "to see a physician at the institution uh",
+        "start": 57.719,
+        "duration": 5.041
+    },
+    {
+        "text": "here like the University of Michigan and",
+        "start": 60.539,
+        "duration": 3.84
+    },
+    {
+        "text": "maybe they have suffered from a",
+        "start": 62.76,
+        "duration": 4.26
+    },
+    {
+        "text": "neurological deficit such as maybe a",
+        "start": 64.379,
+        "duration": 4.92
+    },
+    {
+        "text": "seizure or a headache",
+        "start": 67.02,
+        "duration": 4.32
+    },
+    {
+        "text": "so what happens is that they'll often",
+        "start": 69.299,
+        "duration": 3.721
+    },
+    {
+        "text": "get an MRI and they all look something",
+        "start": 71.34,
+        "duration": 4.08
+    },
+    {
+        "text": "like this right so what we can see on",
+        "start": 73.02,
+        "duration": 4.8
+    },
+    {
+        "text": "the MRI is that we can see something's",
+        "start": 75.42,
+        "duration": 4.379
+    },
+    {
+        "text": "going on right there is a lesion here",
+        "start": 77.82,
+        "duration": 4.02
+    },
+    {
+        "text": "but ultimately this doesn't give us a",
+        "start": 79.799,
+        "duration": 3.841
+    },
+    {
+        "text": "diagnosis and we don't really know what",
+        "start": 81.84,
+        "duration": 4.02
+    },
+    {
+        "text": "this is",
+        "start": 83.64,
+        "duration": 4.619
+    },
+    {
+        "text": "um the only way to get a diagnosis",
+        "start": 85.86,
+        "duration": 4.68
+    },
+    {
+        "text": "um is to obtain tissue from from from",
+        "start": 88.259,
+        "duration": 5.701
+    },
+    {
+        "text": "the tumor right and then uh from once we",
+        "start": 90.54,
+        "duration": 5.939
+    },
+    {
+        "text": "get the tissue then we can put a biopsy",
+        "start": 93.96,
+        "duration": 4.14
+    },
+    {
+        "text": "on the tissue and then actually take the",
+        "start": 96.479,
+        "duration": 2.401
+    },
+    {
+        "text": "look",
+        "start": 98.1,
+        "duration": 3.36
+    },
+    {
+        "text": "um at what the tumor is but there are",
+        "start": 98.88,
+        "duration": 4.32
+    },
+    {
+        "text": "many ways to obtain these tissues",
+        "start": 101.46,
+        "duration": 4.32
+    },
+    {
+        "text": "ranging from a small biopsy to a gross",
+        "start": 103.2,
+        "duration": 4.02
+    },
+    {
+        "text": "total resection",
+        "start": 105.78,
+        "duration": 4.379
+    },
+    {
+        "text": "so what happens to these patients then",
+        "start": 107.22,
+        "duration": 4.62
+    },
+    {
+        "text": "oh one more thing I forgot to understand",
+        "start": 110.159,
+        "duration": 4.081
+    },
+    {
+        "text": "is that this is very important because",
+        "start": 111.84,
+        "duration": 4.68
+    },
+    {
+        "text": "the diagnosis actually determines the",
+        "start": 114.24,
+        "duration": 5.159
+    },
+    {
+        "text": "treatment right so for a patient for",
+        "start": 116.52,
+        "duration": 4.68
+    },
+    {
+        "text": "tumors that respond really well to",
+        "start": 119.399,
+        "duration": 4.26
+    },
+    {
+        "text": "radiotherapy or chemotherapy we actually",
+        "start": 121.2,
+        "duration": 4.32
+    },
+    {
+        "text": "don't want to cut out all of the tumor",
+        "start": 123.659,
+        "duration": 3.6
+    },
+    {
+        "text": "because that end up hurting the patient",
+        "start": 125.52,
+        "duration": 3.9
+    },
+    {
+        "text": "in the long run",
+        "start": 127.259,
+        "duration": 4.441
+    },
+    {
+        "text": "so what happens to these patients is",
+        "start": 129.42,
+        "duration": 4.74
+    },
+    {
+        "text": "that um they will undergo surgery and a",
+        "start": 131.7,
+        "duration": 5.22
+    },
+    {
+        "text": "specimen from the tumor will be taken",
+        "start": 134.16,
+        "duration": 3.36
+    },
+    {
+        "text": "um",
+        "start": 136.92,
+        "duration": 3.36
+    },
+    {
+        "text": "uh and right now",
+        "start": 137.52,
+        "duration": 4.74
+    },
+    {
+        "text": "um this uh specimen will go through a",
+        "start": 140.28,
+        "duration": 4.679
+    },
+    {
+        "text": "pathology workflow that is slow labor",
+        "start": 142.26,
+        "duration": 5.16
+    },
+    {
+        "text": "intensive it requires a lot of tissue",
+        "start": 144.959,
+        "duration": 5.161
+    },
+    {
+        "text": "processing right and here's what I mean",
+        "start": 147.42,
+        "duration": 4.44
+    },
+    {
+        "text": "um the tissue well the essential",
+        "start": 150.12,
+        "duration": 4.5
+    },
+    {
+        "text": "Pathology lab and then a histological",
+        "start": 151.86,
+        "duration": 5.22
+    },
+    {
+        "text": "Workforce will have to process the",
+        "start": 154.62,
+        "duration": 4.38
+    },
+    {
+        "text": "tissue right um and there's a lot of",
+        "start": 157.08,
+        "duration": 4.379
+    },
+    {
+        "text": "processing steps including fixing",
+        "start": 159.0,
+        "duration": 5.3
+    },
+    {
+        "text": "sectioning and sometimes staining",
+        "start": 161.459,
+        "duration": 5.761
+    },
+    {
+        "text": "and this requires a highly skilled",
+        "start": 164.3,
+        "duration": 5.5
+    },
+    {
+        "text": "Workforce and and these images can also",
+        "start": 167.22,
+        "duration": 5.64
+    },
+    {
+        "text": "look very inconsistent sometimes uh that",
+        "start": 169.8,
+        "duration": 5.0
+    },
+    {
+        "text": "depends on the the",
+        "start": 172.86,
+        "duration": 4.019
+    },
+    {
+        "text": "technician's preference and their",
+        "start": 174.8,
+        "duration": 4.86
+    },
+    {
+        "text": "experience and once the image is",
+        "start": 176.879,
+        "duration": 5.761
+    },
+    {
+        "text": "acquired and then it will get sent to a",
+        "start": 179.66,
+        "duration": 6.579
+    },
+    {
+        "text": "neuropathologist to get a diagnosis",
+        "start": 182.64,
+        "duration": 6.78
+    },
+    {
+        "text": "and this is a time consuming process and",
+        "start": 186.239,
+        "duration": 4.86
+    },
+    {
+        "text": "can take anywhere between half an hour",
+        "start": 189.42,
+        "duration": 4.26
+    },
+    {
+        "text": "to up to two hours and",
+        "start": 191.099,
+        "duration": 5.521
+    },
+    {
+        "text": "oh oh well the surgeon is waiting in the",
+        "start": 193.68,
+        "duration": 6.419
+    },
+    {
+        "text": "operating room to get the diagnosis and",
+        "start": 196.62,
+        "duration": 5.759
+    },
+    {
+        "text": "this is not Optical workflow this is not",
+        "start": 200.099,
+        "duration": 4.92
+    },
+    {
+        "text": "a optimal workflow for us",
+        "start": 202.379,
+        "duration": 4.381
+    },
+    {
+        "text": "so the question is can we develop",
+        "start": 205.019,
+        "duration": 3.661
+    },
+    {
+        "text": "something better right we want something",
+        "start": 206.76,
+        "duration": 4.199
+    },
+    {
+        "text": "that's more streamlined for",
+        "start": 208.68,
+        "duration": 4.919
+    },
+    {
+        "text": "intra-operative pathology",
+        "start": 210.959,
+        "duration": 5.881
+    },
+    {
+        "text": "um ideal uh workflow to evaluate this",
+        "start": 213.599,
+        "duration": 6.121
+    },
+    {
+        "text": "specimen should be accessible everywhere",
+        "start": 216.84,
+        "duration": 5.1
+    },
+    {
+        "text": "right even though even when there's no",
+        "start": 219.72,
+        "duration": 3.659
+    },
+    {
+        "text": "equipment or highly trained staff",
+        "start": 221.94,
+        "duration": 3.06
+    },
+    {
+        "text": "available",
+        "start": 223.379,
+        "duration": 3.901
+    },
+    {
+        "text": "um it should be fast right we should uh",
+        "start": 225.0,
+        "duration": 4.44
+    },
+    {
+        "text": "we should be able to get the images or",
+        "start": 227.28,
+        "duration": 4.2
+    },
+    {
+        "text": "the diagnoses right away without having",
+        "start": 229.44,
+        "duration": 3.659
+    },
+    {
+        "text": "to wait for a long time",
+        "start": 231.48,
+        "duration": 3.479
+    },
+    {
+        "text": "it should be standardized everywhere",
+        "start": 233.099,
+        "duration": 3.241
+    },
+    {
+        "text": "right so",
+        "start": 234.959,
+        "duration": 2.881
+    },
+    {
+        "text": "um it should be invariant to",
+        "start": 236.34,
+        "duration": 3.3
+    },
+    {
+        "text": "institutional protocols patient",
+        "start": 237.84,
+        "duration": 4.86
+    },
+    {
+        "text": "demographics in the clinical Workforce",
+        "start": 239.64,
+        "duration": 5.76
+    },
+    {
+        "text": "and it should be accurate when compared",
+        "start": 242.7,
+        "duration": 4.86
+    },
+    {
+        "text": "to the existing standard repair so it",
+        "start": 245.4,
+        "duration": 3.78
+    },
+    {
+        "text": "should work better than what we",
+        "start": 247.56,
+        "duration": 2.58
+    },
+    {
+        "text": "currently have",
+        "start": 249.18,
+        "duration": 3.839
+    },
+    {
+        "text": "and I think where I found something like",
+        "start": 250.14,
+        "duration": 4.26
+    },
+    {
+        "text": "this and that's why we work with",
+        "start": 253.019,
+        "duration": 4.921
+    },
+    {
+        "text": "stimulated Roman histology so",
+        "start": 254.4,
+        "duration": 5.579
+    },
+    {
+        "text": "with SRH",
+        "start": 257.94,
+        "duration": 4.86
+    },
+    {
+        "text": "we can",
+        "start": 259.979,
+        "duration": 6.0
+    },
+    {
+        "text": "instead of sending our specimen to a",
+        "start": 262.8,
+        "duration": 5.459
+    },
+    {
+        "text": "conventional lab we can actually",
+        "start": 265.979,
+        "duration": 3.72
+    },
+    {
+        "text": "um roll the microscope into the",
+        "start": 268.259,
+        "duration": 3.481
+    },
+    {
+        "text": "operating room and we can image right",
+        "start": 269.699,
+        "duration": 5.22
+    },
+    {
+        "text": "there and uh we can get these histology",
+        "start": 271.74,
+        "duration": 7.019
+    },
+    {
+        "text": "images in uh just under a minute and",
+        "start": 274.919,
+        "duration": 6.241
+    },
+    {
+        "text": "once we have these images we're",
+        "start": 278.759,
+        "duration": 4.261
+    },
+    {
+        "text": "developing AI methods to help",
+        "start": 281.16,
+        "duration": 3.9
+    },
+    {
+        "text": "Pathologists",
+        "start": 283.02,
+        "duration": 5.52
+    },
+    {
+        "text": "um to to reach the diagnosis faster and",
+        "start": 285.06,
+        "duration": 5.94
+    },
+    {
+        "text": "this whole process will take uh in about",
+        "start": 288.54,
+        "duration": 4.8
+    },
+    {
+        "text": "just a minute right so we can see that",
+        "start": 291.0,
+        "duration": 5.22
+    },
+    {
+        "text": "there is a significant speed up from the",
+        "start": 293.34,
+        "duration": 5.16
+    },
+    {
+        "text": "conventional workflow to Imaging with",
+        "start": 296.22,
+        "duration": 5.22
+    },
+    {
+        "text": "standard uh with SRH",
+        "start": 298.5,
+        "duration": 5.46
+    },
+    {
+        "text": "so um SRH is actually currently",
+        "start": 301.44,
+        "duration": 4.68
+    },
+    {
+        "text": "clinically being used at the University",
+        "start": 303.96,
+        "duration": 4.44
+    },
+    {
+        "text": "of Michigan and many other Essentials",
+        "start": 306.12,
+        "duration": 4.98
+    },
+    {
+        "text": "across the US and also in Europe",
+        "start": 308.4,
+        "duration": 5.04
+    },
+    {
+        "text": "right so let me go into a little more",
+        "start": 311.1,
+        "duration": 4.8
+    },
+    {
+        "text": "about the Imaging details on for how",
+        "start": 313.44,
+        "duration": 4.979
+    },
+    {
+        "text": "this microscope works",
+        "start": 315.9,
+        "duration": 5.4
+    },
+    {
+        "text": "right so once we have a specimen from",
+        "start": 318.419,
+        "duration": 5.161
+    },
+    {
+        "text": "the uh from the patient",
+        "start": 321.3,
+        "duration": 4.02
+    },
+    {
+        "text": "um all we need to do is to place that",
+        "start": 323.58,
+        "duration": 4.26
+    },
+    {
+        "text": "onto a microscope slide and we don't",
+        "start": 325.32,
+        "duration": 4.86
+    },
+    {
+        "text": "need to do any other tissue processing",
+        "start": 327.84,
+        "duration": 4.62
+    },
+    {
+        "text": "we just need to put it on the microscope",
+        "start": 330.18,
+        "duration": 4.68
+    },
+    {
+        "text": "slide and then close up cover right and",
+        "start": 332.46,
+        "duration": 4.32
+    },
+    {
+        "text": "then this slide can go straight into the",
+        "start": 334.86,
+        "duration": 3.24
+    },
+    {
+        "text": "microscope",
+        "start": 336.78,
+        "duration": 4.68
+    },
+    {
+        "text": "um without any other processing",
+        "start": 338.1,
+        "duration": 4.86
+    },
+    {
+        "text": "um so once the",
+        "start": 341.46,
+        "duration": 4.2
+    },
+    {
+        "text": "once the tissue is in the microscope uh",
+        "start": 342.96,
+        "duration": 6.179
+    },
+    {
+        "text": "we then start the image acquisition so",
+        "start": 345.66,
+        "duration": 6.479
+    },
+    {
+        "text": "um SRH the technology is based on a",
+        "start": 349.139,
+        "duration": 5.28
+    },
+    {
+        "text": "Ramen scattering right so what rhymes",
+        "start": 352.139,
+        "duration": 5.101
+    },
+    {
+        "text": "scattering is is we have instant proton",
+        "start": 354.419,
+        "duration": 4.681
+    },
+    {
+        "text": "on",
+        "start": 357.24,
+        "duration": 4.679
+    },
+    {
+        "text": "on the tissue and it can gain or lose",
+        "start": 359.1,
+        "duration": 5.76
+    },
+    {
+        "text": "energy and when it's being scattered and",
+        "start": 361.919,
+        "duration": 5.401
+    },
+    {
+        "text": "when against the loose energy it has a",
+        "start": 364.86,
+        "duration": 4.679
+    },
+    {
+        "text": "shift in frequency and we can measure",
+        "start": 367.32,
+        "duration": 4.86
+    },
+    {
+        "text": "this shift in frequency to characterize",
+        "start": 369.539,
+        "duration": 4.5
+    },
+    {
+        "text": "biochemical composition",
+        "start": 372.18,
+        "duration": 5.16
+    },
+    {
+        "text": "but the problem with uh Romans Gathering",
+        "start": 374.039,
+        "duration": 6.061
+    },
+    {
+        "text": "is that it's very slow to acquire the",
+        "start": 377.34,
+        "duration": 5.88
+    },
+    {
+        "text": "problem the Broadband Spectra",
+        "start": 380.1,
+        "duration": 7.319
+    },
+    {
+        "text": "um so in 2008 of stimulate Ramen uh",
+        "start": 383.22,
+        "duration": 7.16
+    },
+    {
+        "text": "scattering was discovered",
+        "start": 387.419,
+        "duration": 6.541
+    },
+    {
+        "text": "and instead of using one laser um two",
+        "start": 390.38,
+        "duration": 6.939
+    },
+    {
+        "text": "two lasers are being used and um we can",
+        "start": 393.96,
+        "duration": 4.739
+    },
+    {
+        "text": "use",
+        "start": 397.319,
+        "duration": 3.481
+    },
+    {
+        "text": "we can use these lasers to achieve a",
+        "start": 398.699,
+        "duration": 4.681
+    },
+    {
+        "text": "non-linear amplification of a narrow",
+        "start": 400.8,
+        "duration": 4.8
+    },
+    {
+        "text": "event Spectrum right so we will choose",
+        "start": 403.38,
+        "duration": 5.039
+    },
+    {
+        "text": "on this frequency very frequently very",
+        "start": 405.6,
+        "duration": 3.78
+    },
+    {
+        "text": "carefully",
+        "start": 408.419,
+        "duration": 2.641
+    },
+    {
+        "text": "um to correspond to molecular",
+        "start": 409.38,
+        "duration": 4.439
+    },
+    {
+        "text": "vibrational signatures so what we do",
+        "start": 411.06,
+        "duration": 6.9
+    },
+    {
+        "text": "here is we choose the two very specific",
+        "start": 413.819,
+        "duration": 6.141
+    },
+    {
+        "text": "um",
+        "start": 417.96,
+        "duration": 2.0
+    },
+    {
+        "text": "they correspond to uh",
+        "start": 421.34,
+        "duration": 6.639
+    },
+    {
+        "text": "they correspond to nucleic acid and the",
+        "start": 425.16,
+        "duration": 5.159
+    },
+    {
+        "text": "protein contents in the in the protein",
+        "start": 427.979,
+        "duration": 5.94
+    },
+    {
+        "text": "lipid content in the specimen so once we",
+        "start": 430.319,
+        "duration": 5.94
+    },
+    {
+        "text": "once we do that then we acquire",
+        "start": 433.919,
+        "duration": 4.741
+    },
+    {
+        "text": "um these two channels of images of the",
+        "start": 436.259,
+        "duration": 5.701
+    },
+    {
+        "text": "signals that comes from the microscope",
+        "start": 438.66,
+        "duration": 6.0
+    },
+    {
+        "text": "um so the raw image format output is",
+        "start": 441.96,
+        "duration": 4.5
+    },
+    {
+        "text": "like this and they're in their diacom",
+        "start": 444.66,
+        "duration": 3.36
+    },
+    {
+        "text": "format",
+        "start": 446.46,
+        "duration": 3.9
+    },
+    {
+        "text": "um once we have these images we actually",
+        "start": 448.02,
+        "duration": 4.799
+    },
+    {
+        "text": "do some tissue processing image",
+        "start": 450.36,
+        "duration": 4.92
+    },
+    {
+        "text": "processing for AI model training so what",
+        "start": 452.819,
+        "duration": 4.621
+    },
+    {
+        "text": "happens what we see here is the two raw",
+        "start": 455.28,
+        "duration": 4.5
+    },
+    {
+        "text": "channels and we can see that the channel",
+        "start": 457.44,
+        "duration": 4.56
+    },
+    {
+        "text": "on the top uh toucher corresponds to",
+        "start": 459.78,
+        "duration": 4.56
+    },
+    {
+        "text": "protein and lipid content that's in the",
+        "start": 462.0,
+        "duration": 5.099
+    },
+    {
+        "text": "tissue and the second row here",
+        "start": 464.34,
+        "duration": 5.1
+    },
+    {
+        "text": "um corresponds to the uberic acid that",
+        "start": 467.099,
+        "duration": 4.801
+    },
+    {
+        "text": "they tend to reflect on nucleic acid",
+        "start": 469.44,
+        "duration": 4.62
+    },
+    {
+        "text": "content so what we can do is to subtract",
+        "start": 471.9,
+        "duration": 4.38
+    },
+    {
+        "text": "these two channels to highlight the",
+        "start": 474.06,
+        "duration": 4.5
+    },
+    {
+        "text": "nuclear contrast and we can then",
+        "start": 476.28,
+        "duration": 4.199
+    },
+    {
+        "text": "concatenate that with the two channels",
+        "start": 478.56,
+        "duration": 3.66
+    },
+    {
+        "text": "to create a three-dimensional three",
+        "start": 480.479,
+        "duration": 3.481
+    },
+    {
+        "text": "Channel image right which is something",
+        "start": 482.22,
+        "duration": 4.34
+    },
+    {
+        "text": "that we're used to looking at",
+        "start": 483.96,
+        "duration": 7.5
+    },
+    {
+        "text": "and uh and these images are so these",
+        "start": 486.56,
+        "duration": 7.359
+    },
+    {
+        "text": "these are a few examples of the of the",
+        "start": 491.46,
+        "duration": 4.679
+    },
+    {
+        "text": "patches that we generate from the from",
+        "start": 493.919,
+        "duration": 5.0
+    },
+    {
+        "text": "the whole side images",
+        "start": 496.139,
+        "duration": 2.78
+    },
+    {
+        "text": "um so we will patch our host that image",
+        "start": 499.44,
+        "duration": 5.28
+    },
+    {
+        "text": "into smaller patches because these",
+        "start": 502.5,
+        "duration": 3.72
+    },
+    {
+        "text": "Pulsar images are on the scale",
+        "start": 504.72,
+        "duration": 5.34
+    },
+    {
+        "text": "gigapixels and they're not feasible for",
+        "start": 506.22,
+        "duration": 7.02
+    },
+    {
+        "text": "uh our gpus to process",
+        "start": 510.06,
+        "duration": 5.82
+    },
+    {
+        "text": "and we use the segmentation model to",
+        "start": 513.24,
+        "duration": 5.099
+    },
+    {
+        "text": "determine where on the slide is tumor",
+        "start": 515.88,
+        "duration": 4.5
+    },
+    {
+        "text": "and What instrumental right so we can",
+        "start": 518.339,
+        "duration": 4.021
+    },
+    {
+        "text": "generate this cmap see that appears the",
+        "start": 520.38,
+        "duration": 4.14
+    },
+    {
+        "text": "tumors and appears from normal or normal",
+        "start": 522.36,
+        "duration": 5.64
+    },
+    {
+        "text": "content and these and then the tumorable",
+        "start": 524.52,
+        "duration": 5.58
+    },
+    {
+        "text": "patches right so we're confident about",
+        "start": 528.0,
+        "duration": 4.44
+    },
+    {
+        "text": "that these patches are tumored um then I",
+        "start": 530.1,
+        "duration": 4.38
+    },
+    {
+        "text": "can go through a neural network to",
+        "start": 532.44,
+        "duration": 5.88
+    },
+    {
+        "text": "predict um the tumor probabilities",
+        "start": 534.48,
+        "duration": 6.419
+    },
+    {
+        "text": "so",
+        "start": 538.32,
+        "duration": 4.38
+    },
+    {
+        "text": "um next I want you to talk a little more",
+        "start": 540.899,
+        "duration": 3.361
+    },
+    {
+        "text": "about the AI methods that we're having",
+        "start": 542.7,
+        "duration": 4.259
+    },
+    {
+        "text": "developing our lab um that go with um",
+        "start": 544.26,
+        "duration": 5.519
+    },
+    {
+        "text": "SRH images and specifically I want to",
+        "start": 546.959,
+        "duration": 4.921
+    },
+    {
+        "text": "focus on two projects",
+        "start": 549.779,
+        "duration": 4.321
+    },
+    {
+        "text": "um the first one is on the scope-based",
+        "start": 551.88,
+        "duration": 4.86
+    },
+    {
+        "text": "analysis and it's actually featured on",
+        "start": 554.1,
+        "duration": 4.679
+    },
+    {
+        "text": "the cover of the neurosurgery journal in",
+        "start": 556.74,
+        "duration": 3.96
+    },
+    {
+        "text": "2022.",
+        "start": 558.779,
+        "duration": 5.101
+    },
+    {
+        "text": "so uh first I want to talk about why we",
+        "start": 560.7,
+        "duration": 6.24
+    },
+    {
+        "text": "chose um star-based tumor analysis right",
+        "start": 563.88,
+        "duration": 6.66
+    },
+    {
+        "text": "um skull base uh is Spokes uh the",
+        "start": 566.94,
+        "duration": 6.0
+    },
+    {
+        "text": "diagnosis of a cell based tumor is",
+        "start": 570.54,
+        "duration": 4.2
+    },
+    {
+        "text": "essential to have a personalized",
+        "start": 572.94,
+        "duration": 4.26
+    },
+    {
+        "text": "treatment and",
+        "start": 574.74,
+        "duration": 5.039
+    },
+    {
+        "text": "um and so it's very important for us to",
+        "start": 577.2,
+        "duration": 4.62
+    },
+    {
+        "text": "have this diagnosis",
+        "start": 579.779,
+        "duration": 5.221
+    },
+    {
+        "text": "um during the surgery and the other uh",
+        "start": 581.82,
+        "duration": 4.98
+    },
+    {
+        "text": "important bit about small Bas treatment",
+        "start": 585.0,
+        "duration": 4.62
+    },
+    {
+        "text": "is that it's very diverse right so here",
+        "start": 586.8,
+        "duration": 5.94
+    },
+    {
+        "text": "are some samples of normal and selfish",
+        "start": 589.62,
+        "duration": 4.98
+    },
+    {
+        "text": "tissues and we can see that these",
+        "start": 592.74,
+        "duration": 4.219
+    },
+    {
+        "text": "histologic images look very diverse",
+        "start": 594.6,
+        "duration": 5.52
+    },
+    {
+        "text": "ranging from a very dense cellular",
+        "start": 596.959,
+        "duration": 5.801
+    },
+    {
+        "text": "tumors to some of the tumor that's less",
+        "start": 600.12,
+        "duration": 4.14
+    },
+    {
+        "text": "cellular",
+        "start": 602.76,
+        "duration": 6.0
+    },
+    {
+        "text": "right so um in this project we use ID we",
+        "start": 604.26,
+        "duration": 6.96
+    },
+    {
+        "text": "use the idea of the similar data should",
+        "start": 608.76,
+        "duration": 6.9
+    },
+    {
+        "text": "have a similar representation so",
+        "start": 611.22,
+        "duration": 4.44
+    },
+    {
+        "text": "um for all of these images right we",
+        "start": 615.779,
+        "duration": 3.601
+    },
+    {
+        "text": "would",
+        "start": 618.36,
+        "duration": 2.28
+    },
+    {
+        "text": "um",
+        "start": 619.38,
+        "duration": 4.86
+    },
+    {
+        "text": "we can use a model to compute some",
+        "start": 620.64,
+        "duration": 5.04
+    },
+    {
+        "text": "representations",
+        "start": 624.24,
+        "duration": 3.599
+    },
+    {
+        "text": "um for these images which can then be",
+        "start": 625.68,
+        "duration": 4.44
+    },
+    {
+        "text": "used to generate the predictions",
+        "start": 627.839,
+        "duration": 5.341
+    },
+    {
+        "text": "um for each for each patch and so what",
+        "start": 630.12,
+        "duration": 5.7
+    },
+    {
+        "text": "we can do is we can find some a similar",
+        "start": 633.18,
+        "duration": 6.0
+    },
+    {
+        "text": "patches uh and we will pass the computer",
+        "start": 635.82,
+        "duration": 6.54
+    },
+    {
+        "text": "model and we'll try to make sure that",
+        "start": 639.18,
+        "duration": 4.8
+    },
+    {
+        "text": "they're similar on the representation",
+        "start": 642.36,
+        "duration": 2.78
+    },
+    {
+        "text": "space",
+        "start": 643.98,
+        "duration": 3.96
+    },
+    {
+        "text": "so on how do we find the patches that",
+        "start": 645.14,
+        "duration": 5.08
+    },
+    {
+        "text": "are similar so we can do this in two",
+        "start": 647.94,
+        "duration": 3.959
+    },
+    {
+        "text": "ways",
+        "start": 650.22,
+        "duration": 4.44
+    },
+    {
+        "text": "um if we know the labels of our images",
+        "start": 651.899,
+        "duration": 5.401
+    },
+    {
+        "text": "then we then we can assume that a",
+        "start": 654.66,
+        "duration": 4.56
+    },
+    {
+        "text": "similar the same the images from the",
+        "start": 657.3,
+        "duration": 4.08
+    },
+    {
+        "text": "same level uh will have a similar",
+        "start": 659.22,
+        "duration": 4.98
+    },
+    {
+        "text": "representation right so if that's the",
+        "start": 661.38,
+        "duration": 4.079
+    },
+    {
+        "text": "case",
+        "start": 664.2,
+        "duration": 4.139
+    },
+    {
+        "text": "I'm done then we can use the images from",
+        "start": 665.459,
+        "duration": 4.32
+    },
+    {
+        "text": "the same label and make sure that they",
+        "start": 668.339,
+        "duration": 3.961
+    },
+    {
+        "text": "have a similar representation and if we",
+        "start": 669.779,
+        "duration": 3.781
+    },
+    {
+        "text": "don't know",
+        "start": 672.3,
+        "duration": 3.599
+    },
+    {
+        "text": "um what the what the ground truth label",
+        "start": 673.56,
+        "duration": 4.26
+    },
+    {
+        "text": "is for our images then we can actually",
+        "start": 675.899,
+        "duration": 4.56
+    },
+    {
+        "text": "use different augmentations right so for",
+        "start": 677.82,
+        "duration": 4.86
+    },
+    {
+        "text": "example we can try to blur the image or",
+        "start": 680.459,
+        "duration": 5.101
+    },
+    {
+        "text": "maybe shift it around right so um this",
+        "start": 682.68,
+        "duration": 4.92
+    },
+    {
+        "text": "this way we can know that these images",
+        "start": 685.56,
+        "duration": 4.98
+    },
+    {
+        "text": "should look are still are still very",
+        "start": 687.6,
+        "duration": 4.919
+    },
+    {
+        "text": "similar to each other and therefore they",
+        "start": 690.54,
+        "duration": 4.799
+    },
+    {
+        "text": "should have a similar representations",
+        "start": 692.519,
+        "duration": 5.041
+    },
+    {
+        "text": "so using this technique which is called",
+        "start": 695.339,
+        "duration": 4.56
+    },
+    {
+        "text": "contrastive learning we can achieve",
+        "start": 697.56,
+        "duration": 3.779
+    },
+    {
+        "text": "excellent results",
+        "start": 699.899,
+        "duration": 3.601
+    },
+    {
+        "text": "um and as we expected right our",
+        "start": 701.339,
+        "duration": 4.44
+    },
+    {
+        "text": "supervised contraceptive learning where",
+        "start": 703.5,
+        "duration": 4.2
+    },
+    {
+        "text": "we know the labels during training um",
+        "start": 705.779,
+        "duration": 4.981
+    },
+    {
+        "text": "all performs um self-supervised methods",
+        "start": 707.7,
+        "duration": 5.34
+    },
+    {
+        "text": "um which is trained without labels or",
+        "start": 710.76,
+        "duration": 3.78
+    },
+    {
+        "text": "the conventional cross-centric model",
+        "start": 713.04,
+        "duration": 3.08
+    },
+    {
+        "text": "that's the Baseline",
+        "start": 714.54,
+        "duration": 4.08
+    },
+    {
+        "text": "we can also look at some confusion",
+        "start": 716.12,
+        "duration": 5.02
+    },
+    {
+        "text": "matrices uh for the models that we train",
+        "start": 718.62,
+        "duration": 5.159
+    },
+    {
+        "text": "and we didn't see that many areas are",
+        "start": 721.14,
+        "duration": 5.1
+    },
+    {
+        "text": "actually in the processing class and",
+        "start": 723.779,
+        "duration": 4.861
+    },
+    {
+        "text": "that is uh that actually do correspond",
+        "start": 726.24,
+        "duration": 4.86
+    },
+    {
+        "text": "to our domain knowledge that metastasis",
+        "start": 728.64,
+        "duration": 4.92
+    },
+    {
+        "text": "is a very diverse class and it makes",
+        "start": 731.1,
+        "duration": 4.679
+    },
+    {
+        "text": "sense that we have this",
+        "start": 733.56,
+        "duration": 5.779
+    },
+    {
+        "text": "um slightly worse performance",
+        "start": 735.779,
+        "duration": 3.56
+    },
+    {
+        "text": "right we can also visualize these",
+        "start": 739.38,
+        "duration": 5.24
+    },
+    {
+        "text": "learning representations using tissue",
+        "start": 741.6,
+        "duration": 5.58
+    },
+    {
+        "text": "dimensionality reduction and from here",
+        "start": 744.62,
+        "duration": 4.24
+    },
+    {
+        "text": "we can see that",
+        "start": 747.18,
+        "duration": 3.839
+    },
+    {
+        "text": "um they're using supervised contrastive",
+        "start": 748.86,
+        "duration": 3.599
+    },
+    {
+        "text": "learning we can visualize much better",
+        "start": 751.019,
+        "duration": 4.741
+    },
+    {
+        "text": "separation between classes uh compared",
+        "start": 752.459,
+        "duration": 5.701
+    },
+    {
+        "text": "to uh process attribute but we can see",
+        "start": 755.76,
+        "duration": 4.5
+    },
+    {
+        "text": "that the cell supervised learning",
+        "start": 758.16,
+        "duration": 4.38
+    },
+    {
+        "text": "um doesn't do as well and in this that's",
+        "start": 760.26,
+        "duration": 4.259
+    },
+    {
+        "text": "okay because from cell supervised",
+        "start": 762.54,
+        "duration": 3.18
+    },
+    {
+        "text": "learning is actually training without",
+        "start": 764.519,
+        "duration": 3.721
+    },
+    {
+        "text": "any supervision uh when we're learning",
+        "start": 765.72,
+        "duration": 4.26
+    },
+    {
+        "text": "the model okay what are the points here",
+        "start": 768.24,
+        "duration": 4.08
+    },
+    {
+        "text": "uh there are each patches in like",
+        "start": 769.98,
+        "duration": 5.46
+    },
+    {
+        "text": "roughly how many images or patients",
+        "start": 772.32,
+        "duration": 6.12
+    },
+    {
+        "text": "is",
+        "start": 775.44,
+        "duration": 3.0
+    },
+    {
+        "text": "um so we have about 8 000 points as",
+        "start": 781.68,
+        "duration": 3.959
+    },
+    {
+        "text": "visualized but that's not all the",
+        "start": 784.32,
+        "duration": 3.78
+    },
+    {
+        "text": "training or the validations data set",
+        "start": 785.639,
+        "duration": 4.2
+    },
+    {
+        "text": "um I don't know the number of patients",
+        "start": 788.1,
+        "duration": 3.539
+    },
+    {
+        "text": "at the top I had",
+        "start": 789.839,
+        "duration": 4.381
+    },
+    {
+        "text": "um we can touch base after I can I can",
+        "start": 791.639,
+        "duration": 5.601
+    },
+    {
+        "text": "compute the numbers",
+        "start": 794.22,
+        "duration": 3.02
+    },
+    {
+        "text": "um one of the most common",
+        "start": 797.519,
+        "duration": 5.701
+    },
+    {
+        "text": "uh questions that we got from surgeon is",
+        "start": 799.62,
+        "duration": 5.459
+    },
+    {
+        "text": "um how does that help us right how does",
+        "start": 803.22,
+        "duration": 4.98
+    },
+    {
+        "text": "the AI help us so what we can or what we",
+        "start": 805.079,
+        "duration": 5.76
+    },
+    {
+        "text": "can use our aim to do is to do something",
+        "start": 808.2,
+        "duration": 5.28
+    },
+    {
+        "text": "called margin delineation so what",
+        "start": 810.839,
+        "duration": 4.74
+    },
+    {
+        "text": "happens during surgery is that the",
+        "start": 813.48,
+        "duration": 3.72
+    },
+    {
+        "text": "surgeon will assemble from different",
+        "start": 815.579,
+        "duration": 4.5
+    },
+    {
+        "text": "places on the tumor",
+        "start": 817.2,
+        "duration": 5.22
+    },
+    {
+        "text": "and the surgeon will want to know",
+        "start": 820.079,
+        "duration": 4.981
+    },
+    {
+        "text": "um where every place is sample is tumor",
+        "start": 822.42,
+        "duration": 5.4
+    },
+    {
+        "text": "or normal so our model can help the",
+        "start": 825.06,
+        "duration": 5.399
+    },
+    {
+        "text": "surgeon to decide that maybe different",
+        "start": 827.82,
+        "duration": 5.639
+    },
+    {
+        "text": "regions that they sample this tumor",
+        "start": 830.459,
+        "duration": 4.62
+    },
+    {
+        "text": "um and maybe they should keep respecting",
+        "start": 833.459,
+        "duration": 4.801
+    },
+    {
+        "text": "or maybe some regions that we sample is",
+        "start": 835.079,
+        "duration": 5.101
+    },
+    {
+        "text": "not tumor and maybe the reception is",
+        "start": 838.26,
+        "duration": 3.72
+    },
+    {
+        "text": "good",
+        "start": 840.18,
+        "duration": 3.42
+    },
+    {
+        "text": "all right so that's the first",
+        "start": 841.98,
+        "duration": 5.28
+    },
+    {
+        "text": "application and the the second AI that I",
+        "start": 843.6,
+        "duration": 5.34
+    },
+    {
+        "text": "want to talk about today",
+        "start": 847.26,
+        "duration": 3.72
+    },
+    {
+        "text": "um is molecular diagnosis politically or",
+        "start": 848.94,
+        "duration": 4.139
+    },
+    {
+        "text": "muscle",
+        "start": 850.98,
+        "duration": 6.78
+    },
+    {
+        "text": "um so emotionally cliomas are diagnosis",
+        "start": 853.079,
+        "duration": 7.26
+    },
+    {
+        "text": "with histologic features right so um",
+        "start": 857.76,
+        "duration": 4.319
+    },
+    {
+        "text": "these images will be examined by a",
+        "start": 860.339,
+        "duration": 3.601
+    },
+    {
+        "text": "pathologists",
+        "start": 862.079,
+        "duration": 3.601
+    },
+    {
+        "text": "and",
+        "start": 863.94,
+        "duration": 5.16
+    },
+    {
+        "text": "and they will classify the cliona",
+        "start": 865.68,
+        "duration": 6.0
+    },
+    {
+        "text": "grading and the subtypes based on",
+        "start": 869.1,
+        "duration": 5.58
+    },
+    {
+        "text": "histologic features and this can",
+        "start": 871.68,
+        "duration": 5.399
+    },
+    {
+        "text": "sometimes be subjective and could be",
+        "start": 874.68,
+        "duration": 4.74
+    },
+    {
+        "text": "varied between Physicians especially",
+        "start": 877.079,
+        "duration": 5.461
+    },
+    {
+        "text": "depends on the pathologist experience",
+        "start": 879.42,
+        "duration": 8.94
+    },
+    {
+        "text": "so in 2016 uh thanks to uh tcga right",
+        "start": 882.54,
+        "duration": 8.34
+    },
+    {
+        "text": "there is a study that showed that",
+        "start": 888.36,
+        "duration": 4.62
+    },
+    {
+        "text": "actually",
+        "start": 890.88,
+        "duration": 4.139
+    },
+    {
+        "text": "um these molecular mutations these",
+        "start": 892.98,
+        "duration": 4.979
+    },
+    {
+        "text": "molecular subgroups correspond to a",
+        "start": 895.019,
+        "duration": 4.741
+    },
+    {
+        "text": "patient overall survival and treatment",
+        "start": 897.959,
+        "duration": 4.801
+    },
+    {
+        "text": "response so much better than what the",
+        "start": 899.76,
+        "duration": 5.879
+    },
+    {
+        "text": "histologic feature enables us",
+        "start": 902.76,
+        "duration": 5.42
+    },
+    {
+        "text": "um therefore it is so that internally 21",
+        "start": 905.639,
+        "duration": 5.94
+    },
+    {
+        "text": "uh the World Health Organization changed",
+        "start": 908.18,
+        "duration": 6.519
+    },
+    {
+        "text": "the way that we classify gliomas right",
+        "start": 911.579,
+        "duration": 5.76
+    },
+    {
+        "text": "from based on histologic features",
+        "start": 914.699,
+        "duration": 6.601
+    },
+    {
+        "text": "um to only based on these new patients",
+        "start": 917.339,
+        "duration": 6.12
+    },
+    {
+        "text": "um but the problem here is that",
+        "start": 921.3,
+        "duration": 5.159
+    },
+    {
+        "text": "molecular diagnosis will require a",
+        "start": 923.459,
+        "duration": 4.74
+    },
+    {
+        "text": "immunohistochemistry",
+        "start": 926.459,
+        "duration": 4.68
+    },
+    {
+        "text": "or next Generation sequencing and these",
+        "start": 928.199,
+        "duration": 5.401
+    },
+    {
+        "text": "methods are very time consuming and also",
+        "start": 931.139,
+        "duration": 5.221
+    },
+    {
+        "text": "very very expensive right so there's a",
+        "start": 933.6,
+        "duration": 5.82
+    },
+    {
+        "text": "need um to develop develop an AI to help",
+        "start": 936.36,
+        "duration": 5.82
+    },
+    {
+        "text": "us to determine the molecular medication",
+        "start": 939.42,
+        "duration": 5.279
+    },
+    {
+        "text": "for the gliomas",
+        "start": 942.18,
+        "duration": 6.48
+    },
+    {
+        "text": "so the clinical relevance for having an",
+        "start": 944.699,
+        "duration": 6.961
+    },
+    {
+        "text": "AI method here is that it can again help",
+        "start": 948.66,
+        "duration": 5.82
+    },
+    {
+        "text": "us guide the tumor resection right it",
+        "start": 951.66,
+        "duration": 5.88
+    },
+    {
+        "text": "can help us extend access of molecular",
+        "start": 954.48,
+        "duration": 6.12
+    },
+    {
+        "text": "testing without requiring these",
+        "start": 957.54,
+        "duration": 5.34
+    },
+    {
+        "text": "expensive tests and",
+        "start": 960.6,
+        "duration": 4.739
+    },
+    {
+        "text": "in in Laboratories",
+        "start": 962.88,
+        "duration": 5.519
+    },
+    {
+        "text": "and it can also help us inform uh",
+        "start": 965.339,
+        "duration": 4.86
+    },
+    {
+        "text": "clinical trial feasibility and",
+        "start": 968.399,
+        "duration": 5.221
+    },
+    {
+        "text": "enrollment for early post-op Therapies",
+        "start": 970.199,
+        "duration": 7.2
+    },
+    {
+        "text": "right so we call our algorithm d cleoma",
+        "start": 973.62,
+        "duration": 6.42
+    },
+    {
+        "text": "so how do we train right so there are",
+        "start": 977.399,
+        "duration": 4.081
+    },
+    {
+        "text": "three steps that we need to do we need",
+        "start": 980.04,
+        "duration": 3.299
+    },
+    {
+        "text": "to First learn the images",
+        "start": 981.48,
+        "duration": 3.299
+    },
+    {
+        "text": "um we need to learn the genomic",
+        "start": 983.339,
+        "duration": 3.36
+    },
+    {
+        "text": "landscape and I'll get into what that",
+        "start": 984.779,
+        "duration": 4.68
+    },
+    {
+        "text": "means in just a second and we and and",
+        "start": 986.699,
+        "duration": 4.38
+    },
+    {
+        "text": "then we'll take other components and",
+        "start": 989.459,
+        "duration": 3.541
+    },
+    {
+        "text": "we'll put them together to classify",
+        "start": 991.079,
+        "duration": 4.38
+    },
+    {
+        "text": "images using the genomic landscape that",
+        "start": 993.0,
+        "duration": 3.839
+    },
+    {
+        "text": "we're learning",
+        "start": 995.459,
+        "duration": 4.141
+    },
+    {
+        "text": "so the first step is to learn the images",
+        "start": 996.839,
+        "duration": 5.94
+    },
+    {
+        "text": "right so this figure looks very familiar",
+        "start": 999.6,
+        "duration": 5.76
+    },
+    {
+        "text": "right we'll use the same idea that we",
+        "start": 1002.779,
+        "duration": 5.101
+    },
+    {
+        "text": "used earlier where similar images should",
+        "start": 1005.36,
+        "duration": 3.919
+    },
+    {
+        "text": "have similar representation",
+        "start": 1007.88,
+        "duration": 4.62
+    },
+    {
+        "text": "representations right so we'll have a",
+        "start": 1009.279,
+        "duration": 5.321
+    },
+    {
+        "text": "patch we'll take the patches and we'll",
+        "start": 1012.5,
+        "duration": 4.5
+    },
+    {
+        "text": "do either augmentations or we'll sample",
+        "start": 1014.6,
+        "duration": 4.979
+    },
+    {
+        "text": "from um patches that are from the same",
+        "start": 1017.0,
+        "duration": 4.98
+    },
+    {
+        "text": "terminal same terminal class",
+        "start": 1019.579,
+        "duration": 3.841
+    },
+    {
+        "text": "and from here we'll have the",
+        "start": 1021.98,
+        "duration": 4.14
+    },
+    {
+        "text": "representations for the images",
+        "start": 1023.42,
+        "duration": 5.22
+    },
+    {
+        "text": "and second is to learn the genomic",
+        "start": 1026.12,
+        "duration": 5.4
+    },
+    {
+        "text": "landscape this is",
+        "start": 1028.64,
+        "duration": 5.939
+    },
+    {
+        "text": "so when we when we do know about a lot",
+        "start": 1031.52,
+        "duration": 4.919
+    },
+    {
+        "text": "of these mutations is that some of them",
+        "start": 1034.579,
+        "duration": 5.34
+    },
+    {
+        "text": "tend to occur together and some of them",
+        "start": 1036.439,
+        "duration": 5.461
+    },
+    {
+        "text": "maybe don't occur together and we",
+        "start": 1039.919,
+        "duration": 4.38
+    },
+    {
+        "text": "actually have a lot of data about on",
+        "start": 1041.9,
+        "duration": 4.559
+    },
+    {
+        "text": "this genomic data that's actually",
+        "start": 1044.299,
+        "duration": 5.521
+    },
+    {
+        "text": "publicly available from tcga cgga and",
+        "start": 1046.459,
+        "duration": 5.821
+    },
+    {
+        "text": "other sources",
+        "start": 1049.82,
+        "duration": 4.56
+    },
+    {
+        "text": "um so what we can do here is we can use",
+        "start": 1052.28,
+        "duration": 4.68
+    },
+    {
+        "text": "a we can train a machine learning model",
+        "start": 1054.38,
+        "duration": 6.0
+    },
+    {
+        "text": "to um as a genetic encoder to basically",
+        "start": 1056.96,
+        "duration": 6.42
+    },
+    {
+        "text": "learn these core occurrences and we can",
+        "start": 1060.38,
+        "duration": 5.76
+    },
+    {
+        "text": "leverage these co-appearances to help us",
+        "start": 1063.38,
+        "duration": 4.799
+    },
+    {
+        "text": "predict on the mutations together",
+        "start": 1066.14,
+        "duration": 4.44
+    },
+    {
+        "text": "Downstream",
+        "start": 1068.179,
+        "duration": 4.561
+    },
+    {
+        "text": "right so once we learn these two",
+        "start": 1070.58,
+        "duration": 3.9
+    },
+    {
+        "text": "components we can put everything",
+        "start": 1072.74,
+        "duration": 4.26
+    },
+    {
+        "text": "together so what we had is the image",
+        "start": 1074.48,
+        "duration": 6.559
+    },
+    {
+        "text": "encoder here and we also have our learn",
+        "start": 1077.0,
+        "duration": 6.96
+    },
+    {
+        "text": "genomic encoder and we will put all the",
+        "start": 1081.039,
+        "duration": 5.14
+    },
+    {
+        "text": "components together and we can use a",
+        "start": 1083.96,
+        "duration": 4.62
+    },
+    {
+        "text": "Transformer architecture to help us",
+        "start": 1086.179,
+        "duration": 6.301
+    },
+    {
+        "text": "predict the mutation of each subgroup",
+        "start": 1088.58,
+        "duration": 6.66
+    },
+    {
+        "text": "and once we have the classification for",
+        "start": 1092.48,
+        "duration": 5.04
+    },
+    {
+        "text": "each subgroup we can then combine all of",
+        "start": 1095.24,
+        "duration": 4.26
+    },
+    {
+        "text": "them together to have an overall",
+        "start": 1097.52,
+        "duration": 5.46
+    },
+    {
+        "text": "molecular diagnosis",
+        "start": 1099.5,
+        "duration": 5.58
+    },
+    {
+        "text": "we tested",
+        "start": 1102.98,
+        "duration": 5.22
+    },
+    {
+        "text": "um biblioma International multi-center",
+        "start": 1105.08,
+        "duration": 5.4
+    },
+    {
+        "text": "infrastructive testing cohort including",
+        "start": 1108.2,
+        "duration": 3.839
+    },
+    {
+        "text": "institutions here in the United States",
+        "start": 1110.48,
+        "duration": 3.18
+    },
+    {
+        "text": "and also in Europe",
+        "start": 1112.039,
+        "duration": 4.201
+    },
+    {
+        "text": "and we can see that overall our model",
+        "start": 1113.66,
+        "duration": 5.46
+    },
+    {
+        "text": "achieves excellent results in the three",
+        "start": 1116.24,
+        "duration": 4.62
+    },
+    {
+        "text": "molecular subgroups that we are focused",
+        "start": 1119.12,
+        "duration": 4.5
+    },
+    {
+        "text": "on right so these Spirit subgroups are",
+        "start": 1120.86,
+        "duration": 6.96
+    },
+    {
+        "text": "the three molecular mutations that the",
+        "start": 1123.62,
+        "duration": 7.559
+    },
+    {
+        "text": "who have defined to help us classify the",
+        "start": 1127.82,
+        "duration": 4.68
+    },
+    {
+        "text": "poliomas",
+        "start": 1131.179,
+        "duration": 5.161
+    },
+    {
+        "text": "right um we use many metrics to evaluate",
+        "start": 1132.5,
+        "duration": 5.76
+    },
+    {
+        "text": "our machine learning model and we can",
+        "start": 1136.34,
+        "duration": 4.56
+    },
+    {
+        "text": "see that we achieve excellent results in",
+        "start": 1138.26,
+        "duration": 5.22
+    },
+    {
+        "text": "over 90 for pretty much all the metrics",
+        "start": 1140.9,
+        "duration": 4.019
+    },
+    {
+        "text": "except for",
+        "start": 1143.48,
+        "duration": 3.439
+    },
+    {
+        "text": "um",
+        "start": 1144.919,
+        "duration": 2.0
+    },
+    {
+        "text": "but",
+        "start": 1148.46,
+        "duration": 4.62
+    },
+    {
+        "text": "um and from from the molecular subgroups",
+        "start": 1149.48,
+        "duration": 6.0
+    },
+    {
+        "text": "we can then combine them together to get",
+        "start": 1153.08,
+        "duration": 4.8
+    },
+    {
+        "text": "the final diagnosis of the molecular",
+        "start": 1155.48,
+        "duration": 4.68
+    },
+    {
+        "text": "classification right and we can see that",
+        "start": 1157.88,
+        "duration": 4.74
+    },
+    {
+        "text": "we still achieve very good results once",
+        "start": 1160.16,
+        "duration": 4.92
+    },
+    {
+        "text": "we combine these uh once we combine",
+        "start": 1162.62,
+        "duration": 5.16
+    },
+    {
+        "text": "these molecular subgroups together and",
+        "start": 1165.08,
+        "duration": 5.58
+    },
+    {
+        "text": "especially in patients that is in the 55",
+        "start": 1167.78,
+        "duration": 5.3
+    },
+    {
+        "text": "years old",
+        "start": 1170.66,
+        "duration": 2.42
+    },
+    {
+        "text": "[Music]",
+        "start": 1173.17,
+        "duration": 5.77
+    },
+    {
+        "text": "you take a genomic sample and then",
+        "start": 1175.24,
+        "duration": 5.86
+    },
+    {
+        "text": "you're predicting with the histology and",
+        "start": 1178.94,
+        "duration": 4.02
+    },
+    {
+        "text": "you're also the predicting the genomic",
+        "start": 1181.1,
+        "duration": 3.66
+    },
+    {
+        "text": "substitute no and the testing this time",
+        "start": 1182.96,
+        "duration": 4.68
+    },
+    {
+        "text": "we only have the in the clinical setting",
+        "start": 1184.76,
+        "duration": 4.26
+    },
+    {
+        "text": "we only have the images",
+        "start": 1187.64,
+        "duration": 3.18
+    },
+    {
+        "text": "okay so when we have that arrange",
+        "start": 1189.02,
+        "duration": 3.779
+    },
+    {
+        "text": "training during the training we have the",
+        "start": 1190.82,
+        "duration": 4.8
+    },
+    {
+        "text": "the labels yeah",
+        "start": 1192.799,
+        "duration": 4.981
+    },
+    {
+        "text": "a training we have the molecular labels",
+        "start": 1195.62,
+        "duration": 4.679
+    },
+    {
+        "text": "but in a clinic during inference time we",
+        "start": 1197.78,
+        "duration": 5.0
+    },
+    {
+        "text": "only have three images",
+        "start": 1200.299,
+        "duration": 2.481
+    },
+    {
+        "text": "so how does that compare to the existing",
+        "start": 1204.58,
+        "duration": 5.5
+    },
+    {
+        "text": "methods uh to get the molecular",
+        "start": 1208.16,
+        "duration": 4.98
+    },
+    {
+        "text": "diagnosis right",
+        "start": 1210.08,
+        "duration": 5.64
+    },
+    {
+        "text": "um so one of the challenge uh for the",
+        "start": 1213.14,
+        "duration": 4.8
+    },
+    {
+        "text": "current current diagnosis that the",
+        "start": 1215.72,
+        "duration": 3.8
+    },
+    {
+        "text": "testing needs to be go through",
+        "start": 1217.94,
+        "duration": 4.26
+    },
+    {
+        "text": "immunohistochemistry or IHC",
+        "start": 1219.52,
+        "duration": 5.62
+    },
+    {
+        "text": "um I see tests for a very specific",
+        "start": 1222.2,
+        "duration": 6.18
+    },
+    {
+        "text": "mutation right it doesn't sorry there's",
+        "start": 1225.14,
+        "duration": 4.74
+    },
+    {
+        "text": "a question online I just want to make",
+        "start": 1228.38,
+        "duration": 2.82
+    },
+    {
+        "text": "sure in case it is specifically wrong",
+        "start": 1229.88,
+        "duration": 3.659
+    },
+    {
+        "text": "but uh because how does it do in terms",
+        "start": 1231.2,
+        "duration": 4.38
+    },
+    {
+        "text": "of FDR",
+        "start": 1233.539,
+        "duration": 4.561
+    },
+    {
+        "text": "back you are supposed to Discovery",
+        "start": 1235.58,
+        "duration": 4.74
+    },
+    {
+        "text": "results",
+        "start": 1238.1,
+        "duration": 3.26
+    },
+    {
+        "text": "um",
+        "start": 1240.32,
+        "duration": 3.96
+    },
+    {
+        "text": "I I don't I don't have the numbers I'm",
+        "start": 1241.36,
+        "duration": 6.54
+    },
+    {
+        "text": "sorry all right if you",
+        "start": 1244.28,
+        "duration": 3.62
+    },
+    {
+        "text": "or contact",
+        "start": 1248.0,
+        "duration": 3.48
+    },
+    {
+        "text": "s you want to unmute yourself and ask",
+        "start": 1249.98,
+        "duration": 3.24
+    },
+    {
+        "text": "that would be great",
+        "start": 1251.48,
+        "duration": 5.76
+    },
+    {
+        "text": "yeah hi so technically like when you",
+        "start": 1253.22,
+        "duration": 6.66
+    },
+    {
+        "text": "um if you can go back and go on to your",
+        "start": 1257.24,
+        "duration": 6.78
+    },
+    {
+        "text": "last slide uh again the last one",
+        "start": 1259.88,
+        "duration": 5.34
+    },
+    {
+        "text": "um",
+        "start": 1264.02,
+        "duration": 5.34
+    },
+    {
+        "text": "the before yeah so so now here you are",
+        "start": 1265.22,
+        "duration": 5.88
+    },
+    {
+        "text": "only considering the true positive rate",
+        "start": 1269.36,
+        "duration": 6.42
+    },
+    {
+        "text": "now like and in along with your kind of",
+        "start": 1271.1,
+        "duration": 6.6
+    },
+    {
+        "text": "plotting the false positive traits in a",
+        "start": 1275.78,
+        "duration": 4.8
+    },
+    {
+        "text": "way you are looking into like AUC or",
+        "start": 1277.7,
+        "duration": 6.06
+    },
+    {
+        "text": "similar kind of stuff so like do you",
+        "start": 1280.58,
+        "duration": 4.92
+    },
+    {
+        "text": "know that if your method kind of",
+        "start": 1283.76,
+        "duration": 4.38
+    },
+    {
+        "text": "controls false discoveries or is the",
+        "start": 1285.5,
+        "duration": 5.159
+    },
+    {
+        "text": "power Just because like it finds like",
+        "start": 1288.14,
+        "duration": 4.37
+    },
+    {
+        "text": "way too many",
+        "start": 1290.659,
+        "duration": 2.581
+    },
+    {
+        "text": "[Music]",
+        "start": 1292.51,
+        "duration": 2.73
+    },
+    {
+        "text": "um",
+        "start": 1293.24,
+        "duration": 2.0
+    },
+    {
+        "text": "like way too many",
+        "start": 1295.28,
+        "duration": 7.16
+    },
+    {
+        "text": "options to just get considered",
+        "start": 1297.679,
+        "duration": 4.761
+    },
+    {
+        "text": "um I I don't know if you if you send an",
+        "start": 1303.44,
+        "duration": 4.02
+    },
+    {
+        "text": "email I can follow up with you okay",
+        "start": 1305.299,
+        "duration": 4.981
+    },
+    {
+        "text": "great thank you I'm not familiar with",
+        "start": 1307.46,
+        "duration": 3.719
+    },
+    {
+        "text": "the",
+        "start": 1310.28,
+        "duration": 2.46
+    },
+    {
+        "text": "the metric that you're talking about",
+        "start": 1311.179,
+        "duration": 4.521
+    },
+    {
+        "text": "okay",
+        "start": 1312.74,
+        "duration": 2.96
+    },
+    {
+        "text": "so",
+        "start": 1317.24,
+        "duration": 4.2
+    },
+    {
+        "text": "so yeah so let's compare",
+        "start": 1318.32,
+        "duration": 5.04
+    },
+    {
+        "text": "um How Deeply almost performs compared",
+        "start": 1321.44,
+        "duration": 3.0
+    },
+    {
+        "text": "to",
+        "start": 1323.36,
+        "duration": 2.939
+    },
+    {
+        "text": "um the current weight that we're",
+        "start": 1324.44,
+        "duration": 4.739
+    },
+    {
+        "text": "diagnosing biblioma patients",
+        "start": 1326.299,
+        "duration": 4.62
+    },
+    {
+        "text": "um and that's your immunohistochemistry",
+        "start": 1329.179,
+        "duration": 4.801
+    },
+    {
+        "text": "the problem with immunohistochemistry is",
+        "start": 1330.919,
+        "duration": 4.74
+    },
+    {
+        "text": "that it only",
+        "start": 1333.98,
+        "duration": 4.62
+    },
+    {
+        "text": "um tests for a specific mutation and it",
+        "start": 1335.659,
+        "duration": 5.101
+    },
+    {
+        "text": "doesn't really account for these",
+        "start": 1338.6,
+        "duration": 3.959
+    },
+    {
+        "text": "non-canonical mutations or sometimes",
+        "start": 1340.76,
+        "duration": 3.84
+    },
+    {
+        "text": "idh2 mutations",
+        "start": 1342.559,
+        "duration": 4.681
+    },
+    {
+        "text": "um so um this is especially important",
+        "start": 1344.6,
+        "duration": 5.76
+    },
+    {
+        "text": "for patients with low grade gliomas um",
+        "start": 1347.24,
+        "duration": 5.939
+    },
+    {
+        "text": "which is very common in patients uh with",
+        "start": 1350.36,
+        "duration": 5.16
+    },
+    {
+        "text": "with a younger than 55 years old and",
+        "start": 1353.179,
+        "duration": 5.221
+    },
+    {
+        "text": "that's why it's often recommended to in",
+        "start": 1355.52,
+        "duration": 5.76
+    },
+    {
+        "text": "addition to immunohistochemistry to also",
+        "start": 1358.4,
+        "duration": 6.659
+    },
+    {
+        "text": "do uh uh sequencing which is more",
+        "start": 1361.28,
+        "duration": 6.06
+    },
+    {
+        "text": "expensive and takes more time",
+        "start": 1365.059,
+        "duration": 5.1
+    },
+    {
+        "text": "um and we can see that so so we we can",
+        "start": 1367.34,
+        "duration": 4.86
+    },
+    {
+        "text": "see that I think we all outperforms the",
+        "start": 1370.159,
+        "duration": 5.221
+    },
+    {
+        "text": "standard immunohistochemistry uh testing",
+        "start": 1372.2,
+        "duration": 4.859
+    },
+    {
+        "text": "and especially in patients that's",
+        "start": 1375.38,
+        "duration": 4.5
+    },
+    {
+        "text": "younger than 55 years old",
+        "start": 1377.059,
+        "duration": 5.041
+    },
+    {
+        "text": "um diclioma has the potential",
+        "start": 1379.88,
+        "duration": 3.539
+    },
+    {
+        "text": "um to improve the way that we do",
+        "start": 1382.1,
+        "duration": 4.38
+    },
+    {
+        "text": "molecular testing and in just a fraction",
+        "start": 1383.419,
+        "duration": 5.541
+    },
+    {
+        "text": "of the time",
+        "start": 1386.48,
+        "duration": 2.48
+    },
+    {
+        "text": "so next up I can show you some heat maps",
+        "start": 1389.419,
+        "duration": 5.821
+    },
+    {
+        "text": "of how igneoma performs right so like I",
+        "start": 1391.7,
+        "duration": 5.459
+    },
+    {
+        "text": "mentioned earlier we kind of patched our",
+        "start": 1395.24,
+        "duration": 3.919
+    },
+    {
+        "text": "whole side image into smaller patches",
+        "start": 1397.159,
+        "duration": 5.161
+    },
+    {
+        "text": "and uh we will have a patch level",
+        "start": 1399.159,
+        "duration": 4.781
+    },
+    {
+        "text": "prediction and then these predictions",
+        "start": 1402.32,
+        "duration": 4.2
+    },
+    {
+        "text": "are aggregated together to have an",
+        "start": 1403.94,
+        "duration": 4.859
+    },
+    {
+        "text": "overall diagnosis and also this heat map",
+        "start": 1406.52,
+        "duration": 4.92
+    },
+    {
+        "text": "that we don't see and we can and and",
+        "start": 1408.799,
+        "duration": 5.821
+    },
+    {
+        "text": "it's very interesting to see how in",
+        "start": 1411.44,
+        "duration": 6.239
+    },
+    {
+        "text": "these positive regions well we can see",
+        "start": 1414.62,
+        "duration": 6.439
+    },
+    {
+        "text": "on histological features that correspond",
+        "start": 1417.679,
+        "duration": 10.021
+    },
+    {
+        "text": "to ADH maintenance such as uh anaphasia",
+        "start": 1421.059,
+        "duration": 9.461
+    },
+    {
+        "text": "in other features right and we also see",
+        "start": 1427.7,
+        "duration": 5.7
+    },
+    {
+        "text": "that in this region that the model",
+        "start": 1430.52,
+        "duration": 5.94
+    },
+    {
+        "text": "predicted to be less likely",
+        "start": 1433.4,
+        "duration": 5.88
+    },
+    {
+        "text": "um as the idh mutant uh we can see that",
+        "start": 1436.46,
+        "duration": 3.959
+    },
+    {
+        "text": "it has",
+        "start": 1439.28,
+        "duration": 2.94
+    },
+    {
+        "text": "um these microvascular proliferation",
+        "start": 1440.419,
+        "duration": 4.74
+    },
+    {
+        "text": "which tend to be correlated to uh with",
+        "start": 1442.22,
+        "duration": 7.079
+    },
+    {
+        "text": "idh wild type uh type of slides",
+        "start": 1445.159,
+        "duration": 6.061
+    },
+    {
+        "text": "and we can also see that our model",
+        "start": 1449.299,
+        "duration": 4.86
+    },
+    {
+        "text": "performs really well with these some of",
+        "start": 1451.22,
+        "duration": 4.74
+    },
+    {
+        "text": "these non-conomical ideation mutations",
+        "start": 1454.159,
+        "duration": 3.38
+    },
+    {
+        "text": "where",
+        "start": 1455.96,
+        "duration": 3.959
+    },
+    {
+        "text": "immunohistochemistry predicted",
+        "start": 1457.539,
+        "duration": 5.801
+    },
+    {
+        "text": "um that this slide is ideation idh wild",
+        "start": 1459.919,
+        "duration": 5.701
+    },
+    {
+        "text": "type but it's actually an age two",
+        "start": 1463.34,
+        "duration": 4.86
+    },
+    {
+        "text": "mutants right so you know histochemistry",
+        "start": 1465.62,
+        "duration": 5.039
+    },
+    {
+        "text": "does not test for that so the diploma is",
+        "start": 1468.2,
+        "duration": 3.9
+    },
+    {
+        "text": "able to",
+        "start": 1470.659,
+        "duration": 4.201
+    },
+    {
+        "text": "um was able to predict this to be a",
+        "start": 1472.1,
+        "duration": 4.92
+    },
+    {
+        "text": "ideation return as well",
+        "start": 1474.86,
+        "duration": 5.58
+    },
+    {
+        "text": "we have many other examples uh from",
+        "start": 1477.02,
+        "duration": 5.94
+    },
+    {
+        "text": "deeply over on our website so um if",
+        "start": 1480.44,
+        "duration": 3.84
+    },
+    {
+        "text": "you're interested I recommend you to",
+        "start": 1482.96,
+        "duration": 3.8
+    },
+    {
+        "text": "check it out",
+        "start": 1484.28,
+        "duration": 2.48
+    },
+    {
+        "text": "all right so I have talked about SRH and",
+        "start": 1486.919,
+        "duration": 8.401
+    },
+    {
+        "text": "how we have developed AI methods to help",
+        "start": 1491.059,
+        "duration": 6.48
+    },
+    {
+        "text": "um to help positions",
+        "start": 1495.32,
+        "duration": 6.54
+    },
+    {
+        "text": "um to diagnosis to to diagnose with SRH",
+        "start": 1497.539,
+        "duration": 6.481
+    },
+    {
+        "text": "so",
+        "start": 1501.86,
+        "duration": 4.14
+    },
+    {
+        "text": "next up I want to talk about the actual",
+        "start": 1504.02,
+        "duration": 4.98
+    },
+    {
+        "text": "open SRH data set so like I mentioned",
+        "start": 1506.0,
+        "duration": 5.82
+    },
+    {
+        "text": "earlier open SRH is the first and only",
+        "start": 1509.0,
+        "duration": 5.64
+    },
+    {
+        "text": "publicly available SRH data set that's",
+        "start": 1511.82,
+        "duration": 4.26
+    },
+    {
+        "text": "out there",
+        "start": 1514.64,
+        "duration": 3.96
+    },
+    {
+        "text": "and we've selected seven classes",
+        "start": 1516.08,
+        "duration": 4.26
+    },
+    {
+        "text": "um that are the most common right so",
+        "start": 1518.6,
+        "duration": 4.14
+    },
+    {
+        "text": "that includes 5 Min and lower glios that",
+        "start": 1520.34,
+        "duration": 6.12
+    },
+    {
+        "text": "we use in the nucleioma are study and we",
+        "start": 1522.74,
+        "duration": 7.08
+    },
+    {
+        "text": "also included four other tumors that are",
+        "start": 1526.46,
+        "duration": 5.819
+    },
+    {
+        "text": "skull based tumors that are very diverse",
+        "start": 1529.82,
+        "duration": 5.76
+    },
+    {
+        "text": "and we also include a normal brain idea",
+        "start": 1532.279,
+        "duration": 6.0
+    },
+    {
+        "text": "and so here are some examples and again",
+        "start": 1535.58,
+        "duration": 5.579
+    },
+    {
+        "text": "these patches are very diverse uh we can",
+        "start": 1538.279,
+        "duration": 5.161
+    },
+    {
+        "text": "see meningiomas in the pituitary",
+        "start": 1541.159,
+        "duration": 4.62
+    },
+    {
+        "text": "anomalas are very cellular and we can",
+        "start": 1543.44,
+        "duration": 4.5
+    },
+    {
+        "text": "see some other treatment type are less",
+        "start": 1545.779,
+        "duration": 3.9
+    },
+    {
+        "text": "cellular and we can see that strong",
+        "start": 1547.94,
+        "duration": 5.099
+    },
+    {
+        "text": "armor has their elongated cells on which",
+        "start": 1549.679,
+        "duration": 5.641
+    },
+    {
+        "text": "is the histologic features that tend to",
+        "start": 1553.039,
+        "duration": 4.74
+    },
+    {
+        "text": "be associated with strong normal and",
+        "start": 1555.32,
+        "duration": 5.76
+    },
+    {
+        "text": "also metastases is very diverse on their",
+        "start": 1557.779,
+        "duration": 5.481
+    },
+    {
+        "text": "own",
+        "start": 1561.08,
+        "duration": 2.18
+    },
+    {
+        "text": "so um we divided",
+        "start": 1563.36,
+        "duration": 4.74
+    },
+    {
+        "text": "um so we randomly selected from our",
+        "start": 1566.059,
+        "duration": 3.36
+    },
+    {
+        "text": "training set",
+        "start": 1568.1,
+        "duration": 4.98
+    },
+    {
+        "text": "um about 60 uh patients per majority",
+        "start": 1569.419,
+        "duration": 6.541
+    },
+    {
+        "text": "tumor class and the minority process are",
+        "start": 1573.08,
+        "duration": 5.28
+    },
+    {
+        "text": "strong normal and all so we get a lot",
+        "start": 1575.96,
+        "duration": 5.099
+    },
+    {
+        "text": "less of them so we selected about 20",
+        "start": 1578.36,
+        "duration": 4.679
+    },
+    {
+        "text": "patients for each or each of these",
+        "start": 1581.059,
+        "duration": 4.321
+    },
+    {
+        "text": "classes right so we randomly selected",
+        "start": 1583.039,
+        "duration": 4.681
+    },
+    {
+        "text": "these patients from our data set",
+        "start": 1585.38,
+        "duration": 4.5
+    },
+    {
+        "text": "um and we divided them into training and",
+        "start": 1587.72,
+        "duration": 4.079
+    },
+    {
+        "text": "testing cells",
+        "start": 1589.88,
+        "duration": 3.899
+    },
+    {
+        "text": "and here's kind of like the breakdown",
+        "start": 1591.799,
+        "duration": 4.321
+    },
+    {
+        "text": "again it's it's overall uh pretty",
+        "start": 1593.779,
+        "duration": 4.801
+    },
+    {
+        "text": "balanced on the on the patient level I",
+        "start": 1596.12,
+        "duration": 5.46
+    },
+    {
+        "text": "mean except for the terminality process",
+        "start": 1598.58,
+        "duration": 4.56
+    },
+    {
+        "text": "um in",
+        "start": 1601.58,
+        "duration": 3.719
+    },
+    {
+        "text": "uh each",
+        "start": 1603.14,
+        "duration": 5.1
+    },
+    {
+        "text": "um each slide is then a patched into",
+        "start": 1605.299,
+        "duration": 6.781
+    },
+    {
+        "text": "patches and we can show a distribution",
+        "start": 1608.24,
+        "duration": 6.6
+    },
+    {
+        "text": "we can visualize how the number of",
+        "start": 1612.08,
+        "duration": 5.579
+    },
+    {
+        "text": "patches and slides varies across the",
+        "start": 1614.84,
+        "duration": 5.339
+    },
+    {
+        "text": "patients right and we can see that on",
+        "start": 1617.659,
+        "duration": 4.38
+    },
+    {
+        "text": "most patients tend to have five slides",
+        "start": 1620.179,
+        "duration": 3.661
+    },
+    {
+        "text": "and that just that is just how many",
+        "start": 1622.039,
+        "duration": 3.361
+    },
+    {
+        "text": "slides that we're Imaging during the",
+        "start": 1623.84,
+        "duration": 3.9
+    },
+    {
+        "text": "surgery and the differences between",
+        "start": 1625.4,
+        "duration": 5.58
+    },
+    {
+        "text": "these two distribution uh uh can be",
+        "start": 1627.74,
+        "duration": 5.64
+    },
+    {
+        "text": "caused by the specimen size",
+        "start": 1630.98,
+        "duration": 4.559
+    },
+    {
+        "text": "um the the size of the non-diagnostic",
+        "start": 1633.38,
+        "duration": 4.32
+    },
+    {
+        "text": "regions and also the certain preference",
+        "start": 1635.539,
+        "duration": 4.26
+    },
+    {
+        "text": "so some surgeon will stumble differently",
+        "start": 1637.7,
+        "duration": 4.859
+    },
+    {
+        "text": "than the other",
+        "start": 1639.799,
+        "duration": 4.98
+    },
+    {
+        "text": "right we can also visualize the age",
+        "start": 1642.559,
+        "duration": 3.961
+    },
+    {
+        "text": "distribution for the patients that were",
+        "start": 1644.779,
+        "duration": 5.461
+    },
+    {
+        "text": "released in open SRH contains patients",
+        "start": 1646.52,
+        "duration": 7.68
+    },
+    {
+        "text": "ranging from newborns to uh 87 years old",
+        "start": 1650.24,
+        "duration": 7.08
+    },
+    {
+        "text": "and we can see that different classes",
+        "start": 1654.2,
+        "duration": 4.859
+    },
+    {
+        "text": "um are all what pretty well distributed",
+        "start": 1657.32,
+        "duration": 4.08
+    },
+    {
+        "text": "among the age groups",
+        "start": 1659.059,
+        "duration": 3.841
+    },
+    {
+        "text": "um so",
+        "start": 1661.4,
+        "duration": 6.12
+    },
+    {
+        "text": "we can also see that some tumors uh tend",
+        "start": 1662.9,
+        "duration": 6.12
+    },
+    {
+        "text": "to have different age distributions",
+        "start": 1667.52,
+        "duration": 3.84
+    },
+    {
+        "text": "right for example the low brick gliomas",
+        "start": 1669.02,
+        "duration": 4.68
+    },
+    {
+        "text": "tend to have a lot more in younger",
+        "start": 1671.36,
+        "duration": 4.74
+    },
+    {
+        "text": "patients and that is",
+        "start": 1673.7,
+        "duration": 4.14
+    },
+    {
+        "text": "um that's how we expect them in hybrid",
+        "start": 1676.1,
+        "duration": 4.26
+    },
+    {
+        "text": "gliomas in the metastases tend to happen",
+        "start": 1677.84,
+        "duration": 5.88
+    },
+    {
+        "text": "more in older patients",
+        "start": 1680.36,
+        "duration": 6.78
+    },
+    {
+        "text": "right the Aged also part of the data uh",
+        "start": 1683.72,
+        "duration": 5.1
+    },
+    {
+        "text": "it's just not released as part of data",
+        "start": 1687.14,
+        "duration": 2.7
+    },
+    {
+        "text": "yeah",
+        "start": 1688.82,
+        "duration": 3.18
+    },
+    {
+        "text": "um the absence email uh we can we can",
+        "start": 1689.84,
+        "duration": 3.959
+    },
+    {
+        "text": "talk about collaborating and releasing",
+        "start": 1692.0,
+        "duration": 4.26
+    },
+    {
+        "text": "the ages as well",
+        "start": 1693.799,
+        "duration": 5.041
+    },
+    {
+        "text": "so next up I wanted to show you some",
+        "start": 1696.26,
+        "duration": 4.5
+    },
+    {
+        "text": "Logistics that's associated with",
+        "start": 1698.84,
+        "duration": 3.839
+    },
+    {
+        "text": "releasing the data right now everything",
+        "start": 1700.76,
+        "duration": 3.779
+    },
+    {
+        "text": "is just machine learning a lot of this",
+        "start": 1702.679,
+        "duration": 3.48
+    },
+    {
+        "text": "is actually",
+        "start": 1704.539,
+        "duration": 5.221
+    },
+    {
+        "text": "um in the data readings so",
+        "start": 1706.159,
+        "duration": 4.26
+    },
+    {
+        "text": "um",
+        "start": 1709.76,
+        "duration": 3.0
+    },
+    {
+        "text": "that's one more question yeah is that",
+        "start": 1710.419,
+        "duration": 5.041
+    },
+    {
+        "text": "all data is labeled as patient editable",
+        "start": 1712.76,
+        "duration": 5.58
+    },
+    {
+        "text": "yes patch level yeah so all the all the",
+        "start": 1715.46,
+        "duration": 4.86
+    },
+    {
+        "text": "data is labeled at the patient level and",
+        "start": 1718.34,
+        "duration": 5.18
+    },
+    {
+        "text": "I'll get into more differs",
+        "start": 1720.32,
+        "duration": 3.2
+    },
+    {
+        "text": "right so I want to talk about the",
+        "start": 1726.2,
+        "duration": 4.02
+    },
+    {
+        "text": "website that we have created the data",
+        "start": 1728.12,
+        "duration": 3.96
+    },
+    {
+        "text": "use agreement and how we're hosting the",
+        "start": 1730.22,
+        "duration": 4.5
+    },
+    {
+        "text": "data and how the data is organized and",
+        "start": 1732.08,
+        "duration": 3.839
+    },
+    {
+        "text": "also the source code that we have",
+        "start": 1734.72,
+        "duration": 3.86
+    },
+    {
+        "text": "released with that",
+        "start": 1735.919,
+        "duration": 2.661
+    },
+    {
+        "text": "of the website that I have created so",
+        "start": 1746.419,
+        "duration": 5.76
+    },
+    {
+        "text": "this is hosted on GitHub uh using a",
+        "start": 1748.94,
+        "duration": 6.18
+    },
+    {
+        "text": "jackal template so uh it basically",
+        "start": 1752.179,
+        "duration": 5.461
+    },
+    {
+        "text": "contains the information about the",
+        "start": 1755.12,
+        "duration": 4.5
+    },
+    {
+        "text": "the paper and some have some abstract on",
+        "start": 1757.64,
+        "duration": 4.86
+    },
+    {
+        "text": "the front page and what's important",
+        "start": 1759.62,
+        "duration": 5.1
+    },
+    {
+        "text": "about this website is that it has some",
+        "start": 1762.5,
+        "duration": 3.779
+    },
+    {
+        "text": "samples of the images that we can",
+        "start": 1764.72,
+        "duration": 4.62
+    },
+    {
+        "text": "visualize and you can zoom in to some of",
+        "start": 1766.279,
+        "duration": 4.801
+    },
+    {
+        "text": "you can zoom in or zoom out on some of",
+        "start": 1769.34,
+        "duration": 4.559
+    },
+    {
+        "text": "these images and see the shower to the",
+        "start": 1771.08,
+        "duration": 5.339
+    },
+    {
+        "text": "cellular details for yourself right so",
+        "start": 1773.899,
+        "duration": 4.861
+    },
+    {
+        "text": "we included an example for each class",
+        "start": 1776.419,
+        "duration": 5.941
+    },
+    {
+        "text": "then we have so we can see these very",
+        "start": 1778.76,
+        "duration": 5.279
+    },
+    {
+        "text": "beautiful images",
+        "start": 1782.36,
+        "duration": 3.6
+    },
+    {
+        "text": "um that are that you can zoom in to see",
+        "start": 1784.039,
+        "duration": 3.721
+    },
+    {
+        "text": "all the details",
+        "start": 1785.96,
+        "duration": 4.02
+    },
+    {
+        "text": "another important thing for our website",
+        "start": 1787.76,
+        "duration": 5.58
+    },
+    {
+        "text": "is to have a",
+        "start": 1789.98,
+        "duration": 7.199
+    },
+    {
+        "text": "data use agreement right so uh we have a",
+        "start": 1793.34,
+        "duration": 6.66
+    },
+    {
+        "text": "agreement to get the data so basically",
+        "start": 1797.179,
+        "duration": 4.62
+    },
+    {
+        "text": "anyone online can fill out this",
+        "start": 1800.0,
+        "duration": 4.679
+    },
+    {
+        "text": "agreement right it's",
+        "start": 1801.799,
+        "duration": 5.401
+    },
+    {
+        "text": "we basically don't provide any",
+        "start": 1804.679,
+        "duration": 5.041
+    },
+    {
+        "text": "guarantees about the data it's important",
+        "start": 1807.2,
+        "duration": 5.16
+    },
+    {
+        "text": "on commercial used",
+        "start": 1809.72,
+        "duration": 6.059
+    },
+    {
+        "text": "so once you fill out this agreement",
+        "start": 1812.36,
+        "duration": 5.64
+    },
+    {
+        "text": "you will see a screen that looks like",
+        "start": 1815.779,
+        "duration": 3.78
+    },
+    {
+        "text": "this right which will take you to",
+        "start": 1818.0,
+        "duration": 4.02
+    },
+    {
+        "text": "nothing so we went with Google Google",
+        "start": 1819.559,
+        "duration": 4.321
+    },
+    {
+        "text": "forms so it's pretty simple to implement",
+        "start": 1822.02,
+        "duration": 3.899
+    },
+    {
+        "text": "and it's also really easy to change if",
+        "start": 1823.88,
+        "duration": 4.019
+    },
+    {
+        "text": "you need to",
+        "start": 1825.919,
+        "duration": 4.26
+    },
+    {
+        "text": "um so as you can see we have our data",
+        "start": 1827.899,
+        "duration": 5.64
+    },
+    {
+        "text": "hosted on Dropbox uh Google Drive uh and",
+        "start": 1830.179,
+        "duration": 6.841
+    },
+    {
+        "text": "AWS S3 right so AWS were probably the",
+        "start": 1833.539,
+        "duration": 5.161
+    },
+    {
+        "text": "easiest way for someone to download this",
+        "start": 1837.02,
+        "duration": 4.379
+    },
+    {
+        "text": "data in a very Speedy fashion",
+        "start": 1838.7,
+        "duration": 4.92
+    },
+    {
+        "text": "um but Google Drive and Dropbox has",
+        "start": 1841.399,
+        "duration": 4.321
+    },
+    {
+        "text": "their own convenience and we don't have",
+        "start": 1843.62,
+        "duration": 3.9
+    },
+    {
+        "text": "the patient archive from Dropbox yet but",
+        "start": 1845.72,
+        "duration": 4.38
+    },
+    {
+        "text": "we will be putting a copy there really",
+        "start": 1847.52,
+        "duration": 4.82
+    },
+    {
+        "text": "soon",
+        "start": 1850.1,
+        "duration": 2.24
+    },
+    {
+        "text": "okay so open SRH is sort of organized uh",
+        "start": 1852.74,
+        "duration": 6.12
+    },
+    {
+        "text": "in a way that we contain the metadata",
+        "start": 1856.279,
+        "duration": 3.481
+    },
+    {
+        "text": "file",
+        "start": 1858.86,
+        "duration": 3.36
+    },
+    {
+        "text": "and we also have",
+        "start": 1859.76,
+        "duration": 5.039
+    },
+    {
+        "text": "um basically the raw data for for every",
+        "start": 1862.22,
+        "duration": 4.92
+    },
+    {
+        "text": "patient in their own directories right",
+        "start": 1864.799,
+        "duration": 5.041
+    },
+    {
+        "text": "so we will we are releasing both the raw",
+        "start": 1867.14,
+        "duration": 5.759
+    },
+    {
+        "text": "of the icon files so that's the the raw",
+        "start": 1869.84,
+        "duration": 4.86
+    },
+    {
+        "text": "strips that we can get from the imager",
+        "start": 1872.899,
+        "duration": 4.681
+    },
+    {
+        "text": "and also the patches that we have",
+        "start": 1874.7,
+        "duration": 5.64
+    },
+    {
+        "text": "generated uh to to training machine",
+        "start": 1877.58,
+        "duration": 5.54
+    },
+    {
+        "text": "learning models",
+        "start": 1880.34,
+        "duration": 2.78
+    },
+    {
+        "text": "yes that's right so",
+        "start": 1885.559,
+        "duration": 4.86
+    },
+    {
+        "text": "um the the patches will basically just",
+        "start": 1887.779,
+        "duration": 5.221
+    },
+    {
+        "text": "um divide the dicom file into smaller",
+        "start": 1890.419,
+        "duration": 4.74
+    },
+    {
+        "text": "regions so we can actually fit that on",
+        "start": 1893.0,
+        "duration": 4.26
+    },
+    {
+        "text": "the GPU this is",
+        "start": 1895.159,
+        "duration": 5.9
+    },
+    {
+        "text": "why yes yeah",
+        "start": 1897.26,
+        "duration": 3.799
+    },
+    {
+        "text": "right so in the metadata files we",
+        "start": 1902.539,
+        "duration": 4.26
+    },
+    {
+        "text": "released",
+        "start": 1905.539,
+        "duration": 3.301
+    },
+    {
+        "text": "um both the patient information we also",
+        "start": 1906.799,
+        "duration": 3.841
+    },
+    {
+        "text": "released a training validation split",
+        "start": 1908.84,
+        "duration": 4.5
+    },
+    {
+        "text": "right so in the page and information we",
+        "start": 1910.64,
+        "duration": 5.1
+    },
+    {
+        "text": "released the final diagnosis right so",
+        "start": 1913.34,
+        "duration": 5.28
+    },
+    {
+        "text": "high grade logarithms hpg here is a",
+        "start": 1915.74,
+        "duration": 4.08
+    },
+    {
+        "text": "hyper glioma",
+        "start": 1918.62,
+        "duration": 4.02
+    },
+    {
+        "text": "and we also released uh the results of",
+        "start": 1919.82,
+        "duration": 5.4
+    },
+    {
+        "text": "the segmentation model that we used",
+        "start": 1922.64,
+        "duration": 5.46
+    },
+    {
+        "text": "um for prediction so these are uh so",
+        "start": 1925.22,
+        "duration": 4.439
+    },
+    {
+        "text": "basically these are patches that we",
+        "start": 1928.1,
+        "duration": 3.5
+    },
+    {
+        "text": "determined to be tumor normal or",
+        "start": 1929.659,
+        "duration": 4.861
+    },
+    {
+        "text": "non-diagnostic so we release the",
+        "start": 1931.6,
+        "duration": 5.02
+    },
+    {
+        "text": "prediction and these predictions are the",
+        "start": 1934.52,
+        "duration": 4.139
+    },
+    {
+        "text": "same ones that we used to generate the",
+        "start": 1936.62,
+        "duration": 6.74
+    },
+    {
+        "text": "benchmarks that we have with this paper",
+        "start": 1938.659,
+        "duration": 4.701
+    },
+    {
+        "text": "um",
+        "start": 1943.88,
+        "duration": 4.2
+    },
+    {
+        "text": "so and we also have a Json file to to",
+        "start": 1944.72,
+        "duration": 5.52
+    },
+    {
+        "text": "signify the twin validation split and",
+        "start": 1948.08,
+        "duration": 3.36
+    },
+    {
+        "text": "this is here",
+        "start": 1950.24,
+        "duration": 4.2
+    },
+    {
+        "text": "um so that it's flexible enough so you",
+        "start": 1951.44,
+        "duration": 4.68
+    },
+    {
+        "text": "can easily change the display if you",
+        "start": 1954.44,
+        "duration": 4.02
+    },
+    {
+        "text": "want to right so this is a release",
+        "start": 1956.12,
+        "duration": 3.96
+    },
+    {
+        "text": "that's part of the data set but can be",
+        "start": 1958.46,
+        "duration": 3.48
+    },
+    {
+        "text": "easily changed",
+        "start": 1960.08,
+        "duration": 4.199
+    },
+    {
+        "text": "we also have a companion of source code",
+        "start": 1961.94,
+        "duration": 5.04
+    },
+    {
+        "text": "and that's released on GitHub and our",
+        "start": 1964.279,
+        "duration": 4.441
+    },
+    {
+        "text": "source code is implemented using High",
+        "start": 1966.98,
+        "duration": 4.14
+    },
+    {
+        "text": "torch and high touch lightning so high",
+        "start": 1968.72,
+        "duration": 4.559
+    },
+    {
+        "text": "pressure lighting is a wrapper over High",
+        "start": 1971.12,
+        "duration": 4.98
+    },
+    {
+        "text": "touch that easily allowed us to do",
+        "start": 1973.279,
+        "duration": 6.801
+    },
+    {
+        "text": "multi-gpu training and parallelization",
+        "start": 1976.1,
+        "duration": 9.14
+    },
+    {
+        "text": "so going back to our demo",
+        "start": 1980.08,
+        "duration": 5.16
+    },
+    {
+        "text": "I can show you",
+        "start": 1985.46,
+        "duration": 5.579
+    },
+    {
+        "text": "the repository that we have",
+        "start": 1988.1,
+        "duration": 6.199
+    },
+    {
+        "text": "so on GitHub",
+        "start": 1991.039,
+        "duration": 3.26
+    },
+    {
+        "text": "um we have",
+        "start": 1995.36,
+        "duration": 3.179
+    },
+    {
+        "text": "um our basic information and our package",
+        "start": 1996.74,
+        "duration": 3.779
+    },
+    {
+        "text": "is called open SRH",
+        "start": 1998.539,
+        "duration": 3.901
+    },
+    {
+        "text": "um there are there are instructions on",
+        "start": 2000.519,
+        "duration": 4.621
+    },
+    {
+        "text": "how to install these on how to install",
+        "start": 2002.44,
+        "duration": 5.219
+    },
+    {
+        "text": "these packages and also how to run the",
+        "start": 2005.14,
+        "duration": 4.68
+    },
+    {
+        "text": "training and it's it's a pretty simple",
+        "start": 2007.659,
+        "duration": 3.961
+    },
+    {
+        "text": "trick it's a pretty simple command you",
+        "start": 2009.82,
+        "duration": 4.739
+    },
+    {
+        "text": "just need to modify the config files and",
+        "start": 2011.62,
+        "duration": 5.88
+    },
+    {
+        "text": "also just just run the trim",
+        "start": 2014.559,
+        "duration": 6.661
+    },
+    {
+        "text": "uh we we provided all the components",
+        "start": 2017.5,
+        "duration": 5.88
+    },
+    {
+        "text": "that you need to train a deep learning",
+        "start": 2021.22,
+        "duration": 4.62
+    },
+    {
+        "text": "model right including custom data sets",
+        "start": 2023.38,
+        "duration": 7.2
+    },
+    {
+        "text": "uh that we need to use with our with the",
+        "start": 2025.84,
+        "duration": 6.9
+    },
+    {
+        "text": "or custom data sets that you need to use",
+        "start": 2030.58,
+        "duration": 4.92
+    },
+    {
+        "text": "on with the data set right so the reason",
+        "start": 2032.74,
+        "duration": 5.34
+    },
+    {
+        "text": "the Json files and reading the images",
+        "start": 2035.5,
+        "duration": 4.919
+    },
+    {
+        "text": "for you so um that's not something that",
+        "start": 2038.08,
+        "duration": 4.5
+    },
+    {
+        "text": "you need to worry about",
+        "start": 2040.419,
+        "duration": 4.98
+    },
+    {
+        "text": "um this is important because SRH isn't",
+        "start": 2042.58,
+        "duration": 5.28
+    },
+    {
+        "text": "organized like image now like everything",
+        "start": 2045.399,
+        "duration": 4.321
+    },
+    {
+        "text": "else right because",
+        "start": 2047.86,
+        "duration": 4.08
+    },
+    {
+        "text": "um with SRH image there is this inherent",
+        "start": 2049.72,
+        "duration": 5.28
+    },
+    {
+        "text": "hierarchy of patients slides and then",
+        "start": 2051.94,
+        "duration": 4.919
+    },
+    {
+        "text": "patches right so we can just put",
+        "start": 2055.0,
+        "duration": 4.139
+    },
+    {
+        "text": "everything in one folder like how a lot",
+        "start": 2056.859,
+        "duration": 3.961
+    },
+    {
+        "text": "of these data set is structured so",
+        "start": 2059.139,
+        "duration": 3.841
+    },
+    {
+        "text": "that's why we included our own data set",
+        "start": 2060.82,
+        "duration": 4.799
+    },
+    {
+        "text": "narrative learning model acquired",
+        "start": 2062.98,
+        "duration": 6.3
+    },
+    {
+        "text": "constitute between the incidentals data",
+        "start": 2065.619,
+        "duration": 5.641
+    },
+    {
+        "text": "sets do you have an estimated training",
+        "start": 2069.28,
+        "duration": 5.579
+    },
+    {
+        "text": "time or like a single model yes so uh",
+        "start": 2071.26,
+        "duration": 5.7
+    },
+    {
+        "text": "the the length of our benchmarks is All",
+        "start": 2074.859,
+        "duration": 3.78
+    },
+    {
+        "text": "released as the papering objects and",
+        "start": 2076.96,
+        "duration": 4.219
+    },
+    {
+        "text": "just a second",
+        "start": 2078.639,
+        "duration": 2.54
+    },
+    {
+        "text": "and we also have the training script",
+        "start": 2082.06,
+        "duration": 4.5
+    },
+    {
+        "text": "again like I mentioned earlier we use",
+        "start": 2084.339,
+        "duration": 5.361
+    },
+    {
+        "text": "high push lightning which",
+        "start": 2086.56,
+        "duration": 6.119
+    },
+    {
+        "text": "allow us to remove a lot of the training",
+        "start": 2089.7,
+        "duration": 4.84
+    },
+    {
+        "text": "Loops but we only need to identify the",
+        "start": 2092.679,
+        "duration": 4.561
+    },
+    {
+        "text": "inner workings of the functions so it's",
+        "start": 2094.54,
+        "duration": 4.62
+    },
+    {
+        "text": "very convenient and if you're interested",
+        "start": 2097.24,
+        "duration": 3.42
+    },
+    {
+        "text": "I can walk through the code with you",
+        "start": 2099.16,
+        "duration": 5.06
+    },
+    {
+        "text": "more details um later",
+        "start": 2100.66,
+        "duration": 3.56
+    },
+    {
+        "text": "all right so next up I want to talk",
+        "start": 2105.82,
+        "duration": 4.14
+    },
+    {
+        "text": "about the benchmarks that we included",
+        "start": 2107.98,
+        "duration": 4.8
+    },
+    {
+        "text": "with our data set",
+        "start": 2109.96,
+        "duration": 5.879
+    },
+    {
+        "text": "um we included histologic classification",
+        "start": 2112.78,
+        "duration": 6.0
+    },
+    {
+        "text": "um and we also uh Benchmark contrasted",
+        "start": 2115.839,
+        "duration": 6.24
+    },
+    {
+        "text": "representation learning on a data set so",
+        "start": 2118.78,
+        "duration": 4.62
+    },
+    {
+        "text": "um first let's talk about the",
+        "start": 2122.079,
+        "duration": 3.361
+    },
+    {
+        "text": "histological classification so we have",
+        "start": 2123.4,
+        "duration": 3.84
+    },
+    {
+        "text": "our image",
+        "start": 2125.44,
+        "duration": 3.72
+    },
+    {
+        "text": "so this you this is basically the",
+        "start": 2127.24,
+        "duration": 4.08
+    },
+    {
+        "text": "Baseline for for all of the",
+        "start": 2129.16,
+        "duration": 4.74
+    },
+    {
+        "text": "classification tasks we have a image and",
+        "start": 2131.32,
+        "duration": 4.08
+    },
+    {
+        "text": "go through some kind of neural network",
+        "start": 2133.9,
+        "duration": 3.48
+    },
+    {
+        "text": "and then at the end of your network the",
+        "start": 2135.4,
+        "duration": 4.5
+    },
+    {
+        "text": "model will predict a distribution for",
+        "start": 2137.38,
+        "duration": 5.52
+    },
+    {
+        "text": "different type of tumors",
+        "start": 2139.9,
+        "duration": 4.98
+    },
+    {
+        "text": "um this classification is learned with",
+        "start": 2142.9,
+        "duration": 5.34
+    },
+    {
+        "text": "past entropy with which maximize the",
+        "start": 2144.88,
+        "duration": 5.28
+    },
+    {
+        "text": "similarity between the model prediction",
+        "start": 2148.24,
+        "duration": 4.32
+    },
+    {
+        "text": "and the brown shoes in a basically a",
+        "start": 2150.16,
+        "duration": 5.04
+    },
+    {
+        "text": "one-part Napoleon as a histogram",
+        "start": 2152.56,
+        "duration": 5.46
+    },
+    {
+        "text": "uh we benchmarked um the classification",
+        "start": 2155.2,
+        "duration": 4.74
+    },
+    {
+        "text": "with different architectures",
+        "start": 2158.02,
+        "duration": 4.559
+    },
+    {
+        "text": "um such as uh residual networks right so",
+        "start": 2159.94,
+        "duration": 6.0
+    },
+    {
+        "text": "residual network was invented in 2016",
+        "start": 2162.579,
+        "duration": 4.921
+    },
+    {
+        "text": "um so as we've seen once the",
+        "start": 2165.94,
+        "duration": 3.96
+    },
+    {
+        "text": "convolutional layer a convolutional gets",
+        "start": 2167.5,
+        "duration": 4.8
+    },
+    {
+        "text": "deeper and deeper as we add more layers",
+        "start": 2169.9,
+        "duration": 4.14
+    },
+    {
+        "text": "um these models tend to be harder to",
+        "start": 2172.3,
+        "duration": 4.26
+    },
+    {
+        "text": "train right so what resonant did is that",
+        "start": 2174.04,
+        "duration": 4.98
+    },
+    {
+        "text": "it added these skip connections um to",
+        "start": 2176.56,
+        "duration": 4.799
+    },
+    {
+        "text": "help the gradients to easily or flow",
+        "start": 2179.02,
+        "duration": 3.78
+    },
+    {
+        "text": "through our Network",
+        "start": 2181.359,
+        "duration": 3.781
+    },
+    {
+        "text": "um so that it's easier for us to train",
+        "start": 2182.8,
+        "duration": 5.72
+    },
+    {
+        "text": "these very deep Networks",
+        "start": 2185.14,
+        "duration": 3.38
+    },
+    {
+        "text": "um we also included Vision Transformers",
+        "start": 2189.16,
+        "duration": 4.439
+    },
+    {
+        "text": "so Vision Transformer is a newer",
+        "start": 2191.44,
+        "duration": 3.6
+    },
+    {
+        "text": "architecture",
+        "start": 2193.599,
+        "duration": 3.48
+    },
+    {
+        "text": "um that models the image as a sequence",
+        "start": 2195.04,
+        "duration": 3.42
+    },
+    {
+        "text": "so",
+        "start": 2197.079,
+        "duration": 4.02
+    },
+    {
+        "text": "um the images are being patched into",
+        "start": 2198.46,
+        "duration": 5.159
+    },
+    {
+        "text": "small even smaller patches and then all",
+        "start": 2201.099,
+        "duration": 4.141
+    },
+    {
+        "text": "of these patches are modeled as a",
+        "start": 2203.619,
+        "duration": 5.041
+    },
+    {
+        "text": "sequence and these sequence are learned",
+        "start": 2205.24,
+        "duration": 5.94
+    },
+    {
+        "text": "using a Transformer encoder and it can",
+        "start": 2208.66,
+        "duration": 5.939
+    },
+    {
+        "text": "predict um the final labels with the",
+        "start": 2211.18,
+        "duration": 5.1
+    },
+    {
+        "text": "transforming encoder",
+        "start": 2214.599,
+        "duration": 5.401
+    },
+    {
+        "text": "the advantages of a VIP encoder is that",
+        "start": 2216.28,
+        "duration": 6.66
+    },
+    {
+        "text": "it has less inductive bias and it allows",
+        "start": 2220.0,
+        "duration": 4.98
+    },
+    {
+        "text": "us to learn these images more generally",
+        "start": 2222.94,
+        "duration": 5.06
+    },
+    {
+        "text": "it doesn't confine us to the convolution",
+        "start": 2224.98,
+        "duration": 6.0
+    },
+    {
+        "text": "but the problem with that it requires a",
+        "start": 2228.0,
+        "duration": 4.9
+    },
+    {
+        "text": "lot more data to overcome this low",
+        "start": 2230.98,
+        "duration": 3.42
+    },
+    {
+        "text": "inductive bias",
+        "start": 2232.9,
+        "duration": 3.06
+    },
+    {
+        "text": "um it has been shown that with enough",
+        "start": 2234.4,
+        "duration": 5.459
+    },
+    {
+        "text": "data enough compute vit can outperform",
+        "start": 2235.96,
+        "duration": 7.32
+    },
+    {
+        "text": "all the convolutional networks",
+        "start": 2239.859,
+        "duration": 7.081
+    },
+    {
+        "text": "so here is the the benchmarks that we",
+        "start": 2243.28,
+        "duration": 4.62
+    },
+    {
+        "text": "have",
+        "start": 2246.94,
+        "duration": 3.899
+    },
+    {
+        "text": "uh here are the benchmarks that we have",
+        "start": 2247.9,
+        "duration": 5.16
+    },
+    {
+        "text": "um and we can see the overall resonant",
+        "start": 2250.839,
+        "duration": 4.441
+    },
+    {
+        "text": "performance a lot better than vit",
+        "start": 2253.06,
+        "duration": 3.96
+    },
+    {
+        "text": "um and and that's the potential reason",
+        "start": 2255.28,
+        "duration": 4.98
+    },
+    {
+        "text": "is that vit often requires a very very",
+        "start": 2257.02,
+        "duration": 5.4
+    },
+    {
+        "text": "large scale data sets",
+        "start": 2260.26,
+        "duration": 3.12
+    },
+    {
+        "text": "um",
+        "start": 2262.42,
+        "duration": 3.36
+    },
+    {
+        "text": "to to overcome the slowing Dr bias I was",
+        "start": 2263.38,
+        "duration": 4.68
+    },
+    {
+        "text": "talking about so efficient training of",
+        "start": 2265.78,
+        "duration": 4.98
+    },
+    {
+        "text": "the vits is one of the open question in",
+        "start": 2268.06,
+        "duration": 5.16
+    },
+    {
+        "text": "the field for both computer vision and",
+        "start": 2270.76,
+        "duration": 5.16
+    },
+    {
+        "text": "also Medical Imaging",
+        "start": 2273.22,
+        "duration": 5.34
+    },
+    {
+        "text": "and we can again visualize the confusion",
+        "start": 2275.92,
+        "duration": 5.52
+    },
+    {
+        "text": "matrices where again we see a lot of",
+        "start": 2278.56,
+        "duration": 4.92
+    },
+    {
+        "text": "errors are being made in the metastases",
+        "start": 2281.44,
+        "duration": 4.02
+    },
+    {
+        "text": "passing again it's because it's very",
+        "start": 2283.48,
+        "duration": 3.9
+    },
+    {
+        "text": "diverse",
+        "start": 2285.46,
+        "duration": 3.6
+    },
+    {
+        "text": "and that Benchmark did you use",
+        "start": 2287.38,
+        "duration": 3.42
+    },
+    {
+        "text": "augmentation when you did the main",
+        "start": 2289.06,
+        "duration": 4.559
+    },
+    {
+        "text": "contrast important yes so",
+        "start": 2290.8,
+        "duration": 5.34
+    },
+    {
+        "text": "um for for cross-centric people we only",
+        "start": 2293.619,
+        "duration": 4.861
+    },
+    {
+        "text": "needed to use weak augmentation so only",
+        "start": 2296.14,
+        "duration": 4.14
+    },
+    {
+        "text": "flipping",
+        "start": 2298.48,
+        "duration": 4.44
+    },
+    {
+        "text": "um only only flipping is really needed",
+        "start": 2300.28,
+        "duration": 4.76
+    },
+    {
+        "text": "to achieve a really good result",
+        "start": 2302.92,
+        "duration": 5.64
+    },
+    {
+        "text": "achieve a reasonable result in the uh in",
+        "start": 2305.04,
+        "duration": 5.5
+    },
+    {
+        "text": "this training and we actually do release",
+        "start": 2308.56,
+        "duration": 4.76
+    },
+    {
+        "text": "like the details of how other",
+        "start": 2310.54,
+        "duration": 6.48
+    },
+    {
+        "text": "augmentations implemented uh in the",
+        "start": 2313.32,
+        "duration": 5.2
+    },
+    {
+        "text": "paper so I'll filter that in just a",
+        "start": 2317.02,
+        "duration": 2.339
+    },
+    {
+        "text": "second",
+        "start": 2318.52,
+        "duration": 3.24
+    },
+    {
+        "text": "yeah",
+        "start": 2319.359,
+        "duration": 6.0
+    },
+    {
+        "text": "oh and in addition to uh",
+        "start": 2321.76,
+        "duration": 6.3
+    },
+    {
+        "text": "in addition to classification benchmarks",
+        "start": 2325.359,
+        "duration": 6.301
+    },
+    {
+        "text": "we also performed benchmarking on these",
+        "start": 2328.06,
+        "duration": 5.64
+    },
+    {
+        "text": "contrastive representation methods so",
+        "start": 2331.66,
+        "duration": 4.919
+    },
+    {
+        "text": "I'll actually like to go a little more",
+        "start": 2333.7,
+        "duration": 5.46
+    },
+    {
+        "text": "in depth into what contrastive learning",
+        "start": 2336.579,
+        "duration": 5.461
+    },
+    {
+        "text": "is doing right so your sort of two",
+        "start": 2339.16,
+        "duration": 4.86
+    },
+    {
+        "text": "variants of contrastive learning that we",
+        "start": 2342.04,
+        "duration": 4.14
+    },
+    {
+        "text": "are that we benchmarked we have the",
+        "start": 2344.02,
+        "duration": 4.02
+    },
+    {
+        "text": "self-supervised contraceptive learning",
+        "start": 2346.18,
+        "duration": 3.659
+    },
+    {
+        "text": "and also supervised",
+        "start": 2348.04,
+        "duration": 4.02
+    },
+    {
+        "text": "so like I mentioned earlier in",
+        "start": 2349.839,
+        "duration": 4.26
+    },
+    {
+        "text": "self-supervised contrastive learning we",
+        "start": 2352.06,
+        "duration": 5.16
+    },
+    {
+        "text": "don't actually have the labels for each",
+        "start": 2354.099,
+        "duration": 5.161
+    },
+    {
+        "text": "image that we have right so for example",
+        "start": 2357.22,
+        "duration": 4.74
+    },
+    {
+        "text": "we know that these are or pictures of",
+        "start": 2359.26,
+        "duration": 4.26
+    },
+    {
+        "text": "thoughts but since we don't know that",
+        "start": 2361.96,
+        "duration": 2.879
+    },
+    {
+        "text": "they're dogs right",
+        "start": 2363.52,
+        "duration": 4.04
+    },
+    {
+        "text": "um the model will actually uh try to",
+        "start": 2364.839,
+        "duration": 5.941
+    },
+    {
+        "text": "pull these two images far away only",
+        "start": 2367.56,
+        "duration": 6.18
+    },
+    {
+        "text": "representation space",
+        "start": 2370.78,
+        "duration": 2.96
+    },
+    {
+        "text": "um so contrasted learning is important",
+        "start": 2373.9,
+        "duration": 5.459
+    },
+    {
+        "text": "and contrastive loss and so we can see",
+        "start": 2376.24,
+        "duration": 5.4
+    },
+    {
+        "text": "that in the numerator so the numerator",
+        "start": 2379.359,
+        "duration": 5.041
+    },
+    {
+        "text": "here is what we're trying to minimize",
+        "start": 2381.64,
+        "duration": 4.56
+    },
+    {
+        "text": "well we can see that we use the dot",
+        "start": 2384.4,
+        "duration": 3.719
+    },
+    {
+        "text": "product similarities the dot product",
+        "start": 2386.2,
+        "duration": 3.6
+    },
+    {
+        "text": "similarity score",
+        "start": 2388.119,
+        "duration": 4.561
+    },
+    {
+        "text": "um to to compute the how similar how",
+        "start": 2389.8,
+        "duration": 5.039
+    },
+    {
+        "text": "similar or positive pairs are right so",
+        "start": 2392.68,
+        "duration": 4.14
+    },
+    {
+        "text": "in this case the positive pairs are",
+        "start": 2394.839,
+        "duration": 4.201
+    },
+    {
+        "text": "basically two augmentations of the same",
+        "start": 2396.82,
+        "duration": 3.779
+    },
+    {
+        "text": "image right since we don't know the",
+        "start": 2399.04,
+        "duration": 2.579
+    },
+    {
+        "text": "labels",
+        "start": 2400.599,
+        "duration": 2.881
+    },
+    {
+        "text": "and in the denominator is what we're",
+        "start": 2401.619,
+        "duration": 3.24
+    },
+    {
+        "text": "trying to maximize",
+        "start": 2403.48,
+        "duration": 4.02
+    },
+    {
+        "text": "uh we have uh we have a DOT product",
+        "start": 2404.859,
+        "duration": 5.041
+    },
+    {
+        "text": "similar similarity score of any pair",
+        "start": 2407.5,
+        "duration": 4.5
+    },
+    {
+        "text": "right and we can see that this",
+        "start": 2409.9,
+        "duration": 5.52
+    },
+    {
+        "text": "similarity score is being summed over",
+        "start": 2412.0,
+        "duration": 5.099
+    },
+    {
+        "text": "um all the samples in our mini batch",
+        "start": 2415.42,
+        "duration": 3.6
+    },
+    {
+        "text": "right so that includes everything else",
+        "start": 2417.099,
+        "duration": 3.661
+    },
+    {
+        "text": "right so",
+        "start": 2419.02,
+        "duration": 4.68
+    },
+    {
+        "text": "um but also uh notice that there's the",
+        "start": 2420.76,
+        "duration": 4.44
+    },
+    {
+        "text": "other developments here since we don't",
+        "start": 2423.7,
+        "duration": 3.659
+    },
+    {
+        "text": "really have this information during a",
+        "start": 2425.2,
+        "duration": 4.379
+    },
+    {
+        "text": "self-supervised study",
+        "start": 2427.359,
+        "duration": 4.26
+    },
+    {
+        "text": "and we can see that this loss is some",
+        "start": 2429.579,
+        "duration": 3.0
+    },
+    {
+        "text": "over",
+        "start": 2431.619,
+        "duration": 2.46
+    },
+    {
+        "text": "um all of the anchors right all of the",
+        "start": 2432.579,
+        "duration": 3.201
+    },
+    {
+        "text": "images",
+        "start": 2434.079,
+        "duration": 4.201
+    },
+    {
+        "text": "of temperature having perimeter to help",
+        "start": 2435.78,
+        "duration": 5.44
+    },
+    {
+        "text": "us to train them all together anger is",
+        "start": 2438.28,
+        "duration": 5.46
+    },
+    {
+        "text": "the Ice image right yes yeah so it will",
+        "start": 2441.22,
+        "duration": 5.16
+    },
+    {
+        "text": "be something over every anchor in your",
+        "start": 2443.74,
+        "duration": 5.42
+    },
+    {
+        "text": "mini branch",
+        "start": 2446.38,
+        "duration": 2.78
+    },
+    {
+        "text": "temperature is a hyper parameter",
+        "start": 2449.64,
+        "duration": 6.04
+    },
+    {
+        "text": "um it basically changes the behavior of",
+        "start": 2452.74,
+        "duration": 7.339
+    },
+    {
+        "text": "of the loss function there's a",
+        "start": 2455.68,
+        "duration": 4.399
+    },
+    {
+        "text": "um depends on different temperature",
+        "start": 2461.079,
+        "duration": 3.961
+    },
+    {
+        "text": "um the the loss function will behave",
+        "start": 2463.42,
+        "duration": 3.0
+    },
+    {
+        "text": "differently",
+        "start": 2465.04,
+        "duration": 3.9
+    },
+    {
+        "text": "um in the way that the Clusters are",
+        "start": 2466.42,
+        "duration": 4.32
+    },
+    {
+        "text": "being formed so you can that's a",
+        "start": 2468.94,
+        "duration": 4.139
+    },
+    {
+        "text": "parameter that we can turn over",
+        "start": 2470.74,
+        "duration": 5.04
+    },
+    {
+        "text": "um to to basically adjust it based on",
+        "start": 2473.079,
+        "duration": 5.721
+    },
+    {
+        "text": "the data sets that we have",
+        "start": 2475.78,
+        "duration": 3.02
+    },
+    {
+        "text": "right so in order to train uh",
+        "start": 2479.619,
+        "duration": 4.74
+    },
+    {
+        "text": "self-supervised contrastive loss uh we",
+        "start": 2482.02,
+        "duration": 4.14
+    },
+    {
+        "text": "need these very strong augmentations",
+        "start": 2484.359,
+        "duration": 4.021
+    },
+    {
+        "text": "right so here is a list of all the",
+        "start": 2486.16,
+        "duration": 3.9
+    },
+    {
+        "text": "strong augmentations that we that we",
+        "start": 2488.38,
+        "duration": 4.08
+    },
+    {
+        "text": "apply so we just apply every",
+        "start": 2490.06,
+        "duration": 5.4
+    },
+    {
+        "text": "augmentation in in sequence with a 30",
+        "start": 2492.46,
+        "duration": 5.7
+    },
+    {
+        "text": "chance right so here are some of the",
+        "start": 2495.46,
+        "duration": 4.86
+    },
+    {
+        "text": "resulting images and we can see that",
+        "start": 2498.16,
+        "duration": 4.38
+    },
+    {
+        "text": "some of them don't really look like SRH",
+        "start": 2500.32,
+        "duration": 4.92
+    },
+    {
+        "text": "images and that is okay because",
+        "start": 2502.54,
+        "duration": 3.9
+    },
+    {
+        "text": "um a lot of these very strong",
+        "start": 2505.24,
+        "duration": 3.66
+    },
+    {
+        "text": "augmentations uh tend to help the model",
+        "start": 2506.44,
+        "duration": 4.02
+    },
+    {
+        "text": "to learn better",
+        "start": 2508.9,
+        "duration": 6.14
+    },
+    {
+        "text": "um for for Learning Without available",
+        "start": 2510.46,
+        "duration": 4.58
+    },
+    {
+        "text": "um so but we also use a supervised",
+        "start": 2515.98,
+        "duration": 4.859
+    },
+    {
+        "text": "contrast deployment right so in",
+        "start": 2519.339,
+        "duration": 3.661
+    },
+    {
+        "text": "supervised compressive learning uh we",
+        "start": 2520.839,
+        "duration": 4.5
+    },
+    {
+        "text": "have we actually had the labels for all",
+        "start": 2523.0,
+        "duration": 4.8
+    },
+    {
+        "text": "the all of our samples right so we know",
+        "start": 2525.339,
+        "duration": 5.161
+    },
+    {
+        "text": "that these are both images so when we",
+        "start": 2527.8,
+        "duration": 5.1
+    },
+    {
+        "text": "are Computing our positive pairs right",
+        "start": 2530.5,
+        "duration": 4.74
+    },
+    {
+        "text": "we can we can know that all of these",
+        "start": 2532.9,
+        "duration": 4.32
+    },
+    {
+        "text": "images should be similar",
+        "start": 2535.24,
+        "duration": 3.96
+    },
+    {
+        "text": "right so the last function actually",
+        "start": 2537.22,
+        "duration": 4.5
+    },
+    {
+        "text": "looks quite similar we have identified",
+        "start": 2539.2,
+        "duration": 4.08
+    },
+    {
+        "text": "these terms that we already talked about",
+        "start": 2541.72,
+        "duration": 3.06
+    },
+    {
+        "text": "earlier right we heard that they're",
+        "start": 2543.28,
+        "duration": 3.36
+    },
+    {
+        "text": "probably similarity score",
+        "start": 2544.78,
+        "duration": 3.36
+    },
+    {
+        "text": "um of a positive pair",
+        "start": 2546.64,
+        "duration": 3.9
+    },
+    {
+        "text": "um but this time",
+        "start": 2548.14,
+        "duration": 4.439
+    },
+    {
+        "text": "oh sorry there's something to talk about",
+        "start": 2550.54,
+        "duration": 3.84
+    },
+    {
+        "text": "denominator first right the denominator",
+        "start": 2552.579,
+        "duration": 4.381
+    },
+    {
+        "text": "is the same as before right",
+        "start": 2554.38,
+        "duration": 4.02
+    },
+    {
+        "text": "um except",
+        "start": 2556.96,
+        "duration": 4.02
+    },
+    {
+        "text": "um in this case we're only uh summing",
+        "start": 2558.4,
+        "duration": 5.459
+    },
+    {
+        "text": "over samples in different classes so we",
+        "start": 2560.98,
+        "duration": 4.379
+    },
+    {
+        "text": "don't see the underground image here",
+        "start": 2563.859,
+        "duration": 5.641
+    },
+    {
+        "text": "that's not being compared and",
+        "start": 2565.359,
+        "duration": 4.141
+    },
+    {
+        "text": "in the numerator we're summing over all",
+        "start": 2570.64,
+        "duration": 4.74
+    },
+    {
+        "text": "the positive examples right and these",
+        "start": 2573.28,
+        "duration": 4.62
+    },
+    {
+        "text": "positive examples are acquired based on",
+        "start": 2575.38,
+        "duration": 4.08
+    },
+    {
+        "text": "the labels of",
+        "start": 2577.9,
+        "duration": 3.78
+    },
+    {
+        "text": "of the images right so we know that",
+        "start": 2579.46,
+        "duration": 4.02
+    },
+    {
+        "text": "these are all images of dogs and they",
+        "start": 2581.68,
+        "duration": 3.84
+    },
+    {
+        "text": "should be similar",
+        "start": 2583.48,
+        "duration": 4.619
+    },
+    {
+        "text": "right and and like before we are sending",
+        "start": 2585.52,
+        "duration": 4.14
+    },
+    {
+        "text": "over all the anchors in the mini batch",
+        "start": 2588.099,
+        "duration": 3.24
+    },
+    {
+        "text": "and we still have our temperature",
+        "start": 2589.66,
+        "duration": 2.939
+    },
+    {
+        "text": "parameters",
+        "start": 2591.339,
+        "duration": 3.901
+    },
+    {
+        "text": "um here as a hyper parameter",
+        "start": 2592.599,
+        "duration": 5.461
+    },
+    {
+        "text": "so in here is the contrasting learning",
+        "start": 2595.24,
+        "duration": 5.46
+    },
+    {
+        "text": "metrics that we have and we can see that",
+        "start": 2598.06,
+        "duration": 5.88
+    },
+    {
+        "text": "uh overall supervised method you still",
+        "start": 2600.7,
+        "duration": 4.5
+    },
+    {
+        "text": "perform the best",
+        "start": 2603.94,
+        "duration": 3.179
+    },
+    {
+        "text": "um because label help us learn a lot",
+        "start": 2605.2,
+        "duration": 2.94
+    },
+    {
+        "text": "better",
+        "start": 2607.119,
+        "duration": 2.101
+    },
+    {
+        "text": "um",
+        "start": 2608.14,
+        "duration": 3.84
+    },
+    {
+        "text": "but we can see that uh with simclr right",
+        "start": 2609.22,
+        "duration": 5.34
+    },
+    {
+        "text": "so this model is trained without any uh",
+        "start": 2611.98,
+        "duration": 5.639
+    },
+    {
+        "text": "supervision from the without any actual",
+        "start": 2614.56,
+        "duration": 4.559
+    },
+    {
+        "text": "labels right we're just looking at the",
+        "start": 2617.619,
+        "duration": 3.541
+    },
+    {
+        "text": "images and using documentations and we",
+        "start": 2619.119,
+        "duration": 3.24
+    },
+    {
+        "text": "can see that we're still achieving",
+        "start": 2621.16,
+        "duration": 3.84
+    },
+    {
+        "text": "really good results",
+        "start": 2622.359,
+        "duration": 4.861
+    },
+    {
+        "text": "another thing that we can do with these",
+        "start": 2625.0,
+        "duration": 4.079
+    },
+    {
+        "text": "contrastive learnings is we can",
+        "start": 2627.22,
+        "duration": 3.48
+    },
+    {
+        "text": "visualize these learn representations",
+        "start": 2629.079,
+        "duration": 4.02
+    },
+    {
+        "text": "and we can see that we have a much",
+        "start": 2630.7,
+        "duration": 6.36
+    },
+    {
+        "text": "better discernible uh clustering in in",
+        "start": 2633.099,
+        "duration": 6.121
+    },
+    {
+        "text": "the suit part and the same CR when",
+        "start": 2637.06,
+        "duration": 4.32
+    },
+    {
+        "text": "compared to randomly initialized with",
+        "start": 2639.22,
+        "duration": 4.08
+    },
+    {
+        "text": "sorry these are not right now these",
+        "start": 2641.38,
+        "duration": 4.62
+    },
+    {
+        "text": "images are not trained initialized model",
+        "start": 2643.3,
+        "duration": 4.92
+    },
+    {
+        "text": "so basically these are representations",
+        "start": 2646.0,
+        "duration": 4.099
+    },
+    {
+        "text": "learned are natural images",
+        "start": 2648.22,
+        "duration": 4.32
+    },
+    {
+        "text": "we can see that there's a very big",
+        "start": 2650.099,
+        "duration": 3.821
+    },
+    {
+        "text": "difference",
+        "start": 2652.54,
+        "duration": 3.12
+    },
+    {
+        "text": "um when we are actually trained using",
+        "start": 2653.92,
+        "duration": 4.5
+    },
+    {
+        "text": "contrastive learning on our data with or",
+        "start": 2655.66,
+        "duration": 4.62
+    },
+    {
+        "text": "without the need for the treatment",
+        "start": 2658.42,
+        "duration": 4.399
+    },
+    {
+        "text": "classes",
+        "start": 2660.28,
+        "duration": 2.539
+    },
+    {
+        "text": "um we can see some mixing in on our",
+        "start": 2663.339,
+        "duration": 5.941
+    },
+    {
+        "text": "images so everything inside here so a",
+        "start": 2666.4,
+        "duration": 7.02
+    },
+    {
+        "text": "lot of these on mixing happens in uh",
+        "start": 2669.28,
+        "duration": 5.7
+    },
+    {
+        "text": "images that have pretty similar",
+        "start": 2673.42,
+        "duration": 3.659
+    },
+    {
+        "text": "histologic features such as between",
+        "start": 2674.98,
+        "duration": 4.5
+    },
+    {
+        "text": "hydrogen and logarith gliomas and",
+        "start": 2677.079,
+        "duration": 5.841
+    },
+    {
+        "text": "sometimes hydrogen passes",
+        "start": 2679.48,
+        "duration": 3.44
+    },
+    {
+        "text": "um so as part of our Benchmark release",
+        "start": 2683.26,
+        "duration": 5.099
+    },
+    {
+        "text": "detailed training parameters for all the",
+        "start": 2685.48,
+        "duration": 6.119
+    },
+    {
+        "text": "experiments that we have run right so",
+        "start": 2688.359,
+        "duration": 7.021
+    },
+    {
+        "text": "we also included uh the gpus that we",
+        "start": 2691.599,
+        "duration": 6.961
+    },
+    {
+        "text": "used and also how much time it took for",
+        "start": 2695.38,
+        "duration": 5.4
+    },
+    {
+        "text": "us to train these models",
+        "start": 2698.56,
+        "duration": 4.019
+    },
+    {
+        "text": "um you know we can see most of these",
+        "start": 2700.78,
+        "duration": 4.5
+    },
+    {
+        "text": "models can be trained probably within a",
+        "start": 2702.579,
+        "duration": 5.161
+    },
+    {
+        "text": "day so the training of this data set",
+        "start": 2705.28,
+        "duration": 4.44
+    },
+    {
+        "text": "that tends to be quite feasible for a",
+        "start": 2707.74,
+        "duration": 4.339
+    },
+    {
+        "text": "lot of us",
+        "start": 2709.72,
+        "duration": 2.359
+    },
+    {
+        "text": "all right so",
+        "start": 2712.599,
+        "duration": 3.661
+    },
+    {
+        "text": "in conclusion",
+        "start": 2714.52,
+        "duration": 4.319
+    },
+    {
+        "text": "uh there is a there's still a lot of",
+        "start": 2716.26,
+        "duration": 4.2
+    },
+    {
+        "text": "open questions",
+        "start": 2718.839,
+        "duration": 3.841
+    },
+    {
+        "text": "um that we have with our data set right",
+        "start": 2720.46,
+        "duration": 4.619
+    },
+    {
+        "text": "so uh here are some of them right domain",
+        "start": 2722.68,
+        "duration": 5.52
+    },
+    {
+        "text": "adaptation so a lot of existing tasks in",
+        "start": 2725.079,
+        "duration": 4.981
+    },
+    {
+        "text": "domain adaptation",
+        "start": 2728.2,
+        "duration": 4.98
+    },
+    {
+        "text": "um it tends to be very artificial so uh",
+        "start": 2730.06,
+        "duration": 6.18
+    },
+    {
+        "text": "some of these data set is comparing uh",
+        "start": 2733.18,
+        "duration": 6.24
+    },
+    {
+        "text": "the MS the hearing digits to the street",
+        "start": 2736.24,
+        "duration": 5.76
+    },
+    {
+        "text": "being house members right so a lot of",
+        "start": 2739.42,
+        "duration": 5.64
+    },
+    {
+        "text": "these tasks tend to be very uh",
+        "start": 2742.0,
+        "duration": 5.28
+    },
+    {
+        "text": "artificial and another example is taking",
+        "start": 2745.06,
+        "duration": 4.38
+    },
+    {
+        "text": "a picture with your phone and taking a",
+        "start": 2747.28,
+        "duration": 4.319
+    },
+    {
+        "text": "picture with a DSLR right so there isn't",
+        "start": 2749.44,
+        "duration": 5.159
+    },
+    {
+        "text": "much difference here and the tasks are",
+        "start": 2751.599,
+        "duration": 5.341
+    },
+    {
+        "text": "all very artificial but we can actually",
+        "start": 2754.599,
+        "duration": 4.321
+    },
+    {
+        "text": "trying to adapt",
+        "start": 2756.94,
+        "duration": 5.12
+    },
+    {
+        "text": "um SRH to the conventional hne histology",
+        "start": 2758.92,
+        "duration": 6.3
+    },
+    {
+        "text": "and adapting these different methods is",
+        "start": 2762.06,
+        "duration": 5.38
+    },
+    {
+        "text": "a very large scale Benchmark that's",
+        "start": 2765.22,
+        "duration": 4.68
+    },
+    {
+        "text": "actually uh based on",
+        "start": 2767.44,
+        "duration": 4.8
+    },
+    {
+        "text": "the image properties right from Optical",
+        "start": 2769.9,
+        "duration": 5.939
+    },
+    {
+        "text": "Imaging or from staining",
+        "start": 2772.24,
+        "duration": 5.879
+    },
+    {
+        "text": "um there is uh multiple instance",
+        "start": 2775.839,
+        "duration": 4.5
+    },
+    {
+        "text": "learning where we want to have a good",
+        "start": 2778.119,
+        "duration": 4.801
+    },
+    {
+        "text": "strategy to learn from these weak labels",
+        "start": 2780.339,
+        "duration": 5.161
+    },
+    {
+        "text": "is that we included with our data set",
+        "start": 2782.92,
+        "duration": 4.919
+    },
+    {
+        "text": "right so I mentioned earlier that we are",
+        "start": 2785.5,
+        "duration": 4.92
+    },
+    {
+        "text": "releasing a label for every patient",
+        "start": 2787.839,
+        "duration": 4.74
+    },
+    {
+        "text": "instead of enabled for every patch",
+        "start": 2790.42,
+        "duration": 3.06
+    },
+    {
+        "text": "because",
+        "start": 2792.579,
+        "duration": 2.701
+    },
+    {
+        "text": "um it's infeasible for someone to",
+        "start": 2793.48,
+        "duration": 3.839
+    },
+    {
+        "text": "basically enter every patch right so we",
+        "start": 2795.28,
+        "duration": 4.079
+    },
+    {
+        "text": "have this weak label where all of the",
+        "start": 2797.319,
+        "duration": 4.681
+    },
+    {
+        "text": "data from the same patient right so how",
+        "start": 2799.359,
+        "duration": 5.22
+    },
+    {
+        "text": "do we better leverage this",
+        "start": 2802.0,
+        "duration": 6.119
+    },
+    {
+        "text": "um label to use uh to to train our",
+        "start": 2804.579,
+        "duration": 5.461
+    },
+    {
+        "text": "models using multiple instance learning",
+        "start": 2808.119,
+        "duration": 5.541
+    },
+    {
+        "text": "it's another opening question",
+        "start": 2810.04,
+        "duration": 3.62
+    },
+    {
+        "text": "um in all of our benchmarks we had a",
+        "start": 2813.76,
+        "duration": 4.38
+    },
+    {
+        "text": "very simple aggregation method that was",
+        "start": 2815.98,
+        "duration": 5.099
+    },
+    {
+        "text": "simply average all of our predictions",
+        "start": 2818.14,
+        "duration": 5.459
+    },
+    {
+        "text": "right so a better aggregation method to",
+        "start": 2821.079,
+        "duration": 4.02
+    },
+    {
+        "text": "get us a sign and patient level",
+        "start": 2823.599,
+        "duration": 2.701
+    },
+    {
+        "text": "prediction",
+        "start": 2825.099,
+        "duration": 4.581
+    },
+    {
+        "text": "um is also a open question",
+        "start": 2826.3,
+        "duration": 3.38
+    },
+    {
+        "text": "um earlier we looked at some of the",
+        "start": 2829.72,
+        "duration": 3.72
+    },
+    {
+        "text": "augmented images and in these",
+        "start": 2831.099,
+        "duration": 3.901
+    },
+    {
+        "text": "augmentations a lot of image doesn't",
+        "start": 2833.44,
+        "duration": 3.659
+    },
+    {
+        "text": "really make sense right so how to do",
+        "start": 2835.0,
+        "duration": 4.2
+    },
+    {
+        "text": "self-supervised learning um without",
+        "start": 2837.099,
+        "duration": 5.881
+    },
+    {
+        "text": "these augmentations or with more domain",
+        "start": 2839.2,
+        "duration": 5.58
+    },
+    {
+        "text": "specific augmentations",
+        "start": 2842.98,
+        "duration": 3.78
+    },
+    {
+        "text": "there's also an open question",
+        "start": 2844.78,
+        "duration": 6.42
+    },
+    {
+        "text": "and finally uh we have seen that vit",
+        "start": 2846.76,
+        "duration": 7.319
+    },
+    {
+        "text": "tend to have a worse performance on our",
+        "start": 2851.2,
+        "duration": 5.159
+    },
+    {
+        "text": "data set and that's because of these",
+        "start": 2854.079,
+        "duration": 4.5
+    },
+    {
+        "text": "models requires a massive amount of data",
+        "start": 2856.359,
+        "duration": 4.381
+    },
+    {
+        "text": "to train so how to train these models",
+        "start": 2858.579,
+        "duration": 4.801
+    },
+    {
+        "text": "efficiently right with uh without a lot",
+        "start": 2860.74,
+        "duration": 5.04
+    },
+    {
+        "text": "of data is also another one question",
+        "start": 2863.38,
+        "duration": 4.38
+    },
+    {
+        "text": "that",
+        "start": 2865.78,
+        "duration": 3.48
+    },
+    {
+        "text": "um does another future direction of",
+        "start": 2867.76,
+        "duration": 3.3
+    },
+    {
+        "text": "research",
+        "start": 2869.26,
+        "duration": 5.339
+    },
+    {
+        "text": "so in conclusion we can see that SRH is",
+        "start": 2871.06,
+        "duration": 6.12
+    },
+    {
+        "text": "a rapid label-free Optical Imaging",
+        "start": 2874.599,
+        "duration": 4.681
+    },
+    {
+        "text": "method that provides this very high",
+        "start": 2877.18,
+        "duration": 4.98
+    },
+    {
+        "text": "resolution images of unprocessed",
+        "start": 2879.28,
+        "duration": 5.64
+    },
+    {
+        "text": "biomedical specimens",
+        "start": 2882.16,
+        "duration": 4.82
+    },
+    {
+        "text": "um the combination of",
+        "start": 2884.92,
+        "duration": 4.62
+    },
+    {
+        "text": "SRH and modern artificial intelligence",
+        "start": 2886.98,
+        "duration": 5.5
+    },
+    {
+        "text": "can enable us to have rapid and accurate",
+        "start": 2889.54,
+        "duration": 5.4
+    },
+    {
+        "text": "brain tumor diagnosis",
+        "start": 2892.48,
+        "duration": 5.76
+    },
+    {
+        "text": "open SRH is the first and only publicly",
+        "start": 2894.94,
+        "duration": 6.419
+    },
+    {
+        "text": "available data set of SRH",
+        "start": 2898.24,
+        "duration": 5.879
+    },
+    {
+        "text": "and we hope that open SRH will help",
+        "start": 2901.359,
+        "duration": 5.701
+    },
+    {
+        "text": "promote open science translational AI",
+        "start": 2904.119,
+        "duration": 4.98
+    },
+    {
+        "text": "research within the field of physician",
+        "start": 2907.06,
+        "duration": 5.4
+    },
+    {
+        "text": "oncology to optimize the surgical uh",
+        "start": 2909.099,
+        "duration": 5.341
+    },
+    {
+        "text": "management of brain cancers",
+        "start": 2912.46,
+        "duration": 5.1
+    },
+    {
+        "text": "right so more details again it's on our",
+        "start": 2914.44,
+        "duration": 5.52
+    },
+    {
+        "text": "website and I would like to thank all of",
+        "start": 2917.56,
+        "duration": 5.4
+    },
+    {
+        "text": "our collaborators in the lab and all in",
+        "start": 2919.96,
+        "duration": 6.3
+    },
+    {
+        "text": "our uh sponsors which generosity make",
+        "start": 2922.96,
+        "duration": 4.92
+    },
+    {
+        "text": "this research possible",
+        "start": 2926.26,
+        "duration": 5.48
+    },
+    {
+        "text": "so that's it any questions",
+        "start": 2927.88,
+        "duration": 3.86
+    },
+    {
+        "text": "a reminder if you're online you can put",
+        "start": 2933.04,
+        "duration": 4.2
+    },
+    {
+        "text": "your questions either in the chat box or",
+        "start": 2935.5,
+        "duration": 3.9
+    },
+    {
+        "text": "a razor Electronics",
+        "start": 2937.24,
+        "duration": 5.22
+    },
+    {
+        "text": "yeah I'm going to talk to him I have two",
+        "start": 2939.4,
+        "duration": 5.459
+    },
+    {
+        "text": "questions three nine questions but um",
+        "start": 2942.46,
+        "duration": 4.44
+    },
+    {
+        "text": "the first one goes to your simulator",
+        "start": 2944.859,
+        "duration": 4.98
+    },
+    {
+        "text": "Roman histology at the beginning",
+        "start": 2946.9,
+        "duration": 4.679
+    },
+    {
+        "text": "um I remember you talking about how I",
+        "start": 2949.839,
+        "duration": 4.081
+    },
+    {
+        "text": "think the reason why we generate um",
+        "start": 2951.579,
+        "duration": 4.681
+    },
+    {
+        "text": "pursue this project was because",
+        "start": 2953.92,
+        "duration": 4.38
+    },
+    {
+        "text": "um uh wearability in the technician",
+        "start": 2956.26,
+        "duration": 4.44
+    },
+    {
+        "text": "obtaining the sample and such",
+        "start": 2958.3,
+        "duration": 4.5
+    },
+    {
+        "text": "um you know I'm thinking about obtained",
+        "start": 2960.7,
+        "duration": 4.02
+    },
+    {
+        "text": "tissue even for this project is very",
+        "start": 2962.8,
+        "duration": 3.24
+    },
+    {
+        "text": "important because we're going to try to",
+        "start": 2964.72,
+        "duration": 3.66
+    },
+    {
+        "text": "process begins so my question for you is",
+        "start": 2966.04,
+        "duration": 3.84
+    },
+    {
+        "text": "whether it's leaving for the surgeon",
+        "start": 2968.38,
+        "duration": 3.479
+    },
+    {
+        "text": "obtains the sample",
+        "start": 2969.88,
+        "duration": 3.719
+    },
+    {
+        "text": "when you have",
+        "start": 2971.859,
+        "duration": 4.5
+    },
+    {
+        "text": "like a requirement or some kind of",
+        "start": 2973.599,
+        "duration": 6.24
+    },
+    {
+        "text": "threshold saying this tissue sample",
+        "start": 2976.359,
+        "duration": 6.661
+    },
+    {
+        "text": "needs to have this amount of cancerous",
+        "start": 2979.839,
+        "duration": 6.24
+    },
+    {
+        "text": "tissue versus pelvic tissue all Living",
+        "start": 2983.02,
+        "duration": 6.44
+    },
+    {
+        "text": "Essential for those that can't be 100",
+        "start": 2986.079,
+        "duration": 6.24
+    },
+    {
+        "text": "and it's like part of the tumor doesn't",
+        "start": 2989.46,
+        "duration": 4.72
+    },
+    {
+        "text": "matter where the surgeon takes it from",
+        "start": 2992.319,
+        "duration": 3.481
+    },
+    {
+        "text": "because I know I mean if you're working",
+        "start": 2994.18,
+        "duration": 3.3
+    },
+    {
+        "text": "with a three-day options like if you",
+        "start": 2995.8,
+        "duration": 3.72
+    },
+    {
+        "text": "can't deeper in a thing for tumor versus",
+        "start": 2997.48,
+        "duration": 3.78
+    },
+    {
+        "text": "someone else works you could have",
+        "start": 2999.52,
+        "duration": 3.799
+    },
+    {
+        "text": "potentially different being with tipping",
+        "start": 3001.26,
+        "duration": 4.44
+    },
+    {
+        "text": "Nostalgia so what's your take on that",
+        "start": 3003.319,
+        "duration": 4.661
+    },
+    {
+        "text": "yeah so that's really up to the surgeon",
+        "start": 3005.7,
+        "duration": 4.919
+    },
+    {
+        "text": "so sometimes a certainly would like to",
+        "start": 3007.98,
+        "duration": 5.7
+    },
+    {
+        "text": "sample around the tumor right so and and",
+        "start": 3010.619,
+        "duration": 4.321
+    },
+    {
+        "text": "that that goes into the margin",
+        "start": 3013.68,
+        "duration": 3.84
+    },
+    {
+        "text": "delineation that day I can help solve",
+        "start": 3014.94,
+        "duration": 5.22
+    },
+    {
+        "text": "right so it's really up to the surgeon",
+        "start": 3017.52,
+        "duration": 5.46
+    },
+    {
+        "text": "on which part of the tumor that they",
+        "start": 3020.16,
+        "duration": 5.159
+    },
+    {
+        "text": "want to have it visualized",
+        "start": 3022.98,
+        "duration": 5.28
+    },
+    {
+        "text": "um and in general there isn't really a",
+        "start": 3025.319,
+        "duration": 4.861
+    },
+    {
+        "text": "lot of requirement on where the tissue",
+        "start": 3028.26,
+        "duration": 4.62
+    },
+    {
+        "text": "comes from it can literally be anything",
+        "start": 3030.18,
+        "duration": 5.34
+    },
+    {
+        "text": "um the the the imager works really well",
+        "start": 3032.88,
+        "duration": 6.42
+    },
+    {
+        "text": "with tumor normal tissues and and we can",
+        "start": 3035.52,
+        "duration": 7.92
+    },
+    {
+        "text": "also see like a necrotic tissues and",
+        "start": 3039.3,
+        "duration": 6.299
+    },
+    {
+        "text": "other other regions right some regions",
+        "start": 3043.44,
+        "duration": 4.379
+    },
+    {
+        "text": "are very fibrous like we can see all of",
+        "start": 3045.599,
+        "duration": 5.881
+    },
+    {
+        "text": "that on our images it's just up to where",
+        "start": 3047.819,
+        "duration": 6.24
+    },
+    {
+        "text": "does the surgeon want to see",
+        "start": 3051.48,
+        "duration": 6.24
+    },
+    {
+        "text": "yeah and there are some guidelines",
+        "start": 3054.059,
+        "duration": 6.181
+    },
+    {
+        "text": "um they're like pretty simple like don't",
+        "start": 3057.72,
+        "duration": 5.82
+    },
+    {
+        "text": "sample very bloody things right so",
+        "start": 3060.24,
+        "duration": 4.92
+    },
+    {
+        "text": "um there are some guidelines but it's",
+        "start": 3063.54,
+        "duration": 3.539
+    },
+    {
+        "text": "really up to the story well then my",
+        "start": 3065.16,
+        "duration": 4.38
+    },
+    {
+        "text": "second simple question is",
+        "start": 3067.079,
+        "duration": 4.461
+    },
+    {
+        "text": "um",
+        "start": 3069.54,
+        "duration": 2.0
+    },
+    {
+        "text": "not call it but what is your take on",
+        "start": 3071.76,
+        "duration": 7.22
+    },
+    {
+        "text": "your research and adjusting rare",
+        "start": 3073.98,
+        "duration": 8.54
+    },
+    {
+        "text": "and being able to survive those bills",
+        "start": 3078.98,
+        "duration": 6.94
+    },
+    {
+        "text": "yeah yeah so a lot of the methods that",
+        "start": 3082.52,
+        "duration": 6.52
+    },
+    {
+        "text": "we have right now is focus on the",
+        "start": 3085.92,
+        "duration": 6.48
+    },
+    {
+        "text": "on the very like majority classes of",
+        "start": 3089.04,
+        "duration": 4.38
+    },
+    {
+        "text": "trainers",
+        "start": 3092.4,
+        "duration": 3.06
+    },
+    {
+        "text": "um but there are also strategies to",
+        "start": 3093.42,
+        "duration": 4.5
+    },
+    {
+        "text": "identify these rare tumors",
+        "start": 3095.46,
+        "duration": 4.32
+    },
+    {
+        "text": "um so the first thing that we can do is",
+        "start": 3097.92,
+        "duration": 5.159
+    },
+    {
+        "text": "to basically identify the rare tumors",
+        "start": 3099.78,
+        "duration": 5.64
+    },
+    {
+        "text": "right so um basically",
+        "start": 3103.079,
+        "duration": 4.561
+    },
+    {
+        "text": "um during inference time if we see a",
+        "start": 3105.42,
+        "duration": 4.38
+    },
+    {
+        "text": "trimmer that we're not trained on right",
+        "start": 3107.64,
+        "duration": 4.38
+    },
+    {
+        "text": "can we identify it right that's that's",
+        "start": 3109.8,
+        "duration": 3.799
+    },
+    {
+        "text": "like the first step",
+        "start": 3112.02,
+        "duration": 5.76
+    },
+    {
+        "text": "and uh in addition to that we can use a",
+        "start": 3113.599,
+        "duration": 5.681
+    },
+    {
+        "text": "lot of this representation learning",
+        "start": 3117.78,
+        "duration": 3.9
+    },
+    {
+        "text": "techniques or other techniques to",
+        "start": 3119.28,
+        "duration": 4.92
+    },
+    {
+        "text": "basically help us to learn these better",
+        "start": 3121.68,
+        "duration": 5.7
+    },
+    {
+        "text": "representations of tumors and ideally at",
+        "start": 3124.2,
+        "duration": 6.419
+    },
+    {
+        "text": "the end we can we can have a one shot or",
+        "start": 3127.38,
+        "duration": 6.36
+    },
+    {
+        "text": "a few shot learning of these of these",
+        "start": 3130.619,
+        "duration": 5.101
+    },
+    {
+        "text": "trainers right so for example in our",
+        "start": 3133.74,
+        "duration": 3.9
+    },
+    {
+        "text": "database maybe we have one or two",
+        "start": 3135.72,
+        "duration": 5.7
+    },
+    {
+        "text": "patients of a very rare tumor right so",
+        "start": 3137.64,
+        "duration": 6.179
+    },
+    {
+        "text": "um the the goal that we're going toward",
+        "start": 3141.42,
+        "duration": 4.86
+    },
+    {
+        "text": "with representation learning is that",
+        "start": 3143.819,
+        "duration": 5.221
+    },
+    {
+        "text": "with only one or two patients we can",
+        "start": 3146.28,
+        "duration": 4.5
+    },
+    {
+        "text": "identify them separately on the",
+        "start": 3149.04,
+        "duration": 3.42
+    },
+    {
+        "text": "representation space",
+        "start": 3150.78,
+        "duration": 4.14
+    },
+    {
+        "text": "um so when we see them in the wild right",
+        "start": 3152.46,
+        "duration": 6.74
+    },
+    {
+        "text": "we can identify these red tumors as well",
+        "start": 3154.92,
+        "duration": 4.28
+    },
+    {
+        "text": "yeah it's really really fantastic",
+        "start": 3159.66,
+        "duration": 5.04
+    },
+    {
+        "text": "workings for this data set it seems like",
+        "start": 3161.7,
+        "duration": 4.8
+    },
+    {
+        "text": "a really powerful for people to go out",
+        "start": 3164.7,
+        "duration": 3.72
+    },
+    {
+        "text": "and train their own models I'm curious",
+        "start": 3166.5,
+        "duration": 3.92
+    },
+    {
+        "text": "as people do that if you have a way of",
+        "start": 3168.42,
+        "duration": 4.919
+    },
+    {
+        "text": "collecting back like a leaderboard or",
+        "start": 3170.42,
+        "duration": 4.36
+    },
+    {
+        "text": "some sort of",
+        "start": 3173.339,
+        "duration": 4.201
+    },
+    {
+        "text": "um like summary of their model",
+        "start": 3174.78,
+        "duration": 6.18
+    },
+    {
+        "text": "performers yeah so as of now we haven't",
+        "start": 3177.54,
+        "duration": 6.539
+    },
+    {
+        "text": "decided on how we want to",
+        "start": 3180.96,
+        "duration": 5.34
+    },
+    {
+        "text": "um have a leaderboard of sorts um we",
+        "start": 3184.079,
+        "duration": 3.54
+    },
+    {
+        "text": "have talked about maybe we've been",
+        "start": 3186.3,
+        "duration": 3.72
+    },
+    {
+        "text": "potentially host a competition",
+        "start": 3187.619,
+        "duration": 3.781
+    },
+    {
+        "text": "um at some point",
+        "start": 3190.02,
+        "duration": 3.78
+    },
+    {
+        "text": "um especially uh with these molecular",
+        "start": 3191.4,
+        "duration": 3.959
+    },
+    {
+        "text": "diagnosis right so we can release",
+        "start": 3193.8,
+        "duration": 4.559
+    },
+    {
+        "text": "additional labels with our patients and",
+        "start": 3195.359,
+        "duration": 6.72
+    },
+    {
+        "text": "we can potentially host a competition to",
+        "start": 3198.359,
+        "duration": 5.581
+    },
+    {
+        "text": "um to predict these",
+        "start": 3202.079,
+        "duration": 3.661
+    },
+    {
+        "text": "um additional labels or we can release",
+        "start": 3203.94,
+        "duration": 4.919
+    },
+    {
+        "text": "another testing set right on to to host",
+        "start": 3205.74,
+        "duration": 4.74
+    },
+    {
+        "text": "a competition but that's not something",
+        "start": 3208.859,
+        "duration": 3.96
+    },
+    {
+        "text": "that we have right now but we think",
+        "start": 3210.48,
+        "duration": 4.02
+    },
+    {
+        "text": "that's something that we certainly have",
+        "start": 3212.819,
+        "duration": 5.161
+    },
+    {
+        "text": "talked about so we're just doing other",
+        "start": 3214.5,
+        "duration": 5.22
+    },
+    {
+        "text": "contexts that really is simple it works",
+        "start": 3217.98,
+        "duration": 4.56
+    },
+    {
+        "text": "well as at the end of your training for",
+        "start": 3219.72,
+        "duration": 5.099
+    },
+    {
+        "text": "example with the paper Titan there's a",
+        "start": 3222.54,
+        "duration": 4.38
+    },
+    {
+        "text": "function that can just generate like a",
+        "start": 3224.819,
+        "duration": 5.881
+    },
+    {
+        "text": "yaml I guess like in a format that is",
+        "start": 3226.92,
+        "duration": 6.24
+    },
+    {
+        "text": "standardized and then say please send",
+        "start": 3230.7,
+        "duration": 4.379
+    },
+    {
+        "text": "that to us and then we can add it to the",
+        "start": 3233.16,
+        "duration": 3.84
+    },
+    {
+        "text": "website I guess but that way you're at",
+        "start": 3235.079,
+        "duration": 3.901
+    },
+    {
+        "text": "least getting kind of like a consistent",
+        "start": 3237.0,
+        "duration": 4.559
+    },
+    {
+        "text": "performance and if people want to share",
+        "start": 3238.98,
+        "duration": 5.22
+    },
+    {
+        "text": "like something that you can gather that",
+        "start": 3241.559,
+        "duration": 4.741
+    },
+    {
+        "text": "it's not just kind of free viewing all",
+        "start": 3244.2,
+        "duration": 5.58
+    },
+    {
+        "text": "over the place yeah so the so our base",
+        "start": 3246.3,
+        "duration": 5.279
+    },
+    {
+        "text": "has a pretty",
+        "start": 3249.78,
+        "duration": 2.339
+    },
+    {
+        "text": "um",
+        "start": 3251.579,
+        "duration": 3.5
+    },
+    {
+        "text": "say thorough logging",
+        "start": 3252.119,
+        "duration": 6.661
+    },
+    {
+        "text": "process for for the training process and",
+        "start": 3255.079,
+        "duration": 7.24
+    },
+    {
+        "text": "also evaluation so what we can what the",
+        "start": 3258.78,
+        "duration": 6.12
+    },
+    {
+        "text": "what our code base doing that",
+        "start": 3262.319,
+        "duration": 6.121
+    },
+    {
+        "text": "standardized is that it saves the uh the",
+        "start": 3264.9,
+        "duration": 5.4
+    },
+    {
+        "text": "checkpoints right it also saves the",
+        "start": 3268.44,
+        "duration": 3.3
+    },
+    {
+        "text": "state of",
+        "start": 3270.3,
+        "duration": 3.0
+    },
+    {
+        "text": "um pretty much everything so including",
+        "start": 3271.74,
+        "duration": 4.079
+    },
+    {
+        "text": "the optimizer or the scheduler in the",
+        "start": 3273.3,
+        "duration": 5.4
+    },
+    {
+        "text": "data sets and we also have a prediction",
+        "start": 3275.819,
+        "duration": 4.74
+    },
+    {
+        "text": "pipeline that saves",
+        "start": 3278.7,
+        "duration": 3.84
+    },
+    {
+        "text": "um all of the predictions so including",
+        "start": 3280.559,
+        "duration": 4.921
+    },
+    {
+        "text": "uh like the Learned representations and",
+        "start": 3282.54,
+        "duration": 6.0
+    },
+    {
+        "text": "also the the locates by the selling",
+        "start": 3285.48,
+        "duration": 6.06
+    },
+    {
+        "text": "process so all of that is being saved um",
+        "start": 3288.54,
+        "duration": 5.819
+    },
+    {
+        "text": "in a standardized way obviously people",
+        "start": 3291.54,
+        "duration": 6.059
+    },
+    {
+        "text": "can identify that um but we do have some",
+        "start": 3294.359,
+        "duration": 4.5
+    },
+    {
+        "text": "kind of",
+        "start": 3297.599,
+        "duration": 3.541
+    },
+    {
+        "text": "a way that that's being released with",
+        "start": 3298.859,
+        "duration": 5.101
+    },
+    {
+        "text": "the code base to save these essential uh",
+        "start": 3301.14,
+        "duration": 6.179
+    },
+    {
+        "text": "predictions in the models so",
+        "start": 3303.96,
+        "duration": 5.639
+    },
+    {
+        "text": "hopefully we can we can use something",
+        "start": 3307.319,
+        "duration": 4.641
+    },
+    {
+        "text": "like that in the future to to maybe do",
+        "start": 3309.599,
+        "duration": 6.801
+    },
+    {
+        "text": "representation sharing or mobile chain",
+        "start": 3311.96,
+        "duration": 4.44
+    },
+    {
+        "text": "the questions okay",
+        "start": 3321.24,
+        "duration": 3.079
+    },
+    {
+        "text": "don't say anything on them yeah",
+        "start": 3325.079,
+        "duration": 4.28
+    },
+    {
+        "text": "so yeah so the ground truth is from I uh",
+        "start": 3333.839,
+        "duration": 5.881
+    },
+    {
+        "text": "from I've seen also the yeah and also",
+        "start": 3336.72,
+        "duration": 5.16
+    },
+    {
+        "text": "the sequencing so um the ground shoot",
+        "start": 3339.72,
+        "duration": 4.98
+    },
+    {
+        "text": "that we that we do is the is the final",
+        "start": 3341.88,
+        "duration": 6.439
+    },
+    {
+        "text": "diagnosis for each patient",
+        "start": 3344.7,
+        "duration": 3.619
+    },
+    {
+        "text": "those",
+        "start": 3349.02,
+        "duration": 3.0
+    },
+    {
+        "text": "[Music]",
+        "start": 3356.25,
+        "duration": 3.11
+    },
+    {
+        "text": "yeah so",
+        "start": 3363.3,
+        "duration": 3.84
+    },
+    {
+        "text": "um different different tumor will",
+        "start": 3365.16,
+        "duration": 4.86
+    },
+    {
+        "text": "basically be have a different channel on",
+        "start": 3367.14,
+        "duration": 5.58
+    },
+    {
+        "text": "during during surgery right so",
+        "start": 3370.02,
+        "duration": 4.26
+    },
+    {
+        "text": "um",
+        "start": 3372.72,
+        "duration": 5.58
+    },
+    {
+        "text": "so in in the future we can well the goal",
+        "start": 3374.28,
+        "duration": 6.539
+    },
+    {
+        "text": "is to integrate this AI into into the",
+        "start": 3378.3,
+        "duration": 5.1
+    },
+    {
+        "text": "microscope or into the or so we can",
+        "start": 3380.819,
+        "duration": 4.381
+    },
+    {
+        "text": "inform the surgeon",
+        "start": 3383.4,
+        "duration": 3.959
+    },
+    {
+        "text": "um like right away that",
+        "start": 3385.2,
+        "duration": 6.96
+    },
+    {
+        "text": "um we think this is a surgery",
+        "start": 3387.359,
+        "duration": 4.801
+    }
+]

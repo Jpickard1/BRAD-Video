@@ -1,0 +1,194 @@
+[
+    {
+        "start": 0.08,
+        "text": "hello everyone my name is anne shanzhau you can call me sam i'm i'm a phd student from dcmb dr ellen boyd's lab and our lab focus on genomics especially about like regulatory elements like enhancer and promoters and in today's talk i will uh i'll talk about uh uh well one two that we recently developed called fc2 so f62 is a p color that we recently developed and it's improved based on the original version dr alan boyer developed him back in 2008 and we improved that with dynamic statistics and now this uh two has been published in the ar genomics and bioinformatics and and if you're interested you can uh go and check out this paper and but for today's talk we will have like many four sections the introduction a little bit background about the p calling and also the methods use the uh in the 5c 2 and also "
+    },
+    {
+        "start": 61.92,
+        "text": "the second section is methods which is a methodology like methodology are adopted in the f62 and some results of sd2 to show yfc 2 is a a very good general peak color and it outperforms the very popular pure color of maxwell a lot and then at last we will have a hands-on demo to uh to show this uh how to use this p color as well and so let's get started so first of all introduction i will start with a statement like peak calling is the uh uh the most important analysis a very core analysis uh in the uh hasbro sequencing data analysis and p calling is defined as the uh computation method so identify uh areas in genome that have rich risk compared to a background in hds experiment and the accuracy of it appear calling results is very important for any downstream analysis like "
+    },
+    {
+        "start": 123.84,
+        "text": "peak differential analysis footprinting analysis and motif enrichment analysis so uh this is one of the reason why we want to improve on our previous uh version and also we that's why we see why the peak coding uh field was uh keep moving forward and today we're going to talk about p colony so speaking of p calling uh i usually start with most p color you really start with reconstructing the genomic signal and but different p colors employ different ways to construct a signal but most of them fall into two categories the first one is to extend the the risk to the mean fragments and this way you will get some interval thoughts of the fragments so for example as you can see here so first of all we met the risk to the genome then we extend to the mean fragments and in this case we will get the interval source of the signal but one disadvantage of this strategy as you can see the the signal always like "
+    },
+    {
+        "start": 184.319,
+        "text": "non-smooth and it really depends on the fragment lens that you estimated so another approach is to treat those as a point source so what i mean by that is like you shift those uh rays like by half of the meme fragments and not examples and then you get some point source of the countries and this is and uh one common one to deal with those uh risk is to using a moving histogram and but uh but the histogram is actually very problematic because it's strongly affected by the choice of the uh beans and starting locations for example you can see here those two data points are identically distributed but if we choose a different starting location you generate very different histogram profile so this is a very um big problem for the histograms and so what should we do so kde came to rescue so kde stands for kernel density "
+    },
+    {
+        "start": 244.959,
+        "text": "estimation which is a non-parametric estimator so the essential idea is like instead of like being in those b uh those car those data points into certain bins uh we will model each wrist with a kernel uh uh with a kernel for example here we model issues with a gaussian kernel then we add up those threes will generate this smooth and very accurate and also very interpretable signal which is that the uh the signal is the probability of bending certain risk at a given base pair location and this is a very good like it's a pilot in many many uh areas and uh it's very accurate and uh proved to be uh good for the uh people calling as well so to formally defend the kde so kde defines the sum of the kernels uh some of the gaussian kernels and normalize the number of rays and especially uh in the f62 we use anomalous "
+    },
+    {
+        "start": 308.56,
+        "text": "abnormalized version which is uh we don't normally expect the number of rays but just a little bit detail to formula uh formula define this so uh uh let me see so so with the td being a better uh uh estimator we developed the first p color ever with the kde back in 2008 which is called fc f6 so f6 use kde to initially summarize the sequence data and we also develop a simulated background to allow very accurate identification of the biological meaningful sets and fbc have been valid using the encode project and other project for the uh ds6 data and verisig data and it's shown to be the most accurate and sensitive p color for the vlc data however there are some shortcomings of the original version the first one is being like this this p color developed like uh back in "
+    },
+    {
+        "start": 370.56,
+        "text": "2008 so it's like 13 years ago and also there's some inherent sharp comments of this uh p colors of this p color which being said like there's no support for in user input control data which really limit the ability to estimate the background distribution of those rays and this is this becomes a big problem for uh when we compete calling for chipset data because always cheap signal data will come with a control dataset but uh won't be a big problem for ataxic or the dlc data and also there's no test statistic reported and which limits the uh uh the ability to account for those local passes which i will explain uh in a minute what what i mean by this local biases and the third one is which is inherent from the above too there's no consideration of the local biases so in order to uh improve and update our "
+    },
+    {
+        "start": 430.56,
+        "text": "p color we develop fc2 so f62 is complete regret of the original version in python and we developed this a new statistical framework so that we implement dynamic parameters to conduct local statistical analysis with a underlying personal distribution and by combining the power of the kde and this local test we found out it can be uh it can robustly account for the local buses and soft tests will rank in those summits and peaks and making the result very suitable for the idr analysis which i will talk about uh in a minute as well and also will bring many uh new features uh to the p color to uh to make it compatible with uh other p color now so here is the github page of the uh fc2 so um next up we're gonna talk about the methodology uh employed in the f62 "
+    },
+    {
+        "start": 492.16,
+        "text": "so first of all first of all let's talk about the workflow so this is the workflow of the original uh f6 sorry wait can you hear me yes oh seems like there's something wrong with my uh i can't move my mouse let me see uh give me one second "
+    },
+    {
+        "start": 574.839,
+        "text": "okay "
+    },
+    {
+        "start": 637.92,
+        "text": "i'm not sorry about that i don't know what happened but uh i can't move my screen sorry about that so let's uh so are you guys seeing the presenter wheel or the um it looks good okay sorry about that i was uh there's some technical issue there and so where are we so here is the uh original workflow of the f6 and here it start with uh uh start with the treatment data and then we will estimate some parameters for this uh treatment data and then it will shift risk if there's a chipset data and then we will calculate the kd uh kde signal which is kernel that's the estimation signal of those treatment data then we'll call candidate summits relative to background so this but this step is different from the original fc original i've seen focus on the peak regions but now we focus on the kind of sum is to test for those summits "
+    },
+    {
+        "start": 698.64,
+        "text": "to get a more accurate and better results so what have we developed so far first of all we add a control for we add a support for the control data and we will do the same for the control data set and then we take both uh kde signal to calculate the a p value with a dynamic parameter after that we will calculate q value use benchmark uh benzene mini heartburn fdr fdr rate and also the uh and also then we filter the segments and in the end we will optionally uh uh output three files the signal uh uh the bigwig signal the the significant sub miss and also those broad peaks uh broad peaks are contained at least one of the uh significant subnets and also if you have replicate we can um we can do this uh do doing this for another replica for example replica ii and we'll concatenate those two to a a contaminated version and then we also "
+    },
+    {
+        "start": 760.24,
+        "text": "repeat calling on those uh files and we will run into our idr framework to better uh identify those significant peaks and i will talk about this framework uh uh in a minute and enough you you end up with a plot to see okay where are the uh significant cutoff will be reasonable uh for your uh data set and also the uh any idr threshold peaks so and the most important uh the most important part of the uh uh the most important part of the methodology of fc2 which being this uh we developed this new uh framework for the uh calculated p-value and uh let's talk about this part uh in a little bit detail so first of all what is a dynamic parameter so instead of like fitting into a single under underlying distribution we want to calculate a background distribution for each uh sum is going to be tested "
+    },
+    {
+        "start": 821.76,
+        "text": "and this this distribution will vary along the genome but you probably wonder why you want to calculate the dynamic parameter this is because we observe the release current very well between the read between the treatment and the control so as you can see here like this is a fox a1 chipset data and the accesses is the treatment rates and for a 10kb window and the y-axis is the controller set you can see a relative well correlation between two and this is suggests the redistribution with some local fluctuation basis if one using one fixed underlying distribution then we will resolve many false positives because like uh there are some local biases need to be considered and those are being some for example local company structures the application sequence biases and so much more we need to consider them locally so this is the "
+    },
+    {
+        "start": 883.519,
+        "text": "this is the uh dynamic testing idea however if you're familiar with the p calling algorithm you know this idea is not completely new this is ideal uh original developed by max2 and we adopted and modified this idea uh from it and we we uh we did a test through a lot of settings and we found out the local person is a very effective underlining distribution to use and when it's very fit to our settings and the specif the specific settings is being like for example uh if we see the uh the number of reads in reaching up uh in university origin follow-up for some distribution and and characterized by lambda local and we define the lambda local as the following the maximum of the following different aspects of the lambda and we take some maximum of it and in this case we can better remove the first part of force positive due to the local biases "
+    },
+    {
+        "start": 944.56,
+        "text": "because like those uh this uh those are different lambdas are zooming on different regions of the local regions to get a better idea of the local uh environment so uh so and uh just to repeat myself the highlight of iseq is like we developed a statistical framework that combines the power of kde and also the uh city also testing the local testing and kde can capture the surrounding information better and the dynamic testing idea can convert this into a interpretable p-value so one thing problem notice is that like uh person is a discrete distribution well kde generates some very continuous uh signal like uh uh like with some floating point so how we actually bridge uh the kdu is this uh dynamic idea so we use linear interpolation of the p-value in log space "
+    },
+    {
+        "start": 1004.8,
+        "text": "as i said before like for example number risk follow the personal distribution we calculate the p value by the survival function of the personal distribution like this and then we have this uh we we defend this y as a continuous variable and we just do a linear interpolation in the log space to have the the uh to have a continuous p value actually and uh so that we will allow those uh those are those uh rates to be a continuous variable and uh and linear interpolation of those p value you probably wonder why we want to uh doing this linear interpolation new log space because we observe the survival function of the personal distribution for a log space is linearly uh across the limit with the x with the number of reads and we think this is a good enough uh approximation for our uh for our usage and so just repeat myself we um "
+    },
+    {
+        "start": 1067.36,
+        "text": "we transformed this discrete uh percent distribution into the continuous percent distribution but this is not like mathematically proved uh the counterpart of the continuous percent distribution but it's good enough for uh for us to bridge the kde with the dynamic test the idea and solve some more ties when we ranking those submits okay so this is uh this is uh the most significant part change of our algorithm and after talking about this i will show you a list of new features which has been brought into the uh the second version so first of all this is a complete rewriting python and we take advantage of very well optimized python libraries and like kde pi and pi bad tools and this is very easier easy to refactor this is like due to pass on so during development we have testing so many ideas to see which one works best for the uh kde and uh yeah and also "
+    },
+    {
+        "start": 1129.28,
+        "text": "um it's very easy to import in the python environment also easy to maintenance uh later as well and also we add multiple sensor support and also p-value kilometer calculation as i said before and also we have better quality and show on the sun is being caught and more improvements like parent rates flexibility of the i o band allow control data and so much more and among all those improvements i would like to point out two new new important features i will to talk about the first one is the fragment filter based on the fragment on the lens information the second one is the integrated idea analysis so uh first of all let's talk about number eight so one thing we come across a lot during p calling is like uh we want to improve the p accuracy of p calling by filter out uh the e "
+    },
+    {
+        "start": 1189.76,
+        "text": "at the not relevant race and this is very this is also very true for the taxi uh data set because like a taxi acid both the open company regions and also some nucleation regions right and this is like i'm often often oftentimes we only want to call peaks on those open chromatin regions so what should we do so in a regional paper the officer said like that a taxi fragment will indicate where those fragments are for example if the fragments like lens under 100 base pair they are most likely from the nucleus of three regions which is open chromatin regions if it's between 180 and 247 the most likely from the mono-nucleosome regions and in our renal paper what the also do they only include those 100 less than 100 base pair fragments for the open chromatin analysis however uh for us we designed another "
+    },
+    {
+        "start": 1251.12,
+        "text": "uh we designed an auto filter for the open prompting uh p calling uh by future uh but filter out only nucleosome related fragments so the difference is like we are we not only include those uh under 100 base pair we also include those between those uh regions between those ranges for example between 100 and 180 and i will show you a detailed plot later like when we see the results of ic2 to see uh how we exactly do that so we keep more fragments because we find out this is actually uh better for us to model the uh background distribution and then also we filter out the multiple multinucleation risks uh which represent the condensed chemical chromosome and uh that won't add much information to the background estimation so so this is a auto filter we designed for a taxi data and also you can design your own uh "
+    },
+    {
+        "start": 1311.28,
+        "text": "filter uh by plotting for example this plot if you see okay the range i think it's not like 180 you can shift a little bit and directly input the other command and tools so that would be a good thing to do and uh so this is for the attack seek fragment filter and the other thing is the i want to talk about is of the new feature of the f62 is the integrated idea analysis so idr stands for irreproducible discovery so the basically the idea is like we want to use the replica information to better identify the security significance cutoff for those peaks and the intuition is like if the replica is measuring the same uh uh biological uh events then the general signal will have like very high self consistency but the noise "
+    },
+    {
+        "start": 1372.24,
+        "text": "like false positive they it seems to be more random ranked for example i will um explain here so for example you can see here you can see here the uh accesses is the peak rank of for example replica one and the y-axis is the peak rank for the replica two if we write uh if the smaller value means a higher rank then the higher if these two records measured in the same biological thing then the higher red peak will have a very good correspondence between each other it's more like a linear so this is a this is a fake example this is perfect correspondence but in in real case there will be a more linear relationship between uh the replicas and after some decay after some um at some point they will translate to the noise peaks which are not like a significant piece then those "
+    },
+    {
+        "start": 1434.72,
+        "text": "noise peaks will have this uh no correspondence between each other and the algorithm of the idr is to reliably to identify this decay point so you probably wonder okay why we want to integrate this idea analysis because in our practice we found it is a very reliable way to identify the significance cut-off we found out like uh actually most of uh both the p colors including us we when we define the threshold for the uh peak uh uh for the significant peaks they are often like heuristic based and kind of arbitrary and especially when you compare the results of different p-color you'll see okay those signal those significant scores are in different scales or in different uh format as well however idr uses relative rank scenes of absolute values and they also integrate this replica information to better identify this significant "
+    },
+    {
+        "start": 1495.799,
+        "text": "significance cut off and it's very effective uh in the tf chipset data analysis because it's uh it's already part of the encode uh include data analysis pipeline so and this is why we want to integrate this uh your tools as well and i will have a demo of the idea analysis at the end of the talk so uh so also this uh idea analysis is very compatible with different scales signal scales and tabs it indeed favors a certain output for the accurate identification of the decay point which being like you have to have the ability to cover extensive list of peaks like uh three uh 300k number of peaks and this this actually becomes some problem for some p color for example max2 because when you lower the threshold they actually they call a broader peaks "
+    },
+    {
+        "start": 1556.799,
+        "text": "instead of like uh they can reproduce the the original peaks that they set for uh lower threshold and also you have to have the separate score for individual summits and that will work better because like you use the red information unless test b2 summits and bad design fc2 is very super compatible with idr analysis due to the following reasons we design like this and to make it very uh workable with the idr as well and the good news is that this idr is already integrated in our pipeline and with our tuned settings so you can directly use the idr analysis if you have a good quality replicas to do so so uh next up we're gonna talk about the results of the uh of the fc2 which is basically to show like uh yfc2 is a better generic p color and how it outperform max2 which is a very popular p color so we'll be focusing on the chipseeker "
+    },
+    {
+        "start": 1618.96,
+        "text": "taxi because we have visual very uh perform very well on dnc conversing and will benchmark with four other p colors frequently used by the inco project max tools svp music and jam and we will have uh we will benchmark on 100 simulated chipset data sets three real chips as a review chipset data set and what a taxi data set and here's a plot showing the f6 being the most uh accurate and sensitive p color for the dac data set so let's first get into the simulation test testing so for the simulated chipset testing benchmarking we will evaluate with the f score so f square is the harmonic mean between the precision recall and it's basically translated to like for example a higher f-score which means a more balanced performance of the p-color and we will vary the upper uh we will generate this operating "
+    },
+    {
+        "start": 1678.96,
+        "text": "uh characteristic curve by vary along the top uh top ranked peaks like especially uh specifically top lock and number of peaks and the shaded area is like the 95 of company's interval of those 100 simulated data set so as you can see f62 and the max2 they outperform other p colors this actually suggests like the uh the network testing idea is very effective in removing the false positives which are also consistent with another benchmarking paper showing that like this dynamic testing idea is very good for cheap sig data and and those two picots are only two p colors are implemented with this dynamic testing idea and also we can evaluate this uh from another perspective we can also evaluate how well the number of peaks caught by hp color using their default threshold and correlate it with the number of "
+    },
+    {
+        "start": 1739.44,
+        "text": "peaks in the ground truth and here is a plot a box plot showing that and as you can see f62 best correlated with the ground truth in terms of number of peaks called bad debug structure those numbers are the correlation coefficient and at this point you may say okay the f6 2 and back to the uh they perform uh similarly very similarly so what's the point of developing this so i seek to really shines when there's no control data and this is very surprising like uh when we uh without control data for those cheap sig data sets we can achieve comparable performance when there's a control data set and the output from other p color bell a lot back and this actually suggests that some the control information can be extracted from the treatment information because we only use the treatment data here but this should be given certain conditions first of all we need a very statistical "
+    },
+    {
+        "start": 1801.6,
+        "text": "rigorous modeling methods which in this case is our kde and also we need to develop a statistical framework to coherent with this uh uh modelling methods which is our new status of framework and in this case we can summarize those values into better representation of the p-values and we can outperform other p colors uh a lot by uh by designing like this and also there's one more uh thing i need to mention is like in order to have this performance the the the controller set and treatment dataset they have to cover it very well in large window sets and which i have shown you uh i have shown you like in the previous slide like actually for a good quality uh set of treatment control that should be always the case and that will uh reassure the performance of the f62 without uh control data could be uh very good as well so and you pro and also you probably wonder "
+    },
+    {
+        "start": 1863.519,
+        "text": "okay sam this chipseek often comes with a control dataset yeah it often comes uh kind of this but how it applies to other isis when there's missing uh control for example uh a taxi called dnc they are often missing control because the controller set is very expensive to generate so in order to answer that question we did the direct comparison with max2 with uh first of all because it's very popular and reliable and second of all is the p color the encode project used for the taxi data analysis and we compare with max2 and with different p color mode so for max you use the single and shift extend pair and mode and use f62 pair and auto mode and single and uh f62 single ad mode and more and here also the original version of the f6 and one thing i want to point out is like the single and shifter exam mode "
+    },
+    {
+        "start": 1924.32,
+        "text": "and pair and auto mode there are uh max 2 and i've seek two different strategies to avoid peak coding on those nucleotide regions to fork that strategy to to make the p color to focus on the open chrome king p column and as you can see the uh f62 uh pair and auto mode and the mx2 single and shifting exam mode they outperform other p colors at a lower genome coverage this is actually indicate using those strategies to avoid causal nuclear zones can achieve higher precision for the top front peaks because x-axis is a top-ranked peaks and in the scale of the genome coverage and and especially for like p-coding test for the uh in identify open compute regions and to be more specific uh the pair and auto filter what we include in this "
+    },
+    {
+        "start": 1985.919,
+        "text": "filter is uh so here is showing a plot of that so in the original paper of the taxi the ulcers only include those uh fragments and the 100 base pair but for f62 we included those in between those nucleosome ranges as well because those three uh those uh those fragments actually give us a boost to uh of the performance due to we can better model the background distribution and that's also where we observe this fc2 uh pair and auto mode to outperform uh the single and shift lengths of exam mode by a lot and also another thing you may observe from this plot is like at a larger genome coverage the fc2 other two the fc2 two other modes outperform others and uh they peek at the different uh genome coverage and uh this suggests actually fc2 can take advantage of the "
+    },
+    {
+        "start": 2048.079,
+        "text": "additional data point uh data points to improve the precision for like for example medium rank peaks by more accurately like uh estimating uh background distribution because those two modes uh have more risk to uh to model the background distribution compared to the f62 pair and auto mode and this is and uh and you probably wonder okay sam what uh what's the what's the usage of this what's the point of this so i think the take-home message uh for this plot is like uh so the more rigorous selection of those stories uh the more rigorous you filter out those rays then the more precision you will gain for those very top ranked peaks for example for the fc2 uh pair and auto mode however that also comes with the potential cost of foil tearing out some um true possible as well like you can observe from here like when you filter "
+    },
+    {
+        "start": 2108.48,
+        "text": "out some risk at a low uh at a higher genome coverage you will end up with with a lower performance here so in practice if you care a lot about the top-ranked peaks then go ahead with the pair and auto filter mode and otherwise you can choose single-end or parent without filter terminal so next up we also wonder the uh the the superior performance seen in the simulated chip stickers that also uh can be reproduced in the wheelchair stick data set so we benchmark on three more real chipset datasets and uh the result is showing here the difference is like now we are not using simulated set that means we don't have a ground truth and one common alternative to uh to evaluate this is to use the fraction we see like 100 base pair of cellular and tf motif and as you can see the f62 has the largest "
+    },
+    {
+        "start": 2169.28,
+        "text": "fraction of the top and peaks within this uh base pair of the ctcf motif and uh and now seeing the result from another perspective which we evaluate from the empirical cdf we'll see actually the gem stood out like 80 percent of the peaks of top 1000 peaks it's only within four bits pair of a cvs motif and compared to max 2 and the f6 to around 30 base pair actually and this is actually due to the gems additional ability to uh call peaks near those motifs however this may not be an advantage uh uh in most cases which i will show you uh just in a minute and also we will observe will also observe similar trends in another chip real chipset data set like the mafk chipset dataset however in another data set like step one chipset data set all those p colors had very low uh "
+    },
+    {
+        "start": 2230.88,
+        "text": "performance and you you really cannot like distinguish uh from each other as well and this is actually indicate this motif decent analysis may not reflect the uh actual performance because like uh like huffman showed like uh 76 out of 20 to 20 uh quantum factors like relevant uh motifs in their chipset peaks and the stat one were very low in the motif accuracy that means if you call kicks uh near those motifs that may not be a good indicator of the real data set and here's a plot showing that like step one is very low in the peak with a sequence motif however it's not one of the lowest one and ctcf being the top one so and that concludes the results section then we will have we will have a hands-on demo of the f62 "
+    },
+    {
+        "start": 2292.64,
+        "text": "so uh here's a github of the f62 and we'll go through some installation uh tips and some basic usage and some uh hands-on example of pre-calling on a taxi data and the uh chief city data work with the idr framework here's some data that i generated from the encode project and only include one chromosome due to the time concern so i will start a new shared screen to to show that in one second okay "
+    },
+    {
+        "start": 2355.359,
+        "text": "okay so here's the uh you guys can see the the my github page right yes we can see it okay cool so here's the github page of the uh fcq and we go through a little bit here's some uh documentation of the ip2 and here we go through some details of the installation here so we will highlight out the prerequisite is uh fc2 only work with python 3.6 uh virtual and higher and also you have to install the bad tools as well and we highly recommend to prepare a contact environment for the uh f62 and then you can install from pi pi or kanda and here is like uh i just i would directly can activate the the environment i have uh "
+    },
+    {
+        "start": 2415.68,
+        "text": "previously uh activated so also you can install from the cells as well and some integration tests if you install it let's see if it works and then go back so the main usage of sc2 com includes three uh sub command the first of all is a copy which is a main function to copy from those treatment control data and also copy idr so copy is followed by the idr framework with the recommend settings and also we have this wrapper for the uh wrapper for the idr package and here uh i will i will run those pieces i will run this and rent this "
+    },
+    {
+        "start": 2475.92,
+        "text": "oh sorry too much too much technical difficulties today i think my um sorry good one said actually i have tested but uh know what happened i'm really sorry about this yeah just uh and says d is not working oh "
+    },
+    {
+        "start": 2550.96,
+        "text": "okay actually i'll just uh i'll just go through this there's some technical difficulties so uh for the uh here's on the github page there's some uh detailed documentation of the f62 and uh yeah you can read this through if you want to uh know more about those and the output form formats as well and then we will talk about the examples of the ataxic picotin here so you can call the copic command and with a trick i was uh with the treatment file and here's a specific setting for the uh taxi data and then you can include this uh pair and auto filter here by including this command and also you can run the first chip sig data "
+    },
+    {
+        "start": 2611.68,
+        "text": "and for the idr pipeline and you can call fc2 call idr and you supply with two replicas and you can give a control files and then some settings for the chip signature and you can specify the multi-processing as well yeah this is for uh for that and i actually plan to show you the uh real results here but it seems like my uh my accessory is not working now i don't know why but uh but i will go ahead i will escape that and back to the uh "
+    },
+    {
+        "start": 2674.839,
+        "text": "uh okay so but i will just briefly talk about uh the results of the idr so uh here is the uh idr plot when we run those uh command will get and if you get a very high quality of the replica you will observe something like this so a linear relationship either at the head and uh very random uh at the tail and also if you have a very poor uh quality data you have this more random case here and uh yeah this is uh to just uh show that uh about the uh how about the uh idr pipeline results and just a little summary like i seek to like uh we solved the shortcomings in the first version and we combine the power of kde and dynamic testing "
+    },
+    {
+        "start": 2735.28,
+        "text": "this really helps for account for local biases and soft tests when ranking those summits is very useful for this idr analysis and we can notice the high performance of processes not only in the dnc uh and also in the chipseq and the ataxic and also the results is very suitable to idr analysis and also already integrated into fc2 and thank you and i'll take any questions sorry about the technical issue i tested out yesterday but uh there's some issues here does anyone have any questions so sam it does look like there's a "
+    },
+    {
+        "start": 2796.56,
+        "text": "question that was put into the chat box i apologize for my dog at the moment but uh in the chat box it says great talk thank you for sharing this tool are there edge cases where fc2 and or max specifically struggle that can only be solved with experimental design uh i would say yes like uh i would say like maxu and f62 they both perform poorly when the the reads uh the sequencing depth is low so i think that's um um if we if you observe the the risk is like um for example below one million then that's especially for cheap sick data and that would be a problem for both uh p color and yeah that would be uh that could be only sound bad experimental design so "
+    },
+    {
+        "start": 2858.24,
+        "text": "great thank you is uh entered in the chat box does anyone else have questions you can either put them in the chat box or unmute yourself and ask if you have any all right well i'm not seeing it oh brian you're right well it's not a question but i really enjoyed the talk i came in a little late but i really appreciate you coming uh uh thanks so much it was interesting what i saw was interesting and chris did you have any questions i see you there it's good to see you let's see i just thought it was good thank you i wanted i wanted to register that i'm sorry i came in late we just got off the exact committee so thank you thank you yeah yeah great well i'm not seeing any other questions um "
+    },
+    {
+        "start": 2918.48,
+        "text": "so i want to thank everyone for uh joining us today hopefully everyone can join us again next week we'll have uh gcal talking to us about building a software pipeline for developing and evaluating time series machine learning models using electronic health record data so i hope to see everyone next week and thank you again sam for today's uh excellent presentation so thanks everyone thank you thank you thank you thanks marcy "
+    }
+]

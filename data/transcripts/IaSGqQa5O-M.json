@@ -1,0 +1,2152 @@
+[
+    {
+        "text": "Let's kick things off with a quiz.",
+        "start": 0.0,
+        "duration": 1.62
+    },
+    {
+        "text": "Suppose I take a normal distribution with this familiar bell curve shape, ",
+        "start": 2.36,
+        "duration": 3.852
+    },
+    {
+        "text": "and I have a random variable x that's drawn from that distribution.",
+        "start": 6.212,
+        "duration": 3.488
+    },
+    {
+        "text": "So what you're looking at right now are repeated samples of that random variable.",
+        "start": 10.52,
+        "duration": 4.02
+    },
+    {
+        "text": "And as a quick reminder, the way that you interpret this curve, ",
+        "start": 14.96,
+        "duration": 3.491
+    },
+    {
+        "text": "what the function actually means, is that if you want the probability that your ",
+        "start": 18.451,
+        "duration": 4.365
+    },
+    {
+        "text": "sample falls within a given range of values, say the probability that it ends up ",
+        "start": 22.816,
+        "duration": 4.419
+    },
+    {
+        "text": "between negative one and two, well that would equal the area under this curve in ",
+        "start": 27.235,
+        "duration": 4.419
+    },
+    {
+        "text": "that range of values.",
+        "start": 31.654,
+        "duration": 1.146
+    },
+    {
+        "text": "That's what the curve actually means.",
+        "start": 32.84,
+        "duration": 1.86
+    },
+    {
+        "text": "I'll also pull up a second random variable, also following a normal distribution, ",
+        "start": 35.26,
+        "duration": 3.836
+    },
+    {
+        "text": "but maybe this time a little more spread out, a slightly bigger standard deviation.",
+        "start": 39.096,
+        "duration": 3.884
+    },
+    {
+        "text": "And here's the quiz for you.",
+        "start": 43.28,
+        "duration": 1.16
+    },
+    {
+        "text": "If you repeatedly sample both of these variables, ",
+        "start": 44.6,
+        "duration": 2.826
+    },
+    {
+        "text": "and at each iteration you add up the two results, ",
+        "start": 47.426,
+        "duration": 2.827
+    },
+    {
+        "text": "well then that sum behaves like its own random variable.",
+        "start": 50.253,
+        "duration": 3.167
+    },
+    {
+        "text": "And the question is what distribution describes that sum that you're looking at?",
+        "start": 53.959,
+        "duration": 4.921
+    },
+    {
+        "text": "You think about it for a little moment, maybe you have a guess, maybe you think, ",
+        "start": 59.38,
+        "duration": 3.495
+    },
+    {
+        "text": "I don't know, it's another normal distribution, or something with a different shape.",
+        "start": 62.875,
+        "duration": 3.625
+    },
+    {
+        "text": "Needless to say, guessing is not enough.",
+        "start": 67.2,
+        "duration": 1.92
+    },
+    {
+        "text": "The real quiz is to be able to explain why you get the answer that you do.",
+        "start": 69.56,
+        "duration": 4.7
+    },
+    {
+        "text": "In this case, if you have that deep to your bones visceral level of understanding ",
+        "start": 74.8,
+        "duration": 4.274
+    },
+    {
+        "text": "for why the answer is what it is, you'll be a long way towards understanding ",
+        "start": 79.074,
+        "duration": 4.015
+    },
+    {
+        "text": "why normal distributions serve the special function that they do in probability.",
+        "start": 83.089,
+        "duration": 4.171
+    },
+    {
+        "text": "Zooming out though, this is actually meant to be a much more general ",
+        "start": 87.86,
+        "duration": 3.433
+    },
+    {
+        "text": "lesson about how you add two different random variables, ",
+        "start": 91.293,
+        "duration": 2.837
+    },
+    {
+        "text": "regardless of their distribution, not necessarily just the normally distributed ones.",
+        "start": 94.13,
+        "duration": 4.23
+    },
+    {
+        "text": "This amounts to a special operation that you apply ",
+        "start": 99.1,
+        "duration": 2.75
+    },
+    {
+        "text": "to the distributions underlying those variables.",
+        "start": 101.85,
+        "duration": 2.59
+    },
+    {
+        "text": "The operation has a special name, it's called a convolution, ",
+        "start": 104.66,
+        "duration": 3.204
+    },
+    {
+        "text": "and the primary thing you and I will do today is motivate and build up two ",
+        "start": 107.864,
+        "duration": 3.941
+    },
+    {
+        "text": "distinct ways to visualize what a convolution looks like for continuous functions, ",
+        "start": 111.805,
+        "duration": 4.361
+    },
+    {
+        "text": "and then to talk about how these two different visualizations can each be ",
+        "start": 116.166,
+        "duration": 3.888
+    },
+    {
+        "text": "helpful in different ways, with a special focus on the central limit theorem.",
+        "start": 120.054,
+        "duration": 4.046
+    },
+    {
+        "text": "After we do the general lesson, I want to return to the ",
+        "start": 124.88,
+        "duration": 3.163
+    },
+    {
+        "text": "opening quiz and offer an unusually satisfying way to answer it.",
+        "start": 128.043,
+        "duration": 3.617
+    },
+    {
+        "text": "As a quick side note, regular viewers among you might know there's already a ",
+        "start": 131.66,
+        "duration": 3.787
+    },
+    {
+        "text": "video about convolutions on this channel, but that one had a pretty different focus.",
+        "start": 135.447,
+        "duration": 4.133
+    },
+    {
+        "text": "We were only doing the discrete case, and I wanted to show not just probability, ",
+        "start": 139.76,
+        "duration": 3.642
+    },
+    {
+        "text": "but the ways that it comes up in a wide variety of contexts.",
+        "start": 143.402,
+        "duration": 2.698
+    },
+    {
+        "text": "I'm in a slightly awkward spot because it doesn't really make sense for that to be ",
+        "start": 146.78,
+        "duration": 4.229
+    },
+    {
+        "text": "a prerequisite to this video, but I think the best way to warm up today is to cover ",
+        "start": 151.009,
+        "duration": 4.28
+    },
+    {
+        "text": "essentially one of the same examples used in that video, ",
+        "start": 155.289,
+        "duration": 2.904
+    },
+    {
+        "text": "so if you are coming straight from that one, you can probably skip safely ahead, ",
+        "start": 158.193,
+        "duration": 4.127
+    },
+    {
+        "text": "otherwise, let's dive right in.",
+        "start": 162.32,
+        "duration": 1.58
+    },
+    {
+        "text": "For this opening quiz question, each of the random variables can take on ",
+        "start": 166.86,
+        "duration": 3.88
+    },
+    {
+        "text": "a value in a continuous infinite range of values, all possible real numbers.",
+        "start": 170.74,
+        "duration": 4.04
+    },
+    {
+        "text": "It'll be a lot easier if we warm up in a setting that's more discrete and finite, ",
+        "start": 175.3,
+        "duration": 4.25
+    },
+    {
+        "text": "like maybe rolling a pair of weighted dice.",
+        "start": 179.55,
+        "duration": 2.23
+    },
+    {
+        "text": "Here, the animation you're looking at is simulating two weighted dice, ",
+        "start": 182.56,
+        "duration": 3.855
+    },
+    {
+        "text": "and you can probably tell what's going on, but just to spell it out explicitly, ",
+        "start": 186.415,
+        "duration": 4.344
+    },
+    {
+        "text": "the blue die is following a distribution that seems to be biased towards lower values, ",
+        "start": 190.759,
+        "duration": 4.724
+    },
+    {
+        "text": "the red die has a distinct distribution, and I'm repeatedly sampling from ",
+        "start": 195.483,
+        "duration": 4.018
+    },
+    {
+        "text": "each one and recording the sum of the two values at each iteration.",
+        "start": 199.501,
+        "duration": 3.639
+    },
+    {
+        "text": "Repeating samples like this many many different times can give you a heuristic sense of ",
+        "start": 203.74,
+        "duration": 4.38
+    },
+    {
+        "text": "the final distribution, but our real task today is to compute that distribution precisely.",
+        "start": 208.12,
+        "duration": 4.48
+    },
+    {
+        "text": "What is the precise probability of rolling a 2, ",
+        "start": 212.6,
+        "duration": 3.12
+    },
+    {
+        "text": "or a 3, or a 4, or a 5, on and on for all possibilities?",
+        "start": 215.72,
+        "duration": 3.64
+    },
+    {
+        "text": "It's not too hard a question, I'd actually encourage ",
+        "start": 219.84,
+        "duration": 2.234
+    },
+    {
+        "text": "you to pause and try working it out for yourself.",
+        "start": 222.074,
+        "duration": 2.066
+    },
+    {
+        "text": "The main goal in this warm-up section will be to walk through two ",
+        "start": 224.98,
+        "duration": 3.33
+    },
+    {
+        "text": "distinct ways that you could visualize the underlying computation.",
+        "start": 228.31,
+        "duration": 3.33
+    },
+    {
+        "text": "For example, one way you could start to think about it is that there are 36 distinct ",
+        "start": 232.92,
+        "duration": 4.953
+    },
+    {
+        "text": "possible outcomes, and we could organize those outcomes in a little 6x6 grid.",
+        "start": 237.873,
+        "duration": 4.487
+    },
+    {
+        "text": "Now if I was to ask you, what is the probability of seeing any one of these specific ",
+        "start": 243.04,
+        "duration": 4.843
+    },
+    {
+        "text": "outcomes, say the probability of seeing a blue 4 and a red 2, what would you say?",
+        "start": 247.883,
+        "duration": 4.617
+    },
+    {
+        "text": "We might say it should be the probability of that blue 4 ",
+        "start": 253.04,
+        "duration": 3.06
+    },
+    {
+        "text": "multiplied by the probability of the red 2, and that would be ",
+        "start": 256.1,
+        "duration": 3.329
+    },
+    {
+        "text": "correct assuming that the die rolls are independent from each other.",
+        "start": 259.429,
+        "duration": 3.651
+    },
+    {
+        "text": "You might say that's kind of pedantic, of course the die rolls should be independent ",
+        "start": 263.54,
+        "duration": 3.802
+    },
+    {
+        "text": "from each other, but it's a point worth emphasizing because everything that we're ",
+        "start": 267.342,
+        "duration": 3.669
+    },
+    {
+        "text": "going to do from here moving forward, from this simple example all the way up to ",
+        "start": 271.011,
+        "duration": 3.624
+    },
+    {
+        "text": "the central limit theorem, assumes that the random variables are independent.",
+        "start": 274.635,
+        "duration": 3.445
+    },
+    {
+        "text": "In the real world, you want to keep a sharp eye out for if this assumption actually holds.",
+        "start": 278.66,
+        "duration": 4.06
+    },
+    {
+        "text": "Now what I'm going to do is take this grid of all possible outcomes, ",
+        "start": 283.64,
+        "duration": 3.22
+    },
+    {
+        "text": "but start filling it in with some numbers.",
+        "start": 286.86,
+        "duration": 1.96
+    },
+    {
+        "text": "Maybe we'll put the numbers for all the probabilities of the blue die down on the bottom, ",
+        "start": 289.18,
+        "duration": 4.346
+    },
+    {
+        "text": "all the probabilities for the red die over here on the left, ",
+        "start": 293.526,
+        "duration": 2.946
+    },
+    {
+        "text": "and then we will fill in the grid where the probability for every outcome inside the grid ",
+        "start": 296.472,
+        "duration": 4.347
+    },
+    {
+        "text": "looks like some product between one number from the blue distribution and one number from ",
+        "start": 300.819,
+        "duration": 4.346
+    },
+    {
+        "text": "the red distribution.",
+        "start": 305.165,
+        "duration": 1.015
+    },
+    {
+        "text": "Another way to think about it is we're basically constructing a multiplication table.",
+        "start": 306.68,
+        "duration": 3.66
+    },
+    {
+        "text": "To be a little more visual about all of this, we could plot each one of these ",
+        "start": 310.7,
+        "duration": 4.096
+    },
+    {
+        "text": "probabilities as the height of a bar above the square in this sort of three-dimensional ",
+        "start": 314.796,
+        "duration": 4.621
+    },
+    {
+        "text": "plot.",
+        "start": 319.417,
+        "duration": 0.263
+    },
+    {
+        "text": "In some sense, this three-dimensional plot carries all the ",
+        "start": 320.12,
+        "duration": 2.694
+    },
+    {
+        "text": "data that we would need to know about rolling a pair of dice.",
+        "start": 322.814,
+        "duration": 2.786
+    },
+    {
+        "text": "And so the question is how do we extract the thing that we want to know, ",
+        "start": 325.74,
+        "duration": 3.971
+    },
+    {
+        "text": "the probabilities for various different sums?",
+        "start": 329.711,
+        "duration": 2.449
+    },
+    {
+        "text": "Well, if you highlight all of the outcomes with a certain sum, ",
+        "start": 333.66,
+        "duration": 3.573
+    },
+    {
+        "text": "say a sum of six, notice how all of those end up on a certain diagonal.",
+        "start": 337.233,
+        "duration": 4.027
+    },
+    {
+        "text": "Same deal if I highlight all the pairs where the sum is seven, ",
+        "start": 341.74,
+        "duration": 3.194
+    },
+    {
+        "text": "they sit along a different diagonal.",
+        "start": 344.934,
+        "duration": 1.826
+    },
+    {
+        "text": "So to compute the probability of each possible sum, ",
+        "start": 347.24,
+        "duration": 2.848
+    },
+    {
+        "text": "what you do is you add together all of the entries that sit on one of these diagonals.",
+        "start": 350.088,
+        "duration": 4.712
+    },
+    {
+        "text": "Pulling up the 3D plot, we can better foreshadow where we'll go with this ",
+        "start": 358.28,
+        "duration": 4.133
+    },
+    {
+        "text": "later by saying that the distribution of possible sums looks like combining ",
+        "start": 362.413,
+        "duration": 4.244
+    },
+    {
+        "text": "all of the heights of this plot along one of these diagonal slices.",
+        "start": 366.657,
+        "duration": 3.743
+    },
+    {
+        "text": "It's as if we've taken this full distribution for all possible ",
+        "start": 372.08,
+        "duration": 3.318
+    },
+    {
+        "text": "outcomes and we've kind of collapsed it along one of the directions.",
+        "start": 375.398,
+        "duration": 3.582
+    },
+    {
+        "text": "And admittedly, I'm just having a bit of fun with the animations at this point.",
+        "start": 380.96,
+        "duration": 3.18
+    },
+    {
+        "text": "It's not like if you were working this out with pencil ",
+        "start": 384.14,
+        "duration": 2.296
+    },
+    {
+        "text": "and paper you would be drawing some three-dimensional plot.",
+        "start": 386.436,
+        "duration": 2.464
+    },
+    {
+        "text": "But it's fun when you collapse it on this direction, ",
+        "start": 389.32,
+        "duration": 2.545
+    },
+    {
+        "text": "you actually do get the same distribution, which I knew you should, ",
+        "start": 391.865,
+        "duration": 3.266
+    },
+    {
+        "text": "but it's still fun to see.",
+        "start": 395.131,
+        "duration": 1.249
+    },
+    {
+        "text": "Also, even though all of this might just seem a little bit playful or ",
+        "start": 396.96,
+        "duration": 3.735
+    },
+    {
+        "text": "even unnecessarily complicated, I can promise you this intuition about ",
+        "start": 400.695,
+        "duration": 3.789
+    },
+    {
+        "text": "diagonal slices will come back to us later for a genuinely satisfying proof.",
+        "start": 404.484,
+        "duration": 4.056
+    },
+    {
+        "text": "But staying focused on the simple dice case a little bit longer, ",
+        "start": 408.86,
+        "duration": 3.037
+    },
+    {
+        "text": "here's the second way that we could think about it.",
+        "start": 411.897,
+        "duration": 2.383
+    },
+    {
+        "text": "Take that bottom distribution and flip it around horizontally ",
+        "start": 414.78,
+        "duration": 3.306
+    },
+    {
+        "text": "so that the die values increase as you go from right to left.",
+        "start": 418.086,
+        "duration": 3.254
+    },
+    {
+        "text": "Why do this, you might ask?",
+        "start": 422.48,
+        "duration": 1.56
+    },
+    {
+        "text": "Well, notice now which of the pairs of dice values line up with each other.",
+        "start": 424.6,
+        "duration": 3.88
+    },
+    {
+        "text": "As it's positioned right now, we have 1 and 6, 2 and 5, 3 and 4, and so on.",
+        "start": 428.86,
+        "duration": 5.86
+    },
+    {
+        "text": "It is all of the pairs of values that add up to 7.",
+        "start": 434.9,
+        "duration": 3.2
+    },
+    {
+        "text": "So if you want to think about the probability of rolling a 7, ",
+        "start": 438.1,
+        "duration": 3.539
+    },
+    {
+        "text": "a way to hold that computation in your mind is to take all of the pairs of ",
+        "start": 441.639,
+        "duration": 4.281
+    },
+    {
+        "text": "probabilities that line up with each other, multiply together those pairs, ",
+        "start": 445.92,
+        "duration": 4.282
+    },
+    {
+        "text": "and then add up all of the results.",
+        "start": 450.202,
+        "duration": 1.998
+    },
+    {
+        "text": "Some of you might like to think of this as a kind of dot product.",
+        "start": 452.94,
+        "duration": 2.7
+    },
+    {
+        "text": "But the operation as a whole is not just one dot product, but many.",
+        "start": 456.18,
+        "duration": 3.74
+    },
+    {
+        "text": "If we were to slide that bottom distribution a little more to the left, ",
+        "start": 460.36,
+        "duration": 4.115
+    },
+    {
+        "text": "so in this case it looks like the die values which line up are 1 and 4, 2 and 3, ",
+        "start": 464.475,
+        "duration": 4.631
+    },
+    {
+        "text": "3 and 2, 4 and 1, in other words all the ones that add up to a 5, well, ",
+        "start": 469.106,
+        "duration": 4.116
+    },
+    {
+        "text": "now if we take the dot product, we multiply the pairs of probabilities that ",
+        "start": 473.222,
+        "duration": 4.344
+    },
+    {
+        "text": "line up and add them together, that would give us the total probability of rolling a 5.",
+        "start": 477.566,
+        "duration": 4.974
+    },
+    {
+        "text": "In general, from this point of view, computing the full distribution ",
+        "start": 483.2,
+        "duration": 3.426
+    },
+    {
+        "text": "for the sum looks like sliding that bottom distribution into various ",
+        "start": 486.626,
+        "duration": 3.426
+    },
+    {
+        "text": "different positions and computing this dot product along the way.",
+        "start": 490.052,
+        "duration": 3.228
+    },
+    {
+        "text": "It is precisely the same operation as the diagonal slices we were looking at earlier.",
+        "start": 494.6,
+        "duration": 5.22
+    },
+    {
+        "text": "They're just two different ways to visualize the same underlying operation.",
+        "start": 500.38,
+        "duration": 3.42
+    },
+    {
+        "text": "And however you choose to visualize it, this operation that takes in two different ",
+        "start": 507.24,
+        "duration": 4.717
+    },
+    {
+        "text": "distributions and spits out a new one describing the sum of the relevant random ",
+        "start": 511.957,
+        "duration": 4.546
+    },
+    {
+        "text": "variables is called a convolution, and we often denote it with this asterisk.",
+        "start": 516.503,
+        "duration": 4.377
+    },
+    {
+        "text": "Really the way you want to think about it, especially as we set up for the continuous ",
+        "start": 520.88,
+        "duration": 4.016
+    },
+    {
+        "text": "case, is to think of it as combining two different functions and spitting out a new ",
+        "start": 524.896,
+        "duration": 3.923
+    },
+    {
+        "text": "function.",
+        "start": 528.819,
+        "duration": 0.421
+    },
+    {
+        "text": "For example, in this case, maybe I give the function ",
+        "start": 530.32,
+        "duration": 2.819
+    },
+    {
+        "text": "for the first distribution the name p sub x.",
+        "start": 533.139,
+        "duration": 2.341
+    },
+    {
+        "text": "This would be a function that takes in a possible value for the die, ",
+        "start": 535.82,
+        "duration": 3.92
+    },
+    {
+        "text": "like a 3, and it spits out the corresponding probability.",
+        "start": 539.74,
+        "duration": 3.24
+    },
+    {
+        "text": "Similarly, let's let p sub y be the function for our second distribution, ",
+        "start": 544.44,
+        "duration": 4.281
+    },
+    {
+        "text": "and p sub x plus y be the function describing the distribution for the sum.",
+        "start": 548.721,
+        "duration": 4.339
+    },
+    {
+        "text": "In the lingo, what you would say is that p sub x plus ",
+        "start": 553.96,
+        "duration": 3.495
+    },
+    {
+        "text": "y is equal to a convolution between p sub x and p sub y.",
+        "start": 557.455,
+        "duration": 3.625
+    },
+    {
+        "text": "And what I want you to think about now is what ",
+        "start": 561.68,
+        "duration": 2.206
+    },
+    {
+        "text": "the formula for this operation should look like.",
+        "start": 563.886,
+        "duration": 2.254
+    },
+    {
+        "text": "You've seen two different ways to visualize it, ",
+        "start": 566.44,
+        "duration": 2.01
+    },
+    {
+        "text": "but how do we actually write it down in symbols?",
+        "start": 568.45,
+        "duration": 2.01
+    },
+    {
+        "text": "To get your bearings, maybe it's helpful to write down a specific example, ",
+        "start": 570.96,
+        "duration": 3.664
+    },
+    {
+        "text": "like the case of plugging in a 4, where you add up over all the different ",
+        "start": 574.624,
+        "duration": 3.615
+    },
+    {
+        "text": "pairwise products corresponding to pairs of inputs that add up to a 4.",
+        "start": 578.239,
+        "duration": 3.421
+    },
+    {
+        "text": "And more generally, here's how it might look.",
+        "start": 582.46,
+        "duration": 2.08
+    },
+    {
+        "text": "This new function takes as an input a possible sum for your random variables, ",
+        "start": 584.98,
+        "duration": 4.75
+    },
+    {
+        "text": "which I'll call s, and what it outputs looks like a sum over a bunch of pairs of values ",
+        "start": 589.73,
+        "duration": 5.359
+    },
+    {
+        "text": "for x and y.",
+        "start": 595.089,
+        "duration": 0.731
+    },
+    {
+        "text": "Except the usual way it's written is not to write with x and y, ",
+        "start": 595.82,
+        "duration": 3.372
+    },
+    {
+        "text": "but instead we just focus on one of those variables, in this case x, ",
+        "start": 599.192,
+        "duration": 3.635
+    },
+    {
+        "text": "letting it range over all of its possible values, ",
+        "start": 602.827,
+        "duration": 2.635
+    },
+    {
+        "text": "which here just means going from 1 all the way up to 6.",
+        "start": 605.462,
+        "duration": 2.898
+    },
+    {
+        "text": "And instead of writing y, you write s minus x, ",
+        "start": 608.84,
+        "duration": 2.811
+    },
+    {
+        "text": "essentially whatever the number has to be to make sure the sum is s.",
+        "start": 611.651,
+        "duration": 4.069
+    },
+    {
+        "text": "Now the astute among you might notice a slightly ",
+        "start": 617.3,
+        "duration": 2.283
+    },
+    {
+        "text": "weird quirk with the formula as it's written.",
+        "start": 619.583,
+        "duration": 2.097
+    },
+    {
+        "text": "For example, if you plug in a given value like s equals 4, and you unpack this sum, ",
+        "start": 622.22,
+        "duration": 4.972
+    },
+    {
+        "text": "letting x range over all the possible values going from 1 up to 6, ",
+        "start": 627.192,
+        "duration": 3.966
+    },
+    {
+        "text": "then sometimes that corresponding y value drops below the domain of what we've ",
+        "start": 631.158,
+        "duration": 4.677
+    },
+    {
+        "text": "explicitly defined.",
+        "start": 635.835,
+        "duration": 1.125
+    },
+    {
+        "text": "For example, you plug in 0 and negative 1 and negative 2.",
+        "start": 637.4,
+        "duration": 3.14
+    },
+    {
+        "text": "It's not actually that big a deal.",
+        "start": 641.2,
+        "duration": 1.68
+    },
+    {
+        "text": "Essentially, you would just say all of these values are 0, ",
+        "start": 643.0,
+        "duration": 2.984
+    },
+    {
+        "text": "so all these later terms don't get counted.",
+        "start": 645.984,
+        "duration": 2.176
+    },
+    {
+        "text": "And that should kind of make sense.",
+        "start": 648.64,
+        "duration": 1.1
+    },
+    {
+        "text": "What is the probability that the red die rolls to become a negative 1?",
+        "start": 649.9,
+        "duration": 3.38
+    },
+    {
+        "text": "Well, it's 0.",
+        "start": 653.82,
+        "duration": 1.0
+    },
+    {
+        "text": "That is an impossible outcome.",
+        "start": 654.86,
+        "duration": 1.54
+    },
+    {
+        "text": "As a next step, let's turn our attention towards continuous distributions, ",
+        "start": 661.04,
+        "duration": 4.01
+    },
+    {
+        "text": "where your random variable can take on values anywhere in an infinite continuum, ",
+        "start": 665.05,
+        "duration": 4.332
+    },
+    {
+        "text": "like all possible real numbers.",
+        "start": 669.382,
+        "duration": 1.658
+    },
+    {
+        "text": "Maybe you're doing weather modeling and trying to predict the ",
+        "start": 671.52,
+        "duration": 2.752
+    },
+    {
+        "text": "temperature tomorrow at noon, or you're doing some financial projections, ",
+        "start": 674.272,
+        "duration": 3.285
+    },
+    {
+        "text": "or maybe you're modeling the typical wait times before a bus arrives.",
+        "start": 677.557,
+        "duration": 3.063
+    },
+    {
+        "text": "There are all sorts of things where you need to handle continuity.",
+        "start": 680.84,
+        "duration": 2.52
+    },
+    {
+        "text": "In all the graphs that we draw, the x value still represents a possible number ",
+        "start": 683.9,
+        "duration": 4.035
+    },
+    {
+        "text": "that the random variable can take on, but the interpretation of the y-axis is ",
+        "start": 687.935,
+        "duration": 3.984
+    },
+    {
+        "text": "a little bit different, because no longer does this represent probability.",
+        "start": 691.919,
+        "duration": 3.781
+    },
+    {
+        "text": "Instead, the thing that we're graphing is what's called probability density.",
+        "start": 696.28,
+        "duration": 3.56
+    },
+    {
+        "text": "This is something we've talked about before, so you know the deal.",
+        "start": 700.32,
+        "duration": 2.7
+    },
+    {
+        "text": "Essentially, the probability that a sample of your variable falls ",
+        "start": 703.44,
+        "duration": 3.719
+    },
+    {
+        "text": "within a given range looks like the area under the curve in that range.",
+        "start": 707.159,
+        "duration": 4.001
+    },
+    {
+        "text": "The function describing this curve is commonly called a probability density function, ",
+        "start": 711.62,
+        "duration": 4.653
+    },
+    {
+        "text": "a common enough phrase that it's frequently just given the abbreviation PDF, ",
+        "start": 716.273,
+        "duration": 4.167
+    },
+    {
+        "text": "and so the proper way to write all of this down would be to say that the ",
+        "start": 720.44,
+        "duration": 3.95
+    },
+    {
+        "text": "probability that your sample falls within a given range looks like the ",
+        "start": 724.39,
+        "duration": 3.842
+    },
+    {
+        "text": "integral of your PDF, the probability density function, in that range.",
+        "start": 728.232,
+        "duration": 3.788
+    },
+    {
+        "text": "As a general rule of thumb, anytime that you see a sum in the discrete case, ",
+        "start": 732.88,
+        "duration": 4.106
+    },
+    {
+        "text": "you would use an integral in the continuous case.",
+        "start": 736.986,
+        "duration": 2.614
+    },
+    {
+        "text": "So let's think about what that means for our main example.",
+        "start": 740.42,
+        "duration": 2.88
+    },
+    {
+        "text": "Let's say we have two different random variables, ",
+        "start": 743.859,
+        "duration": 2.599
+    },
+    {
+        "text": "but this time each one will follow a continuous distribution, ",
+        "start": 746.458,
+        "duration": 3.223
+    },
+    {
+        "text": "and we want to understand their sum and the new distribution that describes that sum.",
+        "start": 749.681,
+        "duration": 4.419
+    },
+    {
+        "text": "You can probably already guess what the formula will be just by analogy.",
+        "start": 755.42,
+        "duration": 3.5
+    },
+    {
+        "text": "Remember, in the formula that we just wrote down, ",
+        "start": 759.4,
+        "duration": 2.703
+    },
+    {
+        "text": "where p sub x is the function for the first variable, ",
+        "start": 762.103,
+        "duration": 2.921
+    },
+    {
+        "text": "and p sub y is the function for the second variable, the convolution between them, ",
+        "start": 765.024,
+        "duration": 4.488
+    },
+    {
+        "text": "the thing describing a sum of those variables, ",
+        "start": 769.512,
+        "duration": 2.542
+    },
+    {
+        "text": "itself looks like a sum where we combine a bunch of pairwise products.",
+        "start": 772.054,
+        "duration": 3.786
+    },
+    {
+        "text": "The expression in the continuous case really does look 100% analogous.",
+        "start": 776.48,
+        "duration": 3.68
+    },
+    {
+        "text": "It's just that we swap out that sum for an integral.",
+        "start": 780.6,
+        "duration": 2.38
+    },
+    {
+        "text": "Sometimes when students see this definition of a convolution out of context, ",
+        "start": 783.76,
+        "duration": 3.371
+    },
+    {
+        "text": "it can seem a little intimidating.",
+        "start": 787.131,
+        "duration": 1.489
+    },
+    {
+        "text": "Hopefully the analogy is enough to make it clear, ",
+        "start": 789.1,
+        "duration": 2.275
+    },
+    {
+        "text": "but the continuous nature really does give it a different flavor, ",
+        "start": 791.375,
+        "duration": 3.005
+    },
+    {
+        "text": "and it's worth taking a couple minutes to think through what it means on its own terms.",
+        "start": 794.38,
+        "duration": 3.96
+    },
+    {
+        "text": "And so I put together a little interactive demo that helps ",
+        "start": 798.34,
+        "duration": 3.317
+    },
+    {
+        "text": "unpack each part of the expression and what it's really saying.",
+        "start": 801.657,
+        "duration": 3.543
+    },
+    {
+        "text": "For example, the first term in this integral is f of x, ",
+        "start": 805.8,
+        "duration": 3.195
+    },
+    {
+        "text": "which represents the density function for the first of the two random variables.",
+        "start": 808.995,
+        "duration": 4.565
+    },
+    {
+        "text": "And in this case, I'm choosing this sort of wedge-shaped function for that distribution, ",
+        "start": 813.94,
+        "duration": 3.809
+    },
+    {
+        "text": "but it could be anything.",
+        "start": 817.749,
+        "duration": 1.071
+    },
+    {
+        "text": "Similarly, g represents the density function for the second random variable, ",
+        "start": 819.66,
+        "duration": 3.802
+    },
+    {
+        "text": "for which I'm choosing this sort of double lump-shaped distribution.",
+        "start": 823.462,
+        "duration": 3.358
+    },
+    {
+        "text": "And in the same way that earlier we went over all possible pairs of dice values with a ",
+        "start": 826.82,
+        "duration": 5.266
+    },
+    {
+        "text": "given sum, the way you want to think about this integral is that what it wants to do is ",
+        "start": 832.086,
+        "duration": 5.326
+    },
+    {
+        "text": "iterate over all possible pairs of values x and y that are constrained to a given sum, s.",
+        "start": 837.412,
+        "duration": 5.388
+    },
+    {
+        "text": "We don't really have great notation for doing that symmetrically, ",
+        "start": 843.34,
+        "duration": 3.843
+    },
+    {
+        "text": "so instead the way we commonly write it down gives this artificial emphasis to one ",
+        "start": 847.183,
+        "duration": 4.835
+    },
+    {
+        "text": "of the variables, in this case x, where we let that value x range over all possible ",
+        "start": 852.018,
+        "duration": 4.892
+    },
+    {
+        "text": "real numbers, negative infinity up to infinity, ",
+        "start": 856.91,
+        "duration": 2.796
+    },
+    {
+        "text": "and the thing we plug into the function g is s minus x, ",
+        "start": 859.706,
+        "duration": 3.261
+    },
+    {
+        "text": "essentially whatever it has to be to make sure that this sum is constrained to be s.",
+        "start": 862.967,
+        "duration": 4.893
+    },
+    {
+        "text": "So for the demo, instead of graphing g directly, I want to graph g of s minus x.",
+        "start": 869.38,
+        "duration": 5.22
+    },
+    {
+        "text": "You might ask yourself, what does that look like?",
+        "start": 875.1,
+        "duration": 2.04
+    },
+    {
+        "text": "Well, if you plug in negative x as the input, that has ",
+        "start": 877.68,
+        "duration": 3.167
+    },
+    {
+        "text": "the effect of flipping around the graph horizontally.",
+        "start": 880.847,
+        "duration": 3.053
+    },
+    {
+        "text": "And then if we throw in this parameter s, treat it as some kind of constant, ",
+        "start": 884.76,
+        "duration": 3.929
+    },
+    {
+        "text": "that has the effect of shifting the graph either left or right, ",
+        "start": 888.689,
+        "duration": 3.267
+    },
+    {
+        "text": "depending on if s is positive or negative.",
+        "start": 891.956,
+        "duration": 2.144
+    },
+    {
+        "text": "In the demo, s is a parameter that I'll just grab and shift around a little bit.",
+        "start": 894.64,
+        "duration": 3.68
+    },
+    {
+        "text": "The real fun comes from graphing the entire contents of the integral, ",
+        "start": 898.7,
+        "duration": 3.624
+    },
+    {
+        "text": "the product between these two graphs.",
+        "start": 902.324,
+        "duration": 1.916
+    },
+    {
+        "text": "This is analogous to the list of pairwise products that we saw earlier, ",
+        "start": 904.78,
+        "duration": 3.717
+    },
+    {
+        "text": "but in this case instead of adding up all of those pairwise products, ",
+        "start": 908.497,
+        "duration": 3.613
+    },
+    {
+        "text": "we want to integrate them together, which you would interpret as the area underneath ",
+        "start": 912.11,
+        "duration": 4.389
+    },
+    {
+        "text": "this product graph.",
+        "start": 916.499,
+        "duration": 0.981
+    },
+    {
+        "text": "As I shift around this value of s, the shape of that ",
+        "start": 918.2,
+        "duration": 2.919
+    },
+    {
+        "text": "product graph changes and so does the corresponding area.",
+        "start": 921.119,
+        "duration": 3.141
+    },
+    {
+        "text": "Keep in mind for all three graphs on the left, ",
+        "start": 926.92,
+        "duration": 3.028
+    },
+    {
+        "text": "the input is x and the number s is just a parameter.",
+        "start": 929.948,
+        "duration": 3.352
+    },
+    {
+        "text": "But for the final graph on the right, for the resulting convolution itself, ",
+        "start": 933.3,
+        "duration": 4.598
+    },
+    {
+        "text": "this number s is the input to that function, and the corresponding ",
+        "start": 937.898,
+        "duration": 4.055
+    },
+    {
+        "text": "output is whatever the area of the lower left graph is, ",
+        "start": 941.953,
+        "duration": 3.389
+    },
+    {
+        "text": "whatever the integral between this combination of f and g turns out to be.",
+        "start": 945.342,
+        "duration": 4.478
+    },
+    {
+        "text": "Here, it might be helpful if we do a simple example, ",
+        "start": 953.28,
+        "duration": 2.986
+    },
+    {
+        "text": "say where each of our two random variables follows a uniform ",
+        "start": 956.266,
+        "duration": 3.437
+    },
+    {
+        "text": "distribution between the values negative one half and positive one half.",
+        "start": 959.703,
+        "duration": 4.057
+    },
+    {
+        "text": "So what that looks like is that our density functions each have this kind ",
+        "start": 964.46,
+        "duration": 4.073
+    },
+    {
+        "text": "of top hat shape, where the graph equals one for all inputs between ",
+        "start": 968.533,
+        "duration": 3.743
+    },
+    {
+        "text": "negative one half and positive one half, and it equals zero everywhere else.",
+        "start": 972.276,
+        "duration": 4.184
+    },
+    {
+        "text": "The question, as always, is what should the distribution for the sum look like?",
+        "start": 977.04,
+        "duration": 4.4
+    },
+    {
+        "text": "Well, let me show you how it looks inside our demo.",
+        "start": 981.96,
+        "duration": 2.44
+    },
+    {
+        "text": "In this case, the product between the two graphs has a really easy interpretation.",
+        "start": 985.22,
+        "duration": 3.96
+    },
+    {
+        "text": "It is one wherever the graphs overlap with each other, but zero everywhere else.",
+        "start": 989.18,
+        "duration": 4.88
+    },
+    {
+        "text": "So if I slide this parameter s far enough to the left that our top ",
+        "start": 994.56,
+        "duration": 3.953
+    },
+    {
+        "text": "graphs don't overlap at all, then the product graph is zero everywhere, ",
+        "start": 998.513,
+        "duration": 4.25
+    },
+    {
+        "text": "and that's a way of saying this is an impossible sum to achieve.",
+        "start": 1002.763,
+        "duration": 3.777
+    },
+    {
+        "text": "That should make sense.",
+        "start": 1007.22,
+        "duration": 0.84
+    },
+    {
+        "text": "Each of the two variables can only get as low as negative one half, ",
+        "start": 1008.2,
+        "duration": 3.662
+    },
+    {
+        "text": "so the sum could never get below negative one.",
+        "start": 1011.862,
+        "duration": 2.478
+    },
+    {
+        "text": "As I start to slide s to the right and the graphs overlap with each other, ",
+        "start": 1014.34,
+        "duration": 5.074
+    },
+    {
+        "text": "the area increases linearly until the graphs overlap entirely and it reaches a maximum.",
+        "start": 1019.414,
+        "duration": 5.886
+    },
+    {
+        "text": "And then after that point it starts to decrease linearly again, ",
+        "start": 1026.2,
+        "duration": 3.413
+    },
+    {
+        "text": "which means that the distribution for the sum takes on this kind of wedge shape.",
+        "start": 1029.613,
+        "duration": 4.267
+    },
+    {
+        "text": "And I imagine this actually feels somewhat familiar for anyone ",
+        "start": 1035.339,
+        "duration": 3.053
+    },
+    {
+        "text": "who's thought about a pair of dice, that is unweighted dice.",
+        "start": 1038.392,
+        "duration": 2.908
+    },
+    {
+        "text": "There, if you add up two different uniformly distributed variables, ",
+        "start": 1041.859,
+        "duration": 4.176
+    },
+    {
+        "text": "then the distribution for the sum has a certain wedge shape.",
+        "start": 1046.035,
+        "duration": 3.685
+    },
+    {
+        "text": "Probabilities increase until they max out at a ",
+        "start": 1050.04,
+        "duration": 2.298
+    },
+    {
+        "text": "seven and then they decrease back down again.",
+        "start": 1052.338,
+        "duration": 2.202
+    },
+    {
+        "text": "Where this gets a lot more fun is if instead of asking for a sum ",
+        "start": 1056.26,
+        "duration": 3.513
+    },
+    {
+        "text": "of two uniformly distributed variables, I ask you what it looks ",
+        "start": 1059.773,
+        "duration": 3.459
+    },
+    {
+        "text": "like if we add up three different uniformly distributed variables.",
+        "start": 1063.232,
+        "duration": 3.568
+    },
+    {
+        "text": "At first you might say, I don't know, we need some new ",
+        "start": 1066.8,
+        "duration": 2.89
+    },
+    {
+        "text": "way to visualize combining three things instead of two.",
+        "start": 1069.69,
+        "duration": 2.89
+    },
+    {
+        "text": "But really what you can do here is think about the sum of the first two as ",
+        "start": 1073.42,
+        "duration": 3.71
+    },
+    {
+        "text": "their own variable, which we just figured out follows this wedge shape distribution, ",
+        "start": 1077.13,
+        "duration": 4.205
+    },
+    {
+        "text": "and then take a convolution between that and the top hat function.",
+        "start": 1081.335,
+        "duration": 3.265
+    },
+    {
+        "text": "Pulling up the demo, here's what that would look like.",
+        "start": 1085.1,
+        "duration": 2.26
+    },
+    {
+        "text": "Once again, what makes the top hat function really nice is that multiplying ",
+        "start": 1087.84,
+        "duration": 4.272
+    },
+    {
+        "text": "by it sort of has the effect of filtering out values from the top graph.",
+        "start": 1092.112,
+        "duration": 4.048
+    },
+    {
+        "text": "The product on the bottom looks just like a copy of the top graph, ",
+        "start": 1096.16,
+        "duration": 3.789
+    },
+    {
+        "text": "but limited to a certain window.",
+        "start": 1099.949,
+        "duration": 1.811
+    },
+    {
+        "text": "Again, as I slide this around left and right and the area gets bigger and smaller, ",
+        "start": 1102.62,
+        "duration": 4.063
+    },
+    {
+        "text": "the result maxes out in the middle, but tapers out to either side, ",
+        "start": 1106.683,
+        "duration": 3.28
+    },
+    {
+        "text": "except this time it does so more smoothly.",
+        "start": 1109.963,
+        "duration": 2.057
+    },
+    {
+        "text": "It's kind of like we're taking a moving average of that top left graph.",
+        "start": 1112.6,
+        "duration": 3.52
+    },
+    {
+        "text": "Actually, it's more than just kind of, this literally ",
+        "start": 1116.94,
+        "duration": 2.756
+    },
+    {
+        "text": "is a moving average of the top left graph.",
+        "start": 1119.696,
+        "duration": 2.144
+    },
+    {
+        "text": "One thing you might think to do is take this even further.",
+        "start": 1122.399,
+        "duration": 2.601
+    },
+    {
+        "text": "The way we started was combining two top hat functions and we got this wedge.",
+        "start": 1125.5,
+        "duration": 3.46
+    },
+    {
+        "text": "Then we replaced the first function with that wedge, ",
+        "start": 1129.46,
+        "duration": 2.841
+    },
+    {
+        "text": "and then when we took the convolution, we got this smoother shape describing a sum of ",
+        "start": 1132.301,
+        "duration": 4.61
+    },
+    {
+        "text": "three distinct uniform variables.",
+        "start": 1136.911,
+        "duration": 1.769
+    },
+    {
+        "text": "But we could just repeat.",
+        "start": 1139.38,
+        "duration": 1.12
+    },
+    {
+        "text": "Swap that out for the top function and then convolve ",
+        "start": 1141.22,
+        "duration": 2.974
+    },
+    {
+        "text": "that with the flat rectangular function.",
+        "start": 1144.194,
+        "duration": 2.246
+    },
+    {
+        "text": "And whatever result we see should describe a sum ",
+        "start": 1146.44,
+        "duration": 3.031
+    },
+    {
+        "text": "of four uniformly distributed random variables.",
+        "start": 1149.471,
+        "duration": 2.909
+    },
+    {
+        "text": "Any of you who watched the video about the central ",
+        "start": 1153.66,
+        "duration": 2.028
+    },
+    {
+        "text": "limit theorem should know what to expect.",
+        "start": 1155.688,
+        "duration": 1.632
+    },
+    {
+        "text": "As we repeat this process over and over, the shape looks more and more like a bell curve.",
+        "start": 1157.82,
+        "duration": 4.58
+    },
+    {
+        "text": "Or to be more precise, at each iteration we should rescale the x-axis to make sure that ",
+        "start": 1162.86,
+        "duration": 4.818
+    },
+    {
+        "text": "the standard deviation is one, because the dominant effect of this repeated convolution, ",
+        "start": 1167.678,
+        "duration": 4.873
+    },
+    {
+        "text": "the kind of repeated moving average process, is to flatten out the function over time.",
+        "start": 1172.551,
+        "duration": 4.709
+    },
+    {
+        "text": "So in the limit it just flattens out towards zero.",
+        "start": 1177.62,
+        "duration": 2.22
+    },
+    {
+        "text": "But rescaling is a way of saying yeah, yeah, yeah, ",
+        "start": 1180.24,
+        "duration": 2.347
+    },
+    {
+        "text": "I know that it gets flatter, but what's the actual shape underlying it all?",
+        "start": 1182.587,
+        "duration": 3.453
+    },
+    {
+        "text": "The statement of the central limit theorem, one of the coolest facts from probability, ",
+        "start": 1188.06,
+        "duration": 4.572
+    },
+    {
+        "text": "is that you could have started with essentially any distribution ",
+        "start": 1192.632,
+        "duration": 3.416
+    },
+    {
+        "text": "and this still would have been true.",
+        "start": 1196.048,
+        "duration": 1.892
+    },
+    {
+        "text": "That as you take repeated convolutions like this, ",
+        "start": 1198.54,
+        "duration": 2.922
+    },
+    {
+        "text": "representing bigger and bigger sums of a given random variable, ",
+        "start": 1201.462,
+        "duration": 3.741
+    },
+    {
+        "text": "then the distribution describing that sum, which might start off looking very ",
+        "start": 1205.203,
+        "duration": 4.559
+    },
+    {
+        "text": "different from a normal distribution, over time smooths out more and more until ",
+        "start": 1209.762,
+        "duration": 4.676
+    },
+    {
+        "text": "it gets arbitrarily close to a normal distribution.",
+        "start": 1214.438,
+        "duration": 2.982
+    },
+    {
+        "text": "It's as if a bell curve is, in some loose manner of speaking, ",
+        "start": 1218.08,
+        "duration": 3.362
+    },
+    {
+        "text": "the smoothest possible distribution, an attractive fixed point in the space of ",
+        "start": 1221.442,
+        "duration": 4.285
+    },
+    {
+        "text": "all possible functions, as we apply this process of repeated smoothing through ",
+        "start": 1225.727,
+        "duration": 4.285
+    },
+    {
+        "text": "the convolution.",
+        "start": 1230.012,
+        "duration": 0.868
+    },
+    {
+        "text": "Naturally you might wonder why normal distributions?",
+        "start": 1235.4,
+        "duration": 3.12
+    },
+    {
+        "text": "Why this function and not some other one?",
+        "start": 1238.98,
+        "duration": 1.94
+    },
+    {
+        "text": "That's a very good answer, and I think the most fun way to show the answer ",
+        "start": 1241.68,
+        "duration": 3.74
+    },
+    {
+        "text": "is in the light of the last visualization that we'll show for convolutions.",
+        "start": 1245.42,
+        "duration": 3.74
+    },
+    {
+        "text": "Remember how in the discrete case the first of our two visualizations ",
+        "start": 1250.28,
+        "duration": 3.749
+    },
+    {
+        "text": "involved forming this kind of multiplication table, ",
+        "start": 1254.029,
+        "duration": 2.785
+    },
+    {
+        "text": "showing the probabilities for all possible outcomes and adding up along the diagonals?",
+        "start": 1256.814,
+        "duration": 4.606
+    },
+    {
+        "text": "You've probably guessed it by now, but our last ",
+        "start": 1262.96,
+        "duration": 2.282
+    },
+    {
+        "text": "step is to generalize this to the continuous case.",
+        "start": 1265.242,
+        "duration": 2.378
+    },
+    {
+        "text": "And it is beautiful, but you have to be a little bit careful.",
+        "start": 1268.56,
+        "duration": 2.3
+    },
+    {
+        "text": "Pulling up the same two functions we had before, f of x and g of y, ",
+        "start": 1271.98,
+        "duration": 3.86
+    },
+    {
+        "text": "what in this case would be analogous to the grid of possible pairs that we were ",
+        "start": 1275.84,
+        "duration": 4.541
+    },
+    {
+        "text": "looking at earlier?",
+        "start": 1280.381,
+        "duration": 1.079
+    },
+    {
+        "text": "Well in this case each of the variables can take on any real number, ",
+        "start": 1282.48,
+        "duration": 3.865
+    },
+    {
+        "text": "so we want to think about all possible pairs of real numbers and the xy plane ",
+        "start": 1286.345,
+        "duration": 4.37
+    },
+    {
+        "text": "comes to mind.",
+        "start": 1290.715,
+        "duration": 0.785
+    },
+    {
+        "text": "Every point corresponds to a possible outcome when we sample from both distributions.",
+        "start": 1292.64,
+        "duration": 4.4
+    },
+    {
+        "text": "Now the probability of any one of these outcomes xy, ",
+        "start": 1298.14,
+        "duration": 3.259
+    },
+    {
+        "text": "or rather the probability density around that point, ",
+        "start": 1301.399,
+        "duration": 3.26
+    },
+    {
+        "text": "will look like f of x times g of y, again assuming that the two are independent.",
+        "start": 1304.659,
+        "duration": 4.921
+    },
+    {
+        "text": "So a natural thing to do is to graph this function f of x times g of y as a two variable ",
+        "start": 1309.58,
+        "duration": 5.381
+    },
+    {
+        "text": "function, which would give something that looks like a surface above the xy plane.",
+        "start": 1314.961,
+        "duration": 4.959
+    },
+    {
+        "text": "Notice in this example how if we look at it from one angle where we see the x values ",
+        "start": 1320.56,
+        "duration": 4.392
+    },
+    {
+        "text": "changing, it has the shape of our first graph, ",
+        "start": 1324.952,
+        "duration": 2.428
+    },
+    {
+        "text": "but if we look at it from another angle emphasizing the change in the y direction, ",
+        "start": 1327.38,
+        "duration": 4.289
+    },
+    {
+        "text": "it takes on the shape of our second graph.",
+        "start": 1331.669,
+        "duration": 2.171
+    },
+    {
+        "text": "This three-dimensional graph encodes all of the information we need.",
+        "start": 1334.22,
+        "duration": 3.58
+    },
+    {
+        "text": "It shows all the probability densities for every possible outcome.",
+        "start": 1337.8,
+        "duration": 3.32
+    },
+    {
+        "text": "And if you want to limit your view just to those outcomes where x plus y is ",
+        "start": 1341.9,
+        "duration": 4.365
+    },
+    {
+        "text": "constrained to be a given sum, what that looks like is limiting our view to a ",
+        "start": 1346.265,
+        "duration": 4.481
+    },
+    {
+        "text": "diagonal slice, specifically a slice over the line x plus y equals some constant.",
+        "start": 1350.746,
+        "duration": 4.654
+    },
+    {
+        "text": "All of the possible probability densities for the outcome subject to this constraint ",
+        "start": 1355.98,
+        "duration": 4.777
+    },
+    {
+        "text": "look sort of like a slice under this graph, and as we change around what specific sum ",
+        "start": 1360.757,
+        "duration": 4.833
+    },
+    {
+        "text": "we're constraining to, it shifts around which specific diagonal slice we're looking at.",
+        "start": 1365.59,
+        "duration": 4.89
+    },
+    {
+        "text": "Now what you might predict is that the way to combine all of the probability ",
+        "start": 1373.94,
+        "duration": 4.4
+    },
+    {
+        "text": "densities along one of these slices, the way to integrate them together, ",
+        "start": 1378.34,
+        "duration": 4.171
+    },
+    {
+        "text": "can be interpreted as the area under this curve, which is a slice of the surface.",
+        "start": 1382.511,
+        "duration": 4.629
+    },
+    {
+        "text": "And that is almost correct.",
+        "start": 1387.94,
+        "duration": 1.48
+    },
+    {
+        "text": "There's a subtle detail regarding a factor of the square root ",
+        "start": 1389.74,
+        "duration": 3.569
+    },
+    {
+        "text": "of two that we need to talk about, but up to a constant factor, ",
+        "start": 1393.309,
+        "duration": 3.685
+    },
+    {
+        "text": "the areas of these slices give us the values of the convolution.",
+        "start": 1396.994,
+        "duration": 3.686
+    },
+    {
+        "text": "In fact, all of these slices that we're looking at are precisely ",
+        "start": 1401.5,
+        "duration": 3.449
+    },
+    {
+        "text": "the same as the product graph that we were looking at earlier.",
+        "start": 1404.949,
+        "duration": 3.291
+    },
+    {
+        "text": "Here, to emphasize this point, let me pull up both visualizations side by side, ",
+        "start": 1409.44,
+        "duration": 4.625
+    },
+    {
+        "text": "and I'm going to slowly decrease the value of s, ",
+        "start": 1414.065,
+        "duration": 2.833
+    },
+    {
+        "text": "which on the left means we're looking at different slices, ",
+        "start": 1416.898,
+        "duration": 3.412
+    },
+    {
+        "text": "and on the right means we're shifting around the modified graph of g.",
+        "start": 1420.31,
+        "duration": 3.99
+    },
+    {
+        "text": "Notice how at all points the shape of the graph on the bottom right, ",
+        "start": 1425.52,
+        "duration": 3.935
+    },
+    {
+        "text": "the product between the functions, looks exactly the same as the shape of the ",
+        "start": 1429.455,
+        "duration": 4.449
+    },
+    {
+        "text": "diagonal slice.",
+        "start": 1433.904,
+        "duration": 0.856
+    },
+    {
+        "text": "And this should make sense.",
+        "start": 1438.44,
+        "duration": 1.26
+    },
+    {
+        "text": "They are two distinct ways to visualize the same thing.",
+        "start": 1439.84,
+        "duration": 2.76
+    },
+    {
+        "text": "It sounds like a lot when we put it into words, ",
+        "start": 1443.04,
+        "duration": 2.71
+    },
+    {
+        "text": "but what we're looking at are all the possible products between outputs of the functions, ",
+        "start": 1445.75,
+        "duration": 5.083
+    },
+    {
+        "text": "corresponding to pairs of inputs that have a given sum.",
+        "start": 1450.833,
+        "duration": 3.107
+    },
+    {
+        "text": "Again, it's kind of a mouthful, but I think you see what I'm saying, ",
+        "start": 1454.76,
+        "duration": 3.443
+    },
+    {
+        "text": "and we now have two different ways to see it.",
+        "start": 1458.203,
+        "duration": 2.247
+    },
+    {
+        "text": "The nice thing about the diagonal slice visualization is that ",
+        "start": 1471.0,
+        "duration": 3.1
+    },
+    {
+        "text": "it makes it much more clear that it's a symmetric operation.",
+        "start": 1474.1,
+        "duration": 3.0
+    },
+    {
+        "text": "It's much more obvious that f convolved with g is the same thing as g convolved with f.",
+        "start": 1477.1,
+        "duration": 5.92
+    },
+    {
+        "text": "Technically, the diagonal slices are not exactly the same shape.",
+        "start": 1484.08,
+        "duration": 3.5
+    },
+    {
+        "text": "They've actually been stretched out by a factor of the square root of 2.",
+        "start": 1487.9,
+        "duration": 3.26
+    },
+    {
+        "text": "The basic reason is that if you imagine taking some small step along one ",
+        "start": 1491.88,
+        "duration": 4.38
+    },
+    {
+        "text": "of these lines where x plus y equals a constant, then the change in your x value, ",
+        "start": 1496.26,
+        "duration": 4.92
+    },
+    {
+        "text": "the delta x here, is not the same thing as the length of that step.",
+        "start": 1501.18,
+        "duration": 4.02
+    },
+    {
+        "text": "That step is actually longer by a factor of the square root of 2.",
+        "start": 1505.2,
+        "duration": 3.68
+    },
+    {
+        "text": "I will leave a note up on the screen for the calculus enthusiasts among you ",
+        "start": 1509.66,
+        "duration": 3.731
+    },
+    {
+        "text": "who want to pause and ponder, but the upshot is very simply that the outputs ",
+        "start": 1513.391,
+        "duration": 3.781
+    },
+    {
+        "text": "of our convolution are technically not quite the areas of these diagonal slices.",
+        "start": 1517.172,
+        "duration": 3.928
+    },
+    {
+        "text": "We have to divide those areas by a square root of 2.",
+        "start": 1521.6,
+        "duration": 2.74
+    },
+    {
+        "text": "Stepping back from all of this for a moment, I just think this is so beautiful.",
+        "start": 1526.14,
+        "duration": 3.4
+    },
+    {
+        "text": "We started with such a simple question, or at least such a seemingly simple question.",
+        "start": 1530.04,
+        "duration": 4.36
+    },
+    {
+        "text": "How do you add up two random variables?",
+        "start": 1534.4,
+        "duration": 2.28
+    },
+    {
+        "text": "And what we end up with is this very intricate ",
+        "start": 1537.3,
+        "duration": 2.246
+    },
+    {
+        "text": "operation for combining two different functions.",
+        "start": 1539.546,
+        "duration": 2.294
+    },
+    {
+        "text": "We have at least two very pretty ways to understand it, but still, ",
+        "start": 1542.68,
+        "duration": 3.182
+    },
+    {
+        "text": "some of you might be raising your hands and saying, ",
+        "start": 1545.862,
+        "duration": 2.47
+    },
+    {
+        "text": "pretty pictures are all well and good, but do they actually help you calculate something?",
+        "start": 1548.332,
+        "duration": 4.228
+    },
+    {
+        "text": "For example, I still have not answered the opening quiz ",
+        "start": 1553.04,
+        "duration": 2.912
+    },
+    {
+        "text": "question about adding two normally distributed random variables.",
+        "start": 1555.952,
+        "duration": 3.328
+    },
+    {
+        "text": "Well, the ordinary way that you would approach this kind of question, ",
+        "start": 1559.879,
+        "duration": 3.637
+    },
+    {
+        "text": "if it showed up on a homework or something like that, ",
+        "start": 1563.516,
+        "duration": 2.806
+    },
+    {
+        "text": "is that you would plug in the formula for a normal distribution into ",
+        "start": 1566.322,
+        "duration": 3.585
+    },
+    {
+        "text": "the definition of a convolution, the integral that we've been describing here.",
+        "start": 1569.907,
+        "duration": 4.053
+    },
+    {
+        "text": "And in that case, the visualizations would really just be there to ",
+        "start": 1575.08,
+        "duration": 3.123
+    },
+    {
+        "text": "clarify what the expression is saying, but they sit in the back seat.",
+        "start": 1578.203,
+        "duration": 3.217
+    },
+    {
+        "text": "In this case, the integral is not prohibitively difficult.",
+        "start": 1581.92,
+        "duration": 2.7
+    },
+    {
+        "text": "There are analytical methods.",
+        "start": 1584.86,
+        "duration": 1.42
+    },
+    {
+        "text": "But for this example, I want to show you a more fun method where the visualizations, ",
+        "start": 1586.28,
+        "duration": 4.997
+    },
+    {
+        "text": "specifically the diagonal slices, will play a much more front ",
+        "start": 1591.277,
+        "duration": 3.646
+    },
+    {
+        "text": "and center role in the proof itself.",
+        "start": 1594.923,
+        "duration": 2.117
+    },
+    {
+        "text": "I think many of you may actually enjoy taking a ",
+        "start": 1597.9,
+        "duration": 2.086
+    },
+    {
+        "text": "moment to predict how this will look for yourself.",
+        "start": 1599.986,
+        "duration": 2.174
+    },
+    {
+        "text": "Think about what this 3D graph would look like in the case of two normal distributions, ",
+        "start": 1602.68,
+        "duration": 4.775
+    },
+    {
+        "text": "and what properties that it has that you might be able to take advantage of.",
+        "start": 1607.455,
+        "duration": 4.125
+    },
+    {
+        "text": "And it is for sure easiest if you start with the case ",
+        "start": 1612.48,
+        "duration": 2.555
+    },
+    {
+        "text": "where both distributions have the same standard deviation.",
+        "start": 1615.035,
+        "duration": 2.745
+    },
+    {
+        "text": "Whenever you want the details, and to see how the answer fits ",
+        "start": 1619.08,
+        "duration": 2.926
+    },
+    {
+        "text": "into the central limit theorem, come join me in the next video.",
+        "start": 1622.006,
+        "duration": 2.974
+    }
+]

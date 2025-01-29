@@ -1,0 +1,777 @@
+[
+    {
+        "text": "The fundamental, root-of-it-all building block for linear algebra is the vector.",
+        "start": 10.92,
+        "duration": 4.3
+    },
+    {
+        "text": "So it's worth making sure that we're all on the same page about what exactly a vector is.",
+        "start": 15.72,
+        "duration": 4.12
+    },
+    {
+        "text": "You see, broadly speaking, there are three distinct but related ideas about vectors, ",
+        "start": 20.38,
+        "duration": 3.897
+    },
+    {
+        "text": "which I'll call the physics student perspective, ",
+        "start": 24.277,
+        "duration": 2.246
+    },
+    {
+        "text": "the computer science student perspective, and the mathematician's perspective.",
+        "start": 26.523,
+        "duration": 3.577
+    },
+    {
+        "text": "The physics student perspective is that vectors are arrows pointing in space.",
+        "start": 30.88,
+        "duration": 3.52
+    },
+    {
+        "text": "What defines a given vector is its length and the direction it's pointing, ",
+        "start": 34.94,
+        "duration": 3.444
+    },
+    {
+        "text": "but as long as those two facts are the same, you can move it all around, ",
+        "start": 38.384,
+        "duration": 3.352
+    },
+    {
+        "text": "and it's still the same vector.",
+        "start": 41.736,
+        "duration": 1.424
+    },
+    {
+        "text": "Vectors that live in the flat plane are two-dimensional, ",
+        "start": 44.04,
+        "duration": 2.496
+    },
+    {
+        "text": "and those sitting in broader space that you and I live in are three-dimensional.",
+        "start": 46.536,
+        "duration": 3.504
+    },
+    {
+        "text": "The computer science perspective is that vectors are ordered lists of numbers.",
+        "start": 51.72,
+        "duration": 3.92
+    },
+    {
+        "text": "For example, let's say you were doing some analytics about house prices, ",
+        "start": 55.64,
+        "duration": 3.686
+    },
+    {
+        "text": "and the only features you cared about were square footage and price.",
+        "start": 59.326,
+        "duration": 3.434
+    },
+    {
+        "text": "You might model each house with a pair of numbers, ",
+        "start": 63.02,
+        "duration": 2.425
+    },
+    {
+        "text": "the first indicating square footage and the second indicating price.",
+        "start": 65.445,
+        "duration": 3.235
+    },
+    {
+        "text": "Notice the order matters here.",
+        "start": 69.32,
+        "duration": 1.72
+    },
+    {
+        "text": "In the lingo, you'd be modeling houses as two-dimensional vectors, ",
+        "start": 72.4,
+        "duration": 3.512
+    },
+    {
+        "text": "where in this context, vector is pretty much just a fancy word for list, ",
+        "start": 75.912,
+        "duration": 3.828
+    },
+    {
+        "text": "and what makes it two-dimensional is the fact that the length of that list is two.",
+        "start": 79.74,
+        "duration": 4.3
+    },
+    {
+        "text": "The mathematician, on the other hand, seeks to generalize both these views, ",
+        "start": 85.64,
+        "duration": 3.709
+    },
+    {
+        "text": "basically saying that a vector can be anything where there's a sensible notion of adding ",
+        "start": 89.349,
+        "duration": 4.345
+    },
+    {
+        "text": "two vectors and multiplying a vector by a number, ",
+        "start": 93.694,
+        "duration": 2.441
+    },
+    {
+        "text": "operations that I'll talk about later on in this video.",
+        "start": 96.135,
+        "duration": 2.685
+    },
+    {
+        "text": "The details of this view are rather abstract, and I actually think it's healthy to ignore ",
+        "start": 99.58,
+        "duration": 4.226
+    },
+    {
+        "text": "it until the last video of this series, favoring a more concrete setting in the interim.",
+        "start": 103.806,
+        "duration": 4.134
+    },
+    {
+        "text": "But the reason I bring it up here is that it hints at the ",
+        "start": 108.4,
+        "duration": 2.826
+    },
+    {
+        "text": "fact that the ideas of vector addition and multiplication by ",
+        "start": 111.226,
+        "duration": 2.972
+    },
+    {
+        "text": "numbers will play an important role throughout linear algebra.",
+        "start": 114.198,
+        "duration": 3.022
+    },
+    {
+        "text": "But before I talk about those operations, let's just settle in ",
+        "start": 118.0,
+        "duration": 2.972
+    },
+    {
+        "text": "on a specific thought to have in mind when I say the word vector.",
+        "start": 120.972,
+        "duration": 3.068
+    },
+    {
+        "text": "Given the geometric focus that I'm shooting for here, ",
+        "start": 124.74,
+        "duration": 2.811
+    },
+    {
+        "text": "whenever I introduce a new topic involving vectors, ",
+        "start": 127.551,
+        "duration": 2.707
+    },
+    {
+        "text": "I want you to first think about an arrow, and specifically, ",
+        "start": 130.258,
+        "duration": 3.123
+    },
+    {
+        "text": "think about that arrow inside a coordinate system, like the xy-plane, ",
+        "start": 133.381,
+        "duration": 3.644
+    },
+    {
+        "text": "with its tail sitting at the origin.",
+        "start": 137.025,
+        "duration": 1.875
+    },
+    {
+        "text": "This is a little bit different from the physics student perspective, ",
+        "start": 139.68,
+        "duration": 2.869
+    },
+    {
+        "text": "where vectors can freely sit anywhere they want in space.",
+        "start": 142.549,
+        "duration": 2.371
+    },
+    {
+        "text": "In linear algebra, it's almost always the case ",
+        "start": 145.42,
+        "duration": 2.476
+    },
+    {
+        "text": "that your vector will be rooted at the origin.",
+        "start": 147.896,
+        "duration": 2.424
+    },
+    {
+        "text": "Then, once you understand a new concept in the context of arrows in space, ",
+        "start": 150.94,
+        "duration": 3.666
+    },
+    {
+        "text": "we'll translate it over to the list of numbers point of view, ",
+        "start": 154.606,
+        "duration": 3.031
+    },
+    {
+        "text": "which we can do by considering the coordinates of the vector.",
+        "start": 157.637,
+        "duration": 2.983
+    },
+    {
+        "text": "Now, while I'm sure that many of you are already familiar with this coordinate system, ",
+        "start": 161.44,
+        "duration": 3.758
+    },
+    {
+        "text": "it's worth walking through explicitly, since this is where all of the important ",
+        "start": 165.198,
+        "duration": 3.457
+    },
+    {
+        "text": "back and forth happens between the two perspectives of linear algebra.",
+        "start": 168.655,
+        "duration": 3.025
+    },
+    {
+        "text": "Focusing our attention on two dimensions for the moment, ",
+        "start": 172.74,
+        "duration": 2.726
+    },
+    {
+        "text": "you have a horizontal line, called the x-axis, and a vertical line, called the y-axis.",
+        "start": 175.466,
+        "duration": 4.114
+    },
+    {
+        "text": "The place where they intersect is called the origin, ",
+        "start": 180.26,
+        "duration": 2.144
+    },
+    {
+        "text": "which you should think of as the center of space and the root of all vectors.",
+        "start": 182.404,
+        "duration": 3.116
+    },
+    {
+        "text": "After choosing an arbitrary length to represent one, ",
+        "start": 186.38,
+        "duration": 2.335
+    },
+    {
+        "text": "you make tick marks on each axis to represent this distance.",
+        "start": 188.715,
+        "duration": 2.645
+    },
+    {
+        "text": "When I want to convey the idea of 2D space as a whole, ",
+        "start": 192.32,
+        "duration": 2.334
+    },
+    {
+        "text": "which you'll see comes up a lot in these videos, ",
+        "start": 194.654,
+        "duration": 2.079
+    },
+    {
+        "text": "I'll extend these tick marks to make grid lines, but right now, ",
+        "start": 196.733,
+        "duration": 2.717
+    },
+    {
+        "text": "they'll actually get a little bit in the way.",
+        "start": 199.45,
+        "duration": 1.91
+    },
+    {
+        "text": "The coordinates of a vector is a pair of numbers that basically gives ",
+        "start": 202.0,
+        "duration": 3.757
+    },
+    {
+        "text": "instructions for how to get from the tail of that vector at the origin to its tip.",
+        "start": 205.757,
+        "duration": 4.403
+    },
+    {
+        "text": "The first number tells you how far to walk along the x-axis, ",
+        "start": 210.88,
+        "duration": 3.124
+    },
+    {
+        "text": "positive numbers indicating rightward motion, negative numbers indicating leftward ",
+        "start": 214.004,
+        "duration": 4.252
+    },
+    {
+        "text": "motion, and the second number tells you how far to walk parallel to the y-axis ",
+        "start": 218.256,
+        "duration": 4.047
+    },
+    {
+        "text": "after that, positive numbers indicating upward motion, ",
+        "start": 222.303,
+        "duration": 2.818
+    },
+    {
+        "text": "and negative numbers indicating downward motion.",
+        "start": 225.121,
+        "duration": 2.459
+    },
+    {
+        "text": "To distinguish vectors from points, the convention is to write ",
+        "start": 228.14,
+        "duration": 3.051
+    },
+    {
+        "text": "this pair of numbers vertically with square brackets around them.",
+        "start": 231.191,
+        "duration": 3.149
+    },
+    {
+        "text": "Every pair of numbers gives you one and only one vector, ",
+        "start": 236.34,
+        "duration": 3.32
+    },
+    {
+        "text": "and every vector is associated with one and only one pair of numbers.",
+        "start": 239.66,
+        "duration": 4.02
+    },
+    {
+        "text": "What about in three dimensions?",
+        "start": 244.64,
+        "duration": 0.86
+    },
+    {
+        "text": "Well, you add a third axis, called the z-axis, ",
+        "start": 246.2,
+        "duration": 2.77
+    },
+    {
+        "text": "which is perpendicular to both the x and y-axes, and in this case, ",
+        "start": 248.97,
+        "duration": 3.95
+    },
+    {
+        "text": "each vector is associated with ordered triplet of numbers.",
+        "start": 252.92,
+        "duration": 3.419
+    },
+    {
+        "text": "The first tells you how far to move along the x-axis, ",
+        "start": 256.86,
+        "duration": 3.043
+    },
+    {
+        "text": "the second tells you how far to move parallel to the y-axis, ",
+        "start": 259.903,
+        "duration": 3.437
+    },
+    {
+        "text": "and the third one tells you how far to then move parallel to this new z-axis.",
+        "start": 263.34,
+        "duration": 4.34
+    },
+    {
+        "text": "Every triplet of numbers gives you one unique vector in space, ",
+        "start": 268.4,
+        "duration": 3.469
+    },
+    {
+        "text": "and every vector in space gives you exactly one triplet of numbers.",
+        "start": 271.869,
+        "duration": 3.691
+    },
+    {
+        "text": "All right, so back to vector addition and multiplication by numbers.",
+        "start": 276.9,
+        "duration": 3.2
+    },
+    {
+        "text": "After all, every topic in linear algebra is going to center around these two operations.",
+        "start": 280.46,
+        "duration": 4.32
+    },
+    {
+        "text": "Luckily, each one's pretty straightforward to define.",
+        "start": 285.44,
+        "duration": 2.2
+    },
+    {
+        "text": "Let's say we have two vectors, one pointing up and a little to the right, ",
+        "start": 288.48,
+        "duration": 3.081
+    },
+    {
+        "text": "and the other one pointing right and down a bit.",
+        "start": 291.561,
+        "duration": 1.999
+    },
+    {
+        "text": "To add these two vectors, move the second one so ",
+        "start": 293.96,
+        "duration": 2.919
+    },
+    {
+        "text": "that its tail sits at the tip of the first one.",
+        "start": 296.879,
+        "duration": 2.801
+    },
+    {
+        "text": "Then, if you draw a new vector from the tail of the first one to ",
+        "start": 300.3,
+        "duration": 4.156
+    },
+    {
+        "text": "where the tip of the second one sits, that new vector is their sum.",
+        "start": 304.456,
+        "duration": 4.284
+    },
+    {
+        "text": "This definition of addition, by the way, is pretty much the only time ",
+        "start": 312.08,
+        "duration": 3.489
+    },
+    {
+        "text": "in linear algebra where we let vectors stray away from the origin.",
+        "start": 315.569,
+        "duration": 3.291
+    },
+    {
+        "text": "Now, why is this a reasonable thing to do?",
+        "start": 319.72,
+        "duration": 1.76
+    },
+    {
+        "text": "Why this definition of addition and not some other one?",
+        "start": 321.74,
+        "duration": 2.28
+    },
+    {
+        "text": "Well, the way I like to think about it is that each vector represents a certain movement, ",
+        "start": 325.52,
+        "duration": 4.475
+    },
+    {
+        "text": "a step with a certain distance and direction in space.",
+        "start": 329.995,
+        "duration": 2.685
+    },
+    {
+        "text": "If you take a step along the first vector, then take a step in the direction ",
+        "start": 333.98,
+        "duration": 3.729
+    },
+    {
+        "text": "and distance described by the second vector, the overall effect is just ",
+        "start": 337.709,
+        "duration": 3.487
+    },
+    {
+        "text": "the same as if you moved along the sum of those two vectors to start with.",
+        "start": 341.196,
+        "duration": 3.584
+    },
+    {
+        "text": "You could think about this as an extension of ",
+        "start": 345.26,
+        "duration": 1.991
+    },
+    {
+        "text": "how we think about adding numbers on a number line.",
+        "start": 347.251,
+        "duration": 2.209
+    },
+    {
+        "text": "One way that we teach kids to think about this, say with 2 plus 5, ",
+        "start": 350.18,
+        "duration": 3.341
+    },
+    {
+        "text": "is to think of moving two steps to the right followed by another five steps to the right.",
+        "start": 353.521,
+        "duration": 4.439
+    },
+    {
+        "text": "The overall effect is the same as if you just took seven steps to the right.",
+        "start": 357.96,
+        "duration": 3.76
+    },
+    {
+        "text": "In fact, let's see how vector addition looks numerically.",
+        "start": 362.66,
+        "duration": 2.82
+    },
+    {
+        "text": "The first vector here has coordinates 1, 2, and the second one has coordinates 3, ",
+        "start": 366.02,
+        "duration": 5.678
+    },
+    {
+        "text": "negative 1.",
+        "start": 371.698,
+        "duration": 0.762
+    },
+    {
+        "text": "When you take the vector sum using this tip-to-tail method, ",
+        "start": 374.36,
+        "duration": 2.983
+    },
+    {
+        "text": "you can think of a four-step path from the origin to the tip of the second vector.",
+        "start": 377.343,
+        "duration": 4.077
+    },
+    {
+        "text": "Walk 1 to the right, then 2 up, then 3 to the right, then 1 down.",
+        "start": 381.84,
+        "duration": 3.78
+    },
+    {
+        "text": "Reorganizing these steps so that you first do all of the rightward motion, ",
+        "start": 386.92,
+        "duration": 4.421
+    },
+    {
+        "text": "then do all the vertical motion, you can read it as saying first ",
+        "start": 391.341,
+        "duration": 3.832
+    },
+    {
+        "text": "move 1 plus 3 to the right, then move 2 minus 1 up.",
+        "start": 395.173,
+        "duration": 3.007
+    },
+    {
+        "text": "So the new vector has coordinates 1 plus 3 and 2 plus negative 1.",
+        "start": 400.08,
+        "duration": 4.84
+    },
+    {
+        "text": "In general, vector addition in this list of numbers conception ",
+        "start": 405.6,
+        "duration": 3.522
+    },
+    {
+        "text": "looks like matching up their terms and adding each one together.",
+        "start": 409.122,
+        "duration": 3.578
+    },
+    {
+        "text": "The other fundamental vector operation is multiplication by a number.",
+        "start": 414.64,
+        "duration": 3.72
+    },
+    {
+        "text": "Now this is best understood just by looking at a few examples.",
+        "start": 418.86,
+        "duration": 2.52
+    },
+    {
+        "text": "If you take the number 2 and multiply it by a given vector, ",
+        "start": 421.84,
+        "duration": 3.154
+    },
+    {
+        "text": "it means you stretch out that vector so that it's two times as long as when you started.",
+        "start": 424.994,
+        "duration": 4.626
+    },
+    {
+        "text": "If you multiply that vector by, say, one-third, ",
+        "start": 430.5,
+        "duration": 2.565
+    },
+    {
+        "text": "it means you squish it down so that it's one-third the original length.",
+        "start": 433.065,
+        "duration": 3.795
+    },
+    {
+        "text": "When you multiply it by a negative number, like negative 1.8, ",
+        "start": 437.64,
+        "duration": 3.677
+    },
+    {
+        "text": "then the vector first gets flipped around, then stretched out by that factor of 1.8.",
+        "start": 441.317,
+        "duration": 4.983
+    },
+    {
+        "text": "This process of stretching or squishing or sometimes reversing the direction of ",
+        "start": 447.36,
+        "duration": 4.631
+    },
+    {
+        "text": "a vector is called scaling, and whenever you catch a number like two or one-third ",
+        "start": 451.991,
+        "duration": 4.748
+    },
+    {
+        "text": "or negative 1.8 acting like this, scaling some vector, you call it a scalar.",
+        "start": 456.739,
+        "duration": 4.401
+    },
+    {
+        "text": "In fact, throughout linear algebra, one of the main things that numbers do is scale ",
+        "start": 461.94,
+        "duration": 4.312
+    },
+    {
+        "text": "vectors, so it's common to use the word scalar pretty much interchangeably with the word ",
+        "start": 466.252,
+        "duration": 4.568
+    },
+    {
+        "text": "number.",
+        "start": 470.82,
+        "duration": 0.36
+    },
+    {
+        "text": "Numerically, stretching out a vector by a factor of, say, 2, ",
+        "start": 472.02,
+        "duration": 3.52
+    },
+    {
+        "text": "corresponds with multiplying each of its components by that factor, 2.",
+        "start": 475.54,
+        "duration": 4.04
+    },
+    {
+        "text": "So in the conception of vectors as lists of numbers, ",
+        "start": 480.3,
+        "duration": 2.815
+    },
+    {
+        "text": "multiplying a given vector by a scalar means multiplying each one of those ",
+        "start": 483.115,
+        "duration": 3.983
+    },
+    {
+        "text": "components by that scalar.",
+        "start": 487.098,
+        "duration": 1.382
+    },
+    {
+        "text": "You'll see in the following videos what I mean when I say linear algebra topics tend to ",
+        "start": 490.22,
+        "duration": 4.424
+    },
+    {
+        "text": "revolve around these two fundamental operations, ",
+        "start": 494.644,
+        "duration": 2.464
+    },
+    {
+        "text": "vector addition and scalar multiplication.",
+        "start": 497.108,
+        "duration": 2.112
+    },
+    {
+        "text": "And I'll talk more in the last video about how and why the ",
+        "start": 499.98,
+        "duration": 2.899
+    },
+    {
+        "text": "mathematician thinks only about these operations, ",
+        "start": 502.879,
+        "duration": 2.457
+    },
+    {
+        "text": "independent and abstracted away from however you choose to represent vectors.",
+        "start": 505.336,
+        "duration": 3.784
+    },
+    {
+        "text": "In truth, it doesn't matter whether you think about vectors as fundamentally being arrows ",
+        "start": 509.8,
+        "duration": 4.066
+    },
+    {
+        "text": "in space, like I'm suggesting you do, that happen to have a nice numerical ",
+        "start": 513.866,
+        "duration": 3.389
+    },
+    {
+        "text": "representation, or fundamentally as lists of numbers that happen to have a nice geometric ",
+        "start": 517.255,
+        "duration": 4.067
+    },
+    {
+        "text": "interpretation.",
+        "start": 521.322,
+        "duration": 0.678
+    },
+    {
+        "text": "The usefulness of linear algebra has less to do with either one of these ",
+        "start": 522.52,
+        "duration": 3.504
+    },
+    {
+        "text": "views than it does with the ability to translate back and forth between them.",
+        "start": 526.024,
+        "duration": 3.696
+    },
+    {
+        "text": "It gives the data analyst a nice way to conceptualize many lists ",
+        "start": 530.14,
+        "duration": 3.45
+    },
+    {
+        "text": "of numbers in a visual way, which can seriously clarify patterns ",
+        "start": 533.59,
+        "duration": 3.451
+    },
+    {
+        "text": "in data and give a global view of what certain operations do.",
+        "start": 537.041,
+        "duration": 3.239
+    },
+    {
+        "text": "And on the flip side, it gives people like physicists and computer ",
+        "start": 540.82,
+        "duration": 3.385
+    },
+    {
+        "text": "graphics programmers a language to describe space and the manipulation ",
+        "start": 544.205,
+        "duration": 3.587
+    },
+    {
+        "text": "of space using numbers that can be crunched and run through a computer.",
+        "start": 547.792,
+        "duration": 3.588
+    },
+    {
+        "text": "When I do math-y animations, for example, I start by thinking about what's ",
+        "start": 552.3,
+        "duration": 3.618
+    },
+    {
+        "text": "actually going on in space, and then get the computer to represent things numerically, ",
+        "start": 555.918,
+        "duration": 4.198
+    },
+    {
+        "text": "thereby figuring out where to place the pixels on the screen.",
+        "start": 560.116,
+        "duration": 2.944
+    },
+    {
+        "text": "And doing that usually relies on a lot of linear algebra understanding.",
+        "start": 563.48,
+        "duration": 3.1
+    },
+    {
+        "text": "So there are your vector basics, and in the next video I'll ",
+        "start": 567.84,
+        "duration": 7.862
+    },
+    {
+        "text": "start getting into some pretty neat concepts surrounding vectors like span, ",
+        "start": 575.702,
+        "duration": 9.959
+    },
+    {
+        "text": "bases, and linear dependence. See you then! you",
+        "start": 585.661,
+        "duration": 6.159
+    }
+]

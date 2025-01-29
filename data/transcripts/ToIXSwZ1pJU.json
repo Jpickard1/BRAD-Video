@@ -1,0 +1,1112 @@
+[
+    {
+        "text": "We last left off studying the heat equation in the one-dimensional case of a rod.",
+        "start": 3.6,
+        "duration": 4.64
+    },
+    {
+        "text": "The question is how the temperature distribution ",
+        "start": 8.8,
+        "duration": 2.49
+    },
+    {
+        "text": "along such a rod will tend to change over time.",
+        "start": 11.29,
+        "duration": 2.39
+    },
+    {
+        "text": "This gave us a nice first example for a partial differential equation.",
+        "start": 14.36,
+        "duration": 3.12
+    },
+    {
+        "text": "It told us that the rate at which the temperature at a given point changes over time ",
+        "start": 18.06,
+        "duration": 4.631
+    },
+    {
+        "text": "depends on the second derivative of that temperature at that point with respect to space.",
+        "start": 22.691,
+        "duration": 4.849
+    },
+    {
+        "text": "Where there's curvature in space, there's change in time.",
+        "start": 28.0,
+        "duration": 2.42
+    },
+    {
+        "text": "Here we're going to look at how to solve that equation.",
+        "start": 31.18,
+        "duration": 2.16
+    },
+    {
+        "text": "Actually, it's a little misleading to refer to all of this as solving an equation.",
+        "start": 33.94,
+        "duration": 3.72
+    },
+    {
+        "text": "The PDE itself only describes one out of three constraints that our ",
+        "start": 38.12,
+        "duration": 3.258
+    },
+    {
+        "text": "temperature function must satisfy if it's going to accurately describe heat flow.",
+        "start": 41.378,
+        "duration": 3.882
+    },
+    {
+        "text": "It must also satisfy certain boundary conditions, ",
+        "start": 45.64,
+        "duration": 2.47
+    },
+    {
+        "text": "which is something we'll talk about momentarily, and a certain initial condition, ",
+        "start": 48.11,
+        "duration": 4.05
+    },
+    {
+        "text": "that is, you don't get to choose how it looks at time t equals zero.",
+        "start": 52.16,
+        "duration": 3.36
+    },
+    {
+        "text": "These added constraints are really where all of the challenge lies.",
+        "start": 57.24,
+        "duration": 3.36
+    },
+    {
+        "text": "There is a vast ocean of functions solving the PDE, ",
+        "start": 61.26,
+        "duration": 2.631
+    },
+    {
+        "text": "in the sense that when you take their partial derivatives the thing is going to be equal, ",
+        "start": 63.891,
+        "duration": 4.554
+    },
+    {
+        "text": "and a sizable subset of that ocean satisfies the right boundary conditions.",
+        "start": 68.445,
+        "duration": 3.795
+    },
+    {
+        "text": "When Joseph Fourier solved this problem in 1822, ",
+        "start": 72.76,
+        "duration": 2.776
+    },
+    {
+        "text": "his key contribution was to gain control of this ocean, ",
+        "start": 75.536,
+        "duration": 3.174
+    },
+    {
+        "text": "turning all of the right knobs and dials, so as to be able to select from it the ",
+        "start": 78.71,
+        "duration": 4.59
+    },
+    {
+        "text": "particular solution fitting a given initial condition.",
+        "start": 83.3,
+        "duration": 3.06
+    },
+    {
+        "text": "We can think of his solution as being broken down into three fundamental observations.",
+        "start": 87.62,
+        "duration": 4.18
+    },
+    {
+        "text": "1.",
+        "start": 92.44,
+        "duration": 0.28
+    },
+    {
+        "text": "Certain sine waves offer a really simple solution to this equation.",
+        "start": 93.1,
+        "duration": 3.02
+    },
+    {
+        "text": "2.",
+        "start": 96.88,
+        "duration": 0.32
+    },
+    {
+        "text": "If you know multiple solutions, the sum of these functions is also a solution.",
+        "start": 97.58,
+        "duration": 4.42
+    },
+    {
+        "text": "And number three,",
+        "start": 102.58,
+        "duration": 0.52
+    },
+    {
+        "text": "Most surprisingly, any function can be expressed as a sum of sine waves.",
+        "start": 103.4,
+        "duration": 3.98
+    },
+    {
+        "text": "A pedantic mathematician might point out that there are some pathological exceptions, ",
+        "start": 108.06,
+        "duration": 5.111
+    },
+    {
+        "text": "but basically any distribution you would come across in practice, ",
+        "start": 113.171,
+        "duration": 3.923
+    },
+    {
+        "text": "including discontinuous ones, can be written as a sum of sine waves, ",
+        "start": 117.094,
+        "duration": 4.101
+    },
+    {
+        "text": "potentially infinitely many.",
+        "start": 121.195,
+        "duration": 1.665
+    },
+    {
+        "text": "And if you've ever heard of Fourier series, you've at least heard of this last idea.",
+        "start": 123.74,
+        "duration": 4.0
+    },
+    {
+        "text": "And if so, maybe you've wondered, why on earth would anyone ",
+        "start": 128.28,
+        "duration": 2.722
+    },
+    {
+        "text": "care about breaking down a function as a sum of sine waves?",
+        "start": 131.002,
+        "duration": 2.678
+    },
+    {
+        "text": "Well, in many applications, sine waves are nicer to deal with than anything else, ",
+        "start": 134.38,
+        "duration": 4.197
+    },
+    {
+        "text": "and differential equations offer us a really nice context where you can see how that ",
+        "start": 138.577,
+        "duration": 4.351
+    },
+    {
+        "text": "plays out.",
+        "start": 142.928,
+        "duration": 0.512
+    },
+    {
+        "text": "For our heat equation, when you write a function as a sum of these waves, ",
+        "start": 143.76,
+        "duration": 3.914
+    },
+    {
+        "text": "the relatively clean second derivatives make it easy to solve the heat equation ",
+        "start": 147.674,
+        "duration": 4.232
+    },
+    {
+        "text": "for each one of them, and as you'll see, a sum of solutions to this equation ",
+        "start": 151.906,
+        "duration": 4.073
+    },
+    {
+        "text": "gives us another solution, and so in turn that will give us a recipe for ",
+        "start": 155.979,
+        "duration": 3.862
+    },
+    {
+        "text": "solving the heat equation for any complicated distribution as an initial state.",
+        "start": 159.841,
+        "duration": 4.179
+    },
+    {
+        "text": "Here, let's dig into that first step.",
+        "start": 164.86,
+        "duration": 1.56
+    },
+    {
+        "text": "Why exactly would sine waves play nicely with the heat equation?",
+        "start": 166.42,
+        "duration": 3.3
+    },
+    {
+        "text": "To avoid messy constants, let's start simple and say that the temperature function ",
+        "start": 170.46,
+        "duration": 4.385
+    },
+    {
+        "text": "at time t equals 0 is simply sine of x, where x describes the point on the rod.",
+        "start": 174.845,
+        "duration": 4.175
+    },
+    {
+        "text": "Yes, the idea of a rod's temperature just happening to look like sine of x, ",
+        "start": 180.5,
+        "duration": 3.737
+    },
+    {
+        "text": "varying around whatever temperature our conventions arbitrarily label as 0, ",
+        "start": 184.237,
+        "duration": 3.738
+    },
+    {
+        "text": "is clearly absurd, but in math you should always be happy to play with examples that ",
+        "start": 187.975,
+        "duration": 4.181
+    },
+    {
+        "text": "are idealized, potentially well beyond the point of being realistic, ",
+        "start": 192.156,
+        "duration": 3.393
+    },
+    {
+        "text": "because they can offer a good first step in the direction of something more general, ",
+        "start": 195.549,
+        "duration": 4.181
+    },
+    {
+        "text": "and hence more realistic.",
+        "start": 199.73,
+        "duration": 1.23
+    },
+    {
+        "text": "The right-hand side of this heat equation asks about the second derivative of ",
+        "start": 202.98,
+        "duration": 3.73
+    },
+    {
+        "text": "our function, how much our temperature distribution curves as you move along space.",
+        "start": 206.71,
+        "duration": 3.97
+    },
+    {
+        "text": "The derivative of sine of x is cosine of x, whose ",
+        "start": 211.6,
+        "duration": 3.098
+    },
+    {
+        "text": "derivative in turn is negative sine of x.",
+        "start": 214.698,
+        "duration": 2.542
+    },
+    {
+        "text": "The amount the wave curves is, in a sense, equal and opposite to its height at each point.",
+        "start": 217.54,
+        "duration": 5.08
+    },
+    {
+        "text": "So at least at time t equals 0, this has the peculiar effect that each ",
+        "start": 225.44,
+        "duration": 3.707
+    },
+    {
+        "text": "point changes its temperature at a rate proportional to the temperature ",
+        "start": 229.147,
+        "duration": 3.76
+    },
+    {
+        "text": "of the point itself, with the same proportionality constant across all points.",
+        "start": 232.907,
+        "duration": 4.073
+    },
+    {
+        "text": "So after some tiny time step, everything scales down by the same factor, ",
+        "start": 238.18,
+        "duration": 4.084
+    },
+    {
+        "text": "and after that, it's still the same sine curve shape, just scaled down a bit, ",
+        "start": 242.264,
+        "duration": 4.364
+    },
+    {
+        "text": "so the same logic applies, and the next time step would scale it down uniformly again.",
+        "start": 246.628,
+        "duration": 4.812
+    },
+    {
+        "text": "This applies just as well in the limit, as the size of these time steps approaches 0.",
+        "start": 251.92,
+        "duration": 4.4
+    },
+    {
+        "text": "So unlike other temperature distributions, sine waves are peculiar in that they'll ",
+        "start": 256.899,
+        "duration": 4.725
+    },
+    {
+        "text": "get scaled down uniformly, looking like some constant times sine of x for all times t.",
+        "start": 261.624,
+        "duration": 4.896
+    },
+    {
+        "text": "Now when you see that the rate at which some value changes is proportional to ",
+        "start": 269.26,
+        "duration": 3.96
+    },
+    {
+        "text": "that value itself, your mind should burn with the thought of an exponential.",
+        "start": 273.22,
+        "duration": 3.86
+    },
+    {
+        "text": "And if it's not, or if you're a little rusty on the idea of taking derivatives of ",
+        "start": 277.74,
+        "duration": 3.997
+    },
+    {
+        "text": "exponentials, or what makes the number e special, ",
+        "start": 281.737,
+        "duration": 2.438
+    },
+    {
+        "text": "I'd recommend you take a look at this video.",
+        "start": 284.175,
+        "duration": 2.145
+    },
+    {
+        "text": "The upshot is that the derivative of e to some ",
+        "start": 286.86,
+        "duration": 3.294
+    },
+    {
+        "text": "constant times t is equal to that constant times itself.",
+        "start": 290.154,
+        "duration": 3.926
+    },
+    {
+        "text": "If the rate at which your investment grows, for example, ",
+        "start": 295.5,
+        "duration": 3.862
+    },
+    {
+        "text": "is always 0.05 times the total value, then its value over time is ",
+        "start": 299.362,
+        "duration": 4.473
+    },
+    {
+        "text": "going to look like e to the 0.05 times t times whatever the initial investment was.",
+        "start": 303.835,
+        "duration": 5.625
+    },
+    {
+        "text": "If the rate at which the count of carbon-14 atoms in an old bone changes is always equal ",
+        "start": 310.0,
+        "duration": 5.353
+    },
+    {
+        "text": "to some negative constant times that count itself, ",
+        "start": 315.353,
+        "duration": 3.067
+    },
+    {
+        "text": "then over time that number will look approximately like e to that negative constant times ",
+        "start": 318.42,
+        "duration": 5.414
+    },
+    {
+        "text": "t times whatever the initial count was.",
+        "start": 323.834,
+        "duration": 2.346
+    },
+    {
+        "text": "So when you look at our heat equation, and you know that for a sine wave, ",
+        "start": 327.66,
+        "duration": 3.859
+    },
+    {
+        "text": "the right hand side is going to be negative alpha times the temperature function itself, ",
+        "start": 331.519,
+        "duration": 4.643
+    },
+    {
+        "text": "hopefully it won't be too surprising to propose that the solution is to ",
+        "start": 336.162,
+        "duration": 3.755
+    },
+    {
+        "text": "scale down by a factor of e to the negative alpha t.",
+        "start": 339.917,
+        "duration": 2.713
+    },
+    {
+        "text": "Here, go ahead and check the partial derivatives.",
+        "start": 344.33,
+        "duration": 2.32
+    },
+    {
+        "text": "The proposed function of x and t is sine of x times e to the negative alpha t.",
+        "start": 347.17,
+        "duration": 5.08
+    },
+    {
+        "text": "Taking the second partial derivative with respect to x, ",
+        "start": 352.83,
+        "duration": 2.89
+    },
+    {
+        "text": "that e to the negative alpha t term looks like a constant, it doesn't have any x in it.",
+        "start": 355.72,
+        "duration": 4.49
+    },
+    {
+        "text": "So it just comes along for the ride, as if it was any other constant, like 2, ",
+        "start": 360.41,
+        "duration": 4.234
+    },
+    {
+        "text": "and the first derivative with respect to x is cosine of x times e to the negative alpha t.",
+        "start": 364.644,
+        "duration": 4.886
+    },
+    {
+        "text": "Likewise, the second partial derivative with respect to x ",
+        "start": 370.21,
+        "duration": 3.261
+    },
+    {
+        "text": "becomes negative sine of x times e to the negative alpha t.",
+        "start": 373.471,
+        "duration": 3.319
+    },
+    {
+        "text": "And on the flip side, if you look at the partial derivative with respect to t, ",
+        "start": 377.73,
+        "duration": 4.03
+    },
+    {
+        "text": "that sine of x term now looks like a constant, since it doesn't have a t in it.",
+        "start": 381.76,
+        "duration": 4.03
+    },
+    {
+        "text": "So we get negative alpha times e to the negative alpha t times sine of x.",
+        "start": 385.89,
+        "duration": 4.8
+    },
+    {
+        "text": "So indeed, this function does make the partial differential equation true.",
+        "start": 391.15,
+        "duration": 4.06
+    },
+    {
+        "text": "And oh, if it was only that simple, this narrative flow could be so nice, ",
+        "start": 396.55,
+        "duration": 3.57
+    },
+    {
+        "text": "we would just beeline directly to the delicious Fourier series conclusion.",
+        "start": 400.12,
+        "duration": 3.57
+    },
+    {
+        "text": "Sadly, nature is not so nice, knocking us off ",
+        "start": 404.13,
+        "duration": 2.517
+    },
+    {
+        "text": "onto an annoying but highly necessary detour.",
+        "start": 406.647,
+        "duration": 2.463
+    },
+    {
+        "text": "Here's the thing, even if nature were to somehow produce a ",
+        "start": 409.85,
+        "duration": 2.865
+    },
+    {
+        "text": "temperature distribution on this rod, which looks like this perfect sine wave, ",
+        "start": 412.715,
+        "duration": 3.837
+    },
+    {
+        "text": "the exponential decay is not actually how it would evolve.",
+        "start": 416.552,
+        "duration": 2.818
+    },
+    {
+        "text": "Assuming that no heat flows in or out of the rod, ",
+        "start": 420.01,
+        "duration": 2.401
+    },
+    {
+        "text": "here's what that evolution would actually look like.",
+        "start": 422.411,
+        "duration": 2.499
+    },
+    {
+        "text": "The points on the left are heated up a little at first, ",
+        "start": 425.19,
+        "duration": 2.524
+    },
+    {
+        "text": "and those on the right are cooled down by their neighbors to the interior.",
+        "start": 427.714,
+        "duration": 3.336
+    },
+    {
+        "text": "In fact, let me give you an even simpler solution to the PDE which fails ",
+        "start": 432.33,
+        "duration": 3.983
+    },
+    {
+        "text": "to describe actual heat flow, a straight line, that is, ",
+        "start": 436.313,
+        "duration": 3.056
+    },
+    {
+        "text": "the temperature function will be some non-zero constant times x, ",
+        "start": 439.369,
+        "duration": 3.547
+    },
+    {
+        "text": "and never change over time.",
+        "start": 442.916,
+        "duration": 1.474
+    },
+    {
+        "text": "The second partial derivative with respect to x is indeed zero, ",
+        "start": 444.71,
+        "duration": 3.379
+    },
+    {
+        "text": "I mean there is no curvature, and its partial derivative with ",
+        "start": 448.089,
+        "duration": 3.274
+    },
+    {
+        "text": "respect to time is also zero, since it never changes over time.",
+        "start": 451.363,
+        "duration": 3.327
+    },
+    {
+        "text": "And yet, if I throw this into the simulator, it does actually change over time, ",
+        "start": 456.29,
+        "duration": 4.074
+    },
+    {
+        "text": "slowly approaching a uniform temperature at the mean value.",
+        "start": 460.364,
+        "duration": 3.006
+    },
+    {
+        "text": "What's going on here is that the simulation I'm using treats the two ",
+        "start": 464.43,
+        "duration": 2.955
+    },
+    {
+        "text": "boundary points of the rod differently from how it treats all the others, ",
+        "start": 467.385,
+        "duration": 3.169
+    },
+    {
+        "text": "which is a more accurate reflection of what would actually happen in nature.",
+        "start": 470.554,
+        "duration": 3.256
+    },
+    {
+        "text": "If you'll recall from the last video, the intuition for where that second ",
+        "start": 474.63,
+        "duration": 3.823
+    },
+    {
+        "text": "derivative with respect to x actually came from was rooted in having each ",
+        "start": 478.453,
+        "duration": 3.824
+    },
+    {
+        "text": "point tend towards the average value of its two neighbors on either side.",
+        "start": 482.277,
+        "duration": 3.773
+    },
+    {
+        "text": "But at the boundary, there is no neighbor to one side.",
+        "start": 486.69,
+        "duration": 2.38
+    },
+    {
+        "text": "If we went back to thinking of the discrete version, ",
+        "start": 489.25,
+        "duration": 2.586
+    },
+    {
+        "text": "modeling only finitely many points on this rod, ",
+        "start": 491.836,
+        "duration": 2.343
+    },
+    {
+        "text": "you could have each boundary point tend towards its one neighbor at ",
+        "start": 494.179,
+        "duration": 3.318
+    },
+    {
+        "text": "a rate proportional to their difference.",
+        "start": 497.497,
+        "duration": 1.953
+    },
+    {
+        "text": "As we do this for higher and higher resolutions, ",
+        "start": 500.73,
+        "duration": 2.172
+    },
+    {
+        "text": "notice how pretty much immediately after the clock starts, ",
+        "start": 502.902,
+        "duration": 2.617
+    },
+    {
+        "text": "our distribution looks flat at either of those two boundary points.",
+        "start": 505.519,
+        "duration": 2.971
+    },
+    {
+        "text": "In fact, in the limiting case, as these finer and finer ",
+        "start": 509.99,
+        "duration": 3.317
+    },
+    {
+        "text": "discretized setups approach a continuous curve, ",
+        "start": 513.307,
+        "duration": 2.844
+    },
+    {
+        "text": "the slope of our curve at the boundary will be zero for all times after the start.",
+        "start": 516.151,
+        "duration": 4.859
+    },
+    {
+        "text": "One way this is often described is that the slope at any given ",
+        "start": 522.53,
+        "duration": 3.292
+    },
+    {
+        "text": "point is proportional to the rate of heat flow at that point.",
+        "start": 525.822,
+        "duration": 3.188
+    },
+    {
+        "text": "So if you want to model the restriction that no heat flows into or out of the rod, ",
+        "start": 530.13,
+        "duration": 4.191
+    },
+    {
+        "text": "the slope at either end will be zero.",
+        "start": 534.321,
+        "duration": 1.869
+    },
+    {
+        "text": "That's somewhat hand-wavy and incomplete, I know, ",
+        "start": 537.17,
+        "duration": 2.029
+    },
+    {
+        "text": "so if you want the fuller details, I've left links and resources in the description.",
+        "start": 539.199,
+        "duration": 3.411
+    },
+    {
+        "text": "Taking the example of a straight line, whose slope at the boundary ",
+        "start": 543.45,
+        "duration": 3.219
+    },
+    {
+        "text": "points is decidedly not zero, as soon as the clock starts, ",
+        "start": 546.669,
+        "duration": 2.836
+    },
+    {
+        "text": "those boundary values will shift infinitesimally such that the slope ",
+        "start": 549.505,
+        "duration": 3.316
+    },
+    {
+        "text": "there suddenly becomes zero and remains that way through the remainder of the evolution.",
+        "start": 552.821,
+        "duration": 4.229
+    },
+    {
+        "text": "In other words, finding a function satisfying the heat equation itself is not enough.",
+        "start": 557.53,
+        "duration": 3.98
+    },
+    {
+        "text": "It must also satisfy the property that it's flat at ",
+        "start": 561.65,
+        "duration": 2.869
+    },
+    {
+        "text": "each of those endpoints for all times greater than zero.",
+        "start": 564.519,
+        "duration": 3.091
+    },
+    {
+        "text": "Phrased more precisely, the partial derivative with respect to ",
+        "start": 568.53,
+        "duration": 3.978
+    },
+    {
+        "text": "x of our temperature function at 0T and at LT must be zero for ",
+        "start": 572.508,
+        "duration": 3.979
+    },
+    {
+        "text": "all times T greater than zero, where L is the length of the rod.",
+        "start": 576.487,
+        "duration": 4.043
+    },
+    {
+        "text": "This is an example of a boundary condition, and pretty much any time you have to solve ",
+        "start": 581.35,
+        "duration": 4.343
+    },
+    {
+        "text": "a partial differential equation in practice, there will also be some boundary condition ",
+        "start": 585.693,
+        "duration": 4.393
+    },
+    {
+        "text": "hanging along for the ride, which demands just as much attention as the PDE itself.",
+        "start": 590.086,
+        "duration": 4.144
+    },
+    {
+        "text": "All of this may make it feel like we've gotten nowhere, ",
+        "start": 595.09,
+        "duration": 2.552
+    },
+    {
+        "text": "but the function which is a sine wave in space and an exponential decay in time ",
+        "start": 597.642,
+        "duration": 3.647
+    },
+    {
+        "text": "actually gets us quite close, we just need to tweak it a little bit so that it's ",
+        "start": 601.289,
+        "duration": 3.692
+    },
+    {
+        "text": "flat at both endpoints.",
+        "start": 604.981,
+        "duration": 1.049
+    },
+    {
+        "text": "First off, notice that we could just as well use a cosine function instead of a sine.",
+        "start": 607.45,
+        "duration": 3.78
+    },
+    {
+        "text": "I mean, it's the same wave, it's just shifted in phase by a quarter of the period, ",
+        "start": 611.47,
+        "duration": 4.289
+    },
+    {
+        "text": "which would make it flat at x equals zero, as we want.",
+        "start": 615.759,
+        "duration": 2.791
+    },
+    {
+        "text": "The second derivative of cosine of x is also negative one times itself, ",
+        "start": 619.19,
+        "duration": 4.516
+    },
+    {
+        "text": "so for all the same reasons as before, the product cosine of x ",
+        "start": 623.706,
+        "duration": 3.951
+    },
+    {
+        "text": "times e to the negative alpha t still satisfies the PDE.",
+        "start": 627.657,
+        "duration": 3.513
+    },
+    {
+        "text": "To make sure that it also satisfies the boundary condition on that right side, ",
+        "start": 632.03,
+        "duration": 3.657
+    },
+    {
+        "text": "we're going to adjust the frequency of the wave.",
+        "start": 635.687,
+        "duration": 2.223
+    },
+    {
+        "text": "However, that will affect the second derivative, ",
+        "start": 638.27,
+        "duration": 2.71
+    },
+    {
+        "text": "since higher frequency waves curve more sharply, ",
+        "start": 640.98,
+        "duration": 2.711
+    },
+    {
+        "text": "and lower frequency ones curve more gently.",
+        "start": 643.691,
+        "duration": 2.379
+    },
+    {
+        "text": "Changing the frequency means introducing some constant, ",
+        "start": 646.51,
+        "duration": 2.986
+    },
+    {
+        "text": "say omega, multiplied by the input of this function.",
+        "start": 649.496,
+        "duration": 2.774
+    },
+    {
+        "text": "A higher value of omega means the wave oscillates more quickly, ",
+        "start": 652.75,
+        "duration": 3.529
+    },
+    {
+        "text": "since as you increase x, the input to the cosine increases more rapidly.",
+        "start": 656.279,
+        "duration": 3.971
+    },
+    {
+        "text": "Taking the derivative with respect to x, we still get negative sine, ",
+        "start": 661.81,
+        "duration": 3.528
+    },
+    {
+        "text": "but the chain rule tells us to multiply that omega on the outside, ",
+        "start": 665.338,
+        "duration": 3.425
+    },
+    {
+        "text": "and similarly the second derivative will still be negative cosine, ",
+        "start": 668.763,
+        "duration": 3.426
+    },
+    {
+        "text": "but now with omega squared.",
+        "start": 672.189,
+        "duration": 1.381
+    },
+    {
+        "text": "This means that the right hand side of our equation ",
+        "start": 674.47,
+        "duration": 2.456
+    },
+    {
+        "text": "has now picked up this omega squared term.",
+        "start": 676.926,
+        "duration": 1.984
+    },
+    {
+        "text": "So to balance things out, on the left hand side, ",
+        "start": 680.07,
+        "duration": 2.58
+    },
+    {
+        "text": "the exponential decay part should have an additional omega squared term up top.",
+        "start": 682.65,
+        "duration": 4.16
+    },
+    {
+        "text": "Unpacking what that actually means should feel intuitive.",
+        "start": 687.47,
+        "duration": 2.32
+    },
+    {
+        "text": "For a temperature function filled with sharper curves, ",
+        "start": 690.33,
+        "duration": 2.844
+    },
+    {
+        "text": "it decays more quickly towards an equilibrium, and evidently does this quadratically.",
+        "start": 693.174,
+        "duration": 4.396
+    },
+    {
+        "text": "For instance, doubling the frequency results in an exponential decay four times as fast.",
+        "start": 698.23,
+        "duration": 4.88
+    },
+    {
+        "text": "If the length of the rod is L, then the lowest frequency, ",
+        "start": 706.45,
+        "duration": 3.227
+    },
+    {
+        "text": "where that rightmost point of the distribution will be flat, ",
+        "start": 709.677,
+        "duration": 3.395
+    },
+    {
+        "text": "is when omega is equal to pi divided by L.",
+        "start": 713.072,
+        "duration": 2.338
+    },
+    {
+        "text": "You see that way, as x increases up to the value L, ",
+        "start": 717.21,
+        "duration": 2.961
+    },
+    {
+        "text": "the input of our cosine expression goes up to pi, ",
+        "start": 720.171,
+        "duration": 2.847
+    },
+    {
+        "text": "which is half the period of a cosine wave.",
+        "start": 723.018,
+        "duration": 2.392
+    },
+    {
+        "text": "Finding all the other frequencies which satisfy this boundary ",
+        "start": 726.67,
+        "duration": 2.822
+    },
+    {
+        "text": "condition is sort of like finding harmonics, you essentially go ",
+        "start": 729.492,
+        "duration": 2.914
+    },
+    {
+        "text": "through all the whole number multiples of this base frequency, pi over L.",
+        "start": 732.406,
+        "duration": 3.324
+    },
+    {
+        "text": "In fact, even multiplying it by zero works, since that gives us a constant function, ",
+        "start": 738.47,
+        "duration": 4.541
+    },
+    {
+        "text": "which is indeed a valid solution, boundary condition and all.",
+        "start": 743.011,
+        "duration": 3.259
+    },
+    {
+        "text": "And with that, we're off the bumpy boundary condition detour and back onto the freeway.",
+        "start": 746.83,
+        "duration": 3.94
+    },
+    {
+        "text": "Moving forward, we're equipped with an infinite family of ",
+        "start": 751.21,
+        "duration": 3.025
+    },
+    {
+        "text": "functions satisfying both the PDE and the pesky boundary condition.",
+        "start": 754.235,
+        "duration": 3.495
+    },
+    {
+        "text": "Things are definitely looking more intricate now, ",
+        "start": 759.13,
+        "duration": 2.437
+    },
+    {
+        "text": "but it all stems from the one basic observation that a function which ",
+        "start": 761.567,
+        "duration": 3.414
+    },
+    {
+        "text": "looks like a sine curve in space and an exponential decay in time fits this equation, ",
+        "start": 764.981,
+        "duration": 4.193
+    },
+    {
+        "text": "relating second derivatives in space with first derivatives in time.",
+        "start": 769.174,
+        "duration": 3.316
+    },
+    {
+        "text": "And of course, your formulas should start to look more intricate, ",
+        "start": 773.59,
+        "duration": 3.013
+    },
+    {
+        "text": "you're solving a genuinely hard problem.",
+        "start": 776.603,
+        "duration": 1.827
+    },
+    {
+        "text": "This actually makes for a pretty good stopping point, ",
+        "start": 779.13,
+        "duration": 2.262
+    },
+    {
+        "text": "so let's call it an end here, and in the next video, ",
+        "start": 781.392,
+        "duration": 2.22
+    },
+    {
+        "text": "we'll look at how to use this infinite family to construct a more general solution.",
+        "start": 783.612,
+        "duration": 3.478
+    },
+    {
+        "text": "To any of you worried about dwelling too much on a single example in a series that's ",
+        "start": 788.23,
+        "duration": 3.78
+    },
+    {
+        "text": "meant to give a general overview of differential equations, ",
+        "start": 792.01,
+        "duration": 2.669
+    },
+    {
+        "text": "it's worth emphasizing that many of the considerations which pop up here are frequent ",
+        "start": 794.679,
+        "duration": 3.825
+    },
+    {
+        "text": "themes throughout the field.",
+        "start": 798.504,
+        "duration": 1.246
+    },
+    {
+        "text": "First off, the fact that we modeled the boundary with its own special rule, ",
+        "start": 800.21,
+        "duration": 3.76
+    },
+    {
+        "text": "while the main differential equation only characterized the interior, ",
+        "start": 803.97,
+        "duration": 3.463
+    },
+    {
+        "text": "is a very regular theme, and a pattern well worth getting used to, ",
+        "start": 807.433,
+        "duration": 3.314
+    },
+    {
+        "text": "especially in the context of PDEs.",
+        "start": 810.747,
+        "duration": 1.683
+    },
+    {
+        "text": "Also, take note of how what we're doing is breaking ",
+        "start": 812.91,
+        "duration": 2.796
+    },
+    {
+        "text": "down a general situation into simpler idealized cases.",
+        "start": 815.706,
+        "duration": 2.904
+    },
+    {
+        "text": "This strategy comes up all the time, and it's actually quite common ",
+        "start": 819.15,
+        "duration": 3.081
+    },
+    {
+        "text": "for these simpler cases to look like some mixture of sine curves ",
+        "start": 822.231,
+        "duration": 2.945
+    },
+    {
+        "text": "and exponentials that's not at all unique to the heat equation, ",
+        "start": 825.176,
+        "duration": 2.9
+    },
+    {
+        "text": "and as time goes on, we're going to get a deeper feel for why that's true.",
+        "start": 828.076,
+        "duration": 3.354
+    }
+]

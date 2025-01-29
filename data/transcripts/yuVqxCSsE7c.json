@@ -1,0 +1,1447 @@
+[
+    {
+        "text": "You know that feeling you get when things that seem ",
+        "start": 2.98,
+        "duration": 2.653
+    },
+    {
+        "text": "completely unrelated turn out to have a key connection?",
+        "start": 5.633,
+        "duration": 2.807
+    },
+    {
+        "text": "In math especially, there's a certain tingly sensation I get ",
+        "start": 9.08,
+        "duration": 2.702
+    },
+    {
+        "text": "whenever one of those connections starts to fall into place.",
+        "start": 11.782,
+        "duration": 2.658
+    },
+    {
+        "text": "This is what I have in store for you today.",
+        "start": 15.22,
+        "duration": 2.12
+    },
+    {
+        "text": "It takes some time to set up, I have to introduce a fair division puzzle from ",
+        "start": 17.88,
+        "duration": 3.808
+    },
+    {
+        "text": "discrete math called the stolen necklace problem, ",
+        "start": 21.688,
+        "duration": 2.442
+    },
+    {
+        "text": "as well as a topological fact about spheres that we'll use to solve it, ",
+        "start": 24.13,
+        "duration": 3.516
+    },
+    {
+        "text": "called the Borsuk-Ulam theorem.",
+        "start": 27.646,
+        "duration": 1.514
+    },
+    {
+        "text": "But trust me, seeing these two seemingly disconnected ",
+        "start": 29.16,
+        "duration": 3.209
+    },
+    {
+        "text": "pieces of math come together is well worth the setup.",
+        "start": 32.369,
+        "duration": 3.151
+    },
+    {
+        "text": "Let's start with the puzzle we're going to solve.",
+        "start": 36.46,
+        "duration": 1.68
+    },
+    {
+        "text": "You and your friend steal a necklace full of a bunch of jewels, ",
+        "start": 38.46,
+        "duration": 3.443
+    },
+    {
+        "text": "maybe it's got some sapphires, emeralds, diamonds, and rubies.",
+        "start": 41.903,
+        "duration": 3.337
+    },
+    {
+        "text": "They're all arranged on the necklace in some random order.",
+        "start": 45.36,
+        "duration": 3.06
+    },
+    {
+        "text": "And let's say it happens to be an even number of each type of jewel.",
+        "start": 48.96,
+        "duration": 3.38
+    },
+    {
+        "text": "Here I have 8 sapphires, 10 emeralds, 4 diamonds, and 6 rubies.",
+        "start": 52.92,
+        "duration": 5.42
+    },
+    {
+        "text": "You and your friend want to split up the booty evenly, ",
+        "start": 58.86,
+        "duration": 3.227
+    },
+    {
+        "text": "with each of you getting half of each jewel type, that is 4 sapphires, 5 emeralds, ",
+        "start": 62.087,
+        "duration": 4.872
+    },
+    {
+        "text": "2 diamonds, and 3 rubies each.",
+        "start": 66.959,
+        "duration": 1.761
+    },
+    {
+        "text": "Of course you could just cut off all the jewels and divvy them up evenly, ",
+        "start": 69.32,
+        "duration": 3.256
+    },
+    {
+        "text": "but that's boring, there's not a puzzle there.",
+        "start": 72.576,
+        "duration": 2.024
+    },
+    {
+        "text": "Instead, the challenge is for you to make as few cuts to the necklace as ",
+        "start": 75.06,
+        "duration": 3.717
+    },
+    {
+        "text": "possible so that you can divvy up the resulting segments between you and ",
+        "start": 78.777,
+        "duration": 3.718
+    },
+    {
+        "text": "your co-conspirator, with each of you getting half of each jewel type.",
+        "start": 82.495,
+        "duration": 3.565
+    },
+    {
+        "text": "For example, for the arrangement I'm showing here, I just did it with 4 cuts.",
+        "start": 86.64,
+        "duration": 4.06
+    },
+    {
+        "text": "If I give the top 3 strands to you, and these bottom 2 strands to your co-conspirator, ",
+        "start": 91.24,
+        "duration": 7.217
+    },
+    {
+        "text": "each of you ends up with 4 sapphires, 5 emeralds, 2 diamonds, and 3 rubies.",
+        "start": 98.457,
+        "duration": 6.223
+    },
+    {
+        "text": "The claim, the thing I want to prove in this video, ",
+        "start": 105.26,
+        "duration": 3.241
+    },
+    {
+        "text": "is that if there are N different jewel types, it's always possible to do this fair ",
+        "start": 108.501,
+        "duration": 5.174
+    },
+    {
+        "text": "division with only N cuts, or fewer.",
+        "start": 113.675,
+        "duration": 2.245
+    },
+    {
+        "text": "So with 4 jewel types, no matter what random ordering of the jewels, ",
+        "start": 116.52,
+        "duration": 3.939
+    },
+    {
+        "text": "it should be possible to cut it in 4 places and divvy up the 5 necklace ",
+        "start": 120.459,
+        "duration": 4.11
+    },
+    {
+        "text": "pieces so that each thief has the same number of each jewel type.",
+        "start": 124.569,
+        "duration": 3.711
+    },
+    {
+        "text": "With 5 jewel types you should be able to do it with 5 cuts, ",
+        "start": 129.72,
+        "duration": 3.204
+    },
+    {
+        "text": "no matter the arrangement, and so on.",
+        "start": 132.924,
+        "duration": 1.976
+    },
+    {
+        "text": "It's kind of hard to think about, right?",
+        "start": 135.6,
+        "duration": 1.96
+    },
+    {
+        "text": "You need to keep track of all of these different jewel types, ",
+        "start": 137.56,
+        "duration": 2.912
+    },
+    {
+        "text": "ensuring they're divided fairly, while making as few cuts as possible.",
+        "start": 140.472,
+        "duration": 3.288
+    },
+    {
+        "text": "And if you sit down to try this, this is a shockingly hard fact to prove.",
+        "start": 144.44,
+        "duration": 3.46
+    },
+    {
+        "text": "Maybe the puzzle seems a little contrived, but its core characteristics, ",
+        "start": 148.94,
+        "duration": 3.591
+    },
+    {
+        "text": "like trying to minimize sharding and allocating some collections of ",
+        "start": 152.531,
+        "duration": 3.345
+    },
+    {
+        "text": "things in a balanced way, these are the kind of optimization issues ",
+        "start": 155.876,
+        "duration": 3.346
+    },
+    {
+        "text": "that actually come up quite frequently in practical applications.",
+        "start": 159.222,
+        "duration": 3.198
+    },
+    {
+        "text": "For the computer system folks among you, I'm sure you can imagine ",
+        "start": 163.08,
+        "duration": 3.073
+    },
+    {
+        "text": "how this is analogous to kinds of efficient memory allocation problems.",
+        "start": 166.153,
+        "duration": 3.307
+    },
+    {
+        "text": "Also for the curious among you, I've left a link in the description ",
+        "start": 170.04,
+        "duration": 3.045
+    },
+    {
+        "text": "to an electrical engineering paper that applies this specific problem.",
+        "start": 173.085,
+        "duration": 3.135
+    },
+    {
+        "text": "Independent from the usefulness though, it certainly does make for a good puzzle.",
+        "start": 176.88,
+        "duration": 3.18
+    },
+    {
+        "text": "Can you always find a fair division using only as many cuts as there are types of jewels?",
+        "start": 180.66,
+        "duration": 4.78
+    },
+    {
+        "text": "So that's the puzzle, remember it, and now we take a seemingly unrelated ",
+        "start": 186.46,
+        "duration": 4.389
+    },
+    {
+        "text": "sidestep to the total opposite side of the mathematical universe, topology.",
+        "start": 190.849,
+        "duration": 4.511
+    },
+    {
+        "text": "Imagine taking a sphere in 3D space and squishing it somehow onto the 2D plane, ",
+        "start": 195.94,
+        "duration": 4.788
+    },
+    {
+        "text": "stretching and morphing it however you'd like to do so.",
+        "start": 200.728,
+        "duration": 3.292
+    },
+    {
+        "text": "The only constraint I'll ask is that you do this continuously, ",
+        "start": 204.52,
+        "duration": 3.142
+    },
+    {
+        "text": "which you can think of as meaning never cut the sphere or tear it in any way ",
+        "start": 207.662,
+        "duration": 3.84
+    },
+    {
+        "text": "during this mapping.",
+        "start": 211.502,
+        "duration": 0.998
+    },
+    {
+        "text": "As you do this, many different pairs of points will land on top of ",
+        "start": 214.04,
+        "duration": 3.271
+    },
+    {
+        "text": "each other once they hit the plane, and that's not really a big deal.",
+        "start": 217.311,
+        "duration": 3.369
+    },
+    {
+        "text": "The special fact we're going to use, known as the Borsuk-Ulam theorem, ",
+        "start": 221.09,
+        "duration": 4.036
+    },
+    {
+        "text": "is that you will always be able to find a pair of points that started off on ",
+        "start": 225.126,
+        "duration": 4.378
+    },
+    {
+        "text": "the exact opposite sides of the sphere, which land on each other during the mapping.",
+        "start": 229.504,
+        "duration": 4.776
+    },
+    {
+        "text": "Points on the exact opposite like this are called antipodes, or antipodal points.",
+        "start": 237.28,
+        "duration": 4.66
+    },
+    {
+        "text": "For example, if you think of the sphere as Earth, ",
+        "start": 243.14,
+        "duration": 2.815
+    },
+    {
+        "text": "and you're mapping as a straight projection of every point directly onto the ",
+        "start": 245.955,
+        "duration": 4.337
+    },
+    {
+        "text": "plane of the equator, the north and the south pole, which are antipodal, ",
+        "start": 250.292,
+        "duration": 4.111
+    },
+    {
+        "text": "each land on the same point.",
+        "start": 254.403,
+        "duration": 1.577
+    },
+    {
+        "text": "And in this example, that's the only antipodal pair that lands on the same point, ",
+        "start": 256.399,
+        "duration": 4.079
+    },
+    {
+        "text": "and the other antipodal pair will end up offset from each other somehow.",
+        "start": 260.478,
+        "duration": 3.582
+    },
+    {
+        "text": "If you tweaked this function a bit, maybe shearing it during the projection, ",
+        "start": 266.7,
+        "duration": 3.966
+    },
+    {
+        "text": "the north and the south pole don't land on each other anymore.",
+        "start": 270.666,
+        "duration": 3.194
+    },
+    {
+        "text": "But when the topology gods close a door, they open a window, ",
+        "start": 273.86,
+        "duration": 3.281
+    },
+    {
+        "text": "because the Borsuk-Ulam theorem guarantees that no matter what, ",
+        "start": 277.141,
+        "duration": 3.444
+    },
+    {
+        "text": "there must be some other antipodal pair that now land on top of each other.",
+        "start": 280.585,
+        "duration": 4.035
+    },
+    {
+        "text": "The classic example to illustrate this idea, which math educators ",
+        "start": 286.48,
+        "duration": 3.576
+    },
+    {
+        "text": "introducing Borsuk-Ulam are required by law to present, ",
+        "start": 290.056,
+        "duration": 3.035
+    },
+    {
+        "text": "is that there must exist some pair of points on the opposite side of ",
+        "start": 293.091,
+        "duration": 3.739
+    },
+    {
+        "text": "the Earth where the temperature and the barometric pressure are both precisely the same.",
+        "start": 296.83,
+        "duration": 4.77
+    },
+    {
+        "text": "This is because associating each point on the surface of the Earth with ",
+        "start": 302.4,
+        "duration": 3.845
+    },
+    {
+        "text": "a pair of numbers, temperature and pressure, is the same thing as mapping ",
+        "start": 306.245,
+        "duration": 3.951
+    },
+    {
+        "text": "the surface of the Earth onto a 2D coordinate plane, ",
+        "start": 310.196,
+        "duration": 2.831
+    },
+    {
+        "text": "where the first coordinate represents temperature, and the second represents pressure.",
+        "start": 313.027,
+        "duration": 4.593
+    },
+    {
+        "text": "The implicit assumption here is that temperature and pressure each vary continuously ",
+        "start": 318.46,
+        "duration": 4.71
+    },
+    {
+        "text": "as you walk around the Earth, so this association is a continuous mapping from the ",
+        "start": 323.17,
+        "duration": 4.599
+    },
+    {
+        "text": "sphere onto a plane, some non-tearing way to squish that surface into two dimensions.",
+        "start": 327.769,
+        "duration": 4.711
+    },
+    {
+        "text": "So what Borsuk-Ulam implies is that no matter what the weather patterns on Earth, ",
+        "start": 333.36,
+        "duration": 4.494
+    },
+    {
+        "text": "or any other planet for that matter, two antipodal points must land on top of each other, ",
+        "start": 337.854,
+        "duration": 4.932
+    },
+    {
+        "text": "which means they map to the same temperature-pressure pair.",
+        "start": 342.786,
+        "duration": 3.234
+    },
+    {
+        "text": "Since you're watching this video, you're probably a mathematician at heart, ",
+        "start": 347.3,
+        "duration": 4.071
+    },
+    {
+        "text": "so you want to see why this is true, not just that it's true.",
+        "start": 351.371,
+        "duration": 3.269
+    },
+    {
+        "text": "So let's take a little sidestep through topology-proof land, ",
+        "start": 355.26,
+        "duration": 2.68
+    },
+    {
+        "text": "and I think you'll agree that this is a really satisfying line of reasoning.",
+        "start": 357.94,
+        "duration": 3.34
+    },
+    {
+        "text": "First rephrasing what it is we want to show slightly more symbolically, ",
+        "start": 362.28,
+        "duration": 4.186
+    },
+    {
+        "text": "if you have some function f that takes in a point p of the sphere and spits out some ",
+        "start": 366.466,
+        "duration": 4.943
+    },
+    {
+        "text": "pair of coordinates, you want to show that no matter what crazy choice of function ",
+        "start": 371.409,
+        "duration": 4.826
+    },
+    {
+        "text": "this is, as long as it's continuous, you'll be able to find some point p so that f ",
+        "start": 376.235,
+        "duration": 4.826
+    },
+    {
+        "text": "of p equals f of negative where negative p is the antipodal point on the other side ",
+        "start": 381.061,
+        "duration": 4.884
+    },
+    {
+        "text": "of the sphere.",
+        "start": 385.945,
+        "duration": 0.815
+    },
+    {
+        "text": "The key idea here, which might seem small at first, ",
+        "start": 389.36,
+        "duration": 3.402
+    },
+    {
+        "text": "is to rearrange this and say f of p minus f of negative p equals zero zero, ",
+        "start": 392.762,
+        "duration": 4.974
+    },
+    {
+        "text": "and focus on a new function g of p that's defined to be this left-hand side here, ",
+        "start": 397.736,
+        "duration": 5.366
+    },
+    {
+        "text": "f of p minus f of negative p.",
+        "start": 403.102,
+        "duration": 1.898
+    },
+    {
+        "text": "This way, what we need to show is that g maps some ",
+        "start": 405.56,
+        "duration": 3.018
+    },
+    {
+        "text": "point of the sphere onto the origin in 2D space.",
+        "start": 408.578,
+        "duration": 2.842
+    },
+    {
+        "text": "So rather than finding a pair of colliding points which could land anywhere, ",
+        "start": 411.92,
+        "duration": 3.92
+    },
+    {
+        "text": "this helps limit our focus to just one point of the output space, the origin.",
+        "start": 415.84,
+        "duration": 3.92
+    },
+    {
+        "text": "This function g has a pretty special property which is going to help us out, ",
+        "start": 422.68,
+        "duration": 4.742
+    },
+    {
+        "text": "that g of negative p is equal to negative g of p.",
+        "start": 427.422,
+        "duration": 3.018
+    },
+    {
+        "text": "Basically negating the input involves swapping these terms.",
+        "start": 431.1,
+        "duration": 2.84
+    },
+    {
+        "text": "In other words, going to the antipodal point of the sphere ",
+        "start": 435.98,
+        "duration": 4.03
+    },
+    {
+        "text": "results in reflecting the output of g through the origin of the output space, ",
+        "start": 440.01,
+        "duration": 5.329
+    },
+    {
+        "text": "or rotating the output 180 degrees around the origin.",
+        "start": 445.339,
+        "duration": 3.621
+    },
+    {
+        "text": "Notice what this means if you were to continuously ",
+        "start": 449.9,
+        "duration": 2.549
+    },
+    {
+        "text": "walk around the equator and look at the outputs of g.",
+        "start": 452.449,
+        "duration": 2.651
+    },
+    {
+        "text": "What happens when you go halfway around?",
+        "start": 455.64,
+        "duration": 2.12
+    },
+    {
+        "text": "Well, the output needs to have wandered to the ",
+        "start": 461.58,
+        "duration": 2.63
+    },
+    {
+        "text": "reflection of the starting point through the origin.",
+        "start": 464.21,
+        "duration": 2.91
+    },
+    {
+        "text": "Then, as you continue walking around the other half, ",
+        "start": 467.64,
+        "duration": 3.493
+    },
+    {
+        "text": "the second half of your output path must be the reflection of the first half, ",
+        "start": 471.133,
+        "duration": 5.142
+    },
+    {
+        "text": "or equivalently, it's the 180 degree rotation of that first path.",
+        "start": 476.275,
+        "duration": 4.285
+    },
+    {
+        "text": "Now, there's a slim possibility that one of these points happens to pass ",
+        "start": 483.78,
+        "duration": 3.534
+    },
+    {
+        "text": "through the origin, in which case you've lucked out and were done early.",
+        "start": 487.314,
+        "duration": 3.486
+    },
+    {
+        "text": "But otherwise, what we have here is a path that winds around the origin at least once.",
+        "start": 491.2,
+        "duration": 5.52
+    },
+    {
+        "text": "Now, look at that path on the equator, and imagine continuously ",
+        "start": 498.22,
+        "duration": 3.602
+    },
+    {
+        "text": "deforming it up to the north pole, cinching that loop tight.",
+        "start": 501.822,
+        "duration": 3.378
+    },
+    {
+        "text": "As you do this, the resulting path in the output space is also ",
+        "start": 506.02,
+        "duration": 3.865
+    },
+    {
+        "text": "continuously deforming to a point, since the function g is continuous.",
+        "start": 509.885,
+        "duration": 4.294
+    },
+    {
+        "text": "Now, because it wound around the origin at some point during this process, ",
+        "start": 514.88,
+        "duration": 5.444
+    },
+    {
+        "text": "it must cross the origin, and this means there is some point p on the sphere where ",
+        "start": 520.324,
+        "duration": 6.025
+    },
+    {
+        "text": "g of p has the coordinates 0,0, which means f of p minus f of negative p equals 0,0, ",
+        "start": 526.349,
+        "duration": 6.17
+    },
+    {
+        "text": "meaning f of p is the same as f of negative p, the antipodal collision we're looking for.",
+        "start": 532.519,
+        "duration": 6.461
+    },
+    {
+        "text": "Isn't that clever?",
+        "start": 538.98,
+        "duration": 1.18
+    },
+    {
+        "text": "And it's a pretty common style of argument in the context of topology.",
+        "start": 540.56,
+        "duration": 3.2
+    },
+    {
+        "text": "It doesn't matter what particular continuous function from the ",
+        "start": 544.26,
+        "duration": 3.278
+    },
+    {
+        "text": "sphere to the plane you define, this line of reasoning will ",
+        "start": 547.538,
+        "duration": 3.123
+    },
+    {
+        "text": "always zero in on an antipodal pair that lands on top of each other.",
+        "start": 550.661,
+        "duration": 3.539
+    },
+    {
+        "text": "At this point, maybe you're thinking, yeah yeah, lovely math and all, ",
+        "start": 556.08,
+        "duration": 3.08
+    },
+    {
+        "text": "but we've strayed pretty far away from the necklace problem.",
+        "start": 559.16,
+        "duration": 2.64
+    },
+    {
+        "text": "But just you wait, here's where things start getting clever.",
+        "start": 562.24,
+        "duration": 2.5
+    },
+    {
+        "text": "First, answer me this.",
+        "start": 565.34,
+        "duration": 1.26
+    },
+    {
+        "text": "What is a sphere, really?",
+        "start": 567.16,
+        "duration": 1.92
+    },
+    {
+        "text": "Well, points in 3D space are represented with three coordinates, ",
+        "start": 570.1,
+        "duration": 3.529
+    },
+    {
+        "text": "in some sense that's what 3D space is to a mathematician at least, ",
+        "start": 573.629,
+        "duration": 3.639
+    },
+    {
+        "text": "all possible triplets of numbers.",
+        "start": 577.268,
+        "duration": 1.792
+    },
+    {
+        "text": "And the simplest sphere to describe with coordinates is the standard unit ",
+        "start": 579.78,
+        "duration": 4.224
+    },
+    {
+        "text": "sphere centered at the origin, the set of all points a distance 1 from the origin, ",
+        "start": 584.004,
+        "duration": 4.739
+    },
+    {
+        "text": "meaning all triplets of numbers so that the sum of their squares is 1.",
+        "start": 588.743,
+        "duration": 3.997
+    },
+    {
+        "text": "So the geometric idea of a sphere is related to the ",
+        "start": 593.36,
+        "duration": 3.11
+    },
+    {
+        "text": "algebraic idea of a set of positive numbers that add up to 1.",
+        "start": 596.47,
+        "duration": 3.65
+    },
+    {
+        "text": "That might sound simple, but tuck that away in your mind.",
+        "start": 601.0,
+        "duration": 2.56
+    },
+    {
+        "text": "If you have one of these triplets, the point on the opposite side of the sphere, ",
+        "start": 604.28,
+        "duration": 3.788
+    },
+    {
+        "text": "the corresponding antipodal point, is whatever you get by ",
+        "start": 608.068,
+        "duration": 2.713
+    },
+    {
+        "text": "flipping the sign of each coordinate, right?",
+        "start": 610.781,
+        "duration": 2.059
+    },
+    {
+        "text": "So let's just write out what the Borsuk-Ulam theorem is saying symbolically.",
+        "start": 613.46,
+        "duration": 3.4
+    },
+    {
+        "text": "Trust me, this will help with getting back to the necklace problem.",
+        "start": 617.4,
+        "duration": 2.32
+    },
+    {
+        "text": "For any function that takes in points on the sphere, ",
+        "start": 620.24,
+        "duration": 3.023
+    },
+    {
+        "text": "triplets of numbers who square sum to 1, and spits out some point in 2D space, ",
+        "start": 623.263,
+        "duration": 4.507
+    },
+    {
+        "text": "some pair of coordinates like temperature and pressure, ",
+        "start": 627.77,
+        "duration": 3.195
+    },
+    {
+        "text": "as long as the function is continuous, there will be some input so that flipping ",
+        "start": 630.965,
+        "duration": 4.621
+    },
+    {
+        "text": "all of its signs doesn't change the output.",
+        "start": 635.586,
+        "duration": 2.454
+    },
+    {
+        "text": "With that in mind, look back at the necklace problem.",
+        "start": 639.16,
+        "duration": 2.08
+    },
+    {
+        "text": "Part of the reason these two things feel so very unrelated is that the necklace ",
+        "start": 641.86,
+        "duration": 4.144
+    },
+    {
+        "text": "problem is discrete, while the Borsuk-Ulam theorem is continuous, ",
+        "start": 646.004,
+        "duration": 3.419
+    },
+    {
+        "text": "so our first step is to translate the stolen necklace problem into a continuous version, ",
+        "start": 649.423,
+        "duration": 4.611
+    },
+    {
+        "text": "seeking the connection between necklace divisions and points on the sphere.",
+        "start": 654.034,
+        "duration": 3.886
+    },
+    {
+        "text": "For right now, let's limit ourselves to the case where there's only two jewel types, ",
+        "start": 659.74,
+        "duration": 4.396
+    },
+    {
+        "text": "say sapphires and emeralds, and we're hoping to make a fair ",
+        "start": 664.136,
+        "duration": 3.104
+    },
+    {
+        "text": "division of this necklace after only two cuts.",
+        "start": 667.24,
+        "duration": 2.38
+    },
+    {
+        "text": "As an example, just to have up on the screen, let's ",
+        "start": 670.28,
+        "duration": 2.571
+    },
+    {
+        "text": "say there's 8 sapphires and 10 emeralds on the necklace.",
+        "start": 672.851,
+        "duration": 2.769
+    },
+    {
+        "text": "Just as a reminder, this means the goal is to cut the necklace in two different spots, ",
+        "start": 676.28,
+        "duration": 4.602
+    },
+    {
+        "text": "and divvy up those three segments so that each thief ends up with ",
+        "start": 680.882,
+        "duration": 3.491
+    },
+    {
+        "text": "half of the sapphires and half of the emeralds.",
+        "start": 684.373,
+        "duration": 2.487
+    },
+    {
+        "text": "Notice the top and bottom each have 4 sapphires and 5 emeralds.",
+        "start": 687.14,
+        "duration": 4.64
+    },
+    {
+        "text": "For our continuousification, think of the necklace as a line with length 1, ",
+        "start": 692.78,
+        "duration": 4.637
+    },
+    {
+        "text": "with the jewels sitting evenly spaced on it, and divide up that ",
+        "start": 697.417,
+        "duration": 3.906
+    },
+    {
+        "text": "line into 18 evenly sized segments, one for each jewel.",
+        "start": 701.323,
+        "duration": 3.357
+    },
+    {
+        "text": "And rather than thinking of each jewel as a discrete, indivisible entity on each segment, ",
+        "start": 705.42,
+        "duration": 4.673
+    },
+    {
+        "text": "remove the jewel itself, and just paint that segment the color of the jewel.",
+        "start": 710.093,
+        "duration": 3.947
+    },
+    {
+        "text": "So in this case, 8 18ths of the line would be painted sapphire, ",
+        "start": 716.84,
+        "duration": 3.84
+    },
+    {
+        "text": "and 10 18ths would be painted emerald.",
+        "start": 720.68,
+        "duration": 2.28
+    },
+    {
+        "text": "The continuous variant of the puzzle is now to ask if we can find two cuts ",
+        "start": 723.68,
+        "duration": 4.233
+    },
+    {
+        "text": "anywhere on this line, not necessarily on the 1 18th interval marks, ",
+        "start": 727.913,
+        "duration": 3.895
+    },
+    {
+        "text": "that lets us divide up the pieces so that each thief has an equal length of each color.",
+        "start": 731.808,
+        "duration": 4.912
+    },
+    {
+        "text": "In this case, each thief should have a total of 4 18ths of sapphire colored segments, ",
+        "start": 737.34,
+        "duration": 4.955
+    },
+    {
+        "text": "and 5 18ths of emerald colored segments.",
+        "start": 742.295,
+        "duration": 2.305
+    },
+    {
+        "text": "An important but somewhat subtle point here is that if you can solve ",
+        "start": 745.6,
+        "duration": 3.644
+    },
+    {
+        "text": "the continuous variant, you can also solve the original discrete version.",
+        "start": 749.244,
+        "duration": 3.856
+    },
+    {
+        "text": "To see this, let's say you did find a fair division whose ",
+        "start": 753.82,
+        "duration": 2.796
+    },
+    {
+        "text": "cuts didn't happen to fall cleanly between the jewels.",
+        "start": 756.616,
+        "duration": 2.604
+    },
+    {
+        "text": "Maybe it cuts only part way through an emerald segment.",
+        "start": 759.88,
+        "duration": 2.52
+    },
+    {
+        "text": "Well, because this is a fair division, the length of emerald in both top and bottom has ",
+        "start": 763.18,
+        "duration": 5.209
+    },
+    {
+        "text": "to add up to 5 total emerald segments, a whole number multiple of the segment lengths.",
+        "start": 768.389,
+        "duration": 5.091
+    },
+    {
+        "text": "So even if the division cut partially into an emerald segment on the left, ",
+        "start": 774.02,
+        "duration": 3.874
+    },
+    {
+        "text": "it has to cut partially into an emerald segment on the right, ",
+        "start": 777.894,
+        "duration": 3.204
+    },
+    {
+        "text": "and more specifically in such a way that the total length adds up to a whole number ",
+        "start": 781.098,
+        "duration": 4.34
+    },
+    {
+        "text": "multiple of the segment length.",
+        "start": 785.438,
+        "duration": 1.602
+    },
+    {
+        "text": "What that means is that you can adjust each cut without affecting ",
+        "start": 787.54,
+        "duration": 3.733
+    },
+    {
+        "text": "the division so that they ultimately do line up on the 1 18th marks.",
+        "start": 791.273,
+        "duration": 3.847
+    },
+    {
+        "text": "Now why are we doing all this?",
+        "start": 796.38,
+        "duration": 1.36
+    },
+    {
+        "text": "Well, in the continuous case, where you can cut wherever you want on this line, ",
+        "start": 798.22,
+        "duration": 4.112
+    },
+    {
+        "text": "think about all of the choices going into dividing the necklace and allocating the pieces.",
+        "start": 802.332,
+        "duration": 4.628
+    },
+    {
+        "text": "First you choose two locations to cut the interval, ",
+        "start": 807.7,
+        "duration": 2.858
+    },
+    {
+        "text": "but another way to think about that is to choose three positive numbers ",
+        "start": 810.558,
+        "duration": 3.957
+    },
+    {
+        "text": "that add up to one.",
+        "start": 814.515,
+        "duration": 1.045
+    },
+    {
+        "text": "For example, maybe you choose 1 6th, 1 3rd, and 1 half, ",
+        "start": 816.08,
+        "duration": 3.31
+    },
+    {
+        "text": "which correspond to these two cuts.",
+        "start": 819.39,
+        "duration": 2.07
+    },
+    {
+        "text": "Any time you find three positive numbers that add up to one, ",
+        "start": 822.5,
+        "duration": 2.745
+    },
+    {
+        "text": "it gives you a way to cut the necklace, and vice versa.",
+        "start": 825.245,
+        "duration": 2.475
+    },
+    {
+        "text": "After that, you have to make a binary choice for each of these pieces, ",
+        "start": 828.62,
+        "duration": 3.832
+    },
+    {
+        "text": "for whether it goes to thief 1 or thief 2.",
+        "start": 832.452,
+        "duration": 2.268
+    },
+    {
+        "text": "Now compare that to if I asked you to choose some arbitrary point on a sphere in ",
+        "start": 835.5,
+        "duration": 4.787
+    },
+    {
+        "text": "three-dimensional space, some point with coordinates x, y, z, ",
+        "start": 840.287,
+        "duration": 3.665
+    },
+    {
+        "text": "so that x2 plus y2 plus z2 equals 1.",
+        "start": 843.952,
+        "duration": 2.128
+    },
+    {
+        "text": "Well, you might start off by choosing three positive numbers that add to one.",
+        "start": 846.88,
+        "duration": 3.62
+    },
+    {
+        "text": "Maybe you want x2 to be 1 6th, y2 to be 1 3rd, and z2 to be 1 half.",
+        "start": 851.02,
+        "duration": 5.34
+    },
+    {
+        "text": "Then you have to make a binary choice for each one of them, ",
+        "start": 857.16,
+        "duration": 2.819
+    },
+    {
+        "text": "choosing whether to take the positive square root or the negative square root, ",
+        "start": 859.979,
+        "duration": 3.712
+    },
+    {
+        "text": "in a way that's completely parallel to dividing the necklace and allocating the pieces.",
+        "start": 863.691,
+        "duration": 4.089
+    },
+    {
+        "text": "Alright, hang with me now, because this is the key observation of the whole video.",
+        "start": 870.78,
+        "duration": 4.18
+    },
+    {
+        "text": "It gives a correspondence between points on the sphere and necklace divisions.",
+        "start": 875.36,
+        "duration": 3.46
+    },
+    {
+        "text": "For any point x, y, z on the sphere, because x2 plus y2 plus z2 is 1, ",
+        "start": 879.46,
+        "duration": 4.524
+    },
+    {
+        "text": "you can cut the necklace so that the first piece has a length x2, ",
+        "start": 883.984,
+        "duration": 4.266
+    },
+    {
+        "text": "the second has a length y2, and the third has a length z2.",
+        "start": 888.25,
+        "duration": 3.75
+    },
+    {
+        "text": "For that first piece, if x is positive, give it to thief 1, otherwise give it to thief 2.",
+        "start": 892.72,
+        "duration": 4.82
+    },
+    {
+        "text": "For the second piece, if y is positive, give it to thief 1, ",
+        "start": 897.98,
+        "duration": 3.197
+    },
+    {
+        "text": "otherwise give it to thief 2, and likewise give the third ",
+        "start": 901.177,
+        "duration": 3.092
+    },
+    {
+        "text": "piece to thief 1 if z is positive, and to thief 2 if z is negative.",
+        "start": 904.269,
+        "duration": 3.571
+    },
+    {
+        "text": "And you could go the other way around.",
+        "start": 908.54,
+        "duration": 1.68
+    },
+    {
+        "text": "Any way that you divide up the necklace and divvy ",
+        "start": 910.62,
+        "duration": 2.647
+    },
+    {
+        "text": "up the pieces gives us a unique point on the sphere.",
+        "start": 913.267,
+        "duration": 2.753
+    },
+    {
+        "text": "It's as if the sphere is a weirdly perfect way to encapsulate the ",
+        "start": 916.68,
+        "duration": 3.775
+    },
+    {
+        "text": "idea of all possible necklace divisions, just with a geometric object.",
+        "start": 920.455,
+        "duration": 4.005
+    },
+    {
+        "text": "And here we are tantalizingly close.",
+        "start": 925.26,
+        "duration": 2.08
+    },
+    {
+        "text": "Think of the meaning of antipodal points under this association.",
+        "start": 927.92,
+        "duration": 3.14
+    },
+    {
+        "text": "If the point x, y, z on the sphere corresponds to some necklace allocation, ",
+        "start": 931.86,
+        "duration": 4.192
+    },
+    {
+        "text": "what does the point negative x, negative y, and negative z correspond to?",
+        "start": 936.052,
+        "duration": 4.028
+    },
+    {
+        "text": "Well, the squares of these three coordinates are the same, ",
+        "start": 941.02,
+        "duration": 3.213
+    },
+    {
+        "text": "so each one corresponds to making the same cuts on the necklace.",
+        "start": 944.233,
+        "duration": 3.487
+    },
+    {
+        "text": "The difference is that every piece switches which thief it belongs to.",
+        "start": 948.36,
+        "duration": 3.82
+    },
+    {
+        "text": "So jumping to an antipodal point on the opposite side ",
+        "start": 952.54,
+        "duration": 2.886
+    },
+    {
+        "text": "of the sphere corresponds with exchanging the pieces.",
+        "start": 955.426,
+        "duration": 2.834
+    },
+    {
+        "text": "Now remember what it is that we're actually looking for.",
+        "start": 959.3,
+        "duration": 2.02
+    },
+    {
+        "text": "We want the total length of each jewel type belonging ",
+        "start": 961.86,
+        "duration": 3.655
+    },
+    {
+        "text": "to thief 1 to equal that for thief 2.",
+        "start": 965.515,
+        "duration": 2.505
+    },
+    {
+        "text": "Or in other words, in a fair division, performing this antipodal ",
+        "start": 969.86,
+        "duration": 3.453
+    },
+    {
+        "text": "swap doesn't change the amount of each jewel belonging to each thief.",
+        "start": 973.313,
+        "duration": 3.667
+    },
+    {
+        "text": "Your brain should be burning with the thought of Borsuk Ulam at this point.",
+        "start": 977.58,
+        "duration": 3.78
+    },
+    {
+        "text": "Specifically, you might construct a function that takes in a given necklace ",
+        "start": 981.98,
+        "duration": 4.434
+    },
+    {
+        "text": "allocation and spits out two numbers, the total length of sapphire belonging to thief 1, ",
+        "start": 986.414,
+        "duration": 5.193
+    },
+    {
+        "text": "and the total length of emerald belonging to thief 1.",
+        "start": 991.607,
+        "duration": 3.093
+    },
+    {
+        "text": "We want to show that there must exist a way to divide the necklace, with two cuts, ",
+        "start": 995.12,
+        "duration": 4.26
+    },
+    {
+        "text": "and divvy up the pieces so that these two numbers are the same as what they would be for ",
+        "start": 999.38,
+        "duration": 4.569
+    },
+    {
+        "text": "thief 2.",
+        "start": 1003.949,
+        "duration": 0.411
+    },
+    {
+        "text": "Or said differently, where swapping all of the pieces wouldn't change those two numbers.",
+        "start": 1004.76,
+        "duration": 5.06
+    },
+    {
+        "text": "Because of this back and forth between necklace allocations and the points of the sphere, ",
+        "start": 1010.42,
+        "duration": 4.808
+    },
+    {
+        "text": "and because pairs of numbers correspond with points on the xy-plane, ",
+        "start": 1015.228,
+        "duration": 3.686
+    },
+    {
+        "text": "this is, in effect, a map from the sphere onto the plane.",
+        "start": 1018.914,
+        "duration": 3.046
+    },
+    {
+        "text": "And the animation you're looking at right now is ",
+        "start": 1022.74,
+        "duration": 2.303
+    },
+    {
+        "text": "that literal map for the necklace I was showing.",
+        "start": 1025.043,
+        "duration": 2.257
+    },
+    {
+        "text": "So the Borsuk-Ulam theorem guarantees that some antipodal pair of points on ",
+        "start": 1033.5,
+        "duration": 3.98
+    },
+    {
+        "text": "the sphere land on each other in the plane, which means there must be some ",
+        "start": 1037.48,
+        "duration": 3.929
+    },
+    {
+        "text": "necklace division using two cuts that gives a fair division between the thieves.",
+        "start": 1041.409,
+        "duration": 4.19
+    },
+    {
+        "text": "That, my friends, is what beautiful math feels like.",
+        "start": 1046.46,
+        "duration": 2.96
+    },
+    {
+        "text": "Alright, and if you're anything like me, you're just basking in the glow of what ",
+        "start": 1050.42,
+        "duration": 4.37
+    },
+    {
+        "text": "a clever proof that is, and it might be easy to forget that what we actually want ",
+        "start": 1054.79,
+        "duration": 4.424
+    },
+    {
+        "text": "to solve is the more general stolen necklace problem, with any number of jewel types.",
+        "start": 1059.214,
+        "duration": 4.586
+    },
+    {
+        "text": "Luckily, we've now done 95% of the work.",
+        "start": 1063.8,
+        "duration": 2.84
+    },
+    {
+        "text": "Generalizing is pretty brief.",
+        "start": 1066.9,
+        "duration": 1.32
+    },
+    {
+        "text": "The main thing to mention is that there is a more general version of ",
+        "start": 1068.92,
+        "duration": 3.415
+    },
+    {
+        "text": "the Borsuk-Ulam theorem, one that applies to higher dimensional spheres.",
+        "start": 1072.335,
+        "duration": 3.565
+    },
+    {
+        "text": "As an example, Borsuk-Ulam applies to mapping ",
+        "start": 1076.62,
+        "duration": 2.631
+    },
+    {
+        "text": "hyperspheres in 4D space into three dimensions.",
+        "start": 1079.251,
+        "duration": 2.689
+    },
+    {
+        "text": "And what I mean by a hypersphere is the set of all possible lists ",
+        "start": 1082.76,
+        "duration": 3.588
+    },
+    {
+        "text": "of four coordinates where the sum of their squares equals one.",
+        "start": 1086.348,
+        "duration": 3.372
+    },
+    {
+        "text": "Those are the points in 4D space a distance one from the origin.",
+        "start": 1090.39,
+        "duration": 3.11
+    },
+    {
+        "text": "Borsuk-Ulam says that if you try to map that set, ",
+        "start": 1094.56,
+        "duration": 2.993
+    },
+    {
+        "text": "all those special quadruplets of numbers, into three-dimensional space, ",
+        "start": 1097.553,
+        "duration": 4.311
+    },
+    {
+        "text": "continuously associating each one with some triplet of numbers, ",
+        "start": 1101.864,
+        "duration": 3.832
+    },
+    {
+        "text": "there must be some antipodal collision, an input x1, x2, x3, x4, ",
+        "start": 1105.696,
+        "duration": 3.891
+    },
+    {
+        "text": "where flipping all of the signs wouldn't change the output.",
+        "start": 1109.587,
+        "duration": 3.533
+    },
+    {
+        "text": "I'll leave it to you to pause and ponder and think about how this could ",
+        "start": 1113.94,
+        "duration": 3.396
+    },
+    {
+        "text": "apply to the 3-jewel case, and about what the general statement of Borsuk-Ulam might be, ",
+        "start": 1117.336,
+        "duration": 4.198
+    },
+    {
+        "text": "and how it applies to the general necklace problem.",
+        "start": 1121.534,
+        "duration": 2.406
+    },
+    {
+        "text": "And maybe, just maybe, this gives you an inkling of why ",
+        "start": 1124.88,
+        "duration": 2.732
+    },
+    {
+        "text": "mathematicians care about things like higher dimensional spheres, ",
+        "start": 1127.612,
+        "duration": 3.22
+    },
+    {
+        "text": "regardless of whether or not they exist in physical reality.",
+        "start": 1130.832,
+        "duration": 2.928
+    },
+    {
+        "text": "It's not always about the sphere per se, it's about ",
+        "start": 1134.48,
+        "duration": 2.565
+    },
+    {
+        "text": "what other problems in math they can be used to encode.",
+        "start": 1137.045,
+        "duration": 2.715
+    }
+]

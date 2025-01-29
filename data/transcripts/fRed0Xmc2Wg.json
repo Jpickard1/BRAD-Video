@@ -1,0 +1,867 @@
+[
+    {
+        "text": "Last week I put up this video about solving the game Wordle, ",
+        "start": 0.0,
+        "duration": 3.194
+    },
+    {
+        "text": "or at least trying to solve it, using information theory.",
+        "start": 3.194,
+        "duration": 2.986
+    },
+    {
+        "text": "And I wanted to add a quick, what should we call this, an addendum, ",
+        "start": 6.58,
+        "duration": 3.409
+    },
+    {
+        "text": "a confession, basically I just want to explain a place where I made a mistake.",
+        "start": 9.989,
+        "duration": 3.911
+    },
+    {
+        "text": "It turns out there was a very slight bug in the code that I was running to recreate ",
+        "start": 14.46,
+        "duration": 3.838
+    },
+    {
+        "text": "Wordle and then run all of the algorithms to solve it and test their performance.",
+        "start": 18.298,
+        "duration": 3.702
+    },
+    {
+        "text": "And it's one of those bugs that affects a very small percentage of cases, ",
+        "start": 22.6,
+        "duration": 3.34
+    },
+    {
+        "text": "so it was easy to miss, and it has only a slight effect that for the most part doesn't ",
+        "start": 25.94,
+        "duration": 3.928
+    },
+    {
+        "text": "really matter.",
+        "start": 29.868,
+        "duration": 0.632
+    },
+    {
+        "text": "Basically it had to do with how you assign a color ",
+        "start": 31.22,
+        "duration": 2.52
+    },
+    {
+        "text": "to a guess that has multiple different letters in it.",
+        "start": 33.74,
+        "duration": 2.62
+    },
+    {
+        "text": "For example if you guess speed and the true answer is abide, ",
+        "start": 36.52,
+        "duration": 3.077
+    },
+    {
+        "text": "how should you color those two e's from the guess?",
+        "start": 39.597,
+        "duration": 2.523
+    },
+    {
+        "text": "Well the way that it works with the Wordle conventions is that the ",
+        "start": 43.06,
+        "duration": 2.86
+    },
+    {
+        "text": "first e would be colored yellow, and the second one would be colored gray.",
+        "start": 45.92,
+        "duration": 3.16
+    },
+    {
+        "text": "You might think of that first one as matching up with something from the true answer, ",
+        "start": 49.6,
+        "duration": 3.662
+    },
+    {
+        "text": "and the grayness is telling you there is no second e.",
+        "start": 53.262,
+        "duration": 2.258
+    },
+    {
+        "text": "By contrast, if the answer was something like erase, ",
+        "start": 55.52,
+        "duration": 2.855
+    },
+    {
+        "text": "both of those e's would be colored yellow, telling you that there is ",
+        "start": 58.375,
+        "duration": 3.717
+    },
+    {
+        "text": "a first e in a different location, and there's a second e also in a different location.",
+        "start": 62.092,
+        "duration": 4.688
+    },
+    {
+        "text": "Similarly if one of the e's hits and it's green, ",
+        "start": 67.3,
+        "duration": 2.667
+    },
+    {
+        "text": "then that second one would be gray in the case where the true answer has no second e, ",
+        "start": 69.967,
+        "duration": 4.683
+    },
+    {
+        "text": "but it would be yellow in the case where there is a second e and it's just in ",
+        "start": 74.65,
+        "duration": 4.246
+    },
+    {
+        "text": "a different location.",
+        "start": 78.896,
+        "duration": 1.144
+    },
+    {
+        "text": "Long story short, somewhere along the convention slightly.",
+        "start": 80.7,
+        "duration": 5.7
+    },
+    {
+        "text": "Honestly it was really dumb.",
+        "start": 87.1,
+        "duration": 1.44
+    },
+    {
+        "text": "Basically at some point in the middle of the project I wanted to speed up ",
+        "start": 88.88,
+        "duration": 3.402
+    },
+    {
+        "text": "some of the computations, and I was trying a little trick for how it computed ",
+        "start": 92.282,
+        "duration": 3.586
+    },
+    {
+        "text": "the value for this pattern between any given pair of words, ",
+        "start": 95.868,
+        "duration": 2.759
+    },
+    {
+        "text": "and you know I just didn't really think it through, and it introduced this slight change.",
+        "start": 98.627,
+        "duration": 4.093
+    },
+    {
+        "text": "The ironic part is that in the end the actual way to make things ",
+        "start": 103.22,
+        "duration": 2.95
+    },
+    {
+        "text": "fastest is to pre-compute all those patterns so that everything is just a lookup, ",
+        "start": 106.17,
+        "duration": 3.723
+    },
+    {
+        "text": "and so it wouldn't matter how long it takes to do each one, ",
+        "start": 109.893,
+        "duration": 2.723
+    },
+    {
+        "text": "especially if you're writing hard to read buggy code to make it happen.",
+        "start": 112.616,
+        "duration": 3.224
+    },
+    {
+        "text": "You know, you live and you learn.",
+        "start": 116.4,
+        "duration": 0.84
+    },
+    {
+        "text": "As far as how this affects the actual video, I ",
+        "start": 118.04,
+        "duration": 2.196
+    },
+    {
+        "text": "mean very little of substance really changes.",
+        "start": 120.236,
+        "duration": 2.104
+    },
+    {
+        "text": "Of course the main lessons about what is information, ",
+        "start": 122.66,
+        "duration": 2.216
+    },
+    {
+        "text": "what is entropy, all that stays the same.",
+        "start": 124.876,
+        "duration": 1.684
+    },
+    {
+        "text": "Every now and then if I'm showing on screen some distribution associated with a given ",
+        "start": 126.86,
+        "duration": 4.539
+    },
+    {
+        "text": "word, that distribution might actually be a little bit off because some of the buckets ",
+        "start": 131.399,
+        "duration": 4.592
+    },
+    {
+        "text": "associated with various patterns should include either more or fewer true answers.",
+        "start": 135.991,
+        "duration": 4.329
+    },
+    {
+        "text": "Even then it doesn't really come up because it was very rare that I would ",
+        "start": 140.84,
+        "duration": 3.08
+    },
+    {
+        "text": "be showing a word that had multiple letters that also hit this edge case.",
+        "start": 143.92,
+        "duration": 3.04
+    },
+    {
+        "text": "But one of the very few things of substance that does change, ",
+        "start": 147.68,
+        "duration": 3.524
+    },
+    {
+        "text": "and that arguably does matter a fair bit, was the final conclusion around how if we ",
+        "start": 151.204,
+        "duration": 4.775
+    },
+    {
+        "text": "want to find the optimal possible score for the wordle answer list, ",
+        "start": 155.979,
+        "duration": 3.866
+    },
+    {
+        "text": "what opening guess does such an algorithm use?",
+        "start": 159.845,
+        "duration": 2.615
+    },
+    {
+        "text": "In the video I said the best performance that I could find came ",
+        "start": 163.08,
+        "duration": 3.111
+    },
+    {
+        "text": "from opening with the word crane, which was true only in the sense ",
+        "start": 166.191,
+        "duration": 3.257
+    },
+    {
+        "text": "that the algorithms were playing a very slightly different game.",
+        "start": 169.448,
+        "duration": 3.112
+    },
+    {
+        "text": "After fixing it and rerunning it all, there is a different answer for ",
+        "start": 173.16,
+        "duration": 3.475
+    },
+    {
+        "text": "what the theoretically optimal first guess is for this particular list.",
+        "start": 176.635,
+        "duration": 3.525
+    },
+    {
+        "text": "And look, I know that you know that the point of the video is not ",
+        "start": 181.0,
+        "duration": 4.019
+    },
+    {
+        "text": "to find some technically optimal answer to some random online game.",
+        "start": 185.019,
+        "duration": 4.081
+    },
+    {
+        "text": "The point of the video is to shamelessly hop on the bandwagon of an ",
+        "start": 189.46,
+        "duration": 3.128
+    },
+    {
+        "text": "internet trend to sneak attack people with an information theory lesson.",
+        "start": 192.588,
+        "duration": 3.312
+    },
+    {
+        "text": "And that's all good, I stand by that part.",
+        "start": 196.32,
+        "duration": 1.68
+    },
+    {
+        "text": "But I know how the internet works, and for a lot of people the ",
+        "start": 198.2,
+        "duration": 3.125
+    },
+    {
+        "text": "one main takeaway was what is the best opener for the game wordle.",
+        "start": 201.325,
+        "duration": 3.275
+    },
+    {
+        "text": "And I get it, I walked into that because I put it in the thumbnail, ",
+        "start": 205.28,
+        "duration": 3.107
+    },
+    {
+        "text": "but presumably you can forgive me if I want to add a little correction here.",
+        "start": 208.387,
+        "duration": 3.473
+    },
+    {
+        "text": "And a more meaningful reason to circle back to all this actually is that ",
+        "start": 211.98,
+        "duration": 3.495
+    },
+    {
+        "text": "I never really talked about what went into that final analysis, ",
+        "start": 215.475,
+        "duration": 3.065
+    },
+    {
+        "text": "and it's interesting as a sublesson in its own right, so that's worth doing here.",
+        "start": 218.54,
+        "duration": 3.88
+    },
+    {
+        "text": "Now if you'll recall, most of our time last video was spent ",
+        "start": 223.14,
+        "duration": 3.039
+    },
+    {
+        "text": "on the challenge of trying to write an algorithm to solve ",
+        "start": 226.179,
+        "duration": 2.937
+    },
+    {
+        "text": "wordle that did not use the official list of all possible answers.",
+        "start": 229.116,
+        "duration": 3.344
+    },
+    {
+        "text": "To my taste that feels a bit like overfitting to a test set, ",
+        "start": 232.98,
+        "duration": 2.795
+    },
+    {
+        "text": "and what's more fun is building something that's resilient.",
+        "start": 235.775,
+        "duration": 2.705
+    },
+    {
+        "text": "This is why we went through the whole process of looking at relative ",
+        "start": 238.9,
+        "duration": 3.351
+    },
+    {
+        "text": "word frequencies in the English language to come up with some notion ",
+        "start": 242.251,
+        "duration": 3.351
+    },
+    {
+        "text": "of how likely each one would be to be included as a final answer.",
+        "start": 245.602,
+        "duration": 3.158
+    },
+    {
+        "text": "However, for what we're doing here, where we're just trying to find an absolute ",
+        "start": 249.4,
+        "duration": 4.027
+    },
+    {
+        "text": "best performance period, I am incorporating that official list and just shamelessly ",
+        "start": 253.427,
+        "duration": 4.229
+    },
+    {
+        "text": "overfitting to the test set, which is to say we know with certainty whether a ",
+        "start": 257.656,
+        "duration": 3.927
+    },
+    {
+        "text": "word is included or not, and we can assign a uniform probability to each one.",
+        "start": 261.583,
+        "duration": 3.877
+    },
+    {
+        "text": "If you'll remember, the first step in all of this was to say for a ",
+        "start": 266.44,
+        "duration": 3.198
+    },
+    {
+        "text": "particular opening guess, maybe something like my old favorite, crane, ",
+        "start": 269.638,
+        "duration": 3.39
+    },
+    {
+        "text": "how likely is it that you would see each of the possible patterns?",
+        "start": 273.028,
+        "duration": 3.152
+    },
+    {
+        "text": "And in this context, where we are shamelessly overfitting to the wordle answer list, ",
+        "start": 276.68,
+        "duration": 4.089
+    },
+    {
+        "text": "all that involves is counting how many of the possible answers give each one of these ",
+        "start": 280.769,
+        "duration": 4.138
+    },
+    {
+        "text": "patterns.",
+        "start": 284.907,
+        "duration": 0.433
+    },
+    {
+        "text": "And then of course most of our time was spent on this kind of funny looking formula ",
+        "start": 285.98,
+        "duration": 4.094
+    },
+    {
+        "text": "to quantify the amount of information that you would get from this guess that basically ",
+        "start": 290.074,
+        "duration": 4.288
+    },
+    {
+        "text": "involves going through each one of those buckets and saying how much information would ",
+        "start": 294.362,
+        "duration": 4.241
+    },
+    {
+        "text": "you gain, that has this log expression that is a fanciful way of saying how many times ",
+        "start": 298.603,
+        "duration": 4.24
+    },
+    {
+        "text": "would you cut your space of possibilities in half if you observed a given pattern.",
+        "start": 302.843,
+        "duration": 3.997
+    },
+    {
+        "text": "We take a weighted average of all of those and it gives us a ",
+        "start": 307.6,
+        "duration": 2.79
+    },
+    {
+        "text": "measure of how much we expect to learn from this first guess.",
+        "start": 310.39,
+        "duration": 2.79
+    },
+    {
+        "text": "In a moment we'll go deeper than this, but if you simply search through all 13,000 ",
+        "start": 313.56,
+        "duration": 4.949
+    },
+    {
+        "text": "different words that you could start with and you ask which one has the highest ",
+        "start": 318.509,
+        "duration": 4.771
+    },
+    {
+        "text": "expected information, it turns out the best possible answer is soar, ",
+        "start": 323.28,
+        "duration": 4.114
+    },
+    {
+        "text": "which doesn't really look like a real word, but I guess it's an obsolete term for ",
+        "start": 327.394,
+        "duration": 4.89
+    },
+    {
+        "text": "a baby hawk.",
+        "start": 332.284,
+        "duration": 0.716
+    },
+    {
+        "text": "The top 15 openers by this metric happen to look like this, ",
+        "start": 334.04,
+        "duration": 3.292
+    },
+    {
+        "text": "but these are not necessarily the best opening guesses because they're only looking ",
+        "start": 337.332,
+        "duration": 4.61
+    },
+    {
+        "text": "one step in with the heuristic of expected information to try to estimate what the ",
+        "start": 341.942,
+        "duration": 4.555
+    },
+    {
+        "text": "true score will be.",
+        "start": 346.497,
+        "duration": 1.043
+    },
+    {
+        "text": "But there's few enough patterns that we can do an exhaustive search two steps in.",
+        "start": 347.92,
+        "duration": 3.76
+    },
+    {
+        "text": "For example let's say you opened with soar and the pattern you happen to see was ",
+        "start": 352.16,
+        "duration": 4.241
+    },
+    {
+        "text": "the most likely one, all grays, then you can run identical analysis from that point.",
+        "start": 356.401,
+        "duration": 4.399
+    },
+    {
+        "text": "For a given proposed second guess, something like kitty, ",
+        "start": 361.32,
+        "duration": 3.007
+    },
+    {
+        "text": "what's the distribution across all patterns in that restricted case where ",
+        "start": 364.327,
+        "duration": 3.904
+    },
+    {
+        "text": "we're restricted only to the words that would produce all grays for soar, ",
+        "start": 368.231,
+        "duration": 3.903
+    },
+    {
+        "text": "and then we measure the flatness of that distribution using this expected ",
+        "start": 372.134,
+        "duration": 3.904
+    },
+    {
+        "text": "information formula, and we do that for all 13,000 possible words that we ",
+        "start": 376.038,
+        "duration": 3.904
+    },
+    {
+        "text": "could use as a second guess.",
+        "start": 379.942,
+        "duration": 1.478
+    },
+    {
+        "text": "Doing this we can find the optimal second guess in that scenario ",
+        "start": 382.12,
+        "duration": 3.132
+    },
+    {
+        "text": "and the amount of information we were expected to get from it.",
+        "start": 385.252,
+        "duration": 2.988
+    },
+    {
+        "text": "And if we wash rinse and repeat and do this for all of the different ",
+        "start": 388.76,
+        "duration": 3.397
+    },
+    {
+        "text": "possible patterns that you might see, we get a full map of all the best ",
+        "start": 392.157,
+        "duration": 3.546
+    },
+    {
+        "text": "possible second guesses together with the expected information of each.",
+        "start": 395.703,
+        "duration": 3.497
+    },
+    {
+        "text": "From there, if you take a weighted average of all those second step values, ",
+        "start": 403.18,
+        "duration": 4.075
+    },
+    {
+        "text": "weighted according to how likely you are to fall into that bucket, ",
+        "start": 407.255,
+        "duration": 3.592
+    },
+    {
+        "text": "it gives you a measure of how much information you're likely to gain from the guess ",
+        "start": 410.847,
+        "duration": 4.505
+    },
+    {
+        "text": "soar after the second step.",
+        "start": 415.352,
+        "duration": 1.448
+    },
+    {
+        "text": "When we use this two-step metric as our new means of ranking, ",
+        "start": 417.38,
+        "duration": 2.965
+    },
+    {
+        "text": "the list gets shaken up a bit.",
+        "start": 420.345,
+        "duration": 1.435
+    },
+    {
+        "text": "Soar is no longer first place, it falls back to 14th, ",
+        "start": 422.08,
+        "duration": 3.106
+    },
+    {
+        "text": "and instead what rises to the top is slain.",
+        "start": 425.186,
+        "duration": 2.474
+    },
+    {
+        "text": "Again, doesn't feel very real, and it looks like it is ",
+        "start": 428.64,
+        "duration": 3.835
+    },
+    {
+        "text": "a British term for a spade that's used for cutting turf.",
+        "start": 432.475,
+        "duration": 3.905
+    },
+    {
+        "text": "All right, but as you can see, it is a really tight race among all of these ",
+        "start": 437.2,
+        "duration": 4.005
+    },
+    {
+        "text": "top contenders for who gains the most information after those two steps.",
+        "start": 441.205,
+        "duration": 3.795
+    },
+    {
+        "text": "And even still, these are not necessarily the best opening guesses, ",
+        "start": 445.7,
+        "duration": 3.17
+    },
+    {
+        "text": "because information is just the heuristic, it's not telling us the actual score if you ",
+        "start": 448.87,
+        "duration": 4.057
+    },
+    {
+        "text": "actually play the game.",
+        "start": 452.927,
+        "duration": 1.073
+    },
+    {
+        "text": "What I did is I ran the simulation of playing all 2315 possible ",
+        "start": 454.58,
+        "duration": 4.831
+    },
+    {
+        "text": "Wurtle games with all possible answers on the top 250 from this list.",
+        "start": 459.411,
+        "duration": 5.209
+    },
+    {
+        "text": "And by doing this, seeing how they actually perform, ",
+        "start": 466.46,
+        "duration": 4.44
+    },
+    {
+        "text": "the one that ends up very marginally with the best possible score turns out to be Sal\u00e9, ",
+        "start": 470.9,
+        "duration": 7.372
+    },
+    {
+        "text": "which is, let's see, Sal\u00e9, an alternate spelling for Sal\u00e9, ",
+        "start": 478.272,
+        "duration": 4.943
+    },
+    {
+        "text": "which is a light medieval helmet.",
+        "start": 483.215,
+        "duration": 2.765
+    },
+    {
+        "text": "All right, if that feels a little too fake for you, which it does for me, ",
+        "start": 486.98,
+        "duration": 3.974
+    },
+    {
+        "text": "you'll be happy to know that trace and crate give almost identical performance, ",
+        "start": 490.954,
+        "duration": 4.297
+    },
+    {
+        "text": "and each of them has the benefit of obviously being a real word, ",
+        "start": 495.251,
+        "duration": 3.491
+    },
+    {
+        "text": "so there is one day when you get it right on the first guess, ",
+        "start": 498.742,
+        "duration": 3.33
+    },
+    {
+        "text": "since both are actual Wurtle answers.",
+        "start": 502.072,
+        "duration": 1.988
+    },
+    {
+        "text": "This move from sorting based on the best two-step entropies to sorting based ",
+        "start": 505.02,
+        "duration": 3.744
+    },
+    {
+        "text": "on the lowest average score also shakes up the list, but not nearly as much.",
+        "start": 508.764,
+        "duration": 3.696
+    },
+    {
+        "text": "For example, Sal\u00e9 was previously third place before it bubbles to the top, ",
+        "start": 512.659,
+        "duration": 3.947
+    },
+    {
+        "text": "and crate and trace were both fourth and fifth.",
+        "start": 516.606,
+        "duration": 2.474
+    },
+    {
+        "text": "If you're curious, you can get slightly better ",
+        "start": 519.64,
+        "duration": 1.898
+    },
+    {
+        "text": "performance from here by doing a little brute forcing.",
+        "start": 521.538,
+        "duration": 2.182
+    },
+    {
+        "text": "There's a very nice blog post by Jonathan Olson, if you're curious about this, ",
+        "start": 524.1,
+        "duration": 3.512
+    },
+    {
+        "text": "where he also lets you explore what the optimal following guesses are ",
+        "start": 527.612,
+        "duration": 3.113
+    },
+    {
+        "text": "for a few of the starting words based on these optimal algorithms.",
+        "start": 530.725,
+        "duration": 2.935
+    },
+    {
+        "text": "Stepping back from all this though, I'm told by some people that it quote ruins ",
+        "start": 535.18,
+        "duration": 4.263
+    },
+    {
+        "text": "the game to overanalyze it like this and try to find an optimal opening guess.",
+        "start": 539.443,
+        "duration": 4.157
+    },
+    {
+        "text": "It feels kinda dirty if you use that opening guess after learning it, ",
+        "start": 544.26,
+        "duration": 3.496
+    },
+    {
+        "text": "and it feels inefficient if you don't, but the thing is, ",
+        "start": 547.756,
+        "duration": 2.847
+    },
+    {
+        "text": "I don't actually think this is the best opener for a human playing the game.",
+        "start": 550.603,
+        "duration": 3.797
+    },
+    {
+        "text": "For one thing, you would need to know what the optimal ",
+        "start": 554.88,
+        "duration": 2.444
+    },
+    {
+        "text": "second guess is for each one of the patterns you see.",
+        "start": 557.324,
+        "duration": 2.356
+    },
+    {
+        "text": "And more importantly, all of this is in a setting where ",
+        "start": 560.26,
+        "duration": 2.97
+    },
+    {
+        "text": "we are absurdly overfit to the official Wurtle answer list.",
+        "start": 563.23,
+        "duration": 3.13
+    },
+    {
+        "text": "The moment that, say, the New York Times chooses to change what ",
+        "start": 566.58,
+        "duration": 3.125
+    },
+    {
+        "text": "that list is under the hood, all of this would go out the window.",
+        "start": 569.705,
+        "duration": 3.175
+    },
+    {
+        "text": "The way that we humans play the game is just very ",
+        "start": 573.58,
+        "duration": 1.971
+    },
+    {
+        "text": "different from what any of these algorithms are doing.",
+        "start": 575.551,
+        "duration": 2.129
+    },
+    {
+        "text": "We don't have the word list memorized, we're not doing exhaustive searches.",
+        "start": 578.02,
+        "duration": 3.16
+    },
+    {
+        "text": "We get intuition from things like what are the vowels, and how are they placed.",
+        "start": 581.34,
+        "duration": 3.74
+    },
+    {
+        "text": "I would actually be most happy if those of you watching this video promptly ",
+        "start": 585.64,
+        "duration": 3.625
+    },
+    {
+        "text": "forgot what happens to be the technically best opening guess, ",
+        "start": 589.265,
+        "duration": 2.958
+    },
+    {
+        "text": "and instead came out remembering things like how do you quantify information, ",
+        "start": 592.223,
+        "duration": 3.721
+    },
+    {
+        "text": "or the fact that you should look out for when a greedy algorithm falls ",
+        "start": 595.944,
+        "duration": 3.387
+    },
+    {
+        "text": "short of the globally best performance that you would get from a deeper search.",
+        "start": 599.331,
+        "duration": 3.769
+    },
+    {
+        "text": "For my taste at least, the joy of writing algorithms to try to play games ",
+        "start": 603.7,
+        "duration": 3.437
+    },
+    {
+        "text": "actually has very little bearing on how I like to play those games as a human.",
+        "start": 607.137,
+        "duration": 3.623
+    },
+    {
+        "text": "The point of writing algorithms for all this is not to affect ",
+        "start": 611.3,
+        "duration": 2.718
+    },
+    {
+        "text": "the way that we play the game, it's still just a fun word game.",
+        "start": 614.018,
+        "duration": 2.762
+    },
+    {
+        "text": "It's to hone in our muscles for writing algorithms in more meaningful contexts elsewhere.",
+        "start": 617.1,
+        "duration": 3.62
+    }
+]

@@ -1,0 +1,1372 @@
+[
+    {
+        "text": "After seeing how we think about ordinary differential equations in chapter 1, ",
+        "start": 3.9,
+        "duration": 4.255
+    },
+    {
+        "text": "we turn now to an example of a partial differential equation, the heat equation.",
+        "start": 8.155,
+        "duration": 4.365
+    },
+    {
+        "text": "To set things up, imagine you have some object, like a piece of metal, ",
+        "start": 13.4,
+        "duration": 3.444
+    },
+    {
+        "text": "and you know how the heat is distributed across it at any one moment, ",
+        "start": 16.844,
+        "duration": 3.397
+    },
+    {
+        "text": "that is, what's the temperature of every individual point along this plate.",
+        "start": 20.241,
+        "duration": 3.639
+    },
+    {
+        "text": "The question is, how will this distribution change over time, ",
+        "start": 24.64,
+        "duration": 3.445
+    },
+    {
+        "text": "as the heat flows from warmer spots to cooler ones?",
+        "start": 28.085,
+        "duration": 2.835
+    },
+    {
+        "text": "The image on the left shows the temperature of an example plate using color, ",
+        "start": 31.7,
+        "duration": 3.731
+    },
+    {
+        "text": "with the graph of that temperature being shown on the right.",
+        "start": 35.431,
+        "duration": 2.909
+    },
+    {
+        "text": "To take a concrete one-dimensional example, let's say you have two different ",
+        "start": 39.12,
+        "duration": 3.635
+    },
+    {
+        "text": "rods at different temperatures, where that temperature is uniform along each one.",
+        "start": 42.755,
+        "duration": 3.825
+    },
+    {
+        "text": "You know that when you bring them into contact, ",
+        "start": 47.16,
+        "duration": 2.172
+    },
+    {
+        "text": "the temperature will flow from the hot one to the cool one, ",
+        "start": 49.332,
+        "duration": 2.715
+    },
+    {
+        "text": "tending to make the whole thing equal over time.",
+        "start": 52.047,
+        "duration": 2.173
+    },
+    {
+        "text": "But how exactly?",
+        "start": 54.6,
+        "duration": 1.56
+    },
+    {
+        "text": "What will the temperature distribution be at each point in time?",
+        "start": 56.16,
+        "duration": 3.88
+    },
+    {
+        "text": "As is typical with differential equations, the idea is that it's ",
+        "start": 61.26,
+        "duration": 3.276
+    },
+    {
+        "text": "easier to describe how this setup changes from moment to moment ",
+        "start": 64.536,
+        "duration": 3.226
+    },
+    {
+        "text": "than it is to jump straight to a description of the full evolution.",
+        "start": 67.762,
+        "duration": 3.378
+    },
+    {
+        "text": "We write this rule of change in the language of derivatives, though as you'll see, ",
+        "start": 71.82,
+        "duration": 4.209
+    },
+    {
+        "text": "we'll need to expand our vocabulary a bit beyond ordinary derivatives.",
+        "start": 76.029,
+        "duration": 3.551
+    },
+    {
+        "text": "And don't worry, we'll learn how to read the equations you're seeing now in just a minute.",
+        "start": 80.16,
+        "duration": 3.32
+    },
+    {
+        "text": "Variations of the heat equation show up in many other parts of math and physics, ",
+        "start": 84.54,
+        "duration": 4.065
+    },
+    {
+        "text": "like Brownian motion, the black-Scholes equations from finance, ",
+        "start": 88.605,
+        "duration": 3.213
+    },
+    {
+        "text": "and all sorts of diffusion, so there are many dividends to be had from a deep ",
+        "start": 91.818,
+        "duration": 3.915
+    },
+    {
+        "text": "understanding of this one setup.",
+        "start": 95.733,
+        "duration": 1.607
+    },
+    {
+        "text": "In the last video we looked at ways of building understanding while acknowledging ",
+        "start": 98.24,
+        "duration": 3.846
+    },
+    {
+        "text": "the truth that most differential equations are simply too difficult to actually solve.",
+        "start": 102.086,
+        "duration": 4.034
+    },
+    {
+        "text": "And indeed, PDEs tend to be even harder than ODEs, ",
+        "start": 106.74,
+        "duration": 3.044
+    },
+    {
+        "text": "largely because they involve modeling infinitely many values changing in concert.",
+        "start": 109.784,
+        "duration": 4.836
+    },
+    {
+        "text": "But our main character for today is an equation we can actually solve.",
+        "start": 115.1,
+        "duration": 3.82
+    },
+    {
+        "text": "In fact, if you've ever heard of Fourier series, ",
+        "start": 119.48,
+        "duration": 2.442
+    },
+    {
+        "text": "you may be interested to know that this is the physical problem which Babyface ",
+        "start": 121.922,
+        "duration": 3.937
+    },
+    {
+        "text": "Fourier over here was trying to solve when he stumbled across the corner of math ",
+        "start": 125.859,
+        "duration": 4.037
+    },
+    {
+        "text": "that is now so replete with his name.",
+        "start": 129.896,
+        "duration": 1.844
+    },
+    {
+        "text": "We'll dig into Fourier series much more deeply in the next chapter, ",
+        "start": 132.44,
+        "duration": 2.827
+    },
+    {
+        "text": "but I would like to give you at least a little hint of the beautiful connection ",
+        "start": 135.267,
+        "duration": 3.326
+    },
+    {
+        "text": "which is to come.",
+        "start": 138.593,
+        "duration": 0.707
+    },
+    {
+        "text": "This animation you're seeing right now shows how lots of little rotating vectors, ",
+        "start": 142.26,
+        "duration": 4.194
+    },
+    {
+        "text": "each rotating at some constant integer frequency, can trace out an arbitrary shape.",
+        "start": 146.454,
+        "duration": 4.246
+    },
+    {
+        "text": "To be clear, what's happening is that these vectors are being added together, ",
+        "start": 151.86,
+        "duration": 4.941
+    },
+    {
+        "text": "tip to tail, at each moment, and you might imagine that the last one ",
+        "start": 156.801,
+        "duration": 4.371
+    },
+    {
+        "text": "has some sort of pencil at its tip, tracing a path as it goes.",
+        "start": 161.172,
+        "duration": 3.928
+    },
+    {
+        "text": "For finitely many vectors, this tracing usually won't be a ",
+        "start": 165.88,
+        "duration": 3.051
+    },
+    {
+        "text": "perfect replica of the target shape, which in this animation is a lowercase f, ",
+        "start": 168.931,
+        "duration": 4.087
+    },
+    {
+        "text": "but the more circles you include, the closer it gets.",
+        "start": 173.018,
+        "duration": 2.742
+    },
+    {
+        "text": "What you're seeing now uses only 100 circles, and I think you'd ",
+        "start": 176.26,
+        "duration": 3.112
+    },
+    {
+        "text": "agree that the deviations from the real shape are negligible.",
+        "start": 179.372,
+        "duration": 2.968
+    },
+    {
+        "text": "What's mind-blowing is that just by tweaking the initial size and angle of each vector, ",
+        "start": 183.4,
+        "duration": 4.689
+    },
+    {
+        "text": "that gives you enough control to approximate any curve you want.",
+        "start": 188.089,
+        "duration": 3.411
+    },
+    {
+        "text": "At first, this might seem like an idle curiosity, a neat art project, but little more.",
+        "start": 195.08,
+        "duration": 5.08
+    },
+    {
+        "text": "In fact, the math that makes this possible is the ",
+        "start": 200.8,
+        "duration": 2.689
+    },
+    {
+        "text": "same as the math describing the physics of heat flow.",
+        "start": 203.489,
+        "duration": 2.851
+    },
+    {
+        "text": "But we're getting ahead of ourselves.",
+        "start": 209.84,
+        "duration": 1.78
+    },
+    {
+        "text": "Step one is simply to build up the heat equation, and for that, ",
+        "start": 212.02,
+        "duration": 3.515
+    },
+    {
+        "text": "let's start by being clear about what the function we're analyzing is exactly.",
+        "start": 215.535,
+        "duration": 4.285
+    },
+    {
+        "text": "We have a rod in one dimension, and we're thinking of it as sitting on an x-axis, ",
+        "start": 220.459,
+        "duration": 4.966
+    },
+    {
+        "text": "so each point of that rod is labeled with a unique number, x.",
+        "start": 225.425,
+        "duration": 3.695
+    },
+    {
+        "text": "The temperature is some function of that position, t of x, shown here as a graph above it.",
+        "start": 231.14,
+        "duration": 6.34
+    },
+    {
+        "text": "But really, since the value changes over time, ",
+        "start": 238.88,
+        "duration": 2.357
+    },
+    {
+        "text": "we should think of this function as having one more input, t, for time.",
+        "start": 241.237,
+        "duration": 3.563
+    },
+    {
+        "text": "You could, if you wanted, think of this input space as being two-dimensional, ",
+        "start": 245.54,
+        "duration": 4.242
+    },
+    {
+        "text": "representing space and time together, with the temperature being graphed as a surface ",
+        "start": 249.782,
+        "duration": 4.678
+    },
+    {
+        "text": "above it, each slice across time, showing you what that distribution looks like at any ",
+        "start": 254.46,
+        "duration": 4.732
+    },
+    {
+        "text": "given moment.",
+        "start": 259.192,
+        "duration": 0.707
+    },
+    {
+        "text": "Or you could simply think of this graph of temperature changing with time.",
+        "start": 262.68,
+        "duration": 3.44
+    },
+    {
+        "text": "Both are equivalent.",
+        "start": 266.5,
+        "duration": 0.92
+    },
+    {
+        "text": "This surface is not to be confused with what I was showing earlier, ",
+        "start": 270.52,
+        "duration": 3.282
+    },
+    {
+        "text": "the temperature graph of a two-dimensional body.",
+        "start": 273.802,
+        "duration": 2.318
+    },
+    {
+        "text": "Be mindful when you're studying equations like these of whether ",
+        "start": 276.36,
+        "duration": 3.267
+    },
+    {
+        "text": "time is being represented with its own axis, or if it's being ",
+        "start": 279.627,
+        "duration": 3.165
+    },
+    {
+        "text": "represented with literal changes over time, say in an animation.",
+        "start": 282.792,
+        "duration": 3.268
+    },
+    {
+        "text": "Last chapter, we looked at some systems where just a handful of ",
+        "start": 287.08,
+        "duration": 3.278
+    },
+    {
+        "text": "numbers changed over time, like the angle and angular velocity of a pendulum, ",
+        "start": 290.358,
+        "duration": 3.995
+    },
+    {
+        "text": "describing that change in the language of derivatives.",
+        "start": 294.353,
+        "duration": 2.767
+    },
+    {
+        "text": "But when we have an entire function changing with time, ",
+        "start": 297.6,
+        "duration": 2.8
+    },
+    {
+        "text": "the mathematical tools become slightly more intricate.",
+        "start": 300.4,
+        "duration": 2.7
+    },
+    {
+        "text": "Because we're thinking of this temperature function with multiple ",
+        "start": 303.1,
+        "duration": 3.54
+    },
+    {
+        "text": "dimensions to its input space, in this case one for space and one for time, ",
+        "start": 306.64,
+        "duration": 4.077
+    },
+    {
+        "text": "there are multiple different rates of change at play.",
+        "start": 310.717,
+        "duration": 2.843
+    },
+    {
+        "text": "There's the derivative with respect to x, how rapidly ",
+        "start": 314.8,
+        "duration": 2.959
+    },
+    {
+        "text": "the temperature changes as you move along the rod.",
+        "start": 317.759,
+        "duration": 2.741
+    },
+    {
+        "text": "You might think of this as the slope of our surface when you slice it ",
+        "start": 321.0,
+        "duration": 3.715
+    },
+    {
+        "text": "parallel to the x-axis, or given a tiny step in the x-direction and the ",
+        "start": 324.715,
+        "duration": 3.822
+    },
+    {
+        "text": "tiny change to temperature caused by it, giving a ratio between the two.",
+        "start": 328.537,
+        "duration": 3.823
+    },
+    {
+        "text": "But there's also the rate at which a single point on the rod changes with time, ",
+        "start": 334.04,
+        "duration": 3.968
+    },
+    {
+        "text": "what you might think of as the slope of the surface when you slice ",
+        "start": 338.008,
+        "duration": 3.323
+    },
+    {
+        "text": "it in the other direction, parallel to the time axis.",
+        "start": 341.331,
+        "duration": 2.629
+    },
+    {
+        "text": "Each one of these derivatives tells only part of the story for how ",
+        "start": 344.58,
+        "duration": 3.097
+    },
+    {
+        "text": "this temperature function changes, so we call them partial derivatives.",
+        "start": 347.677,
+        "duration": 3.283
+    },
+    {
+        "text": "To emphasize this point, the notation changes a little, ",
+        "start": 351.54,
+        "duration": 3.043
+    },
+    {
+        "text": "replacing the letter D with a special curly D, sometimes called del.",
+        "start": 354.583,
+        "duration": 3.697
+    },
+    {
+        "text": "Personally, I think it's a little silly to change the ",
+        "start": 359.06,
+        "duration": 2.396
+    },
+    {
+        "text": "notation for this since it's essentially the same operation.",
+        "start": 361.456,
+        "duration": 2.664
+    },
+    {
+        "text": "I would rather see notation that emphasizes that the delT terms up in the numerators ",
+        "start": 364.68,
+        "duration": 4.95
+    },
+    {
+        "text": "refer to different changes, one is a small change to temperature after a small change ",
+        "start": 369.63,
+        "duration": 5.01
+    },
+    {
+        "text": "in time, the other is a small change to temperature after a small step in space.",
+        "start": 374.64,
+        "duration": 4.66
+    },
+    {
+        "text": "To reiterate a point I made in the calculus series, ",
+        "start": 382.2,
+        "duration": 2.64
+    },
+    {
+        "text": "I do think it's healthy to initially read derivatives like this as a literal ",
+        "start": 384.84,
+        "duration": 3.91
+    },
+    {
+        "text": "ratio between a small change to the function's output and the small change to ",
+        "start": 388.75,
+        "duration": 3.96
+    },
+    {
+        "text": "the input that caused it.",
+        "start": 392.71,
+        "duration": 1.27
+    },
+    {
+        "text": "Just keep in mind that what this notation is meant to encode is the ",
+        "start": 394.4,
+        "duration": 3.696
+    },
+    {
+        "text": "limit of that ratio for smaller and smaller nudges to the input, ",
+        "start": 398.096,
+        "duration": 3.533
+    },
+    {
+        "text": "rather than a specific value of the ratio for a finitely small nudge.",
+        "start": 401.629,
+        "duration": 3.751
+    },
+    {
+        "text": "This goes for partial derivatives just as much as it does for ordinary derivatives.",
+        "start": 405.62,
+        "duration": 3.82
+    },
+    {
+        "text": "The heat equation is written in terms of these partial derivatives.",
+        "start": 412.98,
+        "duration": 3.6
+    },
+    {
+        "text": "It tells us that the way this function changes with respect ",
+        "start": 417.08,
+        "duration": 3.155
+    },
+    {
+        "text": "to time depends on how it changes with respect to space.",
+        "start": 420.235,
+        "duration": 2.945
+    },
+    {
+        "text": "More specifically, it's proportional to the second partial derivative with respect to x.",
+        "start": 423.62,
+        "duration": 5.1
+    },
+    {
+        "text": "At a high level, the intuition is that at points where the temperature distribution ",
+        "start": 429.38,
+        "duration": 4.384
+    },
+    {
+        "text": "curves, it tends to change more quickly in the direction of that curvature.",
+        "start": 433.764,
+        "duration": 3.916
+    },
+    {
+        "text": "Since a rule like this is written using partial derivatives, ",
+        "start": 438.26,
+        "duration": 2.956
+    },
+    {
+        "text": "we call it a partial differential equation.",
+        "start": 441.216,
+        "duration": 2.084
+    },
+    {
+        "text": "This has the funny result that to an outsider, ",
+        "start": 444.0,
+        "duration": 2.269
+    },
+    {
+        "text": "the name sounds like a tamer version of ordinary differential equations, ",
+        "start": 446.269,
+        "duration": 3.525
+    },
+    {
+        "text": "when quite to the contrary, partial differential equations tend to tell a much richer ",
+        "start": 449.794,
+        "duration": 4.153
+    },
+    {
+        "text": "story than ODEs, and are much harder to solve in general.",
+        "start": 453.947,
+        "duration": 2.753
+    },
+    {
+        "text": "The general heat equation applies to bodies in any number of dimensions, ",
+        "start": 457.34,
+        "duration": 3.519
+    },
+    {
+        "text": "which would mean more inputs to our temperature function, ",
+        "start": 460.859,
+        "duration": 2.796
+    },
+    {
+        "text": "but it'll be easiest for us to stay focused on the one-dimensional case of a rod.",
+        "start": 463.655,
+        "duration": 3.905
+    },
+    {
+        "text": "As it is, graphing this in a way which gives time its own ",
+        "start": 468.1,
+        "duration": 2.844
+    },
+    {
+        "text": "axis already pushes our visuals into the third dimension.",
+        "start": 470.944,
+        "duration": 2.796
+    },
+    {
+        "text": "So I threw out this equation, but where does this come from?",
+        "start": 475.32,
+        "duration": 3.0
+    },
+    {
+        "text": "How could you think up something like this yourself?",
+        "start": 478.56,
+        "duration": 2.02
+    },
+    {
+        "text": "Well, for that let's simplify things by describing a discrete version of the setup, ",
+        "start": 481.48,
+        "duration": 4.521
+    },
+    {
+        "text": "where you have only finitely many points x in a row.",
+        "start": 486.001,
+        "duration": 2.799
+    },
+    {
+        "text": "This is sort of like working in a pixelated universe where instead of ",
+        "start": 489.32,
+        "duration": 3.346
+    },
+    {
+        "text": "having a continuum of temperatures, we have a finite set of separate values.",
+        "start": 492.666,
+        "duration": 3.634
+    },
+    {
+        "text": "The intuition here is simple.",
+        "start": 497.06,
+        "duration": 1.2
+    },
+    {
+        "text": "For a particular point, if its two neighbors on either ",
+        "start": 498.56,
+        "duration": 3.349
+    },
+    {
+        "text": "side are on average hotter than it is, it will heat up.",
+        "start": 501.909,
+        "duration": 3.351
+    },
+    {
+        "text": "If they're cooler on average, it'll cool down.",
+        "start": 506.02,
+        "duration": 2.64
+    },
+    {
+        "text": "Here, specifically focus on these three neighboring points x1, ",
+        "start": 509.42,
+        "duration": 4.048
+    },
+    {
+        "text": "x2, and x3, with corresponding temperatures T1, T2, and T3.",
+        "start": 513.468,
+        "duration": 3.792
+    },
+    {
+        "text": "What we want to compare is the average of T1 and T3 with the value of T2.",
+        "start": 517.53,
+        "duration": 6.129
+    },
+    {
+        "text": "When this difference is greater than zero, T2 will tend to heat up.",
+        "start": 525.0,
+        "duration": 4.18
+    },
+    {
+        "text": "And the bigger the difference, the faster it heats up.",
+        "start": 530.54,
+        "duration": 2.92
+    },
+    {
+        "text": "Likewise, if it's negative, T2 will tend to cool down, ",
+        "start": 535.86,
+        "duration": 3.05
+    },
+    {
+        "text": "at a rate proportional to that difference.",
+        "start": 538.91,
+        "duration": 2.33
+    },
+    {
+        "text": "More formally, we write that the derivative of T2 with respect to time ",
+        "start": 542.94,
+        "duration": 4.485
+    },
+    {
+        "text": "is proportional to the difference between its neighbors and its own value.",
+        "start": 547.425,
+        "duration": 4.675
+    },
+    {
+        "text": "Alpha here is simply a proportionality constant.",
+        "start": 552.74,
+        "duration": 2.64
+    },
+    {
+        "text": "To write this in a way which will ultimately explain the second derivative ",
+        "start": 556.44,
+        "duration": 3.76
+    },
+    {
+        "text": "in the heat equation, let me rearrange this right hand a bit in terms of ",
+        "start": 560.2,
+        "duration": 3.66
+    },
+    {
+        "text": "the difference between T1 and T2, and the difference between T2 and T3.",
+        "start": 563.86,
+        "duration": 3.56
+    },
+    {
+        "text": "You can quickly check that these two are the same.",
+        "start": 568.02,
+        "duration": 1.98
+    },
+    {
+        "text": "The top has half of T1, and in the bottom there are two minus signs in front of T1, ",
+        "start": 570.0,
+        "duration": 5.714
+    },
+    {
+        "text": "so it's positive, and the half has been factored out.",
+        "start": 575.714,
+        "duration": 3.606
+    },
+    {
+        "text": "Likewise, both have half of T3.",
+        "start": 580.5,
+        "duration": 2.5
+    },
+    {
+        "text": "Then on the bottom we have a negative T2 that's effectively written twice, ",
+        "start": 584.6,
+        "duration": 4.078
+    },
+    {
+        "text": "so when you take half of that it's the same as the single negative T2 written up top.",
+        "start": 588.678,
+        "duration": 4.622
+    },
+    {
+        "text": "Like I said, the reason to rewrite it is that it ",
+        "start": 595.44,
+        "duration": 2.264
+    },
+    {
+        "text": "takes us a step closer to the language of derivatives.",
+        "start": 597.704,
+        "duration": 2.496
+    },
+    {
+        "text": "In fact, let's write these as delta T1 and delta T2.",
+        "start": 601.22,
+        "duration": 4.28
+    },
+    {
+        "text": "It's the same value on the right hand side, but we're ",
+        "start": 605.9,
+        "duration": 2.45
+    },
+    {
+        "text": "adding a new perspective to how to think about it.",
+        "start": 608.35,
+        "duration": 2.27
+    },
+    {
+        "text": "Instead of comparing the average of the neighbors to T2, ",
+        "start": 611.06,
+        "duration": 2.707
+    },
+    {
+        "text": "we're thinking about the difference of the differences.",
+        "start": 613.767,
+        "duration": 2.613
+    },
+    {
+        "text": "Here, take a moment to gut check that this makes sense.",
+        "start": 617.14,
+        "duration": 2.26
+    },
+    {
+        "text": "If those two differences are the same, then the average of T1 and T3 is the same as T2, ",
+        "start": 619.7,
+        "duration": 5.966
+    },
+    {
+        "text": "so T2 will not tend to change.",
+        "start": 625.666,
+        "duration": 2.034
+    },
+    {
+        "text": "If delta T2 is bigger than delta T1, meaning the difference of the differences is ",
+        "start": 628.339,
+        "duration": 6.129
+    },
+    {
+        "text": "positive, notice how the average of T1 and T3 is bigger than T2, so T2 tends to increase.",
+        "start": 634.468,
+        "duration": 6.652
+    },
+    {
+        "text": "And on the flip side, if the difference of the differences is negative, ",
+        "start": 642.54,
+        "duration": 4.474
+    },
+    {
+        "text": "which means delta T2 is smaller than delta T1, ",
+        "start": 647.014,
+        "duration": 2.921
+    },
+    {
+        "text": "it corresponds to an average of these neighbors being less than T2.",
+        "start": 649.935,
+        "duration": 4.165
+    },
+    {
+        "text": "We could be especially compact with our notation and write this whole term, ",
+        "start": 654.56,
+        "duration": 4.231
+    },
+    {
+        "text": "the difference between the differences, as delta delta T1.",
+        "start": 658.791,
+        "duration": 3.229
+    },
+    {
+        "text": "This is known in the lingo as a second difference.",
+        "start": 663.02,
+        "duration": 2.26
+    },
+    {
+        "text": "If it feels a little weird to think about, keep in mind, ",
+        "start": 665.88,
+        "duration": 2.501
+    },
+    {
+        "text": "it's essentially a compact way of writing the idea of how much T2 differs from the ",
+        "start": 668.381,
+        "duration": 3.642
+    },
+    {
+        "text": "average of its neighbors.",
+        "start": 672.023,
+        "duration": 1.097
+    },
+    {
+        "text": "It just has this extra factor of one half, is all.",
+        "start": 673.68,
+        "duration": 2.28
+    },
+    {
+        "text": "And that factor doesn't really matter, because either way we're ",
+        "start": 676.56,
+        "duration": 2.48
+    },
+    {
+        "text": "writing this equation in terms of some proportionality constant.",
+        "start": 679.04,
+        "duration": 2.48
+    },
+    {
+        "text": "The upshot is that the rate of change for the temperature of ",
+        "start": 682.08,
+        "duration": 3.141
+    },
+    {
+        "text": "a point is proportional to the second difference around it.",
+        "start": 685.221,
+        "duration": 3.039
+    },
+    {
+        "text": "As we go from this finite context to the infinite continuous case, ",
+        "start": 689.12,
+        "duration": 3.669
+    },
+    {
+        "text": "the analog of a second difference is the second derivative.",
+        "start": 692.789,
+        "duration": 3.231
+    },
+    {
+        "text": "Instead of looking at the difference between the temperature ",
+        "start": 698.58,
+        "duration": 2.998
+    },
+    {
+        "text": "values at points some fixed distance apart, you instead consider ",
+        "start": 701.578,
+        "duration": 3.194
+    },
+    {
+        "text": "what happens as you shrink the size of that step towards zero.",
+        "start": 704.772,
+        "duration": 3.048
+    },
+    {
+        "text": "And in calculus, instead of talking about absolute differences, ",
+        "start": 708.38,
+        "duration": 3.214
+    },
+    {
+        "text": "which would also approach zero, you think in terms of the rate of change.",
+        "start": 711.594,
+        "duration": 3.666
+    },
+    {
+        "text": "In this case, what's the rate of change in temperature per unit distance?",
+        "start": 715.8,
+        "duration": 3.62
+    },
+    {
+        "text": "And remember, there are two separate rates of change at play.",
+        "start": 720.14,
+        "duration": 2.4
+    },
+    {
+        "text": "How does that temperature change as time progresses, ",
+        "start": 722.86,
+        "duration": 2.461
+    },
+    {
+        "text": "and how does the temperature change as you move along the rod?",
+        "start": 725.321,
+        "duration": 2.879
+    },
+    {
+        "text": "The core intuition remains the same as what we had in the discrete case.",
+        "start": 728.96,
+        "duration": 3.0
+    },
+    {
+        "text": "To know how a point differs from its neighbors, ",
+        "start": 732.2,
+        "duration": 2.373
+    },
+    {
+        "text": "look not just at how the function changes from one point to the next, ",
+        "start": 734.573,
+        "duration": 3.461
+    },
+    {
+        "text": "but at how the rate of change itself changes.",
+        "start": 738.034,
+        "duration": 2.226
+    },
+    {
+        "text": "Now in calculus land, we write this as del-squared t over del x-squared, ",
+        "start": 742.76,
+        "duration": 4.625
+    },
+    {
+        "text": "the second partial derivative of our function with respect to x.",
+        "start": 747.385,
+        "duration": 4.055
+    },
+    {
+        "text": "Notice how this slope increases at points where the graph curves upwards, ",
+        "start": 752.18,
+        "duration": 4.165
+    },
+    {
+        "text": "meaning the rate of change of the rate of change is positive.",
+        "start": 756.345,
+        "duration": 3.435
+    },
+    {
+        "text": "Similarly, that slope decreases at points where the graph curves downwards, ",
+        "start": 760.58,
+        "duration": 4.403
+    },
+    {
+        "text": "where the rate of change of this rate of change is negative.",
+        "start": 764.983,
+        "duration": 3.477
+    },
+    {
+        "text": "Tuck that away as a meaningful intuition for problems well beyond the heat equation.",
+        "start": 769.72,
+        "duration": 3.7
+    },
+    {
+        "text": "Second derivatives give a measure of how a value compares to the average of its neighbors.",
+        "start": 773.88,
+        "duration": 4.44
+    },
+    {
+        "text": "Hopefully that gives some satisfying added color to the equation.",
+        "start": 779.38,
+        "duration": 3.06
+    },
+    {
+        "text": "It's already pretty intuitive when you read it as saying that curved points tend ",
+        "start": 782.92,
+        "duration": 3.657
+    },
+    {
+        "text": "to flatten out, but I think there's something even more satisfying about seeing ",
+        "start": 786.577,
+        "duration": 3.613
+    },
+    {
+        "text": "a partial differential equation like this arise almost mechanistically from ",
+        "start": 790.19,
+        "duration": 3.432
+    },
+    {
+        "text": "thinking about each point as simply tending towards the average of its neighbors.",
+        "start": 793.622,
+        "duration": 3.658
+    },
+    {
+        "text": "Take a moment to compare what this feels like ",
+        "start": 798.9,
+        "duration": 2.067
+    },
+    {
+        "text": "to the case of ordinary differential equations.",
+        "start": 800.967,
+        "duration": 2.113
+    },
+    {
+        "text": "For example, if we have multiple bodies in space tugging at each other with gravity, ",
+        "start": 803.54,
+        "duration": 4.601
+    },
+    {
+        "text": "what we're analyzing is a handful of changing numbers, ",
+        "start": 808.141,
+        "duration": 2.977
+    },
+    {
+        "text": "in this case the coordinates of each object.",
+        "start": 811.118,
+        "duration": 2.382
+    },
+    {
+        "text": "The rate of change for any one of these values depends on the values of ",
+        "start": 814.1,
+        "duration": 3.863
+    },
+    {
+        "text": "the other numbers, and we often write this down as a system of equations.",
+        "start": 817.963,
+        "duration": 3.917
+    },
+    {
+        "text": "On the left, we have the derivative of each value with respect to time, ",
+        "start": 821.88,
+        "duration": 3.829
+    },
+    {
+        "text": "and on the right there's some combination of all the other values.",
+        "start": 825.709,
+        "duration": 3.511
+    },
+    {
+        "text": "In our partial differential equation, the difference is that we have infinitely ",
+        "start": 830.78,
+        "duration": 4.518
+    },
+    {
+        "text": "many values changing from a continuum, and again, ",
+        "start": 835.298,
+        "duration": 2.824
+    },
+    {
+        "text": "the way that any one of these values changes depends on the other values, ",
+        "start": 838.122,
+        "duration": 4.179
+    },
+    {
+        "text": "but quite helpfully, each one only depends on its immediate neighbors in some ",
+        "start": 842.301,
+        "duration": 4.405
+    },
+    {
+        "text": "limiting sense of the word neighbor.",
+        "start": 846.706,
+        "duration": 2.034
+    },
+    {
+        "text": "So here, the relation on the right hand side is not a sum or product ",
+        "start": 849.3,
+        "duration": 3.728
+    },
+    {
+        "text": "of the other numbers, it's instead a kind of derivative, ",
+        "start": 853.028,
+        "duration": 3.081
+    },
+    {
+        "text": "just a derivative with respect to space instead of with respect to time.",
+        "start": 856.109,
+        "duration": 3.891
+    },
+    {
+        "text": "In a sense, when you think about it, this one partial differential equation ",
+        "start": 860.88,
+        "duration": 4.152
+    },
+    {
+        "text": "is like a system of infinitely many equations, one for each point on the rod.",
+        "start": 865.032,
+        "duration": 4.208
+    },
+    {
+        "text": "You might wonder about objects which are spread out in more than one dimension, ",
+        "start": 871.84,
+        "duration": 3.264
+    },
+    {
+        "text": "like a plate, or something three dimensional.",
+        "start": 875.104,
+        "duration": 1.836
+    },
+    {
+        "text": "In that case the equation looks quite similar, ",
+        "start": 876.94,
+        "duration": 2.493
+    },
+    {
+        "text": "but you include the second derivative with respect to the other spatial ",
+        "start": 879.433,
+        "duration": 3.819
+    },
+    {
+        "text": "directions as well.",
+        "start": 883.252,
+        "duration": 1.008
+    },
+    {
+        "text": "And adding up all of these second spatial derivatives like this ",
+        "start": 885.66,
+        "duration": 3.255
+    },
+    {
+        "text": "is common enough as an operation that it has its own special name, ",
+        "start": 888.915,
+        "duration": 3.408
+    },
+    {
+        "text": "the Laplacian, often written as this upside down triangle squared.",
+        "start": 892.323,
+        "duration": 3.357
+    },
+    {
+        "text": "It's essentially a multivariable version of the second derivative, ",
+        "start": 896.38,
+        "duration": 3.075
+    },
+    {
+        "text": "and the intuition for this equation is no different from the one dimensional case.",
+        "start": 899.455,
+        "duration": 3.765
+    },
+    {
+        "text": "This Laplacian can still be thought of as measuring how different ",
+        "start": 903.64,
+        "duration": 3.408
+    },
+    {
+        "text": "is a point from the average of its neighbors, but now these ",
+        "start": 907.048,
+        "duration": 3.098
+    },
+    {
+        "text": "neighbors aren't just left and right of it, they're all around.",
+        "start": 910.146,
+        "duration": 3.254
+    },
+    {
+        "text": "For the curious among you, I did a couple of videos during my time ",
+        "start": 915.48,
+        "duration": 2.599
+    },
+    {
+        "text": "at Khan Academy on this operator if you want to go check them out.",
+        "start": 918.079,
+        "duration": 2.561
+    },
+    {
+        "text": "For those of you with multivariable calculus under your belt, ",
+        "start": 920.96,
+        "duration": 2.592
+    },
+    {
+        "text": "it's nice to think about as the divergence of the gradient.",
+        "start": 923.552,
+        "duration": 2.468
+    },
+    {
+        "text": "But you don't have to worry about that, for our ",
+        "start": 926.7,
+        "duration": 2.049
+    },
+    {
+        "text": "purposes let's stay focused on the one dimensional case.",
+        "start": 928.749,
+        "duration": 2.391
+    },
+    {
+        "text": "If you feel like you understand all of this, pat yourself on the back.",
+        "start": 931.66,
+        "duration": 3.56
+    },
+    {
+        "text": "Being able to read a PDE is no joke, and it's a powerful addition ",
+        "start": 935.68,
+        "duration": 3.417
+    },
+    {
+        "text": "to have to your vocabulary for describing the world around you.",
+        "start": 939.097,
+        "duration": 3.263
+    },
+    {
+        "text": "But after all of this time spent interpreting the equations, ",
+        "start": 943.04,
+        "duration": 3.225
+    },
+    {
+        "text": "I say it's high time we start solving them, don't you?",
+        "start": 946.265,
+        "duration": 2.855
+    },
+    {
+        "text": "And trust me, there are few pieces of math quite as satisfying as ",
+        "start": 949.56,
+        "duration": 3.132
+    },
+    {
+        "text": "what Poodlehaired Fourier over here developed to solve this problem.",
+        "start": 952.692,
+        "duration": 3.228
+    },
+    {
+        "text": "All this and more in the next chapter.",
+        "start": 956.56,
+        "duration": 1.94
+    },
+    {
+        "text": "I was originally motivated to cover this particular topic when ",
+        "start": 964.699,
+        "duration": 3.062
+    },
+    {
+        "text": "I got an early view of Steve Strogatz's new book Infinite Powers.",
+        "start": 967.761,
+        "duration": 3.159
+    },
+    {
+        "text": "This isn't a sponsored message or anything like that, ",
+        "start": 971.52,
+        "duration": 2.637
+    },
+    {
+        "text": "but all cards on the table I do have two selfish ulterior motives for mentioning it.",
+        "start": 974.157,
+        "duration": 4.103
+    },
+    {
+        "text": "The first is that Steve has been a really strong, maybe even pivotal, ",
+        "start": 978.68,
+        "duration": 3.213
+    },
+    {
+        "text": "advocate for the channel since the very beginning, ",
+        "start": 981.893,
+        "duration": 2.341
+    },
+    {
+        "text": "and I've had an itch to repay that kindness for quite a while.",
+        "start": 984.234,
+        "duration": 2.846
+    },
+    {
+        "text": "And the second is to make more people love math, and calculus in particular.",
+        "start": 987.52,
+        "duration": 3.88
+    },
+    {
+        "text": "That might not sound selfish, but think about it, when more people love math, ",
+        "start": 992.06,
+        "duration": 3.374
+    },
+    {
+        "text": "the potential audience base for these videos gets bigger.",
+        "start": 995.434,
+        "duration": 2.466
+    },
+    {
+        "text": "And frankly there are few better ways to get people loving ",
+        "start": 998.38,
+        "duration": 2.485
+    },
+    {
+        "text": "the subject than to expose them to Strogatz's writing.",
+        "start": 1000.865,
+        "duration": 2.275
+    },
+    {
+        "text": "So if you have friends who you know who you think would enjoy the ideas of calculus ",
+        "start": 1003.86,
+        "duration": 3.784
+    },
+    {
+        "text": "but maybe have been a bit intimidated by math in the past, ",
+        "start": 1007.644,
+        "duration": 2.659
+    },
+    {
+        "text": "this book does a really outstanding job communicating the heart of the subject, ",
+        "start": 1010.303,
+        "duration": 3.605
+    },
+    {
+        "text": "both substantively and accessibly.",
+        "start": 1013.908,
+        "duration": 1.532
+    },
+    {
+        "text": "Its main theme is the idea of constructing solutions to complex real-world problems ",
+        "start": 1015.44,
+        "duration": 4.548
+    },
+    {
+        "text": "from simple idealized building blocks, which as you'll see is exactly what Fourier did.",
+        "start": 1019.988,
+        "duration": 4.712
+    },
+    {
+        "text": "And for those of you who already know and love the subject, ",
+        "start": 1025.44,
+        "duration": 2.409
+    },
+    {
+        "text": "you will find no shortage of fresh insights and enlightening stories.",
+        "start": 1027.849,
+        "duration": 2.77
+    },
+    {
+        "text": "I certainly enjoyed it.",
+        "start": 1030.819,
+        "duration": 1.241
+    },
+    {
+        "text": "Again, I kinda know that sounds like an ad, but it's not, ",
+        "start": 1032.5,
+        "duration": 2.331
+    },
+    {
+        "text": "I just actually think you'll enjoy the book.",
+        "start": 1034.831,
+        "duration": 1.768
+    }
+]

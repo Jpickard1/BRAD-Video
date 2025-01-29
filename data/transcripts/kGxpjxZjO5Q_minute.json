@@ -1,0 +1,202 @@
+[
+    {
+        "start": 9.11,
+        "text": "so more interesting after noon everyone so today's tools and tech will be conducted by Tony as stood in my lab Tony how long you been here about two years maybe he shows up every day he's at the desk showed up one day he was like okay here's here's a laptop do good stuff so so Tony's been working on a number of different projects with in part with the collaborator over in the neurosciences Peter Todd and his group and we're looking at the role of prevalence of ribosomes on different transcripts and how we can model that and measure that and as part of this work Tony has developed a tool that he'll talk about today four different ways to measure and "
+    },
+    {
+        "start": 71.4,
+        "text": "actually identify regions of active translation so take it away Sam an algorithm that we developed called Spector it's a spectral coherence based classifier that looks at active translated actively traded transcripts in the magazine and so other than the algorithm what what Ryan told me in developing this is the second most important thing to have is just as an overview I'll give some background and then look at a couple of the other classification algorithms that are that are that exist right now and speaking of "
+    },
+    {
+        "start": 131.58,
+        "text": "cool names or for highly imaginative is one of the other algorithms that's out there and then I'll walk you through the pipeline as well as I'm looking at some test data and how the different classifiers perform using using that data so we've traditionally understood the transmission of information from DNA to RNA to protein to be linear well we've come to realize recently as the truth is it exactly so we have multiple mechanisms of regulation that ultimately can alter how DNA and RNA and protein are are expressed I just listed a few of the mechanism Gager mechanisms that are in play here but what we what we see here is that again that going from DNA to RNA to protein it's not always linear "
+    },
+    {
+        "start": 193.17,
+        "text": "and what I'm gonna focus on today is looking at how RNA is translated into protein so they give some perspective on some of the techniques that are commonly used to measure the output or the activity of a cell to transcribe and then ultimately translate RNA to protein we have RNA and mrna seek to look at kind of the total transcriptional content of a cell or group of cells brew sequence is a technique developed by the youngman lab here at michigan looks kind of looks more the nascent active transcription of a cell and then ultimately you can use mass spectrometry among other techniques to look at protein employment but what I'm focused on today is fairly recently technique "
+    },
+    {
+        "start": 253.92,
+        "text": "developed called ribosome profile and that looks more at the translational content so just a brief overview of next generation secrets sequencing you have AI you have your RNA here which is either fragmented to get total RNA or you can do some sort of enrichment using like an algo DT DT to get M RNA or mRNA those RNAs are then fragmented and then adapters and sequencing prayers are ligated to the ends of those those are then loaded onto a sequencing machine and usually the major method for economic sequencing by synthesis single nucleotides that are labeled are added to the flow cell and their incorporation "
+    },
+    {
+        "start": 315.87,
+        "text": "will give off a signal and the machine will read the sequence that's been synthesized once you have the sequence reads from there's machine you'll do some QC and and that will enable downstream analysis like expression profile so to speak a little bit more about alignment again we have these earnings seek these RNA reads and there are usually two major methods of alignment either the first is either de novo so that's basically assembling transcripts from the reads themselves and then aligning those to the genome what most people do with mRNA seek or in ribosome profiling is to align those reads to a genome and then assemble those transcripts and then look for "
+    },
+    {
+        "start": 377.24,
+        "text": "differences in and then the abundance of reads over at different splice models can help you estimate which isoforms of genes are more so to speak a little bit more about rags on profiling because I not many people are as familiar with this is with RNA seek you start just like with ironing seek with with a cell you like so selves and use either a sucrose pushing or gradient to isolate poly films versus ribosome or mono zonal fractions of ribosomes bound to mRNA nuclease digestion will then yield fragments of mRNA with their bound ribosomes and then "
+    },
+    {
+        "start": 438.809,
+        "text": "further enzymatic digestion will release those mRNAs and and innate or is further digested enzymatic digestion and denaturation will release those mRNAs from ribosomes that were previously protected by the ribosomes and then from there on linker elongation and C DNA synthesis procedure looks like any other rna-seq experiment just just briefly there's a the one of the major differentiation differentiating points about ribosome profiling is that is that your cells are usually treated with different inhibitors translational inhibitors the first two I believe X similarly Harrington I I think what is "
+    },
+    {
+        "start": 500.469,
+        "text": "what is it it it will bind to free 60s subunits in in the cell and will prevent basically elongation once it's formed an ATF subunit it won't prevent elongation of ribosomes that are found prior to treatment so there has been in the literature some observation that you get a little runoff it's not perfectly at the initiation sites the other two also I believe acts similar to each other they provide kind of a more uniformly distributed view of translation cycloheximide specifically I believe changes the conformation of the each site in the ribosomes such that it interferes with the interferes with the tRNA the tRNA transfer or something to "
+    },
+    {
+        "start": 562.24,
+        "text": "basically prevents any further along gaging so so I'm just a review hearing Tony and laxatives mics and they will generally look they will generally stall ribosomes at initiation sites cycloheximide and EMA team will kind of stall ribosomes wherever they're found so there are a couple techniques out there that look at sequencing from the standpoint of proteins that are bound to them so I just wanted to briefly review those within the context of mRNA seek so one of those techniques it's called clip seek stands where the cross-linking cross-linking amino party she mean a precipitation followed by sequencing it also goes by some other names and heart clip particle or something like that the general idea is "
+    },
+    {
+        "start": 622.569,
+        "text": "that you're also isolating proteins that are gone to mRNA digesting and that sequencing the fragments of mRNA so with so with clip C you can basically look for different different proteins I think the Kim lab that was here at U of M they developed a more generalized ribosome order RNA binding protein protocol but usually it's it's a specific protein rival seek obviously will I I'm RNA bombed by ribosomes the arrest method used in methods like clip seek is usually cross-linking or some sort of chemical cross-linking procedure like formaldehyde Grabow seek like I mentioned it is use uses those translational inhibitors the method of "
+    },
+    {
+        "start": 685.99,
+        "text": "covering those mRNA are bpe complexes are both similar across the two methods i'm mrna city obviously does not require that the major difference between clip seek and those methods and Rago see is that with clip see if you can still do an algo DT enrichment with ribose see you can't and because of that and and because of that I'll go into a little bit more detail why that's an issue and then nuclease digestion across those two methods are the same in all three cases you can do an ribosomal RNA depletion step to try to cut down on a contamination from those sources and with mrna see if you can obviously do single or paired end clips you can grab "
+    },
+    {
+        "start": 746.24,
+        "text": "a seek are limited to single end so there are some inherent advantages and disadvantages like I mentioned with with Raglan profiling the first is that there's high background of ribosomal RNA and the reason this is is that our nation digestion the RNA digestion will target not just the unprotected mRNA but also B ribosomal the unprotected rnase but also the what's found in the ribosomal complex itself so therefore this leads to our RNA contamination being dependent on the efficiency of your depletion step and scary enough some ribosome profiling experiments that I've seen can be comprised of up to 80% our RNA contamination but usually 10 to 40% is "
+    },
+    {
+        "start": 807.64,
+        "text": "more typical because of this sequencing COMPETES sequencing of your target mRNA competes with that of our RNA and so your sequencing depth and diversity is usually much lower than you will see with mRNA exceed higher coverage libraries that I've seen published how may have like 100 150 million reads and obviously multiplexing with ribosomal profiling because of these concerns this is an issue but one of the neat things about ribosome profiling is that when you align your reads to a reference transcriptome the alignment of those reads the position of those reads actually tracks the three nucleotide "
+    },
+    {
+        "start": 868.03,
+        "text": "periodicity of a ribosome as it translates transcript from RNA to protein and the reason this is it's not a bug it's a feature but the reason this is is as as your mRNA is being translated it's being added three nucleotides at a time and once those are added it moves in a three nucleotide window and so when you align those reads to a reference transcriptome and look at the coverage over over a transcript look at the normalized coverage over a transcript you'll see that there's a clear three nuclear every three nucleotides you know with with good regularity so in black here that's ribosome profiling when you do the same thing with mRNA seek lie Barry reads the lines of transcript you don't see that seeing periodicity and so this idea "
+    },
+    {
+        "start": 932.6,
+        "text": "forms the basis of of our algorithm so what we're interested in as a lab with in concert with our collaborators is looking at upstream open reading frames and so why this is important and how this algorithm plays into it is that it's often very hard to tell what's actually being translated versus what is what isn't and so just to give a brief background about yours approximately half of the human transcriptome contains a you or many of them actually contain more than one and this mechanism of upstream translation is conserved across species and so the reason why these UF's are important in their expression is important is that they may actually "
+    },
+    {
+        "start": 993.209,
+        "text": "negatively regulate protein expression two major mechanisms through which it does that is through the promotion of mrna decay as it's read here there might be it as it's read from this upstream frame into the mRNA it may introduce like a non canonical stop or something like that and trigger the nonsense mediate decay pathway the other major mechanism is just a competitive expression if this is being translated by the translational machinery at the expense of this one you'll have high expression of this one versus your canonical protein and so these she works have been found in genes with a diverse array of functions they've been found in oncogenes genes related to differentiation which is what were ultimately interested in cell cycle "
+    },
+    {
+        "start": 1054.53,
+        "text": "control as well as response so when they have them fully upstream do they divide them up and or distance between the stop codon for the upstream and the start codon for the whether they differentiate between whether that's like a novel protein or no as to expression level of the downstream so the distance will have an effect sometimes if there's sufficient distance for the ribosomal for the translation and cheery to basically pick back up its unaffected that was the other way then it's the stop has to be closed right because it will not reinitialize if they're close together then then right it won't it won't be able to it doesn't disassemble just picks up yeah I did not know of this they say "
+    },
+    {
+        "start": 1121.79,
+        "text": "like they do then this lighting so like it's having twenty or thirty code of they use like the air photons so like understanding translation missing it is not very soon then yeah yeah so so there is there is an aspect to that and one of one of the things that so I think another thing that our lab is also looking at is if you have basically a site that is canonically not an AEG but it doesn't actually but we another thing that we're looking at is is looking whether a mutation can introduce an Aug but yeah so so because of this it's nice "
+    },
+    {
+        "start": 1183.05,
+        "text": "ever an expression of these yours have been implicated in a number of diseases and including including cancer pancreatitis so just to give a little more background on some of the existing methods that are out there already the afore mentioned highly negative Lee named or score basically takes the alignment of reeds in each frame and compares it against a uniform distribution and computes a score based on that so if there is enrichment of reeds in a non canonical frame it will it will penalize that which is I think part of the reason why it doesn't perform as well in the classification the other method that's "
+    },
+    {
+        "start": 1246.1,
+        "text": "that was published by the lab that initially developed ribosome profiling is called floss which stands for fragment length organizations similarity score and basically it's it looks at the magnitude difference at the distribution of read lengths in protein coding transcripts as a reference signal here in red versus your transcript of interest and based on and based on that magnitude difference that it will either qualify or not as a protein coding transcript so most non-coding RNAs and mitochondrial transcripts have a distribution profile that's distinct from protein coding transcripts here in the darker blue here long non-coding RNAs and v prime utrs of protein coding genes actually follow a profile set by "
+    },
+    {
+        "start": 1309.12,
+        "text": "protein coding genes and so this was actually this comparison here was the basis of their paper where they posit that that there may be pervasive translation of linked rnas are they defined as non-coding how are they so they they it's based on annotation so what they did was they took basically anything that wasn't a pseudogene anything that wasn't a link RNA and basically lump those together and they also so and that gave them a set of non-coding transcripts they then added a further filter where anything that "
+    },
+    {
+        "start": 1370.0,
+        "text": "overlaps with a protein coding gene could not be considered non-coding any and anything within like a certain proximal distance I think they used 5,000 nucleotides as a filter - so basically they used to sanitize said that they had annotated as so for the so for the classification test that I did I actually follow protocol set out by them just to make sure that the comparison was was one-to-one so the way that they do their classification is that they first plotted the floss scores of every transcript as a function of the number of reads aligned to those transcripts and then used a rolling window of 200 transcripts starting from the lowest numbered reads up and calculated cutoff "
+    },
+    {
+        "start": 1432.52,
+        "text": "using an extreme outlier cutoff and so that's shown here so you have the floss scores here the number of reads on the x axis and they used this I believe was a lowest smoothing curve to define their cutoff one issue that I would like to point out in which we were kind of surprised by is what can you actually say about transcripts that only have one or two or three reads when I pointed it up you're actually surprised this this got accepted but nonetheless this is their idea is that as long as as long as their floss score as a function of their input read followed a certain distribution they called it a protein coding gene and "
+    },
+    {
+        "start": 1495.179,
+        "text": "they're published accuracy using this method they claimed they were able to recover 99.6% of protein coding transcripts so I'll get to this a little bit more later but just to give an idea of the algorithm that we developed it's based on spectral coherence so coherence is you know trying to keep this a little bit more high-level it's basically the relationship as a function of frequency between two data series and so this is kind of this is a simplified example here but if you have two two waves here two sine waves here one the first one here X's out sine wave with a frequency of 10 Hertz and if you have a second "
+    },
+    {
+        "start": 1557.049,
+        "text": "wave here that's composed of two two signals actually one at ten Hertz and one at twenty seven Hertz if you look at the spectral power spectrum of each of those waves you'll see that you have a peak here for wave x that corresponds to 10 Hertz for wave Y you see two major peaks at ten Hertz and twenty seven when you plot the coherence function between those two waves the only wave in common between the two the only signal in common between the two is of course 10 Hertz and so you see this what's called magnitude square coherence at ten Hertz so the idea that we're working off of is that regions of active translation will have high coherence with the signal associated with that trinucleotide periodicity signal and "
+    },
+    {
+        "start": 1621.649,
+        "text": "what we do see I think I'm missing a plot here but they had a plot here where if you look at the distribution of Specter scores for protein coding transcripts and for non-coding transcripts we see a nice delineation between the two distributions so walk you through schematically what we're doing for each transcript we general general generate a normalized we calculate the normalized read coverage signal based on you have to do an adjustment of the time and position of the aligned reads because the reads that are sequenced are protected by ribosomes and the cyberking site is in the middle of that just for that positioning aspect so we generate this normalize read coverage signal over over a transcript and then we also generate in tandem and idealized coding signal that corresponds "
+    },
+    {
+        "start": 1682.429,
+        "text": "to that three nucleotide periodicity like so we then calculate the coherence between this normalized signal and the reference signal here and then so do you get your idealized coding signal you just made it up or your coding so we we've done it both ways and the problem with both so one of the reasons why we got away from doing taking it from the data is kind of one of the inherent problems of the Foss algorithm - is that the floss or if emits it's highly dependent on the redistribution to get following your "
+    },
+    {
+        "start": 1744.55,
+        "text": "size selection and so we kind of just want it to look at it if we had this ideal signal and given that spectral coherence it's really only concerned about the frequency aspect of your signal it's related to cross correlation unlike cross correlation cross correlation takes into account the magnitude of the signal as well for coherence we're only concerned about the frequency how how two signals correlate by frequency yeah so what we then get is the coherent "
+    },
+    {
+        "start": 1808.45,
+        "text": "signal across various frequencies that are tested and what we extract then is the coherence at the this is plotted as the inverse sequence II so 0.33 corresponds to that three nucleotide periodicity free frequency so regions with inactive trans perfectly inactive translations would be zero very low should be clipped you know skewed towards zero I'm higher translational activity should tend to higher to a closer to one oh there's a yeah there's the distribution so the way we implemented this algorithm is that we directly enabled it so that you could measure coherence over either an entire transcript or over sliding windows across the transcript like so there and "
+    },
+    {
+        "start": 1869.35,
+        "text": "so on and then what we did for the purposes of this for the test gate is the median coherence of of these windows the program itself you can direct it to take different metrics as well so for the comparison of the class of different classifiers using the test data we looked not only at the entire transcript but we also looked at 30 60 nucleotide windows and I'll mention why we did that briefly okay so just to give an overall view of how we processed the how this how the state is processed private after trimming adapters and aligning to our "
+    },
+    {
+        "start": 1930.94,
+        "text": "RNA contaminant database um you take the unmapped reads and align those to the reference genome and transcriptome we filtered based on mapping quality quantitated transcript abundance and the script itself will be able to support different input formats for that and then calculated the specter floss and/or score for ug transcript so we implemented the we implemented this in Python with an eye towards trying to cut down on extraneous third library third library so most of these are actually default libraries the the analysis itself requires a native installation of Sam tools as well as our with the ROC our package and then to do the different amount the "
+    },
+    {
+        "start": 1996.24,
+        "text": "calculations I do those in using our PI - so what we take is from so first feeding in the transcript ETF we load all the transcript coordinates into memory in the form of an interval tree I we then load the the Bann alignments into memory and after adjustment to take them to account that ate a site or keysight position within the ribosome that's also converted into an interval tree i then removed overlapping transcripts as the floss experiment did where they removed overlapping transcripts as well as any transfers within 5,000 nucleotides of each other i then extracted the coverage over each over each transcript and then calculated the spectra flossin or scores for them those scores are then used to build a "
+    },
+    {
+        "start": 2057.639,
+        "text": "distribution for example coding versus non-coding or translated versus actively bleated depending on say like an arbitrary fpm cutoff and from that I can calculate extra experiment level statistics and and so the plan so right now we're able to output transcript level metrics for each for each transcript in the GTF that it's tested experiment level metrics as well as plots so a quick word about the data itself I used the floss the data that was used for that floss polycon which were which were mouse embryonic stem cells treated with cycloheximide or MIT night since the rest of these are treated cycloheximide I use only the cycle has my library the second library or data set that I "
+    },
+    {
+        "start": 2120.72,
+        "text": "used for this test is from another 2014 publication looking at ribosome profiling in zebrafish and and so this this group actually are collaborators of this group so just keep that in mind for later and so for their meta-analysis which I copied for for this test they combined all 16 of their Aboriginal profiling libraries into one for a medal and for a meta-analysis this amounted to almost 500 million reads and then our collaborators as part of a ramp up test for a larger project did a test library in SH sy5 white neuroblastoma cells so I "
+    },
+    {
+        "start": 2186.619,
+        "text": "tested these using the using a binary classification first I did either whether it was si done with that floss publication whether it was annotated as protein coding or non-coding we also looked at various FP fpkm cut-offs to basically differentiate whether it was actively translated or are not actively translated so just a quick word about RFC curves so given given a cutoff point in a binary classification test you calculate the true positive rate versus the false positive rate so so for a test with perfect sensitivity and specificity an ROC curve based on that would basically cut through the top left portion of this graph The Closer your curve is to the diagonal line basically that indicates "
+    },
+    {
+        "start": 2248.62,
+        "text": "you might as well flip the point and so based on our C curves you can also calculate the AFC which is the probability that you will rank a randomly chosen positive instance higher than a randomly chosen negative one so that can give you a measure of performance as well so what I did was to in the in Golia mouse embryonic stem cell data set computed the floss or scoring Specter scores using using the methods that they had previously published and then like I mentioned previously looked both at how looked looked at various ranges so starting here at one read which is what they did what we have here in the South solid "
+    },
+    {
+        "start": 2311.38,
+        "text": "line is that a you see in solid lines are the AUC at at this at this point using this point as the minimum cutoff and so here in solid black is the RFC based on floss and in dashed line is their public accuracy and so we see here is that using a couple of windows particularly if you notice the thirty nucleotide window it outperforms their classification algorithm once you impose a cut-off to differentiate active versus inactive translation and so keeping in mind that this is the lab that develops published you know and have published many many papers on ribosome profiling the fact that we're beating them at "
+    },
+    {
+        "start": 2372.33,
+        "text": "their own obviously are most likely cherry picked seven Thetas is is what's good for our confidence at least uh-huh so yeah and so obviously and so one thing you also notice it in purple it's looking at those spectral coherence or using the whole transcript and the reason why it looking at the whole transcript doesn't work as well as looking at these windows is that as I'll go through later spectral coherence is based on its signal and so if you have gaps in a read coverage and there's no signal there it's unable to basically form form a score formulate a score and so we we did we found that when doing window weight using a windowed approach does seem to improve performance quite a bit "
+    },
+    {
+        "start": 2433.17,
+        "text": "oh and then at the bottom is is or score so the second set of data that we looked at was the Vizzini zebrafish data this was this was yet so the so this group is uh our collaborators of the Weissman lab in Mongolia and so again we see that in in this mostly independent data set we see that all three windowed approaches outperform floss as well as our score did you try an even smaller window size so and so "
+    },
+    {
+        "start": 2493.97,
+        "text": "looking at the data generated by the toddler period Michigan it was prepared by student Caitlyn and this was a like I mentioned before a test library for a larger scale project which I'll talk about next week I'm sure but there's a again our windowed approach outperforms floss and the reason why we we think that life floss seems to perform worse and worse as you look at different as you go further and further away from their own lab is that floss because it's based on that based on scoring based on or this based on scoring using those read issue read length distribution profiles it's going to be sensitive to any variation in that and so that kind "
+    },
+    {
+        "start": 2556.26,
+        "text": "of points leads to whether or not you know the the degree of reproduces reproducibly from experiment to experiment much less from lab to lab and so yeah so like I mentioned its inherent advantages that it's very simple and in most cases it actually does perform quite well because it's based on this expected fragment size distribution but because of that it's also sensitive to variations in the efficiency of fragment size selection and so what we have here in lack is there is Ingo Lea data which follows a certain profile when you look at the Pezzini lab data it follows a slightly similar but obviously it's you know quite different read length distribution profile and on the Tod data "
+    },
+    {
+        "start": 2616.77,
+        "text": "itself follows a entirely distinct distribution its itself that published accuracy correctly classified you know 99% 99.6% of protein coding genes from non-coding RNAs but like I mentioned before that published accuracy might be a bit overstated due to the functional insignificance of these transcripts with low read coverage unlike Spector however it is it is robust to gaps and read coverage because you're looking at an overall read length distribution as opposed to a signal for or score it also likewise is robust to captain IV coverage since it's looking at an overall read distribution by frame one issue may be that it's overly punitive to transcripts that demonstrate "
+    },
+    {
+        "start": 2677.64,
+        "text": "translation outside of an annotated reading frame which may affect its classification performance so what I think is an advantage of our algorithm is that a signal base so therefore it seems more robust to technical variations in that fragment size selection process and but like I mentioned previously in comparison to using a cross correlation metric its amplitude agnostic meaning that its input and output coherences a function only of its frequency and not its magnitude it seems to be quite accurate especially when you look especially when you looked at windowed especially when you start breaking it down into windows across a transcript "
+    },
+    {
+        "start": 2738.599,
+        "text": "and more so when you start looking at defined points of what is considered actively translated those that aren't and like I mentioned it's it's sensitive to gaps in a read coverage since rather is important coverage isn't always uniform or robust across all transcriptions really the other advantage that we have is that we're offering this as a standalone package neither flosser or score are provided as packaged binaries in fact it was re capitulating floss was in itself huge exercise first of all the they don't distribute code before they have code but they don't provide the annotation "
+    },
+    {
+        "start": 2799.26,
+        "text": "files they don't provide the the code itself is not commented very well so actually really hard to follow and so and to and actually just to mention I did speak with Bengali over email a couple times I think he was actually really helpful but but yeah it's it definitely was a process just to even recapitulate their their analysis was actually even more frustrating despite how hopefully was it said he's decided to migrate all of his code and any other improvements that he's making posts publishing of that paper in to this code the original code that I was trying to make officially from what's from our East decided to convert everything that "
+    },
+    {
+        "start": 2860.19,
+        "text": "Haskell yeah so so yeah so I'll just briefly mention the outputs that we'll have from our from our program is will have these transcript level metrics experimental metrics as well as plots both for the coherence over a transcript those distributions and one thing we're actually actively working on is based on either these window coherences this is just a toy example here but based on these window coherences over a over region or even using the posterior probabilities across the region we're actively looking into basically implementing like a hmm so defined where we might see the start of active translation versus fat and that can help "
+    },
+    {
+        "start": 2922.119,
+        "text": "us pinpoint where these upstream upstream open reading frames might initiate so it's very close it's not a quite yet but this is where you can find everything yeah so I'll just briefly acknowledge my lab here our collaborators collaborators in the Tod lab and Kaitlyn Rodriguez here and then my funding I did I I tried like I like tonight I tried cross-correlation as one of the initial that's just because of the variances in signal it was hard to normal get a normalized or idealize I know that basically the scores were it "
+    },
+    {
+        "start": 2983.18,
+        "text": "is really messy using using that I even tried I mean and along the same lines I try just straight Pearson yeah I was thinking more along the lines of like the ratio of first base pair to the second second to third and third what you expect is a high value about one and a low value and that would repeat over yeah to try fast Fourier transforms on the data um so the coherence itself is based on the Fourier transform of the data the the math still narrows or at least you don't mention it doing some of it in numpy um I thought about doing that oh that's a lot faster yeah yeah it would be but at the same time I also "
+    },
+    {
+        "start": 3043.71,
+        "text": "kind of wanted to make it so that there there wouldn't be I mean it's something that I'll probably visit well yeah it was something that I at least for this iteration I was trying to do with this much standard library as possible ya know that's definitely something [Music] thank you [Applause] "
+    }
+]

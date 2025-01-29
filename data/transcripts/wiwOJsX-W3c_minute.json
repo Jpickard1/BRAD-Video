@@ -1,0 +1,138 @@
+[
+    {
+        "start": 22.55,
+        "text": "[Music] "
+    },
+    {
+        "start": 82.79,
+        "text": "so welcome abroad to the technology seminar sir this is the last seminar of the semester love next week and then we'll start again you and your very schedule masterpiece also later today be sending out ones on the email listserv just for this semester information based on feedback also the recommendations speakers that I perceived that have reached out to them so you try but today I do really value and appreciate the fact that you surprised them he felt that in there's a sign-up sheet I'll bring it if anyone has inside of my announcement so today's speaker is John who is a grad student about my this displays a "
+    },
+    {
+        "start": 163.76,
+        "text": "prediction assisted by artificial inheritance convolutional okay ketta let's go on okay so in this part I will discuss how we use the neural network predicted versatile raster distance for assist the normal protein folding so protein structure prediction problem is that given amino acid sequence of building how to reduce computational algorithm to predict that tertiary structure so early approach of this problem is used template based modeling where you can search by a sequence "
+    },
+    {
+        "start": 225.95,
+        "text": "through the PDB database which experimentally determine 14 structures you can use the alignment between query and template and then chance to get your structure of your IV protein so third problem is you don't always have a good MP you can find from the PDB database so the normal protein structure prediction is to remove the dependence on the protein on experimentally determined protein structure while we why is this important will explain in the next slide so why do we do in the normal or temporary protein structure prediction so on the right hand side we I showed the accumulation of protein sequences in "
+    },
+    {
+        "start": 286.159,
+        "text": "the unicode database so this is early in this year I think now is almost for hungry Elia top and among this many protein sequences by the way this is exponential this is log scale so the number of protein sequence in Unipro is expanding exponentially by the accumulation of luxury determined proteins in the PDB database is just increase almost linearly that means one in a thousand protein as experimental determine structure for most proteins we care we have to a computationally modeled a structure to model them is not there easily for the so here I sought for the human and equilateral him how many proteins can be modeled by tempeh based method where the red easy portion are those "
+    },
+    {
+        "start": 349.449,
+        "text": "that can be modeled by a threatening or template based model so for human ecoli around to answer of their proteins cannot be confidently cannot be accurately model by template based modeling and they need the normal structure Bowden so this other cool most well study organisms I won't study a strength Wireless call append or arrivals which has around three thousand genes ninety percent of the podium cannot be modeled by template base model so this is similar to most of the organisms because of the bacteria or other microbes in the world the protein structure prediction problem is at require I am about who deep learning so "
+    },
+    {
+        "start": 413.789,
+        "text": "in case you don't know cache has a critical assessment of structure prediction is biannual international church parent for protein structure folding those in cusp on a little year you have the experimental groups we all can to determine a structure of around 100 proteins and ask every participant with it the protein structure and after half a year you get a native structure than you know how everyone is performing so here we show the ranking of temple based model so each bar is one group and the higher the bar the better the performance Tom is young John of course this is I say sir so this ranking is for all groups including human group and server group whereas there are automated server "
+    },
+    {
+        "start": 476.56,
+        "text": "that must be must submit a murder within three days and human groups can submit a modal after two or three weeks so in other words the human groups can check the result that solar groups though they are not completely automated this is young term dishes i phaser this is a purple or a 7d and all these groups they use to blend name though this is for template based modeling and for all protein stock prediction structure of proteins for solar the first round group is quark I which is the deep mattress project and then I phaser and then web Hall and Los Zetas and for human groups then you "
+    },
+    {
+        "start": 537.01,
+        "text": "a purple West that hot tip my has make some be sleeping announcement that they wink they wink at doing everyone in casts each way they just bring in one category but anyway we should give them quality as they are really doing good job and also there's a submerged called conquer prediction so I will explain what is contact prediction later and also in this category Bucharest and West Tripoli is the program we develop and we are also ramping as the top now after all this has 13 groups except for Rosetta they all use deep learning so why deep learning is particularly suitable for protein structure prediction that's because in our tertiary protein structure their daughter is if usually stable by "
+    },
+    {
+        "start": 599.589,
+        "text": "pairwise thus the intellection so the cat home is the bathroom and the stick shows desciption so we can define two residues to be in contact if there's if they have so the distance between this debate her atom is within a and strong and predicting which residue pairs are in contact it can be actually a formula rise as image segmentation problem so in an image segmentation problem or b or you can also stay a pixel level labeling problem you have an image that has different colors or different feature channels your goal is given this input image label each pixel what kind of object is on this image they an elephant or the background or the grass in contact "
+    },
+    {
+        "start": 664.52,
+        "text": "prediction contact map can be considered as an image where the x axis and the y axis are both the residual index from 1 to L where L is the rival so this image is symmetric and one poi means one residue pair a black dot means two residues are in contact and the white point means they are not in contact we don't need to care that much on the diagonal because obviously if two rescues are posed together in a sequence they should also in contact so the important part is this is post a far away from the diagonal now in counter predictions that color or the info feature is the multiple sequence alignment for your query sequence so if "
+    },
+    {
+        "start": 726.59,
+        "text": "we formulate as image segmentation problem where for a cou dimensional map we try to label each pixel or interest of hair is in contact or not then this is a classical problems for deep convolutional neural network so in our so why how can we use a multiple sequence alignment to predict this now suppose we have this is our query sequence the time from this query sequence we can find the sequence homologs this sequence hormones don't have to have tertiary structure and even if they don't we don't care and even if they do or don't we don't care we search the highest depends to protein sequence database and get this alignment now if you notice this position when this "
+    },
+    {
+        "start": 788.709,
+        "text": "position can go from B to D this position also can work on earth okay so is unlike this position is completely conserved so they there is mutation it doesn't have any mutation or when this mutation converter art will be disposition income of an art will be East mutation does not happens let's not have any coercion with other position but when this position can go from B it would be it also can work from F okay that means these two residues they are overlooked they are evolutionary coupled and we can use this evolutionary coupling information who are infer whether these two positions they are close together in the tertiary structure and the multiple sequence alignment can express as three dimensional matrix for n sequence L amino acid per sequence and "
+    },
+    {
+        "start": 852.339,
+        "text": "20 amino acid type as the gap the evolutionary coupling is the 21 L by 20 when L matrix L o L is the length of 6 there is a landfill sequence and 21 is the amino acid type and so this if so this express the correlation between different amino acid type a different amino a different position in the protein sequence our goal is to predict theta or the original evolutionary coupling given the multiple sequence alignment we can do this by maximum likelihood though we can use string rule to write rewrite this into this where Xin is the amino acid type add out so I mean I see type a precision I for the M "
+    },
+    {
+        "start": 914.13,
+        "text": "sequence then we can do this probability can express ideas we can put the product outside as the summation then this can be solved by a maximum likelihood estimation document yes our I and J Jason longaville your sequence they don't have to be in any position in three dimensions any any two positions they don't have to be adjacent in depth or in the primary sequence them the different filter then we can use it to predict the total national content map which is L by L and L by L image using deep convolutional neural network so this process is the process I described here where we get a vita then the filter "
+    },
+    {
+        "start": 976.68,
+        "text": "is one kind of info future we can pair it to a deep convolutional neural network to predict L by L counter actually the contact rejection of a distance position so this is this pipeline is called Seahawk whether we use the convolutional neural network though in this slide to predict a two-dimensional content mass and this content map is used to guide a Monte Carlo simulation which also include others that is statistical annuity terms to assemble shock structure fragments to full and sequence using a multi car simulation this Monte Carlo simulation has many different geometry operations "
+    },
+    {
+        "start": 1036.839,
+        "text": "we also call movements so each movement you'll either change a little bit of the structure or coherent we change a lot a lot a lot of the structure by sampling the confirmation we can generate a large number of confirmations and then we Custer them and we buy into atomic model this is the pipeline we use in cash valve and and also in cash 13 so this is the native structure of a protein and weak and dash line is the critical context and here is the sticker model we predict for this structure which has ITM score of the 0.8 and hem score is the measurement of aqua is the structure "
+    },
+    {
+        "start": 1097.53,
+        "text": "model the higher the better and di is the distance between the of the rescuer I between the native and the predicta structure after civil position so the higher the better and we can see the y-axis is the structure prediction pipeline with critical content and excesses is without long hair and after in the context we can significantly improve the structure quality as almost all points are on the upper diagonal or solid at hemorrhoids or assailant on hill point eight so this was the old pattern in the password him type but now we are developing and another newer pipeline where the thumb just predicted pairwise whether we don't just predict "
+    },
+    {
+        "start": 1158.1,
+        "text": "the contact though for residues that are in content we also predict the realvalue distance the content map is just a binary map as a yes or no whether they are in contact and distance map is for each recipe is a histogram and in this histogram each each path is a probability of whether a Rosko pair is within a distance for example from nyeport vertical hand and strong so we can use almost the same architecture to predict the distance distribution and then we can fit a Gaussian curve to estimate what is the real value distance how do we predict the distance is by "
+    },
+    {
+        "start": 1220.95,
+        "text": "using almost the same architecture but now instead of L by L by one prediction we had by L by L by two need to be a prediction and Knuth who means the number of different distance beans for one was still here so we used a similar logic how simulation by adding the predicted distance and dr. motoring college here and be significantly improved so here is the average TM score of hungry protein structures and here is the number of target proteins whose gem score can be Christian score is greater than 0.5 means the stock term prediction has suffered quality those secret means are only used content and deep heart means I use both content and pretty good "
+    },
+    {
+        "start": 1284.44,
+        "text": "distance so we can improve the modeling quality by 89% so the conclusion is predicted residue ratio distance significantly improve the in davos structure prediction / content assisted protein folding and base the major part of how I do the distance prediction and structure folding so I didn't talk oh my maybe I admit that lie order incorrect so one part didn't how to much is how do we how to regenerate the multiple sequence alignment here though this is dispatch return out of year by critical critical part in the pipeline because "
+    },
+    {
+        "start": 1345.04,
+        "text": "all our prediction including the contact distance and also local structure or property by secondly structure and so on accessibility are all based on the input multiple sequence alignment so I used around two to three month to film the pipeline and so though the para is like this time from a query sequence I use it which breeds which is the hidden Markov model based model who searched the unicast protein sequence database to get a multiple sequence alignment if the number of sequences was small then we do "
+    },
+    {
+        "start": 1407.77,
+        "text": "a second step where I used another hidden Markov model based method to get to get the raw sequence hit and this sequence heats are converted for each piece format and use this difference profile to search this database forget this multiple sequence alignment though this two step only used traditional whole genome sequence derived protein sequence and if these two steps obtain a small number of protein sequence I will perform a first step where we will search metal cars which is the meta genome database then I also can way to edit this format will get a final alignment so with this with the free stage I can improve the contact prediction accuracy by around 4% and "
+    },
+    {
+        "start": 1470.88,
+        "text": "this work is now accepted by PI informatics so this is the simplified outright that I'm trying to develop but I haven't finished this part yet yes so this is what we are eating empirically there's no theoretical justification what we find is that you don't always get improvement and you get more sequence in fact if your number of chip yeah if you're a number of effective sequence is quick and 128 I think more sequence will just makes more noise because the more sequins you have the more difficult or it will arrive equity "
+    },
+    {
+        "start": 1542.76,
+        "text": "there's a little bit also and also I didn't talk much about how why do we use why do we how do we use the protein structure by a true from the protein structure they are locked you can pretty you can use the structure tool by stocker templates in the protein database we function a notation from where we can predict the gene ontology terms by combining sides and enzyme commish and the enzyme commission number and other function and notations so here is a paper we developed for the human proteome together with you and we include both the cultural information and the protein coding inhalation Russian network and a sequence or models who derive consensus building function prediction or and for human proteome so "
+    },
+    {
+        "start": 1606.84,
+        "text": "with that I shall thank everyone for coming so here is my thesis committee member and apart from my main mentor eater and our young Peter and he'll who are my unofficial commenters also participate although a guy meat with a protein function prediction pipeline and where my wife's alkalosis more power people is here and with that I would like to take questions and so you said that they're having more sequences does not necessarily improve the quality of the production which sort of makes sense have you tried like I guess you know what I'm wondering is to what extent the results are influenced by what sequences "
+    },
+    {
+        "start": 1670.22,
+        "text": "you select I mean I'm not sure how you can test that because I mean at this point I imagined that the sequences are so distant so just like you know no insight that you can provide like you know have you tested like you know somehow but how the sequences you selected accept the result so much whether or not more so the so this sequences versus like you know a subset of being was more I guess yeah that's what I'm wondering oh when we when we think the cutoff and "
+    },
+    {
+        "start": 1731.02,
+        "text": "uh so we are using we use the contemplation who train the cutoff yeah the y-axis is the accuracy of contract prediction so obviously the higher the better and the excesses is the different of the number of effective sequence and then we find that up after you reach 128 your your result don't improve anymore right so my guess empirical cut off that makes perfect sense but when I'm asking is how are the results attracted by which sequence with you so what right so have you done some kind of I don't know maybe exclusive what do you mean by which sequence is okay if you talk more sequences I believe that I "
+    },
+    {
+        "start": 1791.54,
+        "text": "understand that but if you you know cut 148 sequences for example right so and you have you know maybe fifty more if you you know take some of these out and other sequences is that going to affect your predictions right the sequences that you selected so for example I have I somehow I fight 400 sequence so I just select a subset of 128 or if if so which subset I just saw that is that's a question yeah so if "
+    },
+    {
+        "start": 1855.179,
+        "text": "in our part right over from home if one stage I find home to a sequence then I will just I will just use this MSA operate and if it's less than 128 number of effective sequence then we will we will start we will continue with the next stage until the sequence which the cutoff so upon you reach that a point to after your number of effective sequence reach the threshold whether you only choose the stops there or you use off it won't make much difference so as we saw in the previous clock after reaching 120 a you still have more so that less the results about the same so my answer is you don't need to worry about that that's all it is okay yes so the d\u00e9cor pipeline you use both contact information and distance "
+    },
+    {
+        "start": 1916.83,
+        "text": "information both of those come from the same source and generally address the same concept of inter residues distance so how are the two complementary to each other in the actual ink work simulation I do not completely agree that they are for the same source so it is correct that they had there in Co feature are all derived from the multiple sequence alignment but different predictor they use different um never architecture and different loss function to train their model so we have asked that at least in sequel you only include the best contact predictor is not as good as you include like country 14 different diverse contemporary details because you increase the diversity you can of email "
+    },
+    {
+        "start": 1977.07,
+        "text": "or always improve the model and accuracy right but I'm asking between distance and context so if your trying the same neural network to predict both content and distance then or foresee well I will assume it won't make much difference using both content and distance or just using distance but we don't they are they are trained differently so they are still complementary to each other because they are training his different ok so then would you say if diversity is the only way they are complementary to each other if you used a bunch of different distance predictors instead of the contact ridiculous aim sort of increasing in fact there we not only use our predict we also use Davy Jones and "
+    },
+    {
+        "start": 2037.61,
+        "text": "other groups distance predictor it does improve so you can effectively remove contact prediction from the pipeline by adding a bunch of other distance well I guess the passive is domiciled appropriately combined all of the brain and a tree by the way I forgot of so our server so we don't have the latest level with the distance prediction but we do have the door where for contact phase come to assistive protein structure prediction where you can put your sequence here and then you can run the result and the result looks like this where you have a sequence of a secondary structure prediction so ssibility your specific contact map and then a "
+    },
+    {
+        "start": 2098.93,
+        "text": "different structure and you can all play and play around or download there any other questions all right thank you "
+    }
+]

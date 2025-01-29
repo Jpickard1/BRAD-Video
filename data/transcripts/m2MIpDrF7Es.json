@@ -1,0 +1,917 @@
+[
+    {
+        "text": "I've introduced a few derivative formulas, but a ",
+        "start": 14.76,
+        "duration": 2.568
+    },
+    {
+        "text": "really important one that I left out was exponentials.",
+        "start": 17.328,
+        "duration": 2.832
+    },
+    {
+        "text": "So here I want to talk about the derivatives of functions like 2 to the x, 7 to the x, ",
+        "start": 20.84,
+        "duration": 5.22
+    },
+    {
+        "text": "and also to show why e to the x is arguably the most important of the exponentials.",
+        "start": 26.06,
+        "duration": 4.98
+    },
+    {
+        "text": "First of all, to get an intuition, let's just focus on the function 2 to the x.",
+        "start": 32.24,
+        "duration": 3.88
+    },
+    {
+        "text": "Let's think of that input as a time, t, maybe in days, and the output, ",
+        "start": 36.92,
+        "duration": 4.585
+    },
+    {
+        "text": "2 to the t, as a population size, perhaps of a particularly ",
+        "start": 41.505,
+        "duration": 3.875
+    },
+    {
+        "text": "fertile band of pie creatures which doubles every single day.",
+        "start": 45.38,
+        "duration": 3.94
+    },
+    {
+        "text": "And actually, instead of population size, which grows in discrete little jumps with each ",
+        "start": 50.56,
+        "duration": 5.419
+    },
+    {
+        "text": "new baby pie creature, maybe let's think of 2 to the t as the total mass of the ",
+        "start": 55.979,
+        "duration": 4.871
+    },
+    {
+        "text": "population.",
+        "start": 60.85,
+        "duration": 0.67
+    },
+    {
+        "text": "I think that better reflects the continuity of this function, don't you?",
+        "start": 62.22,
+        "duration": 3.099
+    },
+    {
+        "text": "So for example, at time t equals 0, the total mass is 2 to the 0 equals 1, ",
+        "start": 66.38,
+        "duration": 5.264
+    },
+    {
+        "text": "for the mass of one creature.",
+        "start": 71.644,
+        "duration": 2.036
+    },
+    {
+        "text": "At t equals 1 day, the population has grown to 2 to the 1 equals 2 creature masses.",
+        "start": 74.41,
+        "duration": 5.79
+    },
+    {
+        "text": "At day t equals 2, it's t squared, or 4, and in general it just keeps doubling every day.",
+        "start": 81.16,
+        "duration": 5.96
+    },
+    {
+        "text": "For the derivative, we want dm dt, the rate at which this population mass is growing, ",
+        "start": 88.26,
+        "duration": 5.729
+    },
+    {
+        "text": "thought of as a tiny change in the mass, divided by a tiny change in time.",
+        "start": 93.989,
+        "duration": 4.931
+    },
+    {
+        "text": "Let's start by thinking of the rate of change over a full day, ",
+        "start": 99.84,
+        "duration": 4.306
+    },
+    {
+        "text": "say between day 3 and day 4.",
+        "start": 104.146,
+        "duration": 1.914
+    },
+    {
+        "text": "In this case, it grows from 8 to 16, so that's 8 ",
+        "start": 106.5,
+        "duration": 3.708
+    },
+    {
+        "text": "new creature masses added over the course of one day.",
+        "start": 110.208,
+        "duration": 4.012
+    },
+    {
+        "text": "And notice, that rate of growth equals the population size at the start of the day.",
+        "start": 115.06,
+        "duration": 4.78
+    },
+    {
+        "text": "Between day 4 and day 5, it grows from 16 to 32, ",
+        "start": 121.48,
+        "duration": 3.37
+    },
+    {
+        "text": "so that's a rate of 16 new creature masses per day, ",
+        "start": 124.85,
+        "duration": 3.576
+    },
+    {
+        "text": "which again equals the population size at the start of the day.",
+        "start": 128.426,
+        "duration": 4.334
+    },
+    {
+        "text": "And in general, this rate of growth over a full day ",
+        "start": 133.52,
+        "duration": 3.57
+    },
+    {
+        "text": "equals the population size at the start of that day.",
+        "start": 137.09,
+        "duration": 3.57
+    },
+    {
+        "text": "So it might be tempting to say that this means the derivative ",
+        "start": 141.68,
+        "duration": 4.08
+    },
+    {
+        "text": "of 2 to the t equals itself, that the rate of change of this ",
+        "start": 145.76,
+        "duration": 4.015
+    },
+    {
+        "text": "function at a given time t is equal to the value of that function.",
+        "start": 149.775,
+        "duration": 4.345
+    },
+    {
+        "text": "And this is definitely in the right direction, but it's not quite correct.",
+        "start": 154.12,
+        "duration": 4.76
+    },
+    {
+        "text": "What we're doing here is making comparisons over a full day, ",
+        "start": 159.46,
+        "duration": 3.905
+    },
+    {
+        "text": "considering the difference between 2 to the t plus 1 and 2 to the t.",
+        "start": 163.365,
+        "duration": 4.355
+    },
+    {
+        "text": "But for the derivative, we need to ask what happens for smaller and smaller changes.",
+        "start": 168.56,
+        "duration": 4.78
+    },
+    {
+        "text": "What's the growth over the course of a tenth of a day, ",
+        "start": 173.96,
+        "duration": 2.781
+    },
+    {
+        "text": "a hundredth of a day, one one billionth of a day?",
+        "start": 176.741,
+        "duration": 2.479
+    },
+    {
+        "text": "This is why I had us think of the function as representing population mass, ",
+        "start": 179.96,
+        "duration": 4.269
+    },
+    {
+        "text": "since it makes sense to ask about a tiny change in mass over a tiny fraction of a day, ",
+        "start": 184.229,
+        "duration": 4.888
+    },
+    {
+        "text": "but it doesn't make as much sense to ask about the tiny change in a discrete population ",
+        "start": 189.117,
+        "duration": 4.944
+    },
+    {
+        "text": "size per second.",
+        "start": 194.061,
+        "duration": 0.899
+    },
+    {
+        "text": "More abstractly, for a tiny change in time, dt, ",
+        "start": 195.9,
+        "duration": 3.695
+    },
+    {
+        "text": "we want to understand the difference between 2 to the t plus dt and 2 to the t, ",
+        "start": 199.595,
+        "duration": 6.159
+    },
+    {
+        "text": "all divided by dt.",
+        "start": 205.754,
+        "duration": 1.386
+    },
+    {
+        "text": "The change in the function per unit time, but now we're looking very narrowly ",
+        "start": 207.66,
+        "duration": 4.544
+    },
+    {
+        "text": "around a given point in time, rather than over the course of a full day.",
+        "start": 212.204,
+        "duration": 4.196
+    },
+    {
+        "text": "And here's the thing, I would love if there was some very clear geometric picture ",
+        "start": 219.58,
+        "duration": 4.559
+    },
+    {
+        "text": "that made everything that's about to follow just pop out, ",
+        "start": 224.139,
+        "duration": 3.225
+    },
+    {
+        "text": "some diagram where you could point to one value and say, see, that part, ",
+        "start": 227.364,
+        "duration": 4.058
+    },
+    {
+        "text": "that is the derivative of 2 to the t.",
+        "start": 231.422,
+        "duration": 2.058
+    },
+    {
+        "text": "And if you know of one, please let me know.",
+        "start": 234.38,
+        "duration": 2.26
+    },
+    {
+        "text": "And while the goal here, as with the rest of the series, ",
+        "start": 237.02,
+        "duration": 2.888
+    },
+    {
+        "text": "is to maintain a playful spirit of discovery, the type of play that ",
+        "start": 239.908,
+        "duration": 3.445
+    },
+    {
+        "text": "follows will have more to do with finding numerical patterns rather than visual ones.",
+        "start": 243.353,
+        "duration": 4.307
+    },
+    {
+        "text": "So start by just taking a very close look at this term, 2 to the t plus dt.",
+        "start": 248.68,
+        "duration": 4.88
+    },
+    {
+        "text": "A core property of exponentials is that you can ",
+        "start": 254.36,
+        "duration": 3.247
+    },
+    {
+        "text": "break this up as 2 to the t times 2 to the dt.",
+        "start": 257.607,
+        "duration": 3.113
+    },
+    {
+        "text": "That really is the most important property of exponents.",
+        "start": 261.26,
+        "duration": 2.86
+    },
+    {
+        "text": "If you add two values in that exponent, you can ",
+        "start": 264.66,
+        "duration": 2.798
+    },
+    {
+        "text": "break up the output as a product of some kind.",
+        "start": 267.458,
+        "duration": 2.682
+    },
+    {
+        "text": "This is what lets you relate additive ideas, things like tiny steps in time, ",
+        "start": 270.82,
+        "duration": 4.032
+    },
+    {
+        "text": "to multiplicative ideas, things like rates and ratios.",
+        "start": 274.852,
+        "duration": 2.828
+    },
+    {
+        "text": "I mean, just look at what happens here.",
+        "start": 278.42,
+        "duration": 1.54
+    },
+    {
+        "text": "After that move, we can factor out the term 2 to the t, ",
+        "start": 280.84,
+        "duration": 3.968
+    },
+    {
+        "text": "which is now just multiplied by 2 to the dt minus 1, all divided by dt.",
+        "start": 284.808,
+        "duration": 5.032
+    },
+    {
+        "text": "And remember, the derivative of 2 to the t is whatever ",
+        "start": 290.72,
+        "duration": 3.464
+    },
+    {
+        "text": "this whole expression approaches as dt approaches 0.",
+        "start": 294.184,
+        "duration": 3.276
+    },
+    {
+        "text": "And at first glance, that might seem like an unimportant manipulation.",
+        "start": 298.54,
+        "duration": 3.54
+    },
+    {
+        "text": "But a tremendously important fact is that this term on the right, ",
+        "start": 302.7,
+        "duration": 3.677
+    },
+    {
+        "text": "where all of the dt stuff lives, is completely separate from the t term itself.",
+        "start": 306.377,
+        "duration": 4.403
+    },
+    {
+        "text": "It doesn't depend on the actual time where we started.",
+        "start": 311.26,
+        "duration": 2.66
+    },
+    {
+        "text": "You can go off to a calculator and plug in very small values for dt here, ",
+        "start": 314.62,
+        "duration": 6.064
+    },
+    {
+        "text": "for example, maybe typing in 2 to the 0.001 minus 1 divided by 0.001.",
+        "start": 320.684,
+        "duration": 5.656
+    },
+    {
+        "text": "What you'll find is that for smaller and smaller choices of dt, ",
+        "start": 327.76,
+        "duration": 5.058
+    },
+    {
+        "text": "this value approaches a very specific number, around 0.6931.",
+        "start": 332.818,
+        "duration": 4.742
+    },
+    {
+        "text": "Don't worry if that number seems mysterious, the ",
+        "start": 338.64,
+        "duration": 2.396
+    },
+    {
+        "text": "central point is that this is some kind of constant.",
+        "start": 341.036,
+        "duration": 2.544
+    },
+    {
+        "text": "Unlike derivatives of other functions, all of the stuff ",
+        "start": 344.5,
+        "duration": 3.752
+    },
+    {
+        "text": "that depends on dt is separate from the value of t itself.",
+        "start": 348.252,
+        "duration": 3.888
+    },
+    {
+        "text": "So the derivative of 2 to the t is just itself, but multiplied by some constant.",
+        "start": 352.84,
+        "duration": 5.28
+    },
+    {
+        "text": "And that should make sense, because earlier it felt like the derivative for 2 to the t ",
+        "start": 359.3,
+        "duration": 4.518
+    },
+    {
+        "text": "should be itself, at least when we were looking at changes over the course of a full day.",
+        "start": 363.818,
+        "duration": 4.622
+    },
+    {
+        "text": "And evidently, the rate of change for this function over much smaller ",
+        "start": 369.03,
+        "duration": 4.748
+    },
+    {
+        "text": "timescales is not quite equal to itself, but it's proportional to itself, ",
+        "start": 373.778,
+        "duration": 5.019
+    },
+    {
+        "text": "with this very peculiar proportionality constant of 0.6931.",
+        "start": 378.797,
+        "duration": 4.003
+    },
+    {
+        "text": "And there's not too much special about the number 2 here.",
+        "start": 389.04,
+        "duration": 3.16
+    },
+    {
+        "text": "If instead we had dealt with the function 3 to the t, ",
+        "start": 392.84,
+        "duration": 3.3
+    },
+    {
+        "text": "the exponential property would also have led us to the conclusion that the derivative ",
+        "start": 396.14,
+        "duration": 5.256
+    },
+    {
+        "text": "of 3 to the t is proportional to itself, but this time it would have had a ",
+        "start": 401.396,
+        "duration": 4.584
+    },
+    {
+        "text": "proportionality constant of 1.0986.",
+        "start": 405.98,
+        "duration": 2.14
+    },
+    {
+        "text": "And for other bases to your exponent, you can have fun trying to see what the ",
+        "start": 409.2,
+        "duration": 3.957
+    },
+    {
+        "text": "various proportionality constants are, maybe seeing if you can find a pattern in them.",
+        "start": 413.157,
+        "duration": 4.363
+    },
+    {
+        "text": "For example, if you plug in 8 to the power of a very tiny number, ",
+        "start": 418.4,
+        "duration": 4.982
+    },
+    {
+        "text": "minus 1, and divide by that same tiny number, you'd find that ",
+        "start": 423.382,
+        "duration": 4.681
+    },
+    {
+        "text": "the relevant proportionality constant is around 2.079.",
+        "start": 428.063,
+        "duration": 4.077
+    },
+    {
+        "text": "And maybe, just maybe, you would notice that this number happens ",
+        "start": 432.66,
+        "duration": 4.485
+    },
+    {
+        "text": "to be exactly 3 times the constant associated with the base for 2.",
+        "start": 437.145,
+        "duration": 4.555
+    },
+    {
+        "text": "So these numbers certainly aren't random, there is some kind of pattern, but what is it?",
+        "start": 442.46,
+        "duration": 5.5
+    },
+    {
+        "text": "What does 2 have to do with the number 0.6931, ",
+        "start": 448.18,
+        "duration": 3.534
+    },
+    {
+        "text": "and what does 8 have to do with the number 2.079?",
+        "start": 451.714,
+        "duration": 3.686
+    },
+    {
+        "text": "Well, a second question that is ultimately going to explain these mystery constants is ",
+        "start": 456.78,
+        "duration": 5.466
+    },
+    {
+        "text": "whether there's some base where that proportionality constant is 1, ",
+        "start": 462.246,
+        "duration": 4.273
+    },
+    {
+        "text": "where the derivative of a to the power t is not just proportional to itself, ",
+        "start": 466.519,
+        "duration": 4.838
+    },
+    {
+        "text": "but actually equal to itself.",
+        "start": 471.357,
+        "duration": 1.823
+    },
+    {
+        "text": "And there is!",
+        "start": 473.72,
+        "duration": 0.96
+    },
+    {
+        "text": "It's the special constant e around 2.71828.",
+        "start": 475.08,
+        "duration": 4.22
+    },
+    {
+        "text": "In fact, it's not just that the number e happens to show up here, ",
+        "start": 480.32,
+        "duration": 4.102
+    },
+    {
+        "text": "this is in a sense what defines the number e.",
+        "start": 484.422,
+        "duration": 2.798
+    },
+    {
+        "text": "If you ask why does e of all numbers have this property, ",
+        "start": 488.6,
+        "duration": 2.981
+    },
+    {
+        "text": "it's a little like asking why does pi of all numbers happen ",
+        "start": 491.581,
+        "duration": 3.139
+    },
+    {
+        "text": "to be the ratio of the circumference of a circle to its diameter.",
+        "start": 494.72,
+        "duration": 3.4
+    },
+    {
+        "text": "This is at its heart what defines this value.",
+        "start": 498.67,
+        "duration": 2.61
+    },
+    {
+        "text": "All exponential functions are proportional to their own derivative, ",
+        "start": 502.06,
+        "duration": 4.212
+    },
+    {
+        "text": "but e alone is the special number so that proportionality constant is 1, ",
+        "start": 506.272,
+        "duration": 4.522
+    },
+    {
+        "text": "meaning e to the t actually equals its own derivative.",
+        "start": 510.794,
+        "duration": 3.346
+    },
+    {
+        "text": "One way to think of that is that if you look at the graph of e to the t, ",
+        "start": 515.44,
+        "duration": 4.048
+    },
+    {
+        "text": "it has the peculiar property that the slope of a tangent line to any point ",
+        "start": 519.488,
+        "duration": 4.159
+    },
+    {
+        "text": "on this graph equals the height of that point above the horizontal axis.",
+        "start": 523.647,
+        "duration": 3.993
+    },
+    {
+        "text": "The existence of a function like this answers the question of the mystery constants, ",
+        "start": 528.76,
+        "duration": 4.095
+    },
+    {
+        "text": "and it's because it gives a different way to think about functions ",
+        "start": 532.855,
+        "duration": 3.228
+    },
+    {
+        "text": "that are proportional to their own derivative.",
+        "start": 536.083,
+        "duration": 2.217
+    },
+    {
+        "text": "The key is to use the chain rule.",
+        "start": 539.2,
+        "duration": 1.8
+    },
+    {
+        "text": "For example, what is the derivative of e to the 3t?",
+        "start": 541.92,
+        "duration": 3.38
+    },
+    {
+        "text": "Well, you take the derivative of the outermost function, ",
+        "start": 546.34,
+        "duration": 3.567
+    },
+    {
+        "text": "which due to this special nature of e is just itself, ",
+        "start": 549.907,
+        "duration": 3.38
+    },
+    {
+        "text": "and multiply by the derivative of that inner function 3t, which is the constant 3.",
+        "start": 553.287,
+        "duration": 5.133
+    },
+    {
+        "text": "Or rather than just applying a rule blindly, you could take this moment ",
+        "start": 559.46,
+        "duration": 4.093
+    },
+    {
+        "text": "to practice the intuition for the chain rule that I talked through last video, ",
+        "start": 563.553,
+        "duration": 4.491
+    },
+    {
+        "text": "thinking about how a slight nudge to t changes the value of 3t, ",
+        "start": 568.044,
+        "duration": 3.639
+    },
+    {
+        "text": "and how that intermediate change nudges the final value of e to the 3t.",
+        "start": 571.683,
+        "duration": 4.037
+    },
+    {
+        "text": "Either way, the point is e to the power of some constant ",
+        "start": 578.42,
+        "duration": 4.382
+    },
+    {
+        "text": "times t is equal to that same constant times itself.",
+        "start": 582.802,
+        "duration": 3.998
+    },
+    {
+        "text": "And from here, the question of those mystery constants ",
+        "start": 587.96,
+        "duration": 3.222
+    },
+    {
+        "text": "really just comes down to a certain algebraic manipulation.",
+        "start": 591.182,
+        "duration": 3.458
+    },
+    {
+        "text": "The number 2 can also be written as e to the natural log of 2.",
+        "start": 596.3,
+        "duration": 4.76
+    },
+    {
+        "text": "There's nothing fancy here, this is just the definition of the natural log, ",
+        "start": 601.06,
+        "duration": 5.332
+    },
+    {
+        "text": "it asks the question e to the what equals 2.",
+        "start": 606.392,
+        "duration": 3.088
+    },
+    {
+        "text": "So the function 2 to the t is the same as the function ",
+        "start": 610.82,
+        "duration": 4.076
+    },
+    {
+        "text": "e to the power of the natural log of 2 times t.",
+        "start": 614.896,
+        "duration": 3.484
+    },
+    {
+        "text": "And from what we just saw, combining the fact that e to the t is its own ",
+        "start": 620.32,
+        "duration": 4.095
+    },
+    {
+        "text": "derivative with the chain rule, the derivative of this function is proportional ",
+        "start": 624.415,
+        "duration": 4.489
+    },
+    {
+        "text": "to itself, with a proportionality constant equal to the natural log of 2.",
+        "start": 628.904,
+        "duration": 4.096
+    },
+    {
+        "text": "And indeed, if you go plug in the natural log of 2 to a calculator, ",
+        "start": 634.08,
+        "duration": 4.324
+    },
+    {
+        "text": "you'll find that it's 0.6931, the mystery constant we ran into earlier.",
+        "start": 638.404,
+        "duration": 4.516
+    },
+    {
+        "text": "And the same goes for all the other bases.",
+        "start": 643.98,
+        "duration": 2.24
+    },
+    {
+        "text": "The mystery proportionality constant that pops up when taking derivatives is just ",
+        "start": 646.76,
+        "duration": 3.231
+    },
+    {
+        "text": "the natural log of the base. The answer to the question e to the what equals that base.",
+        "start": 649.991,
+        "duration": 3.429
+    },
+    {
+        "text": "In fact, throughout applications of calculus, you rarely ",
+        "start": 653.42,
+        "duration": 7.367
+    },
+    {
+        "text": "see exponentials written as some base to a power t.",
+        "start": 660.787,
+        "duration": 6.593
+    },
+    {
+        "text": "Instead, you almost always write the exponential ",
+        "start": 668.06,
+        "duration": 2.801
+    },
+    {
+        "text": "as e to the power of some constant times t.",
+        "start": 670.861,
+        "duration": 2.459
+    },
+    {
+        "text": "It's all equivalent, I mean any function like 2 to the t or ",
+        "start": 674.2,
+        "duration": 4.085
+    },
+    {
+        "text": "3 to the t can also be written as e to some constant times t.",
+        "start": 678.285,
+        "duration": 4.155
+    },
+    {
+        "text": "At the risk of staying overfocused on the symbols here, ",
+        "start": 684.52,
+        "duration": 3.419
+    },
+    {
+        "text": "I want to emphasize that there are many ways to write down any particular ",
+        "start": 687.939,
+        "duration": 4.518
+    },
+    {
+        "text": "exponential function.",
+        "start": 692.457,
+        "duration": 1.283
+    },
+    {
+        "text": "And when you see something written as e to some constant times t, ",
+        "start": 694.5,
+        "duration": 4.006
+    },
+    {
+        "text": "that's a choice we make to write it that way, and the number e is not fundamental to ",
+        "start": 698.506,
+        "duration": 5.159
+    },
+    {
+        "text": "that function itself.",
+        "start": 703.665,
+        "duration": 1.275
+    },
+    {
+        "text": "What is special about writing exponentials in terms of e like this is ",
+        "start": 705.56,
+        "duration": 4.169
+    },
+    {
+        "text": "that it gives that constant in the exponent a nice readable meaning.",
+        "start": 709.729,
+        "duration": 4.051
+    },
+    {
+        "text": "Here, let me show you what I mean.",
+        "start": 714.44,
+        "duration": 1.1
+    },
+    {
+        "text": "All sorts of natural phenomena involve some rate of ",
+        "start": 716.28,
+        "duration": 2.879
+    },
+    {
+        "text": "change that's proportional to the thing that's changing.",
+        "start": 719.159,
+        "duration": 3.101
+    },
+    {
+        "text": "For example, the rate of growth of a population actually does ",
+        "start": 723.26,
+        "duration": 3.388
+    },
+    {
+        "text": "tend to be proportional to the size of the population itself, ",
+        "start": 726.648,
+        "duration": 3.388
+    },
+    {
+        "text": "assuming there isn't some limited resource slowing things down.",
+        "start": 730.036,
+        "duration": 3.444
+    },
+    {
+        "text": "And if you put a cup of hot water in a cool room, ",
+        "start": 734.1,
+        "duration": 3.178
+    },
+    {
+        "text": "the rate at which the water cools is proportional to the difference in temperature ",
+        "start": 737.278,
+        "duration": 5.277
+    },
+    {
+        "text": "between the room and the water, or said a little differently, ",
+        "start": 742.555,
+        "duration": 3.941
+    },
+    {
+        "text": "the rate at which that difference changes is proportional to itself.",
+        "start": 746.496,
+        "duration": 4.324
+    },
+    {
+        "text": "If you invest your money, the rate at which it grows is ",
+        "start": 751.96,
+        "duration": 3.624
+    },
+    {
+        "text": "proportional to the amount of money there at any time.",
+        "start": 755.584,
+        "duration": 3.496
+    },
+    {
+        "text": "In all of these cases, where some variable's rate of change is proportional to itself, ",
+        "start": 759.94,
+        "duration": 5.114
+    },
+    {
+        "text": "the function describing that variable over time is going to ",
+        "start": 765.054,
+        "duration": 3.528
+    },
+    {
+        "text": "look like some kind of exponential.",
+        "start": 768.582,
+        "duration": 2.058
+    },
+    {
+        "text": "And even though there are lots of ways to write any exponential function, ",
+        "start": 771.76,
+        "duration": 4.34
+    },
+    {
+        "text": "it's very natural to choose to express these functions as e to the power ",
+        "start": 776.1,
+        "duration": 4.283
+    },
+    {
+        "text": "of some constant times t, since that constant carries a very natural meaning.",
+        "start": 780.383,
+        "duration": 4.517
+    },
+    {
+        "text": "It's the same as the proportionality constant between ",
+        "start": 784.9,
+        "duration": 3.317
+    },
+    {
+        "text": "the size of the changing variable and the rate of change.",
+        "start": 788.217,
+        "duration": 3.503
+    },
+    {
+        "text": "And as always, I want to thank those who have made this series possible.",
+        "start": 794.76,
+        "duration": 3.1
+    },
+    {
+        "text": "Thank you.",
+        "start": 814.9,
+        "duration": 14.6
+    }
+]

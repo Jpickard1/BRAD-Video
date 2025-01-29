@@ -1,0 +1,1077 @@
+[
+    {
+        "text": "Today, I want to share with you a neat way to solve the Towers ",
+        "start": 4.2,
+        "duration": 3.235
+    },
+    {
+        "text": "of Hanoi puzzle just by counting in a different number system.",
+        "start": 7.435,
+        "duration": 3.185
+    },
+    {
+        "text": "And surprisingly, this stuff relates to finding a curve that fills Sierpinski's triangle.",
+        "start": 11.22,
+        "duration": 4.42
+    },
+    {
+        "text": "I learned about this from a former CS lecturer of mine, his name's Keith Schwartz, ",
+        "start": 16.72,
+        "duration": 4.144
+    },
+    {
+        "text": "and I've gotta say, this man is one of the best educators I've ever met.",
+        "start": 20.864,
+        "duration": 3.596
+    },
+    {
+        "text": "I actually recorded a bit of the conversation where he showed me this stuff, ",
+        "start": 25.14,
+        "duration": 3.334
+    },
+    {
+        "text": "so you guys can hear some of what he described directly.",
+        "start": 28.474,
+        "duration": 2.426
+    },
+    {
+        "text": "In case you're unfamiliar, let's just lay down ",
+        "start": 38.42,
+        "duration": 4.761
+    },
+    {
+        "text": "what the Towers of Hanoi puzzle actually is.",
+        "start": 43.181,
+        "duration": 4.459
+    },
+    {
+        "text": "So you have a collection of three pegs, and you have these disks of descending size.",
+        "start": 47.64,
+        "duration": 6.36
+    },
+    {
+        "text": "You think of these disks as having a hole in the ",
+        "start": 54.4,
+        "duration": 2.119
+    },
+    {
+        "text": "middle so that you can fit them onto a peg.",
+        "start": 56.519,
+        "duration": 1.861
+    },
+    {
+        "text": "The setup pictured here has five disks, which I'll label 0, 1, 2, ",
+        "start": 59.2,
+        "duration": 3.808
+    },
+    {
+        "text": "3, 4, but in principle, you could have as many disks as you want.",
+        "start": 63.008,
+        "duration": 3.752
+    },
+    {
+        "text": "So they all start up stacked up from biggest to smallest on one spindle, ",
+        "start": 67.46,
+        "duration": 4.328
+    },
+    {
+        "text": "and the goal is to move the entire tower from one spindle to another.",
+        "start": 71.788,
+        "duration": 4.092
+    },
+    {
+        "text": "The rule is you can only move one disk at a time, ",
+        "start": 75.88,
+        "duration": 2.861
+    },
+    {
+        "text": "and you can't move a bigger disk on top of a smaller disk.",
+        "start": 78.741,
+        "duration": 3.319
+    },
+    {
+        "text": "For example, your first move must involve moving disk 0, ",
+        "start": 83.72,
+        "duration": 3.27
+    },
+    {
+        "text": "since any other disk has stuff on top of it that needs to get out of the way ",
+        "start": 86.99,
+        "duration": 4.419
+    },
+    {
+        "text": "before it can move.",
+        "start": 91.409,
+        "duration": 1.091
+    },
+    {
+        "text": "After that, you can move disk 1, but it has to go on whatever ",
+        "start": 93.08,
+        "duration": 3.624
+    },
+    {
+        "text": "peg doesn't currently have disk 0, since otherwise you'd be ",
+        "start": 96.704,
+        "duration": 3.508
+    },
+    {
+        "text": "putting a bigger disk on a smaller one, which isn't allowed.",
+        "start": 100.212,
+        "duration": 3.508
+    },
+    {
+        "text": "If you've never seen this before, I highly encourage you to pause ",
+        "start": 104.58,
+        "duration": 3.588
+    },
+    {
+        "text": "and pull out some books of varying sizes and try it out for yourself.",
+        "start": 108.168,
+        "duration": 3.752
+    },
+    {
+        "text": "Just kind of get a feel for what the puzzle is, if it's hard, ",
+        "start": 112.3,
+        "duration": 2.842
+    },
+    {
+        "text": "why it's hard, if it's not, why it's not, that kind of stuff.",
+        "start": 115.142,
+        "duration": 2.798
+    },
+    {
+        "text": "Now Keith showed me something truly surprising about this puzzle, ",
+        "start": 120.3,
+        "duration": 3.484
+    },
+    {
+        "text": "which is that you can solve it just by counting up in binary and ",
+        "start": 123.784,
+        "duration": 3.432
+    },
+    {
+        "text": "associating the rhythm of that counting with a certain rhythm of disk movements.",
+        "start": 127.216,
+        "duration": 4.224
+    },
+    {
+        "text": "For anyone unfamiliar with binary, I'm going to ",
+        "start": 132.1,
+        "duration": 2.359
+    },
+    {
+        "text": "take a moment to do a quick overview here first.",
+        "start": 134.459,
+        "duration": 2.361
+    },
+    {
+        "text": "Actually, even if you are familiar with binary, ",
+        "start": 137.46,
+        "duration": 2.309
+    },
+    {
+        "text": "I want to explain it with a focus on the rhythm of counting, ",
+        "start": 139.769,
+        "duration": 2.936
+    },
+    {
+        "text": "which you may or may not have thought about before.",
+        "start": 142.705,
+        "duration": 2.455
+    },
+    {
+        "text": "Any description of binary typically starts off with an introspection ",
+        "start": 146.4,
+        "duration": 3.984
+    },
+    {
+        "text": "about our usual way to represent numbers, what we call base 10, ",
+        "start": 150.384,
+        "duration": 3.695
+    },
+    {
+        "text": "since we use 10 separate digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.",
+        "start": 154.079,
+        "duration": 3.581
+    },
+    {
+        "text": "The rhythm of counting begins by walking through all 10 of these digits.",
+        "start": 158.18,
+        "duration": 4.42
+    },
+    {
+        "text": "Then, having run out of new digits, you express the next number, ",
+        "start": 165.34,
+        "duration": 4.328
+    },
+    {
+        "text": "10, with two digits, 1, 0.",
+        "start": 169.668,
+        "duration": 1.732
+    },
+    {
+        "text": "You say that 1 is in the tens place, since it's meant to encapsulate the group of 10 ",
+        "start": 172.2,
+        "duration": 4.509
+    },
+    {
+        "text": "that you've already counted up to so far, while freeing the ones place to reset to 0.",
+        "start": 176.709,
+        "duration": 4.511
+    },
+    {
+        "text": "The rhythm of counting repeats like this, counting up 9, ",
+        "start": 182.079,
+        "duration": 3.578
+    },
+    {
+        "text": "rolling over to the tens place, counting up 9 more, rolling over to the tens place, etc.",
+        "start": 185.657,
+        "duration": 5.523
+    },
+    {
+        "text": "Until, after repeating that process 9 times, you roll over to a hundreds place, ",
+        "start": 192.62,
+        "duration": 5.528
+    },
+    {
+        "text": "a digit that keeps track of how many groups of 100 you've hit, ",
+        "start": 198.148,
+        "duration": 4.353
+    },
+    {
+        "text": "freeing up the other two digits to reset to 0.",
+        "start": 202.501,
+        "duration": 3.179
+    },
+    {
+        "text": "In this way, the rhythm of counting is kind of self-similar.",
+        "start": 209.519,
+        "duration": 3.721
+    },
+    {
+        "text": "Even if you zoom out to a larger scale, the process looks like doing something, ",
+        "start": 213.82,
+        "duration": 4.834
+    },
+    {
+        "text": "rolling over, doing that same thing, rolling over, ",
+        "start": 218.654,
+        "duration": 3.082
+    },
+    {
+        "text": "and repeating 9 times before an even larger rollover.",
+        "start": 221.736,
+        "duration": 3.204
+    },
+    {
+        "text": "In binary, also known as base-2, you limit yourself to two digits, ",
+        "start": 229.519,
+        "duration": 4.777
+    },
+    {
+        "text": "0 and 1, commonly called bits, which is short for binary digits.",
+        "start": 234.296,
+        "duration": 4.564
+    },
+    {
+        "text": "The result is that when you're counting, you have to roll over all the time.",
+        "start": 239.64,
+        "duration": 3.54
+    },
+    {
+        "text": "After counting 01, you've already run out of bits, ",
+        "start": 243.74,
+        "duration": 3.304
+    },
+    {
+        "text": "so you need to roll over to a twos place, writing 10, ",
+        "start": 247.044,
+        "duration": 3.498
+    },
+    {
+        "text": "and resisting every urge in your base-10 trained brain to read this as 10, ",
+        "start": 250.542,
+        "duration": 4.859
+    },
+    {
+        "text": "and instead understand it to mean 1 group of 2 plus 0.",
+        "start": 255.401,
+        "duration": 3.498
+    },
+    {
+        "text": "Then increment up to 11, which represents 3, and already you have to roll over again, ",
+        "start": 259.899,
+        "duration": 6.315
+    },
+    {
+        "text": "and since there's a 1 in that twos place, that has to roll over as well, ",
+        "start": 266.214,
+        "duration": 5.359
+    },
+    {
+        "text": "giving you 100, which represents 1 group of 4 plus 0 groups of 2 plus 0.",
+        "start": 271.573,
+        "duration": 5.287
+    },
+    {
+        "text": "In the same way that digits in base-10 represent powers of 10, ",
+        "start": 276.86,
+        "duration": 4.63
+    },
+    {
+        "text": "bits in base-2 represent different powers of 2, so instead of a tens place, ",
+        "start": 281.49,
+        "duration": 5.586
+    },
+    {
+        "text": "a hundreds place, a thousands place, you talk about a twos place, a fours place, ",
+        "start": 287.076,
+        "duration": 5.954
+    },
+    {
+        "text": "and an eights place.",
+        "start": 293.03,
+        "duration": 1.47
+    },
+    {
+        "text": "The rhythm of counting is now a lot faster, but that almost makes it more noticeable.",
+        "start": 295.82,
+        "duration": 4.2
+    },
+    {
+        "text": "Again, there's a certain self-similarity to this pattern.",
+        "start": 307.4,
+        "duration": 5.84
+    },
+    {
+        "text": "At every scale, the process is to do something, roll over, then do that same thing again.",
+        "start": 313.92,
+        "duration": 5.86
+    },
+    {
+        "text": "At the small scale, say counting up to 3, which is 11 in binary, ",
+        "start": 322.36,
+        "duration": 4.278
+    },
+    {
+        "text": "this means flip the last bit, roll over to the twos, then flip the last bit.",
+        "start": 326.638,
+        "duration": 5.002
+    },
+    {
+        "text": "At a larger scale, like counting up to 15, which is 1111 in binary, ",
+        "start": 332.96,
+        "duration": 4.72
+    },
+    {
+        "text": "the process is to let the last 3 count up to 7, ",
+        "start": 337.68,
+        "duration": 3.331
+    },
+    {
+        "text": "roll over to the eights place, then let the last 3 bits count up again.",
+        "start": 341.011,
+        "duration": 4.929
+    },
+    {
+        "text": "Counting up to 255, which is 8 successive ones, ",
+        "start": 346.96,
+        "duration": 3.118
+    },
+    {
+        "text": "this looks like letting the last 7 bits count up till they're full, ",
+        "start": 350.078,
+        "duration": 4.418
+    },
+    {
+        "text": "rolling over to the 128th place, then letting the last 7 bits count up again.",
+        "start": 354.496,
+        "duration": 5.004
+    },
+    {
+        "text": "Alright, so with that mini-introduction, the surprising fact that Keith ",
+        "start": 361.34,
+        "duration": 3.924
+    },
+    {
+        "text": "showed me is that we can use this rhythm to solve the towers of Hanoi.",
+        "start": 365.264,
+        "duration": 3.816
+    },
+    {
+        "text": "You start by counting from 0.",
+        "start": 370.38,
+        "duration": 1.46
+    },
+    {
+        "text": "Whenever you're only flipping that last bit, from a 0 to a 1, ",
+        "start": 372.66,
+        "duration": 4.137
+    },
+    {
+        "text": "move disk 0 one peg to the right.",
+        "start": 376.797,
+        "duration": 2.203
+    },
+    {
+        "text": "If it was already on the right-most peg, you just loop it back to the first peg.",
+        "start": 382.02,
+        "duration": 4.0
+    },
+    {
+        "text": "If, in your binary counting, you roll over once to the twos place, ",
+        "start": 388.8,
+        "duration": 4.19
+    },
+    {
+        "text": "meaning you flip the last two bits, you move disk number 1.",
+        "start": 392.99,
+        "duration": 3.69
+    },
+    {
+        "text": "Where do you move it, you might ask?",
+        "start": 397.62,
+        "duration": 1.36
+    },
+    {
+        "text": "Well, you have no choice.",
+        "start": 399.3,
+        "duration": 1.1
+    },
+    {
+        "text": "You can't put it on top of disk 0, and there's only one other peg, ",
+        "start": 400.62,
+        "duration": 3.201
+    },
+    {
+        "text": "so you move it where you're forced to move it.",
+        "start": 403.821,
+        "duration": 2.199
+    },
+    {
+        "text": "So after this, counting up to 1,1, that involves just flipping the last bit, ",
+        "start": 406.659,
+        "duration": 4.017
+    },
+    {
+        "text": "so you move disk 0 again.",
+        "start": 410.676,
+        "duration": 1.304
+    },
+    {
+        "text": "Then when your binary counting rolls over twice to the fours place, ",
+        "start": 412.64,
+        "duration": 4.595
+    },
+    {
+        "text": "move disk number 2, and the pattern continues like this.",
+        "start": 417.235,
+        "duration": 3.785
+    },
+    {
+        "text": "Flip the last, move disk 0.",
+        "start": 421.32,
+        "duration": 1.56
+    },
+    {
+        "text": "Flip the last two, move disk 1.",
+        "start": 423.26,
+        "duration": 1.64
+    },
+    {
+        "text": "Flip the last, move disk 0.",
+        "start": 425.76,
+        "duration": 1.44
+    },
+    {
+        "text": "And here, we're going to have to roll over three times to the eights place, ",
+        "start": 427.98,
+        "duration": 3.68
+    },
+    {
+        "text": "and that corresponds to moving disk number 3.",
+        "start": 431.66,
+        "duration": 2.18
+    },
+    {
+        "text": "There's something magical about it.",
+        "start": 434.8,
+        "duration": 1.38
+    },
+    {
+        "text": "When I first saw this, I was like, this can't work.",
+        "start": 436.3,
+        "duration": 1.62
+    },
+    {
+        "text": "I don't know how this works, I don't know why this works.",
+        "start": 438.54,
+        "duration": 2.54
+    },
+    {
+        "text": "Now I know, but it's just magical when you see it.",
+        "start": 441.2,
+        "duration": 3.08
+    },
+    {
+        "text": "I remember putting together an animation for this when I was teaching this, ",
+        "start": 444.4,
+        "duration": 4.761
+    },
+    {
+        "text": "and just like, I know how this works.",
+        "start": 449.161,
+        "duration": 2.319
+    },
+    {
+        "text": "I know all the things in it.",
+        "start": 451.62,
+        "duration": 1.22
+    },
+    {
+        "text": "It's still fun to just sit and just watch it play out.",
+        "start": 452.9,
+        "duration": 3.32
+    },
+    {
+        "text": "Oh yeah.",
+        "start": 456.38,
+        "duration": 0.26
+    },
+    {
+        "text": "I mean, it's not even clear at first that this is always going to give legal moves.",
+        "start": 457.18,
+        "duration": 4.04
+    },
+    {
+        "text": "For example, how do you know that every time you're rolling over to the eights place, ",
+        "start": 461.64,
+        "duration": 4.469
+    },
+    {
+        "text": "that disk 3 is necessarily going to be freed up to move?",
+        "start": 466.109,
+        "duration": 2.911
+    },
+    {
+        "text": "At the same time, the solution just immediately raises these questions like, ",
+        "start": 469.74,
+        "duration": 3.771
+    },
+    {
+        "text": "where does this come from, why does this work, ",
+        "start": 473.511,
+        "duration": 2.303
+    },
+    {
+        "text": "and is there a better way of doing this than having to do 2 to the n minus 1 steps?",
+        "start": 475.814,
+        "duration": 4.066
+    },
+    {
+        "text": "It turns out, not only does this solve Towers of Hanoi, ",
+        "start": 480.52,
+        "duration": 2.873
+    },
+    {
+        "text": "but it does it in the most efficient way possible.",
+        "start": 483.393,
+        "duration": 2.567
+    },
+    {
+        "text": "Understanding why this works and how it works and what the heck is going on comes down ",
+        "start": 486.7,
+        "duration": 4.394
+    },
+    {
+        "text": "to a certain perspective on the puzzle, what CS folk might call a recursive perspective.",
+        "start": 491.094,
+        "duration": 4.446
+    },
+    {
+        "text": "Disk 3 is thinking, okay, 2, 1, and 0, you have to get off of me.",
+        "start": 496.8,
+        "duration": 3.48
+    },
+    {
+        "text": "I can't really function under this much weight and pressure.",
+        "start": 500.42,
+        "duration": 3.2
+    },
+    {
+        "text": "And so just from disk 3's perspective, if you want to figure out how is disk 3 going ",
+        "start": 504.9,
+        "duration": 4.477
+    },
+    {
+        "text": "to get over here, somehow, I don't care how, disk 2, 1, and 0 have to get to spindle B.",
+        "start": 509.377,
+        "duration": 4.583
+    },
+    {
+        "text": "That's the only way it can move.",
+        "start": 514.02,
+        "duration": 1.92
+    },
+    {
+        "text": "If any of these disks are on top of 3, it can't move.",
+        "start": 516.08,
+        "duration": 1.92
+    },
+    {
+        "text": "If any of them are in spindle C, it can't move there.",
+        "start": 518.0,
+        "duration": 2.6
+    },
+    {
+        "text": "So somehow we have to get 2, 1, and 0 off.",
+        "start": 521.0,
+        "duration": 2.059
+    },
+    {
+        "text": "Having done that, then we can move disk 3 over there.",
+        "start": 523.58,
+        "duration": 4.02
+    },
+    {
+        "text": "And then disk 3 says, I'm set.",
+        "start": 528.12,
+        "duration": 1.26
+    },
+    {
+        "text": "You never need to move me again.",
+        "start": 529.72,
+        "duration": 1.56
+    },
+    {
+        "text": "Everyone else just figure out how to get here.",
+        "start": 531.74,
+        "duration": 1.64
+    },
+    {
+        "text": "And in a sense, you now have a smaller version of the same problem.",
+        "start": 533.98,
+        "duration": 3.68
+    },
+    {
+        "text": "Now you've got disk 0, 1, and 2 sitting on spindle B, you've got to get them to C.",
+        "start": 537.74,
+        "duration": 3.78
+    },
+    {
+        "text": "So the idea is that if I just focus on one disk and I think ",
+        "start": 542.08,
+        "duration": 2.636
+    },
+    {
+        "text": "about what am I going to have to do to get this disk to work, ",
+        "start": 544.716,
+        "duration": 2.724
+    },
+    {
+        "text": "I can turn my bigger problem into something slightly smaller.",
+        "start": 547.44,
+        "duration": 2.68
+    },
+    {
+        "text": "And then how do I solve that?",
+        "start": 550.34,
+        "duration": 1.5
+    },
+    {
+        "text": "Well, it's exactly the same thing.",
+        "start": 551.94,
+        "duration": 1.32
+    },
+    {
+        "text": "Disk 2 is going to say, disk 1, disk 0, it's not you, it's me.",
+        "start": 553.4,
+        "duration": 3.76
+    },
+    {
+        "text": "I just need some space.",
+        "start": 557.22,
+        "duration": 0.64
+    },
+    {
+        "text": "Get off.",
+        "start": 557.96,
+        "duration": 0.42
+    },
+    {
+        "text": "They need to move somewhere.",
+        "start": 558.82,
+        "duration": 1.3
+    },
+    {
+        "text": "Then disk 2 can move to where it needs to go.",
+        "start": 560.34,
+        "duration": 2.6
+    },
+    {
+        "text": "Then disk 1 and 0 can do this.",
+        "start": 563.02,
+        "duration": 1.78
+    },
+    {
+        "text": "But the interesting point is that every single ",
+        "start": 565.02,
+        "duration": 3.024
+    },
+    {
+        "text": "disk pretty much has the exact same strategy.",
+        "start": 568.044,
+        "duration": 2.896
+    },
+    {
+        "text": "They all say, everybody above me, get off.",
+        "start": 571.02,
+        "duration": 1.78
+    },
+    {
+        "text": "Then I'm going to move, OK, everyone pile back on.",
+        "start": 572.8,
+        "duration": 2.54
+    },
+    {
+        "text": "When you know that insight, you can code up something that will solve Towers of Hanoi, ",
+        "start": 576.32,
+        "duration": 5.754
+    },
+    {
+        "text": "like five or six lines of code, which probably has the highest ratio ",
+        "start": 582.074,
+        "duration": 4.564
+    },
+    {
+        "text": "of intellectual investment to lines of code ever.",
+        "start": 586.638,
+        "duration": 3.242
+    },
+    {
+        "text": "And if you think about it for a bit, it becomes ",
+        "start": 590.42,
+        "duration": 2.748
+    },
+    {
+        "text": "clear that this has to be the most efficient solution.",
+        "start": 593.168,
+        "duration": 3.092
+    },
+    {
+        "text": "At every step, you're only doing what's forced upon you.",
+        "start": 596.76,
+        "duration": 2.72
+    },
+    {
+        "text": "You have to get disk 0 through 2 off before you can move disk 3.",
+        "start": 599.92,
+        "duration": 3.9
+    },
+    {
+        "text": "And you have to move disk 3.",
+        "start": 604.34,
+        "duration": 1.56
+    },
+    {
+        "text": "And then you have to move disk 0 through 2 back onto it.",
+        "start": 606.46,
+        "duration": 2.84
+    },
+    {
+        "text": "There's just not any room for inefficiency from this perspective.",
+        "start": 609.88,
+        "duration": 3.76
+    },
+    {
+        "text": "So why does counting in binary capture this algorithm?",
+        "start": 615.2,
+        "duration": 3.2
+    },
+    {
+        "text": "Well, what's going on here is that this pattern of solving a subproblem, ",
+        "start": 619.46,
+        "duration": 3.941
+    },
+    {
+        "text": "moving a big disk, then solving a subproblem again, ",
+        "start": 623.401,
+        "duration": 2.807
+    },
+    {
+        "text": "is perfectly paralleled by the pattern of binary counting.",
+        "start": 626.208,
+        "duration": 3.132
+    },
+    {
+        "text": "Count up some amount, roll over, count up to that same amount again.",
+        "start": 630.08,
+        "duration": 3.4
+    },
+    {
+        "text": "And this Towers of Hanoi algorithm and binary counting are both self-similar processes, ",
+        "start": 635.14,
+        "duration": 4.858
+    },
+    {
+        "text": "in the sense that if you zoom out and count up to a larger power of 2, ",
+        "start": 639.998,
+        "duration": 3.919
+    },
+    {
+        "text": "or solve Towers of Hanoi with more disks, they both still have that same structure.",
+        "start": 643.917,
+        "duration": 4.583
+    },
+    {
+        "text": "Subproblem, do a thing, subproblem.",
+        "start": 649.04,
+        "duration": 2.12
+    },
+    {
+        "text": "For example, at a pretty small scale, solving Towers of Hanoi for two disks, ",
+        "start": 652.48,
+        "duration": 5.113
+    },
+    {
+        "text": "move disk 0, move disk 1, move disk 0, is reflected by counting up to 3 in binary.",
+        "start": 657.593,
+        "duration": 5.447
+    },
+    {
+        "text": "Flip the last bit, roll over once, flip the last bit.",
+        "start": 663.68,
+        "duration": 2.86
+    },
+    {
+        "text": "At a slightly larger scale, solving Towers of Hanoi for three ",
+        "start": 667.38,
+        "duration": 3.47
+    },
+    {
+        "text": "disks looks like doing whatever it takes to solve two disks, ",
+        "start": 670.85,
+        "duration": 3.415
+    },
+    {
+        "text": "move disk number 2, then do whatever it takes to solve two disks again.",
+        "start": 674.265,
+        "duration": 3.975
+    },
+    {
+        "text": "Analogously, counting up to 111 in binary involves counting up to 3, ",
+        "start": 679.1,
+        "duration": 4.349
+    },
+    {
+        "text": "rolling over all three bits, and counting up three more.",
+        "start": 683.449,
+        "duration": 3.531
+    },
+    {
+        "text": "At all scales, both processes have this same breakdown.",
+        "start": 687.6,
+        "duration": 3.76
+    },
+    {
+        "text": "So in a sense, the reason that this binary solution works, or at least an explanation, ",
+        "start": 691.82,
+        "duration": 4.356
+    },
+    {
+        "text": "I feel like there's no one explanation, but I think the most natural one is that ",
+        "start": 696.176,
+        "duration": 4.056
+    },
+    {
+        "text": "the pattern you would use to generate these binary numbers has exactly the same ",
+        "start": 700.232,
+        "duration": 4.006
+    },
+    {
+        "text": "structure as the pattern you would use for Towers of Hanoi, ",
+        "start": 704.238,
+        "duration": 3.005
+    },
+    {
+        "text": "which is why if you look at the bits flipping, you're effectively reversing this process.",
+        "start": 707.243,
+        "duration": 4.457
+    },
+    {
+        "text": "You're saying, what process generated these?",
+        "start": 711.82,
+        "duration": 2.2
+    },
+    {
+        "text": "If I were trying to understand how these bits were flipped to give me this thing, ",
+        "start": 714.02,
+        "duration": 5.133
+    },
+    {
+        "text": "you're effectively reverse engineering the recursive algorithm for Towers of Hanoi, ",
+        "start": 719.153,
+        "duration": 5.259
+    },
+    {
+        "text": "which is why it works out.",
+        "start": 724.412,
+        "duration": 1.628
+    },
+    {
+        "text": "That's pretty cool, right?",
+        "start": 727.62,
+        "duration": 1.38
+    },
+    {
+        "text": "But it actually gets cooler.",
+        "start": 729.42,
+        "duration": 1.32
+    },
+    {
+        "text": "I haven't even gotten to how this relates to Sierpinski's triangle.",
+        "start": 730.96,
+        "duration": 2.68
+    },
+    {
+        "text": "And that's exactly what I'm going to do in the follow-on video, part 2.",
+        "start": 734.26,
+        "duration": 3.52
+    },
+    {
+        "text": "Many thanks to everybody who's supporting these videos on Patreon.",
+        "start": 738.82,
+        "duration": 3.04
+    },
+    {
+        "text": "I just finished the first chapter of Essence of Calculus, ",
+        "start": 741.86,
+        "duration": 3.002
+    },
+    {
+        "text": "and I'm working on the second one right now, and Patreon supporters are ",
+        "start": 744.862,
+        "duration": 3.726
+    },
+    {
+        "text": "getting early access to these videos before I publish the full series in a few months.",
+        "start": 748.588,
+        "duration": 4.452
+    },
+    {
+        "text": "This video and the next one are also supported in part by Desmos, ",
+        "start": 754.5,
+        "duration": 3.069
+    },
+    {
+        "text": "and before the next video I just want to take a moment and share with ",
+        "start": 757.569,
+        "duration": 3.255
+    },
+    {
+        "text": "you guys a little about who they are and the fact that they're hiring.",
+        "start": 760.824,
+        "duration": 3.256
+    },
+    {
+        "text": "So Desmos is actually really cool.",
+        "start": 764.74,
+        "duration": 1.74
+    },
+    {
+        "text": "They make a lot of these interactive math activities ",
+        "start": 766.88,
+        "duration": 2.329
+    },
+    {
+        "text": "for classrooms and tools for teachers.",
+        "start": 769.209,
+        "duration": 1.671
+    },
+    {
+        "text": "The real meat of their offering is in their classroom activities.",
+        "start": 771.48,
+        "duration": 3.7
+    },
+    {
+        "text": "For my part, I'm super impressed by just how well-thought-out ",
+        "start": 776.04,
+        "duration": 3.171
+    },
+    {
+        "text": "these activities are from a pedagogical standpoint.",
+        "start": 779.211,
+        "duration": 2.609
+    },
+    {
+        "text": "The team clearly knows their stuff, and they know where they ",
+        "start": 782.5,
+        "duration": 2.47
+    },
+    {
+        "text": "stand to make a difference in students' and teachers' lives.",
+        "start": 784.97,
+        "duration": 2.43
+    },
+    {
+        "text": "And like I said, they're hiring.",
+        "start": 788.08,
+        "duration": 1.42
+    },
+    {
+        "text": "They are always looking to bring in more good talent, whether that's engineering talent, ",
+        "start": 790.06,
+        "duration": 4.455
+    },
+    {
+        "text": "designers, teachers, or whatever other skill sets line up with what they want to do.",
+        "start": 794.515,
+        "duration": 4.205
+    },
+    {
+        "text": "If any of you out there are interested in joining them, ",
+        "start": 799.22,
+        "duration": 2.379
+    },
+    {
+        "text": "helping them make some of these great tools for teachers and students, ",
+        "start": 801.599,
+        "duration": 3.016
+    },
+    {
+        "text": "you can check out the careers page I've linked in the description.",
+        "start": 804.615,
+        "duration": 2.805
+    },
+    {
+        "text": "Personally, I think they're doing some really meaningful stuff.",
+        "start": 808.04,
+        "duration": 2.36
+    },
+    {
+        "text": "I think their activities are building genuinely good math intuitions for students, ",
+        "start": 810.5,
+        "duration": 4.058
+    },
+    {
+        "text": "and the world could use a few more talented people pointing ",
+        "start": 814.558,
+        "duration": 2.934
+    },
+    {
+        "text": "their efforts towards education the way they do.",
+        "start": 817.492,
+        "duration": 2.348
+    },
+    {
+        "text": "Alright so with that, I'll see you guys next video, ",
+        "start": 821.26,
+        "duration": 7.818
+    },
+    {
+        "text": "and I think you're really going to like where this is going.",
+        "start": 829.078,
+        "duration": 9.022
+    }
+]

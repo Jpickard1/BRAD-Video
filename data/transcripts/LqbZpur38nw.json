@@ -1,0 +1,2207 @@
+[
+    {
+        "text": "Today I'd like to tell you about a piece of math known as holomorphic dynamics.",
+        "start": 0.0,
+        "duration": 3.78
+    },
+    {
+        "text": "This is the field which studies things like the Mandelbrot set, ",
+        "start": 4.44,
+        "duration": 3.272
+    },
+    {
+        "text": "and in fact one of my main goals today is to show you how this iconic shape, ",
+        "start": 7.712,
+        "duration": 3.937
+    },
+    {
+        "text": "the poster child of math, pops up in a more general way than the initial definition ",
+        "start": 11.649,
+        "duration": 4.295
+    },
+    {
+        "text": "might suggest.",
+        "start": 15.944,
+        "duration": 0.716
+    },
+    {
+        "text": "Now this field is also intimately tied to what we talked about in the last video, ",
+        "start": 17.38,
+        "duration": 3.909
+    },
+    {
+        "text": "with Newton's fractal, and another goal of ours towards the end of this ",
+        "start": 21.289,
+        "duration": 3.433
+    },
+    {
+        "text": "video will be to help tie up some of the loose ends that we had there.",
+        "start": 24.722,
+        "duration": 3.338
+    },
+    {
+        "text": "So first of all, this word holomorphic might seem a little weird.",
+        "start": 34.6,
+        "duration": 2.94
+    },
+    {
+        "text": "It refers to functions that have complex number inputs and complex number outputs, ",
+        "start": 37.64,
+        "duration": 4.561
+    },
+    {
+        "text": "and which you can also take a derivative of.",
+        "start": 42.201,
+        "duration": 2.419
+    },
+    {
+        "text": "Basically what it means to have a derivative in this context is that when you zoom ",
+        "start": 45.18,
+        "duration": 4.09
+    },
+    {
+        "text": "in to how the function behaves near a given point, to the point and its neighbors, ",
+        "start": 49.27,
+        "duration": 4.091
+    },
+    {
+        "text": "it looks roughly like scaling and rotating, like multiplying by some complex constant.",
+        "start": 53.361,
+        "duration": 4.239
+    },
+    {
+        "text": "We'll talk more about that in just a bit, but for now know that ",
+        "start": 58.24,
+        "duration": 2.775
+    },
+    {
+        "text": "it includes most of the ordinary functions you could write down, ",
+        "start": 61.015,
+        "duration": 2.819
+    },
+    {
+        "text": "things like polynomials, exponentials, trig functions, all of that.",
+        "start": 63.834,
+        "duration": 2.906
+    },
+    {
+        "text": "The relevant dynamics in the title here comes from asking what happens when ",
+        "start": 67.38,
+        "duration": 4.585
+    },
+    {
+        "text": "you repeatedly apply one of these functions over and over, ",
+        "start": 71.965,
+        "duration": 3.56
+    },
+    {
+        "text": "in the sense of evaluating on some input, then evaluating the same function ",
+        "start": 75.525,
+        "duration": 4.585
+    },
+    {
+        "text": "on whatever you just got out, and then doing that again, and again and again and again.",
+        "start": 80.11,
+        "duration": 5.25
+    },
+    {
+        "text": "Sometimes the pattern of points emerging from this gets trapped in a cycle, ",
+        "start": 86.86,
+        "duration": 4.025
+    },
+    {
+        "text": "other times the sequence will just approach some kind of limiting point.",
+        "start": 90.885,
+        "duration": 3.815
+    },
+    {
+        "text": "Or maybe the sequence gets bigger and bigger and it flies off to infinity, ",
+        "start": 95.74,
+        "duration": 3.488
+    },
+    {
+        "text": "which mathematicians also kind of think of as approaching a limit point, ",
+        "start": 99.228,
+        "duration": 3.396
+    },
+    {
+        "text": "just the point at infinity.",
+        "start": 102.624,
+        "duration": 1.256
+    },
+    {
+        "text": "And other times still they have no pattern at all, and they behave chaotically.",
+        "start": 105.24,
+        "duration": 3.62
+    },
+    {
+        "text": "What's surprising is that for all sorts of functions that you might write down, ",
+        "start": 110.52,
+        "duration": 4.108
+    },
+    {
+        "text": "when you try to do something to visualize when these different possible behaviors arise, ",
+        "start": 114.628,
+        "duration": 4.57
+    },
+    {
+        "text": "it often results in some insanely intricate fractal pattern.",
+        "start": 119.198,
+        "duration": 3.082
+    },
+    {
+        "text": "Those of you who watched the last video have already seen one neat example of this.",
+        "start": 123.54,
+        "duration": 3.36
+    },
+    {
+        "text": "There's this algorithm called Newton's method, which finds the root of some polynomial p, ",
+        "start": 127.4,
+        "duration": 4.586
+    },
+    {
+        "text": "and the way it works is to basically repeatedly iterate the expression x ",
+        "start": 131.986,
+        "duration": 3.719
+    },
+    {
+        "text": "minus p of x divided by p prime of x, p prime being the derivative.",
+        "start": 135.705,
+        "duration": 3.415
+    },
+    {
+        "text": "When your initial seed value is in the loose vicinity of a root to that polynomial, ",
+        "start": 139.82,
+        "duration": 4.306
+    },
+    {
+        "text": "a value where p of x equals zero, this procedure produces a sequence ",
+        "start": 144.126,
+        "duration": 3.537
+    },
+    {
+        "text": "of values that really quickly converges to that root.",
+        "start": 147.663,
+        "duration": 2.717
+    },
+    {
+        "text": "This is what makes it a useful algorithm in practice.",
+        "start": 150.66,
+        "duration": 1.96
+    },
+    {
+        "text": "But then we tried to do this in the complex plane, ",
+        "start": 153.52,
+        "duration": 2.614
+    },
+    {
+        "text": "looking at the many possible seed values and asking which ",
+        "start": 156.134,
+        "duration": 2.974
+    },
+    {
+        "text": "root in the complex plane each one of these seed values might end up on.",
+        "start": 159.108,
+        "duration": 3.692
+    },
+    {
+        "text": "Then we associated a color with one of the roots, ",
+        "start": 163.28,
+        "duration": 2.744
+    },
+    {
+        "text": "and then colored each pixel of the plane based on which root a seed value starting at ",
+        "start": 166.024,
+        "duration": 4.72
+    },
+    {
+        "text": "that pixel would ultimately land on.",
+        "start": 170.744,
+        "duration": 1.976
+    },
+    {
+        "text": "The results we got were some of these insanely intricate pictures, ",
+        "start": 173.74,
+        "duration": 3.064
+    },
+    {
+        "text": "with these rough fractal boundaries between the colors.",
+        "start": 176.804,
+        "duration": 2.516
+    },
+    {
+        "text": "Now in this example, if you look at the function that we're actually iterating, ",
+        "start": 182.08,
+        "duration": 4.116
+    },
+    {
+        "text": "say for some specific choice of a polynomial, like z cubed minus one, ",
+        "start": 186.196,
+        "duration": 3.601
+    },
+    {
+        "text": "you can rewrite the whole expression to look like one polynomial divided by another.",
+        "start": 189.797,
+        "duration": 4.323
+    },
+    {
+        "text": "Mathematicians call these kinds of functions rational functions.",
+        "start": 195.02,
+        "duration": 3.02
+    },
+    {
+        "text": "And if you forget the fact that this arose from Newton's method, ",
+        "start": 198.64,
+        "duration": 2.995
+    },
+    {
+        "text": "you could reasonably ask what happens when you iterate any other rational function.",
+        "start": 201.635,
+        "duration": 3.825
+    },
+    {
+        "text": "And in fact, this is exactly what the mathematicians Pierre Fatou ",
+        "start": 206.12,
+        "duration": 3.25
+    },
+    {
+        "text": "and Gaston Julia did in the years immediately following World War I.",
+        "start": 209.37,
+        "duration": 3.35
+    },
+    {
+        "text": "And they built up a surprisingly rich theory of what happens when you ",
+        "start": 213.1,
+        "duration": 3.49
+    },
+    {
+        "text": "iterate these rational functions, which is particularly impressive given ",
+        "start": 216.59,
+        "duration": 3.64
+    },
+    {
+        "text": "that they had no computers to visualize any of this the way you and I can.",
+        "start": 220.23,
+        "duration": 3.69
+    },
+    {
+        "text": "Remember those two names, they'll come up a bit later.",
+        "start": 224.4,
+        "duration": 1.98
+    },
+    {
+        "text": "By far the most popularized example of a rational function that you ",
+        "start": 227.16,
+        "duration": 3.937
+    },
+    {
+        "text": "might study like this, and the fractals that can ensue, ",
+        "start": 231.097,
+        "duration": 3.243
+    },
+    {
+        "text": "is one of the simplest functions, z squared plus c, where c is some constant.",
+        "start": 234.34,
+        "duration": 4.46
+    },
+    {
+        "text": "I'm going to guess that this is at least somewhat familiar to many of you, ",
+        "start": 239.88,
+        "duration": 3.284
+    },
+    {
+        "text": "but it certainly doesn't hurt to quickly summarize the story here, ",
+        "start": 243.164,
+        "duration": 2.934
+    },
+    {
+        "text": "since it can help set the stage for what comes later.",
+        "start": 246.098,
+        "duration": 2.322
+    },
+    {
+        "text": "For this game, we're going to think of c as a value that can be changed.",
+        "start": 249.32,
+        "duration": 3.36
+    },
+    {
+        "text": "It'll be visible as this movable yellow dot.",
+        "start": 252.68,
+        "duration": 2.88
+    },
+    {
+        "text": "For the actual iterative process, we will always ",
+        "start": 256.2,
+        "duration": 2.887
+    },
+    {
+        "text": "start with an initial value of z equals zero.",
+        "start": 259.087,
+        "duration": 2.653
+    },
+    {
+        "text": "So after iterating this function once, doing z squared plus c, you get c.",
+        "start": 262.64,
+        "duration": 4.6
+    },
+    {
+        "text": "If you iterate a second time, plugging in that value to the function, ",
+        "start": 267.9,
+        "duration": 4.023
+    },
+    {
+        "text": "you get c squared plus c.",
+        "start": 271.923,
+        "duration": 1.437
+    },
+    {
+        "text": "And as I change around the value c here, you can kind of see how the second value ",
+        "start": 273.96,
+        "duration": 4.572
+    },
+    {
+        "text": "moves in lockstep. Then we can plug in that second value to get z3, ",
+        "start": 278.532,
+        "duration": 3.793
+    },
+    {
+        "text": "and that third value to get z4, and continue on like this, ",
+        "start": 282.325,
+        "duration": 3.29
+    },
+    {
+        "text": "visualizing our chain of values.",
+        "start": 285.615,
+        "duration": 1.785
+    },
+    {
+        "text": "So if I keep doing this many different times for the first many values, ",
+        "start": 289.92,
+        "duration": 3.994
+    },
+    {
+        "text": "for some choices of c, this process remains bounded.",
+        "start": 293.914,
+        "duration": 2.886
+    },
+    {
+        "text": "You can still see it all on the screen.",
+        "start": 297.06,
+        "duration": 1.5
+    },
+    {
+        "text": "And other times, it looks like it blows up, and you can actually ",
+        "start": 299.06,
+        "duration": 2.776
+    },
+    {
+        "text": "show that if it gets as big as 2, it'll blow up to infinity.",
+        "start": 301.836,
+        "duration": 2.564
+    },
+    {
+        "text": "If you color the points of the plane where it stays bounded black, ",
+        "start": 307.82,
+        "duration": 3.873
+    },
+    {
+        "text": "and you assign some other gradient of colors to the divergent values based on how quickly ",
+        "start": 311.693,
+        "duration": 5.204
+    },
+    {
+        "text": "the process rushes off to infinity, you get one of the most iconic images in all of math, ",
+        "start": 316.897,
+        "duration": 5.204
+    },
+    {
+        "text": "the Mandelbrot set.",
+        "start": 322.101,
+        "duration": 1.099
+    },
+    {
+        "text": "Now this interactive dots and stick visualization of the trajectory, ",
+        "start": 324.56,
+        "duration": 3.135
+    },
+    {
+        "text": "by the way, is heavily inspired by Ben Sparks' illustration and the ",
+        "start": 327.695,
+        "duration": 3.091
+    },
+    {
+        "text": "Numberphile video he did about the Mandelbrot set, which is great, you should watch it.",
+        "start": 330.786,
+        "duration": 3.954
+    },
+    {
+        "text": "I honestly thought it was just too fun not to re-implement here. ",
+        "start": 334.9,
+        "duration": 2.904
+    },
+    {
+        "text": "I would also highly recommend the interactive article on ako.net about ",
+        "start": 337.804,
+        "duration": 3.172
+    },
+    {
+        "text": "all of this stuff for any of you who haven't had the pleasure of reading that yet.",
+        "start": 340.976,
+        "duration": 3.664
+    },
+    {
+        "text": "What's nice about the Ben Sparks illustration is how it illuminates ",
+        "start": 345.24,
+        "duration": 3.052
+    },
+    {
+        "text": "what each different part of the Mandelbrot set actually represents.",
+        "start": 348.292,
+        "duration": 3.008
+    },
+    {
+        "text": "This largest cardioid section includes the values of c ",
+        "start": 352.06,
+        "duration": 3.04
+    },
+    {
+        "text": "so that the process eventually converges to some limit.",
+        "start": 355.1,
+        "duration": 3.04
+    },
+    {
+        "text": "The big circle on the left represents the values where ",
+        "start": 358.94,
+        "duration": 2.76
+    },
+    {
+        "text": "the process gets trapped in a cycle between two values.",
+        "start": 361.7,
+        "duration": 2.76
+    },
+    {
+        "text": "And then the top and bottom circles show values where the process ",
+        "start": 365.28,
+        "duration": 3.17
+    },
+    {
+        "text": "gets trapped in a cycle of three values, and so on like this.",
+        "start": 368.45,
+        "duration": 2.93
+    },
+    {
+        "text": "Each one of these little islands kind of has its own meaning.",
+        "start": 371.48,
+        "duration": 2.24
+    },
+    {
+        "text": "Also notice there's an important difference between how this ",
+        "start": 376.4,
+        "duration": 2.84
+    },
+    {
+        "text": "Mandelbrot set and the Newton fractals we were looking at before are each constructed, ",
+        "start": 379.24,
+        "duration": 4.051
+    },
+    {
+        "text": "beyond just a different underlying function.",
+        "start": 383.291,
+        "duration": 2.049
+    },
+    {
+        "text": "For the Mandelbrot set we have a consistent seed value, z equals zero, ",
+        "start": 386.1,
+        "duration": 3.926
+    },
+    {
+        "text": "but the thing we're tweaking is the parameter c, changing the function itself.",
+        "start": 390.026,
+        "duration": 4.314
+    },
+    {
+        "text": "So what you're looking at is what we might call a parameter space.",
+        "start": 394.82,
+        "duration": 2.68
+    },
+    {
+        "text": "But with Newton's fractal, we have a single unchanging function, ",
+        "start": 398.16,
+        "duration": 3.523
+    },
+    {
+        "text": "but what we associate with each pixel is a different seed value for the process.",
+        "start": 401.683,
+        "duration": 4.337
+    },
+    {
+        "text": "Of course, we could play the same game with the map z squared plus c.",
+        "start": 407.16,
+        "duration": 3.4
+    },
+    {
+        "text": "We could fix c at some constant, and then let the pixels ",
+        "start": 411.06,
+        "duration": 2.845
+    },
+    {
+        "text": "represent the different possible initial values, z naught.",
+        "start": 413.905,
+        "duration": 2.895
+    },
+    {
+        "text": "So whereas each pixel of the Mandelbrot set corresponds to a unique function, ",
+        "start": 417.68,
+        "duration": 3.759
+    },
+    {
+        "text": "the images on the right each just correspond to a single function.",
+        "start": 421.439,
+        "duration": 3.181
+    },
+    {
+        "text": "As we change the parameter c, it changes the entire image on the right.",
+        "start": 425.46,
+        "duration": 3.76
+    },
+    {
+        "text": "And again, just to be clear, the rule being applied is that we color pixels ",
+        "start": 430.02,
+        "duration": 3.917
+    },
+    {
+        "text": "black if the process remains bounded, and then apply some kind of gradient to ",
+        "start": 433.937,
+        "duration": 4.021
+    },
+    {
+        "text": "the ones that diverge away to infinity based on how quickly they diverge to infinity.",
+        "start": 437.958,
+        "duration": 4.382
+    },
+    {
+        "text": "In principle, and it's kind of mind-warping to think about, ",
+        "start": 443.38,
+        "duration": 3.095
+    },
+    {
+        "text": "there is some four-dimensional space of all combinations of c and z naught, ",
+        "start": 446.475,
+        "duration": 3.92
+    },
+    {
+        "text": "and what we're doing here is kind of looking through individual two-dimensional slices ",
+        "start": 450.395,
+        "duration": 4.488
+    },
+    {
+        "text": "of that unimaginable pattern.",
+        "start": 454.883,
+        "duration": 1.497
+    },
+    {
+        "text": "You'll often hear or read the images on the right being referred to as ",
+        "start": 457.74,
+        "duration": 3.536
+    },
+    {
+        "text": "Julia sets or Julia fractals, and when I first learned about all this stuff, ",
+        "start": 461.276,
+        "duration": 3.835
+    },
+    {
+        "text": "I'll admit that I kind of was left with the misconception that this is ",
+        "start": 465.111,
+        "duration": 3.536
+    },
+    {
+        "text": "what the term Julia set refers to, specifically the z squared plus c case, ",
+        "start": 468.647,
+        "duration": 3.735
+    },
+    {
+        "text": "and moreover that it's referring to the black region on the inside.",
+        "start": 472.382,
+        "duration": 3.338
+    },
+    {
+        "text": "However, the term Julia set has a much more general definition, ",
+        "start": 476.44,
+        "duration": 2.959
+    },
+    {
+        "text": "and it would refer just to the boundaries of these regions, not the interior.",
+        "start": 479.399,
+        "duration": 3.561
+    },
+    {
+        "text": "To set the stage for a more specific definition, ",
+        "start": 483.9,
+        "duration": 2.221
+    },
+    {
+        "text": "and to also make some headway towards the first goal that I mentioned at the start, ",
+        "start": 486.121,
+        "duration": 3.809
+    },
+    {
+        "text": "it's worth stepping back and really just picturing yourself as a mathematician right now, ",
+        "start": 489.93,
+        "duration": 4.081
+    },
+    {
+        "text": "discovering all of this.",
+        "start": 494.011,
+        "duration": 1.089
+    },
+    {
+        "text": "What would you actually do to construct a theory around this?",
+        "start": 495.74,
+        "duration": 3.14
+    },
+    {
+        "text": "It's one thing to look at some pretty pictures, ",
+        "start": 499.26,
+        "duration": 2.109
+    },
+    {
+        "text": "but what sorts of questions would you ask if you actually want to understand it all?",
+        "start": 501.369,
+        "duration": 3.691
+    },
+    {
+        "text": "In general, if you want to understand something complicated, ",
+        "start": 506.02,
+        "duration": 2.78
+    },
+    {
+        "text": "a good place to start is to ask if there are any parts of the system ",
+        "start": 508.8,
+        "duration": 3.146
+    },
+    {
+        "text": "that have some simple behavior, preferably the simplest possible behavior.",
+        "start": 511.946,
+        "duration": 3.374
+    },
+    {
+        "text": "In our example, that might mean asking when does the process just stay fixed in place, ",
+        "start": 516.179,
+        "duration": 5.221
+    },
+    {
+        "text": "meaning f of z is equal to z.",
+        "start": 521.4,
+        "duration": 1.74
+    },
+    {
+        "text": "That's a pretty boring set of dynamics, I think you'd agree.",
+        "start": 523.74,
+        "duration": 2.14
+    },
+    {
+        "text": "We call a value with this property a fixed point of the function.",
+        "start": 526.5,
+        "duration": 3.18
+    },
+    {
+        "text": "In the case of the functions arising from Newton's method, ",
+        "start": 529.68,
+        "duration": 3.353
+    },
+    {
+        "text": "by design they have a fixed point at the roots of the relevant polynomial.",
+        "start": 533.033,
+        "duration": 4.207
+    },
+    {
+        "text": "You can verify for yourself, if p of z is equal to zero, ",
+        "start": 537.84,
+        "duration": 3.3
+    },
+    {
+        "text": "then the entire expression is simply equal to z.",
+        "start": 541.14,
+        "duration": 2.78
+    },
+    {
+        "text": "That's what it means to be a fixed point.",
+        "start": 544.3,
+        "duration": 1.36
+    },
+    {
+        "text": "If you're into exercises, you may enjoy pausing for a moment and computing the ",
+        "start": 546.56,
+        "duration": 4.74
+    },
+    {
+        "text": "fixed points of this Mandelbrot set function, z squared plus c. More generally, ",
+        "start": 551.3,
+        "duration": 4.799
+    },
+    {
+        "text": "any rational function will always have fixed points, ",
+        "start": 556.099,
+        "duration": 3.181
+    },
+    {
+        "text": "since asking when this expression equals z can always be rearranged as finding the ",
+        "start": 559.28,
+        "duration": 4.98
+    },
+    {
+        "text": "roots of some polynomial expression,",
+        "start": 564.26,
+        "duration": 2.16
+    },
+    {
+        "text": "From the fundamental theorem of algebra, this must have solutions, ",
+        "start": 567.14,
+        "duration": 3.29
+    },
+    {
+        "text": "typically as many solutions as the highest degree in this expression.",
+        "start": 570.43,
+        "duration": 3.39
+    },
+    {
+        "text": "Incidentally, this means you could also find those fixed points using Newton's method, ",
+        "start": 574.96,
+        "duration": 4.478
+    },
+    {
+        "text": "but maybe that's a little too meta for us.",
+        "start": 579.438,
+        "duration": 2.162
+    },
+    {
+        "text": "ight now. Now just asking about fixed points is maybe easy, ",
+        "start": 582.64,
+        "duration": 3.026
+    },
+    {
+        "text": "but a key idea for understanding the full dynamics, ",
+        "start": 585.666,
+        "duration": 2.623
+    },
+    {
+        "text": "and hence the diagrams we're looking at, is to understand stability.",
+        "start": 588.289,
+        "duration": 3.431
+    },
+    {
+        "text": "We say that a fixed point is attracting if nearby points tend to get drawn in towards it, ",
+        "start": 592.88,
+        "duration": 4.818
+    },
+    {
+        "text": "and repelling if they're pushed away.",
+        "start": 597.698,
+        "duration": 1.982
+    },
+    {
+        "text": "And this is something that you can actually compute ",
+        "start": 600.38,
+        "duration": 2.423
+    },
+    {
+        "text": "explicitly using the derivative of the function.",
+        "start": 602.803,
+        "duration": 2.237
+    },
+    {
+        "text": "Symbolically, when you take derivatives of complex functions, ",
+        "start": 606.04,
+        "duration": 3.059
+    },
+    {
+        "text": "it looks exactly the same as it would for real functions, ",
+        "start": 609.099,
+        "duration": 2.861
+    },
+    {
+        "text": "though something like z squared has a derivative of 2 times z.",
+        "start": 611.96,
+        "duration": 3.06
+    },
+    {
+        "text": "But geometrically, there's a really lovely way to interpret what this means.",
+        "start": 615.9,
+        "duration": 3.12
+    },
+    {
+        "text": "For example, at the input 1, the derivative of this particular function evaluates to be ",
+        "start": 619.74,
+        "duration": 4.765
+    },
+    {
+        "text": "2, and what that's telling us is that if you look at a very small neighborhood around ",
+        "start": 624.505,
+        "duration": 4.657
+    },
+    {
+        "text": "that input, and you follow what happens to all the points in that little neighborhood as ",
+        "start": 629.162,
+        "duration": 4.819
+    },
+    {
+        "text": "you apply the function, in this case z squared, ",
+        "start": 633.981,
+        "duration": 2.599
+    },
+    {
+        "text": "then it looks just like you're multiplying by 2.",
+        "start": 636.58,
+        "duration": 2.6
+    },
+    {
+        "text": "This is what a derivative of 2 means.",
+        "start": 639.58,
+        "duration": 1.82
+    },
+    {
+        "text": "To take another example, let's look at the input i.",
+        "start": 643.24,
+        "duration": 2.66
+    },
+    {
+        "text": "We know that this function moves that input to the value negative 1, that's i squared.",
+        "start": 646.5,
+        "duration": 4.36
+    },
+    {
+        "text": "But the added information that its derivative at this value is 2 times i gives us the ",
+        "start": 651.58,
+        "duration": 4.743
+    },
+    {
+        "text": "added picture that when you zoom in around that point, ",
+        "start": 656.323,
+        "duration": 3.033
+    },
+    {
+        "text": "and you look at the action of the function on this tiny neighborhood, ",
+        "start": 659.356,
+        "duration": 3.861
+    },
+    {
+        "text": "it looks like multiplication by 2i, which in this case is saying it looks like a 90 ",
+        "start": 663.217,
+        "duration": 4.633
+    },
+    {
+        "text": "degree rotation combined with an expansion by a factor of 2.",
+        "start": 667.85,
+        "duration": 3.31
+    },
+    {
+        "text": "For the purposes of analyzing stability, the only thing ",
+        "start": 674.86,
+        "duration": 2.734
+    },
+    {
+        "text": "we care about here is the growing and shrinking factor.",
+        "start": 677.594,
+        "duration": 2.686
+    },
+    {
+        "text": "The rotational part doesn't matter.",
+        "start": 680.64,
+        "duration": 1.4
+    },
+    {
+        "text": "So if you compute the derivative of a function at its fixed point, ",
+        "start": 682.52,
+        "duration": 3.529
+    },
+    {
+        "text": "and the absolute value of this result is less than 1, ",
+        "start": 686.049,
+        "duration": 2.845
+    },
+    {
+        "text": "it tells you that the fixed point is attracting, ",
+        "start": 688.894,
+        "duration": 2.582
+    },
+    {
+        "text": "that nearby points tend to come in towards it.",
+        "start": 691.476,
+        "duration": 2.424
+    },
+    {
+        "text": "If that derivative has an absolute value bigger than 1, ",
+        "start": 694.36,
+        "duration": 2.625
+    },
+    {
+        "text": "it tells you the fixed point is repelling, it pushes away its neighbors.",
+        "start": 696.985,
+        "duration": 3.375
+    },
+    {
+        "text": "For example, if you work out the derivative of our Newton's map expression, ",
+        "start": 701.64,
+        "duration": 3.834
+    },
+    {
+        "text": "and you simplify a couple things a little bit, here's what you would get out.",
+        "start": 705.474,
+        "duration": 3.886
+    },
+    {
+        "text": "So if z is a fixed point, which in this context means that it's one of the roots ",
+        "start": 710.38,
+        "duration": 4.64
+    },
+    {
+        "text": "of the polynomial p, this derivative is not only smaller than 1, it's equal to 0.",
+        "start": 715.02,
+        "duration": 4.64
+    },
+    {
+        "text": "These are sometimes called super-attracting fixed points, ",
+        "start": 720.84,
+        "duration": 2.63
+    },
+    {
+        "text": "since it means that a neighborhood around these points doesn't merely shrink, ",
+        "start": 723.47,
+        "duration": 3.538
+    },
+    {
+        "text": "it shrinks a lot.",
+        "start": 727.008,
+        "duration": 0.772
+    },
+    {
+        "text": "And again, this is kind of by design, since the intent of Newton's method ",
+        "start": 728.66,
+        "duration": 4.208
+    },
+    {
+        "text": "is to produce iterations that fall towards a root as quickly as they can.",
+        "start": 732.868,
+        "duration": 4.152
+    },
+    {
+        "text": "Pulling up our z squared plus c example, if you did the first ",
+        "start": 738.02,
+        "duration": 3.127
+    },
+    {
+        "text": "exercise to find its fixed points, the next step would be to ask, ",
+        "start": 741.147,
+        "duration": 3.329
+    },
+    {
+        "text": "when is at least one of those fixed points attracting?",
+        "start": 744.476,
+        "duration": 2.724
+    },
+    {
+        "text": "For what values of c is this going to be true?",
+        "start": 747.82,
+        "duration": 2.28
+    },
+    {
+        "text": "And then, if that's not enough of a challenge, ",
+        "start": 751.04,
+        "duration": 2.479
+    },
+    {
+        "text": "try using the result that you find to show that this condition corresponds to the main ",
+        "start": 753.519,
+        "duration": 4.589
+    },
+    {
+        "text": "cardioid shape of the Mandelbrot set.",
+        "start": 758.108,
+        "duration": 1.952
+    },
+    {
+        "text": "This is something you can compute explicitly, it's pretty cool.",
+        "start": 760.68,
+        "duration": 2.72
+    },
+    {
+        "text": "A natural next step would be to ask about cycles, ",
+        "start": 765.32,
+        "duration": 2.149
+    },
+    {
+        "text": "and this is where things really start to get interesting.",
+        "start": 767.469,
+        "duration": 2.451
+    },
+    {
+        "text": "If f of z is not z but some other value, and then that value comes back to z, ",
+        "start": 770.72,
+        "duration": 4.971
+    },
+    {
+        "text": "it means that you've fallen into a two cycle.",
+        "start": 775.691,
+        "duration": 2.869
+    },
+    {
+        "text": "You could explicitly find these kinds of two cycles by ",
+        "start": 779.32,
+        "duration": 3.522
+    },
+    {
+        "text": "evaluating f of f of z and then setting it equal to z.",
+        "start": 782.842,
+        "duration": 3.458
+    },
+    {
+        "text": "For example, with the z squared plus c map, f of f of z expands out to look like this.",
+        "start": 787.12,
+        "duration": 5.58
+    },
+    {
+        "text": "A little messy, but you know, it's not too terrible.",
+        "start": 793.34,
+        "duration": 1.74
+    },
+    {
+        "text": "The main thing to highlight is that it boils down to solving some degree four equation.",
+        "start": 795.56,
+        "duration": 3.82
+    },
+    {
+        "text": "You should note though that the fixed points will also be solutions to this equation, ",
+        "start": 800.16,
+        "duration": 4.122
+    },
+    {
+        "text": "so technically the two cycles are the solutions to this minus the ",
+        "start": 804.282,
+        "duration": 3.164
+    },
+    {
+        "text": "solutions to the original fixed point equation.",
+        "start": 807.446,
+        "duration": 2.254
+    },
+    {
+        "text": "And likewise you can use the same idea to look for ",
+        "start": 811.08,
+        "duration": 2.856
+    },
+    {
+        "text": "n cycles by composing f with itself n different times.",
+        "start": 813.936,
+        "duration": 3.024
+    },
+    {
+        "text": "The explicit expressions that you would get quickly become insanely messy, ",
+        "start": 817.88,
+        "duration": 4.042
+    },
+    {
+        "text": "but it's still elucidating to ask how many cycles would you expect based on this ",
+        "start": 821.922,
+        "duration": 4.366
+    },
+    {
+        "text": "hypothetical process.",
+        "start": 826.288,
+        "duration": 1.132
+    },
+    {
+        "text": "If we stick with our simple z squared plus c example, as you compose it with itself, ",
+        "start": 827.96,
+        "duration": 4.578
+    },
+    {
+        "text": "you'd get a polynomial with degree four and then one with degree eight and then ",
+        "start": 832.538,
+        "duration": 4.309
+    },
+    {
+        "text": "degree sixteen and so on and so on, exponentially growing the order of the polynomial.",
+        "start": 836.847,
+        "duration": 4.633
+    },
+    {
+        "text": "So in principle, if I asked you how many cycles are there with a period of one million, ",
+        "start": 842.36,
+        "duration": 4.624
+    },
+    {
+        "text": "you can know that it's equivalent to solving some just absolutely insane ",
+        "start": 846.984,
+        "duration": 3.837
+    },
+    {
+        "text": "polynomial expression with a degree of two to the one million.",
+        "start": 850.821,
+        "duration": 3.259
+    },
+    {
+        "text": "So again, fundamental theorem of algebra, you would expect to find something on the order ",
+        "start": 854.88,
+        "duration": 4.99
+    },
+    {
+        "text": "of two to the one million points in the complex plane which cycle in exactly this way.",
+        "start": 859.87,
+        "duration": 4.77
+    },
+    {
+        "text": "And more generally, for any rational map you'll always be able ",
+        "start": 865.7,
+        "duration": 3.08
+    },
+    {
+        "text": "to find values whose behavior falls into a cycle with period n.",
+        "start": 868.78,
+        "duration": 3.08
+    },
+    {
+        "text": "It ultimately boils down to solving some probably insane polynomial expression.",
+        "start": 872.36,
+        "duration": 4.12
+    },
+    {
+        "text": "And just like with this example, the number of ",
+        "start": 877.18,
+        "duration": 2.611
+    },
+    {
+        "text": "such periodic points will grow exponentially with n.",
+        "start": 879.791,
+        "duration": 2.889
+    },
+    {
+        "text": "I didn't really talk about this in the last video about Newton's fractal, ",
+        "start": 883.98,
+        "duration": 3.314
+    },
+    {
+        "text": "but it's sort of strange to think that there are infinitely many points ",
+        "start": 887.294,
+        "duration": 3.224
+    },
+    {
+        "text": "that fall into some kind of cycle even for a process like this.",
+        "start": 890.518,
+        "duration": 2.822
+    },
+    {
+        "text": "In almost all cases though, these points are somewhere on the boundary ",
+        "start": 894.02,
+        "duration": 3.383
+    },
+    {
+        "text": "between those colored regions and they don't really come up in ",
+        "start": 897.403,
+        "duration": 3.003
+    },
+    {
+        "text": "practice because the probability of landing on one of them is zero.",
+        "start": 900.406,
+        "duration": 3.194
+    },
+    {
+        "text": "What matters for actually falling into one of these is if one of the ",
+        "start": 904.24,
+        "duration": 3.59
+    },
+    {
+        "text": "cycles is attracting in the sense that a neighborhood of points around ",
+        "start": 907.83,
+        "duration": 3.695
+    },
+    {
+        "text": "a value from that cycle would tend to get pulled in towards that cycle.",
+        "start": 911.525,
+        "duration": 3.695
+    },
+    {
+        "text": "A highly relevant question for someone interested in numerical methods ",
+        "start": 916.46,
+        "duration": 3.511
+    },
+    {
+        "text": "is whether or not this Newton's map process ever has an attracting cycle, ",
+        "start": 919.971,
+        "duration": 3.66
+    },
+    {
+        "text": "because if there is it means there's a non-zero chance that your ",
+        "start": 923.631,
+        "duration": 3.215
+    },
+    {
+        "text": "initial guess gets trapped in that cycle and it never finds a root.",
+        "start": 926.846,
+        "duration": 3.314
+    },
+    {
+        "text": "The answer here is actually yes.",
+        "start": 931.16,
+        "duration": 1.64
+    },
+    {
+        "text": "More explicitly, if you try to find the roots of z cubed minus 2z plus ",
+        "start": 933.58,
+        "duration": 4.328
+    },
+    {
+        "text": "2 and you're using Newton's method, watch what happens to a cluster ",
+        "start": 937.908,
+        "duration": 4.145
+    },
+    {
+        "text": "that starts around the value zero and sort of bounces back and forth.",
+        "start": 942.053,
+        "duration": 4.207
+    },
+    {
+        "text": "And well okay, in this case the cluster we started with was a ",
+        "start": 947.26,
+        "duration": 2.654
+    },
+    {
+        "text": "little bit too big so some of the outer points get sprayed away, ",
+        "start": 949.914,
+        "duration": 2.783
+    },
+    {
+        "text": "but here's what it looks like if we start with a smaller cluster.",
+        "start": 952.697,
+        "duration": 2.783
+    },
+    {
+        "text": "Notice how all of the points genuinely do shrink ",
+        "start": 956.12,
+        "duration": 2.595
+    },
+    {
+        "text": "in towards the cycle between zero and one.",
+        "start": 958.715,
+        "duration": 2.225
+    },
+    {
+        "text": "It's not likely that you hit this with a random seed, but it definitely is possible.",
+        "start": 961.48,
+        "duration": 3.56
+    },
+    {
+        "text": "The exercise that you could do to verify that a cycle like this is attracting, ",
+        "start": 966.08,
+        "duration": 4.452
+    },
+    {
+        "text": "by the way, would be to compute the derivative of f of f of z, ",
+        "start": 970.532,
+        "duration": 3.55
+    },
+    {
+        "text": "and you check that at the input zero this derivative has a magnitude less than one.",
+        "start": 974.082,
+        "duration": 4.678
+    },
+    {
+        "text": "The thing that blew my mind a little is what happens when you try ",
+        "start": 979.76,
+        "duration": 3.364
+    },
+    {
+        "text": "to visualize which cubic polynomials have attracting cycles at all.",
+        "start": 983.124,
+        "duration": 3.416
+    },
+    {
+        "text": "Hopefully if Newton's method is going to be at all decent at finding roots, ",
+        "start": 987.08,
+        "duration": 3.793
+    },
+    {
+        "text": "those attracting cycles should be rare.",
+        "start": 990.873,
+        "duration": 1.947
+    },
+    {
+        "text": "First of all, to better visualize the one example we're looking at, ",
+        "start": 993.96,
+        "duration": 3.389
+    },
+    {
+        "text": "we could draw the same fractal that we had before, ",
+        "start": 997.349,
+        "duration": 2.542
+    },
+    {
+        "text": "coloring each point based on what root the seed value starting at that point ",
+        "start": 999.891,
+        "duration": 3.837
+    },
+    {
+        "text": "will tend to, but this time we'll have an added condition of coloring points ",
+        "start": 1003.728,
+        "duration": 3.838
+    },
+    {
+        "text": "that says that if the seed value never gets close enough to a root at all, ",
+        "start": 1007.566,
+        "duration": 3.738
+    },
+    {
+        "text": "we will color the pixel black.",
+        "start": 1011.304,
+        "duration": 1.496
+    },
+    {
+        "text": "Notice if I tweak the roots, meaning that we're trying out different cubic polynomials, ",
+        "start": 1013.76,
+        "duration": 4.76
+    },
+    {
+        "text": "it's actually really hard to find any place to put them so ",
+        "start": 1018.52,
+        "duration": 3.192
+    },
+    {
+        "text": "that we see any black pixels at all.",
+        "start": 1021.712,
+        "duration": 1.948
+    },
+    {
+        "text": "I can find this one little sweet spot here, but it's definitely rare.",
+        "start": 1024.319,
+        "duration": 3.341
+    },
+    {
+        "text": "Now what I want is some kind of way to visualize every possible cubic polynomial ",
+        "start": 1028.68,
+        "duration": 4.452
+    },
+    {
+        "text": "at once with a single image in a way that shows which ones have attracting cycles.",
+        "start": 1033.132,
+        "duration": 4.508
+    },
+    {
+        "text": "Luckily it turns out that there is a really simple way to test ",
+        "start": 1038.88,
+        "duration": 2.738
+    },
+    {
+        "text": "whether or not one of these polynomials has an attracting cycle.",
+        "start": 1041.618,
+        "duration": 2.782
+    },
+    {
+        "text": "All you have to do is look at the seed value which sits at average of the three roots, ",
+        "start": 1045.06,
+        "duration": 4.971
+    },
+    {
+        "text": "this center of mass here.",
+        "start": 1050.031,
+        "duration": 1.429
+    },
+    {
+        "text": "Turns out, this is not at all obvious, if there's an attracting cycle, ",
+        "start": 1052.1,
+        "duration": 3.641
+    },
+    {
+        "text": "you can guarantee that this seed value will fall into that attracting cycle.",
+        "start": 1055.741,
+        "duration": 3.899
+    },
+    {
+        "text": "In other words, if there are any black points, this will be one of them.",
+        "start": 1060.5,
+        "duration": 3.92
+    },
+    {
+        "text": "If you want to know where this magical fact comes from, ",
+        "start": 1065.34,
+        "duration": 2.762
+    },
+    {
+        "text": "it stems from a theorem of our good friend Fatou.",
+        "start": 1068.102,
+        "duration": 2.418
+    },
+    {
+        "text": "He showed that if one of these rational maps has an attracting cycle, ",
+        "start": 1070.92,
+        "duration": 3.69
+    },
+    {
+        "text": "you can look at the values where the derivative of your iterated function equals zero, ",
+        "start": 1074.61,
+        "duration": 4.586
+    },
+    {
+        "text": "and at least one of those values has to fall into the cycle.",
+        "start": 1079.196,
+        "duration": 3.164
+    },
+    {
+        "text": "That might seem like a little bit of a weird fact, ",
+        "start": 1083.44,
+        "duration": 2.493
+    },
+    {
+        "text": "but the loose intuition is that if a cycle is going to be attracting, ",
+        "start": 1085.933,
+        "duration": 3.423
+    },
+    {
+        "text": "at least one of its values should have a very small derivative, ",
+        "start": 1089.356,
+        "duration": 3.13
+    },
+    {
+        "text": "that's where the shrinking will come from.",
+        "start": 1092.486,
+        "duration": 2.054
+    },
+    {
+        "text": "And this in turn means that that value in the cycle sits near some ",
+        "start": 1095.1,
+        "duration": 3.343
+    },
+    {
+        "text": "point where the derivative is not merely small but equal to zero, ",
+        "start": 1098.443,
+        "duration": 3.293
+    },
+    {
+        "text": "and that point ends up being close enough to get sucked into the cycle.",
+        "start": 1101.736,
+        "duration": 3.544
+    },
+    {
+        "text": "This fact also justifies why with the Mandelbrot set, ",
+        "start": 1106.56,
+        "duration": 2.696
+    },
+    {
+        "text": "where we're only using one seed value z equals zero, ",
+        "start": 1109.256,
+        "duration": 2.647
+    },
+    {
+        "text": "it's still enough to get us a very full and interesting picture.",
+        "start": 1111.903,
+        "duration": 3.197
+    },
+    {
+        "text": "If there's a stable cycle to be found, that one seed value is definitely going to find it.",
+        "start": 1115.32,
+        "duration": 5.28
+    },
+    {
+        "text": "I feel like maybe I'm assigning a little too much homework and exercises today, ",
+        "start": 1121.5,
+        "duration": 4.23
+    },
+    {
+        "text": "but if you're into that, yet another pleasing one would be to look back at ",
+        "start": 1125.73,
+        "duration": 3.966
+    },
+    {
+        "text": "derivative expression that we found with our function that arises from Newton's method, ",
+        "start": 1129.696,
+        "duration": 4.653
+    },
+    {
+        "text": "and use this wonderful theorem of Vateau's to show our magical fact about cubic ",
+        "start": 1134.349,
+        "duration": 4.23
+    },
+    {
+        "text": "polynomials, that it suffices to just check this midpoint over the roots.",
+        "start": 1138.579,
+        "duration": 3.861
+    },
+    {
+        "text": "Honestly though, all of those are details that you don't really have to worry about.",
+        "start": 1143.24,
+        "duration": 3.3
+    },
+    {
+        "text": "The upshot is that we can perform a test for whether or not one of these polynomials ",
+        "start": 1146.84,
+        "duration": 4.186
+    },
+    {
+        "text": "has an attracting cycle by looking at just a single point, not all of them.",
+        "start": 1151.026,
+        "duration": 3.694
+    },
+    {
+        "text": "And because of this, we can actually generate a really cool diagram.",
+        "start": 1155.48,
+        "duration": 3.12
+    },
+    {
+        "text": "The way this will work is to fix two roots in place, ",
+        "start": 1159.38,
+        "duration": 2.625
+    },
+    {
+        "text": "let's say putting them at z equals negative one and z equals positive one, ",
+        "start": 1162.005,
+        "duration": 3.715
+    },
+    {
+        "text": "and then we'll move around that third root, which I'll call lambda.",
+        "start": 1165.72,
+        "duration": 3.32
+    },
+    {
+        "text": "Remember, the key feature that we're looking for ",
+        "start": 1170.48,
+        "duration": 2.34
+    },
+    {
+        "text": "is when the point at the center of mass is black.",
+        "start": 1172.82,
+        "duration": 2.34
+    },
+    {
+        "text": "So what I'll do is draw a second diagram on the right, ",
+        "start": 1175.86,
+        "duration": 3.328
+    },
+    {
+        "text": "where each pixel corresponds to one possible choice of lambda.",
+        "start": 1179.188,
+        "duration": 3.752
+    },
+    {
+        "text": "What we're going to do is color that pixel based ",
+        "start": 1183.86,
+        "duration": 2.37
+    },
+    {
+        "text": "on the color of this midpoint of the three roots.",
+        "start": 1186.23,
+        "duration": 2.37
+    },
+    {
+        "text": "If this feels a little bit confusing, that's totally okay.",
+        "start": 1189.6,
+        "duration": 2.56
+    },
+    {
+        "text": "There are kind of a lot of layers at play here.",
+        "start": 1192.32,
+        "duration": 2.12
+    },
+    {
+        "text": "Just remember, each pixel on the right corresponds to a unique polynomial, ",
+        "start": 1195.02,
+        "duration": 4.118
+    },
+    {
+        "text": "as determined by this parameter lambda.",
+        "start": 1199.138,
+        "duration": 2.142
+    },
+    {
+        "text": "In fact, you might call this a parameter space.",
+        "start": 1202.0,
+        "duration": 2.74
+    },
+    {
+        "text": "Sound familiar?",
+        "start": 1205.08,
+        "duration": 0.5
+    },
+    {
+        "text": "Points in this parameter space are colored black if, and only if, ",
+        "start": 1213.74,
+        "duration": 4.061
+    },
+    {
+        "text": "the Newton's method process for the corresponding polynomial produces an attracting cycle.",
+        "start": 1217.801,
+        "duration": 5.539
+    },
+    {
+        "text": "Again, don't worry if that takes a little moment to digest.",
+        "start": 1224.26,
+        "duration": 2.14
+    },
+    {
+        "text": "Now, at first glance, it might not look like there ",
+        "start": 1227.84,
+        "duration": 2.437
+    },
+    {
+        "text": "are any black points at all on this diagram.",
+        "start": 1230.277,
+        "duration": 2.103
+    },
+    {
+        "text": "And this is good news.",
+        "start": 1233.12,
+        "duration": 0.66
+    },
+    {
+        "text": "It means that in most cases Newton's method will not get sucked into cycles like this.",
+        "start": 1233.94,
+        "duration": 4.36
+    },
+    {
+        "text": "But, and I think I've previewed this enough that you know exactly where this is going, ",
+        "start": 1239.0,
+        "duration": 4.81
+    },
+    {
+        "text": "if we zoom in we can find a black region, and that black region ",
+        "start": 1243.81,
+        "duration": 3.539
+    },
+    {
+        "text": "looks exactly like a Mandelbrot set.",
+        "start": 1247.349,
+        "duration": 1.991
+    },
+    {
+        "text": "Yet again, asking a question where we tweak a parameter for one ",
+        "start": 1250.02,
+        "duration": 3.542
+    },
+    {
+        "text": "of these functions yields this iconic cardioid and bubbles shape.",
+        "start": 1253.562,
+        "duration": 3.598
+    },
+    {
+        "text": "The upshot is that this shape is not as specific ",
+        "start": 1258.02,
+        "duration": 2.391
+    },
+    {
+        "text": "to the z squared plus c example as you might think.",
+        "start": 1260.411,
+        "duration": 2.489
+    },
+    {
+        "text": "It seems to relate to something more general and ",
+        "start": 1263.4,
+        "duration": 2.765
+    },
+    {
+        "text": "universal about parameter spaces with processes like this.",
+        "start": 1266.165,
+        "duration": 3.275
+    },
+    {
+        "text": "Still, one pressing question is why we get fractals at all.",
+        "start": 1271.64,
+        "duration": 3.88
+    },
+    {
+        "text": "In the last video, I talked about how the diagrams for Newton's method have this ",
+        "start": 1276.22,
+        "duration": 4.24
+    },
+    {
+        "text": "very peculiar property, where if you draw a small circle around the boundary of a ",
+        "start": 1280.46,
+        "duration": 4.293
+    },
+    {
+        "text": "colored region, that circle must actually include all available colors from the picture.",
+        "start": 1284.753,
+        "duration": 4.607
+    },
+    {
+        "text": "And this is true more generally for any rational map.",
+        "start": 1290.28,
+        "duration": 2.46
+    },
+    {
+        "text": "If you were to assign colors to regions based on which limiting behavior ",
+        "start": 1293.14,
+        "duration": 4.001
+    },
+    {
+        "text": "points fall into, like which limit point or which limit cycle or does it ",
+        "start": 1297.141,
+        "duration": 4.002
+    },
+    {
+        "text": "tend to infinity, then tiny circles that you draw either contain points with ",
+        "start": 1301.143,
+        "duration": 4.221
+    },
+    {
+        "text": "just one of those limiting behaviors, or they contain points with all of them.",
+        "start": 1305.364,
+        "duration": 4.276
+    },
+    {
+        "text": "It's never anything in between.",
+        "start": 1309.82,
+        "duration": 1.38
+    },
+    {
+        "text": "So in the case where there's at least three colors, ",
+        "start": 1311.96,
+        "duration": 2.618
+    },
+    {
+        "text": "this property implies that our boundary could never be smooth, ",
+        "start": 1314.578,
+        "duration": 3.172
+    },
+    {
+        "text": "since along a smooth segment, you can draw a small enough circle that touches ",
+        "start": 1317.75,
+        "duration": 3.928
+    },
+    {
+        "text": "just two colors, not all of them.",
+        "start": 1321.678,
+        "duration": 1.662
+    },
+    {
+        "text": "And empirically, this is what we see.",
+        "start": 1323.92,
+        "duration": 1.4
+    },
+    {
+        "text": "No matter how far you zoom in, these boundaries are always rough.",
+        "start": 1325.48,
+        "duration": 2.88
+    },
+    {
+        "text": "And furthermore, you might notice that as we zoom in, ",
+        "start": 1328.88,
+        "duration": 2.743
+    },
+    {
+        "text": "you can always see all available colors within the frame.",
+        "start": 1331.623,
+        "duration": 2.897
+    },
+    {
+        "text": "This doesn't explain rough boundaries in the context where there's only two limiting ",
+        "start": 1336.16,
+        "duration": 4.249
+    },
+    {
+        "text": "behaviors, but still, it's a loose end that I left in that video worth tying up, ",
+        "start": 1340.409,
+        "duration": 4.051
+    },
+    {
+        "text": "and it's a nice excuse to bring in two important bits of terminology, ",
+        "start": 1344.46,
+        "duration": 3.5
+    },
+    {
+        "text": "Julia sets and Fatou sets.",
+        "start": 1347.96,
+        "duration": 1.3
+    },
+    {
+        "text": "If a point eventually falls into some stable, predictable pattern, ",
+        "start": 1349.94,
+        "duration": 3.631
+    },
+    {
+        "text": "we say that it's part of the Fatou set of our iterated function.",
+        "start": 1353.571,
+        "duration": 3.469
+    },
+    {
+        "text": "And for all the maps that we've seen, this includes almost everything.",
+        "start": 1357.74,
+        "duration": 3.12
+    },
+    {
+        "text": "The Julia set is everything else, which in the pictures we've ",
+        "start": 1361.64,
+        "duration": 3.422
+    },
+    {
+        "text": "seen would be the rough boundaries between the colored regions.",
+        "start": 1365.062,
+        "duration": 3.478
+    },
+    {
+        "text": "What happens as you transition from one stable attractor to another?",
+        "start": 1369.2,
+        "duration": 3.14
+    },
+    {
+        "text": "For example, the Julia set will include all of ",
+        "start": 1373.2,
+        "duration": 2.354
+    },
+    {
+        "text": "the repelling cycles and the repelling fixed points.",
+        "start": 1375.554,
+        "duration": 2.606
+    },
+    {
+        "text": "A typical point from the Julia set though, will not be a cycle.",
+        "start": 1378.88,
+        "duration": 2.92
+    },
+    {
+        "text": "It'll bounce around forever with no clear pattern.",
+        "start": 1382.22,
+        "duration": 2.12
+    },
+    {
+        "text": "Now, if you look at a point in the Fatou set, and you draw a small enough disc around it, ",
+        "start": 1385.62,
+        "duration": 4.247
+    },
+    {
+        "text": "as you follow the process, that small disc will eventually shrink as ",
+        "start": 1389.867,
+        "duration": 3.257
+    },
+    {
+        "text": "you fall into whatever the relevant stable behavior is.",
+        "start": 1393.124,
+        "duration": 2.596
+    },
+    {
+        "text": "Unless you're going to infinity, but you could kind of think of that as ",
+        "start": 1396.24,
+        "duration": 2.87
+    },
+    {
+        "text": "the disc shrinking around infinity, but maybe that just confuses matters.",
+        "start": 1399.11,
+        "duration": 2.91
+    },
+    {
+        "text": "By contrast, if you draw a small disc around a point on the Julia set, ",
+        "start": 1404.5,
+        "duration": 3.818
+    },
+    {
+        "text": "it tends to expand over time as the points from within that circle go off and kind of do ",
+        "start": 1408.318,
+        "duration": 4.787
+    },
+    {
+        "text": "their own things.",
+        "start": 1413.105,
+        "duration": 0.915
+    },
+    {
+        "text": "In other words, points of the Julia set tend to behave chaotically.",
+        "start": 1415.54,
+        "duration": 4.0
+    },
+    {
+        "text": "Their nearby neighbors, even very nearby, will ",
+        "start": 1420.08,
+        "duration": 2.386
+    },
+    {
+        "text": "eventually fall into qualitatively different behaviors.",
+        "start": 1422.466,
+        "duration": 2.794
+    },
+    {
+        "text": "But it's not merely that this disc expands.",
+        "start": 1426.42,
+        "duration": 2.42
+    },
+    {
+        "text": "A pretty surprising result, key to the multicolor property mentioned before, ",
+        "start": 1429.36,
+        "duration": 4.098
+    },
+    {
+        "text": "is that if you let this process play out, that little disc eventually expands so ",
+        "start": 1433.458,
+        "duration": 4.311
+    },
+    {
+        "text": "much that it hits every single point on the complex plane, with at most two exceptions.",
+        "start": 1437.769,
+        "duration": 4.631
+    },
+    {
+        "text": "This is known as the stuff-goes-everywhere principle of Julia sets.",
+        "start": 1442.4,
+        "duration": 4.48
+    },
+    {
+        "text": "Okay, it's not actually called that.",
+        "start": 1447.94,
+        "duration": 1.42
+    },
+    {
+        "text": "In the source I was reading from, it's mentioned as ",
+        "start": 1449.7,
+        "duration": 2.069
+    },
+    {
+        "text": "a corollary to something known as Montel's theorem.",
+        "start": 1451.769,
+        "duration": 2.031
+    },
+    {
+        "text": "But it should be called that.",
+        "start": 1454.32,
+        "duration": 1.38
+    },
+    {
+        "text": "In some sense, what this is telling us is that the points of the Julia set ",
+        "start": 1456.12,
+        "duration": 4.05
+    },
+    {
+        "text": "are not merely chaotic, they're kind of as chaotic as they possibly can be.",
+        "start": 1460.17,
+        "duration": 4.05
+    },
+    {
+        "text": "Here, let me show you a little simulation using the Newton's map, ",
+        "start": 1465.86,
+        "duration": 3.473
+    },
+    {
+        "text": "with a cluster of a few thousand points, all starting from within a tiny distance, ",
+        "start": 1469.333,
+        "duration": 4.368
+    },
+    {
+        "text": "one one-millionth, from a point on the Julia set.",
+        "start": 1473.701,
+        "duration": 2.579
+    },
+    {
+        "text": "Of course, the stuff-goes-everywhere principle is about the uncountably ",
+        "start": 1482.68,
+        "duration": 3.495
+    },
+    {
+        "text": "infinitely many points that would lie within that distance, ",
+        "start": 1486.175,
+        "duration": 2.913
+    },
+    {
+        "text": "and that they eventually expand out to hit everything on the plane, ",
+        "start": 1489.088,
+        "duration": 3.301
+    },
+    {
+        "text": "except possibly two points.",
+        "start": 1492.389,
+        "duration": 1.311
+    },
+    {
+        "text": "But this little cluster should still give the general idea.",
+        "start": 1494.2,
+        "duration": 2.58
+    },
+    {
+        "text": "A small, finite sample from that tiny disk gets ",
+        "start": 1496.78,
+        "duration": 2.805
+    },
+    {
+        "text": "sprayed all over the place in seemingly all directions.",
+        "start": 1499.585,
+        "duration": 3.215
+    },
+    {
+        "text": "What this means for our purposes is that if there's some attractive behavior of our map, ",
+        "start": 1504.4,
+        "duration": 4.304
+    },
+    {
+        "text": "something like an attracting fixed point or an attracting cycle, ",
+        "start": 1508.704,
+        "duration": 3.144
+    },
+    {
+        "text": "you can be guaranteed that the values from that tiny disk around the point on the ",
+        "start": 1511.848,
+        "duration": 3.967
+    },
+    {
+        "text": "Julia set, no matter how tiny it was, will eventually fall into that attracting behavior.",
+        "start": 1515.815,
+        "duration": 4.305
+    },
+    {
+        "text": "If we have a case with three or more attracting behaviors, ",
+        "start": 1520.86,
+        "duration": 2.972
+    },
+    {
+        "text": "this gives us some explanation for why the Julia set is not smooth, ",
+        "start": 1523.832,
+        "duration": 3.426
+    },
+    {
+        "text": "why it has to be complicated.",
+        "start": 1527.258,
+        "duration": 1.462
+    },
+    {
+        "text": "Even still, this might not be entirely satisfying because it kicks ",
+        "start": 1529.82,
+        "duration": 2.919
+    },
+    {
+        "text": "the can one more step down the road, raising the question of why ",
+        "start": 1532.739,
+        "duration": 2.832
+    },
+    {
+        "text": "this stuff-goes-everywhere principle is true in the first place.",
+        "start": 1535.571,
+        "duration": 2.789
+    },
+    {
+        "text": "Like I mentioned, it comes from something called Montel's theorem, ",
+        "start": 1539.18,
+        "duration": 3.057
+    },
+    {
+        "text": "and I'm choosing not to go into the details there, because honestly, it's a lot to cover.",
+        "start": 1542.237,
+        "duration": 4.063
+    },
+    {
+        "text": "The proof I could find ends up leaning on something known as the J function, ",
+        "start": 1546.82,
+        "duration": 3.468
+    },
+    {
+        "text": "which is a whole intricate story in its own right.",
+        "start": 1550.288,
+        "duration": 2.252
+    },
+    {
+        "text": "I will of course leave links and resources in the ",
+        "start": 1552.8,
+        "duration": 1.867
+    },
+    {
+        "text": "description for any of you who are hungry to learn more.",
+        "start": 1554.667,
+        "duration": 2.093
+    },
+    {
+        "text": "And if you know of a simpler way to see why this principle is true, ",
+        "start": 1557.32,
+        "duration": 3.193
+    },
+    {
+        "text": "I'm definitely all ears.",
+        "start": 1560.513,
+        "duration": 1.127
+    },
+    {
+        "text": "I should also say as a brief side note that even though the pictures we've seen ",
+        "start": 1562.4,
+        "duration": 3.775
+    },
+    {
+        "text": "so far have a Julia set which has an area of zero, ",
+        "start": 1566.175,
+        "duration": 2.407
+    },
+    {
+        "text": "it's kind of the boundary between these regions, ",
+        "start": 1568.582,
+        "duration": 2.313
+    },
+    {
+        "text": "there are examples where the Julia set is the entire plane.",
+        "start": 1570.895,
+        "duration": 2.785
+    },
+    {
+        "text": "Everything behaves chaotically, which is kind of wild.",
+        "start": 1574.04,
+        "duration": 2.76
+    },
+    {
+        "text": "The main takeaway for this particular section ",
+        "start": 1578.18,
+        "duration": 2.57
+    },
+    {
+        "text": "is the link between the chaos and the fractal.",
+        "start": 1580.75,
+        "duration": 2.57
+    },
+    {
+        "text": "At first it seems like these are merely analogous to each other, you know,",
+        "start": 1583.98,
+        "duration": 2.7
+    },
+    {
+        "text": "Newton's method turns out to be a kind of messy process for some seed values, ",
+        "start": 1587.14,
+        "duration": 4.108
+    },
+    {
+        "text": "and this messiness is visible one way by following the trajectory of a particular point, ",
+        "start": 1591.248,
+        "duration": 4.687
+    },
+    {
+        "text": "and another way by the complexity of our diagrams, ",
+        "start": 1595.935,
+        "duration": 2.686
+    },
+    {
+        "text": "but those feel like qualitatively different kinds of messiness.",
+        "start": 1598.621,
+        "duration": 3.319
+    },
+    {
+        "text": "Maybe it makes for a nice metaphor, but nothing more.",
+        "start": 1602.52,
+        "duration": 2.12
+    },
+    {
+        "text": "However, what's neat here is that when you quantify just how chaotic ",
+        "start": 1605.32,
+        "duration": 3.748
+    },
+    {
+        "text": "some of the points are, well, that quantification leads us to an actual ",
+        "start": 1609.068,
+        "duration": 3.912
+    },
+    {
+        "text": "explanation for the rough fractal shape via this boundary property.",
+        "start": 1612.98,
+        "duration": 3.64
+    },
+    {
+        "text": "Quite often you see chaos and fractals sort of married together in math, ",
+        "start": 1617.64,
+        "duration": 3.584
+    },
+    {
+        "text": "and to me at least it's satisfying whenever that marriage comes with a ",
+        "start": 1621.224,
+        "duration": 3.486
+    },
+    {
+        "text": "logical link to it, rather than as two phenomena that just happen to coincide.",
+        "start": 1624.71,
+        "duration": 3.83
+    }
+]

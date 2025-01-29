@@ -1,0 +1,3722 @@
+[
+    {
+        "text": "hi everyone so my name is this Warrior",
+        "start": 0.42,
+        "duration": 4.939
+    },
+    {
+        "text": "and today I'm going to give a talk on",
+        "start": 3.06,
+        "duration": 5.28
+    },
+    {
+        "text": "understanding bad publication in pytorch",
+        "start": 5.359,
+        "duration": 6.461
+    },
+    {
+        "text": "and before I begin I uh I think that",
+        "start": 8.34,
+        "duration": 5.04
+    },
+    {
+        "text": "there will be some people in this room",
+        "start": 11.82,
+        "duration": 3.96
+    },
+    {
+        "text": "who's very familiar with the topic and",
+        "start": 13.38,
+        "duration": 4.26
+    },
+    {
+        "text": "there will be some people here who are",
+        "start": 15.78,
+        "duration": 5.7
+    },
+    {
+        "text": "kind of here for the free pizza so uh",
+        "start": 17.64,
+        "duration": 7.2
+    },
+    {
+        "text": "I'm going to try to summarize the the",
+        "start": 21.48,
+        "duration": 6.66
+    },
+    {
+        "text": "main points for for uh just just some",
+        "start": 24.84,
+        "duration": 4.8
+    },
+    {
+        "text": "main takeaways so that even if you're",
+        "start": 28.14,
+        "duration": 3.959
+    },
+    {
+        "text": "not really well versed in this area you",
+        "start": 29.64,
+        "duration": 4.62
+    },
+    {
+        "text": "can you can still learn something from",
+        "start": 32.099,
+        "duration": 5.3
+    },
+    {
+        "text": "this presentation",
+        "start": 34.26,
+        "duration": 3.139
+    },
+    {
+        "text": "now",
+        "start": 38.579,
+        "duration": 3.0
+    },
+    {
+        "text": "also it's okay to be here",
+        "start": 43.68,
+        "duration": 6.18
+    },
+    {
+        "text": "okay so uh first of all what is python",
+        "start": 46.7,
+        "duration": 6.4
+    },
+    {
+        "text": "so pytorch is a python package that's",
+        "start": 49.86,
+        "duration": 5.64
+    },
+    {
+        "text": "used for deep learning so high storage",
+        "start": 53.1,
+        "duration": 4.74
+    },
+    {
+        "text": "and tensorflow are kind of the most",
+        "start": 55.5,
+        "duration": 5.399
+    },
+    {
+        "text": "popular packages but I in my opinion I",
+        "start": 57.84,
+        "duration": 5.58
+    },
+    {
+        "text": "think pytorch is most popular for",
+        "start": 60.899,
+        "duration": 6.241
+    },
+    {
+        "text": "building customizable deep Networks and",
+        "start": 63.42,
+        "duration": 5.879
+    },
+    {
+        "text": "it's free and open source",
+        "start": 67.14,
+        "duration": 3.479
+    },
+    {
+        "text": "um yeah",
+        "start": 69.299,
+        "duration": 4.081
+    },
+    {
+        "text": "so today I'm going to uh first I'm going",
+        "start": 70.619,
+        "duration": 4.621
+    },
+    {
+        "text": "to start with kind of a set of",
+        "start": 73.38,
+        "duration": 4.32
+    },
+    {
+        "text": "prerequisites that I expect for the",
+        "start": 75.24,
+        "duration": 4.32
+    },
+    {
+        "text": "audience to kind of know about neural",
+        "start": 77.7,
+        "duration": 4.44
+    },
+    {
+        "text": "networks and and optimization and then",
+        "start": 79.56,
+        "duration": 5.28
+    },
+    {
+        "text": "we'll talk about uh back propagation and",
+        "start": 82.14,
+        "duration": 5.22
+    },
+    {
+        "text": "what it is and then we'll talk about how",
+        "start": 84.84,
+        "duration": 4.8
+    },
+    {
+        "text": "we Implement back propagation in pi",
+        "start": 87.36,
+        "duration": 5.759
+    },
+    {
+        "text": "torch and then we'll kind of go very",
+        "start": 89.64,
+        "duration": 6.06
+    },
+    {
+        "text": "lightly into how it's implemented",
+        "start": 93.119,
+        "duration": 5.161
+    },
+    {
+        "text": "algorithmically and take a little bit of",
+        "start": 95.7,
+        "duration": 5.7
+    },
+    {
+        "text": "a peek into the source code of pytorch",
+        "start": 98.28,
+        "duration": 5.54
+    },
+    {
+        "text": "so let's start with uh kind of the",
+        "start": 101.4,
+        "duration": 5.16
+    },
+    {
+        "text": "pre-requisites for kind of what I might",
+        "start": 103.82,
+        "duration": 4.78
+    },
+    {
+        "text": "expect the audience to know about neural",
+        "start": 106.56,
+        "duration": 4.019
+    },
+    {
+        "text": "networks to begin with",
+        "start": 108.6,
+        "duration": 3.54
+    },
+    {
+        "text": "so",
+        "start": 110.579,
+        "duration": 4.561
+    },
+    {
+        "text": "um first of all uh hopefully we all kind",
+        "start": 112.14,
+        "duration": 5.04
+    },
+    {
+        "text": "of know what a neural network looks like",
+        "start": 115.14,
+        "duration": 4.56
+    },
+    {
+        "text": "so it will be made up of an input layer",
+        "start": 117.18,
+        "duration": 4.5
+    },
+    {
+        "text": "and an output layer and then there's any",
+        "start": 119.7,
+        "duration": 4.62
+    },
+    {
+        "text": "number of hidden layers in in the middle",
+        "start": 121.68,
+        "duration": 4.86
+    },
+    {
+        "text": "which can consist of any number of",
+        "start": 124.32,
+        "duration": 5.4
+    },
+    {
+        "text": "neurons and this is just your feed",
+        "start": 126.54,
+        "duration": 4.98
+    },
+    {
+        "text": "forward fully connected Network there's",
+        "start": 129.72,
+        "duration": 4.2
+    },
+    {
+        "text": "no uh extra bells and whistles to this",
+        "start": 131.52,
+        "duration": 4.92
+    },
+    {
+        "text": "network and so we expect that basically",
+        "start": 133.92,
+        "duration": 5.399
+    },
+    {
+        "text": "every uh value in the input layer should",
+        "start": 136.44,
+        "duration": 5.879
+    },
+    {
+        "text": "go to Every value and every neuron in",
+        "start": 139.319,
+        "duration": 6.301
+    },
+    {
+        "text": "the first hidden layer like this and in",
+        "start": 142.319,
+        "duration": 6.06
+    },
+    {
+        "text": "the in each neuron in the human layer we",
+        "start": 145.62,
+        "duration": 5.28
+    },
+    {
+        "text": "should perform some type of linear",
+        "start": 148.379,
+        "duration": 6.661
+    },
+    {
+        "text": "function W X plus b and yes it's in red",
+        "start": 150.9,
+        "duration": 6.72
+    },
+    {
+        "text": "and then we try to wrap it sometimes",
+        "start": 155.04,
+        "duration": 6.0
+    },
+    {
+        "text": "oftentimes into a non-linear activation",
+        "start": 157.62,
+        "duration": 5.759
+    },
+    {
+        "text": "like a sigmoid or a teenage or a",
+        "start": 161.04,
+        "duration": 4.26
+    },
+    {
+        "text": "rectified linear Union and that's really",
+        "start": 163.379,
+        "duration": 4.44
+    },
+    {
+        "text": "the key to neural networks because we",
+        "start": 165.3,
+        "duration": 4.799
+    },
+    {
+        "text": "already had linear equations for a very",
+        "start": 167.819,
+        "duration": 5.221
+    },
+    {
+        "text": "long time linear models and we even had",
+        "start": 170.099,
+        "duration": 4.981
+    },
+    {
+        "text": "non-linear models but a neural network",
+        "start": 173.04,
+        "duration": 4.8
+    },
+    {
+        "text": "is able to to create these really",
+        "start": 175.08,
+        "duration": 5.22
+    },
+    {
+        "text": "complex non-linear models which can",
+        "start": 177.84,
+        "duration": 4.14
+    },
+    {
+        "text": "really fit our data really well so",
+        "start": 180.3,
+        "duration": 4.019
+    },
+    {
+        "text": "that's why we like them",
+        "start": 181.98,
+        "duration": 4.68
+    },
+    {
+        "text": "um so after we wrap it in the activation",
+        "start": 184.319,
+        "duration": 4.801
+    },
+    {
+        "text": "we send all the outputs from the first",
+        "start": 186.66,
+        "duration": 4.92
+    },
+    {
+        "text": "hidden layer into the as inputs into the",
+        "start": 189.12,
+        "duration": 4.38
+    },
+    {
+        "text": "second human layer and so on and so",
+        "start": 191.58,
+        "duration": 3.9
+    },
+    {
+        "text": "forth we calculate this linear equation",
+        "start": 193.5,
+        "duration": 3.84
+    },
+    {
+        "text": "we wrap it in a non-linear activation",
+        "start": 195.48,
+        "duration": 4.02
+    },
+    {
+        "text": "and then it gets sent to the output",
+        "start": 197.34,
+        "duration": 5.7
+    },
+    {
+        "text": "layer where some final calculation will",
+        "start": 199.5,
+        "duration": 5.519
+    },
+    {
+        "text": "be made and then we should get either",
+        "start": 203.04,
+        "duration": 4.919
+    },
+    {
+        "text": "like a regression value or we might",
+        "start": 205.019,
+        "duration": 7.58
+    },
+    {
+        "text": "predict a binary class or a some type of",
+        "start": 207.959,
+        "duration": 8.28
+    },
+    {
+        "text": "multi-class output",
+        "start": 212.599,
+        "duration": 6.581
+    },
+    {
+        "text": "so how do we measure the performance of",
+        "start": 216.239,
+        "duration": 4.381
+    },
+    {
+        "text": "our model so we want to know if our",
+        "start": 219.18,
+        "duration": 4.32
+    },
+    {
+        "text": "model is doing well or not doing well so",
+        "start": 220.62,
+        "duration": 6.179
+    },
+    {
+        "text": "we can use loss a loss function or a",
+        "start": 223.5,
+        "duration": 6.0
+    },
+    {
+        "text": "cost function to do this for us and you",
+        "start": 226.799,
+        "duration": 4.561
+    },
+    {
+        "text": "might read some computer science papers",
+        "start": 229.5,
+        "duration": 4.319
+    },
+    {
+        "text": "and you see that the loss functions are",
+        "start": 231.36,
+        "duration": 5.64
+    },
+    {
+        "text": "really complicated and confusing but at",
+        "start": 233.819,
+        "duration": 5.64
+    },
+    {
+        "text": "the core of uh pretty much all the loss",
+        "start": 237.0,
+        "duration": 5.22
+    },
+    {
+        "text": "functions in a computer science paper it",
+        "start": 239.459,
+        "duration": 5.941
+    },
+    {
+        "text": "will be made up of one of these two loss",
+        "start": 242.22,
+        "duration": 5.28
+    },
+    {
+        "text": "functions either a mean squared error or",
+        "start": 245.4,
+        "duration": 4.619
+    },
+    {
+        "text": "a cross-entropy loss you know highlight",
+        "start": 247.5,
+        "duration": 4.68
+    },
+    {
+        "text": "means great error because even if you",
+        "start": 250.019,
+        "duration": 3.78
+    },
+    {
+        "text": "worked with linear regressions you've",
+        "start": 252.18,
+        "duration": 3.54
+    },
+    {
+        "text": "seen a mean square error basically",
+        "start": 253.799,
+        "duration": 4.141
+    },
+    {
+        "text": "you're you're taking your predicted",
+        "start": 255.72,
+        "duration": 4.739
+    },
+    {
+        "text": "label from the network side to shaky so",
+        "start": 257.94,
+        "duration": 3.9
+    },
+    {
+        "text": "your predicted label from the network",
+        "start": 260.459,
+        "duration": 2.941
+    },
+    {
+        "text": "and you're subtracting it from your",
+        "start": 261.84,
+        "duration": 3.72
+    },
+    {
+        "text": "ground truth label and then we Square it",
+        "start": 263.4,
+        "duration": 3.239
+    },
+    {
+        "text": "because we want to make it",
+        "start": 265.56,
+        "duration": 3.6
+    },
+    {
+        "text": "differentiable and so that's how we can",
+        "start": 266.639,
+        "duration": 4.62
+    },
+    {
+        "text": "measure the performance of our model but",
+        "start": 269.16,
+        "duration": 3.84
+    },
+    {
+        "text": "it turns out that loss function is",
+        "start": 271.259,
+        "duration": 3.241
+    },
+    {
+        "text": "important for more than that it's",
+        "start": 273.0,
+        "duration": 4.139
+    },
+    {
+        "text": "important for optimizing our Network and",
+        "start": 274.5,
+        "duration": 5.28
+    },
+    {
+        "text": "so if we have this network of a bunch of",
+        "start": 277.139,
+        "duration": 5.28
+    },
+    {
+        "text": "Weights in our neurons to perform this",
+        "start": 279.78,
+        "duration": 5.34
+    },
+    {
+        "text": "linear functions uh we want to be able",
+        "start": 282.419,
+        "duration": 5.641
+    },
+    {
+        "text": "to get the the exact values of the",
+        "start": 285.12,
+        "duration": 4.56
+    },
+    {
+        "text": "weights which can correspond to the",
+        "start": 288.06,
+        "duration": 4.44
+    },
+    {
+        "text": "lowest possible loss so this is uh",
+        "start": 289.68,
+        "duration": 5.239
+    },
+    {
+        "text": "completely an optimization problem",
+        "start": 292.5,
+        "duration": 6.419
+    },
+    {
+        "text": "and so in a simple example in a simple",
+        "start": 294.919,
+        "duration": 6.22
+    },
+    {
+        "text": "example where we have only two weights",
+        "start": 298.919,
+        "duration": 3.961
+    },
+    {
+        "text": "and we're using the mean squared error",
+        "start": 301.139,
+        "duration": 4.681
+    },
+    {
+        "text": "we can actually graph out all the",
+        "start": 302.88,
+        "duration": 6.3
+    },
+    {
+        "text": "possible values of our loss function and",
+        "start": 305.82,
+        "duration": 7.62
+    },
+    {
+        "text": "we can see which values of waves out of",
+        "start": 309.18,
+        "duration": 6.42
+    },
+    {
+        "text": "all possible values would result in the",
+        "start": 313.44,
+        "duration": 5.34
+    },
+    {
+        "text": "lowest possible loss and so this is what",
+        "start": 315.6,
+        "duration": 6.78
+    },
+    {
+        "text": "we're doing in optimization but uh",
+        "start": 318.78,
+        "duration": 5.46
+    },
+    {
+        "text": "but we know that neural networks are",
+        "start": 322.38,
+        "duration": 3.539
+    },
+    {
+        "text": "much more complicated than that we can't",
+        "start": 324.24,
+        "duration": 4.44
+    },
+    {
+        "text": "just look at this graph or we can't just",
+        "start": 325.919,
+        "duration": 4.861
+    },
+    {
+        "text": "look at a graph and see where the lowest",
+        "start": 328.68,
+        "duration": 4.44
+    },
+    {
+        "text": "point is and we have we have these",
+        "start": 330.78,
+        "duration": 5.1
+    },
+    {
+        "text": "really highly non-linear functions where",
+        "start": 333.12,
+        "duration": 3.96
+    },
+    {
+        "text": "there's going to be more than one",
+        "start": 335.88,
+        "duration": 3.539
+    },
+    {
+        "text": "minimum and so we want to we need to do",
+        "start": 337.08,
+        "duration": 5.339
+    },
+    {
+        "text": "a more sophisticated process for that",
+        "start": 339.419,
+        "duration": 5.701
+    },
+    {
+        "text": "and so we might do something like",
+        "start": 342.419,
+        "duration": 5.521
+    },
+    {
+        "text": "gradient descent also known as steepest",
+        "start": 345.12,
+        "duration": 6.66
+    },
+    {
+        "text": "descent and there are two core uh steps",
+        "start": 347.94,
+        "duration": 6.9
+    },
+    {
+        "text": "in a gradient descent algorithm we want",
+        "start": 351.78,
+        "duration": 6.359
+    },
+    {
+        "text": "to one find the best Direction and",
+        "start": 354.84,
+        "duration": 5.18
+    },
+    {
+        "text": "defining the best Direction",
+        "start": 358.139,
+        "duration": 5.521
+    },
+    {
+        "text": "means calculating a derivative or a",
+        "start": 360.02,
+        "duration": 6.34
+    },
+    {
+        "text": "gradient and we want basically the",
+        "start": 363.66,
+        "duration": 4.5
+    },
+    {
+        "text": "direction that's going to show us which",
+        "start": 366.36,
+        "duration": 6.96
+    },
+    {
+        "text": "which way should we lower our weights in",
+        "start": 368.16,
+        "duration": 7.56
+    },
+    {
+        "text": "in our neural network that will result",
+        "start": 373.32,
+        "duration": 5.04
+    },
+    {
+        "text": "in a lower loss and then we want to move",
+        "start": 375.72,
+        "duration": 5.58
+    },
+    {
+        "text": "a small step in that direction so that's",
+        "start": 378.36,
+        "duration": 5.58
+    },
+    {
+        "text": "that's this Alpha w i",
+        "start": 381.3,
+        "duration": 5.28
+    },
+    {
+        "text": "for each wave so",
+        "start": 383.94,
+        "duration": 4.68
+    },
+    {
+        "text": "um find the best Direction update the",
+        "start": 386.58,
+        "duration": 5.179
+    },
+    {
+        "text": "weights and bed propagation comes into",
+        "start": 388.62,
+        "duration": 6.54
+    },
+    {
+        "text": "into our talk because it turns out that",
+        "start": 391.759,
+        "duration": 5.261
+    },
+    {
+        "text": "using this method called back",
+        "start": 395.16,
+        "duration": 3.599
+    },
+    {
+        "text": "propagation or backwards propagation",
+        "start": 397.02,
+        "duration": 5.7
+    },
+    {
+        "text": "tends to be the best way to to do this",
+        "start": 398.759,
+        "duration": 6.0
+    },
+    {
+        "text": "optimization process and it means that",
+        "start": 402.72,
+        "duration": 5.039
+    },
+    {
+        "text": "we basically start in the back of the",
+        "start": 404.759,
+        "duration": 5.761
+    },
+    {
+        "text": "network and then we find the best",
+        "start": 407.759,
+        "duration": 4.44
+    },
+    {
+        "text": "direction we update the weights and then",
+        "start": 410.52,
+        "duration": 4.26
+    },
+    {
+        "text": "we work our way up so for infrastructure",
+        "start": 412.199,
+        "duration": 5.821
+    },
+    {
+        "text": "update the weights and do the same thing",
+        "start": 414.78,
+        "duration": 6.96
+    },
+    {
+        "text": "okay so that's optimization and web",
+        "start": 418.02,
+        "duration": 7.2
+    },
+    {
+        "text": "application so if we could actually view",
+        "start": 421.74,
+        "duration": 7.44
+    },
+    {
+        "text": "what uh gradient descent is doing",
+        "start": 425.22,
+        "duration": 5.759
+    },
+    {
+        "text": "um this is this would be in a situation",
+        "start": 429.18,
+        "duration": 3.239
+    },
+    {
+        "text": "where we have only two weights because",
+        "start": 430.979,
+        "duration": 4.201
+    },
+    {
+        "text": "we could view it in three dimensions",
+        "start": 432.419,
+        "duration": 4.021
+    },
+    {
+        "text": "um it would look something like this it",
+        "start": 435.18,
+        "duration": 3.72
+    },
+    {
+        "text": "would be slowly the values of the",
+        "start": 436.44,
+        "duration": 4.68
+    },
+    {
+        "text": "weights that we choose would slowly inch",
+        "start": 438.9,
+        "duration": 4.019
+    },
+    {
+        "text": "their way along until it reached the",
+        "start": 441.12,
+        "duration": 4.26
+    },
+    {
+        "text": "lowest possible value for the last",
+        "start": 442.919,
+        "duration": 4.141
+    },
+    {
+        "text": "function",
+        "start": 445.38,
+        "duration": 4.56
+    },
+    {
+        "text": "a small technicality is that because the",
+        "start": 447.06,
+        "duration": 6.6
+    },
+    {
+        "text": "the function is so non-linear there are",
+        "start": 449.94,
+        "duration": 5.819
+    },
+    {
+        "text": "so many different Minima that you could",
+        "start": 453.66,
+        "duration": 4.379
+    },
+    {
+        "text": "fall into and we call those local Minima",
+        "start": 455.759,
+        "duration": 4.861
+    },
+    {
+        "text": "and the the global minimum which is the",
+        "start": 458.039,
+        "duration": 4.861
+    },
+    {
+        "text": "lowest lowest possible value for our",
+        "start": 460.62,
+        "duration": 3.78
+    },
+    {
+        "text": "loss function sometimes we never find",
+        "start": 462.9,
+        "duration": 5.16
+    },
+    {
+        "text": "that but we just want to get the weights",
+        "start": 464.4,
+        "duration": 6.54
+    },
+    {
+        "text": "to a point that uh the the model does",
+        "start": 468.06,
+        "duration": 5.1
+    },
+    {
+        "text": "good enough for us so so any local",
+        "start": 470.94,
+        "duration": 3.96
+    },
+    {
+        "text": "Minima that does good enough is really",
+        "start": 473.16,
+        "duration": 4.2
+    },
+    {
+        "text": "what we're looking for",
+        "start": 474.9,
+        "duration": 3.6
+    },
+    {
+        "text": "okay",
+        "start": 477.36,
+        "duration": 3.899
+    },
+    {
+        "text": "so we talked about gradient descent and",
+        "start": 478.5,
+        "duration": 4.74
+    },
+    {
+        "text": "we talked about how we the first most",
+        "start": 481.259,
+        "duration": 3.72
+    },
+    {
+        "text": "important step is to find the best",
+        "start": 483.24,
+        "duration": 3.66
+    },
+    {
+        "text": "Direction so finding the best Direction",
+        "start": 484.979,
+        "duration": 5.34
+    },
+    {
+        "text": "always means you want to find the",
+        "start": 486.9,
+        "duration": 5.639
+    },
+    {
+        "text": "derivative of the cost function with",
+        "start": 490.319,
+        "duration": 4.861
+    },
+    {
+        "text": "respect to each weight in the network",
+        "start": 492.539,
+        "duration": 4.321
+    },
+    {
+        "text": "and",
+        "start": 495.18,
+        "duration": 4.019
+    },
+    {
+        "text": "I'm going to show some some confusing",
+        "start": 496.86,
+        "duration": 3.779
+    },
+    {
+        "text": "notation but there are two main",
+        "start": 499.199,
+        "duration": 3.661
+    },
+    {
+        "text": "takeaways I want you to learn from this",
+        "start": 500.639,
+        "duration": 4.861
+    },
+    {
+        "text": "the first one is that it's not a mystery",
+        "start": 502.86,
+        "duration": 5.399
+    },
+    {
+        "text": "it's not a black box we know like we",
+        "start": 505.5,
+        "duration": 4.199
+    },
+    {
+        "text": "know how to do this you can do this on",
+        "start": 508.259,
+        "duration": 2.88
+    },
+    {
+        "text": "paper you can write it all out you can",
+        "start": 509.699,
+        "duration": 4.501
+    },
+    {
+        "text": "calculate the derivatives yourself",
+        "start": 511.139,
+        "duration": 5.881
+    },
+    {
+        "text": "um and I mean you can use these",
+        "start": 514.2,
+        "duration": 5.1
+    },
+    {
+        "text": "equations here",
+        "start": 517.02,
+        "duration": 3.78
+    },
+    {
+        "text": "um but the second point is that you",
+        "start": 519.3,
+        "duration": 3.72
+    },
+    {
+        "text": "don't want to do that because if you did",
+        "start": 520.8,
+        "duration": 4.92
+    },
+    {
+        "text": "that you might be very likely to first",
+        "start": 523.02,
+        "duration": 6.36
+    },
+    {
+        "text": "of all mess up anytime you add a neuron",
+        "start": 525.72,
+        "duration": 5.58
+    },
+    {
+        "text": "into your network or you update your",
+        "start": 529.38,
+        "duration": 3.36
+    },
+    {
+        "text": "loss function in any way you're going to",
+        "start": 531.3,
+        "duration": 4.02
+    },
+    {
+        "text": "recalculate that all over again and also",
+        "start": 532.74,
+        "duration": 3.84
+    },
+    {
+        "text": "you can",
+        "start": 535.32,
+        "duration": 3.66
+    },
+    {
+        "text": "um you can imagine that in modern day",
+        "start": 536.58,
+        "duration": 3.84
+    },
+    {
+        "text": "neural networks you might even have",
+        "start": 538.98,
+        "duration": 3.72
+    },
+    {
+        "text": "billions of different weights in your",
+        "start": 540.42,
+        "duration": 4.02
+    },
+    {
+        "text": "network and you don't really want to be",
+        "start": 542.7,
+        "duration": 4.319
+    },
+    {
+        "text": "calculating this for a billion uh",
+        "start": 544.44,
+        "duration": 4.86
+    },
+    {
+        "text": "different weights so just know that's",
+        "start": 547.019,
+        "duration": 4.201
+    },
+    {
+        "text": "possible but you don't really want to do",
+        "start": 549.3,
+        "duration": 3.479
+    },
+    {
+        "text": "it and so that's why it's good that",
+        "start": 551.22,
+        "duration": 4.26
+    },
+    {
+        "text": "pytorch does it for us but let's just",
+        "start": 552.779,
+        "duration": 6.481
+    },
+    {
+        "text": "take a quick look at edit so",
+        "start": 555.48,
+        "duration": 7.5
+    },
+    {
+        "text": "um basically the the main Hallmark of",
+        "start": 559.26,
+        "duration": 6.3
+    },
+    {
+        "text": "being able to calculate these partial",
+        "start": 562.98,
+        "duration": 5.7
+    },
+    {
+        "text": "derivatives is using the chain Rule and",
+        "start": 565.56,
+        "duration": 5.04
+    },
+    {
+        "text": "hopefully everyone here knows what the",
+        "start": 568.68,
+        "duration": 4.74
+    },
+    {
+        "text": "chain rule is but basically it's a",
+        "start": 570.6,
+        "duration": 4.62
+    },
+    {
+        "text": "special trick that you can use when",
+        "start": 573.42,
+        "duration": 3.72
+    },
+    {
+        "text": "you're calculating derivatives if you",
+        "start": 575.22,
+        "duration": 4.5
+    },
+    {
+        "text": "have a set of nested functions and if",
+        "start": 577.14,
+        "duration": 5.16
+    },
+    {
+        "text": "you look very shaky if you look at the",
+        "start": 579.72,
+        "duration": 5.34
+    },
+    {
+        "text": "the end of the neural network you can",
+        "start": 582.3,
+        "duration": 5.039
+    },
+    {
+        "text": "see that basically the whole network is",
+        "start": 585.06,
+        "duration": 4.68
+    },
+    {
+        "text": "just a set of nested functions and so",
+        "start": 587.339,
+        "duration": 4.081
+    },
+    {
+        "text": "that's why we can really take advantage",
+        "start": 589.74,
+        "duration": 4.02
+    },
+    {
+        "text": "of the change Rule and because it's a",
+        "start": 591.42,
+        "duration": 3.9
+    },
+    {
+        "text": "set of nested functions you might also",
+        "start": 593.76,
+        "duration": 4.019
+    },
+    {
+        "text": "see oh that's also why back propagation",
+        "start": 595.32,
+        "duration": 4.019
+    },
+    {
+        "text": "makes sense because you'll have to start",
+        "start": 597.779,
+        "duration": 3.18
+    },
+    {
+        "text": "at the back",
+        "start": 599.339,
+        "duration": 3.721
+    },
+    {
+        "text": "um and kind of work our way forward",
+        "start": 600.959,
+        "duration": 4.88
+    },
+    {
+        "text": "through the nested functions",
+        "start": 603.06,
+        "duration": 6.3
+    },
+    {
+        "text": "so uh someone was able to actually",
+        "start": 605.839,
+        "duration": 5.381
+    },
+    {
+        "text": "summarize all of the personal",
+        "start": 609.36,
+        "duration": 3.479
+    },
+    {
+        "text": "derivatives you need to take with four",
+        "start": 611.22,
+        "duration": 3.42
+    },
+    {
+        "text": "different functions I'm not going to",
+        "start": 612.839,
+        "duration": 3.481
+    },
+    {
+        "text": "like go through it all in depth I just",
+        "start": 614.64,
+        "duration": 5.4
+    },
+    {
+        "text": "want you to see that it's possible so",
+        "start": 616.32,
+        "duration": 6.36
+    },
+    {
+        "text": "this is calculating the",
+        "start": 620.04,
+        "duration": 4.38
+    },
+    {
+        "text": "pressure derivative of the cost function",
+        "start": 622.68,
+        "duration": 3.36
+    },
+    {
+        "text": "with each weight all you would need is",
+        "start": 624.42,
+        "duration": 4.56
+    },
+    {
+        "text": "the activation of the previous layer and",
+        "start": 626.04,
+        "duration": 4.919
+    },
+    {
+        "text": "then you would multiply it times this",
+        "start": 628.98,
+        "duration": 5.34
+    },
+    {
+        "text": "Delta function which consists of Weights",
+        "start": 630.959,
+        "duration": 6.121
+    },
+    {
+        "text": "in layers that are closer in this",
+        "start": 634.32,
+        "duration": 5.639
+    },
+    {
+        "text": "direction if we call Upstream",
+        "start": 637.08,
+        "duration": 4.62
+    },
+    {
+        "text": "um until you get to the last layer and",
+        "start": 639.959,
+        "duration": 3.541
+    },
+    {
+        "text": "then you can also calculate there is an",
+        "start": 641.7,
+        "duration": 4.139
+    },
+    {
+        "text": "equation for calculating the the cost",
+        "start": 643.5,
+        "duration": 4.26
+    },
+    {
+        "text": "function in with respect to the biases",
+        "start": 645.839,
+        "duration": 5.341
+    },
+    {
+        "text": "as well but many takeaways you can do it",
+        "start": 647.76,
+        "duration": 6.24
+    },
+    {
+        "text": "by hand but you don't want to and you",
+        "start": 651.18,
+        "duration": 4.32
+    },
+    {
+        "text": "use the chain rule",
+        "start": 654.0,
+        "duration": 4.86
+    },
+    {
+        "text": "okay so how do we implement this in",
+        "start": 655.5,
+        "duration": 6.42
+    },
+    {
+        "text": "pytorch using some code so let's first",
+        "start": 658.86,
+        "duration": 5.099
+    },
+    {
+        "text": "take a look at neural networks because",
+        "start": 661.92,
+        "duration": 4.8
+    },
+    {
+        "text": "everyone likes that",
+        "start": 663.959,
+        "duration": 4.32
+    },
+    {
+        "text": "um so first thing we need to do is",
+        "start": 666.72,
+        "duration": 4.619
+    },
+    {
+        "text": "create a network architecture and so we",
+        "start": 668.279,
+        "duration": 6.24
+    },
+    {
+        "text": "always create this network object",
+        "start": 671.339,
+        "duration": 7.44
+    },
+    {
+        "text": "um using a class and we Define all of",
+        "start": 674.519,
+        "duration": 6.841
+    },
+    {
+        "text": "our layers in the initializer so this is",
+        "start": 678.779,
+        "duration": 6.0
+    },
+    {
+        "text": "this is where we kind of uh define",
+        "start": 681.36,
+        "duration": 5.7
+    },
+    {
+        "text": "whether we're going to use linear layers",
+        "start": 684.779,
+        "duration": 6.661
+    },
+    {
+        "text": "or convolutional layers Etc and then we",
+        "start": 687.06,
+        "duration": 7.56
+    },
+    {
+        "text": "have a forward method and this defines",
+        "start": 691.44,
+        "duration": 5.28
+    },
+    {
+        "text": "the forward pass so we defined our",
+        "start": 694.62,
+        "duration": 3.719
+    },
+    {
+        "text": "layers here but we need to Define how",
+        "start": 696.72,
+        "duration": 3.72
+    },
+    {
+        "text": "the input is going to go into each of",
+        "start": 698.339,
+        "duration": 3.721
+    },
+    {
+        "text": "these layers and so that's what the",
+        "start": 700.44,
+        "duration": 2.339
+    },
+    {
+        "text": "forward",
+        "start": 702.06,
+        "duration": 3.66
+    },
+    {
+        "text": "forward method is for",
+        "start": 702.779,
+        "duration": 6.24
+    },
+    {
+        "text": "and then we have the training step",
+        "start": 705.72,
+        "duration": 5.22
+    },
+    {
+        "text": "so the first thing we're going to do is",
+        "start": 709.019,
+        "duration": 5.041
+    },
+    {
+        "text": "we're going to call up our model so",
+        "start": 710.94,
+        "duration": 5.82
+    },
+    {
+        "text": "we're going to create a model instance",
+        "start": 714.06,
+        "duration": 5.82
+    },
+    {
+        "text": "here and then we are going to Define our",
+        "start": 716.76,
+        "duration": 5.759
+    },
+    {
+        "text": "Optimizer and so here we're using",
+        "start": 719.88,
+        "duration": 5.16
+    },
+    {
+        "text": "stochastic gradient descent and we're",
+        "start": 722.519,
+        "duration": 4.741
+    },
+    {
+        "text": "going to optimize the parameters of the",
+        "start": 725.04,
+        "duration": 4.68
+    },
+    {
+        "text": "model and then we can Define the",
+        "start": 727.26,
+        "duration": 4.319
+    },
+    {
+        "text": "learning rate there's other bells and",
+        "start": 729.72,
+        "duration": 3.54
+    },
+    {
+        "text": "whistles you can add to the optimizer",
+        "start": 731.579,
+        "duration": 3.901
+    },
+    {
+        "text": "but I don't put them here",
+        "start": 733.26,
+        "duration": 4.56
+    },
+    {
+        "text": "and then we have our actual training",
+        "start": 735.48,
+        "duration": 4.68
+    },
+    {
+        "text": "Loop and so we iterate through epochs",
+        "start": 737.82,
+        "duration": 4.5
+    },
+    {
+        "text": "first thing we need to do is we need to",
+        "start": 740.16,
+        "duration": 6.06
+    },
+    {
+        "text": "set model.train to true and uh basically",
+        "start": 742.32,
+        "duration": 7.019
+    },
+    {
+        "text": "what this is is we're telling uh pytorch",
+        "start": 746.22,
+        "duration": 5.88
+    },
+    {
+        "text": "that we are ready to train the model and",
+        "start": 749.339,
+        "duration": 4.68
+    },
+    {
+        "text": "this is mostly important if you have",
+        "start": 752.1,
+        "duration": 4.14
+    },
+    {
+        "text": "things like batch normalization or",
+        "start": 754.019,
+        "duration": 4.021
+    },
+    {
+        "text": "Dropout in your model because they kind",
+        "start": 756.24,
+        "duration": 3.779
+    },
+    {
+        "text": "of depend on knowing that your model is",
+        "start": 758.04,
+        "duration": 4.44
+    },
+    {
+        "text": "training if you're trying to evaluate",
+        "start": 760.019,
+        "duration": 6.12
+    },
+    {
+        "text": "your uh validation set your or your test",
+        "start": 762.48,
+        "duration": 4.74
+    },
+    {
+        "text": "set",
+        "start": 766.139,
+        "duration": 3.781
+    },
+    {
+        "text": "um you would set model.train to false or",
+        "start": 767.22,
+        "duration": 6.0
+    },
+    {
+        "text": "you would set model.eball",
+        "start": 769.92,
+        "duration": 5.88
+    },
+    {
+        "text": "and then we're gonna iterate through all",
+        "start": 773.22,
+        "duration": 4.739
+    },
+    {
+        "text": "of the batches so oftentimes we use",
+        "start": 775.8,
+        "duration": 4.44
+    },
+    {
+        "text": "what's called a data loader and the data",
+        "start": 777.959,
+        "duration": 5.521
+    },
+    {
+        "text": "loader helps us to organize our data our",
+        "start": 780.24,
+        "duration": 6.36
+    },
+    {
+        "text": "input data into batches for the model",
+        "start": 783.48,
+        "duration": 4.799
+    },
+    {
+        "text": "and then we're going to get our model",
+        "start": 786.6,
+        "duration": 5.1
+    },
+    {
+        "text": "predictions in this step here oh sorry",
+        "start": 788.279,
+        "duration": 5.101
+    },
+    {
+        "text": "for people over here and then we're",
+        "start": 791.7,
+        "duration": 4.139
+    },
+    {
+        "text": "going to calculate the loss and so uh Pi",
+        "start": 793.38,
+        "duration": 4.8
+    },
+    {
+        "text": "charge has its own built-in functions",
+        "start": 795.839,
+        "duration": 4.62
+    },
+    {
+        "text": "like mean squared air and cross entropy",
+        "start": 798.18,
+        "duration": 4.98
+    },
+    {
+        "text": "loss but you can also Define your own",
+        "start": 800.459,
+        "duration": 5.341
+    },
+    {
+        "text": "and then the most important step uh",
+        "start": 803.16,
+        "duration": 4.799
+    },
+    {
+        "text": "we're going to back propagate and these",
+        "start": 805.8,
+        "duration": 4.68
+    },
+    {
+        "text": "in these two steps so we're going to",
+        "start": 807.959,
+        "duration": 4.38
+    },
+    {
+        "text": "call last stop backward and what that's",
+        "start": 810.48,
+        "duration": 3.78
+    },
+    {
+        "text": "going to do is it's going to calculate",
+        "start": 812.339,
+        "duration": 3.601
+    },
+    {
+        "text": "all of the",
+        "start": 814.26,
+        "duration": 4.319
+    },
+    {
+        "text": "um all the partial derivatives of the",
+        "start": 815.94,
+        "duration": 5.16
+    },
+    {
+        "text": "cost function with respect to all the",
+        "start": 818.579,
+        "duration": 4.741
+    },
+    {
+        "text": "model parameters here",
+        "start": 821.1,
+        "duration": 3.56
+    },
+    {
+        "text": "and then we're going to call",
+        "start": 823.32,
+        "duration": 3.54
+    },
+    {
+        "text": "optimizer.step and that's that's the",
+        "start": 824.66,
+        "duration": 4.9
+    },
+    {
+        "text": "step that's going to uh move the weights",
+        "start": 826.86,
+        "duration": 4.74
+    },
+    {
+        "text": "in the direction that we just calculated",
+        "start": 829.56,
+        "duration": 4.2
+    },
+    {
+        "text": "here",
+        "start": 831.6,
+        "duration": 4.739
+    },
+    {
+        "text": "and then if you do this right you should",
+        "start": 833.76,
+        "duration": 6.06
+    },
+    {
+        "text": "hopefully see your loss decreasing and",
+        "start": 836.339,
+        "duration": 4.5
+    },
+    {
+        "text": "because",
+        "start": 839.82,
+        "duration": 2.759
+    },
+    {
+        "text": "um in this example we use the cat the",
+        "start": 840.839,
+        "duration": 3.721
+    },
+    {
+        "text": "gradient scent you might see it looks a",
+        "start": 842.579,
+        "duration": 4.32
+    },
+    {
+        "text": "little bumpy your your loss sometimes",
+        "start": 844.56,
+        "duration": 4.44
+    },
+    {
+        "text": "might increase a little bit but overall",
+        "start": 846.899,
+        "duration": 5.24
+    },
+    {
+        "text": "the trend should decrease",
+        "start": 849.0,
+        "duration": 3.139
+    },
+    {
+        "text": "so another method that I want to kind of",
+        "start": 852.3,
+        "duration": 5.58
+    },
+    {
+        "text": "talk about is a torsion tensor that",
+        "start": 855.42,
+        "duration": 6.359
+    },
+    {
+        "text": "requires red so uh every so the model",
+        "start": 857.88,
+        "duration": 8.18
+    },
+    {
+        "text": "parameters are set in a data type called",
+        "start": 861.779,
+        "duration": 8.161
+    },
+    {
+        "text": "torch.hinser and that data type also",
+        "start": 866.06,
+        "duration": 8.32
+    },
+    {
+        "text": "stores a an attribute called red and red",
+        "start": 869.94,
+        "duration": 6.6
+    },
+    {
+        "text": "is where it stores the the gradients",
+        "start": 874.38,
+        "duration": 3.12
+    },
+    {
+        "text": "basically",
+        "start": 876.54,
+        "duration": 3.239
+    },
+    {
+        "text": "and sometimes we don't want to store the",
+        "start": 877.5,
+        "duration": 5.279
+    },
+    {
+        "text": "gradients sometimes it's just a it's",
+        "start": 879.779,
+        "duration": 5.521
+    },
+    {
+        "text": "just using up memory but we don't want",
+        "start": 882.779,
+        "duration": 4.441
+    },
+    {
+        "text": "to back propagate through those values",
+        "start": 885.3,
+        "duration": 4.2
+    },
+    {
+        "text": "and one example of that is if I'm using",
+        "start": 887.22,
+        "duration": 4.2
+    },
+    {
+        "text": "a set of pre-trained weights and I don't",
+        "start": 889.5,
+        "duration": 3.3
+    },
+    {
+        "text": "want to update them I just want to",
+        "start": 891.42,
+        "duration": 4.02
+    },
+    {
+        "text": "freeze the network so then I can use",
+        "start": 892.8,
+        "duration": 5.099
+    },
+    {
+        "text": "this method called requires grad so if",
+        "start": 895.44,
+        "duration": 5.16
+    },
+    {
+        "text": "my my torch tensor is called X I just",
+        "start": 897.899,
+        "duration": 4.861
+    },
+    {
+        "text": "say x dot requires grad false and then",
+        "start": 900.6,
+        "duration": 4.5
+    },
+    {
+        "text": "it would it just won't store anything in",
+        "start": 902.76,
+        "duration": 5.78
+    },
+    {
+        "text": "that red attribute",
+        "start": 905.1,
+        "duration": 3.44
+    },
+    {
+        "text": "uh there's another a couple methods I",
+        "start": 908.94,
+        "duration": 4.92
+    },
+    {
+        "text": "want to kind of distinguish so we kind",
+        "start": 911.82,
+        "duration": 4.199
+    },
+    {
+        "text": "of lost that backwards this is using",
+        "start": 913.86,
+        "duration": 4.08
+    },
+    {
+        "text": "torch.autobred we call it lost out",
+        "start": 916.019,
+        "duration": 4.021
+    },
+    {
+        "text": "backward but you can also call lost that",
+        "start": 917.94,
+        "duration": 4.62
+    },
+    {
+        "text": "bread and the difference uh is just that",
+        "start": 920.04,
+        "duration": 4.979
+    },
+    {
+        "text": "with that backward what you're doing is",
+        "start": 922.56,
+        "duration": 4.92
+    },
+    {
+        "text": "you are calculating the gradients and",
+        "start": 925.019,
+        "duration": 4.5
+    },
+    {
+        "text": "then you're storing them into that grad",
+        "start": 927.48,
+        "duration": 4.32
+    },
+    {
+        "text": "attribute but with red you're just going",
+        "start": 929.519,
+        "duration": 3.781
+    },
+    {
+        "text": "to calculate gradients and it's going to",
+        "start": 931.8,
+        "duration": 5.64
+    },
+    {
+        "text": "return the gradients uh to you as output",
+        "start": 933.3,
+        "duration": 6.899
+    },
+    {
+        "text": "so let's do one more example of using",
+        "start": 937.44,
+        "duration": 4.62
+    },
+    {
+        "text": "torched out autobred",
+        "start": 940.199,
+        "duration": 3.601
+    },
+    {
+        "text": "um you don't need to use it in a neural",
+        "start": 942.06,
+        "duration": 3.719
+    },
+    {
+        "text": "network you could just do it to",
+        "start": 943.8,
+        "duration": 4.02
+    },
+    {
+        "text": "calculate a derivative for you like",
+        "start": 945.779,
+        "duration": 5.041
+    },
+    {
+        "text": "let's say you you don't have Wolfram",
+        "start": 947.82,
+        "duration": 6.6
+    },
+    {
+        "text": "Alpha or you have access to it or you",
+        "start": 950.82,
+        "duration": 6.3
+    },
+    {
+        "text": "just want to be cool and use this in",
+        "start": 954.42,
+        "duration": 5.64
+    },
+    {
+        "text": "pytorch so you can totally do that",
+        "start": 957.12,
+        "duration": 6.54
+    },
+    {
+        "text": "um here we're setting we're giving a",
+        "start": 960.06,
+        "duration": 6.12
+    },
+    {
+        "text": "concrete value to X which is 3.6 we're",
+        "start": 963.66,
+        "duration": 5.039
+    },
+    {
+        "text": "setting our function to the x squared x",
+        "start": 966.18,
+        "duration": 5.94
+    },
+    {
+        "text": "times x and then we are applying uh our",
+        "start": 968.699,
+        "duration": 6.0
+    },
+    {
+        "text": "function y y dot backward and then we're",
+        "start": 972.12,
+        "duration": 4.2
+    },
+    {
+        "text": "going to take a look at what was saved",
+        "start": 974.699,
+        "duration": 4.38
+    },
+    {
+        "text": "in the grad attribute and it turns out",
+        "start": 976.32,
+        "duration": 5.34
+    },
+    {
+        "text": "that would save this 7.2 which is equal",
+        "start": 979.079,
+        "duration": 4.2
+    },
+    {
+        "text": "to 2 times",
+        "start": 981.66,
+        "duration": 5.16
+    },
+    {
+        "text": "uh X which is equal equal to the",
+        "start": 983.279,
+        "duration": 5.341
+    },
+    {
+        "text": "derivative of y",
+        "start": 986.82,
+        "duration": 4.139
+    },
+    {
+        "text": "so this is how we use it to calculate",
+        "start": 988.62,
+        "duration": 4.88
+    },
+    {
+        "text": "derivatives",
+        "start": 990.959,
+        "duration": 2.541
+    },
+    {
+        "text": "all right so let's let's say talk about",
+        "start": 993.779,
+        "duration": 4.92
+    },
+    {
+        "text": "how that propagation is implemented",
+        "start": 995.76,
+        "duration": 5.16
+    },
+    {
+        "text": "algorithmically and before I begin I",
+        "start": 998.699,
+        "duration": 5.341
+    },
+    {
+        "text": "want to thank Justin Johnson who is a",
+        "start": 1000.92,
+        "duration": 5.88
+    },
+    {
+        "text": "professor in ex he has a lot of content",
+        "start": 1004.04,
+        "duration": 6.18
+    },
+    {
+        "text": "on pytorch and that's how I learned some",
+        "start": 1006.8,
+        "duration": 5.399
+    },
+    {
+        "text": "of this stuff from him and I I borrowed",
+        "start": 1010.22,
+        "duration": 5.6
+    },
+    {
+        "text": "some slide content from",
+        "start": 1012.199,
+        "duration": 3.621
+    },
+    {
+        "text": "um okay yeah so in order to understand",
+        "start": 1016.399,
+        "duration": 4.62
+    },
+    {
+        "text": "how we implement this in pi torch we",
+        "start": 1018.139,
+        "duration": 5.7
+    },
+    {
+        "text": "should understand uh what computational",
+        "start": 1021.019,
+        "duration": 5.94
+    },
+    {
+        "text": "graphs are and how to use them so a",
+        "start": 1023.839,
+        "duration": 5.46
+    },
+    {
+        "text": "computational graph is a way that we can",
+        "start": 1026.959,
+        "duration": 5.281
+    },
+    {
+        "text": "kind of graphically represent some",
+        "start": 1029.299,
+        "duration": 5.821
+    },
+    {
+        "text": "equation and it it helps us to firstly",
+        "start": 1032.24,
+        "duration": 5.339
+    },
+    {
+        "text": "structure our equations more clearly",
+        "start": 1035.12,
+        "duration": 4.74
+    },
+    {
+        "text": "compared to writing it out on paper but",
+        "start": 1037.579,
+        "duration": 4.38
+    },
+    {
+        "text": "it will also allow us to use that",
+        "start": 1039.86,
+        "duration": 5.28
+    },
+    {
+        "text": "propagation to leverage gradients and it",
+        "start": 1041.959,
+        "duration": 6.541
+    },
+    {
+        "text": "has this cool kind of trick where we can",
+        "start": 1045.14,
+        "duration": 5.279
+    },
+    {
+        "text": "calculate gradients for all the",
+        "start": 1048.5,
+        "duration": 3.48
+    },
+    {
+        "text": "variables using only what are called",
+        "start": 1050.419,
+        "duration": 3.0
+    },
+    {
+        "text": "local radians",
+        "start": 1051.98,
+        "duration": 4.62
+    },
+    {
+        "text": "so first let me explain here here's one",
+        "start": 1053.419,
+        "duration": 5.64
+    },
+    {
+        "text": "example function it's F of these",
+        "start": 1056.6,
+        "duration": 5.04
+    },
+    {
+        "text": "independent variables X Y and Z and our",
+        "start": 1059.059,
+        "duration": 6.0
+    },
+    {
+        "text": "function is X Plus y times e so this is",
+        "start": 1061.64,
+        "duration": 6.36
+    },
+    {
+        "text": "a tag or a direct a secret graph and we",
+        "start": 1065.059,
+        "duration": 6.961
+    },
+    {
+        "text": "can see X Plus y the arrows times Z",
+        "start": 1068.0,
+        "duration": 6.84
+    },
+    {
+        "text": "equals m so this is a computational",
+        "start": 1072.02,
+        "duration": 6.84
+    },
+    {
+        "text": "graph representation of our function f",
+        "start": 1074.84,
+        "duration": 7.199
+    },
+    {
+        "text": "so let's run through some example of how",
+        "start": 1078.86,
+        "duration": 6.36
+    },
+    {
+        "text": "we would use a computational graph",
+        "start": 1082.039,
+        "duration": 5.841
+    },
+    {
+        "text": "so I'm going to set something some",
+        "start": 1085.22,
+        "duration": 5.22
+    },
+    {
+        "text": "example input",
+        "start": 1087.88,
+        "duration": 5.44
+    },
+    {
+        "text": "um through our forward pass here so I'm",
+        "start": 1090.44,
+        "duration": 5.82
+    },
+    {
+        "text": "going to set x equals to 3 y equals 4",
+        "start": 1093.32,
+        "duration": 5.16
+    },
+    {
+        "text": "and Z equals two so so I'm setting",
+        "start": 1096.26,
+        "duration": 4.02
+    },
+    {
+        "text": "values into our function",
+        "start": 1098.48,
+        "duration": 4.86
+    },
+    {
+        "text": "and I'm also going to define a kind of",
+        "start": 1100.28,
+        "duration": 5.1
+    },
+    {
+        "text": "an intermediate variable Q which is",
+        "start": 1103.34,
+        "duration": 5.76
+    },
+    {
+        "text": "going to equal X Plus Y and that equals",
+        "start": 1105.38,
+        "duration": 4.919
+    },
+    {
+        "text": "seven",
+        "start": 1109.1,
+        "duration": 4.02
+    },
+    {
+        "text": "because three plus one equals seven",
+        "start": 1110.299,
+        "duration": 5.341
+    },
+    {
+        "text": "okay so we're gonna we're gonna back",
+        "start": 1113.12,
+        "duration": 4.14
+    },
+    {
+        "text": "propagate through this computational",
+        "start": 1115.64,
+        "duration": 3.96
+    },
+    {
+        "text": "graph we're going to start at the end",
+        "start": 1117.26,
+        "duration": 4.5
+    },
+    {
+        "text": "because that's what we do",
+        "start": 1119.6,
+        "duration": 3.78
+    },
+    {
+        "text": "um so we're going to take the partial",
+        "start": 1121.76,
+        "duration": 4.32
+    },
+    {
+        "text": "derivative of f with respect to F so",
+        "start": 1123.38,
+        "duration": 5.4
+    },
+    {
+        "text": "that should be equal to one right",
+        "start": 1126.08,
+        "duration": 4.5
+    },
+    {
+        "text": "because it's",
+        "start": 1128.78,
+        "duration": 4.56
+    },
+    {
+        "text": "do everything with respect to itself",
+        "start": 1130.58,
+        "duration": 5.219
+    },
+    {
+        "text": "now we're going to move back one of the",
+        "start": 1133.34,
+        "duration": 3.9
+    },
+    {
+        "text": "oops",
+        "start": 1135.799,
+        "duration": 3.061
+    },
+    {
+        "text": "we're going to move back one of the",
+        "start": 1137.24,
+        "duration": 4.86
+    },
+    {
+        "text": "nodes here to look at Q",
+        "start": 1138.86,
+        "duration": 4.8
+    },
+    {
+        "text": "and we're going to take the partial",
+        "start": 1142.1,
+        "duration": 5.34
+    },
+    {
+        "text": "derivative of f with respect to Q so f",
+        "start": 1143.66,
+        "duration": 7.08
+    },
+    {
+        "text": "equals Q times Z because we defined Q as",
+        "start": 1147.44,
+        "duration": 6.42
+    },
+    {
+        "text": "X Plus y so Q times e so the derivative",
+        "start": 1150.74,
+        "duration": 7.14
+    },
+    {
+        "text": "of f with respect to Q should be Z right",
+        "start": 1153.86,
+        "duration": 6.9
+    },
+    {
+        "text": "so Z equals negative two so the",
+        "start": 1157.88,
+        "duration": 4.86
+    },
+    {
+        "text": "derivative here is going to be negative",
+        "start": 1160.76,
+        "duration": 3.0
+    },
+    {
+        "text": "two",
+        "start": 1162.74,
+        "duration": 3.36
+    },
+    {
+        "text": "we're going to go oh here's a good time",
+        "start": 1163.76,
+        "duration": 5.1
+    },
+    {
+        "text": "to also add some",
+        "start": 1166.1,
+        "duration": 6.0
+    },
+    {
+        "text": "um some definitions for you so we",
+        "start": 1168.86,
+        "duration": 5.34
+    },
+    {
+        "text": "basically call so if we're if we're",
+        "start": 1172.1,
+        "duration": 4.62
+    },
+    {
+        "text": "looking we're situating ourselves at",
+        "start": 1174.2,
+        "duration": 5.82
+    },
+    {
+        "text": "this um part of the Brad Q we can call",
+        "start": 1176.72,
+        "duration": 5.52
+    },
+    {
+        "text": "any gradients which are in the direction",
+        "start": 1180.02,
+        "duration": 6.06
+    },
+    {
+        "text": "towards the the output layer as being",
+        "start": 1182.24,
+        "duration": 6.48
+    },
+    {
+        "text": "upstream gradients and any gradients",
+        "start": 1186.08,
+        "duration": 4.44
+    },
+    {
+        "text": "which are in the direction towards the",
+        "start": 1188.72,
+        "duration": 3.44
+    },
+    {
+        "text": "input layer are going to be called",
+        "start": 1190.52,
+        "duration": 4.98
+    },
+    {
+        "text": "Downstream gradients",
+        "start": 1192.16,
+        "duration": 6.22
+    },
+    {
+        "text": "okay so now we're gonna do this note",
+        "start": 1195.5,
+        "duration": 4.98
+    },
+    {
+        "text": "here the partial derivative of f with",
+        "start": 1198.38,
+        "duration": 4.56
+    },
+    {
+        "text": "respect to X and you might be tempting",
+        "start": 1200.48,
+        "duration": 4.5
+    },
+    {
+        "text": "to if you know if you're already",
+        "start": 1202.94,
+        "duration": 4.38
+    },
+    {
+        "text": "thinking this in your head to just",
+        "start": 1204.98,
+        "duration": 4.92
+    },
+    {
+        "text": "um take the uh partial derivative using",
+        "start": 1207.32,
+        "duration": 4.739
+    },
+    {
+        "text": "the whole expression of f but we're not",
+        "start": 1209.9,
+        "duration": 4.5
+    },
+    {
+        "text": "going to do that we're going to use a",
+        "start": 1212.059,
+        "duration": 4.62
+    },
+    {
+        "text": "chain Rule and we know that partial",
+        "start": 1214.4,
+        "duration": 4.44
+    },
+    {
+        "text": "derivative of f with respect to X is",
+        "start": 1216.679,
+        "duration": 5.521
+    },
+    {
+        "text": "going to equal f with respect to Q",
+        "start": 1218.84,
+        "duration": 7.62
+    },
+    {
+        "text": "times Q with respect to X that's",
+        "start": 1222.2,
+        "duration": 8.04
+    },
+    {
+        "text": "then yeah so some cup one exercise for",
+        "start": 1226.46,
+        "duration": 4.8
+    },
+    {
+        "text": "you",
+        "start": 1230.24,
+        "duration": 2.88
+    },
+    {
+        "text": "um and we already calculated partial",
+        "start": 1231.26,
+        "duration": 4.799
+    },
+    {
+        "text": "derivative of f with respect to Q",
+        "start": 1233.12,
+        "duration": 4.98
+    },
+    {
+        "text": "um it's negative two so all we need to",
+        "start": 1236.059,
+        "duration": 4.321
+    },
+    {
+        "text": "do is give Q with respect to X and",
+        "start": 1238.1,
+        "duration": 5.4
+    },
+    {
+        "text": "that's going to equal one right so we",
+        "start": 1240.38,
+        "duration": 5.46
+    },
+    {
+        "text": "just say negative 2 times 1 equals",
+        "start": 1243.5,
+        "duration": 3.6
+    },
+    {
+        "text": "negative two",
+        "start": 1245.84,
+        "duration": 3.6
+    },
+    {
+        "text": "and then we can do we basically use the",
+        "start": 1247.1,
+        "duration": 5.16
+    },
+    {
+        "text": "same principle apply it to the Y",
+        "start": 1249.44,
+        "duration": 5.82
+    },
+    {
+        "text": "um same exact chain rule",
+        "start": 1252.26,
+        "duration": 5.279
+    },
+    {
+        "text": "and then lastly we're going to look at Z",
+        "start": 1255.26,
+        "duration": 6.419
+    },
+    {
+        "text": "so uh f with respect to Z so we know",
+        "start": 1257.539,
+        "duration": 8.461
+    },
+    {
+        "text": "that f equals Q times e right and uh so",
+        "start": 1261.679,
+        "duration": 6.481
+    },
+    {
+        "text": "the derivative of f with respect to Z is",
+        "start": 1266.0,
+        "duration": 5.52
+    },
+    {
+        "text": "going to be just Q",
+        "start": 1268.16,
+        "duration": 5.46
+    },
+    {
+        "text": "so that's what we put here",
+        "start": 1271.52,
+        "duration": 3.659
+    },
+    {
+        "text": "so",
+        "start": 1273.62,
+        "duration": 2.7
+    },
+    {
+        "text": "um",
+        "start": 1275.179,
+        "duration": 3.481
+    },
+    {
+        "text": "notice that when we were kind of back",
+        "start": 1276.32,
+        "duration": 5.219
+    },
+    {
+        "text": "propagating through this graph we we",
+        "start": 1278.66,
+        "duration": 5.82
+    },
+    {
+        "text": "only need to we only really uh need to",
+        "start": 1281.539,
+        "duration": 5.88
+    },
+    {
+        "text": "think about uh nodes which are the",
+        "start": 1284.48,
+        "duration": 4.98
+    },
+    {
+        "text": "values of nodes which are adjacent to",
+        "start": 1287.419,
+        "duration": 4.201
+    },
+    {
+        "text": "the node that we were looking at or the",
+        "start": 1289.46,
+        "duration": 5.88
+    },
+    {
+        "text": "node which is directly uh Upstream of",
+        "start": 1291.62,
+        "duration": 6.48
+    },
+    {
+        "text": "our node we never actually have to go",
+        "start": 1295.34,
+        "duration": 5.819
+    },
+    {
+        "text": "any further than that and that's what we",
+        "start": 1298.1,
+        "duration": 4.68
+    },
+    {
+        "text": "call this that's why we call this area",
+        "start": 1301.159,
+        "duration": 4.441
+    },
+    {
+        "text": "the local gradient so so any node which",
+        "start": 1302.78,
+        "duration": 5.94
+    },
+    {
+        "text": "is adjacent to or directly Upstream of",
+        "start": 1305.6,
+        "duration": 4.86
+    },
+    {
+        "text": "the node we're looking at what we call",
+        "start": 1308.72,
+        "duration": 3.839
+    },
+    {
+        "text": "our local gradient and that's really the",
+        "start": 1310.46,
+        "duration": 5.339
+    },
+    {
+        "text": "advantage of using computational graphs",
+        "start": 1312.559,
+        "duration": 5.161
+    },
+    {
+        "text": "um when we're back propagating is that",
+        "start": 1315.799,
+        "duration": 4.26
+    },
+    {
+        "text": "we don't need to worry about calculating",
+        "start": 1317.72,
+        "duration": 5.4
+    },
+    {
+        "text": "a derivative over the overall expression",
+        "start": 1320.059,
+        "duration": 5.461
+    },
+    {
+        "text": "we only need to look in this local area",
+        "start": 1323.12,
+        "duration": 4.559
+    },
+    {
+        "text": "to calculate our gradient",
+        "start": 1325.52,
+        "duration": 4.32
+    },
+    {
+        "text": "and so that's that's the main takeaway",
+        "start": 1327.679,
+        "duration": 4.441
+    },
+    {
+        "text": "like even if you didn't follow",
+        "start": 1329.84,
+        "duration": 4.079
+    },
+    {
+        "text": "everything about the computational graph",
+        "start": 1332.12,
+        "duration": 4.439
+    },
+    {
+        "text": "the main takeaway is that",
+        "start": 1333.919,
+        "duration": 4.801
+    },
+    {
+        "text": "um we can really leverage these local",
+        "start": 1336.559,
+        "duration": 4.021
+    },
+    {
+        "text": "gradients so that we don't have to do",
+        "start": 1338.72,
+        "duration": 3.78
+    },
+    {
+        "text": "all these calculations",
+        "start": 1340.58,
+        "duration": 3.78
+    },
+    {
+        "text": "um on based on the the overall",
+        "start": 1342.5,
+        "duration": 3.84
+    },
+    {
+        "text": "expression and secondly even though I",
+        "start": 1344.36,
+        "duration": 5.04
+    },
+    {
+        "text": "showed you this simple example all of",
+        "start": 1346.34,
+        "duration": 4.92
+    },
+    {
+        "text": "the more complicated examples I can show",
+        "start": 1349.4,
+        "duration": 5.279
+    },
+    {
+        "text": "you work in the exact same way",
+        "start": 1351.26,
+        "duration": 6.36
+    },
+    {
+        "text": "and so so here's another graph that we",
+        "start": 1354.679,
+        "duration": 4.801
+    },
+    {
+        "text": "can look at but but",
+        "start": 1357.62,
+        "duration": 3.84
+    },
+    {
+        "text": "um what I want to say now is that you",
+        "start": 1359.48,
+        "duration": 5.34
+    },
+    {
+        "text": "now that we know how this uh works now",
+        "start": 1361.46,
+        "duration": 4.74
+    },
+    {
+        "text": "that we've kind of taken a look at both",
+        "start": 1364.82,
+        "duration": 3.42
+    },
+    {
+        "text": "the forward pass and the backward pass",
+        "start": 1366.2,
+        "duration": 5.76
+    },
+    {
+        "text": "uh we can write this up in code and we",
+        "start": 1368.24,
+        "duration": 7.98
+    },
+    {
+        "text": "can define a function which gives us our",
+        "start": 1371.96,
+        "duration": 6.42
+    },
+    {
+        "text": "forward pass and then we can write up a",
+        "start": 1376.22,
+        "duration": 3.959
+    },
+    {
+        "text": "function which gives us our backward",
+        "start": 1378.38,
+        "duration": 4.32
+    },
+    {
+        "text": "test and if you become you know really",
+        "start": 1380.179,
+        "duration": 4.681
+    },
+    {
+        "text": "good at this you don't really even have",
+        "start": 1382.7,
+        "duration": 5.16
+    },
+    {
+        "text": "to do any math anymore all you need to",
+        "start": 1384.86,
+        "duration": 5.4
+    },
+    {
+        "text": "do is you just kind of understand what",
+        "start": 1387.86,
+        "duration": 4.86
+    },
+    {
+        "text": "the operator what what's the kind of",
+        "start": 1390.26,
+        "duration": 4.44
+    },
+    {
+        "text": "trick at the operator",
+        "start": 1392.72,
+        "duration": 2.9
+    },
+    {
+        "text": "um",
+        "start": 1394.7,
+        "duration": 3.359
+    },
+    {
+        "text": "which which gradient are we trying to",
+        "start": 1395.62,
+        "duration": 4.0
+    },
+    {
+        "text": "take or what calculation do we need to",
+        "start": 1398.059,
+        "duration": 4.381
+    },
+    {
+        "text": "make and then we can just uh use that in",
+        "start": 1399.62,
+        "duration": 4.439
+    },
+    {
+        "text": "our background pass",
+        "start": 1402.44,
+        "duration": 3.84
+    },
+    {
+        "text": "um so I I put this box here to show okay",
+        "start": 1404.059,
+        "duration": 4.86
+    },
+    {
+        "text": "this is this part of the graph here's",
+        "start": 1406.28,
+        "duration": 4.2
+    },
+    {
+        "text": "here's where it's represented in the",
+        "start": 1408.919,
+        "duration": 2.64
+    },
+    {
+        "text": "forward pass through the words",
+        "start": 1410.48,
+        "duration": 4.46
+    },
+    {
+        "text": "represented in the back road test",
+        "start": 1411.559,
+        "duration": 3.381
+    },
+    {
+        "text": "um yeah so so basically after a while",
+        "start": 1416.0,
+        "duration": 4.5
+    },
+    {
+        "text": "you don't even need to use paper at all",
+        "start": 1418.46,
+        "duration": 3.42
+    },
+    {
+        "text": "you don't need to do any type of",
+        "start": 1420.5,
+        "duration": 2.88
+    },
+    {
+        "text": "calculations",
+        "start": 1421.88,
+        "duration": 2.94
+    },
+    {
+        "text": "however",
+        "start": 1423.38,
+        "duration": 4.32
+    },
+    {
+        "text": "uh once we start to scale this up to",
+        "start": 1424.82,
+        "duration": 5.76
+    },
+    {
+        "text": "tens or hundreds or thousands or or even",
+        "start": 1427.7,
+        "duration": 4.859
+    },
+    {
+        "text": "millions or billions of parameters you",
+        "start": 1430.58,
+        "duration": 3.78
+    },
+    {
+        "text": "don't really want to be doing this by",
+        "start": 1432.559,
+        "duration": 4.381
+    },
+    {
+        "text": "hand no matter how easy it is to do so",
+        "start": 1434.36,
+        "duration": 4.92
+    },
+    {
+        "text": "thank goodness that Thai torch does that",
+        "start": 1436.94,
+        "duration": 4.859
+    },
+    {
+        "text": "for us and they do that by since since",
+        "start": 1439.28,
+        "duration": 4.44
+    },
+    {
+        "text": "we know that the behavior of the",
+        "start": 1441.799,
+        "duration": 5.88
+    },
+    {
+        "text": "operator to of um calculating this this",
+        "start": 1443.72,
+        "duration": 6.3
+    },
+    {
+        "text": "forward pass and this backward pass",
+        "start": 1447.679,
+        "duration": 4.86
+    },
+    {
+        "text": "um are are predictable",
+        "start": 1450.02,
+        "duration": 5.94
+    },
+    {
+        "text": "we can Define the behavior at that",
+        "start": 1452.539,
+        "duration": 6.601
+    },
+    {
+        "text": "operator and so if we go into",
+        "start": 1455.96,
+        "duration": 6.54
+    },
+    {
+        "text": "um this is the old high torch code for",
+        "start": 1459.14,
+        "duration": 6.6
+    },
+    {
+        "text": "the sigmoid operator it can see code for",
+        "start": 1462.5,
+        "duration": 5.58
+    },
+    {
+        "text": "the forward pass and we can see a",
+        "start": 1465.74,
+        "duration": 4.439
+    },
+    {
+        "text": "section of code for the backward test",
+        "start": 1468.08,
+        "duration": 5.339
+    },
+    {
+        "text": "and so this is kind of an algorithmic or",
+        "start": 1470.179,
+        "duration": 5.761
+    },
+    {
+        "text": "did I say this is um some kind of a",
+        "start": 1473.419,
+        "duration": 5.281
+    },
+    {
+        "text": "shorthand for how to calculate the",
+        "start": 1475.94,
+        "duration": 4.8
+    },
+    {
+        "text": "derivative of a single one function so",
+        "start": 1478.7,
+        "duration": 4.44
+    },
+    {
+        "text": "so you can just Define the behavior at",
+        "start": 1480.74,
+        "duration": 4.86
+    },
+    {
+        "text": "each operator and this is the so I",
+        "start": 1483.14,
+        "duration": 4.44
+    },
+    {
+        "text": "actually tried to find this code but",
+        "start": 1485.6,
+        "duration": 4.26
+    },
+    {
+        "text": "it's it's the old code and they they",
+        "start": 1487.58,
+        "duration": 4.86
+    },
+    {
+        "text": "rewrote it but it's more clear to see",
+        "start": 1489.86,
+        "duration": 4.799
+    },
+    {
+        "text": "where the forward passes where the",
+        "start": 1492.44,
+        "duration": 4.14
+    },
+    {
+        "text": "backward passes",
+        "start": 1494.659,
+        "duration": 3.841
+    },
+    {
+        "text": "um so you can see how they Define that",
+        "start": 1496.58,
+        "duration": 3.479
+    },
+    {
+        "text": "and you will see if you look in the code",
+        "start": 1498.5,
+        "duration": 3.84
+    },
+    {
+        "text": "that they they have definitions for all",
+        "start": 1500.059,
+        "duration": 4.74
+    },
+    {
+        "text": "of the operators that you can use in pi",
+        "start": 1502.34,
+        "duration": 4.56
+    },
+    {
+        "text": "torch this is their old code and if you",
+        "start": 1504.799,
+        "duration": 4.38
+    },
+    {
+        "text": "want which I have a link to if you're if",
+        "start": 1506.9,
+        "duration": 3.6
+    },
+    {
+        "text": "you're interested",
+        "start": 1509.179,
+        "duration": 2.821
+    },
+    {
+        "text": "um but I also have a link to the new",
+        "start": 1510.5,
+        "duration": 2.7
+    },
+    {
+        "text": "code",
+        "start": 1512.0,
+        "duration": 2.64
+    },
+    {
+        "text": "um where they Define all of the",
+        "start": 1513.2,
+        "duration": 4.4
+    },
+    {
+        "text": "operators as well",
+        "start": 1514.64,
+        "duration": 2.96
+    },
+    {
+        "text": "okay so a section summary computational",
+        "start": 1518.12,
+        "duration": 4.86
+    },
+    {
+        "text": "graphs so",
+        "start": 1520.94,
+        "duration": 2.64
+    },
+    {
+        "text": "um",
+        "start": 1522.98,
+        "duration": 2.579
+    },
+    {
+        "text": "by George real-time gradients are made",
+        "start": 1523.58,
+        "duration": 3.479
+    },
+    {
+        "text": "possible by leveraging these",
+        "start": 1525.559,
+        "duration": 3.421
+    },
+    {
+        "text": "computational breaths so we had a look",
+        "start": 1527.059,
+        "duration": 4.081
+    },
+    {
+        "text": "at what like how to use a computational",
+        "start": 1528.98,
+        "duration": 5.88
+    },
+    {
+        "text": "graph what it is and then we also uh saw",
+        "start": 1531.14,
+        "duration": 6.24
+    },
+    {
+        "text": "how that what the benefits are of using",
+        "start": 1534.86,
+        "duration": 4.679
+    },
+    {
+        "text": "computational graphs they allow us to",
+        "start": 1537.38,
+        "duration": 4.86
+    },
+    {
+        "text": "back propagate by only focusing on these",
+        "start": 1539.539,
+        "duration": 5.401
+    },
+    {
+        "text": "local gradients rather than calculating",
+        "start": 1542.24,
+        "duration": 4.919
+    },
+    {
+        "text": "partial derivatives over the entire loss",
+        "start": 1544.94,
+        "duration": 4.14
+    },
+    {
+        "text": "expression and it's kind of this",
+        "start": 1547.159,
+        "duration": 3.721
+    },
+    {
+        "text": "algorithmic trick so that we don't have",
+        "start": 1549.08,
+        "duration": 3.0
+    },
+    {
+        "text": "to",
+        "start": 1550.88,
+        "duration": 3.659
+    },
+    {
+        "text": "um do a bunch of math on paper we can",
+        "start": 1552.08,
+        "duration": 7.02
+    },
+    {
+        "text": "just look at this over a short area",
+        "start": 1554.539,
+        "duration": 7.201
+    },
+    {
+        "text": "so and the other advantage of that is",
+        "start": 1559.1,
+        "duration": 4.5
+    },
+    {
+        "text": "that it's able to calculate gradients in",
+        "start": 1561.74,
+        "duration": 4.2
+    },
+    {
+        "text": "real time so anytime that I'm going to",
+        "start": 1563.6,
+        "duration": 4.559
+    },
+    {
+        "text": "modify my network like add some neurons",
+        "start": 1565.94,
+        "duration": 3.96
+    },
+    {
+        "text": "add some layers",
+        "start": 1568.159,
+        "duration": 3.721
+    },
+    {
+        "text": "um or change my loss function it doesn't",
+        "start": 1569.9,
+        "duration": 4.279
+    },
+    {
+        "text": "have to do a whole lot of extra",
+        "start": 1571.88,
+        "duration": 4.74
+    },
+    {
+        "text": "preparation to calculate the gradients",
+        "start": 1574.179,
+        "duration": 4.12
+    },
+    {
+        "text": "because it's just always going to follow",
+        "start": 1576.62,
+        "duration": 4.52
+    },
+    {
+        "text": "along whatever breath you've made",
+        "start": 1578.299,
+        "duration": 5.88
+    },
+    {
+        "text": "so yeah presentation summary so we",
+        "start": 1581.14,
+        "duration": 4.96
+    },
+    {
+        "text": "talked about back propagation and",
+        "start": 1584.179,
+        "duration": 4.441
+    },
+    {
+        "text": "optimization so back propagation was a",
+        "start": 1586.1,
+        "duration": 5.88
+    },
+    {
+        "text": "method for or algorithm used for finding",
+        "start": 1588.62,
+        "duration": 4.98
+    },
+    {
+        "text": "gradients in the network",
+        "start": 1591.98,
+        "duration": 4.02
+    },
+    {
+        "text": "we remember that gradients help us find",
+        "start": 1593.6,
+        "duration": 4.8
+    },
+    {
+        "text": "a direction to to travel down to reduce",
+        "start": 1596.0,
+        "duration": 4.74
+    },
+    {
+        "text": "our loss so",
+        "start": 1598.4,
+        "duration": 2.94
+    },
+    {
+        "text": "um",
+        "start": 1600.74,
+        "duration": 2.34
+    },
+    {
+        "text": "that propagation consists of calculating",
+        "start": 1601.34,
+        "duration": 3.36
+    },
+    {
+        "text": "partial derivatives at the back of the",
+        "start": 1603.08,
+        "duration": 4.199
+    },
+    {
+        "text": "network first and then moving forward we",
+        "start": 1604.7,
+        "duration": 5.099
+    },
+    {
+        "text": "looked at code implementation of pytorch",
+        "start": 1607.279,
+        "duration": 4.441
+    },
+    {
+        "text": "so we saw okay this is how you set up a",
+        "start": 1609.799,
+        "duration": 3.181
+    },
+    {
+        "text": "network this is how you go through the",
+        "start": 1611.72,
+        "duration": 3.12
+    },
+    {
+        "text": "training Loop this is",
+        "start": 1612.98,
+        "duration": 5.22
+    },
+    {
+        "text": "lost out backwards and and Optimizer",
+        "start": 1614.84,
+        "duration": 4.92
+    },
+    {
+        "text": "does that",
+        "start": 1618.2,
+        "duration": 3.839
+    },
+    {
+        "text": "and then uh the algorithm implementation",
+        "start": 1619.76,
+        "duration": 4.5
+    },
+    {
+        "text": "so we saw we looked a little carefully",
+        "start": 1622.039,
+        "duration": 3.361
+    },
+    {
+        "text": "at",
+        "start": 1624.26,
+        "duration": 3.84
+    },
+    {
+        "text": "um how pytorch uses computational graphs",
+        "start": 1625.4,
+        "duration": 4.5
+    },
+    {
+        "text": "and it allows this real-time calculation",
+        "start": 1628.1,
+        "duration": 4.02
+    },
+    {
+        "text": "based on local gradients and we looked a",
+        "start": 1629.9,
+        "duration": 3.6
+    },
+    {
+        "text": "little bit at the source code and saw",
+        "start": 1632.12,
+        "duration": 4.02
+    },
+    {
+        "text": "how they Define these operators which",
+        "start": 1633.5,
+        "duration": 5.52
+    },
+    {
+        "text": "help us build back coverage",
+        "start": 1636.14,
+        "duration": 4.38
+    },
+    {
+        "text": "and so I'm just going to end this",
+        "start": 1639.02,
+        "duration": 3.12
+    },
+    {
+        "text": "presentation with some additional",
+        "start": 1640.52,
+        "duration": 3.84
+    },
+    {
+        "text": "resources in case you didn't weren't",
+        "start": 1642.14,
+        "duration": 4.2
+    },
+    {
+        "text": "able to catch all of that and I'm gonna",
+        "start": 1644.36,
+        "duration": 5.819
+    },
+    {
+        "text": "make a Shameless plug for my blog so so",
+        "start": 1646.34,
+        "duration": 6.959
+    },
+    {
+        "text": "one thing I I enjoy is I want to read",
+        "start": 1650.179,
+        "duration": 5.281
+    },
+    {
+        "text": "some deep learning papers and I like to",
+        "start": 1653.299,
+        "duration": 5.041
+    },
+    {
+        "text": "kind of just share what I've learned and",
+        "start": 1655.46,
+        "duration": 5.16
+    },
+    {
+        "text": "so I I put this whole presentation into",
+        "start": 1658.34,
+        "duration": 4.14
+    },
+    {
+        "text": "a two-part series there so you could",
+        "start": 1660.62,
+        "duration": 3.659
+    },
+    {
+        "text": "take a look and and if you don't want to",
+        "start": 1662.48,
+        "duration": 4.079
+    },
+    {
+        "text": "you there's a whole bunch of other good",
+        "start": 1664.279,
+        "duration": 3.601
+    },
+    {
+        "text": "resources here",
+        "start": 1666.559,
+        "duration": 4.821
+    },
+    {
+        "text": "So yeah thank you",
+        "start": 1667.88,
+        "duration": 3.5
+    },
+    {
+        "text": "are there any questions about anything",
+        "start": 1676.039,
+        "duration": 6.481
+    },
+    {
+        "text": "yeah if you're training a complex neural",
+        "start": 1678.919,
+        "duration": 5.701
+    },
+    {
+        "text": "network can you use impact propagation",
+        "start": 1682.52,
+        "duration": 4.56
+    },
+    {
+        "text": "my understanding is that you will often",
+        "start": 1684.62,
+        "duration": 6.48
+    },
+    {
+        "text": "end up in a local minimum so",
+        "start": 1687.08,
+        "duration": 6.42
+    },
+    {
+        "text": "does that mean we should run the",
+        "start": 1691.1,
+        "duration": 4.98
+    },
+    {
+        "text": "training process many times to try to",
+        "start": 1693.5,
+        "duration": 4.62
+    },
+    {
+        "text": "get to the you know the lowest local",
+        "start": 1696.08,
+        "duration": 3.78
+    },
+    {
+        "text": "minimum we can find or how do you",
+        "start": 1698.12,
+        "duration": 3.26
+    },
+    {
+        "text": "address that problem",
+        "start": 1699.86,
+        "duration": 6.9
+    },
+    {
+        "text": "uh you can do that but hopefully so so I",
+        "start": 1701.38,
+        "duration": 7.179
+    },
+    {
+        "text": "I kind of skipped over at how there's",
+        "start": 1706.76,
+        "duration": 3.72
+    },
+    {
+        "text": "other bells and whistles to the",
+        "start": 1708.559,
+        "duration": 4.5
+    },
+    {
+        "text": "optimizer but there are kind of these",
+        "start": 1710.48,
+        "duration": 5.4
+    },
+    {
+        "text": "other tricks that people do to try to",
+        "start": 1713.059,
+        "duration": 5.821
+    },
+    {
+        "text": "get out of local minimum so over here so",
+        "start": 1715.88,
+        "duration": 4.62
+    },
+    {
+        "text": "we had things like momentum which is",
+        "start": 1718.88,
+        "duration": 3.539
+    },
+    {
+        "text": "supposed to kind of like if you're stuck",
+        "start": 1720.5,
+        "duration": 3.419
+    },
+    {
+        "text": "in a local minimum it's supposed to kind",
+        "start": 1722.419,
+        "duration": 3.721
+    },
+    {
+        "text": "of push you out a little bit",
+        "start": 1723.919,
+        "duration": 2.941
+    },
+    {
+        "text": "um",
+        "start": 1726.14,
+        "duration": 2.76
+    },
+    {
+        "text": "uh",
+        "start": 1726.86,
+        "duration": 4.559
+    },
+    {
+        "text": "yeah they're they're or for example we",
+        "start": 1728.9,
+        "duration": 4.139
+    },
+    {
+        "text": "can use things like schedulers or wake",
+        "start": 1731.419,
+        "duration": 4.14
+    },
+    {
+        "text": "Decay which can help us to reduce our",
+        "start": 1733.039,
+        "duration": 4.26
+    },
+    {
+        "text": "learning rate so that would that would",
+        "start": 1735.559,
+        "duration": 3.061
+    },
+    {
+        "text": "help us so that maybe in the beginning",
+        "start": 1737.299,
+        "duration": 4.441
+    },
+    {
+        "text": "we're jumping over big local Minima and",
+        "start": 1738.62,
+        "duration": 5.58
+    },
+    {
+        "text": "then once we kind of reach a good spot",
+        "start": 1741.74,
+        "duration": 4.08
+    },
+    {
+        "text": "and we don't want to jump over anything",
+        "start": 1744.2,
+        "duration": 3.78
+    },
+    {
+        "text": "we start to reduce our learning rate",
+        "start": 1745.82,
+        "duration": 3.959
+    },
+    {
+        "text": "more and more and more and more so that",
+        "start": 1747.98,
+        "duration": 3.84
+    },
+    {
+        "text": "we kind of reach the best minimum we can",
+        "start": 1749.779,
+        "duration": 4.981
+    },
+    {
+        "text": "we can find so there are some tricks for",
+        "start": 1751.82,
+        "duration": 6.78
+    },
+    {
+        "text": "that but you you can you can rerun it",
+        "start": 1754.76,
+        "duration": 4.62
+    },
+    {
+        "text": "um",
+        "start": 1758.6,
+        "duration": 3.66
+    },
+    {
+        "text": "but but usually I I think uh if you're",
+        "start": 1759.38,
+        "duration": 4.679
+    },
+    {
+        "text": "finding that you you had to rerun your",
+        "start": 1762.26,
+        "duration": 4.38
+    },
+    {
+        "text": "network to get uh like a much better",
+        "start": 1764.059,
+        "duration": 4.681
+    },
+    {
+        "text": "performance then you probably didn't",
+        "start": 1766.64,
+        "duration": 3.779
+    },
+    {
+        "text": "make your network very good so probably",
+        "start": 1768.74,
+        "duration": 5.78
+    },
+    {
+        "text": "you'd have to restructure it",
+        "start": 1770.419,
+        "duration": 4.101
+    },
+    {
+        "text": "yeah there's an online question from Hui",
+        "start": 1774.62,
+        "duration": 4.74
+    },
+    {
+        "text": "who asked how are non-differential",
+        "start": 1777.5,
+        "duration": 6.12
+    },
+    {
+        "text": "functions such as relu handbook",
+        "start": 1779.36,
+        "duration": 5.76
+    },
+    {
+        "text": "yeah so",
+        "start": 1783.62,
+        "duration": 4.799
+    },
+    {
+        "text": "um in optimization so like",
+        "start": 1785.12,
+        "duration": 6.36
+    },
+    {
+        "text": "actually for functions like relu there",
+        "start": 1788.419,
+        "duration": 5.341
+    },
+    {
+        "text": "is something called uh it's called like",
+        "start": 1791.48,
+        "duration": 4.74
+    },
+    {
+        "text": "a sub differential or something or",
+        "start": 1793.76,
+        "duration": 3.84
+    },
+    {
+        "text": "basically",
+        "start": 1796.22,
+        "duration": 4.8
+    },
+    {
+        "text": "um even though technically there's no it",
+        "start": 1797.6,
+        "duration": 5.459
+    },
+    {
+        "text": "you can't calculate a derivative at that",
+        "start": 1801.02,
+        "duration": 4.139
+    },
+    {
+        "text": "point there's actually like a whole set",
+        "start": 1803.059,
+        "duration": 5.1
+    },
+    {
+        "text": "of derivative of possible choices of",
+        "start": 1805.159,
+        "duration": 4.62
+    },
+    {
+        "text": "derivatives that I could make if you",
+        "start": 1808.159,
+        "duration": 3.24
+    },
+    {
+        "text": "think about the tangent that that would",
+        "start": 1809.779,
+        "duration": 4.741
+    },
+    {
+        "text": "form at that at that elbow there's a",
+        "start": 1811.399,
+        "duration": 4.441
+    },
+    {
+        "text": "whole bunch of lines there that won't",
+        "start": 1814.52,
+        "duration": 3.18
+    },
+    {
+        "text": "touch the function and so that that",
+        "start": 1815.84,
+        "duration": 3.9
+    },
+    {
+        "text": "whole set is actually a possible",
+        "start": 1817.7,
+        "duration": 5.16
+    },
+    {
+        "text": "derivative and so usually at that point",
+        "start": 1819.74,
+        "duration": 5.28
+    },
+    {
+        "text": "um in the code for the operator they",
+        "start": 1822.86,
+        "duration": 5.28
+    },
+    {
+        "text": "were probably just like pick one they'll",
+        "start": 1825.02,
+        "duration": 5.039
+    },
+    {
+        "text": "pick one of the the possible set of",
+        "start": 1828.14,
+        "duration": 4.7
+    },
+    {
+        "text": "derivatives",
+        "start": 1830.059,
+        "duration": 2.781
+    }
+]

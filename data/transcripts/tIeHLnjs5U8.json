@@ -1,0 +1,687 @@
+[
+    {
+        "text": "The hard assumption here is that you've watched part 3,",
+        "start": 4.02,
+        "duration": 2.682
+    },
+    {
+        "text": "giving an intuitive walkthrough of the backpropagation algorithm.",
+        "start": 6.702,
+        "duration": 3.218
+    },
+    {
+        "text": "Here we get a little more formal and dive into the relevant calculus.",
+        "start": 11.04,
+        "duration": 3.18
+    },
+    {
+        "text": "It's normal for this to be at least a little confusing,",
+        "start": 14.82,
+        "duration": 2.445
+    },
+    {
+        "text": "so the mantra to regularly pause and ponder certainly applies as much here",
+        "start": 17.265,
+        "duration": 3.335
+    },
+    {
+        "text": "as anywhere else.",
+        "start": 20.6,
+        "duration": 0.8
+    },
+    {
+        "text": "Our main goal is to show how people in machine learning commonly think about",
+        "start": 21.94,
+        "duration": 3.935
+    },
+    {
+        "text": "the chain rule from calculus in the context of networks,",
+        "start": 25.875,
+        "duration": 2.95
+    },
+    {
+        "text": "which has a different feel from how most introductory calculus courses",
+        "start": 28.825,
+        "duration": 3.676
+    },
+    {
+        "text": "approach the subject.",
+        "start": 32.501,
+        "duration": 1.139
+    },
+    {
+        "text": "For those of you uncomfortable with the relevant calculus,",
+        "start": 34.34,
+        "duration": 2.631
+    },
+    {
+        "text": "I do have a whole series on the topic.",
+        "start": 36.971,
+        "duration": 1.769
+    },
+    {
+        "text": "Let's start off with an extremely simple network,",
+        "start": 39.96,
+        "duration": 3.061
+    },
+    {
+        "text": "one where each layer has a single neuron in it.",
+        "start": 43.021,
+        "duration": 2.999
+    },
+    {
+        "text": "This network is determined by three weights and three biases,",
+        "start": 46.32,
+        "duration": 3.576
+    },
+    {
+        "text": "and our goal is to understand how sensitive the cost function is to these variables.",
+        "start": 49.896,
+        "duration": 4.984
+    },
+    {
+        "text": "That way, we know which adjustments to those terms will",
+        "start": 55.42,
+        "duration": 2.676
+    },
+    {
+        "text": "cause the most efficient decrease to the cost function.",
+        "start": 58.096,
+        "duration": 2.724
+    },
+    {
+        "text": "And we're just going to focus on the connection between the last two neurons.",
+        "start": 61.96,
+        "duration": 2.88
+    },
+    {
+        "text": "Let's label the activation of that last neuron with a superscript L,",
+        "start": 65.98,
+        "duration": 4.286
+    },
+    {
+        "text": "indicating which layer it's in, so the activation of the previous neuron is a(L-1).",
+        "start": 70.266,
+        "duration": 5.294
+    },
+    {
+        "text": "These are not exponents, they're just a way of indexing what we're talking about,",
+        "start": 76.36,
+        "duration": 3.732
+    },
+    {
+        "text": "since I want to save subscripts for different indices later on.",
+        "start": 80.092,
+        "duration": 2.948
+    },
+    {
+        "text": "Let's say that the value we want this last activation to be for",
+        "start": 83.72,
+        "duration": 4.23
+    },
+    {
+        "text": "a given training example is y, for example, y might be 0 or 1.",
+        "start": 87.95,
+        "duration": 4.23
+    },
+    {
+        "text": "So the cost of this network for a single training example is (a(L) - y) squared.",
+        "start": 92.84,
+        "duration": 6.4
+    },
+    {
+        "text": "We'll denote the cost of that one training example as C0.",
+        "start": 100.26,
+        "duration": 4.12
+    },
+    {
+        "text": "As a reminder, this last activation is determined by a weight,",
+        "start": 105.9,
+        "duration": 3.94
+    },
+    {
+        "text": "which I'm going to call w(L), times the previous neuron's activation plus some bias,",
+        "start": 109.84,
+        "duration": 5.402
+    },
+    {
+        "text": "which I'll call b(L).",
+        "start": 115.242,
+        "duration": 1.398
+    },
+    {
+        "text": "And then you pump that through some special nonlinear function like the sigmoid or ReLU.",
+        "start": 117.42,
+        "duration": 3.9
+    },
+    {
+        "text": "It's actually going to make things easier for us if we give a special name to",
+        "start": 121.8,
+        "duration": 3.642
+    },
+    {
+        "text": "this weighted sum, like z, with the same superscript as the relevant activations.",
+        "start": 125.442,
+        "duration": 3.878
+    },
+    {
+        "text": "This is a lot of terms, and a way you might conceptualize it is that the weight,",
+        "start": 130.38,
+        "duration": 4.951
+    },
+    {
+        "text": "previous action and the bias all together are used to compute z,",
+        "start": 135.331,
+        "duration": 4.022
+    },
+    {
+        "text": "which in turn lets us compute a, which finally, along with a constant y,",
+        "start": 139.353,
+        "duration": 4.518
+    },
+    {
+        "text": "lets us compute the cost.",
+        "start": 143.871,
+        "duration": 1.609
+    },
+    {
+        "text": "And of course a(L-1) is influenced by its own weight and bias and such,",
+        "start": 147.34,
+        "duration": 4.606
+    },
+    {
+        "text": "but we're not going to focus on that right now.",
+        "start": 151.946,
+        "duration": 3.114
+    },
+    {
+        "text": "All of these are just numbers, right?",
+        "start": 155.7,
+        "duration": 1.92
+    },
+    {
+        "text": "And it can be nice to think of each one as having its own little number line.",
+        "start": 158.06,
+        "duration": 2.98
+    },
+    {
+        "text": "Our first goal is to understand how sensitive the",
+        "start": 161.72,
+        "duration": 3.463
+    },
+    {
+        "text": "cost function is to small changes in our weight w(L).",
+        "start": 165.183,
+        "duration": 3.817
+    },
+    {
+        "text": "Or phrase differently, what is the derivative of C with respect to w(L)?",
+        "start": 169.54,
+        "duration": 5.32
+    },
+    {
+        "text": "When you see this del w term, think of it as meaning some tiny nudge to W,",
+        "start": 175.6,
+        "duration": 5.066
+    },
+    {
+        "text": "like a change by 0.01, and think of this del C term as meaning",
+        "start": 180.666,
+        "duration": 4.313
+    },
+    {
+        "text": "whatever the resulting nudge to the cost is.",
+        "start": 184.979,
+        "duration": 3.081
+    },
+    {
+        "text": "What we want is their ratio.",
+        "start": 188.06,
+        "duration": 2.16
+    },
+    {
+        "text": "Conceptually, this tiny nudge to w(L) causes some nudge to z(L),",
+        "start": 191.26,
+        "duration": 4.53
+    },
+    {
+        "text": "which in turn causes some nudge to a(L), which directly influences the cost.",
+        "start": 195.79,
+        "duration": 5.45
+    },
+    {
+        "text": "So we break things up by first looking at the ratio of a tiny change to z(L)",
+        "start": 203.12,
+        "duration": 5.007
+    },
+    {
+        "text": "to this tiny change q, that is, the derivative of z(L) with respect to w(L).",
+        "start": 208.127,
+        "duration": 5.073
+    },
+    {
+        "text": "Likewise, you then consider the ratio of the change to a(L) to",
+        "start": 213.2,
+        "duration": 3.759
+    },
+    {
+        "text": "the tiny change in z(L) that caused it, as well as the ratio",
+        "start": 216.959,
+        "duration": 3.699
+    },
+    {
+        "text": "between the final nudge to C and this intermediate nudge to a(L).",
+        "start": 220.658,
+        "duration": 4.002
+    },
+    {
+        "text": "This right here is the chain rule, where multiplying together these",
+        "start": 225.74,
+        "duration": 4.631
+    },
+    {
+        "text": "three ratios gives us the sensitivity of C to small changes in w(L).",
+        "start": 230.371,
+        "duration": 4.769
+    },
+    {
+        "text": "So on screen right now, there's a lot of symbols,",
+        "start": 236.88,
+        "duration": 2.682
+    },
+    {
+        "text": "and take a moment to make sure it's clear what they all are,",
+        "start": 239.562,
+        "duration": 3.339
+    },
+    {
+        "text": "because now we're going to compute the relevant derivatives.",
+        "start": 242.901,
+        "duration": 3.339
+    },
+    {
+        "text": "The derivative of C with respect to a(L) works out to be 2(a(L)-y).",
+        "start": 247.44,
+        "duration": 5.72
+    },
+    {
+        "text": "Notice this means its size is proportional to the difference between the network's",
+        "start": 253.98,
+        "duration": 4.612
+    },
+    {
+        "text": "output and the thing we want it to be, so if that output was very different,",
+        "start": 258.592,
+        "duration": 4.33
+    },
+    {
+        "text": "even slight changes stand to have a big impact on the final cost function.",
+        "start": 262.922,
+        "duration": 4.218
+    },
+    {
+        "text": "The derivative of a(L) with respect to z(L) is just the derivative",
+        "start": 267.84,
+        "duration": 4.077
+    },
+    {
+        "text": "of our sigmoid function, or whatever nonlinearity you choose to use.",
+        "start": 271.917,
+        "duration": 4.263
+    },
+    {
+        "text": "And the derivative of z(L) with respect to w(L) comes out to be a(L-1).",
+        "start": 277.22,
+        "duration": 7.44
+    },
+    {
+        "text": "Now I don't know about you, but I think it's easy to get stuck head down in the",
+        "start": 285.76,
+        "duration": 3.624
+    },
+    {
+        "text": "formulas without taking a moment to sit back and remind yourself of what they all mean.",
+        "start": 289.384,
+        "duration": 4.036
+    },
+    {
+        "text": "In the case of this last derivative, the amount that the small nudge to the",
+        "start": 293.92,
+        "duration": 4.334
+    },
+    {
+        "text": "weight influenced the last layer depends on how strong the previous neuron is.",
+        "start": 298.254,
+        "duration": 4.566
+    },
+    {
+        "text": "Remember, this is where the neurons-that-fire-together-wire-together idea comes in.",
+        "start": 303.38,
+        "duration": 4.9
+    },
+    {
+        "text": "And all of this is the derivative with respect to w(L)",
+        "start": 309.2,
+        "duration": 3.172
+    },
+    {
+        "text": "only of the cost for a specific single training example.",
+        "start": 312.372,
+        "duration": 3.348
+    },
+    {
+        "text": "Since the full cost function involves averaging together all",
+        "start": 316.44,
+        "duration": 3.462
+    },
+    {
+        "text": "those costs across many different training examples,",
+        "start": 319.902,
+        "duration": 3.058
+    },
+    {
+        "text": "its derivative requires averaging this expression over all training examples.",
+        "start": 322.96,
+        "duration": 4.5
+    },
+    {
+        "text": "And of course, that is just one component of the gradient vector,",
+        "start": 328.38,
+        "duration": 3.453
+    },
+    {
+        "text": "which itself is built up from the partial derivatives of the",
+        "start": 331.833,
+        "duration": 3.24
+    },
+    {
+        "text": "cost function with respect to all those weights and biases.",
+        "start": 335.073,
+        "duration": 3.187
+    },
+    {
+        "text": "But even though that's just one of the many partial derivatives we need,",
+        "start": 340.64,
+        "duration": 3.198
+    },
+    {
+        "text": "it's more than 50% of the work.",
+        "start": 343.838,
+        "duration": 1.422
+    },
+    {
+        "text": "The sensitivity to the bias, for example, is almost identical.",
+        "start": 346.34,
+        "duration": 3.38
+    },
+    {
+        "text": "We just need to change out this del z del w term for a del z del b.",
+        "start": 350.04,
+        "duration": 4.98
+    },
+    {
+        "text": "And if you look at the relevant formula, that derivative comes out to be 1.",
+        "start": 358.42,
+        "duration": 3.98
+    },
+    {
+        "text": "Also, and this is where the idea of propagating backwards comes in,",
+        "start": 366.14,
+        "duration": 4.123
+    },
+    {
+        "text": "you can see how sensitive this cost function is to the activation of the previous layer.",
+        "start": 370.263,
+        "duration": 5.477
+    },
+    {
+        "text": "Namely, this initial derivative in the chain rule expression,",
+        "start": 375.74,
+        "duration": 4.232
+    },
+    {
+        "text": "the sensitivity of z to the previous activation, comes out to be the weight w(L).",
+        "start": 379.972,
+        "duration": 5.688
+    },
+    {
+        "text": "And again, even though we're not going to be able to directly influence",
+        "start": 386.64,
+        "duration": 3.842
+    },
+    {
+        "text": "that previous layer activation, it's helpful to keep track of,",
+        "start": 390.482,
+        "duration": 3.409
+    },
+    {
+        "text": "because now we can just keep iterating this same chain rule idea backwards",
+        "start": 393.891,
+        "duration": 4.058
+    },
+    {
+        "text": "to see how sensitive the cost function is to previous weights and previous biases.",
+        "start": 397.949,
+        "duration": 4.491
+    },
+    {
+        "text": "And you might think this is an overly simple example, since all layers have one neuron,",
+        "start": 403.18,
+        "duration": 4.109
+    },
+    {
+        "text": "and things are going to get exponentially more complicated for a real network.",
+        "start": 407.289,
+        "duration": 3.731
+    },
+    {
+        "text": "But honestly, not that much changes when we give the layers multiple neurons,",
+        "start": 411.7,
+        "duration": 4.209
+    },
+    {
+        "text": "really it's just a few more indices to keep track of.",
+        "start": 415.909,
+        "duration": 2.951
+    },
+    {
+        "text": "Rather than the activation of a given layer simply being a(L),",
+        "start": 419.38,
+        "duration": 3.373
+    },
+    {
+        "text": "it's also going to have a subscript indicating which neuron of that layer it is.",
+        "start": 422.753,
+        "duration": 4.407
+    },
+    {
+        "text": "Let's use the letter k to index the layer L-1, and j to index the layer L.",
+        "start": 427.16,
+        "duration": 7.26
+    },
+    {
+        "text": "For the cost, again we look at what the desired output is,",
+        "start": 435.26,
+        "duration": 3.307
+    },
+    {
+        "text": "but this time we add up the squares of the differences between these last layer",
+        "start": 438.567,
+        "duration": 4.561
+    },
+    {
+        "text": "activations and the desired output.",
+        "start": 443.128,
+        "duration": 2.052
+    },
+    {
+        "text": "That is, you take a sum over a(L)j minus yj squared.",
+        "start": 446.08,
+        "duration": 4.76
+    },
+    {
+        "text": "Since there's a lot more weights, each one has to have a couple",
+        "start": 453.04,
+        "duration": 3.799
+    },
+    {
+        "text": "more indices to keep track of where it is, so let's call the weight",
+        "start": 456.839,
+        "duration": 4.101
+    },
+    {
+        "text": "of the edge connecting this kth neuron to the jth neuron, w(L)jk.",
+        "start": 460.94,
+        "duration": 3.98
+    },
+    {
+        "text": "Those indices might feel a little backwards at first,",
+        "start": 465.62,
+        "duration": 2.76
+    },
+    {
+        "text": "but it lines up with how you'd index the weight matrix I talked about in",
+        "start": 468.38,
+        "duration": 3.803
+    },
+    {
+        "text": "the part 1 video.",
+        "start": 472.183,
+        "duration": 0.937
+    },
+    {
+        "text": "Just as before, it's still nice to give a name to the relevant weighted sum,",
+        "start": 473.62,
+        "duration": 4.261
+    },
+    {
+        "text": "like z, so that the activation of the last layer is just your special function,",
+        "start": 477.881,
+        "duration": 4.485
+    },
+    {
+        "text": "like the sigmoid, applied to z.",
+        "start": 482.366,
+        "duration": 1.794
+    },
+    {
+        "text": "You can see what I mean, where all of these are essentially the same equations we had",
+        "start": 484.66,
+        "duration": 4.332
+    },
+    {
+        "text": "before in the one-neuron-per-layer case, it's just that it looks a little more",
+        "start": 488.992,
+        "duration": 4.026
+    },
+    {
+        "text": "complicated.",
+        "start": 493.018,
+        "duration": 0.662
+    },
+    {
+        "text": "And indeed, the chain-ruled derivative expression describing how",
+        "start": 495.44,
+        "duration": 3.783
+    },
+    {
+        "text": "sensitive the cost is to a specific weight looks essentially the same.",
+        "start": 499.223,
+        "duration": 4.197
+    },
+    {
+        "text": "I'll leave it to you to pause and think about each of those terms if you want.",
+        "start": 503.92,
+        "duration": 2.92
+    },
+    {
+        "text": "What does change here, though, is the derivative of the cost",
+        "start": 508.98,
+        "duration": 3.938
+    },
+    {
+        "text": "with respect to one of the activations in the layer L-1.",
+        "start": 512.918,
+        "duration": 3.742
+    },
+    {
+        "text": "In this case, the difference is that the neuron influences",
+        "start": 517.78,
+        "duration": 2.689
+    },
+    {
+        "text": "the cost function through multiple different paths.",
+        "start": 520.469,
+        "duration": 2.411
+    },
+    {
+        "text": "That is, on the one hand, it influences a(L)0, which plays a role in the cost function,",
+        "start": 524.68,
+        "duration": 5.539
+    },
+    {
+        "text": "but it also has an influence on a(L)1, which also plays a role in the cost function,",
+        "start": 530.219,
+        "duration": 5.411
+    },
+    {
+        "text": "and you have to add those up.",
+        "start": 535.63,
+        "duration": 1.91
+    },
+    {
+        "text": "And that, well, that's pretty much it.",
+        "start": 539.82,
+        "duration": 3.22
+    },
+    {
+        "text": "Once you know how sensitive the cost function is to the",
+        "start": 543.5,
+        "duration": 2.783
+    },
+    {
+        "text": "activations in this second-to-last layer, you can just repeat",
+        "start": 546.283,
+        "duration": 3.137
+    },
+    {
+        "text": "the process for all the weights and biases feeding into that layer.",
+        "start": 549.42,
+        "duration": 3.44
+    },
+    {
+        "text": "So pat yourself on the back!",
+        "start": 553.9,
+        "duration": 1.06
+    },
+    {
+        "text": "If all of this makes sense, you have now looked deep into the heart of backpropagation,",
+        "start": 555.3,
+        "duration": 4.756
+    },
+    {
+        "text": "the workhorse behind how neural networks learn.",
+        "start": 560.056,
+        "duration": 2.624
+    },
+    {
+        "text": "These chain rule expressions give you the derivatives that determine each component in",
+        "start": 563.3,
+        "duration": 4.886
+    },
+    {
+        "text": "the gradient that helps minimize the cost of the network by repeatedly stepping downhill.",
+        "start": 568.186,
+        "duration": 5.114
+    },
+    {
+        "text": "If you sit back and think about all that, this is a lot of layers of complexity to",
+        "start": 574.3,
+        "duration": 4.095
+    },
+    {
+        "text": "wrap your mind around, so don't worry if it takes time for your mind to digest it all.",
+        "start": 578.395,
+        "duration": 4.345
+    }
+]

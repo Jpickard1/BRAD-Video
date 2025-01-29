@@ -1,0 +1,5487 @@
+[
+    {
+        "text": "The most common question I get about 3Blue1Brown is, what do I use to animate the videos?",
+        "start": 0.0,
+        "duration": 4.62
+    },
+    {
+        "text": "The short answer is that I wrote a custom Python library, ",
+        "start": 5.16,
+        "duration": 3.194
+    },
+    {
+        "text": "its name is Manim, so it's all programmatic and it's also very bespoke.",
+        "start": 8.354,
+        "duration": 3.966
+    },
+    {
+        "text": "What I wanted to do with this video is offer a behind the scenes to show you, ",
+        "start": 12.9,
+        "duration": 3.935
+    },
+    {
+        "text": "one, what Manim is for those who don't know, and even for those who do know, ",
+        "start": 16.835,
+        "duration": 3.885
+    },
+    {
+        "text": "to show a little bit about how I use it and what the workflow is.",
+        "start": 20.72,
+        "duration": 3.28
+    },
+    {
+        "text": "Now the way I'm doing this is I sat down with Ben Sparks when I was in the UK a couple ",
+        "start": 24.5,
+        "duration": 4.205
+    },
+    {
+        "text": "months ago, many of you may recognize him from his many great Numberphile videos.",
+        "start": 28.705,
+        "duration": 3.914
+    },
+    {
+        "text": "He wanted to know how Manim worked, I knew a number of other people had that same ",
+        "start": 33.14,
+        "duration": 4.01
+    },
+    {
+        "text": "question, so I recorded the conversation, it's kind of a scrappy recording but we'll ",
+        "start": 37.15,
+        "duration": 4.158
+    },
+    {
+        "text": "make do.",
+        "start": 41.308,
+        "duration": 0.5
+    },
+    {
+        "text": "And after a simple hello world example, we animate the famous Lorenz Attractor, ",
+        "start": 42.24,
+        "duration": 4.263
+    },
+    {
+        "text": "which is very important in the foundations of chaos, ",
+        "start": 46.503,
+        "duration": 2.825
+    },
+    {
+        "text": "it's also just a fun visual to get into.",
+        "start": 49.328,
+        "duration": 2.132
+    },
+    {
+        "text": "One quick thing I should mention before we dive in ",
+        "start": 52.02,
+        "duration": 2.131
+    },
+    {
+        "text": "is that there are actually two versions of Manim.",
+        "start": 54.151,
+        "duration": 2.049
+    },
+    {
+        "text": "So the first has a history very intertwined with the history of the channel, ",
+        "start": 56.72,
+        "duration": 3.932
+    },
+    {
+        "text": "the way I started the project, basically when I was finishing my undergrad, ",
+        "start": 60.652,
+        "duration": 3.882
+    },
+    {
+        "text": "was that I wanted this coding project that would somehow let me illustrate mathematical ",
+        "start": 64.534,
+        "duration": 4.495
+    },
+    {
+        "text": "functions better as transformations, made a super scrappy bit of Python code for that, ",
+        "start": 69.029,
+        "duration": 4.443
+    },
+    {
+        "text": "used it to make the first video on this channel, as I made more videos the tool improved, ",
+        "start": 73.472,
+        "duration": 4.597
+    },
+    {
+        "text": "as the tool improved I would make more videos, and that's just continued ever since.",
+        "start": 78.069,
+        "duration": 4.291
+    },
+    {
+        "text": "The most recent video I made, which was about holograms, if I do say so myself, ",
+        "start": 82.36,
+        "duration": 3.852
+    },
+    {
+        "text": "I was pretty proud of the visuals in that, and that would have been dramatically ",
+        "start": 86.212,
+        "duration": 3.901
+    },
+    {
+        "text": "harder to do even two or three years ago, but over the last month it was actually ",
+        "start": 90.113,
+        "duration": 3.949
+    },
+    {
+        "text": "kind of a joy to make just because of a lot of the workflow improvements over the years.",
+        "start": 94.062,
+        "duration": 4.238
+    },
+    {
+        "text": "I've always posted all of the code that I make for videos, it's openly visible on GitHub, ",
+        "start": 98.56,
+        "duration": 4.27
+    },
+    {
+        "text": "and I also made the tool itself, the underlying tool Manim open source.",
+        "start": 102.83,
+        "duration": 3.37
+    },
+    {
+        "text": "But I don't, as a personality type, really have the constitution to manage an open ",
+        "start": 107.02,
+        "duration": 4.277
+    },
+    {
+        "text": "source project, I also don't really have the capacity for it while I'm making videos, ",
+        "start": 111.297,
+        "duration": 4.431
+    },
+    {
+        "text": "so I wasn't the most attentive to issues and pull requests and things like that, ",
+        "start": 115.728,
+        "duration": 4.174
+    },
+    {
+        "text": "but a community of people who wanted it to be a more robust tool for others forked ",
+        "start": 119.902,
+        "duration": 4.277
+    },
+    {
+        "text": "the repo and created a version that is attentive to issues and pull requests and ",
+        "start": 124.179,
+        "duration": 4.174
+    },
+    {
+        "text": "has better testing and better documentation, and it's called the Manim community version.",
+        "start": 128.353,
+        "duration": 4.587
+    },
+    {
+        "text": "So it's generally recommended people start with that, ",
+        "start": 133.34,
+        "duration": 2.406
+    },
+    {
+        "text": "but in the meantime I often do make a bunch of changes or developments to my own, ",
+        "start": 135.746,
+        "duration": 3.654
+    },
+    {
+        "text": "over the last couple years I've made it more interactive, more performant, ",
+        "start": 139.4,
+        "duration": 3.342
+    },
+    {
+        "text": "things like that.",
+        "start": 142.742,
+        "duration": 0.758
+    },
+    {
+        "text": "The reason I bring this up is that what I'll be demoing with Ben is my own version, ",
+        "start": 143.92,
+        "duration": 3.753
+    },
+    {
+        "text": "but you should be aware that there is this divide and that if you want the better ",
+        "start": 147.673,
+        "duration": 3.664
+    },
+    {
+        "text": "documented and tested version, it's recommended to go with the community one for that.",
+        "start": 151.337,
+        "duration": 3.843
+    },
+    {
+        "text": "Without further ado, let's dive into the Hello World example.",
+        "start": 155.66,
+        "duration": 2.98
+    },
+    {
+        "text": "It's all in Python.",
+        "start": 160.3,
+        "duration": 1.04
+    },
+    {
+        "text": "Okay, and on the left is a Python, just a text file essentially with...",
+        "start": 161.88,
+        "duration": 3.62
+    },
+    {
+        "text": "Yep, so this is, it's Sublime text, I use Sublime, that's a text editor.",
+        "start": 165.5,
+        "duration": 3.48
+    },
+    {
+        "text": "We're going to be typing some Python here.",
+        "start": 169.26,
+        "duration": 1.56
+    },
+    {
+        "text": "I guess just as like a basic sense of what it ",
+        "start": 170.82,
+        "duration": 2.465
+    },
+    {
+        "text": "even looks like to have something up on the screen.",
+        "start": 173.285,
+        "duration": 2.735
+    },
+    {
+        "text": "Let me get something there and then we can talk through what's going on.",
+        "start": 176.52,
+        "duration": 3.44
+    },
+    {
+        "text": "Here I've created a scene.",
+        "start": 180.32,
+        "duration": 2.96
+    },
+    {
+        "text": "So all of the scenes that I edit together take the form of a class in Python.",
+        "start": 183.88,
+        "duration": 4.32
+    },
+    {
+        "text": "And then inside a certain method of that called construct, ",
+        "start": 188.9,
+        "duration": 2.534
+    },
+    {
+        "text": "this is where all the code that renders stuff is going to live.",
+        "start": 191.434,
+        "duration": 2.706
+    },
+    {
+        "text": "There's objects added like a circle, like, you know, ",
+        "start": 194.26,
+        "duration": 2.83
+    },
+    {
+        "text": "we can add like a square in there too.",
+        "start": 197.09,
+        "duration": 2.03
+    },
+    {
+        "text": "We're also going to add that square.",
+        "start": 199.12,
+        "duration": 1.94
+    },
+    {
+        "text": "If I kind of ran all of that, we have the square.",
+        "start": 202.18,
+        "duration": 2.26
+    },
+    {
+        "text": "How did you just run that?",
+        "start": 204.58,
+        "duration": 0.9
+    },
+    {
+        "text": "Was there...",
+        "start": 205.68,
+        "duration": 0.52
+    },
+    {
+        "text": "Oh yeah, okay, okay, okay.",
+        "start": 206.2,
+        "duration": 1.16
+    },
+    {
+        "text": "So this is what...",
+        "start": 207.54,
+        "duration": 1.48
+    },
+    {
+        "text": "I think you just waved the magic wand and it happened, right?",
+        "start": 209.02,
+        "duration": 1.74
+    },
+    {
+        "text": "But you have a shortcut it looked like.",
+        "start": 210.78,
+        "duration": 1.18
+    },
+    {
+        "text": "Okay, so in principle, if over in this little terminal, ",
+        "start": 212.32,
+        "duration": 3.479
+    },
+    {
+        "text": "it's a Python terminal such that we can call commands on the scene that are relevant.",
+        "start": 215.799,
+        "duration": 5.281
+    },
+    {
+        "text": "So I might say square.shift to the right, and then that square will shift to the right.",
+        "start": 221.08,
+        "duration": 4.36
+    },
+    {
+        "text": "And if I call it again, more things will happen.",
+        "start": 225.46,
+        "duration": 1.82
+    },
+    {
+        "text": "I could also say, you know, what's one plus two, just normal Python.",
+        "start": 227.28,
+        "duration": 3.3
+    },
+    {
+        "text": "Okay, it's a Python just entry box, basically.",
+        "start": 230.82,
+        "duration": 1.84
+    },
+    {
+        "text": "Yeah, but it's talking to this.",
+        "start": 232.92,
+        "duration": 1.32
+    },
+    {
+        "text": "And so while I'm creating a scene, it's nice to have ",
+        "start": 234.76,
+        "duration": 3.81
+    },
+    {
+        "text": "a Python terminal that's talking to the scene itself.",
+        "start": 238.57,
+        "duration": 3.81
+    },
+    {
+        "text": "And then separately, so what might be nice as a workflow is to say, ",
+        "start": 243.1,
+        "duration": 2.858
+    },
+    {
+        "text": "hey, I've got all this stuff that I'm going to do.",
+        "start": 245.958,
+        "duration": 2.102
+    },
+    {
+        "text": "Like maybe I want to take square and I'm going to put it to the top edge.",
+        "start": 248.1,
+        "duration": 4.14
+    },
+    {
+        "text": "And so a common thing that you might do is say, take that, ",
+        "start": 253.48,
+        "duration": 3.072
+    },
+    {
+        "text": "copy that, go over to this, paste that, press enter.",
+        "start": 256.552,
+        "duration": 2.708
+    },
+    {
+        "text": "And that immediately tests that line.",
+        "start": 260.2,
+        "duration": 1.72
+    },
+    {
+        "text": "So then it tests that line.",
+        "start": 262.56,
+        "duration": 1.04
+    },
+    {
+        "text": "But I don't want to do that every time.",
+        "start": 264.22,
+        "duration": 1.6
+    },
+    {
+        "text": "I don't want to like do it and copy and paste.",
+        "start": 265.94,
+        "duration": 1.98
+    },
+    {
+        "text": "So instead I have a shortcut written and this is tied to some Sublime specific things.",
+        "start": 268.2,
+        "duration": 5.2
+    },
+    {
+        "text": "In my case, it's command R, I think the keyboard shortcut I have.",
+        "start": 273.66,
+        "duration": 3.4
+    },
+    {
+        "text": "It'll copy it and it'll run whatever the text that was copied in there.",
+        "start": 277.32,
+        "duration": 4.1
+    },
+    {
+        "text": "So you've got a shortcut which runs this code, outputs the visual, immediate check.",
+        "start": 281.42,
+        "duration": 4.76
+    },
+    {
+        "text": "I just want to jump in with a quick comment here ",
+        "start": 286.94,
+        "duration": 1.779
+    },
+    {
+        "text": "because there's slightly more going on under the hood.",
+        "start": 288.719,
+        "duration": 1.961
+    },
+    {
+        "text": "Like all things, this is best motivated with an example.",
+        "start": 290.92,
+        "duration": 2.26
+    },
+    {
+        "text": "So if I pull up a scene from the most recent video on holograms, these can get quite long.",
+        "start": 293.9,
+        "duration": 4.72
+    },
+    {
+        "text": "So here, the final output was a four and a half minute MP4 file describing ",
+        "start": 298.8,
+        "duration": 4.859
+    },
+    {
+        "text": "diffraction gradings and in particular, this one was about the double slit.",
+        "start": 303.659,
+        "duration": 4.861
+    },
+    {
+        "text": "It's really nice to have these long scenes because they share a bunch ",
+        "start": 308.52,
+        "duration": 2.987
+    },
+    {
+        "text": "of context and as you're coding, you can kind of reference that context.",
+        "start": 311.507,
+        "duration": 3.073
+    },
+    {
+        "text": "But the code for something like that ends up being just a big, big, big pile of Python.",
+        "start": 315.0,
+        "duration": 4.88
+    },
+    {
+        "text": "Lots and lots of code.",
+        "start": 320.1,
+        "duration": 0.76
+    },
+    {
+        "text": "And it used to be the case I would break this all down into little subroutines, ",
+        "start": 321.44,
+        "duration": 3.106
+    },
+    {
+        "text": "but historically it's proven to be nice as just to have it kind of ",
+        "start": 324.546,
+        "duration": 2.601
+    },
+    {
+        "text": "all in one spot where all your local variables are shared.",
+        "start": 327.147,
+        "duration": 2.253
+    },
+    {
+        "text": "The thing I want to highlight is that if I'm working on the scene and I'm somewhere ",
+        "start": 329.72,
+        "duration": 3.752
+    },
+    {
+        "text": "in the middle of it, so lots and lots of code has taken place, ",
+        "start": 333.472,
+        "duration": 2.814
+    },
+    {
+        "text": "but we're in the middle at this point, while I'm iterating on just one little section, ",
+        "start": 336.286,
+        "duration": 3.887
+    },
+    {
+        "text": "like here I might want to be able to run the code of this section and see what it does.",
+        "start": 340.173,
+        "duration": 3.887
+    },
+    {
+        "text": "As you can imagine, you might want to tweak it, you might want to change it a little bit.",
+        "start": 344.44,
+        "duration": 3.22
+    },
+    {
+        "text": "So in this case, let's see what's going on.",
+        "start": 348.48,
+        "duration": 1.74
+    },
+    {
+        "text": "We've got some graphs being drawn.",
+        "start": 350.24,
+        "duration": 1.66
+    },
+    {
+        "text": "This like wave kind of showing the red and blue wave is fading out a little bit.",
+        "start": 353.22,
+        "duration": 5.06
+    },
+    {
+        "text": "So maybe I could say, what if I don't want it to fade out as much?",
+        "start": 358.28,
+        "duration": 2.38
+    },
+    {
+        "text": "I want that to only be 0.8.",
+        "start": 361.04,
+        "duration": 1.66
+    },
+    {
+        "text": "I want the runtime here to be a little different.",
+        "start": 363.14,
+        "duration": 1.8
+    },
+    {
+        "text": "I want to be able to run that same section, but in order for that to work, ",
+        "start": 364.94,
+        "duration": 3.818
+    },
+    {
+        "text": "when I'm pasting it in, it can't just literally be pasting the code.",
+        "start": 368.758,
+        "duration": 3.462
+    },
+    {
+        "text": "It has to revert to the state that the scene had at the start.",
+        "start": 372.4,
+        "duration": 2.72
+    },
+    {
+        "text": "So it's really running this little thing called checkpoint paste, ",
+        "start": 375.78,
+        "duration": 3.36
+    },
+    {
+        "text": "which basically says if the thing that was copied starts with a certain comment, ",
+        "start": 379.14,
+        "duration": 4.125
+    },
+    {
+        "text": "I'm going to see if I've seen that comment before and cached a state ",
+        "start": 383.265,
+        "duration": 3.514
+    },
+    {
+        "text": "of the scene associated with that so that I can run it.",
+        "start": 386.779,
+        "duration": 2.801
+    },
+    {
+        "text": "Basically it's making it behave a little bit more like a notebook, ",
+        "start": 389.72,
+        "duration": 2.841
+    },
+    {
+        "text": "like a Jupyter notebook.",
+        "start": 392.561,
+        "duration": 1.019
+    },
+    {
+        "text": "Some viewers might be wondering why I don't just have it all in a Jupyter notebook, ",
+        "start": 394.06,
+        "duration": 4.093
+    },
+    {
+        "text": "but I really like having the scene in a single text file and being able ",
+        "start": 398.153,
+        "duration": 3.509
+    },
+    {
+        "text": "to interact with it through scripts and things like that.",
+        "start": 401.662,
+        "duration": 2.778
+    },
+    {
+        "text": "But this is kind of like a hybridization between ",
+        "start": 404.52,
+        "duration": 2.377
+    },
+    {
+        "text": "just the raw text file and a notebook itself.",
+        "start": 406.897,
+        "duration": 2.183
+    },
+    {
+        "text": "We could also have some like text on there that maybe literally says, hello world.",
+        "start": 409.9,
+        "duration": 4.32
+    },
+    {
+        "text": "This is like a good plan for hello world.",
+        "start": 414.36,
+        "duration": 1.9
+    },
+    {
+        "text": "Yeah, put that to the top.",
+        "start": 416.82,
+        "duration": 1.38
+    },
+    {
+        "text": "And that's also something, you know, it's not ",
+        "start": 418.36,
+        "duration": 1.98
+    },
+    {
+        "text": "going to show up on this if we don't have this line.",
+        "start": 420.34,
+        "duration": 2.24
+    },
+    {
+        "text": "So the adding makes it appear.",
+        "start": 422.58,
+        "duration": 1.76
+    },
+    {
+        "text": "But it looks like, so this is me naively thinking, ",
+        "start": 424.64,
+        "duration": 2.19
+    },
+    {
+        "text": "when you make an object, it puts it in the middle and unless ",
+        "start": 426.83,
+        "duration": 2.62
+    },
+    {
+        "text": "you then do some two edges or some other movements, it moves it around.",
+        "start": 429.45,
+        "duration": 3.05
+    },
+    {
+        "text": "Most objects default to being in the center.",
+        "start": 432.68,
+        "duration": 1.82
+    },
+    {
+        "text": "Instead of adding it, a different thing you could do, ",
+        "start": 435.02,
+        "duration": 2.724
+    },
+    {
+        "text": "anytime you're going to do some kind of animation, there's a method called play.",
+        "start": 437.744,
+        "duration": 4.036
+    },
+    {
+        "text": "And then instead of throwing in an object, I'll ",
+        "start": 442.1,
+        "duration": 2.115
+    },
+    {
+        "text": "say there's something I want to do to that object.",
+        "start": 444.215,
+        "duration": 2.205
+    },
+    {
+        "text": "So in this case, maybe I want to write it to make it look like ",
+        "start": 446.48,
+        "duration": 2.499
+    },
+    {
+        "text": "it's being written on And there's a function baked in here.",
+        "start": 448.979,
+        "duration": 2.341
+    },
+    {
+        "text": "Yeah.",
+        "start": 451.32,
+        "duration": 0.44
+    },
+    {
+        "text": "Nice.",
+        "start": 451.76,
+        "duration": 0.5
+    },
+    {
+        "text": "And I could have some parameters and like, hey, ",
+        "start": 452.48,
+        "duration": 1.859
+    },
+    {
+        "text": "maybe I want that to happen a little bit longer, like with a runtime of three.",
+        "start": 454.339,
+        "duration": 3.021
+    },
+    {
+        "text": "And suddenly anyone who's watched any Manim videos recognizes that effect.",
+        "start": 457.88,
+        "duration": 3.42
+    },
+    {
+        "text": "Yeah.\nThey're ready to go.",
+        "start": 461.52,
+        "duration": 1.0
+    },
+    {
+        "text": "That's really useful.",
+        "start": 462.72,
+        "duration": 0.64
+    },
+    {
+        "text": "Like I wrote that effect and like nothing else uses that ",
+        "start": 463.54,
+        "duration": 2.806
+    },
+    {
+        "text": "particular effect of having the like edge come on and fade in.",
+        "start": 466.346,
+        "duration": 3.054
+    },
+    {
+        "text": "It's pretty.",
+        "start": 469.58,
+        "duration": 0.44
+    },
+    {
+        "text": "It's pretty.",
+        "start": 470.02,
+        "duration": 0.5
+    },
+    {
+        "text": "That's the signature look for it.",
+        "start": 470.82,
+        "duration": 1.54
+    },
+    {
+        "text": "A different philosophy also with Manim was like anything can transform into anything.",
+        "start": 472.76,
+        "duration": 5.42
+    },
+    {
+        "text": "So what I mean by that is let's say we've got this text.",
+        "start": 478.18,
+        "duration": 3.68
+    },
+    {
+        "text": "I might say, hey, I want to take the the H of that ",
+        "start": 483.76,
+        "duration": 3.727
+    },
+    {
+        "text": "text and then I'm going to make it turn into the circle.",
+        "start": 487.487,
+        "duration": 4.093
+    },
+    {
+        "text": "So that's going to turn into a circle.",
+        "start": 492.76,
+        "duration": 1.66
+    },
+    {
+        "text": "So you defined the circle already, but you didn't add it anywhere.",
+        "start": 494.62,
+        "duration": 1.96
+    },
+    {
+        "text": "Exactly.",
+        "start": 496.72,
+        "duration": 0.46
+    },
+    {
+        "text": "Now you're going to transform the H into it.",
+        "start": 497.18,
+        "duration": 1.3
+    },
+    {
+        "text": "Yeah.\nSo if we go to this point, the text gets written.",
+        "start": 498.76,
+        "duration": 2.3
+    },
+    {
+        "text": "What this line is going to do is say extract the H from that text.",
+        "start": 501.86,
+        "duration": 5.12
+    },
+    {
+        "text": "And then transform it into the circle.",
+        "start": 507.44,
+        "duration": 2.38
+    },
+    {
+        "text": "Oh, because the circle was in the middle it has moved it hasn't just put it away.",
+        "start": 511.72,
+        "duration": 2.86
+    },
+    {
+        "text": "And so these these built in functions like write and transform that we're just seeing.",
+        "start": 515.539,
+        "duration": 2.841
+    },
+    {
+        "text": "These are the ones that you sort of sculpted to ",
+        "start": 518.58,
+        "duration": 2.192
+    },
+    {
+        "text": "make the jobs that you wanted to happen happen.",
+        "start": 520.772,
+        "duration": 2.147
+    },
+    {
+        "text": "Yeah, exactly.",
+        "start": 523.12,
+        "duration": 0.559
+    },
+    {
+        "text": "Exactly.",
+        "start": 523.94,
+        "duration": 0.5
+    },
+    {
+        "text": "And so a lot of things derive from transform.",
+        "start": 524.84,
+        "duration": 2.56
+    },
+    {
+        "text": "So usually like it doesn't really there's no pedagogical ",
+        "start": 528.02,
+        "duration": 3.081
+    },
+    {
+        "text": "reason to have like an H turn into a circle.",
+        "start": 531.101,
+        "duration": 2.379
+    },
+    {
+        "text": "I enjoyed it.",
+        "start": 533.72,
+        "duration": 0.42
+    },
+    {
+        "text": "It looks nice and we can, you know, we can maybe make it a little bit slower.",
+        "start": 534.14,
+        "duration": 3.54
+    },
+    {
+        "text": "I mean, I have other questions like it didn't just transform.",
+        "start": 538.52,
+        "duration": 2.22
+    },
+    {
+        "text": "It looked like it had it was eased.",
+        "start": 541.02,
+        "duration": 1.68
+    },
+    {
+        "text": "There's all sorts of nice smoothing functions going on.",
+        "start": 542.9,
+        "duration": 1.86
+    },
+    {
+        "text": "Oh, yeah.",
+        "start": 544.76,
+        "duration": 0.36
+    },
+    {
+        "text": "OK, so let's play with that.",
+        "start": 545.12,
+        "duration": 0.94
+    },
+    {
+        "text": "So let's let's play with the transform.",
+        "start": 546.24,
+        "duration": 3.16
+    },
+    {
+        "text": "So here notice like the H is shrinking and the circle is growing.",
+        "start": 551.16,
+        "duration": 4.0
+    },
+    {
+        "text": "I don't actually want that.",
+        "start": 555.44,
+        "duration": 1.02
+    },
+    {
+        "text": "So when I extract the H, it creates a group of all of the H's that it found in this text.",
+        "start": 556.72,
+        "duration": 5.08
+    },
+    {
+        "text": "So if I take the first element of that, it'll have a thing of it.",
+        "start": 562.18,
+        "duration": 3.42
+    },
+    {
+        "text": "This is uglier than it needs to look.",
+        "start": 566.26,
+        "duration": 1.52
+    },
+    {
+        "text": "But if I want to use a matrix, it's like there's a hierarchy where you might ",
+        "start": 567.9,
+        "duration": 3.744
+    },
+    {
+        "text": "have groups of objects like this whole text is a group of characters within.",
+        "start": 571.644,
+        "duration": 3.696
+    },
+    {
+        "text": "So if I just want the first character, actually a simpler way to do this.",
+        "start": 575.54,
+        "duration": 2.9
+    },
+    {
+        "text": "It's very dumb.",
+        "start": 578.74,
+        "duration": 0.52
+    },
+    {
+        "text": "I'm going to take the first character.",
+        "start": 579.56,
+        "duration": 1.24
+    },
+    {
+        "text": "So the zeroeth element in that Python list, then the actual points data of that H.",
+        "start": 580.94,
+        "duration": 5.38
+    },
+    {
+        "text": "That's fun.",
+        "start": 587.28,
+        "duration": 0.5
+    },
+    {
+        "text": "OK, right.",
+        "start": 587.9,
+        "duration": 0.5
+    },
+    {
+        "text": "So instead of taking the characters, just got the geometrical.",
+        "start": 588.6,
+        "duration": 2.06
+    },
+    {
+        "text": "Yeah.",
+        "start": 590.66,
+        "duration": 0.5
+    },
+    {
+        "text": "And so the smoothing there, there's an attribute I call like the rate ",
+        "start": 592.04,
+        "duration": 3.62
+    },
+    {
+        "text": "function and it defaults to a thing called smooth, which just looks smooth.",
+        "start": 595.66,
+        "duration": 3.88
+    },
+    {
+        "text": "But if it's not the classic smooth step sort of profile, ",
+        "start": 599.7,
+        "duration": 2.752
+    },
+    {
+        "text": "basically, yeah, it's a cubic bezier.",
+        "start": 602.452,
+        "duration": 1.788
+    },
+    {
+        "text": "I think that it'll be like a smooth step.",
+        "start": 604.56,
+        "duration": 1.98
+    },
+    {
+        "text": "But if it was linear, then just notice it's a little jerky.",
+        "start": 606.68,
+        "duration": 3.68
+    },
+    {
+        "text": "This will be easier if it's a runtime of one to see.",
+        "start": 610.92,
+        "duration": 1.88
+    },
+    {
+        "text": "It's like, yes, jerky start, jerky stop.",
+        "start": 612.9,
+        "duration": 1.82
+    },
+    {
+        "text": "Sometimes you want that.",
+        "start": 615.14,
+        "duration": 0.96
+    },
+    {
+        "text": "Yeah, sometimes you don't.",
+        "start": 616.22,
+        "duration": 0.76
+    },
+    {
+        "text": "This will come up for us later, actually, is only ",
+        "start": 617.08,
+        "duration": 2.094
+    },
+    {
+        "text": "this to be linear when it defaults to smooth.",
+        "start": 619.174,
+        "duration": 1.886
+    },
+    {
+        "text": "I'm really excited to see that because it's those details that make the ",
+        "start": 621.36,
+        "duration": 2.517
+    },
+    {
+        "text": "difference from like I've made something move to I've made something look good.",
+        "start": 623.877,
+        "duration": 2.763
+    },
+    {
+        "text": "Yeah, yeah.",
+        "start": 626.8,
+        "duration": 0.66
+    },
+    {
+        "text": "I really making that easy to do.",
+        "start": 627.68,
+        "duration": 1.96
+    },
+    {
+        "text": "It's a big part of what my name is doing, I think.",
+        "start": 629.64,
+        "duration": 2.42
+    },
+    {
+        "text": "We mentioned let's let's do a classic piece of sort of ",
+        "start": 633.18,
+        "duration": 2.048
+    },
+    {
+        "text": "recreational interesting maths that a lot of people heard of.",
+        "start": 635.228,
+        "duration": 2.272
+    },
+    {
+        "text": "Yeah, I was like, I've never plotted a Lorenz attractor.",
+        "start": 637.72,
+        "duration": 2.72
+    },
+    {
+        "text": "And that was that was why I suggested.",
+        "start": 640.52,
+        "duration": 0.94
+    },
+    {
+        "text": "For those of you who don't know, the Lorenz attractor is this very ",
+        "start": 641.7,
+        "duration": 3.058
+    },
+    {
+        "text": "bizarre shape that came up in the early history of chaos theory.",
+        "start": 644.758,
+        "duration": 2.922
+    },
+    {
+        "text": "Ben and I do talk more about it.",
+        "start": 647.96,
+        "duration": 1.34
+    },
+    {
+        "text": "But what you need to know is that it comes from a set of differential ",
+        "start": 649.3,
+        "duration": 3.302
+    },
+    {
+        "text": "equations in three dimensions, which basically means if you have a ",
+        "start": 652.602,
+        "duration": 3.16
+    },
+    {
+        "text": "point somewhere in 3D space, there's this set of deterministic rules ",
+        "start": 655.762,
+        "duration": 3.255
+    },
+    {
+        "text": "that tells you how that point should change at a given moment in time.",
+        "start": 659.017,
+        "duration": 3.303
+    },
+    {
+        "text": "And what happens when you try this for a variety of starting ",
+        "start": 662.96,
+        "duration": 2.997
+    },
+    {
+        "text": "conditions proves to be very interesting as you'll see.",
+        "start": 665.957,
+        "duration": 2.703
+    },
+    {
+        "text": "It's really nice fodder for animation.",
+        "start": 668.82,
+        "duration": 1.46
+    },
+    {
+        "text": "And if you want to learn more about it, I'm pretty ",
+        "start": 670.64,
+        "duration": 1.997
+    },
+    {
+        "text": "sure there's a great Veritasium video on it.",
+        "start": 672.637,
+        "duration": 1.723
+    },
+    {
+        "text": "But also one of my favorite books, which I think I actually should have up here.",
+        "start": 674.36,
+        "duration": 4.5
+    },
+    {
+        "text": "Yes.",
+        "start": 679.44,
+        "duration": 0.32
+    },
+    {
+        "text": "OK.\nSo one of my favorite books by one of my favorite authors, James Glick, describes,",
+        "start": 679.76,
+        "duration": 3.944
+    },
+    {
+        "text": "you know, kind of how this came about and the role that it had in early chaos theory.",
+        "start": 683.704,
+        "duration": 3.836
+    },
+    {
+        "text": "All of that's by the by.",
+        "start": 687.92,
+        "duration": 0.9
+    },
+    {
+        "text": "But some of you all want to know.",
+        "start": 689.06,
+        "duration": 1.52
+    },
+    {
+        "text": "So I figured I'd share.",
+        "start": 690.64,
+        "duration": 0.78
+    },
+    {
+        "text": "I guess maybe one thing I should mention before we dive into this.",
+        "start": 692.7,
+        "duration": 2.66
+    },
+    {
+        "text": "This is all in 2D.",
+        "start": 695.5,
+        "duration": 0.72
+    },
+    {
+        "text": "But the points are actually all in 2D.",
+        "start": 696.58,
+        "duration": 1.46
+    },
+    {
+        "text": "Whoa, that's a bug.",
+        "start": 698.36,
+        "duration": 1.06
+    },
+    {
+        "text": "This is a rendering bug, is it?",
+        "start": 700.42,
+        "duration": 1.26
+    },
+    {
+        "text": "Yes, actually, that's it.",
+        "start": 702.28,
+        "duration": 1.1
+    },
+    {
+        "text": "OK, there's the thing I was playing around with on the low level rendering recently.",
+        "start": 703.38,
+        "duration": 3.2
+    },
+    {
+        "text": "I know what's going on and why that's happening.",
+        "start": 707.08,
+        "duration": 1.82
+    },
+    {
+        "text": "And there's a dumb way to fix it, which is to.",
+        "start": 709.06,
+        "duration": 3.82
+    },
+    {
+        "text": "Yeah, just don't don't don't worry about that.",
+        "start": 715.22,
+        "duration": 2.24
+    },
+    {
+        "text": "Fun to see the back end.",
+        "start": 718.08,
+        "duration": 1.3
+    },
+    {
+        "text": "Don't worry about that.",
+        "start": 719.54,
+        "duration": 0.66
+    },
+    {
+        "text": "Sometimes I go and I try to make the rendering nicer.",
+        "start": 720.26,
+        "duration": 1.94
+    },
+    {
+        "text": "And then so that was that was always three dimensional.",
+        "start": 722.38,
+        "duration": 2.72
+    },
+    {
+        "text": "We just happen to be looking at everything's always through.",
+        "start": 725.28,
+        "duration": 1.52
+    },
+    {
+        "text": "So for example, if I add 3D axes, then it's like everything exists by default on the X, ",
+        "start": 726.92,
+        "duration": 6.029
+    },
+    {
+        "text": "Y plane and just like ninety nine scenes out of one hundred.",
+        "start": 732.949,
+        "duration": 4.111
+    },
+    {
+        "text": "I'm just doing it in 2D because pedagogically you want it to feel like a blackboard.",
+        "start": 737.46,
+        "duration": 3.3
+    },
+    {
+        "text": "Only go up to 3D if you really need to.",
+        "start": 740.94,
+        "duration": 1.92
+    },
+    {
+        "text": "Now we really need to.",
+        "start": 743.32,
+        "duration": 1.1
+    },
+    {
+        "text": "So for the Lorenz Attractor, our setup, I just have some like axes with ",
+        "start": 744.8,
+        "duration": 4.105
+    },
+    {
+        "text": "some coordinates around what we're around what we're going to want to be in.",
+        "start": 748.905,
+        "duration": 4.335
+    },
+    {
+        "text": "Actually, I'll be very honest with you.",
+        "start": 754.0,
+        "duration": 1.42
+    },
+    {
+        "text": "The way I started here, I went to chat GPT.",
+        "start": 755.56,
+        "duration": 3.18
+    },
+    {
+        "text": "What you want to do for the math underlying this is to basically feed some software, ",
+        "start": 758.74,
+        "duration": 5.018
+    },
+    {
+        "text": "a differential equation and an initial condition and just say, ",
+        "start": 763.758,
+        "duration": 3.719
+    },
+    {
+        "text": "how does this initial condition evolve?",
+        "start": 767.477,
+        "duration": 2.303
+    },
+    {
+        "text": "Obviously, people will have built software packages that do it with something smarter.",
+        "start": 770.52,
+        "duration": 3.02
+    },
+    {
+        "text": "So I just asked and I'm like, hey, write me a Python function using some ",
+        "start": 774.04,
+        "duration": 2.91
+    },
+    {
+        "text": "numerical ODE solver to find, you know, find a solution of the Lorenz equations.",
+        "start": 776.95,
+        "duration": 3.19
+    },
+    {
+        "text": "The famous Lorenz equations.",
+        "start": 780.56,
+        "duration": 0.84
+    },
+    {
+        "text": "Well, you know, I just wanted to.",
+        "start": 781.74,
+        "duration": 0.94
+    },
+    {
+        "text": "Not the other ones.",
+        "start": 782.88,
+        "duration": 0.7
+    },
+    {
+        "text": "You know, sometimes I like it.",
+        "start": 784.96,
+        "duration": 1.2
+    },
+    {
+        "text": "As you've no doubt found, if you're trying to engage with some new library or something, ",
+        "start": 786.16,
+        "duration": 4.145
+    },
+    {
+        "text": "it's just, you know, just kind of a nice way to see what it is.",
+        "start": 790.305,
+        "duration": 2.935
+    },
+    {
+        "text": "It solves a lot of the protocol issues that sometimes you take three hours to get past.",
+        "start": 793.52,
+        "duration": 4.9
+    },
+    {
+        "text": "So it's mentioning the SciPy integrate.",
+        "start": 798.6,
+        "duration": 2.62
+    },
+    {
+        "text": "So that's a nice library and it's got this solve initial value problem function.",
+        "start": 801.68,
+        "duration": 3.48
+    },
+    {
+        "text": "And then it gives some boilerplate for how to how that would look.",
+        "start": 805.86,
+        "duration": 2.68
+    },
+    {
+        "text": "And it's using Matplotlib to render it.",
+        "start": 808.62,
+        "duration": 1.54
+    },
+    {
+        "text": "Abundantly reasonable, but we're using Manim.",
+        "start": 810.4,
+        "duration": 1.7
+    },
+    {
+        "text": "So just adapt it.",
+        "start": 812.4,
+        "duration": 1.42
+    },
+    {
+        "text": "Yeah.",
+        "start": 814.26,
+        "duration": 0.5
+    },
+    {
+        "text": "And so essentially I've got a function here to describe the differential equation.",
+        "start": 815.72,
+        "duration": 4.62
+    },
+    {
+        "text": "It says for a given time and for a given state, ",
+        "start": 820.6,
+        "duration": 2.366
+    },
+    {
+        "text": "which is going to have XYZ coordinates, just what's the derivative of that state.",
+        "start": 822.966,
+        "duration": 3.994
+    },
+    {
+        "text": "And you've got three parameters, which you've got Greek words for.",
+        "start": 827.36,
+        "duration": 3.68
+    },
+    {
+        "text": "And so that, you know, I guess if we go to the if we go to the Wikipedia page for Lorenz, ",
+        "start": 831.16,
+        "duration": 5.035
+    },
+    {
+        "text": "this is a system that has some parameters on it that I guess we can kind of freely tune.",
+        "start": 836.195,
+        "duration": 4.925
+    },
+    {
+        "text": "There's some parameters that someone must have found makes for nice diagrams.",
+        "start": 841.54,
+        "duration": 3.22
+    },
+    {
+        "text": "And so let's just use them.",
+        "start": 845.56,
+        "duration": 1.02
+    },
+    {
+        "text": "Let's keep this page open.",
+        "start": 846.84,
+        "duration": 0.84
+    },
+    {
+        "text": "So if we want to render the equations onto our scene to do it, ",
+        "start": 847.68,
+        "duration": 3.117
+    },
+    {
+        "text": "do it in that manner, maybe we can do it in a moment.",
+        "start": 850.797,
+        "duration": 2.623
+    },
+    {
+        "text": "So we've got that.",
+        "start": 854.22,
+        "duration": 0.8
+    },
+    {
+        "text": "I've just got a tiny little wrapper around the SciPy numerical integration ",
+        "start": 855.58,
+        "duration": 5.01
+    },
+    {
+        "text": "solver for us because what I want to do is be able to say, hey, ",
+        "start": 860.59,
+        "duration": 4.276
+    },
+    {
+        "text": "for a given initial condition, just give me all the points that are going to ",
+        "start": 864.866,
+        "duration": 5.145
+    },
+    {
+        "text": "be the solution.",
+        "start": 870.011,
+        "duration": 1.069
+    },
+    {
+        "text": "So let me just check.",
+        "start": 871.46,
+        "duration": 0.7
+    },
+    {
+        "text": "And you kind of need to know what it's going to spit back at you.",
+        "start": 872.76,
+        "duration": 2.06
+    },
+    {
+        "text": "Yeah.",
+        "start": 874.96,
+        "duration": 0.5
+    },
+    {
+        "text": "It's giving you something called solution, which is going to have time values and X, ",
+        "start": 875.76,
+        "duration": 5.184
+    },
+    {
+        "text": "Y, and Z values.",
+        "start": 880.944,
+        "duration": 0.976
+    },
+    {
+        "text": "So the way, yeah, this library is a little weird.",
+        "start": 882.42,
+        "duration": 2.16
+    },
+    {
+        "text": "It's kind of like it's treating Y as the output, but Y might be like a vector value, ",
+        "start": 884.74,
+        "duration": 3.955
+    },
+    {
+        "text": "which is a little confusing, which is part of why I wanted a wrapper so that I'm ",
+        "start": 888.695,
+        "duration": 3.769
+    },
+    {
+        "text": "just thinking in terms of states rather than like its language is involving like a Y.",
+        "start": 892.464,
+        "duration": 3.956
+    },
+    {
+        "text": "And I also wanted this matrix transposed for how I like it.",
+        "start": 896.42,
+        "duration": 3.04
+    },
+    {
+        "text": "Oh, gotcha.\nThat's what that T is.",
+        "start": 899.56,
+        "duration": 0.76
+    },
+    {
+        "text": "Okay.\nYeah.",
+        "start": 900.44,
+        "duration": 0.48
+    },
+    {
+        "text": "It's just all like, don't worry about the wrapper too much.",
+        "start": 900.92,
+        "duration": 2.88
+    },
+    {
+        "text": "Let's just actually see what it looks like.",
+        "start": 904.06,
+        "duration": 1.54
+    },
+    {
+        "text": "So let's say our initial condition is something like, let's just make it 0, 0, 0.",
+        "start": 905.84,
+        "duration": 4.8
+    },
+    {
+        "text": "Why not?",
+        "start": 910.78,
+        "duration": 0.5
+    },
+    {
+        "text": "And then we can take the solutions where I'm passing in a given function, ",
+        "start": 912.56,
+        "duration": 3.982
+    },
+    {
+        "text": "which we want to be the Lorentz system and passing in that initial state, ",
+        "start": 916.542,
+        "duration": 3.982
+    },
+    {
+        "text": "which is the initial state we just wrote down.",
+        "start": 920.524,
+        "duration": 2.476
+    },
+    {
+        "text": "How long do I want that to go?",
+        "start": 923.58,
+        "duration": 1.76
+    },
+    {
+        "text": "So let's see what, I don't know, 10 seconds of solution looks like.",
+        "start": 925.34,
+        "duration": 3.08
+    },
+    {
+        "text": "And this right here is just going to be a set of points basically.",
+        "start": 928.74,
+        "duration": 2.84
+    },
+    {
+        "text": "And so if I run this and I ask, you know, what are points?",
+        "start": 932.24,
+        "duration": 4.2
+    },
+    {
+        "text": "It gives a bunch of zeros.",
+        "start": 936.6,
+        "duration": 0.72
+    },
+    {
+        "text": "This is maybe predictable that 0 is going to be a bad initial condition.",
+        "start": 937.68,
+        "duration": 3.24
+    },
+    {
+        "text": "Initial condition, yes.",
+        "start": 940.92,
+        "duration": 0.68
+    },
+    {
+        "text": "Yeah.\nSo let's make that like 10 or something like that.",
+        "start": 941.76,
+        "duration": 2.8
+    },
+    {
+        "text": "And so now if we look at the points.",
+        "start": 945.0,
+        "duration": 1.4
+    },
+    {
+        "text": "There's some interesting points rather than all zeros.",
+        "start": 946.98,
+        "duration": 2.08
+    },
+    {
+        "text": "Yeah.",
+        "start": 949.28,
+        "duration": 0.44
+    },
+    {
+        "text": "Yeah.",
+        "start": 949.72,
+        "duration": 0.44
+    },
+    {
+        "text": "Okay.\nSo in this case, I could render a curve where the, like I said,",
+        "start": 950.16,
+        "duration": 5.412
+    },
+    {
+        "text": "I call everything a mobject for a mathematical object.",
+        "start": 955.572,
+        "duration": 4.348
+    },
+    {
+        "text": "Many of them are vectorized mobjects, which just tells you how ",
+        "start": 960.3,
+        "duration": 2.558
+    },
+    {
+        "text": "it's rendering as opposed to being a surface or like a point cloud.",
+        "start": 962.858,
+        "duration": 2.722
+    },
+    {
+        "text": "And these are things like curves that have some ",
+        "start": 966.08,
+        "duration": 2.099
+    },
+    {
+        "text": "sort of stroke thickness fill and all that.",
+        "start": 968.179,
+        "duration": 1.881
+    },
+    {
+        "text": "So that's interpreting the points and then drawing lines between them essentially.",
+        "start": 970.58,
+        "duration": 3.08
+    },
+    {
+        "text": "Well, so to do that, I'm basically going to say, hey, ",
+        "start": 974.02,
+        "duration": 3.177
+    },
+    {
+        "text": "set your points as corners as if it was a polygon.",
+        "start": 977.197,
+        "duration": 2.943
+    },
+    {
+        "text": "All of those points that were just created.",
+        "start": 981.68,
+        "duration": 2.22
+    },
+    {
+        "text": "And then let's see what that curve looks like.",
+        "start": 984.54,
+        "duration": 2.02
+    },
+    {
+        "text": "If I knew how to spell self.",
+        "start": 988.44,
+        "duration": 1.42
+    },
+    {
+        "text": "So if I do that, we don't see it, but actually it's up there.",
+        "start": 991.04,
+        "duration": 4.22
+    },
+    {
+        "text": "No, because the thing is I was just adding the points, ",
+        "start": 995.66,
+        "duration": 2.345
+    },
+    {
+        "text": "but I wasn't using the coordinate system of these axes in any way.",
+        "start": 998.005,
+        "duration": 2.815
+    },
+    {
+        "text": "And so.",
+        "start": 1001.6,
+        "duration": 0.5
+    },
+    {
+        "text": "Ah, so they're not necessarily going to plot them according to those axes.",
+        "start": 1002.56,
+        "duration": 2.86
+    },
+    {
+        "text": "Right.\nSo what I actually want to do is take the axes and there's a function",
+        "start": 1005.64,
+        "duration": 3.768
+    },
+    {
+        "text": "called like coordinates to points, which is basically going from whatever ",
+        "start": 1009.408,
+        "duration": 3.836
+    },
+    {
+        "text": "the coordinate system of the axes are to the like manum coordinate system.",
+        "start": 1013.244,
+        "duration": 3.836
+    },
+    {
+        "text": "And there's an abbreviation for that because it's used a lot called chords to points.",
+        "start": 1017.26,
+        "duration": 3.26
+    },
+    {
+        "text": "And I'll just pass that in.",
+        "start": 1021.08,
+        "duration": 2.14
+    },
+    {
+        "text": "And I think actually it thinks of it in terms ",
+        "start": 1023.36,
+        "duration": 2.469
+    },
+    {
+        "text": "of you passing a list of X list of Y list of Z's.",
+        "start": 1025.829,
+        "duration": 2.631
+    },
+    {
+        "text": "So I'm going to do a little transposing and don't worry about it too much.",
+        "start": 1028.46,
+        "duration": 4.02
+    },
+    {
+        "text": "But this should be in the actual coordinate system.",
+        "start": 1033.079,
+        "duration": 2.401
+    },
+    {
+        "text": "Can I check what that star is doing in that penultimate line on the code?",
+        "start": 1035.96,
+        "duration": 3.52
+    },
+    {
+        "text": "OK, so yeah, if you have let's say I have a tuple, this like one, two, three.",
+        "start": 1040.319,
+        "duration": 6.341
+    },
+    {
+        "text": "Right.",
+        "start": 1046.66,
+        "duration": 0.5
+    },
+    {
+        "text": "And then if I have I define a function that takes in like X, ",
+        "start": 1047.339,
+        "duration": 5.155
+    },
+    {
+        "text": "Y, Z and it returns let's say like X plus Y plus two times.",
+        "start": 1052.494,
+        "duration": 4.986
+    },
+    {
+        "text": "We'll do a non trivial.",
+        "start": 1057.62,
+        "duration": 0.76
+    },
+    {
+        "text": "If I call function on that tuple, it'll be like type error.",
+        "start": 1058.56,
+        "duration": 3.1
+    },
+    {
+        "text": "Ah, because it wanted them separated.",
+        "start": 1061.66,
+        "duration": 1.36
+    },
+    {
+        "text": "That's a different kind of error.",
+        "start": 1064.5,
+        "duration": 1.12
+    },
+    {
+        "text": "It wants them separated.",
+        "start": 1065.84,
+        "duration": 0.8
+    },
+    {
+        "text": "So I could do it like oh, pass in like the zeroth element.",
+        "start": 1067.18,
+        "duration": 2.5
+    },
+    {
+        "text": "But Python has a little little syntactical snazziness where if ",
+        "start": 1070.7,
+        "duration": 3.77
+    },
+    {
+        "text": "you put an asterisk in front of an iterable thing, it'll unpack it.",
+        "start": 1074.47,
+        "duration": 4.01
+    },
+    {
+        "text": "OK, this is I mean, this is the most useful thing I've learned all day.",
+        "start": 1078.54,
+        "duration": 2.42
+    },
+    {
+        "text": "I mean, manum is pretty good.",
+        "start": 1082.34,
+        "duration": 1.22
+    },
+    {
+        "text": "But thank you.",
+        "start": 1083.72,
+        "duration": 1.3
+    },
+    {
+        "text": "And joking aside, that's helpful.",
+        "start": 1085.14,
+        "duration": 1.64
+    },
+    {
+        "text": "If you don't know what that was, it's always mysterious ",
+        "start": 1086.96,
+        "duration": 1.73
+    },
+    {
+        "text": "to see things you don't understand what they're doing.",
+        "start": 1088.69,
+        "duration": 1.67
+    },
+    {
+        "text": "So in this case, points is an array where I like ",
+        "start": 1090.36,
+        "duration": 2.674
+    },
+    {
+        "text": "to think of each each row is one of the points.",
+        "start": 1093.034,
+        "duration": 2.566
+    },
+    {
+        "text": "But the syntax for this coordinates to points is going ",
+        "start": 1097.22,
+        "duration": 2.393
+    },
+    {
+        "text": "to take in lists of the X coordinates, Y coordinates.",
+        "start": 1099.613,
+        "duration": 2.307
+    },
+    {
+        "text": "It's maybe a dumb design as I'm thinking about it right now.",
+        "start": 1102.44,
+        "duration": 2.0
+    },
+    {
+        "text": "Like maybe the way it should play.",
+        "start": 1104.64,
+        "duration": 1.24
+    },
+    {
+        "text": "It makes sense.",
+        "start": 1106.32,
+        "duration": 0.68
+    },
+    {
+        "text": "The reason it makes sense is usually when you're calling this, you have axi.c2p.",
+        "start": 1107.28,
+        "duration": 3.9
+    },
+    {
+        "text": "You're just passing an actual individual ones like, hey, ",
+        "start": 1111.54,
+        "duration": 2.222
+    },
+    {
+        "text": "I want to know what point does this correspond to in the manum coordinate system.",
+        "start": 1113.762,
+        "duration": 3.158
+    },
+    {
+        "text": "And it's like, here's that point.",
+        "start": 1117.06,
+        "duration": 0.9
+    },
+    {
+        "text": "So if I wanted to add a dot there, you know, this we could see where it shows up for.",
+        "start": 1117.96,
+        "duration": 5.42
+    },
+    {
+        "text": "Why can't I type cell?",
+        "start": 1126.02,
+        "duration": 1.22
+    },
+    {
+        "text": "Because you're on camera.",
+        "start": 1127.64,
+        "duration": 0.58
+    },
+    {
+        "text": "Because I'm on camera.",
+        "start": 1128.58,
+        "duration": 0.66
+    },
+    {
+        "text": "Yeah.",
+        "start": 1129.48,
+        "duration": 0.5
+    },
+    {
+        "text": "And so it's putting it at that.",
+        "start": 1130.12,
+        "duration": 1.4
+    },
+    {
+        "text": "And you say it's a dumb system.",
+        "start": 1131.68,
+        "duration": 0.82
+    },
+    {
+        "text": "If it works, it's not a dumb system.",
+        "start": 1132.5,
+        "duration": 1.54
+    },
+    {
+        "text": "Yeah.",
+        "start": 1134.24,
+        "duration": 0.5
+    },
+    {
+        "text": "It can always be improved.",
+        "start": 1135.08,
+        "duration": 1.32
+    },
+    {
+        "text": "Right.\nBut it's working as a whole lot better than many systems we try and make.",
+        "start": 1136.48,
+        "duration": 2.56
+    },
+    {
+        "text": "Great.",
+        "start": 1139.36,
+        "duration": 0.36
+    },
+    {
+        "text": "So let's have some fun with this.",
+        "start": 1139.72,
+        "duration": 1.24
+    },
+    {
+        "text": "We could see how it evolves rather than just adding the curve.",
+        "start": 1141.32,
+        "duration": 2.44
+    },
+    {
+        "text": "We could show the creation of the curve, which is basically showing the system evolve.",
+        "start": 1143.76,
+        "duration": 4.98
+    },
+    {
+        "text": "So that's going to take all those points, but just kind of run through them slowly.",
+        "start": 1149.22,
+        "duration": 3.1
+    },
+    {
+        "text": "Yeah.\nOr make them appear slowly.",
+        "start": 1153.32,
+        "duration": 1.06
+    },
+    {
+        "text": "Well, here's what it'll do.",
+        "start": 1154.7,
+        "duration": 0.8
+    },
+    {
+        "text": "Right.",
+        "start": 1155.64,
+        "duration": 0.4
+    },
+    {
+        "text": "It'll draw it.",
+        "start": 1156.04,
+        "duration": 0.66
+    },
+    {
+        "text": "But that was very fast.",
+        "start": 1156.92,
+        "duration": 0.94
+    },
+    {
+        "text": "So maybe I want the runtime to match the actual time of the dynamic system.",
+        "start": 1157.98,
+        "duration": 5.02
+    },
+    {
+        "text": "So it should draw it over the course of 10 seconds.",
+        "start": 1163.28,
+        "duration": 2.18
+    },
+    {
+        "text": "But here it's trying to be too smart.",
+        "start": 1165.9,
+        "duration": 1.7
+    },
+    {
+        "text": "When it draws things by default, it does that smoothing function.",
+        "start": 1167.78,
+        "duration": 2.7
+    },
+    {
+        "text": "I see.",
+        "start": 1170.8,
+        "duration": 0.38
+    },
+    {
+        "text": "And that's actually changing the behavior.",
+        "start": 1171.18,
+        "duration": 1.92
+    },
+    {
+        "text": "So actually we want the rate function in this case.",
+        "start": 1173.1,
+        "duration": 2.94
+    },
+    {
+        "text": "Almost always it's nice for it to be smooth.",
+        "start": 1176.82,
+        "duration": 1.68
+    },
+    {
+        "text": "This is one of those cases where the math that it's representing is relevant.",
+        "start": 1178.72,
+        "duration": 3.32
+    },
+    {
+        "text": "It needs to be kept rather than masked.",
+        "start": 1182.26,
+        "duration": 1.4
+    },
+    {
+        "text": "So instead, linearly, this is the actual evolution of it.",
+        "start": 1183.84,
+        "duration": 2.6
+    },
+    {
+        "text": "Nice.",
+        "start": 1186.5,
+        "duration": 0.5
+    },
+    {
+        "text": "And so we can style it too.",
+        "start": 1188.16,
+        "duration": 1.7
+    },
+    {
+        "text": "Maybe we want to set the stroke to make it look blue, ",
+        "start": 1190.88,
+        "duration": 3.339
+    },
+    {
+        "text": "make it look a little bit thinner, something like that.",
+        "start": 1194.219,
+        "duration": 3.401
+    },
+    {
+        "text": "We could actually give it a range if we wanted to have a kind of gradient between things.",
+        "start": 1198.4,
+        "duration": 6.02
+    },
+    {
+        "text": "Which I don't know if that looks nice or not.",
+        "start": 1205.94,
+        "duration": 2.36
+    },
+    {
+        "text": "But you can imagine.",
+        "start": 1208.52,
+        "duration": 0.6
+    },
+    {
+        "text": "That's starting blue and ending up red.",
+        "start": 1209.24,
+        "duration": 1.48
+    },
+    {
+        "text": "Yeah.",
+        "start": 1211.06,
+        "duration": 0.48
+    },
+    {
+        "text": "Starting at zero stroke with ending up at 10 or starting at 10 ending up at zero.",
+        "start": 1211.54,
+        "duration": 3.58
+    },
+    {
+        "text": "Knock yourself out.",
+        "start": 1215.4,
+        "duration": 0.5
+    },
+    {
+        "text": "Yeah, those look pretty ugly to me.",
+        "start": 1216.14,
+        "duration": 1.22
+    },
+    {
+        "text": "And also I think we'll want to use colors for a different reason now.",
+        "start": 1218.72,
+        "duration": 3.72
+    },
+    {
+        "text": "Because the reason the system is interesting is because it's chaotic.",
+        "start": 1222.5,
+        "duration": 3.32
+    },
+    {
+        "text": "If you have initial conditions that are really close to each other.",
+        "start": 1226.34,
+        "duration": 2.62
+    },
+    {
+        "text": "But not quite the same.",
+        "start": 1229.2,
+        "duration": 0.6
+    },
+    {
+        "text": "But not quite the same.",
+        "start": 1229.82,
+        "duration": 0.76
+    },
+    {
+        "text": "They start evolving the same for a while, but then they stop.",
+        "start": 1230.64,
+        "duration": 2.5
+    },
+    {
+        "text": "So I think here's the way that I want to illustrate this.",
+        "start": 1234.18,
+        "duration": 2.66
+    },
+    {
+        "text": "We're going to create multiple curves.",
+        "start": 1237.26,
+        "duration": 1.22
+    },
+    {
+        "text": "I'm going to have curves which I'm going to create a group.",
+        "start": 1239.3,
+        "duration": 4.02
+    },
+    {
+        "text": "And I call it a vgroup just to say, hey, these are going to be vectorized objects.",
+        "start": 1244.12,
+        "duration": 2.84
+    },
+    {
+        "text": "That makes the rendering a little faster if it knows that.",
+        "start": 1247.16,
+        "duration": 2.28
+    },
+    {
+        "text": "If it doesn't know that, it'll render them, but ",
+        "start": 1249.52,
+        "duration": 2.048
+    },
+    {
+        "text": "it doesn't use a certain trick to make it faster.",
+        "start": 1251.568,
+        "duration": 2.092
+    },
+    {
+        "text": "Then I'm going to go through a bunch of states, which I need to define now.",
+        "start": 1254.78,
+        "duration": 4.04
+    },
+    {
+        "text": "So states I'm going to maybe make into...",
+        "start": 1259.54,
+        "duration": 2.54
+    },
+    {
+        "text": "And these are your initial conditions.",
+        "start": 1262.08,
+        "duration": 0.98
+    },
+    {
+        "text": "These are going to be the initial conditions.",
+        "start": 1263.22,
+        "duration": 1.26
+    },
+    {
+        "text": "So let's just change that z coordinate by a little bit.",
+        "start": 1264.66,
+        "duration": 4.08
+    },
+    {
+        "text": "So we'll take like an epsilon to be like 1, 1000.",
+        "start": 1269.28,
+        "duration": 2.58
+    },
+    {
+        "text": "Maybe I'll make it more explicit for n in range.",
+        "start": 1272.34,
+        "duration": 3.2
+    },
+    {
+        "text": "How many initial conditions do you want?",
+        "start": 1276.04,
+        "duration": 1.4
+    },
+    {
+        "text": "Should we start with just two?",
+        "start": 1279.58,
+        "duration": 1.16
+    },
+    {
+        "text": "Sure, sure.",
+        "start": 1281.14,
+        "duration": 0.46
+    },
+    {
+        "text": "I mean, I know you're doing a whole list for it, ",
+        "start": 1281.6,
+        "duration": 2.107
+    },
+    {
+        "text": "and that's slightly redundant, but we can crank that up to lots.",
+        "start": 1283.707,
+        "duration": 2.753
+    },
+    {
+        "text": "Yeah, this will be good.",
+        "start": 1286.78,
+        "duration": 0.74
+    },
+    {
+        "text": "So that'll be our state.",
+        "start": 1288.04,
+        "duration": 1.6
+    },
+    {
+        "text": "So these are not going to be dependent on the state 0, ",
+        "start": 1290.08,
+        "duration": 3.118
+    },
+    {
+        "text": "but whatever state is part of our for loop here.",
+        "start": 1293.198,
+        "duration": 2.722
+    },
+    {
+        "text": "I'm going to take everything we just did and basically say...",
+        "start": 1297.28,
+        "duration": 3.58
+    },
+    {
+        "text": "Put it in the loop.",
+        "start": 1300.86,
+        "duration": 0.5
+    },
+    {
+        "text": "Okay, points were just created.",
+        "start": 1302.22,
+        "duration": 2.0
+    },
+    {
+        "text": "Great.",
+        "start": 1304.48,
+        "duration": 0.5
+    },
+    {
+        "text": "Okay, it says blue.",
+        "start": 1306.12,
+        "duration": 0.94
+    },
+    {
+        "text": "I don't want them all to be blue.",
+        "start": 1307.74,
+        "duration": 1.14
+    },
+    {
+        "text": "So let me make some colors, which at the moment, because there's just two right now, ",
+        "start": 1308.88,
+        "duration": 4.205
+    },
+    {
+        "text": "we're going to have to change this in a moment, but I'm going to make it blue and red.",
+        "start": 1313.085,
+        "duration": 4.255
+    },
+    {
+        "text": "But like...",
+        "start": 1318.26,
+        "duration": 0.46
+    },
+    {
+        "text": "You eventually will need some numerical way of changing it.",
+        "start": 1318.72,
+        "duration": 2.16
+    },
+    {
+        "text": "Generalized, yeah.",
+        "start": 1321.14,
+        "duration": 0.66
+    },
+    {
+        "text": "But this will make it kind of easy to see now.",
+        "start": 1322.12,
+        "duration": 1.3
+    },
+    {
+        "text": "Good commenting, Graham.",
+        "start": 1323.42,
+        "duration": 0.56
+    },
+    {
+        "text": "Oh, it's a rarity when I'm animating.",
+        "start": 1325.26,
+        "duration": 2.4
+    },
+    {
+        "text": "Someone's watching now, eh?",
+        "start": 1327.9,
+        "duration": 1.18
+    },
+    {
+        "text": "Yeah.",
+        "start": 1329.62,
+        "duration": 0.5
+    },
+    {
+        "text": "I'm not the worst in the world, but there's a lot of room for improvement.",
+        "start": 1330.8,
+        "duration": 4.52
+    },
+    {
+        "text": "So I'm just going to include that in the loop.",
+        "start": 1335.76,
+        "duration": 2.9
+    },
+    {
+        "text": "So I'm zipping together the states and the colors.",
+        "start": 1338.88,
+        "duration": 2.2
+    },
+    {
+        "text": "And so the curves are going to be colored differently.",
+        "start": 1341.6,
+        "duration": 1.56
+    },
+    {
+        "text": "And now this showing creation, I want to actually happen...",
+        "start": 1343.92,
+        "duration": 4.08
+    },
+    {
+        "text": "Oh, here we'll use our star again.",
+        "start": 1349.52,
+        "duration": 2.6
+    },
+    {
+        "text": "I love list constructors and all that.",
+        "start": 1352.32,
+        "duration": 2.54
+    },
+    {
+        "text": "So here's a little fanciness for what we're doing.",
+        "start": 1356.74,
+        "duration": 2.48
+    },
+    {
+        "text": "So we've got this group of curves that actually...",
+        "start": 1359.44,
+        "duration": 4.24
+    },
+    {
+        "text": "In this for loop, I'm going to need to add each one.",
+        "start": 1363.68,
+        "duration": 1.98
+    },
+    {
+        "text": "So curves.add curve.",
+        "start": 1366.12,
+        "duration": 1.7
+    },
+    {
+        "text": "So creates an empty group.",
+        "start": 1369.12,
+        "duration": 1.3
+    },
+    {
+        "text": "This list adds new threads to it.",
+        "start": 1371.12,
+        "duration": 1.88
+    },
+    {
+        "text": "In this case, there's just two.",
+        "start": 1373.12,
+        "duration": 0.92
+    },
+    {
+        "text": "In a moment, we can make it 10 if we want.",
+        "start": 1374.16,
+        "duration": 1.8
+    },
+    {
+        "text": "And then this is going to create basically a list.",
+        "start": 1376.92,
+        "duration": 3.46
+    },
+    {
+        "text": "It's a generator, but it'll create a list of animations.",
+        "start": 1380.5,
+        "duration": 3.36
+    },
+    {
+        "text": "Those animations are this show creation thing.",
+        "start": 1384.64,
+        "duration": 2.08
+    },
+    {
+        "text": "And then the stars, so that as you pass it into the play argument, ",
+        "start": 1387.62,
+        "duration": 3.252
+    },
+    {
+        "text": "it's passing them as if they were multiple different animations.",
+        "start": 1390.872,
+        "duration": 3.108
+    },
+    {
+        "text": "So there's a little bit baked into that.",
+        "start": 1394.78,
+        "duration": 2.14
+    },
+    {
+        "text": "But essentially what we want is that we're going ",
+        "start": 1397.48,
+        "duration": 2.748
+    },
+    {
+        "text": "to have an evolution of two curves at once.",
+        "start": 1400.228,
+        "duration": 2.412
+    },
+    {
+        "text": "And right now you only see the red one because the red one's being rendered on top of it.",
+        "start": 1403.16,
+        "duration": 3.6
+    },
+    {
+        "text": "But now they've diverged.",
+        "start": 1407.18,
+        "duration": 0.88
+    },
+    {
+        "text": "Now they've diverged.",
+        "start": 1408.38,
+        "duration": 0.82
+    },
+    {
+        "text": "I want to see that divergence a little bit more clearly.",
+        "start": 1409.84,
+        "duration": 2.0
+    },
+    {
+        "text": "We need to run it for longer.",
+        "start": 1412.1,
+        "duration": 0.82
+    },
+    {
+        "text": "Okay, so first let's run it for longer.",
+        "start": 1413.84,
+        "duration": 1.56
+    },
+    {
+        "text": "So let's actually name this.",
+        "start": 1415.88,
+        "duration": 1.6
+    },
+    {
+        "text": "Let's call it, I don't know, evolution time.",
+        "start": 1418.1,
+        "duration": 2.56
+    },
+    {
+        "text": "We could just call it time.",
+        "start": 1421.08,
+        "duration": 1.02
+    },
+    {
+        "text": "And that will be an overused name again, isn't it?",
+        "start": 1423.24,
+        "duration": 2.42
+    },
+    {
+        "text": "Let's make that 30.",
+        "start": 1426.16,
+        "duration": 0.9
+    },
+    {
+        "text": "The other thing I want to do is have little dots indicating the end point.",
+        "start": 1427.22,
+        "duration": 3.4
+    },
+    {
+        "text": "Oh yes, so you can eyeball it easily.",
+        "start": 1431.16,
+        "duration": 1.44
+    },
+    {
+        "text": "Yeah, so the way I'm going to do that is I'm going to make a ",
+        "start": 1433.18,
+        "duration": 6.05
+    },
+    {
+        "text": "group that'll have a thing called a glow dot color for colors.",
+        "start": 1439.23,
+        "duration": 6.15
+    },
+    {
+        "text": "And again, glow dot is a baked in function that you've got because you want ",
+        "start": 1446.08,
+        "duration": 3.05
+    },
+    {
+        "text": "often to have a point that moves and has a nice bit of coloring into it.",
+        "start": 1449.13,
+        "duration": 2.89
+    },
+    {
+        "text": "And so this one's not a vectorized thing.",
+        "start": 1452.16,
+        "duration": 2.06
+    },
+    {
+        "text": "So rather than it's just like its data is described by a point ",
+        "start": 1454.42,
+        "duration": 2.95
+    },
+    {
+        "text": "in space and like how much I want it to like ambiently glow.",
+        "start": 1457.37,
+        "duration": 2.81
+    },
+    {
+        "text": "And it's got a little color.",
+        "start": 1460.64,
+        "duration": 0.82
+    },
+    {
+        "text": "And I'm going to create an updater function for it where I'm going to update the dots.",
+        "start": 1461.82,
+        "duration": 5.84
+    },
+    {
+        "text": "This is going to be a function that takes those dots in.",
+        "start": 1467.94,
+        "duration": 2.3
+    },
+    {
+        "text": "And I'm just going to write this function kind of in place.",
+        "start": 1470.62,
+        "duration": 2.16
+    },
+    {
+        "text": "I often like to do that where it's like everything relevant ",
+        "start": 1473.86,
+        "duration": 2.517
+    },
+    {
+        "text": "to this animation we're doing just sits in that commenting bit.",
+        "start": 1476.377,
+        "duration": 2.643
+    },
+    {
+        "text": "I'm going to say for dot curve and zipping together the dots with the curves.",
+        "start": 1480.5,
+        "duration": 6.44
+    },
+    {
+        "text": "I want each dot to move to the end point of the curve.",
+        "start": 1487.28,
+        "duration": 2.56
+    },
+    {
+        "text": "So move to curve dot get end.",
+        "start": 1490.5,
+        "duration": 1.98
+    },
+    {
+        "text": "So curve dot get end will tell you its last point.",
+        "start": 1493.52,
+        "duration": 1.82
+    },
+    {
+        "text": "The dots going to move to that point.",
+        "start": 1496.18,
+        "duration": 1.28
+    },
+    {
+        "text": "And this is something I want to happen on every iteration.",
+        "start": 1498.12,
+        "duration": 2.3
+    },
+    {
+        "text": "So I'm going to say add as an updater this.",
+        "start": 1500.62,
+        "duration": 2.74
+    },
+    {
+        "text": "This is a thing I want to be called on these dots at every iteration from here on forward.",
+        "start": 1504.42,
+        "duration": 6.48
+    },
+    {
+        "text": "Python question?",
+        "start": 1511.44,
+        "duration": 0.5
+    },
+    {
+        "text": "Yeah, yeah, yeah.",
+        "start": 1512.18,
+        "duration": 0.5
+    },
+    {
+        "text": "The zip command is sort of stacking two lists sort of in ",
+        "start": 1512.76,
+        "duration": 2.408
+    },
+    {
+        "text": "parallel so that you can iterate through them in parallel.",
+        "start": 1515.168,
+        "duration": 2.452
+    },
+    {
+        "text": "Yeah, yeah.",
+        "start": 1517.74,
+        "duration": 0.54
+    },
+    {
+        "text": "So let's say we have list one looks like one, two, three.",
+        "start": 1518.36,
+        "duration": 3.08
+    },
+    {
+        "text": "List two looks like, you know, a, b, c.",
+        "start": 1522.1,
+        "duration": 6.24
+    },
+    {
+        "text": "Yeah.",
+        "start": 1528.6,
+        "duration": 0.48
+    },
+    {
+        "text": "Oh, that's going to kill me.",
+        "start": 1529.08,
+        "duration": 0.8
+    },
+    {
+        "text": "You couldn't leave it.",
+        "start": 1530.14,
+        "duration": 1.12
+    },
+    {
+        "text": "So if you say for number letter in zip list one list two print number and letter.",
+        "start": 1533.38,
+        "duration": 8.04
+    },
+    {
+        "text": "Then it pairs them up.",
+        "start": 1542.6,
+        "duration": 0.9
+    },
+    {
+        "text": "Yeah, it pairs them up.",
+        "start": 1543.68,
+        "duration": 0.88
+    },
+    {
+        "text": "So you can keep lists which are referring to similar ",
+        "start": 1544.7,
+        "duration": 1.817
+    },
+    {
+        "text": "things sort of implicitly because of their position.",
+        "start": 1546.517,
+        "duration": 1.783
+    },
+    {
+        "text": "Yeah.",
+        "start": 1548.66,
+        "duration": 0.4
+    },
+    {
+        "text": "I mean, that's what I thought, but it's nice to see that.",
+        "start": 1549.06,
+        "duration": 2.48
+    },
+    {
+        "text": "And so there's a it's unsettling in my mind right now because ",
+        "start": 1551.92,
+        "duration": 2.548
+    },
+    {
+        "text": "we're zipping things together that might not have the same size.",
+        "start": 1554.468,
+        "duration": 2.632
+    },
+    {
+        "text": "So we're going to want to do something that makes sure that colors.",
+        "start": 1557.16,
+        "duration": 1.98
+    },
+    {
+        "text": "In fact, let's just do it now.",
+        "start": 1559.54,
+        "duration": 1.1
+    },
+    {
+        "text": "Would it cope if you did or would it spit out an error?",
+        "start": 1560.64,
+        "duration": 2.46
+    },
+    {
+        "text": "Well, so what it'll do, here's what will happen.",
+        "start": 1563.64,
+        "duration": 2.1
+    },
+    {
+        "text": "Suppose that list one was actually range much longer.",
+        "start": 1565.98,
+        "duration": 5.9
+    },
+    {
+        "text": "So list one looks like this.",
+        "start": 1572.7,
+        "duration": 1.08
+    },
+    {
+        "text": "If we run that little bit we had above it just it goes until one of the lists runs out.",
+        "start": 1574.0,
+        "duration": 4.78
+    },
+    {
+        "text": "So we would just it would cope, but you would be missing many of them.",
+        "start": 1578.94,
+        "duration": 3.0
+    },
+    {
+        "text": "And actually quite hard to find that bug if you hadn't spotted it.",
+        "start": 1582.14,
+        "duration": 2.04
+    },
+    {
+        "text": "Yeah, no, it is.",
+        "start": 1584.22,
+        "duration": 0.42
+    },
+    {
+        "text": "It is.\nIt's why it's unsettling unless you're like sort of fluent with Python.",
+        "start": 1584.64,
+        "duration": 3.64
+    },
+    {
+        "text": "So I have a thing called color gradient that will basically go between ",
+        "start": 1588.72,
+        "duration": 4.667
+    },
+    {
+        "text": "two colors and you you tell it how many steps to how many steps exactly.",
+        "start": 1593.387,
+        "duration": 4.733
+    },
+    {
+        "text": "And so the number of steps should be the length of the states in this case.",
+        "start": 1598.26,
+        "duration": 3.6
+    },
+    {
+        "text": "So we should just feel like, OK, no matter what, ",
+        "start": 1602.02,
+        "duration": 1.931
+    },
+    {
+        "text": "the number of colors matches the length of the states.",
+        "start": 1603.951,
+        "duration": 2.129
+    },
+    {
+        "text": "And now I feel more comfortable.",
+        "start": 1606.22,
+        "duration": 2.14
+    },
+    {
+        "text": "I wonder how much it is insightful to watch someone ",
+        "start": 1609.82,
+        "duration": 2.894
+    },
+    {
+        "text": "doing a workflow and to note when discomfort kicks in.",
+        "start": 1612.714,
+        "duration": 3.006
+    },
+    {
+        "text": "That's a really insightful thing to realize what matters from bitter experience, right?",
+        "start": 1615.72,
+        "duration": 3.56
+    },
+    {
+        "text": "Isn't it?",
+        "start": 1619.46,
+        "duration": 0.44
+    },
+    {
+        "text": "This isn't that bitter.",
+        "start": 1619.9,
+        "duration": 1.02
+    },
+    {
+        "text": "It's maybe just like aesthetically.",
+        "start": 1621.08,
+        "duration": 1.44
+    },
+    {
+        "text": "Experience tells you when to worry about something when not to worry about it.",
+        "start": 1623.36,
+        "duration": 2.34
+    },
+    {
+        "text": "And it's just nice to see that that's how you know ",
+        "start": 1625.72,
+        "duration": 2.213
+    },
+    {
+        "text": "I should deal with that before I forget about it.",
+        "start": 1627.933,
+        "duration": 2.127
+    },
+    {
+        "text": "So how do we want to do this?",
+        "start": 1630.58,
+        "duration": 1.82
+    },
+    {
+        "text": "Oh, yeah.",
+        "start": 1632.64,
+        "duration": 0.4
+    },
+    {
+        "text": "So we've got our dots.",
+        "start": 1633.04,
+        "duration": 0.8
+    },
+    {
+        "text": "We've got the updater.",
+        "start": 1633.96,
+        "duration": 0.52
+    },
+    {
+        "text": "That means if we add the dots to the scene, then as these ",
+        "start": 1634.66,
+        "duration": 3.187
+    },
+    {
+        "text": "evolve and their endpoint changes based on what's been drawn.",
+        "start": 1637.847,
+        "duration": 3.353
+    },
+    {
+        "text": "It should track it around.",
+        "start": 1641.2,
+        "duration": 0.5
+    },
+    {
+        "text": "It should.",
+        "start": 1642.02,
+        "duration": 0.5
+    },
+    {
+        "text": "I'm going to put in a small line that anyone who knows Python is going to vomit at.",
+        "start": 1644.32,
+        "duration": 5.64
+    },
+    {
+        "text": "And if you want, I can explain the line and why I ",
+        "start": 1651.56,
+        "duration": 2.366
+    },
+    {
+        "text": "would never do it in any sort of like serious code.",
+        "start": 1653.926,
+        "duration": 2.414
+    },
+    {
+        "text": "But it is an annoying necessity.",
+        "start": 1656.34,
+        "duration": 2.88
+    },
+    {
+        "text": "Let's see it first and then I'll ask you.",
+        "start": 1659.56,
+        "duration": 1.72
+    },
+    {
+        "text": "We can edit if we need to.",
+        "start": 1661.38,
+        "duration": 1.06
+    },
+    {
+        "text": "Must be a string or real number.",
+        "start": 1662.68,
+        "duration": 1.06
+    },
+    {
+        "text": "What line is this coming up for?",
+        "start": 1665.48,
+        "duration": 1.64
+    },
+    {
+        "text": "So when I set the points.",
+        "start": 1668.3,
+        "duration": 1.12
+    },
+    {
+        "text": "Color and colors.",
+        "start": 1671.56,
+        "duration": 1.08
+    },
+    {
+        "text": "The color gradient is producing.",
+        "start": 1674.36,
+        "duration": 1.38
+    },
+    {
+        "text": "Oh, so the initial argument for glow dot is the center like where it is in space.",
+        "start": 1677.62,
+        "duration": 6.78
+    },
+    {
+        "text": "So it was telling it you needed that parameter to be there could be ",
+        "start": 1684.68,
+        "duration": 3.367
+    },
+    {
+        "text": "a better certainly a better type error message that's that rather than ",
+        "start": 1688.047,
+        "duration": 3.516
+    },
+    {
+        "text": "this is kicking off to this is where people are like who know Python.",
+        "start": 1691.563,
+        "duration": 3.417
+    },
+    {
+        "text": "The constructor of glow dot should definitely have had better error messaging.",
+        "start": 1695.26,
+        "duration": 3.9
+    },
+    {
+        "text": "I'm not going to hold it against you.",
+        "start": 1699.16,
+        "duration": 1.38
+    },
+    {
+        "text": "Yeah, there's the dot.",
+        "start": 1700.9,
+        "duration": 1.2
+    },
+    {
+        "text": "And again, red on top of blue at first.",
+        "start": 1702.86,
+        "duration": 1.22
+    },
+    {
+        "text": "This is OK.",
+        "start": 1704.48,
+        "duration": 2.52
+    },
+    {
+        "text": "The reason they're running so fast is because the ",
+        "start": 1707.06,
+        "duration": 2.233
+    },
+    {
+        "text": "runtime of this is now different from the evolution time.",
+        "start": 1709.293,
+        "duration": 2.547
+    },
+    {
+        "text": "So we should maybe have the 30 step the 30 length solution is now happening in 10 seconds.",
+        "start": 1712.62,
+        "duration": 4.88
+    },
+    {
+        "text": "Yeah.",
+        "start": 1717.82,
+        "duration": 0.48
+    },
+    {
+        "text": "So let's let's run that again.",
+        "start": 1718.3,
+        "duration": 1.56
+    },
+    {
+        "text": "But where we.",
+        "start": 1720.06,
+        "duration": 0.5
+    },
+    {
+        "text": "So this is in the time it's actually supposed to be.",
+        "start": 1721.6,
+        "duration": 2.78
+    },
+    {
+        "text": "So they start off together.",
+        "start": 1724.46,
+        "duration": 0.96
+    },
+    {
+        "text": "And here's the classic.",
+        "start": 1725.58,
+        "duration": 0.84
+    },
+    {
+        "text": "They'd be like they're so close together to start with.",
+        "start": 1726.42,
+        "duration": 2.6
+    },
+    {
+        "text": "But now they're separated.",
+        "start": 1729.12,
+        "duration": 0.78
+    },
+    {
+        "text": "And then after a little bit, it's as if they're doing completely different things.",
+        "start": 1730.12,
+        "duration": 2.92
+    },
+    {
+        "text": "I want to jump in here real quick to explain that global update locals line, ",
+        "start": 1733.5,
+        "duration": 4.173
+    },
+    {
+        "text": "because it is such a ridiculously cursed line of code.",
+        "start": 1737.673,
+        "duration": 2.927
+    },
+    {
+        "text": "But it has to do with a bug in the sort of IPython embed being used.",
+        "start": 1740.76,
+        "duration": 4.0
+    },
+    {
+        "text": "So let me just show you what's going on here.",
+        "start": 1745.14,
+        "duration": 1.6
+    },
+    {
+        "text": "Taking a super simple example, let's say I have this ",
+        "start": 1747.0,
+        "duration": 3.044
+    },
+    {
+        "text": "snippet of Python where I define some variable X.",
+        "start": 1750.044,
+        "duration": 2.816
+    },
+    {
+        "text": "Let me make this bigger.",
+        "start": 1753.18,
+        "duration": 1.0
+    },
+    {
+        "text": "And then I define this function of Y that's going to use that X.",
+        "start": 1754.72,
+        "duration": 4.22
+    },
+    {
+        "text": "So it's defined outside of the function, but it's making use of that X.",
+        "start": 1758.94,
+        "duration": 3.3
+    },
+    {
+        "text": "And then we're going to test, you know, what is like F of 10.",
+        "start": 1762.72,
+        "duration": 2.02
+    },
+    {
+        "text": "So you expect it to return 13.",
+        "start": 1764.88,
+        "duration": 1.7
+    },
+    {
+        "text": "And it'll do this if I run this as just a Python script.",
+        "start": 1766.96,
+        "duration": 3.8
+    },
+    {
+        "text": "I run it from the terminal Python of that thing.",
+        "start": 1770.9,
+        "duration": 2.48
+    },
+    {
+        "text": "It prints out for us F of 10 is equal to 13.",
+        "start": 1773.52,
+        "duration": 2.7
+    },
+    {
+        "text": "All is well and good.",
+        "start": 1776.66,
+        "duration": 0.92
+    },
+    {
+        "text": "Now inside that sort of IPython embed that's being used for Manim.",
+        "start": 1778.12,
+        "duration": 4.22
+    },
+    {
+        "text": "If I take exactly the same code, exactly the same code, ",
+        "start": 1782.34,
+        "duration": 3.606
+    },
+    {
+        "text": "it behaves differently where it says name error, name X is not defined.",
+        "start": 1785.946,
+        "duration": 4.574
+    },
+    {
+        "text": "Because I think what's happening is that when inside an IPython cell like this, ",
+        "start": 1791.12,
+        "duration": 4.664
+    },
+    {
+        "text": "it defines a new function.",
+        "start": 1795.784,
+        "duration": 1.516
+    },
+    {
+        "text": "It doesn't necessarily share the same scope that it would in a normal Python environment.",
+        "start": 1797.78,
+        "duration": 4.74
+    },
+    {
+        "text": "The catch all hack for how to get around this is to say, ",
+        "start": 1803.32,
+        "duration": 3.695
+    },
+    {
+        "text": "hey, I want X to be a global variable.",
+        "start": 1807.015,
+        "duration": 2.465
+    },
+    {
+        "text": "In fact, to just have a universal catch all, I'm going to take the whole dictionary ",
+        "start": 1810.13,
+        "duration": 5.013
+    },
+    {
+        "text": "of global variables, which Python just gives you access to for some reason.",
+        "start": 1815.143,
+        "duration": 4.477
+    },
+    {
+        "text": "And I'm going to say, hey, look at the dictionary of all local variables.",
+        "start": 1819.64,
+        "duration": 3.58
+    },
+    {
+        "text": "That's going to include that X.",
+        "start": 1823.22,
+        "duration": 1.64
+    },
+    {
+        "text": "I just want everything that's local to become global, ",
+        "start": 1825.0,
+        "duration": 2.806
+    },
+    {
+        "text": "which is obviously a horrifying thing to do if this was like code for a real ",
+        "start": 1827.806,
+        "duration": 4.002
+    },
+    {
+        "text": "library or something.",
+        "start": 1831.808,
+        "duration": 1.092
+    },
+    {
+        "text": "But because we're just scrappily running it in this little interactive ",
+        "start": 1832.98,
+        "duration": 4.25
+    },
+    {
+        "text": "session purely for the purpose of scene development, it's not as dangerous.",
+        "start": 1837.23,
+        "duration": 4.49
+    },
+    {
+        "text": "But if you were wondering or if you were vomiting at the screen, ",
+        "start": 1842.46,
+        "duration": 3.342
+    },
+    {
+        "text": "that's basically what's going on.",
+        "start": 1845.802,
+        "duration": 1.698
+    },
+    {
+        "text": "It's that with this kind of interactive mode.",
+        "start": 1847.56,
+        "duration": 1.84
+    },
+    {
+        "text": "Interestingly, it's not the case that that'll be a ",
+        "start": 1849.88,
+        "duration": 2.863
+    },
+    {
+        "text": "problem in just IPython if you run that from the terminal.",
+        "start": 1852.743,
+        "duration": 3.257
+    },
+    {
+        "text": "Like if I take this code not using the dumb hack, it works just fine.",
+        "start": 1856.2,
+        "duration": 4.92
+    },
+    {
+        "text": "So it has something to do with this notion of embedding such that ",
+        "start": 1861.24,
+        "duration": 3.073
+    },
+    {
+        "text": "we're dropping into the middle of a scene kind of like it's a debugger.",
+        "start": 1864.313,
+        "duration": 3.307
+    },
+    {
+        "text": "If I'm missing someone, if someone knows like a better way to get around that, ",
+        "start": 1868.72,
+        "duration": 3.778
+    },
+    {
+        "text": "I'm all ears.",
+        "start": 1872.498,
+        "duration": 0.622
+    },
+    {
+        "text": "Future future me here.",
+        "start": 1873.4,
+        "duration": 1.3
+    },
+    {
+        "text": "Worth being clear about one thing here, which is that the better way to do this, ",
+        "start": 1875.14,
+        "duration": 4.126
+    },
+    {
+        "text": "if you have some function referencing some variable that it needs to use, ",
+        "start": 1879.266,
+        "duration": 3.77
+    },
+    {
+        "text": "is to just make that very explicit.",
+        "start": 1883.036,
+        "duration": 1.784
+    },
+    {
+        "text": "So in this case, I could say X is an argument of the function, give it a default value, ",
+        "start": 1885.28,
+        "duration": 4.627
+    },
+    {
+        "text": "which is the X kind of defined in the same scope as where the function is defined.",
+        "start": 1889.907,
+        "duration": 4.313
+    },
+    {
+        "text": "And then everything will work dandy and as you want.",
+        "start": 1894.68,
+        "duration": 2.62
+    },
+    {
+        "text": "So in the scene that I was doing with Ben, if we look over at the very cursed line here, ",
+        "start": 1898.18,
+        "duration": 4.535
+    },
+    {
+        "text": "the better way to do that where it wants to reference curves is to basically say, ",
+        "start": 1902.715,
+        "duration": 4.178
+    },
+    {
+        "text": "hey, curves should actually be something explicit in there.",
+        "start": 1906.893,
+        "duration": 3.007
+    },
+    {
+        "text": "Maybe an argument that defaults to the value that's ",
+        "start": 1909.92,
+        "duration": 2.638
+    },
+    {
+        "text": "going to be whatever it was on the outside.",
+        "start": 1912.558,
+        "duration": 2.182
+    },
+    {
+        "text": "That will totally handle it.",
+        "start": 1915.0,
+        "duration": 1.44
+    },
+    {
+        "text": "The reason I was in the habit of doing this, for one thing, ",
+        "start": 1916.86,
+        "duration": 2.838
+    },
+    {
+        "text": "it's maybe a little annoying to do that with lambdas on the fly and things like that.",
+        "start": 1919.698,
+        "duration": 4.022
+    },
+    {
+        "text": "But the same bug would come up with list constructors.",
+        "start": 1924.08,
+        "duration": 3.24
+    },
+    {
+        "text": "So if I was to define something like X plus Y for Y in range, ",
+        "start": 1927.58,
+        "duration": 4.674
+    },
+    {
+        "text": "I don't know, 10, something like that.",
+        "start": 1932.254,
+        "duration": 2.866
+    },
+    {
+        "text": "And I want to see what this looks like.",
+        "start": 1935.14,
+        "duration": 1.42
+    },
+    {
+        "text": "This is something where, you know, in normal Python, this X would be visible outside.",
+        "start": 1937.02,
+        "duration": 4.84
+    },
+    {
+        "text": "And so if we were to actually run this, run this little test, it would do what we want.",
+        "start": 1942.08,
+        "duration": 4.98
+    },
+    {
+        "text": "Whereas inside the manum environment, at least previously, ",
+        "start": 1947.06,
+        "duration": 3.779
+    },
+    {
+        "text": "so if I do all this and then I ran that code, previously that same bug would emerge.",
+        "start": 1950.839,
+        "duration": 5.381
+    },
+    {
+        "text": "But when I was just looking at it now, it seems like actually it's fine.",
+        "start": 1956.6,
+        "duration": 4.24
+    },
+    {
+        "text": "Whatever bug had been there that affected list constructors and things like that, ",
+        "start": 1961.94,
+        "duration": 3.743
+    },
+    {
+        "text": "it's fine.",
+        "start": 1965.683,
+        "duration": 0.5
+    },
+    {
+        "text": "So maybe I should just get out of the habit of typing that ",
+        "start": 1967.44,
+        "duration": 3.415
+    },
+    {
+        "text": "incredibly cursed line and you can ignore the last five minutes.",
+        "start": 1970.855,
+        "duration": 3.705
+    },
+    {
+        "text": "Anyway, back to actually finishing out that scene with Ben.",
+        "start": 1974.56,
+        "duration": 2.92
+    },
+    {
+        "text": "Let's make those dots bigger.",
+        "start": 1978.76,
+        "duration": 1.2
+    },
+    {
+        "text": "Can we give them radius one?",
+        "start": 1981.16,
+        "duration": 0.96
+    },
+    {
+        "text": "I don't like red as the second color.",
+        "start": 1982.66,
+        "duration": 1.68
+    },
+    {
+        "text": "I just think that looks kind of ugly.",
+        "start": 1984.94,
+        "duration": 1.64
+    },
+    {
+        "text": "I often...",
+        "start": 1988.54,
+        "duration": 0.72
+    },
+    {
+        "text": "Okay, that's a very big dot.",
+        "start": 1989.26,
+        "duration": 1.42
+    },
+    {
+        "text": "But I guess I don't know.",
+        "start": 1991.8,
+        "duration": 0.7
+    },
+    {
+        "text": "We see it.",
+        "start": 1992.62,
+        "duration": 0.38
+    },
+    {
+        "text": "Yeah, we see it.",
+        "start": 1993.0,
+        "duration": 0.6
+    },
+    {
+        "text": "That's maybe a little bit a little bit too big.",
+        "start": 1994.02,
+        "duration": 2.0
+    },
+    {
+        "text": "So I might ease off on that.",
+        "start": 1996.02,
+        "duration": 1.3
+    },
+    {
+        "text": "Again, I mean, it's a minor comment, but the aesthetics are handled for you.",
+        "start": 1999.98,
+        "duration": 3.7
+    },
+    {
+        "text": "The glow dot, it's too big, right?",
+        "start": 2003.68,
+        "duration": 1.72
+    },
+    {
+        "text": "But it still looks nice, even though it's big because you've paid ",
+        "start": 2005.66,
+        "duration": 2.266
+    },
+    {
+        "text": "attention to making a glow dot function, which makes a nice looking dot.",
+        "start": 2007.926,
+        "duration": 2.474
+    },
+    {
+        "text": "So this is something I was going to ask about.",
+        "start": 2011.26,
+        "duration": 1.62
+    },
+    {
+        "text": "This is interactive.",
+        "start": 2013.18,
+        "duration": 2.4
+    },
+    {
+        "text": "Yeah, yeah, yeah, yeah.",
+        "start": 2015.78,
+        "duration": 0.88
+    },
+    {
+        "text": "And that wasn't obvious until you moved the axes.",
+        "start": 2016.72,
+        "duration": 1.78
+    },
+    {
+        "text": "No, it's because everything is ultimately rendered ",
+        "start": 2018.68,
+        "duration": 2.04
+    },
+    {
+        "text": "and just like made into a YouTube video.",
+        "start": 2020.72,
+        "duration": 1.6
+    },
+    {
+        "text": "And every now and then I've done something where I'll ",
+        "start": 2022.44,
+        "duration": 2.082
+    },
+    {
+        "text": "like have an animation I want to play with in the moment.",
+        "start": 2024.522,
+        "duration": 2.198
+    },
+    {
+        "text": "But like, it's not that common.",
+        "start": 2027.1,
+        "duration": 1.28
+    },
+    {
+        "text": "So okay, a very common thing I might do, we've got this animation, ",
+        "start": 2028.9,
+        "duration": 2.607
+    },
+    {
+        "text": "it's rendering all these.",
+        "start": 2031.507,
+        "duration": 0.973
+    },
+    {
+        "text": "It would be nice for the camera to slowly pan throughout.",
+        "start": 2032.48,
+        "duration": 2.64
+    },
+    {
+        "text": "Agreed.",
+        "start": 2035.44,
+        "duration": 0.46
+    },
+    {
+        "text": "And so it's amazing how useful it is for 3D rendering is that if you're looking at it",
+        "start": 2035.9,
+        "duration": 4.78
+    },
+    {
+        "text": "on a 2d screen, you need the illusion created by the rotation to keep the depth alive.",
+        "start": 2040.68,
+        "duration": 4.78
+    },
+    {
+        "text": "Yeah.",
+        "start": 2045.72,
+        "duration": 0.5
+    },
+    {
+        "text": "So here's what I might do.",
+        "start": 2046.26,
+        "duration": 1.76
+    },
+    {
+        "text": "I have a little another keyboard shortcut that is not documented ",
+        "start": 2048.739,
+        "duration": 4.382
+    },
+    {
+        "text": "anywhere where I can save to my clipboard, basically a call that ",
+        "start": 2053.121,
+        "duration": 4.381
+    },
+    {
+        "text": "needs to be made to put the camera in the current position.",
+        "start": 2057.502,
+        "duration": 3.978
+    },
+    {
+        "text": "So that's just grabbed where the camera angle is right now.",
+        "start": 2061.48,
+        "duration": 3.62
+    },
+    {
+        "text": "That's helpful.",
+        "start": 2065.36,
+        "duration": 0.72
+    },
+    {
+        "text": "And so if in my animation I take the camera frame, which is like frame.",
+        "start": 2066.32,
+        "duration": 2.8
+    },
+    {
+        "text": "I haven't talked about this dot animate thing yet.",
+        "start": 2070.4,
+        "duration": 2.12
+    },
+    {
+        "text": "But basically I say, I want you to do this thing.",
+        "start": 2072.58,
+        "duration": 2.76
+    },
+    {
+        "text": "I don't want you to just do it to the object.",
+        "start": 2075.5,
+        "duration": 1.54
+    },
+    {
+        "text": "I want you to animate that over time.",
+        "start": 2077.04,
+        "duration": 1.72
+    },
+    {
+        "text": "And there's some little bit of magic that underlies what's going on there.",
+        "start": 2078.88,
+        "duration": 4.48
+    },
+    {
+        "text": "But in this case, the thing I wanted to animate ",
+        "start": 2083.719,
+        "duration": 2.181
+    },
+    {
+        "text": "is reorienting itself to a certain position.",
+        "start": 2085.9,
+        "duration": 2.0
+    },
+    {
+        "text": "So over the course of the animation, it should like slowly pan itself over.",
+        "start": 2088.44,
+        "duration": 4.199
+    },
+    {
+        "text": "So it'll take wherever it is, wherever it thinks it is already and try and get to that.",
+        "start": 2092.76,
+        "duration": 3.86
+    },
+    {
+        "text": "So I'm going to also it's nice if the runtime as an argument of the play method, ",
+        "start": 2097.38,
+        "duration": 3.847
+    },
+    {
+        "text": "then it becomes the runtime for every animation in that method.",
+        "start": 2101.227,
+        "duration": 2.993
+    },
+    {
+        "text": "So this might not be enough movement, actually.",
+        "start": 2104.92,
+        "duration": 1.96
+    },
+    {
+        "text": "I might want to like really have it spin around because it's happening over 30 seconds.",
+        "start": 2106.98,
+        "duration": 5.6
+    },
+    {
+        "text": "So back to the beginning.",
+        "start": 2114.12,
+        "duration": 1.5
+    },
+    {
+        "text": "Do all this.",
+        "start": 2117.62,
+        "duration": 0.5
+    },
+    {
+        "text": "Is it panning?",
+        "start": 2118.2,
+        "duration": 0.8
+    },
+    {
+        "text": "Oh, it's very slow.",
+        "start": 2120.4,
+        "duration": 0.74
+    },
+    {
+        "text": "It looks like it is very smooth.",
+        "start": 2121.34,
+        "duration": 1.0
+    },
+    {
+        "text": "It's not.",
+        "start": 2122.5,
+        "duration": 0.5
+    },
+    {
+        "text": "Yeah, it's smooth, which not necessarily.",
+        "start": 2123.22,
+        "duration": 2.28
+    },
+    {
+        "text": "I think I like that.",
+        "start": 2125.92,
+        "duration": 0.76
+    },
+    {
+        "text": "I think I like it as a smooth thing.",
+        "start": 2126.88,
+        "duration": 1.54
+    },
+    {
+        "text": "Agreed.\nIt might look kind of a jerky style if it wasn't.",
+        "start": 2129.06,
+        "duration": 1.92
+    },
+    {
+        "text": "Yeah.\nAnd so now it's like as we're going, we can see it from all the different angles.",
+        "start": 2131.36,
+        "duration": 3.04
+    },
+    {
+        "text": "I think the color scheme is still a little jarring to me.",
+        "start": 2135.54,
+        "duration": 2.92
+    },
+    {
+        "text": "So I think what I might do is make it go to teal or something that's nice and close to it.",
+        "start": 2138.46,
+        "duration": 5.2
+    },
+    {
+        "text": "And then maybe we'll make this actually even more aggressive.",
+        "start": 2145.3,
+        "duration": 3.54
+    },
+    {
+        "text": "I'm not your best color audience.",
+        "start": 2149.02,
+        "duration": 2.04
+    },
+    {
+        "text": "My color vision deficiency, definitely.",
+        "start": 2151.48,
+        "duration": 2.3
+    },
+    {
+        "text": "I don't know if my colors are the same.",
+        "start": 2154.64,
+        "duration": 1.12
+    },
+    {
+        "text": "Anyway, yellow and blue I can see apart.",
+        "start": 2156.0,
+        "duration": 1.66
+    },
+    {
+        "text": "Blue and teal.",
+        "start": 2157.94,
+        "duration": 0.5
+    },
+    {
+        "text": "In this case, like either you want them to be starkly different so ",
+        "start": 2158.56,
+        "duration": 3.245
+    },
+    {
+        "text": "you see it or you want it to be aesthetically nice where maybe ",
+        "start": 2161.805,
+        "duration": 3.052
+    },
+    {
+        "text": "you're just using the shade of it rather than the hue to distinguish.",
+        "start": 2164.857,
+        "duration": 3.343
+    },
+    {
+        "text": "So I mean, one thing we could try, it's going to look cleaner, ",
+        "start": 2169.54,
+        "duration": 3.981
+    },
+    {
+        "text": "but maybe be harder to discern.",
+        "start": 2173.521,
+        "duration": 1.959
+    },
+    {
+        "text": "Let's say we go between two different shades of blue and I'm going ",
+        "start": 2175.94,
+        "duration": 3.486
+    },
+    {
+        "text": "to now let's have some fun and let's have there be like 10 points.",
+        "start": 2179.426,
+        "duration": 3.434
+    },
+    {
+        "text": "And so they're just going to change by their epsilon in the third coordinate.",
+        "start": 2183.36,
+        "duration": 2.56
+    },
+    {
+        "text": "Yeah, exactly.\nDoesn't really matter.",
+        "start": 2186.46,
+        "duration": 0.64
+    },
+    {
+        "text": "We know actually.",
+        "start": 2187.1,
+        "duration": 0.6
+    },
+    {
+        "text": "I mean, mathematical comment.",
+        "start": 2188.44,
+        "duration": 1.32
+    },
+    {
+        "text": "The other amazing thing about this is that wherever you start, ",
+        "start": 2189.92,
+        "duration": 2.864
+    },
+    {
+        "text": "it goes into this sort of shape.",
+        "start": 2192.784,
+        "duration": 1.456
+    },
+    {
+        "text": "That's kind of like the second surprising thing, isn't it?",
+        "start": 2194.46,
+        "duration": 1.96
+    },
+    {
+        "text": "Yeah, yeah, yeah.",
+        "start": 2196.42,
+        "duration": 0.6
+    },
+    {
+        "text": "The whole point is not just that it does something strange, ",
+        "start": 2197.16,
+        "duration": 3.164
+    },
+    {
+        "text": "but that there is an attractor.",
+        "start": 2200.324,
+        "duration": 1.636
+    },
+    {
+        "text": "So often with differential equations, it might be attracted to a single point.",
+        "start": 2203.04,
+        "duration": 3.38
+    },
+    {
+        "text": "It might blow up to infinity.",
+        "start": 2206.48,
+        "duration": 1.4
+    },
+    {
+        "text": "It might be attracted to a cycle, but then this is what's called a strange ",
+        "start": 2208.26,
+        "duration": 3.997
+    },
+    {
+        "text": "attractor where all the points are attracted to a certain shape, ",
+        "start": 2212.257,
+        "duration": 3.465
+    },
+    {
+        "text": "but that shape isn't so simple as a cycle and it's got a fractal nature to it.",
+        "start": 2215.722,
+        "duration": 4.158
+    },
+    {
+        "text": "I often feel like it's the sort of contradiction inherent in trying to describe ",
+        "start": 2220.1,
+        "duration": 2.923
+    },
+    {
+        "text": "chaos to someone because I want you to say, okay, this is when it's unpredictable.",
+        "start": 2223.023,
+        "duration": 2.997
+    },
+    {
+        "text": "And yet at the same time it is predictable and there's this strange attractor.",
+        "start": 2226.22,
+        "duration": 2.72
+    },
+    {
+        "text": "So it's the fact that both are happening.",
+        "start": 2228.94,
+        "duration": 1.34
+    },
+    {
+        "text": "And this is...",
+        "start": 2231.16,
+        "duration": 0.8
+    },
+    {
+        "text": "You know that it's going to be on this subset of R3.",
+        "start": 2231.96,
+        "duration": 2.38
+    },
+    {
+        "text": "It's going to get really close to that subset.",
+        "start": 2234.78,
+        "duration": 1.88
+    },
+    {
+        "text": "Where on that will it be?",
+        "start": 2236.92,
+        "duration": 1.36
+    },
+    {
+        "text": "Well, we just had 10 starting conditions that were really close to each other.",
+        "start": 2238.68,
+        "duration": 2.72
+    },
+    {
+        "text": "And if we remove the curves and just see the dots.",
+        "start": 2241.48,
+        "duration": 2.64
+    },
+    {
+        "text": "They're all over the place.",
+        "start": 2244.26,
+        "duration": 0.56
+    },
+    {
+        "text": "Oh, actually, let's do this.",
+        "start": 2244.94,
+        "duration": 1.14
+    },
+    {
+        "text": "Let's have some fun.",
+        "start": 2246.2,
+        "duration": 0.7
+    },
+    {
+        "text": "What if the curves...",
+        "start": 2247.8,
+        "duration": 0.5
+    },
+    {
+        "text": "Sort of fade out of...",
+        "start": 2248.86,
+        "duration": 1.22
+    },
+    {
+        "text": "Oh yeah, let's have them fade out of...",
+        "start": 2250.08,
+        "duration": 1.16
+    },
+    {
+        "text": "Sorry, you had an idea that I...",
+        "start": 2251.24,
+        "duration": 0.92
+    },
+    {
+        "text": "No, no, no, no, let's do that.",
+        "start": 2252.16,
+        "duration": 0.84
+    },
+    {
+        "text": "Let's have the curves fade over time.",
+        "start": 2253.0,
+        "duration": 0.74
+    },
+    {
+        "text": "I want to know what your idea was.",
+        "start": 2253.74,
+        "duration": 1.08
+    },
+    {
+        "text": "How do I want to do that?",
+        "start": 2255.64,
+        "duration": 1.32
+    },
+    {
+        "text": "I'm going to...",
+        "start": 2257.18,
+        "duration": 1.38
+    },
+    {
+        "text": "I definitely made the part that follows with Ben ",
+        "start": 2258.56,
+        "duration": 2.369
+    },
+    {
+        "text": "way more complicated than it needed to be.",
+        "start": 2260.929,
+        "duration": 2.031
+    },
+    {
+        "text": "We also got sidetracked chasing down a couple of different bugs.",
+        "start": 2263.4,
+        "duration": 2.68
+    },
+    {
+        "text": "I think what I'll do is post the full relatively ",
+        "start": 2266.58,
+        "duration": 2.91
+    },
+    {
+        "text": "uncut version of that conversation maybe on Patreon.",
+        "start": 2269.49,
+        "duration": 3.09
+    },
+    {
+        "text": "But just give you a much more succinct version of how we wrapped up here.",
+        "start": 2273.08,
+        "duration": 2.68
+    },
+    {
+        "text": "Here I have essentially the same scene that I was doing with Ben.",
+        "start": 2276.1,
+        "duration": 3.1
+    },
+    {
+        "text": "So we've got our axes setting up a 3D coordinate system.",
+        "start": 2279.88,
+        "duration": 2.78
+    },
+    {
+        "text": "We've got our curves.",
+        "start": 2282.66,
+        "duration": 1.18
+    },
+    {
+        "text": "I've got 10 of them.",
+        "start": 2284.18,
+        "duration": 1.34
+    },
+    {
+        "text": "Here, when we animate, the curves are getting drawn.",
+        "start": 2286.2,
+        "duration": 2.56
+    },
+    {
+        "text": "The dots are following.",
+        "start": 2288.94,
+        "duration": 0.84
+    },
+    {
+        "text": "And Ben had just asked if we want to have the curves fade out over time.",
+        "start": 2290.24,
+        "duration": 3.62
+    },
+    {
+        "text": "What I should have said is that you just type fade out curves, ",
+        "start": 2294.5,
+        "duration": 4.416
+    },
+    {
+        "text": "which is another animation type.",
+        "start": 2298.916,
+        "duration": 2.244
+    },
+    {
+        "text": "It'll slowly change them to have zero opacity.",
+        "start": 2301.36,
+        "duration": 2.36
+    },
+    {
+        "text": "In this case, that evolution time, if we make it the parameter...",
+        "start": 2304.34,
+        "duration": 4.46
+    },
+    {
+        "text": "The runtime, rather.",
+        "start": 2309.36,
+        "duration": 1.1
+    },
+    {
+        "text": "If we make that the parameter of the play argument here, ",
+        "start": 2310.56,
+        "duration": 3.063
+    },
+    {
+        "text": "then it becomes a runtime for everything on the inside.",
+        "start": 2313.623,
+        "duration": 2.957
+    },
+    {
+        "text": "So now when we do that, it goes.",
+        "start": 2317.3,
+        "duration": 2.6
+    },
+    {
+        "text": "And over the course of those 10 seconds, the curves should slowly fade.",
+        "start": 2320.7,
+        "duration": 4.48
+    },
+    {
+        "text": "And indeed it looks like they do.",
+        "start": 2325.48,
+        "duration": 1.1
+    },
+    {
+        "text": "And then we're left just with the dots, which is nice.",
+        "start": 2326.98,
+        "duration": 2.12
+    },
+    {
+        "text": "It looks very nice.",
+        "start": 2329.22,
+        "duration": 0.82
+    },
+    {
+        "text": "The other thing that we got into, and I just took ",
+        "start": 2331.2,
+        "duration": 2.801
+    },
+    {
+        "text": "way longer to say this than I properly should have.",
+        "start": 2334.001,
+        "duration": 2.859
+    },
+    {
+        "text": "Because I was trying to remember what the names ",
+        "start": 2336.86,
+        "duration": 1.856
+    },
+    {
+        "text": "of the functions were and things like that.",
+        "start": 2338.716,
+        "duration": 1.664
+    },
+    {
+        "text": "Again, I'll post this all in a more uncut version elsewhere.",
+        "start": 2340.4,
+        "duration": 3.74
+    },
+    {
+        "text": "If we wanted a nice effect where there's this sort of ",
+        "start": 2344.62,
+        "duration": 3.23
+    },
+    {
+        "text": "tail following the dots that sort of fades out nicely.",
+        "start": 2347.85,
+        "duration": 3.23
+    },
+    {
+        "text": "There's this thing I once wrote for some...",
+        "start": 2351.08,
+        "duration": 2.06
+    },
+    {
+        "text": "You don't even remember what video, way in the past, called Tracing Tail.",
+        "start": 2353.14,
+        "duration": 3.28
+    },
+    {
+        "text": "And so the way this will work is if you give it just a single little object of some kind.",
+        "start": 2357.3,
+        "duration": 3.62
+    },
+    {
+        "text": "So let's give it that first dot.",
+        "start": 2360.92,
+        "duration": 1.38
+    },
+    {
+        "text": "And then let's add the tail.",
+        "start": 2362.52,
+        "duration": 1.42
+    },
+    {
+        "text": "Then, rather than fading out the curves in this case, ",
+        "start": 2365.72,
+        "duration": 4.751
+    },
+    {
+        "text": "actually what I'm going to do is just set those curves to be invisible.",
+        "start": 2370.471,
+        "duration": 6.249
+    },
+    {
+        "text": "So set their opacity to be zero.",
+        "start": 2377.06,
+        "duration": 1.52
+    },
+    {
+        "text": "So they'll be drawn that will determine where the dots go as ",
+        "start": 2379.96,
+        "duration": 2.846
+    },
+    {
+        "text": "they're having this kind of update function called on them.",
+        "start": 2382.806,
+        "duration": 2.754
+    },
+    {
+        "text": "But we won't actually see them.",
+        "start": 2385.78,
+        "duration": 1.14
+    },
+    {
+        "text": "What we will see is this one tail for one of the dots.",
+        "start": 2387.28,
+        "duration": 2.6
+    },
+    {
+        "text": "I think.",
+        "start": 2390.52,
+        "duration": 0.5
+    },
+    {
+        "text": "So the way that it looks...",
+        "start": 2391.42,
+        "duration": 1.5
+    },
+    {
+        "text": "Great.\nWe see that one little tail and it kind of fades out in the back.",
+        "start": 2392.92,
+        "duration": 3.2
+    },
+    {
+        "text": "I like the effect.",
+        "start": 2396.12,
+        "duration": 1.72
+    },
+    {
+        "text": "It sort of goes from full opacity to zero opacity, zero stroke width.",
+        "start": 2397.88,
+        "duration": 5.58
+    },
+    {
+        "text": "You can change some of the parameters on it here.",
+        "start": 2404.18,
+        "duration": 3.22
+    },
+    {
+        "text": "In this case, the amount of time that it follows it.",
+        "start": 2408.32,
+        "duration": 3.72
+    },
+    {
+        "text": "So right here it's showing the last one second.",
+        "start": 2412.24,
+        "duration": 2.02
+    },
+    {
+        "text": "And if we were to wait, it would sort of fade out because one more second has passed.",
+        "start": 2414.74,
+        "duration": 4.56
+    },
+    {
+        "text": "So instead I could say, hey, I want you to follow it for a little bit more time.",
+        "start": 2419.3,
+        "duration": 3.6
+    },
+    {
+        "text": "So let's make that time traced three seconds.",
+        "start": 2423.64,
+        "duration": 2.84
+    },
+    {
+        "text": "Instead of just having one tail, we could have a group of them.",
+        "start": 2426.94,
+        "duration": 3.08
+    },
+    {
+        "text": "So we'll create a group of these tails, not just for the zeroth dot, ",
+        "start": 2430.68,
+        "duration": 4.021
+    },
+    {
+        "text": "but for all of the dots.",
+        "start": 2434.701,
+        "duration": 1.399
+    },
+    {
+        "text": "For dots and dots.",
+        "start": 2436.56,
+        "duration": 0.76
+    },
+    {
+        "text": "And then I could maybe have it match the color ",
+        "start": 2438.1,
+        "duration": 2.086
+    },
+    {
+        "text": "of that dot so that we kind of see them all.",
+        "start": 2440.186,
+        "duration": 1.954
+    },
+    {
+        "text": "So now, when we do this, we should see ten different ",
+        "start": 2442.8,
+        "duration": 3.042
+    },
+    {
+        "text": "tails all following for a little bit more time.",
+        "start": 2445.842,
+        "duration": 2.698
+    },
+    {
+        "text": "Which I think should just give a nice, oh yeah, ",
+        "start": 2448.54,
+        "duration": 2.918
+    },
+    {
+        "text": "yeah, yeah, that gives a nice smooth little effect.",
+        "start": 2451.458,
+        "duration": 3.102
+    },
+    {
+        "text": "And they all start to spread out.",
+        "start": 2455.64,
+        "duration": 1.12
+    },
+    {
+        "text": "You can see that spread really cleanly.",
+        "start": 2456.84,
+        "duration": 1.7
+    },
+    {
+        "text": "And here we can have more fun by basically having it evolve over more time.",
+        "start": 2459.22,
+        "duration": 3.96
+    },
+    {
+        "text": "Instead of ten seconds, we could bring that up to thirty seconds.",
+        "start": 2463.34,
+        "duration": 3.22
+    },
+    {
+        "text": "We could make them closer so this epsilon value, ",
+        "start": 2467.36,
+        "duration": 3.309
+    },
+    {
+        "text": "instead of being one one thousandth, we could make it one one hundred thousandth.",
+        "start": 2470.669,
+        "duration": 5.471
+    },
+    {
+        "text": "So it should take longer for them to all diverge.",
+        "start": 2476.14,
+        "duration": 2.16
+    },
+    {
+        "text": "So now if I go, we see all of those tails.",
+        "start": 2478.92,
+        "duration": 2.1
+    },
+    {
+        "text": "In theory, these ten dots should actually stay closer for much longer.",
+        "start": 2481.34,
+        "duration": 2.96
+    },
+    {
+        "text": "And it should take longer before we see that divergence in the chaos.",
+        "start": 2484.54,
+        "duration": 3.14
+    },
+    {
+        "text": "And indeed, it takes a little while, but eventually they spread out.",
+        "start": 2488.66,
+        "duration": 3.22
+    },
+    {
+        "text": "So, I think that's kind of a nice end effect.",
+        "start": 2492.56,
+        "duration": 3.44
+    },
+    {
+        "text": "Like I said, I'll post the more uncut version, ",
+        "start": 2496.48,
+        "duration": 1.991
+    },
+    {
+        "text": "but now is a pretty good point to just jump ahead towards other topics.",
+        "start": 2498.471,
+        "duration": 3.009
+    },
+    {
+        "text": "Well, goal achieved.",
+        "start": 2501.88,
+        "duration": 0.98
+    },
+    {
+        "text": "You've got a Lorentz Attractor with multiple initial conditions varied very slightly, ",
+        "start": 2503.08,
+        "duration": 4.477
+    },
+    {
+        "text": "animating prettily with a glitchy trail.",
+        "start": 2507.557,
+        "duration": 2.083
+    },
+    {
+        "text": "So before we finish the workflow, you've made a code that does a thing.",
+        "start": 2509.96,
+        "duration": 2.7
+    },
+    {
+        "text": "And let's say you're happy with it.",
+        "start": 2512.82,
+        "duration": 1.42
+    },
+    {
+        "text": "I know there's lots of polishing that you want to do.",
+        "start": 2514.24,
+        "duration": 1.74
+    },
+    {
+        "text": "But you then bake it into an MP4 file.",
+        "start": 2516.06,
+        "duration": 2.6
+    },
+    {
+        "text": "Oh yeah, yeah, yeah.",
+        "start": 2518.9,
+        "duration": 0.82
+    },
+    {
+        "text": "So in this case, once I have the scene that I like, ",
+        "start": 2519.74,
+        "duration": 3.306
+    },
+    {
+        "text": "and so in this case maybe we'll clean it a little bit.",
+        "start": 2523.046,
+        "duration": 3.434
+    },
+    {
+        "text": "I might want to render this out, so I've got a little keyboard shortcut.",
+        "start": 2526.82,
+        "duration": 3.12
+    },
+    {
+        "text": "The way that you might call Manim usually is in the command line, ",
+        "start": 2529.94,
+        "duration": 4.226
+    },
+    {
+        "text": "if you've downloaded the GitHub and you've imported it all, you say Manim, ",
+        "start": 2534.166,
+        "duration": 4.803
+    },
+    {
+        "text": "and then you pass in a file, a Python file that contains the scene.",
+        "start": 2538.969,
+        "duration": 4.291
+    },
+    {
+        "text": "And so in this case, I found the scene to put that.",
+        "start": 2543.98,
+        "duration": 2.32
+    },
+    {
+        "text": "You say which scene do you want to render from that file.",
+        "start": 2546.64,
+        "duration": 2.76
+    },
+    {
+        "text": "And in this case, I have a couple different parameters.",
+        "start": 2550.06,
+        "duration": 2.36
+    },
+    {
+        "text": "If I say pre-run, it'll go through it all without animating to one, ",
+        "start": 2552.66,
+        "duration": 3.334
+    },
+    {
+        "text": "estimate how long it'll take, and also catch any errors rather than halfway through ",
+        "start": 2555.994,
+        "duration": 4.119
+    },
+    {
+        "text": "the animation.",
+        "start": 2560.113,
+        "duration": 0.687
+    },
+    {
+        "text": "This Finder thing just means it's going to pop it up in Finder, the Mac OS file system.",
+        "start": 2561.2,
+        "duration": 4.88
+    },
+    {
+        "text": "And then W means write it to file.",
+        "start": 2566.62,
+        "duration": 1.8
+    },
+    {
+        "text": "And so if I run this, it pre-runs through, thinks about it, ",
+        "start": 2569.12,
+        "duration": 3.193
+    },
+    {
+        "text": "it knows how long it'll take now, and now it's rendering it to an MP4.",
+        "start": 2572.313,
+        "duration": 3.727
+    },
+    {
+        "text": "And because I'll usually render it at 4K, sometimes ",
+        "start": 2576.78,
+        "duration": 2.95
+    },
+    {
+        "text": "the rendering will take a little longer.",
+        "start": 2579.73,
+        "duration": 2.27
+    },
+    {
+        "text": "One of the reasons I wanted to make any kind of behind the scenes, ",
+        "start": 2582.42,
+        "duration": 3.144
+    },
+    {
+        "text": "the way I used to use Manim, and the way I actually suspect a lot of people ",
+        "start": 2585.564,
+        "duration": 3.566
+    },
+    {
+        "text": "who use Manim Community do use it, is you're always running it from the command line.",
+        "start": 2589.13,
+        "duration": 3.99
+    },
+    {
+        "text": "So you've got your scene and then you run Manim, that scene, and then it pops up.",
+        "start": 2593.6,
+        "duration": 5.64
+    },
+    {
+        "text": "It renders an MP4 file, so it has to render the file and then pop it up.",
+        "start": 2599.44,
+        "duration": 4.02
+    },
+    {
+        "text": "And there were a bunch of shortcuts to say, oh, don't render the whole file, ",
+        "start": 2604.08,
+        "duration": 2.683
+    },
+    {
+        "text": "just render it starting at this animation or something.",
+        "start": 2606.763,
+        "duration": 1.917
+    },
+    {
+        "text": "But you can imagine the iteration cycle is a little more annoying ",
+        "start": 2608.9,
+        "duration": 2.452
+    },
+    {
+        "text": "if every single time you're making an update and you want to see it.",
+        "start": 2611.352,
+        "duration": 2.528
+    },
+    {
+        "text": "So it was later in the game, around the same time I was changing the implementation ",
+        "start": 2613.88,
+        "duration": 4.484
+    },
+    {
+        "text": "to run on OpenGL, to then also have the interactive shell version, ",
+        "start": 2618.364,
+        "duration": 3.577
+    },
+    {
+        "text": "such that the process of creating just is like, ",
+        "start": 2621.941,
+        "duration": 2.563
+    },
+    {
+        "text": "highlight the code and see what the code does.",
+        "start": 2624.504,
+        "duration": 2.456
+    },
+    {
+        "text": "And that's a fundamental change to the workflow.",
+        "start": 2627.32,
+        "duration": 1.74
+    },
+    {
+        "text": "It's huge!",
+        "start": 2629.42,
+        "duration": 0.7
+    },
+    {
+        "text": "And my specific workflow, it depends on these Sublime scripts that I wrote that will ",
+        "start": 2630.58,
+        "duration": 5.041
+    },
+    {
+        "text": "send a command to the Terminus, which is the extension of Sublime that makes a terminal.",
+        "start": 2635.621,
+        "duration": 5.219
+    },
+    {
+        "text": "So what I'll do is in the description of this video, ",
+        "start": 2640.84,
+        "duration": 3.19
+    },
+    {
+        "text": "I'll actually document what that process is.",
+        "start": 2644.03,
+        "duration": 2.65
+    },
+    {
+        "text": "And so if anyone's curious and wants to replicate it, ",
+        "start": 2646.84,
+        "duration": 3.513
+    },
+    {
+        "text": "probably whatever text editor they're using you can do something that does the same.",
+        "start": 2650.353,
+        "duration": 5.467
+    },
+    {
+        "text": "So for all the people who are in Visual Studio and whatnot, ",
+        "start": 2656.04,
+        "duration": 2.207
+    },
+    {
+        "text": "you can do something that would look the same.",
+        "start": 2658.247,
+        "duration": 1.693
+    },
+    {
+        "text": "So here it rendered it, and now it's going to look ",
+        "start": 2660.38,
+        "duration": 3.3
+    },
+    {
+        "text": "all glitchy because of those glitches that I mentioned.",
+        "start": 2663.68,
+        "duration": 3.56
+    },
+    {
+        "text": "But this is now playing in a video player, it's a file.",
+        "start": 2667.32,
+        "duration": 1.96
+    },
+    {
+        "text": "This I would drop into Final Cut, do my editing.",
+        "start": 2669.28,
+        "duration": 2.46
+    },
+    {
+        "text": "I guess another thing we never did is we could have the equations.",
+        "start": 2674.08,
+        "duration": 3.54
+    },
+    {
+        "text": "Let's add the equations.",
+        "start": 2678.5,
+        "duration": 1.56
+    },
+    {
+        "text": "So you can have a LaTeX object that's basically going to say hey, ",
+        "start": 2681.36,
+        "duration": 4.302
+    },
+    {
+        "text": "take some LaTeX and then render it, and then we'll add it on.",
+        "start": 2685.662,
+        "duration": 3.978
+    },
+    {
+        "text": "Have you ever used MathPix?",
+        "start": 2690.44,
+        "duration": 1.1
+    },
+    {
+        "text": "MathPix is so good.",
+        "start": 2693.04,
+        "duration": 1.1
+    },
+    {
+        "text": "So it's OCR, but for LaTeX you can take a snapshot of just any equations and then it ",
+        "start": 2694.7,
+        "duration": 5.06
+    },
+    {
+        "text": "gives you all sorts of things, but one of them would be the LaTeX for that expression.",
+        "start": 2699.76,
+        "duration": 5.12
+    },
+    {
+        "text": "Fantastic.\nAnd so it also gives you it as an SVG if you want and all that.",
+        "start": 2705.46,
+        "duration": 3.82
+    },
+    {
+        "text": "It's really good.",
+        "start": 2709.28,
+        "duration": 0.6
+    },
+    {
+        "text": "So from a screen, literally a bitmap is taken to a scalable vector.",
+        "start": 2710.68,
+        "duration": 4.68
+    },
+    {
+        "text": "It's really panicky.",
+        "start": 2715.6,
+        "duration": 0.64
+    },
+    {
+        "text": "It's great.",
+        "start": 2716.36,
+        "duration": 0.5
+    },
+    {
+        "text": "It's so good.",
+        "start": 2716.94,
+        "duration": 0.5
+    },
+    {
+        "text": "I guess it renders it in LaTeX and then SVGs it out.",
+        "start": 2717.58,
+        "duration": 3.02
+    },
+    {
+        "text": "So we can use this here, so we can have our equations and then add those.",
+        "start": 2720.74,
+        "duration": 5.16
+    },
+    {
+        "text": "So that will dump them in the middle of the screen, am I right?",
+        "start": 2727.14,
+        "duration": 1.88
+    },
+    {
+        "text": "You're absolutely right.",
+        "start": 2729.48,
+        "duration": 0.72
+    },
+    {
+        "text": "And also on the XY play.",
+        "start": 2730.72,
+        "duration": 2.18
+    },
+    {
+        "text": "If there's a 3D scene and you want stuff like that, ",
+        "start": 2735.68,
+        "duration": 3.803
+    },
+    {
+        "text": "you say fix in frame, as if it's glued on the camera frame.",
+        "start": 2739.483,
+        "duration": 4.317
+    },
+    {
+        "text": "And then in this case we might want it in a corner.",
+        "start": 2744.04,
+        "duration": 1.6
+    },
+    {
+        "text": "So here's something I wrote which, let's see if this works actually.",
+        "start": 2749.98,
+        "duration": 3.5
+    },
+    {
+        "text": "So you can index into it by a string.",
+        "start": 2754.0,
+        "duration": 2.5
+    },
+    {
+        "text": "So I can say every time you find an X you know, maybe color that red.",
+        "start": 2756.92,
+        "duration": 4.96
+    },
+    {
+        "text": "That's useful.",
+        "start": 2762.34,
+        "duration": 0.96
+    },
+    {
+        "text": "But not working.",
+        "start": 2764.36,
+        "duration": 0.66
+    },
+    {
+        "text": "Tech to color.",
+        "start": 2768.02,
+        "duration": 1.3
+    },
+    {
+        "text": "And by better I mean more it'll actually work.",
+        "start": 2770.24,
+        "duration": 1.88
+    },
+    {
+        "text": "So T to C I guess is what we call it.",
+        "start": 2773.58,
+        "duration": 2.68
+    },
+    {
+        "text": "So T to C Let me get my line spacing in a way that looks a little bit nicer.",
+        "start": 2776.88,
+        "duration": 5.5
+    },
+    {
+        "text": "So here's a nice thing you can do.",
+        "start": 2783.58,
+        "duration": 1.18
+    },
+    {
+        "text": "If we say everything that looks like an X make that red.",
+        "start": 2785.0,
+        "duration": 3.1
+    },
+    {
+        "text": "Everything that's Y, red, green, blue.",
+        "start": 2789.16,
+        "duration": 2.78
+    },
+    {
+        "text": "I think that will...",
+        "start": 2793.18,
+        "duration": 4.04
+    },
+    {
+        "text": "And actually now that it's known to separate those out at some point, ",
+        "start": 2797.22,
+        "duration": 5.507
+    },
+    {
+        "text": "if I do say equations and I try to pull out the Xs and I ",
+        "start": 2802.727,
+        "duration": 4.485
+    },
+    {
+        "text": "shift them a little bit up then it has control on them.",
+        "start": 2807.212,
+        "duration": 4.328
+    },
+    {
+        "text": "It does its best if you don't do anything to say hey these are specific variables ",
+        "start": 2812.08,
+        "duration": 5.029
+    },
+    {
+        "text": "I'm going to want to separate but you have to from the tech expression know how ",
+        "start": 2817.109,
+        "duration": 4.907
+    },
+    {
+        "text": "many symbols there will be such that it can dissect the manum object in that.",
+        "start": 2822.016,
+        "duration": 4.724
+    },
+    {
+        "text": "It's a little tricky to get it to actually work.",
+        "start": 2828.08,
+        "duration": 2.08
+    },
+    {
+        "text": "So if you know you want control over variables ",
+        "start": 2830.3,
+        "duration": 2.104
+    },
+    {
+        "text": "you just put them in an expression like this.",
+        "start": 2832.404,
+        "duration": 2.016
+    },
+    {
+        "text": "There's another one called isolate or something.",
+        "start": 2834.5,
+        "duration": 1.88
+    },
+    {
+        "text": "9 times out of 10 it will work by default anyway for simpler expressions.",
+        "start": 2836.9,
+        "duration": 4.16
+    },
+    {
+        "text": "Maybe you do something where it's like you've got we're going ",
+        "start": 2842.04,
+        "duration": 3.155
+    },
+    {
+        "text": "to write the equations onto the screen to just beam in a bit.",
+        "start": 2845.195,
+        "duration": 3.105
+    },
+    {
+        "text": "And now that's going to be the scene that renders ",
+        "start": 2849.18,
+        "duration": 2.445
+    },
+    {
+        "text": "if we go and then it does its whole thing.",
+        "start": 2851.625,
+        "duration": 2.055
+    },
+    {
+        "text": "And so those are just up there as it's doing its thing.",
+        "start": 2854.06,
+        "duration": 2.56
+    },
+    {
+        "text": "And are they behind or in front of the camera?",
+        "start": 2856.86,
+        "duration": 1.86
+    },
+    {
+        "text": "That's the sort of thing I'm sure you can control right?",
+        "start": 2859.06,
+        "duration": 2.12
+    },
+    {
+        "text": "So in this case by default things will just be rendered in the ",
+        "start": 2861.64,
+        "duration": 4.215
+    },
+    {
+        "text": "order that you put them on unless you tell them to apply a depth test.",
+        "start": 2865.855,
+        "duration": 4.685
+    },
+    {
+        "text": "So a lot of 3D objects that know they're supposed to ",
+        "start": 2870.8,
+        "duration": 1.9
+    },
+    {
+        "text": "be in three dimensions it's going to be depth tested.",
+        "start": 2872.7,
+        "duration": 1.9
+    },
+    {
+        "text": "In this case its actual position in space is on that xy plane so it's a little bit weird.",
+        "start": 2874.88,
+        "duration": 5.74
+    },
+    {
+        "text": "But if we wanted them to be rendered, wanted to make sure they show up ",
+        "start": 2880.84,
+        "duration": 3.032
+    },
+    {
+        "text": "in front what we could do is just make sure that we add it down here.",
+        "start": 2883.872,
+        "duration": 2.948
+    },
+    {
+        "text": "And then what I could do we could maybe say hey let's take those equations and ",
+        "start": 2887.26,
+        "duration": 4.345
+    },
+    {
+        "text": "I want to set a backstroke so that there's a little bit of space around them.",
+        "start": 2891.605,
+        "duration": 4.235
+    },
+    {
+        "text": "Let's maybe make the font size a little smaller so that they're just ",
+        "start": 2896.08,
+        "duration": 3.511
+    },
+    {
+        "text": "up in the corner so the font size is like 30 something like that.",
+        "start": 2899.591,
+        "duration": 3.309
+    },
+    {
+        "text": "We put that on they're a little bit smaller up there and then now when we render our I ",
+        "start": 2903.46,
+        "duration": 3.964
+    },
+    {
+        "text": "guess they're not really going to overlap with the solutions because I made them smaller.",
+        "start": 2907.424,
+        "duration": 4.056
+    },
+    {
+        "text": "Because they're being updated every frame.",
+        "start": 2912.68,
+        "duration": 1.78
+    },
+    {
+        "text": "Being able to break the text into sort of mathematical parts is ",
+        "start": 2915.04,
+        "duration": 2.472
+    },
+    {
+        "text": "extraordinarily useful if you want to highlight mathematical parts.",
+        "start": 2917.512,
+        "duration": 2.588
+    },
+    {
+        "text": "And it's something that would be a real pain to do in any other context.",
+        "start": 2920.32,
+        "duration": 2.4
+    },
+    {
+        "text": "Yeah you know what I maybe should say.",
+        "start": 2922.74,
+        "duration": 1.64
+    },
+    {
+        "text": "I have some example scenes basically.",
+        "start": 2924.54,
+        "duration": 2.04
+    },
+    {
+        "text": "So this is my intention.",
+        "start": 2927.22,
+        "duration": 1.32
+    },
+    {
+        "text": "Hey if you wanted to get started just look at a couple of these examples.",
+        "start": 2928.68,
+        "duration": 2.62
+    },
+    {
+        "text": "And so if you wanted to see like working with some tech what that might look like.",
+        "start": 2932.0,
+        "duration": 4.76
+    },
+    {
+        "text": "In this case I've got actually a series of expressions that we're ",
+        "start": 2937.12,
+        "duration": 2.395
+    },
+    {
+        "text": "going to play with which is basically rearranging a certain equation.",
+        "start": 2939.515,
+        "duration": 2.505
+    },
+    {
+        "text": "And these are going to be the lines of our equation ",
+        "start": 2942.28,
+        "duration": 1.98
+    },
+    {
+        "text": "and now it's just rendering the first of those lines.",
+        "start": 2944.26,
+        "duration": 2.02
+    },
+    {
+        "text": "I've got a special notion of transform that will try to match the strings underlying it.",
+        "start": 2946.28,
+        "duration": 4.84
+    },
+    {
+        "text": "So that if we play like this the A squared goes to the A ",
+        "start": 2951.36,
+        "duration": 3.419
+    },
+    {
+        "text": "squared the B squared goes to the B squared and things like that.",
+        "start": 2954.779,
+        "duration": 3.901
+    },
+    {
+        "text": "There's example scenes in here to kind of show the kinds of operations available.",
+        "start": 2959.28,
+        "duration": 5.16
+    },
+    {
+        "text": "If you just play around with some strings this like matching ",
+        "start": 2965.14,
+        "duration": 3.466
+    },
+    {
+        "text": "string will automatically give you a nice anagram animator.",
+        "start": 2968.606,
+        "duration": 3.354
+    },
+    {
+        "text": "Where you don't really you don't even have to think.",
+        "start": 2972.26,
+        "duration": 1.3
+    },
+    {
+        "text": "You don't have to worry about it.",
+        "start": 2973.76,
+        "duration": 0.42
+    },
+    {
+        "text": "You don't have to think.",
+        "start": 2974.18,
+        "duration": 0.66
+    },
+    {
+        "text": "It's just like move the letter to the corresponding ",
+        "start": 2975.0,
+        "duration": 2.253
+    },
+    {
+        "text": "letter and like it's sort of a one liner that does that.",
+        "start": 2977.253,
+        "duration": 2.427
+    },
+    {
+        "text": "That was like an emergent thing.",
+        "start": 2979.82,
+        "duration": 1.48
+    },
+    {
+        "text": "I mean slightly not helpful for viewers but we ",
+        "start": 2981.46,
+        "duration": 2.32
+    },
+    {
+        "text": "saw a big anagram discussed a couple of days ago.",
+        "start": 2983.78,
+        "duration": 2.42
+    },
+    {
+        "text": "We should tell Simon.",
+        "start": 2986.36,
+        "duration": 0.66
+    },
+    {
+        "text": "Yeah that's what it would save Simon if he had run it through Manim.",
+        "start": 2987.14,
+        "duration": 2.74
+    },
+    {
+        "text": "I can just like show a little bit more in here if you want where got this equation, ",
+        "start": 2991.14,
+        "duration": 3.864
+    },
+    {
+        "text": "famous equation.",
+        "start": 2995.004,
+        "duration": 0.736
+    },
+    {
+        "text": "If you wanted to say hey I just want to reference the E part of that.",
+        "start": 2996.12,
+        "duration": 2.8
+    },
+    {
+        "text": "There's an animation called flash around and you'd be flashing around just at E.",
+        "start": 2999.24,
+        "duration": 3.58
+    },
+    {
+        "text": "Or you want it.",
+        "start": 3003.26,
+        "duration": 0.5
+    },
+    {
+        "text": "There's another one called indicate and you want to indicate that pie.",
+        "start": 3003.78,
+        "duration": 2.26
+    },
+    {
+        "text": "Things like that.",
+        "start": 3006.48,
+        "duration": 0.5
+    },
+    {
+        "text": "So you're pulling it out bit by bit.",
+        "start": 3007.02,
+        "duration": 1.68
+    },
+    {
+        "text": "And in terms of understanding what functions like that exist.",
+        "start": 3008.78,
+        "duration": 2.94
+    },
+    {
+        "text": "Obviously there's your head which is this vast ",
+        "start": 3012.6,
+        "duration": 2.58
+    },
+    {
+        "text": "trove of experience over the time you wrote it.",
+        "start": 3015.18,
+        "duration": 2.58
+    },
+    {
+        "text": "But the Manim community version is a different version but these still exist.",
+        "start": 3017.88,
+        "duration": 4.0
+    },
+    {
+        "text": "Yeah Manim community definitely has much better documentation.",
+        "start": 3022.16,
+        "duration": 2.46
+    },
+    {
+        "text": "There's not zero documentation on this one.",
+        "start": 3025.48,
+        "duration": 1.8
+    },
+    {
+        "text": "You can see all the animations basically in a folder of the library called animation.",
+        "start": 3027.62,
+        "duration": 3.86
+    },
+    {
+        "text": "If you just look through that folder you'll see the things that exist.",
+        "start": 3031.92,
+        "duration": 2.8
+    },
+    {
+        "text": "All of the code I've ever written for any video is on GitHub.",
+        "start": 3035.32,
+        "duration": 2.5
+    },
+    {
+        "text": "If you go to github.",
+        "start": 3038.44,
+        "duration": 3.26
+    },
+    {
+        "text": "slash 3b1b slash videos this GitHub basically ",
+        "start": 3042.1,
+        "duration": 3.85
+    },
+    {
+        "text": "has all the animation from videos in the past.",
+        "start": 3045.95,
+        "duration": 3.85
+    },
+    {
+        "text": "In this case I guess and videos of the present.",
+        "start": 3050.54,
+        "duration": 1.92
+    },
+    {
+        "text": "I haven't made any animation for holograms yet so that one.",
+        "start": 3052.9,
+        "duration": 3.04
+    },
+    {
+        "text": "We can see some puzzles that I just made for the IMO.",
+        "start": 3056.42,
+        "duration": 3.42
+    },
+    {
+        "text": "You can see it all in there and then that gives you ",
+        "start": 3060.16,
+        "duration": 2.059
+    },
+    {
+        "text": "some sense of what the functionality available is.",
+        "start": 3062.219,
+        "duration": 1.981
+    },
+    {
+        "text": "And maybe this is a workflow thing for people like me who are beginning.",
+        "start": 3064.7,
+        "duration": 2.7
+    },
+    {
+        "text": "If you don't know what functions are out there obviously ",
+        "start": 3068.92,
+        "duration": 2.217
+    },
+    {
+        "text": "you can look at the library and see what's in there.",
+        "start": 3071.137,
+        "duration": 2.023
+    },
+    {
+        "text": "There's no auto complete sort of like if you start typing ",
+        "start": 3073.84,
+        "duration": 2.76
+    },
+    {
+        "text": "one that you think might be it you can't Oh yeah sure there is.",
+        "start": 3076.6,
+        "duration": 3.0
+    },
+    {
+        "text": "There's all sorts of auto complete tools out there.",
+        "start": 3079.74,
+        "duration": 2.06
+    },
+    {
+        "text": "Which will be more to do with the text editor.",
+        "start": 3082.04,
+        "duration": 1.74
+    },
+    {
+        "text": "Yeah so this is the text editor question.",
+        "start": 3084.06,
+        "duration": 1.44
+    },
+    {
+        "text": "So like in Sublime there's a thing called a language server protocol ",
+        "start": 3085.9,
+        "duration": 3.46
+    },
+    {
+        "text": "and so there's some I think it's called like Pi LSP or something.",
+        "start": 3089.36,
+        "duration": 3.26
+    },
+    {
+        "text": "It has some sense of the environment that it's in and might auto complete.",
+        "start": 3094.98,
+        "duration": 3.14
+    },
+    {
+        "text": "So that's one way to find a function.",
+        "start": 3098.12,
+        "duration": 1.22
+    },
+    {
+        "text": "If I was going to write a function I might call it this.",
+        "start": 3099.68,
+        "duration": 2.06
+    },
+    {
+        "text": "You can find out if there is one call.",
+        "start": 3101.88,
+        "duration": 1.2
+    },
+    {
+        "text": "GitHub copilot right?",
+        "start": 3103.42,
+        "duration": 1.2
+    },
+    {
+        "text": "Just like use copilot.",
+        "start": 3104.8,
+        "duration": 1.3
+    },
+    {
+        "text": "I don't like using copilot with Manim just because I know ",
+        "start": 3106.46,
+        "duration": 3.46
+    },
+    {
+        "text": "what I want to do and it doesn't quite know what I want to do.",
+        "start": 3109.92,
+        "duration": 3.7
+    },
+    {
+        "text": "And it's really nice if you're like engaging with a new library of code but I don't ",
+        "start": 3113.98,
+        "duration": 4.266
+    },
+    {
+        "text": "know I just find like dumber auto complete tools to be the thing I actually want.",
+        "start": 3118.246,
+        "duration": 4.114
+    },
+    {
+        "text": "Because often it's like it's not a if I don't know exactly what I want ",
+        "start": 3122.9,
+        "duration": 3.326
+    },
+    {
+        "text": "the way I want to even articulate the request is in code not in English.",
+        "start": 3126.226,
+        "duration": 3.374
+    },
+    {
+        "text": "To each their own but like just try it.",
+        "start": 3130.88,
+        "duration": 2.06
+    },
+    {
+        "text": "Yeah and you have the experience to sort of fall back on your own experience.",
+        "start": 3133.08,
+        "duration": 2.24
+    },
+    {
+        "text": "Yeah yeah yeah yeah just fill it in.",
+        "start": 3135.32,
+        "duration": 1.68
+    },
+    {
+        "text": "No but that is a sort of workflow thing and depending on your ",
+        "start": 3137.48,
+        "duration": 2.58
+    },
+    {
+        "text": "text editor and it's actually something I'm just not used to.",
+        "start": 3140.06,
+        "duration": 2.54
+    },
+    {
+        "text": "Like it's that that lower level sometimes it's ",
+        "start": 3143.16,
+        "duration": 1.869
+    },
+    {
+        "text": "the barrier to getting started on these things.",
+        "start": 3145.029,
+        "duration": 1.871
+    },
+    {
+        "text": "Yeah yeah yeah.",
+        "start": 3147.18,
+        "duration": 0.38
+    },
+    {
+        "text": "But once you've crossed those hurdles.",
+        "start": 3147.56,
+        "duration": 1.08
+    },
+    {
+        "text": "Yeah how do you even know where to start.",
+        "start": 3149.06,
+        "duration": 0.96
+    },
+    {
+        "text": "So the example scenes I think would maybe yeah yeah gives you some sense of it.",
+        "start": 3150.28,
+        "duration": 4.18
+    },
+    {
+        "text": "Nice well thank you for showing me I really enjoyed seeing the back end.",
+        "start": 3154.62,
+        "duration": 3.12
+    },
+    {
+        "text": "It's a very human experience coding and what and the messiness is part of it.",
+        "start": 3158.18,
+        "duration": 3.26
+    },
+    {
+        "text": "So there you go little peek behind the scenes.",
+        "start": 3161.92,
+        "duration": 2.26
+    },
+    {
+        "text": "I will leave a link in the description to that repo where you ",
+        "start": 3164.76,
+        "duration": 2.787
+    },
+    {
+        "text": "can see the code for literally any video I've made in the past.",
+        "start": 3167.547,
+        "duration": 2.833
+    },
+    {
+        "text": "By the time I post this I'll also add something to the readme ",
+        "start": 3170.92,
+        "duration": 3.031
+    },
+    {
+        "text": "of that repo to outline the actual workflow that I'm using here.",
+        "start": 3173.951,
+        "duration": 3.129
+    },
+    {
+        "text": "You know the specific sublime scripts what you would want to ",
+        "start": 3177.36,
+        "duration": 2.794
+    },
+    {
+        "text": "mimic if you're using a different text editor things like that.",
+        "start": 3180.154,
+        "duration": 2.886
+    },
+    {
+        "text": "And I'll also post the full version of that conversation warts and all to Patreon.",
+        "start": 3183.24,
+        "duration": 3.8
+    },
+    {
+        "text": "I might actually do some like manum live streams ",
+        "start": 3187.28,
+        "duration": 2.123
+    },
+    {
+        "text": "or something like that on Patreon periodically.",
+        "start": 3189.403,
+        "duration": 2.037
+    },
+    {
+        "text": "If that's a thing you would be into let me know.",
+        "start": 3191.7,
+        "duration": 2.18
+    },
+    {
+        "text": "If so what kinds of things would you like to see.",
+        "start": 3194.3,
+        "duration": 2.0
+    },
+    {
+        "text": "But in the meantime I'll be busy animating the next video and I will see you then.",
+        "start": 3196.5,
+        "duration": 3.32
+    }
+]

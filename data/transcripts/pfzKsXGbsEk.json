@@ -1,0 +1,7072 @@
+[
+    {
+        "text": "today's speaker is laura morris",
+        "start": 0.0,
+        "duration": 5.44
+    },
+    {
+        "text": "and he is associate research scientist",
+        "start": 3.04,
+        "duration": 6.16
+    },
+    {
+        "text": "and biostatistics wonderful",
+        "start": 5.44,
+        "duration": 3.76
+    },
+    {
+        "text": "so thanks so much for giving me the",
+        "start": 9.92,
+        "duration": 4.08
+    },
+    {
+        "text": "opportunity to present some of my tools",
+        "start": 11.28,
+        "duration": 5.28
+    },
+    {
+        "text": "here and um thanks for the kind",
+        "start": 14.0,
+        "duration": 4.32
+    },
+    {
+        "text": "introduction so today i'm going to talk",
+        "start": 16.56,
+        "duration": 4.32
+    },
+    {
+        "text": "about prs prep and basically about how",
+        "start": 18.32,
+        "duration": 5.119
+    },
+    {
+        "text": "we constructed evaluated",
+        "start": 20.88,
+        "duration": 4.8
+    },
+    {
+        "text": "and shared our cancer related",
+        "start": 23.439,
+        "duration": 5.361
+    },
+    {
+        "text": "polygenic risk scores",
+        "start": 25.68,
+        "duration": 3.12
+    },
+    {
+        "text": "and so",
+        "start": 28.96,
+        "duration": 3.279
+    },
+    {
+        "text": "the outline of my talk will be that i",
+        "start": 30.48,
+        "duration": 3.2
+    },
+    {
+        "text": "first will talk a little bit about",
+        "start": 32.239,
+        "duration": 3.521
+    },
+    {
+        "text": "polygenic risk scores and why they are",
+        "start": 33.68,
+        "duration": 5.52
+    },
+    {
+        "text": "useful to translate findings from g was",
+        "start": 35.76,
+        "duration": 4.959
+    },
+    {
+        "text": "um",
+        "start": 39.2,
+        "duration": 2.64
+    },
+    {
+        "text": "um",
+        "start": 40.719,
+        "duration": 4.0
+    },
+    {
+        "text": "into kind of a clinical setup maybe then",
+        "start": 41.84,
+        "duration": 4.32
+    },
+    {
+        "text": "spend time on",
+        "start": 44.719,
+        "duration": 3.36
+    },
+    {
+        "text": "how to construct polygenic risk scores",
+        "start": 46.16,
+        "duration": 4.719
+    },
+    {
+        "text": "and show some examples and finally",
+        "start": 48.079,
+        "duration": 4.96
+    },
+    {
+        "text": "show how we evaluated those",
+        "start": 50.879,
+        "duration": 5.761
+    },
+    {
+        "text": "cancer-related prs in two large biobanks",
+        "start": 53.039,
+        "duration": 6.16
+    },
+    {
+        "text": "and finally show the the platform itself",
+        "start": 56.64,
+        "duration": 3.84
+    },
+    {
+        "text": "that we use",
+        "start": 59.199,
+        "duration": 3.441
+    },
+    {
+        "text": "to um",
+        "start": 60.48,
+        "duration": 3.44
+    },
+    {
+        "text": "to kind of",
+        "start": 62.64,
+        "duration": 3.12
+    },
+    {
+        "text": "share the college and risk scores but",
+        "start": 63.92,
+        "duration": 4.64
+    },
+    {
+        "text": "also share their performance and",
+        "start": 65.76,
+        "duration": 4.88
+    },
+    {
+        "text": "and all our kind of features so other",
+        "start": 68.56,
+        "duration": 5.36
+    },
+    {
+        "text": "people can download and",
+        "start": 70.64,
+        "duration": 5.839
+    },
+    {
+        "text": "try those risk scores in their own data",
+        "start": 73.92,
+        "duration": 4.8
+    },
+    {
+        "text": "sets",
+        "start": 76.479,
+        "duration": 2.241
+    },
+    {
+        "text": "okay",
+        "start": 78.799,
+        "duration": 2.801
+    },
+    {
+        "text": "so first the clinical translation of",
+        "start": 79.759,
+        "duration": 4.161
+    },
+    {
+        "text": "divorce findings so the goal is here we",
+        "start": 81.6,
+        "duration": 4.24
+    },
+    {
+        "text": "want to improve measures of disease",
+        "start": 83.92,
+        "duration": 3.519
+    },
+    {
+        "text": "susceptibility",
+        "start": 85.84,
+        "duration": 2.56
+    },
+    {
+        "text": "and",
+        "start": 87.439,
+        "duration": 3.281
+    },
+    {
+        "text": "usually the classical way is",
+        "start": 88.4,
+        "duration": 3.92
+    },
+    {
+        "text": "genome-wide association studies they",
+        "start": 90.72,
+        "duration": 4.719
+    },
+    {
+        "text": "identify susceptibility variants",
+        "start": 92.32,
+        "duration": 5.28
+    },
+    {
+        "text": "and so by doing so they often end up in",
+        "start": 95.439,
+        "duration": 4.161
+    },
+    {
+        "text": "an interesting gene telling them about",
+        "start": 97.6,
+        "duration": 3.92
+    },
+    {
+        "text": "pathways and so they get noble",
+        "start": 99.6,
+        "duration": 4.72
+    },
+    {
+        "text": "biological insights and that is helpful",
+        "start": 101.52,
+        "duration": 4.879
+    },
+    {
+        "text": "because it points people into",
+        "start": 104.32,
+        "duration": 5.04
+    },
+    {
+        "text": "into a pathway that might be targeted",
+        "start": 106.399,
+        "duration": 5.281
+    },
+    {
+        "text": "through therapeutics you might identify",
+        "start": 109.36,
+        "duration": 4.24
+    },
+    {
+        "text": "biomarkers that could be relevant for",
+        "start": 111.68,
+        "duration": 4.32
+    },
+    {
+        "text": "diabetes disease diagnostics but then",
+        "start": 113.6,
+        "duration": 4.879
+    },
+    {
+        "text": "also maybe there are some inferences you",
+        "start": 116.0,
+        "duration": 6.159
+    },
+    {
+        "text": "can make on how to prevent the disease",
+        "start": 118.479,
+        "duration": 5.6
+    },
+    {
+        "text": "and here um",
+        "start": 122.159,
+        "duration": 4.161
+    },
+    {
+        "text": "the other half how we're going to",
+        "start": 124.079,
+        "duration": 4.481
+    },
+    {
+        "text": "translate jiva's findings is to kind of",
+        "start": 126.32,
+        "duration": 4.32
+    },
+    {
+        "text": "improve how we measure",
+        "start": 128.56,
+        "duration": 2.88
+    },
+    {
+        "text": "um",
+        "start": 130.64,
+        "duration": 3.36
+    },
+    {
+        "text": "the causal mechanisms or how we measure",
+        "start": 131.44,
+        "duration": 4.159
+    },
+    {
+        "text": "the susceptibility and the idea is to",
+        "start": 134.0,
+        "duration": 4.08
+    },
+    {
+        "text": "have a kind of a personalized medicine",
+        "start": 135.599,
+        "duration": 4.481
+    },
+    {
+        "text": "that we can help to better diagnose",
+        "start": 138.08,
+        "duration": 4.48
+    },
+    {
+        "text": "individuals so to support a clinical",
+        "start": 140.08,
+        "duration": 4.64
+    },
+    {
+        "text": "diagnosis maybe we can make some",
+        "start": 142.56,
+        "duration": 3.92
+    },
+    {
+        "text": "inferences about the",
+        "start": 144.72,
+        "duration": 4.72
+    },
+    {
+        "text": "disease prognosis or onset and maybe we",
+        "start": 146.48,
+        "duration": 5.44
+    },
+    {
+        "text": "can use those data points to optimize",
+        "start": 149.44,
+        "duration": 4.079
+    },
+    {
+        "text": "the therapy",
+        "start": 151.92,
+        "duration": 3.599
+    },
+    {
+        "text": "this slide is from 2008 but kind of",
+        "start": 153.519,
+        "duration": 4.0
+    },
+    {
+        "text": "those goals are still",
+        "start": 155.519,
+        "duration": 4.401
+    },
+    {
+        "text": "um up to date",
+        "start": 157.519,
+        "duration": 4.961
+    },
+    {
+        "text": "and divas are very successful and here",
+        "start": 159.92,
+        "duration": 5.52
+    },
+    {
+        "text": "i'm showing on a plot",
+        "start": 162.48,
+        "duration": 5.36
+    },
+    {
+        "text": "from a milted al they kind of summarize",
+        "start": 165.44,
+        "duration": 5.2
+    },
+    {
+        "text": "g walls that were published between 2007",
+        "start": 167.84,
+        "duration": 4.32
+    },
+    {
+        "text": "2017",
+        "start": 170.64,
+        "duration": 3.36
+    },
+    {
+        "text": "and what you can see here",
+        "start": 172.16,
+        "duration": 2.799
+    },
+    {
+        "text": "is that",
+        "start": 174.0,
+        "duration": 4.48
+    },
+    {
+        "text": "jivas became more and more frequent so",
+        "start": 174.959,
+        "duration": 5.761
+    },
+    {
+        "text": "more devastations were performed when",
+        "start": 178.48,
+        "duration": 4.08
+    },
+    {
+        "text": "you look at the color code here blue is",
+        "start": 180.72,
+        "duration": 4.64
+    },
+    {
+        "text": "the largest g was",
+        "start": 182.56,
+        "duration": 4.88
+    },
+    {
+        "text": "category you can see that sample size is",
+        "start": 185.36,
+        "duration": 3.68
+    },
+    {
+        "text": "increased overall",
+        "start": 187.44,
+        "duration": 2.56
+    },
+    {
+        "text": "and",
+        "start": 189.04,
+        "duration": 3.68
+    },
+    {
+        "text": "because of the larger sample sizes",
+        "start": 190.0,
+        "duration": 4.879
+    },
+    {
+        "text": "then of course the number of association",
+        "start": 192.72,
+        "duration": 5.04
+    },
+    {
+        "text": "signals increased",
+        "start": 194.879,
+        "duration": 4.64
+    },
+    {
+        "text": "also with the increasing sample size",
+        "start": 197.76,
+        "duration": 4.0
+    },
+    {
+        "text": "here so here we're looking at",
+        "start": 199.519,
+        "duration": 4.72
+    },
+    {
+        "text": "i think there are 40 million analyzed",
+        "start": 201.76,
+        "duration": 5.119
+    },
+    {
+        "text": "individuals and there are up to",
+        "start": 204.239,
+        "duration": 6.0
+    },
+    {
+        "text": "20 000 association 20 000 associations",
+        "start": 206.879,
+        "duration": 7.121
+    },
+    {
+        "text": "that were discovered by 2017",
+        "start": 210.239,
+        "duration": 6.0
+    },
+    {
+        "text": "and there's a market for those jivas",
+        "start": 214.0,
+        "duration": 5.44
+    },
+    {
+        "text": "studies it was still in 2017 there were",
+        "start": 216.239,
+        "duration": 4.64
+    },
+    {
+        "text": "more and more journals publishing those",
+        "start": 219.44,
+        "duration": 4.079
+    },
+    {
+        "text": "divorce findings and more and more",
+        "start": 220.879,
+        "duration": 6.08
+    },
+    {
+        "text": "diseases were analyzed so this is a very",
+        "start": 223.519,
+        "duration": 5.841
+    },
+    {
+        "text": "successful approach",
+        "start": 226.959,
+        "duration": 3.84
+    },
+    {
+        "text": "um",
+        "start": 229.36,
+        "duration": 3.439
+    },
+    {
+        "text": "but when when you look at the",
+        "start": 230.799,
+        "duration": 3.761
+    },
+    {
+        "text": "kind of the effect sizes and the number",
+        "start": 232.799,
+        "duration": 4.08
+    },
+    {
+        "text": "of loci we can see that in the beginning",
+        "start": 234.56,
+        "duration": 5.2
+    },
+    {
+        "text": "people were picking up those low hanging",
+        "start": 236.879,
+        "duration": 4.72
+    },
+    {
+        "text": "common variants with strong effects but",
+        "start": 239.76,
+        "duration": 4.479
+    },
+    {
+        "text": "over time those were already identified",
+        "start": 241.599,
+        "duration": 3.92
+    },
+    {
+        "text": "and became more and more difficult to",
+        "start": 244.239,
+        "duration": 3.441
+    },
+    {
+        "text": "find novel hits but with the more",
+        "start": 245.519,
+        "duration": 4.161
+    },
+    {
+        "text": "samples they had in their study",
+        "start": 247.68,
+        "duration": 3.6
+    },
+    {
+        "text": "and they could pick up additional loci",
+        "start": 249.68,
+        "duration": 3.68
+    },
+    {
+        "text": "but the effect sizes itself",
+        "start": 251.28,
+        "duration": 4.48
+    },
+    {
+        "text": "they they became smaller and smaller",
+        "start": 253.36,
+        "duration": 5.599
+    },
+    {
+        "text": "um also they're now able to also pick up",
+        "start": 255.76,
+        "duration": 5.36
+    },
+    {
+        "text": "lower frequency variants",
+        "start": 258.959,
+        "duration": 3.12
+    },
+    {
+        "text": "um",
+        "start": 261.12,
+        "duration": 4.24
+    },
+    {
+        "text": "and so there's not a linear trend on how",
+        "start": 262.079,
+        "duration": 4.801
+    },
+    {
+        "text": "much of the heritability can be",
+        "start": 265.36,
+        "duration": 3.279
+    },
+    {
+        "text": "explained but it's more kind of you can",
+        "start": 266.88,
+        "duration": 3.759
+    },
+    {
+        "text": "see here that they tend to reach a kind",
+        "start": 268.639,
+        "duration": 3.441
+    },
+    {
+        "text": "of a plateau",
+        "start": 270.639,
+        "duration": 3.041
+    },
+    {
+        "text": "but still even if the",
+        "start": 272.08,
+        "duration": 3.76
+    },
+    {
+        "text": "effect sizes are not",
+        "start": 273.68,
+        "duration": 3.6
+    },
+    {
+        "text": "that strong and",
+        "start": 275.84,
+        "duration": 3.28
+    },
+    {
+        "text": "each single variant can explain only a",
+        "start": 277.28,
+        "duration": 3.52
+    },
+    {
+        "text": "very small",
+        "start": 279.12,
+        "duration": 4.48
+    },
+    {
+        "text": "part of the susceptibility of a disease",
+        "start": 280.8,
+        "duration": 5.28
+    },
+    {
+        "text": "um overall the number of loci itself",
+        "start": 283.6,
+        "duration": 3.599
+    },
+    {
+        "text": "they explain more and more of the",
+        "start": 286.08,
+        "duration": 2.559
+    },
+    {
+        "text": "heritability",
+        "start": 287.199,
+        "duration": 3.041
+    },
+    {
+        "text": "and so we want to capture this",
+        "start": 288.639,
+        "duration": 4.161
+    },
+    {
+        "text": "heritability to make kind of",
+        "start": 290.24,
+        "duration": 3.92
+    },
+    {
+        "text": "risk predictions",
+        "start": 292.8,
+        "duration": 5.52
+    },
+    {
+        "text": "or of a risk stratification",
+        "start": 294.16,
+        "duration": 4.16
+    },
+    {
+        "text": "and so the way we are going to do this",
+        "start": 298.4,
+        "duration": 4.4
+    },
+    {
+        "text": "is we're condensing the findings from a",
+        "start": 300.0,
+        "duration": 5.44
+    },
+    {
+        "text": "from from a g was into a single",
+        "start": 302.8,
+        "duration": 4.64
+    },
+    {
+        "text": "biomarker",
+        "start": 305.44,
+        "duration": 3.52
+    },
+    {
+        "text": "um",
+        "start": 307.44,
+        "duration": 3.039
+    },
+    {
+        "text": "and so this is shown here this is an",
+        "start": 308.96,
+        "duration": 4.4
+    },
+    {
+        "text": "example divas from the uk biobank",
+        "start": 310.479,
+        "duration": 4.72
+    },
+    {
+        "text": "many hits here that reach genome by",
+        "start": 313.36,
+        "duration": 4.0
+    },
+    {
+        "text": "significance here in blue",
+        "start": 315.199,
+        "duration": 4.481
+    },
+    {
+        "text": "and we calculate a single score based on",
+        "start": 317.36,
+        "duration": 4.08
+    },
+    {
+        "text": "those experience and later i'm going to",
+        "start": 319.68,
+        "duration": 4.079
+    },
+    {
+        "text": "show how we're going to do that",
+        "start": 321.44,
+        "duration": 3.92
+    },
+    {
+        "text": "we are going to use this to",
+        "start": 323.759,
+        "duration": 4.241
+    },
+    {
+        "text": "differentiate cases from controls here",
+        "start": 325.36,
+        "duration": 5.76
+    },
+    {
+        "text": "cases in black controls and controls in",
+        "start": 328.0,
+        "duration": 5.12
+    },
+    {
+        "text": "black cases in red",
+        "start": 331.12,
+        "duration": 4.88
+    },
+    {
+        "text": "you can see there is a shift in the risk",
+        "start": 333.12,
+        "duration": 5.76
+    },
+    {
+        "text": "or distribution and we can use that to",
+        "start": 336.0,
+        "duration": 5.199
+    },
+    {
+        "text": "match for risk stratification for",
+        "start": 338.88,
+        "duration": 4.08
+    },
+    {
+        "text": "example",
+        "start": 341.199,
+        "duration": 3.121
+    },
+    {
+        "text": "and so",
+        "start": 342.96,
+        "duration": 3.92
+    },
+    {
+        "text": "before i talk about pis i want to kind",
+        "start": 344.32,
+        "duration": 4.879
+    },
+    {
+        "text": "of set the expectations",
+        "start": 346.88,
+        "duration": 4.8
+    },
+    {
+        "text": "um so right now the project scores we're",
+        "start": 349.199,
+        "duration": 4.961
+    },
+    {
+        "text": "using they're most useful in details of",
+        "start": 351.68,
+        "duration": 4.16
+    },
+    {
+        "text": "the distribution and that can be shown",
+        "start": 354.16,
+        "duration": 4.64
+    },
+    {
+        "text": "here when you look at cases and controls",
+        "start": 355.84,
+        "duration": 4.32
+    },
+    {
+        "text": "you can see this area where there's a",
+        "start": 358.8,
+        "duration": 3.119
+    },
+    {
+        "text": "large overlap so you're not able to",
+        "start": 360.16,
+        "duration": 4.159
+    },
+    {
+        "text": "differentiate cases from controls",
+        "start": 361.919,
+        "duration": 4.321
+    },
+    {
+        "text": "but when you look at the tail here you",
+        "start": 364.319,
+        "duration": 3.521
+    },
+    {
+        "text": "can see",
+        "start": 366.24,
+        "duration": 4.32
+    },
+    {
+        "text": "there's an enrichment of cases in here",
+        "start": 367.84,
+        "duration": 4.079
+    },
+    {
+        "text": "that's also shown here by the odds",
+        "start": 370.56,
+        "duration": 4.16
+    },
+    {
+        "text": "ratios when you compare the top 25",
+        "start": 371.919,
+        "duration": 5.521
+    },
+    {
+        "text": "versus the bottom 75",
+        "start": 374.72,
+        "duration": 4.64
+    },
+    {
+        "text": "we get an outrage of three in this case",
+        "start": 377.44,
+        "duration": 2.96
+    },
+    {
+        "text": "this is",
+        "start": 379.36,
+        "duration": 2.399
+    },
+    {
+        "text": "prostate cancer",
+        "start": 380.4,
+        "duration": 3.919
+    },
+    {
+        "text": "meaning that those prs allow you",
+        "start": 381.759,
+        "duration": 4.56
+    },
+    {
+        "text": "to identify a subset of a population",
+        "start": 384.319,
+        "duration": 5.201
+    },
+    {
+        "text": "that is in reach at higher risk for",
+        "start": 386.319,
+        "duration": 6.16
+    },
+    {
+        "text": "developing a disease",
+        "start": 389.52,
+        "duration": 4.64
+    },
+    {
+        "text": "another thing to keep in mind is we're",
+        "start": 392.479,
+        "duration": 3.44
+    },
+    {
+        "text": "looking at genetic data",
+        "start": 394.16,
+        "duration": 3.92
+    },
+    {
+        "text": "and so we have the different effects in",
+        "start": 395.919,
+        "duration": 4.481
+    },
+    {
+        "text": "population bottleneck effects and so",
+        "start": 398.08,
+        "duration": 4.08
+    },
+    {
+        "text": "many of those polygenic risk scores are",
+        "start": 400.4,
+        "duration": 4.079
+    },
+    {
+        "text": "ancestry specific so the distributions",
+        "start": 402.16,
+        "duration": 4.319
+    },
+    {
+        "text": "differ between ancestry groups and you",
+        "start": 404.479,
+        "duration": 3.521
+    },
+    {
+        "text": "need to be very careful when you have a",
+        "start": 406.479,
+        "duration": 3.761
+    },
+    {
+        "text": "polygenic risk for because it's not",
+        "start": 408.0,
+        "duration": 4.08
+    },
+    {
+        "text": "directly transferable to a different",
+        "start": 410.24,
+        "duration": 4.399
+    },
+    {
+        "text": "ancestry group",
+        "start": 412.08,
+        "duration": 4.64
+    },
+    {
+        "text": "and the problem in dbos studies right",
+        "start": 414.639,
+        "duration": 3.761
+    },
+    {
+        "text": "now that we're still facing is the lack",
+        "start": 416.72,
+        "duration": 4.08
+    },
+    {
+        "text": "of diversity there's a",
+        "start": 418.4,
+        "duration": 4.72
+    },
+    {
+        "text": "european bias in here and later on i'm",
+        "start": 420.8,
+        "duration": 4.32
+    },
+    {
+        "text": "going to show a plot about that most of",
+        "start": 423.12,
+        "duration": 3.919
+    },
+    {
+        "text": "the jivas that were performed",
+        "start": 425.12,
+        "duration": 3.76
+    },
+    {
+        "text": "are focused on european ancestry",
+        "start": 427.039,
+        "duration": 4.481
+    },
+    {
+        "text": "individuals",
+        "start": 428.88,
+        "duration": 2.64
+    },
+    {
+        "text": "another important thing when we talk",
+        "start": 432.16,
+        "duration": 3.84
+    },
+    {
+        "text": "about prs is that they only capture the",
+        "start": 433.599,
+        "duration": 4.401
+    },
+    {
+        "text": "heritable fraction that is captured by",
+        "start": 436.0,
+        "duration": 4.96
+    },
+    {
+        "text": "the additive effects of snip variants",
+        "start": 438.0,
+        "duration": 5.039
+    },
+    {
+        "text": "and so this is kind of the the maximum",
+        "start": 440.96,
+        "duration": 4.32
+    },
+    {
+        "text": "that we can predict with the polygenic",
+        "start": 443.039,
+        "duration": 4.88
+    },
+    {
+        "text": "risk score and so what i'm showing here",
+        "start": 445.28,
+        "duration": 4.639
+    },
+    {
+        "text": "these are different traits and depending",
+        "start": 447.919,
+        "duration": 3.68
+    },
+    {
+        "text": "on the trait there's a different",
+        "start": 449.919,
+        "duration": 4.4
+    },
+    {
+        "text": "estimated familiar heritability",
+        "start": 451.599,
+        "duration": 5.6
+    },
+    {
+        "text": "this is the the lighter color and in the",
+        "start": 454.319,
+        "duration": 4.561
+    },
+    {
+        "text": "darker color indicates",
+        "start": 457.199,
+        "duration": 3.361
+    },
+    {
+        "text": "the heritability that we currently can",
+        "start": 458.88,
+        "duration": 2.64
+    },
+    {
+        "text": "explain",
+        "start": 460.56,
+        "duration": 2.28
+    },
+    {
+        "text": "by um",
+        "start": 461.52,
+        "duration": 4.56
+    },
+    {
+        "text": "by snips by common snips of from jiva",
+        "start": 462.84,
+        "duration": 4.28
+    },
+    {
+        "text": "studies",
+        "start": 466.08,
+        "duration": 3.04
+    },
+    {
+        "text": "and so there's still a gap in here",
+        "start": 467.12,
+        "duration": 3.759
+    },
+    {
+        "text": "but the maximum here indicates that",
+        "start": 469.12,
+        "duration": 3.359
+    },
+    {
+        "text": "there is a proportion",
+        "start": 470.879,
+        "duration": 3.681
+    },
+    {
+        "text": "that is due to other demographic",
+        "start": 472.479,
+        "duration": 4.16
+    },
+    {
+        "text": "environmental risk factors that are not",
+        "start": 474.56,
+        "duration": 3.84
+    },
+    {
+        "text": "captured in political collision and",
+        "start": 476.639,
+        "duration": 2.721
+    },
+    {
+        "text": "school",
+        "start": 478.4,
+        "duration": 2.639
+    },
+    {
+        "text": "and so this means that when you fully",
+        "start": 479.36,
+        "duration": 2.959
+    },
+    {
+        "text": "want to understand the risk for a",
+        "start": 481.039,
+        "duration": 3.201
+    },
+    {
+        "text": "disease we also need to consider",
+        "start": 482.319,
+        "duration": 5.6
+    },
+    {
+        "text": "those non-genetic risk factors and um",
+        "start": 484.24,
+        "duration": 5.6
+    },
+    {
+        "text": "current exposures",
+        "start": 487.919,
+        "duration": 5.921
+    },
+    {
+        "text": "um that influence the susceptibility",
+        "start": 489.84,
+        "duration": 4.0
+    },
+    {
+        "text": "okay so coming now to the ps",
+        "start": 494.319,
+        "duration": 4.081
+    },
+    {
+        "text": "construction itself",
+        "start": 496.56,
+        "duration": 3.52
+    },
+    {
+        "text": "um there's a basic recipe how to",
+        "start": 498.4,
+        "duration": 4.0
+    },
+    {
+        "text": "construct polygenic discourse and here",
+        "start": 500.08,
+        "duration": 3.76
+    },
+    {
+        "text": "i'm talking about polygenic wisco",
+        "start": 502.4,
+        "duration": 3.359
+    },
+    {
+        "text": "because i mainly focus on case control",
+        "start": 503.84,
+        "duration": 3.6
+    },
+    {
+        "text": "studies if you have quantitative traits",
+        "start": 505.759,
+        "duration": 3.761
+    },
+    {
+        "text": "you would you would call them polygenic",
+        "start": 507.44,
+        "duration": 3.36
+    },
+    {
+        "text": "scores",
+        "start": 509.52,
+        "duration": 4.16
+    },
+    {
+        "text": "and and so basic recipe is the same",
+        "start": 510.8,
+        "duration": 5.2
+    },
+    {
+        "text": "you want to select on kind of",
+        "start": 513.68,
+        "duration": 4.719
+    },
+    {
+        "text": "independent variants that you",
+        "start": 516.0,
+        "duration": 4.56
+    },
+    {
+        "text": "i think are contributing diseases",
+        "start": 518.399,
+        "duration": 5.601
+    },
+    {
+        "text": "independently on maybe a different loci",
+        "start": 520.56,
+        "duration": 5.68
+    },
+    {
+        "text": "and each one of them has a certain",
+        "start": 524.0,
+        "duration": 4.72
+    },
+    {
+        "text": "effect size or weighted effect size",
+        "start": 526.24,
+        "duration": 4.64
+    },
+    {
+        "text": "let's call it a meter head for a single",
+        "start": 528.72,
+        "duration": 4.16
+    },
+    {
+        "text": "slip they're coming from an external g",
+        "start": 530.88,
+        "duration": 3.84
+    },
+    {
+        "text": "gbos and here i'm looking at summary",
+        "start": 532.88,
+        "duration": 3.68
+    },
+    {
+        "text": "statistics",
+        "start": 534.72,
+        "duration": 3.04
+    },
+    {
+        "text": "then in your own cohort you have",
+        "start": 536.56,
+        "duration": 3.76
+    },
+    {
+        "text": "genotype data",
+        "start": 537.76,
+        "duration": 5.44
+    },
+    {
+        "text": "and for individual you have either two",
+        "start": 540.32,
+        "duration": 3.76
+    },
+    {
+        "text": "one",
+        "start": 543.2,
+        "duration": 2.88
+    },
+    {
+        "text": "or no risk of you",
+        "start": 544.08,
+        "duration": 3.36
+    },
+    {
+        "text": "and so basically you have a list of",
+        "start": 546.08,
+        "duration": 4.16
+    },
+    {
+        "text": "those risk snips and their genotypes and",
+        "start": 547.44,
+        "duration": 5.28
+    },
+    {
+        "text": "now you multiply for each",
+        "start": 550.24,
+        "duration": 4.64
+    },
+    {
+        "text": "single um risk snip",
+        "start": 552.72,
+        "duration": 2.88
+    },
+    {
+        "text": "the",
+        "start": 554.88,
+        "duration": 3.36
+    },
+    {
+        "text": "the risk allele dosages times the effect",
+        "start": 555.6,
+        "duration": 5.04
+    },
+    {
+        "text": "size from the external g wells and then",
+        "start": 558.24,
+        "duration": 6.08
+    },
+    {
+        "text": "basically sum up um",
+        "start": 560.64,
+        "duration": 3.68
+    },
+    {
+        "text": "those numbers into a single score and",
+        "start": 564.399,
+        "duration": 4.0
+    },
+    {
+        "text": "that's what we call a prs",
+        "start": 566.08,
+        "duration": 5.28
+    },
+    {
+        "text": "and the different ways how to weigh on",
+        "start": 568.399,
+        "duration": 5.361
+    },
+    {
+        "text": "on the effect sizes and how to condense",
+        "start": 571.36,
+        "duration": 3.44
+    },
+    {
+        "text": "those lists",
+        "start": 573.76,
+        "duration": 2.96
+    },
+    {
+        "text": "and and so the question is always how do",
+        "start": 574.8,
+        "duration": 4.24
+    },
+    {
+        "text": "we choose the list which nips should",
+        "start": 576.72,
+        "duration": 3.92
+    },
+    {
+        "text": "should be included in a polygenic risk",
+        "start": 579.04,
+        "duration": 2.4
+    },
+    {
+        "text": "or",
+        "start": 580.64,
+        "duration": 2.319
+    },
+    {
+        "text": "and how many",
+        "start": 581.44,
+        "duration": 3.12
+    },
+    {
+        "text": "um and should we do anything with the",
+        "start": 582.959,
+        "duration": 3.601
+    },
+    {
+        "text": "effect sizes should we shrink them and",
+        "start": 584.56,
+        "duration": 3.44
+    },
+    {
+        "text": "there are different many different",
+        "start": 586.56,
+        "duration": 5.36
+    },
+    {
+        "text": "approaches by now and here's a recent um",
+        "start": 588.0,
+        "duration": 6.48
+    },
+    {
+        "text": "review article by jing mao and changzo",
+        "start": 591.92,
+        "duration": 4.08
+    },
+    {
+        "text": "in our department",
+        "start": 594.48,
+        "duration": 3.44
+    },
+    {
+        "text": "and jing ma is actually a gsi who's",
+        "start": 596.0,
+        "duration": 3.44
+    },
+    {
+        "text": "working with me on college and grisco",
+        "start": 597.92,
+        "duration": 2.88
+    },
+    {
+        "text": "and she put together this very nice",
+        "start": 599.44,
+        "duration": 3.92
+    },
+    {
+        "text": "review manuscript review paper",
+        "start": 600.8,
+        "duration": 4.479
+    },
+    {
+        "text": "and here showing kind of the history of",
+        "start": 603.36,
+        "duration": 3.84
+    },
+    {
+        "text": "current um",
+        "start": 605.279,
+        "duration": 3.441
+    },
+    {
+        "text": "um polygenic",
+        "start": 607.2,
+        "duration": 3.759
+    },
+    {
+        "text": "score methods and here blue these are",
+        "start": 608.72,
+        "duration": 4.4
+    },
+    {
+        "text": "based on individual level data",
+        "start": 610.959,
+        "duration": 4.161
+    },
+    {
+        "text": "but i'm mainly talking about methods",
+        "start": 613.12,
+        "duration": 3.839
+    },
+    {
+        "text": "that use gba summary statistics they are",
+        "start": 615.12,
+        "duration": 4.48
+    },
+    {
+        "text": "shown in orange and you can see this is",
+        "start": 616.959,
+        "duration": 4.32
+    },
+    {
+        "text": "a real trend here more and more people",
+        "start": 619.6,
+        "duration": 3.2
+    },
+    {
+        "text": "are developing methods",
+        "start": 621.279,
+        "duration": 3.201
+    },
+    {
+        "text": "including additional information",
+        "start": 622.8,
+        "duration": 3.52
+    },
+    {
+        "text": "improving the ways how they weigh those",
+        "start": 624.48,
+        "duration": 3.68
+    },
+    {
+        "text": "effect sizes and",
+        "start": 626.32,
+        "duration": 4.24
+    },
+    {
+        "text": "similar effects as distributions and",
+        "start": 628.16,
+        "duration": 5.04
+    },
+    {
+        "text": "also include um additional annotations",
+        "start": 630.56,
+        "duration": 4.399
+    },
+    {
+        "text": "from other sources",
+        "start": 633.2,
+        "duration": 3.52
+    },
+    {
+        "text": "and so here",
+        "start": 634.959,
+        "duration": 4.161
+    },
+    {
+        "text": "for for our study we focused on four and",
+        "start": 636.72,
+        "duration": 4.16
+    },
+    {
+        "text": "actually there's a",
+        "start": 639.12,
+        "duration": 3.36
+    },
+    {
+        "text": "the first method actually is the the",
+        "start": 640.88,
+        "duration": 3.44
+    },
+    {
+        "text": "simplest simplest one where you just",
+        "start": 642.48,
+        "duration": 3.599
+    },
+    {
+        "text": "focus on the independent g was hits",
+        "start": 644.32,
+        "duration": 3.92
+    },
+    {
+        "text": "that's i think the most common",
+        "start": 646.079,
+        "duration": 4.721
+    },
+    {
+        "text": "photogenic disco method itself",
+        "start": 648.24,
+        "duration": 4.4
+    },
+    {
+        "text": "and then there's",
+        "start": 650.8,
+        "duration": 4.4
+    },
+    {
+        "text": "ld clamping and thresholding a deep red",
+        "start": 652.64,
+        "duration": 4.72
+    },
+    {
+        "text": "lasso some prcs although and i'm going",
+        "start": 655.2,
+        "duration": 5.12
+    },
+    {
+        "text": "to talk about them in the next slide so",
+        "start": 657.36,
+        "duration": 4.56
+    },
+    {
+        "text": "there's you always have the kind of",
+        "start": 660.32,
+        "duration": 3.199
+    },
+    {
+        "text": "you're faced with the choice that you",
+        "start": 661.92,
+        "duration": 3.359
+    },
+    {
+        "text": "have to make and here we",
+        "start": 663.519,
+        "duration": 3.601
+    },
+    {
+        "text": "said we focus on those five because we",
+        "start": 665.279,
+        "duration": 2.881
+    },
+    {
+        "text": "can",
+        "start": 667.12,
+        "duration": 2.48
+    },
+    {
+        "text": "make them work on our",
+        "start": 668.16,
+        "duration": 3.119
+    },
+    {
+        "text": "on our resources we have and they work",
+        "start": 669.6,
+        "duration": 3.239
+    },
+    {
+        "text": "quite",
+        "start": 671.279,
+        "duration": 4.161
+    },
+    {
+        "text": "well so the",
+        "start": 672.839,
+        "duration": 5.401
+    },
+    {
+        "text": "so focusing on those five methods here",
+        "start": 675.44,
+        "duration": 4.399
+    },
+    {
+        "text": "the simplest one is the the fixed key",
+        "start": 678.24,
+        "duration": 3.36
+    },
+    {
+        "text": "value threshold and that is for example",
+        "start": 679.839,
+        "duration": 4.24
+    },
+    {
+        "text": "the g wise g was hits and the kind of",
+        "start": 681.6,
+        "duration": 4.32
+    },
+    {
+        "text": "you you want to ensure that they are",
+        "start": 684.079,
+        "duration": 3.76
+    },
+    {
+        "text": "independent so you perform an ld",
+        "start": 685.92,
+        "duration": 3.68
+    },
+    {
+        "text": "clamping what it means is",
+        "start": 687.839,
+        "duration": 4.0
+    },
+    {
+        "text": "you take the strongest signal and then",
+        "start": 689.6,
+        "duration": 4.0
+    },
+    {
+        "text": "you determine which of the of the other",
+        "start": 691.839,
+        "duration": 3.841
+    },
+    {
+        "text": "snips are correlated to that one you",
+        "start": 693.6,
+        "duration": 4.16
+    },
+    {
+        "text": "exclude those and then go on to the next",
+        "start": 695.68,
+        "duration": 4.159
+    },
+    {
+        "text": "one that is then independent from the",
+        "start": 697.76,
+        "duration": 4.72
+    },
+    {
+        "text": "first you selected and you do that until",
+        "start": 699.839,
+        "duration": 4.801
+    },
+    {
+        "text": "you run out of for example snips that",
+        "start": 702.48,
+        "duration": 3.919
+    },
+    {
+        "text": "reach genome-wide significance so that's",
+        "start": 704.64,
+        "duration": 4.639
+    },
+    {
+        "text": "the most simplest approach",
+        "start": 706.399,
+        "duration": 5.44
+    },
+    {
+        "text": "but then there's um an advanced method",
+        "start": 709.279,
+        "duration": 3.841
+    },
+    {
+        "text": "that says oh",
+        "start": 711.839,
+        "duration": 2.961
+    },
+    {
+        "text": "the genome-wide significant threshold",
+        "start": 713.12,
+        "duration": 3.2
+    },
+    {
+        "text": "maybe that's not the optimal threshold",
+        "start": 714.8,
+        "duration": 3.76
+    },
+    {
+        "text": "we want to use um we are talking about",
+        "start": 716.32,
+        "duration": 5.84
+    },
+    {
+        "text": "prediction so it might be helpful to go",
+        "start": 718.56,
+        "duration": 5.76
+    },
+    {
+        "text": "to pick snips that did not reach a",
+        "start": 722.16,
+        "duration": 4.4
+    },
+    {
+        "text": "threshold so we might increase the risk",
+        "start": 724.32,
+        "duration": 5.12
+    },
+    {
+        "text": "of adding noise to the stress score but",
+        "start": 726.56,
+        "duration": 4.48
+    },
+    {
+        "text": "still there are informative snips in",
+        "start": 729.44,
+        "duration": 3.6
+    },
+    {
+        "text": "here that could contribute to the",
+        "start": 731.04,
+        "duration": 3.44
+    },
+    {
+        "text": "predictive power",
+        "start": 733.04,
+        "duration": 3.12
+    },
+    {
+        "text": "and so we don't know this threshold so",
+        "start": 734.48,
+        "duration": 3.359
+    },
+    {
+        "text": "there's kind of a tuning",
+        "start": 736.16,
+        "duration": 3.76
+    },
+    {
+        "text": "step involved where you determine this",
+        "start": 737.839,
+        "duration": 4.081
+    },
+    {
+        "text": "this optimal threshold for this",
+        "start": 739.92,
+        "duration": 2.919
+    },
+    {
+        "text": "this",
+        "start": 741.92,
+        "duration": 2.719
+    },
+    {
+        "text": "score",
+        "start": 742.839,
+        "duration": 3.641
+    },
+    {
+        "text": "and one example one tool is called",
+        "start": 744.639,
+        "duration": 6.0
+    },
+    {
+        "text": "precise two that does exactly that",
+        "start": 746.48,
+        "duration": 5.68
+    },
+    {
+        "text": "there are other approaches penalized",
+        "start": 750.639,
+        "duration": 4.0
+    },
+    {
+        "text": "regression approaches that try to",
+        "start": 752.16,
+        "duration": 3.6
+    },
+    {
+        "text": "balance",
+        "start": 754.639,
+        "duration": 4.241
+    },
+    {
+        "text": "bias and variance to find optimal",
+        "start": 755.76,
+        "duration": 4.4
+    },
+    {
+        "text": "parameters",
+        "start": 758.88,
+        "duration": 4.639
+    },
+    {
+        "text": "and also they they adjust",
+        "start": 760.16,
+        "duration": 6.0
+    },
+    {
+        "text": "for ld this is part of the algorithm",
+        "start": 763.519,
+        "duration": 5.601
+    },
+    {
+        "text": "one example for that would be elastosome",
+        "start": 766.16,
+        "duration": 5.04
+    },
+    {
+        "text": "so this more advanced method",
+        "start": 769.12,
+        "duration": 3.92
+    },
+    {
+        "text": "you can end up with more millions of",
+        "start": 771.2,
+        "duration": 3.52
+    },
+    {
+        "text": "snips",
+        "start": 773.04,
+        "duration": 3.68
+    },
+    {
+        "text": "that contribute to a risk score",
+        "start": 774.72,
+        "duration": 4.48
+    },
+    {
+        "text": "or you can use a bayesian method where",
+        "start": 776.72,
+        "duration": 4.16
+    },
+    {
+        "text": "you kind of",
+        "start": 779.2,
+        "duration": 4.079
+    },
+    {
+        "text": "use some prior information or",
+        "start": 780.88,
+        "duration": 4.48
+    },
+    {
+        "text": "assumptions let's say",
+        "start": 783.279,
+        "duration": 4.8
+    },
+    {
+        "text": "um you assume a certain percentage of",
+        "start": 785.36,
+        "duration": 4.8
+    },
+    {
+        "text": "variants that contribute that that are",
+        "start": 788.079,
+        "duration": 5.921
+    },
+    {
+        "text": "causal and so you model that uh fraction",
+        "start": 790.16,
+        "duration": 6.239
+    },
+    {
+        "text": "into a risk one also you you shrink",
+        "start": 794.0,
+        "duration": 4.959
+    },
+    {
+        "text": "effect sizes with respect to ob",
+        "start": 796.399,
+        "duration": 6.401
+    },
+    {
+        "text": "and and then you have um",
+        "start": 798.959,
+        "duration": 3.841
+    },
+    {
+        "text": "for example prscs",
+        "start": 804.16,
+        "duration": 3.6
+    },
+    {
+        "text": "auto",
+        "start": 806.56,
+        "duration": 3.279
+    },
+    {
+        "text": "on snip that usually includes over 1",
+        "start": 807.76,
+        "duration": 4.16
+    },
+    {
+        "text": "million",
+        "start": 809.839,
+        "duration": 4.0
+    },
+    {
+        "text": "variants or you can use ld prep and",
+        "start": 811.92,
+        "duration": 3.359
+    },
+    {
+        "text": "depending on the fraction of causal",
+        "start": 813.839,
+        "duration": 3.68
+    },
+    {
+        "text": "variance you can end up with very few",
+        "start": 815.279,
+        "duration": 4.401
+    },
+    {
+        "text": "contributing steps or many depending on",
+        "start": 817.519,
+        "duration": 3.521
+    },
+    {
+        "text": "the assumption",
+        "start": 819.68,
+        "duration": 3.519
+    },
+    {
+        "text": "of that approach so basically you end up",
+        "start": 821.04,
+        "duration": 4.64
+    },
+    {
+        "text": "with depending on the method",
+        "start": 823.199,
+        "duration": 4.561
+    },
+    {
+        "text": "you end up with very",
+        "start": 825.68,
+        "duration": 4.08
+    },
+    {
+        "text": "different",
+        "start": 827.76,
+        "duration": 4.639
+    },
+    {
+        "text": "snip lists",
+        "start": 829.76,
+        "duration": 2.639
+    },
+    {
+        "text": "and so when we want to construct prs we",
+        "start": 832.959,
+        "duration": 4.161
+    },
+    {
+        "text": "usually",
+        "start": 836.0,
+        "duration": 2.56
+    },
+    {
+        "text": "we aim to have at least three",
+        "start": 837.12,
+        "duration": 3.44
+    },
+    {
+        "text": "independent data sets so we need to",
+        "start": 838.56,
+        "duration": 4.16
+    },
+    {
+        "text": "discover diva studies that we use to",
+        "start": 840.56,
+        "duration": 3.12
+    },
+    {
+        "text": "find",
+        "start": 842.72,
+        "duration": 3.44
+    },
+    {
+        "text": "um susceptibility variants",
+        "start": 843.68,
+        "duration": 4.8
+    },
+    {
+        "text": "and then we need a training set that we",
+        "start": 846.16,
+        "duration": 4.64
+    },
+    {
+        "text": "use to uh to kind of get the tuning",
+        "start": 848.48,
+        "duration": 3.76
+    },
+    {
+        "text": "parameters",
+        "start": 850.8,
+        "duration": 3.68
+    },
+    {
+        "text": "um that tells us this might be the",
+        "start": 852.24,
+        "duration": 4.88
+    },
+    {
+        "text": "setting that works best for that g boss",
+        "start": 854.48,
+        "duration": 5.12
+    },
+    {
+        "text": "and that phenotype you're interested in",
+        "start": 857.12,
+        "duration": 3.92
+    },
+    {
+        "text": "and because you don't want to avoid",
+        "start": 859.6,
+        "duration": 3.28
+    },
+    {
+        "text": "overfitting you want to evaluate that",
+        "start": 861.04,
+        "duration": 3.84
+    },
+    {
+        "text": "prs in a testing set",
+        "start": 862.88,
+        "duration": 4.399
+    },
+    {
+        "text": "and you can also think about",
+        "start": 864.88,
+        "duration": 4.319
+    },
+    {
+        "text": "a fourth data set where you then",
+        "start": 867.279,
+        "duration": 3.441
+    },
+    {
+        "text": "actually are going to work with the prs",
+        "start": 869.199,
+        "duration": 3.121
+    },
+    {
+        "text": "but here i'm focusing only on those",
+        "start": 870.72,
+        "duration": 4.479
+    },
+    {
+        "text": "three independent data sets",
+        "start": 872.32,
+        "duration": 5.199
+    },
+    {
+        "text": "okay",
+        "start": 875.199,
+        "duration": 2.32
+    },
+    {
+        "text": "and so the two data sets we are going to",
+        "start": 877.839,
+        "duration": 4.401
+    },
+    {
+        "text": "use are",
+        "start": 880.399,
+        "duration": 4.481
+    },
+    {
+        "text": "two biobanks one is the michigan",
+        "start": 882.24,
+        "duration": 4.88
+    },
+    {
+        "text": "genomics initiative from this precision",
+        "start": 884.88,
+        "duration": 3.68
+    },
+    {
+        "text": "health here",
+        "start": 887.12,
+        "duration": 2.24
+    },
+    {
+        "text": "from",
+        "start": 888.56,
+        "duration": 2.719
+    },
+    {
+        "text": "from the university and it's a hospital",
+        "start": 889.36,
+        "duration": 3.36
+    },
+    {
+        "text": "based study and you might have heard",
+        "start": 891.279,
+        "duration": 2.961
+    },
+    {
+        "text": "about this from a present previous",
+        "start": 892.72,
+        "duration": 3.04
+    },
+    {
+        "text": "presentation here",
+        "start": 894.24,
+        "duration": 3.76
+    },
+    {
+        "text": "and so right now there are over 80 000",
+        "start": 895.76,
+        "duration": 5.28
+    },
+    {
+        "text": "participants maybe more closer to 100",
+        "start": 898.0,
+        "duration": 4.56
+    },
+    {
+        "text": "000 by now",
+        "start": 901.04,
+        "duration": 3.52
+    },
+    {
+        "text": "and so the kind of",
+        "start": 902.56,
+        "duration": 3.92
+    },
+    {
+        "text": "main recruitment mechanism was through",
+        "start": 904.56,
+        "duration": 2.959
+    },
+    {
+        "text": "surgery",
+        "start": 906.48,
+        "duration": 2.479
+    },
+    {
+        "text": "or other",
+        "start": 907.519,
+        "duration": 3.201
+    },
+    {
+        "text": "interventional diagnostic procedures and",
+        "start": 908.959,
+        "duration": 3.68
+    },
+    {
+        "text": "also people consent",
+        "start": 910.72,
+        "duration": 4.72
+    },
+    {
+        "text": "and then they give a blood sample and we",
+        "start": 912.639,
+        "duration": 4.721
+    },
+    {
+        "text": "can access their full electronic health",
+        "start": 915.44,
+        "duration": 3.68
+    },
+    {
+        "text": "records",
+        "start": 917.36,
+        "duration": 3.52
+    },
+    {
+        "text": "and de-identified",
+        "start": 919.12,
+        "duration": 4.159
+    },
+    {
+        "text": "and um the catchment population of",
+        "start": 920.88,
+        "duration": 4.48
+    },
+    {
+        "text": "michigan medicine",
+        "start": 923.279,
+        "duration": 3.12
+    },
+    {
+        "text": "is",
+        "start": 925.36,
+        "duration": 3.52
+    },
+    {
+        "text": "mainly european ancestry and so also in",
+        "start": 926.399,
+        "duration": 5.36
+    },
+    {
+        "text": "this data set here we end up with over",
+        "start": 928.88,
+        "duration": 3.67
+    },
+    {
+        "text": "92",
+        "start": 931.759,
+        "duration": 2.32
+    },
+    {
+        "text": "[Music]",
+        "start": 932.55,
+        "duration": 3.849
+    },
+    {
+        "text": "european ansys to individuals",
+        "start": 934.079,
+        "duration": 4.401
+    },
+    {
+        "text": "the data set is a genotype based it's a",
+        "start": 936.399,
+        "duration": 4.721
+    },
+    {
+        "text": "genotype array based but then we perform",
+        "start": 938.48,
+        "duration": 3.919
+    },
+    {
+        "text": "imputation",
+        "start": 941.12,
+        "duration": 3.36
+    },
+    {
+        "text": "and here i'm look i'm using the pattern",
+        "start": 942.399,
+        "duration": 4.321
+    },
+    {
+        "text": "type reference consortium data set",
+        "start": 944.48,
+        "duration": 4.08
+    },
+    {
+        "text": "but the latest data set is the top net",
+        "start": 946.72,
+        "duration": 4.0
+    },
+    {
+        "text": "imputed data set with i think right now",
+        "start": 948.56,
+        "duration": 4.8
+    },
+    {
+        "text": "with over 15 million",
+        "start": 950.72,
+        "duration": 4.119
+    },
+    {
+        "text": "that were snips",
+        "start": 953.36,
+        "duration": 1.479
+    },
+    {
+        "text": "and contrasted you can buy bank a study",
+        "start": 954.88,
+        "duration": 4.24
+    },
+    {
+        "text": "you probably all know very well",
+        "start": 956.639,
+        "duration": 5.041
+    },
+    {
+        "text": "includes up to 500 000 individual",
+        "start": 959.12,
+        "duration": 5.44
+    },
+    {
+        "text": "and 90 over 95 percent of them",
+        "start": 961.68,
+        "duration": 4.959
+    },
+    {
+        "text": "are of a european ancestry and here",
+        "start": 964.56,
+        "duration": 4.0
+    },
+    {
+        "text": "again i'm using the similar included",
+        "start": 966.639,
+        "duration": 4.56
+    },
+    {
+        "text": "data set the hsc compute dataset with",
+        "start": 968.56,
+        "duration": 4.56
+    },
+    {
+        "text": "over 20 million variables",
+        "start": 971.199,
+        "duration": 4.241
+    },
+    {
+        "text": "so we have the genetic data and we have",
+        "start": 973.12,
+        "duration": 4.079
+    },
+    {
+        "text": "electronic medical records that we can",
+        "start": 975.44,
+        "duration": 3.759
+    },
+    {
+        "text": "use to construct phenotypes",
+        "start": 977.199,
+        "duration": 4.0
+    },
+    {
+        "text": "so this is an ideal setting",
+        "start": 979.199,
+        "duration": 4.88
+    },
+    {
+        "text": "to generate many different phenotypes",
+        "start": 981.199,
+        "duration": 3.681
+    },
+    {
+        "text": "and",
+        "start": 984.079,
+        "duration": 2.241
+    },
+    {
+        "text": "because i said in the beginning that",
+        "start": 984.88,
+        "duration": 4.16
+    },
+    {
+        "text": "polygenic risks are ancestry-specific",
+        "start": 986.32,
+        "duration": 4.72
+    },
+    {
+        "text": "we are focusing on european ancestry",
+        "start": 989.04,
+        "duration": 3.76
+    },
+    {
+        "text": "that makes the whole analysis easier",
+        "start": 991.04,
+        "duration": 3.919
+    },
+    {
+        "text": "because they are",
+        "start": 992.8,
+        "duration": 4.719
+    },
+    {
+        "text": "mainly european g was available and we",
+        "start": 994.959,
+        "duration": 4.32
+    },
+    {
+        "text": "need kind of the matching ancestry when",
+        "start": 997.519,
+        "duration": 3.601
+    },
+    {
+        "text": "we construct prs",
+        "start": 999.279,
+        "duration": 4.081
+    },
+    {
+        "text": "and so um right now we are limited by",
+        "start": 1001.12,
+        "duration": 4.48
+    },
+    {
+        "text": "the biodiversity and so again focusing",
+        "start": 1003.36,
+        "duration": 3.839
+    },
+    {
+        "text": "on european ancestry",
+        "start": 1005.6,
+        "duration": 4.0
+    },
+    {
+        "text": "and this leaves us with close to 40 000",
+        "start": 1007.199,
+        "duration": 4.161
+    },
+    {
+        "text": "individuals in mgi",
+        "start": 1009.6,
+        "duration": 4.88
+    },
+    {
+        "text": "that are unrelated and um 410 000 in the",
+        "start": 1011.36,
+        "duration": 4.64
+    },
+    {
+        "text": "uk by bank",
+        "start": 1014.48,
+        "duration": 4.88
+    },
+    {
+        "text": "percentage of females is",
+        "start": 1016.0,
+        "duration": 4.32
+    },
+    {
+        "text": "similar",
+        "start": 1019.36,
+        "duration": 4.24
+    },
+    {
+        "text": "and they also have a similar",
+        "start": 1020.32,
+        "duration": 4.96
+    },
+    {
+        "text": "mean age but the age distribution is",
+        "start": 1023.6,
+        "duration": 3.52
+    },
+    {
+        "text": "slightly different here",
+        "start": 1025.28,
+        "duration": 4.24
+    },
+    {
+        "text": "but both we have rich um",
+        "start": 1027.12,
+        "duration": 4.079
+    },
+    {
+        "text": "diagnosis data",
+        "start": 1029.52,
+        "duration": 3.84
+    },
+    {
+        "text": "um and here i'm looking at icd-9 codes",
+        "start": 1031.199,
+        "duration": 3.201
+    },
+    {
+        "text": "so these are international",
+        "start": 1033.36,
+        "duration": 3.439
+    },
+    {
+        "text": "classifications of disease codes",
+        "start": 1034.4,
+        "duration": 4.32
+    },
+    {
+        "text": "and they help usually with",
+        "start": 1036.799,
+        "duration": 4.561
+    },
+    {
+        "text": "with billing or for administrative",
+        "start": 1038.72,
+        "duration": 4.479
+    },
+    {
+        "text": "purposes in the clinic so they're not",
+        "start": 1041.36,
+        "duration": 4.079
+    },
+    {
+        "text": "ideal to define phenotypes but they can",
+        "start": 1043.199,
+        "duration": 4.081
+    },
+    {
+        "text": "be used to define",
+        "start": 1045.439,
+        "duration": 3.841
+    },
+    {
+        "text": "um phenotypes and i'm going to show that",
+        "start": 1047.28,
+        "duration": 4.24
+    },
+    {
+        "text": "later on so so we're going to use those",
+        "start": 1049.28,
+        "duration": 4.32
+    },
+    {
+        "text": "electronic health records in this case",
+        "start": 1051.52,
+        "duration": 7.12
+    },
+    {
+        "text": "icd codes to define case control studies",
+        "start": 1053.6,
+        "duration": 8.16
+    },
+    {
+        "text": "and the most convenient way to do this",
+        "start": 1058.64,
+        "duration": 4.72
+    },
+    {
+        "text": "that we found",
+        "start": 1061.76,
+        "duration": 4.0
+    },
+    {
+        "text": "is the so-called fivers code system and",
+        "start": 1063.36,
+        "duration": 4.16
+    },
+    {
+        "text": "you might have heard about this",
+        "start": 1065.76,
+        "duration": 3.84
+    },
+    {
+        "text": "the idea here that was published by josh",
+        "start": 1067.52,
+        "duration": 6.64
+    },
+    {
+        "text": "denny's group in 2013 i don't know",
+        "start": 1069.6,
+        "duration": 4.56
+    },
+    {
+        "text": "there's a fifa's catalog basically tells",
+        "start": 1076.0,
+        "duration": 3.36
+    },
+    {
+        "text": "you",
+        "start": 1078.0,
+        "duration": 4.16
+    },
+    {
+        "text": "which icd codes can be collapsed into a",
+        "start": 1079.36,
+        "duration": 3.92
+    },
+    {
+        "text": "broader",
+        "start": 1082.16,
+        "duration": 3.519
+    },
+    {
+        "text": "fico term the way it works is that you",
+        "start": 1083.28,
+        "duration": 4.88
+    },
+    {
+        "text": "have icd codes for a diagnosis that",
+        "start": 1085.679,
+        "duration": 4.641
+    },
+    {
+        "text": "describe the same phenotype",
+        "start": 1088.16,
+        "duration": 4.68
+    },
+    {
+        "text": "and you would use those codes to define",
+        "start": 1090.32,
+        "duration": 5.359
+    },
+    {
+        "text": "cases you have then other diagnosis that",
+        "start": 1092.84,
+        "duration": 5.079
+    },
+    {
+        "text": "might",
+        "start": 1095.679,
+        "duration": 2.24
+    },
+    {
+        "text": "describe a similar or related phenotype",
+        "start": 1098.08,
+        "duration": 4.08
+    },
+    {
+        "text": "that is but it does not match the",
+        "start": 1100.64,
+        "duration": 3.76
+    },
+    {
+        "text": "phenotype so you want to exclude those",
+        "start": 1102.16,
+        "duration": 4.56
+    },
+    {
+        "text": "and all the other diagnoses you consider",
+        "start": 1104.4,
+        "duration": 4.0
+    },
+    {
+        "text": "as controls so even if you're looking at",
+        "start": 1106.72,
+        "duration": 3.839
+    },
+    {
+        "text": "a hospital-based studies",
+        "start": 1108.4,
+        "duration": 3.6
+    },
+    {
+        "text": "where you probably don't have healthy",
+        "start": 1110.559,
+        "duration": 2.961
+    },
+    {
+        "text": "individuals because there's a reason why",
+        "start": 1112.0,
+        "duration": 3.2
+    },
+    {
+        "text": "they came to the hospital",
+        "start": 1113.52,
+        "duration": 3.84
+    },
+    {
+        "text": "you can use them as controls",
+        "start": 1115.2,
+        "duration": 4.24
+    },
+    {
+        "text": "and by doing so you end up with case",
+        "start": 1117.36,
+        "duration": 4.8
+    },
+    {
+        "text": "control studies you have a fee code per",
+        "start": 1119.44,
+        "duration": 4.0
+    },
+    {
+        "text": "um",
+        "start": 1122.16,
+        "duration": 4.399
+    },
+    {
+        "text": "her case control study",
+        "start": 1123.44,
+        "duration": 3.119
+    },
+    {
+        "text": "and",
+        "start": 1127.12,
+        "duration": 3.04
+    },
+    {
+        "text": "it's really fast this approach",
+        "start": 1128.32,
+        "duration": 3.68
+    },
+    {
+        "text": "these are not the ideal phenotypes if",
+        "start": 1130.16,
+        "duration": 2.8
+    },
+    {
+        "text": "you are",
+        "start": 1132.0,
+        "duration": 3.36
+    },
+    {
+        "text": "focusing on one specific disease",
+        "start": 1132.96,
+        "duration": 4.16
+    },
+    {
+        "text": "it's definitely helpful to work with",
+        "start": 1135.36,
+        "duration": 3.679
+    },
+    {
+        "text": "domain experts to",
+        "start": 1137.12,
+        "duration": 3.919
+    },
+    {
+        "text": "to problem the phenotype definitions and",
+        "start": 1139.039,
+        "duration": 5.361
+    },
+    {
+        "text": "get phenotypes there",
+        "start": 1141.039,
+        "duration": 3.361
+    },
+    {
+        "text": "so",
+        "start": 1145.12,
+        "duration": 2.24
+    },
+    {
+        "text": "okay so when we do this the two data",
+        "start": 1148.4,
+        "duration": 3.84
+    },
+    {
+        "text": "sets we ended up with",
+        "start": 1150.64,
+        "duration": 3.68
+    },
+    {
+        "text": "almost 1700",
+        "start": 1152.24,
+        "duration": 3.52
+    },
+    {
+        "text": "fee codes",
+        "start": 1154.32,
+        "duration": 4.479
+    },
+    {
+        "text": "um that had at least 50 cases in mgi and",
+        "start": 1155.76,
+        "duration": 5.2
+    },
+    {
+        "text": "we had over 1400 fee codes in the uk",
+        "start": 1158.799,
+        "duration": 6.161
+    },
+    {
+        "text": "biobank that had at least 50 cases",
+        "start": 1160.96,
+        "duration": 6.0
+    },
+    {
+        "text": "and when the and the collection of the",
+        "start": 1164.96,
+        "duration": 3.52
+    },
+    {
+        "text": "codes in this case this is what we call",
+        "start": 1166.96,
+        "duration": 2.959
+    },
+    {
+        "text": "a phenome",
+        "start": 1168.48,
+        "duration": 3.28
+    },
+    {
+        "text": "this would be relevant later on when i",
+        "start": 1169.919,
+        "duration": 4.88
+    },
+    {
+        "text": "describe a phenomenon",
+        "start": 1171.76,
+        "duration": 6.24
+    },
+    {
+        "text": "basically we can use those",
+        "start": 1174.799,
+        "duration": 5.76
+    },
+    {
+        "text": "1500 phenotypes and new associations",
+        "start": 1178.0,
+        "duration": 4.559
+    },
+    {
+        "text": "with each one of them",
+        "start": 1180.559,
+        "duration": 4.401
+    },
+    {
+        "text": "and get kind of an idea how specific a",
+        "start": 1182.559,
+        "duration": 5.36
+    },
+    {
+        "text": "polygenic risk is",
+        "start": 1184.96,
+        "duration": 5.04
+    },
+    {
+        "text": "okay so when we looked at the",
+        "start": 1187.919,
+        "duration": 4.961
+    },
+    {
+        "text": "mgi study and this is the main focus a",
+        "start": 1190.0,
+        "duration": 5.6
+    },
+    {
+        "text": "main study i'm focusing on in my talk",
+        "start": 1192.88,
+        "duration": 4.4
+    },
+    {
+        "text": "we found that it is highly enriched for",
+        "start": 1195.6,
+        "duration": 3.439
+    },
+    {
+        "text": "cancer patients there are multiple",
+        "start": 1197.28,
+        "duration": 3.36
+    },
+    {
+        "text": "reasons for that as i said the",
+        "start": 1199.039,
+        "duration": 3.281
+    },
+    {
+        "text": "recruitment mechanism is surgery and",
+        "start": 1200.64,
+        "duration": 4.0
+    },
+    {
+        "text": "apparently cancer patients undergo",
+        "start": 1202.32,
+        "duration": 3.92
+    },
+    {
+        "text": "surgery more often maybe they have",
+        "start": 1204.64,
+        "duration": 4.24
+    },
+    {
+        "text": "biopsies",
+        "start": 1206.24,
+        "duration": 2.64
+    },
+    {
+        "text": "and also we have",
+        "start": 1209.039,
+        "duration": 4.88
+    },
+    {
+        "text": "experts here in michigan medicine for",
+        "start": 1211.36,
+        "duration": 5.04
+    },
+    {
+        "text": "example focusing on melanoma so the",
+        "start": 1213.919,
+        "duration": 3.921
+    },
+    {
+        "text": "recruitment here is definitely enriched",
+        "start": 1216.4,
+        "duration": 4.92
+    },
+    {
+        "text": "for those patients",
+        "start": 1217.84,
+        "duration": 3.48
+    },
+    {
+        "text": "mgi is much smaller than uk biobank but",
+        "start": 1221.6,
+        "duration": 4.559
+    },
+    {
+        "text": "here when you look at the different",
+        "start": 1223.919,
+        "duration": 4.24
+    },
+    {
+        "text": "case counts in ngi",
+        "start": 1226.159,
+        "duration": 4.321
+    },
+    {
+        "text": "they are sometimes comparable sometimes",
+        "start": 1228.159,
+        "duration": 4.241
+    },
+    {
+        "text": "they they can't reach the numbers that",
+        "start": 1230.48,
+        "duration": 3.679
+    },
+    {
+        "text": "are observed in your providing so the",
+        "start": 1232.4,
+        "duration": 3.279
+    },
+    {
+        "text": "sample sizes are quite different but",
+        "start": 1234.159,
+        "duration": 3.601
+    },
+    {
+        "text": "both and biobanks",
+        "start": 1235.679,
+        "duration": 4.641
+    },
+    {
+        "text": "have sufficient sample sizes to be used",
+        "start": 1237.76,
+        "duration": 5.44
+    },
+    {
+        "text": "for the prs construction",
+        "start": 1240.32,
+        "duration": 4.479
+    },
+    {
+        "text": "because they are enriched for cancer and",
+        "start": 1243.2,
+        "duration": 4.4
+    },
+    {
+        "text": "we are especially interested",
+        "start": 1244.799,
+        "duration": 5.201
+    },
+    {
+        "text": "in cancer being affiliated with the",
+        "start": 1247.6,
+        "duration": 4.959
+    },
+    {
+        "text": "roman cancer center that's the first",
+        "start": 1250.0,
+        "duration": 7.6
+    },
+    {
+        "text": "category of traits we explored on here",
+        "start": 1252.559,
+        "duration": 6.161
+    },
+    {
+        "text": "okay",
+        "start": 1257.6,
+        "duration": 4.24
+    },
+    {
+        "text": "so coming next to the peers",
+        "start": 1258.72,
+        "duration": 5.04
+    },
+    {
+        "text": "as i said we have three independent data",
+        "start": 1261.84,
+        "duration": 2.8
+    },
+    {
+        "text": "sets",
+        "start": 1263.76,
+        "duration": 2.24
+    },
+    {
+        "text": "and there are different",
+        "start": 1264.64,
+        "duration": 3.279
+    },
+    {
+        "text": "setups you can imagine so you can use",
+        "start": 1266.0,
+        "duration": 4.48
+    },
+    {
+        "text": "the biobank as the training set and use",
+        "start": 1267.919,
+        "duration": 5.361
+    },
+    {
+        "text": "mgis testing or vice versa mgis training",
+        "start": 1270.48,
+        "duration": 4.96
+    },
+    {
+        "text": "and providing it as testing",
+        "start": 1273.28,
+        "duration": 3.279
+    },
+    {
+        "text": "but then the question is where do you",
+        "start": 1275.44,
+        "duration": 3.04
+    },
+    {
+        "text": "get the discovery device and we found",
+        "start": 1276.559,
+        "duration": 2.801
+    },
+    {
+        "text": "that is",
+        "start": 1278.48,
+        "duration": 3.04
+    },
+    {
+        "text": "specifically how to find those summary",
+        "start": 1279.36,
+        "duration": 3.84
+    },
+    {
+        "text": "statistics online that are freely",
+        "start": 1281.52,
+        "duration": 2.96
+    },
+    {
+        "text": "available",
+        "start": 1283.2,
+        "duration": 3.12
+    },
+    {
+        "text": "and so",
+        "start": 1284.48,
+        "duration": 3.92
+    },
+    {
+        "text": "there are some consortia that are very",
+        "start": 1286.32,
+        "duration": 3.359
+    },
+    {
+        "text": "open about",
+        "start": 1288.4,
+        "duration": 3.6
+    },
+    {
+        "text": "sharing their their um jivasami",
+        "start": 1289.679,
+        "duration": 4.161
+    },
+    {
+        "text": "statistics and breast cancer and",
+        "start": 1292.0,
+        "duration": 4.88
+    },
+    {
+        "text": "prostate cancer are two of those cancer",
+        "start": 1293.84,
+        "duration": 5.199
+    },
+    {
+        "text": "consortium that are fantastic in this",
+        "start": 1296.88,
+        "duration": 3.279
+    },
+    {
+        "text": "regard",
+        "start": 1299.039,
+        "duration": 3.681
+    },
+    {
+        "text": "um but we found that if if you want to",
+        "start": 1300.159,
+        "duration": 5.601
+    },
+    {
+        "text": "do this pan cancer across many different",
+        "start": 1302.72,
+        "duration": 5.839
+    },
+    {
+        "text": "cancers you often you don't find those",
+        "start": 1305.76,
+        "duration": 3.68
+    },
+    {
+        "text": "so",
+        "start": 1308.559,
+        "duration": 4.161
+    },
+    {
+        "text": "what we did now we decided to",
+        "start": 1309.44,
+        "duration": 5.359
+    },
+    {
+        "text": "use eucal bio vendors as our discovery",
+        "start": 1312.72,
+        "duration": 5.52
+    },
+    {
+        "text": "data set and split our data sets uh in",
+        "start": 1314.799,
+        "duration": 5.521
+    },
+    {
+        "text": "half just use one half for training and",
+        "start": 1318.24,
+        "duration": 4.24
+    },
+    {
+        "text": "oneness testing set and so this way",
+        "start": 1320.32,
+        "duration": 4.56
+    },
+    {
+        "text": "allowed us to generate many more",
+        "start": 1322.48,
+        "duration": 4.48
+    },
+    {
+        "text": "prs for other cancers that are not",
+        "start": 1324.88,
+        "duration": 5.44
+    },
+    {
+        "text": "openly available online",
+        "start": 1326.96,
+        "duration": 4.719
+    },
+    {
+        "text": "still there are",
+        "start": 1330.32,
+        "duration": 3.28
+    },
+    {
+        "text": "large tubulars that are available and we",
+        "start": 1331.679,
+        "duration": 3.521
+    },
+    {
+        "text": "can use them",
+        "start": 1333.6,
+        "duration": 3.76
+    },
+    {
+        "text": "to generate psos and new provider as i",
+        "start": 1335.2,
+        "duration": 3.44
+    },
+    {
+        "text": "said",
+        "start": 1337.36,
+        "duration": 5.679
+    },
+    {
+        "text": "before here i'm mainly focusing on mgi",
+        "start": 1338.64,
+        "duration": 5.68
+    },
+    {
+        "text": "okay",
+        "start": 1343.039,
+        "duration": 2.561
+    },
+    {
+        "text": "because there's a difference in the",
+        "start": 1344.32,
+        "duration": 3.599
+    },
+    {
+        "text": "quality of external grass so if you have",
+        "start": 1345.6,
+        "duration": 4.319
+    },
+    {
+        "text": "yuca biobank you're limited by the",
+        "start": 1347.919,
+        "duration": 4.161
+    },
+    {
+        "text": "sample spice",
+        "start": 1349.919,
+        "duration": 5.041
+    },
+    {
+        "text": "and they nowadays can't compete with",
+        "start": 1352.08,
+        "duration": 5.28
+    },
+    {
+        "text": "those large glass metal analysis so you",
+        "start": 1354.96,
+        "duration": 4.56
+    },
+    {
+        "text": "can see here this is the nearby",
+        "start": 1357.36,
+        "duration": 4.88
+    },
+    {
+        "text": "and this um in this case this is on",
+        "start": 1359.52,
+        "duration": 4.32
+    },
+    {
+        "text": "prostate cancer",
+        "start": 1362.24,
+        "duration": 3.52
+    },
+    {
+        "text": "this is the",
+        "start": 1363.84,
+        "duration": 4.959
+    },
+    {
+        "text": "practical consortium you have tenfold um",
+        "start": 1365.76,
+        "duration": 4.96
+    },
+    {
+        "text": "sample sizes and of course you can see",
+        "start": 1368.799,
+        "duration": 3.841
+    },
+    {
+        "text": "they are able to attain many more",
+        "start": 1370.72,
+        "duration": 4.24
+    },
+    {
+        "text": "variants and so this large g was",
+        "start": 1372.64,
+        "duration": 6.0
+    },
+    {
+        "text": "probably will result in the better prs",
+        "start": 1374.96,
+        "duration": 6.32
+    },
+    {
+        "text": "um but as i said before not all of those",
+        "start": 1378.64,
+        "duration": 4.64
+    },
+    {
+        "text": "gba summit statistics are openly",
+        "start": 1381.28,
+        "duration": 3.68
+    },
+    {
+        "text": "available",
+        "start": 1383.28,
+        "duration": 3.279
+    },
+    {
+        "text": "okay so what we did",
+        "start": 1384.96,
+        "duration": 3.839
+    },
+    {
+        "text": "we kind of looked for for resources",
+        "start": 1386.559,
+        "duration": 4.961
+    },
+    {
+        "text": "online where we can find snip sets",
+        "start": 1388.799,
+        "duration": 4.561
+    },
+    {
+        "text": "or jiba summary statistics that we can",
+        "start": 1391.52,
+        "duration": 4.08
+    },
+    {
+        "text": "use to construct photogenic risk scores",
+        "start": 1393.36,
+        "duration": 4.72
+    },
+    {
+        "text": "one source was the g bus catalog",
+        "start": 1395.6,
+        "duration": 4.88
+    },
+    {
+        "text": "basically a resource that tries to",
+        "start": 1398.08,
+        "duration": 4.88
+    },
+    {
+        "text": "collect all genome-wide significant hits",
+        "start": 1400.48,
+        "duration": 3.92
+    },
+    {
+        "text": "sometimes they also go below that",
+        "start": 1402.96,
+        "duration": 2.719
+    },
+    {
+        "text": "threshold",
+        "start": 1404.4,
+        "duration": 3.759
+    },
+    {
+        "text": "and so we could do this for i think 24",
+        "start": 1405.679,
+        "duration": 4.24
+    },
+    {
+        "text": "different can um",
+        "start": 1408.159,
+        "duration": 2.721
+    },
+    {
+        "text": "cancer",
+        "start": 1409.919,
+        "duration": 2.321
+    },
+    {
+        "text": "trades",
+        "start": 1410.88,
+        "duration": 4.64
+    },
+    {
+        "text": "um we also looked online",
+        "start": 1412.24,
+        "duration": 5.12
+    },
+    {
+        "text": "through pubmed we can find summary",
+        "start": 1415.52,
+        "duration": 3.2
+    },
+    {
+        "text": "statistics that were shared with the",
+        "start": 1417.36,
+        "duration": 2.559
+    },
+    {
+        "text": "publication",
+        "start": 1418.72,
+        "duration": 3.04
+    },
+    {
+        "text": "we found 20 of those",
+        "start": 1419.919,
+        "duration": 3.841
+    },
+    {
+        "text": "and um",
+        "start": 1421.76,
+        "duration": 3.76
+    },
+    {
+        "text": "for the uk biobank we didn't have to run",
+        "start": 1423.76,
+        "duration": 4.08
+    },
+    {
+        "text": "those gpas by our ourselves because",
+        "start": 1425.52,
+        "duration": 4.96
+    },
+    {
+        "text": "other groups already just used all the",
+        "start": 1427.84,
+        "duration": 4.48
+    },
+    {
+        "text": "data they could find and randy was for",
+        "start": 1430.48,
+        "duration": 3.439
+    },
+    {
+        "text": "every trade they could define and also",
+        "start": 1432.32,
+        "duration": 3.2
+    },
+    {
+        "text": "they used for example the fifa's code",
+        "start": 1433.919,
+        "duration": 4.161
+    },
+    {
+        "text": "system that was done by sean lee",
+        "start": 1435.52,
+        "duration": 5.12
+    },
+    {
+        "text": "talking buyer statistics here or a ben",
+        "start": 1438.08,
+        "duration": 4.56
+    },
+    {
+        "text": "neil's lab and they just put them online",
+        "start": 1440.64,
+        "duration": 3.68
+    },
+    {
+        "text": "and you can download those device",
+        "start": 1442.64,
+        "duration": 3.2
+    },
+    {
+        "text": "statistics",
+        "start": 1444.32,
+        "duration": 3.28
+    },
+    {
+        "text": "and so in total we ended up with over",
+        "start": 1445.84,
+        "duration": 3.92
+    },
+    {
+        "text": "200 snip sets",
+        "start": 1447.6,
+        "duration": 5.04
+    },
+    {
+        "text": "that we manually manually mapped to over",
+        "start": 1449.76,
+        "duration": 7.2
+    },
+    {
+        "text": "close to 70 different cancer feed codes",
+        "start": 1452.64,
+        "duration": 6.639
+    },
+    {
+        "text": "and so how we we use those different",
+        "start": 1456.96,
+        "duration": 4.319
+    },
+    {
+        "text": "sources of give us summative statistics",
+        "start": 1459.279,
+        "duration": 4.081
+    },
+    {
+        "text": "to to test the different methods i",
+        "start": 1461.279,
+        "duration": 4.241
+    },
+    {
+        "text": "mentioned before so we did ld pruning",
+        "start": 1463.36,
+        "duration": 3.76
+    },
+    {
+        "text": "and clumping",
+        "start": 1465.52,
+        "duration": 2.8
+    },
+    {
+        "text": "um",
+        "start": 1467.12,
+        "duration": 3.36
+    },
+    {
+        "text": "did the p value thresholding so this is",
+        "start": 1468.32,
+        "duration": 5.28
+    },
+    {
+        "text": "the c cnc approach the fixed p-value",
+        "start": 1470.48,
+        "duration": 4.96
+    },
+    {
+        "text": "threshold for example the g-rose hits",
+        "start": 1473.6,
+        "duration": 2.72
+    },
+    {
+        "text": "and then",
+        "start": 1475.44,
+        "duration": 2.239
+    },
+    {
+        "text": "the more complex method for example",
+        "start": 1476.32,
+        "duration": 3.68
+    },
+    {
+        "text": "losses someone pr scs",
+        "start": 1477.679,
+        "duration": 4.401
+    },
+    {
+        "text": "on the data set where we had full gbos",
+        "start": 1480.0,
+        "duration": 3.6
+    },
+    {
+        "text": "summary statistics",
+        "start": 1482.08,
+        "duration": 3.479
+    },
+    {
+        "text": "and then we",
+        "start": 1483.6,
+        "duration": 3.84
+    },
+    {
+        "text": "evaluated.ps in terms of overall",
+        "start": 1485.559,
+        "duration": 4.6
+    },
+    {
+        "text": "performance it could be um and that one",
+        "start": 1487.44,
+        "duration": 4.479
+    },
+    {
+        "text": "way to do this is looking at zero r",
+        "start": 1490.159,
+        "duration": 2.88
+    },
+    {
+        "text": "square",
+        "start": 1491.919,
+        "duration": 2.321
+    },
+    {
+        "text": "we can look at the discrimination",
+        "start": 1493.039,
+        "duration": 3.201
+    },
+    {
+        "text": "between cases and controls this is the",
+        "start": 1494.24,
+        "duration": 4.799
+    },
+    {
+        "text": "area under the receiver operator curve",
+        "start": 1496.24,
+        "duration": 4.4
+    },
+    {
+        "text": "or we can look at appears here that",
+        "start": 1499.039,
+        "duration": 4.081
+    },
+    {
+        "text": "could be the the brighter score",
+        "start": 1500.64,
+        "duration": 4.24
+    },
+    {
+        "text": "also we're interested in association",
+        "start": 1503.12,
+        "duration": 4.0
+    },
+    {
+        "text": "strength itself is the cprs associated",
+        "start": 1504.88,
+        "duration": 4.56
+    },
+    {
+        "text": "with the trait we're interested in not",
+        "start": 1507.12,
+        "duration": 5.919
+    },
+    {
+        "text": "and then we want to see if this prs is",
+        "start": 1509.44,
+        "duration": 5.92
+    },
+    {
+        "text": "able to enrich cases in details of the",
+        "start": 1513.039,
+        "duration": 4.961
+    },
+    {
+        "text": "distribution",
+        "start": 1515.36,
+        "duration": 2.64
+    },
+    {
+        "text": "okay as you can imagine we generated",
+        "start": 1519.36,
+        "duration": 4.24
+    },
+    {
+        "text": "many peers",
+        "start": 1521.52,
+        "duration": 4.639
+    },
+    {
+        "text": "by doing when we combine the number of",
+        "start": 1523.6,
+        "duration": 5.12
+    },
+    {
+        "text": "snip sets by the different ps methods",
+        "start": 1526.159,
+        "duration": 4.161
+    },
+    {
+        "text": "and also we had two bio banks so we",
+        "start": 1528.72,
+        "duration": 3.92
+    },
+    {
+        "text": "ended up with over 1300 prs that we",
+        "start": 1530.32,
+        "duration": 4.239
+    },
+    {
+        "text": "constructed",
+        "start": 1532.64,
+        "duration": 4.0
+    },
+    {
+        "text": "so the questions are of course what is",
+        "start": 1534.559,
+        "duration": 4.48
+    },
+    {
+        "text": "the prs method um",
+        "start": 1536.64,
+        "duration": 5.12
+    },
+    {
+        "text": "what's the best external gbos source",
+        "start": 1539.039,
+        "duration": 5.201
+    },
+    {
+        "text": "and is the method gives combination this",
+        "start": 1541.76,
+        "duration": 4.399
+    },
+    {
+        "text": "is one best solution that works for all",
+        "start": 1544.24,
+        "duration": 3.52
+    },
+    {
+        "text": "the different applications or is it",
+        "start": 1546.159,
+        "duration": 3.201
+    },
+    {
+        "text": "dependent if you want to look at risk",
+        "start": 1547.76,
+        "duration": 3.84
+    },
+    {
+        "text": "stratification association or",
+        "start": 1549.36,
+        "duration": 4.319
+    },
+    {
+        "text": "discrimination and so those are the",
+        "start": 1551.6,
+        "duration": 3.6
+    },
+    {
+        "text": "questions that we had",
+        "start": 1553.679,
+        "duration": 4.24
+    },
+    {
+        "text": "and so the metrics that we used",
+        "start": 1555.2,
+        "duration": 3.52
+    },
+    {
+        "text": "are",
+        "start": 1557.919,
+        "duration": 2.321
+    },
+    {
+        "text": "initially the association of the",
+        "start": 1558.72,
+        "duration": 2.959
+    },
+    {
+        "text": "continuous prs with the trait of",
+        "start": 1560.24,
+        "duration": 2.48
+    },
+    {
+        "text": "interest",
+        "start": 1561.679,
+        "duration": 2.961
+    },
+    {
+        "text": "because those methods even if you have",
+        "start": 1562.72,
+        "duration": 3.36
+    },
+    {
+        "text": "all the data they often they don't work",
+        "start": 1564.64,
+        "duration": 3.6
+    },
+    {
+        "text": "so you end up with a prs that is not",
+        "start": 1566.08,
+        "duration": 4.8
+    },
+    {
+        "text": "associated at all maybe the sample size",
+        "start": 1568.24,
+        "duration": 4.96
+    },
+    {
+        "text": "was not sufficient from the original",
+        "start": 1570.88,
+        "duration": 4.32
+    },
+    {
+        "text": "discovery was maybe sample size it's not",
+        "start": 1573.2,
+        "duration": 4.4
+    },
+    {
+        "text": "sufficient in our data set and so we",
+        "start": 1575.2,
+        "duration": 4.959
+    },
+    {
+        "text": "kind of use this initial filter here to",
+        "start": 1577.6,
+        "duration": 5.199
+    },
+    {
+        "text": "make sure that we only analyze trs that",
+        "start": 1580.159,
+        "duration": 4.88
+    },
+    {
+        "text": "are positively associated with the trade",
+        "start": 1582.799,
+        "duration": 4.161
+    },
+    {
+        "text": "of interest and at least nominally",
+        "start": 1585.039,
+        "duration": 3.441
+    },
+    {
+        "text": "significant",
+        "start": 1586.96,
+        "duration": 2.56
+    },
+    {
+        "text": "and that",
+        "start": 1588.48,
+        "duration": 3.04
+    },
+    {
+        "text": "directly i think cut the the number of",
+        "start": 1589.52,
+        "duration": 4.8
+    },
+    {
+        "text": "peers in half",
+        "start": 1591.52,
+        "duration": 2.8
+    },
+    {
+        "text": "if we looked at overall performance that",
+        "start": 1594.64,
+        "duration": 6.0
+    },
+    {
+        "text": "r square that's the measure that we use",
+        "start": 1598.48,
+        "duration": 4.64
+    },
+    {
+        "text": "to rank the tuning parameters so the one",
+        "start": 1600.64,
+        "duration": 3.84
+    },
+    {
+        "text": "with the",
+        "start": 1603.12,
+        "duration": 2.159
+    },
+    {
+        "text": "um",
+        "start": 1604.48,
+        "duration": 2.96
+    },
+    {
+        "text": "pi is zero r square and that's the",
+        "start": 1605.279,
+        "duration": 4.0
+    },
+    {
+        "text": "tuning parameter that we used then for",
+        "start": 1607.44,
+        "duration": 3.92
+    },
+    {
+        "text": "the evaluation later on",
+        "start": 1609.279,
+        "duration": 4.0
+    },
+    {
+        "text": "and we looked at in the train in the",
+        "start": 1611.36,
+        "duration": 3.199
+    },
+    {
+        "text": "testing data set we looked at",
+        "start": 1613.279,
+        "duration": 4.4
+    },
+    {
+        "text": "discrimination here adjusted auc",
+        "start": 1614.559,
+        "duration": 5.201
+    },
+    {
+        "text": "with the accuracy and then also looked",
+        "start": 1617.679,
+        "duration": 4.161
+    },
+    {
+        "text": "at the ability to in which cases",
+        "start": 1619.76,
+        "duration": 3.12
+    },
+    {
+        "text": "in the top",
+        "start": 1621.84,
+        "duration": 2.959
+    },
+    {
+        "text": "in five selected",
+        "start": 1622.88,
+        "duration": 4.0
+    },
+    {
+        "text": "top percentiles and it was top one two",
+        "start": 1624.799,
+        "duration": 4.801
+    },
+    {
+        "text": "five ten or twenty five percent",
+        "start": 1626.88,
+        "duration": 5.279
+    },
+    {
+        "text": "okay so we generated a lot of data and",
+        "start": 1629.6,
+        "duration": 5.76
+    },
+    {
+        "text": "we ended up with over 500 pos",
+        "start": 1632.159,
+        "duration": 6.561
+    },
+    {
+        "text": "over 31 and 30 over 30 cancers in mgi",
+        "start": 1635.36,
+        "duration": 6.24
+    },
+    {
+        "text": "over 20 in mgi",
+        "start": 1638.72,
+        "duration": 3.76
+    },
+    {
+        "text": "okay",
+        "start": 1641.6,
+        "duration": 3.28
+    },
+    {
+        "text": "and here i want to show you some",
+        "start": 1642.48,
+        "duration": 4.96
+    },
+    {
+        "text": "examples how you now can compare those",
+        "start": 1644.88,
+        "duration": 4.56
+    },
+    {
+        "text": "polygenic risks you generated and so one",
+        "start": 1647.44,
+        "duration": 3.2
+    },
+    {
+        "text": "question is",
+        "start": 1649.44,
+        "duration": 3.28
+    },
+    {
+        "text": "what method works best and so you look",
+        "start": 1650.64,
+        "duration": 3.759
+    },
+    {
+        "text": "at the same g well source",
+        "start": 1652.72,
+        "duration": 3.36
+    },
+    {
+        "text": "and look at the performance",
+        "start": 1654.399,
+        "duration": 3.601
+    },
+    {
+        "text": "across those different methods and here",
+        "start": 1656.08,
+        "duration": 3.92
+    },
+    {
+        "text": "what i'm showing here this is prscs this",
+        "start": 1658.0,
+        "duration": 4.159
+    },
+    {
+        "text": "is the bayesian method losses sum this",
+        "start": 1660.0,
+        "duration": 4.48
+    },
+    {
+        "text": "is the",
+        "start": 1662.159,
+        "duration": 2.321
+    },
+    {
+        "text": "regression method penalty regression and",
+        "start": 1665.36,
+        "duration": 4.08
+    },
+    {
+        "text": "you have clumping thresholding and then",
+        "start": 1667.6,
+        "duration": 3.76
+    },
+    {
+        "text": "different fixed thresholds",
+        "start": 1669.44,
+        "duration": 4.56
+    },
+    {
+        "text": "and i already ordered here by",
+        "start": 1671.36,
+        "duration": 4.64
+    },
+    {
+        "text": "decreasing number of snips so the",
+        "start": 1674.0,
+        "duration": 3.6
+    },
+    {
+        "text": "situation method includes over one",
+        "start": 1676.0,
+        "duration": 3.36
+    },
+    {
+        "text": "million snips condensed into one single",
+        "start": 1677.6,
+        "duration": 2.64
+    },
+    {
+        "text": "score",
+        "start": 1679.36,
+        "duration": 3.679
+    },
+    {
+        "text": "losses are some trim this number to 100",
+        "start": 1680.24,
+        "duration": 3.76
+    },
+    {
+        "text": "000",
+        "start": 1683.039,
+        "duration": 2.481
+    },
+    {
+        "text": "but then depending on those thresholds",
+        "start": 1684.0,
+        "duration": 2.24
+    },
+    {
+        "text": "you",
+        "start": 1685.52,
+        "duration": 2.08
+    },
+    {
+        "text": "the",
+        "start": 1686.24,
+        "duration": 4.88
+    },
+    {
+        "text": "high setting you end up with 264 snips",
+        "start": 1687.6,
+        "duration": 5.28
+    },
+    {
+        "text": "and what we found here and i already",
+        "start": 1691.12,
+        "duration": 3.439
+    },
+    {
+        "text": "ordered it by performance in terms of",
+        "start": 1692.88,
+        "duration": 2.72
+    },
+    {
+        "text": "zero",
+        "start": 1694.559,
+        "duration": 2.561
+    },
+    {
+        "text": "that prscs",
+        "start": 1695.6,
+        "duration": 3.439
+    },
+    {
+        "text": "was the method that worked best and one",
+        "start": 1697.12,
+        "duration": 3.439
+    },
+    {
+        "text": "of the reasons that",
+        "start": 1699.039,
+        "duration": 4.321
+    },
+    {
+        "text": "we also found tscs worked very well for",
+        "start": 1700.559,
+        "duration": 5.681
+    },
+    {
+        "text": "for many other trades that is ps seems",
+        "start": 1703.36,
+        "duration": 4.48
+    },
+    {
+        "text": "to work very well with different kinds",
+        "start": 1706.24,
+        "duration": 4.559
+    },
+    {
+        "text": "of genetic architectures and adapt",
+        "start": 1707.84,
+        "duration": 4.64
+    },
+    {
+        "text": "to the to the phenotype and",
+        "start": 1710.799,
+        "duration": 3.281
+    },
+    {
+        "text": "summary statistics and usually that",
+        "start": 1712.48,
+        "duration": 4.24
+    },
+    {
+        "text": "helps with the performance",
+        "start": 1714.08,
+        "duration": 5.52
+    },
+    {
+        "text": "um it also really happens prcs have the",
+        "start": 1716.72,
+        "duration": 4.959
+    },
+    {
+        "text": "highest accuracy",
+        "start": 1719.6,
+        "duration": 4.959
+    },
+    {
+        "text": "um so here the smaller the better um and",
+        "start": 1721.679,
+        "duration": 5.12
+    },
+    {
+        "text": "the discrimination was also better than",
+        "start": 1724.559,
+        "duration": 3.36
+    },
+    {
+        "text": "the others",
+        "start": 1726.799,
+        "duration": 3.201
+    },
+    {
+        "text": "and the association strength itself so",
+        "start": 1727.919,
+        "duration": 4.401
+    },
+    {
+        "text": "the continuous prs",
+        "start": 1730.0,
+        "duration": 4.08
+    },
+    {
+        "text": "so this is",
+        "start": 1732.32,
+        "duration": 3.839
+    },
+    {
+        "text": "one standard deviation also was was the",
+        "start": 1734.08,
+        "duration": 4.479
+    },
+    {
+        "text": "highest in here then when you look at",
+        "start": 1736.159,
+        "duration": 4.481
+    },
+    {
+        "text": "the enrichment in this case top one",
+        "start": 1738.559,
+        "duration": 4.561
+    },
+    {
+        "text": "versus bottom 99",
+        "start": 1740.64,
+        "duration": 4.0
+    },
+    {
+        "text": "here you found that actually one of the",
+        "start": 1743.12,
+        "duration": 3.52
+    },
+    {
+        "text": "other methods the fixed threshold that",
+        "start": 1744.64,
+        "duration": 3.759
+    },
+    {
+        "text": "five times ten to power minus seven that",
+        "start": 1746.64,
+        "duration": 3.2
+    },
+    {
+        "text": "performs best",
+        "start": 1748.399,
+        "duration": 3.681
+    },
+    {
+        "text": "usually those this method here only",
+        "start": 1749.84,
+        "duration": 3.839
+    },
+    {
+        "text": "includes kind of the",
+        "start": 1752.08,
+        "duration": 3.36
+    },
+    {
+        "text": "strong top signals here and apparently",
+        "start": 1753.679,
+        "duration": 3.761
+    },
+    {
+        "text": "that helps to define people that are at",
+        "start": 1755.44,
+        "duration": 3.119
+    },
+    {
+        "text": "high risk",
+        "start": 1757.44,
+        "duration": 2.4
+    },
+    {
+        "text": "and that might be one of the reasons why",
+        "start": 1758.559,
+        "duration": 2.961
+    },
+    {
+        "text": "this method is better for enrichment",
+        "start": 1759.84,
+        "duration": 5.28
+    },
+    {
+        "text": "analysis when you look at one percent",
+        "start": 1761.52,
+        "duration": 5.44
+    },
+    {
+        "text": "this is not always as clear-cut if you",
+        "start": 1765.12,
+        "duration": 4.32
+    },
+    {
+        "text": "look at prostate cancer here",
+        "start": 1766.96,
+        "duration": 4.48
+    },
+    {
+        "text": "um you can see that discrimination",
+        "start": 1769.44,
+        "duration": 4.56
+    },
+    {
+        "text": "clumping and thresholding works best",
+        "start": 1771.44,
+        "duration": 6.08
+    },
+    {
+        "text": "for on association pscs works better but",
+        "start": 1774.0,
+        "duration": 5.12
+    },
+    {
+        "text": "then when you look at the enrichment and",
+        "start": 1777.52,
+        "duration": 4.32
+    },
+    {
+        "text": "top one versus bottom 99 then in this",
+        "start": 1779.12,
+        "duration": 4.159
+    },
+    {
+        "text": "case losses some works best so there's",
+        "start": 1781.84,
+        "duration": 3.199
+    },
+    {
+        "text": "not one solution that works best for",
+        "start": 1783.279,
+        "duration": 4.64
+    },
+    {
+        "text": "every single approach",
+        "start": 1785.039,
+        "duration": 2.88
+    },
+    {
+        "text": "then of course we're interested to see",
+        "start": 1793.039,
+        "duration": 4.88
+    },
+    {
+        "text": "um which of the jiva sources works best",
+        "start": 1795.2,
+        "duration": 4.64
+    },
+    {
+        "text": "we had different sets for some a large",
+        "start": 1797.919,
+        "duration": 3.921
+    },
+    {
+        "text": "published study on prosthetic on breast",
+        "start": 1799.84,
+        "duration": 3.12
+    },
+    {
+        "text": "cancer",
+        "start": 1801.84,
+        "duration": 3.92
+    },
+    {
+        "text": "we had used all the top gbos hits from",
+        "start": 1802.96,
+        "duration": 5.12
+    },
+    {
+        "text": "gbos catalog and used four different",
+        "start": 1805.76,
+        "duration": 4.799
+    },
+    {
+        "text": "digitals on uk biobank",
+        "start": 1808.08,
+        "duration": 4.719
+    },
+    {
+        "text": "um breast cancer cohorts and here they",
+        "start": 1810.559,
+        "duration": 4.24
+    },
+    {
+        "text": "use different phenotype definitions so",
+        "start": 1812.799,
+        "duration": 3.681
+    },
+    {
+        "text": "that's why they are different",
+        "start": 1814.799,
+        "duration": 4.081
+    },
+    {
+        "text": "we found that this large gbos meta",
+        "start": 1816.48,
+        "duration": 4.64
+    },
+    {
+        "text": "analysis the largest sample size that",
+        "start": 1818.88,
+        "duration": 3.76
+    },
+    {
+        "text": "outperformed all the other approaches",
+        "start": 1821.12,
+        "duration": 3.76
+    },
+    {
+        "text": "and that's what we usually see",
+        "start": 1822.64,
+        "duration": 4.24
+    },
+    {
+        "text": "the latest largest g bars this is the",
+        "start": 1824.88,
+        "duration": 3.2
+    },
+    {
+        "text": "best source you want to have to",
+        "start": 1826.88,
+        "duration": 3.2
+    },
+    {
+        "text": "construct collagen in the scores but",
+        "start": 1828.08,
+        "duration": 5.28
+    },
+    {
+        "text": "often those are not available so yeah",
+        "start": 1830.08,
+        "duration": 5.04
+    },
+    {
+        "text": "you're limited to the",
+        "start": 1833.36,
+        "duration": 3.679
+    },
+    {
+        "text": "this down here",
+        "start": 1835.12,
+        "duration": 4.64
+    },
+    {
+        "text": "again here the last g was",
+        "start": 1837.039,
+        "duration": 4.481
+    },
+    {
+        "text": "perform best across all different",
+        "start": 1839.76,
+        "duration": 4.32
+    },
+    {
+        "text": "metrics here",
+        "start": 1841.52,
+        "duration": 2.56
+    },
+    {
+        "text": "okay so when we look at discrimination",
+        "start": 1845.52,
+        "duration": 4.32
+    },
+    {
+        "text": "now across",
+        "start": 1847.76,
+        "duration": 3.68
+    },
+    {
+        "text": "and what we found",
+        "start": 1849.84,
+        "duration": 3.439
+    },
+    {
+        "text": "is that depending on the",
+        "start": 1851.44,
+        "duration": 4.64
+    },
+    {
+        "text": "the cancer trade this discrimination",
+        "start": 1853.279,
+        "duration": 4.481
+    },
+    {
+        "text": "ranges from",
+        "start": 1856.08,
+        "duration": 2.479
+    },
+    {
+        "text": "um",
+        "start": 1857.76,
+        "duration": 2.48
+    },
+    {
+        "text": "coin toss to",
+        "start": 1858.559,
+        "duration": 3.921
+    },
+    {
+        "text": "0.7 maybe here",
+        "start": 1860.24,
+        "duration": 5.279
+    },
+    {
+        "text": "and and so for some traits and for some",
+        "start": 1862.48,
+        "duration": 5.039
+    },
+    {
+        "text": "diva summer statistics this works quite",
+        "start": 1865.519,
+        "duration": 4.081
+    },
+    {
+        "text": "well but when you're honest and you",
+        "start": 1867.519,
+        "duration": 3.28
+    },
+    {
+        "text": "consider",
+        "start": 1869.6,
+        "duration": 4.24
+    },
+    {
+        "text": "how you classify this um the accuracy",
+        "start": 1870.799,
+        "duration": 3.921
+    },
+    {
+        "text": "um",
+        "start": 1873.84,
+        "duration": 3.36
+    },
+    {
+        "text": "this is by definition a law low",
+        "start": 1874.72,
+        "duration": 4.64
+    },
+    {
+        "text": "discrimination meaning that those prs",
+        "start": 1877.2,
+        "duration": 4.719
+    },
+    {
+        "text": "are not really helpful for individual",
+        "start": 1879.36,
+        "duration": 5.52
+    },
+    {
+        "text": "level prediction of diseases",
+        "start": 1881.919,
+        "duration": 5.921
+    },
+    {
+        "text": "and so by themselves i would say a prs",
+        "start": 1884.88,
+        "duration": 4.0
+    },
+    {
+        "text": "right now for",
+        "start": 1887.84,
+        "duration": 4.719
+    },
+    {
+        "text": "that we looked at they are not useful to",
+        "start": 1888.88,
+        "duration": 5.279
+    },
+    {
+        "text": "reach an outcome but if you combine it",
+        "start": 1892.559,
+        "duration": 3.12
+    },
+    {
+        "text": "with non-genetic",
+        "start": 1894.159,
+        "duration": 3.681
+    },
+    {
+        "text": "risk factors you might end up with much",
+        "start": 1895.679,
+        "duration": 4.24
+    },
+    {
+        "text": "higher agencies",
+        "start": 1897.84,
+        "duration": 3.52
+    },
+    {
+        "text": "and the reason for that is that it's",
+        "start": 1899.919,
+        "duration": 2.88
+    },
+    {
+        "text": "something that i've shown before when",
+        "start": 1901.36,
+        "duration": 3.28
+    },
+    {
+        "text": "you look at the distributions there's a",
+        "start": 1902.799,
+        "duration": 3.521
+    },
+    {
+        "text": "huge overlap between the two so you",
+        "start": 1904.64,
+        "duration": 3.44
+    },
+    {
+        "text": "can't differentiate",
+        "start": 1906.32,
+        "duration": 4.079
+    },
+    {
+        "text": "a person just based on appears it's a",
+        "start": 1908.08,
+        "duration": 4.959
+    },
+    {
+        "text": "case of control",
+        "start": 1910.399,
+        "duration": 2.64
+    },
+    {
+        "text": "when we look at the risk stratification",
+        "start": 1913.36,
+        "duration": 4.0
+    },
+    {
+        "text": "we found that for many",
+        "start": 1915.2,
+        "duration": 5.28
+    },
+    {
+        "text": "cancers we are able to enrich cases in",
+        "start": 1917.36,
+        "duration": 5.199
+    },
+    {
+        "text": "the top 10 percentile so here for",
+        "start": 1920.48,
+        "duration": 4.559
+    },
+    {
+        "text": "example most extreme example is chronic",
+        "start": 1922.559,
+        "duration": 4.72
+    },
+    {
+        "text": "lymphoid leukemia",
+        "start": 1925.039,
+        "duration": 4.801
+    },
+    {
+        "text": "estimates between four and five",
+        "start": 1927.279,
+        "duration": 4.561
+    },
+    {
+        "text": "fold enrichment prostate cancer follows",
+        "start": 1929.84,
+        "duration": 4.4
+    },
+    {
+        "text": "by a threefold enrichment in the top ten",
+        "start": 1931.84,
+        "duration": 3.76
+    },
+    {
+        "text": "percent and",
+        "start": 1934.24,
+        "duration": 2.96
+    },
+    {
+        "text": "if you look at top one percent those",
+        "start": 1935.6,
+        "duration": 4.72
+    },
+    {
+        "text": "numbers increase as well",
+        "start": 1937.2,
+        "duration": 3.12
+    },
+    {
+        "text": "and so",
+        "start": 1941.519,
+        "duration": 2.4
+    },
+    {
+        "text": "we created all those",
+        "start": 1942.399,
+        "duration": 3.76
+    },
+    {
+        "text": "prs we did all those analyses and one",
+        "start": 1943.919,
+        "duration": 3.76
+    },
+    {
+        "text": "dilemma did we had is now we have all",
+        "start": 1946.159,
+        "duration": 3.281
+    },
+    {
+        "text": "those results how we should we put them",
+        "start": 1947.679,
+        "duration": 3.441
+    },
+    {
+        "text": "in one manuscript how we can share them",
+        "start": 1949.44,
+        "duration": 4.0
+    },
+    {
+        "text": "with the with the community and so",
+        "start": 1951.12,
+        "duration": 4.96
+    },
+    {
+        "text": "we came up with an online solution and",
+        "start": 1953.44,
+        "duration": 4.719
+    },
+    {
+        "text": "that's the last part of my talk",
+        "start": 1956.08,
+        "duration": 4.959
+    },
+    {
+        "text": "um talking about the prs web how we",
+        "start": 1958.159,
+        "duration": 5.441
+    },
+    {
+        "text": "shared them online and here i was",
+        "start": 1961.039,
+        "duration": 4.721
+    },
+    {
+        "text": "fortunate to work with sinhal patil um",
+        "start": 1963.6,
+        "duration": 3.6
+    },
+    {
+        "text": "you might know her",
+        "start": 1965.76,
+        "duration": 3.279
+    },
+    {
+        "text": "very talented application programmer and",
+        "start": 1967.2,
+        "duration": 2.959
+    },
+    {
+        "text": "it was kind of",
+        "start": 1969.039,
+        "duration": 3.36
+    },
+    {
+        "text": "fantastic to directly work with her",
+        "start": 1970.159,
+        "duration": 4.961
+    },
+    {
+        "text": "one-on-one to kind of",
+        "start": 1972.399,
+        "duration": 5.041
+    },
+    {
+        "text": "discuss what we have what we can share",
+        "start": 1975.12,
+        "duration": 4.32
+    },
+    {
+        "text": "and how we can make a user experience",
+        "start": 1977.44,
+        "duration": 4.0
+    },
+    {
+        "text": "better to share the information that we",
+        "start": 1979.44,
+        "duration": 3.119
+    },
+    {
+        "text": "have",
+        "start": 1981.44,
+        "duration": 2.479
+    },
+    {
+        "text": "um",
+        "start": 1982.559,
+        "duration": 3.761
+    },
+    {
+        "text": "okay and so basically now i'm sharing",
+        "start": 1983.919,
+        "duration": 4.401
+    },
+    {
+        "text": "with the platform itself and we call",
+        "start": 1986.32,
+        "duration": 5.12
+    },
+    {
+        "text": "this that from cancer pi as well",
+        "start": 1988.32,
+        "duration": 5.599
+    },
+    {
+        "text": "and so this is the first instance of pr",
+        "start": 1991.44,
+        "duration": 4.8
+    },
+    {
+        "text": "swept we plan to expand this for other",
+        "start": 1993.919,
+        "duration": 3.521
+    },
+    {
+        "text": "categories",
+        "start": 1996.24,
+        "duration": 4.08
+    },
+    {
+        "text": "uh in the future but as for now we focus",
+        "start": 1997.44,
+        "duration": 4.32
+    },
+    {
+        "text": "on cancer traits because we have this",
+        "start": 2000.32,
+        "duration": 4.32
+    },
+    {
+        "text": "huge enrichment in ngr",
+        "start": 2001.76,
+        "duration": 5.519
+    },
+    {
+        "text": "and when you google ps web as one word",
+        "start": 2004.64,
+        "duration": 6.24
+    },
+    {
+        "text": "you usually find this as the topic here",
+        "start": 2007.279,
+        "duration": 6.24
+    },
+    {
+        "text": "in here you can find the evaluation",
+        "start": 2010.88,
+        "duration": 4.799
+    },
+    {
+        "text": "of prs the prs evaluation table by",
+        "start": 2013.519,
+        "duration": 3.601
+    },
+    {
+        "text": "phenotype",
+        "start": 2015.679,
+        "duration": 3.281
+    },
+    {
+        "text": "then also we share",
+        "start": 2017.12,
+        "duration": 3.919
+    },
+    {
+        "text": "genome-wide association studies results",
+        "start": 2018.96,
+        "duration": 4.48
+    },
+    {
+        "text": "so using this prs to screen for",
+        "start": 2021.039,
+        "duration": 4.0
+    },
+    {
+        "text": "associations across the phenomens that",
+        "start": 2023.44,
+        "duration": 2.56
+    },
+    {
+        "text": "we have",
+        "start": 2025.039,
+        "duration": 3.36
+    },
+    {
+        "text": "and then also share the the file with",
+        "start": 2026.0,
+        "duration": 4.159
+    },
+    {
+        "text": "all the information you need to",
+        "start": 2028.399,
+        "duration": 4.961
+    },
+    {
+        "text": "regenerate this prs in your code",
+        "start": 2030.159,
+        "duration": 4.801
+    },
+    {
+        "text": "and so these are live examples if you",
+        "start": 2033.36,
+        "duration": 3.52
+    },
+    {
+        "text": "click on one you kind of see what's",
+        "start": 2034.96,
+        "duration": 3.439
+    },
+    {
+        "text": "going on there",
+        "start": 2036.88,
+        "duration": 4.32
+    },
+    {
+        "text": "and the key entry point here is the",
+        "start": 2038.399,
+        "duration": 4.321
+    },
+    {
+        "text": "selection menu",
+        "start": 2041.2,
+        "duration": 3.599
+    },
+    {
+        "text": "where you select the cancer trade your",
+        "start": 2042.72,
+        "duration": 4.4
+    },
+    {
+        "text": "evaluation cohort and then focus on the",
+        "start": 2044.799,
+        "duration": 5.521
+    },
+    {
+        "text": "enrichment you're looking for for the",
+        "start": 2047.12,
+        "duration": 5.36
+    },
+    {
+        "text": "the risk gratification",
+        "start": 2050.32,
+        "duration": 3.12
+    },
+    {
+        "text": "and so",
+        "start": 2052.48,
+        "duration": 3.04
+    },
+    {
+        "text": "nice feature here is you don't have to",
+        "start": 2053.44,
+        "duration": 3.919
+    },
+    {
+        "text": "scroll through all those",
+        "start": 2055.52,
+        "duration": 4.159
+    },
+    {
+        "text": "68 cancers that we analyzed but you can",
+        "start": 2057.359,
+        "duration": 4.161
+    },
+    {
+        "text": "just type a word and with autocomplete",
+        "start": 2059.679,
+        "duration": 2.72
+    },
+    {
+        "text": "here and",
+        "start": 2061.52,
+        "duration": 3.119
+    },
+    {
+        "text": "show you a selection here and also to",
+        "start": 2062.399,
+        "duration": 4.321
+    },
+    {
+        "text": "warn you if there's a phenotype where",
+        "start": 2064.639,
+        "duration": 4.081
+    },
+    {
+        "text": "we're not able to find a",
+        "start": 2066.72,
+        "duration": 4.32
+    },
+    {
+        "text": "appearance that we consider worthwhile",
+        "start": 2068.72,
+        "duration": 3.52
+    },
+    {
+        "text": "analyzing",
+        "start": 2071.04,
+        "duration": 3.76
+    },
+    {
+        "text": "here when you type in lymph you end up",
+        "start": 2072.24,
+        "duration": 4.879
+    },
+    {
+        "text": "with those different phenotype codes we",
+        "start": 2074.8,
+        "duration": 5.599
+    },
+    {
+        "text": "had ps4 and here i'm selecting",
+        "start": 2077.119,
+        "duration": 6.401
+    },
+    {
+        "text": "chronic lymphoid leukemia",
+        "start": 2080.399,
+        "duration": 4.641
+    },
+    {
+        "text": "next you can select if you want to look",
+        "start": 2083.52,
+        "duration": 3.68
+    },
+    {
+        "text": "at the uk biovango ngi",
+        "start": 2085.04,
+        "duration": 3.839
+    },
+    {
+        "text": "and finally um",
+        "start": 2087.2,
+        "duration": 3.52
+    },
+    {
+        "text": "you're interested to compare the top one",
+        "start": 2088.879,
+        "duration": 4.081
+    },
+    {
+        "text": "versus bottom 99 or you can look at the",
+        "start": 2090.72,
+        "duration": 4.399
+    },
+    {
+        "text": "others here the reason why we did this",
+        "start": 2092.96,
+        "duration": 3.919
+    },
+    {
+        "text": "last part here is because the table",
+        "start": 2095.119,
+        "duration": 3.521
+    },
+    {
+        "text": "would get too broad if you include all",
+        "start": 2096.879,
+        "duration": 3.441
+    },
+    {
+        "text": "the different",
+        "start": 2098.64,
+        "duration": 4.24
+    },
+    {
+        "text": "tails that you're looking at then",
+        "start": 2100.32,
+        "duration": 3.68
+    },
+    {
+        "text": "you",
+        "start": 2102.88,
+        "duration": 3.28
+    },
+    {
+        "text": "select your table and this is what you",
+        "start": 2104.0,
+        "duration": 4.72
+    },
+    {
+        "text": "see here in this case we generated three",
+        "start": 2106.16,
+        "duration": 5.36
+    },
+    {
+        "text": "prs for chronic lymphoid",
+        "start": 2108.72,
+        "duration": 5.359
+    },
+    {
+        "text": "leukemia and you can see the jiva source",
+        "start": 2111.52,
+        "duration": 4.88
+    },
+    {
+        "text": "is the jivas catalog and then two you",
+        "start": 2114.079,
+        "duration": 3.76
+    },
+    {
+        "text": "can buy rank gbos",
+        "start": 2116.4,
+        "duration": 3.52
+    },
+    {
+        "text": "data sets we used",
+        "start": 2117.839,
+        "duration": 3.76
+    },
+    {
+        "text": "less information about the method how",
+        "start": 2119.92,
+        "duration": 3.199
+    },
+    {
+        "text": "many snips were used and this is",
+        "start": 2121.599,
+        "duration": 2.961
+    },
+    {
+        "text": "sometimes helpful",
+        "start": 2123.119,
+        "duration": 3.201
+    },
+    {
+        "text": "if you want to avoid you working with a",
+        "start": 2124.56,
+        "duration": 3.6
+    },
+    {
+        "text": "pis that includes one million snip and",
+        "start": 2126.32,
+        "duration": 3.519
+    },
+    {
+        "text": "there's another one that only includes",
+        "start": 2128.16,
+        "duration": 4.0
+    },
+    {
+        "text": "100 and performs almost as good then you",
+        "start": 2129.839,
+        "duration": 5.041
+    },
+    {
+        "text": "probably might opt for the other one",
+        "start": 2132.16,
+        "duration": 4.959
+    },
+    {
+        "text": "you get the association",
+        "start": 2134.88,
+        "duration": 3.6
+    },
+    {
+        "text": "in the",
+        "start": 2137.119,
+        "duration": 4.24
+    },
+    {
+        "text": "testing set the other metrics and so",
+        "start": 2138.48,
+        "duration": 4.72
+    },
+    {
+        "text": "this is an interactive table you can",
+        "start": 2141.359,
+        "duration": 4.24
+    },
+    {
+        "text": "sort by your favorite metric",
+        "start": 2143.2,
+        "duration": 5.04
+    },
+    {
+        "text": "and then select the prs",
+        "start": 2145.599,
+        "duration": 4.401
+    },
+    {
+        "text": "for the next step",
+        "start": 2148.24,
+        "duration": 3.2
+    },
+    {
+        "text": "and so",
+        "start": 2150.0,
+        "duration": 4.64
+    },
+    {
+        "text": "also we excluded some some peers those",
+        "start": 2151.44,
+        "duration": 5.04
+    },
+    {
+        "text": "that did not perform well did not reach",
+        "start": 2154.64,
+        "duration": 3.52
+    },
+    {
+        "text": "nominal significant or actually point in",
+        "start": 2156.48,
+        "duration": 3.28
+    },
+    {
+        "text": "the wrong direction",
+        "start": 2158.16,
+        "duration": 3.52
+    },
+    {
+        "text": "we try to put as many warning signs as",
+        "start": 2159.76,
+        "duration": 3.92
+    },
+    {
+        "text": "we can on here",
+        "start": 2161.68,
+        "duration": 5.04
+    },
+    {
+        "text": "and um as i said this is interactive and",
+        "start": 2163.68,
+        "duration": 4.8
+    },
+    {
+        "text": "maybe i get a chance later on to maybe",
+        "start": 2166.72,
+        "duration": 3.76
+    },
+    {
+        "text": "show this platform",
+        "start": 2168.48,
+        "duration": 3.84
+    },
+    {
+        "text": "sneha did a fantastic job and this works",
+        "start": 2170.48,
+        "duration": 3.599
+    },
+    {
+        "text": "very smoothly so i'm very impressed by",
+        "start": 2172.32,
+        "duration": 2.88
+    },
+    {
+        "text": "that",
+        "start": 2174.079,
+        "duration": 3.361
+    },
+    {
+        "text": "um you can download prs from this table",
+        "start": 2175.2,
+        "duration": 3.12
+    },
+    {
+        "text": "here",
+        "start": 2177.44,
+        "duration": 2.48
+    },
+    {
+        "text": "and in here you will find all the",
+        "start": 2178.32,
+        "duration": 4.0
+    },
+    {
+        "text": "information that you need in the header",
+        "start": 2179.92,
+        "duration": 4.0
+    },
+    {
+        "text": "and then the chromosome position and",
+        "start": 2182.32,
+        "duration": 3.68
+    },
+    {
+        "text": "then the effect the non-effect allele",
+        "start": 2183.92,
+        "duration": 3.84
+    },
+    {
+        "text": "and the weight that was used to",
+        "start": 2186.0,
+        "duration": 3.92
+    },
+    {
+        "text": "construct this prs so that's basically",
+        "start": 2187.76,
+        "duration": 5.839
+    },
+    {
+        "text": "the recipe you need to reconstruct it",
+        "start": 2189.92,
+        "duration": 4.88
+    },
+    {
+        "text": "and then there's",
+        "start": 2193.599,
+        "duration": 3.52
+    },
+    {
+        "text": "a neat feature in here that we kind of",
+        "start": 2194.8,
+        "duration": 4.0
+    },
+    {
+        "text": "did not make very obvious here but",
+        "start": 2197.119,
+        "duration": 4.641
+    },
+    {
+        "text": "there's this pls keywords",
+        "start": 2198.8,
+        "duration": 5.039
+    },
+    {
+        "text": "column here where you can",
+        "start": 2201.76,
+        "duration": 5.599
+    },
+    {
+        "text": "look at prs keywords",
+        "start": 2203.839,
+        "duration": 5.441
+    },
+    {
+        "text": "and when you click on that",
+        "start": 2207.359,
+        "duration": 3.601
+    },
+    {
+        "text": "press you you get a header in here",
+        "start": 2209.28,
+        "duration": 3.92
+    },
+    {
+        "text": "describing the prs itself where it's",
+        "start": 2210.96,
+        "duration": 4.639
+    },
+    {
+        "text": "coming from what was how it was defined",
+        "start": 2213.2,
+        "duration": 4.24
+    },
+    {
+        "text": "which method and so on",
+        "start": 2215.599,
+        "duration": 4.161
+    },
+    {
+        "text": "and then you can look at this fibos plot",
+        "start": 2217.44,
+        "duration": 4.0
+    },
+    {
+        "text": "itself which is the manhattan plot kind",
+        "start": 2219.76,
+        "duration": 3.359
+    },
+    {
+        "text": "of a manhattan plot but here you're not",
+        "start": 2221.44,
+        "duration": 3.2
+    },
+    {
+        "text": "looking at snips",
+        "start": 2223.119,
+        "duration": 4.641
+    },
+    {
+        "text": "on the x-axis but actually in this case",
+        "start": 2224.64,
+        "duration": 5.68
+    },
+    {
+        "text": "i think over 1600 phenotypes",
+        "start": 2227.76,
+        "duration": 5.599
+    },
+    {
+        "text": "and you now associate in each of those",
+        "start": 2230.32,
+        "duration": 5.68
+    },
+    {
+        "text": "case controls that you you're testing",
+        "start": 2233.359,
+        "duration": 4.401
+    },
+    {
+        "text": "the association with the",
+        "start": 2236.0,
+        "duration": 3.599
+    },
+    {
+        "text": "prs that you have and this is a nice way",
+        "start": 2237.76,
+        "duration": 4.079
+    },
+    {
+        "text": "to kind of get an idea how specific your",
+        "start": 2239.599,
+        "duration": 3.601
+    },
+    {
+        "text": "prs is",
+        "start": 2241.839,
+        "duration": 2.641
+    },
+    {
+        "text": "can you pick up the trait you're",
+        "start": 2243.2,
+        "duration": 2.48
+    },
+    {
+        "text": "interested in",
+        "start": 2244.48,
+        "duration": 3.68
+    },
+    {
+        "text": "and then also sometimes you end up with",
+        "start": 2245.68,
+        "duration": 4.08
+    },
+    {
+        "text": "secondary signals",
+        "start": 2248.16,
+        "duration": 2.72
+    },
+    {
+        "text": "and",
+        "start": 2249.76,
+        "duration": 2.88
+    },
+    {
+        "text": "at this point we are not sure if this is",
+        "start": 2250.88,
+        "duration": 3.6
+    },
+    {
+        "text": "a",
+        "start": 2252.64,
+        "duration": 3.92
+    },
+    {
+        "text": "precancerous condition maybe that's",
+        "start": 2254.48,
+        "duration": 4.4
+    },
+    {
+        "text": "helpful for predicting the cancer",
+        "start": 2256.56,
+        "duration": 3.92
+    },
+    {
+        "text": "outcome maybe it's a consequence of the",
+        "start": 2258.88,
+        "duration": 2.64
+    },
+    {
+        "text": "treatment",
+        "start": 2260.48,
+        "duration": 2.24
+    },
+    {
+        "text": "and so that's something that we",
+        "start": 2261.52,
+        "duration": 2.4
+    },
+    {
+        "text": "struggled in",
+        "start": 2262.72,
+        "duration": 3.84
+    },
+    {
+        "text": "um this is all time stamped data",
+        "start": 2263.92,
+        "duration": 4.56
+    },
+    {
+        "text": "but here we're looking at case control",
+        "start": 2266.56,
+        "duration": 3.519
+    },
+    {
+        "text": "studies without this time information so",
+        "start": 2268.48,
+        "duration": 2.96
+    },
+    {
+        "text": "we don't know if you came before or",
+        "start": 2270.079,
+        "duration": 3.601
+    },
+    {
+        "text": "after this diagnosis",
+        "start": 2271.44,
+        "duration": 4.0
+    },
+    {
+        "text": "and so the way we resolve this is",
+        "start": 2273.68,
+        "duration": 2.64
+    },
+    {
+        "text": "through",
+        "start": 2275.44,
+        "duration": 3.04
+    },
+    {
+        "text": "oh and those plots are interactive you",
+        "start": 2276.32,
+        "duration": 4.08
+    },
+    {
+        "text": "can hover over",
+        "start": 2278.48,
+        "duration": 3.359
+    },
+    {
+        "text": "of this those",
+        "start": 2280.4,
+        "duration": 3.28
+    },
+    {
+        "text": "dots and you get information and and",
+        "start": 2281.839,
+        "duration": 4.401
+    },
+    {
+        "text": "peter actually the audience he is uh",
+        "start": 2283.68,
+        "duration": 4.56
+    },
+    {
+        "text": "partially responsible for this nice",
+        "start": 2286.24,
+        "duration": 3.359
+    },
+    {
+        "text": "interactive",
+        "start": 2288.24,
+        "duration": 4.32
+    },
+    {
+        "text": "local zoom feature that we're using",
+        "start": 2289.599,
+        "duration": 5.441
+    },
+    {
+        "text": "okay so if you want to exclu",
+        "start": 2292.56,
+        "duration": 4.08
+    },
+    {
+        "text": "you want to exclude",
+        "start": 2295.04,
+        "duration": 3.68
+    },
+    {
+        "text": "you want to know if these are",
+        "start": 2296.64,
+        "duration": 4.56
+    },
+    {
+        "text": "independent associations of the prs you",
+        "start": 2298.72,
+        "duration": 4.16
+    },
+    {
+        "text": "can um",
+        "start": 2301.2,
+        "duration": 4.0
+    },
+    {
+        "text": "exclude all the cancer cases and see if",
+        "start": 2302.88,
+        "duration": 4.719
+    },
+    {
+        "text": "those associations remain and that would",
+        "start": 2305.2,
+        "duration": 4.32
+    },
+    {
+        "text": "be an indicator that's an independent",
+        "start": 2307.599,
+        "duration": 3.76
+    },
+    {
+        "text": "association with a shared genetic",
+        "start": 2309.52,
+        "duration": 2.88
+    },
+    {
+        "text": "component",
+        "start": 2311.359,
+        "duration": 2.961
+    },
+    {
+        "text": "and so we also offer those",
+        "start": 2312.4,
+        "duration": 6.16
+    },
+    {
+        "text": "exclusion which appear as hebrews plots",
+        "start": 2314.32,
+        "duration": 6.4
+    },
+    {
+        "text": "and of course people are sometimes um so",
+        "start": 2318.56,
+        "duration": 3.84
+    },
+    {
+        "text": "i'm a very visual person but if you're",
+        "start": 2320.72,
+        "duration": 3.76
+    },
+    {
+        "text": "more interested in the raw data in the",
+        "start": 2322.4,
+        "duration": 4.56
+    },
+    {
+        "text": "tables you can look at table view and",
+        "start": 2324.48,
+        "duration": 4.24
+    },
+    {
+        "text": "you can see the prs keyboards and the",
+        "start": 2326.96,
+        "duration": 4.32
+    },
+    {
+        "text": "exclusion peers keyboard side by side",
+        "start": 2328.72,
+        "duration": 4.16
+    },
+    {
+        "text": "effect sizes",
+        "start": 2331.28,
+        "duration": 3.6
+    },
+    {
+        "text": "number of cases and controls included in",
+        "start": 2332.88,
+        "duration": 3.52
+    },
+    {
+        "text": "here and you can download this also as",
+        "start": 2334.88,
+        "duration": 2.16
+    },
+    {
+        "text": "an",
+        "start": 2336.4,
+        "duration": 4.04
+    },
+    {
+        "text": "excel file",
+        "start": 2337.04,
+        "duration": 3.4
+    },
+    {
+        "text": "there's a lot of information in those",
+        "start": 2341.599,
+        "duration": 3.681
+    },
+    {
+        "text": "tables and sometimes you want to know",
+        "start": 2343.119,
+        "duration": 4.0
+    },
+    {
+        "text": "how was the phenotype defined what was",
+        "start": 2345.28,
+        "duration": 3.44
+    },
+    {
+        "text": "the method that was used",
+        "start": 2347.119,
+        "duration": 3.521
+    },
+    {
+        "text": "and so we tried to",
+        "start": 2348.72,
+        "duration": 4.24
+    },
+    {
+        "text": "incorporate that information in this in",
+        "start": 2350.64,
+        "duration": 3.76
+    },
+    {
+        "text": "those tabs in here",
+        "start": 2352.96,
+        "duration": 3.36
+    },
+    {
+        "text": "so we have methods here this basically",
+        "start": 2354.4,
+        "duration": 3.76
+    },
+    {
+        "text": "the method sections that we had in our",
+        "start": 2356.32,
+        "duration": 3.68
+    },
+    {
+        "text": "manuscript you can read about the",
+        "start": 2358.16,
+        "duration": 4.24
+    },
+    {
+        "text": "different cohorts that we used",
+        "start": 2360.0,
+        "duration": 4.56
+    },
+    {
+        "text": "then you might be interested in getting",
+        "start": 2362.4,
+        "duration": 3.84
+    },
+    {
+        "text": "an overview about all the cares that",
+        "start": 2364.56,
+        "duration": 3.68
+    },
+    {
+        "text": "were generated",
+        "start": 2366.24,
+        "duration": 4.0
+    },
+    {
+        "text": "you can see the different trades in here",
+        "start": 2368.24,
+        "duration": 4.8
+    },
+    {
+        "text": "and this description and the fee codes",
+        "start": 2370.24,
+        "duration": 4.4
+    },
+    {
+        "text": "you can see how many",
+        "start": 2373.04,
+        "duration": 3.28
+    },
+    {
+        "text": "remained after filtering how many",
+        "start": 2374.64,
+        "duration": 4.24
+    },
+    {
+        "text": "appears were there before we started and",
+        "start": 2376.32,
+        "duration": 4.48
+    },
+    {
+        "text": "you can look at",
+        "start": 2378.88,
+        "duration": 4.56
+    },
+    {
+        "text": "ps mgi or any carbic so this is a nice",
+        "start": 2380.8,
+        "duration": 3.84
+    },
+    {
+        "text": "overview",
+        "start": 2383.44,
+        "duration": 2.88
+    },
+    {
+        "text": "and if you want to see how a phenotype",
+        "start": 2384.64,
+        "duration": 4.0
+    },
+    {
+        "text": "was defined you can click on a v code",
+        "start": 2386.32,
+        "duration": 4.72
+    },
+    {
+        "text": "and it will tell you those icd codes",
+        "start": 2388.64,
+        "duration": 5.68
+    },
+    {
+        "text": "were used to define the this case the",
+        "start": 2391.04,
+        "duration": 6.72
+    },
+    {
+        "text": "prostate cancer diagnosis",
+        "start": 2394.32,
+        "duration": 6.0
+    },
+    {
+        "text": "all right so",
+        "start": 2397.76,
+        "duration": 4.88
+    },
+    {
+        "text": "at this point i might be able to",
+        "start": 2400.32,
+        "duration": 3.999
+    },
+    {
+        "text": "give you a quick",
+        "start": 2402.64,
+        "duration": 4.16
+    },
+    {
+        "text": "live demo um i've showed you i've shown",
+        "start": 2404.319,
+        "duration": 5.441
+    },
+    {
+        "text": "you most of the features",
+        "start": 2406.8,
+        "duration": 2.96
+    },
+    {
+        "text": "is this available online",
+        "start": 2420.16,
+        "duration": 3.199
+    },
+    {
+        "text": "yes so here as i said the key",
+        "start": 2423.599,
+        "duration": 6.48
+    },
+    {
+        "text": "here is to look at the",
+        "start": 2426.64,
+        "duration": 3.439
+    },
+    {
+        "text": "selection menu that is not showing up",
+        "start": 2430.72,
+        "duration": 4.48
+    },
+    {
+        "text": "here we go",
+        "start": 2433.04,
+        "duration": 4.559
+    },
+    {
+        "text": "so one nice example here that i know",
+        "start": 2435.2,
+        "duration": 4.8
+    },
+    {
+        "text": "works well is",
+        "start": 2437.599,
+        "duration": 4.161
+    },
+    {
+        "text": "i think",
+        "start": 2440.0,
+        "duration": 4.319
+    },
+    {
+        "text": "basal cell calcinoma",
+        "start": 2441.76,
+        "duration": 4.319
+    },
+    {
+        "text": "and we want to look at this in the uk",
+        "start": 2444.319,
+        "duration": 3.121
+    },
+    {
+        "text": "biobank",
+        "start": 2446.079,
+        "duration": 3.04
+    },
+    {
+        "text": "let's say",
+        "start": 2447.44,
+        "duration": 4.159
+    },
+    {
+        "text": "five percent versus rest and so we want",
+        "start": 2449.119,
+        "duration": 4.161
+    },
+    {
+        "text": "to show this look at this table and you",
+        "start": 2451.599,
+        "duration": 3.041
+    },
+    {
+        "text": "can see the the selection was very",
+        "start": 2453.28,
+        "duration": 3.6
+    },
+    {
+        "text": "smooth you could just type in a word and",
+        "start": 2454.64,
+        "duration": 4.479
+    },
+    {
+        "text": "on the film type awesome it was showed",
+        "start": 2456.88,
+        "duration": 4.32
+    },
+    {
+        "text": "up",
+        "start": 2459.119,
+        "duration": 4.48
+    },
+    {
+        "text": "and here we can see that there are two",
+        "start": 2461.2,
+        "duration": 5.119
+    },
+    {
+        "text": "studies that went into this score",
+        "start": 2463.599,
+        "duration": 5.201
+    },
+    {
+        "text": "24 28 snips the association was",
+        "start": 2466.319,
+        "duration": 4.161
+    },
+    {
+        "text": "extremely strong",
+        "start": 2468.8,
+        "duration": 6.24
+    },
+    {
+        "text": "you see was a lower as our other um",
+        "start": 2470.48,
+        "duration": 6.8
+    },
+    {
+        "text": "yes we had in our data set and still the",
+        "start": 2475.04,
+        "duration": 5.12
+    },
+    {
+        "text": "sps is able to enrich cases in the top",
+        "start": 2477.28,
+        "duration": 4.72
+    },
+    {
+        "text": "five percent",
+        "start": 2480.16,
+        "duration": 3.6
+    },
+    {
+        "text": "now when you look at the",
+        "start": 2482.0,
+        "duration": 4.64
+    },
+    {
+        "text": "piers fevers",
+        "start": 2483.76,
+        "duration": 2.88
+    },
+    {
+        "text": "the data is loaded in here you get the",
+        "start": 2487.28,
+        "duration": 3.36
+    },
+    {
+        "text": "details",
+        "start": 2489.04,
+        "duration": 4.4
+    },
+    {
+        "text": "and you can see skin cancer",
+        "start": 2490.64,
+        "duration": 5.12
+    },
+    {
+        "text": "melanoma and carcinoma are showing up on",
+        "start": 2493.44,
+        "duration": 4.8
+    },
+    {
+        "text": "top here so this seems to be a skin",
+        "start": 2495.76,
+        "duration": 5.28
+    },
+    {
+        "text": "cancer skin cancer related peer has many",
+        "start": 2498.24,
+        "duration": 4.48
+    },
+    {
+        "text": "associations",
+        "start": 2501.04,
+        "duration": 4.16
+    },
+    {
+        "text": "across different types of skin cancer",
+        "start": 2502.72,
+        "duration": 4.399
+    },
+    {
+        "text": "and the reason for that is that",
+        "start": 2505.2,
+        "duration": 3.2
+    },
+    {
+        "text": "i think pigment",
+        "start": 2507.119,
+        "duration": 2.601
+    },
+    {
+        "text": "pigment",
+        "start": 2508.4,
+        "duration": 4.32
+    },
+    {
+        "text": "pigmentation itself the genetic",
+        "start": 2509.72,
+        "duration": 5.32
+    },
+    {
+        "text": "factors that influence pigmentation",
+        "start": 2512.72,
+        "duration": 5.119
+    },
+    {
+        "text": "are causing skins or strongest factors",
+        "start": 2515.04,
+        "duration": 4.48
+    },
+    {
+        "text": "for skin cancer and so",
+        "start": 2517.839,
+        "duration": 3.681
+    },
+    {
+        "text": "they're relevant for all kinds of skin",
+        "start": 2519.52,
+        "duration": 4.079
+    },
+    {
+        "text": "cancers here but also you can see that",
+        "start": 2521.52,
+        "duration": 4.64
+    },
+    {
+        "text": "there are dermatological traits in here",
+        "start": 2523.599,
+        "duration": 5.281
+    },
+    {
+        "text": "that seem to be associated",
+        "start": 2526.16,
+        "duration": 5.12
+    },
+    {
+        "text": "and so when you look at the",
+        "start": 2528.88,
+        "duration": 4.959
+    },
+    {
+        "text": "exclusion ps3 verse in this case you can",
+        "start": 2531.28,
+        "duration": 3.92
+    },
+    {
+        "text": "see that here",
+        "start": 2533.839,
+        "duration": 4.321
+    },
+    {
+        "text": "there is a trait called sebaceous cyst",
+        "start": 2535.2,
+        "duration": 6.08
+    },
+    {
+        "text": "that is associated with this prs also in",
+        "start": 2538.16,
+        "duration": 5.28
+    },
+    {
+        "text": "the exclusion plc was meaning that this",
+        "start": 2541.28,
+        "duration": 3.839
+    },
+    {
+        "text": "trait itself seemed to have a shared",
+        "start": 2543.44,
+        "duration": 4.639
+    },
+    {
+        "text": "genetic component",
+        "start": 2545.119,
+        "duration": 2.96
+    },
+    {
+        "text": "here",
+        "start": 2548.16,
+        "duration": 2.72
+    },
+    {
+        "text": "likely coming from the",
+        "start": 2548.96,
+        "duration": 3.76
+    },
+    {
+        "text": "implementation again so when you select",
+        "start": 2550.88,
+        "duration": 4.08
+    },
+    {
+        "text": "this in here",
+        "start": 2552.72,
+        "duration": 5.119
+    },
+    {
+        "text": "you can also directly see the",
+        "start": 2554.96,
+        "duration": 6.8
+    },
+    {
+        "text": "association of the continuous prs",
+        "start": 2557.839,
+        "duration": 3.921
+    },
+    {
+        "text": "and you can see quarter one versus",
+        "start": 2562.8,
+        "duration": 4.64
+    },
+    {
+        "text": "chrono two you can see if this",
+        "start": 2564.48,
+        "duration": 4.72
+    },
+    {
+        "text": "enrichment here",
+        "start": 2567.44,
+        "duration": 4.48
+    },
+    {
+        "text": "uh is present in the different quartiles",
+        "start": 2569.2,
+        "duration": 4.399
+    },
+    {
+        "text": "and in this case it is present in the",
+        "start": 2571.92,
+        "duration": 3.199
+    },
+    {
+        "text": "fevers but also in the exclusion",
+        "start": 2573.599,
+        "duration": 3.601
+    },
+    {
+        "text": "perceivers meaning that there seem to be",
+        "start": 2575.119,
+        "duration": 5.441
+    },
+    {
+        "text": "an independent association",
+        "start": 2577.2,
+        "duration": 3.36
+    },
+    {
+        "text": "if you want to go at the table",
+        "start": 2580.88,
+        "duration": 3.84
+    },
+    {
+        "text": "look at the table",
+        "start": 2582.72,
+        "duration": 3.52
+    },
+    {
+        "text": "this generates here automatically and",
+        "start": 2584.72,
+        "duration": 4.8
+    },
+    {
+        "text": "then sorts by p value",
+        "start": 2586.24,
+        "duration": 4.879
+    },
+    {
+        "text": "there are some extremely small p values",
+        "start": 2589.52,
+        "duration": 3.52
+    },
+    {
+        "text": "that shows up as zero we need to fix",
+        "start": 2591.119,
+        "duration": 4.081
+    },
+    {
+        "text": "that",
+        "start": 2593.04,
+        "duration": 2.16
+    },
+    {
+        "text": "but again you can",
+        "start": 2595.359,
+        "duration": 4.161
+    },
+    {
+        "text": "look at all those tables and sort them",
+        "start": 2597.28,
+        "duration": 5.44
+    },
+    {
+        "text": "as as you want depending on",
+        "start": 2599.52,
+        "duration": 6.44
+    },
+    {
+        "text": "your interests",
+        "start": 2602.72,
+        "duration": 3.24
+    },
+    {
+        "text": "and i think",
+        "start": 2606.16,
+        "duration": 3.84
+    },
+    {
+        "text": "please go to pisweb try explore and if",
+        "start": 2607.52,
+        "duration": 4.16
+    },
+    {
+        "text": "you find any bugs like those",
+        "start": 2610.0,
+        "duration": 3.839
+    },
+    {
+        "text": "zero p values let me know",
+        "start": 2611.68,
+        "duration": 5.6
+    },
+    {
+        "text": "you can certainly fix that",
+        "start": 2613.839,
+        "duration": 3.441
+    },
+    {
+        "text": "okay so what's next so we want to expand",
+        "start": 2617.839,
+        "duration": 4.081
+    },
+    {
+        "text": "our platform to other phenotype domains",
+        "start": 2620.0,
+        "duration": 3.68
+    },
+    {
+        "text": "we start with cancer but we have a whole",
+        "start": 2621.92,
+        "duration": 4.48
+    },
+    {
+        "text": "phenome so we might be able to do this",
+        "start": 2623.68,
+        "duration": 4.48
+    },
+    {
+        "text": "across the whole phenome",
+        "start": 2626.4,
+        "duration": 3.84
+    },
+    {
+        "text": "right now we are focusing on exposure",
+        "start": 2628.16,
+        "duration": 4.72
+    },
+    {
+        "text": "prs so not only that",
+        "start": 2630.24,
+        "duration": 5.2
+    },
+    {
+        "text": "case control g was but on",
+        "start": 2632.88,
+        "duration": 4.239
+    },
+    {
+        "text": "kind of traits that are relevant for",
+        "start": 2635.44,
+        "duration": 3.919
+    },
+    {
+        "text": "other common diseases i think about",
+        "start": 2637.119,
+        "duration": 6.24
+    },
+    {
+        "text": "lipid levels or bmi levels they also can",
+        "start": 2639.359,
+        "duration": 4.801
+    },
+    {
+        "text": "be",
+        "start": 2643.359,
+        "duration": 3.121
+    },
+    {
+        "text": "useful as predictors for common diseases",
+        "start": 2644.16,
+        "duration": 3.199
+    },
+    {
+        "text": "or",
+        "start": 2646.48,
+        "duration": 3.2
+    },
+    {
+        "text": "we can use them as proxies in case you",
+        "start": 2647.359,
+        "duration": 3.681
+    },
+    {
+        "text": "don't have them measured in your own",
+        "start": 2649.68,
+        "duration": 2.72
+    },
+    {
+        "text": "data sets and that's why you think",
+        "start": 2651.04,
+        "duration": 3.44
+    },
+    {
+        "text": "exposure ps's are relevant",
+        "start": 2652.4,
+        "duration": 4.64
+    },
+    {
+        "text": "for the community",
+        "start": 2654.48,
+        "duration": 3.92
+    },
+    {
+        "text": "um we want to",
+        "start": 2657.04,
+        "duration": 2.96
+    },
+    {
+        "text": "we are using mgi",
+        "start": 2658.4,
+        "duration": 4.08
+    },
+    {
+        "text": "and so many researchers are by now using",
+        "start": 2660.0,
+        "duration": 4.4
+    },
+    {
+        "text": "mgi and so we",
+        "start": 2662.48,
+        "duration": 3.359
+    },
+    {
+        "text": "want to return those peers we get",
+        "start": 2664.4,
+        "duration": 3.36
+    },
+    {
+        "text": "regenerated sometimes it takes a long",
+        "start": 2665.839,
+        "duration": 4.081
+    },
+    {
+        "text": "time to condense one million snips into",
+        "start": 2667.76,
+        "duration": 3.28
+    },
+    {
+        "text": "one score",
+        "start": 2669.92,
+        "duration": 3.12
+    },
+    {
+        "text": "and so we we have those numbers we can",
+        "start": 2671.04,
+        "duration": 4.24
+    },
+    {
+        "text": "directly share them with the precision",
+        "start": 2673.04,
+        "duration": 3.92
+    },
+    {
+        "text": "health and so they can make them",
+        "start": 2675.28,
+        "duration": 4.799
+    },
+    {
+        "text": "available for other researchers",
+        "start": 2676.96,
+        "duration": 5.68
+    },
+    {
+        "text": "of course we want to try new bis methods",
+        "start": 2680.079,
+        "duration": 4.081
+    },
+    {
+        "text": "and ideally we want to increase",
+        "start": 2682.64,
+        "duration": 4.959
+    },
+    {
+        "text": "diversity of also non-european peers",
+        "start": 2684.16,
+        "duration": 6.959
+    },
+    {
+        "text": "but here um study from 2019 shows that",
+        "start": 2687.599,
+        "duration": 5.841
+    },
+    {
+        "text": "when you look at the jiva's catalogue",
+        "start": 2691.119,
+        "duration": 4.161
+    },
+    {
+        "text": "uh almost 80 percent of the individuals",
+        "start": 2693.44,
+        "duration": 4.32
+    },
+    {
+        "text": "that are analyzed of european ancestry",
+        "start": 2695.28,
+        "duration": 4.319
+    },
+    {
+        "text": "followed by east asian",
+        "start": 2697.76,
+        "duration": 4.96
+    },
+    {
+        "text": "there are some african um cohorts in",
+        "start": 2699.599,
+        "duration": 5.281
+    },
+    {
+        "text": "here some",
+        "start": 2702.72,
+        "duration": 4.08
+    },
+    {
+        "text": "cross-ancestry studies are in here as",
+        "start": 2704.88,
+        "duration": 4.479
+    },
+    {
+        "text": "well but kind of um",
+        "start": 2706.8,
+        "duration": 4.0
+    },
+    {
+        "text": "people have to do a lot of catching up",
+        "start": 2709.359,
+        "duration": 3.441
+    },
+    {
+        "text": "to or to increase diversity for gps",
+        "start": 2710.8,
+        "duration": 4.08
+    },
+    {
+        "text": "studies",
+        "start": 2712.8,
+        "duration": 4.4
+    },
+    {
+        "text": "so our work is published in the american",
+        "start": 2714.88,
+        "duration": 5.92
+    },
+    {
+        "text": "journal of human genetics um a year ago",
+        "start": 2717.2,
+        "duration": 5.76
+    },
+    {
+        "text": "and again i want to especially thanks",
+        "start": 2720.8,
+        "duration": 4.799
+    },
+    {
+        "text": "nihal potter with all of her patients",
+        "start": 2722.96,
+        "duration": 4.399
+    },
+    {
+        "text": "um to put together this web page and",
+        "start": 2725.599,
+        "duration": 3.76
+    },
+    {
+        "text": "kind of discuss what is possible what is",
+        "start": 2727.359,
+        "duration": 3.921
+    },
+    {
+        "text": "not possible it's always difficult to",
+        "start": 2729.359,
+        "duration": 4.081
+    },
+    {
+        "text": "know",
+        "start": 2731.28,
+        "duration": 4.16
+    },
+    {
+        "text": "but she did a wonderful job there and um",
+        "start": 2733.44,
+        "duration": 4.879
+    },
+    {
+        "text": "this work was collected by rama mukuchi",
+        "start": 2735.44,
+        "duration": 4.08
+    },
+    {
+        "text": "um",
+        "start": 2738.319,
+        "duration": 3.841
+    },
+    {
+        "text": "classic friend and collaborator",
+        "start": 2739.52,
+        "duration": 4.079
+    },
+    {
+        "text": "and finally i want to acknowledge other",
+        "start": 2742.16,
+        "duration": 3.439
+    },
+    {
+        "text": "study participants in mgi and the uk",
+        "start": 2743.599,
+        "duration": 4.081
+    },
+    {
+        "text": "biobank and then we worked with many",
+        "start": 2745.599,
+        "duration": 4.321
+    },
+    {
+        "text": "different centers here the university",
+        "start": 2747.68,
+        "duration": 3.76
+    },
+    {
+        "text": "and departments",
+        "start": 2749.92,
+        "duration": 4.8
+    },
+    {
+        "text": "and we had some funding from nsf nih and",
+        "start": 2751.44,
+        "duration": 6.72
+    },
+    {
+        "text": "also through precision health university",
+        "start": 2754.72,
+        "duration": 4.639
+    },
+    {
+        "text": "thank you for your attention and happy",
+        "start": 2758.16,
+        "duration": 3.69
+    },
+    {
+        "text": "to take any questions you might have",
+        "start": 2759.359,
+        "duration": 5.041
+    },
+    {
+        "text": "[Music]",
+        "start": 2761.85,
+        "duration": 4.63
+    },
+    {
+        "text": "okay one of the room is a question for",
+        "start": 2764.4,
+        "duration": 3.28
+    },
+    {
+        "text": "your",
+        "start": 2766.48,
+        "duration": 3.04
+    },
+    {
+        "text": "question if anyone online is a question",
+        "start": 2767.68,
+        "duration": 4.159
+    },
+    {
+        "text": "you can either put it in chat or use the",
+        "start": 2769.52,
+        "duration": 3.28
+    },
+    {
+        "text": "zoom",
+        "start": 2771.839,
+        "duration": 3.52
+    },
+    {
+        "text": "controls",
+        "start": 2772.8,
+        "duration": 2.559
+    },
+    {
+        "text": "um",
+        "start": 2783.28,
+        "duration": 3.0
+    },
+    {
+        "text": "zoom in so you can see some of the",
+        "start": 2791.359,
+        "duration": 4.0
+    },
+    {
+        "text": "different",
+        "start": 2793.119,
+        "duration": 3.281
+    },
+    {
+        "text": "traits",
+        "start": 2795.359,
+        "duration": 2.161
+    },
+    {
+        "text": "that",
+        "start": 2796.4,
+        "duration": 4.88
+    },
+    {
+        "text": "i'm sorry to jump to the map option",
+        "start": 2797.52,
+        "duration": 3.76
+    },
+    {
+        "text": "oh yeah this is",
+        "start": 2801.44,
+        "duration": 2.96
+    },
+    {
+        "text": "i noticed that the pikachu",
+        "start": 2805.119,
+        "duration": 6.321
+    },
+    {
+        "text": "when you have the graphic paper option",
+        "start": 2807.92,
+        "duration": 3.52
+    },
+    {
+        "text": "maybe it was this one here",
+        "start": 2813.2,
+        "duration": 3.879
+    },
+    {
+        "text": "um you had a selection of multiple",
+        "start": 2835.359,
+        "duration": 5.881
+    },
+    {
+        "text": "changes that you showed",
+        "start": 2837.52,
+        "duration": 3.72
+    },
+    {
+        "text": "okay",
+        "start": 2844.319,
+        "duration": 4.401
+    },
+    {
+        "text": "so there's this option here",
+        "start": 2845.52,
+        "duration": 3.2
+    },
+    {
+        "text": "my question was what's the possible",
+        "start": 2854.16,
+        "duration": 5.159
+    },
+    {
+        "text": "question on the map",
+        "start": 2855.359,
+        "duration": 3.96
+    },
+    {
+        "text": "by chance uh any people online or",
+        "start": 2863.359,
+        "duration": 4.881
+    },
+    {
+        "text": "somebody unable to hear their questions",
+        "start": 2865.92,
+        "duration": 6.52
+    },
+    {
+        "text": "let me speak up a little bit more",
+        "start": 2868.24,
+        "duration": 4.2
+    },
+    {
+        "text": "[Music]",
+        "start": 2875.36,
+        "duration": 3.069
+    },
+    {
+        "text": "so",
+        "start": 2882.64,
+        "duration": 3.679
+    },
+    {
+        "text": "that is a good question so you have this",
+        "start": 2883.52,
+        "duration": 4.4
+    },
+    {
+        "text": "plot here and sometimes there are some",
+        "start": 2886.319,
+        "duration": 2.961
+    },
+    {
+        "text": "things happening and you can see here",
+        "start": 2887.92,
+        "duration": 3.679
+    },
+    {
+        "text": "there's a lot of overlap",
+        "start": 2889.28,
+        "duration": 4.48
+    },
+    {
+        "text": "right now i think those labels are",
+        "start": 2891.599,
+        "duration": 4.801
+    },
+    {
+        "text": "this script is trying to repel them",
+        "start": 2893.76,
+        "duration": 4.079
+    },
+    {
+        "text": "but still there's a lot of information",
+        "start": 2896.4,
+        "duration": 4.08
+    },
+    {
+        "text": "in here",
+        "start": 2897.839,
+        "duration": 3.921
+    },
+    {
+        "text": "i think",
+        "start": 2900.48,
+        "duration": 2.879
+    },
+    {
+        "text": "at some point there was an option to",
+        "start": 2901.76,
+        "duration": 3.68
+    },
+    {
+        "text": "make the stream to zoom in but this is",
+        "start": 2903.359,
+        "duration": 4.081
+    },
+    {
+        "text": "not an option at this point but it's a i",
+        "start": 2905.44,
+        "duration": 4.32
+    },
+    {
+        "text": "think that's a very good idea apparently",
+        "start": 2907.44,
+        "duration": 7.159
+    },
+    {
+        "text": "you can drag access tick marks",
+        "start": 2909.76,
+        "duration": 4.839
+    },
+    {
+        "text": "[Music]",
+        "start": 2919.37,
+        "duration": 5.989
+    },
+    {
+        "text": "okay maybe i'm not i'm doing it wrong",
+        "start": 2922.24,
+        "duration": 5.04
+    },
+    {
+        "text": "you know it is yeah you said like when",
+        "start": 2925.359,
+        "duration": 5.921
+    },
+    {
+        "text": "the labels are like by 10.",
+        "start": 2927.28,
+        "duration": 4.0
+    },
+    {
+        "text": "it's possible that i disable that",
+        "start": 2931.68,
+        "duration": 3.679
+    },
+    {
+        "text": "okay but yeah that usually would be",
+        "start": 2935.52,
+        "duration": 3.92
+    },
+    {
+        "text": "possible",
+        "start": 2937.2,
+        "duration": 3.68
+    },
+    {
+        "text": "okay",
+        "start": 2939.44,
+        "duration": 3.919
+    },
+    {
+        "text": "might be an option",
+        "start": 2940.88,
+        "duration": 4.16
+    },
+    {
+        "text": "yeah but some of those plots get very",
+        "start": 2943.359,
+        "duration": 4.561
+    },
+    {
+        "text": "crowded yeah you're right",
+        "start": 2945.04,
+        "duration": 4.24
+    },
+    {
+        "text": "which is a good thing because there are",
+        "start": 2947.92,
+        "duration": 2.8
+    },
+    {
+        "text": "many interesting association you can",
+        "start": 2949.28,
+        "duration": 3.76
+    },
+    {
+        "text": "follow up on but sometimes it's hard to",
+        "start": 2950.72,
+        "duration": 3.119
+    },
+    {
+        "text": "see it",
+        "start": 2953.04,
+        "duration": 2.319
+    },
+    {
+        "text": "i think that's why we have this table",
+        "start": 2953.839,
+        "duration": 3.28
+    },
+    {
+        "text": "option where you can",
+        "start": 2955.359,
+        "duration": 4.48
+    },
+    {
+        "text": "look at the topics",
+        "start": 2957.119,
+        "duration": 5.841
+    },
+    {
+        "text": "in the table itself",
+        "start": 2959.839,
+        "duration": 3.121
+    },
+    {
+        "text": "and you can directly see also what",
+        "start": 2965.28,
+        "duration": 3.2
+    },
+    {
+        "text": "happens when you have an exclusion fee",
+        "start": 2966.64,
+        "duration": 4.32
+    },
+    {
+        "text": "was what are the traits that",
+        "start": 2968.48,
+        "duration": 4.16
+    },
+    {
+        "text": "that are removed when you exclude in",
+        "start": 2970.96,
+        "duration": 3.92
+    },
+    {
+        "text": "this case skin cancer",
+        "start": 2972.64,
+        "duration": 4.24
+    },
+    {
+        "text": "and so these were all the skin cancer",
+        "start": 2974.88,
+        "duration": 3.52
+    },
+    {
+        "text": "traits",
+        "start": 2976.88,
+        "duration": 3.28
+    },
+    {
+        "text": "what was the second question and the",
+        "start": 2978.4,
+        "duration": 4.32
+    },
+    {
+        "text": "second one was for the definition from",
+        "start": 2980.16,
+        "duration": 4.8
+    },
+    {
+        "text": "the",
+        "start": 2982.72,
+        "duration": 2.24
+    },
+    {
+        "text": "um do you distinguish that because i",
+        "start": 2988.24,
+        "duration": 3.599
+    },
+    {
+        "text": "know that there could be some overlap",
+        "start": 2990.319,
+        "duration": 2.561
+    },
+    {
+        "text": "with",
+        "start": 2991.839,
+        "duration": 3.52
+    },
+    {
+        "text": "hispanic for one demographics or with",
+        "start": 2992.88,
+        "duration": 3.92
+    },
+    {
+        "text": "the picture like",
+        "start": 2995.359,
+        "duration": 3.601
+    },
+    {
+        "text": "their",
+        "start": 2996.8,
+        "duration": 2.16
+    },
+    {
+        "text": "i see",
+        "start": 2999.68,
+        "duration": 3.6
+    },
+    {
+        "text": "so here this is um this is not our study",
+        "start": 3000.88,
+        "duration": 3.76
+    },
+    {
+        "text": "this is a",
+        "start": 3003.28,
+        "duration": 3.52
+    },
+    {
+        "text": "study that summarized the gbos catalog",
+        "start": 3004.64,
+        "duration": 4.56
+    },
+    {
+        "text": "studies and i think in here there's kind",
+        "start": 3006.8,
+        "duration": 4.0
+    },
+    {
+        "text": "of a",
+        "start": 3009.2,
+        "duration": 3.68
+    },
+    {
+        "text": "the creators of this database space they",
+        "start": 3010.8,
+        "duration": 4.96
+    },
+    {
+        "text": "tried to categorize the entity groups",
+        "start": 3012.88,
+        "duration": 4.16
+    },
+    {
+        "text": "and i think these are the broad",
+        "start": 3015.76,
+        "duration": 3.599
+    },
+    {
+        "text": "definitions in here",
+        "start": 3017.04,
+        "duration": 3.68
+    },
+    {
+        "text": "but you're right there there are better",
+        "start": 3019.359,
+        "duration": 2.72
+    },
+    {
+        "text": "ways to do this",
+        "start": 3020.72,
+        "duration": 3.68
+    },
+    {
+        "text": "and for example in mgi",
+        "start": 3022.079,
+        "duration": 3.52
+    },
+    {
+        "text": "we can",
+        "start": 3024.4,
+        "duration": 3.6
+    },
+    {
+        "text": "use the inferred ancestry information",
+        "start": 3025.599,
+        "duration": 6.641
+    },
+    {
+        "text": "from admixture or from from",
+        "start": 3028.0,
+        "duration": 4.24
+    },
+    {
+        "text": "pca projection to",
+        "start": 3032.4,
+        "duration": 4.0
+    },
+    {
+        "text": "better differentiate the different",
+        "start": 3035.04,
+        "duration": 3.2
+    },
+    {
+        "text": "groups and depending on which critical",
+        "start": 3036.4,
+        "duration": 4.48
+    },
+    {
+        "text": "component you use you can maybe",
+        "start": 3038.24,
+        "duration": 4.24
+    },
+    {
+        "text": "differentiate between hispanic and",
+        "start": 3040.88,
+        "duration": 5.12
+    },
+    {
+        "text": "non-hispanic individuals also",
+        "start": 3042.48,
+        "duration": 5.2
+    },
+    {
+        "text": "but as i said the numbers are very low",
+        "start": 3046.0,
+        "duration": 2.559
+    },
+    {
+        "text": "right now",
+        "start": 3047.68,
+        "duration": 3.04
+    },
+    {
+        "text": "so we can't offer the account of it at",
+        "start": 3048.559,
+        "duration": 4.401
+    },
+    {
+        "text": "this stage but",
+        "start": 3050.72,
+        "duration": 4.56
+    },
+    {
+        "text": "precision health is increasing diversity",
+        "start": 3052.96,
+        "duration": 4.56
+    },
+    {
+        "text": "in ngi by specifically working with",
+        "start": 3055.28,
+        "duration": 3.68
+    },
+    {
+        "text": "other communities",
+        "start": 3057.52,
+        "duration": 2.4
+    },
+    {
+        "text": "that",
+        "start": 3058.96,
+        "duration": 3.44
+    },
+    {
+        "text": "have higher diversity and to especially",
+        "start": 3059.92,
+        "duration": 5.12
+    },
+    {
+        "text": "increase increased numbers for",
+        "start": 3062.4,
+        "duration": 4.08
+    },
+    {
+        "text": "hispanic",
+        "start": 3065.04,
+        "duration": 3.279
+    },
+    {
+        "text": "ethnicity or for african-american",
+        "start": 3066.48,
+        "duration": 4.48
+    },
+    {
+        "text": "individuals",
+        "start": 3068.319,
+        "duration": 2.641
+    },
+    {
+        "text": "any other questions",
+        "start": 3072.96,
+        "duration": 3.48
+    },
+    {
+        "text": "we're not seeing anything else uh in the",
+        "start": 3082.559,
+        "duration": 3.201
+    },
+    {
+        "text": "chat right here just give it another",
+        "start": 3084.4,
+        "duration": 2.719
+    },
+    {
+        "text": "moment just in case anyone's in the",
+        "start": 3085.76,
+        "duration": 4.4
+    },
+    {
+        "text": "middle of typing and then",
+        "start": 3087.119,
+        "duration": 3.041
+    },
+    {
+        "text": "all right so i'm not seeing any more",
+        "start": 3106.48,
+        "duration": 5.359
+    },
+    {
+        "text": "questions so let's give our speaker",
+        "start": 3107.68,
+        "duration": 4.159
+    },
+    {
+        "text": "thank you all for attending and",
+        "start": 3113.2,
+        "duration": 4.639
+    },
+    {
+        "text": "hopefully i'll see everyone next week",
+        "start": 3114.4,
+        "duration": 3.439
+    },
+    {
+        "text": "thank you very much",
+        "start": 3119.44,
+        "duration": 3.2
+    }
+]

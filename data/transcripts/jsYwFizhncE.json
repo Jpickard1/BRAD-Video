@@ -1,0 +1,1112 @@
+[
+    {
+        "text": "Last video I left you with a puzzle.",
+        "start": 3.24,
+        "duration": 1.94
+    },
+    {
+        "text": "The setup involves two sliding blocks in a perfectly idealized world where there's ",
+        "start": 5.72,
+        "duration": 4.48
+    },
+    {
+        "text": "no friction and all collisions are perfectly elastic, meaning no energy is lost.",
+        "start": 10.2,
+        "duration": 4.32
+    },
+    {
+        "text": "One block is sent towards another smaller one, ",
+        "start": 15.08,
+        "duration": 2.338
+    },
+    {
+        "text": "which starts off stationary and there's a wall behind it, ",
+        "start": 17.418,
+        "duration": 2.887
+    },
+    {
+        "text": "so that the smaller block bounces back and forth until it redirects the big block's ",
+        "start": 20.305,
+        "duration": 4.18
+    },
+    {
+        "text": "momentum enough to fully turn around, sailing away from the wall.",
+        "start": 24.485,
+        "duration": 3.235
+    },
+    {
+        "text": "If that first block has a mass which is a power of 100 times the mass of the second, ",
+        "start": 28.24,
+        "duration": 4.931
+    },
+    {
+        "text": "for example a million times as much, an insanely surprising fact popped out.",
+        "start": 33.171,
+        "duration": 4.409
+    },
+    {
+        "text": "The total number of collisions, including those between the second mass and the wall, ",
+        "start": 37.76,
+        "duration": 4.577
+    },
+    {
+        "text": "has the same starting digits as pi.",
+        "start": 42.337,
+        "duration": 1.863
+    },
+    {
+        "text": "In this example that's 3141 collisions.",
+        "start": 44.96,
+        "duration": 2.78
+    },
+    {
+        "text": "If that first block was a trillion times the mass, ",
+        "start": 48.4,
+        "duration": 3.795
+    },
+    {
+        "text": "it would be 3,141,592 collisions before this happens.",
+        "start": 52.195,
+        "duration": 3.945
+    },
+    {
+        "text": "Almost all of which happen in one huge unrealistic burst.",
+        "start": 56.14,
+        "duration": 3.4
+    },
+    {
+        "text": "And speaking of unexpectedly big bursts, in the short time since that video went out, ",
+        "start": 60.18,
+        "duration": 4.241
+    },
+    {
+        "text": "lots of people have been sharing solutions and attempts and simulations, which is awesome.",
+        "start": 64.421,
+        "duration": 4.439
+    },
+    {
+        "text": "So why does this happen?",
+        "start": 70.4,
+        "duration": 1.26
+    },
+    {
+        "text": "Why should pi show up in such an unexpected place and in such an unexpected manner?",
+        "start": 71.92,
+        "duration": 3.92
+    },
+    {
+        "text": "Foremost this is a lesson about using phase space, ",
+        "start": 76.56,
+        "duration": 2.683
+    },
+    {
+        "text": "also commonly called configuration space, to solve problems.",
+        "start": 79.243,
+        "duration": 3.157
+    },
+    {
+        "text": "So rest assured that you're not just learning about some esoteric algorithm for pi, ",
+        "start": 82.4,
+        "duration": 4.311
+    },
+    {
+        "text": "this tactic here is core to many other fields, and is a useful tool to keep in your belt.",
+        "start": 86.711,
+        "duration": 4.569
+    },
+    {
+        "text": "To start, when one block hits another, how do you ",
+        "start": 92.14,
+        "duration": 2.283
+    },
+    {
+        "text": "figure out the velocity of each one after the collision?",
+        "start": 94.423,
+        "duration": 2.557
+    },
+    {
+        "text": "The key is to use the conservation of energy together with the conservation of momentum.",
+        "start": 97.76,
+        "duration": 4.16
+    },
+    {
+        "text": "Let's call their masses m1 and m2, and their velocities v1 and v2, ",
+        "start": 102.7,
+        "duration": 4.42
+    },
+    {
+        "text": "which will be the variables changing throughout the process.",
+        "start": 107.12,
+        "duration": 3.96
+    },
+    {
+        "text": "At any given point, the total kinetic energy is \u00bd m1 v1\u00b2 plus \u00bd m2 v2\u00b2.",
+        "start": 111.74,
+        "duration": 8.56
+    },
+    {
+        "text": "So even though v1 and v2 will be changing as the blocks get bumped around, ",
+        "start": 120.82,
+        "duration": 4.14
+    },
+    {
+        "text": "the value of this expression must remain constant.",
+        "start": 124.96,
+        "duration": 2.76
+    },
+    {
+        "text": "The total momentum of the two blocks is m1v1 plus m2v2.",
+        "start": 129.86,
+        "duration": 5.24
+    },
+    {
+        "text": "This also has to remain constant when the blocks hit each other, ",
+        "start": 135.44,
+        "duration": 3.197
+    },
+    {
+        "text": "but it can change as the second block bounces off the wall.",
+        "start": 138.637,
+        "duration": 2.903
+    },
+    {
+        "text": "In reality, the second block would transfer its momentum to the wall during ",
+        "start": 142.24,
+        "duration": 3.838
+    },
+    {
+        "text": "this collision, and again we're being idealistic, ",
+        "start": 146.078,
+        "duration": 2.526
+    },
+    {
+        "text": "say thinking of that wall as having infinite mass, ",
+        "start": 148.604,
+        "duration": 2.576
+    },
+    {
+        "text": "so such a momentum transfer won't actually move the wall.",
+        "start": 151.18,
+        "duration": 2.88
+    },
+    {
+        "text": "So here we have two equations and two unknowns.",
+        "start": 155.06,
+        "duration": 2.96
+    },
+    {
+        "text": "To put these to use, try drawing a picture to represent the equations.",
+        "start": 158.06,
+        "duration": 3.3
+    },
+    {
+        "text": "You might start by focusing on the energy equation.",
+        "start": 161.98,
+        "duration": 2.4
+    },
+    {
+        "text": "Since v1 and v2 are changing, maybe you think to represent the equation ",
+        "start": 164.86,
+        "duration": 4.779
+    },
+    {
+        "text": "on a coordinate plane where x is equal to v1 and y is equal to v2.",
+        "start": 169.639,
+        "duration": 4.381
+    },
+    {
+        "text": "So individual points on this plane encode the pair of velocities of our block.",
+        "start": 174.64,
+        "duration": 4.24
+    },
+    {
+        "text": "In that case, the energy equation represents an ellipse, ",
+        "start": 179.5,
+        "duration": 2.916
+    },
+    {
+        "text": "where each point of this ellipse gives you a pair of velocities, ",
+        "start": 182.416,
+        "duration": 3.327
+    },
+    {
+        "text": "all of which correspond to the same total kinetic energy.",
+        "start": 185.743,
+        "duration": 2.917
+    },
+    {
+        "text": "In fact, let's change our coordinates a little bit to make this a perfect circle, ",
+        "start": 189.58,
+        "duration": 4.299
+    },
+    {
+        "text": "since we know we're on a hunt for pi.",
+        "start": 193.879,
+        "duration": 1.941
+    },
+    {
+        "text": "Instead of having the x-coordinate represent v1, ",
+        "start": 195.82,
+        "duration": 2.929
+    },
+    {
+        "text": "let it be the square root of m1 times v1, which for this example stretches the figure in ",
+        "start": 198.749,
+        "duration": 5.32
+    },
+    {
+        "text": "the x-direction by the square root of 10.",
+        "start": 204.069,
+        "duration": 2.451
+    },
+    {
+        "text": "Likewise, have the y-coordinate represent square root of m2 times v2.",
+        "start": 207.18,
+        "duration": 4.08
+    },
+    {
+        "text": "That way, when you look at the conservation of energy equation, ",
+        "start": 211.72,
+        "duration": 3.918
+    },
+    {
+        "text": "what it's saying is \u00bd x2 plus y2 equals some constant, ",
+        "start": 215.638,
+        "duration": 3.367
+    },
+    {
+        "text": "which is the equation for a circle, which specific circle depends on the total energy, ",
+        "start": 219.005,
+        "duration": 5.326
+    },
+    {
+        "text": "but that doesn't matter for our problem.",
+        "start": 224.331,
+        "duration": 2.449
+    },
+    {
+        "text": "At the beginning, when the first block is sliding to the left and ",
+        "start": 227.42,
+        "duration": 3.335
+    },
+    {
+        "text": "the second one is stationary, we're at the leftmost point on the circle, ",
+        "start": 230.755,
+        "duration": 3.69
+    },
+    {
+        "text": "where the x-coordinate is negative and the y-coordinate is zero.",
+        "start": 234.445,
+        "duration": 3.235
+    },
+    {
+        "text": "What about right after the collision?",
+        "start": 238.22,
+        "duration": 1.52
+    },
+    {
+        "text": "How do we know what happens?",
+        "start": 240.12,
+        "duration": 0.92
+    },
+    {
+        "text": "Conservation of energy tells us that we must jump to some other point of the circle, ",
+        "start": 241.8,
+        "duration": 3.674
+    },
+    {
+        "text": "but which one?",
+        "start": 245.474,
+        "duration": 0.606
+    },
+    {
+        "text": "Use the conservation of momentum.",
+        "start": 247.3,
+        "duration": 1.64
+    },
+    {
+        "text": "This tells us that before and after the collision, ",
+        "start": 249.19,
+        "duration": 3.383
+    },
+    {
+        "text": "the value of m1 times v1 plus m2 times v2 must stay constant.",
+        "start": 252.573,
+        "duration": 4.047
+    },
+    {
+        "text": "In our rescaled coordinates, that looks like saying square root ",
+        "start": 257.44,
+        "duration": 3.83
+    },
+    {
+        "text": "of m1 times x plus square root of m2 times y equals some constant.",
+        "start": 261.27,
+        "duration": 3.95
+    },
+    {
+        "text": "And that's the equation for a line, specifically a ",
+        "start": 265.56,
+        "duration": 3.222
+    },
+    {
+        "text": "line with a slope of negative square root of m1 over m2.",
+        "start": 268.782,
+        "duration": 3.538
+    },
+    {
+        "text": "You might ask which specific line, and that depends on what the constant momentum is, ",
+        "start": 273.18,
+        "duration": 4.452
+    },
+    {
+        "text": "but we know that it must pass through our first point, and that locks us into one choice.",
+        "start": 277.632,
+        "duration": 4.608
+    },
+    {
+        "text": "So just to be clear about what all this is saying, ",
+        "start": 283.06,
+        "duration": 2.517
+    },
+    {
+        "text": "all other pairs of velocities which would give the same momentum live on this line, ",
+        "start": 285.577,
+        "duration": 4.147
+    },
+    {
+        "text": "in just the same way that all other pairs of velocities that give the same energy ",
+        "start": 289.724,
+        "duration": 4.048
+    },
+    {
+        "text": "live on this circle.",
+        "start": 293.772,
+        "duration": 0.988
+    },
+    {
+        "text": "So notice, this gives us one and only one other point that we could jump to.",
+        "start": 295.38,
+        "duration": 3.74
+    },
+    {
+        "text": "And it should make sense that it's something where the x-coordinate gets a little less ",
+        "start": 299.5,
+        "duration": 3.85
+    },
+    {
+        "text": "negative and the y-coordinate becomes negative, since that corresponds to the big block, ",
+        "start": 303.35,
+        "duration": 3.94
+    },
+    {
+        "text": "which is slowing down a little, while the little block zooms off towards the wall.",
+        "start": 307.29,
+        "duration": 3.63
+    },
+    {
+        "text": "From here it's quite fun to see how things play out.",
+        "start": 311.62,
+        "duration": 2.02
+    },
+    {
+        "text": "When the second block bounces off the wall, its speed stays the same, ",
+        "start": 314.04,
+        "duration": 3.323
+    },
+    {
+        "text": "but it goes from negative to positive, right?",
+        "start": 317.363,
+        "duration": 2.137
+    },
+    {
+        "text": "So in this diagram, that corresponds to reflecting about the x-axis, ",
+        "start": 322.32,
+        "duration": 3.879
+    },
+    {
+        "text": "since the y-coordinate gets multiplied by negative 1.",
+        "start": 326.199,
+        "duration": 2.981
+    },
+    {
+        "text": "Then once more, the next collision corresponds to a jump along a line ",
+        "start": 330.0,
+        "duration": 4.03
+    },
+    {
+        "text": "with slope negative square root of m1 over m2, ",
+        "start": 334.03,
+        "duration": 2.706
+    },
+    {
+        "text": "since staying on such a line is what conservation of momentum looks like in this diagram.",
+        "start": 336.736,
+        "duration": 5.124
+    },
+    {
+        "text": "And from here you can fill in the rest for how the block collisions ",
+        "start": 342.42,
+        "duration": 3.411
+    },
+    {
+        "text": "correspond to hopping around the circle in our picture, where we keep going like this, ",
+        "start": 345.831,
+        "duration": 4.365
+    },
+    {
+        "text": "until the velocity of that smaller block is both positive and smaller than ",
+        "start": 350.196,
+        "duration": 3.763
+    },
+    {
+        "text": "the velocity of the big one, meaning they'll never touch again.",
+        "start": 353.959,
+        "duration": 3.161
+    },
+    {
+        "text": "That corresponds to this triangular region in the upper right of the diagram, ",
+        "start": 357.86,
+        "duration": 3.998
+    },
+    {
+        "text": "so in our process we keep bouncing until we land in that region.",
+        "start": 361.858,
+        "duration": 3.282
+    },
+    {
+        "text": "What we've drawn here is called a phase diagram, ",
+        "start": 367.42,
+        "duration": 2.823
+    },
+    {
+        "text": "which is a simple but powerful idea in math where you encode the state of some system, ",
+        "start": 370.243,
+        "duration": 5.014
+    },
+    {
+        "text": "in this case the velocities of our sliding blocks, ",
+        "start": 375.257,
+        "duration": 2.94
+    },
+    {
+        "text": "as a single point in some abstract space.",
+        "start": 378.197,
+        "duration": 2.363
+    },
+    {
+        "text": "What's powerful here is that it turns questions ",
+        "start": 381.1,
+        "duration": 2.353
+    },
+    {
+        "text": "about dynamics into questions about geometry.",
+        "start": 383.453,
+        "duration": 2.207
+    },
+    {
+        "text": "In this case, the dynamical idea of all possible pairs of velocities ",
+        "start": 386.24,
+        "duration": 3.76
+    },
+    {
+        "text": "that conserve energy corresponds to the geometric idea of a circle, ",
+        "start": 390.0,
+        "duration": 3.705
+    },
+    {
+        "text": "and counting the total number of collisions turns into counting the ",
+        "start": 393.705,
+        "duration": 3.706
+    },
+    {
+        "text": "total number of hops along these lines, alternating between vertical and diagonal.",
+        "start": 397.411,
+        "duration": 4.469
+    },
+    {
+        "text": "But our question remains, why is it that when that mass ratio is a power of 100, ",
+        "start": 405.74,
+        "duration": 5.271
+    },
+    {
+        "text": "the total number of steps shows the digits of pi?",
+        "start": 411.011,
+        "duration": 3.189
+    },
+    {
+        "text": "Well, if you stare at this picture, maybe, just maybe, ",
+        "start": 415.12,
+        "duration": 3.249
+    },
+    {
+        "text": "you'd notice that all the arc lengths between the points on this circle seem ",
+        "start": 418.369,
+        "duration": 4.55
+    },
+    {
+        "text": "to be about the same.",
+        "start": 422.919,
+        "duration": 1.241
+    },
+    {
+        "text": "It's not immediately obvious that this should be true, but if it is, ",
+        "start": 424.88,
+        "duration": 3.303
+    },
+    {
+        "text": "it means that computing the value of one such arc length should be enough ",
+        "start": 428.183,
+        "duration": 3.542
+    },
+    {
+        "text": "to figure out how many total collisions it takes to get us into that end zone.",
+        "start": 431.725,
+        "duration": 3.735
+    },
+    {
+        "text": "The key here is to use the ever-helpful inscribed angle theorem, ",
+        "start": 436.32,
+        "duration": 4.034
+    },
+    {
+        "text": "which says that whenever you're forming an angle using three points on a circle, P1, ",
+        "start": 440.354,
+        "duration": 5.275
+    },
+    {
+        "text": "P2, and P3, like this, it will be exactly half of the angle formed by P1, ",
+        "start": 445.629,
+        "duration": 4.593
+    },
+    {
+        "text": "the circle's center, and P3.",
+        "start": 450.222,
+        "duration": 1.738
+    },
+    {
+        "text": "P2 can be anywhere on this circle, anywhere except between P1 and P3, ",
+        "start": 452.64,
+        "duration": 3.972
+    },
+    {
+        "text": "and this lovely little fact will be true.",
+        "start": 456.612,
+        "duration": 2.328
+    },
+    {
+        "text": "So now look back at our phase space, and focus specifically on three points, like these.",
+        "start": 460.44,
+        "duration": 4.42
+    },
+    {
+        "text": "Remember that first vertical hop corresponds to the second block bouncing off the wall, ",
+        "start": 465.56,
+        "duration": 4.445
+    },
+    {
+        "text": "and that second hop, along a slope of negative square root of m1 over m2, ",
+        "start": 470.005,
+        "duration": 3.737
+    },
+    {
+        "text": "corresponds to a momentum-conserving block collision.",
+        "start": 473.742,
+        "duration": 2.678
+    },
+    {
+        "text": "Let's call the angle between this momentum line and the vertical line theta, ",
+        "start": 477.2,
+        "duration": 4.419
+    },
+    {
+        "text": "and now maybe you see it using the inscribed angle theorem, ",
+        "start": 481.619,
+        "duration": 3.444
+    },
+    {
+        "text": "this arc length between those two bottom points, measured in radians, will be 2 theta.",
+        "start": 485.063,
+        "duration": 4.937
+    },
+    {
+        "text": "And importantly, since the momentum line has the same slope for all ",
+        "start": 490.82,
+        "duration": 3.694
+    },
+    {
+        "text": "of those jumps from the top of the circle to the bottom, ",
+        "start": 494.514,
+        "duration": 3.097
+    },
+    {
+        "text": "the same reasoning means that all of these arc lengths must also be 2 theta.",
+        "start": 497.611,
+        "duration": 4.129
+    },
+    {
+        "text": "So for each hop, if we drop down a new arc, like so, ",
+        "start": 503.62,
+        "duration": 3.205
+    },
+    {
+        "text": "then after each collision we cover another 2 theta radians of the circle.",
+        "start": 506.825,
+        "duration": 4.415
+    },
+    {
+        "text": "We stop once we're in the end zone on the right, ",
+        "start": 511.96,
+        "duration": 2.216
+    },
+    {
+        "text": "which remember corresponds to both blocks moving to the right with the ",
+        "start": 514.176,
+        "duration": 3.212
+    },
+    {
+        "text": "smaller one going slower.",
+        "start": 517.388,
+        "duration": 1.132
+    },
+    {
+        "text": "But you can also think of this as stopping at the point when ",
+        "start": 519.24,
+        "duration": 3.431
+    },
+    {
+        "text": "adding one more arc of 2 theta would overlap with the previous one.",
+        "start": 522.671,
+        "duration": 3.769
+    },
+    {
+        "text": "In other words, how many times do you have to add 2 theta to itself ",
+        "start": 526.44,
+        "duration": 4.38
+    },
+    {
+        "text": "before it covers more than the whole circle, more than 2 pi radians?",
+        "start": 530.82,
+        "duration": 4.38
+    },
+    {
+        "text": "The answer to this will be the same as the number of collisions between our blocks.",
+        "start": 536.0,
+        "duration": 3.54
+    },
+    {
+        "text": "Or to say the same thing more compactly, what's the ",
+        "start": 540.26,
+        "duration": 3.148
+    },
+    {
+        "text": "largest integer multiple of theta that doesn't surpass pi?",
+        "start": 543.408,
+        "duration": 3.512
+    },
+    {
+        "text": "For example, if theta was 0.01 radians, then multiplying it by as much as 314 ",
+        "start": 547.82,
+        "duration": 5.963
+    },
+    {
+        "text": "would keep you below pi, but multiplying by 315 would bring you over that value.",
+        "start": 553.783,
+        "duration": 6.117
+    },
+    {
+        "text": "So the answer would be 314, meaning if our mass ratio was one such that the ",
+        "start": 560.5,
+        "duration": 5.881
+    },
+    {
+        "text": "angle theta in our diagram was 0.01, then the blocks would collide 314 times.",
+        "start": 566.381,
+        "duration": 5.959
+    },
+    {
+        "text": "So now you know what we need to do.",
+        "start": 574.98,
+        "duration": 2.24
+    },
+    {
+        "text": "Let's go ahead and actually compute the value theta, say when the mass ratio is 100 to 1.",
+        "start": 577.4,
+        "duration": 5.14
+    },
+    {
+        "text": "Remember, this rise over run slope of that constant momentum line was the ",
+        "start": 583.06,
+        "duration": 4.963
+    },
+    {
+        "text": "negative square root of m1 over m2, which in this example is negative 10.",
+        "start": 588.023,
+        "duration": 4.897
+    },
+    {
+        "text": "That would mean that the tangent of this angle theta, opposite over adjacent, ",
+        "start": 594.42,
+        "duration": 4.978
+    },
+    {
+        "text": "is the run over the negative rise, so to speak, which is 1 divided by 10 in this example.",
+        "start": 599.398,
+        "duration": 5.682
+    },
+    {
+        "text": "So theta is going to be the arctan of 1 tenth.",
+        "start": 605.78,
+        "duration": 2.66
+    },
+    {
+        "text": "Speaking more generally, it'll be the inverse tangent of the ",
+        "start": 610.62,
+        "duration": 3.517
+    },
+    {
+        "text": "square root of the small mass over the square root of the big mass.",
+        "start": 614.137,
+        "duration": 3.863
+    },
+    {
+        "text": "If you plug these into a calculator, what you'd notice is that the inverse ",
+        "start": 618.86,
+        "duration": 3.996
+    },
+    {
+        "text": "tangent of such a small value is actually quite close to the value itself.",
+        "start": 622.856,
+        "duration": 3.944
+    },
+    {
+        "text": "For example, arctan of 1 over 100, corresponding to a big mass of 10,000 kg, ",
+        "start": 627.38,
+        "duration": 6.145
+    },
+    {
+        "text": "is extremely close to 0.01.",
+        "start": 633.525,
+        "duration": 2.155
+    },
+    {
+        "text": "In fact, it's so close that for the sake of our central question, ",
+        "start": 636.16,
+        "duration": 4.496
+    },
+    {
+        "text": "it might as well be 0.01.",
+        "start": 640.656,
+        "duration": 1.704
+    },
+    {
+        "text": "What I mean by that is, analogous to what we saw a moment ago, ",
+        "start": 643.26,
+        "duration": 4.422
+    },
+    {
+        "text": "adding this to itself as many as 314 times won't surpass pi, but the 315th time would.",
+        "start": 647.682,
+        "duration": 6.038
+    },
+    {
+        "text": "Remember, unraveling why we're doing all this, ",
+        "start": 654.8,
+        "duration": 2.419
+    },
+    {
+        "text": "that's a way of counting how many jumps on the phase diagram gets us into the end zone, ",
+        "start": 657.219,
+        "duration": 4.53
+    },
+    {
+        "text": "which in turn is a way of counting how many times the blocks collide until they're ",
+        "start": 661.749,
+        "duration": 4.272
+    },
+    {
+        "text": "sailing off to never touch again.",
+        "start": 666.021,
+        "duration": 1.699
+    },
+    {
+        "text": "So that, my friends, is why a mass ratio of 10,000 gives 314 collisions.",
+        "start": 668.32,
+        "duration": 5.4
+    },
+    {
+        "text": "Likewise, a mass ratio of a million to one will give an ",
+        "start": 674.66,
+        "duration": 3.4
+    },
+    {
+        "text": "angle theta equals the inverse tangent of 1 over 1000.",
+        "start": 678.06,
+        "duration": 3.28
+    },
+    {
+        "text": "This is extremely close to 0.001.",
+        "start": 682.16,
+        "duration": 3.06
+    },
+    {
+        "text": "And again, if we ask about the largest integer multiple of this angle that doesn't ",
+        "start": 685.9,
+        "duration": 6.199
+    },
+    {
+        "text": "surpass pi, it's the same as it would be for a precise value of 0.001, namely 3141.",
+        "start": 692.099,
+        "duration": 6.201
+    },
+    {
+        "text": "These are the first four digits of pi because that is, ",
+        "start": 699.38,
+        "duration": 3.144
+    },
+    {
+        "text": "by definition, what digits of a number mean.",
+        "start": 702.524,
+        "duration": 2.516
+    },
+    {
+        "text": "This explains why when the mass ratio is a million, the number of collisions is 3141.",
+        "start": 705.78,
+        "duration": 5.36
+    },
+    {
+        "text": "And you might notice that all of this relies on the hope that the inverse tangent ",
+        "start": 714.6,
+        "duration": 4.737
+    },
+    {
+        "text": "of a small value is sufficiently close to the value itself, ",
+        "start": 719.337,
+        "duration": 3.466
+    },
+    {
+        "text": "which is another way of saying that the tangent of a small value is approximately ",
+        "start": 722.803,
+        "duration": 4.737
+    },
+    {
+        "text": "that value itself.",
+        "start": 727.54,
+        "duration": 1.04
+    },
+    {
+        "text": "Intuitively, there's a really nice reason this is true.",
+        "start": 729.48,
+        "duration": 2.02
+    },
+    {
+        "text": "If you look at a unit circle, the tangent of any given angle is ",
+        "start": 731.92,
+        "duration": 3.488
+    },
+    {
+        "text": "the height of this little triangle I've drawn divided by its width.",
+        "start": 735.408,
+        "duration": 3.652
+    },
+    {
+        "text": "And when that angle is really small, the width is basically 1, ",
+        "start": 739.54,
+        "duration": 3.725
+    },
+    {
+        "text": "the radius of your circle, and the height is basically the same as ",
+        "start": 743.265,
+        "duration": 3.961
+    },
+    {
+        "text": "the arc length along that circle, and by definition that arc length is theta.",
+        "start": 747.226,
+        "duration": 4.554
+    },
+    {
+        "text": "To be more precise about it, the Taylor series expansion of tangent of ",
+        "start": 752.48,
+        "duration": 3.947
+    },
+    {
+        "text": "theta shows that this approximation will have only a cubic error term.",
+        "start": 756.427,
+        "duration": 3.893
+    },
+    {
+        "text": "So for example, the tangent of 1 one hundredth differs from 1 ",
+        "start": 760.98,
+        "duration": 3.371
+    },
+    {
+        "text": "one hundredth itself by something on the order of 1 one millionth.",
+        "start": 764.351,
+        "duration": 3.589
+    },
+    {
+        "text": "So even if we were to consider 314 steps with this angle, ",
+        "start": 768.51,
+        "duration": 3.69
+    },
+    {
+        "text": "the error between the actual value of arc tan 1 over 100 and the approximation ",
+        "start": 772.2,
+        "duration": 5.027
+    },
+    {
+        "text": "of 0.01 just won't have a chance to accumulate high enough to be as big as an integer.",
+        "start": 777.227,
+        "duration": 5.473
+    },
+    {
+        "text": "So let's zoom out and sum up.",
+        "start": 784.96,
+        "duration": 2.02
+    },
+    {
+        "text": "When blocks collide, you can figure out their new velocities ",
+        "start": 787.04,
+        "duration": 3.418
+    },
+    {
+        "text": "by slicing a line through a circle in a velocity phase diagram, ",
+        "start": 790.458,
+        "duration": 3.587
+    },
+    {
+        "text": "where each of these curves represents a conservation law.",
+        "start": 794.045,
+        "duration": 3.195
+    },
+    {
+        "text": "Most notably, the conservation of energy is what plants that circular ",
+        "start": 797.24,
+        "duration": 3.752
+    },
+    {
+        "text": "seed that ultimately blossoms into the pi that we find in the final count.",
+        "start": 800.992,
+        "duration": 3.968
+    },
+    {
+        "text": "Specifically, due to some inscribed angle geometry, ",
+        "start": 805.62,
+        "duration": 2.91
+    },
+    {
+        "text": "the points that we hit of this circle are spaced out evenly, ",
+        "start": 808.53,
+        "duration": 3.415
+    },
+    {
+        "text": "separated by an angle we were calling 2 theta.",
+        "start": 811.945,
+        "duration": 2.575
+    },
+    {
+        "text": "This lets us rephrase the question of counting collisions, ",
+        "start": 815.18,
+        "duration": 3.523
+    },
+    {
+        "text": "as instead asking how many times must we add 2 theta to itself before it surpasses 2 pi.",
+        "start": 818.703,
+        "duration": 5.257
+    },
+    {
+        "text": "If theta looks something like 0.001, the answer to that question has the ",
+        "start": 824.62,
+        "duration": 4.561
+    },
+    {
+        "text": "same first digits as pi, and when the mass ratio is some power of 100, ",
+        "start": 829.181,
+        "duration": 4.437
+    },
+    {
+        "text": "because arc tan of x is so well approximated by x for small values, ",
+        "start": 833.618,
+        "duration": 4.25
+    },
+    {
+        "text": "theta is sufficiently close to this value that it gives the same final count.",
+        "start": 837.868,
+        "duration": 4.812
+    },
+    {
+        "text": "I'll emphasize again what this phase space allowed us to do, ",
+        "start": 843.66,
+        "duration": 3.019
+    },
+    {
+        "text": "because as I said, this is a lesson useful for all sorts of math, ",
+        "start": 846.679,
+        "duration": 3.267
+    },
+    {
+        "text": "like differential equations, chaos theory, and other flavors of dynamics.",
+        "start": 849.946,
+        "duration": 3.614
+    },
+    {
+        "text": "By representing the relevant state of your system as a single point in an abstract space, ",
+        "start": 854.08,
+        "duration": 5.083
+    },
+    {
+        "text": "it lets you translate problems of dynamics into problems of geometry.",
+        "start": 859.163,
+        "duration": 3.897
+    },
+    {
+        "text": "I repeat myself because I don't want you to come away just remembering a ",
+        "start": 863.7,
+        "duration": 3.659
+    },
+    {
+        "text": "neat puzzle where pi shows up unexpectedly, I want you to remember this ",
+        "start": 867.359,
+        "duration": 3.61
+    },
+    {
+        "text": "surprise appearance as a distilled remnant of the deeper relationship at play.",
+        "start": 870.969,
+        "duration": 3.911
+    },
+    {
+        "text": "And if this solution leaves you feeling satisfied, it shouldn't, ",
+        "start": 875.88,
+        "duration": 3.198
+    },
+    {
+        "text": "because there is another perspective, more clever and pretty than this one, ",
+        "start": 879.078,
+        "duration": 3.739
+    },
+    {
+        "text": "due to Galperin and his original paper on this phenomenon, ",
+        "start": 882.817,
+        "duration": 2.903
+    },
+    {
+        "text": "which invites us to draw a striking parallel between the dynamics of these blocks ",
+        "start": 885.72,
+        "duration": 4.035
+    },
+    {
+        "text": "and that of a beam of light bouncing between two mirrors.",
+        "start": 889.755,
+        "duration": 2.805
+    },
+    {
+        "text": "Trust me, I've saved the best for last on this topic, ",
+        "start": 893.22,
+        "duration": 2.192
+    },
+    {
+        "text": "so I hope to see you again in the next video.",
+        "start": 895.412,
+        "duration": 1.828
+    }
+]

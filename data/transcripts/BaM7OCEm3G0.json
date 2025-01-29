@@ -1,0 +1,867 @@
+[
+    {
+        "text": "Hey folks, where we left off I was talking about how to compute ",
+        "start": 16.539,
+        "duration": 3.702
+    },
+    {
+        "text": "a three-dimensional cross product between two vectors, v cross w.",
+        "start": 20.241,
+        "duration": 3.759
+    },
+    {
+        "text": "It's this funny thing where you write a matrix whose second column has the ",
+        "start": 25.28,
+        "duration": 4.245
+    },
+    {
+        "text": "coordinates of v, whose third column has the coordinates of w, ",
+        "start": 29.525,
+        "duration": 3.565
+    },
+    {
+        "text": "but the entries of that first column, weirdly, are the symbols i-hat, j-hat, ",
+        "start": 33.09,
+        "duration": 4.359
+    },
+    {
+        "text": "and k-hat, where you just pretend like those guys are numbers for the sake ",
+        "start": 37.449,
+        "duration": 4.245
+    },
+    {
+        "text": "of computations.",
+        "start": 41.694,
+        "duration": 0.906
+    },
+    {
+        "text": "Then with that funky matrix in hand, you compute its determinant.",
+        "start": 43.78,
+        "duration": 3.68
+    },
+    {
+        "text": "If you just chug along with those computations, ignoring the weirdness, ",
+        "start": 48.08,
+        "duration": 4.048
+    },
+    {
+        "text": "you get some constant times i-hat, plus some constant times j-hat, ",
+        "start": 52.128,
+        "duration": 3.768
+    },
+    {
+        "text": "plus some constant times k-hat.",
+        "start": 55.896,
+        "duration": 1.744
+    },
+    {
+        "text": "How specifically you think about computing that determinant is kind of beside the point.",
+        "start": 59.8,
+        "duration": 4.5
+    },
+    {
+        "text": "All that really matters here is that you'll end up with three different ",
+        "start": 64.819,
+        "duration": 3.208
+    },
+    {
+        "text": "numbers that are interpreted as the coordinates of some resulting vector.",
+        "start": 68.027,
+        "duration": 3.253
+    },
+    {
+        "text": "From here, students are typically told to just believe that ",
+        "start": 73.76,
+        "duration": 3.14
+    },
+    {
+        "text": "the resulting vector has the following geometric properties.",
+        "start": 76.9,
+        "duration": 3.14
+    },
+    {
+        "text": "Its length equals the area of the parallelogram defined by v and w.",
+        "start": 80.04,
+        "duration": 4.72
+    },
+    {
+        "text": "It points in a direction perpendicular to both v and w, ",
+        "start": 85.64,
+        "duration": 3.145
+    },
+    {
+        "text": "and this direction obeys the right-hand rule, in the sense that if ",
+        "start": 88.785,
+        "duration": 3.762
+    },
+    {
+        "text": "you point your forefinger along v and your middle finger along w, ",
+        "start": 92.547,
+        "duration": 3.707
+    },
+    {
+        "text": "then when you stick up your thumb, it'll point in the direction of the new vector.",
+        "start": 96.254,
+        "duration": 4.606
+    },
+    {
+        "text": "There are some brute force computations that you could do to confirm these facts, ",
+        "start": 103.66,
+        "duration": 3.807
+    },
+    {
+        "text": "but I want to share with you a really elegant line of reasoning.",
+        "start": 107.467,
+        "duration": 2.973
+    },
+    {
+        "text": "It leverages a bit of background, though, so for this video ",
+        "start": 111.12,
+        "duration": 3.127
+    },
+    {
+        "text": "I'm assuming that everybody has watched chapter 5 on the determinant and chapter 7, ",
+        "start": 114.247,
+        "duration": 4.379
+    },
+    {
+        "text": "where I introduced the idea of duality.",
+        "start": 118.626,
+        "duration": 2.034
+    },
+    {
+        "text": "As a quick reminder, the idea of duality is that any time you have a ",
+        "start": 124.58,
+        "duration": 3.995
+    },
+    {
+        "text": "linear transformation from some space to the number line, ",
+        "start": 128.575,
+        "duration": 3.359
+    },
+    {
+        "text": "it's associated with a unique vector in that space, ",
+        "start": 131.934,
+        "duration": 3.011
+    },
+    {
+        "text": "in the sense that performing the linear transformation is the same as ",
+        "start": 134.945,
+        "duration": 4.054
+    },
+    {
+        "text": "taking a dot product with that vector.",
+        "start": 138.999,
+        "duration": 2.201
+    },
+    {
+        "text": "Numerically, this is because one of those transformations is described by a matrix with ",
+        "start": 142.08,
+        "duration": 5.035
+    },
+    {
+        "text": "just one row, where each column tells you the number that each basis vector lands on.",
+        "start": 147.115,
+        "duration": 4.865
+    },
+    {
+        "text": "And multiplying this matrix by some vector v is computationally identical to taking ",
+        "start": 155.24,
+        "duration": 4.88
+    },
+    {
+        "text": "the dot product between v and the vector you get by turning that matrix on its side.",
+        "start": 160.12,
+        "duration": 4.88
+    },
+    {
+        "text": "The takeaway is that whenever you're out in the mathematical wild and you find ",
+        "start": 166.58,
+        "duration": 4.146
+    },
+    {
+        "text": "a linear transformation to the number line, you will be able to match it to some vector, ",
+        "start": 170.726,
+        "duration": 4.671
+    },
+    {
+        "text": "which is called the dual vector of that transformation, ",
+        "start": 175.397,
+        "duration": 2.939
+    },
+    {
+        "text": "so that performing the linear transformation is the same as taking a dot product ",
+        "start": 178.336,
+        "duration": 4.251
+    },
+    {
+        "text": "with that vector.",
+        "start": 182.587,
+        "duration": 0.893
+    },
+    {
+        "text": "The cross product gives us a really slick example of this process in action.",
+        "start": 186.36,
+        "duration": 3.68
+    },
+    {
+        "text": "It takes some effort, but it's definitely worth it.",
+        "start": 190.359,
+        "duration": 2.681
+    },
+    {
+        "text": "What I'm going to do is define a certain linear transformation from three dimensions ",
+        "start": 193.64,
+        "duration": 4.512
+    },
+    {
+        "text": "to the number line, and it'll be defined in terms of the two vectors v and w.",
+        "start": 198.152,
+        "duration": 4.088
+    },
+    {
+        "text": "Then when we associate that transformation with its dual vector in 3D space, ",
+        "start": 203.14,
+        "duration": 5.256
+    },
+    {
+        "text": "that dual vector is going to be the cross product of v and w.",
+        "start": 208.396,
+        "duration": 4.164
+    },
+    {
+        "text": "The reason for doing this will be that understanding that transformation is going to ",
+        "start": 213.22,
+        "duration": 4.608
+    },
+    {
+        "text": "make clear the connection between the computation and the geometry of the cross product.",
+        "start": 217.828,
+        "duration": 4.772
+    },
+    {
+        "text": "So to back up a bit, remember in two dimensions what ",
+        "start": 224.72,
+        "duration": 2.664
+    },
+    {
+        "text": "it meant to compute the 2D version of the cross product?",
+        "start": 227.384,
+        "duration": 2.816
+    },
+    {
+        "text": "When you have two vectors v and w, you put the coordinates of v as the first ",
+        "start": 230.82,
+        "duration": 4.31
+    },
+    {
+        "text": "column of a matrix and the coordinates of w as the second column of a matrix.",
+        "start": 235.13,
+        "duration": 4.31
+    },
+    {
+        "text": "Then you just compute the determinant.",
+        "start": 239.72,
+        "duration": 1.58
+    },
+    {
+        "text": "There's no nonsense with basis vectors stuck in a matrix or anything like that, ",
+        "start": 241.68,
+        "duration": 3.962
+    },
+    {
+        "text": "just an ordinary determinant returning a number.",
+        "start": 245.642,
+        "duration": 2.378
+    },
+    {
+        "text": "Geometrically, this gives us the area of a parallelogram spanned out by those two ",
+        "start": 249.38,
+        "duration": 4.439
+    },
+    {
+        "text": "vectors, with the possibility of being negative depending on the orientation of the ",
+        "start": 253.819,
+        "duration": 4.547
+    },
+    {
+        "text": "vectors.",
+        "start": 258.366,
+        "duration": 0.434
+    },
+    {
+        "text": "Now, if you didn't already know the 3D cross product and you're trying to extrapolate, ",
+        "start": 259.779,
+        "duration": 5.641
+    },
+    {
+        "text": "you might imagine that it involves taking three separate 3D vectors, ",
+        "start": 265.42,
+        "duration": 4.474
+    },
+    {
+        "text": "u, v, and w, and making their coordinates the columns of a 3x3 matrix, ",
+        "start": 269.894,
+        "duration": 4.603
+    },
+    {
+        "text": "then computing the determinant of that matrix.",
+        "start": 274.497,
+        "duration": 2.983
+    },
+    {
+        "text": "And as you know from chapter 5, geometrically this would give you the volume ",
+        "start": 278.84,
+        "duration": 4.525
+    },
+    {
+        "text": "of a parallelepiped spanned out by those three vectors, ",
+        "start": 283.365,
+        "duration": 3.29
+    },
+    {
+        "text": "with a plus or minus sign depending on the right hand rule orientation of ",
+        "start": 286.655,
+        "duration": 4.349
+    },
+    {
+        "text": "those three vectors.",
+        "start": 291.004,
+        "duration": 1.176
+    },
+    {
+        "text": "Of course, you all know that this is not the 3D cross product.",
+        "start": 293.06,
+        "duration": 2.86
+    },
+    {
+        "text": "The actual 3D cross product takes in two vectors and spits out a vector.",
+        "start": 296.92,
+        "duration": 4.18
+    },
+    {
+        "text": "It doesn't take in three vectors and spit out a number.",
+        "start": 302.64,
+        "duration": 2.42
+    },
+    {
+        "text": "But this idea actually gets us really close to what the real cross product is.",
+        "start": 305.66,
+        "duration": 3.98
+    },
+    {
+        "text": "Consider that first vector u to be a variable, ",
+        "start": 310.9,
+        "duration": 3.26
+    },
+    {
+        "text": "say with variable entries x, y, and z, while v and w remain fixed.",
+        "start": 314.16,
+        "duration": 4.58
+    },
+    {
+        "text": "What we have then is a function from three dimensions to the number line.",
+        "start": 322.76,
+        "duration": 3.84
+    },
+    {
+        "text": "You input some vector x, y, z and you get out a number by taking ",
+        "start": 327.18,
+        "duration": 4.156
+    },
+    {
+        "text": "the determinant of a matrix whose first column is x, y, ",
+        "start": 331.336,
+        "duration": 3.58
+    },
+    {
+        "text": "z and whose other two columns are the coordinates of the constant vectors v and w.",
+        "start": 334.916,
+        "duration": 5.244
+    },
+    {
+        "text": "Geometrically, the meaning of this function is that for any input vector x, ",
+        "start": 340.92,
+        "duration": 5.167
+    },
+    {
+        "text": "y, z, you consider the parallelepiped defined by this vector v and w.",
+        "start": 346.087,
+        "duration": 4.693
+    },
+    {
+        "text": "Then you return its volume with a plus or minus sign depending on orientation.",
+        "start": 351.42,
+        "duration": 3.96
+    },
+    {
+        "text": "Now, this might feel like kind of a random thing to do.",
+        "start": 357.5,
+        "duration": 2.24
+    },
+    {
+        "text": "I mean, where does this function come from?",
+        "start": 360.16,
+        "duration": 1.54
+    },
+    {
+        "text": "Why are we defining it this way?",
+        "start": 361.76,
+        "duration": 1.28
+    },
+    {
+        "text": "And I'll admit, at this stage it might kind of feel like it's coming out of the blue.",
+        "start": 363.86,
+        "duration": 2.82
+    },
+    {
+        "text": "But if you're willing to go along with it and play around with the ",
+        "start": 366.98,
+        "duration": 2.948
+    },
+    {
+        "text": "properties that this guy has, it's the key to understanding the cross product.",
+        "start": 369.928,
+        "duration": 3.432
+    },
+    {
+        "text": "One really important fact about this function is that it's linear.",
+        "start": 375.34,
+        "duration": 3.82
+    },
+    {
+        "text": "I'll actually leave it to you to work through the details ",
+        "start": 380.02,
+        "duration": 2.587
+    },
+    {
+        "text": "of why this is true based on properties of the determinant.",
+        "start": 382.607,
+        "duration": 2.633
+    },
+    {
+        "text": "But once you know that it's linear, we can start bringing in the idea of duality.",
+        "start": 386.38,
+        "duration": 4.4
+    },
+    {
+        "text": "Once you know that it's linear, you know that there's some ",
+        "start": 395.06,
+        "duration": 2.939
+    },
+    {
+        "text": "way to describe this function as matrix multiplication.",
+        "start": 397.999,
+        "duration": 2.741
+    },
+    {
+        "text": "Specifically, since it's a function that goes from three dimensions to one dimension, ",
+        "start": 401.32,
+        "duration": 4.771
+    },
+    {
+        "text": "there will be a one by three matrix that encodes this transformation.",
+        "start": 406.091,
+        "duration": 3.829
+    },
+    {
+        "text": "And the whole idea of duality is that the special thing about transformations from ",
+        "start": 413.36,
+        "duration": 4.304
+    },
+    {
+        "text": "several dimensions to one dimension is that you can turn that matrix on its side and ",
+        "start": 417.664,
+        "duration": 4.408
+    },
+    {
+        "text": "instead interpret the entire transformation as the dot product with a certain vector.",
+        "start": 422.072,
+        "duration": 4.408
+    },
+    {
+        "text": "What we're looking for is the special 3D vector that I'll call p such that taking ",
+        "start": 427.9,
+        "duration": 5.266
+    },
+    {
+        "text": "the dot product between p and any other vector x, y, ",
+        "start": 433.166,
+        "duration": 3.404
+    },
+    {
+        "text": "z gives the same result as plugging in x, y, z as the first column of a three ",
+        "start": 436.57,
+        "duration": 5.01
+    },
+    {
+        "text": "by three matrix whose other two columns have the coordinates of v and w, ",
+        "start": 441.58,
+        "duration": 4.688
+    },
+    {
+        "text": "then computing the determinant.",
+        "start": 446.268,
+        "duration": 1.992
+    },
+    {
+        "text": "I'll get to the geometry of this in just a moment, ",
+        "start": 449.16,
+        "duration": 2.266
+    },
+    {
+        "text": "but right now let's dig in and think about what this means computationally.",
+        "start": 451.426,
+        "duration": 3.334
+    },
+    {
+        "text": "Taking the dot product between p and x, y, z will give us something times x plus ",
+        "start": 455.78,
+        "duration": 5.428
+    },
+    {
+        "text": "something times y plus something times z, where those somethings are the coordinates of p.",
+        "start": 461.208,
+        "duration": 6.032
+    },
+    {
+        "text": "But on the right side here, when you compute the determinant, ",
+        "start": 467.98,
+        "duration": 3.729
+    },
+    {
+        "text": "you can organize it to look like some constant times x plus some constant times y ",
+        "start": 471.709,
+        "duration": 4.933
+    },
+    {
+        "text": "plus some constant times z, where those constants involve certain combinations of ",
+        "start": 476.642,
+        "duration": 4.933
+    },
+    {
+        "text": "the components of v and w.",
+        "start": 481.575,
+        "duration": 1.565
+    },
+    {
+        "text": "So those constants, those particular combinations of the coordinates of v ",
+        "start": 483.88,
+        "duration": 4.538
+    },
+    {
+        "text": "and w are going to be the coordinates of the vector p that we're looking for.",
+        "start": 488.418,
+        "duration": 4.722
+    },
+    {
+        "text": "But what's going on on the right here should feel very familiar to ",
+        "start": 498.26,
+        "duration": 3.207
+    },
+    {
+        "text": "anyone who's actually worked through a cross product computation.",
+        "start": 501.467,
+        "duration": 3.113
+    },
+    {
+        "text": "Collecting the constant terms that are multiplied by x, y, ",
+        "start": 505.9,
+        "duration": 3.444
+    },
+    {
+        "text": "and by z like this is no different from plugging in the symbols i-hat, j-hat, ",
+        "start": 509.344,
+        "duration": 4.555
+    },
+    {
+        "text": "and k-hat to that first column, and seeing which coefficients aggregate on each ",
+        "start": 513.899,
+        "duration": 4.671
+    },
+    {
+        "text": "one of those terms.",
+        "start": 518.57,
+        "duration": 1.109
+    },
+    {
+        "text": "It's just that plugging in i-hat, j-hat, and k-hat is a way of signaling ",
+        "start": 520.96,
+        "duration": 4.093
+    },
+    {
+        "text": "that we should interpret those coefficients as the coordinates of a vector.",
+        "start": 525.053,
+        "duration": 4.207
+    },
+    {
+        "text": "So what all of this is saying is that this funky computation ",
+        "start": 531.28,
+        "duration": 3.014
+    },
+    {
+        "text": "can be thought of as a way to answer the following question.",
+        "start": 534.294,
+        "duration": 2.966
+    },
+    {
+        "text": "What vector p has the special property that when you take a dot ",
+        "start": 537.74,
+        "duration": 4.063
+    },
+    {
+        "text": "product between p and some vector x, y, z, it gives the same result as plugging in x, ",
+        "start": 541.803,
+        "duration": 5.46
+    },
+    {
+        "text": "y, z to the first column of a matrix whose other two columns have ",
+        "start": 547.263,
+        "duration": 4.191
+    },
+    {
+        "text": "the coordinates of v and w, then computing the determinant.",
+        "start": 551.454,
+        "duration": 3.746
+    },
+    {
+        "text": "That's a bit of a mouthful, but it's an important question to digest for this video.",
+        "start": 555.96,
+        "duration": 3.82
+    },
+    {
+        "text": "Now for the cool part, which ties all this together with the geometric ",
+        "start": 561.22,
+        "duration": 3.334
+    },
+    {
+        "text": "understanding of the cross product that I introduced last video.",
+        "start": 564.554,
+        "duration": 3.006
+    },
+    {
+        "text": "I'm going to ask the same question again, but this time we're ",
+        "start": 568.92,
+        "duration": 2.931
+    },
+    {
+        "text": "going to try to answer it geometrically instead of computationally.",
+        "start": 571.851,
+        "duration": 3.169
+    },
+    {
+        "text": "What 3D vector p has the special property that when you take a dot product between ",
+        "start": 576.42,
+        "duration": 6.027
+    },
+    {
+        "text": "p and some other vector x, y, z, it gives the same result as if you took the signed ",
+        "start": 582.447,
+        "duration": 6.101
+    },
+    {
+        "text": "volume of a parallelepiped defined by this vector x, y, z along with v and w.",
+        "start": 588.548,
+        "duration": 5.592
+    },
+    {
+        "text": "Remember, the geometric interpretation of a dot product between a ",
+        "start": 597.14,
+        "duration": 4.343
+    },
+    {
+        "text": "vector p and some other vector is to project that other vector onto p, ",
+        "start": 601.483,
+        "duration": 4.673
+    },
+    {
+        "text": "then to multiply the length of that projection by the length of p.",
+        "start": 606.156,
+        "duration": 4.344
+    },
+    {
+        "text": "With that in mind, let me show a certain way to think ",
+        "start": 613.46,
+        "duration": 2.883
+    },
+    {
+        "text": "about the volume of the parallelepiped that we care about.",
+        "start": 616.343,
+        "duration": 3.097
+    },
+    {
+        "text": "Start by taking the area of the parallelogram defined by v and w, ",
+        "start": 620.24,
+        "duration": 4.395
+    },
+    {
+        "text": "then multiply it not by the length of x, y, z, but by the component of x, ",
+        "start": 624.635,
+        "duration": 4.928
+    },
+    {
+        "text": "y, z that's perpendicular to that parallelogram.",
+        "start": 629.563,
+        "duration": 3.197
+    },
+    {
+        "text": "In other words, the way our linear function works on a given vector is to project ",
+        "start": 634.28,
+        "duration": 5.345
+    },
+    {
+        "text": "that vector onto a line that's perpendicular to both v and w, ",
+        "start": 639.625,
+        "duration": 4.041
+    },
+    {
+        "text": "then to multiply the length of that projection by the area of the parallelogram ",
+        "start": 643.666,
+        "duration": 5.215
+    },
+    {
+        "text": "spanned by v and w.",
+        "start": 648.881,
+        "duration": 1.239
+    },
+    {
+        "text": "But this is the same thing as taking a dot product between x, y, ",
+        "start": 651.56,
+        "duration": 4.056
+    },
+    {
+        "text": "z and a vector that's perpendicular to v and w with a length equal to the area of ",
+        "start": 655.616,
+        "duration": 5.118
+    },
+    {
+        "text": "that parallelogram.",
+        "start": 660.734,
+        "duration": 1.186
+    },
+    {
+        "text": "What's more, if you choose the appropriate direction for that vector, ",
+        "start": 663.2,
+        "duration": 3.856
+    },
+    {
+        "text": "the cases where the dot product is negative will line up with the cases ",
+        "start": 667.056,
+        "duration": 3.966
+    },
+    {
+        "text": "where the right hand rule for the orientation of x, y, z, v and w is negative.",
+        "start": 671.022,
+        "duration": 4.298
+    },
+    {
+        "text": "This means that we just found a vector p so that taking a dot product ",
+        "start": 679.6,
+        "duration": 4.717
+    },
+    {
+        "text": "between p and some vector x, y, z is the same thing as computing that ",
+        "start": 684.317,
+        "duration": 4.717
+    },
+    {
+        "text": "determinant of a 3x3 matrix whose columns are x, y, z, the coordinates of v and w.",
+        "start": 689.034,
+        "duration": 5.526
+    },
+    {
+        "text": "So the answer that we found earlier computationally using that ",
+        "start": 695.48,
+        "duration": 3.609
+    },
+    {
+        "text": "special notational trick must correspond geometrically to this vector.",
+        "start": 699.089,
+        "duration": 4.011
+    },
+    {
+        "text": "This is the fundamental reason why the computation and the ",
+        "start": 703.9,
+        "duration": 3.227
+    },
+    {
+        "text": "geometric interpretation of the cross product are related.",
+        "start": 707.127,
+        "duration": 3.173
+    },
+    {
+        "text": "Just to sum up what happened here, I started by defining a linear transformation ",
+        "start": 712.64,
+        "duration": 4.772
+    },
+    {
+        "text": "from 3D space to the number line, and it was defined in terms of the vectors v and w.",
+        "start": 717.412,
+        "duration": 5.008
+    },
+    {
+        "text": "Then I went through two separate ways to think about the dual vector ",
+        "start": 723.28,
+        "duration": 3.686
+    },
+    {
+        "text": "of this transformation, the vector such that applying the transformation ",
+        "start": 726.966,
+        "duration": 3.901
+    },
+    {
+        "text": "is the same thing as taking a dot product with that vector.",
+        "start": 730.867,
+        "duration": 3.153
+    },
+    {
+        "text": "On the one hand, a computational approach will lead you to ",
+        "start": 734.86,
+        "duration": 3.138
+    },
+    {
+        "text": "the trick of plugging in the symbols i-hat, j-hat, ",
+        "start": 737.998,
+        "duration": 2.712
+    },
+    {
+        "text": "and k-hat to the first column of a matrix and computing the determinant.",
+        "start": 740.71,
+        "duration": 3.83
+    },
+    {
+        "text": "But thinking geometrically, we can deduce that this dual vector ",
+        "start": 746.02,
+        "duration": 3.853
+    },
+    {
+        "text": "must be perpendicular to v and w with a length equal to the ",
+        "start": 749.873,
+        "duration": 3.614
+    },
+    {
+        "text": "area of the parallelogram spanned out by those two vectors.",
+        "start": 753.487,
+        "duration": 3.553
+    },
+    {
+        "text": "Since both of these approaches give us a dual vector to the same transformation, ",
+        "start": 759.1,
+        "duration": 4.359
+    },
+    {
+        "text": "they must be the same vector.",
+        "start": 763.459,
+        "duration": 1.561
+    },
+    {
+        "text": "So that wraps up dot products and cross products, ",
+        "start": 767.4,
+        "duration": 2.535
+    },
+    {
+        "text": "and the next video will be a really important concept for linear algebra, change of basis.",
+        "start": 769.935,
+        "duration": 4.565
+    }
+]

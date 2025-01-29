@@ -1,0 +1,3977 @@
+[
+    {
+        "text": "hello everyone I'm here presents today",
+        "start": 4.46,
+        "duration": 6.309
+    },
+    {
+        "text": "my name is Nicholas Wang I'm a member of",
+        "start": 8.04,
+        "duration": 4.26
+    },
+    {
+        "text": "my third-year PhD student in the",
+        "start": 10.769,
+        "duration": 3.99
+    },
+    {
+        "text": "bioinformatics department I'm a member",
+        "start": 12.3,
+        "duration": 4.62
+    },
+    {
+        "text": "of the Rao Lab and I wanted to present",
+        "start": 14.759,
+        "duration": 5.43
+    },
+    {
+        "text": "on some of the tools I've used for my",
+        "start": 16.92,
+        "duration": 5.029
+    },
+    {
+        "text": "research into medical imaging",
+        "start": 20.189,
+        "duration": 3.84
+    },
+    {
+        "text": "particularly a set of neuroimaging",
+        "start": 21.949,
+        "duration": 2.92
+    },
+    {
+        "text": "toolkits",
+        "start": 24.029,
+        "duration": 4.111
+    },
+    {
+        "text": "that have been helpful for wrangling",
+        "start": 24.869,
+        "duration": 5.07
+    },
+    {
+        "text": "some of the data reformatting stand the",
+        "start": 28.14,
+        "duration": 5.3
+    },
+    {
+        "text": "data and visualizing a lot of these",
+        "start": 29.939,
+        "duration": 7.881
+    },
+    {
+        "text": "radiology studies that I look at a lot",
+        "start": 33.44,
+        "duration": 8.11
+    },
+    {
+        "text": "so these these toolkits that I'm going",
+        "start": 37.82,
+        "duration": 5.44
+    },
+    {
+        "text": "to be talking about today are part of",
+        "start": 41.55,
+        "duration": 7.2
+    },
+    {
+        "text": "the type I and I pie ecosystem so the",
+        "start": 43.26,
+        "duration": 6.81
+    },
+    {
+        "text": "three toolkits I'm going to focus on",
+        "start": 48.75,
+        "duration": 4.67
+    },
+    {
+        "text": "today are nib the Bell and I learn and",
+        "start": 50.07,
+        "duration": 7.59
+    },
+    {
+        "text": "di-pi these are tools that all come out",
+        "start": 53.42,
+        "duration": 6.79
+    },
+    {
+        "text": "of kind of the community of packages",
+        "start": 57.66,
+        "duration": 5.489
+    },
+    {
+        "text": "that are focused on neuro imaging but",
+        "start": 60.21,
+        "duration": 4.89
+    },
+    {
+        "text": "I've also found them helpful for looking",
+        "start": 63.149,
+        "duration": 3.421
+    },
+    {
+        "text": "at medical imaging in general from",
+        "start": 65.1,
+        "duration": 4.11
+    },
+    {
+        "text": "different types of radiology I've used",
+        "start": 66.57,
+        "duration": 5.04
+    },
+    {
+        "text": "them on prostate kind of studies because",
+        "start": 69.21,
+        "duration": 4.5
+    },
+    {
+        "text": "a lot of the underlying problems that",
+        "start": 71.61,
+        "duration": 4.35
+    },
+    {
+        "text": "come up in handling medical imaging data",
+        "start": 73.71,
+        "duration": 6.5
+    },
+    {
+        "text": "as volumes are also applicable to other",
+        "start": 75.96,
+        "duration": 9.72
+    },
+    {
+        "text": "applications of medical imaging so I'd",
+        "start": 80.21,
+        "duration": 6.82
+    },
+    {
+        "text": "like to talk to you about these kind of",
+        "start": 85.68,
+        "duration": 4.86
+    },
+    {
+        "text": "packages today and so roughly where some",
+        "start": 87.03,
+        "duration": 6.33
+    },
+    {
+        "text": "of the issues come in is when we're",
+        "start": 90.54,
+        "duration": 5.34
+    },
+    {
+        "text": "looking at medical imaging in general",
+        "start": 93.36,
+        "duration": 6.869
+    },
+    {
+        "text": "one of the medical imaging is generally",
+        "start": 95.88,
+        "duration": 7.59
+    },
+    {
+        "text": "stored as DICOM files and DICOM is a",
+        "start": 100.229,
+        "duration": 6.871
+    },
+    {
+        "text": "pretty good standard for certain things",
+        "start": 103.47,
+        "duration": 6.689
+    },
+    {
+        "text": "it's built for radiologists and it's how",
+        "start": 107.1,
+        "duration": 5.64
+    },
+    {
+        "text": "medical imaging is stored clinically so",
+        "start": 110.159,
+        "duration": 5.611
+    },
+    {
+        "text": "anything radiology related from MRI or",
+        "start": 112.74,
+        "duration": 7.559
+    },
+    {
+        "text": "CT ultrasound etc is generally stored in",
+        "start": 115.77,
+        "duration": 8.629
+    },
+    {
+        "text": "the DICOM format on a pack server and",
+        "start": 120.299,
+        "duration": 7.35
+    },
+    {
+        "text": "can be you'll see other things in there",
+        "start": 124.399,
+        "duration": 6.25
+    },
+    {
+        "text": "that radiologists put in such as reports",
+        "start": 127.649,
+        "duration": 6.001
+    },
+    {
+        "text": "or derived images and",
+        "start": 130.649,
+        "duration": 5.521
+    },
+    {
+        "text": "basically all the DICOM pile is is an",
+        "start": 133.65,
+        "duration": 7.88
+    },
+    {
+        "text": "image and a header and these headers are",
+        "start": 136.17,
+        "duration": 5.36
+    },
+    {
+        "text": "standardized in a way that you can store",
+        "start": 142.13,
+        "duration": 5.68
+    },
+    {
+        "text": "a lot of very useful information on how",
+        "start": 145.08,
+        "duration": 4.5
+    },
+    {
+        "text": "to read the image how do you interpret",
+        "start": 147.81,
+        "duration": 4.08
+    },
+    {
+        "text": "the image and what the values are but",
+        "start": 149.58,
+        "duration": 5.1
+    },
+    {
+        "text": "essentially when you look at a MRI study",
+        "start": 151.89,
+        "duration": 5.52
+    },
+    {
+        "text": "you'll get a stack of anywhere from 20",
+        "start": 154.68,
+        "duration": 6.99
+    },
+    {
+        "text": "to 500 or many more depending if it's a",
+        "start": 157.41,
+        "duration": 8.24
+    },
+    {
+        "text": "4d volume of these daikons",
+        "start": 161.67,
+        "duration": 5.97
+    },
+    {
+        "text": "and you put them all together and that",
+        "start": 165.65,
+        "duration": 7.21
+    },
+    {
+        "text": "that makes up your MRI study and so all",
+        "start": 167.64,
+        "duration": 7.26
+    },
+    {
+        "text": "of this is great if you're a radiologist",
+        "start": 172.86,
+        "duration": 3.659
+    },
+    {
+        "text": "but if you're a bioinformatician and you",
+        "start": 174.9,
+        "duration": 3.57
+    },
+    {
+        "text": "want to do something more involved with",
+        "start": 176.519,
+        "duration": 5.401
+    },
+    {
+        "text": "these studies DICOM starts falling a",
+        "start": 178.47,
+        "duration": 4.769
+    },
+    {
+        "text": "little behind it does it does these",
+        "start": 181.92,
+        "duration": 3.289
+    },
+    {
+        "text": "headers contain everything from the",
+        "start": 183.239,
+        "duration": 4.951
+    },
+    {
+        "text": "where the image each image sits in the",
+        "start": 185.209,
+        "duration": 6.61
+    },
+    {
+        "text": "volume they contain some oftentimes in",
+        "start": 188.19,
+        "duration": 5.34
+    },
+    {
+        "text": "the clinical setting they'll contain thi",
+        "start": 191.819,
+        "duration": 5.25
+    },
+    {
+        "text": "and basically these headers are useful",
+        "start": 193.53,
+        "duration": 6.15
+    },
+    {
+        "text": "but not always filled out and so that",
+        "start": 197.069,
+        "duration": 4.021
+    },
+    {
+        "text": "can sometimes cause an issue and I'll",
+        "start": 199.68,
+        "duration": 2.91
+    },
+    {
+        "text": "give you an example of what some of",
+        "start": 201.09,
+        "duration": 3.56
+    },
+    {
+        "text": "these icons might look like this is a",
+        "start": 202.59,
+        "duration": 5.64
+    },
+    {
+        "text": "head Mor for from these are examples",
+        "start": 204.65,
+        "duration": 6.19
+    },
+    {
+        "text": "from MATLAB and these are some this is",
+        "start": 208.23,
+        "duration": 4.86
+    },
+    {
+        "text": "not the same study but some of what the",
+        "start": 210.84,
+        "duration": 4.979
+    },
+    {
+        "text": "DICOM tags might look like on the right",
+        "start": 213.09,
+        "duration": 4.679
+    },
+    {
+        "text": "you'll see there's descriptions where",
+        "start": 215.819,
+        "duration": 4.26
+    },
+    {
+        "text": "it's taken this one has anonymized",
+        "start": 217.769,
+        "duration": 3.75
+    },
+    {
+        "text": "versions of the ID and that sort of",
+        "start": 220.079,
+        "duration": 5.671
+    },
+    {
+        "text": "thing but there may be anywhere from you",
+        "start": 221.519,
+        "duration": 7.321
+    },
+    {
+        "text": "know a hundred to there's tens of",
+        "start": 225.75,
+        "duration": 4.859
+    },
+    {
+        "text": "thousands of possible tags that are",
+        "start": 228.84,
+        "duration": 3.75
+    },
+    {
+        "text": "attached to headers and they're also",
+        "start": 230.609,
+        "duration": 5.28
+    },
+    {
+        "text": "depending on which scanner use these",
+        "start": 232.59,
+        "duration": 7.14
+    },
+    {
+        "text": "headers and so that becomes sort of an",
+        "start": 235.889,
+        "duration": 5.761
+    },
+    {
+        "text": "issue when you're looking at these this",
+        "start": 239.73,
+        "duration": 3.9
+    },
+    {
+        "text": "is a real example of some of the DICOM",
+        "start": 241.65,
+        "duration": 4.739
+    },
+    {
+        "text": "files I look at this is just 25 for a",
+        "start": 243.63,
+        "duration": 4.079
+    },
+    {
+        "text": "particular modality and they've been",
+        "start": 246.389,
+        "duration": 5.66
+    },
+    {
+        "text": "split out but each one of these files",
+        "start": 247.709,
+        "duration": 9.361
+    },
+    {
+        "text": "contains an image and headers that are",
+        "start": 252.049,
+        "duration": 6.581
+    },
+    {
+        "text": "basically the same across all of the",
+        "start": 257.07,
+        "duration": 3.9
+    },
+    {
+        "text": "studies each time the patient's name",
+        "start": 258.63,
+        "duration": 5.73
+    },
+    {
+        "text": "doesn't change the scanner that is",
+        "start": 260.97,
+        "duration": 5.37
+    },
+    {
+        "text": "recorded on doesn't change and all of",
+        "start": 264.36,
+        "duration": 3.04
+    },
+    {
+        "text": "these other files don't",
+        "start": 266.34,
+        "duration": 3.16
+    },
+    {
+        "text": "but the position of each of these files",
+        "start": 267.4,
+        "duration": 4.59
+    },
+    {
+        "text": "does change and you need to put them",
+        "start": 269.5,
+        "duration": 6.78
+    },
+    {
+        "text": "together as far as a volume because MRI",
+        "start": 271.99,
+        "duration": 8.01
+    },
+    {
+        "text": "studies you're looking at the the point",
+        "start": 276.28,
+        "duration": 5.58
+    },
+    {
+        "text": "of an MRI studies to look at it in a 3d",
+        "start": 280.0,
+        "duration": 5.669
+    },
+    {
+        "text": "sense so you have to bring all this",
+        "start": 281.86,
+        "duration": 5.82
+    },
+    {
+        "text": "information together anonymize it if you",
+        "start": 285.669,
+        "duration": 6.661
+    },
+    {
+        "text": "want to be sensitive to the pH I and",
+        "start": 287.68,
+        "duration": 6.12
+    },
+    {
+        "text": "make sure you haven't lost any facts",
+        "start": 292.33,
+        "duration": 3.48
+    },
+    {
+        "text": "along the way because the filenames are",
+        "start": 293.8,
+        "duration": 7.2
+    },
+    {
+        "text": "not at all helpful and that brings us to",
+        "start": 295.81,
+        "duration": 6.99
+    },
+    {
+        "text": "give a bell",
+        "start": 301.0,
+        "duration": 3.75
+    },
+    {
+        "text": "I just wanted to does anyone have any",
+        "start": 302.8,
+        "duration": 3.69
+    },
+    {
+        "text": "questions on the DICOM standard I",
+        "start": 304.75,
+        "duration": 3.84
+    },
+    {
+        "text": "realized I should pause for a second and",
+        "start": 306.49,
+        "duration": 9.12
+    },
+    {
+        "text": "see if there's any questions and if not",
+        "start": 308.59,
+        "duration": 10.79
+    },
+    {
+        "text": "I'll go on to end of a bell which is a",
+        "start": 315.61,
+        "duration": 6.0
+    },
+    {
+        "text": "package for handling a lot of these",
+        "start": 319.38,
+        "duration": 5.099
+    },
+    {
+        "text": "different imaging file formats and",
+        "start": 321.61,
+        "duration": 5.16
+    },
+    {
+        "text": "contains a lot of the utility functions",
+        "start": 324.479,
+        "duration": 9.821
+    },
+    {
+        "text": "for these neural imaging files and so",
+        "start": 326.77,
+        "duration": 9.63
+    },
+    {
+        "text": "you might say DICOM standard is great",
+        "start": 334.3,
+        "duration": 3.9
+    },
+    {
+        "text": "and it you could think of it as one of",
+        "start": 336.4,
+        "duration": 4.889
+    },
+    {
+        "text": "the image volume standards but the ohon",
+        "start": 338.2,
+        "duration": 5.07
+    },
+    {
+        "text": "DICOM and once people start thinking oh",
+        "start": 341.289,
+        "duration": 3.6
+    },
+    {
+        "text": "maybe I need to actually handle images",
+        "start": 343.27,
+        "duration": 4.769
+    },
+    {
+        "text": "and volume you start running into issues",
+        "start": 344.889,
+        "duration": 6.15
+    },
+    {
+        "text": "and there's a lot of different standards",
+        "start": 348.039,
+        "duration": 6.361
+    },
+    {
+        "text": "out there for how to handle files as you",
+        "start": 351.039,
+        "duration": 6.271
+    },
+    {
+        "text": "can tell by this xkcd volume so I'd",
+        "start": 354.4,
+        "duration": 4.799
+    },
+    {
+        "text": "recommend picking a particular one and",
+        "start": 357.31,
+        "duration": 4.65
+    },
+    {
+        "text": "this is the one from nuuma Bell can",
+        "start": 359.199,
+        "duration": 4.59
+    },
+    {
+        "text": "handle a number of different ways that",
+        "start": 361.96,
+        "duration": 5.88
+    },
+    {
+        "text": "people for intermediate files including",
+        "start": 363.789,
+        "duration": 7.321
+    },
+    {
+        "text": "DICOM but I've used nifty in the past",
+        "start": 367.84,
+        "duration": 7.199
+    },
+    {
+        "text": "there's an RD there's there's multiple",
+        "start": 371.11,
+        "duration": 6.0
+    },
+    {
+        "text": "different file formats that people use",
+        "start": 375.039,
+        "duration": 5.821
+    },
+    {
+        "text": "in order to tour these MRI volumes in a",
+        "start": 377.11,
+        "duration": 6.92
+    },
+    {
+        "text": "consistent way for further processing",
+        "start": 380.86,
+        "duration": 8.79
+    },
+    {
+        "text": "but you know it doesn't really matter in",
+        "start": 384.03,
+        "duration": 6.91
+    },
+    {
+        "text": "the end as long as you're consistent",
+        "start": 389.65,
+        "duration": 3.56
+    },
+    {
+        "text": "across all of them and can handle",
+        "start": 390.94,
+        "duration": 7.289
+    },
+    {
+        "text": "different intermediate files and so what",
+        "start": 393.21,
+        "duration": 6.639
+    },
+    {
+        "text": "does the nib about one snippet Bell has",
+        "start": 398.229,
+        "duration": 2.531
+    },
+    {
+        "text": "taken in these",
+        "start": 399.849,
+        "duration": 3.131
+    },
+    {
+        "text": "miles from either daikon or nifty or",
+        "start": 400.76,
+        "duration": 4.92
+    },
+    {
+        "text": "however you're storing these image files",
+        "start": 402.98,
+        "duration": 5.19
+    },
+    {
+        "text": "treats them as an entire image volume",
+        "start": 405.68,
+        "duration": 7.7
+    },
+    {
+        "text": "plus an affine matrix in order to handle",
+        "start": 408.17,
+        "duration": 5.21
+    },
+    {
+        "text": "rotations sheering and kind of changes",
+        "start": 413.44,
+        "duration": 5.38
+    },
+    {
+        "text": "to the image matrix I mean this is",
+        "start": 415.88,
+        "duration": 6.36
+    },
+    {
+        "text": "important because daikon itself is is",
+        "start": 418.82,
+        "duration": 5.76
+    },
+    {
+        "text": "generally treats images of the stack and",
+        "start": 422.24,
+        "duration": 5.88
+    },
+    {
+        "text": "so they're aligned but they're they're",
+        "start": 424.58,
+        "duration": 7.71
+    },
+    {
+        "text": "basically uh the XYZ coordinate frame is",
+        "start": 428.12,
+        "duration": 9.42
+    },
+    {
+        "text": "only up and down and it can't handle any",
+        "start": 432.29,
+        "duration": 6.42
+    },
+    {
+        "text": "rotations and this sort of thing which",
+        "start": 437.54,
+        "duration": 2.67
+    },
+    {
+        "text": "is why when you're looking at a single",
+        "start": 438.71,
+        "duration": 4.05
+    },
+    {
+        "text": "image volume but once you start looking",
+        "start": 440.21,
+        "duration": 6.12
+    },
+    {
+        "text": "at images as a set of them is",
+        "start": 442.76,
+        "duration": 5.66
+    },
+    {
+        "text": "particularly an MRI where everything is",
+        "start": 446.33,
+        "duration": 3.42
+    },
+    {
+        "text": "multi-modality",
+        "start": 448.42,
+        "duration": 3.88
+    },
+    {
+        "text": "where you're looking at a number of",
+        "start": 449.75,
+        "duration": 6.15
+    },
+    {
+        "text": "different aspects of the brain you'll",
+        "start": 452.3,
+        "duration": 6.09
+    },
+    {
+        "text": "and they're not always aligned properly",
+        "start": 455.9,
+        "duration": 5.28
+    },
+    {
+        "text": "having a Phi matrix gives you a little",
+        "start": 458.39,
+        "duration": 5.97
+    },
+    {
+        "text": "more flexibility than simply a Z",
+        "start": 461.18,
+        "duration": 5.25
+    },
+    {
+        "text": "coordinate holding all the information",
+        "start": 464.36,
+        "duration": 5.87
+    },
+    {
+        "text": "about the relative relative spatial",
+        "start": 466.43,
+        "duration": 7.38
+    },
+    {
+        "text": "positioning of these different slices so",
+        "start": 470.23,
+        "duration": 6.07
+    },
+    {
+        "text": "you can tell from this example on the",
+        "start": 473.81,
+        "duration": 7.17
+    },
+    {
+        "text": "right of you see that this is one slice",
+        "start": 476.3,
+        "duration": 7.68
+    },
+    {
+        "text": "out of them this is a one slice out of a",
+        "start": 480.98,
+        "duration": 5.94
+    },
+    {
+        "text": "brain DT and our sorry brain mr study",
+        "start": 483.98,
+        "duration": 5.01
+    },
+    {
+        "text": "where you take your original pixels",
+        "start": 486.92,
+        "duration": 4.47
+    },
+    {
+        "text": "which are in ijk coordinates and",
+        "start": 488.99,
+        "duration": 4.58
+    },
+    {
+        "text": "transform them into real space",
+        "start": 491.39,
+        "duration": 10.29
+    },
+    {
+        "text": "millimeters meanings so you go from so",
+        "start": 493.57,
+        "duration": 9.94
+    },
+    {
+        "text": "this affine matrix tells you how to",
+        "start": 501.68,
+        "duration": 4.59
+    },
+    {
+        "text": "change those coordinates into something",
+        "start": 503.51,
+        "duration": 6.81
+    },
+    {
+        "text": "that can be properly aligned and and a",
+        "start": 506.27,
+        "duration": 5.25
+    },
+    {
+        "text": "Phi matrix what I'll be talking about",
+        "start": 510.32,
+        "duration": 6.84
+    },
+    {
+        "text": "later contains both scaling rotation",
+        "start": 511.52,
+        "duration": 10.709
+    },
+    {
+        "text": "translation and sharing and one",
+        "start": 517.16,
+        "duration": 6.48
+    },
+    {
+        "text": "important thing to note is that these",
+        "start": 522.229,
+        "duration": 3.631
+    },
+    {
+        "text": "are all invertible matrices which makes",
+        "start": 523.64,
+        "duration": 4.44
+    },
+    {
+        "text": "converting back and forth between these",
+        "start": 525.86,
+        "duration": 4.98
+    },
+    {
+        "text": "two or months between these two",
+        "start": 528.08,
+        "duration": 4.44
+    },
+    {
+        "text": "coordinate systems",
+        "start": 530.84,
+        "duration": 4.7
+    },
+    {
+        "text": "pretty straightforward simple",
+        "start": 532.52,
+        "duration": 5.1
+    },
+    {
+        "text": "next I'll talk a little bit about some",
+        "start": 535.54,
+        "duration": 3.55
+    },
+    {
+        "text": "of the different why this is important",
+        "start": 537.62,
+        "duration": 2.7
+    },
+    {
+        "text": "some of the different Bureau imaging",
+        "start": 539.09,
+        "duration": 3.65
+    },
+    {
+        "text": "have our sequences you might come across",
+        "start": 540.32,
+        "duration": 5.18
+    },
+    {
+        "text": "if you're working with MRI studies",
+        "start": 542.74,
+        "duration": 5.89
+    },
+    {
+        "text": "particularly in the brain this is you'll",
+        "start": 545.5,
+        "duration": 7.18
+    },
+    {
+        "text": "look at t1 images t1-weighted images - -",
+        "start": 548.63,
+        "duration": 6.24
+    },
+    {
+        "text": "weighted images they'll add contrast to",
+        "start": 552.68,
+        "duration": 4.91
+    },
+    {
+        "text": "an image to light up different you'll",
+        "start": 554.87,
+        "duration": 7.74
+    },
+    {
+        "text": "you in a clinical setting you may have a",
+        "start": 557.59,
+        "duration": 7.06
+    },
+    {
+        "text": "patient be injected with gadolinium or",
+        "start": 562.61,
+        "duration": 5.1
+    },
+    {
+        "text": "another contrast agent to study where",
+        "start": 564.65,
+        "duration": 5.01
+    },
+    {
+        "text": "the blood flows and that kind of effect",
+        "start": 567.71,
+        "duration": 5.61
+    },
+    {
+        "text": "and see what changes are made when in",
+        "start": 569.66,
+        "duration": 8.13
+    },
+    {
+        "text": "contrast is added in flare is a t2 type",
+        "start": 573.32,
+        "duration": 8.91
+    },
+    {
+        "text": "image where you're lowering the where",
+        "start": 577.79,
+        "duration": 7.8
+    },
+    {
+        "text": "you're doing inversion recovery in order",
+        "start": 582.23,
+        "duration": 7.29
+    },
+    {
+        "text": "to increase the normal fluid and",
+        "start": 585.59,
+        "duration": 6.12
+    },
+    {
+        "text": "increase other aspects but it looks sort",
+        "start": 589.52,
+        "duration": 4.26
+    },
+    {
+        "text": "of like a teacher image you can kind of",
+        "start": 591.71,
+        "duration": 3.96
+    },
+    {
+        "text": "see these are I look at brain tumor",
+        "start": 593.78,
+        "duration": 4.38
+    },
+    {
+        "text": "images which is not necessarily what all",
+        "start": 595.67,
+        "duration": 4.669
+    },
+    {
+        "text": "these neural imaging packages are",
+        "start": 598.16,
+        "duration": 5.64
+    },
+    {
+        "text": "focused on but is a reasonable",
+        "start": 600.339,
+        "duration": 5.461
+    },
+    {
+        "text": "application of these packages as well",
+        "start": 603.8,
+        "duration": 5.13
+    },
+    {
+        "text": "and beyond these kind of standard MRI",
+        "start": 605.8,
+        "duration": 4.9
+    },
+    {
+        "text": "sequences you will also run into",
+        "start": 608.93,
+        "duration": 5.49
+    },
+    {
+        "text": "diffusion-weighted imaging such as",
+        "start": 610.7,
+        "duration": 5.76
+    },
+    {
+        "text": "apparent fusion there's also an apparent",
+        "start": 614.42,
+        "duration": 4.25
+    },
+    {
+        "text": "diffusion coefficient which is a",
+        "start": 616.46,
+        "duration": 5.1
+    },
+    {
+        "text": "secondary image where you've calculated",
+        "start": 618.67,
+        "duration": 5.62
+    },
+    {
+        "text": "how kind of a standardized scale of what",
+        "start": 621.56,
+        "duration": 5.13
+    },
+    {
+        "text": "this diffusion coefficient is and",
+        "start": 624.29,
+        "duration": 5.1
+    },
+    {
+        "text": "there's many more including perfusion",
+        "start": 626.69,
+        "duration": 5.91
+    },
+    {
+        "text": "and I can go on and on and on about what",
+        "start": 629.39,
+        "duration": 7.59
+    },
+    {
+        "text": "type of sequences are you're capable of",
+        "start": 632.6,
+        "duration": 6.0
+    },
+    {
+        "text": "taking an M R which is something in",
+        "start": 636.98,
+        "duration": 4.68
+    },
+    {
+        "text": "distinguishes it from other modalities",
+        "start": 638.6,
+        "duration": 6.45
+    },
+    {
+        "text": "imaging modalities such as CT e or",
+        "start": 641.66,
+        "duration": 6.24
+    },
+    {
+        "text": "ultrasound which are generally one",
+        "start": 645.05,
+        "duration": 5.73
+    },
+    {
+        "text": "acquisition and at the same time all at",
+        "start": 647.9,
+        "duration": 7.29
+    },
+    {
+        "text": "once so that's part of why that's part",
+        "start": 650.78,
+        "duration": 7.65
+    },
+    {
+        "text": "of why your imaging has a lot of these",
+        "start": 655.19,
+        "duration": 5.399
+    },
+    {
+        "text": "kind of packages for integrating",
+        "start": 658.43,
+        "duration": 4.89
+    },
+    {
+        "text": "different modalities and so next I'll",
+        "start": 660.589,
+        "duration": 4.741
+    },
+    {
+        "text": "talk about and I learned but in case",
+        "start": 663.32,
+        "duration": 4.29
+    },
+    {
+        "text": "anyone had any questions about anti",
+        "start": 665.33,
+        "duration": 3.36
+    },
+    {
+        "text": "goodell",
+        "start": 667.61,
+        "duration": 3.51
+    },
+    {
+        "text": "nabob L my Pappy eight take them at this",
+        "start": 668.69,
+        "duration": 4.97
+    },
+    {
+        "text": "point as well",
+        "start": 671.12,
+        "duration": 2.54
+    },
+    {
+        "text": "and if not I'd be also be happy to talk",
+        "start": 683.61,
+        "duration": 4.37
+    },
+    {
+        "text": "I can't see the questions unfortunately",
+        "start": 686.19,
+        "duration": 4.41
+    },
+    {
+        "text": "but I was hoping if maybe that could be",
+        "start": 687.98,
+        "duration": 6.91
+    },
+    {
+        "text": "raised but if and for the next I'd like",
+        "start": 690.6,
+        "duration": 7.02
+    },
+    {
+        "text": "to talk about and I learn which is a",
+        "start": 694.89,
+        "duration": 5.819
+    },
+    {
+        "text": "nice set of neural imaging packages",
+        "start": 697.62,
+        "duration": 4.709
+    },
+    {
+        "text": "beyond the kind of utility functions",
+        "start": 700.709,
+        "duration": 7.891
+    },
+    {
+        "text": "that Numa Bell provides which are also",
+        "start": 702.329,
+        "duration": 7.711
+    },
+    {
+        "text": "come with a nice what I found very",
+        "start": 708.6,
+        "duration": 3.479
+    },
+    {
+        "text": "helpful in kind of these relation tools",
+        "start": 710.04,
+        "duration": 5.52
+    },
+    {
+        "text": "and also other machine learning tools",
+        "start": 712.079,
+        "duration": 5.161
+    },
+    {
+        "text": "that are included in this is there's a",
+        "start": 715.56,
+        "duration": 3.33
+    },
+    {
+        "text": "lot of great documentation for this",
+        "start": 717.24,
+        "duration": 4.469
+    },
+    {
+        "text": "package there is some good documentation",
+        "start": 718.89,
+        "duration": 7.02
+    },
+    {
+        "text": "for Novell as well but it's it's less",
+        "start": 721.709,
+        "duration": 6.0
+    },
+    {
+        "text": "fully coded out in the way that and I",
+        "start": 725.91,
+        "duration": 4.08
+    },
+    {
+        "text": "learn is and so some of the things you",
+        "start": 727.709,
+        "duration": 4.081
+    },
+    {
+        "text": "have access to with these and I learn a",
+        "start": 729.99,
+        "duration": 4.469
+    },
+    {
+        "text": "package is a lot of brain atlas is",
+        "start": 731.79,
+        "duration": 5.13
+    },
+    {
+        "text": "there's a lot of research into brain MOR",
+        "start": 734.459,
+        "duration": 6.091
+    },
+    {
+        "text": "particularly because of work in",
+        "start": 736.92,
+        "duration": 5.849
+    },
+    {
+        "text": "functional magnetic resonance imaging",
+        "start": 740.55,
+        "duration": 6.69
+    },
+    {
+        "text": "fMRI so a lot of normal brains have been",
+        "start": 742.769,
+        "duration": 5.401
+    },
+    {
+        "text": "atlest",
+        "start": 747.24,
+        "duration": 2.76
+    },
+    {
+        "text": "and there's a lot of other datasets that",
+        "start": 748.17,
+        "duration": 4.38
+    },
+    {
+        "text": "come along with it it provides a lot of",
+        "start": 750.0,
+        "duration": 4.79
+    },
+    {
+        "text": "good visualization tools for the brain",
+        "start": 752.55,
+        "duration": 5.25
+    },
+    {
+        "text": "and any kind of there's a number of",
+        "start": 754.79,
+        "duration": 6.46
+    },
+    {
+        "text": "image manipulation tools as well people",
+        "start": 757.8,
+        "duration": 5.42
+    },
+    {
+        "text": "have used these I don't use it as much",
+        "start": 761.25,
+        "duration": 5.899
+    },
+    {
+        "text": "but because there's a lot of work in",
+        "start": 763.22,
+        "duration": 6.91
+    },
+    {
+        "text": "functional matter breaking magnetic",
+        "start": 767.149,
+        "duration": 6.701
+    },
+    {
+        "text": "resonance imaging space on finding which",
+        "start": 770.13,
+        "duration": 5.79
+    },
+    {
+        "text": "areas of the brain are connected to each",
+        "start": 773.85,
+        "duration": 3.359
+    },
+    {
+        "text": "other and their interactions with each",
+        "start": 775.92,
+        "duration": 3.359
+    },
+    {
+        "text": "other it's kind of consuming connectome",
+        "start": 777.209,
+        "duration": 5.221
+    },
+    {
+        "text": "project comes up so there's a lot of",
+        "start": 779.279,
+        "duration": 5.131
+    },
+    {
+        "text": "tools in here I won't specifically talk",
+        "start": 782.43,
+        "duration": 3.42
+    },
+    {
+        "text": "too much about that because that's not",
+        "start": 784.41,
+        "duration": 3.239
+    },
+    {
+        "text": "for my research focuses but there are",
+        "start": 785.85,
+        "duration": 3.479
+    },
+    {
+        "text": "these kind of tools and an important",
+        "start": 787.649,
+        "duration": 3.481
+    },
+    {
+        "text": "thing to know about fMRI is because it's",
+        "start": 789.329,
+        "duration": 5.551
+    },
+    {
+        "text": "an MRI which looks at a 3d space but it",
+        "start": 791.13,
+        "duration": 5.19
+    },
+    {
+        "text": "also looks at this information and the",
+        "start": 794.88,
+        "duration": 3.99
+    },
+    {
+        "text": "change in blood flow over time you're",
+        "start": 796.32,
+        "duration": 4.889
+    },
+    {
+        "text": "looking at four-dimensional data which",
+        "start": 798.87,
+        "duration": 4.469
+    },
+    {
+        "text": "is always a little more tricky to two",
+        "start": 801.209,
+        "duration": 4.141
+    },
+    {
+        "text": "dimensional that is easier to handle the",
+        "start": 803.339,
+        "duration": 3.93
+    },
+    {
+        "text": "three-dimensional data which is again",
+        "start": 805.35,
+        "duration": 3.419
+    },
+    {
+        "text": "easier to handle than four-dimensional",
+        "start": 807.269,
+        "duration": 3.901
+    },
+    {
+        "text": "data which is always hard to visualize",
+        "start": 808.769,
+        "duration": 6.57
+    },
+    {
+        "text": "so four dimensional data is and I",
+        "start": 811.17,
+        "duration": 6.08
+    },
+    {
+        "text": "learned provides a lot of these toolkits",
+        "start": 815.339,
+        "duration": 3.671
+    },
+    {
+        "text": "for handling this four-dimensional",
+        "start": 817.25,
+        "duration": 6.12
+    },
+    {
+        "text": "imaging data and so some of the standard",
+        "start": 819.01,
+        "duration": 7.84
+    },
+    {
+        "text": "brain atlases you might look at our how",
+        "start": 823.37,
+        "duration": 5.61
+    },
+    {
+        "text": "we map out different regions of the",
+        "start": 826.85,
+        "duration": 5.73
+    },
+    {
+        "text": "brain and our study over time of how",
+        "start": 828.98,
+        "duration": 6.36
+    },
+    {
+        "text": "these different areas of gray and white",
+        "start": 832.58,
+        "duration": 5.64
+    },
+    {
+        "text": "matter are what their functions are you",
+        "start": 835.34,
+        "duration": 4.32
+    },
+    {
+        "text": "have motor cortex that sort of thing but",
+        "start": 838.22,
+        "duration": 3.42
+    },
+    {
+        "text": "there's a I've done two examples on the",
+        "start": 839.66,
+        "duration": 4.23
+    },
+    {
+        "text": "right there's in the example they've",
+        "start": 841.64,
+        "duration": 5.4
+    },
+    {
+        "text": "provided this quiet-like and twenty",
+        "start": 843.89,
+        "duration": 5.07
+    },
+    {
+        "text": "different brain atlases you could pull",
+        "start": 847.04,
+        "duration": 8.73
+    },
+    {
+        "text": "down and map your brain images to and so",
+        "start": 848.96,
+        "duration": 9.11
+    },
+    {
+        "text": "you take the idea is you take a",
+        "start": 855.77,
+        "duration": 5.1
+    },
+    {
+        "text": "structural NR such as the t1 weighted",
+        "start": 858.07,
+        "duration": 7.38
+    },
+    {
+        "text": "imaging sequence and map it on to this",
+        "start": 860.87,
+        "duration": 7.41
+    },
+    {
+        "text": "brain atlas so you could use that to",
+        "start": 865.45,
+        "duration": 4.36
+    },
+    {
+        "text": "identify different regions of the brain",
+        "start": 868.28,
+        "duration": 7.59
+    },
+    {
+        "text": "in your study of a particular subject as",
+        "start": 869.81,
+        "duration": 12.0
+    },
+    {
+        "text": "well and so a nice thing is there's a",
+        "start": 875.87,
+        "duration": 8.34
+    },
+    {
+        "text": "lot of visualization tools because it's",
+        "start": 881.81,
+        "duration": 6.42
+    },
+    {
+        "text": "difficult to take 3d volumes and present",
+        "start": 884.21,
+        "duration": 7.31
+    },
+    {
+        "text": "them as nice summary 2d images",
+        "start": 888.23,
+        "duration": 5.16
+    },
+    {
+        "text": "particularly when you have both",
+        "start": 891.52,
+        "duration": 5.01
+    },
+    {
+        "text": "structure and then further on you have",
+        "start": 893.39,
+        "duration": 5.43
+    },
+    {
+        "text": "features you may want to record about",
+        "start": 896.53,
+        "duration": 8.13
+    },
+    {
+        "text": "these different areas of the brain but",
+        "start": 898.82,
+        "duration": 7.769
+    },
+    {
+        "text": "you can see there's you know the",
+        "start": 904.66,
+        "duration": 4.69
+    },
+    {
+        "text": "standard kind of three cuts of you slice",
+        "start": 906.589,
+        "duration": 4.911
+    },
+    {
+        "text": "it down midline after adjusting for",
+        "start": 909.35,
+        "duration": 5.25
+    },
+    {
+        "text": "after mapping it to a particular atlas",
+        "start": 911.5,
+        "duration": 5.02
+    },
+    {
+        "text": "and you can kind of see axial coronal",
+        "start": 914.6,
+        "duration": 3.12
+    },
+    {
+        "text": "and sagittal these kind of three",
+        "start": 916.52,
+        "duration": 3.63
+    },
+    {
+        "text": "different ways to slice three different",
+        "start": 917.72,
+        "duration": 5.67
+    },
+    {
+        "text": "directions of slicing the brain but also",
+        "start": 920.15,
+        "duration": 5.55
+    },
+    {
+        "text": "their ways of plotting these different",
+        "start": 923.39,
+        "duration": 4.53
+    },
+    {
+        "text": "atlases or different features or Anatomy",
+        "start": 925.7,
+        "duration": 5.37
+    },
+    {
+        "text": "on top of that as heat maps and",
+        "start": 927.92,
+        "duration": 5.64
+    },
+    {
+        "text": "different connections which I find very",
+        "start": 931.07,
+        "duration": 5.88
+    },
+    {
+        "text": "appealing and also good for quality",
+        "start": 933.56,
+        "duration": 5.58
+    },
+    {
+        "text": "control because it's important when",
+        "start": 936.95,
+        "duration": 4.53
+    },
+    {
+        "text": "you're looking at imaging tools to make",
+        "start": 939.14,
+        "duration": 3.86
+    },
+    {
+        "text": "sure you know what you're looking at",
+        "start": 941.48,
+        "duration": 4.77
+    },
+    {
+        "text": "it's easy to kind of assume that your",
+        "start": 943.0,
+        "duration": 7.0
+    },
+    {
+        "text": "pipeline worked correctly but sometimes",
+        "start": 946.25,
+        "duration": 4.86
+    },
+    {
+        "text": "you know if you forgot",
+        "start": 950.0,
+        "duration": 4.399
+    },
+    {
+        "text": "you align something correctly or it's",
+        "start": 951.11,
+        "duration": 8.34
+    },
+    {
+        "text": "it's the layers of the mask don't line",
+        "start": 954.399,
+        "duration": 6.94
+    },
+    {
+        "text": "up correctly it's just a nice sanity",
+        "start": 959.45,
+        "duration": 3.06
+    },
+    {
+        "text": "check to be able to take a look at a",
+        "start": 961.339,
+        "duration": 3.271
+    },
+    {
+        "text": "single image and say this is what I",
+        "start": 962.51,
+        "duration": 6.03
+    },
+    {
+        "text": "expected to be investigating and the",
+        "start": 964.61,
+        "duration": 7.38
+    },
+    {
+        "text": "values make sense to me and also further",
+        "start": 968.54,
+        "duration": 4.919
+    },
+    {
+        "text": "down the line if you need to present it",
+        "start": 971.99,
+        "duration": 4.08
+    },
+    {
+        "text": "to a clinician or in the paper these",
+        "start": 973.459,
+        "duration": 4.201
+    },
+    {
+        "text": "herbs and lights imaging visualization",
+        "start": 976.07,
+        "duration": 4.59
+    },
+    {
+        "text": "tools there's also a lot of image",
+        "start": 977.66,
+        "duration": 5.96
+    },
+    {
+        "text": "manipulation utilities I found for",
+        "start": 980.66,
+        "duration": 7.53
+    },
+    {
+        "text": "smoothing resampling masking oftentimes",
+        "start": 983.62,
+        "duration": 6.55
+    },
+    {
+        "text": "when you get in they when you're getting",
+        "start": 988.19,
+        "duration": 4.41
+    },
+    {
+        "text": "these different modalities there will be",
+        "start": 990.17,
+        "duration": 5.19
+    },
+    {
+        "text": "at different resolutions because it has",
+        "start": 992.6,
+        "duration": 5.0
+    },
+    {
+        "text": "different costs to sample at different",
+        "start": 995.36,
+        "duration": 5.25
+    },
+    {
+        "text": "under different protocols so you'll need",
+        "start": 997.6,
+        "duration": 6.19
+    },
+    {
+        "text": "is map it if if you have a segmentation",
+        "start": 1000.61,
+        "duration": 8.81
+    },
+    {
+        "text": "done in one resolution you'll need to",
+        "start": 1003.79,
+        "duration": 10.729
+    },
+    {
+        "text": "resample it onto your different modality",
+        "start": 1009.42,
+        "duration": 7.99
+    },
+    {
+        "text": "either perfusion or whatever it may be a",
+        "start": 1014.519,
+        "duration": 5.5
+    },
+    {
+        "text": "diffusion mask in order to make them all",
+        "start": 1017.41,
+        "duration": 6.119
+    },
+    {
+        "text": "aligned properly or smooth it or handle",
+        "start": 1020.019,
+        "duration": 8.341
+    },
+    {
+        "text": "some of these masking issues and it does",
+        "start": 1023.529,
+        "duration": 6.81
+    },
+    {
+        "text": "provide a lot of image manipulation",
+        "start": 1028.36,
+        "duration": 5.51
+    },
+    {
+        "text": "tools as well and again these are all",
+        "start": 1030.339,
+        "duration": 5.97
+    },
+    {
+        "text": "complemented by some nice jupiter",
+        "start": 1033.87,
+        "duration": 4.99
+    },
+    {
+        "text": "notebooks which can give you some good",
+        "start": 1036.309,
+        "duration": 5.101
+    },
+    {
+        "text": "examples on how to think about and",
+        "start": 1038.86,
+        "duration": 3.9
+    },
+    {
+        "text": "handle this data which i found very",
+        "start": 1041.41,
+        "duration": 5.94
+    },
+    {
+        "text": "useful as well and yeah i mentioned that",
+        "start": 1042.76,
+        "duration": 6.0
+    },
+    {
+        "text": "there's some jupiter notebooks there's a",
+        "start": 1047.35,
+        "duration": 3.99
+    },
+    {
+        "text": "lot of them this is just two of the",
+        "start": 1048.76,
+        "duration": 3.87
+    },
+    {
+        "text": "sections and they provide but there's",
+        "start": 1051.34,
+        "duration": 4.98
+    },
+    {
+        "text": "you know to this page where they provide",
+        "start": 1052.63,
+        "duration": 9.929
+    },
+    {
+        "text": "their examples they have probably almost",
+        "start": 1056.32,
+        "duration": 11.609
+    },
+    {
+        "text": "100 examples of or at least 50 examples",
+        "start": 1062.559,
+        "duration": 8.24
+    },
+    {
+        "text": "of jupiter notebooks with lots of",
+        "start": 1067.929,
+        "duration": 8.211
+    },
+    {
+        "text": "different tools for fMRI and MRI and",
+        "start": 1070.799,
+        "duration": 9.401
+    },
+    {
+        "text": "while it is focused on brain images in",
+        "start": 1076.14,
+        "duration": 5.65
+    },
+    {
+        "text": "particular some of the visualizations",
+        "start": 1080.2,
+        "duration": 4.44
+    },
+    {
+        "text": "and tools that's not you",
+        "start": 1081.79,
+        "duration": 5.34
+    },
+    {
+        "text": "if you're doing other projects like I",
+        "start": 1084.64,
+        "duration": 4.98
+    },
+    {
+        "text": "was looking at a prostate mor bill these",
+        "start": 1087.13,
+        "duration": 5.46
+    },
+    {
+        "text": "kind of nice visualization tools can be",
+        "start": 1089.62,
+        "duration": 5.4
+    },
+    {
+        "text": "utilized even if you're not doing the",
+        "start": 1092.59,
+        "duration": 4.47
+    },
+    {
+        "text": "alignment or mapping it specifically to",
+        "start": 1095.02,
+        "duration": 6.48
+    },
+    {
+        "text": "a brain structure LMR is or could it be",
+        "start": 1097.06,
+        "duration": 6.09
+    },
+    {
+        "text": "CT or whatever you're using still could",
+        "start": 1101.5,
+        "duration": 3.54
+    },
+    {
+        "text": "be handled using these nice blotting",
+        "start": 1103.15,
+        "duration": 5.91
+    },
+    {
+        "text": "tools so that's even if you're not using",
+        "start": 1105.04,
+        "duration": 5.58
+    },
+    {
+        "text": "specifically neural imaging I think this",
+        "start": 1109.06,
+        "duration": 6.75
+    },
+    {
+        "text": "is worth taking a look at and so maybe I",
+        "start": 1110.62,
+        "duration": 6.72
+    },
+    {
+        "text": "take another second to pause if anyone",
+        "start": 1115.81,
+        "duration": 5.52
+    },
+    {
+        "text": "has any questions on and I learn I'd",
+        "start": 1117.34,
+        "duration": 6.12
+    },
+    {
+        "text": "like to also talk a lot about the next",
+        "start": 1121.33,
+        "duration": 3.96
+    },
+    {
+        "text": "package I'd like to talk about is the I",
+        "start": 1123.46,
+        "duration": 4.52
+    },
+    {
+        "text": "pi which is diffusion imaging Python so",
+        "start": 1125.29,
+        "duration": 5.61
+    },
+    {
+        "text": "if anyone has any questions I about and",
+        "start": 1127.98,
+        "duration": 7.93
+    },
+    {
+        "text": "I learned at the ap2 here the beer and",
+        "start": 1130.9,
+        "duration": 6.63
+    },
+    {
+        "text": "if you heard anyone having any questions",
+        "start": 1135.91,
+        "duration": 5.87
+    },
+    {
+        "text": "in the chat you can bring them forward",
+        "start": 1137.53,
+        "duration": 8.07
+    },
+    {
+        "text": "there's no questions yet okay it's all",
+        "start": 1141.78,
+        "duration": 6.58
+    },
+    {
+        "text": "good so I'll go on further to the",
+        "start": 1145.6,
+        "duration": 5.13
+    },
+    {
+        "text": "diffusion imaging Python and at the end",
+        "start": 1148.36,
+        "duration": 3.81
+    },
+    {
+        "text": "maybe if anyone has any questions or not",
+        "start": 1150.73,
+        "duration": 6.23
+    },
+    {
+        "text": "we can talk about that as well but di-pi",
+        "start": 1152.17,
+        "duration": 9.12
+    },
+    {
+        "text": "so diffusion imaging is a different a",
+        "start": 1156.96,
+        "duration": 8.79
+    },
+    {
+        "text": "different kind of imaging on top of MRI",
+        "start": 1161.29,
+        "duration": 9.0
+    },
+    {
+        "text": "where a normal mi would you're trying to",
+        "start": 1165.75,
+        "duration": 6.67
+    },
+    {
+        "text": "see where the water is moving within or",
+        "start": 1170.29,
+        "duration": 6.71
+    },
+    {
+        "text": "the fluid is moving within a brain or",
+        "start": 1172.42,
+        "duration": 8.18
+    },
+    {
+        "text": "subject in general a person in general",
+        "start": 1177.0,
+        "duration": 8.62
+    },
+    {
+        "text": "by doing this kind of diffusion gradient",
+        "start": 1180.6,
+        "duration": 8.43
+    },
+    {
+        "text": "as well where if it's you'll knock",
+        "start": 1185.62,
+        "duration": 5.7
+    },
+    {
+        "text": "you'll knock the pulse you'll take a",
+        "start": 1189.03,
+        "duration": 7.92
+    },
+    {
+        "text": "post to set the hydrogen spins",
+        "start": 1191.32,
+        "duration": 9.03
+    },
+    {
+        "text": "processing and then in provide a",
+        "start": 1196.95,
+        "duration": 5.83
+    },
+    {
+        "text": "gradient and then slip the gradient and",
+        "start": 1200.35,
+        "duration": 5.37
+    },
+    {
+        "text": "so and then do an inverted gradient so",
+        "start": 1202.78,
+        "duration": 4.59
+    },
+    {
+        "text": "the idea is if you are staying",
+        "start": 1205.72,
+        "duration": 3.48
+    },
+    {
+        "text": "stationary these two gradients will",
+        "start": 1207.37,
+        "duration": 4.65
+    },
+    {
+        "text": "cancel out but if you've moved between",
+        "start": 1209.2,
+        "duration": 4.13
+    },
+    {
+        "text": "these two time periods",
+        "start": 1212.02,
+        "duration": 3.75
+    },
+    {
+        "text": "if the water is moving at particularly a",
+        "start": 1213.33,
+        "duration": 4.27
+    },
+    {
+        "text": "particular direction across these two",
+        "start": 1215.77,
+        "duration": 2.67
+    },
+    {
+        "text": "time periods",
+        "start": 1217.6,
+        "duration": 3.08
+    },
+    {
+        "text": "you'll see a difference in the signal",
+        "start": 1218.44,
+        "duration": 8.13
+    },
+    {
+        "text": "after or after these two paired",
+        "start": 1220.68,
+        "duration": 8.86
+    },
+    {
+        "text": "gradients and so you'll get out both",
+        "start": 1226.57,
+        "duration": 5.16
+    },
+    {
+        "text": "diffusion-weighted imaging which is the",
+        "start": 1229.54,
+        "duration": 6.3
+    },
+    {
+        "text": "kind of signal you get out and also an",
+        "start": 1231.73,
+        "duration": 5.82
+    },
+    {
+        "text": "apparent diffusion coefficient which is",
+        "start": 1235.84,
+        "duration": 7.95
+    },
+    {
+        "text": "a single number you get out a B value",
+        "start": 1237.55,
+        "duration": 11.09
+    },
+    {
+        "text": "that you'd get out to quantify what the",
+        "start": 1243.79,
+        "duration": 7.71
+    },
+    {
+        "text": "decision levels are as opposed to the",
+        "start": 1248.64,
+        "duration": 5.88
+    },
+    {
+        "text": "rest of em are in general is not",
+        "start": 1251.5,
+        "duration": 5.43
+    },
+    {
+        "text": "intensity based the intensity is all",
+        "start": 1254.52,
+        "duration": 3.97
+    },
+    {
+        "text": "relative so apparent diffusion",
+        "start": 1256.93,
+        "duration": 3.0
+    },
+    {
+        "text": "coefficient the intensity does have a",
+        "start": 1258.49,
+        "duration": 3.09
+    },
+    {
+        "text": "meaning whereas most the other imaging",
+        "start": 1259.93,
+        "duration": 3.78
+    },
+    {
+        "text": "including diffusion-weighted imaging the",
+        "start": 1261.58,
+        "duration": 4.77
+    },
+    {
+        "text": "signal intensity values doesn't have an",
+        "start": 1263.71,
+        "duration": 6.39
+    },
+    {
+        "text": "egg's a meaning that is consistent",
+        "start": 1266.35,
+        "duration": 9.27
+    },
+    {
+        "text": "across different acquisitions so hundred",
+        "start": 1270.1,
+        "duration": 6.9
+    },
+    {
+        "text": "and the diffusion weighted imaging on",
+        "start": 1275.62,
+        "duration": 4.62
+    },
+    {
+        "text": "one time doesn't mean the same thing as",
+        "start": 1277.0,
+        "duration": 6.81
+    },
+    {
+        "text": "a hundred on another image taken at a",
+        "start": 1280.24,
+        "duration": 7.35
+    },
+    {
+        "text": "different time but yeah so what you get",
+        "start": 1283.81,
+        "duration": 6.12
+    },
+    {
+        "text": "out from this movement of water is you",
+        "start": 1287.59,
+        "duration": 5.61
+    },
+    {
+        "text": "get a gradient field for the direction",
+        "start": 1289.93,
+        "duration": 10.41
+    },
+    {
+        "text": "and size of the movement of water and",
+        "start": 1293.2,
+        "duration": 10.83
+    },
+    {
+        "text": "this diffusion across different time",
+        "start": 1300.34,
+        "duration": 6.09
+    },
+    {
+        "text": "points or sorry across the sorry imaging",
+        "start": 1304.03,
+        "duration": 7.2
+    },
+    {
+        "text": "sequence and so what di-pi is kind of",
+        "start": 1306.43,
+        "duration": 7.97
+    },
+    {
+        "text": "focused on is these tracking these",
+        "start": 1311.23,
+        "duration": 5.4
+    },
+    {
+        "text": "connections across these white matter",
+        "start": 1314.4,
+        "duration": 5.26
+    },
+    {
+        "text": "bundles and seeing you know building out",
+        "start": 1316.63,
+        "duration": 4.71
+    },
+    {
+        "text": "this kind of connection map across them",
+        "start": 1319.66,
+        "duration": 4.89
+    },
+    {
+        "text": "building these streamlines I don't",
+        "start": 1321.34,
+        "duration": 4.8
+    },
+    {
+        "text": "necessarily use it for this as much but",
+        "start": 1324.55,
+        "duration": 3.18
+    },
+    {
+        "text": "these are some interesting approaches I",
+        "start": 1326.14,
+        "duration": 3.75
+    },
+    {
+        "text": "may look at in the future but I use it",
+        "start": 1327.73,
+        "duration": 3.39
+    },
+    {
+        "text": "more for some of the utilities that they",
+        "start": 1329.89,
+        "duration": 5.07
+    },
+    {
+        "text": "provide but it's it's an interesting way",
+        "start": 1331.12,
+        "duration": 6.96
+    },
+    {
+        "text": "of looking at these gradient fields in",
+        "start": 1334.96,
+        "duration": 11.13
+    },
+    {
+        "text": "this alternative way of looking at MRI",
+        "start": 1338.08,
+        "duration": 10.23
+    },
+    {
+        "text": "imaging and more information you can get",
+        "start": 1346.09,
+        "duration": 3.74
+    },
+    {
+        "text": "out about the structure and",
+        "start": 1348.31,
+        "duration": 3.57
+    },
+    {
+        "text": "functionality of",
+        "start": 1349.83,
+        "duration": 8.53
+    },
+    {
+        "text": "these different brain structures and so",
+        "start": 1351.88,
+        "duration": 10.169
+    },
+    {
+        "text": "what I use out of it the DI pack di di",
+        "start": 1358.36,
+        "duration": 6.87
+    },
+    {
+        "text": "pack di PI package is mostly the image",
+        "start": 1362.049,
+        "duration": 7.771
+    },
+    {
+        "text": "registration tools although they're",
+        "start": 1365.23,
+        "duration": 6.079
+    },
+    {
+        "text": "again there are a lot of diffusion",
+        "start": 1369.82,
+        "duration": 4.83
+    },
+    {
+        "text": "imaging tools that aren't accompanying",
+        "start": 1371.309,
+        "duration": 5.051
+    },
+    {
+        "text": "us but in order to do this diffusion",
+        "start": 1374.65,
+        "duration": 4.44
+    },
+    {
+        "text": "imaging kind of analysis you'd first",
+        "start": 1376.36,
+        "duration": 4.73
+    },
+    {
+        "text": "definitely need to do image registration",
+        "start": 1379.09,
+        "duration": 4.41
+    },
+    {
+        "text": "and so what what is image registration",
+        "start": 1381.09,
+        "duration": 5.5
+    },
+    {
+        "text": "if you have two modal modalities of",
+        "start": 1383.5,
+        "duration": 7.89
+    },
+    {
+        "text": "images that may be slow closely aligned",
+        "start": 1386.59,
+        "duration": 8.1
+    },
+    {
+        "text": "but not quite aligned you you want to",
+        "start": 1391.39,
+        "duration": 4.94
+    },
+    {
+        "text": "put them on top of each other so you can",
+        "start": 1394.69,
+        "duration": 4.619
+    },
+    {
+        "text": "understand this multimodal imaging and",
+        "start": 1396.33,
+        "duration": 7.03
+    },
+    {
+        "text": "really be for a particular area of the",
+        "start": 1399.309,
+        "duration": 7.761
+    },
+    {
+        "text": "body what's happening in different",
+        "start": 1403.36,
+        "duration": 5.85
+    },
+    {
+        "text": "non-invasive imaging metrics at the same",
+        "start": 1407.07,
+        "duration": 6.07
+    },
+    {
+        "text": "time right so you might be looking at",
+        "start": 1409.21,
+        "duration": 5.67
+    },
+    {
+        "text": "different contrast phases you might be",
+        "start": 1413.14,
+        "duration": 3.12
+    },
+    {
+        "text": "looking at you could be looking at",
+        "start": 1414.88,
+        "duration": 3.12
+    },
+    {
+        "text": "totally different time points or try to",
+        "start": 1416.26,
+        "duration": 9.99
+    },
+    {
+        "text": "account for trying to account for trying",
+        "start": 1418.0,
+        "duration": 11.52
+    },
+    {
+        "text": "to align it with a standard Atlas which",
+        "start": 1426.25,
+        "duration": 4.86
+    },
+    {
+        "text": "is comparing it to a 12-lead different",
+        "start": 1429.52,
+        "duration": 3.149
+    },
+    {
+        "text": "person or you may be looking at",
+        "start": 1431.11,
+        "duration": 3.72
+    },
+    {
+        "text": "different modalities from t1 t2 I",
+        "start": 1432.669,
+        "duration": 4.801
+    },
+    {
+        "text": "mentioned all these other imaging",
+        "start": 1434.83,
+        "duration": 4.65
+    },
+    {
+        "text": "modalities before but if you can align",
+        "start": 1437.47,
+        "duration": 4.26
+    },
+    {
+        "text": "them properly and MRR does some of it",
+        "start": 1439.48,
+        "duration": 5.72
+    },
+    {
+        "text": "but it's not perfect and again you know",
+        "start": 1441.73,
+        "duration": 5.61
+    },
+    {
+        "text": "there are some caveats with that but",
+        "start": 1445.2,
+        "duration": 5.38
+    },
+    {
+        "text": "image registration helps bring all this",
+        "start": 1447.34,
+        "duration": 6.54
+    },
+    {
+        "text": "together in a way that helps you can",
+        "start": 1450.58,
+        "duration": 5.91
+    },
+    {
+        "text": "analyze it properly again for t imaging",
+        "start": 1453.88,
+        "duration": 6.27
+    },
+    {
+        "text": "you also need to align it and so this",
+        "start": 1456.49,
+        "duration": 5.28
+    },
+    {
+        "text": "kind of static or this kind of affine",
+        "start": 1460.15,
+        "duration": 3.75
+    },
+    {
+        "text": "registration you can see on the bottom",
+        "start": 1461.77,
+        "duration": 3.899
+    },
+    {
+        "text": "is a these are matlab tools this is not",
+        "start": 1463.9,
+        "duration": 4.32
+    },
+    {
+        "text": "exclusively through di-pi but there are",
+        "start": 1465.669,
+        "duration": 4.171
+    },
+    {
+        "text": "other tools that can do this as well but",
+        "start": 1468.22,
+        "duration": 4.439
+    },
+    {
+        "text": "you're trying to put these into",
+        "start": 1469.84,
+        "duration": 4.469
+    },
+    {
+        "text": "alignment so you can either extend the",
+        "start": 1472.659,
+        "duration": 4.02
+    },
+    {
+        "text": "image or provide some consistency across",
+        "start": 1474.309,
+        "duration": 7.761
+    },
+    {
+        "text": "them and so",
+        "start": 1476.679,
+        "duration": 7.671
+    },
+    {
+        "text": "one of the ways that di-pi does this for",
+        "start": 1482.07,
+        "duration": 4.02
+    },
+    {
+        "text": "a fine registration we talked about a",
+        "start": 1484.35,
+        "duration": 3.6
+    },
+    {
+        "text": "little bit about f5 matrices before is",
+        "start": 1486.09,
+        "duration": 4.35
+    },
+    {
+        "text": "you're trying to find the affine matrix",
+        "start": 1487.95,
+        "duration": 9.51
+    },
+    {
+        "text": "that brings two images into alignment or",
+        "start": 1490.44,
+        "duration": 9.03
+    },
+    {
+        "text": "two volumes into alignment that weren't",
+        "start": 1497.46,
+        "duration": 4.65
+    },
+    {
+        "text": "in alignment before using that 4x4",
+        "start": 1499.47,
+        "duration": 4.11
+    },
+    {
+        "text": "matrix we talked about earlier that",
+        "start": 1502.11,
+        "duration": 4.88
+    },
+    {
+        "text": "allows you to do translation rotation",
+        "start": 1503.58,
+        "duration": 8.55
+    },
+    {
+        "text": "scaling and shearing and so the way Adi",
+        "start": 1506.99,
+        "duration": 7.5
+    },
+    {
+        "text": "pine does this the example they provided",
+        "start": 1512.13,
+        "duration": 4.59
+    },
+    {
+        "text": "and the way I'd recommend doing it is",
+        "start": 1514.49,
+        "duration": 4.36
+    },
+    {
+        "text": "they go about it in different levels",
+        "start": 1516.72,
+        "duration": 5.01
+    },
+    {
+        "text": "right so first you want to handle the",
+        "start": 1518.85,
+        "duration": 6.57
+    },
+    {
+        "text": "gross miss restorations because then any",
+        "start": 1521.73,
+        "duration": 5.07
+    },
+    {
+        "text": "options has an ending optimization",
+        "start": 1525.42,
+        "duration": 3.21
+    },
+    {
+        "text": "problem the closer you are to the",
+        "start": 1526.8,
+        "duration": 4.32
+    },
+    {
+        "text": "correct solution the better the",
+        "start": 1528.63,
+        "duration": 6.0
+    },
+    {
+        "text": "fine-tuning and the your answers will be",
+        "start": 1531.12,
+        "duration": 7.32
+    },
+    {
+        "text": "if you do they do this in steps so it",
+        "start": 1534.63,
+        "duration": 5.52
+    },
+    {
+        "text": "basically does the way I recommend doing",
+        "start": 1538.44,
+        "duration": 3.18
+    },
+    {
+        "text": "this is doing multiple sequential",
+        "start": 1540.15,
+        "duration": 2.46
+    },
+    {
+        "text": "alignment and they provide a nice",
+        "start": 1541.62,
+        "duration": 4.53
+    },
+    {
+        "text": "tutorial for how to handle this and the",
+        "start": 1542.61,
+        "duration": 5.25
+    },
+    {
+        "text": "example they provided was you first",
+        "start": 1546.15,
+        "duration": 5.04
+    },
+    {
+        "text": "align the center of mass so if you have",
+        "start": 1547.86,
+        "duration": 5.76
+    },
+    {
+        "text": "two branes you want them to be roughly",
+        "start": 1551.19,
+        "duration": 4.5
+    },
+    {
+        "text": "on top of each other first and then you",
+        "start": 1553.62,
+        "duration": 3.87
+    },
+    {
+        "text": "do a little bit translation to make sure",
+        "start": 1555.69,
+        "duration": 3.96
+    },
+    {
+        "text": "that you know you're trying to align",
+        "start": 1557.49,
+        "duration": 4.53
+    },
+    {
+        "text": "them a little better than that and then",
+        "start": 1559.65,
+        "duration": 4.5
+    },
+    {
+        "text": "doing a rigid registration which allows",
+        "start": 1562.02,
+        "duration": 6.66
+    },
+    {
+        "text": "you to well not sheer it or change some",
+        "start": 1564.15,
+        "duration": 5.85
+    },
+    {
+        "text": "of the structure of it allows you to do",
+        "start": 1568.68,
+        "duration": 4.83
+    },
+    {
+        "text": "rotations scaling and translation and",
+        "start": 1570.0,
+        "duration": 5.19
+    },
+    {
+        "text": "then finally allowing the now find",
+        "start": 1573.51,
+        "duration": 3.12
+    },
+    {
+        "text": "registration at the end once you're",
+        "start": 1575.19,
+        "duration": 5.46
+    },
+    {
+        "text": "pretty well in line in order to properly",
+        "start": 1576.63,
+        "duration": 7.73
+    },
+    {
+        "text": "map it and again each of these again has",
+        "start": 1580.65,
+        "duration": 7.98
+    },
+    {
+        "text": "you start at a low resolution a low",
+        "start": 1584.36,
+        "duration": 7.0
+    },
+    {
+        "text": "resolution registration fine-tune a",
+        "start": 1588.63,
+        "duration": 4.44
+    },
+    {
+        "text": "little more and then fine tune a little",
+        "start": 1591.36,
+        "duration": 3.36
+    },
+    {
+        "text": "more in this kind of pyramid structure",
+        "start": 1593.07,
+        "duration": 4.77
+    },
+    {
+        "text": "where you start off with the gross",
+        "start": 1594.72,
+        "duration": 5.97
+    },
+    {
+        "text": "structure and then fine-tune it across",
+        "start": 1597.84,
+        "duration": 7.08
+    },
+    {
+        "text": "these multiple steps and the metric that",
+        "start": 1600.69,
+        "duration": 9.81
+    },
+    {
+        "text": "you use to align these two images is",
+        "start": 1604.92,
+        "duration": 7.89
+    },
+    {
+        "text": "often mutual information you could",
+        "start": 1610.5,
+        "duration": 4.53
+    },
+    {
+        "text": "that's helpful if they're not the same",
+        "start": 1612.81,
+        "duration": 3.24
+    },
+    {
+        "text": "modality",
+        "start": 1615.03,
+        "duration": 5.34
+    },
+    {
+        "text": "and not the same one there's other",
+        "start": 1616.05,
+        "duration": 6.47
+    },
+    {
+        "text": "approaches you could use like you know",
+        "start": 1620.37,
+        "duration": 4.64
+    },
+    {
+        "text": "squared error root mean squared error",
+        "start": 1622.52,
+        "duration": 6.69
+    },
+    {
+        "text": "but mutual information is useful for",
+        "start": 1625.01,
+        "duration": 9.01
+    },
+    {
+        "text": "cross modality registrations because",
+        "start": 1629.21,
+        "duration": 6.67
+    },
+    {
+        "text": "you're not dependent on them having the",
+        "start": 1634.02,
+        "duration": 4.32
+    },
+    {
+        "text": "exact same value across the different",
+        "start": 1635.88,
+        "duration": 4.41
+    },
+    {
+        "text": "modalities and volumes that you're",
+        "start": 1638.34,
+        "duration": 4.7
+    },
+    {
+        "text": "looking at and so here's this initial",
+        "start": 1640.29,
+        "duration": 5.7
+    },
+    {
+        "text": "registration after center-of-mass",
+        "start": 1643.04,
+        "duration": 5.13
+    },
+    {
+        "text": "registration and kind of see the shift",
+        "start": 1645.99,
+        "duration": 4.29
+    },
+    {
+        "text": "I'm sorry let's decide this the initial",
+        "start": 1648.17,
+        "duration": 4.51
+    },
+    {
+        "text": "alignment and then here's the center of",
+        "start": 1650.28,
+        "duration": 3.69
+    },
+    {
+        "text": "mass where you just put them on top of",
+        "start": 1652.68,
+        "duration": 4.23
+    },
+    {
+        "text": "each other and then you have a",
+        "start": 1653.97,
+        "duration": 4.26
+    },
+    {
+        "text": "translation to do a little more",
+        "start": 1656.91,
+        "duration": 2.97
+    },
+    {
+        "text": "alignment because just because the",
+        "start": 1658.23,
+        "duration": 2.85
+    },
+    {
+        "text": "center of mass of the line doesn't mean",
+        "start": 1659.88,
+        "duration": 5.49
+    },
+    {
+        "text": "it's properly aligned and then finally",
+        "start": 1661.08,
+        "duration": 6.87
+    },
+    {
+        "text": "you can do rigid registration where you",
+        "start": 1665.37,
+        "duration": 4.5
+    },
+    {
+        "text": "kind of tilt it a little bit and there",
+        "start": 1667.95,
+        "duration": 3.3
+    },
+    {
+        "text": "in a little bit of a find registration",
+        "start": 1669.87,
+        "duration": 2.94
+    },
+    {
+        "text": "where you get this nice you can see with",
+        "start": 1671.25,
+        "duration": 3.45
+    },
+    {
+        "text": "the green green in the red are the two",
+        "start": 1672.81,
+        "duration": 3.21
+    },
+    {
+        "text": "different sorry I didn't explain before",
+        "start": 1674.7,
+        "duration": 2.79
+    },
+    {
+        "text": "but the de green in the red are the two",
+        "start": 1676.02,
+        "duration": 5.37
+    },
+    {
+        "text": "different volumes and you're trying to",
+        "start": 1677.49,
+        "duration": 5.43
+    },
+    {
+        "text": "properly align them on top of each other",
+        "start": 1681.39,
+        "duration": 4.17
+    },
+    {
+        "text": "and you can see they're probably best",
+        "start": 1682.92,
+        "duration": 4.17
+    },
+    {
+        "text": "aligned with this affine registration at",
+        "start": 1685.56,
+        "duration": 5.49
+    },
+    {
+        "text": "the end as they're more closely on top",
+        "start": 1687.09,
+        "duration": 7.86
+    },
+    {
+        "text": "of each other and so that's all well and",
+        "start": 1691.05,
+        "duration": 7.49
+    },
+    {
+        "text": "good but some problems don't necessarily",
+        "start": 1694.95,
+        "duration": 6.32
+    },
+    {
+        "text": "fit under the affine registration",
+        "start": 1698.54,
+        "duration": 8.5
+    },
+    {
+        "text": "framework so in the brain which is it's",
+        "start": 1701.27,
+        "duration": 9.01
+    },
+    {
+        "text": "nice because there's not much movement",
+        "start": 1707.04,
+        "duration": 6.21
+    },
+    {
+        "text": "you're encased in the skull and so",
+        "start": 1710.28,
+        "duration": 4.56
+    },
+    {
+        "text": "things don't move around or slosh around",
+        "start": 1713.25,
+        "duration": 4.62
+    },
+    {
+        "text": "too much but in other problems that's",
+        "start": 1714.84,
+        "duration": 5.13
+    },
+    {
+        "text": "not necessarily the case and you can't",
+        "start": 1717.87,
+        "duration": 4.71
+    },
+    {
+        "text": "encapsulate all of these shifts with",
+        "start": 1719.97,
+        "duration": 5.97
+    },
+    {
+        "text": "four by four matrix and that's where non",
+        "start": 1722.58,
+        "duration": 7.74
+    },
+    {
+        "text": "rigid registration comes in and so non",
+        "start": 1725.94,
+        "duration": 5.91
+    },
+    {
+        "text": "rigid registration kind of this is an",
+        "start": 1730.32,
+        "duration": 7.62
+    },
+    {
+        "text": "example from MATLAB where you're this",
+        "start": 1731.85,
+        "duration": 7.38
+    },
+    {
+        "text": "this example is trying to align two",
+        "start": 1737.94,
+        "duration": 2.61
+    },
+    {
+        "text": "hands on top of each other it's the same",
+        "start": 1739.23,
+        "duration": 4.05
+    },
+    {
+        "text": "rough structure but there's been some",
+        "start": 1740.55,
+        "duration": 7.11
+    },
+    {
+        "text": "movement akin to say you know art B or",
+        "start": 1743.28,
+        "duration": 6.51
+    },
+    {
+        "text": "move",
+        "start": 1747.66,
+        "duration": 4.24
+    },
+    {
+        "text": "breathing artifact you might see in",
+        "start": 1749.79,
+        "duration": 7.75
+    },
+    {
+        "text": "other in another modality but this",
+        "start": 1751.9,
+        "duration": 8.1
+    },
+    {
+        "text": "allows for non rigid range station",
+        "start": 1757.54,
+        "duration": 5.19
+    },
+    {
+        "text": "allows for individual shifts of",
+        "start": 1760.0,
+        "duration": 4.98
+    },
+    {
+        "text": "individual pixels and you're creating a",
+        "start": 1762.73,
+        "duration": 7.17
+    },
+    {
+        "text": "kind of a mapping of the entire volume",
+        "start": 1764.98,
+        "duration": 7.47
+    },
+    {
+        "text": "and seeing where different pixels are",
+        "start": 1769.9,
+        "duration": 5.0
+    },
+    {
+        "text": "moving across it instead of a",
+        "start": 1772.45,
+        "duration": 6.72
+    },
+    {
+        "text": "generalized four by four half eye",
+        "start": 1774.9,
+        "duration": 6.07
+    },
+    {
+        "text": "transformation where the entire where",
+        "start": 1779.17,
+        "duration": 5.54
+    },
+    {
+        "text": "the entire volume is moving all that one",
+        "start": 1780.97,
+        "duration": 3.74
+    },
+    {
+        "text": "and so the I PI provides some nice",
+        "start": 1785.76,
+        "duration": 7.78
+    },
+    {
+        "text": "toolkits for doing so and you can see",
+        "start": 1789.94,
+        "duration": 6.39
+    },
+    {
+        "text": "this kind of symmetric - few more edge",
+        "start": 1793.54,
+        "duration": 4.74
+    },
+    {
+        "text": "registration which is useful because",
+        "start": 1796.33,
+        "duration": 4.02
+    },
+    {
+        "text": "again it's invertible so you can have a",
+        "start": 1798.28,
+        "duration": 4.74
+    },
+    {
+        "text": "forward and reverse kind of transform",
+        "start": 1800.35,
+        "duration": 5.13
+    },
+    {
+        "text": "its last straightforward them in a Phi",
+        "start": 1803.02,
+        "duration": 4.64
+    },
+    {
+        "text": "matrix but it's this the idea is similar",
+        "start": 1805.48,
+        "duration": 5.67
+    },
+    {
+        "text": "we're kind of taking if you have on the",
+        "start": 1807.66,
+        "duration": 6.46
+    },
+    {
+        "text": "left you have on the top row you have",
+        "start": 1811.15,
+        "duration": 6.69
+    },
+    {
+        "text": "the original matrix and then you have on",
+        "start": 1814.12,
+        "duration": 6.42
+    },
+    {
+        "text": "the right you have a moving image so",
+        "start": 1817.84,
+        "duration": 5.969
+    },
+    {
+        "text": "you're going to shift it and you can see",
+        "start": 1820.54,
+        "duration": 4.889
+    },
+    {
+        "text": "where there's there's some shift but not",
+        "start": 1823.809,
+        "duration": 3.541
+    },
+    {
+        "text": "it's not proper that's not fully out",
+        "start": 1825.429,
+        "duration": 3.211
+    },
+    {
+        "text": "there you can do a further better",
+        "start": 1827.35,
+        "duration": 6.15
+    },
+    {
+        "text": "alignment and you can see that after",
+        "start": 1828.64,
+        "duration": 7.05
+    },
+    {
+        "text": "you've worked it they align better but",
+        "start": 1833.5,
+        "duration": 4.2
+    },
+    {
+        "text": "you can also using the inverted matrix",
+        "start": 1835.69,
+        "duration": 7.109
+    },
+    {
+        "text": "inverse transform warp the original",
+        "start": 1837.7,
+        "duration": 7.8
+    },
+    {
+        "text": "image back using to make and match with",
+        "start": 1842.799,
+        "duration": 4.861
+    },
+    {
+        "text": "the secondary image say you can make the",
+        "start": 1845.5,
+        "duration": 4.26
+    },
+    {
+        "text": "Redknapp look more like the green map",
+        "start": 1847.66,
+        "duration": 4.47
+    },
+    {
+        "text": "with the adverse instead of making the",
+        "start": 1849.76,
+        "duration": 3.539
+    },
+    {
+        "text": "green map look more like the red map",
+        "start": 1852.13,
+        "duration": 3.539
+    },
+    {
+        "text": "with the direct transform and this uses",
+        "start": 1853.299,
+        "duration": 4.081
+    },
+    {
+        "text": "a cross correlation matrix and use a",
+        "start": 1855.669,
+        "duration": 5.701
+    },
+    {
+        "text": "similar idea but I think this kind of",
+        "start": 1857.38,
+        "duration": 7.32
+    },
+    {
+        "text": "you can see the kind of shifting new",
+        "start": 1861.37,
+        "duration": 7.86
+    },
+    {
+        "text": "coordinate system this is a 2d image and",
+        "start": 1864.7,
+        "duration": 8.729
+    },
+    {
+        "text": "but it's course possible in 3d and shows",
+        "start": 1869.23,
+        "duration": 8.16
+    },
+    {
+        "text": "how this this just happened and it to be",
+        "start": 1873.429,
+        "duration": 6.301
+    },
+    {
+        "text": "honest I think it's helpful I would",
+        "start": 1877.39,
+        "duration": 5.44
+    },
+    {
+        "text": "always make sure your",
+        "start": 1879.73,
+        "duration": 7.6
+    },
+    {
+        "text": "for these kind of image mapping even if",
+        "start": 1882.83,
+        "duration": 6.03
+    },
+    {
+        "text": "you did want to do an on reject",
+        "start": 1887.33,
+        "duration": 5.16
+    },
+    {
+        "text": "registration if you wanted to do that I",
+        "start": 1888.86,
+        "duration": 5.22
+    },
+    {
+        "text": "would also make sure you align them",
+        "start": 1892.49,
+        "duration": 4.56
+    },
+    {
+        "text": "first in the kind of rigid sense make",
+        "start": 1894.08,
+        "duration": 5.46
+    },
+    {
+        "text": "sure because the further you have to",
+        "start": 1897.05,
+        "duration": 5.28
+    },
+    {
+        "text": "move it the more pressure you're putting",
+        "start": 1899.54,
+        "duration": 5.19
+    },
+    {
+        "text": "on the system so you can always do this",
+        "start": 1902.33,
+        "duration": 4.86
+    },
+    {
+        "text": "in sequential steps and do an affine",
+        "start": 1904.73,
+        "duration": 7.77
+    },
+    {
+        "text": "transformation first and so other tools",
+        "start": 1907.19,
+        "duration": 7.77
+    },
+    {
+        "text": "that are available in the beyond image",
+        "start": 1912.5,
+        "duration": 4.79
+    },
+    {
+        "text": "registration they're available in the DI",
+        "start": 1914.96,
+        "duration": 7.14
+    },
+    {
+        "text": "di-pi package our tissue classification",
+        "start": 1917.29,
+        "duration": 6.22
+    },
+    {
+        "text": "which is another problem that comes up",
+        "start": 1922.1,
+        "duration": 7.32
+    },
+    {
+        "text": "off and the agora mijung kind of setting",
+        "start": 1923.51,
+        "duration": 8.61
+    },
+    {
+        "text": "when you want to know what if you have",
+        "start": 1929.42,
+        "duration": 4.47
+    },
+    {
+        "text": "this is an example of you have a TI",
+        "start": 1932.12,
+        "duration": 3.99
+    },
+    {
+        "text": "t1-weighted image and you want to know",
+        "start": 1933.89,
+        "duration": 3.78
+    },
+    {
+        "text": "what the different parts of the brain",
+        "start": 1936.11,
+        "duration": 4.68
+    },
+    {
+        "text": "are from the classical kind of parts are",
+        "start": 1937.67,
+        "duration": 5.64
+    },
+    {
+        "text": "grave ladder white matter and cerebral",
+        "start": 1940.79,
+        "duration": 5.16
+    },
+    {
+        "text": "spinal fluid CSF and you can kind of see",
+        "start": 1943.31,
+        "duration": 4.05
+    },
+    {
+        "text": "this algorithm takes it t1-weighted",
+        "start": 1945.95,
+        "duration": 3.42
+    },
+    {
+        "text": "image and kind of splits them into the",
+        "start": 1947.36,
+        "duration": 5.16
+    },
+    {
+        "text": "different components and this is not",
+        "start": 1949.37,
+        "duration": 5.73
+    },
+    {
+        "text": "exclusive to di-pi this one you always",
+        "start": 1952.52,
+        "duration": 5.37
+    },
+    {
+        "text": "want to be careful because depending on",
+        "start": 1955.1,
+        "duration": 6.95
+    },
+    {
+        "text": "what image modalities your input set has",
+        "start": 1957.89,
+        "duration": 6.5
+    },
+    {
+        "text": "you can get different things with it",
+        "start": 1962.05,
+        "duration": 4.93
+    },
+    {
+        "text": "some somehow algorithms require more",
+        "start": 1964.39,
+        "duration": 4.71
+    },
+    {
+        "text": "information some algorithms and can get",
+        "start": 1966.98,
+        "duration": 5.49
+    },
+    {
+        "text": "perhaps better results unclear but some",
+        "start": 1969.1,
+        "duration": 4.99
+    },
+    {
+        "text": "some algorithms require less information",
+        "start": 1972.47,
+        "duration": 4.32
+    },
+    {
+        "text": "and so depending on your problem you",
+        "start": 1974.09,
+        "duration": 6.06
+    },
+    {
+        "text": "want to tailor your solution to the",
+        "start": 1976.79,
+        "duration": 8.28
+    },
+    {
+        "text": "proper level of you want to only gonna",
+        "start": 1980.15,
+        "duration": 7.08
+    },
+    {
+        "text": "tell you your tissue classification",
+        "start": 1985.07,
+        "duration": 4.44
+    },
+    {
+        "text": "algorithm to what you have but there's",
+        "start": 1987.23,
+        "duration": 4.23
+    },
+    {
+        "text": "also other things like algorithms they",
+        "start": 1989.51,
+        "duration": 4.16
+    },
+    {
+        "text": "include like skull stripping to help",
+        "start": 1991.46,
+        "duration": 5.07
+    },
+    {
+        "text": "clear out extraneous information about",
+        "start": 1993.67,
+        "duration": 6.91
+    },
+    {
+        "text": "the skull and the other anatomy and also",
+        "start": 1996.53,
+        "duration": 8.93
+    },
+    {
+        "text": "do some in an organization and this is",
+        "start": 2000.58,
+        "duration": 7.58
+    },
+    {
+        "text": "these are all part of the di-pi package",
+        "start": 2005.46,
+        "duration": 6.24
+    },
+    {
+        "text": "and so the things i've learned about",
+        "start": 2008.16,
+        "duration": 8.5
+    },
+    {
+        "text": "from these packages and the NI pi",
+        "start": 2011.7,
+        "duration": 6.94
+    },
+    {
+        "text": "ecosystem in my work in your imaging in",
+        "start": 2016.66,
+        "duration": 5.28
+    },
+    {
+        "text": "general is that someone probably has",
+        "start": 2018.64,
+        "duration": 5.76
+    },
+    {
+        "text": "built the tool out there it's not really",
+        "start": 2021.94,
+        "duration": 5.27
+    },
+    {
+        "text": "worth reinventing the wheel these are",
+        "start": 2024.4,
+        "duration": 5.91
+    },
+    {
+        "text": "pretty solved problems if you're looking",
+        "start": 2027.21,
+        "duration": 5.68
+    },
+    {
+        "text": "for you don't you shouldn't be the one",
+        "start": 2030.31,
+        "duration": 6.66
+    },
+    {
+        "text": "trying to you know unless you have a",
+        "start": 2032.89,
+        "duration": 6.57
+    },
+    {
+        "text": "specific reason to if you only need",
+        "start": 2036.97,
+        "duration": 5.49
+    },
+    {
+        "text": "something to strip the skull or if you",
+        "start": 2039.46,
+        "duration": 4.77
+    },
+    {
+        "text": "only need something to segment a tumor",
+        "start": 2042.46,
+        "duration": 3.63
+    },
+    {
+        "text": "or to do image registration or whatever",
+        "start": 2044.23,
+        "duration": 4.38
+    },
+    {
+        "text": "it may be there's not a real reason for",
+        "start": 2046.09,
+        "duration": 6.78
+    },
+    {
+        "text": "you to try and roll your own tool for a",
+        "start": 2048.61,
+        "duration": 7.29
+    },
+    {
+        "text": "lot of these problems I try takes longer",
+        "start": 2052.87,
+        "duration": 6.54
+    },
+    {
+        "text": "and it's probably less well supported so",
+        "start": 2055.9,
+        "duration": 5.52
+    },
+    {
+        "text": "just take a look out there to see what",
+        "start": 2059.41,
+        "duration": 4.83
+    },
+    {
+        "text": "kind of packages exist for image",
+        "start": 2061.42,
+        "duration": 8.04
+    },
+    {
+        "text": "handling and pre processing and",
+        "start": 2064.24,
+        "duration": 8.61
+    },
+    {
+        "text": "visualization it's there are some nicely",
+        "start": 2069.46,
+        "duration": 8.25
+    },
+    {
+        "text": "documented packages out there as well",
+        "start": 2072.85,
+        "duration": 6.87
+    },
+    {
+        "text": "and I will say that there's a caveat",
+        "start": 2077.71,
+        "duration": 4.68
+    },
+    {
+        "text": "that some of their because everyone does",
+        "start": 2079.72,
+        "duration": 4.29
+    },
+    {
+        "text": "things a different way and everyone has",
+        "start": 2082.39,
+        "duration": 4.11
+    },
+    {
+        "text": "their own particular problem well you",
+        "start": 2084.01,
+        "duration": 5.01
+    },
+    {
+        "text": "may have a stay my image data said may",
+        "start": 2086.5,
+        "duration": 7.53
+    },
+    {
+        "text": "have you know standard mr sequences like",
+        "start": 2089.02,
+        "duration": 6.6
+    },
+    {
+        "text": "t1 t2",
+        "start": 2094.03,
+        "duration": 5.25
+    },
+    {
+        "text": "you know layer and contrast other people",
+        "start": 2095.62,
+        "duration": 5.73
+    },
+    {
+        "text": "may be looking only at t1 and t2 and",
+        "start": 2099.28,
+        "duration": 5.01
+    },
+    {
+        "text": "there or they may expect you know",
+        "start": 2101.35,
+        "duration": 4.83
+    },
+    {
+        "text": "diffusion-weighted imaging which i don't",
+        "start": 2104.29,
+        "duration": 6.63
+    },
+    {
+        "text": "have or a proton density weighted method",
+        "start": 2106.18,
+        "duration": 7.2
+    },
+    {
+        "text": "i don't have you have to be careful to",
+        "start": 2110.92,
+        "duration": 5.25
+    },
+    {
+        "text": "make sure that your inputs match what",
+        "start": 2113.38,
+        "duration": 5.28
+    },
+    {
+        "text": "their algorithm expects but it's worth",
+        "start": 2116.17,
+        "duration": 4.02
+    },
+    {
+        "text": "at least looking around and seeing if",
+        "start": 2118.66,
+        "duration": 3.96
+    },
+    {
+        "text": "you can find something that does a good",
+        "start": 2120.19,
+        "duration": 8.22
+    },
+    {
+        "text": "enough job to get you the intermediate",
+        "start": 2122.62,
+        "duration": 10.08
+    },
+    {
+        "text": "steps that you need and even though i've",
+        "start": 2128.41,
+        "duration": 6.81
+    },
+    {
+        "text": "mostly work in the for at least for my",
+        "start": 2132.7,
+        "duration": 4.23
+    },
+    {
+        "text": "thesis I mostly work in the brain mr",
+        "start": 2135.22,
+        "duration": 4.56
+    },
+    {
+        "text": "space I've also used these kind of tools",
+        "start": 2136.93,
+        "duration": 8.85
+    },
+    {
+        "text": "in in prostate mr or in liver CT for",
+        "start": 2139.78,
+        "duration": 8.64
+    },
+    {
+        "text": "example a lot of these radiology",
+        "start": 2145.78,
+        "duration": 4.95
+    },
+    {
+        "text": "radiological tools",
+        "start": 2148.42,
+        "duration": 5.37
+    },
+    {
+        "text": "and I think for those of us who are",
+        "start": 2150.73,
+        "duration": 5.34
+    },
+    {
+        "text": "working in imaging in general like their",
+        "start": 2153.79,
+        "duration": 5.04
+    },
+    {
+        "text": "image registration is a good thing to",
+        "start": 2156.07,
+        "duration": 5.55
+    },
+    {
+        "text": "think about for anyone who's working in",
+        "start": 2158.83,
+        "duration": 6.74
+    },
+    {
+        "text": "multimodal imaging data and there's a",
+        "start": 2161.62,
+        "duration": 7.89
+    },
+    {
+        "text": "lot of good tools out there and one of",
+        "start": 2165.57,
+        "duration": 5.23
+    },
+    {
+        "text": "the things I've learned as well is that",
+        "start": 2169.51,
+        "duration": 3.18
+    },
+    {
+        "text": "you got to look at the results you can't",
+        "start": 2170.8,
+        "duration": 4.26
+    },
+    {
+        "text": "just trust that everything works out",
+        "start": 2172.69,
+        "duration": 5.88
+    },
+    {
+        "text": "perfect and pretty and nice that's part",
+        "start": 2175.06,
+        "duration": 4.92
+    },
+    {
+        "text": "of why there's these image registration",
+        "start": 2178.57,
+        "duration": 4.98
+    },
+    {
+        "text": "tools to correct some of these issues",
+        "start": 2179.98,
+        "duration": 5.55
+    },
+    {
+        "text": "that are relatively fixable what you",
+        "start": 2183.55,
+        "duration": 3.96
+    },
+    {
+        "text": "have to be able to see first that things",
+        "start": 2185.53,
+        "duration": 4.41
+    },
+    {
+        "text": "don't line up and you just take a quick",
+        "start": 2187.51,
+        "duration": 3.78
+    },
+    {
+        "text": "look at your data and make sure things",
+        "start": 2189.94,
+        "duration": 3.72
+    },
+    {
+        "text": "line up correctly you can because then",
+        "start": 2191.29,
+        "duration": 5.91
+    },
+    {
+        "text": "you can save yourself a lot of hassle on",
+        "start": 2193.66,
+        "duration": 9.87
+    },
+    {
+        "text": "the line too with with problems that are",
+        "start": 2197.2,
+        "duration": 7.83
+    },
+    {
+        "text": "a lot harder to fix once you're looking",
+        "start": 2203.53,
+        "duration": 3.72
+    },
+    {
+        "text": "only at numbers and matrices instead of",
+        "start": 2205.03,
+        "duration": 6.87
+    },
+    {
+        "text": "the original images for example you know",
+        "start": 2207.25,
+        "duration": 7.32
+    },
+    {
+        "text": "if you're trying to align brains to",
+        "start": 2211.9,
+        "duration": 8.67
+    },
+    {
+        "text": "atlases in fMRI space there's there's",
+        "start": 2214.57,
+        "duration": 7.74
+    },
+    {
+        "text": "you're mostly looking at people who have",
+        "start": 2220.57,
+        "duration": 3.81
+    },
+    {
+        "text": "normal brains and brains are symmetric",
+        "start": 2222.31,
+        "duration": 4.62
+    },
+    {
+        "text": "and affine transformations work pretty",
+        "start": 2224.38,
+        "duration": 2.79
+    },
+    {
+        "text": "well",
+        "start": 2226.93,
+        "duration": 4.86
+    },
+    {
+        "text": "and they work okay in the brain cancer",
+        "start": 2227.17,
+        "duration": 8.01
+    },
+    {
+        "text": "space but because there's a big tumor on",
+        "start": 2231.79,
+        "duration": 4.71
+    },
+    {
+        "text": "one side of the brain the brain is no",
+        "start": 2235.18,
+        "duration": 3.6
+    },
+    {
+        "text": "longer symmetrical so sometimes these",
+        "start": 2236.5,
+        "duration": 4.41
+    },
+    {
+        "text": "algorithms of trying to align a normal",
+        "start": 2238.78,
+        "duration": 4.41
+    },
+    {
+        "text": "brain to an abnormal brain don't work",
+        "start": 2240.91,
+        "duration": 4.56
+    },
+    {
+        "text": "out perfectly so taking a look at the",
+        "start": 2243.19,
+        "duration": 4.74
+    },
+    {
+        "text": "images using image visualization tools",
+        "start": 2245.47,
+        "duration": 4.92
+    },
+    {
+        "text": "for men I learned as proved helpful to",
+        "start": 2247.93,
+        "duration": 6.39
+    },
+    {
+        "text": "me so I just wanted to thank you all for",
+        "start": 2250.39,
+        "duration": 6.06
+    },
+    {
+        "text": "coming and listening tonight talk about",
+        "start": 2254.32,
+        "duration": 4.95
+    },
+    {
+        "text": "my tools and tech presentation for about",
+        "start": 2256.45,
+        "duration": 5.36
+    },
+    {
+        "text": "your imaging tool kits and part of these",
+        "start": 2259.27,
+        "duration": 5.34
+    },
+    {
+        "text": "ni PI ecosystem there's a number of",
+        "start": 2261.81,
+        "duration": 4.45
+    },
+    {
+        "text": "other packages if you're interested as",
+        "start": 2264.61,
+        "duration": 6.51
+    },
+    {
+        "text": "well but like to thank you again and ask",
+        "start": 2266.26,
+        "duration": 7.82
+    },
+    {
+        "text": "if anyone has any questions",
+        "start": 2271.12,
+        "duration": 2.96
+    },
+    {
+        "text": "you",
+        "start": 2278.299,
+        "duration": 2.06
+    },
+    {
+        "text": "no questions thank you very much for",
+        "start": 2287.709,
+        "duration": 6.3
+    },
+    {
+        "text": "your talk okay thank you very much for",
+        "start": 2290.979,
+        "duration": 3.36
+    },
+    {
+        "text": "listening",
+        "start": 2294.009,
+        "duration": 3.2
+    },
+    {
+        "text": "I appreciate it everyone",
+        "start": 2294.339,
+        "duration": 2.87
+    }
+]

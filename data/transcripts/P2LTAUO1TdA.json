@@ -1,0 +1,872 @@
+[
+    {
+        "text": "If I have a vector sitting here in 2D space, we ",
+        "start": 12.76,
+        "duration": 2.409
+    },
+    {
+        "text": "have a standard way to describe it with coordinates.",
+        "start": 15.169,
+        "duration": 2.611
+    },
+    {
+        "text": "In this case, the vector has coordinates 3, 2, ",
+        "start": 18.56,
+        "duration": 2.623
+    },
+    {
+        "text": "which means going from its tail to its tip involves moving three units to ",
+        "start": 21.183,
+        "duration": 4.13
+    },
+    {
+        "text": "the right and two units up.",
+        "start": 25.313,
+        "duration": 1.507
+    },
+    {
+        "text": "Now, the more linear algebra-oriented way to describe coordinates is to think ",
+        "start": 27.51,
+        "duration": 4.243
+    },
+    {
+        "text": "of each of these numbers as a scalar, a thing that stretches or squishes vectors.",
+        "start": 31.753,
+        "duration": 4.407
+    },
+    {
+        "text": "You think of that first coordinate as scaling i-hat, ",
+        "start": 37.02,
+        "duration": 3.365
+    },
+    {
+        "text": "the vector with length 1 pointing to the right, ",
+        "start": 40.385,
+        "duration": 3.047
+    },
+    {
+        "text": "while the second coordinate scales j-hat, the vector with length 1 pointing straight up.",
+        "start": 43.432,
+        "duration": 5.588
+    },
+    {
+        "text": "The tip-to-tail sum of those two scaled vectors ",
+        "start": 49.66,
+        "duration": 2.594
+    },
+    {
+        "text": "is what the coordinates are meant to describe.",
+        "start": 52.254,
+        "duration": 2.486
+    },
+    {
+        "text": "You can think of these two special vectors as encapsulating ",
+        "start": 55.7,
+        "duration": 3.189
+    },
+    {
+        "text": "all of the implicit assumptions of our coordinate system.",
+        "start": 58.889,
+        "duration": 3.031
+    },
+    {
+        "text": "The fact that the first number indicates rightward motion, ",
+        "start": 62.86,
+        "duration": 3.039
+    },
+    {
+        "text": "that the second one indicates upward motion, exactly how far a unit of distance is, ",
+        "start": 65.899,
+        "duration": 4.327
+    },
+    {
+        "text": "all of that is tied up in the choice of i-hat and j-hat as the ",
+        "start": 70.226,
+        "duration": 3.245
+    },
+    {
+        "text": "vectors which are scalar coordinates are meant to actually scale.",
+        "start": 73.471,
+        "duration": 3.349
+    },
+    {
+        "text": "Any way to translate between vectors and sets of numbers is called a coordinate system, ",
+        "start": 77.92,
+        "duration": 5.108
+    },
+    {
+        "text": "and the two special vectors i-hat and j-hat are called the basis ",
+        "start": 83.028,
+        "duration": 3.773
+    },
+    {
+        "text": "vectors of our standard coordinate system.",
+        "start": 86.801,
+        "duration": 2.439
+    },
+    {
+        "text": "What I'd like to talk about here is the idea of using a different set of basis vectors.",
+        "start": 90.24,
+        "duration": 4.4
+    },
+    {
+        "text": "For example, let's say you have a friend, Jennifer, ",
+        "start": 95.92,
+        "duration": 3.248
+    },
+    {
+        "text": "who uses a different set of basis vectors, which I'll call b1 and b2.",
+        "start": 99.168,
+        "duration": 4.312
+    },
+    {
+        "text": "Her first basis vector, b1, points up and to the right a little bit, ",
+        "start": 104.08,
+        "duration": 4.248
+    },
+    {
+        "text": "and her second vector, b2, points left and up.",
+        "start": 108.328,
+        "duration": 2.832
+    },
+    {
+        "text": "Now take another look at that vector that I showed earlier, ",
+        "start": 111.76,
+        "duration": 3.12
+    },
+    {
+        "text": "the one that you and I would describe using the coordinates 3,2, ",
+        "start": 114.88,
+        "duration": 3.38
+    },
+    {
+        "text": "using our basis vectors i-hat and j-hat.",
+        "start": 118.26,
+        "duration": 2.08
+    },
+    {
+        "text": "Jennifer would actually describe this vector with the coordinates 5 thirds and 1 third.",
+        "start": 121.48,
+        "duration": 4.42
+    },
+    {
+        "text": "What this means is that the particular way to get to that vector using her two basis ",
+        "start": 126.82,
+        "duration": 6.56
+    },
+    {
+        "text": "vectors is to scale b1 by 5 thirds, scale b2 by 1 third, then add them both together.",
+        "start": 133.38,
+        "duration": 6.56
+    },
+    {
+        "text": "In a little bit, I'll show you how you could have figured out those two numbers, ",
+        "start": 140.56,
+        "duration": 3.43
+    },
+    {
+        "text": "5 thirds and 1 third.",
+        "start": 143.99,
+        "duration": 0.89
+    },
+    {
+        "text": "In general, whenever Jennifer uses coordinates to describe a vector, ",
+        "start": 145.98,
+        "duration": 3.743
+    },
+    {
+        "text": "she thinks of her first coordinate as scaling b1, ",
+        "start": 149.723,
+        "duration": 2.713
+    },
+    {
+        "text": "the second coordinate as scaling b2, and she adds the results.",
+        "start": 152.436,
+        "duration": 3.364
+    },
+    {
+        "text": "What she gets will typically be completely different from the ",
+        "start": 157.82,
+        "duration": 2.489
+    },
+    {
+        "text": "vector that you and I would think of as having those coordinates.",
+        "start": 160.309,
+        "duration": 2.611
+    },
+    {
+        "text": "To be a little more precise about the setup here, her first basis vector, ",
+        "start": 164.96,
+        "duration": 4.426
+    },
+    {
+        "text": "b1, is something that we would describe with the coordinates 2,1, ",
+        "start": 169.386,
+        "duration": 3.949
+    },
+    {
+        "text": "and her second basis vector, b2, is something that we would describe as negative 1,1.",
+        "start": 173.335,
+        "duration": 5.085
+    },
+    {
+        "text": "But it's important to realize from her perspective in her system, ",
+        "start": 179.08,
+        "duration": 4.044
+    },
+    {
+        "text": "those vectors have coordinates 1,0 and 0,1.",
+        "start": 183.124,
+        "duration": 2.636
+    },
+    {
+        "text": "They are what define the meaning of the coordinates 1,0 and 0,1 in her world.",
+        "start": 186.06,
+        "duration": 5.54
+    },
+    {
+        "text": "So in effect, we're speaking different languages.",
+        "start": 192.76,
+        "duration": 2.58
+    },
+    {
+        "text": "We're all looking at the same vectors in space, ",
+        "start": 195.34,
+        "duration": 2.75
+    },
+    {
+        "text": "but Jennifer uses different words and numbers to describe them.",
+        "start": 198.09,
+        "duration": 3.61
+    },
+    {
+        "text": "Let me say a quick word about how I'm representing things here.",
+        "start": 203.6,
+        "duration": 2.46
+    },
+    {
+        "text": "When I animate 2D space, I typically use this square grid.",
+        "start": 206.54,
+        "duration": 3.24
+    },
+    {
+        "text": "But that grid is just a construct, a way to visualize our coordinate system, ",
+        "start": 210.3,
+        "duration": 3.98
+    },
+    {
+        "text": "and so it depends on our choice of basis.",
+        "start": 214.28,
+        "duration": 2.12
+    },
+    {
+        "text": "Space itself has no intrinsic grid.",
+        "start": 218.06,
+        "duration": 2.44
+    },
+    {
+        "text": "Jennifer might draw her own grid, which would be an equally made up construct meant ",
+        "start": 221.56,
+        "duration": 4.021
+    },
+    {
+        "text": "as nothing more than a visual tool to help follow the meaning of her coordinates.",
+        "start": 225.581,
+        "duration": 3.879
+    },
+    {
+        "text": "Her origin though would actually line up with ours, ",
+        "start": 233.3,
+        "duration": 2.676
+    },
+    {
+        "text": "since everybody agrees on what the coordinates 0,0 should mean.",
+        "start": 235.976,
+        "duration": 3.244
+    },
+    {
+        "text": "It's the thing that you get when you scale any vector by 0.",
+        "start": 239.8,
+        "duration": 2.94
+    },
+    {
+        "text": "But the direction of her axes and the spacing of her grid lines will be different, ",
+        "start": 243.62,
+        "duration": 4.109
+    },
+    {
+        "text": "depending on her choice of basis vectors.",
+        "start": 247.729,
+        "duration": 2.031
+    },
+    {
+        "text": "So after all this is set up, a pretty natural question ",
+        "start": 251.44,
+        "duration": 2.876
+    },
+    {
+        "text": "to ask is how we translate between coordinate systems.",
+        "start": 254.316,
+        "duration": 2.824
+    },
+    {
+        "text": "If for example, Jennifer describes a vector with coordinates negative 1,2, ",
+        "start": 258.399,
+        "duration": 4.715
+    },
+    {
+        "text": "what would that be in our coordinate system?",
+        "start": 263.114,
+        "duration": 2.766
+    },
+    {
+        "text": "How do you translate from her language to ours?",
+        "start": 266.32,
+        "duration": 2.2
+    },
+    {
+        "text": "Well, what her coordinates are saying is that ",
+        "start": 269.38,
+        "duration": 3.262
+    },
+    {
+        "text": "this vector is negative 1 times b1 plus 2 times b2.",
+        "start": 272.642,
+        "duration": 3.618
+    },
+    {
+        "text": "And from our perspective, b1 has coordinates 2,1, and b2 has coordinates negative 1,1.",
+        "start": 279.48,
+        "duration": 7.22
+    },
+    {
+        "text": "So we can actually compute negative 1 times b1 plus 2 ",
+        "start": 289.3,
+        "duration": 3.804
+    },
+    {
+        "text": "times b2 as they're represented in our coordinate system.",
+        "start": 293.104,
+        "duration": 4.016
+    },
+    {
+        "text": "And working this out, you get a vector with coordinates negative 4,1.",
+        "start": 297.76,
+        "duration": 3.58
+    },
+    {
+        "text": "So that's how we would describe the vector that she thinks of as negative 1,2.",
+        "start": 303.44,
+        "duration": 4.1
+    },
+    {
+        "text": "This process here of scaling each of her basis vectors by the corresponding ",
+        "start": 308.36,
+        "duration": 4.37
+    },
+    {
+        "text": "coordinates of some vector, then adding them together, might feel somewhat familiar.",
+        "start": 312.73,
+        "duration": 4.83
+    },
+    {
+        "text": "It's matrix-vector multiplication, with a matrix whose ",
+        "start": 318.44,
+        "duration": 3.222
+    },
+    {
+        "text": "columns represent Jennifer's basis vectors in our language.",
+        "start": 321.662,
+        "duration": 3.458
+    },
+    {
+        "text": "In fact, once you understand matrix-vector multiplication as applying a certain linear ",
+        "start": 325.72,
+        "duration": 4.424
+    },
+    {
+        "text": "transformation, say by watching what I view to be the most important video in this ",
+        "start": 330.144,
+        "duration": 4.222
+    },
+    {
+        "text": "series, chapter 3, there's a pretty intuitive way to think about what's going on here.",
+        "start": 334.366,
+        "duration": 4.374
+    },
+    {
+        "text": "A matrix whose columns represent Jennifer's basis vectors can be ",
+        "start": 339.68,
+        "duration": 4.173
+    },
+    {
+        "text": "thought of as a transformation that moves our basis vectors, ",
+        "start": 343.853,
+        "duration": 3.917
+    },
+    {
+        "text": "i-hat and j-hat, the things we think of when we say 1,0 and 0,1, ",
+        "start": 347.77,
+        "duration": 4.173
+    },
+    {
+        "text": "to Jennifer's basis vectors, the things she thinks of when she says 1,0 and 0,1.",
+        "start": 351.943,
+        "duration": 5.137
+    },
+    {
+        "text": "To show how this works, let's walk through what it would mean to take the vector ",
+        "start": 358.6,
+        "duration": 4.137
+    },
+    {
+        "text": "that we think of as having coordinates negative 1,2 and applying that transformation.",
+        "start": 362.737,
+        "duration": 4.343
+    },
+    {
+        "text": "Before the linear transformation, we're thinking of this vector as a certain ",
+        "start": 368.2,
+        "duration": 4.09
+    },
+    {
+        "text": "linear combination of our basis vectors, negative 1 times i-hat plus 2 times j-hat.",
+        "start": 372.29,
+        "duration": 4.41
+    },
+    {
+        "text": "And the key feature of a linear transformation is that the resulting vector ",
+        "start": 377.3,
+        "duration": 4.725
+    },
+    {
+        "text": "will be that same linear combination but of the new basis vectors, ",
+        "start": 382.025,
+        "duration": 4.167
+    },
+    {
+        "text": "negative 1 times the place where i-hat lands plus 2 times the place where j-hat lands.",
+        "start": 386.192,
+        "duration": 5.348
+    },
+    {
+        "text": "So what this matrix does is transform our misconception of what ",
+        "start": 393.46,
+        "duration": 4.226
+    },
+    {
+        "text": "Jennifer means into the actual vector that she's referring to.",
+        "start": 397.686,
+        "duration": 4.094
+    },
+    {
+        "text": "I remember that when I was first learning this, it always felt kind of backwards to me.",
+        "start": 404.28,
+        "duration": 3.52
+    },
+    {
+        "text": "Geometrically, this matrix transforms our grid into Jennifer's grid, ",
+        "start": 407.8,
+        "duration": 4.319
+    },
+    {
+        "text": "but numerically, it's translating a vector described in her language to our language.",
+        "start": 412.119,
+        "duration": 5.321
+    },
+    {
+        "text": "What made it finally click for me was thinking about how it takes our ",
+        "start": 420.88,
+        "duration": 3.548
+    },
+    {
+        "text": "misconception of what Jennifer means, the vector we get using the same ",
+        "start": 424.428,
+        "duration": 3.599
+    },
+    {
+        "text": "coordinates but in our system, then it transforms it into the vector that she ",
+        "start": 428.027,
+        "duration": 3.954
+    },
+    {
+        "text": "really meant.",
+        "start": 431.981,
+        "duration": 0.659
+    },
+    {
+        "text": "What about going the other way around?",
+        "start": 434.94,
+        "duration": 1.88
+    },
+    {
+        "text": "In the example I used earlier this video, when I had the vector with coordinates 3, ",
+        "start": 438.12,
+        "duration": 4.471
+    },
+    {
+        "text": "2 in our system, how did I compute that it would have coordinates ",
+        "start": 442.591,
+        "duration": 3.513
+    },
+    {
+        "text": "5 thirds and 1 third in Jennifer's system?",
+        "start": 446.104,
+        "duration": 2.236
+    },
+    {
+        "text": "You start with that change of basis matrix that translates Jennifer's language into ours, ",
+        "start": 452.22,
+        "duration": 4.686
+    },
+    {
+        "text": "then you take its inverse.",
+        "start": 456.906,
+        "duration": 1.354
+    },
+    {
+        "text": "Remember, the inverse of a transformation is a new transformation ",
+        "start": 463.44,
+        "duration": 3.527
+    },
+    {
+        "text": "that corresponds to playing that first one backwards.",
+        "start": 466.967,
+        "duration": 2.833
+    },
+    {
+        "text": "In practice, especially when you're working in more than two dimensions, ",
+        "start": 470.3,
+        "duration": 3.223
+    },
+    {
+        "text": "you'd use a computer to compute the matrix that actually represents this inverse.",
+        "start": 473.523,
+        "duration": 3.577
+    },
+    {
+        "text": "In this case, the inverse of the change of basis matrix that ",
+        "start": 478.18,
+        "duration": 3.747
+    },
+    {
+        "text": "has Jennifer's basis as its columns ends up working out to have columns 1 third, ",
+        "start": 481.927,
+        "duration": 4.975
+    },
+    {
+        "text": "negative 1 third, and 1 third, 2 thirds.",
+        "start": 486.902,
+        "duration": 2.458
+    },
+    {
+        "text": "So, for example, to see what the vector 3, 2 looks like in Jennifer's system, ",
+        "start": 491.28,
+        "duration": 5.25
+    },
+    {
+        "text": "we multiply this inverse change of basis matrix by the vector 3, ",
+        "start": 496.53,
+        "duration": 4.375
+    },
+    {
+        "text": "2, which works out to be 5 thirds, 1 third.",
+        "start": 500.905,
+        "duration": 2.895
+    },
+    {
+        "text": "So that, in a nutshell, is how to translate the description of ",
+        "start": 507.28,
+        "duration": 3.688
+    },
+    {
+        "text": "individual vectors back and forth between coordinate systems.",
+        "start": 510.968,
+        "duration": 3.571
+    },
+    {
+        "text": "The matrix whose columns represent Jennifer's basis vectors but written ",
+        "start": 515.4,
+        "duration": 4.132
+    },
+    {
+        "text": "in our coordinates translates vectors from her language into our language.",
+        "start": 519.532,
+        "duration": 4.248
+    },
+    {
+        "text": "And the inverse matrix does the opposite.",
+        "start": 526.46,
+        "duration": 2.24
+    },
+    {
+        "text": "But vectors aren't the only thing that we describe using coordinates.",
+        "start": 530.84,
+        "duration": 3.52
+    },
+    {
+        "text": "For this next part, it's important that you're all comfortable ",
+        "start": 535.66,
+        "duration": 3.112
+    },
+    {
+        "text": "representing transformations with matrices and that you know how ",
+        "start": 538.772,
+        "duration": 3.211
+    },
+    {
+        "text": "matrix multiplication corresponds to composing successive transformations.",
+        "start": 541.983,
+        "duration": 3.657
+    },
+    {
+        "text": "Definitely pause and take a look at chapters 3 and 4 if any of that feels uneasy.",
+        "start": 546.44,
+        "duration": 4.34
+    },
+    {
+        "text": "Consider some linear transformation, like a 90 degree counterclockwise rotation.",
+        "start": 552.84,
+        "duration": 4.44
+    },
+    {
+        "text": "When you and I represent this with a matrix, we ",
+        "start": 557.94,
+        "duration": 3.113
+    },
+    {
+        "text": "follow where the basis vectors i-hat and j-hat each go.",
+        "start": 561.053,
+        "duration": 3.567
+    },
+    {
+        "text": "i-hat ends up at the spot with coordinates 0, 1, ",
+        "start": 565.58,
+        "duration": 2.815
+    },
+    {
+        "text": "and j-hat ends up at the spot with coordinates negative 1, 0.",
+        "start": 568.395,
+        "duration": 3.505
+    },
+    {
+        "text": "So those coordinates become the columns of our matrix.",
+        "start": 572.24,
+        "duration": 3.16
+    },
+    {
+        "text": "But this representation is heavily tied up in our choice of basis vectors, ",
+        "start": 576.36,
+        "duration": 3.944
+    },
+    {
+        "text": "from the fact that we're following i-hat and j-hat in the first place to ",
+        "start": 580.304,
+        "duration": 3.84
+    },
+    {
+        "text": "the fact that we're recording their landing spots in our own coordinate system.",
+        "start": 584.144,
+        "duration": 4.156
+    },
+    {
+        "text": "How would Jennifer describe this same 90 degree rotation of space?",
+        "start": 590.24,
+        "duration": 4.2
+    },
+    {
+        "text": "You might be tempted to just translate the columns ",
+        "start": 599.58,
+        "duration": 3.121
+    },
+    {
+        "text": "of our rotation matrix into Jennifer's language.",
+        "start": 602.701,
+        "duration": 2.939
+    },
+    {
+        "text": "But that's not quite right.",
+        "start": 606.1,
+        "duration": 1.04
+    },
+    {
+        "text": "Those columns represent where our basis vectors i-hat and j-hat go.",
+        "start": 607.58,
+        "duration": 3.88
+    },
+    {
+        "text": "But the matrix that Jennifer wants should represent where her basis vectors land, ",
+        "start": 611.46,
+        "duration": 4.61
+    },
+    {
+        "text": "and it needs to describe those landing spots in her language.",
+        "start": 616.07,
+        "duration": 3.43
+    },
+    {
+        "text": "Here's a common way to think of how this is done.",
+        "start": 620.78,
+        "duration": 1.98
+    },
+    {
+        "text": "Start with any vector written in Jennifer's language.",
+        "start": 623.6,
+        "duration": 2.52
+    },
+    {
+        "text": "Rather than trying to follow what happens to it in terms of her language, ",
+        "start": 627.06,
+        "duration": 3.961
+    },
+    {
+        "text": "first we're going to translate it into our language using the change of basis matrix, ",
+        "start": 631.021,
+        "duration": 4.605
+    },
+    {
+        "text": "the one whose columns represent her basis vectors in our language.",
+        "start": 635.626,
+        "duration": 3.534
+    },
+    {
+        "text": "This gives us the same vector but now written in our language.",
+        "start": 639.68,
+        "duration": 3.0
+    },
+    {
+        "text": "Then apply the transformation matrix to what you get by multiplying it on the left.",
+        "start": 643.84,
+        "duration": 4.54
+    },
+    {
+        "text": "This tells us where that vector lands, but still in our language.",
+        "start": 649.22,
+        "duration": 3.34
+    },
+    {
+        "text": "So as a last step, apply the inverse change of basis matrix, ",
+        "start": 653.58,
+        "duration": 3.502
+    },
+    {
+        "text": "multiplied on the left as usual, to get the transformed vector but now in ",
+        "start": 657.082,
+        "duration": 4.249
+    },
+    {
+        "text": "Jennifer's language.",
+        "start": 661.331,
+        "duration": 1.149
+    },
+    {
+        "text": "Since we could do this with any vector written in her language, ",
+        "start": 664.3,
+        "duration": 3.738
+    },
+    {
+        "text": "first applying the change of basis, then the transformation, ",
+        "start": 668.038,
+        "duration": 3.563
+    },
+    {
+        "text": "then the inverse change of basis, that composition of three matrices gives us the ",
+        "start": 671.601,
+        "duration": 4.79
+    },
+    {
+        "text": "transformation matrix in Jennifer's language.",
+        "start": 676.391,
+        "duration": 2.629
+    },
+    {
+        "text": "It takes in a vector of her language and spits out ",
+        "start": 679.58,
+        "duration": 2.8
+    },
+    {
+        "text": "the transformed version of that vector in her language.",
+        "start": 682.38,
+        "duration": 3.02
+    },
+    {
+        "text": "For this specific example, when Jennifer's basis vectors look like 2, ",
+        "start": 686.34,
+        "duration": 4.176
+    },
+    {
+        "text": "1 and negative 1, 1 in our language, and when the transformation is a 90 degree rotation, ",
+        "start": 690.516,
+        "duration": 5.369
+    },
+    {
+        "text": "the product of these three matrices, if you work through it, has columns 1 third, ",
+        "start": 695.885,
+        "duration": 4.892
+    },
+    {
+        "text": "5 thirds, and negative 2 thirds, negative 1 third.",
+        "start": 700.777,
+        "duration": 2.983
+    },
+    {
+        "text": "So if Jennifer multiplies that matrix by the coordinates of a vector in her system, ",
+        "start": 704.4,
+        "duration": 5.227
+    },
+    {
+        "text": "it will return the 90 degree rotated version of that vector expressed in her coordinate ",
+        "start": 709.627,
+        "duration": 5.477
+    },
+    {
+        "text": "system.",
+        "start": 715.104,
+        "duration": 0.436
+    },
+    {
+        "text": "In general, whenever you see an expression like A inverse times M times A, ",
+        "start": 718.76,
+        "duration": 4.995
+    },
+    {
+        "text": "it suggests a mathematical sort of empathy.",
+        "start": 723.755,
+        "duration": 2.865
+    },
+    {
+        "text": "That middle matrix represents a transformation of some kind as you see it, ",
+        "start": 727.14,
+        "duration": 4.25
+    },
+    {
+        "text": "and the outer two matrices represent the empathy, the shift in perspective.",
+        "start": 731.39,
+        "duration": 4.25
+    },
+    {
+        "text": "And the full matrix product represents that same ",
+        "start": 736.56,
+        "duration": 2.854
+    },
+    {
+        "text": "transformation but as someone else sees it.",
+        "start": 739.414,
+        "duration": 2.506
+    },
+    {
+        "text": "For those of you wondering why we care about alternate coordinate systems, ",
+        "start": 742.7,
+        "duration": 4.068
+    },
+    {
+        "text": "the next video on eigenvectors and eigenvalues will give a really important example ",
+        "start": 746.768,
+        "duration": 4.557
+    },
+    {
+        "text": "of this.",
+        "start": 751.325,
+        "duration": 0.435
+    }
+]

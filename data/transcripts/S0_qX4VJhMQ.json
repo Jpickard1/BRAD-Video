@@ -1,0 +1,1257 @@
+[
+    {
+        "text": "Now that we've seen what a derivative means and what it has to do with rates of change, ",
+        "start": 12.14,
+        "duration": 4.275
+    },
+    {
+        "text": "our next step is to learn how to actually compute these guys.",
+        "start": 16.415,
+        "duration": 2.965
+    },
+    {
+        "text": "As in, if I give you some kind of function with an explicit formula, ",
+        "start": 19.84,
+        "duration": 3.099
+    },
+    {
+        "text": "you'd want to be able to find what the formula for its derivative is.",
+        "start": 22.939,
+        "duration": 3.101
+    },
+    {
+        "text": "Maybe it's obvious, but I think it's worth stating explicitly why this ",
+        "start": 26.7,
+        "duration": 3.641
+    },
+    {
+        "text": "is an important thing to be able to do, why much of a calculus student's ",
+        "start": 30.341,
+        "duration": 3.744
+    },
+    {
+        "text": "time ends up going towards grappling with derivatives of abstract ",
+        "start": 34.085,
+        "duration": 3.385
+    },
+    {
+        "text": "functions rather than thinking about concrete rate of change problems.",
+        "start": 37.47,
+        "duration": 3.59
+    },
+    {
+        "text": "It's because a lot of real-world phenomena, the sort of things that ",
+        "start": 42.22,
+        "duration": 3.689
+    },
+    {
+        "text": "we want to use calculus to analyze, are modeled using polynomials, ",
+        "start": 45.909,
+        "duration": 3.635
+    },
+    {
+        "text": "trigonometric functions, exponentials, and other pure functions like that.",
+        "start": 49.544,
+        "duration": 4.016
+    },
+    {
+        "text": "So if you build up some fluency with the ideas of rates of change for those kinds of ",
+        "start": 53.98,
+        "duration": 4.305
+    },
+    {
+        "text": "pure abstract functions, it gives you a language to more readily talk about the rates ",
+        "start": 58.285,
+        "duration": 4.357
+    },
+    {
+        "text": "at which things change in concrete situations that you might be using calculus to model.",
+        "start": 62.642,
+        "duration": 4.458
+    },
+    {
+        "text": "But it is way too easy for this process to feel like just memorizing a list of rules, ",
+        "start": 67.92,
+        "duration": 4.221
+    },
+    {
+        "text": "and if that happens, if you get that feeling, it's also easy to lose sight of the ",
+        "start": 72.141,
+        "duration": 4.025
+    },
+    {
+        "text": "fact that derivatives are fundamentally about just looking at tiny changes to some ",
+        "start": 76.166,
+        "duration": 4.074
+    },
+    {
+        "text": "quantity and how that relates to a resulting tiny change in another quantity.",
+        "start": 80.24,
+        "duration": 3.78
+    },
+    {
+        "text": "So in this video and in the next one, my aim is to show you how you can think ",
+        "start": 84.78,
+        "duration": 3.952
+    },
+    {
+        "text": "about a few of these rules intuitively and geometrically, ",
+        "start": 88.732,
+        "duration": 2.94
+    },
+    {
+        "text": "and I really want to encourage you to never forget that tiny nudges are at the ",
+        "start": 91.672,
+        "duration": 4.003
+    },
+    {
+        "text": "heart of derivatives.",
+        "start": 95.675,
+        "duration": 1.065
+    },
+    {
+        "text": "Let's start with a simple function like f of x equals x squared.",
+        "start": 97.92,
+        "duration": 3.36
+    },
+    {
+        "text": "What if I asked you its derivative?",
+        "start": 101.62,
+        "duration": 1.12
+    },
+    {
+        "text": "That is, if you were to look at some value x, like x equals 2, ",
+        "start": 103.52,
+        "duration": 3.518
+    },
+    {
+        "text": "and compare it to a value slightly bigger, just dx bigger, ",
+        "start": 107.038,
+        "duration": 3.295
+    },
+    {
+        "text": "what's the corresponding change in the value of the function?",
+        "start": 110.333,
+        "duration": 3.407
+    },
+    {
+        "text": "dF.",
+        "start": 114.26,
+        "duration": 0.44
+    },
+    {
+        "text": "And in particular, what's dF divided by dx, the rate ",
+        "start": 115.62,
+        "duration": 3.073
+    },
+    {
+        "text": "at which this function is changing per unit change in x.",
+        "start": 118.693,
+        "duration": 3.247
+    },
+    {
+        "text": "As a first step for intuition, we know that you can think of this ratio ",
+        "start": 123.16,
+        "duration": 4.089
+    },
+    {
+        "text": "dF dx as the slope of a tangent line to the graph of x squared, ",
+        "start": 127.249,
+        "duration": 3.634
+    },
+    {
+        "text": "and from that you can see that the slope generally increases as x increases.",
+        "start": 130.883,
+        "duration": 4.317
+    },
+    {
+        "text": "At zero, the tangent line is flat, and the slope is zero.",
+        "start": 135.84,
+        "duration": 2.56
+    },
+    {
+        "text": "At x equals 1, it's something a bit steeper.",
+        "start": 139.0,
+        "duration": 2.26
+    },
+    {
+        "text": "At x equals 2, it's steeper still.",
+        "start": 142.6,
+        "duration": 1.8
+    },
+    {
+        "text": "But looking at graphs isn't generally the best way ",
+        "start": 145.12,
+        "duration": 2.459
+    },
+    {
+        "text": "to understand the precise formula for a derivative.",
+        "start": 147.579,
+        "duration": 2.461
+    },
+    {
+        "text": "For that, it's best to take a more literal look at what x squared actually means, ",
+        "start": 150.72,
+        "duration": 4.214
+    },
+    {
+        "text": "and in this case let's go ahead and picture a square whose side length is x.",
+        "start": 154.934,
+        "duration": 3.906
+    },
+    {
+        "text": "If you increase x by some tiny nudge, some little dx, ",
+        "start": 159.92,
+        "duration": 3.2
+    },
+    {
+        "text": "what's the resulting change in the area of that square?",
+        "start": 163.12,
+        "duration": 3.26
+    },
+    {
+        "text": "That slight change in area is what dF means in this context.",
+        "start": 167.72,
+        "duration": 3.76
+    },
+    {
+        "text": "It's the tiny increase to the value of f of x equals x squared, ",
+        "start": 172.02,
+        "duration": 3.757
+    },
+    {
+        "text": "caused by increasing x by that tiny nudge dx.",
+        "start": 175.777,
+        "duration": 2.643
+    },
+    {
+        "text": "Now you can see that there's three new bits of area in this diagram, ",
+        "start": 179.36,
+        "duration": 3.671
+    },
+    {
+        "text": "two thin rectangles and a minuscule square.",
+        "start": 183.031,
+        "duration": 2.289
+    },
+    {
+        "text": "The two thin rectangles each have side lengths of x and dx, ",
+        "start": 186.24,
+        "duration": 3.866
+    },
+    {
+        "text": "so they account for 2 times x times dx units of new area.",
+        "start": 190.106,
+        "duration": 3.674
+    },
+    {
+        "text": "For example, let's say x was 3 and dx was 0.01, ",
+        "start": 198.24,
+        "duration": 2.791
+    },
+    {
+        "text": "then that new area from these two thin rectangles would be 2 times 3 times 0.01, ",
+        "start": 201.031,
+        "duration": 4.71
+    },
+    {
+        "text": "which is 0.06, about 6 times the size of dx.",
+        "start": 205.741,
+        "duration": 2.559
+    },
+    {
+        "text": "That little square there has an area of dx squared, ",
+        "start": 209.7,
+        "duration": 3.172
+    },
+    {
+        "text": "but you should think of that as being really tiny, negligibly tiny.",
+        "start": 212.872,
+        "duration": 4.088
+    },
+    {
+        "text": "For example, if dx was 0.01, that would be only 0.0001, ",
+        "start": 217.7,
+        "duration": 3.64
+    },
+    {
+        "text": "and keep in mind I'm drawing dx with a fair bit of width here just so we ",
+        "start": 221.34,
+        "duration": 4.746
+    },
+    {
+        "text": "can actually see it, but always remember in principle, ",
+        "start": 226.086,
+        "duration": 3.576
+    },
+    {
+        "text": "dx should be thought of as a truly tiny amount, and for those truly tiny amounts, ",
+        "start": 229.662,
+        "duration": 5.331
+    },
+    {
+        "text": "a good rule of thumb is that you can ignore anything that includes a dx ",
+        "start": 234.993,
+        "duration": 4.681
+    },
+    {
+        "text": "raised to a power greater than 1.",
+        "start": 239.674,
+        "duration": 2.146
+    },
+    {
+        "text": "That is, a tiny change squared is a negligible change.",
+        "start": 242.4,
+        "duration": 3.48
+    },
+    {
+        "text": "What this leaves us with is that dF is just some multiple of dx, and that multiple 2x, ",
+        "start": 247.5,
+        "duration": 5.555
+    },
+    {
+        "text": "which you could also write as dF divided by dx, is the derivative of x squared.",
+        "start": 253.055,
+        "duration": 5.045
+    },
+    {
+        "text": "For example, if you were starting at x equals 3, then as you slightly increase x, ",
+        "start": 259.04,
+        "duration": 5.257
+    },
+    {
+        "text": "the rate of change in the area per unit change in length added, dx squared over dx, ",
+        "start": 264.297,
+        "duration": 5.386
+    },
+    {
+        "text": "would be 2 times 3, or 6, and if instead you were starting at x equals 5, ",
+        "start": 269.683,
+        "duration": 4.744
+    },
+    {
+        "text": "then the rate of change would be 10 units of area per unit change in x.",
+        "start": 274.427,
+        "duration": 4.553
+    },
+    {
+        "text": "Let's go ahead and try a different simple function, f of x equals x cubed.",
+        "start": 281.22,
+        "duration": 4.2
+    },
+    {
+        "text": "This is going to be the geometric view of the stuff ",
+        "start": 285.94,
+        "duration": 2.099
+    },
+    {
+        "text": "that I went through algebraically in the last video.",
+        "start": 288.039,
+        "duration": 2.101
+    },
+    {
+        "text": "What's nice here is that we can think of x cubed as the volume of an actual ",
+        "start": 291.02,
+        "duration": 4.621
+    },
+    {
+        "text": "cube whose side lengths are x, and when you increase x by a tiny nudge, ",
+        "start": 295.641,
+        "duration": 4.379
+    },
+    {
+        "text": "a tiny dx, the resulting increase in volume is what I have here in yellow.",
+        "start": 300.02,
+        "duration": 4.5
+    },
+    {
+        "text": "That represents all the volume in a cube with side lengths x plus dx ",
+        "start": 304.86,
+        "duration": 3.888
+    },
+    {
+        "text": "that's not already in the original cube, the one with side length x.",
+        "start": 308.748,
+        "duration": 3.832
+    },
+    {
+        "text": "It's nice to think of this new volume as broken up into multiple components, ",
+        "start": 313.58,
+        "duration": 5.022
+    },
+    {
+        "text": "but almost all of it comes from these three square faces, ",
+        "start": 318.602,
+        "duration": 3.784
+    },
+    {
+        "text": "or said a little more precisely, as dx approaches 0, ",
+        "start": 322.386,
+        "duration": 3.457
+    },
+    {
+        "text": "those three squares comprise a portion closer and closer to 100% of ",
+        "start": 325.843,
+        "duration": 4.436
+    },
+    {
+        "text": "that new yellow volume.",
+        "start": 330.279,
+        "duration": 1.501
+    },
+    {
+        "text": "Each of those thin squares has a volume of x squared times dx, ",
+        "start": 333.84,
+        "duration": 4.218
+    },
+    {
+        "text": "the area of the face times that little thickness dx.",
+        "start": 338.058,
+        "duration": 3.482
+    },
+    {
+        "text": "So in total this gives us 3x squared dx of volume change.",
+        "start": 342.22,
+        "duration": 4.04
+    },
+    {
+        "text": "And to be sure there are other slivers of volume here along the edges ",
+        "start": 347.3,
+        "duration": 3.762
+    },
+    {
+        "text": "and that tiny one in the corner, but all of that volume is going to be ",
+        "start": 351.062,
+        "duration": 3.815
+    },
+    {
+        "text": "proportional to dx squared, or dx cubed, so we can safely ignore them.",
+        "start": 354.877,
+        "duration": 3.763
+    },
+    {
+        "text": "Again this is ultimately because they're going to be divided by dx, ",
+        "start": 359.46,
+        "duration": 4.006
+    },
+    {
+        "text": "and if there's still any dx remaining then those terms aren't ",
+        "start": 363.466,
+        "duration": 3.652
+    },
+    {
+        "text": "going to survive the process of letting dx approach 0.",
+        "start": 367.118,
+        "duration": 3.182
+    },
+    {
+        "text": "What this means is that the derivative of x cubed, ",
+        "start": 371.28,
+        "duration": 3.155
+    },
+    {
+        "text": "the rate at which x cubed changes per unit change of x, is 3 times x squared.",
+        "start": 374.435,
+        "duration": 4.765
+    },
+    {
+        "text": "What that means in terms of graphical intuition is that the slope of ",
+        "start": 380.64,
+        "duration": 4.545
+    },
+    {
+        "text": "the graph of x cubed at every single point x is exactly 3x squared.",
+        "start": 385.185,
+        "duration": 4.415
+    },
+    {
+        "text": "And reasoning about that slope, it should make sense that this derivative is high on the ",
+        "start": 394.08,
+        "duration": 4.706
+    },
+    {
+        "text": "left and then 0 at the origin and then high again as you move to the right, ",
+        "start": 398.786,
+        "duration": 4.019
+    },
+    {
+        "text": "but just thinking in terms of the graph would never have landed us on the precise ",
+        "start": 402.805,
+        "duration": 4.337
+    },
+    {
+        "text": "quantity 3x squared.",
+        "start": 407.142,
+        "duration": 1.058
+    },
+    {
+        "text": "For that we had to take a much more direct look at what x cubed actually means.",
+        "start": 408.88,
+        "duration": 4.18
+    },
+    {
+        "text": "Now in practice you wouldn't necessarily think of the square every ",
+        "start": 414.26,
+        "duration": 3.301
+    },
+    {
+        "text": "time you're taking the derivative of x squared, ",
+        "start": 417.561,
+        "duration": 2.366
+    },
+    {
+        "text": "nor would you necessarily think of this cube whenever you're taking ",
+        "start": 419.927,
+        "duration": 3.351
+    },
+    {
+        "text": "the derivative of x cubed.",
+        "start": 423.278,
+        "duration": 1.282
+    },
+    {
+        "text": "Both of them fall under a pretty recognizable pattern for polynomial terms.",
+        "start": 424.88,
+        "duration": 3.52
+    },
+    {
+        "text": "The derivative of x to the fourth turns out to be 4x cubed, ",
+        "start": 429.2,
+        "duration": 4.141
+    },
+    {
+        "text": "the derivative of x to the fifth is 5x to the fourth, and so on.",
+        "start": 433.341,
+        "duration": 4.419
+    },
+    {
+        "text": "Abstractly you'd write this as the derivative of x to ",
+        "start": 438.88,
+        "duration": 3.912
+    },
+    {
+        "text": "the n for any power n is n times x to the n minus 1.",
+        "start": 442.792,
+        "duration": 3.768
+    },
+    {
+        "text": "This right here is what's known in the business as the power rule.",
+        "start": 447.3,
+        "duration": 3.26
+    },
+    {
+        "text": "In practice we all quickly just get jaded and think about this symbolically as ",
+        "start": 451.74,
+        "duration": 4.173
+    },
+    {
+        "text": "the exponent hopping down in front, leaving behind one less than itself, ",
+        "start": 455.913,
+        "duration": 3.856
+    },
+    {
+        "text": "rarely pausing to think about the geometric delights that underlie these derivatives.",
+        "start": 459.769,
+        "duration": 4.491
+    },
+    {
+        "text": "That's the kind of thing that happens when these tend ",
+        "start": 465.24,
+        "duration": 2.056
+    },
+    {
+        "text": "to fall in the middle of much longer computations.",
+        "start": 467.296,
+        "duration": 1.904
+    },
+    {
+        "text": "But rather than tracking it all off to symbolic patterns, ",
+        "start": 470.64,
+        "duration": 2.688
+    },
+    {
+        "text": "let's just take a moment and think about why this works for powers beyond just 2 and 3.",
+        "start": 473.328,
+        "duration": 4.032
+    },
+    {
+        "text": "When you nudge that input x, increasing it slightly to x plus dx, ",
+        "start": 478.44,
+        "duration": 4.333
+    },
+    {
+        "text": "working out the exact value of that nudged output would involve ",
+        "start": 482.773,
+        "duration": 4.201
+    },
+    {
+        "text": "multiplying together these n separate x plus dx terms.",
+        "start": 486.974,
+        "duration": 3.546
+    },
+    {
+        "text": "The full expansion would be really complicated, ",
+        "start": 491.34,
+        "duration": 2.55
+    },
+    {
+        "text": "but part of the point of derivatives is that most of that complication can be ignored.",
+        "start": 493.89,
+        "duration": 4.57
+    },
+    {
+        "text": "The first term in your expansion is x to the n.",
+        "start": 499.28,
+        "duration": 2.74
+    },
+    {
+        "text": "This is analogous to the area of the original square, ",
+        "start": 502.68,
+        "duration": 2.904
+    },
+    {
+        "text": "or the volume of the original cube from our previous examples.",
+        "start": 505.584,
+        "duration": 3.336
+    },
+    {
+        "text": "For the next terms in the expansion you can choose mostly x's with a single dx.",
+        "start": 510.82,
+        "duration": 5.219
+    },
+    {
+        "text": "Since there are n different parentheticals from which you could have chosen ",
+        "start": 521.72,
+        "duration": 5.084
+    },
+    {
+        "text": "that single dx, this gives us n separate terms, ",
+        "start": 526.804,
+        "duration": 3.212
+    },
+    {
+        "text": "all of which include n minus 1 x's times a dx, ",
+        "start": 530.016,
+        "duration": 3.144
+    },
+    {
+        "text": "giving a value of x to the power n minus 1 times dx.",
+        "start": 533.16,
+        "duration": 3.48
+    },
+    {
+        "text": "This is analogous to how the majority of the new area in the square came from those ",
+        "start": 537.58,
+        "duration": 5.24
+    },
+    {
+        "text": "two bars, each with area x times dx, or how the bulk of the new volume in the cube ",
+        "start": 542.82,
+        "duration": 5.177
+    },
+    {
+        "text": "came from those three thin squares, each of which had a volume of x squared times dx.",
+        "start": 547.997,
+        "duration": 5.303
+    },
+    {
+        "text": "There will be many other terms of this expansion, ",
+        "start": 554.54,
+        "duration": 2.892
+    },
+    {
+        "text": "but all of them are just going to be some multiple of dx squared, ",
+        "start": 557.432,
+        "duration": 3.819
+    },
+    {
+        "text": "so we can safely ignore them, and what that means is that all but a ",
+        "start": 561.251,
+        "duration": 3.934
+    },
+    {
+        "text": "negligible portion of the increase in the output comes from n copies of ",
+        "start": 565.185,
+        "duration": 4.165
+    },
+    {
+        "text": "this x to the n minus 1 times dx.",
+        "start": 569.35,
+        "duration": 1.91
+    },
+    {
+        "text": "That's what it means for the derivative of x to the n to be n times x to the n minus 1.",
+        "start": 571.94,
+        "duration": 5.58
+    },
+    {
+        "text": "And even though, like I said in practice, you'll find yourself performing this ",
+        "start": 578.96,
+        "duration": 4.26
+    },
+    {
+        "text": "derivative quickly and symbolically, imagining the exponent hopping down to the front, ",
+        "start": 583.22,
+        "duration": 4.691
+    },
+    {
+        "text": "every now and then it's nice to just step back and remember why these rules work.",
+        "start": 587.911,
+        "duration": 4.369
+    },
+    {
+        "text": "Not just because it's pretty, and not just because it helps remind us that math ",
+        "start": 592.82,
+        "duration": 4.06
+    },
+    {
+        "text": "actually makes sense and isn't just a pile of formulas to memorize, ",
+        "start": 596.88,
+        "duration": 3.452
+    },
+    {
+        "text": "but because it flexes that very important muscle of thinking about derivatives in ",
+        "start": 600.332,
+        "duration": 4.162
+    },
+    {
+        "text": "terms of tiny nudges.",
+        "start": 604.494,
+        "duration": 1.066
+    },
+    {
+        "text": "As another example, think of the function f of x equals 1 divided by x.",
+        "start": 607.5,
+        "duration": 4.14
+    },
+    {
+        "text": "Now on the hand you could just blindly try applying the power rule, ",
+        "start": 612.7,
+        "duration": 4.038
+    },
+    {
+        "text": "since 1 divided by x is the same as writing x to the negative 1.",
+        "start": 616.738,
+        "duration": 3.802
+    },
+    {
+        "text": "That would involve letting the negative 1 hop down in front, ",
+        "start": 621.1,
+        "duration": 3.333
+    },
+    {
+        "text": "leaving behind 1 less than itself, which is negative 2.",
+        "start": 624.433,
+        "duration": 3.007
+    },
+    {
+        "text": "But let's have some fun and see if we can reason about this geometrically, ",
+        "start": 628.24,
+        "duration": 3.204
+    },
+    {
+        "text": "rather than just plugging it through some formula.",
+        "start": 631.444,
+        "duration": 2.136
+    },
+    {
+        "text": "The value 1 over x is asking what number multiplied by x equals 1.",
+        "start": 634.86,
+        "duration": 5.32
+    },
+    {
+        "text": "So here's how I'd like to visualize it.",
+        "start": 640.96,
+        "duration": 1.86
+    },
+    {
+        "text": "Imagine a little rectangular puddle of water sitting in two dimensions whose area is 1.",
+        "start": 642.82,
+        "duration": 5.3
+    },
+    {
+        "text": "And let's say that its width is x, which means that the height has to be 1 over x, ",
+        "start": 648.96,
+        "duration": 4.806
+    },
+    {
+        "text": "since the total area of it is 1.",
+        "start": 653.766,
+        "duration": 1.854
+    },
+    {
+        "text": "So if x was stretched out to 2, then that height is forced down to 1 half.",
+        "start": 656.36,
+        "duration": 4.68
+    },
+    {
+        "text": "And if you increased x up to 3, then the other side has to be squished down to 1 third.",
+        "start": 661.78,
+        "duration": 4.14
+    },
+    {
+        "text": "This is a nice way to think about the graph of 1 over x, by the way.",
+        "start": 667.04,
+        "duration": 3.64
+    },
+    {
+        "text": "If you think of this width x of the puddle as being in the xy-plane, ",
+        "start": 671.28,
+        "duration": 4.08
+    },
+    {
+        "text": "then that corresponding output 1 divided by x, the height of the graph above that point, ",
+        "start": 675.36,
+        "duration": 5.263
+    },
+    {
+        "text": "is whatever the height of your puddle has to be to maintain an area of 1.",
+        "start": 680.623,
+        "duration": 4.317
+    },
+    {
+        "text": "So with this visual in mind, for the derivative, ",
+        "start": 686.36,
+        "duration": 2.998
+    },
+    {
+        "text": "imagine nudging up that value of x by some tiny amount, some tiny dx.",
+        "start": 689.358,
+        "duration": 4.222
+    },
+    {
+        "text": "How must the height of this rectangle change so ",
+        "start": 694.58,
+        "duration": 2.821
+    },
+    {
+        "text": "that the area of the puddle remains constant at 1?",
+        "start": 697.401,
+        "duration": 2.939
+    },
+    {
+        "text": "That is, increasing the width by dx adds some new area to the right here.",
+        "start": 701.34,
+        "duration": 4.68
+    },
+    {
+        "text": "So the puddle has to decrease in height by some d 1 over x, ",
+        "start": 706.26,
+        "duration": 4.095
+    },
+    {
+        "text": "so that the area lost off of that top cancels out the area gained.",
+        "start": 710.355,
+        "duration": 4.505
+    },
+    {
+        "text": "You should think of that d 1 over x as being a negative amount, ",
+        "start": 716.1,
+        "duration": 3.159
+    },
+    {
+        "text": "by the way, since it's decreasing the height of the rectangle.",
+        "start": 719.259,
+        "duration": 3.061
+    },
+    {
+        "text": "And you know what?",
+        "start": 723.54,
+        "duration": 0.86
+    },
+    {
+        "text": "I'm going to leave the last few steps here for you, ",
+        "start": 724.84,
+        "duration": 2.187
+    },
+    {
+        "text": "for you to pause and ponder and work out an ultimate expression.",
+        "start": 727.027,
+        "duration": 2.693
+    },
+    {
+        "text": "And once you reason out what d of 1 over x divided by dx should be, ",
+        "start": 730.56,
+        "duration": 3.561
+    },
+    {
+        "text": "I want you to compare it to what you would have gotten if you had just ",
+        "start": 734.121,
+        "duration": 3.718
+    },
+    {
+        "text": "blindly applied the power rule, purely symbolically, to x to the negative 1.",
+        "start": 737.839,
+        "duration": 3.981
+    },
+    {
+        "text": "And while I'm encouraging you to pause and ponder, ",
+        "start": 743.98,
+        "duration": 2.163
+    },
+    {
+        "text": "here's another fun challenge if you're feeling up to it.",
+        "start": 746.143,
+        "duration": 2.377
+    },
+    {
+        "text": "See if you can reason through what the derivative of the square root of x should be.",
+        "start": 749.06,
+        "duration": 4.36
+    },
+    {
+        "text": "To finish things off, I want to tackle one more type of function, ",
+        "start": 756.4,
+        "duration": 3.653
+    },
+    {
+        "text": "trigonometric functions, and in particular let's focus on the sine function.",
+        "start": 760.053,
+        "duration": 4.207
+    },
+    {
+        "text": "So for this section I'm going to assume that you're already ",
+        "start": 765.32,
+        "duration": 2.91
+    },
+    {
+        "text": "familiar with how to think about trig functions using the unit circle, ",
+        "start": 768.23,
+        "duration": 3.444
+    },
+    {
+        "text": "the circle with a radius 1 centered at the origin.",
+        "start": 771.674,
+        "duration": 2.426
+    },
+    {
+        "text": "For a given value of theta, like say 0.8, you imagine yourself ",
+        "start": 775.24,
+        "duration": 3.912
+    },
+    {
+        "text": "walking around the circle starting from the rightmost point ",
+        "start": 779.152,
+        "duration": 3.726
+    },
+    {
+        "text": "until you've traversed that distance of 0.8 in arc length.",
+        "start": 782.878,
+        "duration": 3.602
+    },
+    {
+        "text": "This is the same thing as saying that the angle right here is exactly theta radians, ",
+        "start": 786.76,
+        "duration": 4.958
+    },
+    {
+        "text": "since the circle has a radius of 1.",
+        "start": 791.718,
+        "duration": 2.042
+    },
+    {
+        "text": "Then what sine of theta means is the height of that point above the x-axis, ",
+        "start": 794.76,
+        "duration": 5.253
+    },
+    {
+        "text": "and as your theta value increases and you walk around the circle ",
+        "start": 800.013,
+        "duration": 4.494
+    },
+    {
+        "text": "your height bobs up and down between negative 1 and 1.",
+        "start": 804.507,
+        "duration": 3.733
+    },
+    {
+        "text": "So when you graph sine of theta versus theta you get this wave pattern, ",
+        "start": 809.02,
+        "duration": 4.596
+    },
+    {
+        "text": "the quintessential wave pattern.",
+        "start": 813.616,
+        "duration": 2.044
+    },
+    {
+        "text": "And just from looking at this graph we can start to ",
+        "start": 817.6,
+        "duration": 2.711
+    },
+    {
+        "text": "get a feel for the shape of the derivative of the sine.",
+        "start": 820.311,
+        "duration": 2.869
+    },
+    {
+        "text": "The slope at 0 is something positive since sine of theta is increasing there, ",
+        "start": 824.02,
+        "duration": 4.808
+    },
+    {
+        "text": "and as we move to the right and sine of theta approaches its peak that slope goes down ",
+        "start": 828.828,
+        "duration": 5.363
+    },
+    {
+        "text": "to 0.",
+        "start": 834.191,
+        "duration": 0.309
+    },
+    {
+        "text": "Then the slope is negative for a little while, ",
+        "start": 835.72,
+        "duration": 2.62
+    },
+    {
+        "text": "while the sine is decreasing before coming back up to 0 as the sine graph levels out.",
+        "start": 838.34,
+        "duration": 4.74
+    },
+    {
+        "text": "And as you continue thinking this through and drawing it out, ",
+        "start": 844.46,
+        "duration": 2.973
+    },
+    {
+        "text": "if you're familiar with the graph of trig functions you might guess that this ",
+        "start": 847.433,
+        "duration": 3.741
+    },
+    {
+        "text": "derivative graph should be exactly cosine of theta, ",
+        "start": 851.174,
+        "duration": 2.494
+    },
+    {
+        "text": "since all the peaks and valleys line up perfectly with where the peaks and ",
+        "start": 853.668,
+        "duration": 3.597
+    },
+    {
+        "text": "valleys for the cosine function should be.",
+        "start": 857.265,
+        "duration": 2.015
+    },
+    {
+        "text": "And spoiler alert, the derivative is in fact the cosine of theta, ",
+        "start": 860.34,
+        "duration": 3.57
+    },
+    {
+        "text": "but aren't you a little curious about why it's precisely cosine of theta?",
+        "start": 863.91,
+        "duration": 3.95
+    },
+    {
+        "text": "I mean you could have all sorts of functions with peaks and valleys at the same points ",
+        "start": 868.24,
+        "duration": 3.918
+    },
+    {
+        "text": "that have roughly the same shape, but who knows, ",
+        "start": 872.158,
+        "duration": 2.207
+    },
+    {
+        "text": "maybe the derivative of sine could have turned out to be some entirely new type of ",
+        "start": 874.365,
+        "duration": 3.738
+    },
+    {
+        "text": "function that just happens to have a similar shape.",
+        "start": 878.103,
+        "duration": 2.297
+    },
+    {
+        "text": "Well just like the previous examples, a more exact understanding ",
+        "start": 881.6,
+        "duration": 3.232
+    },
+    {
+        "text": "of the derivative requires looking at what the function actually represents, ",
+        "start": 884.832,
+        "duration": 3.83
+    },
+    {
+        "text": "rather than looking at the graph of the function.",
+        "start": 888.662,
+        "duration": 2.438
+    },
+    {
+        "text": "So think back to that walk around the unit circle, ",
+        "start": 892.4,
+        "duration": 2.596
+    },
+    {
+        "text": "having traversed an arc with length theta and thinking about sine of theta as ",
+        "start": 894.996,
+        "duration": 3.971
+    },
+    {
+        "text": "the height of that point.",
+        "start": 898.967,
+        "duration": 1.273
+    },
+    {
+        "text": "Now zoom into that point on the circle and consider a slight nudge of d theta ",
+        "start": 901.7,
+        "duration": 4.547
+    },
+    {
+        "text": "along their circumference, a tiny step in your walk around the unit circle.",
+        "start": 906.247,
+        "duration": 4.373
+    },
+    {
+        "text": "How much does that tiny step change the sine of theta?",
+        "start": 911.48,
+        "duration": 3.16
+    },
+    {
+        "text": "How much does this increase d theta of arc length increase the height above the x-axis?",
+        "start": 915.44,
+        "duration": 4.98
+    },
+    {
+        "text": "Well zoomed in close enough, the circle basically looks like a straight line in this ",
+        "start": 921.64,
+        "duration": 4.541
+    },
+    {
+        "text": "neighborhood, so let's go ahead and think of this right triangle where the hypotenuse ",
+        "start": 926.181,
+        "duration": 4.596
+    },
+    {
+        "text": "of that right triangle represents the nudge d theta along the circumference, ",
+        "start": 930.777,
+        "duration": 4.114
+    },
+    {
+        "text": "and that left side here represents the change in height, the resulting d sine of theta.",
+        "start": 934.891,
+        "duration": 4.649
+    },
+    {
+        "text": "Now this tiny triangle is actually similar to this larger triangle here, ",
+        "start": 940.14,
+        "duration": 4.045
+    },
+    {
+        "text": "with the defining angle theta and whose hypotenuse is the radius of the circle with ",
+        "start": 944.185,
+        "duration": 4.656
+    },
+    {
+        "text": "length 1.",
+        "start": 948.841,
+        "duration": 0.499
+    },
+    {
+        "text": "Specifically this little angle right here is precisely equal to theta radians.",
+        "start": 950.96,
+        "duration": 4.98
+    },
+    {
+        "text": "Now think about what the derivative of sine is supposed to mean.",
+        "start": 957.42,
+        "duration": 3.1
+    },
+    {
+        "text": "It's the ratio between that d sine of theta, the tiny change to the height, ",
+        "start": 961.22,
+        "duration": 4.365
+    },
+    {
+        "text": "divided by d theta, the tiny change to the input of the function.",
+        "start": 965.585,
+        "duration": 3.735
+    },
+    {
+        "text": "And from the picture we can see that that's the ratio between the ",
+        "start": 970.52,
+        "duration": 3.532
+    },
+    {
+        "text": "length of the side adjacent to the angle theta divided by the hypotenuse.",
+        "start": 974.052,
+        "duration": 3.908
+    },
+    {
+        "text": "Well let's see, adjacent divided by hypotenuse, ",
+        "start": 978.8,
+        "duration": 2.718
+    },
+    {
+        "text": "that's exactly what the cosine of theta means, that's the definition of the cosine.",
+        "start": 981.518,
+        "duration": 4.702
+    },
+    {
+        "text": "So this gives us two different really nice ways of ",
+        "start": 987.54,
+        "duration": 2.683
+    },
+    {
+        "text": "thinking about how the derivative of sine is cosine.",
+        "start": 990.223,
+        "duration": 2.737
+    },
+    {
+        "text": "One of them is looking at the graph and getting a loose feel for the shape of ",
+        "start": 993.14,
+        "duration": 3.502
+    },
+    {
+        "text": "things based on thinking about the slope of the sine graph at every single point.",
+        "start": 996.642,
+        "duration": 3.638
+    },
+    {
+        "text": "And the other is a more precise line of reasoning looking at the unit circle itself.",
+        "start": 1001.1,
+        "duration": 4.3
+    },
+    {
+        "text": "For those of you that like to pause and ponder, ",
+        "start": 1007.08,
+        "duration": 2.196
+    },
+    {
+        "text": "see if you can try a similar line of reasoning to find what the derivative of ",
+        "start": 1009.276,
+        "duration": 3.57
+    },
+    {
+        "text": "the cosine of theta should be.",
+        "start": 1012.846,
+        "duration": 1.374
+    },
+    {
+        "text": "In the next video I'll talk about how you can take derivatives ",
+        "start": 1016.32,
+        "duration": 3.176
+    },
+    {
+        "text": "of functions who combine simple functions like these ones, ",
+        "start": 1019.496,
+        "duration": 2.974
+    },
+    {
+        "text": "either as sums or products or function compositions, things like that.",
+        "start": 1022.47,
+        "duration": 3.53
+    },
+    {
+        "text": "And similar to this video the goal is going to be to understand each one ",
+        "start": 1026.56,
+        "duration": 3.083
+    },
+    {
+        "text": "geometrically in a way that makes it intuitively reasonable and somewhat more memorable.",
+        "start": 1029.643,
+        "duration": 3.716
+    }
+]

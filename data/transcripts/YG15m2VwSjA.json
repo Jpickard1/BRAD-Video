@@ -1,0 +1,1077 @@
+[
+    {
+        "text": "In the last videos I talked about the derivatives of simple functions, ",
+        "start": 14.5,
+        "duration": 4.153
+    },
+    {
+        "text": "and the goal was to have a clear picture or intuition to hold in ",
+        "start": 18.653,
+        "duration": 3.803
+    },
+    {
+        "text": "your mind that actually explains where these formulas come from.",
+        "start": 22.456,
+        "duration": 3.744
+    },
+    {
+        "text": "But most of the functions you deal with in modeling the world involve mixing, ",
+        "start": 26.84,
+        "duration": 4.547
+    },
+    {
+        "text": "combining, or tweaking these simple functions in some other way, ",
+        "start": 31.387,
+        "duration": 3.789
+    },
+    {
+        "text": "so our next step is to understand how you take derivatives of more complicated ",
+        "start": 35.176,
+        "duration": 4.606
+    },
+    {
+        "text": "combinations.",
+        "start": 39.782,
+        "duration": 0.758
+    },
+    {
+        "text": "Again, I don't want these to be something to memorize, ",
+        "start": 41.28,
+        "duration": 2.715
+    },
+    {
+        "text": "I want you to have a clear picture in mind for where each one comes from.",
+        "start": 43.995,
+        "duration": 3.605
+    },
+    {
+        "text": "Now, this really boils down into three basic ways to combine functions.",
+        "start": 49.52,
+        "duration": 4.08
+    },
+    {
+        "text": "You can add them together, you can multiply them, ",
+        "start": 54.1,
+        "duration": 2.491
+    },
+    {
+        "text": "and you can throw one inside the other, known as composing them.",
+        "start": 56.591,
+        "duration": 3.189
+    },
+    {
+        "text": "Sure, you could say subtracting them, but really that's just ",
+        "start": 60.6,
+        "duration": 3.23
+    },
+    {
+        "text": "multiplying the second by negative one and adding them together.",
+        "start": 63.83,
+        "duration": 3.39
+    },
+    {
+        "text": "Likewise, dividing functions doesn't really add anything, ",
+        "start": 68.24,
+        "duration": 2.924
+    },
+    {
+        "text": "because that's the same as plugging one inside the function, one over x, ",
+        "start": 71.164,
+        "duration": 3.68
+    },
+    {
+        "text": "and then multiplying the two together.",
+        "start": 74.844,
+        "duration": 1.916
+    },
+    {
+        "text": "So really, most functions you come across just involve layering ",
+        "start": 77.66,
+        "duration": 3.004
+    },
+    {
+        "text": "together these three different types of combinations, ",
+        "start": 80.664,
+        "duration": 2.536
+    },
+    {
+        "text": "though there's not really a bound on how monstrous things can become.",
+        "start": 83.2,
+        "duration": 3.24
+    },
+    {
+        "text": "But as long as you know how derivatives play with just those three combination types, ",
+        "start": 87.1,
+        "duration": 4.199
+    },
+    {
+        "text": "you'll always be able to take it step by step and peel through ",
+        "start": 91.299,
+        "duration": 3.077
+    },
+    {
+        "text": "the layers for any kind of monstrous expression.",
+        "start": 94.376,
+        "duration": 2.344
+    },
+    {
+        "text": "So the question is, if you know the derivative of two functions, ",
+        "start": 98.72,
+        "duration": 3.821
+    },
+    {
+        "text": "what is the derivative of their sum, of their product, ",
+        "start": 102.541,
+        "duration": 3.233
+    },
+    {
+        "text": "and of the function composition between them?",
+        "start": 105.774,
+        "duration": 2.646
+    },
+    {
+        "text": "The sum rule is easiest, if somewhat tongue-twisting to say out loud.",
+        "start": 110.32,
+        "duration": 3.94
+    },
+    {
+        "text": "The derivative of a sum of two functions is the sum of their derivatives.",
+        "start": 114.84,
+        "duration": 3.76
+    },
+    {
+        "text": "But it's worth warming up with this example by really thinking through ",
+        "start": 119.8,
+        "duration": 3.9
+    },
+    {
+        "text": "what it means to take a derivative of a sum of two functions, ",
+        "start": 123.7,
+        "duration": 3.405
+    },
+    {
+        "text": "since the derivative patterns for products and function composition won't ",
+        "start": 127.105,
+        "duration": 4.065
+    },
+    {
+        "text": "be so straightforward, and they're going to require this kind of deeper thinking.",
+        "start": 131.17,
+        "duration": 4.45
+    },
+    {
+        "text": "For example, let's think about this function f of x equals sine of x plus x squared.",
+        "start": 136.7,
+        "duration": 4.5
+    },
+    {
+        "text": "It's a function where, for every input, you add together ",
+        "start": 142.2,
+        "duration": 3.012
+    },
+    {
+        "text": "the values of sine of x and x squared at that point.",
+        "start": 145.212,
+        "duration": 2.748
+    },
+    {
+        "text": "For example, let's say at x equals 0.5, the height of the sine ",
+        "start": 149.76,
+        "duration": 4.289
+    },
+    {
+        "text": "graph is given by this vertical bar, and the height of the x ",
+        "start": 154.049,
+        "duration": 4.153
+    },
+    {
+        "text": "squared parabola is given by this slightly smaller vertical bar.",
+        "start": 158.202,
+        "duration": 4.358
+    },
+    {
+        "text": "And their sum is the length you get by just stacking them together.",
+        "start": 164.38,
+        "duration": 2.94
+    },
+    {
+        "text": "For the derivative, you want to ask what happens as you nudge that input slightly, ",
+        "start": 168.52,
+        "duration": 5.419
+    },
+    {
+        "text": "maybe increasing it up to 0.5 plus dx.",
+        "start": 173.939,
+        "duration": 2.481
+    },
+    {
+        "text": "The difference in the value of f between those two places is what we call df.",
+        "start": 177.56,
+        "duration": 5.36
+    },
+    {
+        "text": "And when you picture it like this, I think you'll agree that the total ",
+        "start": 184.36,
+        "duration": 4.618
+    },
+    {
+        "text": "change in the height is whatever the change to the sine graph is, ",
+        "start": 188.978,
+        "duration": 4.293
+    },
+    {
+        "text": "what we might call d sine of x, plus whatever the change to x squared is, dx squared.",
+        "start": 193.271,
+        "duration": 5.529
+    },
+    {
+        "text": "We know that the derivative of sine is cosine, and remember what that means.",
+        "start": 202.24,
+        "duration": 5.3
+    },
+    {
+        "text": "It means that this little change, d sine of x, is about cosine of x times dx.",
+        "start": 207.92,
+        "duration": 5.38
+    },
+    {
+        "text": "It's proportional to the size of our initial nudge dx, ",
+        "start": 213.78,
+        "duration": 3.932
+    },
+    {
+        "text": "and the proportionality constant equals cosine of whatever input we started at.",
+        "start": 217.712,
+        "duration": 5.648
+    },
+    {
+        "text": "Likewise, because the derivative of x squared is 2x, ",
+        "start": 223.98,
+        "duration": 4.092
+    },
+    {
+        "text": "the change in the height of the x squared graph is 2x times whatever dx was.",
+        "start": 228.072,
+        "duration": 5.868
+    },
+    {
+        "text": "So rearranging df divided by dx, the ratio of the tiny change to ",
+        "start": 235.6,
+        "duration": 4.876
+    },
+    {
+        "text": "the sum function to the tiny change in x that caused it, ",
+        "start": 240.476,
+        "duration": 4.277
+    },
+    {
+        "text": "is indeed cosine of x plus 2x, the sum of the derivatives of its parts.",
+        "start": 244.753,
+        "duration": 5.327
+    },
+    {
+        "text": "But like I said, things are a bit different for products, ",
+        "start": 251.52,
+        "duration": 3.809
+    },
+    {
+        "text": "and let's think through why in terms of tiny nudges again.",
+        "start": 255.329,
+        "duration": 3.811
+    },
+    {
+        "text": "In this case, I don't think graphs are our best bet for visualizing things.",
+        "start": 260.06,
+        "duration": 3.08
+    },
+    {
+        "text": "Pretty commonly in math, at a lot of levels of math really, ",
+        "start": 263.82,
+        "duration": 3.22
+    },
+    {
+        "text": "if you're dealing with a product of two things, ",
+        "start": 267.04,
+        "duration": 2.577
+    },
+    {
+        "text": "it helps to understand it as some kind of area.",
+        "start": 269.617,
+        "duration": 2.523
+    },
+    {
+        "text": "In this case, maybe you try to configure some mental setup ",
+        "start": 273.08,
+        "duration": 2.935
+    },
+    {
+        "text": "of a box where the side lengths are sine of x and x squared.",
+        "start": 276.015,
+        "duration": 2.985
+    },
+    {
+        "text": "But what would that mean?",
+        "start": 279.88,
+        "duration": 1.16
+    },
+    {
+        "text": "Well, since these are functions, you might think of those sides as adjustable, ",
+        "start": 282.32,
+        "duration": 4.287
+    },
+    {
+        "text": "dependent on the value of x, which maybe you think of as this ",
+        "start": 286.607,
+        "duration": 3.365
+    },
+    {
+        "text": "number that you can just freely adjust up and down.",
+        "start": 289.972,
+        "duration": 2.768
+    },
+    {
+        "text": "So getting a feel for what this means, focus on ",
+        "start": 293.74,
+        "duration": 3.072
+    },
+    {
+        "text": "that top side who changes as the function sine of x.",
+        "start": 296.812,
+        "duration": 3.328
+    },
+    {
+        "text": "As you change this value of x up from 0, it increases up to ",
+        "start": 301.06,
+        "duration": 4.246
+    },
+    {
+        "text": "a length of 1 as sine of x moves up towards its peak, ",
+        "start": 305.306,
+        "duration": 3.821
+    },
+    {
+        "text": "and after that it starts to decrease as sine of x comes down from 1.",
+        "start": 309.127,
+        "duration": 4.813
+    },
+    {
+        "text": "And in the same way, that height there is always changing as x squared.",
+        "start": 315.1,
+        "duration": 3.48
+    },
+    {
+        "text": "So f of x, defined as the product of these two functions, is the area of this box.",
+        "start": 320.08,
+        "duration": 5.72
+    },
+    {
+        "text": "And for the derivative, let's think about how ",
+        "start": 327.06,
+        "duration": 3.06
+    },
+    {
+        "text": "a tiny change to x by dx influences that area.",
+        "start": 330.12,
+        "duration": 3.06
+    },
+    {
+        "text": "What is that resulting change in area df?",
+        "start": 333.84,
+        "duration": 2.44
+    },
+    {
+        "text": "Well, the nudge dx caused that width to change by some small d sine of x, ",
+        "start": 339.0,
+        "duration": 5.116
+    },
+    {
+        "text": "and it caused that height to change by some dx squared.",
+        "start": 344.116,
+        "duration": 3.804
+    },
+    {
+        "text": "And this gives us three little snippets of new area, ",
+        "start": 350.18,
+        "duration": 3.469
+    },
+    {
+        "text": "a thin rectangle on the bottom whose area is its width, sine of x, ",
+        "start": 353.649,
+        "duration": 4.385
+    },
+    {
+        "text": "times its thin height, dx squared.",
+        "start": 358.034,
+        "duration": 2.226
+    },
+    {
+        "text": "And there's this thin rectangle on the right, whose area is its height, ",
+        "start": 361.78,
+        "duration": 4.627
+    },
+    {
+        "text": "x squared, times its thin width, d sine of x.",
+        "start": 366.407,
+        "duration": 2.893
+    },
+    {
+        "text": "And there's also this little bit in the corner, but we can ignore that.",
+        "start": 370.74,
+        "duration": 3.4
+    },
+    {
+        "text": "Its area is ultimately proportional to dx squared, ",
+        "start": 374.44,
+        "duration": 3.417
+    },
+    {
+        "text": "and as we've seen before, that becomes negligible as dx goes to zero.",
+        "start": 377.857,
+        "duration": 4.623
+    },
+    {
+        "text": "I mean, this whole setup is very similar to what I showed last video, ",
+        "start": 383.94,
+        "duration": 3.435
+    },
+    {
+        "text": "with the x squared diagram.",
+        "start": 387.375,
+        "duration": 1.325
+    },
+    {
+        "text": "And just like then, keep in mind that I'm using somewhat beefy ",
+        "start": 389.46,
+        "duration": 3.245
+    },
+    {
+        "text": "changes here to draw things, just so we can actually see them.",
+        "start": 392.705,
+        "duration": 3.195
+    },
+    {
+        "text": "But in principle, dx is something very very small, ",
+        "start": 396.36,
+        "duration": 3.458
+    },
+    {
+        "text": "and that means that dx squared and d sine of x are also very very small.",
+        "start": 399.818,
+        "duration": 4.882
+    },
+    {
+        "text": "So, applying what we know about the derivative of sine and of x squared, ",
+        "start": 405.98,
+        "duration": 5.195
+    },
+    {
+        "text": "that tiny change, dx squared, is going to be about 2x times dx.",
+        "start": 411.175,
+        "duration": 4.485
+    },
+    {
+        "text": "And that tiny change, d sine of x, well that's going to be about cosine of x times dx.",
+        "start": 416.36,
+        "duration": 5.22
+    },
+    {
+        "text": "As usual, we divide out by that dx to see that the ratio we want, df divided by dx, ",
+        "start": 422.92,
+        "duration": 6.099
+    },
+    {
+        "text": "is sine of x times the derivative of x squared, ",
+        "start": 429.019,
+        "duration": 3.486
+    },
+    {
+        "text": "plus x squared times the derivative of sine.",
+        "start": 432.505,
+        "duration": 3.195
+    },
+    {
+        "text": "And nothing we've done here is specific to sine or to x squared.",
+        "start": 437.96,
+        "duration": 3.3
+    },
+    {
+        "text": "This same line of reasoning would work for any two functions, g and h.",
+        "start": 441.58,
+        "duration": 3.78
+    },
+    {
+        "text": "And sometimes people like to remember this pattern with ",
+        "start": 447.0,
+        "duration": 2.311
+    },
+    {
+        "text": "a certain mnemonic that you kind of sing in your head.",
+        "start": 449.311,
+        "duration": 2.229
+    },
+    {
+        "text": "Left d right, right d left.",
+        "start": 452.22,
+        "duration": 1.46
+    },
+    {
+        "text": "In this example, where we have sine of x times x squared, left d right, ",
+        "start": 454.4,
+        "duration": 4.413
+    },
+    {
+        "text": "means you take that left function, sine of x, times the derivative of the right, ",
+        "start": 458.813,
+        "duration": 4.966
+    },
+    {
+        "text": "in this case 2x.",
+        "start": 463.779,
+        "duration": 0.981
+    },
+    {
+        "text": "Then you add on right d left, that right function, ",
+        "start": 465.48,
+        "duration": 3.396
+    },
+    {
+        "text": "x squared, times the derivative of the left one, cosine of x.",
+        "start": 468.876,
+        "duration": 4.064
+    },
+    {
+        "text": "Now out of context, presented as a rule to remember, ",
+        "start": 474.36,
+        "duration": 2.912
+    },
+    {
+        "text": "I think this would feel pretty strange, don't you?",
+        "start": 477.272,
+        "duration": 2.748
+    },
+    {
+        "text": "But when you actually think of this adjustable box, ",
+        "start": 480.74,
+        "duration": 2.641
+    },
+    {
+        "text": "you can see what each of those terms represents.",
+        "start": 483.381,
+        "duration": 2.439
+    },
+    {
+        "text": "Left d right is the area of that little bottom rectangle, ",
+        "start": 486.58,
+        "duration": 4.392
+    },
+    {
+        "text": "and right d left is the area of that rectangle on the side.",
+        "start": 490.972,
+        "duration": 4.468
+    },
+    {
+        "text": "By the way, I should mention that if you multiply by a constant, ",
+        "start": 500.16,
+        "duration": 3.687
+    },
+    {
+        "text": "say 2 times sine of x, things end up a lot simpler.",
+        "start": 503.847,
+        "duration": 2.893
+    },
+    {
+        "text": "The derivative is just the same as the constant multiplied by ",
+        "start": 507.4,
+        "duration": 3.475
+    },
+    {
+        "text": "the derivative of the function, in this case 2 times cosine of x.",
+        "start": 510.875,
+        "duration": 3.645
+    },
+    {
+        "text": "I'll leave it to you to pause and ponder and verify that makes sense.",
+        "start": 515.559,
+        "duration": 4.62
+    },
+    {
+        "text": "Aside from addition and multiplication, the other common way to combine functions, ",
+        "start": 521.919,
+        "duration": 4.615
+    },
+    {
+        "text": "and believe me, this one comes up all the time, ",
+        "start": 526.534,
+        "duration": 2.668
+    },
+    {
+        "text": "is to shove one inside the other, function composition.",
+        "start": 529.202,
+        "duration": 3.058
+    },
+    {
+        "text": "For example, maybe we take the function x squared and shove it ",
+        "start": 533.22,
+        "duration": 3.678
+    },
+    {
+        "text": "inside sine of x to get this new function, sine of x squared.",
+        "start": 536.898,
+        "duration": 3.562
+    },
+    {
+        "text": "What do you think the derivative of that new function is?",
+        "start": 541.4,
+        "duration": 2.68
+    },
+    {
+        "text": "To think this one through, I'll choose yet another way to visualize things, ",
+        "start": 545.3,
+        "duration": 3.847
+    },
+    {
+        "text": "just to emphasize that in creative math, we've got lots of options.",
+        "start": 549.147,
+        "duration": 3.393
+    },
+    {
+        "text": "I'll put up three different number lines, the top one is going to hold the value of x, ",
+        "start": 553.32,
+        "duration": 5.271
+    },
+    {
+        "text": "the second one is going to hold the x squared, ",
+        "start": 558.591,
+        "duration": 2.849
+    },
+    {
+        "text": "and the third line is going to hold the value of sine of x squared.",
+        "start": 561.44,
+        "duration": 4.06
+    },
+    {
+        "text": "That is, the function x squared gets you from line 1 to line 2, ",
+        "start": 566.46,
+        "duration": 3.85
+    },
+    {
+        "text": "and the function sine gets you from line 2 to line 3.",
+        "start": 570.31,
+        "duration": 3.19
+    },
+    {
+        "text": "As I shift around this value of x, maybe moving it up to the value 3, ",
+        "start": 574.84,
+        "duration": 4.741
+    },
+    {
+        "text": "that second value stays pegged to whatever x squared is, in this case moving up to 9.",
+        "start": 579.581,
+        "duration": 5.759
+    },
+    {
+        "text": "That bottom value, being sine of x squared, is ",
+        "start": 586.2,
+        "duration": 3.156
+    },
+    {
+        "text": "going to go to whatever sine of 9 happens to be.",
+        "start": 589.356,
+        "duration": 3.224
+    },
+    {
+        "text": "So, for the derivative, let's again start by nudging that x value by some little dx.",
+        "start": 594.9,
+        "duration": 5.5
+    },
+    {
+        "text": "I always think that it's helpful to think of x as starting ",
+        "start": 601.54,
+        "duration": 3.26
+    },
+    {
+        "text": "at some actual concrete number, maybe 1.5 in this case.",
+        "start": 604.8,
+        "duration": 3.04
+    },
+    {
+        "text": "The resulting nudge to that second value, the change in x squared caused by such a dx, ",
+        "start": 608.76,
+        "duration": 5.978
+    },
+    {
+        "text": "is dx squared.",
+        "start": 614.738,
+        "duration": 0.962
+    },
+    {
+        "text": "We could expand this like we have before, as 2x times dx, ",
+        "start": 616.96,
+        "duration": 4.103
+    },
+    {
+        "text": "which for our specific input would be 2 times 1.5 times dx, ",
+        "start": 621.063,
+        "duration": 4.245
+    },
+    {
+        "text": "but it helps to keep things written as dx squared, at least for now.",
+        "start": 625.308,
+        "duration": 4.812
+    },
+    {
+        "text": "In fact, I'm going to go one step further, give a new name to this x squared, ",
+        "start": 631.02,
+        "duration": 5.365
+    },
+    {
+        "text": "maybe h, so instead of writing dx squared for this nudge, we write dh.",
+        "start": 636.385,
+        "duration": 4.815
+    },
+    {
+        "text": "This makes it easier to think about that third value, which is now pegged at sine of h.",
+        "start": 642.62,
+        "duration": 4.64
+    },
+    {
+        "text": "Its change is d sine of h, the tiny change caused by the nudge dh.",
+        "start": 648.2,
+        "duration": 5.48
+    },
+    {
+        "text": "By the way, the fact that it's moving to the left while the dh bump is going to the right ",
+        "start": 655.0,
+        "duration": 5.134
+    },
+    {
+        "text": "just means that this change, d sine of h, is going to be some kind of negative number.",
+        "start": 660.134,
+        "duration": 4.906
+    },
+    {
+        "text": "Once again, we can use our knowledge of the derivative of the sine.",
+        "start": 666.14,
+        "duration": 3.5
+    },
+    {
+        "text": "This d sine of h is going to be about cosine of h times dh.",
+        "start": 670.5,
+        "duration": 3.92
+    },
+    {
+        "text": "That's what it means for the derivative of sine to be cosine.",
+        "start": 675.24,
+        "duration": 3.4
+    },
+    {
+        "text": "Unfolding things, we can replace that h with x squared again, ",
+        "start": 679.54,
+        "duration": 4.232
+    },
+    {
+        "text": "so we know that the bottom nudge will be a size of cosine of x squared times dx squared.",
+        "start": 683.772,
+        "duration": 6.008
+    },
+    {
+        "text": "Let's unfold things even further.",
+        "start": 691.04,
+        "duration": 1.44
+    },
+    {
+        "text": "That intermediate nudge dx squared is going to be about 2x times dx.",
+        "start": 692.84,
+        "duration": 5.26
+    },
+    {
+        "text": "It's always a good habit to remind yourself of ",
+        "start": 699.06,
+        "duration": 2.386
+    },
+    {
+        "text": "what an expression like this actually means.",
+        "start": 701.446,
+        "duration": 2.234
+    },
+    {
+        "text": "In this case, where we started at x equals 1.5 up top, ",
+        "start": 704.34,
+        "duration": 4.238
+    },
+    {
+        "text": "this whole expression is telling us that the size of the nudge on that third ",
+        "start": 708.578,
+        "duration": 5.935
+    },
+    {
+        "text": "line is going to be about cosine of 1.5 squared times 2 times 1.5 times whatever ",
+        "start": 714.513,
+        "duration": 6.242
+    },
+    {
+        "text": "the size of dx was.",
+        "start": 720.755,
+        "duration": 1.465
+    },
+    {
+        "text": "It's proportional to the size of dx, and this ",
+        "start": 722.72,
+        "duration": 2.392
+    },
+    {
+        "text": "derivative is giving us that proportionality constant.",
+        "start": 725.112,
+        "duration": 2.808
+    },
+    {
+        "text": "Notice what we came out with here.",
+        "start": 730.92,
+        "duration": 1.64
+    },
+    {
+        "text": "We have the derivative of the outside function, ",
+        "start": 732.96,
+        "duration": 2.896
+    },
+    {
+        "text": "and it's still taking in the unaltered inside function, ",
+        "start": 735.856,
+        "duration": 3.38
+    },
+    {
+        "text": "and then multiplying it by the derivative of that inside function.",
+        "start": 739.236,
+        "duration": 3.984
+    },
+    {
+        "text": "Again, there's nothing special about sine of x or x squared.",
+        "start": 745.82,
+        "duration": 3.4
+    },
+    {
+        "text": "If you have any two functions, g of x and h of x, ",
+        "start": 749.74,
+        "duration": 3.762
+    },
+    {
+        "text": "the derivative of their composition, g of h of x, ",
+        "start": 753.502,
+        "duration": 3.762
+    },
+    {
+        "text": "is going to be the derivative of g evaluated on h, multiplied by the derivative of h.",
+        "start": 757.264,
+        "duration": 6.396
+    },
+    {
+        "text": "This pattern right here is what we usually call the chain rule.",
+        "start": 767.14,
+        "duration": 3.76
+    },
+    {
+        "text": "Notice for the derivative of g, I'm writing it as dg dh instead of dg dx.",
+        "start": 772.04,
+        "duration": 5.64
+    },
+    {
+        "text": "On the symbolic level, this is a reminder that the thing you plug ",
+        "start": 778.68,
+        "duration": 3.555
+    },
+    {
+        "text": "into that derivative is still going to be that intermediary function h.",
+        "start": 782.235,
+        "duration": 3.825
+    },
+    {
+        "text": "But more than that, it's an important reflection of what ",
+        "start": 787.02,
+        "duration": 2.726
+    },
+    {
+        "text": "this derivative of the outer function actually represents.",
+        "start": 789.746,
+        "duration": 2.774
+    },
+    {
+        "text": "Remember, in our three line setup, when we took the derivative of the sine on ",
+        "start": 793.2,
+        "duration": 5.249
+    },
+    {
+        "text": "that bottom, we expanded the size of that nudge, d sine, as cosine of h times dh.",
+        "start": 798.449,
+        "duration": 5.451
+    },
+    {
+        "text": "This was because we didn't immediately know how ",
+        "start": 804.94,
+        "duration": 2.556
+    },
+    {
+        "text": "the size of that bottom nudge depended on x.",
+        "start": 807.496,
+        "duration": 2.344
+    },
+    {
+        "text": "That's kind of the whole thing we were trying to figure out.",
+        "start": 810.42,
+        "duration": 2.18
+    },
+    {
+        "text": "But we could take the derivative with respect to that intermediate variable, h.",
+        "start": 813.26,
+        "duration": 4.1
+    },
+    {
+        "text": "That is, figure out how to express the size of that nudge on the third ",
+        "start": 818.1,
+        "duration": 3.816
+    },
+    {
+        "text": "line as some multiple of dh, the size of the nudge on the second line.",
+        "start": 821.916,
+        "duration": 3.764
+    },
+    {
+        "text": "It was only after that that we unfolded further by figuring out what dh was.",
+        "start": 826.58,
+        "duration": 4.12
+    },
+    {
+        "text": "In this chain rule expression, we're saying, look at the ratio between a tiny change in ",
+        "start": 833.32,
+        "duration": 5.407
+    },
+    {
+        "text": "g, the final output, to a tiny change in h that caused it, ",
+        "start": 838.727,
+        "duration": 3.625
+    },
+    {
+        "text": "h being the value we plug into g.",
+        "start": 842.352,
+        "duration": 2.028
+    },
+    {
+        "text": "Then multiply that by the tiny change in h, divided ",
+        "start": 845.32,
+        "duration": 3.36
+    },
+    {
+        "text": "by the tiny change in x that caused it.",
+        "start": 848.68,
+        "duration": 2.52
+    },
+    {
+        "text": "So notice, those dh's cancel out, and they give us a ratio ",
+        "start": 852.3,
+        "duration": 3.182
+    },
+    {
+        "text": "between the change in that final output and the change to the input that, ",
+        "start": 855.482,
+        "duration": 3.992
+    },
+    {
+        "text": "through a certain chain of events, brought it about.",
+        "start": 859.474,
+        "duration": 2.806
+    },
+    {
+        "text": "And that cancellation of dh is not just a notational trick.",
+        "start": 863.86,
+        "duration": 3.12
+    },
+    {
+        "text": "That is a genuine reflection of what's going on with the ",
+        "start": 866.98,
+        "duration": 3.371
+    },
+    {
+        "text": "tiny nudges that underpin everything we do with derivatives.",
+        "start": 870.351,
+        "duration": 3.549
+    },
+    {
+        "text": "So those are the three basic tools to have in your belt to handle ",
+        "start": 876.3,
+        "duration": 3.578
+    },
+    {
+        "text": "derivatives of functions that combine a lot of smaller things.",
+        "start": 879.878,
+        "duration": 3.362
+    },
+    {
+        "text": "You've got the sum rule, the product rule, and the chain rule.",
+        "start": 883.84,
+        "duration": 3.54
+    },
+    {
+        "text": "And I'll be honest with you, there is a big difference between knowing ",
+        "start": 888.4,
+        "duration": 3.522
+    },
+    {
+        "text": "what the chain rule is and what the product rule is, ",
+        "start": 891.922,
+        "duration": 2.629
+    },
+    {
+        "text": "and actually being fluent with applying them in even the most hairy of situations.",
+        "start": 894.551,
+        "duration": 4.069
+    },
+    {
+        "text": "Watching videos, any videos, about the mechanics of calculus is ",
+        "start": 899.48,
+        "duration": 3.621
+    },
+    {
+        "text": "never going to substitute for practicing those mechanics yourself, ",
+        "start": 903.101,
+        "duration": 3.791
+    },
+    {
+        "text": "and building up the muscles to do these computations yourself.",
+        "start": 906.892,
+        "duration": 3.508
+    },
+    {
+        "text": "I really wish I could offer to do that for you, ",
+        "start": 911.24,
+        "duration": 2.361
+    },
+    {
+        "text": "but I'm afraid the ball is in your court, my friend, to seek out the practice.",
+        "start": 913.601,
+        "duration": 3.839
+    },
+    {
+        "text": "What I can offer, and what I hope I have offered, ",
+        "start": 918.04,
+        "duration": 2.901
+    },
+    {
+        "text": "is to show you where these rules actually come from.",
+        "start": 920.941,
+        "duration": 3.019
+    },
+    {
+        "text": "To show that they're not just something to be memorized and hammered away, ",
+        "start": 924.14,
+        "duration": 3.634
+    },
+    {
+        "text": "but they're natural patterns, things that you too could have discovered ",
+        "start": 927.774,
+        "duration": 3.49
+    },
+    {
+        "text": "just by patiently thinking through what a derivative actually means.",
+        "start": 931.264,
+        "duration": 3.296
+    }
+]

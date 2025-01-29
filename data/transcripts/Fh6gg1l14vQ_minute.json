@@ -1,0 +1,150 @@
+[
+    {
+        "start": 0.08,
+        "text": "welcome everyone uh thanks for joining us today for the tools and technology seminar series uh today's session is uh remote only just meaning that we do not have a live viewing opportunity um in palmer commons that's gonna be true for next week too at a minimum after that we'll sort of have to get a sense of how things are going with coven if you have questions during today's presentation you should feel free to put them in the chat box we'll be monitoring that so that we can let our speaker know if any questions come in um so today's speaker is jonathan lafave and he is the uh senior applications programmer and analyst in the center for statistical genetics so thanks jonathan for joining us today and feel free to start your presentation when you're ready thanks marcy and thanks everyone for joining uh as mercy just said my name is jonathan lafave i'm a staff programmer in the gonzalo epicases lab here at the university of michigan "
+    },
+    {
+        "start": 62.16,
+        "text": "our research focuses um mainly on the development of statistical tools that aid in studying genomic variation important in human disease currently one of our main efforts has been contributing to the nhlbi top med initiative acting as the project's informatics resource center and in this role we are we have analyzed many petabytes of whole genome sequence data and today i'm going to talk about some analysis and storage approaches we have developed that are designed for genomic data sets of this scale first i want to show you an overview of how these data sets have grown in recent years notice that in addition to the number of genome samples we are also displaying the number of genomic variants detected and this is to show that these data sets are growing on two dimensions "
+    },
+    {
+        "start": 125.52,
+        "text": "the more recent recent projects are employing high coverage whole genome sequencing uh which is boosting the number of variants being detected within these large sample sets uh and so with this technology the more samples we sequence the more variants we are detecting uh and now a little background on the the storage formats that have been used um you know in recent years the standard file format for storing genomic variation is the variant call format or vcf uh it's a text-based tab-delimited format and it's also coupled with a binary encoding called bcf looking at the toy example here at the bottom of the slide these files contain a set of headers that describe the contents of the file and then a table of detected variants the first nine columns contain "
+    },
+    {
+        "start": 187.28,
+        "text": "site-specific information and the remaining columns contain individual or sample level data so one column per sample and one row per variant in this case we are seeing a matrix of integer encoded alleles that an individual carries at a particular locus um so as whole genome sequencing data sets approach millions of samples and hundreds of millions of variants these matrices are becoming quite large but the the key point i want to convey here before going forward is that the majority of these variants are extremely rare uh resulting in these matrices being very sparse or in other words most of the values are zero so to to capitalize on the sparsity we've developed a file format called sparse allele vectors "
+    },
+    {
+        "start": 247.439,
+        "text": "um which i'll more commonly refer to as sav it's an extension of the bcf format i mentioned in the previous slide and it produces smaller file sizes than bcf and is also faster when it comes to reading and writing files we've also made some changes to the random access of data so we're talking querying subsets of the data either subsets of samples and subsets of variants and then also to to complement the file format we've we've developed a full featured c plus plus api and command line interface and i have a link there to uh that software all right uh what i'm gonna i'm going to try to illustrate with the next few slides is how we exploit the sparsity um of genotype data to compress the genotype matrix "
+    },
+    {
+        "start": 308.16,
+        "text": "and what we're looking at here is basically like a toy example of um uh some genotype calls you might see uh in in dense form uh so first we we discard the values that are zero [Music] and then record the offsets of the non-zero values within each row and then [Music] in order to improve downstream bit level compression we actually store the relative offsets instead of the absolute offsets uh since these contain repetitious integers um and even with this illustrative example there's a notable reduction in what's being stored but in reality the large call sets are much more sparse and the reduction is far greater uh there's also an optional method that "
+    },
+    {
+        "start": 368.24,
+        "text": "uh can be applied in sav for dense data types and this is the positional burrows wheeler transform uh which was originally described in our richard durbin uh 2014 paper this sorts each row using a mapping that is based on the assorted order of the previous row and so as shown here the the first row remains the same but the entries in the second row are mapped based on their sorted positions in the first row for the third row they're mapped based on the second row and so on and so forth this results in sequences of repeated values which is advantageous for bit level compression now i'm going to talk about the index structure for sav we use an archery to query variants that overlap a genomic region "
+    },
+    {
+        "start": 428.4,
+        "text": "um the begin and end positions of a variant indicated by the bars in this figure the colored bars are indexed with this tree structure and this is similar to tabix and ci the csi indices that are used for ucf and bcf they also use an archery but there are some important differences and i'm gonna get to those uh in the following bullet points um the first difference is that we use a bottom-up layout this allows us when writing out a new scifile to simultaneously write out leaf nodes in the tree and then once all the records have been written the internal nodes of the tree are generated and a footer is generated we can then index to or that we can then um [Music] take this index that we've written out and append it to the end of the sav file this differs from previous uh approaches "
+    },
+    {
+        "start": 488.879,
+        "text": "in vcf and bcf that store the indices as a separate file um so you know with sav the index queries uh are done by first opening file then seeking to the end of the file um reading the footer and then we can kind of read the index backwards in order to make those queries and uh you know this footer also doubles as an end of file marker uh which allows us to detect truncation um during you know file transfers or whatever it may be um another way that sn s1r is different is that it can be traversed on disk uh that is to say we don't need to load the entire index into memory uh but instead we we seek directly to the node uh the tree nodes that satisfy our quarry and so we start at the root node and then from there we can determine "
+    },
+    {
+        "start": 548.88,
+        "text": "which other nodes we need to traverse in order to finally get to the data that we care about we also changed how we encode file positions in these indices uh vcf bcf and sav all split the file across uh compressed blocks and with vcf and vcf a uh what is called a you know they call a virtual offset is used to store the file positions of the beginning of the compressed block in addition to um the uncompressed offset within the block and the problem with that this is that it limits the size of the uncompressed data that can fit into a block to four kilobytes um with sav we instead store the number of records in the block as opposed to "
+    },
+    {
+        "start": 609.04,
+        "text": "the uncompressed offset uh and being able to store large larger blocks of data improves the compression especially with the z standard algorithm that sav uses um and then there's also in terms of uh the the number of records being stored in the block we can use that for for other things i'm going to talk about i think maybe in the next slide here uh yeah so storing showing the number of records of the block uh allows us to do slice queries and so this means we can scan the leaf nodes in the index and get uh the compressed block position of the nth record in the file or a series of of records with a start and end position um we can also quickly get the total number of records in a file just by looking at the leaf nodes of the index and then if we wanted to evenly distribute work across compute nodes when "
+    },
+    {
+        "start": 671.36,
+        "text": "parallelizing an analysis of variance so uh i just want to go over a quick history of this format our first iteration of sav was a proprietary file format that only supported gt and hcs data types so these are hard called genotypes and imputed haplotype or basically imputed probabilities um and in addition to this limitation of what can be stored uh there was another issue um so there have been many alternatives to bcf and vcf that have popped up in recent years making it difficult for users when the format of their data isn't supported by uh the analysis tool they want to use and so adding yet another alternative to the mix "
+    },
+    {
+        "start": 731.839,
+        "text": "uh only adds to this problem so for the second iteration of sev we decided to approve upon an existing standard instead of creating a brand new one from scratch sav version 2 extends pcf which means that it gets all the existing features of ucf and is easier to implement in software that already supports bcf uh we're also a part of a ga4gh initiative that is discussing the future direction of the vcf spec and standard and and we hope to combine the best ideas from sav uh with those of other formats in order to improve the standard um so i'm gonna dive into the weeds just just for a moment here to give you an idea of how we uh extended bcf um "
+    },
+    {
+        "start": 792.48,
+        "text": "so the you know the original bcf specification um the data is encoded in what they call a typed value which is basically a statically typed data vector uh the type is encoded in the the four least significant bits of the first byte which is labeled uh as ts as four t's in this diagram um but of the 16 possible values that commit values that can be stored in four bits only five are currently being used for bcf and that's the the five entries on the table to the right so what we've done with the version two of sav is utilize some of this unused bit space to allow for a new sparse vector uh encoding uh as well as a flag for pbwt and so you know uh certain certain vectors can even either have this flag on or off to "
+    },
+    {
+        "start": 853.04,
+        "text": "determine whether or not the transform is applied um and and so by trying to make these minimal um changes to the spec you know the idea is that uh it's it's a lot easier to reuse the same code that already exists for parsing data and some of the libraries that you know were designed to to parse bcf you know read and write bcf files uh don't involve much changes in order to adopt uh sav as an alternative for format okay so now i'm going to move on to some results [Music] this table shows comparisons of a deserialization speed um on the top of the table and then uh file size on the bottom and so i think the main thing is that as sample "
+    },
+    {
+        "start": 913.199,
+        "text": "sizes increase the relative efficiency of sav compared to bcf and vcf improves uh both in terms of file size and speed and i would say especially speed um the i guess other thing to consider is that uh the pbwt uh improves size efficiency but it does worsen the speed because of all that extra sorting that has to happen for each record but we can enable it only for common variants in other words the the least sparse vectors as kind of a compromise so we can we can apply the the sparse vector uh encoding for sparse vectors and use the pbwt for dense vectors um in order to evaluate whether the speed "
+    },
+    {
+        "start": 973.199,
+        "text": "improvements of sav would be noticeable when running a standard analysis we ran a series of genome-wide association analyses that the results are in the table here uh in the bottom of half the table we're showing the results of doing these associated associate association tests using sparse factor operations which results in a 50-fold runtime improvement on 200 000 on a 200 000 sample call set um uh and so even when you're not using the sparse vector operations you can see a a a difference uh in in these analyses but you get the most bang for your buck when you um uh use you know when you can use sparse vector operations as part of your analysis because you don't need to expand out that data into a dense vector you can just leave it you know compressed in memory as it "
+    },
+    {
+        "start": 1033.199,
+        "text": "exists on disk okay so uh quick disclaimer here i uh this is a last-minute slide that i did this morning so i i hope there aren't any typos and that these numbers add up um but we're basically looking at um runtime results of uh our mini mac for imputation software and so we're looking at the total time it takes to write out the imputed results versus the total time of the analysis uh and i have it done for um both uh uh computing 500 samples and then another run that imputed uh looks like close to 8 000 samples um "
+    },
+    {
+        "start": 1094.4,
+        "text": "and there are a lot of things that go into the overall wall uh uh run time and so i wouldn't you know consider this you know extrapolate from here on what you would expect for other things but the main point is that um the using savs and output format does reduce the overall wall time compared to the other two and uh i guess the other thing is that we we use um mini mac 4 as the back end to our imputation server um or servers we have two of them and so we run um i don't know what the number is but you know we've run probably computed maybe many millions of genomes and even a reduction a modest reduction of you know 10 or 20 percent of runtime um you know adds up in terms of compute costs um the other thing is that mini mac 4 is um you know the the actual amputation can be uh um parallelized and so in these in "
+    },
+    {
+        "start": 1157.6,
+        "text": "these runs uh i use 32 threads to do the analysis and so if you're paying for a compute node that has 32 cores and you're doing single threaded writing of the results to disk then you're wasting a lot of cpus when you're writing out um the results files and so shrinking that as much as pot possible is a more efficient use of of those cores and and and the money spent on compute um uh so here i'm just getting some of uh some examples of of using the command line interface this is just you know a small subset of all possible commands and options um but it does you know pretty much all the basic things um you can uh convert between file formats with import and export and then also you know subset um on both dimensions uh "
+    },
+    {
+        "start": 1220.88,
+        "text": "uh with both of these commands uh in in addition to filtering out um the variants based on different criteria that exist in info fields we can concatenate multiple files together um and we can also do this in a very efficient way uh that doesn't involve decompressing the uh files being concatenated together we can just read the headers and make sure everything is compatible across the files and then we can just do a byte for byte uh copy of the compressed data which makes it a lot faster than it would be if we were to completely uncompress the data and then write it all back out again uh we also have uh other common things like sorting the variants and and looking at the headers and editing the headers um also you know they're they're designed to be very efficient "
+    },
+    {
+        "start": 1281.6,
+        "text": "um and then we can set the file but then we can also stack the index file um as i had stated earlier that this new index has some metrics that you can extract from it directly without having to read through the entire file and so you can get things like you know number of variants and number of variants with a certain chromosome that are that exists within the file uh the next few slides i'm going to show you examples of the savvy c-plus plus api it's uh pretty high level and uh hopefully easy for people to use uh this is an example of just how you would copy a file from um sav format to bcf format uh and it just involves initiating the input and output files and then looping through uh each variant and writing it out and that's you know basically all that's involved "
+    },
+    {
+        "start": 1342.96,
+        "text": "um in this example uh we're just showing some of the ways of accessing data when reading in the file um and so it's just really easy to get um you know very common information like the position of the variant chromosome the rethanol and then we can also get and set info fields and get and set the individual level data here's an example of uh how we do random access within uh the savvy api um and this is just an example of doing region queries but in a very similar fashion you can do the slice queries that i talked about earlier uh but you can basically just open a file and then call reset bounds as many times you want to pull out different slices of of variants within a given file "
+    },
+    {
+        "start": 1403.84,
+        "text": "and then uh lastly uh here's an example of subsetting samples and so uh what we're doing here is requesting three um samples indicated by their sample ids in uh the requested variable uh and then calling subset samples with it and it returns the intersection between uh what you've requested and what exists in the file and then from there on out when you read invariants from that file it's only going to give you data for that intersection um and yeah it looks like i actually blew through these sides really quickly so i hope uh i didn't glaze over topics here but this is my last slide uh i have just listed some of the tools um that supports currently "
+    },
+    {
+        "start": 1465.76,
+        "text": "um with links to them uh and uh final note the the last one in this list isn't uh released yet and so it's still in a private repo but um hoping to get that out later this spring uh but this tool is going to um be in a association association analysis tool that uh takes advantage of all the um you know nice characteristics of sav in order to uh speed up your analysis speed up your analyses um so with that i'm i'm happy to take any questions thank you jonathan for that uh great presentation if anyone does have questions you can put them in the chat box or admit yourself and ask the questions hi jonathan um i've that was a great talk by the way um so "
+    },
+    {
+        "start": 1526.08,
+        "text": "i work at the bioinformatics core and so we're interacting from time to time with vcf or bcf style files um the api that you illustrated looked really clean look really clear but as we're typically using tools that are off the shelf what's the kind of recommended road map to integrate your file format with a tool that's you know optimized for a more traditional vcf style uh file format uh yeah um so uh one of the reasons that with the second iteration we went with um basically extending bcf was with the hopes of actually including it in um hts lib which is the c api that not everyone uses but "
+    },
+    {
+        "start": 1586.159,
+        "text": "i would argue many tools use hdslib in order to access or at least parse bcfs because that's more of an involved file format and while we haven't integrated it yet with that you know i i guess our hopes is that eventually it could more easily be integrated with hds lube um at the very least uh we might even make a fork of hts lib that does this integration um and so that's one possible way um the other so so that's probably you know that when that's available that will be the easiest way but um the other thing i want to put out is that um while savvy the c-plus plus library we developed is cleaner it's also faster um sorry one more slide back so if you look at the top table here i'm i'm doing compute times for uh reading and bcf with hts lib and then "
+    },
+    {
+        "start": 1647.44,
+        "text": "also with savvy and it's designed in a way to allow for more vectorized um copying of data uh and and transferring or uh uh altering of data and so it can actually it's actually a bit more efficient as well and so there are advantages of using the savvy library but i do take your point that there's a lot of existing tools and it'd be a headache to have to port all of them to a different uh backend thank you that's uh that's perfect thank you so a couple of questions have come in uh via chat so the first is from dana and uh she wrote sorry if i missed this our location selection are location selection limited to chromosomes or does this format allow for multiple areas of interest to be queried such as all variants overlapping chips peaks all variants overlapping what was that "
+    },
+    {
+        "start": 1708.96,
+        "text": "peaks ah yeah i'm not uh uh familiar with that and so my guess is the answer is no um the the three ways of subsiding involve subsiding by a genomic position within a chromosome subsetting by samples and then subsetting by the nth record within a file so if you want to pull out the about you know the the 500th record to the 900th record you can do that really efficiently but anything beyond that hasn't been implemented though great uh perfect and then the next set of questions came from hari who asked a couple questions a very nice presentation one am i right to say the highlight of sav is space savings coming from bwt and "
+    },
+    {
+        "start": 1771.44,
+        "text": "speed from archery implementation and then the second question i'm happy to reread these if you want i see sav is already very fast but i'm curious to learn how important parallel processing is in this domain and if there's a need to do so with sav okay so uh for the first point yeah i would agree with that um i'd also point out that i think that in some cases the the speed of the file format is more important than the the file size savings and that's because at least when you operate in a cloud environment and you're running mult many analyses on a given data set the cost of compute is going to far outweigh the cost of storage for those data sets um is that just kind of a side point i want to make um and then the second question i'm sorry can you repeat the second part of that again i forgot yeah absolutely "
+    },
+    {
+        "start": 1833.039,
+        "text": "so the second question was i see sav is already very fast but i'm curious to learn how important parallel processing is in this domain and if there is a need to do so with sav i see um so the in in i guess the way i'm interpreting that question is that you're looking at you you're you're bringing up the possibility of doing parallel io and doing parallel rights to disk and there's usually an issue with parallel i o because the the disc the the disc driver heart you know the disc hardware becomes the bottleneck and it needs to do um you know at the end of the day it can really you know majority of the time it can only seek and read one bit of you know one sector of data at a time or one block of data at a time and so adding more parallel threads that are writing actual writing data to the disk at once "
+    },
+    {
+        "start": 1893.84,
+        "text": "um usually doesn't benefit you that much but one thing you can do with that is parallelize the compression um and i think that's more often what you see with these parallel ios that they're paralyzing the compression process and decompression process which can be advantageous that hasn't been implemented yet with savvy but uh that is on our radar and maybe in the future hopefully that addresses the question great thank you those are the only questions so far that have come in via chat so if anyone has any other questions feel free to put them in the chat box or unmute yourself i have a quick question jonathan in your experience does the does this set of libraries run pretty well in a workstation class machine or do you want something a little bit more horsepower to really get get to the sweet spot "
+    },
+    {
+        "start": 1955.76,
+        "text": "um you know i i haven't done a thorough comparison of that but it it is going to to play in and so um you know there there are two factors that are going to contribute to it one is your the cpu the clock speed of the cpu you're using um and then also the um data transfer speed you're working with and so that might be over the network if you're using a network file system or it might be just bare metal um uh transfer speed uh you know directed disk and so um you know both of those kind of play into it and i think uh when you're you know when you're comparing sav versus ecf or vcf um in terms of the the disk or the data transfer speed the smaller file sizes is going to be the biggest component to um you know dealing with that and so regardless of how fast well i guess that "
+    },
+    {
+        "start": 2017.039,
+        "text": "goes you know if you have a really slow disk sav is going to be much better than vcf or the the discrepancy between uh sap and pcf is going to be larger than if you're working through really really fast disks but then the other component is the decompression component and in that case if you have very fast cpus versus very slow cpus which the description between those isn't as large uh i think between you know commodity hardware and in hbc um you will see uh you'll also see a pretty good improvement with slower cpus because there's less especially when you're using um sparse vector in memory vectors but even when you're not because there's just less uh fewer fewer elements you have to iterate when you're pulling in these data vectors so you don't have to "
+    },
+    {
+        "start": 2078.32,
+        "text": "iterate over all the zeros and copy them over to you know from disk in memory um you can just copy over the non-zero values um so i i don't know how much they're going to differ between um i don't have any empirical data as to like you know how much it's going to differ between like your laptop or something on hbc but i think in either environment it's still going to perform pretty well relative to the other formats thank you that's perfect thank you any other questions i will give another couple minutes oh it looks like uh another question did just come in to chat uh from dana again so she wrote i think you touched on this in relation to the updates and saved you but do you have an estimate or way to track the uptake of savvy format the time saving seems very valuable especially for large data sets but curious if that's enough to overcome the activation energy for "
+    },
+    {
+        "start": 2139.04,
+        "text": "using something new yeah um i i don't have good metrics on that uh yet and i agree that is that is um one of the major challenges and um i guess my perspective is that you know i'm not necessarily um you know i i feel that issue i i feel that that uh you know that difficulty of trying something new and all the effort involved in in transitioning to something new and so that's kind of why we're involved with the ga4 gh initiative and that um we're trying to uh you know take what you know sav offers and then you know what what other file formats in this field are offering in trying to come up with a consensus of what a future standard would look like so that we don't have this issue of you know "
+    },
+    {
+        "start": 2199.839,
+        "text": "people having to adopt these new formats of as new things come out um so yeah i mean i i don't think i have a really good answer for your question but i do agree with the points that you're making so it looks like another question uh came in uh oh no never mind no other question coming so far so um yeah sorry about uh just reading uh one that already came in so yeah if anyone else has questions feel free to uh put those in the chat or again on mute yourself we'll give it a few more minutes in case anyone thinks of any questions they want to "
+    }
+]

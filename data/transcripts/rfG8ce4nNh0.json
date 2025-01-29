@@ -1,0 +1,1462 @@
+[
+    {
+        "text": "This guy, Grothendieck, is somewhat of a mathematical idol to me, ",
+        "start": 12.079,
+        "duration": 3.681
+    },
+    {
+        "text": "and I just love this quote, don't you?",
+        "start": 15.76,
+        "duration": 2.12
+    },
+    {
+        "text": "Too often in math, we dive into showing that a certain fact is true ",
+        "start": 18.62,
+        "duration": 3.759
+    },
+    {
+        "text": "with a long series of formulas before stepping back and making sure it feels reasonable, ",
+        "start": 22.379,
+        "duration": 4.92
+    },
+    {
+        "text": "and preferably obvious, at least at an intuitive level.",
+        "start": 27.299,
+        "duration": 3.041
+    },
+    {
+        "text": "In this video, I want to talk about integrals, ",
+        "start": 31.26,
+        "duration": 2.533
+    },
+    {
+        "text": "and the thing that I want to become almost obvious is that they are an ",
+        "start": 33.793,
+        "duration": 3.827
+    },
+    {
+        "text": "inverse of derivatives.",
+        "start": 37.62,
+        "duration": 1.24
+    },
+    {
+        "text": "Here we're just going to focus on one example, ",
+        "start": 39.9,
+        "duration": 2.225
+    },
+    {
+        "text": "which is a kind of dual to the example of a moving car that I talked about in chapter ",
+        "start": 42.125,
+        "duration": 4.073
+    },
+    {
+        "text": "2 of the series, introducing derivatives.",
+        "start": 46.198,
+        "duration": 1.942
+    },
+    {
+        "text": "Then in the next video we're going to see how this same idea generalizes, ",
+        "start": 49.18,
+        "duration": 3.439
+    },
+    {
+        "text": "but to a couple other contexts.",
+        "start": 52.619,
+        "duration": 1.441
+    },
+    {
+        "text": "Imagine you're sitting in a car, and you can't see out the window, ",
+        "start": 55.24,
+        "duration": 3.609
+    },
+    {
+        "text": "all you see is the speedometer.",
+        "start": 58.849,
+        "duration": 1.671
+    },
+    {
+        "text": "At some point the car starts moving, speeds up, ",
+        "start": 62.08,
+        "duration": 3.552
+    },
+    {
+        "text": "and then slows back down to a stop, all over the course of 8 seconds.",
+        "start": 65.632,
+        "duration": 5.108
+    },
+    {
+        "text": "The question is, is there a nice way to figure out how far you've ",
+        "start": 71.68,
+        "duration": 3.532
+    },
+    {
+        "text": "travelled during that time based only on your view of the speedometer?",
+        "start": 75.212,
+        "duration": 3.748
+    },
+    {
+        "text": "Or better yet, can you find a distance function, s of t, ",
+        "start": 79.539,
+        "duration": 3.49
+    },
+    {
+        "text": "that tells you how far you've travelled after a given amount of time, t, ",
+        "start": 83.029,
+        "duration": 4.469
+    },
+    {
+        "text": "somewhere between 0 and 8 seconds?",
+        "start": 87.498,
+        "duration": 2.082
+    },
+    {
+        "text": "Let's say you take note of the velocity at every second, ",
+        "start": 90.9,
+        "duration": 3.1
+    },
+    {
+        "text": "and make a plot over time that looks something like this.",
+        "start": 94.0,
+        "duration": 3.1
+    },
+    {
+        "text": "And maybe you find that a nice function to model that velocity ",
+        "start": 98.96,
+        "duration": 4.19
+    },
+    {
+        "text": "over time in meters per second is v of t equals t times 8 minus t.",
+        "start": 103.15,
+        "duration": 4.39
+    },
+    {
+        "text": "You might remember, in chapter 2 of this series we were looking at ",
+        "start": 108.419,
+        "duration": 3.367
+    },
+    {
+        "text": "the opposite situation, where you knew what a distance function was, ",
+        "start": 111.786,
+        "duration": 3.467
+    },
+    {
+        "text": "s of t, and you wanted to figure out the velocity function from that.",
+        "start": 115.253,
+        "duration": 3.467
+    },
+    {
+        "text": "There I showed how the derivative of a distance vs.",
+        "start": 119.74,
+        "duration": 2.76
+    },
+    {
+        "text": "time function gives you a velocity vs.",
+        "start": 122.56,
+        "duration": 2.3
+    },
+    {
+        "text": "time function.",
+        "start": 124.92,
+        "duration": 0.68
+    },
+    {
+        "text": "So in our current situation, where all we know is velocity, ",
+        "start": 126.36,
+        "duration": 3.255
+    },
+    {
+        "text": "it should make sense that finding a distance vs.",
+        "start": 129.615,
+        "duration": 2.605
+    },
+    {
+        "text": "time function is going to come down to asking what ",
+        "start": 132.28,
+        "duration": 3.153
+    },
+    {
+        "text": "function has a derivative of t times 8 minus t.",
+        "start": 135.433,
+        "duration": 2.907
+    },
+    {
+        "text": "This is often described as finding the antiderivative of a function, and indeed, ",
+        "start": 139.38,
+        "duration": 3.984
+    },
+    {
+        "text": "that's what we'll end up doing, and you could even pause right now and try that.",
+        "start": 143.364,
+        "duration": 3.936
+    },
+    {
+        "text": "But first, I want to spend the bulk of this video showing how this question is related ",
+        "start": 147.9,
+        "duration": 4.741
+    },
+    {
+        "text": "to finding the area bounded by the velocity graph, ",
+        "start": 152.641,
+        "duration": 2.78
+    },
+    {
+        "text": "because that helps to build an intuition for a whole class of problems, ",
+        "start": 155.421,
+        "duration": 3.924
+    },
+    {
+        "text": "things called integral problems in math and science.",
+        "start": 159.345,
+        "duration": 2.835
+    },
+    {
+        "text": "To start off, notice that this question would be a lot easier ",
+        "start": 162.78,
+        "duration": 3.105
+    },
+    {
+        "text": "if the car was just moving at a constant velocity, right?",
+        "start": 165.885,
+        "duration": 2.855
+    },
+    {
+        "text": "In that case, you could just multiply the velocity in meters per second times the amount ",
+        "start": 169.42,
+        "duration": 4.733
+    },
+    {
+        "text": "of time that has passed in seconds, and that would give you the number of meters traveled.",
+        "start": 174.153,
+        "duration": 4.787
+    },
+    {
+        "text": "And notice, you can visualize that product, that distance, as an area.",
+        "start": 180.02,
+        "duration": 4.14
+    },
+    {
+        "text": "And if visualizing distance as area seems kind of weird, I'm right there with you.",
+        "start": 185.0,
+        "duration": 3.82
+    },
+    {
+        "text": "It's just that on this plot, where the horizontal direction has units of seconds, ",
+        "start": 188.82,
+        "duration": 5.028
+    },
+    {
+        "text": "and the vertical direction has units of meters per second, ",
+        "start": 193.848,
+        "duration": 3.619
+    },
+    {
+        "text": "units of area just very naturally correspond to meters.",
+        "start": 197.467,
+        "duration": 3.373
+    },
+    {
+        "text": "But what makes our situation hard is that velocity is not constant, ",
+        "start": 202.02,
+        "duration": 3.722
+    },
+    {
+        "text": "it's incessantly changing at every single instant.",
+        "start": 205.742,
+        "duration": 2.738
+    },
+    {
+        "text": "It would even be a lot easier if it only ever changed at a handful of points, ",
+        "start": 210.78,
+        "duration": 4.451
+    },
+    {
+        "text": "maybe staying static for the first second, and then suddenly discontinuously ",
+        "start": 215.231,
+        "duration": 4.395
+    },
+    {
+        "text": "jumping to a constant 7 meters per second for the next second, and so on, ",
+        "start": 219.626,
+        "duration": 4.223
+    },
+    {
+        "text": "with discontinuous jumps to portions of constant velocity.",
+        "start": 223.849,
+        "duration": 3.311
+    },
+    {
+        "text": "That would make it uncomfortable for the driver, ",
+        "start": 228.7,
+        "duration": 2.509
+    },
+    {
+        "text": "in fact it's actually physically impossible, but it would make your calculations ",
+        "start": 231.209,
+        "duration": 4.148
+    },
+    {
+        "text": "a lot more straightforward.",
+        "start": 235.357,
+        "duration": 1.383
+    },
+    {
+        "text": "You could just compute the distance traveled on each interval by multiplying the constant ",
+        "start": 237.6,
+        "duration": 5.358
+    },
+    {
+        "text": "velocity on that interval by the change in time, and then just add all of those up.",
+        "start": 242.958,
+        "duration": 4.942
+    },
+    {
+        "text": "So what we're going to do is approximate the velocity function as if it ",
+        "start": 249.02,
+        "duration": 4.055
+    },
+    {
+        "text": "was constant on a bunch of intervals, and then, as is common in calculus, ",
+        "start": 253.075,
+        "duration": 4.168
+    },
+    {
+        "text": "we'll see how refining that approximation leads us to something more precise.",
+        "start": 257.243,
+        "duration": 4.336
+    },
+    {
+        "text": "Here, let's make this a little more concrete by throwing in some numbers.",
+        "start": 264.72,
+        "duration": 3.02
+    },
+    {
+        "text": "Chop up the time axis between 0 and 8 seconds into many small intervals, ",
+        "start": 268.36,
+        "duration": 5.313
+    },
+    {
+        "text": "each with some little width dt, something like 0.25 seconds.",
+        "start": 273.673,
+        "duration": 4.367
+    },
+    {
+        "text": "Consider one of those intervals, like the one between t equals 1 and 1.25.",
+        "start": 278.94,
+        "duration": 4.98
+    },
+    {
+        "text": "In reality, the car speeds up from 7 m per second to about 8.4 m per ",
+        "start": 285.28,
+        "duration": 4.402
+    },
+    {
+        "text": "second during that time, and you could find those numbers just by ",
+        "start": 289.682,
+        "duration": 4.211
+    },
+    {
+        "text": "plugging in t equals 1 and t equals 1.25 to the equation for velocity.",
+        "start": 293.893,
+        "duration": 4.467
+    },
+    {
+        "text": "What we want to do is approximate the car's motion ",
+        "start": 299.46,
+        "duration": 2.611
+    },
+    {
+        "text": "as if its velocity was constant on that interval.",
+        "start": 302.071,
+        "duration": 2.509
+    },
+    {
+        "text": "Again, the reason for doing that is we don't really know ",
+        "start": 305.54,
+        "duration": 3.026
+    },
+    {
+        "text": "how to handle situations other than constant velocity ones.",
+        "start": 308.566,
+        "duration": 3.134
+    },
+    {
+        "text": "You could choose this constant to be anything between 7 and 8.4.",
+        "start": 313.46,
+        "duration": 4.26
+    },
+    {
+        "text": "It actually doesn't matter.",
+        "start": 318.02,
+        "duration": 1.22
+    },
+    {
+        "text": "All that matters is that our sequence of approximations, ",
+        "start": 320.02,
+        "duration": 3.516
+    },
+    {
+        "text": "whatever they are, gets better and better as dt gets smaller and smaller.",
+        "start": 323.536,
+        "duration": 4.504
+    },
+    {
+        "text": "That treating this car's journey as a bunch of discontinuous jumps ",
+        "start": 328.74,
+        "duration": 3.746
+    },
+    {
+        "text": "in speed between portions of constant velocity becomes a less-wrong ",
+        "start": 332.486,
+        "duration": 3.803
+    },
+    {
+        "text": "reflection of reality as we decrease the time between those jumps.",
+        "start": 336.289,
+        "duration": 3.691
+    },
+    {
+        "text": "So for convenience, on an interval like this, let's just approximate the ",
+        "start": 342.54,
+        "duration": 4.015
+    },
+    {
+        "text": "speed with whatever the true car's velocity is at the start of that interval, ",
+        "start": 346.555,
+        "duration": 4.29
+    },
+    {
+        "text": "the height of the graph above the left side, which in this case is 7.",
+        "start": 350.845,
+        "duration": 3.795
+    },
+    {
+        "text": "In this example interval, according to our approximation, ",
+        "start": 355.96,
+        "duration": 4.158
+    },
+    {
+        "text": "the car moves 7 m per second times 0.25 seconds.",
+        "start": 360.118,
+        "duration": 3.442
+    },
+    {
+        "text": "That's 1.75 meters, and it's nicely visualized as the area of this thin rectangle.",
+        "start": 364.46,
+        "duration": 5.32
+    },
+    {
+        "text": "In truth, that's a little under the real distance traveled, but not by much.",
+        "start": 370.7,
+        "duration": 3.74
+    },
+    {
+        "text": "The same goes for every other interval.",
+        "start": 374.98,
+        "duration": 1.94
+    },
+    {
+        "text": "The approximated distance is v of t times dt, it's just that you'd be plugging in a ",
+        "start": 377.42,
+        "duration": 5.059
+    },
+    {
+        "text": "different value for t at each one of these, giving a different height for each rectangle.",
+        "start": 382.479,
+        "duration": 5.361
+    },
+    {
+        "text": "I'm going to write out an expression for the sum of ",
+        "start": 389.96,
+        "duration": 2.566
+    },
+    {
+        "text": "the areas of all those rectangles in kind of a funny way.",
+        "start": 392.526,
+        "duration": 2.814
+    },
+    {
+        "text": "Take this symbol here, which looks like a stretched s for sum, ",
+        "start": 396.02,
+        "duration": 4.101
+    },
+    {
+        "text": "and put a 0 at its bottom and an 8 at its top, ",
+        "start": 400.121,
+        "duration": 3.06
+    },
+    {
+        "text": "to indicate that we'll be ranging over time steps between 0 and 8 seconds.",
+        "start": 403.181,
+        "duration": 4.819
+    },
+    {
+        "text": "And as I said, the amount we're adding up at each time step is v of t times dt.",
+        "start": 408.9,
+        "duration": 5.5
+    },
+    {
+        "text": "Two things are implicit in this notation.",
+        "start": 415.46,
+        "duration": 2.0
+    },
+    {
+        "text": "First of all, that value dt plays two separate roles.",
+        "start": 418.18,
+        "duration": 3.16
+    },
+    {
+        "text": "Not only is it a factor in each quantity we're adding up, ",
+        "start": 421.92,
+        "duration": 3.343
+    },
+    {
+        "text": "it also indicates the spacing between each sampled time step.",
+        "start": 425.263,
+        "duration": 3.517
+    },
+    {
+        "text": "So when you make dt smaller and smaller, even though it decreases the area of ",
+        "start": 429.38,
+        "duration": 4.085
+    },
+    {
+        "text": "each rectangle, it increases the total number of rectangles whose areas we're adding up, ",
+        "start": 433.465,
+        "duration": 4.661
+    },
+    {
+        "text": "because if they're thinner, it takes more of them to fill that space.",
+        "start": 438.126,
+        "duration": 3.614
+    },
+    {
+        "text": "And second, the reason we don't use the usual sigma notation to indicate a sum is that ",
+        "start": 442.88,
+        "duration": 5.22
+    },
+    {
+        "text": "this expression is technically not any particular sum for any particular choice of dt.",
+        "start": 448.1,
+        "duration": 5.16
+    },
+    {
+        "text": "It's meant to express whatever that sum approaches as dt approaches 0.",
+        "start": 453.78,
+        "duration": 4.64
+    },
+    {
+        "text": "And as you can see, what that approaches is the ",
+        "start": 459.48,
+        "duration": 2.899
+    },
+    {
+        "text": "area bounded by this curve and the horizontal axis.",
+        "start": 462.379,
+        "duration": 3.081
+    },
+    {
+        "text": "Remember, smaller choices of dt indicate closer approximations for the original question, ",
+        "start": 466.34,
+        "duration": 5.414
+    },
+    {
+        "text": "how far does the car actually go?",
+        "start": 471.754,
+        "duration": 1.986
+    },
+    {
+        "text": "So this limiting value for the sum, the area under this curve, ",
+        "start": 474.54,
+        "duration": 3.924
+    },
+    {
+        "text": "gives us the precise answer to the question in full unapproximated precision.",
+        "start": 478.464,
+        "duration": 4.796
+    },
+    {
+        "text": "Now tell me that's not surprising.",
+        "start": 484.3,
+        "duration": 1.24
+    },
+    {
+        "text": "We had this pretty complicated idea of approximations that ",
+        "start": 486.06,
+        "duration": 3.437
+    },
+    {
+        "text": "can involve adding up a huge number of very tiny things.",
+        "start": 489.497,
+        "duration": 3.263
+    },
+    {
+        "text": "And yet, the value that those approximations approach can be described so simply, ",
+        "start": 493.48,
+        "duration": 4.72
+    },
+    {
+        "text": "it's just the area underneath this curve.",
+        "start": 498.2,
+        "duration": 2.36
+    },
+    {
+        "text": "This expression is called an integral of v of t, ",
+        "start": 502.12,
+        "duration": 2.992
+    },
+    {
+        "text": "since it brings all of its values together, it integrates them.",
+        "start": 505.112,
+        "duration": 3.848
+    },
+    {
+        "text": "Now at this point, you could say, how does this help?",
+        "start": 510.06,
+        "duration": 2.76
+    },
+    {
+        "text": "You've just reframed one hard question, finding how far the car has traveled, ",
+        "start": 513.24,
+        "duration": 4.271
+    },
+    {
+        "text": "into an equally hard problem, finding the area between this graph and the horizontal axis.",
+        "start": 517.511,
+        "duration": 4.929
+    },
+    {
+        "text": "And you'd be right.",
+        "start": 523.88,
+        "duration": 0.9
+    },
+    {
+        "text": "If the velocity-distance duo was the only thing we cared about, most of this video, ",
+        "start": 525.26,
+        "duration": 4.995
+    },
+    {
+        "text": "with all the area under a curve nonsense, would be a waste of time.",
+        "start": 530.255,
+        "duration": 3.985
+    },
+    {
+        "text": "We could just skip straight ahead to finding an antiderivative.",
+        "start": 534.66,
+        "duration": 2.6
+    },
+    {
+        "text": "But finding the area between a function's graph and the horizontal axis ",
+        "start": 538.0,
+        "duration": 4.352
+    },
+    {
+        "text": "is somewhat of a common language for many disparate problems that can be ",
+        "start": 542.352,
+        "duration": 4.414
+    },
+    {
+        "text": "broken down and approximated as the sum of a large number of small things.",
+        "start": 546.766,
+        "duration": 4.474
+    },
+    {
+        "text": "You'll see more in the next video, but for now I'll just say in ",
+        "start": 552.34,
+        "duration": 3.496
+    },
+    {
+        "text": "the abstract that understanding how to interpret and how to ",
+        "start": 555.836,
+        "duration": 3.279
+    },
+    {
+        "text": "compute the area under a graph is a very general problem-solving tool.",
+        "start": 559.115,
+        "duration": 3.825
+    },
+    {
+        "text": "In fact, the first video of this series already covered the basics of how this works, ",
+        "start": 563.6,
+        "duration": 4.494
+    },
+    {
+        "text": "but now that we have more of a background with derivatives, ",
+        "start": 568.094,
+        "duration": 3.135
+    },
+    {
+        "text": "we can take this idea to its completion.",
+        "start": 571.229,
+        "duration": 2.091
+    },
+    {
+        "text": "For a velocity example, think of this right endpoint as a variable, capital T.",
+        "start": 574.32,
+        "duration": 5.26
+    },
+    {
+        "text": "So we're thinking of this integral of the velocity function between 0 and T, ",
+        "start": 581.68,
+        "duration": 4.15
+    },
+    {
+        "text": "the area under this curve between those inputs, ",
+        "start": 585.83,
+        "duration": 2.587
+    },
+    {
+        "text": "as a function where the upper bound is the variable.",
+        "start": 588.417,
+        "duration": 2.803
+    },
+    {
+        "text": "That area represents the distance the car has travelled after T seconds, right?",
+        "start": 592.06,
+        "duration": 4.84
+    },
+    {
+        "text": "So in reality, this is a distance vs.",
+        "start": 597.38,
+        "duration": 1.92
+    },
+    {
+        "text": "time function, s of t.",
+        "start": 599.36,
+        "duration": 1.92
+    },
+    {
+        "text": "Now ask yourself, what is the derivative of that function?",
+        "start": 601.9,
+        "duration": 2.92
+    },
+    {
+        "text": "On the one hand, a tiny change in distance over a tiny change in time is velocity, ",
+        "start": 607.3,
+        "duration": 5.024
+    },
+    {
+        "text": "that is what velocity means.",
+        "start": 612.324,
+        "duration": 1.696
+    },
+    {
+        "text": "But there's another way to see this, purely in terms of this graph and this area, ",
+        "start": 614.84,
+        "duration": 4.299
+    },
+    {
+        "text": "which generalizes a lot better to other integral problems.",
+        "start": 619.139,
+        "duration": 3.041
+    },
+    {
+        "text": "A slight nudge of dt to the input causes that area to increase, ",
+        "start": 623.3,
+        "duration": 4.555
+    },
+    {
+        "text": "some little ds represented by the area of this sliver.",
+        "start": 627.855,
+        "duration": 3.845
+    },
+    {
+        "text": "The height of that sliver is the height of the graph at that point, ",
+        "start": 632.74,
+        "duration": 4.391
+    },
+    {
+        "text": "v of t, and its width is dt.",
+        "start": 637.131,
+        "duration": 1.809
+    },
+    {
+        "text": "And for small enough dt, we can basically consider that sliver to be a rectangle, ",
+        "start": 639.78,
+        "duration": 5.517
+    },
+    {
+        "text": "so this little bit of added area, ds, is approximately equal to v of t times dt.",
+        "start": 645.297,
+        "duration": 5.383
+    },
+    {
+        "text": "And because that's an approximation that gets better and better for smaller dt, ",
+        "start": 651.66,
+        "duration": 5.308
+    },
+    {
+        "text": "the derivative of that area function, ds, dt, at this point equals vt, ",
+        "start": 656.968,
+        "duration": 4.712
+    },
+    {
+        "text": "the value of the velocity function at whatever time we started on.",
+        "start": 661.68,
+        "duration": 4.38
+    },
+    {
+        "text": "And that right there is a super general argument.",
+        "start": 666.98,
+        "duration": 2.28
+    },
+    {
+        "text": "The derivative of any function giving the area under a ",
+        "start": 669.26,
+        "duration": 3.422
+    },
+    {
+        "text": "graph like this is equal to the function for the graph itself.",
+        "start": 672.682,
+        "duration": 3.858
+    },
+    {
+        "text": "So, if our velocity function is t times 8-t, what should s be?",
+        "start": 678.74,
+        "duration": 5.7
+    },
+    {
+        "text": "What function of t has a derivative of t times 8-t?",
+        "start": 685.14,
+        "duration": 3.56
+    },
+    {
+        "text": "It's easier to see if we expand this out, writing it as 8t minus t squared, ",
+        "start": 690.34,
+        "duration": 4.427
+    },
+    {
+        "text": "and then we can just take each part one at a time.",
+        "start": 694.767,
+        "duration": 2.913
+    },
+    {
+        "text": "What function has a derivative of 8t?",
+        "start": 697.68,
+        "duration": 3.24
+    },
+    {
+        "text": "We know that the derivative of t squared is 2t, ",
+        "start": 702.24,
+        "duration": 3.33
+    },
+    {
+        "text": "so if we just scale that up by a factor of 4, we can see that the derivative ",
+        "start": 705.57,
+        "duration": 5.342
+    },
+    {
+        "text": "of 4t squared is 8t.",
+        "start": 710.912,
+        "duration": 1.388
+    },
+    {
+        "text": "And for that second part, what kind of function do ",
+        "start": 713.02,
+        "duration": 2.64
+    },
+    {
+        "text": "you think might have negative t squared as a derivative?",
+        "start": 715.66,
+        "duration": 2.9
+    },
+    {
+        "text": "Using the power rule again, we know that the derivative of a cubic term, ",
+        "start": 720.2,
+        "duration": 4.729
+    },
+    {
+        "text": "t cubed, gives us a square term, 3t squared.",
+        "start": 724.929,
+        "duration": 2.851
+    },
+    {
+        "text": "So if we just scale that down by a third, the ",
+        "start": 728.48,
+        "duration": 2.722
+    },
+    {
+        "text": "derivative of 1 third t cubed is exactly t squared.",
+        "start": 731.202,
+        "duration": 3.018
+    },
+    {
+        "text": "And then making that negative, we'd see that negative ",
+        "start": 734.92,
+        "duration": 3.022
+    },
+    {
+        "text": "1 third t cubed has a derivative of negative t squared.",
+        "start": 737.942,
+        "duration": 3.078
+    },
+    {
+        "text": "Therefore, the antiderivative of our function, ",
+        "start": 742.18,
+        "duration": 3.988
+    },
+    {
+        "text": "8t minus t squared, is 4t squared minus 1 third t cubed.",
+        "start": 746.168,
+        "duration": 4.752
+    },
+    {
+        "text": "But there's a slight issue here.",
+        "start": 752.439,
+        "duration": 1.721
+    },
+    {
+        "text": "We could add any constant we want to this function, ",
+        "start": 754.48,
+        "duration": 3.435
+    },
+    {
+        "text": "and its derivative is still 8t minus t squared.",
+        "start": 757.915,
+        "duration": 3.105
+    },
+    {
+        "text": "The derivative of a constant always goes to zero.",
+        "start": 761.82,
+        "duration": 2.68
+    },
+    {
+        "text": "And if you were to graph s of t, you could think of this in the sense that moving a ",
+        "start": 765.18,
+        "duration": 4.195
+    },
+    {
+        "text": "graph of a distance function up and down does nothing to affect its slope at every input.",
+        "start": 769.375,
+        "duration": 4.445
+    },
+    {
+        "text": "So in reality, there's actually infinitely many different ",
+        "start": 774.64,
+        "duration": 4.001
+    },
+    {
+        "text": "possible antiderivative functions, and every one of them looks ",
+        "start": 778.641,
+        "duration": 4.346
+    },
+    {
+        "text": "like 4t squared minus 1 third t cubed plus c, for some constant c.",
+        "start": 782.987,
+        "duration": 4.553
+    },
+    {
+        "text": "But there is one piece of information we haven't used yet that will let ",
+        "start": 788.58,
+        "duration": 4.202
+    },
+    {
+        "text": "us zero in on which antiderivative to use, the lower bound of the integral.",
+        "start": 792.782,
+        "duration": 4.378
+    },
+    {
+        "text": "This integral has to be zero when we drag that right ",
+        "start": 798.36,
+        "duration": 3.044
+    },
+    {
+        "text": "endpoint all the way to the left endpoint, right?",
+        "start": 801.404,
+        "duration": 2.816
+    },
+    {
+        "text": "The distance travelled by the car between 0 seconds and 0 seconds is\u2026 well, zero.",
+        "start": 804.64,
+        "duration": 5.74
+    },
+    {
+        "text": "So as we found, the area as a function of capital ",
+        "start": 811.58,
+        "duration": 3.265
+    },
+    {
+        "text": "T is an antiderivative for the stuff inside.",
+        "start": 814.845,
+        "duration": 2.875
+    },
+    {
+        "text": "And to choose what constant to add to this expression, ",
+        "start": 818.48,
+        "duration": 3.589
+    },
+    {
+        "text": "you subtract off the value of that antiderivative function at the lower bound.",
+        "start": 822.069,
+        "duration": 5.091
+    },
+    {
+        "text": "If you think about it for a moment, that ensures that the ",
+        "start": 828.16,
+        "duration": 3.656
+    },
+    {
+        "text": "integral from the lower bound to itself will indeed be zero.",
+        "start": 831.816,
+        "duration": 3.784
+    },
+    {
+        "text": "As it so happens, when you evaluate the function we have here at t equals zero, ",
+        "start": 837.74,
+        "duration": 4.731
+    },
+    {
+        "text": "you get zero.",
+        "start": 842.471,
+        "duration": 0.769
+    },
+    {
+        "text": "So in this specific case, you don't need to subtract anything off.",
+        "start": 843.92,
+        "duration": 3.3
+    },
+    {
+        "text": "For example, the total distance travelled during the full 8 seconds ",
+        "start": 847.98,
+        "duration": 5.52
+    },
+    {
+        "text": "is this expression evaluated at t equals 8, which is 85.33 minus 0.",
+        "start": 853.5,
+        "duration": 5.44
+    },
+    {
+        "text": "So the answer as a whole is 85.33.",
+        "start": 858.94,
+        "duration": 3.12
+    },
+    {
+        "text": "But a more typical example would be something like the integral between 1 and 7.",
+        "start": 863.18,
+        "duration": 4.28
+    },
+    {
+        "text": "That's the area pictured here, and it represents ",
+        "start": 868.2,
+        "duration": 2.768
+    },
+    {
+        "text": "the distance travelled between 1 second and 7 seconds.",
+        "start": 870.968,
+        "duration": 3.052
+    },
+    {
+        "text": "What you do is evaluate the antiderivative we found at the top bound, ",
+        "start": 876.48,
+        "duration": 4.666
+    },
+    {
+        "text": "7, and subtract off its value at the bottom bound, 1.",
+        "start": 881.146,
+        "duration": 3.534
+    },
+    {
+        "text": "Notice, by the way, it doesn't matter which antiderivative we chose here.",
+        "start": 885.9,
+        "duration": 4.26
+    },
+    {
+        "text": "If for some reason it had a constant added to it, like 5, that constant would cancel out.",
+        "start": 890.56,
+        "duration": 6.0
+    },
+    {
+        "text": "More generally, any time you want to integrate some function, and remember, ",
+        "start": 898.0,
+        "duration": 5.08
+    },
+    {
+        "text": "you think of that as adding up values f of x times dx for inputs in a certain range, ",
+        "start": 903.08,
+        "duration": 5.682
+    },
+    {
+        "text": "and then asking what is that sum approach as dx approaches 0.",
+        "start": 908.762,
+        "duration": 4.078
+    },
+    {
+        "text": "The first step to evaluating that integral is to find an antiderivative, ",
+        "start": 913.66,
+        "duration": 4.653
+    },
+    {
+        "text": "some other function, capital F, whose derivative is the thing inside the integral.",
+        "start": 918.313,
+        "duration": 5.227
+    },
+    {
+        "text": "Then the integral equals this antiderivative evaluated ",
+        "start": 924.8,
+        "duration": 3.636
+    },
+    {
+        "text": "at the top bound minus its value at the bottom bound.",
+        "start": 928.436,
+        "duration": 3.504
+    },
+    {
+        "text": "And this fact right here that you're staring at is the fundamental theorem of calculus.",
+        "start": 932.82,
+        "duration": 4.64
+    },
+    {
+        "text": "And I want you to appreciate something kind of crazy about this fact.",
+        "start": 938.24,
+        "duration": 3.02
+    },
+    {
+        "text": "The integral, the limiting value for the sum of all these thin rectangles, ",
+        "start": 941.84,
+        "duration": 4.394
+    },
+    {
+        "text": "takes into account every single input on the continuum, ",
+        "start": 946.234,
+        "duration": 3.282
+    },
+    {
+        "text": "from the lower bound to the upper bound.",
+        "start": 949.516,
+        "duration": 2.344
+    },
+    {
+        "text": "That's why we use the word integrate, it brings them all together.",
+        "start": 952.28,
+        "duration": 3.56
+    },
+    {
+        "text": "And yet, to actually compute it using an antiderivative, ",
+        "start": 956.88,
+        "duration": 3.627
+    },
+    {
+        "text": "you only look at two inputs, the top bound and the bottom bound.",
+        "start": 960.507,
+        "duration": 4.073
+    },
+    {
+        "text": "It almost feels like cheating.",
+        "start": 965.42,
+        "duration": 1.14
+    },
+    {
+        "text": "Finding the antiderivative implicitly accounts for all the ",
+        "start": 966.94,
+        "duration": 3.901
+    },
+    {
+        "text": "information needed to add up the values between those two bounds.",
+        "start": 970.841,
+        "duration": 4.299
+    },
+    {
+        "text": "That's just crazy to me.",
+        "start": 975.92,
+        "duration": 1.42
+    },
+    {
+        "text": "This idea is deep, and there's a lot packed into this whole concept, ",
+        "start": 978.68,
+        "duration": 3.739
+    },
+    {
+        "text": "so let's recap everything that just happened, shall we?",
+        "start": 982.419,
+        "duration": 2.981
+    },
+    {
+        "text": "We wanted to figure out how far a car goes just by looking at the speedometer.",
+        "start": 986.22,
+        "duration": 4.36
+    },
+    {
+        "text": "And what makes that hard is that velocity is always changing.",
+        "start": 991.36,
+        "duration": 2.86
+    },
+    {
+        "text": "If you approximate velocity to be constant on multiple different intervals, ",
+        "start": 995.079,
+        "duration": 4.273
+    },
+    {
+        "text": "you could figure out how far the car goes on each interval with multiplication, ",
+        "start": 999.352,
+        "duration": 4.497
+    },
+    {
+        "text": "and then add all of those up.",
+        "start": 1003.849,
+        "duration": 1.631
+    },
+    {
+        "text": "Better and better approximations for the original problem correspond to ",
+        "start": 1006.44,
+        "duration": 4.199
+    },
+    {
+        "text": "collections of rectangles whose aggregate area is closer and closer to ",
+        "start": 1010.639,
+        "duration": 4.141
+    },
+    {
+        "text": "being the area under this curve between the start time and the end time.",
+        "start": 1014.78,
+        "duration": 4.2
+    },
+    {
+        "text": "So that area under the curve is actually the precise distance ",
+        "start": 1018.98,
+        "duration": 4.251
+    },
+    {
+        "text": "traveled for the true nowhere constant velocity function.",
+        "start": 1023.231,
+        "duration": 3.909
+    },
+    {
+        "text": "If you think of that area as a function itself, ",
+        "start": 1028.4,
+        "duration": 3.146
+    },
+    {
+        "text": "with a variable right endpoint, you can deduce that the derivative ",
+        "start": 1031.546,
+        "duration": 4.393
+    },
+    {
+        "text": "of that area function must equal the height of the graph at every point.",
+        "start": 1035.939,
+        "duration": 4.721
+    },
+    {
+        "text": "And that's really the key right there.",
+        "start": 1041.359,
+        "duration": 1.401
+    },
+    {
+        "text": "It means that to find a function giving this area, ",
+        "start": 1042.76,
+        "duration": 3.352
+    },
+    {
+        "text": "you ask, what function has v of t as a derivative?",
+        "start": 1046.112,
+        "duration": 3.288
+    },
+    {
+        "text": "There are actually infinitely many antiderivatives of a given function, ",
+        "start": 1050.64,
+        "duration": 3.856
+    },
+    {
+        "text": "since you can always just add some constant without affecting the derivative, ",
+        "start": 1054.496,
+        "duration": 4.177
+    },
+    {
+        "text": "so you account for that by subtracting off the value of whatever antiderivative function ",
+        "start": 1058.673,
+        "duration": 4.766
+    },
+    {
+        "text": "you choose at the bottom bound.",
+        "start": 1063.439,
+        "duration": 1.661
+    },
+    {
+        "text": "By the way, one important thing to bring up before we leave is the idea of negative area.",
+        "start": 1066.26,
+        "duration": 5.72
+    },
+    {
+        "text": "What if the velocity function was negative at some point, meaning the car goes backwards?",
+        "start": 1073.04,
+        "duration": 4.5
+    },
+    {
+        "text": "It's still true that a tiny distance traveled ds on a little time interval is ",
+        "start": 1078.66,
+        "duration": 4.68
+    },
+    {
+        "text": "about equal to the velocity at that time multiplied by the tiny change in time.",
+        "start": 1083.34,
+        "duration": 4.74
+    },
+    {
+        "text": "It's just that the number you'd plug in for velocity would be negative, ",
+        "start": 1088.64,
+        "duration": 4.432
+    },
+    {
+        "text": "so the tiny change in distance is negative.",
+        "start": 1093.072,
+        "duration": 2.648
+    },
+    {
+        "text": "In terms of our thin rectangles, if a rectangle goes below the horizontal axis, ",
+        "start": 1096.8,
+        "duration": 4.723
+    },
+    {
+        "text": "like this, its area represents a bit of distance traveled backwards, ",
+        "start": 1101.523,
+        "duration": 4.074
+    },
+    {
+        "text": "so if what you want in the end is to find a distance between the car's ",
+        "start": 1105.597,
+        "duration": 4.192
+    },
+    {
+        "text": "start point and its end point, this is something you'll want to subtract.",
+        "start": 1109.789,
+        "duration": 4.311
+    },
+    {
+        "text": "And that's generally true of integrals.",
+        "start": 1115.06,
+        "duration": 1.78
+    },
+    {
+        "text": "Whenever a graph dips below the horizontal axis, ",
+        "start": 1117.36,
+        "duration": 2.686
+    },
+    {
+        "text": "the area between that portion of the graph and the horizontal axis is counted as negative.",
+        "start": 1120.046,
+        "duration": 4.934
+    },
+    {
+        "text": "What you'll commonly hear is that integrals don't measure area per se, ",
+        "start": 1126.0,
+        "duration": 4.09
+    },
+    {
+        "text": "they measure the signed area between the graph and the horizontal axis.",
+        "start": 1130.09,
+        "duration": 4.09
+    },
+    {
+        "text": "Next up, I'm going to bring up more context where this idea ",
+        "start": 1135.68,
+        "duration": 3.009
+    },
+    {
+        "text": "of an integral and area under curves comes up, ",
+        "start": 1138.689,
+        "duration": 2.358
+    },
+    {
+        "text": "along with some other intuitions for this fundamental theorem of calculus.",
+        "start": 1141.047,
+        "duration": 3.713
+    },
+    {
+        "text": "Maybe you remember, chapter 2 of this series introducing the derivative ",
+        "start": 1146.48,
+        "duration": 3.883
+    },
+    {
+        "text": "was sponsored by The Art of Problem Solving, so I think there's ",
+        "start": 1150.363,
+        "duration": 3.452
+    },
+    {
+        "text": "something elegant to the fact that this video, which is kind of a duel to that one, ",
+        "start": 1153.815,
+        "duration": 4.53
+    },
+    {
+        "text": "was also supported in part by The Art of Problem Solving.",
+        "start": 1158.345,
+        "duration": 3.075
+    },
+    {
+        "text": "I really can't imagine a better sponsor for this channel, ",
+        "start": 1162.16,
+        "duration": 3.029
+    },
+    {
+        "text": "because it's a company whose books and courses I recommend to people anyway.",
+        "start": 1165.189,
+        "duration": 3.971
+    },
+    {
+        "text": "They were highly influential to me when I was a student developing a love for ",
+        "start": 1169.76,
+        "duration": 4.09
+    },
+    {
+        "text": "creative math, so if you're a parent looking to foster your own child's love ",
+        "start": 1173.85,
+        "duration": 4.037
+    },
+    {
+        "text": "for the subject, or if you're a student who wants to see what math has to offer ",
+        "start": 1177.887,
+        "duration": 4.195
+    },
+    {
+        "text": "beyond rote schoolwork, I cannot recommend The Art of Problem Solving enough.",
+        "start": 1182.082,
+        "duration": 4.038
+    },
+    {
+        "text": "Whether that's their newest development to build the right intuitions in ",
+        "start": 1186.74,
+        "duration": 4.188
+    },
+    {
+        "text": "elementary school kids, called Beast Academy, or their courses in higher-level ",
+        "start": 1190.928,
+        "duration": 4.533
+    },
+    {
+        "text": "topics and contest preparation, going to aops.com slash 3blue1brown, ",
+        "start": 1195.461,
+        "duration": 3.959
+    },
+    {
+        "text": "or clicking on the link in the description, lets them know you came from this channel, ",
+        "start": 1199.42,
+        "duration": 4.992
+    },
+    {
+        "text": "which may encourage them to support future projects like this one.",
+        "start": 1204.412,
+        "duration": 3.788
+    },
+    {
+        "text": "I consider these videos a success not when they teach people a particular bit of math, ",
+        "start": 1208.92,
+        "duration": 4.753
+    },
+    {
+        "text": "which can only ever be a drop in the ocean, but when they encourage people ",
+        "start": 1213.673,
+        "duration": 4.097
+    },
+    {
+        "text": "to go and explore that expanse for themselves, ",
+        "start": 1217.77,
+        "duration": 2.568
+    },
+    {
+        "text": "and The Art of Problem Solving is among the few great places to actually do ",
+        "start": 1220.338,
+        "duration": 4.153
+    },
+    {
+        "text": "that exploration.",
+        "start": 1224.491,
+        "duration": 0.929
+    }
+]

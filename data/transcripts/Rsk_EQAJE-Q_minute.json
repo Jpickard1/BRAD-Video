@@ -1,0 +1,222 @@
+[
+    {
+        "start": 28.96,
+        "text": "e e hey everybody um it's great to I think this is the first seminar of the term it's great to have hayun back with us uh and I was just catching up he got promoted and he's a he's an associate professor with tenure now and bio statistics he came here to work with Gallo back uh you know what 20 "
+    },
+    {
+        "start": 90.479,
+        "text": "9 and then spent a couple years there and then entered the tenure track as an assistant professor and has just been a forced to be reckoned with in computational biostatistics ever since he was the uh John sirel assistant professor of Bio biostatistics which is fantastic he's had a strong uh association with bioinformatics the whole time we were involved in his Recruitment and uh what we're going to learn from him today is his more recent work oning cell analysis which is so important right now and getting that right and uh having uh statistics that you can trust is absolutely critical and there's no one around frankly that I can think of here at the University of Michigan that would be a better source of information in howun himself so we're great to have you back and uh thank you for kicking off our seminar series you filled the auditorium and we look forward to hearing from you it's my great pleasure to have you uh be here with us thank you thank "
+    },
+    {
+        "start": 151.959,
+        "text": "you uh thank you Brian uh it's a really uh great pleasure to uh talk about uh our uh recent work on a single cell analysis so today I'm going to talk about some computational method that that is interesting in the sense that this uh Ena some uh new types of single cell analysis that wasn't possible before but the method itself is just computational so uh the I was not working on single cell study from the beginning of course and uh I was fascinated uh by the talk from Steve Mell uh who came here about he two and a half years ago and know he was talking about talking he started uh the single set talk with this slides so this set this kind of slides so I plagarized him a little bit "
+    },
+    {
+        "start": 212.72,
+        "text": "so the here the B sequencing we were doing is like a we're uh studying smoothie okay now when the doing the single set analysis it's like a salad because you can see every elements so if you know if you have two two sets of salad you know that this is taste better versus this is not then you can examine what's in there and you can figure out example oh this this store uses gold kiwi and this store doesn't use a gold kiwi that's the difference so that that kind of analysis you can do that when it's uh much easier and much more accurate when you have this individual cell uh result and when you have this kind of smoothie like mixture a lot of uh different compounding factors uh can uh can be involved and uh some misleading result can come in so uh so two and a half years ago uh "
+    },
+    {
+        "start": 274.52,
+        "text": "there's two uh cell papers back to back uh publish it uh you basically this is a new single cell analysis techniques that allows barcoding droplets uh that contain that contains the single cells so uh you because each droplet are barcoded uh previous uh single cell Technologies like a flu C1 has to uh prepare library for each cell separately so there there there might be a cellto cell variation the cost is high and so on but here uh because we're preparing Library per sample together we can get rid of a cellto sell batch effect and uh we can uh assay thousands of sales in a single Library prep and uh this is high high throughput uh low perale cost so this is a great uh opportunity and I was very excited uh to uh work with this so the basic idea of this droplet based uh single "
+    },
+    {
+        "start": 337.0,
+        "text": "cell sequencing including the 10x genomics and the drop uh starts with uh either H hydrogel or some uh droplet uh droplets and the bead that actually have some barcodes so basically you're barcoding the droplets so that you know uh you know uh which uh which droplet uh the read comes from so and the sales celles are shoot it uh uh in a in some flow so stochastically some droplet will have uh one cell some of them may have two cells uh and you you do the Indra inra lies and R transcription and you can sequence uh each droplet each RNA sequence read uh tagged by these cell barcode so you can Dem Multiplex each cell uh so each read by "
+    },
+    {
+        "start": 399.0,
+        "text": "the cell origin then you can uh aggregate the read coming from one barcode and those are the profiles of the Single Cell uh expression Expressions so uh when the drop sheet came came in we contacted the Steve maos group and we uh uh got this the cat file that they had this micr fluidic device we contacted uh this Dr R Yun and uh the UI Chen and the ECS department and they they were they are very uh the frontier in the Single Cell technology but they also were interested in this kind of problem so uh they fabricated the device and Juni leave we we set up a uh drop uh the wet lab so small small equipment and uh the hin qu who did actually all the work uh he he's now a Corell actually "
+    },
+    {
+        "start": 459.199,
+        "text": "did a lot of work to make the drops happen in an AR just within a very short period of time and now since then we have a lot of collaboration including uh Muhammad otan on the retina human retina sequencing and with Gonzales and Matas kler uh and who is doing the uh kidney single sequency so this was really great experience for me uh but I don't have a particular a uh disease or I don't disease or a particular scientific hypothesis I'd like to look at look into necessarily for uh this uh for this single cell study the reason why I was was fascinated is that this is the very future looking method that will likely be uh persistent for a long time and I just wanted to understand what the data looks like uh because if we so I'm going to plagiarize once more so the George "
+    },
+    {
+        "start": 520.88,
+        "text": "Parx said that all models are wrong but some are useful uh we can say for the technology too so uh most of the hyr technology uh when you you are getting uh those are giving some useful information some some information but uh those readouts are not uh perfect uh measurement of the real uh re for example real rary levels for each cell for example so when you look at the look at the data there are parts that are wrong or systematically biased and correcting for that kind of bias or uh technical variability is what I'm very interested in uh because making the analysis right is really important it and that requires careful statistics and computational Analysis uh to achieve it so so I decided to work on a single cell method and this this uh initial "
+    },
+    {
+        "start": 582.68,
+        "text": "experience gave me a lot of ideas about the how to sorry analyze the single data very well then uh about an year ago uh my colleague uh the pH lab PhD lab colleague Jimmy Y and I talked about single cell technology because he was interested in two and we talked about it and we we realized we have a very similar idea to with each other so this this was the idea so he was working on the 10x chromium data I was working on the dropic data but uh I'll explain the 10x chromium data uh first because uh that was act that was how the experiment was done uh actually so T chrom chromy um data is a this platform is a very easy to use platform that can partition thousands or "
+    },
+    {
+        "start": 643.76,
+        "text": "tens of thousands of cell in a very short uh amount short period of time and it recovers 65% up to 65% of loading celles and if you load about thousand celles per well you're going to have about 1% of double so that that's that's what it is it's quite expensive it's more expensive than dropic uh equipment you can set up so uh it varies by how how how much you sequence but at least per well you're going to have to spend about $2,000 or more so if you're doing the eight well it's going to be close to $20,000 so uh when we are doing the single set analysis uh with this kind of platform this is really good platform to uh create some atlas of uh certain single individual single sample and if you wanted to deeply analyze what kind of cells are there cell types are there "
+    },
+    {
+        "start": 704.32,
+        "text": "and uh what are the profiles of each of the cell types these are very good platform but if you are interested in uh some kind of differential expression analysis where you have a typically case control or two different conditions and try to compare the uh gene expression between the condition and try to identify what kind of genes are differential Express you need some a reasonably large amount of sample to do that analysis then uh because you need a a single well for each each experiment if you're doing the 10 sample basically it's going to cost more than $20,000 and for each an analysis where you look at the association between the genetic variant uh and expression levels uh in that case you probably need about hundreds of samples to get a reasonable uh reasonable power then that case the study becomes uh more than $200,000 which is pretty challenging uh to "
+    },
+    {
+        "start": 766.8,
+        "text": "accomplish so a second thing so when so my point here is that when you do the wide experiment it becomes more and more expensive because the per sample cost is almost fixed so challeng it the Second Challenge is that there is a a possible batch effect so I think uh a lot of you a lot of you know if you're doing the either experimental or analysis but if you're careful uh to uh batch effect you will always uh from microwave to and everything you always have to randomize uh your the co variates uh with the with the uh possible batch effect uh you're going to have in your data because for example if you do all the cases in one day in one well one one yeah one one set of wells and uh do the controls in the other the other day with the other set of Wells these are technical differen is totally confounded by uh the biological "
+    },
+    {
+        "start": 828.36,
+        "text": "differences and is very hard to dis disentangle which one is due to the technical effect and which one is due to the biological effect so better thing is to do this uh you know match it assignment between the uh case and control you can think about doing doing by well but each well itself is also batch so you still have a b some sort of batch effect although batch effect uh is a somewhat uh randomized that will reduce the power of your study so uh ideally if we can do something like this so if if we can put one case and one control in each well that will be very ideal setting to reduce batch effect because in that case you are perfectly matching between the case and control so in in in this particular case you shouldn't you don't need to worry about uh you know we world uh batch effect are confounding your "
+    },
+    {
+        "start": 890.8,
+        "text": "analysis so so this randomization is encouraged but sometimes uh people come come to us after doing the experiment so it was totally confounded there's not nothing much we can do and this kind of this kind of uh more ideal experiment was not possible with current protocol so third challenge is that uh this is a stochastic uh procedure so if you if you load more and more cells uh in the microfluidic device there are more chance that the two more cells come into a single droplet so uh if you load more cells you have to risk for having a larger number of doublets Double L means that the one droplet have multi uh two cells or multi multiplet which can have a two or more cells then those doublets will look like a single cell but have a "
+    },
+    {
+        "start": 952.279,
+        "text": "very different expression profile so it's going to increase your you know number of clusters and it's going to uh us weird systematic bias in in your analysis unless you identify and detect them and throw them out and detecting double that is not an easy problem uh in general so uh but uh it because this is a pretty expensive experiment still uh you might want to load as many cells as uh as possible uh because uh this speed and Hy hydrogel this Library prep cost is very high so if you uh reduce the number of sales per run you're basically increasing per sale cost quite quite a bit so there are many other challenges in the droplet barcoding uh single C sequencing studies and I I only talked about three and there are other challenges I haven't talked about and I "
+    },
+    {
+        "start": 1012.399,
+        "text": "didn't address explicitly in my work but I'm going to talk about a method that can handle these three challenges uh with a some different uh way to uh design a study and analyze them so let's think about uh doing the equil study let's say I need to have uh 96 samples to have enough power and uh I'm assuming uh I'm going to have a thousand cells per each to have a low low uh double rate so in this case uh this is a probably just experiment itself is at least the $200,000 experiment could be even more uh it could be cheaper later but that's the price tag right now so you can imagine there there nothing nothing wrong with imagining if you can so if you so let's say I I have only "
+    },
+    {
+        "start": 1072.88,
+        "text": "$40,000 to do the experiment so let's say I want to have I have a money for only only do these uh two set of wells and uh wanting to do the still wanting to do the 96 samples if I some somehow can load the 6,000 uh cells each from six samples together that'll be really good so this is a more efficient design for why data this will reduce the batch effect because if you if you uh load the six samples together at least within those six samples you wouldn't have a patch effect and you can even uh do like a pseudo crew like design where you put the sample in the two different combinations and there's those approaches have been have been tried in the uh DNA sequencing and you can apply those kind of method here so you can reduce a batch effect with the more collaborative design and because you are "
+    },
+    {
+        "start": 1134.799,
+        "text": "sequencing 60 uh 6,000 uh per cell with than uh rather than thousand you you will have increased throughput but obviously this has two main problems one is that if you just mix them together how can you uh decom cells to samples so you you somehow need to tag the sample somehow within the droplet which is not possible now and uh Al so or you need to come up with some way to decom cells to uh samples and the second Second Challenge is that how to uh handle the increased double that because if you load 6,000 cells together you're going to have about 6% of double rates which is very uh relatively high so so we came up with some uh crazy idea that uh just do that and then we can we're imagining if we have some magic "
+    },
+    {
+        "start": 1195.6,
+        "text": "box that can detect the demot doublets and uh the de Dem Multiplex uh the read by sample then we can do this then how do we do this the idea is that we're going to use the genetic variation uh that are uh carried by the Mna levels the each each of the Mna V so the this is a a cartoon ver version of the the basic idea so let's say the genome sequence a genome sequence of some sample looks like this and and some of so some of the RNA sequencing read carry some genetic variation here there it carries three genetic variation and that that matches to the that their actual genome sequences but they they are variable "
+    },
+    {
+        "start": 1255.84,
+        "text": "between the individuals so you can use them as a natural genetic barcode to identify uh the sample uh from all the other samples so then you can use this uh uh uh genetic variance information uh to uh deconvolute the the read uh by each sample using this genetic varation is single cell uh barcode as a natural barcode information so then if you let's say you have four Snips here for example a atgc and there a lot of different uh read coming from uh this each each represent the droplet so then you have a you have a lot of Read's coming from here and only this one matches exactly with this uh set of read so if there's no sequencing errors then just having these four four different read from four different snip should be enough to uh "
+    },
+    {
+        "start": 1318.08,
+        "text": "decomp the sample identity in this uh particular scenario but obviously this is not uh uh realistic because uh uh first humans are Diplo so this one assumes halfs is much easier problem second uh sequence read actually have errors a lot a lot of time sometimes and the genotypes may not be accurate either and know you have very you might have a very limited number of weed that overlaps with Snips because a snip density is about one out one out of thousand or one out one out of few hundred at least so uh we need to develop some more uh uh principled model uh that uh is more statistically rigorous and you can uh easily come up with a likely model like this so this looks a little complicated but I I'll go over so you basically "
+    },
+    {
+        "start": 1379.279,
+        "text": "multiply across all the variance assuming they are independent and go across all possible genotypes uh and uh for each for each of the genotype you're going across the each of the weed and calculate the probability uh of each weed are given the genotype and multiply them and marginalize by the sequencing error possible sequencing errors then this likeu should represent uh the liku that uh this particular set of sequence weed are coming from uh for some particular individual then if you have a list of the candidate individual you can evaluate uh from then you can uh compare the likelihood and choose the one that gives the highest likelihood and if you can give some uh give some buffer to uh decide whether this is ambiguous uh call or this is a confident call so that's the basic idea that should work uh we just don't know if this is this is going "
+    },
+    {
+        "start": 1440.52,
+        "text": "to be enough or this is not uh enough uh because of the lack of number of weeds or uh or the the model could be uh improved improved a little bit more so more challenging problems are uh detecting doublets so when you detect the doublets the the nature of problem be uh becomes if there's a two different individuals are uh the two different cells are in there coming from two different individual basically you have a four half types rather than two so uh in the Diplo model you assume that the each CHR each half loid is contributing one to one mixture and uh you're assuming the Tetra ploid where uh uh two uh chromosomes are coming from uh with a with some mix some proportion let's say Alpha is like 30% then the 70% 70% and then this one comes like a 30% 30% uh or mixture uh if you know that what's "
+    },
+    {
+        "start": 1502.96,
+        "text": "the uh uh fraction of we that that are contribute by each samples so then not every double LS can be detected but if if there's a double Le that are that are coming from the same individual this genetic barcode itself cannot be uh used to the uh detect the doublets but uh if you Multiplex a lot of samples together uh most of the most of the cell double ads actually should come from uh different individuals so if you have nend samples let's say 10 samples then 90% of the weed uh should be coming 90% sorry 90% of double should be cons should consist of two different individuals so you can get if you can detect double this way you can get rid of the uh 90% of douet so assume that l assume that this method works perfectly then this is a theoretical upper bound of the "
+    },
+    {
+        "start": 1563.279,
+        "text": "performance so if you you can load more and more samples then what's going to happen is that you're going to have more and more doublets so you need to you need to load in more more and more cells and this red line represent the number of non- doublets so these are number of number of single letters this is what we care about because we're going to throw out all the ones that are not singlets then uh our calculation shows that uh I want to have 1% of doublet rates then for for a typical way you just load one thousand cell and a excluding 1% double you're going to have a 990 uh single XS but if you load a 63 samples each of them 15 about 15,000 cell sorry sorry the, 1500 cells then you need you need to basically load 100,000 cells and uh about 35% of them 37% of them are going to be a single so "
+    },
+    {
+        "start": 1627.2,
+        "text": "uh you're going to have less number of singlet for sample but to total number of singlets you're going to get increased by 37 uh fold so this is huge increase and uh this is OB obviously theoretical we don't even know that the 100,000 read will fit into a single run because this is a huge amount of concentration of the cells so uh this is a theoretical so we need to see whether this actually works uh to make it work we can we need to develop the method to detect the double it's basically the same method except that you assume that there is a two possible genotypes and the the read the the read of a sorry the likelihood of reading one a particular Al is a mixture between coming from one sample uh versus coming from other s another sample with some mixing proportions so uh so this is actually uh developed several years ago "
+    },
+    {
+        "start": 1690.64,
+        "text": "this is not new this was uh developed a long time ago so uh uh and the it was developed by us so me and Mike B is not here but Mike B and Gonzalo AIS we developed this method a several years before because we knew that this is going to be a important problem in the Single Cell so that's not true so we're we're going to we did that because we we needed this model so what we developed the model this model to detect the sample contamination in DNA sequencing reads so this is a very similar problem indeed so when you when you have a simple contamination from two different uh samples you the way to detect the contamination is develop this like this kind of likely model and do the maximum likely estimation to uh estimate the amount of contamination the settings detail setting is slightly different but we are using exactly the same "
+    },
+    {
+        "start": 1752.36,
+        "text": "model so we use this old model apply this model and implement the software and see how that works so the setting we have this is all done from the GES lab uh from UC s UC San Francisco and each sample is a genotype in this case uh about 250k to 500k gas arrays and number of actually informative uh Snips are less than 200 thousands but uh and it's it was imputed from uh the HRC panel the hypoy reference consortion panel so we have uh imputed genotype which is not correct which is not always correct and uh so the millions of genotypes uh that could be used are the genetic markers but only about 1% of them are uh in the coding region so we still have a limited number of uh genetic variant uh that can be used as a genetic bark so and we have "
+    },
+    {
+        "start": 1812.36,
+        "text": "eight samples and as uh separate separated them into two batches and now we also had another well that contains all the samples together and we wanted to see how they look like so uh aggregating all cells together uh this is the result of the clustering of cells so this is a very typical uh plot for the Single Cell uh the community so the x-axis is a a TSN Dimension uh for first First Dimension and second dimension these are two Dimensions so TSN is called uh T distributed stochastic uh NE embedding uh which is a very good method to uh man create a very low dimensional manifold from the very high dimensional data so this is work this is shown to work better than uh PCA or other kind of clustering methods so "
+    },
+    {
+        "start": 1873.48,
+        "text": "this was this is used a lot to uh cluster visually CL visually cluster uh the single cells and we can use the known markers in this case these are all pbmc's so uh to to use known markers to classify the cells into into B cells T cells and the different types of T cells so so and then cells and NK cells and so on so this this works very nice and this is very consistent to what we would expect except that this is actually mixture for multiple different samples so if what what happens if you demultiplex the samples so this is what happens so this is from well one which is a which has a only sample one to four uh this is this is from well three which has a sample one sample one through sample eight and we decom decoled only the part that that are assigned to sample one and this looks very similar to each other and "
+    },
+    {
+        "start": 1934.96,
+        "text": "this is from sample five they they look very similar to each other but the interestingly these are not similar these are that similar the reason is that these are Lupus patients so they have a very different uh profiles of the cell uh cell uh you know proportion cell type proportions also when when you sample the the blood sometimes you have more t- cells but than others just by the uh variation uh uh based on the uh by the people who draw the blood or who did the who who extracted uh the the actually the pbmcs so so they do have uh this very substantial differences uh in the cell types so and we still we wanted to evaluate how well this method do in terms of the uh accurately demultiplexing uh each cell so the first "
+    },
+    {
+        "start": 1996.0,
+        "text": "well we loaded about 4,000 cells assuming that this could be uh deconvoluted very well so we uh assigned each of the drop LS into either confident single LS confident double Le or ambiguous case so among the confidence so 97% of them are confident singlets and among the singlets so the way how we did that is that uh we start we just uh pretended we do not know that the sample are coming from only the half of the individual and we try to uh we we let the our method demo let to uh assign the best matching individuals and only 0.03% of the case it assigned to the wrong half of the individuals and most of the case it did assign the identity of s sample into the right clusters this this uh uh reassures that this method actually do uh do multiplexing pretty "
+    },
+    {
+        "start": 2059.28,
+        "text": "accurately in well two we uh and we loaded a little more cells uh 40 4200 cells and in this this case the numbers are very similar so 96.6% single LS and they uh they ID they were assigned correctly to the right uh half in know 99.99% and in the well three we use the all the examples in the cas in this case we don't have this measure of the accuracy but the number of single LS are are are decreased because we loaded more cells which is of 6,000 cells so we expected that and uh this is a very in line with what we expect uh based on the uh estimated uh double rates also we we can uh we can view by the proportion of cells in well three and well one and well two for by by each "
+    },
+    {
+        "start": 2119.64,
+        "text": "individual and each cell type and they they look very concurent so this looks like very reproducible result uh even though we use the multiplexing the sorry multiplexing uh the techniques so we ploted this double RS to the previous published the TX paper by saying it all in the nature Communications and this this is our double rates estimated and these these are very in line with uh what others have done uh with it with experimentally uh but they the people have done usually using the human and mouse mixtures and they look very concurent so there's another application of this method uh which is quite interesting so now this eight uh Lupus patients uh lot pbmc are extracted and uh we put the uh inter interfer beta "
+    },
+    {
+        "start": 2182.04,
+        "text": "which is a potential drug Target and uh the the let the sample stay for 6 hours uh where the that the independent beta effect could be maximized and me measured how the uh profiles will be different across the cell across the different conditions also across the different uh cell types so this is a view between the conditions so this whole this is all T cells mostly like T cells andk cells and these are these are have a very different profiles because this uh interferent beta changes the immune response of the cell of the cells quite a bit so expression profile changes a lot and uh so this is a this is known and this is very cool uh view by showing that most of the cell types actually do uh undergo very significant amount of "
+    },
+    {
+        "start": 2242.96,
+        "text": "changes and still when we use the no markers to classify type it does uh show that these are these are all the same cell types this is a this is a great result so in this case we even loaded the more adventurously so we loaded 15,000 cells because now we know that this method method works and we know that the loading more samples are going to be more advant advantageous as long as our method is uh close to perfect so uh this is this is a plot I like a lot so basically uh each uh column represent the different individuals and these is are two different conditions and these are the different color represent the different uh the proportion of each cell types then what we did is that uh we asked the question that whether is this Gene uh more variable between the "
+    },
+    {
+        "start": 2304.04,
+        "text": "individual than you would expect okay so then uh if you do the uh the test that you would do for a bulk an sequencing just by summing up everything you get you get this uh this uh light blue or pink uh plots that means that the most of the genes are differentially expressed uh between the individuals so those are highly variable than you would expect but that actually are caused by the different cell proportion cell type proportion so if you match the cell type proportion and try to measure the same thing you don't have that many uh cell sorry there are many genes that are differ expressed by by different individuals so this is a really important uh result when you do the differ differential Expressions uh always there is a risk of having the cell type having this uh different cell type proportion uh between the cases "
+    },
+    {
+        "start": 2365.92,
+        "text": "control for example confound your analysis that the most of the differential Express genes are just specific to one one cell type versus others so that doesn't mean much in terms of the disas uh ideology so so this uh this result is really encouraging that you can actually more precisely understand what's the what's the gene that are actually what's that are actually differenti and expressed within the same cell types which would be more interesting and you can Decon disentangle the effect from the cell type proportion and the actual differential expression uh result okay so we did the equ study too and we used only two Wells so as you expect so 23 individual two batches one from eight sample one from 15 15 samples so 23 samples is pretty large number of individuals so "
+    },
+    {
+        "start": 2428.52,
+        "text": "it it's not it's not the powerful enough to detect a lot of eals but we can at least with this samples that we can validate the existing UT or detect a very very strong utl so here 23 samples identify only the small number of eqls here but interestingly these are all colors represent the different cell types and you do see that the uh eql profiles are slightly different by the cell types and there are cell type specific eqtls the way we checked is that the this is a the green is a Javad LC eqls which is inated across all the cell types but also there is a cell type specific eql that was done by looking at the CD4 positive uh tala cells and a c cd14 positive this was uh I think it was an case cell uh then then CD4 positive ones this is a T helper cell so this is "
+    },
+    {
+        "start": 2488.76,
+        "text": "more ined here versus here and for this one this is a opposite so this is a oh sorry this is not the not this was not the NK this is a cytotoxic the moncle cells and these are these orange ones are more inate here versus here so this is in line with unn cell typ specific as well and also this cell type specific qls if you look at the actually distribution of the expression Levels by the genotypes you do see clear differences here uh for example this is E2 which should be shared across most of the cell types are just showing the similar patterns but here you do see in some of the cell types the the effect is not observable at all and only the sub subset of cell types you can observe the fact here the same thing happens here for this help T cells you don't see the "
+    },
+    {
+        "start": 2549.319,
+        "text": "effect but here uh in the monuclear cells or here actually NK cells but this one is NK cell specific ones so you do see a very huge effect uh by the genotype so this is a gene environmental interaction or cell type specific uh that have specific e so because we did a more adventurous experiment we now plotted them again against the uh known known rati douet and these are also in line so you might think that 30% is really really bad but actually we are uh removing most of the doublets these are 15 samples together so so then uh these are 26,000 th000 cells about 30% of them are uh double edged you still have almost almost 20,000 single ads you can obtain "
+    },
+    {
+        "start": 2610.8,
+        "text": "as opposed to 1,000 cells you can get uh if you do just didn't do the multiplexing uh with a similar amount of double that so and so this is LIN lines well well with the projected estimates and we are very happy with this result so that's uh where we are where we stand in terms of uh development and we have a lot of different ideas to how to extend this method to make it more accurate and to be useful in different Set uh set of settings uh and this the topic itself uh gives gives us a lot of ideas and it was really great to have that you know have this going with a very good colleagues so the summary is that uh we developed the de multi demo method that demultiplexing uh samples and do the double detection using L model and our method basically enables uh cost effective study uh that are that are "
+    },
+    {
+        "start": 2672.44,
+        "text": "genetically between the genetically diable sample for differential expression and the equ analysis or we call these uh per individual profiles of of us of this TSN plot as a drop print because it looks like a fingerprint and it actually is a individual specific so uh you can do these kind of sensors and drop rate goes as expected and all the uh singular assignment we've seen the most of cases 99.5% or greater singular assignment correctness even if we Multiplex a lot of samples and yeah so the benefits as I said Aller you can do wide experiment so per sample cost is a reduce a lot and you can reduce batch effect and you can reduce the per sale cost as well because you can load a lot of sales so you the library Library prep cost goes down a lot by sale so with that I I'd like to close "
+    },
+    {
+        "start": 2734.68,
+        "text": "with the acknowledgement of my uh lab colleague Jim he's at UCSF and he was a so we we discuss same idea together and he had a he had a very good plan to use this method to uh understand the the genetics of the imune uh cells and that worked out really great and the the papers out the bio card so you can look at uh how what the details of the result and we're very excited to work on uh this problem with the uh in collaboration with Jimmy's lab so that's all I have and thank you sure we have when you do the the um try when you're trying to see when you're trying to assign the reads that you get from the Single Cell to an individual "
+    },
+    {
+        "start": 2796.16,
+        "text": "you've got a small amount of reads that you're Mis assigning or a small amount of cells I guess that you're Mis assigning in the studies that you showed you've only got a few other people in there to whom you could assign other the reads too so you've got four other people or seven other people if you go to having a 100 other people or a thousand other people do you expect that those levels are going to go up or is there something just not good about the sequencing of those particular cells and those rates will stay constant a very very excellent question we actually did some a calculation of how many uh cell how many weed we how many weed or unique read or number of genes in terms of per cell uh the part of the number of informative uh Mr transcript will be needed to decom from this uh particular number of samples for "
+    },
+    {
+        "start": 2856.319,
+        "text": "example if we have a so I just wanted to pull off the this this numbers so if we uh Multiplex four samples together then we get we get this accuracy so we think we can improve the accuracy uh even more but the current uh number suggest that to to uh to obtain more than 99% of the single accur single assignment accuracy you from the 64 samples we need about 50 reads that overlaps with the Snips so 50 so read from at least 50 different samples sorry 50 different Snips so uh that gives some idea and basically if you use this method with a lot more more individual with a lot less read you might have to throw out some of the read that because that's too ambiguous but uh if you deep deeply sequence the droplet "
+    },
+    {
+        "start": 2917.76,
+        "text": "uh well enough you you usually should be able to get at least a 50 uh snip overlapping weed uh because uh you still have a lot of weeds and that's a so that's a problem related to the capture efficiency as well when you do the primary cell you have a cap capture efficiency problem so you usually get much lower number of weed than you would expect and this is actually from tbmc so that this have this shares uh this kind of problem too so I think this actually works in the primary cell I have a question regarding the Duets why you're uh throwing away the the data from the doublets if you deconvolute with the genetic barcode with the fingerprint you might be able to look at the doublets as they were "
+    },
+    {
+        "start": 2978.0,
+        "text": "single cells as well because you you have both data sets yeah so that's excellent uh question too so yes you're definitely right so so you can you can look at the uh doublets and try to understand what kind of what kind of mixture of cell type that that are in so you need to know the cell type for of the uh contributing cells and also you can use the read information to decom which cells are coming from which so I think that's an interesting area uh I I think that's harder problem to solve because uh you have a liit now you have a limited number of information and that now you're solving the problem of tetrao rather than diploid so uh just a single the TW the in general you solving solving the problem uh between the two sample mixture and try to get the right number of uh per cell per cell uh quantification "
+    },
+    {
+        "start": 3038.559,
+        "text": "uh appears to be harder and even just finding finding out the what the pairs of the cell type they're contributing from it's not it's a it's a doable problem if you have a biomarkers but if you don't have the known biomarkers is actually a hard problem yeah so we have some ideas about how to uh solve that problem B now the nice thing about this data is actually you know uh you can pre you can just ignore the genetic information just use the use the read count data and try to pretend that this is actually now you know which one is double Ed and which one is not double Ed right so you can use this data as a reference data to to try to evaluate whether you are really solving that problem and know there there are actually the I think the human human "
+    },
+    {
+        "start": 3100.64,
+        "text": "catas groups are actually working on that kind of problem but basically you to to be able to do that uh you need to use come up with the mixture model that uh then models the per cell type expression levels well and try to model them as mixture between two cell types versus single cell types uh this is a so this is an interesting problem I I found that that's more challenging than I thought I thought that simple Emi was would work but it doesn't doesn't work as well because the com the there are a lot more parameters you need to estimate it doesn't converge well so we're working on that problem very actively and I believe the using the genetic markers and the expression level together should be the best way uh to more accurately deconvolute the cell the sample identity as well as the cell "
+    },
+    {
+        "start": 3165.92,
+        "text": "Tex uh it really depends on the sequencing how much sequencing cost will be because this doesn't necessarily reduce the per sample uh is sorry part per per cell sequencing cost if you wanted to go deeper for each cell in terms of Library PL it's really just one divide by you know number of factors you're going to overload because you you're going to use the same same number of H hydrogel to load and you're just increasing the cell flow rate and uh if you so one one advantage I didn't uh mention clearly is that if you have a very valuable uh cells that you don't want to lose much if you use the uh traditional approach you will lose a lot of cells stochastically but if you increase the cell loading you will minimize the cell loss and uh you you have to the the filter out the double LS but still you will uh save a lot more single ads uh "
+    },
+    {
+        "start": 3230.0,
+        "text": "using this approach so this this is a library prep cost I think PX says that it's a $2,000 per well it's if it's a list if you go by list price basically you're saving uh 2,000 times a number of sample minus one I think so yeah for for h yeah yes so if as I said it's a in two different settings doing the 96 samples versus this way the it was it was about six Vol and seven volt differences just for the library cost itself so the the cost uh increase could be the cost reduction is uh could be the more than "
+    },
+    {
+        "start": 3292.359,
+        "text": "order of Mag so more than more than 10 times uh a particular situation yes uh here thank you um can you imagine this approach being extended to chroman accessibility approaches what would be the challenge yeah I believe CH accessibility you have a more you have a more the more diverse range of the uh reads so usually you chromatin accessibility uh case more because there's so many coverage usually the number of read per cells are has to be larger so you will have a the higher chance to uh get the uh variant overing reads and that that all can be used to deconvolute the samples I I believe that our method can be used then actually we don't necessarily restrict our method to work only for that any sequencing data so any "
+    },
+    {
+        "start": 3353.64,
+        "text": "kind of sequencing data that are multiplexed by with a specific barod tag you can use it so I believe you can if you have that that kind of data you can use it thank you [Applause] "
+    }
+]

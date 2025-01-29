@@ -1,0 +1,5217 @@
+[
+    {
+        "text": "thank you so much for having me",
+        "start": 0.179,
+        "duration": 4.231
+    },
+    {
+        "text": "introduction it's a pleasure to be here",
+        "start": 2.0,
+        "duration": 5.29
+    },
+    {
+        "text": "and please feel free to ask questions",
+        "start": 4.41,
+        "duration": 5.519
+    },
+    {
+        "text": "throughout the talk today I'm actually",
+        "start": 7.29,
+        "duration": 4.83
+    },
+    {
+        "text": "going to deviate a little bit from my",
+        "start": 9.929,
+        "duration": 5.13
+    },
+    {
+        "text": "cancer biology work to talk about some",
+        "start": 12.12,
+        "duration": 4.95
+    },
+    {
+        "text": "of the single-cell analysis techniques",
+        "start": 15.059,
+        "duration": 3.991
+    },
+    {
+        "text": "that we've been developing in my group",
+        "start": 17.07,
+        "duration": 4.89
+    },
+    {
+        "text": "and thinking about so focusing on",
+        "start": 19.05,
+        "duration": 5.46
+    },
+    {
+        "text": "applications to neuroscience that were",
+        "start": 21.96,
+        "duration": 4.68
+    },
+    {
+        "text": "rapidly taking back to clinical",
+        "start": 24.51,
+        "duration": 5.49
+    },
+    {
+        "text": "translational research questions so I'll",
+        "start": 26.64,
+        "duration": 6.75
+    },
+    {
+        "text": "be talking today about how to use matrix",
+        "start": 30.0,
+        "duration": 5.579
+    },
+    {
+        "text": "factorization to interpret single cell",
+        "start": 33.39,
+        "duration": 6.57
+    },
+    {
+        "text": "data and my lab focuses largely these",
+        "start": 35.579,
+        "duration": 7.081
+    },
+    {
+        "text": "days on computational methods for single",
+        "start": 39.96,
+        "duration": 5.25
+    },
+    {
+        "text": "cell analysis and these have taken on",
+        "start": 42.66,
+        "duration": 5.399
+    },
+    {
+        "text": "sort of two primary branches one is",
+        "start": 45.21,
+        "duration": 5.34
+    },
+    {
+        "text": "through matrix factorization being led",
+        "start": 48.059,
+        "duration": 4.831
+    },
+    {
+        "text": "by Genevieve Stein O'Brien and Tom",
+        "start": 50.55,
+        "duration": 4.919
+    },
+    {
+        "text": "Sherman in my group and the other is",
+        "start": 52.89,
+        "duration": 4.939
+    },
+    {
+        "text": "problems in how do you study",
+        "start": 55.469,
+        "duration": 5.191
+    },
+    {
+        "text": "transcriptional heterogeneity from",
+        "start": 57.829,
+        "duration": 5.771
+    },
+    {
+        "text": "single-cell data being led by Emily",
+        "start": 60.66,
+        "duration": 6.779
+    },
+    {
+        "text": "Davis Marcy sac and BOM and F sorry in",
+        "start": 63.6,
+        "duration": 5.85
+    },
+    {
+        "text": "my group these are sort of two branches",
+        "start": 67.439,
+        "duration": 4.711
+    },
+    {
+        "text": "of our single-cell analysis pipelines",
+        "start": 69.45,
+        "duration": 4.709
+    },
+    {
+        "text": "and I'm going to be focusing today",
+        "start": 72.15,
+        "duration": 4.52
+    },
+    {
+        "text": "largely on the matrix factorization",
+        "start": 74.159,
+        "duration": 7.53
+    },
+    {
+        "text": "approaches so what is going on when we",
+        "start": 76.67,
+        "duration": 7.03
+    },
+    {
+        "text": "have single when we have transcriptional",
+        "start": 81.689,
+        "duration": 4.921
+    },
+    {
+        "text": "data be a bulk viet single cell right if",
+        "start": 83.7,
+        "duration": 4.47
+    },
+    {
+        "text": "we think about what's going on in the",
+        "start": 86.61,
+        "duration": 3.719
+    },
+    {
+        "text": "cell there's a number of different",
+        "start": 88.17,
+        "duration": 4.559
+    },
+    {
+        "text": "concurrent processes that are going on",
+        "start": 90.329,
+        "duration": 6.031
+    },
+    {
+        "text": "within a cell at any given time there's",
+        "start": 92.729,
+        "duration": 6.57
+    },
+    {
+        "text": "a phenotype that that cell has which",
+        "start": 96.36,
+        "duration": 5.25
+    },
+    {
+        "text": "might be a continuous state right age",
+        "start": 99.299,
+        "duration": 6.661
+    },
+    {
+        "text": "like I don't know like cell transitions",
+        "start": 101.61,
+        "duration": 7.049
+    },
+    {
+        "text": "things like that there's a discrete cell",
+        "start": 105.96,
+        "duration": 6.0
+    },
+    {
+        "text": "type right like mi an immune cell a Maya",
+        "start": 108.659,
+        "duration": 6.511
+    },
+    {
+        "text": "t-cell and Maya B cell there's the",
+        "start": 111.96,
+        "duration": 5.88
+    },
+    {
+        "text": "spatial position of where that cell is",
+        "start": 115.17,
+        "duration": 5.43
+    },
+    {
+        "text": "located and then there's some sort of",
+        "start": 117.84,
+        "duration": 5.279
+    },
+    {
+        "text": "transitional progression and then",
+        "start": 120.6,
+        "duration": 5.309
+    },
+    {
+        "text": "there's state changes like cell cycle or",
+        "start": 123.119,
+        "duration": 5.37
+    },
+    {
+        "text": "metabolism and all of these come",
+        "start": 125.909,
+        "duration": 5.341
+    },
+    {
+        "text": "together within transcriptional data and",
+        "start": 128.489,
+        "duration": 5.101
+    },
+    {
+        "text": "what's so powerful about transcriptional",
+        "start": 131.25,
+        "duration": 2.709
+    },
+    {
+        "text": "D",
+        "start": 133.59,
+        "duration": 2.86
+    },
+    {
+        "text": "is it's really a combination of all of",
+        "start": 133.959,
+        "duration": 5.071
+    },
+    {
+        "text": "these features and if you have bulk data",
+        "start": 136.45,
+        "duration": 5.399
+    },
+    {
+        "text": "they're all convolve together if you",
+        "start": 139.03,
+        "duration": 5.039
+    },
+    {
+        "text": "have single cell these are somewhat",
+        "start": 141.849,
+        "duration": 4.741
+    },
+    {
+        "text": "resolved at a cellular level but still",
+        "start": 144.069,
+        "duration": 5.01
+    },
+    {
+        "text": "some prophecies like the state the",
+        "start": 146.59,
+        "duration": 4.289
+    },
+    {
+        "text": "spatial position and continuous",
+        "start": 149.079,
+        "duration": 3.841
+    },
+    {
+        "text": "phenotypes are still going to be",
+        "start": 150.879,
+        "duration": 6.571
+    },
+    {
+        "text": "convolve together in your data so if we",
+        "start": 152.92,
+        "duration": 6.209
+    },
+    {
+        "text": "think about the central dogma of",
+        "start": 157.45,
+        "duration": 3.629
+    },
+    {
+        "text": "molecular biology and what we're trying",
+        "start": 159.129,
+        "duration": 4.53
+    },
+    {
+        "text": "to do right and all of these things is",
+        "start": 161.079,
+        "duration": 6.24
+    },
+    {
+        "text": "we're really trying to relate these sort",
+        "start": 163.659,
+        "duration": 6.211
+    },
+    {
+        "text": "of the high dimensional data we get from",
+        "start": 167.319,
+        "duration": 5.941
+    },
+    {
+        "text": "DNA to RNA to protein to what's the",
+        "start": 169.87,
+        "duration": 5.88
+    },
+    {
+        "text": "underlying biological process in the",
+        "start": 173.26,
+        "duration": 4.53
+    },
+    {
+        "text": "system right at the end of the day we",
+        "start": 175.75,
+        "duration": 4.29
+    },
+    {
+        "text": "want to know what are the drivers of a",
+        "start": 177.79,
+        "duration": 5.58
+    },
+    {
+        "text": "given biological process and in order to",
+        "start": 180.04,
+        "duration": 5.91
+    },
+    {
+        "text": "do that you know historically in bulk",
+        "start": 183.37,
+        "duration": 5.22
+    },
+    {
+        "text": "data we were in a situation where you",
+        "start": 185.95,
+        "duration": 4.14
+    },
+    {
+        "text": "know we had tens of thousands of",
+        "start": 188.59,
+        "duration": 4.019
+    },
+    {
+        "text": "molecular measurements and maybe order",
+        "start": 190.09,
+        "duration": 5.549
+    },
+    {
+        "text": "hundred samples and so a lot of the work",
+        "start": 192.609,
+        "duration": 5.25
+    },
+    {
+        "text": "there has been focused on differential",
+        "start": 195.639,
+        "duration": 4.921
+    },
+    {
+        "text": "expression techniques and statistical",
+        "start": 197.859,
+        "duration": 4.35
+    },
+    {
+        "text": "techniques where you really were able to",
+        "start": 200.56,
+        "duration": 4.709
+    },
+    {
+        "text": "query the data with known phenotypes and",
+        "start": 202.209,
+        "duration": 6.75
+    },
+    {
+        "text": "ask very specific questions I've always",
+        "start": 205.269,
+        "duration": 5.94
+    },
+    {
+        "text": "made the argument and it's becoming even",
+        "start": 208.959,
+        "duration": 4.5
+    },
+    {
+        "text": "more apparent with single cell data that",
+        "start": 211.209,
+        "duration": 3.87
+    },
+    {
+        "text": "by doing that you're losing some",
+        "start": 213.459,
+        "duration": 4.051
+    },
+    {
+        "text": "information in the system and that the",
+        "start": 215.079,
+        "duration": 5.431
+    },
+    {
+        "text": "underlying data itself can tell you",
+        "start": 217.51,
+        "duration": 4.92
+    },
+    {
+        "text": "something about the system that your",
+        "start": 220.51,
+        "duration": 4.11
+    },
+    {
+        "text": "prior knowledge might not have given and",
+        "start": 222.43,
+        "duration": 4.649
+    },
+    {
+        "text": "now that we're at a point where our",
+        "start": 224.62,
+        "duration": 4.5
+    },
+    {
+        "text": "datasets are containing upwards of a",
+        "start": 227.079,
+        "duration": 4.681
+    },
+    {
+        "text": "million cells with large consortio like",
+        "start": 229.12,
+        "duration": 4.979
+    },
+    {
+        "text": "human cell atlas we're really getting to",
+        "start": 231.76,
+        "duration": 4.319
+    },
+    {
+        "text": "a point where we need to now let the",
+        "start": 234.099,
+        "duration": 4.5
+    },
+    {
+        "text": "data drive some of the questions that",
+        "start": 236.079,
+        "duration": 5.37
+    },
+    {
+        "text": "we're asking and the data can inform new",
+        "start": 238.599,
+        "duration": 5.01
+    },
+    {
+        "text": "hypotheses about the underlying biology",
+        "start": 241.449,
+        "duration": 4.591
+    },
+    {
+        "text": "of a system that we might not have been",
+        "start": 243.609,
+        "duration": 4.831
+    },
+    {
+        "text": "able to get in a supervised type",
+        "start": 246.04,
+        "duration": 7.02
+    },
+    {
+        "text": "analysis so I'm gonna focus on",
+        "start": 248.44,
+        "duration": 6.57
+    },
+    {
+        "text": "transcription because like I talked",
+        "start": 253.06,
+        "duration": 3.72
+    },
+    {
+        "text": "about it's convolving all these signals",
+        "start": 255.01,
+        "duration": 3.39
+    },
+    {
+        "text": "and that's been the focus of my group",
+        "start": 256.78,
+        "duration": 4.049
+    },
+    {
+        "text": "but really a lot of these apply to any",
+        "start": 258.4,
+        "duration": 4.68
+    },
+    {
+        "text": "of the other high dimensional single",
+        "start": 260.829,
+        "duration": 4.501
+    },
+    {
+        "text": "cell types that are getting out if you",
+        "start": 263.08,
+        "duration": 3.899
+    },
+    {
+        "text": "have continuous phenotypes that you're",
+        "start": 265.33,
+        "duration": 2.58
+    },
+    {
+        "text": "getting",
+        "start": 266.979,
+        "duration": 3.001
+    },
+    {
+        "text": "so if you think about these technologies",
+        "start": 267.91,
+        "duration": 4.26
+    },
+    {
+        "text": "you know be it both be it single cell",
+        "start": 269.98,
+        "duration": 6.24
+    },
+    {
+        "text": "you get some sequence reads that you",
+        "start": 272.17,
+        "duration": 7.05
+    },
+    {
+        "text": "align and quantify write to specific",
+        "start": 276.22,
+        "duration": 5.31
+    },
+    {
+        "text": "genes and at the end of the day when you",
+        "start": 279.22,
+        "duration": 4.89
+    },
+    {
+        "text": "go to interpret the data what you end up",
+        "start": 281.53,
+        "duration": 5.67
+    },
+    {
+        "text": "is with is some matrix of genes by",
+        "start": 284.11,
+        "duration": 5.76
+    },
+    {
+        "text": "conditions right and your goal is to say",
+        "start": 287.2,
+        "duration": 6.03
+    },
+    {
+        "text": "from that matrix of genes by cells by",
+        "start": 289.87,
+        "duration": 6.09
+    },
+    {
+        "text": "samples whatever your conditions what's",
+        "start": 293.23,
+        "duration": 4.86
+    },
+    {
+        "text": "the underlying structure in that data",
+        "start": 295.96,
+        "duration": 4.26
+    },
+    {
+        "text": "that's giving you information about",
+        "start": 298.09,
+        "duration": 6.09
+    },
+    {
+        "text": "what's going on and we're fortunate that",
+        "start": 300.22,
+        "duration": 6.27
+    },
+    {
+        "text": "in mathematics this problem has been",
+        "start": 304.18,
+        "duration": 4.92
+    },
+    {
+        "text": "well solved for a number of years in",
+        "start": 306.49,
+        "duration": 5.31
+    },
+    {
+        "text": "math and computer science where there's",
+        "start": 309.1,
+        "duration": 5.13
+    },
+    {
+        "text": "low dimensional representations there's",
+        "start": 311.8,
+        "duration": 4.73
+    },
+    {
+        "text": "different forms of matrix factorization",
+        "start": 314.23,
+        "duration": 5.18
+    },
+    {
+        "text": "that what you find low dimensional",
+        "start": 316.53,
+        "duration": 5.32
+    },
+    {
+        "text": "representations of the data that give",
+        "start": 319.41,
+        "duration": 5.41
+    },
+    {
+        "text": "you an easier mode of interpretation of",
+        "start": 321.85,
+        "duration": 5.73
+    },
+    {
+        "text": "the underlying structure than higher",
+        "start": 324.82,
+        "duration": 4.98
+    },
+    {
+        "text": "dimensional data that you're given of",
+        "start": 327.58,
+        "duration": 5.43
+    },
+    {
+        "text": "the whole genome RNA seek and single",
+        "start": 329.8,
+        "duration": 6.75
+    },
+    {
+        "text": "cell data and one of the things that a",
+        "start": 333.01,
+        "duration": 5.16
+    },
+    {
+        "text": "lot of people and a lot of the",
+        "start": 336.55,
+        "duration": 4.73
+    },
+    {
+        "text": "literature has really been focused on is",
+        "start": 338.17,
+        "duration": 5.7
+    },
+    {
+        "text": "picking a method and really doubling",
+        "start": 341.28,
+        "duration": 5.89
+    },
+    {
+        "text": "down on it and talking about wit my",
+        "start": 343.87,
+        "duration": 5.07
+    },
+    {
+        "text": "methods the best right and I have my",
+        "start": 347.17,
+        "duration": 3.69
+    },
+    {
+        "text": "bias you know I wrote Co gaps is a",
+        "start": 348.94,
+        "duration": 4.56
+    },
+    {
+        "text": "non-negative matrix factorization but I",
+        "start": 350.86,
+        "duration": 4.14
+    },
+    {
+        "text": "think that it's really set the field",
+        "start": 353.5,
+        "duration": 3.66
+    },
+    {
+        "text": "back in terms of data interpretation",
+        "start": 355.0,
+        "duration": 4.23
+    },
+    {
+        "text": "because everybody comes up with their",
+        "start": 357.16,
+        "duration": 4.47
+    },
+    {
+        "text": "own algorithm they named it something",
+        "start": 359.23,
+        "duration": 4.41
+    },
+    {
+        "text": "slightly different they have a different",
+        "start": 361.63,
+        "duration": 4.38
+    },
+    {
+        "text": "fancy name for their outputs and it",
+        "start": 363.64,
+        "duration": 4.68
+    },
+    {
+        "text": "makes it very hard as a field to compare",
+        "start": 366.01,
+        "duration": 5.88
+    },
+    {
+        "text": "what the outputs are and to then convey",
+        "start": 368.32,
+        "duration": 5.91
+    },
+    {
+        "text": "to collaborators hey here's sort of the",
+        "start": 371.89,
+        "duration": 3.9
+    },
+    {
+        "text": "commonality here are the different",
+        "start": 374.23,
+        "duration": 4.55
+    },
+    {
+        "text": "features that we're learning so broadly",
+        "start": 375.79,
+        "duration": 5.22
+    },
+    {
+        "text": "matrix factorization I'm going to focus",
+        "start": 378.78,
+        "duration": 4.24
+    },
+    {
+        "text": "on linear techniques cuz that's what my",
+        "start": 381.01,
+        "duration": 3.96
+    },
+    {
+        "text": "group does but you can apply this to",
+        "start": 383.02,
+        "duration": 4.08
+    },
+    {
+        "text": "nonlinear techniques like auto-encoders",
+        "start": 384.97,
+        "duration": 4.95
+    },
+    {
+        "text": "as well so these factorization",
+        "start": 387.1,
+        "duration": 5.49
+    },
+    {
+        "text": "approaches largely are divided into",
+        "start": 389.92,
+        "duration": 5.4
+    },
+    {
+        "text": "three major classes there's principal",
+        "start": 392.59,
+        "duration": 5.55
+    },
+    {
+        "text": "component analysis independent component",
+        "start": 395.32,
+        "duration": 4.409
+    },
+    {
+        "text": "analysis and non-negative matrix",
+        "start": 398.14,
+        "duration": 3.92
+    },
+    {
+        "text": "factorization",
+        "start": 399.729,
+        "duration": 4.701
+    },
+    {
+        "text": "so principle component analysis is",
+        "start": 402.06,
+        "duration": 4.11
+    },
+    {
+        "text": "aiming to find the maximum separation",
+        "start": 404.43,
+        "duration": 4.68
+    },
+    {
+        "text": "and orthogonal conditions between your",
+        "start": 406.17,
+        "duration": 6.18
+    },
+    {
+        "text": "data independent component analysis was",
+        "start": 409.11,
+        "duration": 4.74
+    },
+    {
+        "text": "looking for statistically independent",
+        "start": 412.35,
+        "duration": 4.29
+    },
+    {
+        "text": "features and non-negative matrix",
+        "start": 413.85,
+        "duration": 5.43
+    },
+    {
+        "text": "factorization is looking for dependent",
+        "start": 416.64,
+        "duration": 4.95
+    },
+    {
+        "text": "features where the matrix elements are",
+        "start": 419.28,
+        "duration": 5.43
+    },
+    {
+        "text": "all non-negative at the end of the day",
+        "start": 421.59,
+        "duration": 6.39
+    },
+    {
+        "text": "regardless of which approach you use you",
+        "start": 424.71,
+        "duration": 6.15
+    },
+    {
+        "text": "get out two matrices and one of the",
+        "start": 427.98,
+        "duration": 4.86
+    },
+    {
+        "text": "things that we want to argue for is",
+        "start": 430.86,
+        "duration": 4.92
+    },
+    {
+        "text": "coming up with standards of how you",
+        "start": 432.84,
+        "duration": 6.27
+    },
+    {
+        "text": "visualize the data coming out of these",
+        "start": 435.78,
+        "duration": 5.67
+    },
+    {
+        "text": "two matrices and how you quantify",
+        "start": 439.11,
+        "duration": 4.83
+    },
+    {
+        "text": "performance so that way you can really",
+        "start": 441.45,
+        "duration": 4.98
+    },
+    {
+        "text": "start to think about can we compare",
+        "start": 443.94,
+        "duration": 4.68
+    },
+    {
+        "text": "across methods how are we learning what",
+        "start": 446.43,
+        "duration": 4.2
+    },
+    {
+        "text": "are we learning from the data in ways",
+        "start": 448.62,
+        "duration": 3.63
+    },
+    {
+        "text": "that you can't do if you're doubling",
+        "start": 450.63,
+        "duration": 4.92
+    },
+    {
+        "text": "down on one single method so there's two",
+        "start": 452.25,
+        "duration": 6.15
+    },
+    {
+        "text": "matrices one is going to be genes by",
+        "start": 455.55,
+        "duration": 6.24
+    },
+    {
+        "text": "some lower dimensional representation we",
+        "start": 458.4,
+        "duration": 5.07
+    },
+    {
+        "text": "call it patterns in our case other",
+        "start": 461.79,
+        "duration": 3.63
+    },
+    {
+        "text": "people use the term factors there's a",
+        "start": 463.47,
+        "duration": 4.77
+    },
+    {
+        "text": "number of different components this",
+        "start": 465.42,
+        "duration": 5.31
+    },
+    {
+        "text": "matrix we call the amplitude matrix",
+        "start": 468.24,
+        "duration": 4.08
+    },
+    {
+        "text": "again there's a number of different",
+        "start": 470.73,
+        "duration": 3.57
+    },
+    {
+        "text": "names for it the weight matrix the",
+        "start": 472.32,
+        "duration": 4.11
+    },
+    {
+        "text": "loadings what you know call it what you",
+        "start": 474.3,
+        "duration": 2.43
+    },
+    {
+        "text": "may",
+        "start": 476.43,
+        "duration": 3.48
+    },
+    {
+        "text": "we refer to it as the amplitude and this",
+        "start": 476.73,
+        "duration": 6.08
+    },
+    {
+        "text": "gives you a set of how are the genes",
+        "start": 479.91,
+        "duration": 5.43
+    },
+    {
+        "text": "correlated or how are the genes being Co",
+        "start": 482.81,
+        "duration": 4.36
+    },
+    {
+        "text": "used in different low dimensional",
+        "start": 485.34,
+        "duration": 4.44
+    },
+    {
+        "text": "representations so this is typically",
+        "start": 487.17,
+        "duration": 4.26
+    },
+    {
+        "text": "what you would use for gene set",
+        "start": 489.78,
+        "duration": 4.65
+    },
+    {
+        "text": "discovery pathway analysis or biomarker",
+        "start": 491.43,
+        "duration": 4.38
+    },
+    {
+        "text": "discovery where you're really trying to",
+        "start": 494.43,
+        "duration": 3.42
+    },
+    {
+        "text": "find what are the relationships between",
+        "start": 495.81,
+        "duration": 5.16
+    },
+    {
+        "text": "the genes that's as opposed to the",
+        "start": 497.85,
+        "duration": 5.46
+    },
+    {
+        "text": "second matrix which is the pattern",
+        "start": 500.97,
+        "duration": 4.8
+    },
+    {
+        "text": "matrix that gives you the relationships",
+        "start": 503.31,
+        "duration": 5.22
+    },
+    {
+        "text": "between the samples and you can use this",
+        "start": 505.77,
+        "duration": 5.64
+    },
+    {
+        "text": "for clustering for subtype or subclone",
+        "start": 508.53,
+        "duration": 5.19
+    },
+    {
+        "text": "discovery and timecourse analysis",
+        "start": 511.41,
+        "duration": 5.04
+    },
+    {
+        "text": "there's a broad list of applications but",
+        "start": 513.72,
+        "duration": 4.41
+    },
+    {
+        "text": "again all of these are going to come out",
+        "start": 516.45,
+        "duration": 3.03
+    },
+    {
+        "text": "of these different techniques and you",
+        "start": 518.13,
+        "duration": 4.86
+    },
+    {
+        "text": "can think about using them similarly we",
+        "start": 519.48,
+        "duration": 5.73
+    },
+    {
+        "text": "wrote a review sort of trying to start",
+        "start": 522.99,
+        "duration": 4.53
+    },
+    {
+        "text": "bringing together this more consensus in",
+        "start": 525.21,
+        "duration": 4.98
+    },
+    {
+        "text": "the matrix factorization field to think",
+        "start": 527.52,
+        "duration": 4.44
+    },
+    {
+        "text": "about what are the ways that this you",
+        "start": 530.19,
+        "duration": 4.59
+    },
+    {
+        "text": "know is uncovering different levels of",
+        "start": 531.96,
+        "duration": 3.84
+    },
+    {
+        "text": "information",
+        "start": 534.78,
+        "duration": 2.669
+    },
+    {
+        "text": "the data to start developing a",
+        "start": 535.8,
+        "duration": 4.11
+    },
+    {
+        "text": "standardized notation and really start",
+        "start": 537.449,
+        "duration": 3.661
+    },
+    {
+        "text": "thinking about what our standard",
+        "start": 539.91,
+        "duration": 3.599
+    },
+    {
+        "text": "visualizations that are needed for these",
+        "start": 541.11,
+        "duration": 4.229
+    },
+    {
+        "text": "low dimensional approaches in order to",
+        "start": 543.509,
+        "duration": 6.75
+    },
+    {
+        "text": "interpret data so I'm gonna focus on an",
+        "start": 545.339,
+        "duration": 6.511
+    },
+    {
+        "text": "example of non-negative matrix",
+        "start": 550.259,
+        "duration": 4.32
+    },
+    {
+        "text": "factorization and just think about well",
+        "start": 551.85,
+        "duration": 3.929
+    },
+    {
+        "text": "what does it mean to have a low",
+        "start": 554.579,
+        "duration": 2.94
+    },
+    {
+        "text": "dimensional representation of the data",
+        "start": 555.779,
+        "duration": 3.81
+    },
+    {
+        "text": "okay like what are we actually getting",
+        "start": 557.519,
+        "duration": 4.92
+    },
+    {
+        "text": "out so I'm gonna be in this cartoon",
+        "start": 559.589,
+        "duration": 5.67
+    },
+    {
+        "text": "world this nice simple world where I",
+        "start": 562.439,
+        "duration": 6.12
+    },
+    {
+        "text": "have only four genes right so imagine",
+        "start": 565.259,
+        "duration": 4.651
+    },
+    {
+        "text": "I'm in this thought experiment I have",
+        "start": 568.559,
+        "duration": 4.32
+    },
+    {
+        "text": "four genes and there's two scripts of",
+        "start": 569.91,
+        "duration": 5.459
+    },
+    {
+        "text": "data like one first half and one second",
+        "start": 572.879,
+        "duration": 4.65
+    },
+    {
+        "text": "half and then you have some maybe time",
+        "start": 575.369,
+        "duration": 5.491
+    },
+    {
+        "text": "variants in both of them so you can very",
+        "start": 577.529,
+        "duration": 6.81
+    },
+    {
+        "text": "clearly visually see by eye that there's",
+        "start": 580.86,
+        "duration": 6.689
+    },
+    {
+        "text": "two dominant patterns in this data right",
+        "start": 584.339,
+        "duration": 6.09
+    },
+    {
+        "text": "one that's going up and down in the",
+        "start": 587.549,
+        "duration": 5.46
+    },
+    {
+        "text": "second set of samples and one that's",
+        "start": 590.429,
+        "duration": 5.041
+    },
+    {
+        "text": "going up and down in the first set right",
+        "start": 593.009,
+        "duration": 4.8
+    },
+    {
+        "text": "then the third one is a combination of",
+        "start": 595.47,
+        "duration": 4.26
+    },
+    {
+        "text": "those two and the fourth one is a",
+        "start": 597.809,
+        "duration": 3.51
+    },
+    {
+        "text": "different combination of those two",
+        "start": 599.73,
+        "duration": 3.93
+    },
+    {
+        "text": "that's using the second one so if you",
+        "start": 601.319,
+        "duration": 3.63
+    },
+    {
+        "text": "think about what a matrix factorization",
+        "start": 603.66,
+        "duration": 4.049
+    },
+    {
+        "text": "approach is going to do is it's going to",
+        "start": 604.949,
+        "duration": 6.18
+    },
+    {
+        "text": "want to represent this data in terms of",
+        "start": 607.709,
+        "duration": 6.18
+    },
+    {
+        "text": "those two factors so what does that look",
+        "start": 611.129,
+        "duration": 4.89
+    },
+    {
+        "text": "like you have one again that's going up",
+        "start": 613.889,
+        "duration": 3.87
+    },
+    {
+        "text": "and down in the first set of samples and",
+        "start": 616.019,
+        "duration": 3.66
+    },
+    {
+        "text": "one that's going up and down in the",
+        "start": 617.759,
+        "duration": 4.14
+    },
+    {
+        "text": "second set of samples and then you go",
+        "start": 619.679,
+        "duration": 4.921
+    },
+    {
+        "text": "back to each gene and query and just say",
+        "start": 621.899,
+        "duration": 5.341
+    },
+    {
+        "text": "which one is it being used in so this",
+        "start": 624.6,
+        "duration": 4.919
+    },
+    {
+        "text": "first gene right it's not at all going",
+        "start": 627.24,
+        "duration": 3.949
+    },
+    {
+        "text": "up in the first set of the patterns",
+        "start": 629.519,
+        "duration": 4.68
+    },
+    {
+        "text": "samples so get the zero here and it's",
+        "start": 631.189,
+        "duration": 4.96
+    },
+    {
+        "text": "entirely going up in the second set of",
+        "start": 634.199,
+        "duration": 4.021
+    },
+    {
+        "text": "samples so it gets a blonde here right",
+        "start": 636.149,
+        "duration": 3.87
+    },
+    {
+        "text": "and this is just basic matrix",
+        "start": 638.22,
+        "duration": 4.919
+    },
+    {
+        "text": "multiplication right the second one",
+        "start": 640.019,
+        "duration": 5.67
+    },
+    {
+        "text": "flips the third one you get a one in a",
+        "start": 643.139,
+        "duration": 4.53
+    },
+    {
+        "text": "one and the fourth one you get a one in",
+        "start": 645.689,
+        "duration": 3.36
+    },
+    {
+        "text": "it too because it represents the",
+        "start": 647.669,
+        "duration": 4.2
+    },
+    {
+        "text": "relative usage of each pattern so that",
+        "start": 649.049,
+        "duration": 4.71
+    },
+    {
+        "text": "gives you a lower dimensional way of",
+        "start": 651.869,
+        "duration": 4.111
+    },
+    {
+        "text": "saying okay overall these are the",
+        "start": 653.759,
+        "duration": 3.901
+    },
+    {
+        "text": "patterns these are the processes that",
+        "start": 655.98,
+        "duration": 3.81
+    },
+    {
+        "text": "are going on and then these are the",
+        "start": 657.66,
+        "duration": 4.349
+    },
+    {
+        "text": "genes that are associated with each one",
+        "start": 659.79,
+        "duration": 3.899
+    },
+    {
+        "text": "of those so we can start thinking about",
+        "start": 662.009,
+        "duration": 4.17
+    },
+    {
+        "text": "how to blink specific genes back to the",
+        "start": 663.689,
+        "duration": 4.051
+    },
+    {
+        "text": "process",
+        "start": 666.179,
+        "duration": 4.39
+    },
+    {
+        "text": "you can scale this up right so this was",
+        "start": 667.74,
+        "duration": 5.26
+    },
+    {
+        "text": "my world of four genes you can just",
+        "start": 670.569,
+        "duration": 4.26
+    },
+    {
+        "text": "scale this up right and all these",
+        "start": 673.0,
+        "duration": 4.29
+    },
+    {
+        "text": "techniques work scaled up to larger",
+        "start": 674.829,
+        "duration": 4.771
+    },
+    {
+        "text": "datasets so this is going to be our",
+        "start": 677.29,
+        "duration": 3.989
+    },
+    {
+        "text": "cartoon example that I'm going to switch",
+        "start": 679.6,
+        "duration": 3.719
+    },
+    {
+        "text": "to where yellow is a heat map of higher",
+        "start": 681.279,
+        "duration": 4.591
+    },
+    {
+        "text": "expression and blue is lower and I",
+        "start": 683.319,
+        "duration": 5.041
+    },
+    {
+        "text": "imagine they're sort of these classes of",
+        "start": 685.87,
+        "duration": 5.43
+    },
+    {
+        "text": "genes and these classes of samples that",
+        "start": 688.36,
+        "duration": 4.76
+    },
+    {
+        "text": "are indicated by color",
+        "start": 691.3,
+        "duration": 4.649
+    },
+    {
+        "text": "so then how what are the different",
+        "start": 693.12,
+        "duration": 4.839
+    },
+    {
+        "text": "techniques giving you how do you",
+        "start": 695.949,
+        "duration": 3.69
+    },
+    {
+        "text": "interpret the data based on different",
+        "start": 697.959,
+        "duration": 5.041
+    },
+    {
+        "text": "techniques and so if we want to figure",
+        "start": 699.639,
+        "duration": 6.301
+    },
+    {
+        "text": "out the prophecies if you look at",
+        "start": 703.0,
+        "duration": 5.31
+    },
+    {
+        "text": "different types of factorizations you're",
+        "start": 705.94,
+        "duration": 4.68
+    },
+    {
+        "text": "going to get different solutions right",
+        "start": 708.31,
+        "duration": 5.399
+    },
+    {
+        "text": "so PCA for example you can visually I'm",
+        "start": 710.62,
+        "duration": 5.04
+    },
+    {
+        "text": "gonna go back you can visually see in",
+        "start": 713.709,
+        "duration": 3.841
+    },
+    {
+        "text": "this data there's three patterns right",
+        "start": 715.66,
+        "duration": 4.2
+    },
+    {
+        "text": "one going up in this third set of",
+        "start": 717.55,
+        "duration": 5.19
+    },
+    {
+        "text": "samples one going up in the second set",
+        "start": 719.86,
+        "duration": 4.56
+    },
+    {
+        "text": "and one going up in the first and",
+        "start": 722.74,
+        "duration": 3.089
+    },
+    {
+        "text": "everything else is a linear combination",
+        "start": 724.42,
+        "duration": 4.05
+    },
+    {
+        "text": "of those so you can sort of visually by",
+        "start": 725.829,
+        "duration": 5.43
+    },
+    {
+        "text": "I see there are those three groups if",
+        "start": 728.47,
+        "duration": 7.2
+    },
+    {
+        "text": "you look at PCA it gets do things going",
+        "start": 731.259,
+        "duration": 8.31
+    },
+    {
+        "text": "up right and then it gets in the first",
+        "start": 735.67,
+        "duration": 6.99
+    },
+    {
+        "text": "two groups then it gets one going up in",
+        "start": 739.569,
+        "duration": 5.611
+    },
+    {
+        "text": "the third and then it gets another one",
+        "start": 742.66,
+        "duration": 4.89
+    },
+    {
+        "text": "that goes negative right that goes way",
+        "start": 745.18,
+        "duration": 4.649
+    },
+    {
+        "text": "down to compensate for the fact that",
+        "start": 747.55,
+        "duration": 3.99
+    },
+    {
+        "text": "it's getting to things that are highly",
+        "start": 749.829,
+        "duration": 2.61
+    },
+    {
+        "text": "expressed here",
+        "start": 751.54,
+        "duration": 5.64
+    },
+    {
+        "text": "so it's it's recapitulating the data but",
+        "start": 752.439,
+        "duration": 6.871
+    },
+    {
+        "text": "this is not a feature that we ever see",
+        "start": 757.18,
+        "duration": 6.959
+    },
+    {
+        "text": "in our actual data matrix why is PCA so",
+        "start": 759.31,
+        "duration": 6.719
+    },
+    {
+        "text": "useful well these two features are",
+        "start": 764.139,
+        "duration": 3.901
+    },
+    {
+        "text": "really what separates most of the",
+        "start": 766.029,
+        "duration": 4.98
+    },
+    {
+        "text": "variation in the data so if I plot one",
+        "start": 768.04,
+        "duration": 5.88
+    },
+    {
+        "text": "versus the other I've captured most of",
+        "start": 771.009,
+        "duration": 5.01
+    },
+    {
+        "text": "the variation in the data and lo and",
+        "start": 773.92,
+        "duration": 4.2
+    },
+    {
+        "text": "behold I separate out the blue group of",
+        "start": 776.019,
+        "duration": 5.911
+    },
+    {
+        "text": "samples from the yellow and the gray the",
+        "start": 778.12,
+        "duration": 6.6
+    },
+    {
+        "text": "PCA is phenomenal for clustering right",
+        "start": 781.93,
+        "duration": 4.62
+    },
+    {
+        "text": "because I've done I've separated most of",
+        "start": 784.72,
+        "duration": 5.16
+    },
+    {
+        "text": "the samples but it's terrible at",
+        "start": 786.55,
+        "duration": 5.159
+    },
+    {
+        "text": "learning the patterns that are actually",
+        "start": 789.88,
+        "duration": 4.439
+    },
+    {
+        "text": "reflected in the data so if my goal is",
+        "start": 791.709,
+        "duration": 6.57
+    },
+    {
+        "text": "to cluster i 100% want to use pca if my",
+        "start": 794.319,
+        "duration": 6.27
+    },
+    {
+        "text": "goal is to figure out what are the",
+        "start": 798.279,
+        "duration": 2.941
+    },
+    {
+        "text": "process",
+        "start": 800.589,
+        "duration": 2.581
+    },
+    {
+        "text": "in the data I'm gonna want to go to",
+        "start": 801.22,
+        "duration": 3.75
+    },
+    {
+        "text": "another technique like independent",
+        "start": 803.17,
+        "duration": 3.63
+    },
+    {
+        "text": "component analysis or non-negative",
+        "start": 804.97,
+        "duration": 4.53
+    },
+    {
+        "text": "matrix factorization and I'll admit my",
+        "start": 806.8,
+        "duration": 4.5
+    },
+    {
+        "text": "bias up front for non-negative matrix",
+        "start": 809.5,
+        "duration": 3.87
+    },
+    {
+        "text": "factorization and you know of course",
+        "start": 811.3,
+        "duration": 3.75
+    },
+    {
+        "text": "happy to get into discussions with",
+        "start": 813.37,
+        "duration": 3.18
+    },
+    {
+        "text": "people about independent component",
+        "start": 815.05,
+        "duration": 4.95
+    },
+    {
+        "text": "analysis or other you know nonlinear",
+        "start": 816.55,
+        "duration": 5.76
+    },
+    {
+        "text": "techniques but that's my bias and I'll",
+        "start": 820.0,
+        "duration": 5.42
+    },
+    {
+        "text": "be upfront about it at the start so in",
+        "start": 822.31,
+        "duration": 5.7
+    },
+    {
+        "text": "non-negative matrix factorization what",
+        "start": 825.42,
+        "duration": 4.45
+    },
+    {
+        "text": "do you get out you get three patterns",
+        "start": 828.01,
+        "duration": 4.56
+    },
+    {
+        "text": "one that's higher in the first set one",
+        "start": 829.87,
+        "duration": 4.65
+    },
+    {
+        "text": "the tire and the third and one that's",
+        "start": 832.57,
+        "duration": 3.93
+    },
+    {
+        "text": "higher in the second set of samples and",
+        "start": 834.52,
+        "duration": 4.68
+    },
+    {
+        "text": "that's exactly what you observe visually",
+        "start": 836.5,
+        "duration": 5.46
+    },
+    {
+        "text": "within this data so we think that's more",
+        "start": 839.2,
+        "duration": 4.95
+    },
+    {
+        "text": "reflective typically of what are the",
+        "start": 841.96,
+        "duration": 4.34
+    },
+    {
+        "text": "underlying processes in the data and",
+        "start": 844.15,
+        "duration": 4.86
+    },
+    {
+        "text": "then the way you can visualize this so",
+        "start": 846.3,
+        "duration": 5.65
+    },
+    {
+        "text": "whereas you in a PCA plot you're going",
+        "start": 849.01,
+        "duration": 5.37
+    },
+    {
+        "text": "to tend to plot the first PC versus the",
+        "start": 851.95,
+        "duration": 4.59
+    },
+    {
+        "text": "second so you can see the separation of",
+        "start": 854.38,
+        "duration": 4.44
+    },
+    {
+        "text": "the data in non-negative matrix",
+        "start": 856.54,
+        "duration": 4.89
+    },
+    {
+        "text": "factorization each of the factors is",
+        "start": 858.82,
+        "duration": 5.43
+    },
+    {
+        "text": "equally important right so I can't just",
+        "start": 861.43,
+        "duration": 5.37
+    },
+    {
+        "text": "go down to two and visualize the data",
+        "start": 864.25,
+        "duration": 4.98
+    },
+    {
+        "text": "because the goal of it is fundamentally",
+        "start": 866.8,
+        "duration": 3.87
+    },
+    {
+        "text": "for each one to represent a different",
+        "start": 869.23,
+        "duration": 4.74
+    },
+    {
+        "text": "piece of the data so here instead we'll",
+        "start": 870.67,
+        "duration": 5.01
+    },
+    {
+        "text": "do for example a box plot by the",
+        "start": 873.97,
+        "duration": 4.59
+    },
+    {
+        "text": "groupings to see okay this is higher in",
+        "start": 875.68,
+        "duration": 4.98
+    },
+    {
+        "text": "this first set than the second this is",
+        "start": 878.56,
+        "duration": 4.83
+    },
+    {
+        "text": "higher in the third cetera so there's",
+        "start": 880.66,
+        "duration": 4.23
+    },
+    {
+        "text": "different ways that you're going to want",
+        "start": 883.39,
+        "duration": 4.29
+    },
+    {
+        "text": "to visualize the data based on the goal",
+        "start": 884.89,
+        "duration": 4.98
+    },
+    {
+        "text": "of the factorization approach and I",
+        "start": 887.68,
+        "duration": 2.99
+    },
+    {
+        "text": "think that's something that's",
+        "start": 889.87,
+        "duration": 5.97
+    },
+    {
+        "text": "underappreciated in the field so we",
+        "start": 890.67,
+        "duration": 8.23
+    },
+    {
+        "text": "applied this this different approaches",
+        "start": 895.84,
+        "duration": 6.75
+    },
+    {
+        "text": "to gtex data so I don't know if people",
+        "start": 898.9,
+        "duration": 5.85
+    },
+    {
+        "text": "are familiar with gtex this is a",
+        "start": 902.59,
+        "duration": 4.68
+    },
+    {
+        "text": "consortium data set that collected",
+        "start": 904.75,
+        "duration": 5.25
+    },
+    {
+        "text": "postmortem tissue from hundreds of",
+        "start": 907.27,
+        "duration": 6.39
+    },
+    {
+        "text": "individuals and it collected it from",
+        "start": 910.0,
+        "duration": 6.75
+    },
+    {
+        "text": "different tissue sites from the same",
+        "start": 913.66,
+        "duration": 7.2
+    },
+    {
+        "text": "individual and so we this was an earlier",
+        "start": 916.75,
+        "duration": 6.39
+    },
+    {
+        "text": "iteration of gtex where there were eight",
+        "start": 920.86,
+        "duration": 4.229
+    },
+    {
+        "text": "patients and we focused on just the",
+        "start": 923.14,
+        "duration": 5.51
+    },
+    {
+        "text": "brain regions so what we did is we ran",
+        "start": 925.089,
+        "duration": 8.761
+    },
+    {
+        "text": "PCA here independent component analysis",
+        "start": 928.65,
+        "duration": 6.28
+    },
+    {
+        "text": "and",
+        "start": 933.85,
+        "duration": 3.539
+    },
+    {
+        "text": "negative matrix factorization on this",
+        "start": 934.93,
+        "duration": 5.159
+    },
+    {
+        "text": "data and what do we see to sort of",
+        "start": 937.389,
+        "duration": 4.26
+    },
+    {
+        "text": "illustrate what the different approaches",
+        "start": 940.089,
+        "duration": 4.44
+    },
+    {
+        "text": "are the PCA remember the factors are",
+        "start": 941.649,
+        "duration": 4.86
+    },
+    {
+        "text": "going to explain each an increasing",
+        "start": 944.529,
+        "duration": 4.41
+    },
+    {
+        "text": "amount of variation in the data that's",
+        "start": 946.509,
+        "duration": 4.351
+    },
+    {
+        "text": "exactly what you see and you see two",
+        "start": 948.939,
+        "duration": 3.87
+    },
+    {
+        "text": "factors explain almost all of the",
+        "start": 950.86,
+        "duration": 4.74
+    },
+    {
+        "text": "variation in the data do you plot the",
+        "start": 952.809,
+        "duration": 5.671
+    },
+    {
+        "text": "two one versus the other and you see",
+        "start": 955.6,
+        "duration": 4.94
+    },
+    {
+        "text": "this yellow region of the brain is",
+        "start": 958.48,
+        "duration": 4.199
+    },
+    {
+        "text": "separated out from the blue and I",
+        "start": 960.54,
+        "duration": 4.0
+    },
+    {
+        "text": "apologize we colored by tissue type I",
+        "start": 962.679,
+        "duration": 4.681
+    },
+    {
+        "text": "didn't indicate it on the legend do you",
+        "start": 964.54,
+        "duration": 5.099
+    },
+    {
+        "text": "can see a really strong separation of",
+        "start": 967.36,
+        "duration": 6.18
+    },
+    {
+        "text": "tissue but no separation by individual",
+        "start": 969.639,
+        "duration": 6.3
+    },
+    {
+        "text": "donor right so it's doing a great job of",
+        "start": 973.54,
+        "duration": 4.38
+    },
+    {
+        "text": "clustering this tissue is different from",
+        "start": 975.939,
+        "duration": 4.2
+    },
+    {
+        "text": "this one but it has no way of saying",
+        "start": 977.92,
+        "duration": 5.75
+    },
+    {
+        "text": "this is the individual that it came from",
+        "start": 980.139,
+        "duration": 5.82
+    },
+    {
+        "text": "independent component analysis what does",
+        "start": 983.67,
+        "duration": 4.959
+    },
+    {
+        "text": "it do so here we've changed the plot",
+        "start": 985.959,
+        "duration": 6.36
+    },
+    {
+        "text": "instead of plotting PC one by PC two we",
+        "start": 988.629,
+        "duration": 6.81
+    },
+    {
+        "text": "now plot the patterns separately because",
+        "start": 992.319,
+        "duration": 5.19
+    },
+    {
+        "text": "again they're all supposed to be equally",
+        "start": 995.439,
+        "duration": 5.76
+    },
+    {
+        "text": "informative and we plotted them by brain",
+        "start": 997.509,
+        "duration": 8.221
+    },
+    {
+        "text": "region and color them by individual so",
+        "start": 1001.199,
+        "duration": 6.961
+    },
+    {
+        "text": "what you see is one pattern learn from",
+        "start": 1005.73,
+        "duration": 4.769
+    },
+    {
+        "text": "independent component analysis there's a",
+        "start": 1008.16,
+        "duration": 5.46
+    },
+    {
+        "text": "really good job of separating out the",
+        "start": 1010.499,
+        "duration": 5.88
+    },
+    {
+        "text": "cerebellum which I promise you is one of",
+        "start": 1013.62,
+        "duration": 4.379
+    },
+    {
+        "text": "these two I forget if it's the blue or",
+        "start": 1016.379,
+        "duration": 3.15
+    },
+    {
+        "text": "the yellow dots but it's one of the two",
+        "start": 1017.999,
+        "duration": 3.78
+    },
+    {
+        "text": "there so you're getting the same",
+        "start": 1019.529,
+        "duration": 4.981
+    },
+    {
+        "text": "separation of tissue and at the same",
+        "start": 1021.779,
+        "duration": 6.331
+    },
+    {
+        "text": "time another one is separating out two",
+        "start": 1024.51,
+        "duration": 6.48
+    },
+    {
+        "text": "individual donors right so you get one",
+        "start": 1028.11,
+        "duration": 5.299
+    },
+    {
+        "text": "signal that's positive for one donor and",
+        "start": 1030.99,
+        "duration": 4.77
+    },
+    {
+        "text": "negative for another so that's",
+        "start": 1033.409,
+        "duration": 3.91
+    },
+    {
+        "text": "suggesting that the gene weights are",
+        "start": 1035.76,
+        "duration": 3.96
+    },
+    {
+        "text": "just flipping directions between those",
+        "start": 1037.319,
+        "duration": 5.071
+    },
+    {
+        "text": "two individuals if you look at",
+        "start": 1039.72,
+        "duration": 5.25
+    },
+    {
+        "text": "non-negative matrix factorization you",
+        "start": 1042.39,
+        "duration": 5.279
+    },
+    {
+        "text": "again get the separation of the same",
+        "start": 1044.97,
+        "duration": 5.429
+    },
+    {
+        "text": "brain region but now whereas you have",
+        "start": 1047.669,
+        "duration": 4.98
+    },
+    {
+        "text": "one pattern that separates the",
+        "start": 1050.399,
+        "duration": 4.5
+    },
+    {
+        "text": "individual because of the non negativity",
+        "start": 1052.649,
+        "duration": 5.01
+    },
+    {
+        "text": "constraint you get out two separate",
+        "start": 1054.899,
+        "duration": 4.77
+    },
+    {
+        "text": "patterns that separate those individuals",
+        "start": 1057.659,
+        "duration": 4.14
+    },
+    {
+        "text": "so whereas the gene weights are going",
+        "start": 1059.669,
+        "duration": 4.89
+    },
+    {
+        "text": "positive and negative here the gene",
+        "start": 1061.799,
+        "duration": 5.521
+    },
+    {
+        "text": "weights are all positive here so what's",
+        "start": 1064.559,
+        "duration": 3.551
+    },
+    {
+        "text": "the advantage",
+        "start": 1067.32,
+        "duration": 3.79
+    },
+    {
+        "text": "one versus the other this probably is",
+        "start": 1068.11,
+        "duration": 5.1
+    },
+    {
+        "text": "giving you a simplified structure right",
+        "start": 1071.11,
+        "duration": 3.78
+    },
+    {
+        "text": "because you only have to you only have",
+        "start": 1073.21,
+        "duration": 3.24
+    },
+    {
+        "text": "two patterns and you're seeing that in a",
+        "start": 1074.89,
+        "duration": 2.72
+    },
+    {
+        "text": "relationship",
+        "start": 1076.45,
+        "duration": 3.9
+    },
+    {
+        "text": "this lets you account for the fact that",
+        "start": 1077.61,
+        "duration": 4.33
+    },
+    {
+        "text": "there might be different genes that are",
+        "start": 1080.35,
+        "duration": 3.03
+    },
+    {
+        "text": "being used between those individuals",
+        "start": 1081.94,
+        "duration": 3.42
+    },
+    {
+        "text": "where you have some genes that are",
+        "start": 1083.38,
+        "duration": 3.84
+    },
+    {
+        "text": "shared and some genes that are different",
+        "start": 1085.36,
+        "duration": 5.159
+    },
+    {
+        "text": "that's lost in this so again we would",
+        "start": 1087.22,
+        "duration": 4.98
+    },
+    {
+        "text": "argue it's not that one approach is",
+        "start": 1090.519,
+        "duration": 4.051
+    },
+    {
+        "text": "right it's that all of these are giving",
+        "start": 1092.2,
+        "duration": 4.709
+    },
+    {
+        "text": "you different insights into the data and",
+        "start": 1094.57,
+        "duration": 4.38
+    },
+    {
+        "text": "we think when you're doing unsupervised",
+        "start": 1096.909,
+        "duration": 3.781
+    },
+    {
+        "text": "learning you really need to think",
+        "start": 1098.95,
+        "duration": 3.15
+    },
+    {
+        "text": "carefully about what the underlying",
+        "start": 1100.69,
+        "duration": 4.079
+    },
+    {
+        "text": "assumptions of your model are and maybe",
+        "start": 1102.1,
+        "duration": 5.069
+    },
+    {
+        "text": "pluck try multiple methods because",
+        "start": 1104.769,
+        "duration": 3.421
+    },
+    {
+        "text": "they're all going to give you different",
+        "start": 1107.169,
+        "duration": 3.421
+    },
+    {
+        "text": "pieces of information about the data",
+        "start": 1108.19,
+        "duration": 4.92
+    },
+    {
+        "text": "right we see separation of two brain",
+        "start": 1110.59,
+        "duration": 5.04
+    },
+    {
+        "text": "regions and PCA and we only see",
+        "start": 1113.11,
+        "duration": 5.1
+    },
+    {
+        "text": "separation of one in these other",
+        "start": 1115.63,
+        "duration": 5.34
+    },
+    {
+        "text": "approaches it's not that one is right",
+        "start": 1118.21,
+        "duration": 4.17
+    },
+    {
+        "text": "and one is wrong it's that they're all",
+        "start": 1120.97,
+        "duration": 5.179
+    },
+    {
+        "text": "giving you different aspects of the data",
+        "start": 1122.38,
+        "duration": 3.769
+    },
+    {
+        "text": "so I'm going to jump now to single-cell",
+        "start": 1126.899,
+        "duration": 5.62
+    },
+    {
+        "text": "RNA seek right so there was bulk and the",
+        "start": 1129.58,
+        "duration": 5.729
+    },
+    {
+        "text": "goal in bulk is can we deconvolve what",
+        "start": 1132.519,
+        "duration": 4.41
+    },
+    {
+        "text": "are the different signals that are going",
+        "start": 1135.309,
+        "duration": 4.291
+    },
+    {
+        "text": "on and how are they occurring the goal",
+        "start": 1136.929,
+        "duration": 5.311
+    },
+    {
+        "text": "one single cell is now can we find cell",
+        "start": 1139.6,
+        "duration": 4.949
+    },
+    {
+        "text": "types that are in common and shared",
+        "start": 1142.24,
+        "duration": 4.77
+    },
+    {
+        "text": "right so it's almost the same problem",
+        "start": 1144.549,
+        "duration": 4.5
+    },
+    {
+        "text": "it's just focused from a different",
+        "start": 1147.01,
+        "duration": 3.69
+    },
+    {
+        "text": "direction right instead of being focused",
+        "start": 1149.049,
+        "duration": 3.571
+    },
+    {
+        "text": "on D convolving we're now focused on",
+        "start": 1150.7,
+        "duration": 3.839
+    },
+    {
+        "text": "putting things back together a little",
+        "start": 1152.62,
+        "duration": 5.399
+    },
+    {
+        "text": "bit so again we want to figure out what",
+        "start": 1154.539,
+        "duration": 6.27
+    },
+    {
+        "text": "are all of these features from the",
+        "start": 1158.019,
+        "duration": 6.26
+    },
+    {
+        "text": "single cell data that were learning and",
+        "start": 1160.809,
+        "duration": 5.46
+    },
+    {
+        "text": "we were specific this was a",
+        "start": 1164.279,
+        "duration": 4.451
+    },
+    {
+        "text": "collaboration with a Seth Blackshaw and",
+        "start": 1166.269,
+        "duration": 5.01
+    },
+    {
+        "text": "loyal gothic Johns Hopkins and they were",
+        "start": 1168.73,
+        "duration": 4.559
+    },
+    {
+        "text": "very interested in retinal development",
+        "start": 1171.279,
+        "duration": 4.321
+    },
+    {
+        "text": "because the development of the retina is",
+        "start": 1173.289,
+        "duration": 4.23
+    },
+    {
+        "text": "a simplified model for the whole",
+        "start": 1175.6,
+        "duration": 3.48
+    },
+    {
+        "text": "development of the central nervous",
+        "start": 1177.519,
+        "duration": 6.66
+    },
+    {
+        "text": "system so and in the cell types and the",
+        "start": 1179.08,
+        "duration": 6.689
+    },
+    {
+        "text": "progression of cell types in the",
+        "start": 1184.179,
+        "duration": 4.11
+    },
+    {
+        "text": "development of the retina are very well",
+        "start": 1185.769,
+        "duration": 4.711
+    },
+    {
+        "text": "defined so it gives you a really nice",
+        "start": 1188.289,
+        "duration": 5.911
+    },
+    {
+        "text": "system in order to really baseline some",
+        "start": 1190.48,
+        "duration": 6.27
+    },
+    {
+        "text": "algorithm development learn you know",
+        "start": 1194.2,
+        "duration": 4.32
+    },
+    {
+        "text": "some new cell types that might not be in",
+        "start": 1196.75,
+        "duration": 3.899
+    },
+    {
+        "text": "this progression and also serve as a",
+        "start": 1198.52,
+        "duration": 3.36
+    },
+    {
+        "text": "model of central nervous",
+        "start": 1200.649,
+        "duration": 7.021
+    },
+    {
+        "text": "development so they collected 125,000",
+        "start": 1201.88,
+        "duration": 9.33
+    },
+    {
+        "text": "single cells of with in developing mouse",
+        "start": 1207.67,
+        "duration": 7.5
+    },
+    {
+        "text": "retina at several embryonic and post",
+        "start": 1211.21,
+        "duration": 6.8
+    },
+    {
+        "text": "embryonic developmental time points and",
+        "start": 1215.17,
+        "duration": 6.21
+    },
+    {
+        "text": "then did clustering analysis and hand",
+        "start": 1218.01,
+        "duration": 6.31
+    },
+    {
+        "text": "annotated the different cell types in",
+        "start": 1221.38,
+        "duration": 5.82
+    },
+    {
+        "text": "the retina from this data set so we have",
+        "start": 1224.32,
+        "duration": 5.97
+    },
+    {
+        "text": "a sort of reference cell types based on",
+        "start": 1227.2,
+        "duration": 5.79
+    },
+    {
+        "text": "standard gene markers and then we have",
+        "start": 1230.29,
+        "duration": 8.25
+    },
+    {
+        "text": "the gages are known a priori so we",
+        "start": 1232.99,
+        "duration": 8.13
+    },
+    {
+        "text": "wanted to see what else can we learn",
+        "start": 1238.54,
+        "duration": 3.96
+    },
+    {
+        "text": "from these data because what's really",
+        "start": 1241.12,
+        "duration": 4.08
+    },
+    {
+        "text": "critical are the transitions between",
+        "start": 1242.5,
+        "duration": 5.4
+    },
+    {
+        "text": "these cell types that are totally lost",
+        "start": 1245.2,
+        "duration": 5.73
+    },
+    {
+        "text": "in this clustering analysis right we",
+        "start": 1247.9,
+        "duration": 4.77
+    },
+    {
+        "text": "don't we don't see the relationships we",
+        "start": 1250.93,
+        "duration": 3.39
+    },
+    {
+        "text": "don't see the biological processes in",
+        "start": 1252.67,
+        "duration": 5.94
+    },
+    {
+        "text": "this data so I've developed a Bayesian",
+        "start": 1254.32,
+        "duration": 5.49
+    },
+    {
+        "text": "my groups developed a Bayesian",
+        "start": 1258.61,
+        "duration": 2.78
+    },
+    {
+        "text": "non-negative matrix factorization",
+        "start": 1259.81,
+        "duration": 4.65
+    },
+    {
+        "text": "algorithm called Co gaps so I'm gonna be",
+        "start": 1261.39,
+        "duration": 4.69
+    },
+    {
+        "text": "biased and you know I'm gonna put my",
+        "start": 1264.46,
+        "duration": 3.78
+    },
+    {
+        "text": "non-negative matrix factorization hat on",
+        "start": 1266.08,
+        "duration": 3.99
+    },
+    {
+        "text": "now and say of course this is the best",
+        "start": 1268.24,
+        "duration": 4.53
+    },
+    {
+        "text": "approach to use on these data in spite",
+        "start": 1270.07,
+        "duration": 5.58
+    },
+    {
+        "text": "of my real beliefs and what this",
+        "start": 1272.77,
+        "duration": 5.28
+    },
+    {
+        "text": "algorithm does is we have a normal prior",
+        "start": 1275.65,
+        "duration": 5.13
+    },
+    {
+        "text": "on the data the likelihood follows a",
+        "start": 1278.05,
+        "duration": 4.95
+    },
+    {
+        "text": "normal distribution which again for",
+        "start": 1280.78,
+        "duration": 3.99
+    },
+    {
+        "text": "single cell we need to do a little work",
+        "start": 1283.0,
+        "duration": 5.13
+    },
+    {
+        "text": "there what's unique about this model is",
+        "start": 1284.77,
+        "duration": 6.45
+    },
+    {
+        "text": "every element in the matrix for the",
+        "start": 1288.13,
+        "duration": 6.47
+    },
+    {
+        "text": "factorization takes on a gamma prior",
+        "start": 1291.22,
+        "duration": 7.62
+    },
+    {
+        "text": "where the shape of that gamma is set by",
+        "start": 1294.6,
+        "duration": 7.36
+    },
+    {
+        "text": "a Poisson distribution so why do we do",
+        "start": 1298.84,
+        "duration": 4.38
+    },
+    {
+        "text": "it that way because that is a super",
+        "start": 1301.96,
+        "duration": 3.48
+    },
+    {
+        "text": "complicated model right so why do we do",
+        "start": 1303.22,
+        "duration": 5.64
+    },
+    {
+        "text": "this what we found is that if you think",
+        "start": 1305.44,
+        "duration": 6.42
+    },
+    {
+        "text": "about a gamma distribution right so when",
+        "start": 1308.86,
+        "duration": 7.35
+    },
+    {
+        "text": "this parameter is small your data is",
+        "start": 1311.86,
+        "duration": 6.21
+    },
+    {
+        "text": "going to tend to be exit your your",
+        "start": 1316.21,
+        "duration": 3.54
+    },
+    {
+        "text": "parameter is going to ten it's going to",
+        "start": 1318.07,
+        "duration": 4.05
+    },
+    {
+        "text": "look like an exponential so if you think",
+        "start": 1319.75,
+        "duration": 4.98
+    },
+    {
+        "text": "about an exponential distribution it's",
+        "start": 1322.12,
+        "duration": 5.46
+    },
+    {
+        "text": "really constrained towards zero do you",
+        "start": 1324.73,
+        "duration": 7.06
+    },
+    {
+        "text": "get a sparsity constraint when this",
+        "start": 1327.58,
+        "duration": 6.91
+    },
+    {
+        "text": "parameter gets larger what happens is",
+        "start": 1331.79,
+        "duration": 4.92
+    },
+    {
+        "text": "the data becomes more smooth out your",
+        "start": 1334.49,
+        "duration": 4.29
+    },
+    {
+        "text": "gamma sort of starts to look like a",
+        "start": 1336.71,
+        "duration": 3.81
+    },
+    {
+        "text": "normal distribution with wider and wider",
+        "start": 1338.78,
+        "duration": 3.78
+    },
+    {
+        "text": "variants and so you're actually",
+        "start": 1340.52,
+        "duration": 5.43
+    },
+    {
+        "text": "constrained away from sparsity so as",
+        "start": 1342.56,
+        "duration": 5.28
+    },
+    {
+        "text": "opposed to a standard sparse",
+        "start": 1345.95,
+        "duration": 4.59
+    },
+    {
+        "text": "non-negative matrix factorization which",
+        "start": 1347.84,
+        "duration": 4.41
+    },
+    {
+        "text": "is going to typically have a uniform",
+        "start": 1350.54,
+        "duration": 5.49
+    },
+    {
+        "text": "sparsity pram constraint on it we think",
+        "start": 1352.25,
+        "duration": 5.88
+    },
+    {
+        "text": "that this is giving an adaptive sparsity",
+        "start": 1356.03,
+        "duration": 4.44
+    },
+    {
+        "text": "constraint that lets you learn different",
+        "start": 1358.13,
+        "duration": 4.71
+    },
+    {
+        "text": "levels of sparsity for different genes",
+        "start": 1360.47,
+        "duration": 4.74
+    },
+    {
+        "text": "to model the fact that some might be",
+        "start": 1362.84,
+        "duration": 4.86
+    },
+    {
+        "text": "really expressed in all conditions and",
+        "start": 1365.21,
+        "duration": 4.65
+    },
+    {
+        "text": "some are not going to be and it's",
+        "start": 1367.7,
+        "duration": 8.28
+    },
+    {
+        "text": "learned directly from the data so we",
+        "start": 1369.86,
+        "duration": 8.43
+    },
+    {
+        "text": "applied it to this retinal development",
+        "start": 1375.98,
+        "duration": 4.28
+    },
+    {
+        "text": "now I've gone from the fancy you know",
+        "start": 1378.29,
+        "duration": 4.44
+    },
+    {
+        "text": "thinning picture to a two-dimensional",
+        "start": 1380.26,
+        "duration": 4.03
+    },
+    {
+        "text": "map so that it's a little bit easier to",
+        "start": 1382.73,
+        "duration": 4.62
+    },
+    {
+        "text": "see so we applied this approach to this",
+        "start": 1384.29,
+        "duration": 5.67
+    },
+    {
+        "text": "data and lo and behold we found one",
+        "start": 1387.35,
+        "duration": 5.28
+    },
+    {
+        "text": "pattern that distinguishes one group of",
+        "start": 1389.96,
+        "duration": 4.32
+    },
+    {
+        "text": "cells turned out those were the rod",
+        "start": 1392.63,
+        "duration": 3.78
+    },
+    {
+        "text": "cells we find patterns for all the",
+        "start": 1394.28,
+        "duration": 3.63
+    },
+    {
+        "text": "different cell types as well I'm just",
+        "start": 1396.41,
+        "duration": 5.16
+    },
+    {
+        "text": "highlighting rods because it's clear we",
+        "start": 1397.91,
+        "duration": 6.33
+    },
+    {
+        "text": "find another one that shows up across",
+        "start": 1401.57,
+        "duration": 5.61
+    },
+    {
+        "text": "several different early cell types and",
+        "start": 1404.24,
+        "duration": 5.22
+    },
+    {
+        "text": "when we look at it it turns out that",
+        "start": 1407.18,
+        "duration": 4.74
+    },
+    {
+        "text": "that's actually an enrichment in the",
+        "start": 1409.46,
+        "duration": 5.28
+    },
+    {
+        "text": "cell cycle genes and so what's going on",
+        "start": 1411.92,
+        "duration": 4.65
+    },
+    {
+        "text": "is the cell cycle is very tightly",
+        "start": 1414.74,
+        "duration": 4.32
+    },
+    {
+        "text": "synchronized early on in development and",
+        "start": 1416.57,
+        "duration": 4.77
+    },
+    {
+        "text": "as the cells develop different fates",
+        "start": 1419.06,
+        "duration": 4.5
+    },
+    {
+        "text": "each of them goes on their own cell",
+        "start": 1421.34,
+        "duration": 5.07
+    },
+    {
+        "text": "cycle projection progression and it gets",
+        "start": 1423.56,
+        "duration": 4.95
+    },
+    {
+        "text": "more heterogeneous so we're actually",
+        "start": 1426.41,
+        "duration": 4.02
+    },
+    {
+        "text": "able to apply our earlier heterogeneity",
+        "start": 1428.51,
+        "duration": 4.89
+    },
+    {
+        "text": "tool to quantify that as well but it was",
+        "start": 1430.43,
+        "duration": 4.71
+    },
+    {
+        "text": "nice that it showed that the cell cycle",
+        "start": 1433.4,
+        "duration": 4.07
+    },
+    {
+        "text": "was coming up in early stages and then",
+        "start": 1435.14,
+        "duration": 6.51
+    },
+    {
+        "text": "falling off later we see other",
+        "start": 1437.47,
+        "duration": 6.28
+    },
+    {
+        "text": "transitions for example during",
+        "start": 1441.65,
+        "duration": 5.49
+    },
+    {
+        "text": "neurogenic States and cell cycle and we",
+        "start": 1443.75,
+        "duration": 5.19
+    },
+    {
+        "text": "find patterns that are associated with",
+        "start": 1447.14,
+        "duration": 3.78
+    },
+    {
+        "text": "all the different cell types some that",
+        "start": 1448.94,
+        "duration": 4.55
+    },
+    {
+        "text": "are associated with age",
+        "start": 1450.92,
+        "duration": 5.79
+    },
+    {
+        "text": "the other thing that was cool though in",
+        "start": 1453.49,
+        "duration": 6.07
+    },
+    {
+        "text": "the projection I showed you before we",
+        "start": 1456.71,
+        "duration": 5.19
+    },
+    {
+        "text": "removed this group of cells because they",
+        "start": 1459.56,
+        "duration": 4.47
+    },
+    {
+        "text": "were all doublets right so it was found",
+        "start": 1461.9,
+        "duration": 3.58
+    },
+    {
+        "text": "that they were all doublet Sammy",
+        "start": 1464.03,
+        "duration": 3.399
+    },
+    {
+        "text": "there's two cells accidentally there",
+        "start": 1465.48,
+        "duration": 5.04
+    },
+    {
+        "text": "instead of one for single-cell data and",
+        "start": 1467.429,
+        "duration": 5.401
+    },
+    {
+        "text": "what was cool with every single doublet",
+        "start": 1470.52,
+        "duration": 4.23
+    },
+    {
+        "text": "that we found it turned out was a",
+        "start": 1472.83,
+        "duration": 5.099
+    },
+    {
+        "text": "combination of two of the patterns so we",
+        "start": 1474.75,
+        "duration": 5.0
+    },
+    {
+        "text": "think that the matrix factorization",
+        "start": 1477.929,
+        "duration": 5.041
+    },
+    {
+        "text": "approach actually lets you resolve some",
+        "start": 1479.75,
+        "duration": 5.44
+    },
+    {
+        "text": "of the signal in doublets without having",
+        "start": 1482.97,
+        "duration": 4.38
+    },
+    {
+        "text": "to throw them out which is very nice",
+        "start": 1485.19,
+        "duration": 3.869
+    },
+    {
+        "text": "they don't actually is we're showing the",
+        "start": 1487.35,
+        "duration": 3.78
+    },
+    {
+        "text": "deconvolution directly in the doublet",
+        "start": 1489.059,
+        "duration": 8.431
+    },
+    {
+        "text": "cells so that's great so we have all",
+        "start": 1491.13,
+        "duration": 8.91
+    },
+    {
+        "text": "these cool patterns and gene weights how",
+        "start": 1497.49,
+        "duration": 4.11
+    },
+    {
+        "text": "do we know they have any meaning",
+        "start": 1500.04,
+        "duration": 3.6
+    },
+    {
+        "text": "whatsoever right like how do we know",
+        "start": 1501.6,
+        "duration": 3.66
+    },
+    {
+        "text": "that this isn't just some artifact",
+        "start": 1503.64,
+        "duration": 3.96
+    },
+    {
+        "text": "learned in this data how do we know that",
+        "start": 1505.26,
+        "duration": 5.4
+    },
+    {
+        "text": "the you know I told you because it's",
+        "start": 1507.6,
+        "duration": 5.459
+    },
+    {
+        "text": "Dogma that the retina is a model for",
+        "start": 1510.66,
+        "duration": 4.74
+    },
+    {
+        "text": "central nervous system development how",
+        "start": 1513.059,
+        "duration": 5.61
+    },
+    {
+        "text": "do we actually go and test that now so",
+        "start": 1515.4,
+        "duration": 6.96
+    },
+    {
+        "text": "what we did is take this idea sorry I",
+        "start": 1518.669,
+        "duration": 12.931
+    },
+    {
+        "text": "guess I went back you slowed alone all",
+        "start": 1522.36,
+        "duration": 10.77
+    },
+    {
+        "text": "right jumping back and forth a little",
+        "start": 1531.6,
+        "duration": 7.579
+    },
+    {
+        "text": "bit with the pointer I can go back here",
+        "start": 1533.13,
+        "duration": 8.58
+    },
+    {
+        "text": "the joys of these plots with all these",
+        "start": 1539.179,
+        "duration": 4.601
+    },
+    {
+        "text": "data points they end up being a little",
+        "start": 1541.71,
+        "duration": 5.03
+    },
+    {
+        "text": "bit slow to display",
+        "start": 1543.78,
+        "duration": 2.96
+    },
+    {
+        "text": "so what I'll sort of talk through it",
+        "start": 1549.59,
+        "duration": 7.41
+    },
+    {
+        "text": "while it comes up there we go",
+        "start": 1552.66,
+        "duration": 7.889
+    },
+    {
+        "text": "so the idea was okay we learned all",
+        "start": 1557.0,
+        "duration": 6.79
+    },
+    {
+        "text": "these patterns in one context right but",
+        "start": 1560.549,
+        "duration": 5.791
+    },
+    {
+        "text": "we really care about okay how real are",
+        "start": 1563.79,
+        "duration": 4.68
+    },
+    {
+        "text": "these right how preserved are these this",
+        "start": 1566.34,
+        "duration": 3.959
+    },
+    {
+        "text": "is a mouse development how much does it",
+        "start": 1568.47,
+        "duration": 4.709
+    },
+    {
+        "text": "relate to human how much is the biology",
+        "start": 1570.299,
+        "duration": 4.081
+    },
+    {
+        "text": "of the gene weights that we're learning",
+        "start": 1573.179,
+        "duration": 4.111
+    },
+    {
+        "text": "technology dependent how much does it",
+        "start": 1574.38,
+        "duration": 4.47
+    },
+    {
+        "text": "relate to central nervous system",
+        "start": 1577.29,
+        "duration": 3.629
+    },
+    {
+        "text": "development we have all these millions",
+        "start": 1578.85,
+        "duration": 3.81
+    },
+    {
+        "text": "of questions that we want to ask now",
+        "start": 1580.919,
+        "duration": 5.01
+    },
+    {
+        "text": "that we found these patterns so the idea",
+        "start": 1582.66,
+        "duration": 5.759
+    },
+    {
+        "text": "is that we wanted to do a transfer",
+        "start": 1585.929,
+        "duration": 5.191
+    },
+    {
+        "text": "learning approach to see how much does",
+        "start": 1588.419,
+        "duration": 6.39
+    },
+    {
+        "text": "what we've learned in one context relate",
+        "start": 1591.12,
+        "duration": 5.97
+    },
+    {
+        "text": "to what we see in another context and",
+        "start": 1594.809,
+        "duration": 4.5
+    },
+    {
+        "text": "our hypothesis is that the bio",
+        "start": 1597.09,
+        "duration": 4.74
+    },
+    {
+        "text": "logically relevant patterns are going to",
+        "start": 1599.309,
+        "duration": 4.62
+    },
+    {
+        "text": "be preserved across multiple paths",
+        "start": 1601.83,
+        "duration": 5.339
+    },
+    {
+        "text": "multiple data sets whereas the technical",
+        "start": 1603.929,
+        "duration": 5.88
+    },
+    {
+        "text": "patterns won't be right they'll fall out",
+        "start": 1607.169,
+        "duration": 4.83
+    },
+    {
+        "text": "so things that are related to read depth",
+        "start": 1609.809,
+        "duration": 3.99
+    },
+    {
+        "text": "there other technical biases and the",
+        "start": 1611.999,
+        "duration": 4.861
+    },
+    {
+        "text": "data will fall out and the other thing",
+        "start": 1613.799,
+        "duration": 5.7
+    },
+    {
+        "text": "is that if we see something in one data",
+        "start": 1616.86,
+        "duration": 5.519
+    },
+    {
+        "text": "set that's really well annotated that we",
+        "start": 1619.499,
+        "duration": 4.8
+    },
+    {
+        "text": "found in our original data set that",
+        "start": 1622.379,
+        "duration": 4.65
+    },
+    {
+        "text": "isn't can we learn something and borrow",
+        "start": 1624.299,
+        "duration": 5.7
+    },
+    {
+        "text": "information from a new data set the",
+        "start": 1627.029,
+        "duration": 5.071
+    },
+    {
+        "text": "query what's going on in the patterns",
+        "start": 1629.999,
+        "duration": 4.02
+    },
+    {
+        "text": "that we weren't able to interpret in our",
+        "start": 1632.1,
+        "duration": 4.289
+    },
+    {
+        "text": "original data so that's one of the",
+        "start": 1634.019,
+        "duration": 4.711
+    },
+    {
+        "text": "concept so what we do is we get all",
+        "start": 1636.389,
+        "duration": 3.841
+    },
+    {
+        "text": "these different patterns of gene weights",
+        "start": 1638.73,
+        "duration": 4.049
+    },
+    {
+        "text": "and we'd like to think of them as lenses",
+        "start": 1640.23,
+        "duration": 4.11
+    },
+    {
+        "text": "right so we're gonna get these different",
+        "start": 1642.779,
+        "duration": 3.75
+    },
+    {
+        "text": "patterns of gene weights each pattern",
+        "start": 1644.34,
+        "duration": 5.52
+    },
+    {
+        "text": "forms a plan we've learned this in one",
+        "start": 1646.529,
+        "duration": 5.34
+    },
+    {
+        "text": "data which will be our retinal data set",
+        "start": 1649.86,
+        "duration": 5.069
+    },
+    {
+        "text": "and then we ask okay if I have a new",
+        "start": 1651.869,
+        "duration": 5.371
+    },
+    {
+        "text": "data set and I shine it through the",
+        "start": 1654.929,
+        "duration": 4.411
+    },
+    {
+        "text": "lenses if this pattern that we've",
+        "start": 1657.24,
+        "duration": 5.129
+    },
+    {
+        "text": "learned and I see how it's used in",
+        "start": 1659.34,
+        "duration": 5.219
+    },
+    {
+        "text": "different contexts and then figure out",
+        "start": 1662.369,
+        "duration": 4.8
+    },
+    {
+        "text": "is it preserved where is it used what",
+        "start": 1664.559,
+        "duration": 4.59
+    },
+    {
+        "text": "are the annotations and try to learn",
+        "start": 1667.169,
+        "duration": 5.821
+    },
+    {
+        "text": "more between the systems so this is um",
+        "start": 1669.149,
+        "duration": 6.15
+    },
+    {
+        "text": "an approach that's on bio archive till a",
+        "start": 1672.99,
+        "duration": 4.169
+    },
+    {
+        "text": "fellow by Genevieve Steiner Brian and",
+        "start": 1675.299,
+        "duration": 5.88
+    },
+    {
+        "text": "Brian Clark and it's available it was",
+        "start": 1677.159,
+        "duration": 6.87
+    },
+    {
+        "text": "just released on bioconductor today so",
+        "start": 1681.179,
+        "duration": 5.671
+    },
+    {
+        "text": "if folks want the software's out there",
+        "start": 1684.029,
+        "duration": 8.28
+    },
+    {
+        "text": "and I'll give you some examples now so",
+        "start": 1686.85,
+        "duration": 7.5
+    },
+    {
+        "text": "how did we use this how did we benchmark",
+        "start": 1692.309,
+        "duration": 3.57
+    },
+    {
+        "text": "it and how do we sort of start using",
+        "start": 1694.35,
+        "duration": 4.86
+    },
+    {
+        "text": "this to explore the data so one of the",
+        "start": 1695.879,
+        "duration": 5.27
+    },
+    {
+        "text": "things that we did is we took our",
+        "start": 1699.21,
+        "duration": 5.329
+    },
+    {
+        "text": "developing marryin retina dataset and",
+        "start": 1701.149,
+        "duration": 7.451
+    },
+    {
+        "text": "there was a mature retina dataset that",
+        "start": 1704.539,
+        "duration": 7.181
+    },
+    {
+        "text": "was available ours was using 10x this",
+        "start": 1708.6,
+        "duration": 6.99
+    },
+    {
+        "text": "dataset was using drop seek and we asked",
+        "start": 1711.72,
+        "duration": 4.62
+    },
+    {
+        "text": "okay",
+        "start": 1715.59,
+        "duration": 2.939
+    },
+    {
+        "text": "so we have these developing patterns",
+        "start": 1716.34,
+        "duration": 4.169
+    },
+    {
+        "text": "this is a mouse retina but it's all",
+        "start": 1718.529,
+        "duration": 4.051
+    },
+    {
+        "text": "mature mice right so it's a",
+        "start": 1720.509,
+        "duration": 5.091
+    },
+    {
+        "text": "characterization of the mouse retina in",
+        "start": 1722.58,
+        "duration": 7.079
+    },
+    {
+        "text": "adults so what's our hypothesis in this",
+        "start": 1725.6,
+        "duration": 6.189
+    },
+    {
+        "text": "case the cell types right the",
+        "start": 1729.659,
+        "duration": 3.27
+    },
+    {
+        "text": "patterns that we learn that are",
+        "start": 1731.789,
+        "duration": 2.85
+    },
+    {
+        "text": "associated with cell types and mature",
+        "start": 1732.929,
+        "duration": 3.901
+    },
+    {
+        "text": "cell types we should still see in the",
+        "start": 1734.639,
+        "duration": 4.711
+    },
+    {
+        "text": "adult whereas the early developmental",
+        "start": 1736.83,
+        "duration": 5.01
+    },
+    {
+        "text": "phenotypes we shouldn't write because",
+        "start": 1739.35,
+        "duration": 6.87
+    },
+    {
+        "text": "this is an adult so if we take this one",
+        "start": 1741.84,
+        "duration": 7.519
+    },
+    {
+        "text": "pattern that's focused on the retina and",
+        "start": 1746.22,
+        "duration": 6.409
+    },
+    {
+        "text": "project it onto this new data set it",
+        "start": 1749.359,
+        "duration": 6.211
+    },
+    {
+        "text": "shows up in the top half of the data and",
+        "start": 1752.629,
+        "duration": 7.51
+    },
+    {
+        "text": "lo and behold those are all it's blue if",
+        "start": 1755.57,
+        "duration": 6.4
+    },
+    {
+        "text": "you look at the clustering those are all",
+        "start": 1760.139,
+        "duration": 4.74
+    },
+    {
+        "text": "the rod cells so what we found is I'm a",
+        "start": 1761.97,
+        "duration": 5.22
+    },
+    {
+        "text": "pattern associated with mature rods in",
+        "start": 1764.879,
+        "duration": 4.89
+    },
+    {
+        "text": "the developing mouse is also preserved",
+        "start": 1767.19,
+        "duration": 6.75
+    },
+    {
+        "text": "in the adult that was cool let's see if",
+        "start": 1769.769,
+        "duration": 7.47
+    },
+    {
+        "text": "this shows up sorry these points are a",
+        "start": 1773.94,
+        "duration": 5.159
+    },
+    {
+        "text": "little slow because there's a lot of",
+        "start": 1777.239,
+        "duration": 9.66
+    },
+    {
+        "text": "data points so next if you remember that",
+        "start": 1779.099,
+        "duration": 10.53
+    },
+    {
+        "text": "cell cycle pattern that was associated",
+        "start": 1786.899,
+        "duration": 5.431
+    },
+    {
+        "text": "with early development we projected that",
+        "start": 1789.629,
+        "duration": 5.461
+    },
+    {
+        "text": "into the data it didn't come out at all",
+        "start": 1792.33,
+        "duration": 5.219
+    },
+    {
+        "text": "right no cells were enriched for that",
+        "start": 1795.09,
+        "duration": 4.529
+    },
+    {
+        "text": "which is really reassuring that we're",
+        "start": 1797.549,
+        "duration": 5.31
+    },
+    {
+        "text": "not seeing that highly synchronized cell",
+        "start": 1799.619,
+        "duration": 4.86
+    },
+    {
+        "text": "cycle that's associated with early",
+        "start": 1802.859,
+        "duration": 4.591
+    },
+    {
+        "text": "developmental faith in an adult all",
+        "start": 1804.479,
+        "duration": 4.26
+    },
+    {
+        "text": "right so that's reassuring that we've",
+        "start": 1807.45,
+        "duration": 3.149
+    },
+    {
+        "text": "really segregated out a phenotype that's",
+        "start": 1808.739,
+        "duration": 4.14
+    },
+    {
+        "text": "there versus one that's not and that",
+        "start": 1810.599,
+        "duration": 3.9
+    },
+    {
+        "text": "this transfer learning approach is going",
+        "start": 1812.879,
+        "duration": 3.36
+    },
+    {
+        "text": "to let us see features that are",
+        "start": 1814.499,
+        "duration": 4.8
+    },
+    {
+        "text": "preserved versus ones that aren't we",
+        "start": 1816.239,
+        "duration": 4.68
+    },
+    {
+        "text": "applied it to all the different patterns",
+        "start": 1819.299,
+        "duration": 5.1
+    },
+    {
+        "text": "in our dataset and we found that all the",
+        "start": 1820.919,
+        "duration": 5.25
+    },
+    {
+        "text": "patterns that were associated with",
+        "start": 1824.399,
+        "duration": 4.551
+    },
+    {
+        "text": "mature cell types in our dataset",
+        "start": 1826.169,
+        "duration": 7.051
+    },
+    {
+        "text": "projected nicely onto mature cell types",
+        "start": 1828.95,
+        "duration": 6.729
+    },
+    {
+        "text": "in the mouse so what we learned in one",
+        "start": 1833.22,
+        "duration": 4.529
+    },
+    {
+        "text": "context we were able to transfer to this",
+        "start": 1835.679,
+        "duration": 4.891
+    },
+    {
+        "text": "other one as a benchmark even though it",
+        "start": 1837.749,
+        "duration": 4.77
+    },
+    {
+        "text": "was cross-platform different lab",
+        "start": 1840.57,
+        "duration": 3.029
+    },
+    {
+        "text": "different Mouse",
+        "start": 1842.519,
+        "duration": 3.48
+    },
+    {
+        "text": "type all of the sort of usual suspects",
+        "start": 1843.599,
+        "duration": 4.14
+    },
+    {
+        "text": "of where things are going to go wrong in",
+        "start": 1845.999,
+        "duration": 8.73
+    },
+    {
+        "text": "a bioinformatics analysis so then we",
+        "start": 1847.739,
+        "duration": 9.87
+    },
+    {
+        "text": "also wanted to see how does this relate",
+        "start": 1854.729,
+        "duration": 6.751
+    },
+    {
+        "text": "to other tissues right because again",
+        "start": 1857.609,
+        "duration": 6.54
+    },
+    {
+        "text": "we're thinking of the retina as a model",
+        "start": 1861.48,
+        "duration": 3.63
+    },
+    {
+        "text": "for the central nerve",
+        "start": 1864.149,
+        "duration": 3.811
+    },
+    {
+        "text": "system so we projected the same",
+        "start": 1865.11,
+        "duration": 5.91
+    },
+    {
+        "text": "signatures into the tabula Mira's data",
+        "start": 1867.96,
+        "duration": 6.089
+    },
+    {
+        "text": "set and sure enough we find different",
+        "start": 1871.02,
+        "duration": 6.42
+    },
+    {
+        "text": "patterns that are enriched in different",
+        "start": 1874.049,
+        "duration": 6.091
+    },
+    {
+        "text": "regions where clustering has defined",
+        "start": 1877.44,
+        "duration": 5.31
+    },
+    {
+        "text": "different cell types do we find that",
+        "start": 1880.14,
+        "duration": 4.44
+    },
+    {
+        "text": "what we learned about different cell",
+        "start": 1882.75,
+        "duration": 5.22
+    },
+    {
+        "text": "types in the retina are preserved in",
+        "start": 1884.58,
+        "duration": 6.09
+    },
+    {
+        "text": "different cell types throughout the",
+        "start": 1887.97,
+        "duration": 4.709
+    },
+    {
+        "text": "mouse and if you look at the genes the",
+        "start": 1890.67,
+        "duration": 3.9
+    },
+    {
+        "text": "ones that are coming up makes sense and",
+        "start": 1892.679,
+        "duration": 3.931
+    },
+    {
+        "text": "there is some preservation of those cell",
+        "start": 1894.57,
+        "duration": 7.26
+    },
+    {
+        "text": "types one thing that was cool",
+        "start": 1896.61,
+        "duration": 7.11
+    },
+    {
+        "text": "there was one pattern that we couldn't",
+        "start": 1901.83,
+        "duration": 4.589
+    },
+    {
+        "text": "explain in our original data and it",
+        "start": 1903.72,
+        "duration": 5.43
+    },
+    {
+        "text": "showed up in exactly half of the cell in",
+        "start": 1906.419,
+        "duration": 7.081
+    },
+    {
+        "text": "our original projection space so we went",
+        "start": 1909.15,
+        "duration": 6.21
+    },
+    {
+        "text": "to the tabula Mira's data and looked at",
+        "start": 1913.5,
+        "duration": 4.47
+    },
+    {
+        "text": "the annotations and saw what was it",
+        "start": 1915.36,
+        "duration": 4.98
+    },
+    {
+        "text": "enriched in derp enough it was enriched",
+        "start": 1917.97,
+        "duration": 5.25
+    },
+    {
+        "text": "in Saks right so whether it was female",
+        "start": 1920.34,
+        "duration": 7.32
+    },
+    {
+        "text": "or male and so we in our system the mice",
+        "start": 1923.22,
+        "duration": 6.99
+    },
+    {
+        "text": "were too young to sex so we didn't have",
+        "start": 1927.66,
+        "duration": 6.03
+    },
+    {
+        "text": "the information about that so we were",
+        "start": 1930.21,
+        "duration": 5.58
+    },
+    {
+        "text": "able by going into the tabula Meera's",
+        "start": 1933.69,
+        "duration": 4.92
+    },
+    {
+        "text": "data and seeing this separation right we",
+        "start": 1935.79,
+        "duration": 4.23
+    },
+    {
+        "text": "were able to say and go back and say",
+        "start": 1938.61,
+        "duration": 3.809
+    },
+    {
+        "text": "okay we had this annotated we could use",
+        "start": 1940.02,
+        "duration": 4.68
+    },
+    {
+        "text": "the pattern to figure out what was",
+        "start": 1942.419,
+        "duration": 4.201
+    },
+    {
+        "text": "seperated and then go back to our",
+        "start": 1944.7,
+        "duration": 4.26
+    },
+    {
+        "text": "original source data to say oh of course",
+        "start": 1946.62,
+        "duration": 4.14
+    },
+    {
+        "text": "that was sex and when you look at the",
+        "start": 1948.96,
+        "duration": 3.87
+    },
+    {
+        "text": "gene marker it comes up with a gene",
+        "start": 1950.76,
+        "duration": 4.14
+    },
+    {
+        "text": "marker for sex differentiation which is",
+        "start": 1952.83,
+        "duration": 4.74
+    },
+    {
+        "text": "reassuring but you have to kind of you",
+        "start": 1954.9,
+        "duration": 4.29
+    },
+    {
+        "text": "know it gives you a little bit of a way",
+        "start": 1957.57,
+        "duration": 4.349
+    },
+    {
+        "text": "of exploring your original source data",
+        "start": 1959.19,
+        "duration": 4.59
+    },
+    {
+        "text": "through a new data set that you've",
+        "start": 1961.919,
+        "duration": 9.121
+    },
+    {
+        "text": "projected it into if this comes up so",
+        "start": 1963.78,
+        "duration": 12.81
+    },
+    {
+        "text": "that's great we went mouth to mouth but",
+        "start": 1971.04,
+        "duration": 7.05
+    },
+    {
+        "text": "we also want to know how much is",
+        "start": 1976.59,
+        "duration": 4.829
+    },
+    {
+        "text": "development preserved across species",
+        "start": 1978.09,
+        "duration": 5.76
+    },
+    {
+        "text": "right because it's well known that a lot",
+        "start": 1981.419,
+        "duration": 5.221
+    },
+    {
+        "text": "of these processes in development are",
+        "start": 1983.85,
+        "duration": 6.63
+    },
+    {
+        "text": "very highly conserved across species so",
+        "start": 1986.64,
+        "duration": 5.46
+    },
+    {
+        "text": "we went to a human data set of the",
+        "start": 1990.48,
+        "duration": 5.24
+    },
+    {
+        "text": "developing retina and we saw the early",
+        "start": 1992.1,
+        "duration": 6.84
+    },
+    {
+        "text": "cell cycle changes or",
+        "start": 1995.72,
+        "duration": 6.01
+    },
+    {
+        "text": "served in the human data and the mature",
+        "start": 1998.94,
+        "duration": 6.24
+    },
+    {
+        "text": "rod pattern or no sorry terminal retinal",
+        "start": 2001.73,
+        "duration": 6.3
+    },
+    {
+        "text": "RG sees I'm sorry this is where my",
+        "start": 2005.18,
+        "duration": 4.71
+    },
+    {
+        "text": "biology on the neuroscience is weaker",
+        "start": 2008.03,
+        "duration": 4.65
+    },
+    {
+        "text": "than it is in cancer but we also saw",
+        "start": 2009.89,
+        "duration": 4.86
+    },
+    {
+        "text": "that the mature cell types were",
+        "start": 2012.68,
+        "duration": 5.07
+    },
+    {
+        "text": "preserved mouse to human so these gene",
+        "start": 2014.75,
+        "duration": 4.35
+    },
+    {
+        "text": "weights that we learned in the mouse",
+        "start": 2017.75,
+        "duration": 3.9
+    },
+    {
+        "text": "were preserved in the human and some of",
+        "start": 2019.1,
+        "duration": 5.73
+    },
+    {
+        "text": "the transitional patterns as well they",
+        "start": 2021.65,
+        "duration": 7.38
+    },
+    {
+        "text": "also had human bulk RNA sequencing data",
+        "start": 2024.83,
+        "duration": 6.9
+    },
+    {
+        "text": "from the developmental time points as",
+        "start": 2029.03,
+        "duration": 5.79
+    },
+    {
+        "text": "well as the single cell and we found",
+        "start": 2031.73,
+        "duration": 5.94
+    },
+    {
+        "text": "that the projection of the developmental",
+        "start": 2034.82,
+        "duration": 4.65
+    },
+    {
+        "text": "patterns that we learned in the mouse",
+        "start": 2037.67,
+        "duration": 5.07
+    },
+    {
+        "text": "were also preserved in bulk and human so",
+        "start": 2039.47,
+        "duration": 5.73
+    },
+    {
+        "text": "this gives us a way that we can become",
+        "start": 2042.74,
+        "duration": 5.85
+    },
+    {
+        "text": "geek involved and go from single cell to",
+        "start": 2045.2,
+        "duration": 6.27
+    },
+    {
+        "text": "deconvolve within both what's going on",
+        "start": 2048.59,
+        "duration": 5.19
+    },
+    {
+        "text": "and again transfer across different",
+        "start": 2051.47,
+        "duration": 4.2
+    },
+    {
+        "text": "measurement technologies to learn",
+        "start": 2053.78,
+        "duration": 4.58
+    },
+    {
+        "text": "different relationships between systems",
+        "start": 2055.67,
+        "duration": 6.3
+    },
+    {
+        "text": "and building onto that right you want to",
+        "start": 2058.36,
+        "duration": 7.03
+    },
+    {
+        "text": "learn mechanisms of regulation within",
+        "start": 2061.97,
+        "duration": 5.4
+    },
+    {
+        "text": "your system right so you don't just want",
+        "start": 2065.39,
+        "duration": 3.21
+    },
+    {
+        "text": "to learn these or the patterns but",
+        "start": 2067.37,
+        "duration": 3.75
+    },
+    {
+        "text": "what's causing them and in development a",
+        "start": 2068.6,
+        "duration": 4.35
+    },
+    {
+        "text": "lot of fates are solidified by",
+        "start": 2071.12,
+        "duration": 4.11
+    },
+    {
+        "text": "epigenetic modifications and chromatin",
+        "start": 2072.95,
+        "duration": 5.76
+    },
+    {
+        "text": "modifications so our collaborator also",
+        "start": 2075.23,
+        "duration": 5.76
+    },
+    {
+        "text": "collected this was bulk a tack seek",
+        "start": 2078.71,
+        "duration": 4.62
+    },
+    {
+        "text": "they're doing single cell now do they",
+        "start": 2080.99,
+        "duration": 5.37
+    },
+    {
+        "text": "collected bulk a taxi data of each of",
+        "start": 2083.33,
+        "duration": 4.98
+    },
+    {
+        "text": "the different developmental time points",
+        "start": 2086.36,
+        "duration": 5.76
+    },
+    {
+        "text": "and there are clearly differences in the",
+        "start": 2088.31,
+        "duration": 7.74
+    },
+    {
+        "text": "developmental processes if we look at",
+        "start": 2092.12,
+        "duration": 7.46
+    },
+    {
+        "text": "different patterns they show different",
+        "start": 2096.05,
+        "duration": 5.64
+    },
+    {
+        "text": "relationships when they're projected",
+        "start": 2099.58,
+        "duration": 5.14
+    },
+    {
+        "text": "into the a taxied data so we're working",
+        "start": 2101.69,
+        "duration": 5.1
+    },
+    {
+        "text": "on now interpreting this a little bit",
+        "start": 2104.72,
+        "duration": 4.08
+    },
+    {
+        "text": "further to figure out what's the",
+        "start": 2106.79,
+        "duration": 6.36
+    },
+    {
+        "text": "relationship between the developmental",
+        "start": 2108.8,
+        "duration": 7.35
+    },
+    {
+        "text": "datasets and their breath where are the",
+        "start": 2113.15,
+        "duration": 5.19
+    },
+    {
+        "text": "cases where this is preserved versus",
+        "start": 2116.15,
+        "duration": 3.9
+    },
+    {
+        "text": "where the case is where it's really not",
+        "start": 2118.34,
+        "duration": 3.84
+    },
+    {
+        "text": "to figure out what's the rules of",
+        "start": 2120.05,
+        "duration": 6.05
+    },
+    {
+        "text": "epigenetic regulation in the data",
+        "start": 2122.18,
+        "duration": 7.11
+    },
+    {
+        "text": "so to summarize matrix factorization is",
+        "start": 2126.1,
+        "duration": 6.11
+    },
+    {
+        "text": "an incredibly robust set of tools for",
+        "start": 2129.29,
+        "duration": 6.34
+    },
+    {
+        "text": "biological pattern discovery we think",
+        "start": 2132.21,
+        "duration": 5.58
+    },
+    {
+        "text": "our gaps approach you know as much as I",
+        "start": 2135.63,
+        "duration": 3.719
+    },
+    {
+        "text": "said we should look across methods we",
+        "start": 2137.79,
+        "duration": 3.15
+    },
+    {
+        "text": "think our Co gaps approach does a really",
+        "start": 2139.349,
+        "duration": 3.51
+    },
+    {
+        "text": "great job of learning different",
+        "start": 2140.94,
+        "duration": 5.909
+    },
+    {
+        "text": "biological patterns and the data you're",
+        "start": 2142.859,
+        "duration": 6.24
+    },
+    {
+        "text": "able to use projection techniques to",
+        "start": 2146.849,
+        "duration": 6.151
+    },
+    {
+        "text": "transfer information learn from you know",
+        "start": 2149.099,
+        "duration": 6.51
+    },
+    {
+        "text": "one low dimensional representation to",
+        "start": 2153.0,
+        "duration": 4.829
+    },
+    {
+        "text": "interpret another data set and the",
+        "start": 2155.609,
+        "duration": 5.071
+    },
+    {
+        "text": "project our package is general it's not",
+        "start": 2157.829,
+        "duration": 4.861
+    },
+    {
+        "text": "just tailored around Co gaps it works",
+        "start": 2160.68,
+        "duration": 4.35
+    },
+    {
+        "text": "for any of our men tional representation",
+        "start": 2162.69,
+        "duration": 4.8
+    },
+    {
+        "text": "where you have continuous gene weights",
+        "start": 2165.03,
+        "duration": 4.26
+    },
+    {
+        "text": "it also has functions that let you",
+        "start": 2167.49,
+        "duration": 4.71
+    },
+    {
+        "text": "transfer clustering to clustering and",
+        "start": 2169.29,
+        "duration": 4.41
+    },
+    {
+        "text": "other things we're going to we're in the",
+        "start": 2172.2,
+        "duration": 3.359
+    },
+    {
+        "text": "process of writing up a full app note of",
+        "start": 2173.7,
+        "duration": 4.05
+    },
+    {
+        "text": "all the different functionality of that",
+        "start": 2175.559,
+        "duration": 5.851
+    },
+    {
+        "text": "algorithm so the patterns can also be",
+        "start": 2177.75,
+        "duration": 5.579
+    },
+    {
+        "text": "used as a classifier for discrete",
+        "start": 2181.41,
+        "duration": 5.01
+    },
+    {
+        "text": "subtypes and transfer learning of",
+        "start": 2183.329,
+        "duration": 5.101
+    },
+    {
+        "text": "annotations really lets you do an",
+        "start": 2186.42,
+        "duration": 6.21
+    },
+    {
+        "text": "integrative analysis so obviously this",
+        "start": 2188.43,
+        "duration": 5.7
+    },
+    {
+        "text": "is work that I couldn't have done on my",
+        "start": 2192.63,
+        "duration": 3.33
+    },
+    {
+        "text": "own you know highlighted a lot of the",
+        "start": 2194.13,
+        "duration": 5.57
+    },
+    {
+        "text": "work of Genevieve Tom and Brian and",
+        "start": 2195.96,
+        "duration": 6.75
+    },
+    {
+        "text": "thanks to the funders from NIH and Chan",
+        "start": 2199.7,
+        "duration": 5.47
+    },
+    {
+        "text": "Zuckerberg and I'm happy to take",
+        "start": 2202.71,
+        "duration": 17.7
+    },
+    {
+        "text": "questions so thank you wants to start I",
+        "start": 2205.17,
+        "duration": 17.73
+    },
+    {
+        "text": "will start you want to comment more on",
+        "start": 2220.41,
+        "duration": 4.709
+    },
+    {
+        "text": "the integration of different dynamic",
+        "start": 2222.9,
+        "duration": 6.51
+    },
+    {
+        "text": "types you can catenate yeah and I don't",
+        "start": 2225.119,
+        "duration": 6.571
+    },
+    {
+        "text": "show that here but one thing that we've",
+        "start": 2229.41,
+        "duration": 6.929
+    },
+    {
+        "text": "done in the past is to sort of let me",
+        "start": 2231.69,
+        "duration": 6.45
+    },
+    {
+        "text": "see if I can skip over the bigger slide",
+        "start": 2236.339,
+        "duration": 5.96
+    },
+    {
+        "text": "so it goes faster is if you have",
+        "start": 2238.14,
+        "duration": 6.63
+    },
+    {
+        "text": "different types of cell types and this",
+        "start": 2242.299,
+        "duration": 4.03
+    },
+    {
+        "text": "is very similar to the work that I think",
+        "start": 2244.77,
+        "duration": 4.23
+    },
+    {
+        "text": "Josh is doing as well so if you have",
+        "start": 2246.329,
+        "duration": 6.54
+    },
+    {
+        "text": "different data types one thing you can",
+        "start": 2249.0,
+        "duration": 7.559
+    },
+    {
+        "text": "do is you can concatenate one on top of",
+        "start": 2252.869,
+        "duration": 6.361
+    },
+    {
+        "text": "the other and that lets you look for",
+        "start": 2256.559,
+        "duration": 5.28
+    },
+    {
+        "text": "common patterns between the data sets",
+        "start": 2259.23,
+        "duration": 5.04
+    },
+    {
+        "text": "that give you a sense of where they're",
+        "start": 2261.839,
+        "duration": 3.871
+    },
+    {
+        "text": "integrated where they're not",
+        "start": 2264.27,
+        "duration": 5.099
+    },
+    {
+        "text": "so we developed an approach to do that",
+        "start": 2265.71,
+        "duration": 6.72
+    },
+    {
+        "text": "for subtype analysis in head and neck",
+        "start": 2269.369,
+        "duration": 5.94
+    },
+    {
+        "text": "cancers of looking at epigenetically",
+        "start": 2272.43,
+        "duration": 7.98
+    },
+    {
+        "text": "driven subtypes in transcription and one",
+        "start": 2275.309,
+        "duration": 6.841
+    },
+    {
+        "text": "of the things you can do that's cool",
+        "start": 2280.41,
+        "duration": 3.36
+    },
+    {
+        "text": "with that approach is within the",
+        "start": 2282.15,
+        "duration": 3.87
+    },
+    {
+        "text": "Bayesian context and within our model",
+        "start": 2283.77,
+        "duration": 5.76
+    },
+    {
+        "text": "you can change the error distribution to",
+        "start": 2286.02,
+        "duration": 6.12
+    },
+    {
+        "text": "model different types of relationships",
+        "start": 2289.53,
+        "duration": 5.61
+    },
+    {
+        "text": "between data so when we did that model",
+        "start": 2292.14,
+        "duration": 5.16
+    },
+    {
+        "text": "we were at the time using bulk DNA",
+        "start": 2295.14,
+        "duration": 5.34
+    },
+    {
+        "text": "methylation and gene expression and we",
+        "start": 2297.3,
+        "duration": 7.86
+    },
+    {
+        "text": "modified this term in the model too to",
+        "start": 2300.48,
+        "duration": 7.109
+    },
+    {
+        "text": "model the fact that when a gene is fully",
+        "start": 2305.16,
+        "duration": 4.77
+    },
+    {
+        "text": "unmethylated you would imagine you have",
+        "start": 2307.589,
+        "duration": 4.25
+    },
+    {
+        "text": "a high variance in gene expression",
+        "start": 2309.93,
+        "duration": 4.11
+    },
+    {
+        "text": "because methylation conveys the",
+        "start": 2311.839,
+        "duration": 3.941
+    },
+    {
+        "text": "potential for expression but doesn't",
+        "start": 2314.04,
+        "duration": 2.72
+    },
+    {
+        "text": "guarantee it",
+        "start": 2315.78,
+        "duration": 5.13
+    },
+    {
+        "text": "whereas if it's fully methylated you",
+        "start": 2316.76,
+        "duration": 6.549
+    },
+    {
+        "text": "would expect the gene to be silenced and",
+        "start": 2320.91,
+        "duration": 5.25
+    },
+    {
+        "text": "so you would have a lower uncertainty do",
+        "start": 2323.309,
+        "duration": 4.471
+    },
+    {
+        "text": "you can model the relationship between",
+        "start": 2326.16,
+        "duration": 3.929
+    },
+    {
+        "text": "the data modalities through this",
+        "start": 2327.78,
+        "duration": 4.86
+    },
+    {
+        "text": "uncertainty matrix and we apply that to",
+        "start": 2330.089,
+        "duration": 4.441
+    },
+    {
+        "text": "head and neck cancer work beautifully we",
+        "start": 2332.64,
+        "duration": 3.929
+    },
+    {
+        "text": "got segregation of tumors and normals",
+        "start": 2334.53,
+        "duration": 3.6
+    },
+    {
+        "text": "and then you know different known",
+        "start": 2336.569,
+        "duration": 2.941
+    },
+    {
+        "text": "subtypes of head and neck it was",
+        "start": 2338.13,
+        "duration": 4.739
+    },
+    {
+        "text": "gorgeous and then my lab developed a we",
+        "start": 2339.51,
+        "duration": 5.13
+    },
+    {
+        "text": "the wet lab portion of my group is",
+        "start": 2342.869,
+        "duration": 3.24
+    },
+    {
+        "text": "focused on acquired therapeutic",
+        "start": 2344.64,
+        "duration": 4.05
+    },
+    {
+        "text": "resistance and what we did is we took a",
+        "start": 2346.109,
+        "duration": 5.401
+    },
+    {
+        "text": "head and neck cell line model exposed it",
+        "start": 2348.69,
+        "duration": 4.5
+    },
+    {
+        "text": "to a drug that it was initially",
+        "start": 2351.51,
+        "duration": 4.41
+    },
+    {
+        "text": "sensitive to developed resistance by",
+        "start": 2353.19,
+        "duration": 5.129
+    },
+    {
+        "text": "long-term exposure and what we did that",
+        "start": 2355.92,
+        "duration": 3.87
+    },
+    {
+        "text": "was a little bit different is collected",
+        "start": 2358.319,
+        "duration": 3.75
+    },
+    {
+        "text": "cells every single week as they acquired",
+        "start": 2359.79,
+        "duration": 4.98
+    },
+    {
+        "text": "resistance we found that integrated",
+        "start": 2362.069,
+        "duration": 5.49
+    },
+    {
+        "text": "approach completely bombed and when we",
+        "start": 2364.77,
+        "duration": 4.44
+    },
+    {
+        "text": "looked at it what we did is we did a",
+        "start": 2367.559,
+        "duration": 4.05
+    },
+    {
+        "text": "separate analysis of the unsupervised",
+        "start": 2369.21,
+        "duration": 4.83
+    },
+    {
+        "text": "learning patterns on the DNA methylation",
+        "start": 2371.609,
+        "duration": 4.921
+    },
+    {
+        "text": "and gene expression data separately and",
+        "start": 2374.04,
+        "duration": 4.049
+    },
+    {
+        "text": "what we found is there were",
+        "start": 2376.53,
+        "duration": 3.44
+    },
+    {
+        "text": "fundamentally different patterns in them",
+        "start": 2378.089,
+        "duration": 4.141
+    },
+    {
+        "text": "so what was going on is in the gene",
+        "start": 2379.97,
+        "duration": 4.089
+    },
+    {
+        "text": "expression data you see an immediate",
+        "start": 2382.23,
+        "duration": 3.569
+    },
+    {
+        "text": "change due to the fact that you've",
+        "start": 2384.059,
+        "duration": 5.04
+    },
+    {
+        "text": "exposed the cells drug and then you see",
+        "start": 2385.799,
+        "duration": 5.191
+    },
+    {
+        "text": "a slower change that's due to resistance",
+        "start": 2389.099,
+        "duration": 5.22
+    },
+    {
+        "text": "in DNA methylation you only see the",
+        "start": 2390.99,
+        "duration": 5.04
+    },
+    {
+        "text": "drift that's due to resistance because",
+        "start": 2394.319,
+        "duration": 3.721
+    },
+    {
+        "text": "there's no immediate response to therapy",
+        "start": 2396.03,
+        "duration": 3.059
+    },
+    {
+        "text": "and it",
+        "start": 2398.04,
+        "duration": 4.65
+    },
+    {
+        "text": "back delay is actually that that drift",
+        "start": 2399.089,
+        "duration": 7.051
+    },
+    {
+        "text": "is actually delayed relative to gene",
+        "start": 2402.69,
+        "duration": 6.419
+    },
+    {
+        "text": "expression changes so it turns out that",
+        "start": 2406.14,
+        "duration": 5.76
+    },
+    {
+        "text": "the factorization can't possibly work by",
+        "start": 2409.109,
+        "duration": 4.97
+    },
+    {
+        "text": "just putting one on top of the other",
+        "start": 2411.9,
+        "duration": 5.159
+    },
+    {
+        "text": "because there the data are occurring it",
+        "start": 2414.079,
+        "duration": 4.45
+    },
+    {
+        "text": "the patterns are occurring at different",
+        "start": 2417.059,
+        "duration": 4.41
+    },
+    {
+        "text": "time scales and there's fundamentally",
+        "start": 2418.529,
+        "duration": 4.861
+    },
+    {
+        "text": "different patterns between the data sets",
+        "start": 2421.469,
+        "duration": 3.961
+    },
+    {
+        "text": "so that's something that we really want",
+        "start": 2423.39,
+        "duration": 4.02
+    },
+    {
+        "text": "to explore and it's something we think",
+        "start": 2425.43,
+        "duration": 3.27
+    },
+    {
+        "text": "that the transfer learning approach",
+        "start": 2427.41,
+        "duration": 3.119
+    },
+    {
+        "text": "gives you a little bit more flexibility",
+        "start": 2428.7,
+        "duration": 4.139
+    },
+    {
+        "text": "to do because you can take what are the",
+        "start": 2430.529,
+        "duration": 4.381
+    },
+    {
+        "text": "patterns that you learned in one context",
+        "start": 2432.839,
+        "duration": 3.871
+    },
+    {
+        "text": "and really see where they align",
+        "start": 2434.91,
+        "duration": 4.589
+    },
+    {
+        "text": "temporally but there's a lot of work I",
+        "start": 2436.71,
+        "duration": 4.19
+    },
+    {
+        "text": "think to do and semi-supervised learning",
+        "start": 2439.499,
+        "duration": 3.54
+    },
+    {
+        "text": "approaches and other approaches to think",
+        "start": 2440.9,
+        "duration": 5.26
+    },
+    {
+        "text": "about that I just to follow up I think",
+        "start": 2443.039,
+        "duration": 5.131
+    },
+    {
+        "text": "what you talked about the two are mixed",
+        "start": 2446.16,
+        "duration": 4.77
+    },
+    {
+        "text": "layers give somewhat conflicting views",
+        "start": 2448.17,
+        "duration": 5.939
+    },
+    {
+        "text": "we've seen that in TCGA data as well you",
+        "start": 2450.93,
+        "duration": 5.129
+    },
+    {
+        "text": "know with one data type ask for five",
+        "start": 2454.109,
+        "duration": 4.17
+    },
+    {
+        "text": "top-class is another for four they don't",
+        "start": 2456.059,
+        "duration": 5.371
+    },
+    {
+        "text": "align that it's not something",
+        "start": 2458.279,
+        "duration": 4.74
+    },
+    {
+        "text": "computationally you can resolve it's a",
+        "start": 2461.43,
+        "duration": 5.159
+    },
+    {
+        "text": "real conflict in your hand yeah and we",
+        "start": 2463.019,
+        "duration": 4.77
+    },
+    {
+        "text": "don't know if that's because they're",
+        "start": 2466.589,
+        "duration": 2.49
+    },
+    {
+        "text": "taken from different regions of the",
+        "start": 2467.789,
+        "duration": 3.06
+    },
+    {
+        "text": "tumor or there's fundamentally different",
+        "start": 2469.079,
+        "duration": 3.72
+    },
+    {
+        "text": "biology in them I think we don't know",
+        "start": 2470.849,
+        "duration": 5.4
+    },
+    {
+        "text": "what we don't know there yeah I think",
+        "start": 2472.799,
+        "duration": 6.74
+    },
+    {
+        "text": "the multi-omics is a real challenge",
+        "start": 2476.249,
+        "duration": 3.29
+    },
+    {
+        "text": "Thanks I have this scratchy voice right",
+        "start": 2483.319,
+        "duration": 5.341
+    },
+    {
+        "text": "now sorry definitely need the microphone",
+        "start": 2486.18,
+        "duration": 4.98
+    },
+    {
+        "text": "that was a really great talk you do a",
+        "start": 2488.66,
+        "duration": 4.329
+    },
+    {
+        "text": "really great job of intuitively",
+        "start": 2491.16,
+        "duration": 4.349
+    },
+    {
+        "text": "explaining how your methods work",
+        "start": 2492.989,
+        "duration": 5.55
+    },
+    {
+        "text": "I like how I use the gamma distribution",
+        "start": 2495.509,
+        "duration": 7.59
+    },
+    {
+        "text": "to more flexibly model different levels",
+        "start": 2498.539,
+        "duration": 7.95
+    },
+    {
+        "text": "of sparsity and the data and I was",
+        "start": 2503.099,
+        "duration": 5.851
+    },
+    {
+        "text": "wondering when you when you went on to",
+        "start": 2506.489,
+        "duration": 5.31
+    },
+    {
+        "text": "project are does that also take into",
+        "start": 2508.95,
+        "duration": 5.01
+    },
+    {
+        "text": "account potentially different patterns",
+        "start": 2511.799,
+        "duration": 3.96
+    },
+    {
+        "text": "of sparsity and the different data set",
+        "start": 2513.96,
+        "duration": 4.109
+    },
+    {
+        "text": "or is it simply using the linear",
+        "start": 2515.759,
+        "duration": 4.56
+    },
+    {
+        "text": "combinations from the patterns that's a",
+        "start": 2518.069,
+        "duration": 4.591
+    },
+    {
+        "text": "great question it's it's simply using",
+        "start": 2520.319,
+        "duration": 4.05
+    },
+    {
+        "text": "the linear combinations of the patterns",
+        "start": 2522.66,
+        "duration": 4.109
+    },
+    {
+        "text": "and that's you know one thing we want to",
+        "start": 2524.369,
+        "duration": 4.62
+    },
+    {
+        "text": "do is think about if you if you use",
+        "start": 2526.769,
+        "duration": 3.691
+    },
+    {
+        "text": "those as the basis and different",
+        "start": 2528.989,
+        "duration": 3.36
+    },
+    {
+        "text": "semi-supervised learning models right",
+        "start": 2530.46,
+        "duration": 2.46
+    },
+    {
+        "text": "like do we",
+        "start": 2532.349,
+        "duration": 2.941
+    },
+    {
+        "text": "put these back in you know as fix",
+        "start": 2532.92,
+        "duration": 3.86
+    },
+    {
+        "text": "patterns in our matrix factorization",
+        "start": 2535.29,
+        "duration": 4.68
+    },
+    {
+        "text": "approach how does it compare I think",
+        "start": 2536.78,
+        "duration": 5.41
+    },
+    {
+        "text": "that's absolutely something that we need",
+        "start": 2539.97,
+        "duration": 3.06
+    },
+    {
+        "text": "to be doing",
+        "start": 2542.19,
+        "duration": 2.46
+    },
+    {
+        "text": "the advantage of the linear combination",
+        "start": 2543.03,
+        "duration": 3.69
+    },
+    {
+        "text": "is it's a whole lot faster than the",
+        "start": 2544.65,
+        "duration": 4.29
+    },
+    {
+        "text": "Bayesian sampling um so it gives us a",
+        "start": 2546.72,
+        "duration": 3.63
+    },
+    {
+        "text": "quicker way of looking but you're a",
+        "start": 2548.94,
+        "duration": 2.91
+    },
+    {
+        "text": "hundred percent right that's an area",
+        "start": 2550.35,
+        "duration": 24.12
+    },
+    {
+        "text": "that is ripe for exploration thank you",
+        "start": 2551.85,
+        "duration": 26.01
+    },
+    {
+        "text": "for the talk it was very clear so you",
+        "start": 2574.47,
+        "duration": 5.19
+    },
+    {
+        "text": "mentioned that each of these matrix",
+        "start": 2577.86,
+        "duration": 3.57
+    },
+    {
+        "text": "factorization approaches have their own",
+        "start": 2579.66,
+        "duration": 4.17
+    },
+    {
+        "text": "advantages and disadvantages so do you",
+        "start": 2581.43,
+        "duration": 4.62
+    },
+    {
+        "text": "think it's computationally feasible to",
+        "start": 2583.83,
+        "duration": 4.14
+    },
+    {
+        "text": "potentially develop some sort of meta",
+        "start": 2586.05,
+        "duration": 3.9
+    },
+    {
+        "text": "method approach that does every single",
+        "start": 2587.97,
+        "duration": 4.2
+    },
+    {
+        "text": "factorization and then weights them",
+        "start": 2589.95,
+        "duration": 5.58
+    },
+    {
+        "text": "based off of how reliable one approaches",
+        "start": 2592.17,
+        "duration": 5.04
+    },
+    {
+        "text": "over another for certain inferences",
+        "start": 2595.53,
+        "duration": 4.77
+    },
+    {
+        "text": "absolutely I think the trick in that is",
+        "start": 2597.21,
+        "duration": 6.06
+    },
+    {
+        "text": "how do you quantify reliability right so",
+        "start": 2600.3,
+        "duration": 4.83
+    },
+    {
+        "text": "if I were to ask every single person in",
+        "start": 2603.27,
+        "duration": 4.14
+    },
+    {
+        "text": "this room I bet you every single person",
+        "start": 2605.13,
+        "duration": 3.51
+    },
+    {
+        "text": "in this room would have a different",
+        "start": 2607.41,
+        "duration": 3.33
+    },
+    {
+        "text": "metric of reliability all right so some",
+        "start": 2608.64,
+        "duration": 3.87
+    },
+    {
+        "text": "people would say is it the best fit to",
+        "start": 2610.74,
+        "duration": 4.56
+    },
+    {
+        "text": "the data some people would say is it",
+        "start": 2612.51,
+        "duration": 4.2
+    },
+    {
+        "text": "getting the cell types the best some",
+        "start": 2615.3,
+        "duration": 2.82
+    },
+    {
+        "text": "people would say is it getting the early",
+        "start": 2616.71,
+        "duration": 4.32
+    },
+    {
+        "text": "transitions the best so I don't know if",
+        "start": 2618.12,
+        "duration": 6.24
+    },
+    {
+        "text": "it's feasible to develop a meta method",
+        "start": 2621.03,
+        "duration": 7.35
+    },
+    {
+        "text": "of the right answer but I think it's",
+        "start": 2624.36,
+        "duration": 7.35
+    },
+    {
+        "text": "feasible to develop a set of unique",
+        "start": 2628.38,
+        "duration": 5.24
+    },
+    {
+        "text": "features that are learned from different",
+        "start": 2631.71,
+        "duration": 4.95
+    },
+    {
+        "text": "factorizations that together will give",
+        "start": 2633.62,
+        "duration": 4.75
+    },
+    {
+        "text": "you a different piece of the data and",
+        "start": 2636.66,
+        "duration": 4.92
+    },
+    {
+        "text": "even within one factorization if you run",
+        "start": 2638.37,
+        "duration": 5.04
+    },
+    {
+        "text": "it at different numbers of patterns",
+        "start": 2641.58,
+        "duration": 3.27
+    },
+    {
+        "text": "which is always the question everybody",
+        "start": 2643.41,
+        "duration": 2.94
+    },
+    {
+        "text": "asks how do you figure out the right",
+        "start": 2644.85,
+        "duration": 4.41
+    },
+    {
+        "text": "number of patterns right if you run it",
+        "start": 2646.35,
+        "duration": 4.59
+    },
+    {
+        "text": "at different numbers of patterns you're",
+        "start": 2649.26,
+        "duration": 3.75
+    },
+    {
+        "text": "gonna resolve different hierarchies in",
+        "start": 2650.94,
+        "duration": 4.29
+    },
+    {
+        "text": "the data so we think even within one",
+        "start": 2653.01,
+        "duration": 5.19
+    },
+    {
+        "text": "approach you need a meta method that",
+        "start": 2655.23,
+        "duration": 5.34
+    },
+    {
+        "text": "really is going to compare not only",
+        "start": 2658.2,
+        "duration": 4.73
+    },
+    {
+        "text": "across algorithms but across",
+        "start": 2660.57,
+        "duration": 5.52
+    },
+    {
+        "text": "dimensionalities as well so I think that",
+        "start": 2662.93,
+        "duration": 3.91
+    },
+    {
+        "text": "that's an",
+        "start": 2666.09,
+        "duration": 8.52
+    },
+    {
+        "text": "that's ripe for future research no more",
+        "start": 2666.84,
+        "duration": 10.55
+    },
+    {
+        "text": "questions let's Thank You Lane again",
+        "start": 2674.61,
+        "duration": 9.06
+    },
+    {
+        "text": "[Applause]",
+        "start": 2677.39,
+        "duration": 6.28
+    }
+]

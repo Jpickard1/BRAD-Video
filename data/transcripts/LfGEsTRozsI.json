@@ -1,0 +1,6047 @@
+[
+    {
+        "text": "I welcome everyone we're gonna go and",
+        "start": 0.0,
+        "duration": 82.47
+    },
+    {
+        "text": "get started for those of you who are new",
+        "start": 79.83,
+        "duration": 5.01
+    },
+    {
+        "text": "to this seminar series it's the tools",
+        "start": 82.47,
+        "duration": 4.14
+    },
+    {
+        "text": "and technology seminar series through",
+        "start": 84.84,
+        "duration": 3.419
+    },
+    {
+        "text": "the department of computational medicine",
+        "start": 86.61,
+        "duration": 3.99
+    },
+    {
+        "text": "and bioinformatics basically it's just a",
+        "start": 88.259,
+        "duration": 6.0
+    },
+    {
+        "text": "venue to discuss new tools technologies",
+        "start": 90.6,
+        "duration": 5.64
+    },
+    {
+        "text": "and/or methodologies that are either",
+        "start": 94.259,
+        "duration": 4.591
+    },
+    {
+        "text": "currently in development may be recently",
+        "start": 96.24,
+        "duration": 4.769
+    },
+    {
+        "text": "developed or just a neat tool or",
+        "start": 98.85,
+        "duration": 4.769
+    },
+    {
+        "text": "technology that researchers may find an",
+        "start": 101.009,
+        "duration": 5.731
+    },
+    {
+        "text": "interest so today and we have pizzelle",
+        "start": 103.619,
+        "duration": 6.511
+    },
+    {
+        "text": "and a couple other faculty and members",
+        "start": 106.74,
+        "duration": 4.65
+    },
+    {
+        "text": "here I guess we're also going to talk a",
+        "start": 110.13,
+        "duration": 3.12
+    },
+    {
+        "text": "little bit and they're gonna talk to us",
+        "start": 111.39,
+        "duration": 3.839
+    },
+    {
+        "text": "about linear programming tools for",
+        "start": 113.25,
+        "duration": 4.17
+    },
+    {
+        "text": "scheduling trainees and healthcare I do",
+        "start": 115.229,
+        "duration": 3.901
+    },
+    {
+        "text": "want to mention and there's a sign-in",
+        "start": 117.42,
+        "duration": 4.409
+    },
+    {
+        "text": "sheet that is going around please sign",
+        "start": 119.13,
+        "duration": 5.279
+    },
+    {
+        "text": "in and helps us with the pizza and with",
+        "start": 121.829,
+        "duration": 6.811
+    },
+    {
+        "text": "that thank you hi everyone my name is",
+        "start": 124.409,
+        "duration": 7.141
+    },
+    {
+        "text": "Billy Cosell I just graduated with my",
+        "start": 128.64,
+        "duration": 4.71
+    },
+    {
+        "text": "master's degree",
+        "start": 131.55,
+        "duration": 3.57
+    },
+    {
+        "text": "from college of engineering and",
+        "start": 133.35,
+        "duration": 4.08
+    },
+    {
+        "text": "industrial and operations engineering so",
+        "start": 135.12,
+        "duration": 5.13
+    },
+    {
+        "text": "for me linear programming is pretty",
+        "start": 137.43,
+        "duration": 4.5
+    },
+    {
+        "text": "familiar but I'm guessing for most of",
+        "start": 140.25,
+        "duration": 4.19
+    },
+    {
+        "text": "you it's not so we're gonna get into",
+        "start": 141.93,
+        "duration": 6.27
+    },
+    {
+        "text": "some scheduling issues",
+        "start": 144.44,
+        "duration": 6.94
+    },
+    {
+        "text": "I just wanted to recognize dr. Reddy dr.",
+        "start": 148.2,
+        "duration": 6.42
+    },
+    {
+        "text": "Siegel dr. gasket professor Gaskin",
+        "start": 151.38,
+        "duration": 5.85
+    },
+    {
+        "text": "lesser cone and then our other",
+        "start": 154.62,
+        "duration": 4.95
+    },
+    {
+        "text": "collaborators on this project are Janice",
+        "start": 157.23,
+        "duration": 5.7
+    },
+    {
+        "text": "Davis and AJ and some income Jiang I'm",
+        "start": 159.57,
+        "duration": 5.76
+    },
+    {
+        "text": "actually going to hand it over to dr.",
+        "start": 162.93,
+        "duration": 5.67
+    },
+    {
+        "text": "Etienne and dr. Siegel to talk about",
+        "start": 165.33,
+        "duration": 4.74
+    },
+    {
+        "text": "some of the background and motivation",
+        "start": 168.6,
+        "duration": 6.98
+    },
+    {
+        "text": "for the project first as a brief outline",
+        "start": 170.07,
+        "duration": 5.51
+    },
+    {
+        "text": "and then I'm gonna describe a little bit",
+        "start": 175.79,
+        "duration": 5.56
+    },
+    {
+        "text": "of what linear programming is so I'm",
+        "start": 178.47,
+        "duration": 4.4
+    },
+    {
+        "text": "going to try and fit one of our",
+        "start": 181.35,
+        "duration": 4.08
+    },
+    {
+        "text": "undergraduate courses into about five",
+        "start": 182.87,
+        "duration": 5.02
+    },
+    {
+        "text": "minutes and then we'll go into how we're",
+        "start": 185.43,
+        "duration": 5.34
+    },
+    {
+        "text": "applying that in a specific context for",
+        "start": 187.89,
+        "duration": 6.36
+    },
+    {
+        "text": "surgical block scheduling and how we're",
+        "start": 190.77,
+        "duration": 5.58
+    },
+    {
+        "text": "implementing that and then some",
+        "start": 194.25,
+        "duration": 4.95
+    },
+    {
+        "text": "conclusions are in the future so with",
+        "start": 196.35,
+        "duration": 10.98
+    },
+    {
+        "text": "that for people with things they already",
+        "start": 199.2,
+        "duration": 9.54
+    },
+    {
+        "text": "knew but I did want to go over a little",
+        "start": 207.33,
+        "duration": 4.88
+    },
+    {
+        "text": "bit about how medical training happens",
+        "start": 208.74,
+        "duration": 7.59
+    },
+    {
+        "text": "the story our training methodology right",
+        "start": 212.21,
+        "duration": 7.15
+    },
+    {
+        "text": "now is based on William Halsted twin",
+        "start": 216.33,
+        "duration": 6.53
+    },
+    {
+        "text": "1890s start of the first surgical",
+        "start": 219.36,
+        "duration": 7.83
+    },
+    {
+        "text": "residency program which was the",
+        "start": 222.86,
+        "duration": 7.78
+    },
+    {
+        "text": "internship where he followed around the",
+        "start": 227.19,
+        "duration": 5.43
+    },
+    {
+        "text": "students until he thought they were",
+        "start": 230.64,
+        "duration": 5.25
+    },
+    {
+        "text": "ready and that had six years of",
+        "start": 232.62,
+        "duration": 7.02
+    },
+    {
+        "text": "residency followed by two years of being",
+        "start": 235.89,
+        "duration": 6.39
+    },
+    {
+        "text": "a house surgeon and then you were a",
+        "start": 239.64,
+        "duration": 4.68
+    },
+    {
+        "text": "doctor and it's not that different now",
+        "start": 242.28,
+        "duration": 4.29
+    },
+    {
+        "text": "after undergraduate program and medical",
+        "start": 244.32,
+        "duration": 4.17
+    },
+    {
+        "text": "school which if you hear people talking",
+        "start": 246.57,
+        "duration": 3.51
+    },
+    {
+        "text": "about m1 m2 v Rees",
+        "start": 248.49,
+        "duration": 3.03
+    },
+    {
+        "text": "that's the years of medical school you",
+        "start": 250.08,
+        "duration": 2.88
+    },
+    {
+        "text": "do an internship which is really a first",
+        "start": 251.52,
+        "duration": 4.529
+    },
+    {
+        "text": "year of residency and that postgraduate",
+        "start": 252.96,
+        "duration": 6.12
+    },
+    {
+        "text": "year one and a couple years residency",
+        "start": 256.049,
+        "duration": 5.761
+    },
+    {
+        "text": "range between three and seven and then a",
+        "start": 259.08,
+        "duration": 6.93
+    },
+    {
+        "text": "fellowship which is post residency",
+        "start": 261.81,
+        "duration": 5.93
+    },
+    {
+        "text": "training",
+        "start": 266.01,
+        "duration": 3.96
+    },
+    {
+        "text": "and so what we're talking about",
+        "start": 267.74,
+        "duration": 4.09
+    },
+    {
+        "text": "optimizing is the scheduling of",
+        "start": 269.97,
+        "duration": 4.14
+    },
+    {
+        "text": "educational activities between the",
+        "start": 271.83,
+        "duration": 5.209
+    },
+    {
+        "text": "internship through the fellowship years",
+        "start": 274.11,
+        "duration": 7.8
+    },
+    {
+        "text": "and since the time of Halsted",
+        "start": 277.039,
+        "duration": 10.06
+    },
+    {
+        "text": "there's developed a set of 24 medical",
+        "start": 281.91,
+        "duration": 7.68
+    },
+    {
+        "text": "specialty boards that certifications",
+        "start": 287.099,
+        "duration": 4.891
+    },
+    {
+        "text": "that you can have and at university",
+        "start": 289.59,
+        "duration": 4.68
+    },
+    {
+        "text": "Michigan we have 25 individual residency",
+        "start": 291.99,
+        "duration": 6.39
+    },
+    {
+        "text": "programs and 80 fellowships these can be",
+        "start": 294.27,
+        "duration": 6.42
+    },
+    {
+        "text": "sub specialties there's more residency",
+        "start": 298.38,
+        "duration": 6.509
+    },
+    {
+        "text": "than sit for whatever boards they want",
+        "start": 300.69,
+        "duration": 6.21
+    },
+    {
+        "text": "to more or less it's more complicated",
+        "start": 304.889,
+        "duration": 4.921
+    },
+    {
+        "text": "than that but so about over a thousand",
+        "start": 306.9,
+        "duration": 6.12
+    },
+    {
+        "text": "people are being trained to be doctors",
+        "start": 309.81,
+        "duration": 6.57
+    },
+    {
+        "text": "and the reason that scheduling is",
+        "start": 313.02,
+        "duration": 5.399
+    },
+    {
+        "text": "important is a number of them one of",
+        "start": 316.38,
+        "duration": 3.84
+    },
+    {
+        "text": "them is workflow you want to make sure",
+        "start": 318.419,
+        "duration": 3.99
+    },
+    {
+        "text": "that the right people get to the right",
+        "start": 320.22,
+        "duration": 4.319
+    },
+    {
+        "text": "places and then we have a good well",
+        "start": 322.409,
+        "duration": 6.331
+    },
+    {
+        "text": "staffed or well staffed well step units",
+        "start": 324.539,
+        "duration": 8.581
+    },
+    {
+        "text": "the residents and fellows serve as a",
+        "start": 328.74,
+        "duration": 6.0
+    },
+    {
+        "text": "component of the workforce that take",
+        "start": 333.12,
+        "duration": 3.84
+    },
+    {
+        "text": "care our patients and the reason",
+        "start": 334.74,
+        "duration": 4.41
+    },
+    {
+        "text": "scheduling is also important is that if",
+        "start": 336.96,
+        "duration": 5.19
+    },
+    {
+        "text": "you do it poorly if you get a resident a",
+        "start": 339.15,
+        "duration": 5.73
+    },
+    {
+        "text": "schedule that has back-to-back terrible",
+        "start": 342.15,
+        "duration": 6.06
+    },
+    {
+        "text": "months or experiences that they're not",
+        "start": 344.88,
+        "duration": 5.24
+    },
+    {
+        "text": "interested they can burn out and have a",
+        "start": 348.21,
+        "duration": 4.67
+    },
+    {
+        "text": "emotionally difficult time and",
+        "start": 350.12,
+        "duration": 5.169
+    },
+    {
+        "text": "non-optimal educational experiences and",
+        "start": 352.88,
+        "duration": 5.529
+    },
+    {
+        "text": "the third thing is patient care getting",
+        "start": 355.289,
+        "duration": 4.5
+    },
+    {
+        "text": "the right people to the right to the",
+        "start": 358.409,
+        "duration": 3.781
+    },
+    {
+        "text": "bedside in the right mix with good",
+        "start": 359.789,
+        "duration": 5.22
+    },
+    {
+        "text": "educational experiences improves patient",
+        "start": 362.19,
+        "duration": 5.699
+    },
+    {
+        "text": "care improves patient safety and patient",
+        "start": 365.009,
+        "duration": 6.111
+    },
+    {
+        "text": "satisfaction and as well as other things",
+        "start": 367.889,
+        "duration": 5.941
+    },
+    {
+        "text": "so who usually does the scheduling what",
+        "start": 371.12,
+        "duration": 4.359
+    },
+    {
+        "text": "were I'm talking about is in which",
+        "start": 373.83,
+        "duration": 3.589
+    },
+    {
+        "text": "witchdoctor ready we'll talk about",
+        "start": 375.479,
+        "duration": 6.18
+    },
+    {
+        "text": "scheduling a months of experiences it's",
+        "start": 377.419,
+        "duration": 6.31
+    },
+    {
+        "text": "usually can be one of the residents",
+        "start": 381.659,
+        "duration": 3.69
+    },
+    {
+        "text": "themselves the chief resident someone in",
+        "start": 383.729,
+        "duration": 3.481
+    },
+    {
+        "text": "charge of sort of directing their peers",
+        "start": 385.349,
+        "duration": 5.22
+    },
+    {
+        "text": "as well as faculty and staff the faculty",
+        "start": 387.21,
+        "duration": 5.609
+    },
+    {
+        "text": "is usually the program director and the",
+        "start": 390.569,
+        "duration": 4.38
+    },
+    {
+        "text": "staff is the administrators senior",
+        "start": 392.819,
+        "duration": 3.931
+    },
+    {
+        "text": "administrative staff and what do they",
+        "start": 394.949,
+        "duration": 4.25
+    },
+    {
+        "text": "have to do",
+        "start": 396.75,
+        "duration": 2.449
+    },
+    {
+        "text": "it's basically they sit down with at",
+        "start": 400.39,
+        "duration": 4.53
+    },
+    {
+        "text": "least right now usually they sit down",
+        "start": 403.63,
+        "duration": 3.09
+    },
+    {
+        "text": "with a big list of people and try to",
+        "start": 404.92,
+        "duration": 4.59
+    },
+    {
+        "text": "figure out who goes where when it's time",
+        "start": 406.72,
+        "duration": 5.3
+    },
+    {
+        "text": "intensive process we actually did a",
+        "start": 409.51,
+        "duration": 4.5
+    },
+    {
+        "text": "project where we looked at how this was",
+        "start": 412.02,
+        "duration": 3.52
+    },
+    {
+        "text": "done across a bunch of the different",
+        "start": 414.01,
+        "duration": 6.42
+    },
+    {
+        "text": "departments and some of them had got all",
+        "start": 415.54,
+        "duration": 5.91
+    },
+    {
+        "text": "the different departments who were",
+        "start": 420.43,
+        "duration": 2.46
+    },
+    {
+        "text": "involved in trading their residents",
+        "start": 421.45,
+        "duration": 3.42
+    },
+    {
+        "text": "together around a table and hashed it",
+        "start": 422.89,
+        "duration": 2.91
+    },
+    {
+        "text": "out in real time",
+        "start": 424.87,
+        "duration": 3.95
+    },
+    {
+        "text": "other people had a senior a senior",
+        "start": 425.8,
+        "duration": 5.82
+    },
+    {
+        "text": "administrator who had contact all that",
+        "start": 428.82,
+        "duration": 4.66
+    },
+    {
+        "text": "interested party and is this complicated",
+        "start": 431.62,
+        "duration": 3.69
+    },
+    {
+        "text": "negotiation would try to build a",
+        "start": 433.48,
+        "duration": 3.87
+    },
+    {
+        "text": "schedule that worked and it was in time",
+        "start": 435.31,
+        "duration": 3.87
+    },
+    {
+        "text": "intensive process what about 80 hours or",
+        "start": 437.35,
+        "duration": 4.29
+    },
+    {
+        "text": "so to build a schedule for one program",
+        "start": 439.18,
+        "duration": 5.16
+    },
+    {
+        "text": "we have 25 of these here there's a lot",
+        "start": 441.64,
+        "duration": 4.77
+    },
+    {
+        "text": "of stakeholders involved some people are",
+        "start": 444.34,
+        "duration": 3.54
+    },
+    {
+        "text": "sending us residents we're sending other",
+        "start": 446.41,
+        "duration": 3.63
+    },
+    {
+        "text": "people residents like st. Joe for",
+        "start": 447.88,
+        "duration": 4.26
+    },
+    {
+        "text": "different divisions departments this",
+        "start": 450.04,
+        "duration": 3.93
+    },
+    {
+        "text": "complex rules about who needs to be when",
+        "start": 452.14,
+        "duration": 4.32
+    },
+    {
+        "text": "how many of each type of person you get",
+        "start": 453.97,
+        "duration": 5.91
+    },
+    {
+        "text": "at different times and there are",
+        "start": 456.46,
+        "duration": 5.4
+    },
+    {
+        "text": "conflicting goals that residents want",
+        "start": 459.88,
+        "duration": 3.06
+    },
+    {
+        "text": "their vacation time when there are",
+        "start": 461.86,
+        "duration": 2.37
+    },
+    {
+        "text": "sisters getting married they want to",
+        "start": 462.94,
+        "duration": 3.33
+    },
+    {
+        "text": "have a week off or have a like schedule",
+        "start": 464.23,
+        "duration": 6.33
+    },
+    {
+        "text": "and vacation and staffing and things",
+        "start": 466.27,
+        "duration": 5.91
+    },
+    {
+        "text": "like that and there's lots of strategies",
+        "start": 470.56,
+        "duration": 4.83
+    },
+    {
+        "text": "that are used and because there are some",
+        "start": 472.18,
+        "duration": 4.23
+    },
+    {
+        "text": "of the constraints and such a",
+        "start": 475.39,
+        "duration": 4.11
+    },
+    {
+        "text": "complicated process we found basically",
+        "start": 476.41,
+        "duration": 6.27
+    },
+    {
+        "text": "that people adapted a good-enough",
+        "start": 479.5,
+        "duration": 5.4
+    },
+    {
+        "text": "strategy if you could get it done and it",
+        "start": 482.68,
+        "duration": 4.08
+    },
+    {
+        "text": "basically worked you were happy and we",
+        "start": 484.9,
+        "duration": 3.81
+    },
+    {
+        "text": "thought that that's a good place for",
+        "start": 486.76,
+        "duration": 5.19
+    },
+    {
+        "text": "optimizations programming to take it one",
+        "start": 488.71,
+        "duration": 4.89
+    },
+    {
+        "text": "step further and improve the product and",
+        "start": 491.95,
+        "duration": 3.69
+    },
+    {
+        "text": "make it easier so with that I'm going to",
+        "start": 493.6,
+        "duration": 3.54
+    },
+    {
+        "text": "carry over just a little bit",
+        "start": 495.64,
+        "duration": 3.84
+    },
+    {
+        "text": "talk about some of the specific programs",
+        "start": 497.14,
+        "duration": 7.02
+    },
+    {
+        "text": "to a doctorate hi my name is Rishi Reddy",
+        "start": 499.48,
+        "duration": 5.91
+    },
+    {
+        "text": "in one of the thoracic surgeons here at",
+        "start": 504.16,
+        "duration": 2.79
+    },
+    {
+        "text": "the University of Michigan how many",
+        "start": 505.39,
+        "duration": 2.61
+    },
+    {
+        "text": "people here have seen those TV show",
+        "start": 506.95,
+        "duration": 6.18
+    },
+    {
+        "text": "scrubs or ER Grey's Anatomy okay so the",
+        "start": 508.0,
+        "duration": 6.93
+    },
+    {
+        "text": "complexity in those shows is actually",
+        "start": 513.13,
+        "duration": 3.39
+    },
+    {
+        "text": "really underwhelming and I think a lot",
+        "start": 514.93,
+        "duration": 3.66
+    },
+    {
+        "text": "of those shows reflect what medicine was",
+        "start": 516.52,
+        "duration": 4.17
+    },
+    {
+        "text": "like maybe 30 40 50 years ago",
+        "start": 518.59,
+        "duration": 5.1
+    },
+    {
+        "text": "nowadays in terms of surgical schedule",
+        "start": 520.69,
+        "duration": 4.74
+    },
+    {
+        "text": "the surgical residency schedule even",
+        "start": 523.69,
+        "duration": 3.69
+    },
+    {
+        "text": "what we just put here is an example of",
+        "start": 525.43,
+        "duration": 3.66
+    },
+    {
+        "text": "the type of schedule that our general",
+        "start": 527.38,
+        "duration": 4.2
+    },
+    {
+        "text": "surgeon residents go through and so p gy",
+        "start": 529.09,
+        "duration": 3.91
+    },
+    {
+        "text": "1 is first-year resident",
+        "start": 531.58,
+        "duration": 2.89
+    },
+    {
+        "text": "this is a fifth year resident it's a",
+        "start": 533.0,
+        "duration": 3.149
+    },
+    {
+        "text": "five year training program there are six",
+        "start": 534.47,
+        "duration": 3.479
+    },
+    {
+        "text": "residents a year and you can see the",
+        "start": 536.149,
+        "duration": 3.961
+    },
+    {
+        "text": "variety of different schedules or",
+        "start": 537.949,
+        "duration": 3.901
+    },
+    {
+        "text": "different rotations that everyone has to",
+        "start": 540.11,
+        "duration": 3.57
+    },
+    {
+        "text": "go on it's always interesting we watch",
+        "start": 541.85,
+        "duration": 3.239
+    },
+    {
+        "text": "the TV shows they're always in together",
+        "start": 543.68,
+        "duration": 3.42
+    },
+    {
+        "text": "in one big group it's actually not true",
+        "start": 545.089,
+        "duration": 3.93
+    },
+    {
+        "text": "you can see that there's a in this group",
+        "start": 547.1,
+        "duration": 3.57
+    },
+    {
+        "text": "alone we have I think at least 12 to 15",
+        "start": 549.019,
+        "duration": 6.06
+    },
+    {
+        "text": "different schedules on there for plastic",
+        "start": 550.67,
+        "duration": 6.26
+    },
+    {
+        "text": "surgery they have a whole separate",
+        "start": 555.079,
+        "duration": 4.44
+    },
+    {
+        "text": "rotation some of these overlap with the",
+        "start": 556.93,
+        "duration": 4.329
+    },
+    {
+        "text": "previous general surgery schedule",
+        "start": 559.519,
+        "duration": 3.36
+    },
+    {
+        "text": "especially in the early years of the",
+        "start": 561.259,
+        "duration": 3.211
+    },
+    {
+        "text": "person second year but you can see over",
+        "start": 562.879,
+        "duration": 3.601
+    },
+    {
+        "text": "seven years but they have different",
+        "start": 564.47,
+        "duration": 4.95
+    },
+    {
+        "text": "senior rotations and the goal of these",
+        "start": 566.48,
+        "duration": 4.5
+    },
+    {
+        "text": "slides not to memorize is just to show",
+        "start": 569.42,
+        "duration": 2.789
+    },
+    {
+        "text": "you the complexity in terms of the",
+        "start": 570.98,
+        "duration": 2.82
+    },
+    {
+        "text": "problem and just to illustrate what",
+        "start": 572.209,
+        "duration": 4.68
+    },
+    {
+        "text": "we're going through so again each",
+        "start": 573.8,
+        "duration": 4.649
+    },
+    {
+        "text": "service requires a different resident",
+        "start": 576.889,
+        "duration": 3.151
+    },
+    {
+        "text": "complement some residents some services",
+        "start": 578.449,
+        "duration": 3.661
+    },
+    {
+        "text": "require one resident or to two residents",
+        "start": 580.04,
+        "duration": 5.31
+    },
+    {
+        "text": "others may require six some and it's",
+        "start": 582.11,
+        "duration": 4.919
+    },
+    {
+        "text": "also a different year some you may have",
+        "start": 585.35,
+        "duration": 3.479
+    },
+    {
+        "text": "one year of the general surgery",
+        "start": 587.029,
+        "duration": 4.891
+    },
+    {
+        "text": "residents I guess here on the white",
+        "start": 588.829,
+        "duration": 5.041
+    },
+    {
+        "text": "service you can have in the sick you",
+        "start": 591.92,
+        "duration": 7.68
+    },
+    {
+        "text": "multiple ones will go back so but it",
+        "start": 593.87,
+        "duration": 7.409
+    },
+    {
+        "text": "varies in terms of which way are you",
+        "start": 599.6,
+        "duration": 3.209
+    },
+    {
+        "text": "going to put everyone and it actually",
+        "start": 601.279,
+        "duration": 3.03
+    },
+    {
+        "text": "does become somewhat of a complex",
+        "start": 602.809,
+        "duration": 3.9
+    },
+    {
+        "text": "scheduling issue so again the",
+        "start": 604.309,
+        "duration": 3.661
+    },
+    {
+        "text": "traditional scheduling approach and I",
+        "start": 606.709,
+        "duration": 2.761
+    },
+    {
+        "text": "did this myself when I was a general",
+        "start": 607.97,
+        "duration": 3.059
+    },
+    {
+        "text": "surgery chief resident of barns and in",
+        "start": 609.47,
+        "duration": 3.33
+    },
+    {
+        "text": "st. Louis is your building rotation",
+        "start": 611.029,
+        "duration": 4.651
+    },
+    {
+        "text": "templates and then what you're doing is",
+        "start": 612.8,
+        "duration": 4.229
+    },
+    {
+        "text": "just alternating those templates and",
+        "start": 615.68,
+        "duration": 2.61
+    },
+    {
+        "text": "staggering them that's the simplest way",
+        "start": 617.029,
+        "duration": 4.05
+    },
+    {
+        "text": "to do it again you're adjusting for",
+        "start": 618.29,
+        "duration": 4.349
+    },
+    {
+        "text": "coverage educational needs or personal",
+        "start": 621.079,
+        "duration": 4.13
+    },
+    {
+        "text": "vacation needs is what Jake talked about",
+        "start": 622.639,
+        "duration": 5.461
+    },
+    {
+        "text": "so you may switch here and there but",
+        "start": 625.209,
+        "duration": 4.331
+    },
+    {
+        "text": "then again you're going to have people",
+        "start": 628.1,
+        "duration": 3.599
+    },
+    {
+        "text": "overlapping in ways that you weren't",
+        "start": 629.54,
+        "duration": 7.32
+    },
+    {
+        "text": "necessarily anticipating and then at the",
+        "start": 631.699,
+        "duration": 7.471
+    },
+    {
+        "text": "end of the year you're renegotiating you",
+        "start": 636.86,
+        "duration": 3.39
+    },
+    {
+        "text": "know who wants to skip their sister's",
+        "start": 639.17,
+        "duration": 2.88
+    },
+    {
+        "text": "wedding who wants to you know make",
+        "start": 640.25,
+        "duration": 3.629
+    },
+    {
+        "text": "changes with regards to that and so",
+        "start": 642.05,
+        "duration": 3.99
+    },
+    {
+        "text": "there's a lot of trading and none of it",
+        "start": 643.879,
+        "duration": 6.031
+    },
+    {
+        "text": "actually works out well and in the end I",
+        "start": 646.04,
+        "duration": 5.519
+    },
+    {
+        "text": "think as Jake mentioned that Goodenough",
+        "start": 649.91,
+        "duration": 3.239
+    },
+    {
+        "text": "mentality is actually what we've kind of",
+        "start": 651.559,
+        "duration": 2.731
+    },
+    {
+        "text": "drilled into the surgery residents",
+        "start": 653.149,
+        "duration": 4.5
+    },
+    {
+        "text": "because you're just happy so I think our",
+        "start": 654.29,
+        "duration": 6.33
+    },
+    {
+        "text": "goal here is to improve our methodology",
+        "start": 657.649,
+        "duration": 5.011
+    },
+    {
+        "text": "and improve our scheduling and so I'll",
+        "start": 660.62,
+        "duration": 5.059
+    },
+    {
+        "text": "ability from there",
+        "start": 662.66,
+        "duration": 3.019
+    },
+    {
+        "text": "all right so what is linear programming",
+        "start": 669.01,
+        "duration": 6.73
+    },
+    {
+        "text": "how can we actually use it in this",
+        "start": 673.73,
+        "duration": 5.52
+    },
+    {
+        "text": "context linear programming actually came",
+        "start": 675.74,
+        "duration": 6.63
+    },
+    {
+        "text": "out of like World War two military",
+        "start": 679.25,
+        "duration": 6.24
+    },
+    {
+        "text": "strategy planning and since then it's",
+        "start": 682.37,
+        "duration": 6.23
+    },
+    {
+        "text": "been applied to a lot of different areas",
+        "start": 685.49,
+        "duration": 6.06
+    },
+    {
+        "text": "primarily manufacturing and and those",
+        "start": 688.6,
+        "duration": 4.39
+    },
+    {
+        "text": "sorts of things it really hasn't been",
+        "start": 691.55,
+        "duration": 4.17
+    },
+    {
+        "text": "used in in health care at least not",
+        "start": 692.99,
+        "duration": 5.4
+    },
+    {
+        "text": "effectively until very recently but",
+        "start": 695.72,
+        "duration": 4.95
+    },
+    {
+        "text": "essentially what linear programming is",
+        "start": 698.39,
+        "duration": 4.65
+    },
+    {
+        "text": "is a way for you to model and solve",
+        "start": 700.67,
+        "duration": 5.46
+    },
+    {
+        "text": "really complicated story problems so if",
+        "start": 703.04,
+        "duration": 4.5
+    },
+    {
+        "text": "you remember back to late elementary",
+        "start": 706.13,
+        "duration": 4.29
+    },
+    {
+        "text": "school maybe middle school you'd be",
+        "start": 707.54,
+        "duration": 5.01
+    },
+    {
+        "text": "sitting in math class and your teacher",
+        "start": 710.42,
+        "duration": 4.08
+    },
+    {
+        "text": "would give you a paragraph long",
+        "start": 712.55,
+        "duration": 5.37
+    },
+    {
+        "text": "description of a problem that you have",
+        "start": 714.5,
+        "duration": 5.31
+    },
+    {
+        "text": "to pull out the relevant information for",
+        "start": 717.92,
+        "duration": 5.34
+    },
+    {
+        "text": "and essentially turn that into maybe an",
+        "start": 719.81,
+        "duration": 5.97
+    },
+    {
+        "text": "equation or two equations and then solve",
+        "start": 723.26,
+        "duration": 6.56
+    },
+    {
+        "text": "for for something in those equations",
+        "start": 725.78,
+        "duration": 6.87
+    },
+    {
+        "text": "that's basically what linear programming",
+        "start": 729.82,
+        "duration": 5.32
+    },
+    {
+        "text": "is except for instead of a paragraph",
+        "start": 732.65,
+        "duration": 5.85
+    },
+    {
+        "text": "we've got maybe a novels worth of words",
+        "start": 735.14,
+        "duration": 4.47
+    },
+    {
+        "text": "okay",
+        "start": 738.5,
+        "duration": 5.1
+    },
+    {
+        "text": "and so to figure everything out what you",
+        "start": 739.61,
+        "duration": 7.02
+    },
+    {
+        "text": "want to do is look at four key parts of",
+        "start": 743.6,
+        "duration": 6.81
+    },
+    {
+        "text": "any linear program so as an example this",
+        "start": 746.63,
+        "duration": 7.26
+    },
+    {
+        "text": "is a very very simple linear program so",
+        "start": 750.41,
+        "duration": 5.31
+    },
+    {
+        "text": "the first part are the sets of",
+        "start": 753.89,
+        "duration": 4.08
+    },
+    {
+        "text": "parameters so we don't have any sets",
+        "start": 755.72,
+        "duration": 4.65
+    },
+    {
+        "text": "here because it's so basic but sets are",
+        "start": 757.97,
+        "duration": 5.34
+    },
+    {
+        "text": "essentially a way for you to group or",
+        "start": 760.37,
+        "duration": 7.05
+    },
+    {
+        "text": "aggregate similar entities together so",
+        "start": 763.31,
+        "duration": 7.62
+    },
+    {
+        "text": "in the case of our program one of our",
+        "start": 767.42,
+        "duration": 6.69
+    },
+    {
+        "text": "sets is the residents then parameters",
+        "start": 770.93,
+        "duration": 7.68
+    },
+    {
+        "text": "are known inputs that known numerical",
+        "start": 774.11,
+        "duration": 7.74
+    },
+    {
+        "text": "inputs that relate to the decisions and",
+        "start": 778.61,
+        "duration": 7.74
+    },
+    {
+        "text": "the sets in some way so getting into the",
+        "start": 781.85,
+        "duration": 6.6
+    },
+    {
+        "text": "decisions here in this model we just",
+        "start": 786.35,
+        "duration": 7.05
+    },
+    {
+        "text": "have two basic variables X 1 and X 2 so",
+        "start": 788.45,
+        "duration": 7.53
+    },
+    {
+        "text": "we get to decide what those values are",
+        "start": 793.4,
+        "duration": 6.21
+    },
+    {
+        "text": "going to be but to decide what",
+        "start": 795.98,
+        "duration": 7.02
+    },
+    {
+        "text": "gonna be you need to have some some",
+        "start": 799.61,
+        "duration": 6.659
+    },
+    {
+        "text": "decision some influence affecting that",
+        "start": 803.0,
+        "duration": 4.95
+    },
+    {
+        "text": "decision and that is usually an",
+        "start": 806.269,
+        "duration": 3.841
+    },
+    {
+        "text": "objective function you want to have some",
+        "start": 807.95,
+        "duration": 4.92
+    },
+    {
+        "text": "objective function here it's to minimize",
+        "start": 810.11,
+        "duration": 5.669
+    },
+    {
+        "text": "a weighted sum of the two decision",
+        "start": 812.87,
+        "duration": 8.13
+    },
+    {
+        "text": "variables so X 1 plus 2 X 2 and if there",
+        "start": 815.779,
+        "duration": 7.771
+    },
+    {
+        "text": "were no restriction on that you could",
+        "start": 821.0,
+        "duration": 5.79
+    },
+    {
+        "text": "just say okay let's make X 1 and X 2 as",
+        "start": 823.55,
+        "duration": 4.979
+    },
+    {
+        "text": "small as possible right you can",
+        "start": 826.79,
+        "duration": 4.049
+    },
+    {
+        "text": "potentially make them negative infinity",
+        "start": 828.529,
+        "duration": 5.611
+    },
+    {
+        "text": "and then your objectives phenomenal but",
+        "start": 830.839,
+        "duration": 5.49
+    },
+    {
+        "text": "instead what we have is a set of",
+        "start": 834.14,
+        "duration": 5.97
+    },
+    {
+        "text": "constraints that limit our decision okay",
+        "start": 836.329,
+        "duration": 7.651
+    },
+    {
+        "text": "and so those are highlighted in green we",
+        "start": 840.11,
+        "duration": 7.65
+    },
+    {
+        "text": "have two constraints X xx plus x2 has to",
+        "start": 843.98,
+        "duration": 5.94
+    },
+    {
+        "text": "be greater than or equal to 5 so that's",
+        "start": 847.76,
+        "duration": 5.13
+    },
+    {
+        "text": "limiting how small you can make x1 and",
+        "start": 849.92,
+        "duration": 5.039
+    },
+    {
+        "text": "x2 and then the second constraint is",
+        "start": 852.89,
+        "duration": 5.699
+    },
+    {
+        "text": "that 2x1 + 3 x2 is less than or equal to",
+        "start": 854.959,
+        "duration": 5.431
+    },
+    {
+        "text": "9 so that's not really going to affect",
+        "start": 858.589,
+        "duration": 4.081
+    },
+    {
+        "text": "too much here since we're saying",
+        "start": 860.39,
+        "duration": 4.47
+    },
+    {
+        "text": "basically the sum of these has to be",
+        "start": 862.67,
+        "duration": 4.71
+    },
+    {
+        "text": "smaller than some value and since we're",
+        "start": 864.86,
+        "duration": 5.4
+    },
+    {
+        "text": "minimizing it's not an issue and then",
+        "start": 867.38,
+        "duration": 4.019
+    },
+    {
+        "text": "finally you have your variable",
+        "start": 870.26,
+        "duration": 3.81
+    },
+    {
+        "text": "restrictions saying that these variables",
+        "start": 871.399,
+        "duration": 7.291
+    },
+    {
+        "text": "have to be non-negative so that's a very",
+        "start": 874.07,
+        "duration": 8.519
+    },
+    {
+        "text": "rough idea of linear programming a very",
+        "start": 878.69,
+        "duration": 6.75
+    },
+    {
+        "text": "basic example if we want to get into",
+        "start": 882.589,
+        "duration": 6.571
+    },
+    {
+        "text": "more complex issue like surgical block",
+        "start": 885.44,
+        "duration": 6.6
+    },
+    {
+        "text": "scheduling we're gonna have to define a",
+        "start": 889.16,
+        "duration": 6.57
+    },
+    {
+        "text": "lot more so first let's go through our",
+        "start": 892.04,
+        "duration": 5.7
+    },
+    {
+        "text": "sets like I said we're gonna have our",
+        "start": 895.73,
+        "duration": 5.45
+    },
+    {
+        "text": "sets of residents so for example a",
+        "start": 897.74,
+        "duration": 7.44
+    },
+    {
+        "text": "couple of the members of the set of",
+        "start": 901.18,
+        "duration": 7.089
+    },
+    {
+        "text": "residents would be myself doctor ready",
+        "start": 905.18,
+        "duration": 6.63
+    },
+    {
+        "text": "dr. Segal professor Cohn you know you're",
+        "start": 908.269,
+        "duration": 5.551
+    },
+    {
+        "text": "gonna have a nice long list of residents",
+        "start": 911.81,
+        "duration": 4.86
+    },
+    {
+        "text": "so in our problem we have about a",
+        "start": 913.82,
+        "duration": 5.99
+    },
+    {
+        "text": "hundred and five residents currently",
+        "start": 916.67,
+        "duration": 6.72
+    },
+    {
+        "text": "incorporated the second set which is",
+        "start": 919.81,
+        "duration": 7.029
+    },
+    {
+        "text": "really a nice feature of the model that",
+        "start": 923.39,
+        "duration": 6.54
+    },
+    {
+        "text": "that we developed is this set called",
+        "start": 926.839,
+        "duration": 5.821
+    },
+    {
+        "text": "resident categories which basically are",
+        "start": 929.93,
+        "duration": 3.6
+    },
+    {
+        "text": "ways to",
+        "start": 932.66,
+        "duration": 4.5
+    },
+    {
+        "text": "describe residents traits so for example",
+        "start": 933.53,
+        "duration": 7.74
+    },
+    {
+        "text": "we might say there is a trace of your",
+        "start": 937.16,
+        "duration": 6.69
+    },
+    {
+        "text": "discipline so are you a general surgery",
+        "start": 941.27,
+        "duration": 6.18
+    },
+    {
+        "text": "resident are you a plastic surgery",
+        "start": 943.85,
+        "duration": 7.59
+    },
+    {
+        "text": "resident vascular are you you know any",
+        "start": 947.45,
+        "duration": 6.35
+    },
+    {
+        "text": "number of disciplines we can incorporate",
+        "start": 951.44,
+        "duration": 5.37
+    },
+    {
+        "text": "we also have another type of category",
+        "start": 953.8,
+        "duration": 6.07
+    },
+    {
+        "text": "which is the level of the residents so",
+        "start": 956.81,
+        "duration": 6.02
+    },
+    {
+        "text": "going back to that that pyramid of",
+        "start": 959.87,
+        "duration": 7.29
+    },
+    {
+        "text": "training you have first-years p gy 1 PB",
+        "start": 962.83,
+        "duration": 7.63
+    },
+    {
+        "text": "y 2 py 3 going upward and that's",
+        "start": 967.16,
+        "duration": 5.16
+    },
+    {
+        "text": "essentially you know how long you've",
+        "start": 970.46,
+        "duration": 3.3
+    },
+    {
+        "text": "been out of school and how long you've",
+        "start": 972.32,
+        "duration": 4.17
+    },
+    {
+        "text": "been in in residency training that's",
+        "start": 973.76,
+        "duration": 4.86
+    },
+    {
+        "text": "some indication of your skill set just",
+        "start": 976.49,
+        "duration": 4.29
+    },
+    {
+        "text": "like the the discipline was an",
+        "start": 978.62,
+        "duration": 4.65
+    },
+    {
+        "text": "indication of your skill set we could",
+        "start": 980.78,
+        "duration": 5.19
+    },
+    {
+        "text": "also add in additional categories like",
+        "start": 983.27,
+        "duration": 5.73
+    },
+    {
+        "text": "does rock doctor ready like you right",
+        "start": 985.97,
+        "duration": 6.18
+    },
+    {
+        "text": "are you of male are you female all these",
+        "start": 989.0,
+        "duration": 4.77
+    },
+    {
+        "text": "sorts of things that we can categorize",
+        "start": 992.15,
+        "duration": 5.49
+    },
+    {
+        "text": "and group the residents by we have a",
+        "start": 993.77,
+        "duration": 5.67
+    },
+    {
+        "text": "third set which is our set of services",
+        "start": 997.64,
+        "duration": 3.99
+    },
+    {
+        "text": "that we're planning for and that we need",
+        "start": 999.44,
+        "duration": 5.19
+    },
+    {
+        "text": "to further and then the set of months is",
+        "start": 1001.63,
+        "duration": 7.08
+    },
+    {
+        "text": "every month in the year so not",
+        "start": 1004.63,
+        "duration": 5.15
+    },
+    {
+        "text": "parameters",
+        "start": 1008.71,
+        "duration": 5.22
+    },
+    {
+        "text": "so our first parameter is actually a",
+        "start": 1009.78,
+        "duration": 7.24
+    },
+    {
+        "text": "group of parameters AARC so there is a",
+        "start": 1013.93,
+        "duration": 5.909
+    },
+    {
+        "text": "binary indicator for every single",
+        "start": 1017.02,
+        "duration": 6.84
+    },
+    {
+        "text": "resident and a category pair indicating",
+        "start": 1019.839,
+        "duration": 6.271
+    },
+    {
+        "text": "whether that resident fits into that",
+        "start": 1023.86,
+        "duration": 6.0
+    },
+    {
+        "text": "category so do I fit into the category",
+        "start": 1026.11,
+        "duration": 6.2
+    },
+    {
+        "text": "of University of Michigan graduate",
+        "start": 1029.86,
+        "duration": 7.229
+    },
+    {
+        "text": "that's a yes so it's a one for me do I",
+        "start": 1032.31,
+        "duration": 7.269
+    },
+    {
+        "text": "fit into the category of Ohio State fan",
+        "start": 1037.089,
+        "duration": 6.031
+    },
+    {
+        "text": "that's a no so it's a zero okay",
+        "start": 1039.579,
+        "duration": 5.731
+    },
+    {
+        "text": "is that clear how that works it's just",
+        "start": 1043.12,
+        "duration": 5.31
+    },
+    {
+        "text": "this unknown input we can categorize in",
+        "start": 1045.31,
+        "duration": 3.81
+    },
+    {
+        "text": "advance",
+        "start": 1048.43,
+        "duration": 4.38
+    },
+    {
+        "text": "everyone's characteristics and then we",
+        "start": 1049.12,
+        "duration": 6.9
+    },
+    {
+        "text": "have in this in this part of the model",
+        "start": 1052.81,
+        "duration": 7.17
+    },
+    {
+        "text": "we have two groups of bonds so we have",
+        "start": 1056.02,
+        "duration": 8.37
+    },
+    {
+        "text": "limits on the number of residents that",
+        "start": 1059.98,
+        "duration": 5.99
+    },
+    {
+        "text": "can be on",
+        "start": 1064.39,
+        "duration": 4.789
+    },
+    {
+        "text": "service on a given service in a given",
+        "start": 1065.97,
+        "duration": 5.64
+    },
+    {
+        "text": "month that fit under a certain category",
+        "start": 1069.179,
+        "duration": 7.161
+    },
+    {
+        "text": "so if I'm a first year resident then",
+        "start": 1071.61,
+        "duration": 8.939
+    },
+    {
+        "text": "when I'm on when we're discussing the",
+        "start": 1076.34,
+        "duration": 6.91
+    },
+    {
+        "text": "maid service for example they don't want",
+        "start": 1080.549,
+        "duration": 4.98
+    },
+    {
+        "text": "in any given month more than two",
+        "start": 1083.25,
+        "duration": 4.559
+    },
+    {
+        "text": "first-year residents because first year",
+        "start": 1085.529,
+        "duration": 4.89
+    },
+    {
+        "text": "residents have pretty lacking skill sets",
+        "start": 1087.809,
+        "duration": 4.86
+    },
+    {
+        "text": "they're not well trained at this point",
+        "start": 1090.419,
+        "duration": 6.5
+    },
+    {
+        "text": "they can't do more we can't operate and",
+        "start": 1092.669,
+        "duration": 6.84
+    },
+    {
+        "text": "so they're very limited in what they can",
+        "start": 1096.919,
+        "duration": 5.561
+    },
+    {
+        "text": "do and so you want to put a limit abound",
+        "start": 1099.509,
+        "duration": 4.951
+    },
+    {
+        "text": "on how many you have at any given time",
+        "start": 1102.48,
+        "duration": 5.49
+    },
+    {
+        "text": "you could also say I want to four to",
+        "start": 1104.46,
+        "duration": 6.419
+    },
+    {
+        "text": "five residents that are from the general",
+        "start": 1107.97,
+        "duration": 7.62
+    },
+    {
+        "text": "surgery program at any given time so",
+        "start": 1110.879,
+        "duration": 6.3
+    },
+    {
+        "text": "those are those are related to our",
+        "start": 1115.59,
+        "duration": 4.65
+    },
+    {
+        "text": "service coverage requirements and then",
+        "start": 1117.179,
+        "duration": 7.051
+    },
+    {
+        "text": "for our resident education requirements",
+        "start": 1120.24,
+        "duration": 6.21
+    },
+    {
+        "text": "we have another set of bounds which are",
+        "start": 1124.23,
+        "duration": 4.26
+    },
+    {
+        "text": "the number of months over the course of",
+        "start": 1126.45,
+        "duration": 4.89
+    },
+    {
+        "text": "the year that a given resident needs to",
+        "start": 1128.49,
+        "duration": 5.97
+    },
+    {
+        "text": "spend on a specific service so as a",
+        "start": 1131.34,
+        "duration": 7.829
+    },
+    {
+        "text": "first-year resident I need to spend two",
+        "start": 1134.46,
+        "duration": 7.14
+    },
+    {
+        "text": "months total on the may service two",
+        "start": 1139.169,
+        "duration": 4.62
+    },
+    {
+        "text": "months total on blue service two months",
+        "start": 1141.6,
+        "duration": 6.36
+    },
+    {
+        "text": "total on white service and so for some",
+        "start": 1143.789,
+        "duration": 5.76
+    },
+    {
+        "text": "of these the bounds are actually",
+        "start": 1147.96,
+        "duration": 3.87
+    },
+    {
+        "text": "different you might have two to three",
+        "start": 1149.549,
+        "duration": 4.561
+    },
+    {
+        "text": "months on a given service that's the",
+        "start": 1151.83,
+        "duration": 4.26
+    },
+    {
+        "text": "general gist are those all cleared",
+        "start": 1154.11,
+        "duration": 6.269
+    },
+    {
+        "text": "everyone all right here's where we get",
+        "start": 1156.09,
+        "duration": 6.27
+    },
+    {
+        "text": "into things that are not known in",
+        "start": 1160.379,
+        "duration": 3.9
+    },
+    {
+        "text": "advance of the model these are decision",
+        "start": 1162.36,
+        "duration": 5.76
+    },
+    {
+        "text": "variables so our decision is X RSM so",
+        "start": 1164.279,
+        "duration": 6.661
+    },
+    {
+        "text": "for every resident service and month",
+        "start": 1168.12,
+        "duration": 6.96
+    },
+    {
+        "text": "combination we decide are we assigning",
+        "start": 1170.94,
+        "duration": 6.0
+    },
+    {
+        "text": "that resident to the service in the",
+        "start": 1175.08,
+        "duration": 5.25
+    },
+    {
+        "text": "month so it's zero if not one if you are",
+        "start": 1176.94,
+        "duration": 8.01
+    },
+    {
+        "text": "and you know how I introduce the whole",
+        "start": 1180.33,
+        "duration": 8.16
+    },
+    {
+        "text": "we want an objective function to dictate",
+        "start": 1184.95,
+        "duration": 5.729
+    },
+    {
+        "text": "how we decide these things at this point",
+        "start": 1188.49,
+        "duration": 5.299
+    },
+    {
+        "text": "our model does not have an objective",
+        "start": 1190.679,
+        "duration": 5.34
+    },
+    {
+        "text": "because it's still in development it's",
+        "start": 1193.789,
+        "duration": 5.501
+    },
+    {
+        "text": "still being worked through but in the",
+        "start": 1196.019,
+        "duration": 5.161
+    },
+    {
+        "text": "next couple of weeks we're going to be",
+        "start": 1199.29,
+        "duration": 3.54
+    },
+    {
+        "text": "sitting down with the program directors",
+        "start": 1201.18,
+        "duration": 3.81
+    },
+    {
+        "text": "to figure out what are the metrics that",
+        "start": 1202.83,
+        "duration": 4.49
+    },
+    {
+        "text": "are going to guide a decision in",
+        "start": 1204.99,
+        "duration": 9.48
+    },
+    {
+        "text": "assigning residents to services so here",
+        "start": 1207.32,
+        "duration": 11.65
+    },
+    {
+        "text": "are three of the the basic constraints",
+        "start": 1214.47,
+        "duration": 7.25
+    },
+    {
+        "text": "that are in this model in particular",
+        "start": 1218.97,
+        "duration": 4.95
+    },
+    {
+        "text": "there are several more and I'll describe",
+        "start": 1221.72,
+        "duration": 3.97
+    },
+    {
+        "text": "them briefly but for these I'm going to",
+        "start": 1223.92,
+        "duration": 4.35
+    },
+    {
+        "text": "head and walk through the math to give",
+        "start": 1225.69,
+        "duration": 4.77
+    },
+    {
+        "text": "you some idea of how we build these",
+        "start": 1228.27,
+        "duration": 5.22
+    },
+    {
+        "text": "models in particular so the first one is",
+        "start": 1230.46,
+        "duration": 5.64
+    },
+    {
+        "text": "that every resident gets assigned to one",
+        "start": 1233.49,
+        "duration": 5.37
+    },
+    {
+        "text": "service every month we don't want to",
+        "start": 1236.1,
+        "duration": 4.59
+    },
+    {
+        "text": "double assign you because you can't be",
+        "start": 1238.86,
+        "duration": 3.9
+    },
+    {
+        "text": "in two places at once and we don't want",
+        "start": 1240.69,
+        "duration": 5.31
+    },
+    {
+        "text": "to leave you off the list of residents",
+        "start": 1242.76,
+        "duration": 4.5
+    },
+    {
+        "text": "that are working because then you're",
+        "start": 1246.0,
+        "duration": 5.49
+    },
+    {
+        "text": "losing out on education so for example",
+        "start": 1247.26,
+        "duration": 7.38
+    },
+    {
+        "text": "if we look at dr. Smith and the may",
+        "start": 1251.49,
+        "duration": 6.15
+    },
+    {
+        "text": "service in July we can decide are you",
+        "start": 1254.64,
+        "duration": 4.92
+    },
+    {
+        "text": "being assigned to that service in that",
+        "start": 1257.64,
+        "duration": 5.07
+    },
+    {
+        "text": "month so it's pretty simple if yes it's",
+        "start": 1259.56,
+        "duration": 6.81
+    },
+    {
+        "text": "a one if not it's a zero but we can also",
+        "start": 1262.71,
+        "duration": 6.72
+    },
+    {
+        "text": "have the same or similar decision",
+        "start": 1266.37,
+        "duration": 5.64
+    },
+    {
+        "text": "variables for the blue service the white",
+        "start": 1269.43,
+        "duration": 5.66
+    },
+    {
+        "text": "service and any other service there is",
+        "start": 1272.01,
+        "duration": 5.4
+    },
+    {
+        "text": "for now let's just assume that there's",
+        "start": 1275.09,
+        "duration": 4.66
+    },
+    {
+        "text": "the three of them and we need to have",
+        "start": 1277.41,
+        "duration": 6.33
+    },
+    {
+        "text": "exactly one service that were assigned",
+        "start": 1279.75,
+        "duration": 5.85
+    },
+    {
+        "text": "in the month of July so does anyone know",
+        "start": 1283.74,
+        "duration": 4.26
+    },
+    {
+        "text": "like didn't anyone suggest how we would",
+        "start": 1285.6,
+        "duration": 5.19
+    },
+    {
+        "text": "actually put those decisions together to",
+        "start": 1288.0,
+        "duration": 10.71
+    },
+    {
+        "text": "to form a constraint all the variables",
+        "start": 1290.79,
+        "duration": 10.29
+    },
+    {
+        "text": "need to sum to one exactly that's",
+        "start": 1298.71,
+        "duration": 5.4
+    },
+    {
+        "text": "exactly it so your decision for dr.",
+        "start": 1301.08,
+        "duration": 5.91
+    },
+    {
+        "text": "Smith in in maize plus and blue plus and",
+        "start": 1304.11,
+        "duration": 5.31
+    },
+    {
+        "text": "white that all adds up to one in the",
+        "start": 1306.99,
+        "duration": 6.9
+    },
+    {
+        "text": "month of July but that's just for July",
+        "start": 1309.42,
+        "duration": 6.18
+    },
+    {
+        "text": "right we need to be assigned every month",
+        "start": 1313.89,
+        "duration": 4.91
+    },
+    {
+        "text": "so we're going to have a similar",
+        "start": 1315.6,
+        "duration": 6.45
+    },
+    {
+        "text": "constraint that's for August and all the",
+        "start": 1318.8,
+        "duration": 6.01
+    },
+    {
+        "text": "way through till June so for that single",
+        "start": 1322.05,
+        "duration": 5.97
+    },
+    {
+        "text": "individual resident and single service",
+        "start": 1324.81,
+        "duration": 5.04
+    },
+    {
+        "text": "there are actually 12 constraints that",
+        "start": 1328.02,
+        "duration": 4.56
+    },
+    {
+        "text": "get built up and then we move on to the",
+        "start": 1329.85,
+        "duration": 3.27
+    },
+    {
+        "text": "next",
+        "start": 1332.58,
+        "duration": 3.3
+    },
+    {
+        "text": "and we have a similar set of 12",
+        "start": 1333.12,
+        "duration": 6.93
+    },
+    {
+        "text": "constraints so then now here's where we",
+        "start": 1335.88,
+        "duration": 8.25
+    },
+    {
+        "text": "get into some math notation that I don't",
+        "start": 1340.05,
+        "duration": 6.35
+    },
+    {
+        "text": "know if you guys are familiar with but",
+        "start": 1344.13,
+        "duration": 4.65
+    },
+    {
+        "text": "essentially what this is is a summation",
+        "start": 1346.4,
+        "duration": 5.68
+    },
+    {
+        "text": "over all services in our set of services",
+        "start": 1348.78,
+        "duration": 8.16
+    },
+    {
+        "text": "of the decision variable X RSM must be",
+        "start": 1352.08,
+        "duration": 9.03
+    },
+    {
+        "text": "equal to 1 and then that symbol is for",
+        "start": 1356.94,
+        "duration": 7.5
+    },
+    {
+        "text": "all so it's for all residents and all",
+        "start": 1361.11,
+        "duration": 5.28
+    },
+    {
+        "text": "months in our set of residents and",
+        "start": 1364.44,
+        "duration": 6.53
+    },
+    {
+        "text": "months so if you had just two residents",
+        "start": 1366.39,
+        "duration": 10.5
+    },
+    {
+        "text": "three services and two months or 12",
+        "start": 1370.97,
+        "duration": 8.08
+    },
+    {
+        "text": "months how many how many constraints are",
+        "start": 1376.89,
+        "duration": 12.65
+    },
+    {
+        "text": "we building back total so 72 right so",
+        "start": 1379.05,
+        "duration": 14.49
+    },
+    {
+        "text": "it'd be a pain to to write all those out",
+        "start": 1389.54,
+        "duration": 7.06
+    },
+    {
+        "text": "right and and actually figure out okay",
+        "start": 1393.54,
+        "duration": 5.22
+    },
+    {
+        "text": "this is where something goes but we can",
+        "start": 1396.6,
+        "duration": 5.7
+    },
+    {
+        "text": "use this notation to actually encode",
+        "start": 1398.76,
+        "duration": 6.75
+    },
+    {
+        "text": "this in a way that that's like a couple",
+        "start": 1402.3,
+        "duration": 6.57
+    },
+    {
+        "text": "of lines of code to make for for as few",
+        "start": 1405.51,
+        "duration": 6.69
+    },
+    {
+        "text": "as two residents and three services in",
+        "start": 1408.87,
+        "duration": 4.26
+    },
+    {
+        "text": "12 months",
+        "start": 1412.2,
+        "duration": 5.16
+    },
+    {
+        "text": "72 constraints so it's really nice our",
+        "start": 1413.13,
+        "duration": 6.21
+    },
+    {
+        "text": "second set of constraints are the",
+        "start": 1417.36,
+        "duration": 4.199
+    },
+    {
+        "text": "resident educational requirements so",
+        "start": 1419.34,
+        "duration": 4.53
+    },
+    {
+        "text": "need yes of course oh so we're in that",
+        "start": 1421.559,
+        "duration": 5.941
+    },
+    {
+        "text": "do you model the exception it's like not",
+        "start": 1423.87,
+        "duration": 5.28
+    },
+    {
+        "text": "in May because of the sisters wedding",
+        "start": 1427.5,
+        "duration": 5.85
+    },
+    {
+        "text": "yeah so I will I'll get to that",
+        "start": 1429.15,
+        "duration": 7.35
+    },
+    {
+        "text": "essentially we have those this three",
+        "start": 1433.35,
+        "duration": 6.15
+    },
+    {
+        "text": "sets set of constraints are not the",
+        "start": 1436.5,
+        "duration": 6.059
+    },
+    {
+        "text": "entire thing we have other constraints",
+        "start": 1439.5,
+        "duration": 5.429
+    },
+    {
+        "text": "that basically allow us to overwrite",
+        "start": 1442.559,
+        "duration": 6.991
+    },
+    {
+        "text": "that so the second set of constraints",
+        "start": 1444.929,
+        "duration": 6.961
+    },
+    {
+        "text": "are educational requirements that say I",
+        "start": 1449.55,
+        "duration": 5.67
+    },
+    {
+        "text": "need over the course of the entire year",
+        "start": 1451.89,
+        "duration": 6.27
+    },
+    {
+        "text": "two months on maize or whatever it is so",
+        "start": 1455.22,
+        "duration": 5.459
+    },
+    {
+        "text": "again going back to dr. Smith we have a",
+        "start": 1458.16,
+        "duration": 4.8
+    },
+    {
+        "text": "simple decision but now instead of",
+        "start": 1460.679,
+        "duration": 4.171
+    },
+    {
+        "text": "summing over this going over the",
+        "start": 1462.96,
+        "duration": 4.08
+    },
+    {
+        "text": "services in July",
+        "start": 1464.85,
+        "duration": 4.74
+    },
+    {
+        "text": "we're gonna go over mais in all the",
+        "start": 1467.04,
+        "duration": 5.82
+    },
+    {
+        "text": "months right so we have decision am I in",
+        "start": 1469.59,
+        "duration": 5.76
+    },
+    {
+        "text": "August and so forth all the way through",
+        "start": 1472.86,
+        "duration": 9.2
+    },
+    {
+        "text": "Chu so similar to before we're gonna",
+        "start": 1475.35,
+        "duration": 11.73
+    },
+    {
+        "text": "have our expression and you sum up all",
+        "start": 1482.06,
+        "duration": 7.6
+    },
+    {
+        "text": "the decisions and bound that so this is",
+        "start": 1487.08,
+        "duration": 5.37
+    },
+    {
+        "text": "saying Proctor Smith needs one to two",
+        "start": 1489.66,
+        "duration": 4.56
+    },
+    {
+        "text": "months over the course of the year on",
+        "start": 1492.45,
+        "duration": 10.08
+    },
+    {
+        "text": "the May service and we'll create similar",
+        "start": 1494.22,
+        "duration": 11.16
+    },
+    {
+        "text": "treatment or blue service white service",
+        "start": 1502.53,
+        "duration": 6.48
+    },
+    {
+        "text": "any other service and the bounds those",
+        "start": 1505.38,
+        "duration": 5.52
+    },
+    {
+        "text": "are our input parameters that we can",
+        "start": 1509.01,
+        "duration": 4.23
+    },
+    {
+        "text": "change those who need safer for ever",
+        "start": 1510.9,
+        "duration": 8.22
+    },
+    {
+        "text": "given resident every service and so",
+        "start": 1513.24,
+        "duration": 8.04
+    },
+    {
+        "text": "here's our general formula for that is",
+        "start": 1519.12,
+        "duration": 5.06
+    },
+    {
+        "text": "the sum over all months of our decision",
+        "start": 1521.28,
+        "duration": 5.61
+    },
+    {
+        "text": "variable is between a lower and upper",
+        "start": 1524.18,
+        "duration": 4.48
+    },
+    {
+        "text": "bound for every resident and every",
+        "start": 1526.89,
+        "duration": 8.07
+    },
+    {
+        "text": "service finally we have the only service",
+        "start": 1528.66,
+        "duration": 10.07
+    },
+    {
+        "text": "coverage requirements which tell us that",
+        "start": 1534.96,
+        "duration": 7.53
+    },
+    {
+        "text": "for a given service we need between a",
+        "start": 1538.73,
+        "duration": 6.67
+    },
+    {
+        "text": "lower and upper bound every month of",
+        "start": 1542.49,
+        "duration": 5.43
+    },
+    {
+        "text": "residents that fit into a category so",
+        "start": 1545.4,
+        "duration": 5.31
+    },
+    {
+        "text": "this is where that AARC matrix comes in",
+        "start": 1547.92,
+        "duration": 6.14
+    },
+    {
+        "text": "so we just add in these parameters",
+        "start": 1550.71,
+        "duration": 6.78
+    },
+    {
+        "text": "indicating whether resident fits a",
+        "start": 1554.06,
+        "duration": 5.74
+    },
+    {
+        "text": "certain category so you can have general",
+        "start": 1557.49,
+        "duration": 6.3
+    },
+    {
+        "text": "surgery you can have a first year you",
+        "start": 1559.8,
+        "duration": 5.91
+    },
+    {
+        "text": "can say general surgery first year so",
+        "start": 1563.79,
+        "duration": 6.12
+    },
+    {
+        "text": "you can combine categories so does",
+        "start": 1565.71,
+        "duration": 6.59
+    },
+    {
+        "text": "anyone have an idea of how you put these",
+        "start": 1569.91,
+        "duration": 6.74
+    },
+    {
+        "text": "how you incorporate the parameters into",
+        "start": 1572.3,
+        "duration": 12.13
+    },
+    {
+        "text": "to make this decision essentially you're",
+        "start": 1576.65,
+        "duration": 10.36
+    },
+    {
+        "text": "just going to multiply the decision by",
+        "start": 1584.43,
+        "duration": 4.59
+    },
+    {
+        "text": "the parameter right so it'll look",
+        "start": 1587.01,
+        "duration": 4.62
+    },
+    {
+        "text": "something like this so the parameter of",
+        "start": 1589.02,
+        "duration": 5.4
+    },
+    {
+        "text": "whether dr. Smith is a general surgery",
+        "start": 1591.63,
+        "duration": 7.95
+    },
+    {
+        "text": "resident iams the decision for you add",
+        "start": 1594.42,
+        "duration": 7.08
+    },
+    {
+        "text": "all these up",
+        "start": 1599.58,
+        "duration": 5.55
+    },
+    {
+        "text": "and so the general formula for that is a",
+        "start": 1601.5,
+        "duration": 6.049
+    },
+    {
+        "text": "summation over the residence of the",
+        "start": 1605.13,
+        "duration": 5.31
+    },
+    {
+        "text": "indicator times the decision has to be",
+        "start": 1607.549,
+        "duration": 5.441
+    },
+    {
+        "text": "bounded so it's pretty straightforward",
+        "start": 1610.44,
+        "duration": 4.95
+    },
+    {
+        "text": "it's pretty easy these are really simple",
+        "start": 1612.99,
+        "duration": 5.85
+    },
+    {
+        "text": "constraints here's where we get back to",
+        "start": 1615.39,
+        "duration": 5.43
+    },
+    {
+        "text": "your question of how do you how do you",
+        "start": 1618.84,
+        "duration": 5.27
+    },
+    {
+        "text": "create the exception so you can have a",
+        "start": 1620.82,
+        "duration": 5.91
+    },
+    {
+        "text": "distributed educational requirement so",
+        "start": 1624.11,
+        "duration": 4.96
+    },
+    {
+        "text": "this is saying you can you can allow for",
+        "start": 1626.73,
+        "duration": 6.62
+    },
+    {
+        "text": "a residence you have between 0 & 0",
+        "start": 1629.07,
+        "duration": 10.32
+    },
+    {
+        "text": "months on this service during this time",
+        "start": 1633.35,
+        "duration": 8.41
+    },
+    {
+        "text": "window so it could be a single month it",
+        "start": 1639.39,
+        "duration": 3.779
+    },
+    {
+        "text": "could be a group of months it could be",
+        "start": 1641.76,
+        "duration": 3.33
+    },
+    {
+        "text": "every other month whatever you want but",
+        "start": 1643.169,
+        "duration": 5.671
+    },
+    {
+        "text": "you can allow for ensuring that they're",
+        "start": 1645.09,
+        "duration": 7.079
+    },
+    {
+        "text": "basically off off that service in a",
+        "start": 1648.84,
+        "duration": 5.13
+    },
+    {
+        "text": "given month additionally you could say",
+        "start": 1652.169,
+        "duration": 5.521
+    },
+    {
+        "text": "between these services you need some",
+        "start": 1653.97,
+        "duration": 6.75
+    },
+    {
+        "text": "amount of time over the course of a set",
+        "start": 1657.69,
+        "duration": 6.18
+    },
+    {
+        "text": "of months similar constraints for",
+        "start": 1660.72,
+        "duration": 8.339
+    },
+    {
+        "text": "coverage needs so allowing for having a",
+        "start": 1663.87,
+        "duration": 8.189
+    },
+    {
+        "text": "set of residence be across several",
+        "start": 1669.059,
+        "duration": 7.201
+    },
+    {
+        "text": "services so the three main services for",
+        "start": 1672.059,
+        "duration": 7.291
+    },
+    {
+        "text": "general surgery are maids blue and white",
+        "start": 1676.26,
+        "duration": 9.06
+    },
+    {
+        "text": "so over the course of a single month we",
+        "start": 1679.35,
+        "duration": 9.66
+    },
+    {
+        "text": "need five people from general surgery",
+        "start": 1685.32,
+        "duration": 6.87
+    },
+    {
+        "text": "first years on those services you can",
+        "start": 1689.01,
+        "duration": 6.659
+    },
+    {
+        "text": "say extended rotations are simply",
+        "start": 1692.19,
+        "duration": 7.219
+    },
+    {
+        "text": "allowing for ensuring that residents",
+        "start": 1695.669,
+        "duration": 8.071
+    },
+    {
+        "text": "assigned in the month of July to a",
+        "start": 1699.409,
+        "duration": 7.0
+    },
+    {
+        "text": "certain service officer also are on",
+        "start": 1703.74,
+        "duration": 5.549
+    },
+    {
+        "text": "service in the month of August so our",
+        "start": 1706.409,
+        "duration": 4.951
+    },
+    {
+        "text": "chief residents in general surgery they",
+        "start": 1709.289,
+        "duration": 4.5
+    },
+    {
+        "text": "do two month rotations so to ensure that",
+        "start": 1711.36,
+        "duration": 5.22
+    },
+    {
+        "text": "we add in these extended rotations",
+        "start": 1713.789,
+        "duration": 5.691
+    },
+    {
+        "text": "service sequencing allows you to say I",
+        "start": 1716.58,
+        "duration": 5.849
+    },
+    {
+        "text": "need to go on to this service before I",
+        "start": 1719.48,
+        "duration": 6.1
+    },
+    {
+        "text": "go out to that service service spacing",
+        "start": 1722.429,
+        "duration": 6.081
+    },
+    {
+        "text": "allows you going back to the issue of",
+        "start": 1725.58,
+        "duration": 7.26
+    },
+    {
+        "text": "burnout and working really hard services",
+        "start": 1728.51,
+        "duration": 5.08
+    },
+    {
+        "text": "in a row",
+        "start": 1732.84,
+        "duration": 3.33
+    },
+    {
+        "text": "for example if you're on trauma service",
+        "start": 1733.59,
+        "duration": 4.56
+    },
+    {
+        "text": "like twice throughout the year you do",
+        "start": 1736.17,
+        "duration": 3.84
+    },
+    {
+        "text": "not want them to be back to back because",
+        "start": 1738.15,
+        "duration": 4.11
+    },
+    {
+        "text": "that's a really tough experience",
+        "start": 1740.01,
+        "duration": 4.08
+    },
+    {
+        "text": "mentally and physically fatigued so",
+        "start": 1742.26,
+        "duration": 4.53
+    },
+    {
+        "text": "we're going to split those and then",
+        "start": 1744.09,
+        "duration": 4.8
+    },
+    {
+        "text": "resident pairing allows us to say if",
+        "start": 1746.79,
+        "duration": 4.08
+    },
+    {
+        "text": "this resident is not on a particular",
+        "start": 1748.89,
+        "duration": 3.78
+    },
+    {
+        "text": "service then we're actually going to",
+        "start": 1750.87,
+        "duration": 4.08
+    },
+    {
+        "text": "bring in this resident as well that way",
+        "start": 1752.67,
+        "duration": 5.49
+    },
+    {
+        "text": "we can pair maybe a junior with a more",
+        "start": 1754.95,
+        "duration": 5.72
+    },
+    {
+        "text": "senior resident where you can pair",
+        "start": 1758.16,
+        "duration": 4.89
+    },
+    {
+        "text": "potentially a resident that's not quite",
+        "start": 1760.67,
+        "duration": 4.51
+    },
+    {
+        "text": "as strong with one that is stronger to",
+        "start": 1763.05,
+        "duration": 3.84
+    },
+    {
+        "text": "ensure that we're still giving adequate",
+        "start": 1765.18,
+        "duration": 6.15
+    },
+    {
+        "text": "patient care so how do we actually go",
+        "start": 1766.89,
+        "duration": 7.74
+    },
+    {
+        "text": "about doing this well we spent several",
+        "start": 1771.33,
+        "duration": 5.55
+    },
+    {
+        "text": "months myself and the undergraduate",
+        "start": 1774.63,
+        "duration": 5.19
+    },
+    {
+        "text": "students meeting with Janice Davis who's",
+        "start": 1776.88,
+        "duration": 4.65
+    },
+    {
+        "text": "the education director for general",
+        "start": 1779.82,
+        "duration": 5.07
+    },
+    {
+        "text": "surgery and just put your brain learning",
+        "start": 1781.53,
+        "duration": 5.7
+    },
+    {
+        "text": "about the rules what are the different",
+        "start": 1784.89,
+        "duration": 5.28
+    },
+    {
+        "text": "things that we need to satisfy and then",
+        "start": 1787.23,
+        "duration": 5.52
+    },
+    {
+        "text": "we built this model so throughout that",
+        "start": 1790.17,
+        "duration": 5.37
+    },
+    {
+        "text": "time we developed it and built it and",
+        "start": 1792.75,
+        "duration": 7.05
+    },
+    {
+        "text": "then started to actually encode this in",
+        "start": 1795.54,
+        "duration": 8.73
+    },
+    {
+        "text": "C++ and we have as an academic",
+        "start": 1799.8,
+        "duration": 6.72
+    },
+    {
+        "text": "institution we can get a license to a",
+        "start": 1804.27,
+        "duration": 4.02
+    },
+    {
+        "text": "library called cplex",
+        "start": 1806.52,
+        "duration": 5.19
+    },
+    {
+        "text": "which is a way for you to to model and",
+        "start": 1808.29,
+        "duration": 7.02
+    },
+    {
+        "text": "then solve a linear program and so we",
+        "start": 1811.71,
+        "duration": 6.93
+    },
+    {
+        "text": "encoded it and then started building out",
+        "start": 1815.31,
+        "duration": 6.39
+    },
+    {
+        "text": "our input files to allow us to actually",
+        "start": 1818.64,
+        "duration": 5.46
+    },
+    {
+        "text": "say here our set of residents here are",
+        "start": 1821.7,
+        "duration": 4.95
+    },
+    {
+        "text": "the services here are the rules that we",
+        "start": 1824.1,
+        "duration": 6.39
+    },
+    {
+        "text": "have and then in that process realized",
+        "start": 1826.65,
+        "duration": 5.67
+    },
+    {
+        "text": "that maybe the model wasn't completely",
+        "start": 1830.49,
+        "duration": 3.69
+    },
+    {
+        "text": "accurate and so we had to go back and",
+        "start": 1832.32,
+        "duration": 4.92
+    },
+    {
+        "text": "and iterate on that but eventually we",
+        "start": 1834.18,
+        "duration": 4.83
+    },
+    {
+        "text": "got to a point where we were able to",
+        "start": 1837.24,
+        "duration": 5.43
+    },
+    {
+        "text": "test this model on last academic years",
+        "start": 1839.01,
+        "duration": 6.6
+    },
+    {
+        "text": "data set and we're able to get a",
+        "start": 1842.67,
+        "duration": 5.4
+    },
+    {
+        "text": "feasible solution in a matter of seconds",
+        "start": 1845.61,
+        "duration": 4.44
+    },
+    {
+        "text": "it solves in like four seconds for",
+        "start": 1848.07,
+        "duration": 4.02
+    },
+    {
+        "text": "perfusate okay so it's really fast",
+        "start": 1850.05,
+        "duration": 6.12
+    },
+    {
+        "text": "really efficient and now we're at the",
+        "start": 1852.09,
+        "duration": 6.36
+    },
+    {
+        "text": "point of collecting the information for",
+        "start": 1856.17,
+        "duration": 4.47
+    },
+    {
+        "text": "this coming academic year from all the",
+        "start": 1858.45,
+        "duration": 4.62
+    },
+    {
+        "text": "different program directors and we",
+        "start": 1860.64,
+        "duration": 5.76
+    },
+    {
+        "text": "intend to present yeah are you solving",
+        "start": 1863.07,
+        "duration": 4.08
+    },
+    {
+        "text": "of the",
+        "start": 1866.4,
+        "duration": 4.53
+    },
+    {
+        "text": "easily so it's it's an integer it's",
+        "start": 1867.15,
+        "duration": 7.35
+    },
+    {
+        "text": "binary all the decisions are binary so",
+        "start": 1870.93,
+        "duration": 5.61
+    },
+    {
+        "text": "so okay so hallo what's the complexity",
+        "start": 1874.5,
+        "duration": 5.67
+    },
+    {
+        "text": "if you add these binary the complexity",
+        "start": 1876.54,
+        "duration": 8.31
+    },
+    {
+        "text": "may be do you wanna yeah I mean they're",
+        "start": 1880.17,
+        "duration": 6.42
+    },
+    {
+        "text": "theoretically hard and one of the things",
+        "start": 1884.85,
+        "duration": 3.81
+    },
+    {
+        "text": "I find frustrating about complexity is",
+        "start": 1886.59,
+        "duration": 5.4
+    },
+    {
+        "text": "what C says things like there exists an",
+        "start": 1888.66,
+        "duration": 5.13
+    },
+    {
+        "text": "instance for which this problem is",
+        "start": 1891.99,
+        "duration": 5.4
+    },
+    {
+        "text": "solvable polynomial time what we have",
+        "start": 1893.79,
+        "duration": 5.16
+    },
+    {
+        "text": "found in part because we're finding",
+        "start": 1897.39,
+        "duration": 4.289
+    },
+    {
+        "text": "feasible solutions are not not imagine",
+        "start": 1898.95,
+        "duration": 5.1
+    },
+    {
+        "text": "some objective function that these are",
+        "start": 1901.679,
+        "duration": 5.581
+    },
+    {
+        "text": "solving pretty quickly but you could you",
+        "start": 1904.05,
+        "duration": 6.509
+    },
+    {
+        "text": "could you could devise an instance that",
+        "start": 1907.26,
+        "duration": 8.12
+    },
+    {
+        "text": "had structures such that integer program",
+        "start": 1910.559,
+        "duration": 7.021
+    },
+    {
+        "text": "and so one of the challenges with all",
+        "start": 1915.38,
+        "duration": 4.48
+    },
+    {
+        "text": "these problems is there are multiple",
+        "start": 1917.58,
+        "duration": 3.33
+    },
+    {
+        "text": "ways that you can shape these",
+        "start": 1919.86,
+        "duration": 2.58
+    },
+    {
+        "text": "constraints there are multiple ways you",
+        "start": 1920.91,
+        "duration": 4.26
+    },
+    {
+        "text": "can describe the problem and what",
+        "start": 1922.44,
+        "duration": 4.08
+    },
+    {
+        "text": "Billy's described in what's been a",
+        "start": 1925.17,
+        "duration": 3.42
+    },
+    {
+        "text": "tremendous effort on the part of the",
+        "start": 1926.52,
+        "duration": 4.62
+    },
+    {
+        "text": "students is working with the program",
+        "start": 1928.59,
+        "duration": 4.8
+    },
+    {
+        "text": "director to fully capture conceptually",
+        "start": 1931.14,
+        "duration": 4.44
+    },
+    {
+        "text": "what are the constraints there's a",
+        "start": 1933.39,
+        "duration": 3.66
+    },
+    {
+        "text": "second layer which is how do I actually",
+        "start": 1935.58,
+        "duration": 3.24
+    },
+    {
+        "text": "model those constraints in the tractable",
+        "start": 1937.05,
+        "duration": 4.32
+    },
+    {
+        "text": "way and so in some cases your first shot",
+        "start": 1938.82,
+        "duration": 5.37
+    },
+    {
+        "text": "goes and you can go and it solve some",
+        "start": 1941.37,
+        "duration": 5.16
+    },
+    {
+        "text": "cases you can go and you go ahead and",
+        "start": 1944.19,
+        "duration": 4.86
+    },
+    {
+        "text": "get a drink another drink and you wait",
+        "start": 1946.53,
+        "duration": 4.38
+    },
+    {
+        "text": "and nothing happens and so the rules",
+        "start": 1949.05,
+        "duration": 3.78
+    },
+    {
+        "text": "haven't changed but the way you have to",
+        "start": 1950.91,
+        "duration": 4.35
+    },
+    {
+        "text": "formulate them starts to change so so",
+        "start": 1952.83,
+        "duration": 4.979
+    },
+    {
+        "text": "far with this one we've been lucky check",
+        "start": 1955.26,
+        "duration": 4.95
+    },
+    {
+        "text": "back in a year maybe Hobie still doesn't",
+        "start": 1957.809,
+        "duration": 4.861
+    },
+    {
+        "text": "get your board relaxation full of energy",
+        "start": 1960.21,
+        "duration": 5.4
+    },
+    {
+        "text": "to experiment what happens for the",
+        "start": 1962.67,
+        "duration": 7.2
+    },
+    {
+        "text": "results yeah so if you think about it if",
+        "start": 1965.61,
+        "duration": 6.3
+    },
+    {
+        "text": "your decision variables are 0 1",
+        "start": 1969.87,
+        "duration": 3.89
+    },
+    {
+        "text": "variables representing yes/no decisions",
+        "start": 1971.91,
+        "duration": 4.31
+    },
+    {
+        "text": "let's take a step back if you are",
+        "start": 1973.76,
+        "duration": 5.049
+    },
+    {
+        "text": "modeling a problem as an integer linear",
+        "start": 1976.22,
+        "duration": 7.78
+    },
+    {
+        "text": "program to figure out manufacturing so",
+        "start": 1978.809,
+        "duration": 7.831
+    },
+    {
+        "text": "if you're solving a problem where your",
+        "start": 1984.0,
+        "duration": 3.87
+    },
+    {
+        "text": "model and saying that has integer",
+        "start": 1986.64,
+        "duration": 3.18
+    },
+    {
+        "text": "quantity decision variables so I'm",
+        "start": 1987.87,
+        "duration": 3.78
+    },
+    {
+        "text": "designing production line for Ford and",
+        "start": 1989.82,
+        "duration": 4.32
+    },
+    {
+        "text": "my solutions and I relax the integrality",
+        "start": 1991.65,
+        "duration": 4.59
+    },
+    {
+        "text": "and I get solutions like seven thousand",
+        "start": 1994.14,
+        "duration": 3.87
+    },
+    {
+        "text": "four hundred ninety two point six cars",
+        "start": 1996.24,
+        "duration": 4.5
+    },
+    {
+        "text": "in many cases the quality will be pretty",
+        "start": 1998.01,
+        "duration": 3.12
+    },
+    {
+        "text": "good",
+        "start": 2000.74,
+        "duration": 1.92
+    },
+    {
+        "text": "such that if you just round those",
+        "start": 2001.13,
+        "duration": 3.36
+    },
+    {
+        "text": "decision variables you can still be",
+        "start": 2002.66,
+        "duration": 3.27
+    },
+    {
+        "text": "feasible and you'll be still close to",
+        "start": 2004.49,
+        "duration": 3.93
+    },
+    {
+        "text": "the optimal if your decision variables",
+        "start": 2005.93,
+        "duration": 6.42
+    },
+    {
+        "text": "are yes/no and you get a point for what",
+        "start": 2008.42,
+        "duration": 6.99
+    },
+    {
+        "text": "is that what does that mean and in a lot",
+        "start": 2012.35,
+        "duration": 5.46
+    },
+    {
+        "text": "of cases you will get fractional values",
+        "start": 2015.41,
+        "duration": 4.17
+    },
+    {
+        "text": "because what you get is multiple people",
+        "start": 2017.81,
+        "duration": 4.2
+    },
+    {
+        "text": "who ideally would want to work the first",
+        "start": 2019.58,
+        "duration": 5.16
+    },
+    {
+        "text": "weekend of the month and so the model",
+        "start": 2022.01,
+        "duration": 4.71
+    },
+    {
+        "text": "for equity purposes you know if you have",
+        "start": 2024.74,
+        "duration": 3.93
+    },
+    {
+        "text": "equity constraints that say everybody",
+        "start": 2026.72,
+        "duration": 3.63
+    },
+    {
+        "text": "should have a relatively equivalent",
+        "start": 2028.67,
+        "duration": 4.05
+    },
+    {
+        "text": "schedule then what we're gonna see is if",
+        "start": 2030.35,
+        "duration": 3.93
+    },
+    {
+        "text": "I've got four people in only three",
+        "start": 2032.72,
+        "duration": 5.22
+    },
+    {
+        "text": "weekends I give everybody one third or",
+        "start": 2034.28,
+        "duration": 6.18
+    },
+    {
+        "text": "three-quarters so in general the upper",
+        "start": 2037.94,
+        "duration": 3.84
+    },
+    {
+        "text": "relaxation is not going to get you very",
+        "start": 2040.46,
+        "duration": 8.88
+    },
+    {
+        "text": "far so for this upcoming year so we're",
+        "start": 2041.78,
+        "duration": 9.149
+    },
+    {
+        "text": "working with all the program directors",
+        "start": 2049.34,
+        "duration": 5.13
+    },
+    {
+        "text": "ask for thoracic plastics",
+        "start": 2050.929,
+        "duration": 6.45
+    },
+    {
+        "text": "I think there's seven seven programs",
+        "start": 2054.47,
+        "duration": 7.669
+    },
+    {
+        "text": "total that that were actually scheduled",
+        "start": 2057.379,
+        "duration": 4.76
+    },
+    {
+        "text": "here come's trained to include 80 hours",
+        "start": 2062.62,
+        "duration": 5.92
+    },
+    {
+        "text": "a week so this is at a higher level of",
+        "start": 2065.179,
+        "duration": 6.621
+    },
+    {
+        "text": "the monthly schedule we're not doing",
+        "start": 2068.54,
+        "duration": 6.089
+    },
+    {
+        "text": "specific shift scheduling I'm gonna talk",
+        "start": 2071.8,
+        "duration": 4.54
+    },
+    {
+        "text": "in a few minutes about some of the other",
+        "start": 2074.629,
+        "duration": 4.741
+    },
+    {
+        "text": "projects very briefly about how we're",
+        "start": 2076.34,
+        "duration": 5.37
+    },
+    {
+        "text": "doing some shift scheduling as well the",
+        "start": 2079.37,
+        "duration": 5.039
+    },
+    {
+        "text": "individual services will dictate how",
+        "start": 2081.71,
+        "duration": 4.38
+    },
+    {
+        "text": "many residents they need to accomplish",
+        "start": 2084.409,
+        "duration": 3.891
+    },
+    {
+        "text": "the workload within the 80 hour week",
+        "start": 2086.09,
+        "duration": 7.41
+    },
+    {
+        "text": "workweek constraints so and for those",
+        "start": 2088.3,
+        "duration": 6.4
+    },
+    {
+        "text": "you don't know the eer workweek",
+        "start": 2093.5,
+        "duration": 3.81
+    },
+    {
+        "text": "constraints basically for the residents",
+        "start": 2094.7,
+        "duration": 3.9
+    },
+    {
+        "text": "and training or positions of training",
+        "start": 2097.31,
+        "duration": 3.09
+    },
+    {
+        "text": "for the last 11 years now there have",
+        "start": 2098.6,
+        "duration": 3.75
+    },
+    {
+        "text": "been rules that mandate you can't work",
+        "start": 2100.4,
+        "duration": 3.69
+    },
+    {
+        "text": "more than 80 hours per week on average",
+        "start": 2102.35,
+        "duration": 4.23
+    },
+    {
+        "text": "over any four-week period prior to that",
+        "start": 2104.09,
+        "duration": 5.25
+    },
+    {
+        "text": "there were no limitations and so then",
+        "start": 2106.58,
+        "duration": 6.63
+    },
+    {
+        "text": "that's really a monthly relative you",
+        "start": 2109.34,
+        "duration": 5.67
+    },
+    {
+        "text": "know correct but it can actually go",
+        "start": 2113.21,
+        "duration": 3.75
+    },
+    {
+        "text": "across any other month so it could be",
+        "start": 2115.01,
+        "duration": 4.47
+    },
+    {
+        "text": "two weeks in the last two weeks of one",
+        "start": 2116.96,
+        "duration": 3.72
+    },
+    {
+        "text": "rotation the first two weeks of the",
+        "start": 2119.48,
+        "duration": 4.53
+    },
+    {
+        "text": "other so a chief resident level or you",
+        "start": 2120.68,
+        "duration": 5.88
+    },
+    {
+        "text": "know a program director all the",
+        "start": 2124.01,
+        "duration": 4.23
+    },
+    {
+        "text": "rotations have to fit within that you",
+        "start": 2126.56,
+        "duration": 3.75
+    },
+    {
+        "text": "have to be compliant in that and so it",
+        "start": 2128.24,
+        "duration": 3.54
+    },
+    {
+        "text": "doesn't affect this type of scheduling",
+        "start": 2130.31,
+        "duration": 3.27
+    },
+    {
+        "text": "process that we have looked at that and",
+        "start": 2131.78,
+        "duration": 7.29
+    },
+    {
+        "text": "other contacts so we'll have the",
+        "start": 2133.58,
+        "duration": 8.13
+    },
+    {
+        "text": "information from all of the program",
+        "start": 2139.07,
+        "duration": 4.77
+    },
+    {
+        "text": "directors in the next couple weeks and",
+        "start": 2141.71,
+        "duration": 4.59
+    },
+    {
+        "text": "then we'll be building a initial",
+        "start": 2143.84,
+        "duration": 4.98
+    },
+    {
+        "text": "schedule for their review on February",
+        "start": 2146.3,
+        "duration": 4.32
+    },
+    {
+        "text": "1st or right around there because I",
+        "start": 2148.82,
+        "duration": 4.2
+    },
+    {
+        "text": "think February 1st is actually a weekend",
+        "start": 2150.62,
+        "duration": 6.51
+    },
+    {
+        "text": "and so that's gonna be actually a",
+        "start": 2153.02,
+        "duration": 6.24
+    },
+    {
+        "text": "tremendous improvement for them because",
+        "start": 2157.13,
+        "duration": 4.29
+    },
+    {
+        "text": "last year they didn't get the schedule",
+        "start": 2159.26,
+        "duration": 4.89
+    },
+    {
+        "text": "out until the end of April when they're",
+        "start": 2161.42,
+        "duration": 4.86
+    },
+    {
+        "text": "having residents come in the interns",
+        "start": 2164.15,
+        "duration": 6.18
+    },
+    {
+        "text": "come in for training in mid-may so they",
+        "start": 2166.28,
+        "duration": 5.61
+    },
+    {
+        "text": "get very little notice of their",
+        "start": 2170.33,
+        "duration": 3.93
+    },
+    {
+        "text": "schedules currently and so that's one of",
+        "start": 2171.89,
+        "duration": 3.93
+    },
+    {
+        "text": "the things we're hoping for is to have",
+        "start": 2174.26,
+        "duration": 4.59
+    },
+    {
+        "text": "everything finalized in the middle of",
+        "start": 2175.82,
+        "duration": 5.13
+    },
+    {
+        "text": "February with a few months notice for",
+        "start": 2178.85,
+        "duration": 4.29
+    },
+    {
+        "text": "everyone so we're just going to be",
+        "start": 2180.95,
+        "duration": 4.02
+    },
+    {
+        "text": "updating those input files and then",
+        "start": 2183.14,
+        "duration": 3.33
+    },
+    {
+        "text": "generating the reports for them to",
+        "start": 2184.97,
+        "duration": 9.45
+    },
+    {
+        "text": "review so just to recap essentially what",
+        "start": 2186.47,
+        "duration": 10.92
+    },
+    {
+        "text": "we found is that scheduling is actually",
+        "start": 2194.42,
+        "duration": 4.41
+    },
+    {
+        "text": "really important for a number of reasons",
+        "start": 2197.39,
+        "duration": 4.62
+    },
+    {
+        "text": "primarily because it affects the the",
+        "start": 2198.83,
+        "duration": 6.68
+    },
+    {
+        "text": "patient care the training quality and",
+        "start": 2202.01,
+        "duration": 6.09
+    },
+    {
+        "text": "how the workflow actually occurs",
+        "start": 2205.51,
+        "duration": 4.33
+    },
+    {
+        "text": "throughout the hospital",
+        "start": 2208.1,
+        "duration": 4.35
+    },
+    {
+        "text": "moreover surgical residency scheduling",
+        "start": 2209.84,
+        "duration": 5.34
+    },
+    {
+        "text": "here at U of M is incredibly complex",
+        "start": 2212.45,
+        "duration": 6.53
+    },
+    {
+        "text": "because of the inter woven programs and",
+        "start": 2215.18,
+        "duration": 7.95
+    },
+    {
+        "text": "at to this point it's been pretty poorly",
+        "start": 2218.98,
+        "duration": 6.67
+    },
+    {
+        "text": "executed at a universal level you know",
+        "start": 2223.13,
+        "duration": 4.89
+    },
+    {
+        "text": "just in general presidency scheduling",
+        "start": 2225.65,
+        "duration": 4.44
+    },
+    {
+        "text": "has not done well not only here at",
+        "start": 2228.02,
+        "duration": 4.11
+    },
+    {
+        "text": "Michigan but but elsewhere as well",
+        "start": 2230.09,
+        "duration": 5.76
+    },
+    {
+        "text": "however this model actually will address",
+        "start": 2232.13,
+        "duration": 6.27
+    },
+    {
+        "text": "the scheduling needs in a pretty robust",
+        "start": 2235.85,
+        "duration": 6.39
+    },
+    {
+        "text": "manner so for some of the future work we",
+        "start": 2238.4,
+        "duration": 6.12
+    },
+    {
+        "text": "actually do need to spend some time over",
+        "start": 2242.24,
+        "duration": 4.97
+    },
+    {
+        "text": "the couple the next couple of weeks to",
+        "start": 2244.52,
+        "duration": 5.85
+    },
+    {
+        "text": "define our metrics and to build an",
+        "start": 2247.21,
+        "duration": 5.8
+    },
+    {
+        "text": "objective function and so that's going",
+        "start": 2250.37,
+        "duration": 4.02
+    },
+    {
+        "text": "to be a conversation that I have with",
+        "start": 2253.01,
+        "duration": 4.77
+    },
+    {
+        "text": "all the program directors together to to",
+        "start": 2254.39,
+        "duration": 5.67
+    },
+    {
+        "text": "get something that they can in consensus",
+        "start": 2257.78,
+        "duration": 4.01
+    },
+    {
+        "text": "agree this is what we should be",
+        "start": 2260.06,
+        "duration": 5.96
+    },
+    {
+        "text": "optimizing for we have a couple ideas",
+        "start": 2261.79,
+        "duration": 6.69
+    },
+    {
+        "text": "for what we can do with that but I'm",
+        "start": 2266.02,
+        "duration": 4.56
+    },
+    {
+        "text": "excited to hear what they're gonna have",
+        "start": 2268.48,
+        "duration": 6.18
+    },
+    {
+        "text": "to say on that topic and then as I as I",
+        "start": 2270.58,
+        "duration": 6.39
+    },
+    {
+        "text": "mentioned it's a pretty robust model and",
+        "start": 2274.66,
+        "duration": 5.76
+    },
+    {
+        "text": "so one of the goals that we have moving",
+        "start": 2276.97,
+        "duration": 5.91
+    },
+    {
+        "text": "forward is to actually apply this not",
+        "start": 2280.42,
+        "duration": 4.56
+    },
+    {
+        "text": "just for the surgical residency program",
+        "start": 2282.88,
+        "duration": 4.86
+    },
+    {
+        "text": "here at U of M but potentially the other",
+        "start": 2284.98,
+        "duration": 7.05
+    },
+    {
+        "text": "residency programs at the university as",
+        "start": 2287.74,
+        "duration": 10.02
+    },
+    {
+        "text": "well as at other institutions so to get",
+        "start": 2292.03,
+        "duration": 8.85
+    },
+    {
+        "text": "to the topic of shift scheduling just a",
+        "start": 2297.76,
+        "duration": 5.55
+    },
+    {
+        "text": "quick quick run-through of some of the",
+        "start": 2300.88,
+        "duration": 5.57
+    },
+    {
+        "text": "other areas where we've been doing",
+        "start": 2303.31,
+        "duration": 6.09
+    },
+    {
+        "text": "linear programming to solve for the",
+        "start": 2306.45,
+        "duration": 5.76
+    },
+    {
+        "text": "schedules so for the pediatric medicine",
+        "start": 2309.4,
+        "duration": 6.45
+    },
+    {
+        "text": "department or residency program last",
+        "start": 2312.21,
+        "duration": 6.13
+    },
+    {
+        "text": "year for the first time students at",
+        "start": 2315.85,
+        "duration": 3.0
+    },
+    {
+        "text": "CHEP's",
+        "start": 2318.34,
+        "duration": 3.93
+    },
+    {
+        "text": "built the the rotation schedule this",
+        "start": 2318.85,
+        "duration": 5.79
+    },
+    {
+        "text": "blocks schedule for their interns this",
+        "start": 2322.27,
+        "duration": 4.2
+    },
+    {
+        "text": "year were actually expanding to all the",
+        "start": 2324.64,
+        "duration": 4.68
+    },
+    {
+        "text": "residents in pediatric medicine and so",
+        "start": 2326.47,
+        "duration": 6.35
+    },
+    {
+        "text": "that project is kind of working",
+        "start": 2329.32,
+        "duration": 6.78
+    },
+    {
+        "text": "synchronously and together with with",
+        "start": 2332.82,
+        "duration": 4.71
+    },
+    {
+        "text": "this project to make sure that",
+        "start": 2336.1,
+        "duration": 5.04
+    },
+    {
+        "text": "everything is uniform and generalizable",
+        "start": 2337.53,
+        "duration": 6.69
+    },
+    {
+        "text": "so that's been a pretty interesting",
+        "start": 2341.14,
+        "duration": 6.45
+    },
+    {
+        "text": "project to work on which really it was",
+        "start": 2344.22,
+        "duration": 5.59
+    },
+    {
+        "text": "borne out of the next one which is the",
+        "start": 2347.59,
+        "duration": 5.1
+    },
+    {
+        "text": "shift schedule that we work on at CS",
+        "start": 2349.81,
+        "duration": 5.28
+    },
+    {
+        "text": "Mott in the emergency department so each",
+        "start": 2352.69,
+        "duration": 5.94
+    },
+    {
+        "text": "month we work with the chief resident to",
+        "start": 2355.09,
+        "duration": 6.029
+    },
+    {
+        "text": "build their shift schedule so which",
+        "start": 2358.63,
+        "duration": 5.07
+    },
+    {
+        "text": "resident is going to work each shift on",
+        "start": 2361.119,
+        "duration": 5.581
+    },
+    {
+        "text": "every day of the month and so that",
+        "start": 2363.7,
+        "duration": 4.47
+    },
+    {
+        "text": "meeting we're going to be building out",
+        "start": 2366.7,
+        "duration": 5.4
+    },
+    {
+        "text": "marches scheduled tomorrow and that",
+        "start": 2368.17,
+        "duration": 7.59
+    },
+    {
+        "text": "project is incredibly rewarding we get",
+        "start": 2372.1,
+        "duration": 6.78
+    },
+    {
+        "text": "to go into the emergency department and",
+        "start": 2375.76,
+        "duration": 7.08
+    },
+    {
+        "text": "and observe the the residents and I've",
+        "start": 2378.88,
+        "duration": 6.51
+    },
+    {
+        "text": "actually been in there on the first day",
+        "start": 2382.84,
+        "duration": 4.769
+    },
+    {
+        "text": "of the new academic year when someone is",
+        "start": 2385.39,
+        "duration": 4.95
+    },
+    {
+        "text": "just coming on to to their residency",
+        "start": 2387.609,
+        "duration": 5.101
+    },
+    {
+        "text": "program and I've gotten to ask them so",
+        "start": 2390.34,
+        "duration": 4.05
+    },
+    {
+        "text": "how do you like your schedule what what",
+        "start": 2392.71,
+        "duration": 3.42
+    },
+    {
+        "text": "do you think of of the schedule this",
+        "start": 2394.39,
+        "duration": 4.05
+    },
+    {
+        "text": "month and this person having no idea",
+        "start": 2396.13,
+        "duration": 3.76
+    },
+    {
+        "text": "that I was involved in building",
+        "start": 2398.44,
+        "duration": 3.46
+    },
+    {
+        "text": "it was like oh it's awesome everyone",
+        "start": 2399.89,
+        "duration": 4.56
+    },
+    {
+        "text": "told me residency sucks and this is",
+        "start": 2401.9,
+        "duration": 5.28
+    },
+    {
+        "text": "actually a beautiful schedule so to have",
+        "start": 2404.45,
+        "duration": 6.389
+    },
+    {
+        "text": "that interactions some of other students",
+        "start": 2407.18,
+        "duration": 5.58
+    },
+    {
+        "text": "have worked on how to schedule patients",
+        "start": 2410.839,
+        "duration": 4.861
+    },
+    {
+        "text": "for chemotherapy infusion at the Cancer",
+        "start": 2412.76,
+        "duration": 5.279
+    },
+    {
+        "text": "Center we've got another project where",
+        "start": 2415.7,
+        "duration": 5.19
+    },
+    {
+        "text": "we're scheduling physicians into the",
+        "start": 2418.039,
+        "duration": 4.98
+    },
+    {
+        "text": "operating rooms and clinic times and",
+        "start": 2420.89,
+        "duration": 4.909
+    },
+    {
+        "text": "then even at a higher level than",
+        "start": 2423.019,
+        "duration": 5.971
+    },
+    {
+        "text": "specific physicians in the ORS and",
+        "start": 2425.799,
+        "duration": 5.441
+    },
+    {
+        "text": "clinics you can do a master surgical",
+        "start": 2428.99,
+        "duration": 6.17
+    },
+    {
+        "text": "schedule problem of how do we assign",
+        "start": 2431.24,
+        "duration": 6.809
+    },
+    {
+        "text": "operating time to the various surgical",
+        "start": 2435.16,
+        "duration": 5.8
+    },
+    {
+        "text": "departments finally there's nurse",
+        "start": 2438.049,
+        "duration": 4.831
+    },
+    {
+        "text": "staffing staff scheduling problems so",
+        "start": 2440.96,
+        "duration": 5.7
+    },
+    {
+        "text": "those last two have both been done in a",
+        "start": 2442.88,
+        "duration": 6.929
+    },
+    {
+        "text": "variety of hospitals successfully and",
+        "start": 2446.66,
+        "duration": 7.199
+    },
+    {
+        "text": "effectively so maybe in the future we'll",
+        "start": 2449.809,
+        "duration": 6.091
+    },
+    {
+        "text": "be will be doing some of that as well",
+        "start": 2453.859,
+        "duration": 4.2
+    },
+    {
+        "text": "but I just wanted to give an overview of",
+        "start": 2455.9,
+        "duration": 4.8
+    },
+    {
+        "text": "all the different areas where where you",
+        "start": 2458.059,
+        "duration": 5.101
+    },
+    {
+        "text": "can apply this and so there's a lot of",
+        "start": 2460.7,
+        "duration": 4.919
+    },
+    {
+        "text": "opportunity to apply some industrial",
+        "start": 2463.16,
+        "duration": 4.32
+    },
+    {
+        "text": "engineering and optimization techniques",
+        "start": 2465.619,
+        "duration": 6.781
+    },
+    {
+        "text": "to improve scheduling so with that I",
+        "start": 2467.48,
+        "duration": 6.809
+    },
+    {
+        "text": "just want to acknowledge chef's",
+        "start": 2472.4,
+        "duration": 4.199
+    },
+    {
+        "text": "Department of Surgery southbounder",
+        "start": 2474.289,
+        "duration": 4.29
+    },
+    {
+        "text": "Foundation and the doctors company",
+        "start": 2476.599,
+        "duration": 3.99
+    },
+    {
+        "text": "foundation for helping support these",
+        "start": 2478.579,
+        "duration": 4.53
+    },
+    {
+        "text": "projects and I'll open it up to any",
+        "start": 2480.589,
+        "duration": 16.651
+    },
+    {
+        "text": "further questions and comments I'm from",
+        "start": 2483.109,
+        "duration": 15.811
+    },
+    {
+        "text": "the Medical School and one of the things",
+        "start": 2497.24,
+        "duration": 4.289
+    },
+    {
+        "text": "we struggle is clerkship scheduling for",
+        "start": 2498.92,
+        "duration": 4.379
+    },
+    {
+        "text": "years three and four and threes and",
+        "start": 2501.529,
+        "duration": 5.82
+    },
+    {
+        "text": "fours in your pyramid and it's changing",
+        "start": 2503.299,
+        "duration": 5.881
+    },
+    {
+        "text": "dramatically with the new curriculum and",
+        "start": 2507.349,
+        "duration": 4.321
+    },
+    {
+        "text": "curriculum redesign have you put any",
+        "start": 2509.18,
+        "duration": 6.109
+    },
+    {
+        "text": "thought or considered extending to that",
+        "start": 2511.67,
+        "duration": 9.089
+    },
+    {
+        "text": "would you consider we would we would",
+        "start": 2515.289,
+        "duration": 7.601
+    },
+    {
+        "text": "consider I don't think we haven't talked",
+        "start": 2520.759,
+        "duration": 5.07
+    },
+    {
+        "text": "about it too much at least not with",
+        "start": 2522.89,
+        "duration": 5.209
+    },
+    {
+        "text": "faculty",
+        "start": 2525.829,
+        "duration": 2.27
+    },
+    {
+        "text": "so the traditional mental model is in",
+        "start": 2534.809,
+        "duration": 4.241
+    },
+    {
+        "text": "the first years of classroom instruction",
+        "start": 2537.73,
+        "duration": 3.629
+    },
+    {
+        "text": "in the last two years of apprenticeship",
+        "start": 2539.05,
+        "duration": 4.14
+    },
+    {
+        "text": "Bakehouse and learn what the residents",
+        "start": 2541.359,
+        "duration": 5.75
+    },
+    {
+        "text": "go through and there's a shift towards",
+        "start": 2543.19,
+        "duration": 6.3
+    },
+    {
+        "text": "making those first three years in two",
+        "start": 2547.109,
+        "duration": 3.7
+    },
+    {
+        "text": "years and then allowing for more",
+        "start": 2549.49,
+        "duration": 3.15
+    },
+    {
+        "text": "flexibility for medical students to",
+        "start": 2550.809,
+        "duration": 3.721
+    },
+    {
+        "text": "explore other learning opportunities",
+        "start": 2552.64,
+        "duration": 4.38
+    },
+    {
+        "text": "during the second two years so we have",
+        "start": 2554.53,
+        "duration": 4.14
+    },
+    {
+        "text": "talked about that I think that there's I",
+        "start": 2557.02,
+        "duration": 3.809
+    },
+    {
+        "text": "think a lot of what has been done here",
+        "start": 2558.67,
+        "duration": 4.56
+    },
+    {
+        "text": "and you put the bulbs of that the hard",
+        "start": 2560.829,
+        "duration": 4.5
+    },
+    {
+        "text": "part is that there is a this morning at",
+        "start": 2563.23,
+        "duration": 3.72
+    },
+    {
+        "text": "11:30 coming from a medium there's",
+        "start": 2565.329,
+        "duration": 4.471
+    },
+    {
+        "text": "really no merchant models gonna be you",
+        "start": 2566.95,
+        "duration": 4.619
+    },
+    {
+        "text": "want that the schedule is gonna be right",
+        "start": 2569.8,
+        "duration": 3.09
+    },
+    {
+        "text": "now for the second-year med students the",
+        "start": 2571.569,
+        "duration": 5.731
+    },
+    {
+        "text": "new curriculum yeah as I say we're",
+        "start": 2572.89,
+        "duration": 7.8
+    },
+    {
+        "text": "having to work on scheduling the first",
+        "start": 2577.3,
+        "duration": 5.61
+    },
+    {
+        "text": "the new incoming m1 students which is",
+        "start": 2580.69,
+        "duration": 4.2
+    },
+    {
+        "text": "the challenge is adding now clerkship",
+        "start": 2582.91,
+        "duration": 4.56
+    },
+    {
+        "text": "experiences to their first year which",
+        "start": 2584.89,
+        "duration": 4.62
+    },
+    {
+        "text": "has not been done in the past so that's",
+        "start": 2587.47,
+        "duration": 5.879
+    },
+    {
+        "text": "and then you the some of the variables",
+        "start": 2589.51,
+        "duration": 7.22
+    },
+    {
+        "text": "in this aren't the variable locations",
+        "start": 2593.349,
+        "duration": 6.331
+    },
+    {
+        "text": "there's revenue risk because they need",
+        "start": 2596.73,
+        "duration": 4.869
+    },
+    {
+        "text": "to be there on time and if they're not",
+        "start": 2599.68,
+        "duration": 6.119
+    },
+    {
+        "text": "the physicians don't spend as much time",
+        "start": 2601.599,
+        "duration": 6.601
+    },
+    {
+        "text": "and so there's a lot of variables in",
+        "start": 2605.799,
+        "duration": 4.02
+    },
+    {
+        "text": "there which I'm sure you face the same",
+        "start": 2608.2,
+        "duration": 11.31
+    },
+    {
+        "text": "things it's not just about training",
+        "start": 2609.819,
+        "duration": 11.161
+    },
+    {
+        "text": "engineering students like billiards",
+        "start": 2619.51,
+        "duration": 3.27
+    },
+    {
+        "text": "training clinical students so part of",
+        "start": 2620.98,
+        "duration": 4.2
+    },
+    {
+        "text": "the discussion has been there's a push",
+        "start": 2622.78,
+        "duration": 4.35
+    },
+    {
+        "text": "towards things like systems thinking and",
+        "start": 2625.18,
+        "duration": 3.929
+    },
+    {
+        "text": "process improvement within the",
+        "start": 2627.13,
+        "duration": 4.679
+    },
+    {
+        "text": "curriculum and how does that fit into",
+        "start": 2629.109,
+        "duration": 4.921
+    },
+    {
+        "text": "some of these so we don't have med",
+        "start": 2631.809,
+        "duration": 3.81
+    },
+    {
+        "text": "students working with us and we've had",
+        "start": 2634.03,
+        "duration": 3.75
+    },
+    {
+        "text": "students come to approaches about how",
+        "start": 2635.619,
+        "duration": 3.871
+    },
+    {
+        "text": "can I get some experience working on",
+        "start": 2637.78,
+        "duration": 7.319
+    },
+    {
+        "text": "some of these problems from thanks so we",
+        "start": 2639.49,
+        "duration": 8.359
+    },
+    {
+        "text": "have an exactly matched minimum set of",
+        "start": 2645.099,
+        "duration": 6.99
+    },
+    {
+        "text": "residents or we have a few extras that",
+        "start": 2647.849,
+        "duration": 5.531
+    },
+    {
+        "text": "have to be accommodated into the",
+        "start": 2652.089,
+        "duration": 4.561
+    },
+    {
+        "text": "scheduling which are elasticity for",
+        "start": 2653.38,
+        "duration": 9.3
+    },
+    {
+        "text": "someone being you know it's yeah so not",
+        "start": 2656.65,
+        "duration": 7.25
+    },
+    {
+        "text": "only illness",
+        "start": 2662.68,
+        "duration": 2.31
+    },
+    {
+        "text": "things",
+        "start": 2663.9,
+        "duration": 3.73
+    },
+    {
+        "text": "like maternity leave we have you know we",
+        "start": 2664.99,
+        "duration": 4.17
+    },
+    {
+        "text": "have residents that we are scheduling",
+        "start": 2667.63,
+        "duration": 3.75
+    },
+    {
+        "text": "for that are actually out for part of",
+        "start": 2669.16,
+        "duration": 4.23
+    },
+    {
+        "text": "the year and because you know they're",
+        "start": 2671.38,
+        "duration": 4.65
+    },
+    {
+        "text": "giving birth and and need that time with",
+        "start": 2673.39,
+        "duration": 5.96
+    },
+    {
+        "text": "the child and so we can actually create",
+        "start": 2676.03,
+        "duration": 6.839
+    },
+    {
+        "text": "specific rules for them that are unique",
+        "start": 2679.35,
+        "duration": 6.55
+    },
+    {
+        "text": "from everyone else in in their category",
+        "start": 2682.869,
+        "duration": 6.891
+    },
+    {
+        "text": "really like we have a chiefin in",
+        "start": 2685.9,
+        "duration": 7.23
+    },
+    {
+        "text": "vascular surgery that were specifically",
+        "start": 2689.76,
+        "duration": 6.79
+    },
+    {
+        "text": "planning for they need certain services",
+        "start": 2693.13,
+        "duration": 5.31
+    },
+    {
+        "text": "in the month of July and August because",
+        "start": 2696.55,
+        "duration": 4.05
+    },
+    {
+        "text": "those are that's the time leading up to",
+        "start": 2698.44,
+        "duration": 5.94
+    },
+    {
+        "text": "the birth and so we can handle all those",
+        "start": 2700.6,
+        "duration": 6.51
+    },
+    {
+        "text": "things as far as elasticity of the",
+        "start": 2704.38,
+        "duration": 5.88
+    },
+    {
+        "text": "numbers of residents there's some",
+        "start": 2707.11,
+        "duration": 6.45
+    },
+    {
+        "text": "tightness for a few of the services",
+        "start": 2710.26,
+        "duration": 7.34
+    },
+    {
+        "text": "we're going to have a lot of learners",
+        "start": 2713.56,
+        "duration": 5.21
+    },
+    {
+        "text": "[Music]",
+        "start": 2717.6,
+        "duration": 4.63
+    },
+    {
+        "text": "certain services in the month of August",
+        "start": 2718.77,
+        "duration": 6.79
+    },
+    {
+        "text": "but it's something that we just relaxed",
+        "start": 2722.23,
+        "duration": 5.54
+    },
+    {
+        "text": "the bounds a little bit to ensure that",
+        "start": 2725.56,
+        "duration": 5.46
+    },
+    {
+        "text": "they're gonna know that there's nothing",
+        "start": 2727.77,
+        "duration": 6.76
+    },
+    {
+        "text": "we can do about in like spreading this",
+        "start": 2731.02,
+        "duration": 5.27
+    },
+    {
+        "text": "over the year because there are",
+        "start": 2734.53,
+        "duration": 3.75
+    },
+    {
+        "text": "contractual agreements with other",
+        "start": 2736.29,
+        "duration": 3.96
+    },
+    {
+        "text": "institutions that we need to send",
+        "start": 2738.28,
+        "duration": 5.4
+    },
+    {
+        "text": "residents at certain times and so that's",
+        "start": 2740.25,
+        "duration": 5.53
+    },
+    {
+        "text": "one of the issues where it's basically",
+        "start": 2743.68,
+        "duration": 5.25
+    },
+    {
+        "text": "forced a lot of people into certain",
+        "start": 2745.78,
+        "duration": 5.4
+    },
+    {
+        "text": "rotations and you bring up the play",
+        "start": 2748.93,
+        "duration": 3.78
+    },
+    {
+        "text": "which is a big important one of",
+        "start": 2751.18,
+        "duration": 3.929
+    },
+    {
+        "text": "uncertainty and so there's an added",
+        "start": 2752.71,
+        "duration": 4.409
+    },
+    {
+        "text": "layer of you know we've talked about",
+        "start": 2755.109,
+        "duration": 3.661
+    },
+    {
+        "text": "going from linear programs to integer",
+        "start": 2757.119,
+        "duration": 3.451
+    },
+    {
+        "text": "programs of integer programs I think",
+        "start": 2758.77,
+        "duration": 3.87
+    },
+    {
+        "text": "that is fantastic that your programs in",
+        "start": 2760.57,
+        "duration": 4.5
+    },
+    {
+        "text": "some form I was involved in project",
+        "start": 2762.64,
+        "duration": 3.96
+    },
+    {
+        "text": "seven years ago with Jones Hospital",
+        "start": 2765.07,
+        "duration": 3.84
+    },
+    {
+        "text": "Michigan and this notion of what do you",
+        "start": 2766.6,
+        "duration": 3.66
+    },
+    {
+        "text": "do when a resident you were planning on",
+        "start": 2768.91,
+        "duration": 4.77
+    },
+    {
+        "text": "doesn't arrive and this was early 2000s",
+        "start": 2770.26,
+        "duration": 5.33
+    },
+    {
+        "text": "they have a fairly large number of",
+        "start": 2773.68,
+        "duration": 4.53
+    },
+    {
+        "text": "medical students coming up residency and",
+        "start": 2775.59,
+        "duration": 4.36
+    },
+    {
+        "text": "they were running into people's visa",
+        "start": 2778.21,
+        "duration": 3.57
+    },
+    {
+        "text": "issues so you're supposed to be on",
+        "start": 2779.95,
+        "duration": 4.2
+    },
+    {
+        "text": "service in July and your visa hasn't",
+        "start": 2781.78,
+        "duration": 3.78
+    },
+    {
+        "text": "come through and we actually went back",
+        "start": 2784.15,
+        "duration": 4.8
+    },
+    {
+        "text": "and rebuilt the schedule to say if you",
+        "start": 2785.56,
+        "duration": 4.74
+    },
+    {
+        "text": "have of these you know if you're coming",
+        "start": 2788.95,
+        "duration": 3.93
+    },
+    {
+        "text": "in on a certain type of of these the",
+        "start": 2790.3,
+        "duration": 4.23
+    },
+    {
+        "text": "first three months we are putting you on",
+        "start": 2792.88,
+        "duration": 4.77
+    },
+    {
+        "text": "electives services where if you don't",
+        "start": 2794.53,
+        "duration": 3.89
+    },
+    {
+        "text": "have somebody",
+        "start": 2797.65,
+        "duration": 3.56
+    },
+    {
+        "text": "it's medicine we have a big problem if",
+        "start": 2798.42,
+        "duration": 4.26
+    },
+    {
+        "text": "you're doing erupted in elective",
+        "start": 2801.21,
+        "duration": 3.69
+    },
+    {
+        "text": "rotation in sports medicine and you",
+        "start": 2802.68,
+        "duration": 4.919
+    },
+    {
+        "text": "don't show up things things don't have",
+        "start": 2804.9,
+        "duration": 4.8
+    },
+    {
+        "text": "quite the same effect so being able to",
+        "start": 2807.599,
+        "duration": 3.901
+    },
+    {
+        "text": "figure out where can we build robustness",
+        "start": 2809.7,
+        "duration": 5.28
+    },
+    {
+        "text": "into the schedule to say the places of",
+        "start": 2811.5,
+        "duration": 5.13
+    },
+    {
+        "text": "things are most likely to go wrong we",
+        "start": 2814.98,
+        "duration": 3.24
+    },
+    {
+        "text": "put the padding in there but there's not",
+        "start": 2816.63,
+        "duration": 3.09
+    },
+    {
+        "text": "a lot of wiggle room in terms you can't",
+        "start": 2818.22,
+        "duration": 2.49
+    },
+    {
+        "text": "just say well let's get three extra",
+        "start": 2819.72,
+        "duration": 3.089
+    },
+    {
+        "text": "presidents would you say surgery",
+        "start": 2820.71,
+        "duration": 8.19
+    },
+    {
+        "text": "residents don't get sick they do get",
+        "start": 2822.809,
+        "duration": 8.25
+    },
+    {
+        "text": "pregnant now they didn't spend here 20",
+        "start": 2828.9,
+        "duration": 4.29
+    },
+    {
+        "text": "years ago but now we make accommodations",
+        "start": 2831.059,
+        "duration": 4.74
+    },
+    {
+        "text": "or it's an accommodation that's not the",
+        "start": 2833.19,
+        "duration": 4.83
+    },
+    {
+        "text": "right word but now you have to fill that",
+        "start": 2835.799,
+        "duration": 4.741
+    },
+    {
+        "text": "into the schedule because otherwise you",
+        "start": 2838.02,
+        "duration": 5.13
+    },
+    {
+        "text": "know you can accommodate 30% of general",
+        "start": 2840.54,
+        "duration": 4.5
+    },
+    {
+        "text": "surgery residents are now women for the",
+        "start": 2843.15,
+        "duration": 4.439
+    },
+    {
+        "text": "last 10 years but we're 20 years ago is",
+        "start": 2845.04,
+        "duration": 6.72
+    },
+    {
+        "text": "probably 5% so 5% cardiothoracic surgeon",
+        "start": 2847.589,
+        "duration": 6.421
+    },
+    {
+        "text": "practice or women 15 percent of 22 are",
+        "start": 2851.76,
+        "duration": 4.68
+    },
+    {
+        "text": "from so how do you make those changes to",
+        "start": 2854.01,
+        "duration": 5.67
+    },
+    {
+        "text": "the schedule so it's surgery is easier",
+        "start": 2856.44,
+        "duration": 4.169
+    },
+    {
+        "text": "because in terms of the day-to-day",
+        "start": 2859.68,
+        "duration": 3.119
+    },
+    {
+        "text": "illness it really is probably less than",
+        "start": 2860.609,
+        "duration": 4.531
+    },
+    {
+        "text": "a handful of times out of 105 surgical",
+        "start": 2862.799,
+        "duration": 3.721
+    },
+    {
+        "text": "residents that anyone misses a day of",
+        "start": 2865.14,
+        "duration": 3.33
+    },
+    {
+        "text": "work for illness unless you have a major",
+        "start": 2866.52,
+        "duration": 4.44
+    },
+    {
+        "text": "illness that's partly the culture and",
+        "start": 2868.47,
+        "duration": 4.56
+    },
+    {
+        "text": "that's part of a modest above what it",
+        "start": 2870.96,
+        "duration": 6.27
+    },
+    {
+        "text": "attracts but until then for some of",
+        "start": 2873.03,
+        "duration": 8.97
+    },
+    {
+        "text": "those bigger things um so I'm",
+        "start": 2877.23,
+        "duration": 6.06
+    },
+    {
+        "text": "approaching this from like basically a",
+        "start": 2882.0,
+        "duration": 2.7
+    },
+    {
+        "text": "computer science student that's",
+        "start": 2883.29,
+        "duration": 3.93
+    },
+    {
+        "text": "completely naive in medical school and I",
+        "start": 2884.7,
+        "duration": 4.349
+    },
+    {
+        "text": "just like assume this is how all",
+        "start": 2887.22,
+        "duration": 3.66
+    },
+    {
+        "text": "scheduling would be done like this is",
+        "start": 2889.049,
+        "duration": 3.241
+    },
+    {
+        "text": "the 21st century this is how it should",
+        "start": 2890.88,
+        "duration": 4.229
+    },
+    {
+        "text": "be done is this like the case in other",
+        "start": 2892.29,
+        "duration": 4.74
+    },
+    {
+        "text": "places or are you building on models",
+        "start": 2895.109,
+        "duration": 2.76
+    },
+    {
+        "text": "though that people are doing are you",
+        "start": 2897.03,
+        "duration": 2.279
+    },
+    {
+        "text": "pioneering this and I'm just completely",
+        "start": 2897.869,
+        "duration": 4.111
+    },
+    {
+        "text": "out of it I just don't know what I drove",
+        "start": 2899.309,
+        "duration": 4.831
+    },
+    {
+        "text": "hi in here there has been so some of",
+        "start": 2901.98,
+        "duration": 4.319
+    },
+    {
+        "text": "other applications there has been work",
+        "start": 2904.14,
+        "duration": 3.87
+    },
+    {
+        "text": "but we really haven't seen any",
+        "start": 2906.299,
+        "duration": 4.29
+    },
+    {
+        "text": "literature on them using linear",
+        "start": 2908.01,
+        "duration": 4.319
+    },
+    {
+        "text": "programming to do scheduling for",
+        "start": 2910.589,
+        "duration": 3.631
+    },
+    {
+        "text": "residents I've been in a number of",
+        "start": 2912.329,
+        "duration": 3.151
+    },
+    {
+        "text": "different training programs and when I",
+        "start": 2914.22,
+        "duration": 4.379
+    },
+    {
+        "text": "was a chief resident watch you just ago",
+        "start": 2915.48,
+        "duration": 6.0
+    },
+    {
+        "text": "I did it by hand whether they big Excel",
+        "start": 2918.599,
+        "duration": 5.071
+    },
+    {
+        "text": "spreadsheet that was how Janice Davis is",
+        "start": 2921.48,
+        "duration": 4.16
+    },
+    {
+        "text": "doing it as of the year and a half ago",
+        "start": 2923.67,
+        "duration": 5.37
+    },
+    {
+        "text": "by yourself is the kind of education so",
+        "start": 2925.64,
+        "duration": 6.48
+    },
+    {
+        "text": "on so partly through our",
+        "start": 2929.04,
+        "duration": 5.39
+    },
+    {
+        "text": "operation is thought this would be",
+        "start": 2932.12,
+        "duration": 4.2
+    },
+    {
+        "text": "something that would be abused but I",
+        "start": 2934.43,
+        "duration": 5.13
+    },
+    {
+        "text": "think a vast majority of programs in",
+        "start": 2936.32,
+        "duration": 5.19
+    },
+    {
+        "text": "medicine and healthcare are doing it by",
+        "start": 2939.56,
+        "duration": 8.85
+    },
+    {
+        "text": "a tiny bit of healthcare in general is",
+        "start": 2941.51,
+        "duration": 9.45
+    },
+    {
+        "text": "advanced in a lot of ways in terms of",
+        "start": 2948.41,
+        "duration": 5.85
+    },
+    {
+        "text": "the biomedical technology but in a lot",
+        "start": 2950.96,
+        "duration": 6.63
+    },
+    {
+        "text": "of the operational aspects some things",
+        "start": 2954.26,
+        "duration": 5.58
+    },
+    {
+        "text": "that we like it like in Walmart you know",
+        "start": 2957.59,
+        "duration": 6.06
+    },
+    {
+        "text": "where your $2.49 rolled paper towels is",
+        "start": 2959.84,
+        "duration": 6.48
+    },
+    {
+        "text": "anywhere in this nationwide system but",
+        "start": 2963.65,
+        "duration": 5.13
+    },
+    {
+        "text": "in a hospital you can not know where a",
+        "start": 2966.32,
+        "duration": 4.02
+    },
+    {
+        "text": "two million dollar piece of equipment is",
+        "start": 2968.78,
+        "duration": 3.18
+    },
+    {
+        "text": "because if someone took it from one room",
+        "start": 2970.34,
+        "duration": 2.88
+    },
+    {
+        "text": "to the other you can't find it because",
+        "start": 2971.96,
+        "duration": 4.98
+    },
+    {
+        "text": "the hospital is a big place and you",
+        "start": 2973.22,
+        "duration": 5.46
+    },
+    {
+        "text": "don't know where the CRA you don't like",
+        "start": 2976.94,
+        "duration": 3.93
+    },
+    {
+        "text": "it's literally you don't know where",
+        "start": 2978.68,
+        "duration": 4.62
+    },
+    {
+        "text": "things are like million dollars of",
+        "start": 2980.87,
+        "duration": 6.3
+    },
+    {
+        "text": "equipment so should have RFID there so",
+        "start": 2983.3,
+        "duration": 6.18
+    },
+    {
+        "text": "so like Mayo Clinic is having RVD so",
+        "start": 2987.17,
+        "duration": 3.27
+    },
+    {
+        "text": "that's something that some of the",
+        "start": 2989.48,
+        "duration": 3.12
+    },
+    {
+        "text": "pioneers are doing but it's certainly",
+        "start": 2990.44,
+        "duration": 4.2
+    },
+    {
+        "text": "not widespread and it certainly it's",
+        "start": 2992.6,
+        "duration": 5.25
+    },
+    {
+        "text": "also indicative of a general issue which",
+        "start": 2994.64,
+        "duration": 5.22
+    },
+    {
+        "text": "is that there are a lot of technological",
+        "start": 2997.85,
+        "duration": 3.9
+    },
+    {
+        "text": "advancements that are taking for granted",
+        "start": 2999.86,
+        "duration": 4.92
+    },
+    {
+        "text": "in industry and a very forward-thinking",
+        "start": 3001.75,
+        "duration": 7.7
+    },
+    {
+        "text": "thing in medicine so so that sort of a",
+        "start": 3004.78,
+        "duration": 7.08
+    },
+    {
+        "text": "global theme about how technology is",
+        "start": 3009.45,
+        "duration": 3.88
+    },
+    {
+        "text": "being applied to medicine it's very",
+        "start": 3011.86,
+        "duration": 3.66
+    },
+    {
+        "text": "uneven there are state of the art things",
+        "start": 3013.33,
+        "duration": 4.53
+    },
+    {
+        "text": "in very low tech industries that are not",
+        "start": 3015.52,
+        "duration": 5.43
+    },
+    {
+        "text": "being used in medicine puts us back into",
+        "start": 3017.86,
+        "duration": 6.36
+    },
+    {
+        "text": "the middle so another example that is",
+        "start": 3020.95,
+        "duration": 5.19
+    },
+    {
+        "text": "you can log on today and find out where",
+        "start": 3024.22,
+        "duration": 4.71
+    },
+    {
+        "text": "your amazon shipment is but you can log",
+        "start": 3026.14,
+        "duration": 4.8
+    },
+    {
+        "text": "on and find out the status of your blood",
+        "start": 3028.93,
+        "duration": 5.85
+    },
+    {
+        "text": "tests that you had done on Monday unless",
+        "start": 3030.94,
+        "duration": 6.21
+    },
+    {
+        "text": "it's already been reported you can't",
+        "start": 3034.78,
+        "duration": 4.23
+    },
+    {
+        "text": "find out you know whether it's been",
+        "start": 3037.15,
+        "duration": 3.51
+    },
+    {
+        "text": "reported to the doctor yet where the",
+        "start": 3039.01,
+        "duration": 5.87
+    },
+    {
+        "text": "doctor is read it whether the you know",
+        "start": 3040.66,
+        "duration": 4.22
+    },
+    {
+        "text": "did you consider other approaches beyond",
+        "start": 3047.52,
+        "duration": 5.59
+    },
+    {
+        "text": "the near programming so we find on",
+        "start": 3050.38,
+        "duration": 5.97
+    },
+    {
+        "text": "engineering so we talked a little bit",
+        "start": 3053.11,
+        "duration": 8.82
+    },
+    {
+        "text": "about doing some other approaches but so",
+        "start": 3056.35,
+        "duration": 7.62
+    },
+    {
+        "text": "what were the main advantages of this",
+        "start": 3061.93,
+        "duration": 2.88
+    },
+    {
+        "text": "one",
+        "start": 3063.97,
+        "duration": 5.07
+    },
+    {
+        "text": "this I think for us it's it's something",
+        "start": 3064.81,
+        "duration": 7.23
+    },
+    {
+        "text": "that we know pretty well part of the",
+        "start": 3069.04,
+        "duration": 6.0
+    },
+    {
+        "text": "thing is that a lot of this work is done",
+        "start": 3072.04,
+        "duration": 5.87
+    },
+    {
+        "text": "with undergraduate students and so",
+        "start": 3075.04,
+        "duration": 6.06
+    },
+    {
+        "text": "linear programming is a course that is",
+        "start": 3077.91,
+        "duration": 6.07
+    },
+    {
+        "text": "taught by Professor Cohn in our",
+        "start": 3081.1,
+        "duration": 8.94
+    },
+    {
+        "text": "department initially I actually don't",
+        "start": 3083.98,
+        "duration": 8.16
+    },
+    {
+        "text": "others other than drawing things are",
+        "start": 3090.04,
+        "duration": 5.13
+    },
+    {
+        "text": "going oh darn it erase I'm sort of",
+        "start": 3092.14,
+        "duration": 5.22
+    },
+    {
+        "text": "curious your your so much doesn't mean",
+        "start": 3095.17,
+        "duration": 3.39
+    },
+    {
+        "text": "there aren't other things it's just I",
+        "start": 3097.36,
+        "duration": 2.94
+    },
+    {
+        "text": "look at this and I say well of course",
+        "start": 3098.56,
+        "duration": 3.3
+    },
+    {
+        "text": "this is a linear programming problem so",
+        "start": 3100.3,
+        "duration": 3.18
+    },
+    {
+        "text": "what do you all look at this and say",
+        "start": 3101.86,
+        "duration": 5.52
+    },
+    {
+        "text": "this is what would you do well that was",
+        "start": 3103.48,
+        "duration": 5.97
+    },
+    {
+        "text": "the question what are their approaches",
+        "start": 3107.38,
+        "duration": 9.68
+    },
+    {
+        "text": "what else mark I don't know this to me",
+        "start": 3109.45,
+        "duration": 11.28
+    },
+    {
+        "text": "and I think to begin to get a peaceful",
+        "start": 3117.06,
+        "duration": 5.56
+    },
+    {
+        "text": "solution you probably would want to use",
+        "start": 3120.73,
+        "duration": 3.93
+    },
+    {
+        "text": "something like linear programming but",
+        "start": 3122.62,
+        "duration": 4.08
+    },
+    {
+        "text": "then if you want to take into account",
+        "start": 3124.66,
+        "duration": 4.17
+    },
+    {
+        "text": "some of the uncertainties you know I",
+        "start": 3126.7,
+        "duration": 3.75
+    },
+    {
+        "text": "want to start simulating that and saying",
+        "start": 3128.83,
+        "duration": 4.83
+    },
+    {
+        "text": "okay well you know suppose you know Amy",
+        "start": 3130.45,
+        "duration": 5.61
+    },
+    {
+        "text": "is sick on Wednesday what is that what",
+        "start": 3133.66,
+        "duration": 5.52
+    },
+    {
+        "text": "happens in or suppose Amy decides she",
+        "start": 3136.06,
+        "duration": 4.71
+    },
+    {
+        "text": "doesn't want to be a doctor anymore she",
+        "start": 3139.18,
+        "duration": 3.15
+    },
+    {
+        "text": "drops out of the program four months",
+        "start": 3140.77,
+        "duration": 7.02
+    },
+    {
+        "text": "into this and you know or you know her",
+        "start": 3142.33,
+        "duration": 7.83
+    },
+    {
+        "text": "husband you know decides he's gonna take",
+        "start": 3147.79,
+        "duration": 4.32
+    },
+    {
+        "text": "a job in Los Angeles and suddenly she's",
+        "start": 3150.16,
+        "duration": 5.79
+    },
+    {
+        "text": "transferred to UCLA's Hospital you",
+        "start": 3152.11,
+        "duration": 5.49
+    },
+    {
+        "text": "didn't know about that there's not",
+        "start": 3155.95,
+        "duration": 3.54
+    },
+    {
+        "text": "happening these things all happened so",
+        "start": 3157.6,
+        "duration": 3.99
+    },
+    {
+        "text": "you could build that into a simulation",
+        "start": 3159.49,
+        "duration": 3.78
+    },
+    {
+        "text": "and you can start to begin to address",
+        "start": 3161.59,
+        "duration": 4.86
+    },
+    {
+        "text": "how robust the solution is with respect",
+        "start": 3163.27,
+        "duration": 5.13
+    },
+    {
+        "text": "to certain types of uncertainty and then",
+        "start": 3166.45,
+        "duration": 4.95
+    },
+    {
+        "text": "eventually I suspect you move through",
+        "start": 3168.4,
+        "duration": 4.2
+    },
+    {
+        "text": "the direction that you were talking",
+        "start": 3171.4,
+        "duration": 3.21
+    },
+    {
+        "text": "about which is moving from linearity",
+        "start": 3172.6,
+        "duration": 6.12
+    },
+    {
+        "text": "imager the stochastic optimization so",
+        "start": 3174.61,
+        "duration": 6.03
+    },
+    {
+        "text": "that's right I think you actually gave a",
+        "start": 3178.72,
+        "duration": 4.53
+    },
+    {
+        "text": "hint of this which is that you have some",
+        "start": 3180.64,
+        "duration": 6.12
+    },
+    {
+        "text": "ones in the rotations that are soft so",
+        "start": 3183.25,
+        "duration": 6.45
+    },
+    {
+        "text": "they elect them so if you need to cover",
+        "start": 3186.76,
+        "duration": 5.22
+    },
+    {
+        "text": "your script people from those land those",
+        "start": 3189.7,
+        "duration": 4.98
+    },
+    {
+        "text": "sirens to cover there is a flow of",
+        "start": 3191.98,
+        "duration": 4.74
+    },
+    {
+        "text": "rotation for different levels of",
+        "start": 3194.68,
+        "duration": 2.6
+    },
+    {
+        "text": "rotation",
+        "start": 3196.72,
+        "duration": 2.27
+    },
+    {
+        "text": "so for one month you're on float which",
+        "start": 3197.28,
+        "duration": 3.57
+    },
+    {
+        "text": "means you could be pulled into any",
+        "start": 3198.99,
+        "duration": 3.36
+    },
+    {
+        "text": "different rotation for a week at a time",
+        "start": 3200.85,
+        "duration": 3.27
+    },
+    {
+        "text": "or sometimes use a day at a time",
+        "start": 3202.35,
+        "duration": 2.85
+    },
+    {
+        "text": "that actually goes against the",
+        "start": 3204.12,
+        "duration": 3.63
+    },
+    {
+        "text": "educational curriculum and so but having",
+        "start": 3205.2,
+        "duration": 4.08
+    },
+    {
+        "text": "said that that's the back up system",
+        "start": 3207.75,
+        "duration": 3.3
+    },
+    {
+        "text": "especially in the context of the 80 hour",
+        "start": 3209.28,
+        "duration": 4.71
+    },
+    {
+        "text": "work week so there is some redundancy",
+        "start": 3211.05,
+        "duration": 5.22
+    },
+    {
+        "text": "built in to accommodate mostly for our",
+        "start": 3213.99,
+        "duration": 5.19
+    },
+    {
+        "text": "scheduled vacations or residents are",
+        "start": 3216.27,
+        "duration": 4.32
+    },
+    {
+        "text": "going to meet Instagram or something",
+        "start": 3219.18,
+        "duration": 2.58
+    },
+    {
+        "text": "like that what things we know ahead of",
+        "start": 3220.59,
+        "duration": 3.39
+    },
+    {
+        "text": "time you have that float resident or the",
+        "start": 3221.76,
+        "duration": 5.07
+    },
+    {
+        "text": "one or two flow residents that can",
+        "start": 3223.98,
+        "duration": 6.93
+    },
+    {
+        "text": "accommodate come other your models take",
+        "start": 3226.83,
+        "duration": 5.94
+    },
+    {
+        "text": "into account something as subjective as",
+        "start": 3230.91,
+        "duration": 4.56
+    },
+    {
+        "text": "quality of care because you have two",
+        "start": 3232.77,
+        "duration": 5.31
+    },
+    {
+        "text": "patients they were treated the same and",
+        "start": 3235.47,
+        "duration": 3.81
+    },
+    {
+        "text": "one person's gonna say this is the worst",
+        "start": 3238.08,
+        "duration": 2.73
+    },
+    {
+        "text": "place in the world one person's gonna",
+        "start": 3239.28,
+        "duration": 2.67
+    },
+    {
+        "text": "say this is the greatest place in the",
+        "start": 3240.81,
+        "duration": 3.84
+    },
+    {
+        "text": "world I don't think this takes into",
+        "start": 3241.95,
+        "duration": 3.69
+    },
+    {
+        "text": "account sir",
+        "start": 3244.65,
+        "duration": 2.61
+    },
+    {
+        "text": "so this won't currently take into",
+        "start": 3245.64,
+        "duration": 5.04
+    },
+    {
+        "text": "account ideas that you know if you're",
+        "start": 3247.26,
+        "duration": 6.75
+    },
+    {
+        "text": "gonna ensure if you can ensure that the",
+        "start": 3250.68,
+        "duration": 5.7
+    },
+    {
+        "text": "residents don't have a brutal schedule",
+        "start": 3254.01,
+        "duration": 5.16
+    },
+    {
+        "text": "that's just draining on them then",
+        "start": 3256.38,
+        "duration": 5.46
+    },
+    {
+        "text": "they're gonna be more aware they're",
+        "start": 3259.17,
+        "duration": 4.71
+    },
+    {
+        "text": "gonna be friendlier to their their",
+        "start": 3261.84,
+        "duration": 6.57
+    },
+    {
+        "text": "patients and so perception of pull",
+        "start": 3263.88,
+        "duration": 6.63
+    },
+    {
+        "text": "through from that the patient side is so",
+        "start": 3268.41,
+        "duration": 3.66
+    },
+    {
+        "text": "subjective it's it's hard because",
+        "start": 3270.51,
+        "duration": 3.96
+    },
+    {
+        "text": "there's it's so multi factorial terms of",
+        "start": 3272.07,
+        "duration": 3.36
+    },
+    {
+        "text": "what's the positive versus negative",
+        "start": 3274.47,
+        "duration": 3.57
+    },
+    {
+        "text": "experience and some of that's just set",
+        "start": 3275.43,
+        "duration": 4.11
+    },
+    {
+        "text": "by the attending physician before they",
+        "start": 3278.04,
+        "duration": 3.72
+    },
+    {
+        "text": "even enter the door you know in terms of",
+        "start": 3279.54,
+        "duration": 3.81
+    },
+    {
+        "text": "how you set the stage and things like",
+        "start": 3281.76,
+        "duration": 4.08
+    },
+    {
+        "text": "things of you can do a perfect job and",
+        "start": 3283.35,
+        "duration": 4.56
+    },
+    {
+        "text": "then we I heard in one of the",
+        "start": 3285.84,
+        "duration": 3.69
+    },
+    {
+        "text": "departments the fact that they had to",
+        "start": 3287.91,
+        "duration": 4.05
+    },
+    {
+        "text": "wait an extra half-hour an hour to get",
+        "start": 3289.53,
+        "duration": 3.87
+    },
+    {
+        "text": "the discharge notes from the physical",
+        "start": 3291.96,
+        "duration": 3.21
+    },
+    {
+        "text": "therapist and pharmacists that's what",
+        "start": 3293.4,
+        "duration": 3.33
+    },
+    {
+        "text": "impact there's their patient",
+        "start": 3295.17,
+        "duration": 3.75
+    },
+    {
+        "text": "satisfaction score the most and the",
+        "start": 3296.73,
+        "duration": 3.48
+    },
+    {
+        "text": "other thing is you can have these",
+        "start": 3298.92,
+        "duration": 2.91
+    },
+    {
+        "text": "constraints where you said you ideally",
+        "start": 3300.21,
+        "duration": 3.39
+    },
+    {
+        "text": "want to have two seniors do juries on",
+        "start": 3301.83,
+        "duration": 3.48
+    },
+    {
+        "text": "the service at all times and that will",
+        "start": 3303.6,
+        "duration": 3.39
+    },
+    {
+        "text": "ensure that there's nothing for peace",
+        "start": 3305.31,
+        "duration": 4.38
+    },
+    {
+        "text": "things going smoothly and it's not a",
+        "start": 3306.99,
+        "duration": 4.92
+    },
+    {
+        "text": "hard constraint necessarily so when you",
+        "start": 3309.69,
+        "duration": 5.31
+    },
+    {
+        "text": "fail to reach that but then the patient",
+        "start": 3311.91,
+        "duration": 5.19
+    },
+    {
+        "text": "might say I couldn't possibly fail which",
+        "start": 3315.0,
+        "duration": 5.34
+    },
+    {
+        "text": "doctor is my doctor that's well for",
+        "start": 3317.1,
+        "duration": 5.66
+    },
+    {
+        "text": "different people",
+        "start": 3320.34,
+        "duration": 2.42
+    },
+    {
+        "text": "any other questions",
+        "start": 3324.32,
+        "duration": 3.72
+    },
+    {
+        "text": "thank you",
+        "start": 3328.799,
+        "duration": 3.12
+    }
+]

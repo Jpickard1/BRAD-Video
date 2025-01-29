@@ -1,0 +1,162 @@
+[
+    {
+        "start": 0.03,
+        "text": "both done paper version three actually even worse in various Directory seminar series there's a sign in cheek going around if you haven't signed in yet please do so I'm pleased to present today's speaker way Joe who is a recent graduate from the DCM B program and she worked with Kristen Willer leave and she's going to talk to us about a tool called sage today I'm going to talk about this matter I developed with my coal mentors dr. Shawn Lee from bio static Amin and dr. Kristen Willer from the human genetics and bioethics department so I'm going to start with a little bit of background on the genome-wide Association studies and as people start performing she was large "
+    },
+    {
+        "start": 62.43,
+        "text": "bio banks and we have met some problems and those problems joke the development of stage we know genetic variations can cause human diseases and there are two main categories for human diseases and the simple one we call Mendelian diseases there are unique caused by genetic variations in one single gene so those genetic variations usually aggregate within one or multiple families so we can use family-based studies to try to identify those genetic variations and on the other side the other category of human genetic disease is called complex diseases they are usually caused by multiple genes as well as environmental factors such as lifestyles and the examples include heart diseases diabetes and many other common diseases we see in a population "
+    },
+    {
+        "start": 124.939,
+        "text": "so the genetic variations causing complex diseases really have more higher allele frequency than the genetic variation is causing Mendelian disease however their effect size for each single of them are relatively small so the family-based studies we which we use for Mendelian diseases no longer work for complex diseases so the widely used approach to identify genetic variations for complex diseases is the genetic association test here's an example to show how we perform genetic Association tests to identify genetic variants that that are associated with complex disease so this example we call this nip one and each of us have two copies for each snip and we call the two alleles two copies two "
+    },
+    {
+        "start": 185.4,
+        "text": "different nucleotides for each name two alleles and the one with the lower frequency in the population we call it minor allele so for example for snip one we have two copies P&G and we want to test whether this snip is associated with a complex disease for example heart disease we work what we're going to do using genetic association test is we're going to collect two groups of people and one group containing people with the disease we call them pieces and the other group containing people always not with without the disease we call them controls so we're trying to compare the frequency of the allele one allele for example the G on your allele which is the minor allele in the two groups of people and Julie we use the logistic regression to to perform the statistical test to test the difference for the G "
+    },
+    {
+        "start": 246.93,
+        "text": "allele between the two two groups so here we see G is for the genotype of like the copies of the G allele and the acts can include some other non-genetic of areas for example gender age t0 so when we expend the genetics has the genome white and we have this genome-wide Association study we call it G wasps and each gos can provide a plot like this we call it Manhattan plot each start here represents a genetic variant such as sleep snip in the across the human genome and x-axis here is for their genome position from Compton one to chromosome 22 and y-axis represents the negative log 10 p-value for the Association which we got from the logistic regression model so the higher the dot and the more significant it is "
+    },
+    {
+        "start": 307.86,
+        "text": "associated with the disease were testing and to correct for the Marquis Pole testing and we usually use 5 times 2 10 10 to negative 8 for the p-value as the significance trash hole the assuming there are 1 million independent genetic variant across the human genome so as people starting collecting studying perform juwes in large cohorts as large bio banks start collecting their participants and they got information on a lot of phenotypes a lot of diseases as well as their genome information so we can see usually a large cohort have large number of participants and large number of genetic markers for example the UK biobank contains 500 thousand participants and for each of them we have 71 million genetic markers "
+    },
+    {
+        "start": 369.27,
+        "text": "genotyped or imputed and another example I listed here is the hunt study which is a Norway Norway population-based biobank and before the by the UK biobank we think the hunt study has the largest sample size among those biobanks that have been genotyped so recently last last last july and UK biobank has released its data the genotype in the phenotypes for to over 200 laps over the works so we all have the data and we can all perform gos on this data and the other feature of those large bio banks is Lily contains some related same hosts when they collect them would collect their participants so here's an example to show their out about 55,000 our participants out of these 70,000 participants in hunt are related to "
+    },
+    {
+        "start": 430.59,
+        "text": "related to each other up to second degree so we can see this large hairbow showed us the strong relates tempo relatedness so we have to account for these temporal 18 is since if we treat each participant independently and the inflated type 1 error rates can be coerced so here there are more details for the UK biobank and as we see one in three of the five hundred thousand participants have at least one relative up to surgery in the biobank and here we figured out some fully imputed variants and we have 28 million well genotyped or imputed variants for us to test and since we have the some questionnaires and also the hospital ICD codes for each participant and we can construct over 1,000 different phenotypes different diseases for us to "
+    },
+    {
+        "start": 492.18,
+        "text": "test so yeah I see you close it's like international it's like code to represent different health record like when you see doctors each time there is a code corresponding to like what symptoms and what what yeah what station happened for for your doctor visit yeah and if we all if we use these ICD codes directly and we will miss some other related information so we have to have our phenotype expert help us construct some for disease or phenotype has to test and by combining some related ICD codes so usually people use linear mixed model to perform G us and when we have related samples so here compared to the regular "
+    },
+    {
+        "start": 553.44,
+        "text": "linear model we have a random effect here P and we followed this multivariate normal distribution and we have five here and Phi is M by a matrix to represent the simple relatedness for each pair of simple so you can see we have like seven samples here and we can construct a 7 x 7 g g RM which is this M by M matrix and to show how closely each two samples are related to each other and so here is that all exist Romania mix that have developed for to us and until 2015 the food mmm is was developed and this one is the only existing linear mixed model method that can be applied to the large sample size such as you can file Bank as we see the M by M matrix "
+    },
+    {
+        "start": 614.43,
+        "text": "here it's a huge matrix to store and that even is symmetric so you can just store half of it and they still require a lot of memory when we have large simple size like UK biobank and also in the process when we try to fit the model we have to gather inverse of the N by n matrix so together inverse of these large matrix and the computation time is a big old to cut and n to the third so it's very slow and so both are mem is the only matter that can be applied to the nuclear valving so all the other groups use both of em to perform Juma's UK Belvin and we also tried boda mmm but as you can see for binary phenotypes I show in temple correcto cancer here if you use a map and you see this Manhattan plot and really for well perform the G wise we "
+    },
+    {
+        "start": 677.34,
+        "text": "see some significant signals here and we expect some specific spike it was not with a single dot here and instead we're expecting multiple genetic variants exist for each single each single significant signal because each genetic variant tend to correlate it with its nearby genetic variants so as we see here and there are a lot of scattered and single dot here so we see there there are many many false positives and if you use both a man performs EOS phenotypes and you decide see I have so many significant signals and you decide to follow up these signals you you waste a lot of time and energy control we we exclude any samples based on relating veces exclude all of them and then leave "
+    },
+    {
+        "start": 738.15,
+        "text": "all the samples that have do not have the for example correct or cancer yeah yeah even those individuals some of them can be defined as cases but some of them just excluded from the whole analysis for each phenotype so so what we're missing if we we have used the linear mixed model to account for simple relatedness and we're thinking about should we really use linear mixed model for binary phenotypes and even though the binary field the Pinery phenotype does not really follow a normal distribution that the linear mix nene amano assumed and also linear model assumed residuals have constant variances record regardless of any covariant values but this is really violated by the by the "
+    },
+    {
+        "start": 801.12,
+        "text": "traits so this can can can course inflated type 1 error error rates if we just use the linear model for binary as you can see if you fit a regression line here you probably have some problem and back in 2016 and the group she home links group from heather has proposed this logistic mix model and so as you can see here we use the logic transformation for the probability are for each samples for being a case and we have the random effect here just like a linear model so we decided to use a logistic mix model for the binary phenotypes however the algorithms they developed is very very slow and they take a lot of memory as we expect if we take the large matrix and if you try to apply this algorithm to to one phenotype you can "
+    },
+    {
+        "start": 862.62,
+        "text": "coerce 180 for a few years and put like for us to run one single she was so we decided to use some optimization strategies to make this logistic mix model work for the large sample size well here what we have done and to reduce the memory usage we decide to only store some genotypes that we're using try to compute and bio matrix is that all store the matrix directly so which means we don't store the matrix and every time if we want to use them it we need the matrix and we computed its element so we only need to store the genotypes and we can store the genotypes in binary fact vector and so we can use two bits to store one genotype because genotype can be either 0 1 or 2 and so in this way we save a lot of memory we reduce this n times n plus 1 times 4 and "
+    },
+    {
+        "start": 926.85,
+        "text": "then we store the whole matrix we need this fight and we can just we only need n times and what I did before so this everyone is really smaller than for example we only have an m1 because 95 thousand here and so in this example of UK biobank we only need less than 10 gigabytes for to store this matrix and then as we mentioned and to to gather universe of the N by n matrix it's very very time-consuming so we use this method called pre-conditioner country come to be a gradient to get the inverse of the matrix times some some batter and these data are used at alaskey decomposition to get this inverse of the huge matrix and in this way we reduce the computation high and then we also use some other for example "
+    },
+    {
+        "start": 987.25,
+        "text": "randomized trace estimator to get the trace of the matrix of a like another large and by a matrix things we don't store these matrix directly so we need to we need these matter to help us gather may try the trace of it and so in this way we reduce our commutation complexity from n to the third to M one times n to the one point five and then we use these optimization strategies we can apply lot just a mixed model for binary phenotypes and this is the Manhattan plot when we when we do this that we can see there are still many false positives here even we have used the largest in mixed model instead of a linear mixed model so and we started thinking and what we are what what is missing still so there's another scenario here when we look at the "
+    },
+    {
+        "start": 1047.459,
+        "text": "phenotypes in the larger banks such as UK pal Bank so you can see I pluck here for the 1000 and the 663 binary phenotypes in the UK biobank and including those that have very small case numbers and you can see the case control ratio the x-axis and the y-axis is the cumulative percentage of the phenotypes and so if you look at this line and you can see over 85% of them have a case-control ratio 1 to 100 which means the prevalence of these disease in a population is lower than like 99% you know so the it so which means there are very few cases versus a huge number of controls for each phenotype and this can cause some problems when we perform the logistic regression or even linear "
+    },
+    {
+        "start": 1107.79,
+        "text": "regression so because the past the statistic will not follow a normal distribution when the case control ratio is unbalanced here I plot the black solid line is the actual density plot or for the power test the statistic when a case control radio is 1 to 99 which means the prevalence of the disease is about 1% and the Adalia lie is the actual normal approximation so you can see our test statistic actually does not follow a normal distribution and which may if we assume it for normal distribution in the logistic mix model it can give us some problem so we started looking at this matter called the half point approximation it is initially proposed by Daniel's back into in 1954 and it can basically provides highly accurate approximation to probability density function to for any "
+    },
+    {
+        "start": 1170.49,
+        "text": "distribution based on the moment generating function and so instead because we know normal distribution only use the first two moments which is the mean and the variance to defy the distribution and but saddle point approximation can use the entire moment generating function it can give a more accurate approximation to the distribution of our pasta has the statistic so it has actually has multiple applications just boost wrapping and tail area approximation in other area and so last year the piles that student ran AK and in one of my comment or doctor Shanley's lab has developed this this matter called SP a test which try to correct for the inflated type 1 errors in logistic regression when there there are unbalanced case control so you can see the figure from his paper like when we "
+    },
+    {
+        "start": 1231.25,
+        "text": "have balanced case control and the wind even x-axis is the minor allele frequency for the tested genetic variance so you can see for the very very rare genetic variants even the case control ratio is balanced we see some deflation for score test and fast SP a is that is the test that he has developed and the first test is another likelihood ratio test that have been developed to account for the unbalanced case control ratio previously but it's very it took the commutation efficiency for this first hat test a is very low so but you can see when the case controversial become more unbalanced and type the type 1 error rates for the score test which we usually used for energy wise and combined during the logistic regression got very inflated and the SP a can can correctly adjust "
+    },
+    {
+        "start": 1293.5,
+        "text": "for these unbalanced case control ratio so we decide to use also use this SP a and to add it to the logistic mixed model here the matter is only based on law you develop for logistic regression and not accounting for central relatedness so we add this saddle point approximation to account for unbalanced case counter ratio and combine the occupation strategies for logistic mixed model and we call this matter and stage and basically our method contains two step steps and the first step we use the subset of genotypes four genotypes for subset of some hard core snips and to construct to fit a knowledge it's a mixed model and so we need phenotype here and genotypes for those markers here and with after we free the model we got these parameters "
+    },
+    {
+        "start": 1353.88,
+        "text": "and notice that this is the knowledge is to make also we don't include any and in Jeanette Jeanette ik effect here and then after with a model for each genetic marker we can use the parameters from the step one to perform the score test and we apply the saddle point approximation to the scored has the statistic and get our association result so let's look at your run time and the memory usage for siege and compare compared to both our mom and the Gemma is another linear mixed model Mathur and GMAT is the logistic mix model method that without any optimization strategy the bigger a here is for the CPU hours as the number of samples increased the commutation huh computation time is like dramatically increased and this is the "
+    },
+    {
+        "start": 1416.01,
+        "text": "by the log scale here and the stage which is the Purple Line has a similar skill as the polar map and we see stage still need more time to than the holdup man and we think the potential reason here is the true feeding an autistic mix model is harder than feeding on linear mixed model and the memory usage the same stage basically have very similar memory usage to the bodiham the other two mothers have very large needs not large amount of memory to fit the model so and we have performed G was basically 39 million markers includes some other markers that you can use different my little count to decide which markers you want past and over like what 1400 binary "
+    },
+    {
+        "start": 1477.6,
+        "text": "phenotypes in UK biobank and we use Google Cloud to perform this and we finish these jobs within three days so this is your actual benchmarks and we show here and we saw for each feed on high will only need tanking about 10 gigabytes for the memory and a hundred five hundred and fifteen CPU hours but you can see if you can imagine and if you use GMAT it and it will take forever to finish to finish one G us here are some simulations that is I want to show and so I simulate 1000 families that each time we have 10 family members like following this pedigree and you can see when the case control ratio is 1 to 99 and if we use just GMAT which is a logistic mixed model without SP a and the inflation is more serious when the "
+    },
+    {
+        "start": 1538.83,
+        "text": "mind allele frequencies lower and the stage well corrected for these inflated type on arrow and so as the matter of frequency is about 0.5% which are like last relatively rare variants in a population and when the case contra ratio goes more unbalanced and type 1 error rates got more inflated and a stage corrected for these so back to our problem and we see these messy mahasin plot with a lot lots of false positives for these correct or cancer in the UK barrel bank and we apply stage and we see it's like very clean and well corrected for the type 1 error rates and we have three significant signals which are all previously reported by other G wasps and then we randomly select other phenotypes I'm going to show you two examples here "
+    },
+    {
+        "start": 1601.389,
+        "text": "and why is the CID and so we see the case counter ratio is one to Charles and we see this correct or cancer case contra ratio is 1 to 84 so the case contra ratio is less unbalanced for Sadie and we see the blue dots are all previously reported signals and green dots are all potentially novel signals because they passed a significant stress line and we still see some scatter plot here and when we apply stage and we click some clean the Manhattan plot and another even more unbalanced kids can cherish kiss contour ratio is the thyroid cancer and we only have 358 cases in a UK biobank so the kids can try ratio is like about 1 to 1 to 1100 here so if you use both at man you basically got lost lots of her but fast pulses and after we "
+    },
+    {
+        "start": 1663.459,
+        "text": "apply stage and we totally clean this problem and we got one significant signal and which is well known thyroid cancer signal so basically we have shown here our mother worked for the binary binary phenotypes and accounting for sample relatedness and unbalanced kids controversial so this is a summary for this matter it does not require precomputed kinship matrix because we only request for the genotypes for those genetic markers you want to use to construct occasion matrix and it's feasible for large sample size it's developed for binary trees and accounting for unbalanced case counter ratio and we have also implemented the function the linear regression mixed model in sage so you can also use it for testing qualitative treats and we compare this GMAT and boda mmm so we basically add "
+    },
+    {
+        "start": 1726.82,
+        "text": "like one dot here and for people to use to perform G was so the code is available as an open source our package in a kidnap for 14 years and we have released all the GOS results to the public so it is freely down Philly for public to download and if you want to look at and in gos results for any of the these binary phenotypes in you in UK biobank you can go to download it and we are we have also incorporate these map include these these results to the Michigan steel app which is like web web server for people to browse those to us results and then you can click on any thoughts and go to see more higher resolution results by look at the regional Association results so here this work is the collaborative work and it is supervised by micro mentors as I "
+    },
+    {
+        "start": 1790.82,
+        "text": "mentioned dr. shanley from the bio state department and dr. christine wheeler from the biomass experiment and also Gonzalo Casas and hanout and have like we worked together to develop this method and the way I want to thank all the members in the wheeler group and Shelly's group and abkhazia scoop and and my yeah yeah this is the matter thank you I actually have a question yeah you go back to the slide like the thyroid where the case control yeah so something like this yeah so you point out then sage it comes up with the know low side yeah but do you know are there other known low side that sage is not picking up yeah of course there are more than one no one tyroid cancer low side and it's I think it's probably because "
+    },
+    {
+        "start": 1854.58,
+        "text": "I'm not sure if the your set the case number is here it's very low so we probably do not have enough power to pick up all the other ya know alongside [Music] when you compare to other methods their p-value is over optimistic but does not mean not not mean that the ranking of the p-value doesn't make sense right maybe they just not appear I'm too small is there any way like precision recall some things that so said yeah so here I have some backups ahead for to show the powers and so we simulate with we have done some simulation study to evaluate the power of two you value the power of the stage and compared to both mmm so "
+    },
+    {
+        "start": 1916.129,
+        "text": "basically we have tried different case control ratio and deep an odds ratio here along with different my little frequency for the markers so the green line here is for stage and the red line here is for kind of a sage no SP a which is equivalent to GMAT and then the other lines are for down math so you can see when the case country ratio become more balanced and stage have more power but it's basically because they have the other two methods have very very inflated type one error rates and two so we hear this test fix people know we use different empirical p-value cutoff which is current corresponding to the type 1 error rate sometimes 10 10 298 so that's that yeah so the main reason here is we for the other two matters because of the "
+    },
+    {
+        "start": 1978.67,
+        "text": "inflated temporaries their significant cutoff is more significant like more more stringent than stage but yeah yes you could go back and forth with this like 300 cases a hundred thousand new jobs EMP was an idea about like what kind of a central size a data set with one to one ratio okay so put it into that power right so I I guess you can under you really weeks back we asked me the effect simple guys yeah so the effect sample size equals 4 divided by 1 minus cases plasma - "
+    },
+    {
+        "start": 2038.88,
+        "text": "controls and so I can imagine the effect sample size like when the case control ratio goes over like 1 to 100 increasing more controls probably not contribute leader the power of your test but I think the advantage here when you have more controls is you have you got to detect more rare variants and I have done some evaluation when you can just make forcefully make the case control ratio 1 to 10 and in this case you have about less than 4 thousand total samples and you can see whether you you basically cannot detect those very very rare variants in the samples so I can hear I have a QQ plot for ya so "
+    },
+    {
+        "start": 2099.63,
+        "text": "this is the thyroid thyroid cancer QQ plots or the three methods we're trying to compare and podium and sage without s PA is equivalent to the GMAT and this is staged and the dots are stratified by my little my little frequency so you can see one out of the twenty eight million pasty markers and we use my little your counts larger than twenty here to figure out those very very rare variants so about nine nineteen million of them have mine low frequency lower than 0.5% and which is represented by the gray and the black dots so if you if you only like kind of decrease your case number and you probably will lose lots of these rare variants since they are not existing in your immune in a small "
+    },
+    {
+        "start": 2161.4,
+        "text": "sample size can you go back to your pen next slide on complexity yeah vacuum pretty that's pretty good resume do you think you need get improve it more down the line like gets it goods is straight to just be straight linear for all for all steps you actually hear the point five here is is because the conjugate gradient algorithm together universe of the N by M matrix is that it took eternity of me that's a very inefficient step yeah it's always doing that in the future yeah it's two point five an empirical value or it's actually I don't think I've ever see ever seen one yeah since old mmm mother has uses Albert use PCG for the matrix "
+    },
+    {
+        "start": 2225.59,
+        "text": "developers and they have plowed their plots and to show it's like equivalent to n to the point five yeah so if anyone's gonna do take that step get it up to strengthen your would it be you or me to be Sonos or unique that mimes I think probably someone else we are with currently way extending that extending this matter to a team based another yeah - makes cattle accounting for simple relating these for the large-scale data youth a roid cancer the good said there are variants there are known variants they didn't detect did you actually look see if in your sample mm-hmm that they exist you mean those rare variant yeah be an interesting thing just to see thing is it in my population and I'm missing it "
+    },
+    {
+        "start": 2286.34,
+        "text": "because of power or I don't see it at all um you mean the detect that goes are not trying to detect it statistically you there no one so you could go you should be able to look in there yes yeah yeah they they should exist in a sample so that's why we can compare their allele frequencies in cases and contributory you know that the other no one variants exist in your data in UK biobank use whatever you're using yes you could I haven't go to look at the individual level data but uh I mean is here the oh you mean other knowing signals or I haven't checked them but uh yeah I think ish as long as the frequency of those signals are um we don't know in your you could you could "
+    },
+    {
+        "start": 2346.61,
+        "text": "actually look in the data yeah yeah be an interesting thing to see are they really rare in my or I'm missing it for some reason yeah what I did is I plot the QQ plot stratified by all variants and removed any any variance around the knowing signal not only for this one no one signal around any known signal previous reported and we see the stratification we see this the signals that around other knowing signals also have like can you can you can you can see their p values tend to higher than their then render also is getting to know so what the ranking question because may be able to rank some other things filtering it out but I what I'm thinking is given all these messy signals you yeah even though "
+    },
+    {
+        "start": 2409.23,
+        "text": "snowing signals are ranked on the top of these messy signals and you basically it's hard for us to determine whether they are true or not hey thank you "
+    }
+]
