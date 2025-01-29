@@ -186,7 +186,7 @@ def invoke_chat(request):
         config='config.json'
     ).get_agent()
 
-    persist_directory = "/home/acicalo/BRAD-Video/data/RAG_Database/rag_db"
+    persist_directory = os.path.join(os.getcwd(), "data", "RAG_Database", "rag_db")
 
     # Load the database
     vectordb = Chroma(
@@ -206,7 +206,7 @@ def invoke_chat(request):
     brad.save_state()
 
     # Parse the BRAD log file to identify which video to jump into and where
-    log_file_path = "/home/acicalo/BRAD-Video/output-logs/Video-Chat/log.json"
+    log_file_path = os.path.join(os.getcwd(), "output-logs", "Video-Chat", "log.json")
     with open(log_file_path, 'r') as file:
         log_file = json.load(file)
     sorted_keys = sorted(map(int, log_file.keys()))

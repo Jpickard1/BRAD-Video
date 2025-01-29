@@ -73,6 +73,40 @@ if transcripts_missing:
             with open(text_transcript_path, "w") as f:
                 f.write(text_transcript)
 
+            # Save the minute version of the transcript
+            # Initialize variables for grouping
+            grouped_transcript = []
+            text = ""
+            current_start = transcript[0]["start"]
+
+            # Iterate through the transcript
+            for entry in transcript:
+                if entry["start"] < current_start + 60:
+                    # Add entry to the current group
+                    text += (entry["text"] + " ")
+                else:
+                    # Save the current group and start a new one
+                    grouped_transcript.append(
+                        {
+                            "start": current_start,
+                            "text": text
+                        }
+                    )
+                    current_start = entry["start"]
+                    text = entry["text"] + " "
+
+            grouped_transcript.append(
+                {
+                    "start": current_start,
+                    "text": text
+                }
+            )
+
+            # Save the grouped transcript
+            transcript_outfile = os.path.join(TRANSCRIPTS_DIR, f"{video_id}_minute.json")
+            with open(transcript_outfile, "w") as f:
+                json.dump(grouped_transcript, f, indent=4)
+
         except Exception as e:
             print(f"Failed to fetch transcript for video ID {video_id}: {e}")
 

@@ -5,7 +5,6 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from tqdm import tqdm
 
-
 def build_rag_database(transcripts_dir="data/transcripts", db_name="rag_db", db_path="data/databases", 
                        huggingface_model="BAAI/bge-base-en-v1.5", chunk_size=1000, chunk_overlap=200, verbose=False):
     """
@@ -59,7 +58,7 @@ def build_rag_database(transcripts_dir="data/transcripts", db_name="rag_db", db_
     vectordb = Chroma.from_documents(
         documents=data_splits,
         embedding=embeddings_model,
-        persist_directory= "/home/acicalo/BRAD-Video/data/RAG_Database/rag_db", # db_full_path
+        persist_directory= os.path.join(os.getcwd(), "data", "RAG_Database", "rag_db"),
         collection_name="default"
     )
     vectordb.persist()
