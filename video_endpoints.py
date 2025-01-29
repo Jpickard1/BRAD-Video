@@ -1,6 +1,7 @@
 # STANDARD python imports
 import os
 import re
+import sys
 import json
 import shutil
 import logging
@@ -8,6 +9,7 @@ import time
 from difflib import SequenceMatcher
 from itertools import filterfalse
 from urllib.parse import urlparse
+from pathlib import Path
 import random
 from rich import print
 
@@ -89,6 +91,26 @@ def set_global_output_path(output_path, default_session):
 ###############################################################################
 #                               HELPER METHODS                                #
 ###############################################################################
+
+def convert_path_auto(file_path):
+    """
+    This doesn't work correctly, but it should do the following:
+
+    Convert the given path to match the operating system's expected format.
+    - On Windows, it converts to use backslashes (\).
+    - On Linux/macOS, it converts to use forward slashes (/).
+    """
+    # TODO: ask my good friend and the senior developer Ram to fix this
+    file_path = file_path.replace("\\", "/")
+    return file_path
+    # Use pathlib to handle the conversion based on OS
+    # p = Path(path)
+    
+    # Auto-detect the OS and convert accordingly
+    # if sys.platform.startswith("win"):
+    #     return str(p)  # Windows default (backslashes)
+    # else:
+    #     return p.as_posix()  # Unix default (forward slashes)
 
 def initiate_start():
     '''
@@ -224,7 +246,10 @@ def invoke_chat(request):
         source_location = document["source"]
         source_text = document["text"]
         timed_transcript = source_location.split(".")[0] + "_minute.json"
-
+        print(f"{timed_transcript=}")
+        timed_transcript = convert_path_auto(timed_transcript)
+        print(f"{timed_transcript=}")
+        
         # Ensure the transcript file exists
         if not os.path.exists(timed_transcript):
             print(f"Timed transcript file not found: {timed_transcript}")
@@ -260,7 +285,7 @@ def invoke_chat(request):
     print(f"{best_source=}")
     best_time = int(best_time)
     print(f"{best_time=}")
-    source_video = best_source.split('.')[0].split('/')[-1]
+    source_video = best_source.split('.')[0].split('\\')[-1]
     
     response_data = {
         "response": brad_response,
