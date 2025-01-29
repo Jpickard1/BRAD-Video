@@ -10,14 +10,43 @@
   flex: 1; /* Takes up the remaining height */
 }
 
-.chat-container, .video-container {
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Full height */
+  box-sizing: border-box;
+  width: 1200px;
+}
+
+.settings-panel {
+  margin-top: 10px;
+  padding: 10px;
+  width: 560px;
+  background: #af1919;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.database-options {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adds spacing between label and dropdown */
+}
+
+.settings-panel label {
+  display: block;
+  margin-top: 5px;
+}
+
+.chat-container {
   flex: 1; /* Each takes up 50% width */
   height: 100%; /* Full height */
   box-sizing: border-box;
 }
 
 .chat-container {
-  padding: 10px;
+  padding: 5px;
   background-color: #0e0b0b;
   border-right: 1px solid #ccc;
   overflow-y: auto;
@@ -105,18 +134,17 @@ body {
   flex-grow: 1; /* Makes the content area grow to fill the remaining space after the header */
 }
 
-
 .left-sidebar {
   /* Set the background color of the sidebar to black */
-  background-color: #000000;  
+  background-color: #000000;
   /* Set the text color to white */
-  color: #FFFFFF;  
+  color: #FFFFFF;
   /* Optionally, set padding for inner spacing */
-  padding: 10px;  
+  padding: 10px;
   /* Set font size (optional) */
-  font-size: 16px;  
+  font-size: 16px;
   /* Set the width of the sidebar (optional) */
-  width: 250px;    
+  width: 250px;
   /* Add a border (optional, for aesthetics) */
   border: 1px solid #FFFFFF;
 }
@@ -128,7 +156,10 @@ body {
   width: 50%;
   display: flex;
   flex-direction: column;
+  max-height: 900px; /* Set a reasonable height to enable scrolling */
+  border: 1px solid #ccc; /* Optional: adds a border for better visibility */
 }
+
 
 .message {
   margin-bottom: 1em;

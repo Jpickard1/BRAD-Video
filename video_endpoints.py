@@ -74,6 +74,7 @@ def set_globals(data_folder, upload_folder, database_folder, allowed_extensions,
     ALLOWED_EXTENSIONS = allowed_extensions
     TOOL_MODULES = tool_modules
     CACHE = cache
+    CACHE.set('rag_db', "DCMB", timeout=0)
 
 PATH_TO_OUTPUT_DIRECTORIES = None
 DEFAULT_SESSION = None
@@ -100,6 +101,8 @@ def convert_path_auto(file_path):
     - On Windows, it converts to use backslashes (\).
     - On Linux/macOS, it converts to use forward slashes (/).
     """
+    # This line is an artificat of previously using a single rag database
+    file_path = file_path.replace("rag_db", CACHE.get('rag_db'))
     # TODO: ask my good friend and the senior developer Ram to fix this
     file_path = file_path.replace("\\", "/")
     return file_path
@@ -208,7 +211,7 @@ def invoke_chat(request):
         config='config.json'
     ).get_agent()
 
-    persist_directory = os.path.join(os.getcwd(), "data", "RAG_Database", "rag_db")
+    persist_directory = os.path.join(os.getcwd(), "data", "RAG_Database", CACHE.get('rag_db'))
 
     # Load the database
     vectordb = Chroma(
@@ -282,10 +285,12 @@ def invoke_chat(request):
     print(f"{best_match_text=}")
     best_source = max(source_timing_map, key=lambda k: len(source_timing_map[k]))
     best_time = source_timing_map[best_source][0]
-    print(f"{best_source=}")
     best_time = int(best_time)
     print(f"{best_time=}")
-    source_video = best_source.split('.')[0].split('\\')[-1]
+    best_source = best_source.replace('\\', '/')
+    print(f"{best_source=}")
+    source_video = best_source.split('.')[0].split('/')[-1]
+    print(f"{source_video=}")
     
     response_data = {
         "response": brad_response,
@@ -299,4 +304,135 @@ def invoke_chat(request):
 
     return jsonify(response_data)
 
+
+@bp.route("/databases/available", methods=['GET'])
+def ep_databases_available():
+    return databases_available()
+
+def databases_available():
+    """
+    Retrieve a list of available retrieval-augmented generation (RAG) databases.
+
+    This endpoint lists all available databases stored in the designated database folder. The function checks the folder for subdirectories, which represent the databases, and returns the list in JSON format. If no databases are found, the response includes "None" as the first entry in the list.
+
+    This is a `GET` request and does not require any parameters.
+
+    Example request:
+
+    >>> GET /databases/available
+    
+    A JSON object is returned with the list of available databases. In case of errors (e.g., folder not found), an error message is returned.
+
+    Example success response:
+
+    >>> {
+    >>>     "databases": ["None", "database1", "database2"]
+    >>> }
+
+    Example error response (if folder is not found):
+
+    >>> {
+    >>>     "error": "Directory not found"
+    >>> }
+    
+    :return: A JSON response containing a list of available databases or an error message.
+    :rtype: dict
+    """
+    # Auth: Joshua Pickard
+    #       jpic@umich.edu
+    # Date: October 17, 2024    
+    
+    # Get list of directories at this location
+    try:
+        databases = [name for name in os.listdir(DATABASE_FOLDER) 
+                         if os.path.isdir(os.path.join(DATABASE_FOLDER, name))]
+        databases.insert(0, "None")
+
+        # Return the list of open sessions as a JSON response
+        response = jsonify({"databases": databases})
+        return response
+    
+    except FileNotFoundError:
+        return jsonify({"error": "Directory not found"})
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
+    
+@bp.route("/video/databases/set", methods=['POST'])
+def ep_databases_set():
+    return databases_set(request)
+
+def databases_set(request):
+    """
+    Set the active retrieval-augmented generation (RAG) database for the BRAD agent.
+
+    This uses the flask system cache to set the active database and llm hosts and updates it.
+
+    This endpoint allows users to select and set an available database from the server. The selected database will be loaded and set as the active RAG database for the BRAD agent. If "None" is selected, it will disconnect the current database.
+
+    **Request Structure**:
+    The input should be a JSON object containing the name of the database to be set.
+
+    Example request:
+
+    >>> {
+    >>>     "database": "database_name"
+    >>> }
+
+    If the database name is `"None"`, the current RAG database will be disconnected.
+
+    **Response Structure**:
+    A JSON response is returned indicating whether the database was successfully set or if an error occurred.
+
+    Example success response:
+
+    >>> {
+    >>>     "success": True,
+    >>>     "message": "Database set to database_name"
+    >>> }
+
+    Example response for disconnecting the database:
+
+    >>> {
+    >>>     "success": True,
+    >>>     "message": "Database set to None"
+    >>> }
+
+    Example error response (if the directory is not found):
+
+    >>> {
+    >>>     "error": "Directory not found"
+    >>> }
+
+    :param request: The HTTP POST request containing the database name in JSON format.
+    :type request: flask.Request
+    :return: A JSON response with a success message or an error message.
+    :rtype: dict
+    """
+    # Auth: Joshua Pickard
+    #       jpic@umich.edu
+    # Date: October 17, 2024
+    
+    # Get list of directories at this location
+
+    try:
+
+        request_data = request.json
+        logger.info(f"{request_data=}")
+        database_name = request_data.get("database")
+        logger.info(f"{database_name=}")
+
+        rag_database = CACHE.get('rag_db')
+        if rag_database != database_name:
+            CACHE.set('rag_db', database_name, timeout=0)
+        
+        logger.info(f"{CACHE.get('rag_db')=}")
+        
+        return jsonify({"success": True, "message": f"Database set to {database_name}"}), 200
+
+    except FileNotFoundError:
+        return jsonify({"error": "Directory not found"})
+
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
