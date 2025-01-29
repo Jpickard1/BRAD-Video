@@ -1,7 +1,10 @@
 # BRAD-Video RAG
 This repository deploys a [`BRAD`](https://github.com/Jpickard1/BRAD) agent to build a Retrieval Augementec Generation powered chatbot for youtube serieses. BRAD (Bioinformatics Retrieval Augmented Digital assistant) is an LLM powered chatbot that can be reconfigured to perform tasks ranging from database search and software execution, to helping search through a seminar series as we do here. The default settings of this system will build a RAG database for the University of Michigan [Department of Computational Medicine and Bioinformatics (DCMB) youtube channel](https://www.youtube.com/@universityofmichigancomput8877/featured), which feature several seminar series from 2017 until today (but this can be reconfigured).
 
-TODO: put a gif here
+
+https://github.com/user-attachments/assets/293d7bf0-5e6b-4bcb-b62b-e4b8fd17e65f
+
+
 
 ## Setup
 Follow the below instructions to install the necessary dependencies and build the RAG database. This must be run one time when installing the system, and note that the dependencies identical to that of the [`BRAD` repository](https://github.com/Jpickard1/BRAD) with the addition of `scrapetube` and `youtube_transcript_api`.
