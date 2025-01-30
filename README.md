@@ -1,10 +1,9 @@
 # BRAD-Video RAG
-This repository deploys a [`BRAD`](https://github.com/Jpickard1/BRAD) agent to build a Retrieval Augementec Generation powered chatbot for youtube serieses. BRAD (Bioinformatics Retrieval Augmented Digital assistant) is an LLM powered chatbot that can be reconfigured to perform tasks ranging from database search and software execution, to helping search through a seminar series as we do here. The default settings of this system will build a RAG database for the University of Michigan [Department of Computational Medicine and Bioinformatics (DCMB) youtube channel](https://www.youtube.com/@universityofmichigancomput8877/featured), which feature several seminar series from 2017 until today (but this can be reconfigured).
-
+This repository deploys a [`BRAD`](https://github.com/Jpickard1/BRAD) for Retrieval Augemented Generation (RAG) with videos from Youtube. A BRAD (Bioinformatics Retrieval Augmented Digital assistant) agent makes youtube channels searchable and interactive by both providing summary explinations and improving search in large video serieses. This repository contains every recorded seminar from the University of Michigan [Department of Computational Medicine and Bioinformatics (DCMB) youtube channel](https://www.youtube.com/@universityofmichigancomput8877/featured) and videos from 3Blue1Brown.
 
 https://github.com/user-attachments/assets/293d7bf0-5e6b-4bcb-b62b-e4b8fd17e65f
 
-
+**Note**: documentation is still under construction for this repository.
 
 ## Setup
 Follow the below instructions to install the necessary dependencies and build the RAG database. This must be run one time when installing the system, and note that the dependencies identical to that of the [`BRAD` repository](https://github.com/Jpickard1/BRAD) with the addition of `scrapetube` and `youtube_transcript_api`.
@@ -15,9 +14,6 @@ Follow the below instructions to install the necessary dependencies and build th
 This code must be run from the `video-rag` branch from the `BRAD` repository, and the roots of both repository must be located within the same directory. Run the below commands to install both repositories:
 ```
 git clone https://github.com/Jpickard1/BRAD.git
-cd BRAD
-git checkout video-rag
-cd ..
 git clone https://github.com/Jpickard1/BRAD-Video.git
 ```
 
