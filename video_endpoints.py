@@ -346,8 +346,8 @@ def databases_available():
     try:
         databases = [name for name in os.listdir(DATABASE_FOLDER) 
                          if os.path.isdir(os.path.join(DATABASE_FOLDER, name))]
-        databases.insert(0, "None")
-
+        databases.remove("DCMB")
+        databases.insert(0, "DCMB")
         # Return the list of open sessions as a JSON response
         response = jsonify({"databases": databases})
         return response

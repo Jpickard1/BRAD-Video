@@ -11,8 +11,8 @@ from flask_caching import Cache
 # Import from BRAD
 import sys
 sys.path.append('../BRAD') # TODO: change this to work from PIP
-from BRAD.endpoints import bp as brad_endpoints_bp  # Import the Blueprint
-from BRAD.endpoints import set_globals, initiate_start
+# from BRAD.endpoints import bp as brad_endpoints_bp  # Import the Blueprint
+# from BRAD.endpoints import set_globals, initiate_start
 from BRAD.agent import Agent
 from BRAD.constants import TOOL_MODULES
 
@@ -64,14 +64,14 @@ if not os.path.exists(UPLOAD_FOLDER):
 if not os.path.exists(DATABASE_FOLDER):
     os.makedirs(DATABASE_FOLDER)
 
-set_globals(DATA_FOLDER, UPLOAD_FOLDER, DATABASE_FOLDER, ALLOWED_EXTENSIONS, TOOL_MODULES, CACHE)
+# set_globals(DATA_FOLDER, UPLOAD_FOLDER, DATABASE_FOLDER, ALLOWED_EXTENSIONS, TOOL_MODULES, CACHE)
 set_globals_network(DATA_FOLDER, UPLOAD_FOLDER, DATABASE_FOLDER, ALLOWED_EXTENSIONS, TOOL_MODULES, CACHE)
 
-initiate_start()
+# initiate_start()
 initiate_start_network()
 
 # Register the Blueprint for the endpoints
-app.register_blueprint(brad_endpoints_bp)
+# app.register_blueprint(brad_endpoints_bp)
 app.register_blueprint(video_endpoints_bp)
 
 
