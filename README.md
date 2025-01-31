@@ -1,5 +1,5 @@
 # BRAD-Video RAG
-This repository deploys a [`BRAD`](https://github.com/Jpickard1/BRAD) for Retrieval Augemented Generation (RAG) with videos from Youtube. A BRAD (Bioinformatics Retrieval Augmented Digital assistant) agent makes youtube channels searchable and interactive by both providing summary explinations and improving search in large video serieses. This repository contains every recorded seminar from the University of Michigan [Department of Computational Medicine and Bioinformatics (DCMB) youtube channel](https://www.youtube.com/@universityofmichigancomput8877/featured) and videos from 3Blue1Brown.
+This repository deploys a [`BRAD`](https://github.com/Jpickard1/BRAD) for Retrieval Augemented Generation (RAG) with videos from Youtube. A BRAD (Bioinformatics Retrieval Augmented Digital assistant) agent makes youtube channels searchable and interactive by both providing summary explinations and improving search in large video serieses. This repository contains every recorded seminar from the University of Michigan [Department of Computational Medicine and Bioinformatics (DCMB) youtube channel](https://www.youtube.com/@universityofmichigancomput8877/featured) and videos from [3Blue1Brown](https://www.youtube.com/c/3blue1brown).
 
 https://github.com/user-attachments/assets/293d7bf0-5e6b-4bcb-b62b-e4b8fd17e65f
 
@@ -18,7 +18,7 @@ git clone https://github.com/Jpickard1/BRAD-Video.git
 ```
 
 **Backend (python)**
-1. Activate `BRAD-DEV` or `BRAD-1` conda environment used for developing the `BRAD` according to the specifications of that [`repository.`](https://github.com/Jpickard1/BRAD)
+1. Activate `BRAD-DEV` or `BRAD-1` conda environment used for developing the `BRAD` according to the specifications of that [repository.](https://github.com/Jpickard1/BRAD)
 
 If you wish to expand the library of searchable videos beyond those provided, install the following dependencies:
 
@@ -46,7 +46,7 @@ npm start
 export OPENAI_API_KEY=<PLACE YOUR OPENAI API KEY HERE>
 flask --app app run --host=0.0.0.0 --port=5000
 ```
-**Note** Slight variations may be required if you are running this on windows or other systems.
+**Note:** Slight variations may be required if you are running this on windows or other systems.
 
 ### Build New Video RAG Databases from Youtube (optional)
 
