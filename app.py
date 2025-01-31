@@ -1,5 +1,6 @@
 # STANDARD python imports
 import os
+import json
 import logging
 import shutil
 import logging
@@ -20,6 +21,16 @@ from BRAD.constants import TOOL_MODULES
 from video_endpoints import bp as video_endpoints_bp
 from video_endpoints import set_globals as set_globals_network
 from video_endpoints import initiate_start as initiate_start_network
+
+# Modify BRAD configs on the fly
+CONFIG_FILE = "config.json"
+script_dir = os.path.abspath(os.path.dirname(__file__))
+with open(CONFIG_FILE, "r") as file:
+    config = json.load(file)
+if config.get("log_path") == "output-logs":
+    config["log_path"] = os.path.join(script_dir, "output-logs")
+    with open(CONFIG_FILE, "w") as file:
+        json.dump(config, file, indent=4)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
