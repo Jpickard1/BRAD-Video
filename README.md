@@ -18,7 +18,10 @@ git clone https://github.com/Jpickard1/BRAD-Video.git
 ```
 
 **Backend (python)**
-1. Activate `BRAD-DEV` or `BRAD-1` conda environment used for developing the main `BRAD` repository
+1. Activate `BRAD-DEV` or `BRAD-1` conda environment used for developing the `BRAD` according to the specifications of that [`repository.`](https://github.com/Jpickard1/BRAD)
+
+If you wish to expand the library of searchable videos beyond those provided, install the following dependencies:
+
 2. `pip install scrapetube`
 3. `pip install youtube_transcript_api`
 
@@ -32,14 +35,25 @@ nvm use 20.18.0
 npm install --prefix ./brad-chat
 ```
 
-### Build the RAG Database
+## Turn On
+In separate terminals, execute the following commands from the root of this repository:
+```
+cd brad-chat
+npm start
+```
+
+```
+export OPENAI_API_KEY=<PLACE YOUR OPENAI API KEY HERE>
+flask --app app run --host=0.0.0.0 --port=5000
+```
+**Note** Slight variations may be required if you are running this on windows or other systems.
+
+### Build New Video RAG Databases from Youtube (optional)
 
 To build the RAG database:
 ```
 python youtube_database_construction.py
 ```
-
-## Turn On
 
 ## Modifications
 
